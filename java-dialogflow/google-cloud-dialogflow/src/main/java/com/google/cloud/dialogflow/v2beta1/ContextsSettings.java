@@ -66,6 +66,7 @@ import javax.annotation.Generated;
  * ContextsSettings contextsSettings = contextsSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class ContextsSettings extends ClientSettings<ContextsSettings> {
 

@@ -41,6 +41,20 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+ *   ListEnvironmentsRequest request =
+ *       ListEnvironmentsRequest.newBuilder()
+ *           .setParent(EnvironmentName.of("[PROJECT]", "[ENVIRONMENT]").toString())
+ *           .setPageSize(883849137)
+ *           .setPageToken("pageToken873572522")
+ *           .build();
+ *   for (Environment element : environmentsClient.listEnvironments(request).iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the EnvironmentsClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -87,8 +101,7 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@BetaApi
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class EnvironmentsClient implements BackgroundResource {
   private final EnvironmentsSettings settings;
   private final EnvironmentsStub stub;
@@ -144,6 +157,22 @@ public class EnvironmentsClient implements BackgroundResource {
   /**
    * Returns the list of all non-draft environments of the specified agent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   ListEnvironmentsRequest request =
+   *       ListEnvironmentsRequest.newBuilder()
+   *           .setParent(EnvironmentName.of("[PROJECT]", "[ENVIRONMENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Environment element : environmentsClient.listEnvironments(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -156,6 +185,23 @@ public class EnvironmentsClient implements BackgroundResource {
    * Returns the list of all non-draft environments of the specified agent.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   ListEnvironmentsRequest request =
+   *       ListEnvironmentsRequest.newBuilder()
+   *           .setParent(EnvironmentName.of("[PROJECT]", "[ENVIRONMENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Environment> future =
+   *       environmentsClient.listEnvironmentsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Environment element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
       listEnvironmentsPagedCallable() {
@@ -167,6 +213,24 @@ public class EnvironmentsClient implements BackgroundResource {
    * Returns the list of all non-draft environments of the specified agent.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   while (true) {
+   *     ListEnvironmentsResponse response =
+   *         environmentsClient.listEnvironmentsCallable().call(request);
+   *     for (Environment element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
       listEnvironmentsCallable() {

@@ -158,7 +158,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The agent doesn't follow Dialogflow best practicies.
+     * The agent doesn't follow Dialogflow best practices.
      * </pre>
      *
      * <code>INFO = 1;</code>
@@ -211,7 +211,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The agent doesn't follow Dialogflow best practicies.
+     * The agent doesn't follow Dialogflow best practices.
      * </pre>
      *
      * <code>INFO = 1;</code>

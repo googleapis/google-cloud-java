@@ -18,6 +18,7 @@ package com.google.cloud.dialogflow.v2beta1.stub;
 
 import static com.google.cloud.dialogflow.v2beta1.EntityTypesClient.ListEntityTypesPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -57,6 +58,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcEntityTypesStub extends EntityTypesStub {
   private static final MethodDescriptor<ListEntityTypesRequest, ListEntityTypesResponse>
@@ -448,71 +450,87 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse> listEntityTypesCallable() {
     return listEntityTypesCallable;
   }
 
+  @Override
   public UnaryCallable<ListEntityTypesRequest, ListEntityTypesPagedResponse>
       listEntityTypesPagedCallable() {
     return listEntityTypesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetEntityTypeRequest, EntityType> getEntityTypeCallable() {
     return getEntityTypeCallable;
   }
 
+  @Override
   public UnaryCallable<CreateEntityTypeRequest, EntityType> createEntityTypeCallable() {
     return createEntityTypeCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateEntityTypeRequest, EntityType> updateEntityTypeCallable() {
     return updateEntityTypeCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteEntityTypeRequest, Empty> deleteEntityTypeCallable() {
     return deleteEntityTypeCallable;
   }
 
+  @Override
   public UnaryCallable<BatchUpdateEntityTypesRequest, Operation> batchUpdateEntityTypesCallable() {
     return batchUpdateEntityTypesCallable;
   }
 
+  @Override
   public OperationCallable<BatchUpdateEntityTypesRequest, BatchUpdateEntityTypesResponse, Struct>
       batchUpdateEntityTypesOperationCallable() {
     return batchUpdateEntityTypesOperationCallable;
   }
 
+  @Override
   public UnaryCallable<BatchDeleteEntityTypesRequest, Operation> batchDeleteEntityTypesCallable() {
     return batchDeleteEntityTypesCallable;
   }
 
+  @Override
   public OperationCallable<BatchDeleteEntityTypesRequest, Empty, Struct>
       batchDeleteEntityTypesOperationCallable() {
     return batchDeleteEntityTypesOperationCallable;
   }
 
+  @Override
   public UnaryCallable<BatchCreateEntitiesRequest, Operation> batchCreateEntitiesCallable() {
     return batchCreateEntitiesCallable;
   }
 
+  @Override
   public OperationCallable<BatchCreateEntitiesRequest, Empty, Struct>
       batchCreateEntitiesOperationCallable() {
     return batchCreateEntitiesOperationCallable;
   }
 
+  @Override
   public UnaryCallable<BatchUpdateEntitiesRequest, Operation> batchUpdateEntitiesCallable() {
     return batchUpdateEntitiesCallable;
   }
 
+  @Override
   public OperationCallable<BatchUpdateEntitiesRequest, Empty, Struct>
       batchUpdateEntitiesOperationCallable() {
     return batchUpdateEntitiesOperationCallable;
   }
 
+  @Override
   public UnaryCallable<BatchDeleteEntitiesRequest, Operation> batchDeleteEntitiesCallable() {
     return batchDeleteEntitiesCallable;
   }
 
+  @Override
   public OperationCallable<BatchDeleteEntitiesRequest, Empty, Struct>
       batchDeleteEntitiesOperationCallable() {
     return batchDeleteEntitiesOperationCallable;

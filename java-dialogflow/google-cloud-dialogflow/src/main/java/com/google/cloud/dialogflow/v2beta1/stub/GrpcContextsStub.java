@@ -18,6 +18,7 @@ package com.google.cloud.dialogflow.v2beta1.stub;
 
 import static com.google.cloud.dialogflow.v2beta1.ContextsClient.ListContextsPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -49,6 +50,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcContextsStub extends ContextsStub {
   private static final MethodDescriptor<ListContextsRequest, ListContextsResponse>
@@ -266,30 +268,37 @@ public class GrpcContextsStub extends ContextsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListContextsRequest, ListContextsResponse> listContextsCallable() {
     return listContextsCallable;
   }
 
+  @Override
   public UnaryCallable<ListContextsRequest, ListContextsPagedResponse> listContextsPagedCallable() {
     return listContextsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetContextRequest, Context> getContextCallable() {
     return getContextCallable;
   }
 
+  @Override
   public UnaryCallable<CreateContextRequest, Context> createContextCallable() {
     return createContextCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateContextRequest, Context> updateContextCallable() {
     return updateContextCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteContextRequest, Empty> deleteContextCallable() {
     return deleteContextCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteAllContextsRequest, Empty> deleteAllContextsCallable() {
     return deleteAllContextsCallable;
   }

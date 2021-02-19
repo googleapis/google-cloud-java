@@ -146,10 +146,12 @@ public class GrpcSessionsStub extends SessionsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<DetectIntentRequest, DetectIntentResponse> detectIntentCallable() {
     return detectIntentCallable;
   }
 
+  @Override
   public BidiStreamingCallable<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
       streamingDetectIntentCallable() {
     return streamingDetectIntentCallable;

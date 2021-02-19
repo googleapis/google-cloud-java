@@ -23,11 +23,26 @@
  *
  * <p>Sample for AgentsClient:
  *
+ * <pre>{@code
+ * try (AgentsClient agentsClient = AgentsClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   Agent response = agentsClient.getAgent(parent);
+ * }
+ * }</pre>
+ *
  * <p>======================= ContextsClient =======================
  *
  * <p>Service Description: Service for managing [Contexts][google.cloud.dialogflow.v2beta1.Context].
  *
  * <p>Sample for ContextsClient:
+ *
+ * <pre>{@code
+ * try (ContextsClient contextsClient = ContextsClient.create()) {
+ *   ContextName name =
+ *       ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
+ *   Context response = contextsClient.getContext(name);
+ * }
+ * }</pre>
  *
  * <p>======================= DocumentsClient =======================
  *
@@ -36,12 +51,28 @@
  *
  * <p>Sample for DocumentsClient:
  *
+ * <pre>{@code
+ * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+ *   DocumentName name =
+ *       DocumentName.ofProjectKnowledgeBaseDocumentName(
+ *           "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+ *   Document response = documentsClient.getDocument(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= EntityTypesClient =======================
  *
  * <p>Service Description: Service for managing
  * [EntityTypes][google.cloud.dialogflow.v2beta1.EntityType].
  *
  * <p>Sample for EntityTypesClient:
+ *
+ * <pre>{@code
+ * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+ *   EntityTypeName name = EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]");
+ *   EntityType response = entityTypesClient.getEntityType(name);
+ * }
+ * }</pre>
  *
  * <p>======================= EnvironmentsClient =======================
  *
@@ -50,11 +81,27 @@
  *
  * <p>Sample for EnvironmentsClient:
  *
+ * <pre>{@code
+ * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+ *   AgentName parent = AgentName.ofProjectName("[PROJECT]");
+ *   for (Environment element : environmentsClient.listEnvironments(parent).iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
+ * }
+ * }</pre>
+ *
  * <p>======================= IntentsClient =======================
  *
  * <p>Service Description: Service for managing [Intents][google.cloud.dialogflow.v2beta1.Intent].
  *
  * <p>Sample for IntentsClient:
+ *
+ * <pre>{@code
+ * try (IntentsClient intentsClient = IntentsClient.create()) {
+ *   IntentName name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
+ *   Intent response = intentsClient.getIntent(name);
+ * }
+ * }</pre>
  *
  * <p>======================= KnowledgeBasesClient =======================
  *
@@ -62,6 +109,14 @@
  * [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
  *
  * <p>Sample for KnowledgeBasesClient:
+ *
+ * <pre>{@code
+ * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
+ *   KnowledgeBaseName name =
+ *       KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]");
+ *   KnowledgeBase response = knowledgeBasesClient.getKnowledgeBase(name);
+ * }
+ * }</pre>
  *
  * <p>======================= SessionsClient =======================
  *
@@ -72,12 +127,29 @@
  *
  * <p>Sample for SessionsClient:
  *
+ * <pre>{@code
+ * try (SessionsClient sessionsClient = SessionsClient.create()) {
+ *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
+ *   QueryInput queryInput = QueryInput.newBuilder().build();
+ *   DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);
+ * }
+ * }</pre>
+ *
  * <p>======================= SessionEntityTypesClient =======================
  *
  * <p>Service Description: Service for managing
  * [SessionEntityTypes][google.cloud.dialogflow.v2beta1.SessionEntityType].
  *
  * <p>Sample for SessionEntityTypesClient:
+ *
+ * <pre>{@code
+ * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+ *   SessionEntityTypeName name =
+ *       SessionEntityTypeName.ofProjectSessionEntityTypeName(
+ *           "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+ *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.dialogflow.v2beta1;

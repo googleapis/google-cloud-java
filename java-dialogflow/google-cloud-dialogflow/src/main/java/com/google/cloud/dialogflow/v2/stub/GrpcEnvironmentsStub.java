@@ -132,11 +132,13 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
       listEnvironmentsCallable() {
     return listEnvironmentsCallable;
   }
 
+  @Override
   public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
       listEnvironmentsPagedCallable() {
     return listEnvironmentsPagedCallable;

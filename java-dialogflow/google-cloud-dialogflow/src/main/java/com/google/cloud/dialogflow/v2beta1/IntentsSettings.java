@@ -69,6 +69,7 @@ import javax.annotation.Generated;
  * IntentsSettings intentsSettings = intentsSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class IntentsSettings extends ClientSettings<IntentsSettings> {
 

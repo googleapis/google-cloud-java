@@ -36,6 +36,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (SessionsClient sessionsClient = SessionsClient.create()) {
+ *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
+ *   QueryInput queryInput = QueryInput.newBuilder().build();
+ *   DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the SessionsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -82,8 +90,7 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@BetaApi
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class SessionsClient implements BackgroundResource {
   private final SessionsSettings settings;
   private final SessionsStub stub;
@@ -143,6 +150,16 @@ public class SessionsClient implements BackgroundResource {
    * <p>Note: Always use agent versions for production traffic. See [Versions and
    * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionsClient sessionsClient = SessionsClient.create()) {
+   *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
+   *   QueryInput queryInput = QueryInput.newBuilder().build();
+   *   DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);
+   * }
+   * }</pre>
+   *
    * @param session Required. The name of the session this query is sent to. Format:
    *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or `projects/&lt;Project
    *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
@@ -180,6 +197,16 @@ public class SessionsClient implements BackgroundResource {
    * <p>Note: Always use agent versions for production traffic. See [Versions and
    * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionsClient sessionsClient = SessionsClient.create()) {
+   *   String session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString();
+   *   QueryInput queryInput = QueryInput.newBuilder().build();
+   *   DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);
+   * }
+   * }</pre>
+   *
    * @param session Required. The name of the session this query is sent to. Format:
    *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`, or `projects/&lt;Project
    *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
@@ -214,6 +241,23 @@ public class SessionsClient implements BackgroundResource {
    * <p>Note: Always use agent versions for production traffic. See [Versions and
    * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionsClient sessionsClient = SessionsClient.create()) {
+   *   DetectIntentRequest request =
+   *       DetectIntentRequest.newBuilder()
+   *           .setSession(SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString())
+   *           .setQueryParams(QueryParameters.newBuilder().build())
+   *           .setQueryInput(QueryInput.newBuilder().build())
+   *           .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+   *           .setOutputAudioConfigMask(FieldMask.newBuilder().build())
+   *           .setInputAudio(ByteString.EMPTY)
+   *           .build();
+   *   DetectIntentResponse response = sessionsClient.detectIntent(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -231,6 +275,24 @@ public class SessionsClient implements BackgroundResource {
    * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionsClient sessionsClient = SessionsClient.create()) {
+   *   DetectIntentRequest request =
+   *       DetectIntentRequest.newBuilder()
+   *           .setSession(SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString())
+   *           .setQueryParams(QueryParameters.newBuilder().build())
+   *           .setQueryInput(QueryInput.newBuilder().build())
+   *           .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+   *           .setOutputAudioConfigMask(FieldMask.newBuilder().build())
+   *           .setInputAudio(ByteString.EMPTY)
+   *           .build();
+   *   ApiFuture<DetectIntentResponse> future =
+   *       sessionsClient.detectIntentCallable().futureCall(request);
+   *   // Do something.
+   *   DetectIntentResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DetectIntentRequest, DetectIntentResponse> detectIntentCallable() {
     return stub.detectIntentCallable();
@@ -246,6 +308,27 @@ public class SessionsClient implements BackgroundResource {
    * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionsClient sessionsClient = SessionsClient.create()) {
+   *   BidiStream<StreamingDetectIntentRequest, StreamingDetectIntentResponse> bidiStream =
+   *       sessionsClient.streamingDetectIntentCallable().call();
+   *   StreamingDetectIntentRequest request =
+   *       StreamingDetectIntentRequest.newBuilder()
+   *           .setSession(SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString())
+   *           .setQueryParams(QueryParameters.newBuilder().build())
+   *           .setQueryInput(QueryInput.newBuilder().build())
+   *           .setSingleUtterance(true)
+   *           .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+   *           .setOutputAudioConfigMask(FieldMask.newBuilder().build())
+   *           .setInputAudio(ByteString.EMPTY)
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (StreamingDetectIntentResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
    */
   public final BidiStreamingCallable<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
       streamingDetectIntentCallable() {

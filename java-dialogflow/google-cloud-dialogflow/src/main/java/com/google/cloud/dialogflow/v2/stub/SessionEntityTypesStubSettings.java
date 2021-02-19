@@ -90,7 +90,6 @@ import org.threeten.bp.Duration;
  *     sessionEntityTypesSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTypesStubSettings> {
   /** The default scopes of the service. */

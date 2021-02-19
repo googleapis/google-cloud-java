@@ -377,59 +377,73 @@ public class GrpcAgentsStub extends AgentsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetAgentRequest, Agent> getAgentCallable() {
     return getAgentCallable;
   }
 
+  @Override
   public UnaryCallable<SetAgentRequest, Agent> setAgentCallable() {
     return setAgentCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteAgentRequest, Empty> deleteAgentCallable() {
     return deleteAgentCallable;
   }
 
+  @Override
   public UnaryCallable<SearchAgentsRequest, SearchAgentsResponse> searchAgentsCallable() {
     return searchAgentsCallable;
   }
 
+  @Override
   public UnaryCallable<SearchAgentsRequest, SearchAgentsPagedResponse> searchAgentsPagedCallable() {
     return searchAgentsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<TrainAgentRequest, Operation> trainAgentCallable() {
     return trainAgentCallable;
   }
 
+  @Override
   public OperationCallable<TrainAgentRequest, Empty, Struct> trainAgentOperationCallable() {
     return trainAgentOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ExportAgentRequest, Operation> exportAgentCallable() {
     return exportAgentCallable;
   }
 
+  @Override
   public OperationCallable<ExportAgentRequest, ExportAgentResponse, Struct>
       exportAgentOperationCallable() {
     return exportAgentOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ImportAgentRequest, Operation> importAgentCallable() {
     return importAgentCallable;
   }
 
+  @Override
   public OperationCallable<ImportAgentRequest, Empty, Struct> importAgentOperationCallable() {
     return importAgentOperationCallable;
   }
 
+  @Override
   public UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable() {
     return restoreAgentCallable;
   }
 
+  @Override
   public OperationCallable<RestoreAgentRequest, Empty, Struct> restoreAgentOperationCallable() {
     return restoreAgentOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetValidationResultRequest, ValidationResult> getValidationResultCallable() {
     return getValidationResultCallable;
   }

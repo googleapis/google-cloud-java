@@ -312,43 +312,53 @@ public class GrpcIntentsStub extends IntentsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListIntentsRequest, ListIntentsResponse> listIntentsCallable() {
     return listIntentsCallable;
   }
 
+  @Override
   public UnaryCallable<ListIntentsRequest, ListIntentsPagedResponse> listIntentsPagedCallable() {
     return listIntentsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetIntentRequest, Intent> getIntentCallable() {
     return getIntentCallable;
   }
 
+  @Override
   public UnaryCallable<CreateIntentRequest, Intent> createIntentCallable() {
     return createIntentCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateIntentRequest, Intent> updateIntentCallable() {
     return updateIntentCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteIntentRequest, Empty> deleteIntentCallable() {
     return deleteIntentCallable;
   }
 
+  @Override
   public UnaryCallable<BatchUpdateIntentsRequest, Operation> batchUpdateIntentsCallable() {
     return batchUpdateIntentsCallable;
   }
 
+  @Override
   public OperationCallable<BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
       batchUpdateIntentsOperationCallable() {
     return batchUpdateIntentsOperationCallable;
   }
 
+  @Override
   public UnaryCallable<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsCallable() {
     return batchDeleteIntentsCallable;
   }
 
+  @Override
   public OperationCallable<BatchDeleteIntentsRequest, Empty, Struct>
       batchDeleteIntentsOperationCallable() {
     return batchDeleteIntentsOperationCallable;

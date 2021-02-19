@@ -67,6 +67,7 @@ import javax.annotation.Generated;
  * KnowledgeBasesSettings knowledgeBasesSettings = knowledgeBasesSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class KnowledgeBasesSettings extends ClientSettings<KnowledgeBasesSettings> {
 

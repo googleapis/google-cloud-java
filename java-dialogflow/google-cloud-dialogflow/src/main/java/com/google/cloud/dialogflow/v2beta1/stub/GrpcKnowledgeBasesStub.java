@@ -18,6 +18,7 @@ package com.google.cloud.dialogflow.v2beta1.stub;
 
 import static com.google.cloud.dialogflow.v2beta1.KnowledgeBasesClient.ListKnowledgeBasesPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -48,6 +49,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
   private static final MethodDescriptor<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse>
@@ -268,28 +270,34 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse>
       listKnowledgeBasesCallable() {
     return listKnowledgeBasesCallable;
   }
 
+  @Override
   public UnaryCallable<ListKnowledgeBasesRequest, ListKnowledgeBasesPagedResponse>
       listKnowledgeBasesPagedCallable() {
     return listKnowledgeBasesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetKnowledgeBaseRequest, KnowledgeBase> getKnowledgeBaseCallable() {
     return getKnowledgeBaseCallable;
   }
 
+  @Override
   public UnaryCallable<CreateKnowledgeBaseRequest, KnowledgeBase> createKnowledgeBaseCallable() {
     return createKnowledgeBaseCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteKnowledgeBaseRequest, Empty> deleteKnowledgeBaseCallable() {
     return deleteKnowledgeBaseCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateKnowledgeBaseRequest, KnowledgeBase> updateKnowledgeBaseCallable() {
     return updateKnowledgeBaseCallable;
   }

@@ -69,7 +69,13 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListEnvironments, expected %s or %s",
+                  response.getClass().getName(),
+                  ListEnvironmentsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

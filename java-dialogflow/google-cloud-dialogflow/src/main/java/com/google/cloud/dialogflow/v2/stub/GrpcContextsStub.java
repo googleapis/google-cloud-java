@@ -266,30 +266,37 @@ public class GrpcContextsStub extends ContextsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListContextsRequest, ListContextsResponse> listContextsCallable() {
     return listContextsCallable;
   }
 
+  @Override
   public UnaryCallable<ListContextsRequest, ListContextsPagedResponse> listContextsPagedCallable() {
     return listContextsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetContextRequest, Context> getContextCallable() {
     return getContextCallable;
   }
 
+  @Override
   public UnaryCallable<CreateContextRequest, Context> createContextCallable() {
     return createContextCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateContextRequest, Context> updateContextCallable() {
     return updateContextCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteContextRequest, Empty> deleteContextCallable() {
     return deleteContextCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteAllContextsRequest, Empty> deleteAllContextsCallable() {
     return deleteAllContextsCallable;
   }

@@ -100,7 +100,6 @@ import org.threeten.bp.Duration;
  * AgentsStubSettings agentsSettings = agentsSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
   /** The default scopes of the service. */

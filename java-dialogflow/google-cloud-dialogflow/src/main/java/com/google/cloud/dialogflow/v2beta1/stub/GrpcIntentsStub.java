@@ -18,6 +18,7 @@ package com.google.cloud.dialogflow.v2beta1.stub;
 
 import static com.google.cloud.dialogflow.v2beta1.IntentsClient.ListIntentsPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -54,6 +55,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcIntentsStub extends IntentsStub {
   private static final MethodDescriptor<ListIntentsRequest, ListIntentsResponse>
@@ -312,43 +314,53 @@ public class GrpcIntentsStub extends IntentsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListIntentsRequest, ListIntentsResponse> listIntentsCallable() {
     return listIntentsCallable;
   }
 
+  @Override
   public UnaryCallable<ListIntentsRequest, ListIntentsPagedResponse> listIntentsPagedCallable() {
     return listIntentsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetIntentRequest, Intent> getIntentCallable() {
     return getIntentCallable;
   }
 
+  @Override
   public UnaryCallable<CreateIntentRequest, Intent> createIntentCallable() {
     return createIntentCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateIntentRequest, Intent> updateIntentCallable() {
     return updateIntentCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteIntentRequest, Empty> deleteIntentCallable() {
     return deleteIntentCallable;
   }
 
+  @Override
   public UnaryCallable<BatchUpdateIntentsRequest, Operation> batchUpdateIntentsCallable() {
     return batchUpdateIntentsCallable;
   }
 
+  @Override
   public OperationCallable<BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
       batchUpdateIntentsOperationCallable() {
     return batchUpdateIntentsOperationCallable;
   }
 
+  @Override
   public UnaryCallable<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsCallable() {
     return batchDeleteIntentsCallable;
   }
 
+  @Override
   public OperationCallable<BatchDeleteIntentsRequest, Empty, Struct>
       batchDeleteIntentsOperationCallable() {
     return batchDeleteIntentsOperationCallable;

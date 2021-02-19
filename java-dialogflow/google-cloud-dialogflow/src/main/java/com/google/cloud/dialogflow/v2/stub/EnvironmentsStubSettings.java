@@ -84,7 +84,6 @@ import org.threeten.bp.Duration;
  * EnvironmentsStubSettings environmentsSettings = environmentsSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSettings> {
   /** The default scopes of the service. */

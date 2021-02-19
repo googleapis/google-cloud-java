@@ -48,6 +48,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+ *   DocumentName name =
+ *       DocumentName.ofProjectKnowledgeBaseDocumentName(
+ *           "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+ *   Document response = documentsClient.getDocument(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the DocumentsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -95,7 +104,7 @@ import javax.annotation.Generated;
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class DocumentsClient implements BackgroundResource {
   private final DocumentsSettings settings;
   private final DocumentsStub stub;
@@ -164,6 +173,18 @@ public class DocumentsClient implements BackgroundResource {
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   KnowledgeBaseName parent =
+   *       KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]");
+   *   for (Document element : documentsClient.listDocuments(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The knowledge base to list all documents for. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge
    *     Base ID&gt;`.
@@ -184,6 +205,20 @@ public class DocumentsClient implements BackgroundResource {
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   String parent =
+   *       DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *               "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *           .toString();
+   *   for (Document element : documentsClient.listDocuments(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The knowledge base to list all documents for. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge
    *     Base ID&gt;`.
@@ -201,6 +236,26 @@ public class DocumentsClient implements BackgroundResource {
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   ListDocumentsRequest request =
+   *       ListDocumentsRequest.newBuilder()
+   *           .setParent(
+   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (Document element : documentsClient.listDocuments(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -216,6 +271,26 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   ListDocumentsRequest request =
+   *       ListDocumentsRequest.newBuilder()
+   *           .setParent(
+   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<Document> future = documentsClient.listDocumentsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Document element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
       listDocumentsPagedCallable() {
@@ -230,6 +305,23 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   while (true) {
+   *     ListDocumentsResponse response = documentsClient.listDocumentsCallable().call(request);
+   *     for (Document element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable() {
     return stub.listDocumentsCallable();
@@ -241,6 +333,17 @@ public class DocumentsClient implements BackgroundResource {
    *
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   DocumentName name =
+   *       DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *           "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+   *   Document response = documentsClient.getDocument(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the document to retrieve. Format `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge Base
@@ -260,6 +363,18 @@ public class DocumentsClient implements BackgroundResource {
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   String name =
+   *       DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *               "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *           .toString();
+   *   Document response = documentsClient.getDocument(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the document to retrieve. Format `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge Base
    *     ID&gt;/documents/&lt;Document ID&gt;`.
@@ -277,6 +392,21 @@ public class DocumentsClient implements BackgroundResource {
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   GetDocumentRequest request =
+   *       GetDocumentRequest.newBuilder()
+   *           .setName(
+   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *                   .toString())
+   *           .build();
+   *   Document response = documentsClient.getDocument(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -292,6 +422,21 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   GetDocumentRequest request =
+   *       GetDocumentRequest.newBuilder()
+   *           .setName(
+   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Document> future = documentsClient.getDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   Document response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetDocumentRequest, Document> getDocumentCallable() {
     return stub.getDocumentCallable();
@@ -303,6 +448,17 @@ public class DocumentsClient implements BackgroundResource {
    *
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   KnowledgeBaseName parent =
+   *       KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]");
+   *   Document document = Document.newBuilder().build();
+   *   Document response = documentsClient.createDocumentAsync(parent, document).get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The knowledge base to create a document for. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge
@@ -327,6 +483,19 @@ public class DocumentsClient implements BackgroundResource {
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   String parent =
+   *       DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *               "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *           .toString();
+   *   Document document = Document.newBuilder().build();
+   *   Document response = documentsClient.createDocumentAsync(parent, document).get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. The knowledge base to create a document for. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge
    *     Base ID&gt;`.
@@ -347,6 +516,23 @@ public class DocumentsClient implements BackgroundResource {
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   CreateDocumentRequest request =
+   *       CreateDocumentRequest.newBuilder()
+   *           .setParent(
+   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *                   .toString())
+   *           .setDocument(Document.newBuilder().build())
+   *           .setImportGcsCustomMetadata(true)
+   *           .build();
+   *   Document response = documentsClient.createDocumentAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -363,6 +549,24 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   CreateDocumentRequest request =
+   *       CreateDocumentRequest.newBuilder()
+   *           .setParent(
+   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *                   .toString())
+   *           .setDocument(Document.newBuilder().build())
+   *           .setImportGcsCustomMetadata(true)
+   *           .build();
+   *   OperationFuture<Document, KnowledgeOperationMetadata> future =
+   *       documentsClient.createDocumentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Document response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateDocumentRequest, Document, KnowledgeOperationMetadata>
       createDocumentOperationCallable() {
@@ -377,6 +581,23 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   CreateDocumentRequest request =
+   *       CreateDocumentRequest.newBuilder()
+   *           .setParent(
+   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *                   .toString())
+   *           .setDocument(Document.newBuilder().build())
+   *           .setImportGcsCustomMetadata(true)
+   *           .build();
+   *   ApiFuture<Operation> future = documentsClient.createDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateDocumentRequest, Operation> createDocumentCallable() {
     return stub.createDocumentCallable();
@@ -388,6 +609,17 @@ public class DocumentsClient implements BackgroundResource {
    *
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   DocumentName name =
+   *       DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *           "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+   *   documentsClient.deleteDocumentAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the document to delete. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge Base
@@ -408,6 +640,18 @@ public class DocumentsClient implements BackgroundResource {
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   String name =
+   *       DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *               "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *           .toString();
+   *   documentsClient.deleteDocumentAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the document to delete. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge Base
    *     ID&gt;/documents/&lt;Document ID&gt;`.
@@ -425,6 +669,21 @@ public class DocumentsClient implements BackgroundResource {
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   DeleteDocumentRequest request =
+   *       DeleteDocumentRequest.newBuilder()
+   *           .setName(
+   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *                   .toString())
+   *           .build();
+   *   documentsClient.deleteDocumentAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -441,6 +700,22 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   DeleteDocumentRequest request =
+   *       DeleteDocumentRequest.newBuilder()
+   *           .setName(
+   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, KnowledgeOperationMetadata> future =
+   *       documentsClient.deleteDocumentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DeleteDocumentRequest, Empty, KnowledgeOperationMetadata>
       deleteDocumentOperationCallable() {
@@ -455,6 +730,21 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   DeleteDocumentRequest request =
+   *       DeleteDocumentRequest.newBuilder()
+   *           .setName(
+   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future = documentsClient.deleteDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteDocumentRequest, Operation> deleteDocumentCallable() {
     return stub.deleteDocumentCallable();
@@ -466,6 +756,15 @@ public class DocumentsClient implements BackgroundResource {
    *
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   Document response = documentsClient.updateDocumentAsync(document).get();
+   * }
+   * }</pre>
    *
    * @param document Required. The document to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -483,6 +782,16 @@ public class DocumentsClient implements BackgroundResource {
    *
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Document response = documentsClient.updateDocumentAsync(document, updateMask).get();
+   * }
+   * }</pre>
    *
    * @param document Required. The document to update.
    * @param updateMask Optional. Not specified means `update all`. Currently, only `display_name`
@@ -503,6 +812,19 @@ public class DocumentsClient implements BackgroundResource {
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   UpdateDocumentRequest request =
+   *       UpdateDocumentRequest.newBuilder()
+   *           .setDocument(Document.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Document response = documentsClient.updateDocumentAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -519,6 +841,20 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   UpdateDocumentRequest request =
+   *       UpdateDocumentRequest.newBuilder()
+   *           .setDocument(Document.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Document, KnowledgeOperationMetadata> future =
+   *       documentsClient.updateDocumentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Document response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<UpdateDocumentRequest, Document, KnowledgeOperationMetadata>
       updateDocumentOperationCallable() {
@@ -533,6 +869,19 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   UpdateDocumentRequest request =
+   *       UpdateDocumentRequest.newBuilder()
+   *           .setDocument(Document.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = documentsClient.updateDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateDocumentRequest, Operation> updateDocumentCallable() {
     return stub.updateDocumentCallable();
@@ -549,6 +898,18 @@ public class DocumentsClient implements BackgroundResource {
    *
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   DocumentName name =
+   *       DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *           "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+   *   GcsSource gcsSource = GcsSource.newBuilder().build();
+   *   Document response = documentsClient.reloadDocumentAsync(name, gcsSource).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the document to reload. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge Base
@@ -579,6 +940,19 @@ public class DocumentsClient implements BackgroundResource {
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   String name =
+   *       DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *               "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *           .toString();
+   *   GcsSource gcsSource = GcsSource.newBuilder().build();
+   *   Document response = documentsClient.reloadDocumentAsync(name, gcsSource).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the document to reload. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/knowledgeBases/&lt;Knowledge Base
    *     ID&gt;/documents/&lt;Document ID&gt;`
@@ -605,6 +979,22 @@ public class DocumentsClient implements BackgroundResource {
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use
    * `projects.knowledgeBases.documents`.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   ReloadDocumentRequest request =
+   *       ReloadDocumentRequest.newBuilder()
+   *           .setName(
+   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *                   .toString())
+   *           .setImportGcsCustomMetadata(true)
+   *           .build();
+   *   Document response = documentsClient.reloadDocumentAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -626,6 +1016,23 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   ReloadDocumentRequest request =
+   *       ReloadDocumentRequest.newBuilder()
+   *           .setName(
+   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *                   .toString())
+   *           .setImportGcsCustomMetadata(true)
+   *           .build();
+   *   OperationFuture<Document, KnowledgeOperationMetadata> future =
+   *       documentsClient.reloadDocumentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Document response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
       reloadDocumentOperationCallable() {
@@ -645,6 +1052,22 @@ public class DocumentsClient implements BackgroundResource {
    * `projects.knowledgeBases.documents`.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   ReloadDocumentRequest request =
+   *       ReloadDocumentRequest.newBuilder()
+   *           .setName(
+   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *                   .toString())
+   *           .setImportGcsCustomMetadata(true)
+   *           .build();
+   *   ApiFuture<Operation> future = documentsClient.reloadDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ReloadDocumentRequest, Operation> reloadDocumentCallable() {
     return stub.reloadDocumentCallable();

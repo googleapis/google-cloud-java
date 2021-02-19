@@ -187,6 +187,7 @@ public class DocumentsClientTest {
             .setMimeType("mimeType-1392120434")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
             .setEnableAutoReload(true)
+            .setLatestReloadStatus(Document.ReloadStatus.newBuilder().build())
             .build();
     mockDocuments.addResponse(expectedResponse);
 
@@ -236,6 +237,7 @@ public class DocumentsClientTest {
             .setMimeType("mimeType-1392120434")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
             .setEnableAutoReload(true)
+            .setLatestReloadStatus(Document.ReloadStatus.newBuilder().build())
             .build();
     mockDocuments.addResponse(expectedResponse);
 
@@ -281,6 +283,7 @@ public class DocumentsClientTest {
             .setMimeType("mimeType-1392120434")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
             .setEnableAutoReload(true)
+            .setLatestReloadStatus(Document.ReloadStatus.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -339,6 +342,7 @@ public class DocumentsClientTest {
             .setMimeType("mimeType-1392120434")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
             .setEnableAutoReload(true)
+            .setLatestReloadStatus(Document.ReloadStatus.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -483,6 +487,7 @@ public class DocumentsClientTest {
             .setMimeType("mimeType-1392120434")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
             .setEnableAutoReload(true)
+            .setLatestReloadStatus(Document.ReloadStatus.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -536,6 +541,7 @@ public class DocumentsClientTest {
             .setMimeType("mimeType-1392120434")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
             .setEnableAutoReload(true)
+            .setLatestReloadStatus(Document.ReloadStatus.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -592,6 +598,7 @@ public class DocumentsClientTest {
             .setMimeType("mimeType-1392120434")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
             .setEnableAutoReload(true)
+            .setLatestReloadStatus(Document.ReloadStatus.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -652,6 +659,7 @@ public class DocumentsClientTest {
             .setMimeType("mimeType-1392120434")
             .addAllKnowledgeTypes(new ArrayList<Document.KnowledgeType>())
             .setEnableAutoReload(true)
+            .setLatestReloadStatus(Document.ReloadStatus.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

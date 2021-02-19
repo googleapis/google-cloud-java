@@ -18,6 +18,7 @@ package com.google.cloud.dialogflow.v2beta1.stub;
 
 import static com.google.cloud.dialogflow.v2beta1.SessionEntityTypesClient.ListSessionEntityTypesPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -48,6 +49,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
   private static final MethodDescriptor<
@@ -278,31 +280,37 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListSessionEntityTypesRequest, ListSessionEntityTypesResponse>
       listSessionEntityTypesCallable() {
     return listSessionEntityTypesCallable;
   }
 
+  @Override
   public UnaryCallable<ListSessionEntityTypesRequest, ListSessionEntityTypesPagedResponse>
       listSessionEntityTypesPagedCallable() {
     return listSessionEntityTypesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetSessionEntityTypeRequest, SessionEntityType>
       getSessionEntityTypeCallable() {
     return getSessionEntityTypeCallable;
   }
 
+  @Override
   public UnaryCallable<CreateSessionEntityTypeRequest, SessionEntityType>
       createSessionEntityTypeCallable() {
     return createSessionEntityTypeCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateSessionEntityTypeRequest, SessionEntityType>
       updateSessionEntityTypeCallable() {
     return updateSessionEntityTypeCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteSessionEntityTypeRequest, Empty> deleteSessionEntityTypeCallable() {
     return deleteSessionEntityTypeCallable;
   }

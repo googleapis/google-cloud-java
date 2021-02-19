@@ -18,6 +18,7 @@ package com.google.cloud.dialogflow.v2beta1.stub;
 
 import static com.google.cloud.dialogflow.v2beta1.DocumentsClient.ListDocumentsPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -52,6 +53,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcDocumentsStub extends DocumentsStub {
   private static final MethodDescriptor<ListDocumentsRequest, ListDocumentsResponse>
@@ -304,50 +306,61 @@ public class GrpcDocumentsStub extends DocumentsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable() {
     return listDocumentsCallable;
   }
 
+  @Override
   public UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
       listDocumentsPagedCallable() {
     return listDocumentsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetDocumentRequest, Document> getDocumentCallable() {
     return getDocumentCallable;
   }
 
+  @Override
   public UnaryCallable<CreateDocumentRequest, Operation> createDocumentCallable() {
     return createDocumentCallable;
   }
 
+  @Override
   public OperationCallable<CreateDocumentRequest, Document, KnowledgeOperationMetadata>
       createDocumentOperationCallable() {
     return createDocumentOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteDocumentRequest, Operation> deleteDocumentCallable() {
     return deleteDocumentCallable;
   }
 
+  @Override
   public OperationCallable<DeleteDocumentRequest, Empty, KnowledgeOperationMetadata>
       deleteDocumentOperationCallable() {
     return deleteDocumentOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateDocumentRequest, Operation> updateDocumentCallable() {
     return updateDocumentCallable;
   }
 
+  @Override
   public OperationCallable<UpdateDocumentRequest, Document, KnowledgeOperationMetadata>
       updateDocumentOperationCallable() {
     return updateDocumentOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ReloadDocumentRequest, Operation> reloadDocumentCallable() {
     return reloadDocumentCallable;
   }
 
+  @Override
   public OperationCallable<ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
       reloadDocumentOperationCallable() {
     return reloadDocumentOperationCallable;

@@ -68,6 +68,7 @@ import javax.annotation.Generated;
  * DocumentsSettings documentsSettings = documentsSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
 

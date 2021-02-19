@@ -65,6 +65,7 @@ import javax.annotation.Generated;
  * EnvironmentsSettings environmentsSettings = environmentsSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
 

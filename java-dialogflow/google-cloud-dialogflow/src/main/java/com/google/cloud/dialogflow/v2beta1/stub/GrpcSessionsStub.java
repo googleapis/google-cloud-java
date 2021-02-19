@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.stub;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -43,6 +44,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcSessionsStub extends SessionsStub {
   private static final MethodDescriptor<DetectIntentRequest, DetectIntentResponse>
@@ -146,10 +148,12 @@ public class GrpcSessionsStub extends SessionsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<DetectIntentRequest, DetectIntentResponse> detectIntentCallable() {
     return detectIntentCallable;
   }
 
+  @Override
   public BidiStreamingCallable<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
       streamingDetectIntentCallable() {
     return streamingDetectIntentCallable;

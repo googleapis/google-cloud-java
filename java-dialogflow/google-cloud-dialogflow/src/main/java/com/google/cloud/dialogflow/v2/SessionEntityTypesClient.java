@@ -44,6 +44,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+ *   SessionEntityTypeName name =
+ *       SessionEntityTypeName.ofProjectSessionEntityTypeName(
+ *           "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+ *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the SessionEntityTypesClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -93,8 +102,7 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@BetaApi
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class SessionEntityTypesClient implements BackgroundResource {
   private final SessionEntityTypesSettings settings;
   private final SessionEntityTypesStub stub;
@@ -154,6 +162,18 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
    * you need to use session entities with Google Assistant integration.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
+   *   for (SessionEntityType element :
+   *       sessionEntityTypesClient.listSessionEntityTypes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The session to list all session entity types from. Format:
    *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
    *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/
@@ -176,6 +196,21 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
    * you need to use session entities with Google Assistant integration.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   String parent =
+   *       SessionEntityTypeName.ofProjectSessionEntityTypeName(
+   *               "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
+   *           .toString();
+   *   for (SessionEntityType element :
+   *       sessionEntityTypesClient.listSessionEntityTypes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The session to list all session entity types from. Format:
    *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
    *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/
@@ -196,6 +231,26 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
    * you need to use session entities with Google Assistant integration.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   ListSessionEntityTypesRequest request =
+   *       ListSessionEntityTypesRequest.newBuilder()
+   *           .setParent(
+   *               SessionEntityTypeName.ofProjectSessionEntityTypeName(
+   *                       "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (SessionEntityType element :
+   *       sessionEntityTypesClient.listSessionEntityTypes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -212,6 +267,26 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * you need to use session entities with Google Assistant integration.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   ListSessionEntityTypesRequest request =
+   *       ListSessionEntityTypesRequest.newBuilder()
+   *           .setParent(
+   *               SessionEntityTypeName.ofProjectSessionEntityTypeName(
+   *                       "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<SessionEntityType> future =
+   *       sessionEntityTypesClient.listSessionEntityTypesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SessionEntityType element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListSessionEntityTypesRequest, ListSessionEntityTypesPagedResponse>
       listSessionEntityTypesPagedCallable() {
@@ -226,6 +301,24 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * you need to use session entities with Google Assistant integration.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   while (true) {
+   *     ListSessionEntityTypesResponse response =
+   *         sessionEntityTypesClient.listSessionEntityTypesCallable().call(request);
+   *     for (SessionEntityType element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListSessionEntityTypesRequest, ListSessionEntityTypesResponse>
       listSessionEntityTypesCallable() {
@@ -238,6 +331,17 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
    * you need to use session entities with Google Assistant integration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   SessionEntityTypeName name =
+   *       SessionEntityTypeName.ofProjectSessionEntityTypeName(
+   *           "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+   *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the session entity type. Format: `projects/&lt;Project
    *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` or
@@ -262,6 +366,18 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
    * you need to use session entities with Google Assistant integration.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   String name =
+   *       SessionEntityTypeName.ofProjectSessionEntityTypeName(
+   *               "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
+   *           .toString();
+   *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the session entity type. Format: `projects/&lt;Project
    *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` or
    *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
@@ -283,6 +399,21 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
    * you need to use session entities with Google Assistant integration.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   GetSessionEntityTypeRequest request =
+   *       GetSessionEntityTypeRequest.newBuilder()
+   *           .setName(
+   *               SessionEntityTypeName.ofProjectSessionEntityTypeName(
+   *                       "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .build();
+   *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -298,6 +429,22 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * you need to use session entities with Google Assistant integration.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   GetSessionEntityTypeRequest request =
+   *       GetSessionEntityTypeRequest.newBuilder()
+   *           .setName(
+   *               SessionEntityTypeName.ofProjectSessionEntityTypeName(
+   *                       "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<SessionEntityType> future =
+   *       sessionEntityTypesClient.getSessionEntityTypeCallable().futureCall(request);
+   *   // Do something.
+   *   SessionEntityType response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetSessionEntityTypeRequest, SessionEntityType>
       getSessionEntityTypeCallable() {
@@ -312,6 +459,17 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
    * you need to use session entities with Google Assistant integration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   SessionName parent = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
+   *   SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
+   *   SessionEntityType response =
+   *       sessionEntityTypesClient.createSessionEntityType(parent, sessionEntityType);
+   * }
+   * }</pre>
    *
    * @param parent Required. The session to create a session entity type for. Format:
    *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
@@ -340,6 +498,20 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
    * you need to use session entities with Google Assistant integration.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   String parent =
+   *       SessionEntityTypeName.ofProjectSessionEntityTypeName(
+   *               "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
+   *           .toString();
+   *   SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
+   *   SessionEntityType response =
+   *       sessionEntityTypesClient.createSessionEntityType(parent, sessionEntityType);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The session to create a session entity type for. Format:
    *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or `projects/&lt;Project
    *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/
@@ -367,6 +539,22 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
    * you need to use session entities with Google Assistant integration.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   CreateSessionEntityTypeRequest request =
+   *       CreateSessionEntityTypeRequest.newBuilder()
+   *           .setParent(
+   *               SessionEntityTypeName.ofProjectSessionEntityTypeName(
+   *                       "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setSessionEntityType(SessionEntityType.newBuilder().build())
+   *           .build();
+   *   SessionEntityType response = sessionEntityTypesClient.createSessionEntityType(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -384,6 +572,23 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * you need to use session entities with Google Assistant integration.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   CreateSessionEntityTypeRequest request =
+   *       CreateSessionEntityTypeRequest.newBuilder()
+   *           .setParent(
+   *               SessionEntityTypeName.ofProjectSessionEntityTypeName(
+   *                       "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setSessionEntityType(SessionEntityType.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SessionEntityType> future =
+   *       sessionEntityTypesClient.createSessionEntityTypeCallable().futureCall(request);
+   *   // Do something.
+   *   SessionEntityType response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateSessionEntityTypeRequest, SessionEntityType>
       createSessionEntityTypeCallable() {
@@ -396,6 +601,16 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
    * you need to use session entities with Google Assistant integration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
+   *   SessionEntityType response =
+   *       sessionEntityTypesClient.updateSessionEntityType(sessionEntityType);
+   * }
+   * }</pre>
    *
    * @param sessionEntityType Required. The session entity type to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -412,6 +627,17 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
    * you need to use session entities with Google Assistant integration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   SessionEntityType response =
+   *       sessionEntityTypesClient.updateSessionEntityType(sessionEntityType, updateMask);
+   * }
+   * }</pre>
    *
    * @param sessionEntityType Required. The session entity type to update.
    * @param updateMask Optional. The mask to control which fields get updated.
@@ -434,6 +660,19 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
    * you need to use session entities with Google Assistant integration.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   UpdateSessionEntityTypeRequest request =
+   *       UpdateSessionEntityTypeRequest.newBuilder()
+   *           .setSessionEntityType(SessionEntityType.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   SessionEntityType response = sessionEntityTypesClient.updateSessionEntityType(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -449,6 +688,20 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * you need to use session entities with Google Assistant integration.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   UpdateSessionEntityTypeRequest request =
+   *       UpdateSessionEntityTypeRequest.newBuilder()
+   *           .setSessionEntityType(SessionEntityType.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SessionEntityType> future =
+   *       sessionEntityTypesClient.updateSessionEntityTypeCallable().futureCall(request);
+   *   // Do something.
+   *   SessionEntityType response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateSessionEntityTypeRequest, SessionEntityType>
       updateSessionEntityTypeCallable() {
@@ -461,6 +714,17 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
    * you need to use session entities with Google Assistant integration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   SessionEntityTypeName name =
+   *       SessionEntityTypeName.ofProjectSessionEntityTypeName(
+   *           "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
+   *   sessionEntityTypesClient.deleteSessionEntityType(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
    *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` or
@@ -485,6 +749,18 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
    * you need to use session entities with Google Assistant integration.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   String name =
+   *       SessionEntityTypeName.ofProjectSessionEntityTypeName(
+   *               "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
+   *           .toString();
+   *   sessionEntityTypesClient.deleteSessionEntityType(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
    *     ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type Display Name&gt;` or
    *     `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User
@@ -506,6 +782,21 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>This method doesn't work with Google Assistant integration. Contact Dialogflow support if
    * you need to use session entities with Google Assistant integration.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   DeleteSessionEntityTypeRequest request =
+   *       DeleteSessionEntityTypeRequest.newBuilder()
+   *           .setName(
+   *               SessionEntityTypeName.ofProjectSessionEntityTypeName(
+   *                       "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .build();
+   *   sessionEntityTypesClient.deleteSessionEntityType(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -521,6 +812,22 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * you need to use session entities with Google Assistant integration.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   DeleteSessionEntityTypeRequest request =
+   *       DeleteSessionEntityTypeRequest.newBuilder()
+   *           .setName(
+   *               SessionEntityTypeName.ofProjectSessionEntityTypeName(
+   *                       "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       sessionEntityTypesClient.deleteSessionEntityTypeCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteSessionEntityTypeRequest, Empty>
       deleteSessionEntityTypeCallable() {
