@@ -69,7 +69,13 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RunReport, expected %s or %s",
+                  response.getClass().getName(),
+                  RunReportResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -84,7 +90,13 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RunPivotReport, expected %s or %s",
+                  response.getClass().getName(),
+                  RunPivotReportResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -99,7 +111,13 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchRunReports, expected %s or %s",
+                  response.getClass().getName(),
+                  BatchRunReportsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -115,7 +133,13 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchRunPivotReports, expected %s or %s",
+                  response.getClass().getName(),
+                  BatchRunPivotReportsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -129,7 +153,13 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetMetadata, expected %s or %s",
+                  response.getClass().getName(),
+                  Metadata.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -145,7 +175,13 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RunRealtimeReport, expected %s or %s",
+                  response.getClass().getName(),
+                  RunRealtimeReportResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

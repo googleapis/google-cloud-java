@@ -249,27 +249,33 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<RunReportRequest, RunReportResponse> runReportCallable() {
     return runReportCallable;
   }
 
+  @Override
   public UnaryCallable<RunPivotReportRequest, RunPivotReportResponse> runPivotReportCallable() {
     return runPivotReportCallable;
   }
 
+  @Override
   public UnaryCallable<BatchRunReportsRequest, BatchRunReportsResponse> batchRunReportsCallable() {
     return batchRunReportsCallable;
   }
 
+  @Override
   public UnaryCallable<BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>
       batchRunPivotReportsCallable() {
     return batchRunPivotReportsCallable;
   }
 
+  @Override
   public UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable() {
     return getMetadataCallable;
   }
 
+  @Override
   public UnaryCallable<RunRealtimeReportRequest, RunRealtimeReportResponse>
       runRealtimeReportCallable() {
     return runRealtimeReportCallable;
