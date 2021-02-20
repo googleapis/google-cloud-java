@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.2.5](https://www.github.com/googleapis/java-notebooks/compare/v0.2.4...v0.2.5) (2021-02-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#124](https://www.github.com/googleapis/java-notebooks/issues/124)) ([4c4021e](https://www.github.com/googleapis/java-notebooks/commit/4c4021ed903b4f1bfbce014dcae48fcbd1a475d2))
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#120](https://www.github.com/googleapis/java-notebooks/issues/120)) ([3273362](https://www.github.com/googleapis/java-notebooks/commit/3273362afab58b51390f69550a1845efc9fa2248))
+
 ### [0.2.4](https://www.github.com/googleapis/java-notebooks/compare/v0.2.3...v0.2.4) (2021-01-14)
 
 
