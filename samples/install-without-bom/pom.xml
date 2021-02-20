@@ -30,7 +30,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquerystorage</artifactId>
-      <version>1.9.0</version>
+      <version>1.9.1</version>
     </dependency>
     <!-- [END bigquerystorage_install_without_bom] -->
 
