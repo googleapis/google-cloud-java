@@ -4,47 +4,47 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-vision.git",
-        "sha": "ee9592585debf97c1be0ddba8c99c4cb78fe02ed"
+        "sha": "c3d6e7bd7e544cbf035c903648eb43ee7958d57f"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -173,6 +173,7 @@
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/ImageAnnotatorSettings.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/ProductSearchClient.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/ProductSearchSettings.java",
+    "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/gapic_metadata.json",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/package-info.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/stub/GrpcImageAnnotatorCallableFactory.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/stub/GrpcImageAnnotatorStub.java",
@@ -184,6 +185,7 @@
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1/stub/ProductSearchStubSettings.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p1beta1/ImageAnnotatorClient.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p1beta1/ImageAnnotatorSettings.java",
+    "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p1beta1/gapic_metadata.json",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p1beta1/package-info.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p1beta1/stub/GrpcImageAnnotatorCallableFactory.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p1beta1/stub/GrpcImageAnnotatorStub.java",
@@ -191,6 +193,7 @@
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p1beta1/stub/ImageAnnotatorStubSettings.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p2beta1/ImageAnnotatorClient.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p2beta1/ImageAnnotatorSettings.java",
+    "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p2beta1/gapic_metadata.json",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p2beta1/package-info.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p2beta1/stub/GrpcImageAnnotatorCallableFactory.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p2beta1/stub/GrpcImageAnnotatorStub.java",
@@ -200,6 +203,7 @@
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p3beta1/ImageAnnotatorSettings.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p3beta1/ProductSearchClient.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p3beta1/ProductSearchSettings.java",
+    "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p3beta1/gapic_metadata.json",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p3beta1/package-info.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p3beta1/stub/GrpcImageAnnotatorCallableFactory.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p3beta1/stub/GrpcImageAnnotatorStub.java",
@@ -213,6 +217,7 @@
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/ImageAnnotatorSettings.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/ProductSearchClient.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/ProductSearchSettings.java",
+    "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/gapic_metadata.json",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/package-info.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/stub/GrpcImageAnnotatorCallableFactory.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/stub/GrpcImageAnnotatorStub.java",
