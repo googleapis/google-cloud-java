@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.2.12](https://www.github.com/googleapis/java-trace/compare/v1.2.11...v1.2.12) (2021-02-22)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([821c8f9](https://www.github.com/googleapis/java-trace/commit/821c8f9e36f31ff8b1abeedad57d92954d5e3c0f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#422](https://www.github.com/googleapis/java-trace/issues/422)) ([15d0541](https://www.github.com/googleapis/java-trace/commit/15d0541dddb52d40dd5885000be5656a6ee24fba))
+
 ### [1.2.11](https://www.github.com/googleapis/java-trace/compare/v1.2.10...v1.2.11) (2021-01-28)
 
 
