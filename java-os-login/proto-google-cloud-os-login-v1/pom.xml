@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-os-login-v1</artifactId>
-  <version>1.2.0</version><!-- {x-version-update:proto-google-cloud-os-login-v1:current} -->
+  <version>1.2.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-os-login-v1:current} -->
   <name>proto-google-cloud-os-login-v1</name>
   <description>PROTO library for proto-google-cloud-os-login-v1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-os-login-parent</artifactId>
-    <version>1.2.0</version><!-- {x-version-update:google-cloud-os-login:current} -->
+    <version>1.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-login:current} -->
   </parent>
   <dependencies>
     <dependency>
