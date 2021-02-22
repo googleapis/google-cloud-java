@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.30.13](https://www.github.com/googleapis/java-tasks/compare/v1.30.12...v1.30.13) (2021-02-22)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#351](https://www.github.com/googleapis/java-tasks/issues/351)) ([bc17256](https://www.github.com/googleapis/java-tasks/commit/bc172567b4f6443b4ba69f8718e2523757adfdd7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#361](https://www.github.com/googleapis/java-tasks/issues/361)) ([a385638](https://www.github.com/googleapis/java-tasks/commit/a3856385cfd835e6bf031bd606cf8ef9c0b84e04))
+
 ### [1.30.12](https://www.github.com/googleapis/java-tasks/compare/v1.30.11...v1.30.12) (2021-01-14)
 
 
