@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-mediatranslation.git",
-        "sha": "02654392c99395718335efda616f18c2fbc8d8bc"
+        "sha": "d006dd255388bd945e5be3b8ba7f3f1c6f977213"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -103,6 +103,7 @@
     "codecov.yaml",
     "google-cloud-mediatranslation/src/main/java/com/google/cloud/mediatranslation/v1beta1/SpeechTranslationServiceClient.java",
     "google-cloud-mediatranslation/src/main/java/com/google/cloud/mediatranslation/v1beta1/SpeechTranslationServiceSettings.java",
+    "google-cloud-mediatranslation/src/main/java/com/google/cloud/mediatranslation/v1beta1/gapic_metadata.json",
     "google-cloud-mediatranslation/src/main/java/com/google/cloud/mediatranslation/v1beta1/package-info.java",
     "google-cloud-mediatranslation/src/main/java/com/google/cloud/mediatranslation/v1beta1/stub/GrpcSpeechTranslationServiceCallableFactory.java",
     "google-cloud-mediatranslation/src/main/java/com/google/cloud/mediatranslation/v1beta1/stub/GrpcSpeechTranslationServiceStub.java",
