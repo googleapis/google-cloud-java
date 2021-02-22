@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-os-config.git",
-        "sha": "ea21f2cfab56f5171c5eddb02793293cd61e0472"
+        "sha": "fc13336c9a498a781b6dfe596b7301cacc936224"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -103,6 +103,7 @@
     "codecov.yaml",
     "google-cloud-os-config/src/main/java/com/google/cloud/osconfig/v1/OsConfigServiceClient.java",
     "google-cloud-os-config/src/main/java/com/google/cloud/osconfig/v1/OsConfigServiceSettings.java",
+    "google-cloud-os-config/src/main/java/com/google/cloud/osconfig/v1/gapic_metadata.json",
     "google-cloud-os-config/src/main/java/com/google/cloud/osconfig/v1/package-info.java",
     "google-cloud-os-config/src/main/java/com/google/cloud/osconfig/v1/stub/GrpcOsConfigServiceCallableFactory.java",
     "google-cloud-os-config/src/main/java/com/google/cloud/osconfig/v1/stub/GrpcOsConfigServiceStub.java",
