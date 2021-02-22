@@ -4,47 +4,47 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-asset.git",
-        "sha": "f71ffb8297d0049ad7bbb67fb4f69b7001d38008"
+        "sha": "333c250cecbfdcb8501b926085b2eae67f2b601f"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -171,6 +171,7 @@
     "codecov.yaml",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1/AssetServiceClient.java",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1/AssetServiceSettings.java",
+    "google-cloud-asset/src/main/java/com/google/cloud/asset/v1/gapic_metadata.json",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1/package-info.java",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStub.java",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java",
@@ -178,6 +179,7 @@
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/GrpcAssetServiceStub.java",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p1beta1/AssetServiceClient.java",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p1beta1/AssetServiceSettings.java",
+    "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p1beta1/gapic_metadata.json",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p1beta1/package-info.java",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p1beta1/stub/AssetServiceStub.java",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p1beta1/stub/AssetServiceStubSettings.java",
@@ -185,6 +187,7 @@
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p1beta1/stub/GrpcAssetServiceStub.java",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p2beta1/AssetServiceClient.java",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p2beta1/AssetServiceSettings.java",
+    "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p2beta1/gapic_metadata.json",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p2beta1/package-info.java",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p2beta1/stub/AssetServiceStub.java",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p2beta1/stub/AssetServiceStubSettings.java",
@@ -192,6 +195,7 @@
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p2beta1/stub/GrpcAssetServiceStub.java",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p4beta1/AssetServiceClient.java",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p4beta1/AssetServiceSettings.java",
+    "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p4beta1/gapic_metadata.json",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p4beta1/package-info.java",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p4beta1/stub/AssetServiceStub.java",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p4beta1/stub/AssetServiceStubSettings.java",
@@ -199,6 +203,7 @@
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p4beta1/stub/GrpcAssetServiceStub.java",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p5beta1/AssetServiceClient.java",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p5beta1/AssetServiceSettings.java",
+    "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p5beta1/gapic_metadata.json",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p5beta1/package-info.java",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p5beta1/stub/AssetServiceStub.java",
     "google-cloud-asset/src/main/java/com/google/cloud/asset/v1p5beta1/stub/AssetServiceStubSettings.java",
