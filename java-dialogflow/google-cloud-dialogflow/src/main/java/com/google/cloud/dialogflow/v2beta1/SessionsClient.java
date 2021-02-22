@@ -169,11 +169,12 @@ public class SessionsClient implements BackgroundResource {
    *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
    *     ID&gt;`,
    *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
-   *     is not specified, we assume default 'draft' environment. If `User ID` is not specified, we
-   *     are using "-". It's up to the API caller to choose an appropriate `Session ID` and `User
-   *     Id`. They can be a random number or some type of user and session identifiers (preferably
-   *     hashed). The length of the `Session ID` and `User ID` must not exceed 36 characters. For
-   *     more information, see the [API interactions
+   *     is not specified, we assume default 'draft' environment (`Environment ID` might be referred
+   *     to as environment name at some places). If `User ID` is not specified, we are using "-".
+   *     It's up to the API caller to choose an appropriate `Session ID` and `User Id`. They can be
+   *     a random number or some type of user and session identifiers (preferably hashed). The
+   *     length of the `Session ID` and `User ID` must not exceed 36 characters. For more
+   *     information, see the [API interactions
    *     guide](https://cloud.google.com/dialogflow/docs/api-overview).
    *     <p>Note: Always use agent versions for production traffic. See [Versions and
    *     environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
@@ -220,11 +221,12 @@ public class SessionsClient implements BackgroundResource {
    *     ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
    *     ID&gt;`,
    *     <p>If `Location ID` is not specified we assume default 'us' location. If `Environment ID`
-   *     is not specified, we assume default 'draft' environment. If `User ID` is not specified, we
-   *     are using "-". It's up to the API caller to choose an appropriate `Session ID` and `User
-   *     Id`. They can be a random number or some type of user and session identifiers (preferably
-   *     hashed). The length of the `Session ID` and `User ID` must not exceed 36 characters. For
-   *     more information, see the [API interactions
+   *     is not specified, we assume default 'draft' environment (`Environment ID` might be referred
+   *     to as environment name at some places). If `User ID` is not specified, we are using "-".
+   *     It's up to the API caller to choose an appropriate `Session ID` and `User Id`. They can be
+   *     a random number or some type of user and session identifiers (preferably hashed). The
+   *     length of the `Session ID` and `User ID` must not exceed 36 characters. For more
+   *     information, see the [API interactions
    *     guide](https://cloud.google.com/dialogflow/docs/api-overview).
    *     <p>Note: Always use agent versions for production traffic. See [Versions and
    *     environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
