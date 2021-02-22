@@ -1,4 +1,4 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-resourcemanager:0.118.9-alpha:0.118.9-alpha
+google-cloud-resourcemanager:0.118.9-alpha:0.118.10-alpha-SNAPSHOT
