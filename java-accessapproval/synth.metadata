@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-accessapproval.git",
-        "sha": "59d12f1059b387bb1839fa40c9a9bbf4729cd4f1"
+        "sha": "b3fabd4a53ad486dfeebfc8364d8171329f72196"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -103,6 +103,7 @@
     "codecov.yaml",
     "google-cloud-accessapproval/src/main/java/com/google/cloud/accessapproval/v1/AccessApprovalAdminClient.java",
     "google-cloud-accessapproval/src/main/java/com/google/cloud/accessapproval/v1/AccessApprovalAdminSettings.java",
+    "google-cloud-accessapproval/src/main/java/com/google/cloud/accessapproval/v1/gapic_metadata.json",
     "google-cloud-accessapproval/src/main/java/com/google/cloud/accessapproval/v1/package-info.java",
     "google-cloud-accessapproval/src/main/java/com/google/cloud/accessapproval/v1/stub/AccessApprovalStub.java",
     "google-cloud-accessapproval/src/main/java/com/google/cloud/accessapproval/v1/stub/AccessApprovalStubSettings.java",

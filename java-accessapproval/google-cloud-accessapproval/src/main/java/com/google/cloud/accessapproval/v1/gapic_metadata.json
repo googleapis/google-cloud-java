@@ -1,0 +1,39 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.accessapproval.v1",
+  "libraryPackage": "com.google.cloud.accessapproval.v1",
+  "services": {
+    "AccessApproval": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AccessApprovalAdminClient",
+          "rpcs": {
+            "ApproveApprovalRequest": {
+              "methods": ["approveApprovalRequest", "approveApprovalRequestCallable"]
+            },
+            "DeleteAccessApprovalSettings": {
+              "methods": ["deleteAccessApprovalSettings", "deleteAccessApprovalSettings", "deleteAccessApprovalSettingsCallable"]
+            },
+            "DismissApprovalRequest": {
+              "methods": ["dismissApprovalRequest", "dismissApprovalRequestCallable"]
+            },
+            "GetAccessApprovalSettings": {
+              "methods": ["getAccessApprovalSettings", "getAccessApprovalSettings", "getAccessApprovalSettingsCallable"]
+            },
+            "GetApprovalRequest": {
+              "methods": ["getApprovalRequest", "getApprovalRequest", "getApprovalRequestCallable"]
+            },
+            "ListApprovalRequests": {
+              "methods": ["listApprovalRequests", "listApprovalRequests", "listApprovalRequestsPagedCallable", "listApprovalRequestsCallable"]
+            },
+            "UpdateAccessApprovalSettings": {
+              "methods": ["updateAccessApprovalSettings", "updateAccessApprovalSettings", "updateAccessApprovalSettingsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
