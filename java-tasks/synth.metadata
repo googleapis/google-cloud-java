@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-tasks.git",
-        "sha": "1fdc0fed2d6e903f063ad5a65bb40ffa47ef649d"
+        "sha": "a3856385cfd835e6bf031bd606cf8ef9c0b84e04"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -120,6 +120,7 @@
     "codecov.yaml",
     "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/CloudTasksClient.java",
     "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/CloudTasksSettings.java",
+    "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/gapic_metadata.json",
     "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/package-info.java",
     "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/stub/CloudTasksStub.java",
     "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/stub/CloudTasksStubSettings.java",
@@ -127,6 +128,7 @@
     "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/stub/GrpcCloudTasksStub.java",
     "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/CloudTasksClient.java",
     "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/CloudTasksSettings.java",
+    "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/gapic_metadata.json",
     "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/package-info.java",
     "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/stub/CloudTasksStub.java",
     "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/stub/CloudTasksStubSettings.java",
@@ -134,6 +136,7 @@
     "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/stub/GrpcCloudTasksStub.java",
     "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/CloudTasksClient.java",
     "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/CloudTasksSettings.java",
+    "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/gapic_metadata.json",
     "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/package-info.java",
     "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/stub/CloudTasksStub.java",
     "google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/stub/CloudTasksStubSettings.java",
