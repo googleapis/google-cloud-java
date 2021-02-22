@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v1.0.10...v1.1.0) (2021-02-22)
+
+
+### Features
+
+* generate sample code in the Java microgenerator ([#359](https://www.github.com/googleapis/java-recaptchaenterprise/issues/359)) ([e8e0369](https://www.github.com/googleapis/java-recaptchaenterprise/commit/e8e036990f66a18b487bd8d18d45455c87ed64f1))
+
+
+### Bug Fixes
+
+* update repo name ([#356](https://www.github.com/googleapis/java-recaptchaenterprise/issues/356)) ([55fdcd8](https://www.github.com/googleapis/java-recaptchaenterprise/commit/55fdcd83fd8da31ab7483b2e6ebab487c66a04ee))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#369](https://www.github.com/googleapis/java-recaptchaenterprise/issues/369)) ([59806a9](https://www.github.com/googleapis/java-recaptchaenterprise/commit/59806a93cbf679668cad5f38261ed388ca7ea3c1))
+
 ### [1.0.10](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v1.0.9...v1.0.10) (2021-01-14)
 
 
