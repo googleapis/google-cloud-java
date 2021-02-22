@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.0.11](https://www.github.com/googleapis/java-accessapproval/compare/v1.0.10...v1.0.11) (2021-02-22)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#324](https://www.github.com/googleapis/java-accessapproval/issues/324)) ([c6549ef](https://www.github.com/googleapis/java-accessapproval/commit/c6549ef44581613efa5ef2f6e965bf8faea741f4))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#335](https://www.github.com/googleapis/java-accessapproval/issues/335)) ([b3fabd4](https://www.github.com/googleapis/java-accessapproval/commit/b3fabd4a53ad486dfeebfc8364d8171329f72196))
+
 ### [1.0.10](https://www.github.com/googleapis/java-accessapproval/compare/v1.0.9...v1.0.10) (2021-01-14)
 
 
