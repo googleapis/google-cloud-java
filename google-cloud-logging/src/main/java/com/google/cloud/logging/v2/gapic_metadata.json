@@ -1,0 +1,138 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.logging.v2",
+  "libraryPackage": "com.google.cloud.logging.v2",
+  "services": {
+    "LoggingServiceV2": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LoggingClient",
+          "rpcs": {
+            "DeleteLog": {
+              "methods": ["deleteLog", "deleteLog", "deleteLog", "deleteLogCallable"]
+            },
+            "ListLogEntries": {
+              "methods": ["listLogEntries", "listLogEntries", "listLogEntriesPagedCallable", "listLogEntriesCallable"]
+            },
+            "ListLogs": {
+              "methods": ["listLogs", "listLogs", "listLogs", "listLogs", "listLogs", "listLogs", "listLogsPagedCallable", "listLogsCallable"]
+            },
+            "ListMonitoredResourceDescriptors": {
+              "methods": ["listMonitoredResourceDescriptors", "listMonitoredResourceDescriptorsPagedCallable", "listMonitoredResourceDescriptorsCallable"]
+            },
+            "TailLogEntries": {
+              "methods": ["tailLogEntriesCallable"]
+            },
+            "WriteLogEntries": {
+              "methods": ["writeLogEntries", "writeLogEntries", "writeLogEntries", "writeLogEntriesCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ConfigServiceV2": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConfigClient",
+          "rpcs": {
+            "CreateBucket": {
+              "methods": ["createBucket", "createBucketCallable"]
+            },
+            "CreateExclusion": {
+              "methods": ["createExclusion", "createExclusion", "createExclusion", "createExclusion", "createExclusion", "createExclusion", "createExclusionCallable"]
+            },
+            "CreateSink": {
+              "methods": ["createSink", "createSink", "createSink", "createSink", "createSink", "createSink", "createSinkCallable"]
+            },
+            "CreateView": {
+              "methods": ["createView", "createViewCallable"]
+            },
+            "DeleteBucket": {
+              "methods": ["deleteBucket", "deleteBucketCallable"]
+            },
+            "DeleteExclusion": {
+              "methods": ["deleteExclusion", "deleteExclusion", "deleteExclusion", "deleteExclusionCallable"]
+            },
+            "DeleteSink": {
+              "methods": ["deleteSink", "deleteSink", "deleteSink", "deleteSinkCallable"]
+            },
+            "DeleteView": {
+              "methods": ["deleteView", "deleteViewCallable"]
+            },
+            "GetBucket": {
+              "methods": ["getBucket", "getBucketCallable"]
+            },
+            "GetCmekSettings": {
+              "methods": ["getCmekSettings", "getCmekSettingsCallable"]
+            },
+            "GetExclusion": {
+              "methods": ["getExclusion", "getExclusion", "getExclusion", "getExclusionCallable"]
+            },
+            "GetSink": {
+              "methods": ["getSink", "getSink", "getSink", "getSinkCallable"]
+            },
+            "GetView": {
+              "methods": ["getView", "getViewCallable"]
+            },
+            "ListBuckets": {
+              "methods": ["listBuckets", "listBuckets", "listBuckets", "listBuckets", "listBuckets", "listBuckets", "listBucketsPagedCallable", "listBucketsCallable"]
+            },
+            "ListExclusions": {
+              "methods": ["listExclusions", "listExclusions", "listExclusions", "listExclusions", "listExclusions", "listExclusions", "listExclusionsPagedCallable", "listExclusionsCallable"]
+            },
+            "ListSinks": {
+              "methods": ["listSinks", "listSinks", "listSinks", "listSinks", "listSinks", "listSinks", "listSinksPagedCallable", "listSinksCallable"]
+            },
+            "ListViews": {
+              "methods": ["listViews", "listViews", "listViewsPagedCallable", "listViewsCallable"]
+            },
+            "UndeleteBucket": {
+              "methods": ["undeleteBucket", "undeleteBucketCallable"]
+            },
+            "UpdateBucket": {
+              "methods": ["updateBucket", "updateBucketCallable"]
+            },
+            "UpdateCmekSettings": {
+              "methods": ["updateCmekSettings", "updateCmekSettingsCallable"]
+            },
+            "UpdateExclusion": {
+              "methods": ["updateExclusion", "updateExclusion", "updateExclusion", "updateExclusionCallable"]
+            },
+            "UpdateSink": {
+              "methods": ["updateSink", "updateSink", "updateSink", "updateSink", "updateSink", "updateSinkCallable"]
+            },
+            "UpdateView": {
+              "methods": ["updateView", "updateViewCallable"]
+            }
+          }
+        }
+      }
+    },
+    "MetricsServiceV2": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MetricsClient",
+          "rpcs": {
+            "CreateLogMetric": {
+              "methods": ["createLogMetric", "createLogMetric", "createLogMetric", "createLogMetricCallable"]
+            },
+            "DeleteLogMetric": {
+              "methods": ["deleteLogMetric", "deleteLogMetric", "deleteLogMetric", "deleteLogMetricCallable"]
+            },
+            "GetLogMetric": {
+              "methods": ["getLogMetric", "getLogMetric", "getLogMetric", "getLogMetricCallable"]
+            },
+            "ListLogMetrics": {
+              "methods": ["listLogMetrics", "listLogMetrics", "listLogMetrics", "listLogMetricsPagedCallable", "listLogMetricsCallable"]
+            },
+            "UpdateLogMetric": {
+              "methods": ["updateLogMetric", "updateLogMetric", "updateLogMetric", "updateLogMetricCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

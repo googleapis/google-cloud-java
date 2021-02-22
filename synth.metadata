@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-logging.git",
-        "sha": "c34a830ed9b255f5e5614234667fe55225e1f2a3"
+        "sha": "9cd8474fdcd313f08216642254d72de9ce1a3214"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -104,6 +104,7 @@
     "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/LoggingSettings.java",
     "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/MetricsClient.java",
     "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/MetricsSettings.java",
+    "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/gapic_metadata.json",
     "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/package-info.java",
     "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/ConfigServiceV2Stub.java",
     "google-cloud-logging/src/main/java/com/google/cloud/logging/v2/stub/ConfigServiceV2StubSettings.java",
