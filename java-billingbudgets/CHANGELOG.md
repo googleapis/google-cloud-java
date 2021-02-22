@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.0.5](https://www.github.com/googleapis/java-billingbudgets/compare/v1.0.4...v1.0.5) (2021-02-22)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#381](https://www.github.com/googleapis/java-billingbudgets/issues/381)) ([682a5ff](https://www.github.com/googleapis/java-billingbudgets/commit/682a5ffe2604e14fa808a5da01d88de9407a36c7))
+* Update rules for currency_code in budget_amount ([#387](https://www.github.com/googleapis/java-billingbudgets/issues/387)) ([15cd344](https://www.github.com/googleapis/java-billingbudgets/commit/15cd344df0ba052588ea19fb69b96d532d99950c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#394](https://www.github.com/googleapis/java-billingbudgets/issues/394)) ([7964ef0](https://www.github.com/googleapis/java-billingbudgets/commit/7964ef091972099b5b98f62ec8a49c9db45de7d9))
+
 ### [1.0.4](https://www.github.com/googleapis/java-billingbudgets/compare/v1.0.3...v1.0.4) (2021-01-14)
 
 
