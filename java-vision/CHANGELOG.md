@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.111.0](https://www.github.com/googleapis/java-vision/compare/v1.110.10...v1.111.0) (2021-02-22)
+
+
+### Features
+
+* add LEFT_CHEEK_CENTER and RIGHT_CHEEK_CENTER FaceAnnotation Landmark Types ([#394](https://www.github.com/googleapis/java-vision/issues/394)) ([f760842](https://www.github.com/googleapis/java-vision/commit/f760842e6cbcfe6e370b26f630267fdc557a2687))
+* **v1:** add TextDetectionParams.enable_text_detection_confidence_score ([#352](https://www.github.com/googleapis/java-vision/issues/352)) ([2d06685](https://www.github.com/googleapis/java-vision/commit/2d066858963a1f54a2d84071e452e276137d9848))
+* **v1:** add TextDetectionParams.enable_text_detection_confidence_score to ImageContext proto so customer can optionally get confidence score for TEXT_DETECTION feature ([2d06685](https://www.github.com/googleapis/java-vision/commit/2d066858963a1f54a2d84071e452e276137d9848))
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([f760842](https://www.github.com/googleapis/java-vision/commit/f760842e6cbcfe6e370b26f630267fdc557a2687))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.18.0 ([#371](https://www.github.com/googleapis/java-vision/issues/371)) ([c9dab62](https://www.github.com/googleapis/java-vision/commit/c9dab62a01cb0c02de0bd24aa268b0d8ee12127c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#406](https://www.github.com/googleapis/java-vision/issues/406)) ([c3d6e7b](https://www.github.com/googleapis/java-vision/commit/c3d6e7bd7e544cbf035c903648eb43ee7958d57f))
+
 ### [1.110.10](https://www.github.com/googleapis/java-vision/compare/v1.110.9...v1.110.10) (2021-01-06)
 
 
