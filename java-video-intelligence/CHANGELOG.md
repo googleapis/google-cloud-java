@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.5.10](https://www.github.com/googleapis/java-video-intelligence/compare/v1.5.9...v1.5.10) (2021-02-22)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#395](https://www.github.com/googleapis/java-video-intelligence/issues/395)) ([b725c3a](https://www.github.com/googleapis/java-video-intelligence/commit/b725c3aad40c194567877ad6fbb0cf12a61a3c50))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#404](https://www.github.com/googleapis/java-video-intelligence/issues/404)) ([8c96195](https://www.github.com/googleapis/java-video-intelligence/commit/8c96195993cc93a98df0cb4bd8cbf18b0e35fd11))
+
 ### [1.5.9](https://www.github.com/googleapis/java-video-intelligence/compare/v1.5.8...v1.5.9) (2021-02-05)
 
 
