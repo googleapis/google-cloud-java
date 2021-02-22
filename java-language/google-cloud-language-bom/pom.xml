@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-language-bom</artifactId>
-  <version>1.101.11-SNAPSHOT</version><!-- {x-version-update:google-cloud-language:current} -->
+  <version>1.101.11</version><!-- {x-version-update:google-cloud-language:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -64,27 +64,27 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-language-v1</artifactId>
-        <version>1.83.11-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-language-v1:current} -->
+        <version>1.83.11</version><!-- {x-version-update:grpc-google-cloud-language-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-language-v1beta2</artifactId>
-        <version>0.84.11-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-language-v1beta2:current} -->
+        <version>0.84.11</version><!-- {x-version-update:grpc-google-cloud-language-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-language-v1</artifactId>
-        <version>1.83.11-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-language-v1:current} -->
+        <version>1.83.11</version><!-- {x-version-update:proto-google-cloud-language-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-language</artifactId>
-        <version>1.101.11-SNAPSHOT</version><!-- {x-version-update:google-cloud-language:current} -->
+        <version>1.101.11</version><!-- {x-version-update:google-cloud-language:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-language-v1beta2</artifactId>
-        <version>0.84.11-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-language-v1beta2:current} -->
+        <version>0.84.11</version><!-- {x-version-update:proto-google-cloud-language-v1beta2:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
