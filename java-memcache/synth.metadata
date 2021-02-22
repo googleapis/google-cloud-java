@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-memcache.git",
-        "sha": "184ba12c83b709220bef80a9ec174cda30b355d6"
+        "sha": "f5b28ca33bf545e435058b5314ad27a8e285a992"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -120,6 +120,7 @@
     "codecov.yaml",
     "google-cloud-memcache/src/main/java/com/google/cloud/memcache/v1/CloudMemcacheClient.java",
     "google-cloud-memcache/src/main/java/com/google/cloud/memcache/v1/CloudMemcacheSettings.java",
+    "google-cloud-memcache/src/main/java/com/google/cloud/memcache/v1/gapic_metadata.json",
     "google-cloud-memcache/src/main/java/com/google/cloud/memcache/v1/package-info.java",
     "google-cloud-memcache/src/main/java/com/google/cloud/memcache/v1/stub/CloudMemcacheStub.java",
     "google-cloud-memcache/src/main/java/com/google/cloud/memcache/v1/stub/CloudMemcacheStubSettings.java",
@@ -127,6 +128,7 @@
     "google-cloud-memcache/src/main/java/com/google/cloud/memcache/v1/stub/GrpcCloudMemcacheStub.java",
     "google-cloud-memcache/src/main/java/com/google/cloud/memcache/v1beta2/CloudMemcacheClient.java",
     "google-cloud-memcache/src/main/java/com/google/cloud/memcache/v1beta2/CloudMemcacheSettings.java",
+    "google-cloud-memcache/src/main/java/com/google/cloud/memcache/v1beta2/gapic_metadata.json",
     "google-cloud-memcache/src/main/java/com/google/cloud/memcache/v1beta2/package-info.java",
     "google-cloud-memcache/src/main/java/com/google/cloud/memcache/v1beta2/stub/CloudMemcacheStub.java",
     "google-cloud-memcache/src/main/java/com/google/cloud/memcache/v1beta2/stub/CloudMemcacheStubSettings.java",
