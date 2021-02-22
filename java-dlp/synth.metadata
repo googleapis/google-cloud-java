@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dlp.git",
-        "sha": "4e504afe806f2871092087f9d343e4592c7a1e2a"
+        "sha": "54a5ffcdcd7220aecd8a791376e823b45208ec56"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -100,6 +100,7 @@
     "codecov.yaml",
     "google-cloud-dlp/src/main/java/com/google/cloud/dlp/v2/DlpServiceClient.java",
     "google-cloud-dlp/src/main/java/com/google/cloud/dlp/v2/DlpServiceSettings.java",
+    "google-cloud-dlp/src/main/java/com/google/cloud/dlp/v2/gapic_metadata.json",
     "google-cloud-dlp/src/main/java/com/google/cloud/dlp/v2/package-info.java",
     "google-cloud-dlp/src/main/java/com/google/cloud/dlp/v2/stub/DlpServiceStub.java",
     "google-cloud-dlp/src/main/java/com/google/cloud/dlp/v2/stub/DlpServiceStubSettings.java",
