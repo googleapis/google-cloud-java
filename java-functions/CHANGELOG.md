@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.0.7](https://www.github.com/googleapis/java-functions/compare/v1.0.6...v1.0.7) (2021-02-22)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#135](https://www.github.com/googleapis/java-functions/issues/135)) ([77440a6](https://www.github.com/googleapis/java-functions/commit/77440a61a1a25c72cf3ce4dda0b50e41801371b6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#145](https://www.github.com/googleapis/java-functions/issues/145)) ([3034804](https://www.github.com/googleapis/java-functions/commit/3034804aa7bf022f8763ca6db12a92d2d2bdba14))
+
 ### [1.0.6](https://www.github.com/googleapis/java-functions/compare/v1.0.5...v1.0.6) (2021-01-14)
 
 
