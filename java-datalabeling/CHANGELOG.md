@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.119.11](https://www.github.com/googleapis/java-datalabeling/compare/v0.119.10...v0.119.11) (2021-02-22)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#392](https://www.github.com/googleapis/java-datalabeling/issues/392)) ([e92f3e7](https://www.github.com/googleapis/java-datalabeling/commit/e92f3e7be7337fba186061d1fd944bd7380799a6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#404](https://www.github.com/googleapis/java-datalabeling/issues/404)) ([aba9d1c](https://www.github.com/googleapis/java-datalabeling/commit/aba9d1c737f66434bcbda9d8daad699d76d10cc4))
+
 ### [0.119.10](https://www.github.com/googleapis/java-datalabeling/compare/v0.119.9...v0.119.10) (2021-01-14)
 
 
