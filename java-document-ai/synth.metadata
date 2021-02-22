@@ -4,31 +4,31 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-document-ai.git",
-        "sha": "c752c99233a04bbc56c739b64a7b6cfd857e7932"
+        "sha": "83c52c9dbd63690e3e98d261a4660aa1040b51f0"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1f68cd0c02d6925e97aa5bbb153d70a70554dab0",
-        "internalRef": "357825340"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1f68cd0c02d6925e97aa5bbb153d70a70554dab0",
-        "internalRef": "357825340"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1f68cd0c02d6925e97aa5bbb153d70a70554dab0",
-        "internalRef": "357825340"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -137,6 +137,7 @@
     "codecov.yaml",
     "google-cloud-document-ai/src/main/java/com/google/cloud/documentai/v1beta1/DocumentUnderstandingServiceClient.java",
     "google-cloud-document-ai/src/main/java/com/google/cloud/documentai/v1beta1/DocumentUnderstandingServiceSettings.java",
+    "google-cloud-document-ai/src/main/java/com/google/cloud/documentai/v1beta1/gapic_metadata.json",
     "google-cloud-document-ai/src/main/java/com/google/cloud/documentai/v1beta1/package-info.java",
     "google-cloud-document-ai/src/main/java/com/google/cloud/documentai/v1beta1/stub/DocumentUnderstandingServiceStub.java",
     "google-cloud-document-ai/src/main/java/com/google/cloud/documentai/v1beta1/stub/DocumentUnderstandingServiceStubSettings.java",
@@ -144,6 +145,7 @@
     "google-cloud-document-ai/src/main/java/com/google/cloud/documentai/v1beta1/stub/GrpcDocumentUnderstandingServiceStub.java",
     "google-cloud-document-ai/src/main/java/com/google/cloud/documentai/v1beta2/DocumentUnderstandingServiceClient.java",
     "google-cloud-document-ai/src/main/java/com/google/cloud/documentai/v1beta2/DocumentUnderstandingServiceSettings.java",
+    "google-cloud-document-ai/src/main/java/com/google/cloud/documentai/v1beta2/gapic_metadata.json",
     "google-cloud-document-ai/src/main/java/com/google/cloud/documentai/v1beta2/package-info.java",
     "google-cloud-document-ai/src/main/java/com/google/cloud/documentai/v1beta2/stub/DocumentUnderstandingServiceStub.java",
     "google-cloud-document-ai/src/main/java/com/google/cloud/documentai/v1beta2/stub/DocumentUnderstandingServiceStubSettings.java",
@@ -151,6 +153,7 @@
     "google-cloud-document-ai/src/main/java/com/google/cloud/documentai/v1beta2/stub/GrpcDocumentUnderstandingServiceStub.java",
     "google-cloud-document-ai/src/main/java/com/google/cloud/documentai/v1beta3/DocumentProcessorServiceClient.java",
     "google-cloud-document-ai/src/main/java/com/google/cloud/documentai/v1beta3/DocumentProcessorServiceSettings.java",
+    "google-cloud-document-ai/src/main/java/com/google/cloud/documentai/v1beta3/gapic_metadata.json",
     "google-cloud-document-ai/src/main/java/com/google/cloud/documentai/v1beta3/package-info.java",
     "google-cloud-document-ai/src/main/java/com/google/cloud/documentai/v1beta3/stub/DocumentProcessorServiceStub.java",
     "google-cloud-document-ai/src/main/java/com/google/cloud/documentai/v1beta3/stub/DocumentProcessorServiceStubSettings.java",
