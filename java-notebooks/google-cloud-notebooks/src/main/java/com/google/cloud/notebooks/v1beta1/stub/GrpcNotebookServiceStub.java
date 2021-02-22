@@ -796,160 +796,195 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable() {
     return listInstancesCallable;
   }
 
+  @Override
   public UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
       listInstancesPagedCallable() {
     return listInstancesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
     return getInstanceCallable;
   }
 
+  @Override
   public UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable() {
     return createInstanceCallable;
   }
 
+  @Override
   public OperationCallable<CreateInstanceRequest, Instance, OperationMetadata>
       createInstanceOperationCallable() {
     return createInstanceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<RegisterInstanceRequest, Operation> registerInstanceCallable() {
     return registerInstanceCallable;
   }
 
+  @Override
   public OperationCallable<RegisterInstanceRequest, Instance, OperationMetadata>
       registerInstanceOperationCallable() {
     return registerInstanceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<SetInstanceAcceleratorRequest, Operation> setInstanceAcceleratorCallable() {
     return setInstanceAcceleratorCallable;
   }
 
+  @Override
   public OperationCallable<SetInstanceAcceleratorRequest, Instance, OperationMetadata>
       setInstanceAcceleratorOperationCallable() {
     return setInstanceAcceleratorOperationCallable;
   }
 
+  @Override
   public UnaryCallable<SetInstanceMachineTypeRequest, Operation> setInstanceMachineTypeCallable() {
     return setInstanceMachineTypeCallable;
   }
 
+  @Override
   public OperationCallable<SetInstanceMachineTypeRequest, Instance, OperationMetadata>
       setInstanceMachineTypeOperationCallable() {
     return setInstanceMachineTypeOperationCallable;
   }
 
+  @Override
   public UnaryCallable<SetInstanceLabelsRequest, Operation> setInstanceLabelsCallable() {
     return setInstanceLabelsCallable;
   }
 
+  @Override
   public OperationCallable<SetInstanceLabelsRequest, Instance, OperationMetadata>
       setInstanceLabelsOperationCallable() {
     return setInstanceLabelsOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     return deleteInstanceCallable;
   }
 
+  @Override
   public OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable() {
     return deleteInstanceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<StartInstanceRequest, Operation> startInstanceCallable() {
     return startInstanceCallable;
   }
 
+  @Override
   public OperationCallable<StartInstanceRequest, Instance, OperationMetadata>
       startInstanceOperationCallable() {
     return startInstanceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<StopInstanceRequest, Operation> stopInstanceCallable() {
     return stopInstanceCallable;
   }
 
+  @Override
   public OperationCallable<StopInstanceRequest, Instance, OperationMetadata>
       stopInstanceOperationCallable() {
     return stopInstanceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ResetInstanceRequest, Operation> resetInstanceCallable() {
     return resetInstanceCallable;
   }
 
+  @Override
   public OperationCallable<ResetInstanceRequest, Instance, OperationMetadata>
       resetInstanceOperationCallable() {
     return resetInstanceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ReportInstanceInfoRequest, Operation> reportInstanceInfoCallable() {
     return reportInstanceInfoCallable;
   }
 
+  @Override
   public OperationCallable<ReportInstanceInfoRequest, Instance, OperationMetadata>
       reportInstanceInfoOperationCallable() {
     return reportInstanceInfoOperationCallable;
   }
 
+  @Override
   public UnaryCallable<IsInstanceUpgradeableRequest, IsInstanceUpgradeableResponse>
       isInstanceUpgradeableCallable() {
     return isInstanceUpgradeableCallable;
   }
 
+  @Override
   public UnaryCallable<UpgradeInstanceRequest, Operation> upgradeInstanceCallable() {
     return upgradeInstanceCallable;
   }
 
+  @Override
   public OperationCallable<UpgradeInstanceRequest, Instance, OperationMetadata>
       upgradeInstanceOperationCallable() {
     return upgradeInstanceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpgradeInstanceInternalRequest, Operation>
       upgradeInstanceInternalCallable() {
     return upgradeInstanceInternalCallable;
   }
 
+  @Override
   public OperationCallable<UpgradeInstanceInternalRequest, Instance, OperationMetadata>
       upgradeInstanceInternalOperationCallable() {
     return upgradeInstanceInternalOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
       listEnvironmentsCallable() {
     return listEnvironmentsCallable;
   }
 
+  @Override
   public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
       listEnvironmentsPagedCallable() {
     return listEnvironmentsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetEnvironmentRequest, Environment> getEnvironmentCallable() {
     return getEnvironmentCallable;
   }
 
+  @Override
   public UnaryCallable<CreateEnvironmentRequest, Operation> createEnvironmentCallable() {
     return createEnvironmentCallable;
   }
 
+  @Override
   public OperationCallable<CreateEnvironmentRequest, Environment, OperationMetadata>
       createEnvironmentOperationCallable() {
     return createEnvironmentOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteEnvironmentRequest, Operation> deleteEnvironmentCallable() {
     return deleteEnvironmentCallable;
   }
 
+  @Override
   public OperationCallable<DeleteEnvironmentRequest, Empty, OperationMetadata>
       deleteEnvironmentOperationCallable() {
     return deleteEnvironmentOperationCallable;
