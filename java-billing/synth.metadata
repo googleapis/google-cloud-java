@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-billing.git",
-        "sha": "fbfc4068f2f689ee2ce7a3b0857c08a9e9d35fff"
+        "sha": "65c428a3b9802a92fe007bd90ddc8ed07869e879"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -105,6 +105,7 @@
     "google-cloud-billing/src/main/java/com/google/cloud/billing/v1/CloudBillingSettings.java",
     "google-cloud-billing/src/main/java/com/google/cloud/billing/v1/CloudCatalogClient.java",
     "google-cloud-billing/src/main/java/com/google/cloud/billing/v1/CloudCatalogSettings.java",
+    "google-cloud-billing/src/main/java/com/google/cloud/billing/v1/gapic_metadata.json",
     "google-cloud-billing/src/main/java/com/google/cloud/billing/v1/package-info.java",
     "google-cloud-billing/src/main/java/com/google/cloud/billing/v1/stub/CloudBillingStub.java",
     "google-cloud-billing/src/main/java/com/google/cloud/billing/v1/stub/CloudBillingStubSettings.java",
