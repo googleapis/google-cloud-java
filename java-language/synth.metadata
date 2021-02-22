@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-language.git",
-        "sha": "73e960956bd1f4a968eff1b3143b47f53b1d57dd"
+        "sha": "55d4321a5a10959eb3caf0f4fa9800ffb9fca2c9"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -120,6 +120,7 @@
     "codecov.yaml",
     "google-cloud-language/src/main/java/com/google/cloud/language/v1/LanguageServiceClient.java",
     "google-cloud-language/src/main/java/com/google/cloud/language/v1/LanguageServiceSettings.java",
+    "google-cloud-language/src/main/java/com/google/cloud/language/v1/gapic_metadata.json",
     "google-cloud-language/src/main/java/com/google/cloud/language/v1/package-info.java",
     "google-cloud-language/src/main/java/com/google/cloud/language/v1/stub/GrpcLanguageServiceCallableFactory.java",
     "google-cloud-language/src/main/java/com/google/cloud/language/v1/stub/GrpcLanguageServiceStub.java",
@@ -127,6 +128,7 @@
     "google-cloud-language/src/main/java/com/google/cloud/language/v1/stub/LanguageServiceStubSettings.java",
     "google-cloud-language/src/main/java/com/google/cloud/language/v1beta2/LanguageServiceClient.java",
     "google-cloud-language/src/main/java/com/google/cloud/language/v1beta2/LanguageServiceSettings.java",
+    "google-cloud-language/src/main/java/com/google/cloud/language/v1beta2/gapic_metadata.json",
     "google-cloud-language/src/main/java/com/google/cloud/language/v1beta2/package-info.java",
     "google-cloud-language/src/main/java/com/google/cloud/language/v1beta2/stub/GrpcLanguageServiceCallableFactory.java",
     "google-cloud-language/src/main/java/com/google/cloud/language/v1beta2/stub/GrpcLanguageServiceStub.java",
