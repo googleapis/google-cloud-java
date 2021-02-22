@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-redis.git",
-        "sha": "24aa29793a7b52e89e01bbad01021185ef8f2e15"
+        "sha": "ddf8106ff78e4067d31f130d11dfd7df8e0a4e7e"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -118,6 +118,7 @@
     "codecov.yaml",
     "google-cloud-redis/src/main/java/com/google/cloud/redis/v1/CloudRedisClient.java",
     "google-cloud-redis/src/main/java/com/google/cloud/redis/v1/CloudRedisSettings.java",
+    "google-cloud-redis/src/main/java/com/google/cloud/redis/v1/gapic_metadata.json",
     "google-cloud-redis/src/main/java/com/google/cloud/redis/v1/package-info.java",
     "google-cloud-redis/src/main/java/com/google/cloud/redis/v1/stub/CloudRedisStub.java",
     "google-cloud-redis/src/main/java/com/google/cloud/redis/v1/stub/CloudRedisStubSettings.java",
@@ -125,6 +126,7 @@
     "google-cloud-redis/src/main/java/com/google/cloud/redis/v1/stub/GrpcCloudRedisStub.java",
     "google-cloud-redis/src/main/java/com/google/cloud/redis/v1beta1/CloudRedisClient.java",
     "google-cloud-redis/src/main/java/com/google/cloud/redis/v1beta1/CloudRedisSettings.java",
+    "google-cloud-redis/src/main/java/com/google/cloud/redis/v1beta1/gapic_metadata.json",
     "google-cloud-redis/src/main/java/com/google/cloud/redis/v1beta1/package-info.java",
     "google-cloud-redis/src/main/java/com/google/cloud/redis/v1beta1/stub/CloudRedisStub.java",
     "google-cloud-redis/src/main/java/com/google/cloud/redis/v1beta1/stub/CloudRedisStubSettings.java",
