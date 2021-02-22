@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-networkconnectivity.git",
-        "sha": "e0c48642fb61209c8fa8f1cc7e5a051da7875ce0"
+        "sha": "ed7ae3d1e88c4a951f5649ee2c27a80195110e26"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -103,6 +103,7 @@
     "codecov.yaml",
     "google-cloud-networkconnectivity/src/main/java/com/google/cloud/networkconnectivity/v1alpha1/HubServiceClient.java",
     "google-cloud-networkconnectivity/src/main/java/com/google/cloud/networkconnectivity/v1alpha1/HubServiceSettings.java",
+    "google-cloud-networkconnectivity/src/main/java/com/google/cloud/networkconnectivity/v1alpha1/gapic_metadata.json",
     "google-cloud-networkconnectivity/src/main/java/com/google/cloud/networkconnectivity/v1alpha1/package-info.java",
     "google-cloud-networkconnectivity/src/main/java/com/google/cloud/networkconnectivity/v1alpha1/stub/GrpcHubServiceCallableFactory.java",
     "google-cloud-networkconnectivity/src/main/java/com/google/cloud/networkconnectivity/v1alpha1/stub/GrpcHubServiceStub.java",
