@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-grafeas.git",
-        "sha": "3cdd5d10c1d9965a79611a87d2997e948bde06d9"
+        "sha": "aed649ec5e7430e972122e8be718046905a4d71e"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -244,6 +244,7 @@
     "src/main/java/io/grafeas/v1/VulnerabilityOccurrenceOrBuilder.java",
     "src/main/java/io/grafeas/v1/WindowsUpdate.java",
     "src/main/java/io/grafeas/v1/WindowsUpdateOrBuilder.java",
+    "src/main/java/io/grafeas/v1/gapic_metadata.json",
     "src/main/java/io/grafeas/v1/package-info.java",
     "src/main/java/io/grafeas/v1/stub/GrafeasStub.java",
     "src/main/java/io/grafeas/v1/stub/GrafeasStubSettings.java",
