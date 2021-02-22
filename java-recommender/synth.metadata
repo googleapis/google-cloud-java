@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-recommender.git",
-        "sha": "907e01dedb03d500be2466511242b115f38280f4"
+        "sha": "a2e9484e28b9a6884efe6564f73fa442e5487a39"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -120,6 +120,7 @@
     "codecov.yaml",
     "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1/RecommenderClient.java",
     "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1/RecommenderSettings.java",
+    "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1/gapic_metadata.json",
     "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1/package-info.java",
     "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1/stub/GrpcRecommenderCallableFactory.java",
     "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1/stub/GrpcRecommenderStub.java",
@@ -127,6 +128,7 @@
     "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1/stub/RecommenderStubSettings.java",
     "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1beta1/RecommenderClient.java",
     "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1beta1/RecommenderSettings.java",
+    "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1beta1/gapic_metadata.json",
     "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1beta1/package-info.java",
     "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1beta1/stub/GrpcRecommenderCallableFactory.java",
     "google-cloud-recommender/src/main/java/com/google/cloud/recommender/v1beta1/stub/GrpcRecommenderStub.java",
