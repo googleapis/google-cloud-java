@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.2.7](https://www.github.com/googleapis/java-dlp/compare/v2.2.6...v2.2.7) (2021-02-22)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#419](https://www.github.com/googleapis/java-dlp/issues/419)) ([f65322c](https://www.github.com/googleapis/java-dlp/commit/f65322cf1fd0572bf08b00097e354fbcae5e7c1b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#430](https://www.github.com/googleapis/java-dlp/issues/430)) ([54a5ffc](https://www.github.com/googleapis/java-dlp/commit/54a5ffcdcd7220aecd8a791376e823b45208ec56))
+
 ### [2.2.6](https://www.github.com/googleapis/java-dlp/compare/v2.2.5...v2.2.6) (2021-01-14)
 
 
