@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-notebooks.git",
-        "sha": "67ffea0e6cf36a7b265fcb626bffb20efcdc026f"
+        "sha": "515e002e0e98d62cbde961ba5c9599619fd14f0d"
       }
     },
     {
