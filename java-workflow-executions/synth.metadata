@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-workflow-executions.git",
-        "sha": "dd73cc9aca07ce0fb3547df8f1e373f39e8bb3e2"
+        "sha": "2e0ea20f17dc5cff6296b12cbc65ba07101b0cf7"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -103,6 +103,7 @@
     "codecov.yaml",
     "google-cloud-workflow-executions/src/main/java/com/google/cloud/workflows/executions/v1beta/ExecutionsClient.java",
     "google-cloud-workflow-executions/src/main/java/com/google/cloud/workflows/executions/v1beta/ExecutionsSettings.java",
+    "google-cloud-workflow-executions/src/main/java/com/google/cloud/workflows/executions/v1beta/gapic_metadata.json",
     "google-cloud-workflow-executions/src/main/java/com/google/cloud/workflows/executions/v1beta/package-info.java",
     "google-cloud-workflow-executions/src/main/java/com/google/cloud/workflows/executions/v1beta/stub/ExecutionsStub.java",
     "google-cloud-workflow-executions/src/main/java/com/google/cloud/workflows/executions/v1beta/stub/ExecutionsStubSettings.java",
