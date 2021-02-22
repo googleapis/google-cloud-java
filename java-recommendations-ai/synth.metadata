@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-recommendations-ai.git",
-        "sha": "359cf4c3a78091f29e1ebcaee53c3c79f068ec51"
+        "sha": "038842421cd49d6c8149aa56f8e673842bf5ba98"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -109,6 +109,7 @@
     "google-cloud-recommendations-ai/src/main/java/com/google/cloud/recommendationengine/v1beta1/PredictionServiceSettings.java",
     "google-cloud-recommendations-ai/src/main/java/com/google/cloud/recommendationengine/v1beta1/UserEventServiceClient.java",
     "google-cloud-recommendations-ai/src/main/java/com/google/cloud/recommendationengine/v1beta1/UserEventServiceSettings.java",
+    "google-cloud-recommendations-ai/src/main/java/com/google/cloud/recommendationengine/v1beta1/gapic_metadata.json",
     "google-cloud-recommendations-ai/src/main/java/com/google/cloud/recommendationengine/v1beta1/package-info.java",
     "google-cloud-recommendations-ai/src/main/java/com/google/cloud/recommendationengine/v1beta1/stub/CatalogServiceStub.java",
     "google-cloud-recommendations-ai/src/main/java/com/google/cloud/recommendationengine/v1beta1/stub/CatalogServiceStubSettings.java",
