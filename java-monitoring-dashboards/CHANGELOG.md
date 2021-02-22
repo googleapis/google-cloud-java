@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.0.9](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v1.0.8...v1.0.9) (2021-02-22)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#296](https://www.github.com/googleapis/java-monitoring-dashboards/issues/296)) ([c7d5323](https://www.github.com/googleapis/java-monitoring-dashboards/commit/c7d532323d4fa10815494a393d7dc545345f4f94))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#306](https://www.github.com/googleapis/java-monitoring-dashboards/issues/306)) ([abb5940](https://www.github.com/googleapis/java-monitoring-dashboards/commit/abb59408021cabc17b08b0a6126025ff9ccdedf8))
+
 ### [1.0.8](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v1.0.7...v1.0.8) (2021-01-14)
 
 
