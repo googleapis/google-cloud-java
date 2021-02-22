@@ -1,5 +1,22 @@
 # Changelog
 
+### [1.3.7](https://www.github.com/googleapis/java-securitycenter/compare/v1.3.6...v1.3.7) (2021-02-22)
+
+
+### Bug Fixes
+
+* deprecate files in v1beta1 that will be removed in next release ([#355](https://www.github.com/googleapis/java-securitycenter/issues/355)) ([aa91762](https://www.github.com/googleapis/java-securitycenter/commit/aa91762ced3587472ab00094105b2d0372fc508f))
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#371](https://www.github.com/googleapis/java-securitycenter/issues/371)) ([a81156a](https://www.github.com/googleapis/java-securitycenter/commit/a81156ad157694b6a206b65da5c6e9d15528219f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#382](https://www.github.com/googleapis/java-securitycenter/issues/382)) ([1d0e168](https://www.github.com/googleapis/java-securitycenter/commit/1d0e168521f2cd81f908be1b2e1eab9b3bf85ed1))
+
 ### [1.3.6](https://www.github.com/googleapis/java-securitycenter/compare/v1.3.5...v1.3.6) (2021-02-05)
 
 
