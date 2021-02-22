@@ -4,31 +4,31 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-websecurityscanner.git",
-        "sha": "fa65ddb7aa44f3953f2f2f15f41d43f07bf72c8e"
+        "sha": "b1ea31d8eab424784110d40066820d22979033de"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -137,6 +137,7 @@
     "codecov.yaml",
     "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1/WebSecurityScannerClient.java",
     "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1/WebSecurityScannerSettings.java",
+    "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1/gapic_metadata.json",
     "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1/package-info.java",
     "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1/stub/GrpcWebSecurityScannerCallableFactory.java",
     "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1/stub/GrpcWebSecurityScannerStub.java",
@@ -144,6 +145,7 @@
     "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1/stub/WebSecurityScannerStubSettings.java",
     "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1alpha/WebSecurityScannerClient.java",
     "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1alpha/WebSecurityScannerSettings.java",
+    "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1alpha/gapic_metadata.json",
     "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1alpha/package-info.java",
     "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1alpha/stub/GrpcWebSecurityScannerCallableFactory.java",
     "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1alpha/stub/GrpcWebSecurityScannerStub.java",
@@ -151,6 +153,7 @@
     "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1alpha/stub/WebSecurityScannerStubSettings.java",
     "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1beta/WebSecurityScannerClient.java",
     "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1beta/WebSecurityScannerSettings.java",
+    "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1beta/gapic_metadata.json",
     "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1beta/package-info.java",
     "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1beta/stub/GrpcWebSecurityScannerCallableFactory.java",
     "google-cloud-websecurityscanner/src/main/java/com/google/cloud/websecurityscanner/v1beta/stub/GrpcWebSecurityScannerStub.java",
