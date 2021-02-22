@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-video-intelligence.git",
-        "sha": "0cfe59faa38009981829080f49bf85d1163415a2"
+        "sha": "8c96195993cc93a98df0cb4bd8cbf18b0e35fd11"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -139,6 +139,7 @@
     "codecov.yaml",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceClient.java",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceSettings.java",
+    "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/gapic_metadata.json",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/package-info.java",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/stub/GrpcVideoIntelligenceServiceCallableFactory.java",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/stub/GrpcVideoIntelligenceServiceStub.java",
@@ -146,6 +147,7 @@
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/stub/VideoIntelligenceServiceStubSettings.java",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoIntelligenceServiceClient.java",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoIntelligenceServiceSettings.java",
+    "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/gapic_metadata.json",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/package-info.java",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/stub/GrpcVideoIntelligenceServiceCallableFactory.java",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/stub/GrpcVideoIntelligenceServiceStub.java",
@@ -153,6 +155,7 @@
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1beta2/stub/VideoIntelligenceServiceStubSettings.java",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoIntelligenceServiceClient.java",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoIntelligenceServiceSettings.java",
+    "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/gapic_metadata.json",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/package-info.java",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/stub/GrpcVideoIntelligenceServiceCallableFactory.java",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/stub/GrpcVideoIntelligenceServiceStub.java",
@@ -160,6 +163,7 @@
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p1beta1/stub/VideoIntelligenceServiceStubSettings.java",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoIntelligenceServiceClient.java",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoIntelligenceServiceSettings.java",
+    "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p2beta1/gapic_metadata.json",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p2beta1/package-info.java",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p2beta1/stub/GrpcVideoIntelligenceServiceCallableFactory.java",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p2beta1/stub/GrpcVideoIntelligenceServiceStub.java",
@@ -169,6 +173,7 @@
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingVideoIntelligenceServiceSettings.java",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoIntelligenceServiceClient.java",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/VideoIntelligenceServiceSettings.java",
+    "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/gapic_metadata.json",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/package-info.java",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/stub/GrpcStreamingVideoIntelligenceServiceCallableFactory.java",
     "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1p3beta1/stub/GrpcStreamingVideoIntelligenceServiceStub.java",
