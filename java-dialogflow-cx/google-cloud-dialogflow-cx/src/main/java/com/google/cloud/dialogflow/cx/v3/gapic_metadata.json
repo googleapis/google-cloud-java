@@ -1,0 +1,393 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.dialogflow.cx.v3",
+  "libraryPackage": "com.google.cloud.dialogflow.cx.v3",
+  "services": {
+    "Agents": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AgentsClient",
+          "rpcs": {
+            "CreateAgent": {
+              "methods": ["createAgent", "createAgent", "createAgent", "createAgentCallable"]
+            },
+            "DeleteAgent": {
+              "methods": ["deleteAgent", "deleteAgent", "deleteAgent", "deleteAgentCallable"]
+            },
+            "ExportAgent": {
+              "methods": ["exportAgentAsync", "exportAgentOperationCallable", "exportAgentCallable"]
+            },
+            "GetAgent": {
+              "methods": ["getAgent", "getAgent", "getAgent", "getAgentCallable"]
+            },
+            "GetAgentValidationResult": {
+              "methods": ["getAgentValidationResult", "getAgentValidationResult", "getAgentValidationResult", "getAgentValidationResultCallable"]
+            },
+            "ListAgents": {
+              "methods": ["listAgents", "listAgents", "listAgents", "listAgentsPagedCallable", "listAgentsCallable"]
+            },
+            "RestoreAgent": {
+              "methods": ["restoreAgentAsync", "restoreAgentOperationCallable", "restoreAgentCallable"]
+            },
+            "UpdateAgent": {
+              "methods": ["updateAgent", "updateAgent", "updateAgentCallable"]
+            },
+            "ValidateAgent": {
+              "methods": ["validateAgent", "validateAgentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "EntityTypes": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EntityTypesClient",
+          "rpcs": {
+            "CreateEntityType": {
+              "methods": ["createEntityType", "createEntityType", "createEntityType", "createEntityTypeCallable"]
+            },
+            "DeleteEntityType": {
+              "methods": ["deleteEntityType", "deleteEntityType", "deleteEntityType", "deleteEntityTypeCallable"]
+            },
+            "GetEntityType": {
+              "methods": ["getEntityType", "getEntityType", "getEntityType", "getEntityTypeCallable"]
+            },
+            "ListEntityTypes": {
+              "methods": ["listEntityTypes", "listEntityTypes", "listEntityTypes", "listEntityTypesPagedCallable", "listEntityTypesCallable"]
+            },
+            "UpdateEntityType": {
+              "methods": ["updateEntityType", "updateEntityType", "updateEntityTypeCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Environments": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EnvironmentsClient",
+          "rpcs": {
+            "CreateEnvironment": {
+              "methods": ["createEnvironmentAsync", "createEnvironmentAsync", "createEnvironmentAsync", "createEnvironmentOperationCallable", "createEnvironmentCallable"]
+            },
+            "DeleteEnvironment": {
+              "methods": ["deleteEnvironment", "deleteEnvironment", "deleteEnvironment", "deleteEnvironmentCallable"]
+            },
+            "GetEnvironment": {
+              "methods": ["getEnvironment", "getEnvironment", "getEnvironment", "getEnvironmentCallable"]
+            },
+            "ListEnvironments": {
+              "methods": ["listEnvironments", "listEnvironments", "listEnvironments", "listEnvironmentsPagedCallable", "listEnvironmentsCallable"]
+            },
+            "LookupEnvironmentHistory": {
+              "methods": ["lookupEnvironmentHistory", "lookupEnvironmentHistory", "lookupEnvironmentHistory", "lookupEnvironmentHistoryPagedCallable", "lookupEnvironmentHistoryCallable"]
+            },
+            "UpdateEnvironment": {
+              "methods": ["updateEnvironmentAsync", "updateEnvironmentAsync", "updateEnvironmentOperationCallable", "updateEnvironmentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Experiments": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ExperimentsClient",
+          "rpcs": {
+            "CreateExperiment": {
+              "methods": ["createExperiment", "createExperiment", "createExperiment", "createExperimentCallable"]
+            },
+            "DeleteExperiment": {
+              "methods": ["deleteExperiment", "deleteExperiment", "deleteExperiment", "deleteExperimentCallable"]
+            },
+            "GetExperiment": {
+              "methods": ["getExperiment", "getExperiment", "getExperiment", "getExperimentCallable"]
+            },
+            "ListExperiments": {
+              "methods": ["listExperiments", "listExperiments", "listExperiments", "listExperimentsPagedCallable", "listExperimentsCallable"]
+            },
+            "StartExperiment": {
+              "methods": ["startExperiment", "startExperiment", "startExperiment", "startExperimentCallable"]
+            },
+            "StopExperiment": {
+              "methods": ["stopExperiment", "stopExperiment", "stopExperiment", "stopExperimentCallable"]
+            },
+            "UpdateExperiment": {
+              "methods": ["updateExperiment", "updateExperiment", "updateExperimentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Flows": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FlowsClient",
+          "rpcs": {
+            "CreateFlow": {
+              "methods": ["createFlow", "createFlow", "createFlow", "createFlowCallable"]
+            },
+            "DeleteFlow": {
+              "methods": ["deleteFlow", "deleteFlow", "deleteFlow", "deleteFlowCallable"]
+            },
+            "GetFlow": {
+              "methods": ["getFlow", "getFlow", "getFlow", "getFlowCallable"]
+            },
+            "GetFlowValidationResult": {
+              "methods": ["getFlowValidationResult", "getFlowValidationResult", "getFlowValidationResult", "getFlowValidationResultCallable"]
+            },
+            "ListFlows": {
+              "methods": ["listFlows", "listFlows", "listFlows", "listFlowsPagedCallable", "listFlowsCallable"]
+            },
+            "TrainFlow": {
+              "methods": ["trainFlowAsync", "trainFlowAsync", "trainFlowAsync", "trainFlowOperationCallable", "trainFlowCallable"]
+            },
+            "UpdateFlow": {
+              "methods": ["updateFlow", "updateFlow", "updateFlowCallable"]
+            },
+            "ValidateFlow": {
+              "methods": ["validateFlow", "validateFlowCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Intents": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "IntentsClient",
+          "rpcs": {
+            "CreateIntent": {
+              "methods": ["createIntent", "createIntent", "createIntent", "createIntentCallable"]
+            },
+            "DeleteIntent": {
+              "methods": ["deleteIntent", "deleteIntent", "deleteIntent", "deleteIntentCallable"]
+            },
+            "GetIntent": {
+              "methods": ["getIntent", "getIntent", "getIntent", "getIntentCallable"]
+            },
+            "ListIntents": {
+              "methods": ["listIntents", "listIntents", "listIntents", "listIntentsPagedCallable", "listIntentsCallable"]
+            },
+            "UpdateIntent": {
+              "methods": ["updateIntent", "updateIntent", "updateIntentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Pages": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PagesClient",
+          "rpcs": {
+            "CreatePage": {
+              "methods": ["createPage", "createPage", "createPage", "createPageCallable"]
+            },
+            "DeletePage": {
+              "methods": ["deletePage", "deletePage", "deletePage", "deletePageCallable"]
+            },
+            "GetPage": {
+              "methods": ["getPage", "getPage", "getPage", "getPageCallable"]
+            },
+            "ListPages": {
+              "methods": ["listPages", "listPages", "listPages", "listPagesPagedCallable", "listPagesCallable"]
+            },
+            "UpdatePage": {
+              "methods": ["updatePage", "updatePage", "updatePageCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SecuritySettingsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SecuritySettingsServiceClient",
+          "rpcs": {
+            "CreateSecuritySettings": {
+              "methods": ["createSecuritySettings", "createSecuritySettings", "createSecuritySettings", "createSecuritySettingsCallable"]
+            },
+            "DeleteSecuritySettings": {
+              "methods": ["deleteSecuritySettings", "deleteSecuritySettings", "deleteSecuritySettings", "deleteSecuritySettingsCallable"]
+            },
+            "GetSecuritySettings": {
+              "methods": ["getSecuritySettings", "getSecuritySettings", "getSecuritySettings", "getSecuritySettingsCallable"]
+            },
+            "ListSecuritySettings": {
+              "methods": ["listSecuritySettings", "listSecuritySettings", "listSecuritySettings", "listSecuritySettingsPagedCallable", "listSecuritySettingsCallable"]
+            },
+            "UpdateSecuritySettings": {
+              "methods": ["updateSecuritySettings", "updateSecuritySettings", "updateSecuritySettingsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Sessions": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SessionsClient",
+          "rpcs": {
+            "DetectIntent": {
+              "methods": ["detectIntent", "detectIntentCallable"]
+            },
+            "FulfillIntent": {
+              "methods": ["fulfillIntent", "fulfillIntentCallable"]
+            },
+            "MatchIntent": {
+              "methods": ["matchIntent", "matchIntentCallable"]
+            },
+            "StreamingDetectIntent": {
+              "methods": ["streamingDetectIntentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SessionEntityTypes": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SessionEntityTypesClient",
+          "rpcs": {
+            "CreateSessionEntityType": {
+              "methods": ["createSessionEntityType", "createSessionEntityType", "createSessionEntityType", "createSessionEntityTypeCallable"]
+            },
+            "DeleteSessionEntityType": {
+              "methods": ["deleteSessionEntityType", "deleteSessionEntityType", "deleteSessionEntityType", "deleteSessionEntityTypeCallable"]
+            },
+            "GetSessionEntityType": {
+              "methods": ["getSessionEntityType", "getSessionEntityType", "getSessionEntityType", "getSessionEntityTypeCallable"]
+            },
+            "ListSessionEntityTypes": {
+              "methods": ["listSessionEntityTypes", "listSessionEntityTypes", "listSessionEntityTypes", "listSessionEntityTypesPagedCallable", "listSessionEntityTypesCallable"]
+            },
+            "UpdateSessionEntityType": {
+              "methods": ["updateSessionEntityType", "updateSessionEntityType", "updateSessionEntityTypeCallable"]
+            }
+          }
+        }
+      }
+    },
+    "TestCases": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TestCasesClient",
+          "rpcs": {
+            "BatchDeleteTestCases": {
+              "methods": ["batchDeleteTestCases", "batchDeleteTestCases", "batchDeleteTestCases", "batchDeleteTestCasesCallable"]
+            },
+            "BatchRunTestCases": {
+              "methods": ["batchRunTestCasesAsync", "batchRunTestCasesOperationCallable", "batchRunTestCasesCallable"]
+            },
+            "CalculateCoverage": {
+              "methods": ["calculateCoverage", "calculateCoverageCallable"]
+            },
+            "CreateTestCase": {
+              "methods": ["createTestCase", "createTestCase", "createTestCase", "createTestCaseCallable"]
+            },
+            "ExportTestCases": {
+              "methods": ["exportTestCasesAsync", "exportTestCasesOperationCallable", "exportTestCasesCallable"]
+            },
+            "GetTestCase": {
+              "methods": ["getTestCase", "getTestCase", "getTestCase", "getTestCaseCallable"]
+            },
+            "ImportTestCases": {
+              "methods": ["importTestCasesAsync", "importTestCasesOperationCallable", "importTestCasesCallable"]
+            },
+            "ListTestCaseResults": {
+              "methods": ["listTestCaseResults", "listTestCaseResults", "listTestCaseResults", "listTestCaseResultsPagedCallable", "listTestCaseResultsCallable"]
+            },
+            "ListTestCases": {
+              "methods": ["listTestCases", "listTestCases", "listTestCases", "listTestCasesPagedCallable", "listTestCasesCallable"]
+            },
+            "RunTestCase": {
+              "methods": ["runTestCaseAsync", "runTestCaseOperationCallable", "runTestCaseCallable"]
+            },
+            "UpdateTestCase": {
+              "methods": ["updateTestCase", "updateTestCase", "updateTestCaseCallable"]
+            }
+          }
+        }
+      }
+    },
+    "TransitionRouteGroups": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TransitionRouteGroupsClient",
+          "rpcs": {
+            "CreateTransitionRouteGroup": {
+              "methods": ["createTransitionRouteGroup", "createTransitionRouteGroup", "createTransitionRouteGroup", "createTransitionRouteGroupCallable"]
+            },
+            "DeleteTransitionRouteGroup": {
+              "methods": ["deleteTransitionRouteGroup", "deleteTransitionRouteGroup", "deleteTransitionRouteGroup", "deleteTransitionRouteGroupCallable"]
+            },
+            "GetTransitionRouteGroup": {
+              "methods": ["getTransitionRouteGroup", "getTransitionRouteGroup", "getTransitionRouteGroup", "getTransitionRouteGroupCallable"]
+            },
+            "ListTransitionRouteGroups": {
+              "methods": ["listTransitionRouteGroups", "listTransitionRouteGroups", "listTransitionRouteGroups", "listTransitionRouteGroupsPagedCallable", "listTransitionRouteGroupsCallable"]
+            },
+            "UpdateTransitionRouteGroup": {
+              "methods": ["updateTransitionRouteGroup", "updateTransitionRouteGroup", "updateTransitionRouteGroupCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Versions": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "VersionsClient",
+          "rpcs": {
+            "CreateVersion": {
+              "methods": ["createVersionAsync", "createVersionAsync", "createVersionAsync", "createVersionOperationCallable", "createVersionCallable"]
+            },
+            "DeleteVersion": {
+              "methods": ["deleteVersion", "deleteVersion", "deleteVersion", "deleteVersionCallable"]
+            },
+            "GetVersion": {
+              "methods": ["getVersion", "getVersion", "getVersion", "getVersionCallable"]
+            },
+            "ListVersions": {
+              "methods": ["listVersions", "listVersions", "listVersions", "listVersionsPagedCallable", "listVersionsCallable"]
+            },
+            "LoadVersion": {
+              "methods": ["loadVersionAsync", "loadVersionAsync", "loadVersionAsync", "loadVersionOperationCallable", "loadVersionCallable"]
+            },
+            "UpdateVersion": {
+              "methods": ["updateVersion", "updateVersion", "updateVersionCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Webhooks": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "WebhooksClient",
+          "rpcs": {
+            "CreateWebhook": {
+              "methods": ["createWebhook", "createWebhook", "createWebhook", "createWebhookCallable"]
+            },
+            "DeleteWebhook": {
+              "methods": ["deleteWebhook", "deleteWebhook", "deleteWebhook", "deleteWebhookCallable"]
+            },
+            "GetWebhook": {
+              "methods": ["getWebhook", "getWebhook", "getWebhook", "getWebhookCallable"]
+            },
+            "ListWebhooks": {
+              "methods": ["listWebhooks", "listWebhooks", "listWebhooks", "listWebhooksPagedCallable", "listWebhooksCallable"]
+            },
+            "UpdateWebhook": {
+              "methods": ["updateWebhook", "updateWebhook", "updateWebhookCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dialogflow-cx.git",
-        "sha": "5411cd033deb1504ef5d88516dff7dfc6e90390a"
+        "sha": "7cfb6749ede7e7b01d606e83b6ac414466d23378"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -146,6 +146,7 @@
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3/VersionsSettings.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3/WebhooksClient.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3/WebhooksSettings.java",
+    "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3/gapic_metadata.json",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3/package-info.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3/stub/AgentsStub.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3/stub/AgentsStubSettings.java",
@@ -231,6 +232,7 @@
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/VersionsSettings.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/WebhooksClient.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/WebhooksSettings.java",
+    "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/gapic_metadata.json",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/package-info.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/stub/AgentsStub.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/stub/AgentsStubSettings.java",
