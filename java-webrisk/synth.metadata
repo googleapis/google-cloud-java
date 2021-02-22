@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-webrisk.git",
-        "sha": "1c09328ffceef8b89c6cfc88d09d0116586295c3"
+        "sha": "6692fa0207ea9861b62cdeeda6ca6d7f4d35c922"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -120,6 +120,7 @@
     "codecov.yaml",
     "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1/WebRiskServiceClient.java",
     "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1/WebRiskServiceSettings.java",
+    "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1/gapic_metadata.json",
     "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1/package-info.java",
     "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1/stub/GrpcWebRiskServiceCallableFactory.java",
     "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1/stub/GrpcWebRiskServiceStub.java",
@@ -127,6 +128,7 @@
     "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1/stub/WebRiskServiceStubSettings.java",
     "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1beta1/WebRiskServiceV1Beta1Client.java",
     "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1beta1/WebRiskServiceV1Beta1Settings.java",
+    "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1beta1/gapic_metadata.json",
     "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1beta1/package-info.java",
     "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1beta1/stub/GrpcWebRiskServiceV1Beta1CallableFactory.java",
     "google-cloud-webrisk/src/main/java/com/google/cloud/webrisk/v1beta1/stub/GrpcWebRiskServiceV1Beta1Stub.java",
