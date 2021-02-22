@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-monitoring-dashboards.git",
-        "sha": "d59f2664685eb1dfb2ff4d5792d6e353cf0d5bc9"
+        "sha": "abb59408021cabc17b08b0a6126025ff9ccdedf8"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -103,6 +103,7 @@
     "codecov.yaml",
     "google-cloud-monitoring-dashboard/src/main/java/com/google/cloud/monitoring/dashboard/v1/DashboardsServiceClient.java",
     "google-cloud-monitoring-dashboard/src/main/java/com/google/cloud/monitoring/dashboard/v1/DashboardsServiceSettings.java",
+    "google-cloud-monitoring-dashboard/src/main/java/com/google/cloud/monitoring/dashboard/v1/gapic_metadata.json",
     "google-cloud-monitoring-dashboard/src/main/java/com/google/cloud/monitoring/dashboard/v1/package-info.java",
     "google-cloud-monitoring-dashboard/src/main/java/com/google/cloud/monitoring/dashboard/v1/stub/DashboardsServiceStub.java",
     "google-cloud-monitoring-dashboard/src/main/java/com/google/cloud/monitoring/dashboard/v1/stub/DashboardsServiceStubSettings.java",
