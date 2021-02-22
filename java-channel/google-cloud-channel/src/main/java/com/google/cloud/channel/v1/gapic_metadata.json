@@ -1,0 +1,117 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.channel.v1",
+  "libraryPackage": "com.google.cloud.channel.v1",
+  "services": {
+    "CloudChannelService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CloudChannelServiceClient",
+          "rpcs": {
+            "ActivateEntitlement": {
+              "methods": ["activateEntitlementAsync", "activateEntitlementOperationCallable", "activateEntitlementCallable"]
+            },
+            "CancelEntitlement": {
+              "methods": ["cancelEntitlementAsync", "cancelEntitlementOperationCallable", "cancelEntitlementCallable"]
+            },
+            "ChangeOffer": {
+              "methods": ["changeOfferAsync", "changeOfferOperationCallable", "changeOfferCallable"]
+            },
+            "ChangeParameters": {
+              "methods": ["changeParametersAsync", "changeParametersOperationCallable", "changeParametersCallable"]
+            },
+            "ChangeRenewalSettings": {
+              "methods": ["changeRenewalSettingsAsync", "changeRenewalSettingsOperationCallable", "changeRenewalSettingsCallable"]
+            },
+            "CheckCloudIdentityAccountsExist": {
+              "methods": ["checkCloudIdentityAccountsExist", "checkCloudIdentityAccountsExistCallable"]
+            },
+            "CreateChannelPartnerLink": {
+              "methods": ["createChannelPartnerLink", "createChannelPartnerLinkCallable"]
+            },
+            "CreateCustomer": {
+              "methods": ["createCustomer", "createCustomerCallable"]
+            },
+            "CreateEntitlement": {
+              "methods": ["createEntitlementAsync", "createEntitlementOperationCallable", "createEntitlementCallable"]
+            },
+            "DeleteCustomer": {
+              "methods": ["deleteCustomer", "deleteCustomer", "deleteCustomer", "deleteCustomerCallable"]
+            },
+            "GetChannelPartnerLink": {
+              "methods": ["getChannelPartnerLink", "getChannelPartnerLinkCallable"]
+            },
+            "GetCustomer": {
+              "methods": ["getCustomer", "getCustomer", "getCustomer", "getCustomerCallable"]
+            },
+            "GetEntitlement": {
+              "methods": ["getEntitlement", "getEntitlementCallable"]
+            },
+            "ListChannelPartnerLinks": {
+              "methods": ["listChannelPartnerLinks", "listChannelPartnerLinksPagedCallable", "listChannelPartnerLinksCallable"]
+            },
+            "ListCustomers": {
+              "methods": ["listCustomers", "listCustomersPagedCallable", "listCustomersCallable"]
+            },
+            "ListEntitlements": {
+              "methods": ["listEntitlements", "listEntitlementsPagedCallable", "listEntitlementsCallable"]
+            },
+            "ListOffers": {
+              "methods": ["listOffers", "listOffersPagedCallable", "listOffersCallable"]
+            },
+            "ListProducts": {
+              "methods": ["listProducts", "listProductsPagedCallable", "listProductsCallable"]
+            },
+            "ListPurchasableOffers": {
+              "methods": ["listPurchasableOffers", "listPurchasableOffersPagedCallable", "listPurchasableOffersCallable"]
+            },
+            "ListPurchasableSkus": {
+              "methods": ["listPurchasableSkus", "listPurchasableSkusPagedCallable", "listPurchasableSkusCallable"]
+            },
+            "ListSkus": {
+              "methods": ["listSkus", "listSkusPagedCallable", "listSkusCallable"]
+            },
+            "ListSubscribers": {
+              "methods": ["listSubscribers", "listSubscribersPagedCallable", "listSubscribersCallable"]
+            },
+            "ListTransferableOffers": {
+              "methods": ["listTransferableOffers", "listTransferableOffersPagedCallable", "listTransferableOffersCallable"]
+            },
+            "ListTransferableSkus": {
+              "methods": ["listTransferableSkus", "listTransferableSkusPagedCallable", "listTransferableSkusCallable"]
+            },
+            "ProvisionCloudIdentity": {
+              "methods": ["provisionCloudIdentityAsync", "provisionCloudIdentityOperationCallable", "provisionCloudIdentityCallable"]
+            },
+            "RegisterSubscriber": {
+              "methods": ["registerSubscriber", "registerSubscriberCallable"]
+            },
+            "StartPaidService": {
+              "methods": ["startPaidServiceAsync", "startPaidServiceOperationCallable", "startPaidServiceCallable"]
+            },
+            "SuspendEntitlement": {
+              "methods": ["suspendEntitlementAsync", "suspendEntitlementOperationCallable", "suspendEntitlementCallable"]
+            },
+            "TransferEntitlements": {
+              "methods": ["transferEntitlementsAsync", "transferEntitlementsOperationCallable", "transferEntitlementsCallable"]
+            },
+            "TransferEntitlementsToGoogle": {
+              "methods": ["transferEntitlementsToGoogleAsync", "transferEntitlementsToGoogleOperationCallable", "transferEntitlementsToGoogleCallable"]
+            },
+            "UnregisterSubscriber": {
+              "methods": ["unregisterSubscriber", "unregisterSubscriberCallable"]
+            },
+            "UpdateChannelPartnerLink": {
+              "methods": ["updateChannelPartnerLink", "updateChannelPartnerLinkCallable"]
+            },
+            "UpdateCustomer": {
+              "methods": ["updateCustomer", "updateCustomerCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

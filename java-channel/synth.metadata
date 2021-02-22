@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-channel.git",
-        "sha": "4423ee0bd87f97b4bee46b53d86496c21744557f"
+        "sha": "9071df63ce0c21ccf6e2d7ec149e361ff81c0cd7"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -103,6 +103,7 @@
     "codecov.yaml",
     "google-cloud-channel/src/main/java/com/google/cloud/channel/v1/CloudChannelServiceClient.java",
     "google-cloud-channel/src/main/java/com/google/cloud/channel/v1/CloudChannelServiceSettings.java",
+    "google-cloud-channel/src/main/java/com/google/cloud/channel/v1/gapic_metadata.json",
     "google-cloud-channel/src/main/java/com/google/cloud/channel/v1/package-info.java",
     "google-cloud-channel/src/main/java/com/google/cloud/channel/v1/stub/CloudChannelServiceStub.java",
     "google-cloud-channel/src/main/java/com/google/cloud/channel/v1/stub/CloudChannelServiceStubSettings.java",
