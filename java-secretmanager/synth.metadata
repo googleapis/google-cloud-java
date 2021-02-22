@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-secretmanager.git",
-        "sha": "da0152221566c84ae455cb285db55dbffce7b605"
+        "sha": "fdfe07e3549a2948c69e86d1dfce87d2772a3674"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -112,6 +112,7 @@
     "codecov.yaml",
     "google-cloud-secretmanager/src/main/java/com/google/cloud/secretmanager/v1/SecretManagerServiceClient.java",
     "google-cloud-secretmanager/src/main/java/com/google/cloud/secretmanager/v1/SecretManagerServiceSettings.java",
+    "google-cloud-secretmanager/src/main/java/com/google/cloud/secretmanager/v1/gapic_metadata.json",
     "google-cloud-secretmanager/src/main/java/com/google/cloud/secretmanager/v1/package-info.java",
     "google-cloud-secretmanager/src/main/java/com/google/cloud/secretmanager/v1/stub/GrpcSecretManagerServiceCallableFactory.java",
     "google-cloud-secretmanager/src/main/java/com/google/cloud/secretmanager/v1/stub/GrpcSecretManagerServiceStub.java",
@@ -119,6 +120,7 @@
     "google-cloud-secretmanager/src/main/java/com/google/cloud/secretmanager/v1/stub/SecretManagerServiceStubSettings.java",
     "google-cloud-secretmanager/src/main/java/com/google/cloud/secretmanager/v1beta1/SecretManagerServiceClient.java",
     "google-cloud-secretmanager/src/main/java/com/google/cloud/secretmanager/v1beta1/SecretManagerServiceSettings.java",
+    "google-cloud-secretmanager/src/main/java/com/google/cloud/secretmanager/v1beta1/gapic_metadata.json",
     "google-cloud-secretmanager/src/main/java/com/google/cloud/secretmanager/v1beta1/package-info.java",
     "google-cloud-secretmanager/src/main/java/com/google/cloud/secretmanager/v1beta1/stub/GrpcSecretManagerServiceCallableFactory.java",
     "google-cloud-secretmanager/src/main/java/com/google/cloud/secretmanager/v1beta1/stub/GrpcSecretManagerServiceStub.java",
