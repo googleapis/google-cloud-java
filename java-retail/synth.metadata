@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-retail.git",
-        "sha": "25770e434e6430a721e2c294382b33d29cef5b29"
+        "sha": "0ca8a72b896d63d2da372684c7fbaf502018afbc"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -109,6 +109,7 @@
     "google-cloud-retail/src/main/java/com/google/cloud/retail/v2/ProductServiceSettings.java",
     "google-cloud-retail/src/main/java/com/google/cloud/retail/v2/UserEventServiceClient.java",
     "google-cloud-retail/src/main/java/com/google/cloud/retail/v2/UserEventServiceSettings.java",
+    "google-cloud-retail/src/main/java/com/google/cloud/retail/v2/gapic_metadata.json",
     "google-cloud-retail/src/main/java/com/google/cloud/retail/v2/package-info.java",
     "google-cloud-retail/src/main/java/com/google/cloud/retail/v2/stub/CatalogServiceStub.java",
     "google-cloud-retail/src/main/java/com/google/cloud/retail/v2/stub/CatalogServiceStubSettings.java",

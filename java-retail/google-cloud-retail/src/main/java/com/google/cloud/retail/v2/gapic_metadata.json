@@ -1,0 +1,84 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.retail.v2",
+  "libraryPackage": "com.google.cloud.retail.v2",
+  "services": {
+    "CatalogService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CatalogServiceClient",
+          "rpcs": {
+            "ListCatalogs": {
+              "methods": ["listCatalogs", "listCatalogs", "listCatalogs", "listCatalogsPagedCallable", "listCatalogsCallable"]
+            },
+            "UpdateCatalog": {
+              "methods": ["updateCatalog", "updateCatalog", "updateCatalogCallable"]
+            }
+          }
+        }
+      }
+    },
+    "PredictionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PredictionServiceClient",
+          "rpcs": {
+            "Predict": {
+              "methods": ["predict", "predictCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ProductService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProductServiceClient",
+          "rpcs": {
+            "CreateProduct": {
+              "methods": ["createProduct", "createProduct", "createProduct", "createProductCallable"]
+            },
+            "DeleteProduct": {
+              "methods": ["deleteProduct", "deleteProduct", "deleteProduct", "deleteProductCallable"]
+            },
+            "GetProduct": {
+              "methods": ["getProduct", "getProduct", "getProduct", "getProductCallable"]
+            },
+            "ImportProducts": {
+              "methods": ["importProductsAsync", "importProductsOperationCallable", "importProductsCallable"]
+            },
+            "UpdateProduct": {
+              "methods": ["updateProduct", "updateProduct", "updateProductCallable"]
+            }
+          }
+        }
+      }
+    },
+    "UserEventService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "UserEventServiceClient",
+          "rpcs": {
+            "CollectUserEvent": {
+              "methods": ["collectUserEvent", "collectUserEventCallable"]
+            },
+            "ImportUserEvents": {
+              "methods": ["importUserEventsAsync", "importUserEventsOperationCallable", "importUserEventsCallable"]
+            },
+            "PurgeUserEvents": {
+              "methods": ["purgeUserEventsAsync", "purgeUserEventsOperationCallable", "purgeUserEventsCallable"]
+            },
+            "RejoinUserEvents": {
+              "methods": ["rejoinUserEventsAsync", "rejoinUserEventsOperationCallable", "rejoinUserEventsCallable"]
+            },
+            "WriteUserEvent": {
+              "methods": ["writeUserEvent", "writeUserEventCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
