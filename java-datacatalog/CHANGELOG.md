@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-datacatalog/compare/v1.0.13...v1.1.0) (2021-02-22)
+
+
+### Features
+
+* generate sample code in the Java microgenerator ([#419](https://www.github.com/googleapis/java-datacatalog/issues/419)) ([0dfec30](https://www.github.com/googleapis/java-datacatalog/commit/0dfec300b1d1b90d026b73c8d080fe7aa5b5af8e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#431](https://www.github.com/googleapis/java-datacatalog/issues/431)) ([19e2d6d](https://www.github.com/googleapis/java-datacatalog/commit/19e2d6da3de10c54a2ceec164c0c55e27b7925fe))
+
 ### [1.0.13](https://www.github.com/googleapis/java-datacatalog/compare/v1.0.12...v1.0.13) (2021-01-14)
 
 
