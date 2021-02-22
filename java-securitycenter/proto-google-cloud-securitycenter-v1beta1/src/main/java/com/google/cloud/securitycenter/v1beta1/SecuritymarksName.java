@@ -18,8 +18,13 @@ package com.google.cloud.securitycenter.v1beta1;
 
 import com.google.api.resourcenames.ResourceName;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
+/**
+ * AUTO-GENERATED DOCUMENTATION AND CLASS
+ *
+ * @deprecated This resource name class will be removed in the next major version.
+ */
 @javax.annotation.Generated("by GAPIC protoc plugin")
+@Deprecated
 public abstract class SecuritymarksName implements ResourceName {
   protected SecuritymarksName() {}
 }
