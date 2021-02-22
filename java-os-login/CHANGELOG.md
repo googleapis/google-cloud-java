@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-os-login/compare/v1.1.7...v1.2.0) (2021-02-22)
+
+
+### Features
+
+* generate sample code in the Java microgenerator ([#365](https://www.github.com/googleapis/java-os-login/issues/365)) ([2ba0c43](https://www.github.com/googleapis/java-os-login/commit/2ba0c436dbc46f5c26f64657b0f793ef3227e2c1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#376](https://www.github.com/googleapis/java-os-login/issues/376)) ([43e9533](https://www.github.com/googleapis/java-os-login/commit/43e95331dd5ae73ca2e89b756c1c6715c665839d))
+
 ### [1.1.7](https://www.github.com/googleapis/java-os-login/compare/v1.1.6...v1.1.7) (2021-01-14)
 
 
