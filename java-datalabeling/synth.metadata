@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-datalabeling.git",
-        "sha": "152b3c67659802e6ac570ccdc027edf667be32c7"
+        "sha": "aba9d1c737f66434bcbda9d8daad699d76d10cc4"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -103,6 +103,7 @@
     "codecov.yaml",
     "google-cloud-datalabeling/src/main/java/com/google/cloud/datalabeling/v1beta1/DataLabelingServiceClient.java",
     "google-cloud-datalabeling/src/main/java/com/google/cloud/datalabeling/v1beta1/DataLabelingServiceSettings.java",
+    "google-cloud-datalabeling/src/main/java/com/google/cloud/datalabeling/v1beta1/gapic_metadata.json",
     "google-cloud-datalabeling/src/main/java/com/google/cloud/datalabeling/v1beta1/package-info.java",
     "google-cloud-datalabeling/src/main/java/com/google/cloud/datalabeling/v1beta1/stub/DataLabelingServiceStub.java",
     "google-cloud-datalabeling/src/main/java/com/google/cloud/datalabeling/v1beta1/stub/DataLabelingServiceStubSettings.java",
