@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-memcache/compare/v0.3.0...v0.4.0) (2021-02-22)
+
+
+### Features
+
+* **v1beta2:** added ApplySoftwareUpdate API ([#302](https://www.github.com/googleapis/java-memcache/issues/302)) ([184ba12](https://www.github.com/googleapis/java-memcache/commit/184ba12c83b709220bef80a9ec174cda30b355d6))
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#300](https://www.github.com/googleapis/java-memcache/issues/300)) ([182927c](https://www.github.com/googleapis/java-memcache/commit/182927c37930447cf9415b9142b9a028ee08d0dd))
+* various clarifications, new documentation for ApplySoftwareUpdate ([184ba12](https://www.github.com/googleapis/java-memcache/commit/184ba12c83b709220bef80a9ec174cda30b355d6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#312](https://www.github.com/googleapis/java-memcache/issues/312)) ([f5b28ca](https://www.github.com/googleapis/java-memcache/commit/f5b28ca33bf545e435058b5314ad27a8e285a992))
+
 ## [0.3.0](https://www.github.com/googleapis/java-memcache/compare/v0.2.11...v0.3.0) (2021-01-21)
 
 
