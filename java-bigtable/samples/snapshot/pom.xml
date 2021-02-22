@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigtable</artifactId>
-      <version>1.20.1-SNAPSHOT</version>
+      <version>1.20.1</version>
     </dependency>
   <!-- {x-version-update-end} -->
 
