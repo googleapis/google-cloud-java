@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-security-private-ca.git",
-        "sha": "38459f47e3156748e0ccd23dab7f5209b4dab749"
+        "sha": "dbf1419fa1940ad26431e683bf549ad55a852778"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -103,6 +103,7 @@
     "codecov.yaml",
     "google-cloud-security-private-ca/src/main/java/com/google/cloud/security/privateca/v1beta1/CertificateAuthorityServiceClient.java",
     "google-cloud-security-private-ca/src/main/java/com/google/cloud/security/privateca/v1beta1/CertificateAuthorityServiceSettings.java",
+    "google-cloud-security-private-ca/src/main/java/com/google/cloud/security/privateca/v1beta1/gapic_metadata.json",
     "google-cloud-security-private-ca/src/main/java/com/google/cloud/security/privateca/v1beta1/package-info.java",
     "google-cloud-security-private-ca/src/main/java/com/google/cloud/security/privateca/v1beta1/stub/CertificateAuthorityServiceStub.java",
     "google-cloud-security-private-ca/src/main/java/com/google/cloud/security/privateca/v1beta1/stub/CertificateAuthorityServiceStubSettings.java",
