@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-notebooks</artifactId>
-      <version>0.2.4</version>
+      <version>0.2.5</version>
     </dependency>
     <!-- [END notebooks_install_without_bom] -->
 
