@@ -1,0 +1,171 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.talent.v4beta1",
+  "libraryPackage": "com.google.cloud.talent.v4beta1",
+  "services": {
+    "ApplicationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ApplicationServiceClient",
+          "rpcs": {
+            "CreateApplication": {
+              "methods": ["createApplication", "createApplication", "createApplication", "createApplicationCallable"]
+            },
+            "DeleteApplication": {
+              "methods": ["deleteApplication", "deleteApplication", "deleteApplication", "deleteApplicationCallable"]
+            },
+            "GetApplication": {
+              "methods": ["getApplication", "getApplication", "getApplication", "getApplicationCallable"]
+            },
+            "ListApplications": {
+              "methods": ["listApplications", "listApplications", "listApplications", "listApplicationsPagedCallable", "listApplicationsCallable"]
+            },
+            "UpdateApplication": {
+              "methods": ["updateApplication", "updateApplication", "updateApplicationCallable"]
+            }
+          }
+        }
+      }
+    },
+    "CompanyService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CompanyServiceClient",
+          "rpcs": {
+            "CreateCompany": {
+              "methods": ["createCompany", "createCompany", "createCompany", "createCompany", "createCompanyCallable"]
+            },
+            "DeleteCompany": {
+              "methods": ["deleteCompany", "deleteCompany", "deleteCompany", "deleteCompanyCallable"]
+            },
+            "GetCompany": {
+              "methods": ["getCompany", "getCompany", "getCompany", "getCompanyCallable"]
+            },
+            "ListCompanies": {
+              "methods": ["listCompanies", "listCompanies", "listCompanies", "listCompanies", "listCompaniesPagedCallable", "listCompaniesCallable"]
+            },
+            "UpdateCompany": {
+              "methods": ["updateCompany", "updateCompany", "updateCompanyCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Completion": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CompletionClient",
+          "rpcs": {
+            "CompleteQuery": {
+              "methods": ["completeQuery", "completeQueryCallable"]
+            }
+          }
+        }
+      }
+    },
+    "EventService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EventServiceClient",
+          "rpcs": {
+            "CreateClientEvent": {
+              "methods": ["createClientEvent", "createClientEvent", "createClientEvent", "createClientEvent", "createClientEventCallable"]
+            }
+          }
+        }
+      }
+    },
+    "JobService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "JobServiceClient",
+          "rpcs": {
+            "BatchCreateJobs": {
+              "methods": ["batchCreateJobsAsync", "batchCreateJobsAsync", "batchCreateJobsAsync", "batchCreateJobsAsync", "batchCreateJobsOperationCallable", "batchCreateJobsCallable"]
+            },
+            "BatchDeleteJobs": {
+              "methods": ["batchDeleteJobs", "batchDeleteJobs", "batchDeleteJobs", "batchDeleteJobs", "batchDeleteJobsCallable"]
+            },
+            "BatchUpdateJobs": {
+              "methods": ["batchUpdateJobsAsync", "batchUpdateJobsAsync", "batchUpdateJobsAsync", "batchUpdateJobsAsync", "batchUpdateJobsOperationCallable", "batchUpdateJobsCallable"]
+            },
+            "CreateJob": {
+              "methods": ["createJob", "createJob", "createJob", "createJob", "createJobCallable"]
+            },
+            "DeleteJob": {
+              "methods": ["deleteJob", "deleteJob", "deleteJob", "deleteJobCallable"]
+            },
+            "GetJob": {
+              "methods": ["getJob", "getJob", "getJob", "getJobCallable"]
+            },
+            "ListJobs": {
+              "methods": ["listJobs", "listJobs", "listJobs", "listJobs", "listJobsPagedCallable", "listJobsCallable"]
+            },
+            "SearchJobs": {
+              "methods": ["searchJobs", "searchJobsPagedCallable", "searchJobsCallable"]
+            },
+            "SearchJobsForAlert": {
+              "methods": ["searchJobsForAlert", "searchJobsForAlertPagedCallable", "searchJobsForAlertCallable"]
+            },
+            "UpdateJob": {
+              "methods": ["updateJob", "updateJob", "updateJobCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ProfileService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProfileServiceClient",
+          "rpcs": {
+            "CreateProfile": {
+              "methods": ["createProfile", "createProfile", "createProfile", "createProfileCallable"]
+            },
+            "DeleteProfile": {
+              "methods": ["deleteProfile", "deleteProfile", "deleteProfile", "deleteProfileCallable"]
+            },
+            "GetProfile": {
+              "methods": ["getProfile", "getProfile", "getProfile", "getProfileCallable"]
+            },
+            "ListProfiles": {
+              "methods": ["listProfiles", "listProfiles", "listProfiles", "listProfilesPagedCallable", "listProfilesCallable"]
+            },
+            "SearchProfiles": {
+              "methods": ["searchProfiles", "searchProfilesPagedCallable", "searchProfilesCallable"]
+            },
+            "UpdateProfile": {
+              "methods": ["updateProfile", "updateProfile", "updateProfileCallable"]
+            }
+          }
+        }
+      }
+    },
+    "TenantService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TenantServiceClient",
+          "rpcs": {
+            "CreateTenant": {
+              "methods": ["createTenant", "createTenant", "createTenant", "createTenantCallable"]
+            },
+            "DeleteTenant": {
+              "methods": ["deleteTenant", "deleteTenant", "deleteTenant", "deleteTenantCallable"]
+            },
+            "GetTenant": {
+              "methods": ["getTenant", "getTenant", "getTenant", "getTenantCallable"]
+            },
+            "ListTenants": {
+              "methods": ["listTenants", "listTenants", "listTenants", "listTenantsPagedCallable", "listTenantsCallable"]
+            },
+            "UpdateTenant": {
+              "methods": ["updateTenant", "updateTenant", "updateTenantCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

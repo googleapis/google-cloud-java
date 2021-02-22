@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-talent.git",
-        "sha": "a3034c30b7685a5fa20e9b1102ac512e955bc4d6"
+        "sha": "77bec217d808dfbbb9c4ead0a98b638fd7acaa14"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -125,6 +125,7 @@
     "google-cloud-talent/src/main/java/com/google/cloud/talent/v4/JobServiceSettings.java",
     "google-cloud-talent/src/main/java/com/google/cloud/talent/v4/TenantServiceClient.java",
     "google-cloud-talent/src/main/java/com/google/cloud/talent/v4/TenantServiceSettings.java",
+    "google-cloud-talent/src/main/java/com/google/cloud/talent/v4/gapic_metadata.json",
     "google-cloud-talent/src/main/java/com/google/cloud/talent/v4/package-info.java",
     "google-cloud-talent/src/main/java/com/google/cloud/talent/v4/stub/CompanyServiceStub.java",
     "google-cloud-talent/src/main/java/com/google/cloud/talent/v4/stub/CompanyServiceStubSettings.java",
@@ -160,6 +161,7 @@
     "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/ProfileServiceSettings.java",
     "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/TenantServiceClient.java",
     "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/TenantServiceSettings.java",
+    "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/gapic_metadata.json",
     "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/package-info.java",
     "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/ApplicationServiceStub.java",
     "google-cloud-talent/src/main/java/com/google/cloud/talent/v4beta1/stub/ApplicationServiceStubSettings.java",
