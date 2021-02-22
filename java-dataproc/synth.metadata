@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dataproc.git",
-        "sha": "2bad63f51169e72bd4720e260613012e6c66e8af"
+        "sha": "db549f9a231eca393c0c1bfda8f004be8e0f7cd9"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -126,6 +126,7 @@
     "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/JobControllerSettings.java",
     "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/WorkflowTemplateServiceClient.java",
     "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/WorkflowTemplateServiceSettings.java",
+    "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/gapic_metadata.json",
     "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/package-info.java",
     "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/AutoscalingPolicyServiceStub.java",
     "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1/stub/AutoscalingPolicyServiceStubSettings.java",
@@ -151,6 +152,7 @@
     "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/JobControllerSettings.java",
     "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplateServiceClient.java",
     "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/WorkflowTemplateServiceSettings.java",
+    "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/gapic_metadata.json",
     "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/package-info.java",
     "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/AutoscalingPolicyServiceStub.java",
     "google-cloud-dataproc/src/main/java/com/google/cloud/dataproc/v1beta2/stub/AutoscalingPolicyServiceStubSettings.java",
