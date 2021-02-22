@@ -28,19 +28,19 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-trace</artifactId>
-      <version>1.2.12</version>
+      <version>1.2.13-SNAPSHOT</version>
     </dependency>
 
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>1.2.12</version>
+      <version>1.2.13-SNAPSHOT</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
-      <version>1.2.12</version>
+      <version>1.2.13-SNAPSHOT</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
