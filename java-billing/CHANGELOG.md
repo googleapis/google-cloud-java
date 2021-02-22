@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.1.13](https://www.github.com/googleapis/java-billing/compare/v1.1.12...v1.1.13) (2021-02-22)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#320](https://www.github.com/googleapis/java-billing/issues/320)) ([44d60d6](https://www.github.com/googleapis/java-billing/commit/44d60d606a0e39f29f9e8baba0cb7cc1a70a4e77))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#331](https://www.github.com/googleapis/java-billing/issues/331)) ([65c428a](https://www.github.com/googleapis/java-billing/commit/65c428a3b9802a92fe007bd90ddc8ed07869e879))
+
 ### [1.1.12](https://www.github.com/googleapis/java-billing/compare/v1.1.11...v1.1.12) (2021-01-14)
 
 
