@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.2.5](https://www.github.com/googleapis/java-container/compare/v1.2.4...v1.2.5) (2021-02-22)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#360](https://www.github.com/googleapis/java-container/issues/360)) ([dbc84cd](https://www.github.com/googleapis/java-container/commit/dbc84cdc77ff7bf3e03ab221afce09907c6e8a31))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#370](https://www.github.com/googleapis/java-container/issues/370)) ([ffa66c4](https://www.github.com/googleapis/java-container/commit/ffa66c41451ff5518958a93e64736bb1028e2fcd))
+
 ### [1.2.4](https://www.github.com/googleapis/java-container/compare/v1.2.3...v1.2.4) (2021-01-14)
 
 
