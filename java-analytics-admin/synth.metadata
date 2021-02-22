@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-analytics-admin.git",
-        "sha": "8dcace2052a0c79e2256a7a514666dee6e7f7e02"
+        "sha": "f329dc74b5a29b35d5efb97e611cb5f6ced2d746"
       }
     },
     {
       "git": {
         "name": "googleapis-gen",
         "remote": "https://github.com/googleapis/googleapis-gen.git",
-        "sha": "452439e51b89a97d6f056a4300b0e32753a0fadd",
-        "internalRef": "357800868"
+        "sha": "9d14cd16d94886f7f10a243e1b5a6876946f32bb",
+        "internalRef": "358516065"
       }
     },
     {
@@ -92,6 +92,7 @@
     "codecov.yaml",
     "google-analytics-admin/src/main/java/com/google/analytics/admin/v1alpha/AnalyticsAdminServiceClient.java",
     "google-analytics-admin/src/main/java/com/google/analytics/admin/v1alpha/AnalyticsAdminServiceSettings.java",
+    "google-analytics-admin/src/main/java/com/google/analytics/admin/v1alpha/gapic_metadata.json",
     "google-analytics-admin/src/main/java/com/google/analytics/admin/v1alpha/package-info.java",
     "google-analytics-admin/src/main/java/com/google/analytics/admin/v1alpha/stub/AnalyticsAdminServiceStub.java",
     "google-analytics-admin/src/main/java/com/google/analytics/admin/v1alpha/stub/AnalyticsAdminServiceStubSettings.java",
