@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-video-transcoder.git",
-        "sha": "fc3a8407f655843897f39f01fea50cc04ceeed75"
+        "sha": "d643ba3ccbb17c30042540434554dae5ff74a12c"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -103,6 +103,7 @@
     "codecov.yaml",
     "google-cloud-video-transcoder/src/main/java/com/google/cloud/video/transcoder/v1beta1/TranscoderServiceClient.java",
     "google-cloud-video-transcoder/src/main/java/com/google/cloud/video/transcoder/v1beta1/TranscoderServiceSettings.java",
+    "google-cloud-video-transcoder/src/main/java/com/google/cloud/video/transcoder/v1beta1/gapic_metadata.json",
     "google-cloud-video-transcoder/src/main/java/com/google/cloud/video/transcoder/v1beta1/package-info.java",
     "google-cloud-video-transcoder/src/main/java/com/google/cloud/video/transcoder/v1beta1/stub/GrpcTranscoderServiceCallableFactory.java",
     "google-cloud-video-transcoder/src/main/java/com/google/cloud/video/transcoder/v1beta1/stub/GrpcTranscoderServiceStub.java",

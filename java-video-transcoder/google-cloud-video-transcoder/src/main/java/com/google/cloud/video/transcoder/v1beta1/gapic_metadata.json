@@ -1,0 +1,42 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.video.transcoder.v1beta1",
+  "libraryPackage": "com.google.cloud.video.transcoder.v1beta1",
+  "services": {
+    "TranscoderService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TranscoderServiceClient",
+          "rpcs": {
+            "CreateJob": {
+              "methods": ["createJob", "createJob", "createJob", "createJobCallable"]
+            },
+            "CreateJobTemplate": {
+              "methods": ["createJobTemplate", "createJobTemplate", "createJobTemplate", "createJobTemplateCallable"]
+            },
+            "DeleteJob": {
+              "methods": ["deleteJob", "deleteJob", "deleteJob", "deleteJobCallable"]
+            },
+            "DeleteJobTemplate": {
+              "methods": ["deleteJobTemplate", "deleteJobTemplate", "deleteJobTemplate", "deleteJobTemplateCallable"]
+            },
+            "GetJob": {
+              "methods": ["getJob", "getJob", "getJob", "getJobCallable"]
+            },
+            "GetJobTemplate": {
+              "methods": ["getJobTemplate", "getJobTemplate", "getJobTemplate", "getJobTemplateCallable"]
+            },
+            "ListJobTemplates": {
+              "methods": ["listJobTemplates", "listJobTemplates", "listJobTemplates", "listJobTemplatesPagedCallable", "listJobTemplatesCallable"]
+            },
+            "ListJobs": {
+              "methods": ["listJobs", "listJobs", "listJobs", "listJobsPagedCallable", "listJobsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
