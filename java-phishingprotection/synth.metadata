@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-phishingprotection.git",
-        "sha": "2819c2870066812b636642622a865b39d7700e0c"
+        "sha": "d62fcc326b36a7002a13b60c1e7d6937d7256c53"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -103,6 +103,7 @@
     "codecov.yaml",
     "google-cloud-phishingprotection/src/main/java/com/google/cloud/phishingprotection/v1beta1/PhishingProtectionServiceV1Beta1Client.java",
     "google-cloud-phishingprotection/src/main/java/com/google/cloud/phishingprotection/v1beta1/PhishingProtectionServiceV1Beta1Settings.java",
+    "google-cloud-phishingprotection/src/main/java/com/google/cloud/phishingprotection/v1beta1/gapic_metadata.json",
     "google-cloud-phishingprotection/src/main/java/com/google/cloud/phishingprotection/v1beta1/package-info.java",
     "google-cloud-phishingprotection/src/main/java/com/google/cloud/phishingprotection/v1beta1/stub/GrpcPhishingProtectionServiceV1Beta1CallableFactory.java",
     "google-cloud-phishingprotection/src/main/java/com/google/cloud/phishingprotection/v1beta1/stub/GrpcPhishingProtectionServiceV1Beta1Stub.java",
