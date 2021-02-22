@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-servicedirectory/compare/v1.0.3...v1.1.0) (2021-02-22)
+
+
+### Features
+
+* added support for test cases and agent validation ([#280](https://www.github.com/googleapis/java-servicedirectory/issues/280)) ([f66cdd6](https://www.github.com/googleapis/java-servicedirectory/commit/f66cdd699f5f0b7e8d48b8df9234f57551b10bff))
+* update java samples to v1 ([#274](https://www.github.com/googleapis/java-servicedirectory/issues/274)) ([b3c0230](https://www.github.com/googleapis/java-servicedirectory/commit/b3c02302c9c1453f3009b8f4e6474fb6ad68d83e))
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([399530b](https://www.github.com/googleapis/java-servicedirectory/commit/399530b658bba7150b42d7fbedec79d109b4e9e6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#306](https://www.github.com/googleapis/java-servicedirectory/issues/306)) ([ebe396a](https://www.github.com/googleapis/java-servicedirectory/commit/ebe396ac12512b05fcc95011f87005dcba947e58))
+
 ### [1.0.3](https://www.github.com/googleapis/java-servicedirectory/compare/v1.0.2...v1.0.3) (2021-01-14)
 
 
