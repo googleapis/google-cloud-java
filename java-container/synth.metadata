@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-container.git",
-        "sha": "fb05c48474b711d7ce4a16c441adce9aa15c2822"
+        "sha": "ffa66c41451ff5518958a93e64736bb1028e2fcd"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -103,6 +103,7 @@
     "codecov.yaml",
     "google-cloud-container/src/main/java/com/google/cloud/container/v1/ClusterManagerClient.java",
     "google-cloud-container/src/main/java/com/google/cloud/container/v1/ClusterManagerSettings.java",
+    "google-cloud-container/src/main/java/com/google/cloud/container/v1/gapic_metadata.json",
     "google-cloud-container/src/main/java/com/google/cloud/container/v1/package-info.java",
     "google-cloud-container/src/main/java/com/google/cloud/container/v1/stub/ClusterManagerStub.java",
     "google-cloud-container/src/main/java/com/google/cloud/container/v1/stub/ClusterManagerStubSettings.java",
