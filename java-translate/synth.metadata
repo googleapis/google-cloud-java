@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-translate.git",
-        "sha": "f653263e5b80db0bd24a98f02e0b004352ed2d32"
+        "sha": "91ea78bd9bcc535dd8eabad721ed2039e49148f8"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -120,6 +120,7 @@
     "codecov.yaml",
     "google-cloud-translate/src/main/java/com/google/cloud/translate/v3/TranslationServiceClient.java",
     "google-cloud-translate/src/main/java/com/google/cloud/translate/v3/TranslationServiceSettings.java",
+    "google-cloud-translate/src/main/java/com/google/cloud/translate/v3/gapic_metadata.json",
     "google-cloud-translate/src/main/java/com/google/cloud/translate/v3/package-info.java",
     "google-cloud-translate/src/main/java/com/google/cloud/translate/v3/stub/GrpcTranslationServiceCallableFactory.java",
     "google-cloud-translate/src/main/java/com/google/cloud/translate/v3/stub/GrpcTranslationServiceStub.java",
@@ -127,6 +128,7 @@
     "google-cloud-translate/src/main/java/com/google/cloud/translate/v3/stub/TranslationServiceStubSettings.java",
     "google-cloud-translate/src/main/java/com/google/cloud/translate/v3beta1/TranslationServiceClient.java",
     "google-cloud-translate/src/main/java/com/google/cloud/translate/v3beta1/TranslationServiceSettings.java",
+    "google-cloud-translate/src/main/java/com/google/cloud/translate/v3beta1/gapic_metadata.json",
     "google-cloud-translate/src/main/java/com/google/cloud/translate/v3beta1/package-info.java",
     "google-cloud-translate/src/main/java/com/google/cloud/translate/v3beta1/stub/GrpcTranslationServiceCallableFactory.java",
     "google-cloud-translate/src/main/java/com/google/cloud/translate/v3beta1/stub/GrpcTranslationServiceStub.java",
