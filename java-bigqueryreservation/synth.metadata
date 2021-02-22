@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigqueryreservation.git",
-        "sha": "39454f442c17e7f94ea62001763f367efc44ac4d"
+        "sha": "eec8507eaacb9ec7a83933fe1e54d4a20b8aad65"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -103,6 +103,7 @@
     "codecov.yaml",
     "google-cloud-bigqueryreservation/src/main/java/com/google/cloud/bigquery/reservation/v1/ReservationServiceClient.java",
     "google-cloud-bigqueryreservation/src/main/java/com/google/cloud/bigquery/reservation/v1/ReservationServiceSettings.java",
+    "google-cloud-bigqueryreservation/src/main/java/com/google/cloud/bigquery/reservation/v1/gapic_metadata.json",
     "google-cloud-bigqueryreservation/src/main/java/com/google/cloud/bigquery/reservation/v1/package-info.java",
     "google-cloud-bigqueryreservation/src/main/java/com/google/cloud/bigquery/reservation/v1/stub/GrpcReservationServiceCallableFactory.java",
     "google-cloud-bigqueryreservation/src/main/java/com/google/cloud/bigquery/reservation/v1/stub/GrpcReservationServiceStub.java",
