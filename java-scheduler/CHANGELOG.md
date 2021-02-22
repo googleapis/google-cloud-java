@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.23.7](https://www.github.com/googleapis/java-scheduler/compare/v1.23.6...v1.23.7) (2021-02-22)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#344](https://www.github.com/googleapis/java-scheduler/issues/344)) ([35a2689](https://www.github.com/googleapis/java-scheduler/commit/35a2689e745c55d2381a0d4334ab827e5acab7cc))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.18.0 ([#329](https://www.github.com/googleapis/java-scheduler/issues/329)) ([d42824e](https://www.github.com/googleapis/java-scheduler/commit/d42824efdc8eb38cd4a904aa25037dc71a9d2710))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#354](https://www.github.com/googleapis/java-scheduler/issues/354)) ([6668625](https://www.github.com/googleapis/java-scheduler/commit/666862546a26fe0d3c593bc5520977f8b435bb8d))
+
 ### [1.23.6](https://www.github.com/googleapis/java-scheduler/compare/v1.23.5...v1.23.6) (2020-12-29)
 
 
