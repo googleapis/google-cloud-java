@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-os-login.git",
-        "sha": "d4b11b29c9bd17b1f9e2b2dd5e6b03c33ea4d46f"
+        "sha": "43e95331dd5ae73ca2e89b756c1c6715c665839d"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -103,6 +103,7 @@
     "codecov.yaml",
     "google-cloud-os-login/src/main/java/com/google/cloud/oslogin/v1/OsLoginServiceClient.java",
     "google-cloud-os-login/src/main/java/com/google/cloud/oslogin/v1/OsLoginServiceSettings.java",
+    "google-cloud-os-login/src/main/java/com/google/cloud/oslogin/v1/gapic_metadata.json",
     "google-cloud-os-login/src/main/java/com/google/cloud/oslogin/v1/package-info.java",
     "google-cloud-os-login/src/main/java/com/google/cloud/oslogin/v1/stub/GrpcOsLoginServiceCallableFactory.java",
     "google-cloud-os-login/src/main/java/com/google/cloud/oslogin/v1/stub/GrpcOsLoginServiceStub.java",
