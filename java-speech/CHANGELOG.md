@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.25.0](https://www.github.com/googleapis/java-speech/compare/v1.24.11...v1.25.0) (2021-02-22)
+
+
+### Features
+
+* **v1p1beta1:** add support for Model Adaptation ([#433](https://www.github.com/googleapis/java-speech/issues/433)) ([0fd2554](https://www.github.com/googleapis/java-speech/commit/0fd2554392560c34cc753f26bcbaf4e923b499d9))
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#427](https://www.github.com/googleapis/java-speech/issues/427)) ([1492dc7](https://www.github.com/googleapis/java-speech/commit/1492dc70da49e8c3b629e907fd1d3171a5d9be4a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#436](https://www.github.com/googleapis/java-speech/issues/436)) ([7b4771d](https://www.github.com/googleapis/java-speech/commit/7b4771d1f50181e57e0020755df8a2d8cee165f8))
+
 ### [1.24.11](https://www.github.com/googleapis/java-speech/compare/v1.24.10...v1.24.11) (2021-02-01)
 
 
