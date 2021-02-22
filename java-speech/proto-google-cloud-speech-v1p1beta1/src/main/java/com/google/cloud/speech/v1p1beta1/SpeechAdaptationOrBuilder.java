@@ -89,13 +89,64 @@ public interface SpeechAdaptationOrBuilder
    *
    *
    * <pre>
+   * A collection of phrase set resource names to use.
+   * </pre>
+   *
+   * <code>repeated string phrase_set_references = 2;</code>
+   *
+   * @return A list containing the phraseSetReferences.
+   */
+  java.util.List<java.lang.String> getPhraseSetReferencesList();
+  /**
+   *
+   *
+   * <pre>
+   * A collection of phrase set resource names to use.
+   * </pre>
+   *
+   * <code>repeated string phrase_set_references = 2;</code>
+   *
+   * @return The count of phraseSetReferences.
+   */
+  int getPhraseSetReferencesCount();
+  /**
+   *
+   *
+   * <pre>
+   * A collection of phrase set resource names to use.
+   * </pre>
+   *
+   * <code>repeated string phrase_set_references = 2;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The phraseSetReferences at the given index.
+   */
+  java.lang.String getPhraseSetReferences(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A collection of phrase set resource names to use.
+   * </pre>
+   *
+   * <code>repeated string phrase_set_references = 2;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the phraseSetReferences at the given index.
+   */
+  com.google.protobuf.ByteString getPhraseSetReferencesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * A collection of custom classes. To specify the classes inline, leave the
    * class' `name` blank and fill in the rest of its fields, giving it a unique
    * `custom_class_id`. Refer to the inline defined class in phrase hints by its
    * `custom_class_id`.
    * </pre>
    *
-   * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+   * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
    */
   java.util.List<com.google.cloud.speech.v1p1beta1.CustomClass> getCustomClassesList();
   /**
@@ -108,7 +159,7 @@ public interface SpeechAdaptationOrBuilder
    * `custom_class_id`.
    * </pre>
    *
-   * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+   * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
    */
   com.google.cloud.speech.v1p1beta1.CustomClass getCustomClasses(int index);
   /**
@@ -121,7 +172,7 @@ public interface SpeechAdaptationOrBuilder
    * `custom_class_id`.
    * </pre>
    *
-   * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+   * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
    */
   int getCustomClassesCount();
   /**
@@ -134,7 +185,7 @@ public interface SpeechAdaptationOrBuilder
    * `custom_class_id`.
    * </pre>
    *
-   * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+   * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
    */
   java.util.List<? extends com.google.cloud.speech.v1p1beta1.CustomClassOrBuilder>
       getCustomClassesOrBuilderList();
@@ -148,7 +199,7 @@ public interface SpeechAdaptationOrBuilder
    * `custom_class_id`.
    * </pre>
    *
-   * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
+   * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
    */
   com.google.cloud.speech.v1p1beta1.CustomClassOrBuilder getCustomClassesOrBuilder(int index);
 }

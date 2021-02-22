@@ -397,7 +397,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MP3 audio. Support all standard MP3 bitrates (which range from 32-320
+     * MP3 audio. MP3 encoding is a Beta feature and only available in
+     * v1p1beta1. Support all standard MP3 bitrates (which range from 32-320
      * kbps). When using this encoding, `sample_rate_hertz` has to match the
      * sample rate of the file being used.
      * </pre>
@@ -511,7 +512,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MP3 audio. Support all standard MP3 bitrates (which range from 32-320
+     * MP3 audio. MP3 encoding is a Beta feature and only available in
+     * v1p1beta1. Support all standard MP3 bitrates (which range from 32-320
      * kbps). When using this encoding, `sample_rate_hertz` has to match the
      * sample rate of the file being used.
      * </pre>
