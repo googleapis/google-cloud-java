@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-datacatalog.git",
-        "sha": "74d0f352c0f0f9bba0026807e47b4c7cbdf4f5cd"
+        "sha": "19e2d6da3de10c54a2ceec164c0c55e27b7925fe"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -120,6 +120,7 @@
     "codecov.yaml",
     "google-cloud-datacatalog/src/main/java/com/google/cloud/datacatalog/v1/DataCatalogClient.java",
     "google-cloud-datacatalog/src/main/java/com/google/cloud/datacatalog/v1/DataCatalogSettings.java",
+    "google-cloud-datacatalog/src/main/java/com/google/cloud/datacatalog/v1/gapic_metadata.json",
     "google-cloud-datacatalog/src/main/java/com/google/cloud/datacatalog/v1/package-info.java",
     "google-cloud-datacatalog/src/main/java/com/google/cloud/datacatalog/v1/stub/DataCatalogStub.java",
     "google-cloud-datacatalog/src/main/java/com/google/cloud/datacatalog/v1/stub/DataCatalogStubSettings.java",
@@ -131,6 +132,7 @@
     "google-cloud-datacatalog/src/main/java/com/google/cloud/datacatalog/v1beta1/PolicyTagManagerSerializationClient.java",
     "google-cloud-datacatalog/src/main/java/com/google/cloud/datacatalog/v1beta1/PolicyTagManagerSerializationSettings.java",
     "google-cloud-datacatalog/src/main/java/com/google/cloud/datacatalog/v1beta1/PolicyTagManagerSettings.java",
+    "google-cloud-datacatalog/src/main/java/com/google/cloud/datacatalog/v1beta1/gapic_metadata.json",
     "google-cloud-datacatalog/src/main/java/com/google/cloud/datacatalog/v1beta1/package-info.java",
     "google-cloud-datacatalog/src/main/java/com/google/cloud/datacatalog/v1beta1/stub/DataCatalogStub.java",
     "google-cloud-datacatalog/src/main/java/com/google/cloud/datacatalog/v1beta1/stub/DataCatalogStubSettings.java",

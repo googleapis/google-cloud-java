@@ -1,0 +1,99 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.datacatalog.v1",
+  "libraryPackage": "com.google.cloud.datacatalog.v1",
+  "services": {
+    "DataCatalog": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataCatalogClient",
+          "rpcs": {
+            "CreateEntry": {
+              "methods": ["createEntry", "createEntry", "createEntry", "createEntryCallable"]
+            },
+            "CreateEntryGroup": {
+              "methods": ["createEntryGroup", "createEntryGroup", "createEntryGroup", "createEntryGroupCallable"]
+            },
+            "CreateTag": {
+              "methods": ["createTag", "createTag", "createTag", "createTagCallable"]
+            },
+            "CreateTagTemplate": {
+              "methods": ["createTagTemplate", "createTagTemplate", "createTagTemplate", "createTagTemplateCallable"]
+            },
+            "CreateTagTemplateField": {
+              "methods": ["createTagTemplateField", "createTagTemplateField", "createTagTemplateField", "createTagTemplateFieldCallable"]
+            },
+            "DeleteEntry": {
+              "methods": ["deleteEntry", "deleteEntry", "deleteEntry", "deleteEntryCallable"]
+            },
+            "DeleteEntryGroup": {
+              "methods": ["deleteEntryGroup", "deleteEntryGroup", "deleteEntryGroup", "deleteEntryGroupCallable"]
+            },
+            "DeleteTag": {
+              "methods": ["deleteTag", "deleteTag", "deleteTag", "deleteTagCallable"]
+            },
+            "DeleteTagTemplate": {
+              "methods": ["deleteTagTemplate", "deleteTagTemplate", "deleteTagTemplate", "deleteTagTemplateCallable"]
+            },
+            "DeleteTagTemplateField": {
+              "methods": ["deleteTagTemplateField", "deleteTagTemplateField", "deleteTagTemplateField", "deleteTagTemplateFieldCallable"]
+            },
+            "GetEntry": {
+              "methods": ["getEntry", "getEntry", "getEntry", "getEntryCallable"]
+            },
+            "GetEntryGroup": {
+              "methods": ["getEntryGroup", "getEntryGroup", "getEntryGroup", "getEntryGroup", "getEntryGroup", "getEntryGroupCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetTagTemplate": {
+              "methods": ["getTagTemplate", "getTagTemplate", "getTagTemplate", "getTagTemplateCallable"]
+            },
+            "ListEntries": {
+              "methods": ["listEntries", "listEntries", "listEntries", "listEntriesPagedCallable", "listEntriesCallable"]
+            },
+            "ListEntryGroups": {
+              "methods": ["listEntryGroups", "listEntryGroups", "listEntryGroups", "listEntryGroupsPagedCallable", "listEntryGroupsCallable"]
+            },
+            "ListTags": {
+              "methods": ["listTags", "listTags", "listTags", "listTagsPagedCallable", "listTagsCallable"]
+            },
+            "LookupEntry": {
+              "methods": ["lookupEntry", "lookupEntryCallable"]
+            },
+            "RenameTagTemplateField": {
+              "methods": ["renameTagTemplateField", "renameTagTemplateField", "renameTagTemplateField", "renameTagTemplateFieldCallable"]
+            },
+            "SearchCatalog": {
+              "methods": ["searchCatalog", "searchCatalog", "searchCatalogPagedCallable", "searchCatalogCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateEntry": {
+              "methods": ["updateEntry", "updateEntry", "updateEntry", "updateEntryCallable"]
+            },
+            "UpdateEntryGroup": {
+              "methods": ["updateEntryGroup", "updateEntryGroup", "updateEntryGroup", "updateEntryGroupCallable"]
+            },
+            "UpdateTag": {
+              "methods": ["updateTag", "updateTag", "updateTag", "updateTagCallable"]
+            },
+            "UpdateTagTemplate": {
+              "methods": ["updateTagTemplate", "updateTagTemplate", "updateTagTemplate", "updateTagTemplateCallable"]
+            },
+            "UpdateTagTemplateField": {
+              "methods": ["updateTagTemplateField", "updateTagTemplateField", "updateTagTemplateField", "updateTagTemplateField", "updateTagTemplateField", "updateTagTemplateFieldCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
