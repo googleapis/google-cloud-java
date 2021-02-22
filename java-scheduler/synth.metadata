@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-scheduler.git",
-        "sha": "5100ca6ef6b9234d206d842568dc122f8ae9aeb8"
+        "sha": "666862546a26fe0d3c593bc5520977f8b435bb8d"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -112,6 +112,7 @@
     "codecov.yaml",
     "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1/CloudSchedulerClient.java",
     "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1/CloudSchedulerSettings.java",
+    "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1/gapic_metadata.json",
     "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1/package-info.java",
     "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1/stub/CloudSchedulerStub.java",
     "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1/stub/CloudSchedulerStubSettings.java",
@@ -119,6 +120,7 @@
     "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1/stub/GrpcCloudSchedulerStub.java",
     "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1beta1/CloudSchedulerClient.java",
     "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1beta1/CloudSchedulerSettings.java",
+    "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1beta1/gapic_metadata.json",
     "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1beta1/package-info.java",
     "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1beta1/stub/CloudSchedulerStub.java",
     "google-cloud-scheduler/src/main/java/com/google/cloud/scheduler/v1beta1/stub/CloudSchedulerStubSettings.java",
