@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-automl.git",
-        "sha": "12500cb4543271e2e5b5490f9bfa0ceefc2cadb7"
+        "sha": "c05a06137a3ed93b81715a45b183b246dce2ff7a"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -119,6 +119,7 @@
     "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/AutoMlSettings.java",
     "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/PredictionServiceClient.java",
     "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/PredictionServiceSettings.java",
+    "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/gapic_metadata.json",
     "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/package-info.java",
     "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/stub/AutoMlStub.java",
     "google-cloud-automl/src/main/java/com/google/cloud/automl/v1/stub/AutoMlStubSettings.java",
@@ -132,6 +133,7 @@
     "google-cloud-automl/src/main/java/com/google/cloud/automl/v1beta1/AutoMlSettings.java",
     "google-cloud-automl/src/main/java/com/google/cloud/automl/v1beta1/PredictionServiceClient.java",
     "google-cloud-automl/src/main/java/com/google/cloud/automl/v1beta1/PredictionServiceSettings.java",
+    "google-cloud-automl/src/main/java/com/google/cloud/automl/v1beta1/gapic_metadata.json",
     "google-cloud-automl/src/main/java/com/google/cloud/automl/v1beta1/package-info.java",
     "google-cloud-automl/src/main/java/com/google/cloud/automl/v1beta1/stub/AutoMlStub.java",
     "google-cloud-automl/src/main/java/com/google/cloud/automl/v1beta1/stub/AutoMlStubSettings.java",
