@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-mediatranslation-bom</artifactId>
-  <version>0.2.11-SNAPSHOT</version><!-- {x-version-update:google-cloud-mediatranslation:current} -->
+  <version>0.2.11</version><!-- {x-version-update:google-cloud-mediatranslation:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -64,17 +64,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-mediatranslation</artifactId>
-        <version>0.2.11-SNAPSHOT</version><!-- {x-version-update:google-cloud-mediatranslation:current} -->
+        <version>0.2.11</version><!-- {x-version-update:google-cloud-mediatranslation:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-mediatranslation-v1beta1</artifactId>
-        <version>0.2.11-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-mediatranslation-v1beta1:current} -->
+        <version>0.2.11</version><!-- {x-version-update:proto-google-cloud-mediatranslation-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-mediatranslation-v1beta1</artifactId>
-        <version>0.2.11-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-mediatranslation-v1beta1:current} -->
+        <version>0.2.11</version><!-- {x-version-update:grpc-google-cloud-mediatranslation-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

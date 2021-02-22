@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.2.11](https://www.github.com/googleapis/java-mediatranslation/compare/v0.2.10...v0.2.11) (2021-02-22)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#216](https://www.github.com/googleapis/java-mediatranslation/issues/216)) ([bbe7c7e](https://www.github.com/googleapis/java-mediatranslation/commit/bbe7c7e43bbf980b0fbe4fe2bcd11a2a32386890))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#226](https://www.github.com/googleapis/java-mediatranslation/issues/226)) ([d006dd2](https://www.github.com/googleapis/java-mediatranslation/commit/d006dd255388bd945e5be3b8ba7f3f1c6f977213))
+
 ### [0.2.10](https://www.github.com/googleapis/java-mediatranslation/compare/v0.2.9...v0.2.10) (2021-01-14)
 
 
