@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.analytics.data.v1alpha",
+  "libraryPackage": "com.google.analytics.data.v1alpha",
+  "services": {
+    "AlphaAnalyticsData": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AlphaAnalyticsDataClient",
+          "rpcs": {
+            "BatchRunPivotReports": {
+              "methods": ["batchRunPivotReports", "batchRunPivotReportsCallable"]
+            },
+            "BatchRunReports": {
+              "methods": ["batchRunReports", "batchRunReportsCallable"]
+            },
+            "GetMetadata": {
+              "methods": ["getMetadata", "getMetadata", "getMetadata", "getMetadataCallable"]
+            },
+            "RunPivotReport": {
+              "methods": ["runPivotReport", "runPivotReportCallable"]
+            },
+            "RunRealtimeReport": {
+              "methods": ["runRealtimeReport", "runRealtimeReportCallable"]
+            },
+            "RunReport": {
+              "methods": ["runReport", "runReportCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

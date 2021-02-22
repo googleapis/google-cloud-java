@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-analytics-data.git",
-        "sha": "8d8ef0299b4cad666485cd556d43d6e0fb1271f7"
+        "sha": "44a96d0276127da97c719c463eb4602ed9ffd483"
       }
     },
     {
       "git": {
         "name": "googleapis-gen",
         "remote": "https://github.com/googleapis/googleapis-gen.git",
-        "sha": "452439e51b89a97d6f056a4300b0e32753a0fadd",
-        "internalRef": "357800868"
+        "sha": "9d14cd16d94886f7f10a243e1b5a6876946f32bb",
+        "internalRef": "358516065"
       }
     },
     {
@@ -92,6 +92,7 @@
     "codecov.yaml",
     "google-analytics-data/src/main/java/com/google/analytics/data/v1alpha/AlphaAnalyticsDataClient.java",
     "google-analytics-data/src/main/java/com/google/analytics/data/v1alpha/AlphaAnalyticsDataSettings.java",
+    "google-analytics-data/src/main/java/com/google/analytics/data/v1alpha/gapic_metadata.json",
     "google-analytics-data/src/main/java/com/google/analytics/data/v1alpha/package-info.java",
     "google-analytics-data/src/main/java/com/google/analytics/data/v1alpha/stub/AlphaAnalyticsDataStub.java",
     "google-analytics-data/src/main/java/com/google/analytics/data/v1alpha/stub/AlphaAnalyticsDataStubSettings.java",
