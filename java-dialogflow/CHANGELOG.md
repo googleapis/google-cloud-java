@@ -1,5 +1,33 @@
 # Changelog
 
+## [2.5.0](https://www.github.com/googleapis/java-dialogflow/compare/v2.4.6...v2.5.0) (2021-02-22)
+
+
+### Features
+
+* add support for regionalization for documents, allow custom to specify webhook headers through query parameters ([#406](https://www.github.com/googleapis/java-dialogflow/issues/406)) ([a5a3c5a](https://www.github.com/googleapis/java-dialogflow/commit/a5a3c5a378ba61f2bbff8772c3c20cd8f9a51a50))
+* added support for regionalization for document API ([a5a3c5a](https://www.github.com/googleapis/java-dialogflow/commit/a5a3c5a378ba61f2bbff8772c3c20cd8f9a51a50))
+* allowed custom to specify webhook headers through query parameters ([a5a3c5a](https://www.github.com/googleapis/java-dialogflow/commit/a5a3c5a378ba61f2bbff8772c3c20cd8f9a51a50))
+* **v2:** add additional_bindings to Dialogflow v2beta1 ListIntents API ([#440](https://www.github.com/googleapis/java-dialogflow/issues/440)) ([de0c880](https://www.github.com/googleapis/java-dialogflow/commit/de0c8804c9d48b6c61aa295a34574fc07398d5c8))
+* **v2beta1:** add additional_bindings to Dialogflow v2beta1 ListIntents API ([de0c880](https://www.github.com/googleapis/java-dialogflow/commit/de0c8804c9d48b6c61aa295a34574fc07398d5c8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#439](https://www.github.com/googleapis/java-dialogflow/issues/439)) ([931a5a7](https://www.github.com/googleapis/java-dialogflow/commit/931a5a7d29e4d66b5e482475be1e1e16619792ea))
+
+
+### Documentation
+
+* clarified voice selection params names ([ccbd3e6](https://www.github.com/googleapis/java-dialogflow/commit/ccbd3e68a8cff4672285d5365ffd0764ccc730e8))
+* generate sample code in the Java microgenerator ([ccbd3e6](https://www.github.com/googleapis/java-dialogflow/commit/ccbd3e68a8cff4672285d5365ffd0764ccc730e8))
+* restructured AudioConfig API ([a5a3c5a](https://www.github.com/googleapis/java-dialogflow/commit/a5a3c5a378ba61f2bbff8772c3c20cd8f9a51a50))
+* suggested to always use version for production traffic when calling DetectIntent, mark match_mode in Agent message as deprecated ([a5a3c5a](https://www.github.com/googleapis/java-dialogflow/commit/a5a3c5a378ba61f2bbff8772c3c20cd8f9a51a50))
+* suggested to always use version for production traffic when calling DetectIntent.marked match_mode in Agent message as deprecated ([a5a3c5a](https://www.github.com/googleapis/java-dialogflow/commit/a5a3c5a378ba61f2bbff8772c3c20cd8f9a51a50))
+* update comments on parameters and validation result. ([ccbd3e6](https://www.github.com/googleapis/java-dialogflow/commit/ccbd3e68a8cff4672285d5365ffd0764ccc730e8))
+* **v2beta1:** update copyrights and session docs ([de0c880](https://www.github.com/googleapis/java-dialogflow/commit/de0c8804c9d48b6c61aa295a34574fc07398d5c8))
+* **v2:** update copyrights and session docs ([de0c880](https://www.github.com/googleapis/java-dialogflow/commit/de0c8804c9d48b6c61aa295a34574fc07398d5c8))
+
 ### [2.4.6](https://www.github.com/googleapis/java-dialogflow/compare/v2.4.5...v2.4.6) (2021-01-27)
 
 
