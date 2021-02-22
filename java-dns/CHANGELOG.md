@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-dns/compare/v1.0.8...v1.1.0) (2021-02-22)
+
+
+### Features
+
+* add supports of labels while creating managed zone ([#289](https://www.github.com/googleapis/java-dns/issues/289)) ([47b687f](https://www.github.com/googleapis/java-dns/commit/47b687f2aeadc25f24c0c9401be8062b87527580))
+* expose DNSSEC options of ManagedZones ([#276](https://www.github.com/googleapis/java-dns/issues/276)) ([b3bdbd1](https://www.github.com/googleapis/java-dns/commit/b3bdbd1f9e1e593264908dcc913866c5876e1197))
+
+
+### Bug Fixes
+
+* don't log downloads ([#318](https://www.github.com/googleapis/java-dns/issues/318)) ([0b7cb06](https://www.github.com/googleapis/java-dns/commit/0b7cb06e30a8cd9e413375961701952acdb87e5e))
+* update repo name ([#312](https://www.github.com/googleapis/java-dns/issues/312)) ([83cbd61](https://www.github.com/googleapis/java-dns/commit/83cbd610763b5010c9748094cbb8e3dbaceec11c))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-dns to v1-rev20210204-1.31.0 ([#315](https://www.github.com/googleapis/java-dns/issues/315)) ([29f0414](https://www.github.com/googleapis/java-dns/commit/29f0414b91b8922c87dbfe47ed7ea9ca3f8e0c90))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.18.0 ([#298](https://www.github.com/googleapis/java-dns/issues/298)) ([7da3244](https://www.github.com/googleapis/java-dns/commit/7da324461b3848acc66af7efbb827422a456ebdd))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#319](https://www.github.com/googleapis/java-dns/issues/319)) ([e2da544](https://www.github.com/googleapis/java-dns/commit/e2da544fdd62017f21fc78e93dcfa296e83829fa))
+* update dependency com.google.errorprone:error_prone_annotations to v2.5.1 ([#299](https://www.github.com/googleapis/java-dns/issues/299)) ([4919dcc](https://www.github.com/googleapis/java-dns/commit/4919dcc394a85b75d504b50167417d76c4a0a80a))
+
 ### [1.0.8](https://www.github.com/googleapis/java-dns/compare/v1.0.7...v1.0.8) (2020-12-16)
 
 
