@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigqueryconnection.git",
-        "sha": "dcda48e9aa8dbb6b7314b79cb48837b8c54b9ecb"
+        "sha": "98ee3cf4a022efaf53ad0d29a96ae68509ac5232"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -115,6 +115,7 @@
     "codecov.yaml",
     "google-cloud-bigqueryconnection/src/main/java/com/google/cloud/bigquery/connection/v1beta1/ConnectionServiceClient.java",
     "google-cloud-bigqueryconnection/src/main/java/com/google/cloud/bigquery/connection/v1beta1/ConnectionServiceSettings.java",
+    "google-cloud-bigqueryconnection/src/main/java/com/google/cloud/bigquery/connection/v1beta1/gapic_metadata.json",
     "google-cloud-bigqueryconnection/src/main/java/com/google/cloud/bigquery/connection/v1beta1/package-info.java",
     "google-cloud-bigqueryconnection/src/main/java/com/google/cloud/bigquery/connection/v1beta1/stub/ConnectionServiceStub.java",
     "google-cloud-bigqueryconnection/src/main/java/com/google/cloud/bigquery/connection/v1beta1/stub/ConnectionServiceStubSettings.java",
@@ -122,6 +123,7 @@
     "google-cloud-bigqueryconnection/src/main/java/com/google/cloud/bigquery/connection/v1beta1/stub/GrpcConnectionServiceStub.java",
     "google-cloud-bigqueryconnection/src/main/java/com/google/cloud/bigqueryconnection/v1/ConnectionServiceClient.java",
     "google-cloud-bigqueryconnection/src/main/java/com/google/cloud/bigqueryconnection/v1/ConnectionServiceSettings.java",
+    "google-cloud-bigqueryconnection/src/main/java/com/google/cloud/bigqueryconnection/v1/gapic_metadata.json",
     "google-cloud-bigqueryconnection/src/main/java/com/google/cloud/bigqueryconnection/v1/package-info.java",
     "google-cloud-bigqueryconnection/src/main/java/com/google/cloud/bigqueryconnection/v1/stub/ConnectionServiceStub.java",
     "google-cloud-bigqueryconnection/src/main/java/com/google/cloud/bigqueryconnection/v1/stub/ConnectionServiceStubSettings.java",
