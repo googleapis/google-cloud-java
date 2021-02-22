@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-game-servers.git",
-        "sha": "90985e944ec3b0e41e1e417c5eb382486471c327"
+        "sha": "8f38bc7631f1bdbf474ff9b71b3d76be40d902d9"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -126,6 +126,7 @@
     "google-cloud-game-servers/src/main/java/com/google/cloud/gaming/v1/GameServerDeploymentsServiceSettings.java",
     "google-cloud-game-servers/src/main/java/com/google/cloud/gaming/v1/RealmsServiceClient.java",
     "google-cloud-game-servers/src/main/java/com/google/cloud/gaming/v1/RealmsServiceSettings.java",
+    "google-cloud-game-servers/src/main/java/com/google/cloud/gaming/v1/gapic_metadata.json",
     "google-cloud-game-servers/src/main/java/com/google/cloud/gaming/v1/package-info.java",
     "google-cloud-game-servers/src/main/java/com/google/cloud/gaming/v1/stub/GameServerClustersServiceStub.java",
     "google-cloud-game-servers/src/main/java/com/google/cloud/gaming/v1/stub/GameServerClustersServiceStubSettings.java",
@@ -151,6 +152,7 @@
     "google-cloud-game-servers/src/main/java/com/google/cloud/gaming/v1beta/GameServerDeploymentsServiceSettings.java",
     "google-cloud-game-servers/src/main/java/com/google/cloud/gaming/v1beta/RealmsServiceClient.java",
     "google-cloud-game-servers/src/main/java/com/google/cloud/gaming/v1beta/RealmsServiceSettings.java",
+    "google-cloud-game-servers/src/main/java/com/google/cloud/gaming/v1beta/gapic_metadata.json",
     "google-cloud-game-servers/src/main/java/com/google/cloud/gaming/v1beta/package-info.java",
     "google-cloud-game-servers/src/main/java/com/google/cloud/gaming/v1beta/stub/GameServerClustersServiceStub.java",
     "google-cloud-game-servers/src/main/java/com/google/cloud/gaming/v1beta/stub/GameServerClustersServiceStubSettings.java",
