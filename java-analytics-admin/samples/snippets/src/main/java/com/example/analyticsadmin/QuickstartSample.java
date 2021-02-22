@@ -77,7 +77,7 @@ public class QuickstartSample {
         for (Account account : page.iterateAll()) {
           System.out.printf("Account name: %s%n", account.getName());
           System.out.printf("Display name: %s%n", account.getDisplayName());
-          System.out.printf("Country code: %s%n", account.getCountryCode());
+          System.out.printf("Country code: %s%n", account.getRegionCode());
           System.out.printf("Create time: %s%n", account.getCreateTime().getSeconds());
           System.out.printf("Update time: %s%n", account.getUpdateTime().getSeconds());
           System.out.println();
