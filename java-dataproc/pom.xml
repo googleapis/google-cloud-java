@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataproc-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.1.11-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
+  <version>1.2.0</version><!-- {x-version-update:google-cloud-dataproc:current} -->
   <name>Google Cloud Dataproc Parent</name>
   <url>https://github.com/googleapis/java-dataproc</url>
   <description>
@@ -70,27 +70,27 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataproc-v1beta2</artifactId>
-        <version>0.89.11-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-v1beta2:current} -->
+        <version>0.90.0</version><!-- {x-version-update:proto-google-cloud-dataproc-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataproc-v1</artifactId>
-        <version>1.1.11-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-v1:current} -->
+        <version>1.2.0</version><!-- {x-version-update:proto-google-cloud-dataproc-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataproc-v1</artifactId>
-        <version>1.1.11-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-v1:current} -->
+        <version>1.2.0</version><!-- {x-version-update:grpc-google-cloud-dataproc-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataproc-v1beta2</artifactId>
-        <version>0.89.11-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-v1beta2:current} -->
+        <version>0.90.0</version><!-- {x-version-update:grpc-google-cloud-dataproc-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataproc</artifactId>
-        <version>1.1.11-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
+        <version>1.2.0</version><!-- {x-version-update:google-cloud-dataproc:current} -->
       </dependency>
 
       <dependency>
