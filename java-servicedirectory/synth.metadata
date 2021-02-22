@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-servicedirectory.git",
-        "sha": "c483b8d6de0cdfc71d6d3ee4595aa65b866b8a79"
+        "sha": "ebe396ac12512b05fcc95011f87005dcba947e58"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -122,6 +122,7 @@
     "google-cloud-servicedirectory/src/main/java/com/google/cloud/servicedirectory/v1/LookupServiceSettings.java",
     "google-cloud-servicedirectory/src/main/java/com/google/cloud/servicedirectory/v1/RegistrationServiceClient.java",
     "google-cloud-servicedirectory/src/main/java/com/google/cloud/servicedirectory/v1/RegistrationServiceSettings.java",
+    "google-cloud-servicedirectory/src/main/java/com/google/cloud/servicedirectory/v1/gapic_metadata.json",
     "google-cloud-servicedirectory/src/main/java/com/google/cloud/servicedirectory/v1/package-info.java",
     "google-cloud-servicedirectory/src/main/java/com/google/cloud/servicedirectory/v1/stub/GrpcLookupServiceCallableFactory.java",
     "google-cloud-servicedirectory/src/main/java/com/google/cloud/servicedirectory/v1/stub/GrpcLookupServiceStub.java",
@@ -135,6 +136,7 @@
     "google-cloud-servicedirectory/src/main/java/com/google/cloud/servicedirectory/v1beta1/LookupServiceSettings.java",
     "google-cloud-servicedirectory/src/main/java/com/google/cloud/servicedirectory/v1beta1/RegistrationServiceClient.java",
     "google-cloud-servicedirectory/src/main/java/com/google/cloud/servicedirectory/v1beta1/RegistrationServiceSettings.java",
+    "google-cloud-servicedirectory/src/main/java/com/google/cloud/servicedirectory/v1beta1/gapic_metadata.json",
     "google-cloud-servicedirectory/src/main/java/com/google/cloud/servicedirectory/v1beta1/package-info.java",
     "google-cloud-servicedirectory/src/main/java/com/google/cloud/servicedirectory/v1beta1/stub/GrpcLookupServiceCallableFactory.java",
     "google-cloud-servicedirectory/src/main/java/com/google/cloud/servicedirectory/v1beta1/stub/GrpcLookupServiceStub.java",
