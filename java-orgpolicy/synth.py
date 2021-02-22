@@ -14,18 +14,30 @@
 
 """This script is used to synthesize generated parts of this library."""
 
+import synthtool as s
+import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
 service = 'orgpolicy'
 versions = ['v1']
 
+gapic = gcp.GAPICBazel()
+
 for version in versions:
-  java.bazel_library(
+  library = gapic.java_library(
     service=service,
     version=version,
     proto_path=f'google/cloud/orgpolicy/{version}',
     bazel_target=f'//google/cloud/orgpolicy/{version}:google-cloud-orgpolicy-{version}-java',
   )
+  library = library / f"google-cloud-orgpolicy-{version}-java"
+  java.fix_proto_headers(library / f"proto-google-cloud-orgpolicy-{version}-java")
+  s.copy(
+    [library / f"proto-google-cloud-orgpolicy-{version}-java/src"],
+    f"proto-google-cloud-orgpolicy-{version}/src",
+    required=True,
+  )
+  java.format_code(f"proto-google-cloud-orgpolicy-{version}/src")
 
 java.common_templates(excludes=[
   'README.md',
