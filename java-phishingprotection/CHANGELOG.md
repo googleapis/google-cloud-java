@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.29.14](https://www.github.com/googleapis/java-phishingprotection/compare/v0.29.13...v0.29.14) (2021-02-22)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#356](https://www.github.com/googleapis/java-phishingprotection/issues/356)) ([c711b82](https://www.github.com/googleapis/java-phishingprotection/commit/c711b82835993f2b34498c3392bd94fdf50089b5))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#367](https://www.github.com/googleapis/java-phishingprotection/issues/367)) ([d62fcc3](https://www.github.com/googleapis/java-phishingprotection/commit/d62fcc326b36a7002a13b60c1e7d6937d7256c53))
+
 ### [0.29.13](https://www.github.com/googleapis/java-phishingprotection/compare/v0.29.12...v0.29.13) (2021-01-14)
 
 
