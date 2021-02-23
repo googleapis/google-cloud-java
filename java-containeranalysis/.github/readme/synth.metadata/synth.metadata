@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-containeranalysis.git",
-        "sha": "874915cb9c8f42c1e56824cd4a8de44affbc7dc9"
+        "sha": "d7f8a70b25e04b92507636bf70697e6ec0ff952b"
       }
     },
     {
