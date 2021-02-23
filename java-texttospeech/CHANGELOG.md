@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.2.9](https://www.github.com/googleapis/java-texttospeech/compare/v1.2.8...v1.2.9) (2021-02-22)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#363](https://www.github.com/googleapis/java-texttospeech/issues/363)) ([7f9ecc0](https://www.github.com/googleapis/java-texttospeech/commit/7f9ecc02051f4d140c741fe11c5583caefd942e0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#374](https://www.github.com/googleapis/java-texttospeech/issues/374)) ([e7c32cb](https://www.github.com/googleapis/java-texttospeech/commit/e7c32cb1fbef3d0a5f736d9d6696ad48fbfa0872))
+
 ### [1.2.8](https://www.github.com/googleapis/java-texttospeech/compare/v1.2.7...v1.2.8) (2021-01-14)
 
 
