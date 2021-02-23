@@ -1,5 +1,23 @@
 # Changelog
 
+### [1.95.8](https://www.github.com/googleapis/java-translate/compare/v1.95.7...v1.95.8) (2021-02-22)
+
+
+### Bug Fixes
+
+* downcase translated text in Integration Test ([#425](https://www.github.com/googleapis/java-translate/issues/425)) ([b165906](https://www.github.com/googleapis/java-translate/commit/b1659062bffcbbc4f930584e1545394619d83c64))
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#413](https://www.github.com/googleapis/java-translate/issues/413)) ([8c42215](https://www.github.com/googleapis/java-translate/commit/8c422152567b5b974d5824fe6cefaec64fcbce24))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.94.1 ([#409](https://www.github.com/googleapis/java-translate/issues/409)) ([8a40a6e](https://www.github.com/googleapis/java-translate/commit/8a40a6ec80b3a23d10f9fbac620e7e3454c934af))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#431](https://www.github.com/googleapis/java-translate/issues/431)) ([91ea78b](https://www.github.com/googleapis/java-translate/commit/91ea78bd9bcc535dd8eabad721ed2039e49148f8))
+
 ### [1.95.7](https://www.github.com/googleapis/java-translate/compare/v1.95.6...v1.95.7) (2021-01-25)
 
 
