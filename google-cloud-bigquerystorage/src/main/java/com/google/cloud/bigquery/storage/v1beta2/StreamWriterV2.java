@@ -22,6 +22,7 @@ import com.google.cloud.bigquery.storage.v1beta2.StreamConnection.RequestCallbac
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.Uninterruptibles;
 import io.grpc.Status;
+import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
 import java.util.Deque;
 import java.util.LinkedList;
@@ -38,8 +39,6 @@ import javax.annotation.concurrent.GuardedBy;
  * <p>TODO: Add credential support.
  *
  * <p>TODO: Attach schema.
- *
- * <p>TODO: Add max size check.
  *
  * <p>TODO: Add inflight control.
  *
@@ -93,6 +92,11 @@ public class StreamWriterV2 implements AutoCloseable {
    * A separate thread to handle actual communication with server.
    */
   private Thread appendThread;
+
+  /** The maximum size of one request. Defined by the API. */
+  public static long getApiMaxRequestBytes() {
+    return 8L * 1000L * 1000L; // 8 megabytes (https://en.wikipedia.org/wiki/Megabyte)
+  }
 
   private StreamWriterV2(Builder builder) {
     this.lock = new ReentrantLock();
@@ -154,6 +158,17 @@ public class StreamWriterV2 implements AutoCloseable {
    */
   public ApiFuture<AppendRowsResponse> append(AppendRowsRequest message) {
     AppendRequestAndResponse requestWrapper = new AppendRequestAndResponse(message);
+    if (requestWrapper.messageSize > getApiMaxRequestBytes()) {
+      requestWrapper.appendResult.setException(
+          new StatusRuntimeException(
+              Status.fromCode(Code.INVALID_ARGUMENT)
+                  .withDescription(
+                      "MessageSize is too large. Max allow: "
+                          + getApiMaxRequestBytes()
+                          + " Actual: "
+                          + requestWrapper.messageSize)));
+      return requestWrapper.appendResult;
+    }
     this.lock.lock();
     try {
       if (userClosed) {
@@ -355,10 +370,12 @@ public class StreamWriterV2 implements AutoCloseable {
   private static final class AppendRequestAndResponse {
     final SettableApiFuture<AppendRowsResponse> appendResult;
     final AppendRowsRequest message;
+    final long messageSize;
 
     AppendRequestAndResponse(AppendRowsRequest message) {
       this.appendResult = SettableApiFuture.create();
       this.message = message;
+      this.messageSize = message.getProtoRows().getSerializedSize();
     }
   }
 }
