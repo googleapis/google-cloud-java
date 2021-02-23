@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.40.7](https://www.github.com/googleapis/java-kms/compare/v1.40.6...v1.40.7) (2021-02-22)
+
+
+### Bug Fixes
+
+* do not retry on 13 INTERNAL ([#396](https://www.github.com/googleapis/java-kms/issues/396)) ([ea2f95a](https://www.github.com/googleapis/java-kms/commit/ea2f95a02af7de0c6a867b44aa3ec31fd7a0dac2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#404](https://www.github.com/googleapis/java-kms/issues/404)) ([4ab1137](https://www.github.com/googleapis/java-kms/commit/4ab113762461c079777eb617909aaf57a446f1cc))
+
 ### [1.40.6](https://www.github.com/googleapis/java-kms/compare/v1.40.5...v1.40.6) (2021-01-14)
 
 
