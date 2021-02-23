@@ -1,0 +1,192 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.dialogflow.v2",
+  "libraryPackage": "com.google.cloud.dialogflow.v2",
+  "services": {
+    "Agents": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AgentsClient",
+          "rpcs": {
+            "DeleteAgent": {
+              "methods": ["deleteAgent", "deleteAgent", "deleteAgent", "deleteAgentCallable"]
+            },
+            "ExportAgent": {
+              "methods": ["exportAgentAsync", "exportAgentAsync", "exportAgentAsync", "exportAgentOperationCallable", "exportAgentCallable"]
+            },
+            "GetAgent": {
+              "methods": ["getAgent", "getAgent", "getAgent", "getAgentCallable"]
+            },
+            "GetValidationResult": {
+              "methods": ["getValidationResult", "getValidationResultCallable"]
+            },
+            "ImportAgent": {
+              "methods": ["importAgentAsync", "importAgentOperationCallable", "importAgentCallable"]
+            },
+            "RestoreAgent": {
+              "methods": ["restoreAgentAsync", "restoreAgentOperationCallable", "restoreAgentCallable"]
+            },
+            "SearchAgents": {
+              "methods": ["searchAgents", "searchAgents", "searchAgents", "searchAgentsPagedCallable", "searchAgentsCallable"]
+            },
+            "SetAgent": {
+              "methods": ["setAgent", "setAgent", "setAgentCallable"]
+            },
+            "TrainAgent": {
+              "methods": ["trainAgentAsync", "trainAgentAsync", "trainAgentAsync", "trainAgentOperationCallable", "trainAgentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Contexts": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ContextsClient",
+          "rpcs": {
+            "CreateContext": {
+              "methods": ["createContext", "createContext", "createContext", "createContextCallable"]
+            },
+            "DeleteAllContexts": {
+              "methods": ["deleteAllContexts", "deleteAllContexts", "deleteAllContexts", "deleteAllContextsCallable"]
+            },
+            "DeleteContext": {
+              "methods": ["deleteContext", "deleteContext", "deleteContext", "deleteContextCallable"]
+            },
+            "GetContext": {
+              "methods": ["getContext", "getContext", "getContext", "getContextCallable"]
+            },
+            "ListContexts": {
+              "methods": ["listContexts", "listContexts", "listContexts", "listContextsPagedCallable", "listContextsCallable"]
+            },
+            "UpdateContext": {
+              "methods": ["updateContext", "updateContext", "updateContextCallable"]
+            }
+          }
+        }
+      }
+    },
+    "EntityTypes": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EntityTypesClient",
+          "rpcs": {
+            "BatchCreateEntities": {
+              "methods": ["batchCreateEntitiesAsync", "batchCreateEntitiesAsync", "batchCreateEntitiesAsync", "batchCreateEntitiesAsync", "batchCreateEntitiesAsync", "batchCreateEntitiesOperationCallable", "batchCreateEntitiesCallable"]
+            },
+            "BatchDeleteEntities": {
+              "methods": ["batchDeleteEntitiesAsync", "batchDeleteEntitiesAsync", "batchDeleteEntitiesAsync", "batchDeleteEntitiesAsync", "batchDeleteEntitiesAsync", "batchDeleteEntitiesOperationCallable", "batchDeleteEntitiesCallable"]
+            },
+            "BatchDeleteEntityTypes": {
+              "methods": ["batchDeleteEntityTypesAsync", "batchDeleteEntityTypesAsync", "batchDeleteEntityTypesAsync", "batchDeleteEntityTypesOperationCallable", "batchDeleteEntityTypesCallable"]
+            },
+            "BatchUpdateEntities": {
+              "methods": ["batchUpdateEntitiesAsync", "batchUpdateEntitiesAsync", "batchUpdateEntitiesAsync", "batchUpdateEntitiesAsync", "batchUpdateEntitiesAsync", "batchUpdateEntitiesOperationCallable", "batchUpdateEntitiesCallable"]
+            },
+            "BatchUpdateEntityTypes": {
+              "methods": ["batchUpdateEntityTypesAsync", "batchUpdateEntityTypesOperationCallable", "batchUpdateEntityTypesCallable"]
+            },
+            "CreateEntityType": {
+              "methods": ["createEntityType", "createEntityType", "createEntityType", "createEntityType", "createEntityType", "createEntityTypeCallable"]
+            },
+            "DeleteEntityType": {
+              "methods": ["deleteEntityType", "deleteEntityType", "deleteEntityType", "deleteEntityTypeCallable"]
+            },
+            "GetEntityType": {
+              "methods": ["getEntityType", "getEntityType", "getEntityType", "getEntityType", "getEntityType", "getEntityTypeCallable"]
+            },
+            "ListEntityTypes": {
+              "methods": ["listEntityTypes", "listEntityTypes", "listEntityTypes", "listEntityTypes", "listEntityTypes", "listEntityTypesPagedCallable", "listEntityTypesCallable"]
+            },
+            "UpdateEntityType": {
+              "methods": ["updateEntityType", "updateEntityType", "updateEntityType", "updateEntityTypeCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Environments": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EnvironmentsClient",
+          "rpcs": {
+            "ListEnvironments": {
+              "methods": ["listEnvironments", "listEnvironmentsPagedCallable", "listEnvironmentsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Intents": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "IntentsClient",
+          "rpcs": {
+            "BatchDeleteIntents": {
+              "methods": ["batchDeleteIntentsAsync", "batchDeleteIntentsAsync", "batchDeleteIntentsAsync", "batchDeleteIntentsOperationCallable", "batchDeleteIntentsCallable"]
+            },
+            "BatchUpdateIntents": {
+              "methods": ["batchUpdateIntentsAsync", "batchUpdateIntentsAsync", "batchUpdateIntentsAsync", "batchUpdateIntentsAsync", "batchUpdateIntentsAsync", "batchUpdateIntentsOperationCallable", "batchUpdateIntentsCallable"]
+            },
+            "CreateIntent": {
+              "methods": ["createIntent", "createIntent", "createIntent", "createIntent", "createIntent", "createIntentCallable"]
+            },
+            "DeleteIntent": {
+              "methods": ["deleteIntent", "deleteIntent", "deleteIntent", "deleteIntentCallable"]
+            },
+            "GetIntent": {
+              "methods": ["getIntent", "getIntent", "getIntent", "getIntent", "getIntent", "getIntentCallable"]
+            },
+            "ListIntents": {
+              "methods": ["listIntents", "listIntents", "listIntents", "listIntents", "listIntents", "listIntentsPagedCallable", "listIntentsCallable"]
+            },
+            "UpdateIntent": {
+              "methods": ["updateIntent", "updateIntent", "updateIntent", "updateIntentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Sessions": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SessionsClient",
+          "rpcs": {
+            "DetectIntent": {
+              "methods": ["detectIntent", "detectIntent", "detectIntent", "detectIntentCallable"]
+            },
+            "StreamingDetectIntent": {
+              "methods": ["streamingDetectIntentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SessionEntityTypes": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SessionEntityTypesClient",
+          "rpcs": {
+            "CreateSessionEntityType": {
+              "methods": ["createSessionEntityType", "createSessionEntityType", "createSessionEntityType", "createSessionEntityTypeCallable"]
+            },
+            "DeleteSessionEntityType": {
+              "methods": ["deleteSessionEntityType", "deleteSessionEntityType", "deleteSessionEntityType", "deleteSessionEntityTypeCallable"]
+            },
+            "GetSessionEntityType": {
+              "methods": ["getSessionEntityType", "getSessionEntityType", "getSessionEntityType", "getSessionEntityTypeCallable"]
+            },
+            "ListSessionEntityTypes": {
+              "methods": ["listSessionEntityTypes", "listSessionEntityTypes", "listSessionEntityTypes", "listSessionEntityTypesPagedCallable", "listSessionEntityTypesCallable"]
+            },
+            "UpdateSessionEntityType": {
+              "methods": ["updateSessionEntityType", "updateSessionEntityType", "updateSessionEntityType", "updateSessionEntityTypeCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

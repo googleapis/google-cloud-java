@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dialogflow.git",
-        "sha": "931a5a7d29e4d66b5e482475be1e1e16619792ea"
+        "sha": "ca27321d26db11c1632676696800bea15e0effa3"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "54020365f5a790dcff0bbcff5643adea2a199ccb",
-        "internalRef": "358315519"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "54020365f5a790dcff0bbcff5643adea2a199ccb",
-        "internalRef": "358315519"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -132,6 +132,7 @@
     "google-cloud-dialogflow/src/main/java/com/google/cloud/dialogflow/v2/SessionEntityTypesSettings.java",
     "google-cloud-dialogflow/src/main/java/com/google/cloud/dialogflow/v2/SessionsClient.java",
     "google-cloud-dialogflow/src/main/java/com/google/cloud/dialogflow/v2/SessionsSettings.java",
+    "google-cloud-dialogflow/src/main/java/com/google/cloud/dialogflow/v2/gapic_metadata.json",
     "google-cloud-dialogflow/src/main/java/com/google/cloud/dialogflow/v2/package-info.java",
     "google-cloud-dialogflow/src/main/java/com/google/cloud/dialogflow/v2/stub/AgentsStub.java",
     "google-cloud-dialogflow/src/main/java/com/google/cloud/dialogflow/v2/stub/AgentsStubSettings.java",
@@ -179,6 +180,7 @@
     "google-cloud-dialogflow/src/main/java/com/google/cloud/dialogflow/v2beta1/SessionEntityTypesSettings.java",
     "google-cloud-dialogflow/src/main/java/com/google/cloud/dialogflow/v2beta1/SessionsClient.java",
     "google-cloud-dialogflow/src/main/java/com/google/cloud/dialogflow/v2beta1/SessionsSettings.java",
+    "google-cloud-dialogflow/src/main/java/com/google/cloud/dialogflow/v2beta1/gapic_metadata.json",
     "google-cloud-dialogflow/src/main/java/com/google/cloud/dialogflow/v2beta1/package-info.java",
     "google-cloud-dialogflow/src/main/java/com/google/cloud/dialogflow/v2beta1/stub/AgentsStub.java",
     "google-cloud-dialogflow/src/main/java/com/google/cloud/dialogflow/v2beta1/stub/AgentsStubSettings.java",
