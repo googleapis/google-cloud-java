@@ -211,15 +211,17 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    * Optional. An expression for filtering the results of the request. For field names
    * both snake_case and camelCase are supported.
    *   * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID,
-   *     i.e. the last segment of the Endpoint's [resource name][google.cloud.aiplatform.v1beta1.Endpoint.name].
-   *   * `display_name` supports = and, !=
+   *     ie. the last segment of the Endpoint's [resource name][google.cloud.aiplatform.v1beta1.Endpoint.name].
+   *   * `display_name` supports =, != and regex()
+   *             (uses [re2](https://github.com/google/re2/wiki/Syntax) syntax)
    *   * `labels` supports general map functions that is:
-   *     * `labels.key=value` - key:value equality
-   *     * `labels.key:* or labels:key - key existence
-   *     * A key including a space must be quoted. `labels."a key"`.
+   *             `labels.key=value` - key:value equality
+   *             `labels.key:* or labels:key - key existence
+   *              A key including a space must be quoted. `labels."a key"`.
    * Some examples:
    *   * `endpoint=1`
    *   * `displayName="myDisplayName"`
+   *   * `regex(display_name, "^A") -&gt; The display name starts with an A.
    *   * `labels.myKey="myValue"`
    * </pre>
    *
@@ -246,15 +248,17 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    * Optional. An expression for filtering the results of the request. For field names
    * both snake_case and camelCase are supported.
    *   * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID,
-   *     i.e. the last segment of the Endpoint's [resource name][google.cloud.aiplatform.v1beta1.Endpoint.name].
-   *   * `display_name` supports = and, !=
+   *     ie. the last segment of the Endpoint's [resource name][google.cloud.aiplatform.v1beta1.Endpoint.name].
+   *   * `display_name` supports =, != and regex()
+   *             (uses [re2](https://github.com/google/re2/wiki/Syntax) syntax)
    *   * `labels` supports general map functions that is:
-   *     * `labels.key=value` - key:value equality
-   *     * `labels.key:* or labels:key - key existence
-   *     * A key including a space must be quoted. `labels."a key"`.
+   *             `labels.key=value` - key:value equality
+   *             `labels.key:* or labels:key - key existence
+   *              A key including a space must be quoted. `labels."a key"`.
    * Some examples:
    *   * `endpoint=1`
    *   * `displayName="myDisplayName"`
+   *   * `regex(display_name, "^A") -&gt; The display name starts with an A.
    *   * `labels.myKey="myValue"`
    * </pre>
    *
@@ -920,15 +924,17 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * Optional. An expression for filtering the results of the request. For field names
      * both snake_case and camelCase are supported.
      *   * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID,
-     *     i.e. the last segment of the Endpoint's [resource name][google.cloud.aiplatform.v1beta1.Endpoint.name].
-     *   * `display_name` supports = and, !=
+     *     ie. the last segment of the Endpoint's [resource name][google.cloud.aiplatform.v1beta1.Endpoint.name].
+     *   * `display_name` supports =, != and regex()
+     *             (uses [re2](https://github.com/google/re2/wiki/Syntax) syntax)
      *   * `labels` supports general map functions that is:
-     *     * `labels.key=value` - key:value equality
-     *     * `labels.key:* or labels:key - key existence
-     *     * A key including a space must be quoted. `labels."a key"`.
+     *             `labels.key=value` - key:value equality
+     *             `labels.key:* or labels:key - key existence
+     *              A key including a space must be quoted. `labels."a key"`.
      * Some examples:
      *   * `endpoint=1`
      *   * `displayName="myDisplayName"`
+     *   * `regex(display_name, "^A") -&gt; The display name starts with an A.
      *   * `labels.myKey="myValue"`
      * </pre>
      *
@@ -954,15 +960,17 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * Optional. An expression for filtering the results of the request. For field names
      * both snake_case and camelCase are supported.
      *   * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID,
-     *     i.e. the last segment of the Endpoint's [resource name][google.cloud.aiplatform.v1beta1.Endpoint.name].
-     *   * `display_name` supports = and, !=
+     *     ie. the last segment of the Endpoint's [resource name][google.cloud.aiplatform.v1beta1.Endpoint.name].
+     *   * `display_name` supports =, != and regex()
+     *             (uses [re2](https://github.com/google/re2/wiki/Syntax) syntax)
      *   * `labels` supports general map functions that is:
-     *     * `labels.key=value` - key:value equality
-     *     * `labels.key:* or labels:key - key existence
-     *     * A key including a space must be quoted. `labels."a key"`.
+     *             `labels.key=value` - key:value equality
+     *             `labels.key:* or labels:key - key existence
+     *              A key including a space must be quoted. `labels."a key"`.
      * Some examples:
      *   * `endpoint=1`
      *   * `displayName="myDisplayName"`
+     *   * `regex(display_name, "^A") -&gt; The display name starts with an A.
      *   * `labels.myKey="myValue"`
      * </pre>
      *
@@ -988,15 +996,17 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * Optional. An expression for filtering the results of the request. For field names
      * both snake_case and camelCase are supported.
      *   * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID,
-     *     i.e. the last segment of the Endpoint's [resource name][google.cloud.aiplatform.v1beta1.Endpoint.name].
-     *   * `display_name` supports = and, !=
+     *     ie. the last segment of the Endpoint's [resource name][google.cloud.aiplatform.v1beta1.Endpoint.name].
+     *   * `display_name` supports =, != and regex()
+     *             (uses [re2](https://github.com/google/re2/wiki/Syntax) syntax)
      *   * `labels` supports general map functions that is:
-     *     * `labels.key=value` - key:value equality
-     *     * `labels.key:* or labels:key - key existence
-     *     * A key including a space must be quoted. `labels."a key"`.
+     *             `labels.key=value` - key:value equality
+     *             `labels.key:* or labels:key - key existence
+     *              A key including a space must be quoted. `labels."a key"`.
      * Some examples:
      *   * `endpoint=1`
      *   * `displayName="myDisplayName"`
+     *   * `regex(display_name, "^A") -&gt; The display name starts with an A.
      *   * `labels.myKey="myValue"`
      * </pre>
      *
@@ -1021,15 +1031,17 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * Optional. An expression for filtering the results of the request. For field names
      * both snake_case and camelCase are supported.
      *   * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID,
-     *     i.e. the last segment of the Endpoint's [resource name][google.cloud.aiplatform.v1beta1.Endpoint.name].
-     *   * `display_name` supports = and, !=
+     *     ie. the last segment of the Endpoint's [resource name][google.cloud.aiplatform.v1beta1.Endpoint.name].
+     *   * `display_name` supports =, != and regex()
+     *             (uses [re2](https://github.com/google/re2/wiki/Syntax) syntax)
      *   * `labels` supports general map functions that is:
-     *     * `labels.key=value` - key:value equality
-     *     * `labels.key:* or labels:key - key existence
-     *     * A key including a space must be quoted. `labels."a key"`.
+     *             `labels.key=value` - key:value equality
+     *             `labels.key:* or labels:key - key existence
+     *              A key including a space must be quoted. `labels."a key"`.
      * Some examples:
      *   * `endpoint=1`
      *   * `displayName="myDisplayName"`
+     *   * `regex(display_name, "^A") -&gt; The display name starts with an A.
      *   * `labels.myKey="myValue"`
      * </pre>
      *
@@ -1050,15 +1062,17 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * Optional. An expression for filtering the results of the request. For field names
      * both snake_case and camelCase are supported.
      *   * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID,
-     *     i.e. the last segment of the Endpoint's [resource name][google.cloud.aiplatform.v1beta1.Endpoint.name].
-     *   * `display_name` supports = and, !=
+     *     ie. the last segment of the Endpoint's [resource name][google.cloud.aiplatform.v1beta1.Endpoint.name].
+     *   * `display_name` supports =, != and regex()
+     *             (uses [re2](https://github.com/google/re2/wiki/Syntax) syntax)
      *   * `labels` supports general map functions that is:
-     *     * `labels.key=value` - key:value equality
-     *     * `labels.key:* or labels:key - key existence
-     *     * A key including a space must be quoted. `labels."a key"`.
+     *             `labels.key=value` - key:value equality
+     *             `labels.key:* or labels:key - key existence
+     *              A key including a space must be quoted. `labels."a key"`.
      * Some examples:
      *   * `endpoint=1`
      *   * `displayName="myDisplayName"`
+     *   * `regex(display_name, "^A") -&gt; The display name starts with an A.
      *   * `labels.myKey="myValue"`
      * </pre>
      *

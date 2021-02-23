@@ -105,7 +105,6 @@ public class JobServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -155,7 +154,6 @@ public class JobServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -205,7 +203,6 @@ public class JobServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -252,7 +249,6 @@ public class JobServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -546,7 +542,6 @@ public class JobServiceClientTest {
             .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllSpecialistPools(new ArrayList<String>())
-            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setActiveLearningConfig(ActiveLearningConfig.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
@@ -605,7 +600,6 @@ public class JobServiceClientTest {
             .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllSpecialistPools(new ArrayList<String>())
-            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setActiveLearningConfig(ActiveLearningConfig.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
@@ -664,7 +658,6 @@ public class JobServiceClientTest {
             .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllSpecialistPools(new ArrayList<String>())
-            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setActiveLearningConfig(ActiveLearningConfig.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
@@ -721,7 +714,6 @@ public class JobServiceClientTest {
             .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllSpecialistPools(new ArrayList<String>())
-            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setActiveLearningConfig(ActiveLearningConfig.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
@@ -1027,7 +1019,6 @@ public class JobServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -1088,7 +1079,6 @@ public class JobServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -1149,7 +1139,6 @@ public class JobServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -1207,7 +1196,6 @@ public class JobServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -1522,7 +1510,6 @@ public class JobServiceClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -1586,7 +1573,6 @@ public class JobServiceClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -1650,7 +1636,6 @@ public class JobServiceClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -1713,7 +1698,6 @@ public class JobServiceClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 

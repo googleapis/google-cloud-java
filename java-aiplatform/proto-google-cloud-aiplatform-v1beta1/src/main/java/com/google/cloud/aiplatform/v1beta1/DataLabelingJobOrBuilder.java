@@ -692,51 +692,7 @@ public interface DataLabelingJobOrBuilder
    *
    *
    * <pre>
-   * Customer-managed encryption key spec for a DataLabelingJob. If set, this
-   * DataLabelingJob will be secured by this key.
-   * Note: Annotations created in the DataLabelingJob are associated with
-   * the EncryptionSpec of the Dataset they are exported to.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 20;</code>
-   *
-   * @return Whether the encryptionSpec field is set.
-   */
-  boolean hasEncryptionSpec();
-  /**
-   *
-   *
-   * <pre>
-   * Customer-managed encryption key spec for a DataLabelingJob. If set, this
-   * DataLabelingJob will be secured by this key.
-   * Note: Annotations created in the DataLabelingJob are associated with
-   * the EncryptionSpec of the Dataset they are exported to.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 20;</code>
-   *
-   * @return The encryptionSpec.
-   */
-  com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
-  /**
-   *
-   *
-   * <pre>
-   * Customer-managed encryption key spec for a DataLabelingJob. If set, this
-   * DataLabelingJob will be secured by this key.
-   * Note: Annotations created in the DataLabelingJob are associated with
-   * the EncryptionSpec of the Dataset they are exported to.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 20;</code>
-   */
-  com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Parameters that configure active learning pipeline. Active learning will
+   * Paramaters that configure active learning pipeline. Active learning will
    * label the data incrementally via several iterations. For every iteration,
    * it will select a batch of data based on the sampling strategy.
    * </pre>
@@ -750,7 +706,7 @@ public interface DataLabelingJobOrBuilder
    *
    *
    * <pre>
-   * Parameters that configure active learning pipeline. Active learning will
+   * Paramaters that configure active learning pipeline. Active learning will
    * label the data incrementally via several iterations. For every iteration,
    * it will select a batch of data based on the sampling strategy.
    * </pre>
@@ -764,7 +720,7 @@ public interface DataLabelingJobOrBuilder
    *
    *
    * <pre>
-   * Parameters that configure active learning pipeline. Active learning will
+   * Paramaters that configure active learning pipeline. Active learning will
    * label the data incrementally via several iterations. For every iteration,
    * it will select a batch of data based on the sampling strategy.
    * </pre>

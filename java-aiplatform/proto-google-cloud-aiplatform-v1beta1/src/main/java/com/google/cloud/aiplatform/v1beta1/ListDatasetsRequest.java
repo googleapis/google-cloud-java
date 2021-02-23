@@ -216,17 +216,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * An expression for filtering the results of the request. For field names
-   * both snake_case and camelCase are supported.
-   *   * `display_name`: supports = and !=
-   *   * `metadata_schema_uri`: supports = and !=
-   *   * `labels` supports general map functions that is:
-   *     * `labels.key=value` - key:value equality
-   *     * `labels.key:* or labels:key - key existence
-   *     * A key including a space must be quoted. `labels."a key"`.
-   * Some examples:
-   *   * `displayName="myDisplayName"`
-   *   * `labels.myKey="myValue"`
+   * The standard list filter.
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -249,17 +239,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * An expression for filtering the results of the request. For field names
-   * both snake_case and camelCase are supported.
-   *   * `display_name`: supports = and !=
-   *   * `metadata_schema_uri`: supports = and !=
-   *   * `labels` supports general map functions that is:
-   *     * `labels.key=value` - key:value equality
-   *     * `labels.key:* or labels:key - key existence
-   *     * A key including a space must be quoted. `labels."a key"`.
-   * Some examples:
-   *   * `displayName="myDisplayName"`
-   *   * `labels.myKey="myValue"`
+   * The standard list filter.
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -402,7 +382,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
    * Use "desc" after a field name for descending.
    * Supported fields:
    *   * `display_name`
-   *   * `create_time`
+   *   * `data_item_count`   * `create_time`
    *   * `update_time`
    * </pre>
    *
@@ -430,7 +410,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
    * Use "desc" after a field name for descending.
    * Supported fields:
    *   * `display_name`
-   *   * `create_time`
+   *   * `data_item_count`   * `create_time`
    *   * `update_time`
    * </pre>
    *
@@ -987,17 +967,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * An expression for filtering the results of the request. For field names
-     * both snake_case and camelCase are supported.
-     *   * `display_name`: supports = and !=
-     *   * `metadata_schema_uri`: supports = and !=
-     *   * `labels` supports general map functions that is:
-     *     * `labels.key=value` - key:value equality
-     *     * `labels.key:* or labels:key - key existence
-     *     * A key including a space must be quoted. `labels."a key"`.
-     * Some examples:
-     *   * `displayName="myDisplayName"`
-     *   * `labels.myKey="myValue"`
+     * The standard list filter.
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -1019,17 +989,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * An expression for filtering the results of the request. For field names
-     * both snake_case and camelCase are supported.
-     *   * `display_name`: supports = and !=
-     *   * `metadata_schema_uri`: supports = and !=
-     *   * `labels` supports general map functions that is:
-     *     * `labels.key=value` - key:value equality
-     *     * `labels.key:* or labels:key - key existence
-     *     * A key including a space must be quoted. `labels."a key"`.
-     * Some examples:
-     *   * `displayName="myDisplayName"`
-     *   * `labels.myKey="myValue"`
+     * The standard list filter.
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -1051,17 +1011,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * An expression for filtering the results of the request. For field names
-     * both snake_case and camelCase are supported.
-     *   * `display_name`: supports = and !=
-     *   * `metadata_schema_uri`: supports = and !=
-     *   * `labels` supports general map functions that is:
-     *     * `labels.key=value` - key:value equality
-     *     * `labels.key:* or labels:key - key existence
-     *     * A key including a space must be quoted. `labels."a key"`.
-     * Some examples:
-     *   * `displayName="myDisplayName"`
-     *   * `labels.myKey="myValue"`
+     * The standard list filter.
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -1082,17 +1032,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * An expression for filtering the results of the request. For field names
-     * both snake_case and camelCase are supported.
-     *   * `display_name`: supports = and !=
-     *   * `metadata_schema_uri`: supports = and !=
-     *   * `labels` supports general map functions that is:
-     *     * `labels.key=value` - key:value equality
-     *     * `labels.key:* or labels:key - key existence
-     *     * A key including a space must be quoted. `labels."a key"`.
-     * Some examples:
-     *   * `displayName="myDisplayName"`
-     *   * `labels.myKey="myValue"`
+     * The standard list filter.
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -1109,17 +1049,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * An expression for filtering the results of the request. For field names
-     * both snake_case and camelCase are supported.
-     *   * `display_name`: supports = and !=
-     *   * `metadata_schema_uri`: supports = and !=
-     *   * `labels` supports general map functions that is:
-     *     * `labels.key=value` - key:value equality
-     *     * `labels.key:* or labels:key - key existence
-     *     * A key including a space must be quoted. `labels."a key"`.
-     * Some examples:
-     *   * `displayName="myDisplayName"`
-     *   * `labels.myKey="myValue"`
+     * The standard list filter.
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -1484,7 +1414,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      * Use "desc" after a field name for descending.
      * Supported fields:
      *   * `display_name`
-     *   * `create_time`
+     *   * `data_item_count`   * `create_time`
      *   * `update_time`
      * </pre>
      *
@@ -1511,7 +1441,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      * Use "desc" after a field name for descending.
      * Supported fields:
      *   * `display_name`
-     *   * `create_time`
+     *   * `data_item_count`   * `create_time`
      *   * `update_time`
      * </pre>
      *
@@ -1538,7 +1468,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      * Use "desc" after a field name for descending.
      * Supported fields:
      *   * `display_name`
-     *   * `create_time`
+     *   * `data_item_count`   * `create_time`
      *   * `update_time`
      * </pre>
      *
@@ -1564,7 +1494,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      * Use "desc" after a field name for descending.
      * Supported fields:
      *   * `display_name`
-     *   * `create_time`
+     *   * `data_item_count`   * `create_time`
      *   * `update_time`
      * </pre>
      *
@@ -1586,7 +1516,7 @@ public final class ListDatasetsRequest extends com.google.protobuf.GeneratedMess
      * Use "desc" after a field name for descending.
      * Supported fields:
      *   * `display_name`
-     *   * `create_time`
+     *   * `data_item_count`   * `create_time`
      *   * `update_time`
      * </pre>
      *

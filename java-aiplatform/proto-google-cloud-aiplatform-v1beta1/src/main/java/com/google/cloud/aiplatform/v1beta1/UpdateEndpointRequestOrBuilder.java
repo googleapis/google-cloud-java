@@ -69,8 +69,6 @@ public interface UpdateEndpointRequestOrBuilder
    *
    * <pre>
    * Required. The update mask applies to the resource.
-   * See
-   * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -84,8 +82,6 @@ public interface UpdateEndpointRequestOrBuilder
    *
    * <pre>
    * Required. The update mask applies to the resource.
-   * See
-   * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -99,8 +95,6 @@ public interface UpdateEndpointRequestOrBuilder
    *
    * <pre>
    * Required. The update mask applies to the resource.
-   * See
-   * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];

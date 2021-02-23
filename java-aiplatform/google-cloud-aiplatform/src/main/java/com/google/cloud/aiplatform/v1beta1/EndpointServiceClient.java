@@ -96,7 +96,7 @@ import javax.annotation.Generated;
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
-@Generated("by gapic-generator-java")
+@Generated("by gapic-generator")
 public class EndpointServiceClient implements BackgroundResource {
   private final EndpointServiceSettings settings;
   private final EndpointServiceStub stub;
@@ -342,8 +342,7 @@ public class EndpointServiceClient implements BackgroundResource {
    * Updates an Endpoint.
    *
    * @param endpoint Required. The Endpoint which replaces the resource on the server.
-   * @param updateMask Required. The update mask applies to the resource. See
-   *     [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+   * @param updateMask Required. The update mask applies to the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Endpoint updateEndpoint(Endpoint endpoint, FieldMask updateMask) {

@@ -41,8 +41,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     metrics_ = java.util.Collections.emptyList();
     parameters_ = java.util.Collections.emptyList();
     algorithm_ = 0;
-    observationNoise_ = 0;
-    measurementSelectionType_ = 0;
   }
 
   @java.lang.Override
@@ -108,20 +106,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               int rawValue = input.readEnum();
 
               algorithm_ = rawValue;
-              break;
-            }
-          case 48:
-            {
-              int rawValue = input.readEnum();
-
-              observationNoise_ = rawValue;
-              break;
-            }
-          case 56:
-            {
-              int rawValue = input.readEnum();
-
-              measurementSelectionType_ = rawValue;
               break;
             }
           default:
@@ -321,345 +305,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.StudySpec.Algorithm)
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Describes the noise level of the repeated observations.
-   * "Noisy" means that the repeated observations with the same Trial parameters
-   * may lead to different metric evaluations.
-   * </pre>
-   *
-   * Protobuf enum {@code google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise}
-   */
-  public enum ObservationNoise implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     *
-     *
-     * <pre>
-     * The default noise level chosen by the AI Platform service.
-     * </pre>
-     *
-     * <code>OBSERVATION_NOISE_UNSPECIFIED = 0;</code>
-     */
-    OBSERVATION_NOISE_UNSPECIFIED(0),
-    /**
-     *
-     *
-     * <pre>
-     * AI Platform Vizier assumes that the objective function is (nearly)
-     * perfectly reproducible, and will never repeat the same Trial
-     * parameters.
-     * </pre>
-     *
-     * <code>LOW = 1;</code>
-     */
-    LOW(1),
-    /**
-     *
-     *
-     * <pre>
-     * AI Platform Vizier will estimate the amount of noise in metric
-     * evaluations, it may repeat the same Trial parameters more than once.
-     * </pre>
-     *
-     * <code>HIGH = 2;</code>
-     */
-    HIGH(2),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     *
-     *
-     * <pre>
-     * The default noise level chosen by the AI Platform service.
-     * </pre>
-     *
-     * <code>OBSERVATION_NOISE_UNSPECIFIED = 0;</code>
-     */
-    public static final int OBSERVATION_NOISE_UNSPECIFIED_VALUE = 0;
-    /**
-     *
-     *
-     * <pre>
-     * AI Platform Vizier assumes that the objective function is (nearly)
-     * perfectly reproducible, and will never repeat the same Trial
-     * parameters.
-     * </pre>
-     *
-     * <code>LOW = 1;</code>
-     */
-    public static final int LOW_VALUE = 1;
-    /**
-     *
-     *
-     * <pre>
-     * AI Platform Vizier will estimate the amount of noise in metric
-     * evaluations, it may repeat the same Trial parameters more than once.
-     * </pre>
-     *
-     * <code>HIGH = 2;</code>
-     */
-    public static final int HIGH_VALUE = 2;
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static ObservationNoise valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static ObservationNoise forNumber(int value) {
-      switch (value) {
-        case 0:
-          return OBSERVATION_NOISE_UNSPECIFIED;
-        case 1:
-          return LOW;
-        case 2:
-          return HIGH;
-        default:
-          return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<ObservationNoise> internalGetValueMap() {
-      return internalValueMap;
-    }
-
-    private static final com.google.protobuf.Internal.EnumLiteMap<ObservationNoise>
-        internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<ObservationNoise>() {
-              public ObservationNoise findValueByNumber(int number) {
-                return ObservationNoise.forNumber(number);
-              }
-            };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-
-    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
-      return getDescriptor();
-    }
-
-    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.aiplatform.v1beta1.StudySpec.getDescriptor().getEnumTypes().get(1);
-    }
-
-    private static final ObservationNoise[] VALUES = values();
-
-    public static ObservationNoise valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private ObservationNoise(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise)
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * This indicates which measurement to use if/when the service automatically
-   * selects the final measurement from previously reported intermediate
-   * measurements. Choose this based on two considerations:
-   *  A) Do you expect your measurements to monotonically improve?
-   *     If so, choose LAST_MEASUREMENT. On the other hand, if you're in a
-   *     situation where your system can "over-train" and you expect the
-   *     performance to get better for a while but then start declining,
-   *     choose BEST_MEASUREMENT.
-   *  B) Are your measurements significantly noisy and/or irreproducible?
-   *     If so, BEST_MEASUREMENT will tend to be over-optimistic, and it
-   *     may be better to choose LAST_MEASUREMENT.
-   *  If both or neither of (A) and (B) apply, it doesn't matter which
-   *  selection type is chosen.
-   * </pre>
-   *
-   * Protobuf enum {@code google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType}
-   */
-  public enum MeasurementSelectionType implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     *
-     *
-     * <pre>
-     * Will be treated as LAST_MEASUREMENT.
-     * </pre>
-     *
-     * <code>MEASUREMENT_SELECTION_TYPE_UNSPECIFIED = 0;</code>
-     */
-    MEASUREMENT_SELECTION_TYPE_UNSPECIFIED(0),
-    /**
-     *
-     *
-     * <pre>
-     * Use the last measurement reported.
-     * </pre>
-     *
-     * <code>LAST_MEASUREMENT = 1;</code>
-     */
-    LAST_MEASUREMENT(1),
-    /**
-     *
-     *
-     * <pre>
-     * Use the best measurement reported.
-     * </pre>
-     *
-     * <code>BEST_MEASUREMENT = 2;</code>
-     */
-    BEST_MEASUREMENT(2),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     *
-     *
-     * <pre>
-     * Will be treated as LAST_MEASUREMENT.
-     * </pre>
-     *
-     * <code>MEASUREMENT_SELECTION_TYPE_UNSPECIFIED = 0;</code>
-     */
-    public static final int MEASUREMENT_SELECTION_TYPE_UNSPECIFIED_VALUE = 0;
-    /**
-     *
-     *
-     * <pre>
-     * Use the last measurement reported.
-     * </pre>
-     *
-     * <code>LAST_MEASUREMENT = 1;</code>
-     */
-    public static final int LAST_MEASUREMENT_VALUE = 1;
-    /**
-     *
-     *
-     * <pre>
-     * Use the best measurement reported.
-     * </pre>
-     *
-     * <code>BEST_MEASUREMENT = 2;</code>
-     */
-    public static final int BEST_MEASUREMENT_VALUE = 2;
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static MeasurementSelectionType valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static MeasurementSelectionType forNumber(int value) {
-      switch (value) {
-        case 0:
-          return MEASUREMENT_SELECTION_TYPE_UNSPECIFIED;
-        case 1:
-          return LAST_MEASUREMENT;
-        case 2:
-          return BEST_MEASUREMENT;
-        default:
-          return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<MeasurementSelectionType>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-
-    private static final com.google.protobuf.Internal.EnumLiteMap<MeasurementSelectionType>
-        internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<MeasurementSelectionType>() {
-              public MeasurementSelectionType findValueByNumber(int number) {
-                return MeasurementSelectionType.forNumber(number);
-              }
-            };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-
-    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
-      return getDescriptor();
-    }
-
-    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.aiplatform.v1beta1.StudySpec.getDescriptor().getEnumTypes().get(2);
-    }
-
-    private static final MeasurementSelectionType[] VALUES = values();
-
-    public static MeasurementSelectionType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private MeasurementSelectionType(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType)
   }
 
   public interface MetricSpecOrBuilder
@@ -13334,92 +12979,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
-  public static final int OBSERVATION_NOISE_FIELD_NUMBER = 6;
-  private int observationNoise_;
-  /**
-   *
-   *
-   * <pre>
-   * The observation noise level of the study.
-   * Currently only supported by the Vizier service. Not supported by
-   * HyperparamterTuningJob or TrainingPipeline.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise observation_noise = 6;</code>
-   *
-   * @return The enum numeric value on the wire for observationNoise.
-   */
-  @java.lang.Override
-  public int getObservationNoiseValue() {
-    return observationNoise_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The observation noise level of the study.
-   * Currently only supported by the Vizier service. Not supported by
-   * HyperparamterTuningJob or TrainingPipeline.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise observation_noise = 6;</code>
-   *
-   * @return The observationNoise.
-   */
-  @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise getObservationNoise() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise result =
-        com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise.valueOf(observationNoise_);
-    return result == null
-        ? com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise.UNRECOGNIZED
-        : result;
-  }
-
-  public static final int MEASUREMENT_SELECTION_TYPE_FIELD_NUMBER = 7;
-  private int measurementSelectionType_;
-  /**
-   *
-   *
-   * <pre>
-   * Describe which measurement selection type will be used
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType measurement_selection_type = 7;
-   * </code>
-   *
-   * @return The enum numeric value on the wire for measurementSelectionType.
-   */
-  @java.lang.Override
-  public int getMeasurementSelectionTypeValue() {
-    return measurementSelectionType_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Describe which measurement selection type will be used
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType measurement_selection_type = 7;
-   * </code>
-   *
-   * @return The measurementSelectionType.
-   */
-  @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType
-      getMeasurementSelectionType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType result =
-        com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType.valueOf(
-            measurementSelectionType_);
-    return result == null
-        ? com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType.UNRECOGNIZED
-        : result;
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -13445,18 +13004,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(3, algorithm_);
     }
-    if (observationNoise_
-        != com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise
-            .OBSERVATION_NOISE_UNSPECIFIED
-            .getNumber()) {
-      output.writeEnum(6, observationNoise_);
-    }
-    if (measurementSelectionType_
-        != com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType
-            .MEASUREMENT_SELECTION_TYPE_UNSPECIFIED
-            .getNumber()) {
-      output.writeEnum(7, measurementSelectionType_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -13477,18 +13024,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, algorithm_);
     }
-    if (observationNoise_
-        != com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise
-            .OBSERVATION_NOISE_UNSPECIFIED
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, observationNoise_);
-    }
-    if (measurementSelectionType_
-        != com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType
-            .MEASUREMENT_SELECTION_TYPE_UNSPECIFIED
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, measurementSelectionType_);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -13508,8 +13043,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     if (!getMetricsList().equals(other.getMetricsList())) return false;
     if (!getParametersList().equals(other.getParametersList())) return false;
     if (algorithm_ != other.algorithm_) return false;
-    if (observationNoise_ != other.observationNoise_) return false;
-    if (measurementSelectionType_ != other.measurementSelectionType_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -13531,10 +13064,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ALGORITHM_FIELD_NUMBER;
     hash = (53 * hash) + algorithm_;
-    hash = (37 * hash) + OBSERVATION_NOISE_FIELD_NUMBER;
-    hash = (53 * hash) + observationNoise_;
-    hash = (37 * hash) + MEASUREMENT_SELECTION_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + measurementSelectionType_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -13697,10 +13226,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
       algorithm_ = 0;
 
-      observationNoise_ = 0;
-
-      measurementSelectionType_ = 0;
-
       return this;
     }
 
@@ -13748,8 +13273,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         result.parameters_ = parametersBuilder_.build();
       }
       result.algorithm_ = algorithm_;
-      result.observationNoise_ = observationNoise_;
-      result.measurementSelectionType_ = measurementSelectionType_;
       onBuilt();
       return result;
     }
@@ -13855,12 +13378,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.algorithm_ != 0) {
         setAlgorithmValue(other.getAlgorithmValue());
-      }
-      if (other.observationNoise_ != 0) {
-        setObservationNoiseValue(other.getObservationNoiseValue());
-      }
-      if (other.measurementSelectionType_ != 0) {
-        setMeasurementSelectionTypeValue(other.getMeasurementSelectionTypeValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -14785,221 +14302,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAlgorithm() {
 
       algorithm_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int observationNoise_ = 0;
-    /**
-     *
-     *
-     * <pre>
-     * The observation noise level of the study.
-     * Currently only supported by the Vizier service. Not supported by
-     * HyperparamterTuningJob or TrainingPipeline.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise observation_noise = 6;
-     * </code>
-     *
-     * @return The enum numeric value on the wire for observationNoise.
-     */
-    @java.lang.Override
-    public int getObservationNoiseValue() {
-      return observationNoise_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The observation noise level of the study.
-     * Currently only supported by the Vizier service. Not supported by
-     * HyperparamterTuningJob or TrainingPipeline.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise observation_noise = 6;
-     * </code>
-     *
-     * @param value The enum numeric value on the wire for observationNoise to set.
-     * @return This builder for chaining.
-     */
-    public Builder setObservationNoiseValue(int value) {
-
-      observationNoise_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The observation noise level of the study.
-     * Currently only supported by the Vizier service. Not supported by
-     * HyperparamterTuningJob or TrainingPipeline.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise observation_noise = 6;
-     * </code>
-     *
-     * @return The observationNoise.
-     */
-    @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise getObservationNoise() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise result =
-          com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise.valueOf(observationNoise_);
-      return result == null
-          ? com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The observation noise level of the study.
-     * Currently only supported by the Vizier service. Not supported by
-     * HyperparamterTuningJob or TrainingPipeline.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise observation_noise = 6;
-     * </code>
-     *
-     * @param value The observationNoise to set.
-     * @return This builder for chaining.
-     */
-    public Builder setObservationNoise(
-        com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      observationNoise_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The observation noise level of the study.
-     * Currently only supported by the Vizier service. Not supported by
-     * HyperparamterTuningJob or TrainingPipeline.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise observation_noise = 6;
-     * </code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearObservationNoise() {
-
-      observationNoise_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int measurementSelectionType_ = 0;
-    /**
-     *
-     *
-     * <pre>
-     * Describe which measurement selection type will be used
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType measurement_selection_type = 7;
-     * </code>
-     *
-     * @return The enum numeric value on the wire for measurementSelectionType.
-     */
-    @java.lang.Override
-    public int getMeasurementSelectionTypeValue() {
-      return measurementSelectionType_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Describe which measurement selection type will be used
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType measurement_selection_type = 7;
-     * </code>
-     *
-     * @param value The enum numeric value on the wire for measurementSelectionType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMeasurementSelectionTypeValue(int value) {
-
-      measurementSelectionType_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Describe which measurement selection type will be used
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType measurement_selection_type = 7;
-     * </code>
-     *
-     * @return The measurementSelectionType.
-     */
-    @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType
-        getMeasurementSelectionType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType result =
-          com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType.valueOf(
-              measurementSelectionType_);
-      return result == null
-          ? com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Describe which measurement selection type will be used
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType measurement_selection_type = 7;
-     * </code>
-     *
-     * @param value The measurementSelectionType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMeasurementSelectionType(
-        com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      measurementSelectionType_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Describe which measurement selection type will be used
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType measurement_selection_type = 7;
-     * </code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearMeasurementSelectionType() {
-
-      measurementSelectionType_ = 0;
       onChanged();
       return this;
     }

@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-aiplatform.git",
-        "sha": "e9cc050d9e492060f6bd7cb065fcc0c11e04a9bb"
+        "sha": "c49ac8463d342c141cf59af5c19f1ef7f28fd8a5"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "b416a7befcdbc42de41cf387dcf428f894fb812b"
+        "sha": "6946fd71ae9215b0e7ae188f5057df765ee6d7d2"
       }
     }
   ],
@@ -316,9 +316,6 @@
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/DeployedModelRefOrBuilder.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/DiskSpec.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/DiskSpecOrBuilder.java",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/EncryptionSpec.java",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/EncryptionSpecOrBuilder.java",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/EncryptionSpecProto.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/Endpoint.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/EndpointName.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/EndpointOrBuilder.java",
@@ -334,8 +331,6 @@
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/Explanation.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/ExplanationMetadata.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/ExplanationMetadataOrBuilder.java",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/ExplanationMetadataOverride.java",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/ExplanationMetadataOverrideOrBuilder.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/ExplanationMetadataProto.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/ExplanationOrBuilder.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/ExplanationParameters.java",
@@ -343,8 +338,6 @@
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/ExplanationProto.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/ExplanationSpec.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/ExplanationSpecOrBuilder.java",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/ExplanationSpecOverride.java",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/ExplanationSpecOverrideOrBuilder.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/ExportDataConfig.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/ExportDataConfigOrBuilder.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/ExportDataOperationMetadata.java",
@@ -549,7 +542,6 @@
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/TrainingPipelineOrBuilder.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/TrainingPipelineProto.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/Trial.java",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/TrialName.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/TrialOrBuilder.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/UndeployModelOperationMetadata.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/UndeployModelOperationMetadataOrBuilder.java",
@@ -738,7 +730,6 @@
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/dataset.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/dataset_service.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/deployed_model_ref.proto",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/encryption_spec.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/endpoint.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/endpoint_service.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/env_var.proto",

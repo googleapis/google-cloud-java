@@ -92,7 +92,7 @@ import javax.annotation.Generated;
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
-@Generated("by gapic-generator-java")
+@Generated("by gapic-generator")
 public class DatasetServiceClient implements BackgroundResource {
   private final DatasetServiceSettings settings;
   private final DatasetServiceStub stub;
@@ -276,7 +276,8 @@ public class DatasetServiceClient implements BackgroundResource {
    *
    * @param dataset Required. The Dataset which replaces the resource on the server.
    * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
-   *     definition, see [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+   *     definition, see
+   *     <p>[FieldMask](https: //tinyurl.com/dev-google-protobuf#google.protobuf.FieldMask).
    *     Updatable fields:
    *     <p>&#42; `display_name` &#42; `description` &#42; `labels`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

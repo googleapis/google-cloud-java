@@ -16,7 +16,6 @@
 
 package com.google.cloud.aiplatform.v1beta1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
@@ -42,8 +41,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage.
  */
-@BetaApi
-@Generated("by gapic-generator-java")
+@Generated("by gapic-generator")
 public class GrpcEndpointServiceCallableFactory implements GrpcStubCallableFactory {
 
   @Override

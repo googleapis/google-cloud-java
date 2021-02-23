@@ -200,66 +200,6 @@ public interface ExplainRequestOrBuilder
    *
    *
    * <pre>
-   * If specified, overrides the
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of the DeployedModel.
-   * Can be used for explaining prediction results with different
-   * configurations, such as:
-   *  - Explaining top-5 predictions results as opposed to top-1;
-   *  - Increasing path count or step count of the attribution methods to reduce
-   *    approximate errors;
-   *  - Using different baselines for explaining the prediction results.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanation_spec_override = 5;
-   * </code>
-   *
-   * @return Whether the explanationSpecOverride field is set.
-   */
-  boolean hasExplanationSpecOverride();
-  /**
-   *
-   *
-   * <pre>
-   * If specified, overrides the
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of the DeployedModel.
-   * Can be used for explaining prediction results with different
-   * configurations, such as:
-   *  - Explaining top-5 predictions results as opposed to top-1;
-   *  - Increasing path count or step count of the attribution methods to reduce
-   *    approximate errors;
-   *  - Using different baselines for explaining the prediction results.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanation_spec_override = 5;
-   * </code>
-   *
-   * @return The explanationSpecOverride.
-   */
-  com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride getExplanationSpecOverride();
-  /**
-   *
-   *
-   * <pre>
-   * If specified, overrides the
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of the DeployedModel.
-   * Can be used for explaining prediction results with different
-   * configurations, such as:
-   *  - Explaining top-5 predictions results as opposed to top-1;
-   *  - Increasing path count or step count of the attribution methods to reduce
-   *    approximate errors;
-   *  - Using different baselines for explaining the prediction results.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride explanation_spec_override = 5;
-   * </code>
-   */
-  com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverrideOrBuilder
-      getExplanationSpecOverrideOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
    * If specified, this ExplainRequest will be served by the chosen
    * DeployedModel, overriding [Endpoint.traffic_split][google.cloud.aiplatform.v1beta1.Endpoint.traffic_split].
    * </pre>

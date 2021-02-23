@@ -31,7 +31,7 @@ public interface FilterSplitOrBuilder
    * this filter are used to train the Model. A filter with same syntax
    * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
    * single DataItem is matched by more than one of the FilterSplit filters,
-   * then it is assigned to the first set that applies to it in the
+   * then it will be assigned to the first set that applies to it in the
    * training, validation, test order.
    * </pre>
    *
@@ -48,7 +48,7 @@ public interface FilterSplitOrBuilder
    * this filter are used to train the Model. A filter with same syntax
    * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
    * single DataItem is matched by more than one of the FilterSplit filters,
-   * then it is assigned to the first set that applies to it in the
+   * then it will be assigned to the first set that applies to it in the
    * training, validation, test order.
    * </pre>
    *
@@ -66,7 +66,7 @@ public interface FilterSplitOrBuilder
    * this filter are used to validate the Model. A filter with same syntax
    * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
    * single DataItem is matched by more than one of the FilterSplit filters,
-   * then it is assigned to the first set that applies to it in the
+   * then it will be assigned to the first set that applies to it in the
    * training, validation, test order.
    * </pre>
    *
@@ -83,7 +83,7 @@ public interface FilterSplitOrBuilder
    * this filter are used to validate the Model. A filter with same syntax
    * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
    * single DataItem is matched by more than one of the FilterSplit filters,
-   * then it is assigned to the first set that applies to it in the
+   * then it will be assigned to the first set that applies to it in the
    * training, validation, test order.
    * </pre>
    *
@@ -101,7 +101,7 @@ public interface FilterSplitOrBuilder
    * this filter are used to test the Model. A filter with same syntax
    * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
    * single DataItem is matched by more than one of the FilterSplit filters,
-   * then it is assigned to the first set that applies to it in the
+   * then it will be assigned to the first set that applies to it in the
    * training, validation, test order.
    * </pre>
    *
@@ -118,7 +118,7 @@ public interface FilterSplitOrBuilder
    * this filter are used to test the Model. A filter with same syntax
    * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
    * single DataItem is matched by more than one of the FilterSplit filters,
-   * then it is assigned to the first set that applies to it in the
+   * then it will be assigned to the first set that applies to it in the
    * training, validation, test order.
    * </pre>
    *

@@ -173,17 +173,17 @@ public interface InputDataConfigOrBuilder
    *
    *
    * <pre>
-   * The Cloud Storage location where the training data is to be
-   * written to. In the given directory a new directory is created with
+   * The Google Cloud Storage location where the training data is to be
+   * written to. In the given directory a new directory will be created with
    * name:
    * `dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;timestamp-of-training-call&gt;`
    * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format.
-   * All training input data is written into that directory.
-   * The AI Platform environment variables representing Cloud Storage
-   * data URIs are represented in the Cloud Storage wildcard
+   * All training input data will be written into that directory.
+   * The AI Platform environment variables representing Google Cloud Storage
+   * data URIs will always be represented in the Google Cloud Storage wildcard
    * format to support sharded data. e.g.: "gs://.../training-*.jsonl"
    * * AIP_DATA_FORMAT = "jsonl" for non-tabular data, "csv" for tabular data
-   * * AIP_TRAINING_DATA_URI =
+   * * AIP_TRAINING_DATA_URI  =
    * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/training-*.${AIP_DATA_FORMAT}"
    * * AIP_VALIDATION_DATA_URI =
    * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/validation-*.${AIP_DATA_FORMAT}"
@@ -200,17 +200,17 @@ public interface InputDataConfigOrBuilder
    *
    *
    * <pre>
-   * The Cloud Storage location where the training data is to be
-   * written to. In the given directory a new directory is created with
+   * The Google Cloud Storage location where the training data is to be
+   * written to. In the given directory a new directory will be created with
    * name:
    * `dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;timestamp-of-training-call&gt;`
    * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format.
-   * All training input data is written into that directory.
-   * The AI Platform environment variables representing Cloud Storage
-   * data URIs are represented in the Cloud Storage wildcard
+   * All training input data will be written into that directory.
+   * The AI Platform environment variables representing Google Cloud Storage
+   * data URIs will always be represented in the Google Cloud Storage wildcard
    * format to support sharded data. e.g.: "gs://.../training-*.jsonl"
    * * AIP_DATA_FORMAT = "jsonl" for non-tabular data, "csv" for tabular data
-   * * AIP_TRAINING_DATA_URI =
+   * * AIP_TRAINING_DATA_URI  =
    * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/training-*.${AIP_DATA_FORMAT}"
    * * AIP_VALIDATION_DATA_URI =
    * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/validation-*.${AIP_DATA_FORMAT}"
@@ -227,17 +227,17 @@ public interface InputDataConfigOrBuilder
    *
    *
    * <pre>
-   * The Cloud Storage location where the training data is to be
-   * written to. In the given directory a new directory is created with
+   * The Google Cloud Storage location where the training data is to be
+   * written to. In the given directory a new directory will be created with
    * name:
    * `dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;timestamp-of-training-call&gt;`
    * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format.
-   * All training input data is written into that directory.
-   * The AI Platform environment variables representing Cloud Storage
-   * data URIs are represented in the Cloud Storage wildcard
+   * All training input data will be written into that directory.
+   * The AI Platform environment variables representing Google Cloud Storage
+   * data URIs will always be represented in the Google Cloud Storage wildcard
    * format to support sharded data. e.g.: "gs://.../training-*.jsonl"
    * * AIP_DATA_FORMAT = "jsonl" for non-tabular data, "csv" for tabular data
-   * * AIP_TRAINING_DATA_URI =
+   * * AIP_TRAINING_DATA_URI  =
    * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/training-*.${AIP_DATA_FORMAT}"
    * * AIP_VALIDATION_DATA_URI =
    * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/validation-*.${AIP_DATA_FORMAT}"
@@ -253,14 +253,12 @@ public interface InputDataConfigOrBuilder
    *
    *
    * <pre>
-   * Only applicable to custom training with tabular Dataset with BigQuery
-   * source.
    * The BigQuery project location where the training data is to be written
    * to. In the given project a new dataset is created with name
    * `dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;timestamp-of-training-call&gt;`
    * where timestamp is in YYYY_MM_DDThh_mm_ss_sssZ format. All training
-   * input data is written into that dataset. In the dataset three
-   * tables are created, `training`, `validation` and `test`.
+   * input data will be written into that dataset. In the dataset three
+   * tables will be created, `training`, `validation` and `test`.
    * * AIP_DATA_FORMAT = "bigquery".
    * * AIP_TRAINING_DATA_URI  =
    * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.training"
@@ -279,14 +277,12 @@ public interface InputDataConfigOrBuilder
    *
    *
    * <pre>
-   * Only applicable to custom training with tabular Dataset with BigQuery
-   * source.
    * The BigQuery project location where the training data is to be written
    * to. In the given project a new dataset is created with name
    * `dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;timestamp-of-training-call&gt;`
    * where timestamp is in YYYY_MM_DDThh_mm_ss_sssZ format. All training
-   * input data is written into that dataset. In the dataset three
-   * tables are created, `training`, `validation` and `test`.
+   * input data will be written into that dataset. In the dataset three
+   * tables will be created, `training`, `validation` and `test`.
    * * AIP_DATA_FORMAT = "bigquery".
    * * AIP_TRAINING_DATA_URI  =
    * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.training"
@@ -305,14 +301,12 @@ public interface InputDataConfigOrBuilder
    *
    *
    * <pre>
-   * Only applicable to custom training with tabular Dataset with BigQuery
-   * source.
    * The BigQuery project location where the training data is to be written
    * to. In the given project a new dataset is created with name
    * `dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;timestamp-of-training-call&gt;`
    * where timestamp is in YYYY_MM_DDThh_mm_ss_sssZ format. All training
-   * input data is written into that dataset. In the dataset three
-   * tables are created, `training`, `validation` and `test`.
+   * input data will be written into that dataset. In the dataset three
+   * tables will be created, `training`, `validation` and `test`.
    * * AIP_DATA_FORMAT = "bigquery".
    * * AIP_TRAINING_DATA_URI  =
    * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.training"
@@ -368,7 +362,7 @@ public interface InputDataConfigOrBuilder
    *
    *
    * <pre>
-   * Applicable only to Datasets that have DataItems and Annotations.
+   * Only applicable to Datasets that have DataItems and Annotations.
    * A filter on Annotations of the Dataset. Only Annotations that both
    * match this filter and belong to DataItems not ignored by the split method
    * are used in respectively training, validation or test role, depending on
@@ -388,7 +382,7 @@ public interface InputDataConfigOrBuilder
    *
    *
    * <pre>
-   * Applicable only to Datasets that have DataItems and Annotations.
+   * Only applicable to Datasets that have DataItems and Annotations.
    * A filter on Annotations of the Dataset. Only Annotations that both
    * match this filter and belong to DataItems not ignored by the split method
    * are used in respectively training, validation or test role, depending on
@@ -409,13 +403,14 @@ public interface InputDataConfigOrBuilder
    *
    *
    * <pre>
-   * Applicable only to custom training with Datasets that have DataItems and
-   * Annotations.
-   * Cloud Storage URI that points to a YAML file describing the annotation
-   * schema. The schema is defined as an OpenAPI 3.0.2
-   * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+   * Only applicable to custom training.
+   * Google Cloud Storage URI points to a YAML file describing annotation
+   * schema. The schema is defined as an OpenAPI 3.0.2 [Schema Object](
+   * https:
+   * //github.com/OAI/OpenAPI-Specification/b
+   * // lob/master/versions/3.0.2.md#schema-object)
    * The schema files that can be used here are found in
-   * gs://google-cloud-aiplatform/schema/dataset/annotation/ , note that the
+   * gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
    * chosen schema must be consistent with
    * [metadata][google.cloud.aiplatform.v1beta1.Dataset.metadata_schema_uri] of the Dataset specified by
    * [dataset_id][google.cloud.aiplatform.v1beta1.InputDataConfig.dataset_id].
@@ -436,13 +431,14 @@ public interface InputDataConfigOrBuilder
    *
    *
    * <pre>
-   * Applicable only to custom training with Datasets that have DataItems and
-   * Annotations.
-   * Cloud Storage URI that points to a YAML file describing the annotation
-   * schema. The schema is defined as an OpenAPI 3.0.2
-   * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+   * Only applicable to custom training.
+   * Google Cloud Storage URI points to a YAML file describing annotation
+   * schema. The schema is defined as an OpenAPI 3.0.2 [Schema Object](
+   * https:
+   * //github.com/OAI/OpenAPI-Specification/b
+   * // lob/master/versions/3.0.2.md#schema-object)
    * The schema files that can be used here are found in
-   * gs://google-cloud-aiplatform/schema/dataset/annotation/ , note that the
+   * gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
    * chosen schema must be consistent with
    * [metadata][google.cloud.aiplatform.v1beta1.Dataset.metadata_schema_uri] of the Dataset specified by
    * [dataset_id][google.cloud.aiplatform.v1beta1.InputDataConfig.dataset_id].

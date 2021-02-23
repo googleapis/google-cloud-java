@@ -97,11 +97,11 @@ public interface WorkerPoolSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. Immutable. The specification of a single machine.
+   * Required. Immutable. The specification of a single machine.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the machineSpec field is set.
@@ -111,11 +111,11 @@ public interface WorkerPoolSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. Immutable. The specification of a single machine.
+   * Required. Immutable. The specification of a single machine.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The machineSpec.
@@ -125,11 +125,11 @@ public interface WorkerPoolSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. Immutable. The specification of a single machine.
+   * Required. Immutable. The specification of a single machine.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.MachineSpecOrBuilder getMachineSpecOrBuilder();
@@ -138,10 +138,10 @@ public interface WorkerPoolSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. The number of worker replicas to use for this worker pool.
+   * Required. The number of worker replicas to use for this worker pool.
    * </pre>
    *
-   * <code>int64 replica_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int64 replica_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The replicaCount.
    */

@@ -98,45 +98,4 @@ public interface SearchMigratableResourcesRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Supported filters are:
-   * * Resource type: For a specific type of MigratableResource.
-   *   * `ml_engine_model_version:*`
-   *   * `automl_model:*`,
-   *   * `automl_dataset:*`
-   *   * `data_labeling_dataset:*`.
-   * * Migrated or not: Filter migrated resource or not by last_migrate_time.
-   *   * `last_migrate_time:*` will filter migrated resources.
-   *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
-   * </pre>
-   *
-   * <code>string filter = 4;</code>
-   *
-   * @return The filter.
-   */
-  java.lang.String getFilter();
-  /**
-   *
-   *
-   * <pre>
-   * Supported filters are:
-   * * Resource type: For a specific type of MigratableResource.
-   *   * `ml_engine_model_version:*`
-   *   * `automl_model:*`,
-   *   * `automl_dataset:*`
-   *   * `data_labeling_dataset:*`.
-   * * Migrated or not: Filter migrated resource or not by last_migrate_time.
-   *   * `last_migrate_time:*` will filter migrated resources.
-   *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
-   * </pre>
-   *
-   * <code>string filter = 4;</code>
-   *
-   * @return The bytes for filter.
-   */
-  com.google.protobuf.ByteString getFilterBytes();
 }

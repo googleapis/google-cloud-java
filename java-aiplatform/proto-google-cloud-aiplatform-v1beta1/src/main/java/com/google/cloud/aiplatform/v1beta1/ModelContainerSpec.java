@@ -981,8 +981,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * container's response in the API response.
    * For example, if you set this field to `/foo`, then when AI Platform
    * receives a prediction request, it forwards the request body in a POST
-   * request to the `/foo` path on the port of your container specified by the
-   * first value of this `ModelContainerSpec`'s
+   * request to the following URL on the container:
+   * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/foo&lt;/code&gt;
+   * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
    * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
    * If you don't specify this field, it defaults to the following value when
    * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:
@@ -1027,8 +1028,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * container's response in the API response.
    * For example, if you set this field to `/foo`, then when AI Platform
    * receives a prediction request, it forwards the request body in a POST
-   * request to the `/foo` path on the port of your container specified by the
-   * first value of this `ModelContainerSpec`'s
+   * request to the following URL on the container:
+   * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/foo&lt;/code&gt;
+   * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
    * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
    * If you don't specify this field, it defaults to the following value when
    * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:
@@ -1075,8 +1077,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * [health
    * checks](https://tinyurl.com/cust-cont-reqs#checks).
    * For example, if you set this field to `/bar`, then AI Platform
-   * intermittently sends a GET request to the `/bar` path on the port of your
-   * container specified by the first value of this `ModelContainerSpec`'s
+   * intermittently sends a GET request to the following URL on the container:
+   * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/bar&lt;/code&gt;
+   * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
    * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
    * If you don't specify this field, it defaults to the following value when
    * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:
@@ -1120,8 +1123,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
    * [health
    * checks](https://tinyurl.com/cust-cont-reqs#checks).
    * For example, if you set this field to `/bar`, then AI Platform
-   * intermittently sends a GET request to the `/bar` path on the port of your
-   * container specified by the first value of this `ModelContainerSpec`'s
+   * intermittently sends a GET request to the following URL on the container:
+   * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/bar&lt;/code&gt;
+   * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
    * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
    * If you don't specify this field, it defaults to the following value when
    * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:
@@ -4179,8 +4183,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * container's response in the API response.
      * For example, if you set this field to `/foo`, then when AI Platform
      * receives a prediction request, it forwards the request body in a POST
-     * request to the `/foo` path on the port of your container specified by the
-     * first value of this `ModelContainerSpec`'s
+     * request to the following URL on the container:
+     * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/foo&lt;/code&gt;
+     * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
      * If you don't specify this field, it defaults to the following value when
      * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:
@@ -4224,8 +4229,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * container's response in the API response.
      * For example, if you set this field to `/foo`, then when AI Platform
      * receives a prediction request, it forwards the request body in a POST
-     * request to the `/foo` path on the port of your container specified by the
-     * first value of this `ModelContainerSpec`'s
+     * request to the following URL on the container:
+     * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/foo&lt;/code&gt;
+     * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
      * If you don't specify this field, it defaults to the following value when
      * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:
@@ -4269,8 +4275,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * container's response in the API response.
      * For example, if you set this field to `/foo`, then when AI Platform
      * receives a prediction request, it forwards the request body in a POST
-     * request to the `/foo` path on the port of your container specified by the
-     * first value of this `ModelContainerSpec`'s
+     * request to the following URL on the container:
+     * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/foo&lt;/code&gt;
+     * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
      * If you don't specify this field, it defaults to the following value when
      * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:
@@ -4313,8 +4320,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * container's response in the API response.
      * For example, if you set this field to `/foo`, then when AI Platform
      * receives a prediction request, it forwards the request body in a POST
-     * request to the `/foo` path on the port of your container specified by the
-     * first value of this `ModelContainerSpec`'s
+     * request to the following URL on the container:
+     * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/foo&lt;/code&gt;
+     * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
      * If you don't specify this field, it defaults to the following value when
      * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:
@@ -4353,8 +4361,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * container's response in the API response.
      * For example, if you set this field to `/foo`, then when AI Platform
      * receives a prediction request, it forwards the request body in a POST
-     * request to the `/foo` path on the port of your container specified by the
-     * first value of this `ModelContainerSpec`'s
+     * request to the following URL on the container:
+     * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/foo&lt;/code&gt;
+     * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
      * If you don't specify this field, it defaults to the following value when
      * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:
@@ -4399,8 +4408,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [health
      * checks](https://tinyurl.com/cust-cont-reqs#checks).
      * For example, if you set this field to `/bar`, then AI Platform
-     * intermittently sends a GET request to the `/bar` path on the port of your
-     * container specified by the first value of this `ModelContainerSpec`'s
+     * intermittently sends a GET request to the following URL on the container:
+     * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/bar&lt;/code&gt;
+     * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
      * If you don't specify this field, it defaults to the following value when
      * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:
@@ -4443,8 +4453,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [health
      * checks](https://tinyurl.com/cust-cont-reqs#checks).
      * For example, if you set this field to `/bar`, then AI Platform
-     * intermittently sends a GET request to the `/bar` path on the port of your
-     * container specified by the first value of this `ModelContainerSpec`'s
+     * intermittently sends a GET request to the following URL on the container:
+     * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/bar&lt;/code&gt;
+     * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
      * If you don't specify this field, it defaults to the following value when
      * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:
@@ -4487,8 +4498,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [health
      * checks](https://tinyurl.com/cust-cont-reqs#checks).
      * For example, if you set this field to `/bar`, then AI Platform
-     * intermittently sends a GET request to the `/bar` path on the port of your
-     * container specified by the first value of this `ModelContainerSpec`'s
+     * intermittently sends a GET request to the following URL on the container:
+     * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/bar&lt;/code&gt;
+     * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
      * If you don't specify this field, it defaults to the following value when
      * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:
@@ -4530,8 +4542,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [health
      * checks](https://tinyurl.com/cust-cont-reqs#checks).
      * For example, if you set this field to `/bar`, then AI Platform
-     * intermittently sends a GET request to the `/bar` path on the port of your
-     * container specified by the first value of this `ModelContainerSpec`'s
+     * intermittently sends a GET request to the following URL on the container:
+     * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/bar&lt;/code&gt;
+     * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
      * If you don't specify this field, it defaults to the following value when
      * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:
@@ -4569,8 +4582,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * [health
      * checks](https://tinyurl.com/cust-cont-reqs#checks).
      * For example, if you set this field to `/bar`, then AI Platform
-     * intermittently sends a GET request to the `/bar` path on the port of your
-     * container specified by the first value of this `ModelContainerSpec`'s
+     * intermittently sends a GET request to the following URL on the container:
+     * &lt;code&gt;localhost:&lt;var&gt;PORT&lt;/var&gt;/bar&lt;/code&gt;
+     * &lt;var&gt;PORT&lt;/var&gt; refers to the first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
      * If you don't specify this field, it defaults to the following value when
      * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel]:

@@ -18,7 +18,6 @@ package google.cloud.aiplatform.v1beta1;
 
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
-import "google/cloud/aiplatform/v1beta1/encryption_spec.proto";
 import "google/cloud/aiplatform/v1beta1/io.proto";
 import "google/cloud/aiplatform/v1beta1/machine_resources.proto";
 import "google/cloud/aiplatform/v1beta1/manual_batch_tuning_parameters.proto";
@@ -80,7 +79,7 @@ message TrainingPipeline {
   // pipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] contains `metadata` object.
   google.protobuf.Value training_task_metadata = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
+  // Describes the Model that may be uploaded (via [ModelService.UploadMode][])
   // by this TrainingPipeline. The TrainingPipeline's
   // [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
   // description should be populated, and if there are any special requirements
@@ -126,13 +125,6 @@ message TrainingPipeline {
   //
   // See https://goo.gl/xmQnxf for more information and examples of labels.
   map<string, string> labels = 15;
-
-  // Customer-managed encryption key spec for a TrainingPipeline. If set, this
-  // TrainingPipeline will be secured by this key.
-  //
-  // Note: Model trained by this TrainingPipeline is also secured by this key if
-  // [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
-  EncryptionSpec encryption_spec = 18;
 }
 
 // Specifies AI Platform owned input data to be used for training, and
@@ -167,7 +159,7 @@ message InputDataConfig {
   //   * For non-tabular data: "jsonl".
   //   * For tabular data: "csv" and "bigquery".
   //
-  // The following AI Platform environment variables are passed to containers
+  // Following AI Platform environment variables will be passed to containers
   // or python modules of the training task when this field is set:
   //
   // * AIP_DATA_FORMAT : Exported data format.
@@ -175,50 +167,43 @@ message InputDataConfig {
   // * AIP_VALIDATION_DATA_URI : Sharded exported validation data uris.
   // * AIP_TEST_DATA_URI : Sharded exported test data uris.
   oneof destination {
-    // The Cloud Storage location where the training data is to be
-    // written to. In the given directory a new directory is created with
+    // The Google Cloud Storage location where the training data is to be
+    // written to. In the given directory a new directory will be created with
     // name:
     // `dataset-<dataset-id>-<annotation-type>-<timestamp-of-training-call>`
     // where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format.
-    // All training input data is written into that directory.
+    // All training input data will be written into that directory.
     //
-    // The AI Platform environment variables representing Cloud Storage
-    // data URIs are represented in the Cloud Storage wildcard
+    // The AI Platform environment variables representing Google Cloud Storage
+    // data URIs will always be represented in the Google Cloud Storage wildcard
     // format to support sharded data. e.g.: "gs://.../training-*.jsonl"
     //
     // * AIP_DATA_FORMAT = "jsonl" for non-tabular data, "csv" for tabular data
-    // * AIP_TRAINING_DATA_URI =
+    // * AIP_TRAINING_DATA_URI  =
     //
     // "gcs_destination/dataset-<dataset-id>-<annotation-type>-<time>/training-*.${AIP_DATA_FORMAT}"
-    //
     // * AIP_VALIDATION_DATA_URI =
     //
     // "gcs_destination/dataset-<dataset-id>-<annotation-type>-<time>/validation-*.${AIP_DATA_FORMAT}"
-    //
     // * AIP_TEST_DATA_URI =
     //
     // "gcs_destination/dataset-<dataset-id>-<annotation-type>-<time>/test-*.${AIP_DATA_FORMAT}"
     GcsDestination gcs_destination = 8;
 
-    // Only applicable to custom training with tabular Dataset with BigQuery
-    // source.
-    //
     // The BigQuery project location where the training data is to be written
     // to. In the given project a new dataset is created with name
     // `dataset_<dataset-id>_<annotation-type>_<timestamp-of-training-call>`
     // where timestamp is in YYYY_MM_DDThh_mm_ss_sssZ format. All training
-    // input data is written into that dataset. In the dataset three
-    // tables are created, `training`, `validation` and `test`.
+    // input data will be written into that dataset. In the dataset three
+    // tables will be created, `training`, `validation` and `test`.
     //
     // * AIP_DATA_FORMAT = "bigquery".
     // * AIP_TRAINING_DATA_URI  =
     //
     // "bigquery_destination.dataset_<dataset-id>_<annotation-type>_<time>.training"
-    //
     // * AIP_VALIDATION_DATA_URI =
     //
     // "bigquery_destination.dataset_<dataset-id>_<annotation-type>_<time>.validation"
-    //
     // * AIP_TEST_DATA_URI =
     // "bigquery_destination.dataset_<dataset-id>_<annotation-type>_<time>.test"
     BigQueryDestination bigquery_destination = 10;
@@ -233,7 +218,7 @@ message InputDataConfig {
   // and choose from.
   string dataset_id = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Applicable only to Datasets that have DataItems and Annotations.
+  // Only applicable to Datasets that have DataItems and Annotations.
   //
   // A filter on Annotations of the Dataset. Only Annotations that both
   // match this filter and belong to DataItems not ignored by the split method
@@ -245,14 +230,16 @@ message InputDataConfig {
   // a single DataItem.
   string annotations_filter = 6;
 
-  // Applicable only to custom training with Datasets that have DataItems and
-  // Annotations.
+  // Only applicable to custom training.
   //
-  // Cloud Storage URI that points to a YAML file describing the annotation
-  // schema. The schema is defined as an OpenAPI 3.0.2
-  // [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
+  // Google Cloud Storage URI points to a YAML file describing annotation
+  // schema. The schema is defined as an OpenAPI 3.0.2 [Schema Object](
+  //
+  // https:
+  // //github.com/OAI/OpenAPI-Specification/b
+  // // lob/master/versions/3.0.2.md#schema-object)
   // The schema files that can be used here are found in
-  // gs://google-cloud-aiplatform/schema/dataset/annotation/ , note that the
+  // gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
   // chosen schema must be consistent with
   // [metadata][google.cloud.aiplatform.v1beta1.Dataset.metadata_schema_uri] of the Dataset specified by
   // [dataset_id][google.cloud.aiplatform.v1beta1.InputDataConfig.dataset_id].
@@ -272,7 +259,7 @@ message InputDataConfig {
 // `test_fraction` may optionally be provided, they must sum to up to 1. If the
 // provided ones sum to less than 1, the remainder is assigned to sets as
 // decided by AI Platform. If none of the fractions are set, by default roughly
-// 80% of data is used for training, 10% for validation, and 10% for test.
+// 80% of data will be used for training, 10% for validation, and 10% for test.
 message FractionSplit {
   // The fraction of the input data that is to be used to train the Model.
   double training_fraction = 1;
@@ -289,15 +276,12 @@ message FractionSplit {
 // supported for Datasets containing DataItems.
 // If any of the filters in this message are to match nothing, then they can be
 // set as '-' (the minus sign).
-//
-// Supported only for unstructured Datasets.
-//
 message FilterSplit {
   // Required. A filter on DataItems of the Dataset. DataItems that match
   // this filter are used to train the Model. A filter with same syntax
   // as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
   // single DataItem is matched by more than one of the FilterSplit filters,
-  // then it is assigned to the first set that applies to it in the
+  // then it will be assigned to the first set that applies to it in the
   // training, validation, test order.
   string training_filter = 1 [(google.api.field_behavior) = REQUIRED];
 
@@ -305,7 +289,7 @@ message FilterSplit {
   // this filter are used to validate the Model. A filter with same syntax
   // as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
   // single DataItem is matched by more than one of the FilterSplit filters,
-  // then it is assigned to the first set that applies to it in the
+  // then it will be assigned to the first set that applies to it in the
   // training, validation, test order.
   string validation_filter = 2 [(google.api.field_behavior) = REQUIRED];
 
@@ -313,7 +297,7 @@ message FilterSplit {
   // this filter are used to test the Model. A filter with same syntax
   // as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
   // single DataItem is matched by more than one of the FilterSplit filters,
-  // then it is assigned to the first set that applies to it in the
+  // then it will be assigned to the first set that applies to it in the
   // training, validation, test order.
   string test_filter = 3 [(google.api.field_behavior) = REQUIRED];
 }

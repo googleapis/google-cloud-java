@@ -122,7 +122,7 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of the boot disk (default is "pd-ssd").
+   * Type of the boot disk (default is "pd-standard").
    * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
    * "pd-standard" (Persistent Disk Hard Disk Drive).
    * </pre>
@@ -147,7 +147,7 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of the boot disk (default is "pd-ssd").
+   * Type of the boot disk (default is "pd-standard").
    * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
    * "pd-standard" (Persistent Disk Hard Disk Drive).
    * </pre>
@@ -523,7 +523,7 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the boot disk (default is "pd-ssd").
+     * Type of the boot disk (default is "pd-standard").
      * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      * </pre>
@@ -547,7 +547,7 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the boot disk (default is "pd-ssd").
+     * Type of the boot disk (default is "pd-standard").
      * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      * </pre>
@@ -571,7 +571,7 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the boot disk (default is "pd-ssd").
+     * Type of the boot disk (default is "pd-standard").
      * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      * </pre>
@@ -594,7 +594,7 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the boot disk (default is "pd-ssd").
+     * Type of the boot disk (default is "pd-standard").
      * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      * </pre>
@@ -613,7 +613,7 @@ public final class DiskSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the boot disk (default is "pd-ssd").
+     * Type of the boot disk (default is "pd-standard").
      * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
      * "pd-standard" (Persistent Disk Hard Disk Drive).
      * </pre>

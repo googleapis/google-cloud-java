@@ -52,7 +52,7 @@ public interface EnvVarOrBuilder
    *
    *
    * <pre>
-   * Required. Variables that reference a $(VAR_NAME) are expanded
+   * Variables that reference a $(VAR_NAME) are expanded
    * using the previous defined environment variables in the container and
    * any service environment variables. If a variable cannot be resolved,
    * the reference in the input string will be unchanged. The $(VAR_NAME)
@@ -61,7 +61,7 @@ public interface EnvVarOrBuilder
    * exists or not.
    * </pre>
    *
-   * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string value = 2;</code>
    *
    * @return The value.
    */
@@ -70,7 +70,7 @@ public interface EnvVarOrBuilder
    *
    *
    * <pre>
-   * Required. Variables that reference a $(VAR_NAME) are expanded
+   * Variables that reference a $(VAR_NAME) are expanded
    * using the previous defined environment variables in the container and
    * any service environment variables. If a variable cannot be resolved,
    * the reference in the input string will be unchanged. The $(VAR_NAME)
@@ -79,7 +79,7 @@ public interface EnvVarOrBuilder
    * exists or not.
    * </pre>
    *
-   * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string value = 2;</code>
    *
    * @return The bytes for value.
    */

@@ -71,7 +71,6 @@ import javax.annotation.Generated;
  * DatasetServiceSettings datasetServiceSettings = datasetServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class DatasetServiceSettings extends ClientSettings<DatasetServiceSettings> {
 

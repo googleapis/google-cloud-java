@@ -369,18 +369,15 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Generate explanation with the batch prediction results.
-   * When set to `true`, the batch prediction output changes based on the
-   * `predictions_format` field of the
-   * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.output_config] object:
-   *  * `bigquery`: output includes a column named `explanation`. The value
+   * Generate explanation along with the batch prediction results.
+   * When it's true, the batch prediction output will change based on the
+   * [output format][BatchPredictionJob.output_config.predictions_format]:
+   *  * `bigquery`: output will include a column named `explanation`. The value
    *    is a struct that conforms to the [Explanation][google.cloud.aiplatform.v1beta1.Explanation] object.
-   *  * `jsonl`: The JSON objects on each line include an additional entry
+   *  * `jsonl`: The JSON objects on each line will include an additional entry
    *    keyed `explanation`. The value of the entry is a JSON object that
    *    conforms to the [Explanation][google.cloud.aiplatform.v1beta1.Explanation] object.
    *  * `csv`: Generating explanations for CSV format is not supported.
-   * If this field is set to true, the [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be
-   * populated.
    * </pre>
    *
    * <code>bool generate_explanation = 23;</code>
@@ -393,12 +390,15 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Explanation configuration for this BatchPredictionJob. Can be
-   * specified only if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`.
+   * Explanation configuration for this BatchPredictionJob. Can only be
+   * specified if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`. It's invalid to
+   * specified it with generate_explanation set to false or unset.
    * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of the
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] object is not populated, the corresponding field of
-   * the [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] object is inherited.
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] is not populated, the value of the same field of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
+   * this Model is not allowed.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 25;</code>
@@ -410,12 +410,15 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Explanation configuration for this BatchPredictionJob. Can be
-   * specified only if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`.
+   * Explanation configuration for this BatchPredictionJob. Can only be
+   * specified if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`. It's invalid to
+   * specified it with generate_explanation set to false or unset.
    * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of the
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] object is not populated, the corresponding field of
-   * the [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] object is inherited.
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] is not populated, the value of the same field of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
+   * this Model is not allowed.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 25;</code>
@@ -427,12 +430,15 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Explanation configuration for this BatchPredictionJob. Can be
-   * specified only if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`.
+   * Explanation configuration for this BatchPredictionJob. Can only be
+   * specified if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`. It's invalid to
+   * specified it with generate_explanation set to false or unset.
    * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of the
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] object is not populated, the corresponding field of
-   * the [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] object is inherited.
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] is not populated, the value of the same field of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] is inherited. The corresponding
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] must be populated, otherwise explanation for
+   * this Model is not allowed.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 25;</code>
@@ -949,45 +955,4 @@ public interface BatchPredictionJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 19;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
-
-  /**
-   *
-   *
-   * <pre>
-   * Customer-managed encryption key options for a BatchPredictionJob. If this
-   * is set, then all resources created by the BatchPredictionJob will be
-   * encrypted with the provided encryption key.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
-   *
-   * @return Whether the encryptionSpec field is set.
-   */
-  boolean hasEncryptionSpec();
-  /**
-   *
-   *
-   * <pre>
-   * Customer-managed encryption key options for a BatchPredictionJob. If this
-   * is set, then all resources created by the BatchPredictionJob will be
-   * encrypted with the provided encryption key.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
-   *
-   * @return The encryptionSpec.
-   */
-  com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
-  /**
-   *
-   *
-   * <pre>
-   * Customer-managed encryption key options for a BatchPredictionJob. If this
-   * is set, then all resources created by the BatchPredictionJob will be
-   * encrypted with the provided encryption key.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
-   */
-  com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
 }

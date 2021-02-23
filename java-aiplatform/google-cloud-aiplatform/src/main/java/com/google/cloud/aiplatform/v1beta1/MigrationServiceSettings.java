@@ -68,7 +68,6 @@ import javax.annotation.Generated;
  * MigrationServiceSettings migrationServiceSettings = migrationServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class MigrationServiceSettings extends ClientSettings<MigrationServiceSettings> {
 

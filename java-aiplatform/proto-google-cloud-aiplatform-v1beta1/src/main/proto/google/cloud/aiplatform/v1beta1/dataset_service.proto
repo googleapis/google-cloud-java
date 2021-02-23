@@ -181,7 +181,9 @@ message UpdateDatasetRequest {
 
   // Required. The update mask applies to the resource.
   // For the `FieldMask` definition, see
-  // [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
+  //
+  // [FieldMask](https:
+  // //tinyurl.com/dev-google-protobuf#google.protobuf.FieldMask).
   // Updatable fields:
   //
   //   * `display_name`
@@ -201,19 +203,7 @@ message ListDatasetsRequest {
     }
   ];
 
-  // An expression for filtering the results of the request. For field names
-  // both snake_case and camelCase are supported.
-  //
-  //   * `display_name`: supports = and !=
-  //   * `metadata_schema_uri`: supports = and !=
-  //   * `labels` supports general map functions that is:
-  //     * `labels.key=value` - key:value equality
-  //     * `labels.key:* or labels:key - key existence
-  //     * A key including a space must be quoted. `labels."a key"`.
-  //
-  // Some examples:
-  //   * `displayName="myDisplayName"`
-  //   * `labels.myKey="myValue"`
+  // The standard list filter.
   string filter = 2;
 
   // The standard list page size.
@@ -229,7 +219,7 @@ message ListDatasetsRequest {
   // Use "desc" after a field name for descending.
   // Supported fields:
   //   * `display_name`
-  //   * `create_time`
+  //   * `data_item_count`   * `create_time`
   //   * `update_time`
   string order_by = 6;
 }

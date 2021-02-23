@@ -70,7 +70,6 @@ import javax.annotation.Generated;
  * ModelServiceSettings modelServiceSettings = modelServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
 

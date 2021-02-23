@@ -58,19 +58,7 @@ public interface ListModelsRequestOrBuilder
    *
    *
    * <pre>
-   * An expression for filtering the results of the request. For field names
-   * both snake_case and camelCase are supported.
-   *   * `model` supports = and !=. `model` represents the Model ID,
-   *     i.e. the last segment of the Model's [resource name][google.cloud.aiplatform.v1beta1.Model.name].
-   *   * `display_name` supports = and !=
-   *   * `labels` supports general map functions that is:
-   *     * `labels.key=value` - key:value equality
-   *     * `labels.key:* or labels:key - key existence
-   *     * A key including a space must be quoted. `labels."a key"`.
-   * Some examples:
-   *   * `model=1234`
-   *   * `displayName="myDisplayName"`
-   *   * `labels.myKey="myValue"`
+   * The standard list filter.
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -82,19 +70,7 @@ public interface ListModelsRequestOrBuilder
    *
    *
    * <pre>
-   * An expression for filtering the results of the request. For field names
-   * both snake_case and camelCase are supported.
-   *   * `model` supports = and !=. `model` represents the Model ID,
-   *     i.e. the last segment of the Model's [resource name][google.cloud.aiplatform.v1beta1.Model.name].
-   *   * `display_name` supports = and !=
-   *   * `labels` supports general map functions that is:
-   *     * `labels.key=value` - key:value equality
-   *     * `labels.key:* or labels:key - key existence
-   *     * A key including a space must be quoted. `labels."a key"`.
-   * Some examples:
-   *   * `model=1234`
-   *   * `displayName="myDisplayName"`
-   *   * `labels.myKey="myValue"`
+   * The standard list filter.
    * </pre>
    *
    * <code>string filter = 2;</code>

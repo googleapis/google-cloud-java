@@ -69,7 +69,6 @@ import javax.annotation.Generated;
  * EndpointServiceSettings endpointServiceSettings = endpointServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class EndpointServiceSettings extends ClientSettings<EndpointServiceSettings> {
 

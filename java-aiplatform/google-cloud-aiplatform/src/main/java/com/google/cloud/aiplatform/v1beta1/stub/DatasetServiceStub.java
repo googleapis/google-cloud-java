@@ -20,7 +20,6 @@ import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListAnnot
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDataItemsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDatasetsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -56,8 +55,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@BetaApi
-@Generated("by gapic-generator-java")
+@Generated("by gapic-generator")
 public abstract class DatasetServiceStub implements BackgroundResource {
 
   public OperationsStub getOperationsStub() {
