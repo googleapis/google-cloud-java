@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.10.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.9.1...v1.10.0) (2021-02-23)
+
+
+### Features
+
+* Create Stream writer v2 - starting with core logics ([#867](https://www.github.com/googleapis/java-bigquerystorage/issues/867)) ([7c01f45](https://www.github.com/googleapis/java-bigquerystorage/commit/7c01f45ded1c516c23954b88103ca80b2132ecfc))
+
+
+### Bug Fixes
+
+* Remove flushAll method ([#850](https://www.github.com/googleapis/java-bigquerystorage/issues/850)) ([33a4502](https://www.github.com/googleapis/java-bigquerystorage/commit/33a450286b999c41459f92dd0177239f2a1b1f9a))
+* temporally disable refreshAppend ([#853](https://www.github.com/googleapis/java-bigquerystorage/issues/853)) ([baf973d](https://www.github.com/googleapis/java-bigquerystorage/commit/baf973d84577cd490e275f6eebf91e25d5c34ccc))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.127.3 ([#861](https://www.github.com/googleapis/java-bigquerystorage/issues/861)) ([da95d18](https://www.github.com/googleapis/java-bigquerystorage/commit/da95d18a265950de437386870e5f1dba3be75743))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#862](https://www.github.com/googleapis/java-bigquerystorage/issues/862)) ([4e390d7](https://www.github.com/googleapis/java-bigquerystorage/commit/4e390d7f5ca80ce87bfc0be3ce4ef4a33f9735ab))
+
 ### [1.9.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.9.0...v1.9.1) (2021-02-18)
 
 
