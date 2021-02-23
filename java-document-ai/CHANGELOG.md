@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-document-ai/compare/v0.3.9...v0.4.0) (2021-02-23)
+
+
+### Features
+
+* Update documentai/v1beta3 protos ([#351](https://www.github.com/googleapis/java-document-ai/issues/351)) ([c752c99](https://www.github.com/googleapis/java-document-ai/commit/c752c99233a04bbc56c739b64a7b6cfd857e7932))
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#338](https://www.github.com/googleapis/java-document-ai/issues/338)) ([33a1eda](https://www.github.com/googleapis/java-document-ai/commit/33a1eda531d6c5d71a49976fa31bbaf0754cf83a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#354](https://www.github.com/googleapis/java-document-ai/issues/354)) ([b5cc196](https://www.github.com/googleapis/java-document-ai/commit/b5cc196ebd9b3fb4c7a2935b4adde9eb111eb140))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.10 ([#350](https://www.github.com/googleapis/java-document-ai/issues/350)) ([83c52c9](https://www.github.com/googleapis/java-document-ai/commit/83c52c9dbd63690e3e98d261a4660aa1040b51f0))
+
 ### [0.3.9](https://www.github.com/googleapis/java-document-ai/compare/v0.3.8...v0.3.9) (2021-01-14)
 
 
