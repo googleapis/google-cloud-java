@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.0.9](https://www.github.com/googleapis/java-grafeas/compare/v1.0.8...v1.0.9) (2021-02-23)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#241](https://www.github.com/googleapis/java-grafeas/issues/241)) ([06d4f00](https://www.github.com/googleapis/java-grafeas/commit/06d4f003e0195882ed80bd9ac0f2432e104a75b1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#251](https://www.github.com/googleapis/java-grafeas/issues/251)) ([aed649e](https://www.github.com/googleapis/java-grafeas/commit/aed649ec5e7430e972122e8be718046905a4d71e))
+
 ### [1.0.8](https://www.github.com/googleapis/java-grafeas/compare/v1.0.7...v1.0.8) (2021-01-14)
 
 
