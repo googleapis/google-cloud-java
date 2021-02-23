@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-bigqueryreservation/compare/v1.0.8...v1.1.0) (2021-02-23)
+
+
+### Features
+
+* generate sample code in the Java microgenerator ([#316](https://www.github.com/googleapis/java-bigqueryreservation/issues/316)) ([2906ada](https://www.github.com/googleapis/java-bigqueryreservation/commit/2906ada0df29eb094c214fd3767efe381a571406))
+
+
+### Documentation
+
+* **samples:** add quickstart sample ([#302](https://www.github.com/googleapis/java-bigqueryreservation/issues/302)) ([7199e0a](https://www.github.com/googleapis/java-bigqueryreservation/commit/7199e0a2d7f7f8b5d03a21fbae96ee7f8828c750))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#325](https://www.github.com/googleapis/java-bigqueryreservation/issues/325)) ([eec8507](https://www.github.com/googleapis/java-bigqueryreservation/commit/eec8507eaacb9ec7a83933fe1e54d4a20b8aad65))
+
 ### [1.0.8](https://www.github.com/googleapis/java-bigqueryreservation/compare/v1.0.7...v1.0.8) (2021-01-14)
 
 
