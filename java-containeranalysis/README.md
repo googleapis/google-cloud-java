@@ -51,12 +51,12 @@ compile 'com.google.cloud:google-cloud-containeranalysis'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-containeranalysis:1.2.11'
+compile 'com.google.cloud:google-cloud-containeranalysis:1.2.29'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-containeranalysis" % "1.2.11"
+libraryDependencies += "com.google.cloud" % "google-cloud-containeranalysis" % "1.2.29"
 ```
 
 ## Authentication
