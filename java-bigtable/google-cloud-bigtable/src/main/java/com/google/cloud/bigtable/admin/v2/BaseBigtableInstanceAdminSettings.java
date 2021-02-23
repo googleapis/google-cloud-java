@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigtable.admin.v2;
 
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
@@ -67,20 +68,19 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /** For internal use only. */
 @Generated("by gapic-generator")
 @InternalApi
 public class BaseBigtableInstanceAdminSettings
     extends ClientSettings<BaseBigtableInstanceAdminSettings> {
+
   /** Returns the object with the settings used for calls to createInstance. */
   public UnaryCallSettings<CreateInstanceRequest, Operation> createInstanceSettings() {
     return ((BigtableInstanceAdminStubSettings) getStubSettings()).createInstanceSettings();
   }
 
   /** Returns the object with the settings used for calls to createInstance. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateInstanceRequest, Instance, CreateInstanceMetadata>
       createInstanceOperationSettings() {
     return ((BigtableInstanceAdminStubSettings) getStubSettings())
@@ -104,8 +104,6 @@ public class BaseBigtableInstanceAdminSettings
   }
 
   /** Returns the object with the settings used for calls to partialUpdateInstance. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<PartialUpdateInstanceRequest, Instance, UpdateInstanceMetadata>
       partialUpdateInstanceOperationSettings() {
     return ((BigtableInstanceAdminStubSettings) getStubSettings())
@@ -123,8 +121,6 @@ public class BaseBigtableInstanceAdminSettings
   }
 
   /** Returns the object with the settings used for calls to createCluster. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateClusterRequest, Cluster, CreateClusterMetadata>
       createClusterOperationSettings() {
     return ((BigtableInstanceAdminStubSettings) getStubSettings()).createClusterOperationSettings();
@@ -146,8 +142,6 @@ public class BaseBigtableInstanceAdminSettings
   }
 
   /** Returns the object with the settings used for calls to updateCluster. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<Cluster, Cluster, UpdateClusterMetadata>
       updateClusterOperationSettings() {
     return ((BigtableInstanceAdminStubSettings) getStubSettings()).updateClusterOperationSettings();
@@ -181,8 +175,6 @@ public class BaseBigtableInstanceAdminSettings
   }
 
   /** Returns the object with the settings used for calls to updateAppProfile. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateAppProfileRequest, AppProfile, UpdateAppProfileMetadata>
       updateAppProfileOperationSettings() {
     return ((BigtableInstanceAdminStubSettings) getStubSettings())
@@ -271,16 +263,13 @@ public class BaseBigtableInstanceAdminSettings
   /** Builder for BaseBigtableInstanceAdminSettings. */
   public static class Builder
       extends ClientSettings.Builder<BaseBigtableInstanceAdminSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(BigtableInstanceAdminStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(BigtableInstanceAdminStubSettings.newBuilder());
     }
 
     protected Builder(BaseBigtableInstanceAdminSettings settings) {
@@ -291,11 +280,15 @@ public class BaseBigtableInstanceAdminSettings
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(BigtableInstanceAdminStubSettings.newBuilder());
+    }
+
     public BigtableInstanceAdminStubSettings.Builder getStubSettingsBuilder() {
       return ((BigtableInstanceAdminStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -314,8 +307,6 @@ public class BaseBigtableInstanceAdminSettings
     }
 
     /** Returns the builder for the settings used for calls to createInstance. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateInstanceRequest, Instance, CreateInstanceMetadata>
         createInstanceOperationSettings() {
       return getStubSettingsBuilder().createInstanceOperationSettings();
@@ -339,8 +330,6 @@ public class BaseBigtableInstanceAdminSettings
     }
 
     /** Returns the builder for the settings used for calls to partialUpdateInstance. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             PartialUpdateInstanceRequest, Instance, UpdateInstanceMetadata>
         partialUpdateInstanceOperationSettings() {
@@ -358,8 +347,6 @@ public class BaseBigtableInstanceAdminSettings
     }
 
     /** Returns the builder for the settings used for calls to createCluster. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateClusterRequest, Cluster, CreateClusterMetadata>
         createClusterOperationSettings() {
       return getStubSettingsBuilder().createClusterOperationSettings();
@@ -382,8 +369,6 @@ public class BaseBigtableInstanceAdminSettings
     }
 
     /** Returns the builder for the settings used for calls to updateCluster. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<Cluster, Cluster, UpdateClusterMetadata>
         updateClusterOperationSettings() {
       return getStubSettingsBuilder().updateClusterOperationSettings();
@@ -419,8 +404,6 @@ public class BaseBigtableInstanceAdminSettings
     }
 
     /** Returns the builder for the settings used for calls to updateAppProfile. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateAppProfileRequest, AppProfile, UpdateAppProfileMetadata>
         updateAppProfileOperationSettings() {

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigtable.admin.v2;
 
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPagedResponse;
@@ -75,11 +76,12 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /** For internal use only. */
 @Generated("by gapic-generator")
 @InternalApi
 public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableTableAdminSettings> {
+
   /** Returns the object with the settings used for calls to createTable. */
   public UnaryCallSettings<CreateTableRequest, Table> createTableSettings() {
     return ((BigtableTableAdminStubSettings) getStubSettings()).createTableSettings();
@@ -92,8 +94,6 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
   }
 
   /** Returns the object with the settings used for calls to createTableFromSnapshot. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           CreateTableFromSnapshotRequest, Table, CreateTableFromSnapshotMetadata>
       createTableFromSnapshotOperationSettings() {
@@ -139,30 +139,12 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
     return ((BigtableTableAdminStubSettings) getStubSettings()).checkConsistencySettings();
   }
 
-  /** Returns the object with the settings used for calls to getIamPolicy. */
-  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-    return ((BigtableTableAdminStubSettings) getStubSettings()).getIamPolicySettings();
-  }
-
-  /** Returns the object with the settings used for calls to setIamPolicy. */
-  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-    return ((BigtableTableAdminStubSettings) getStubSettings()).setIamPolicySettings();
-  }
-
-  /** Returns the object with the settings used for calls to testIamPermissions. */
-  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings() {
-    return ((BigtableTableAdminStubSettings) getStubSettings()).testIamPermissionsSettings();
-  }
-
   /** Returns the object with the settings used for calls to snapshotTable. */
   public UnaryCallSettings<SnapshotTableRequest, Operation> snapshotTableSettings() {
     return ((BigtableTableAdminStubSettings) getStubSettings()).snapshotTableSettings();
   }
 
   /** Returns the object with the settings used for calls to snapshotTable. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
       snapshotTableOperationSettings() {
     return ((BigtableTableAdminStubSettings) getStubSettings()).snapshotTableOperationSettings();
@@ -190,8 +172,6 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
   }
 
   /** Returns the object with the settings used for calls to createBackup. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateBackupRequest, Backup, CreateBackupMetadata>
       createBackupOperationSettings() {
     return ((BigtableTableAdminStubSettings) getStubSettings()).createBackupOperationSettings();
@@ -200,12 +180,6 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
   /** Returns the object with the settings used for calls to getBackup. */
   public UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings() {
     return ((BigtableTableAdminStubSettings) getStubSettings()).getBackupSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listBackups. */
-  public PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
-      listBackupsSettings() {
-    return ((BigtableTableAdminStubSettings) getStubSettings()).listBackupsSettings();
   }
 
   /** Returns the object with the settings used for calls to updateBackup. */
@@ -218,17 +192,37 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
     return ((BigtableTableAdminStubSettings) getStubSettings()).deleteBackupSettings();
   }
 
+  /** Returns the object with the settings used for calls to listBackups. */
+  public PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).listBackupsSettings();
+  }
+
   /** Returns the object with the settings used for calls to restoreTable. */
   public UnaryCallSettings<RestoreTableRequest, Operation> restoreTableSettings() {
     return ((BigtableTableAdminStubSettings) getStubSettings()).restoreTableSettings();
   }
 
   /** Returns the object with the settings used for calls to restoreTable. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<RestoreTableRequest, Table, RestoreTableMetadata>
       restoreTableOperationSettings() {
     return ((BigtableTableAdminStubSettings) getStubSettings()).restoreTableOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final BaseBigtableTableAdminSettings create(BigtableTableAdminStubSettings stub)
@@ -292,16 +286,13 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
   /** Builder for BaseBigtableTableAdminSettings. */
   public static class Builder
       extends ClientSettings.Builder<BaseBigtableTableAdminSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(BigtableTableAdminStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(BigtableTableAdminStubSettings.newBuilder());
     }
 
     protected Builder(BaseBigtableTableAdminSettings settings) {
@@ -312,11 +303,15 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(BigtableTableAdminStubSettings.newBuilder());
+    }
+
     public BigtableTableAdminStubSettings.Builder getStubSettingsBuilder() {
       return ((BigtableTableAdminStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -341,8 +336,6 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
     }
 
     /** Returns the builder for the settings used for calls to createTableFromSnapshot. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateTableFromSnapshotRequest, Table, CreateTableFromSnapshotMetadata>
         createTableFromSnapshotOperationSettings() {
@@ -389,30 +382,12 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
       return getStubSettingsBuilder().checkConsistencySettings();
     }
 
-    /** Returns the builder for the settings used for calls to getIamPolicy. */
-    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-      return getStubSettingsBuilder().getIamPolicySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to setIamPolicy. */
-    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-      return getStubSettingsBuilder().setIamPolicySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to testIamPermissions. */
-    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings() {
-      return getStubSettingsBuilder().testIamPermissionsSettings();
-    }
-
     /** Returns the builder for the settings used for calls to snapshotTable. */
     public UnaryCallSettings.Builder<SnapshotTableRequest, Operation> snapshotTableSettings() {
       return getStubSettingsBuilder().snapshotTableSettings();
     }
 
     /** Returns the builder for the settings used for calls to snapshotTable. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
         snapshotTableOperationSettings() {
       return getStubSettingsBuilder().snapshotTableOperationSettings();
@@ -441,8 +416,6 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
     }
 
     /** Returns the builder for the settings used for calls to createBackup. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateBackupRequest, Backup, CreateBackupMetadata>
         createBackupOperationSettings() {
       return getStubSettingsBuilder().createBackupOperationSettings();
@@ -451,13 +424,6 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
     /** Returns the builder for the settings used for calls to getBackup. */
     public UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings() {
       return getStubSettingsBuilder().getBackupSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listBackups. */
-    public PagedCallSettings.Builder<
-            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
-        listBackupsSettings() {
-      return getStubSettingsBuilder().listBackupsSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateBackup. */
@@ -470,17 +436,38 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
       return getStubSettingsBuilder().deleteBackupSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listBackups. */
+    public PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings() {
+      return getStubSettingsBuilder().listBackupsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to restoreTable. */
     public UnaryCallSettings.Builder<RestoreTableRequest, Operation> restoreTableSettings() {
       return getStubSettingsBuilder().restoreTableSettings();
     }
 
     /** Returns the builder for the settings used for calls to restoreTable. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RestoreTableRequest, Table, RestoreTableMetadata>
         restoreTableOperationSettings() {
       return getStubSettingsBuilder().restoreTableOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

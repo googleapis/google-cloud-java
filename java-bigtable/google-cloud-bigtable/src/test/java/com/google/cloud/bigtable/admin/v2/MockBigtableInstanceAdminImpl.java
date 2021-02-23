@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigtable.admin.v2;
 
 import com.google.api.core.BetaApi;
@@ -50,9 +51,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -89,10 +91,10 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -103,10 +105,10 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
     Object response = responses.remove();
     if (response instanceof Instance) {
       requests.add(request);
-      responseObserver.onNext((Instance) response);
+      responseObserver.onNext(((Instance) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -118,10 +120,24 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
     Object response = responses.remove();
     if (response instanceof ListInstancesResponse) {
       requests.add(request);
-      responseObserver.onNext((ListInstancesResponse) response);
+      responseObserver.onNext(((ListInstancesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void updateInstance(Instance request, StreamObserver<Instance> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Instance) {
+      requests.add(request);
+      responseObserver.onNext(((Instance) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -133,10 +149,10 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -148,10 +164,10 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -163,10 +179,10 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -177,10 +193,10 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
     Object response = responses.remove();
     if (response instanceof Cluster) {
       requests.add(request);
-      responseObserver.onNext((Cluster) response);
+      responseObserver.onNext(((Cluster) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -192,10 +208,10 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
     Object response = responses.remove();
     if (response instanceof ListClustersResponse) {
       requests.add(request);
-      responseObserver.onNext((ListClustersResponse) response);
+      responseObserver.onNext(((ListClustersResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -206,10 +222,10 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -220,10 +236,10 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -235,10 +251,10 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
     Object response = responses.remove();
     if (response instanceof AppProfile) {
       requests.add(request);
-      responseObserver.onNext((AppProfile) response);
+      responseObserver.onNext(((AppProfile) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -250,10 +266,10 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
     Object response = responses.remove();
     if (response instanceof AppProfile) {
       requests.add(request);
-      responseObserver.onNext((AppProfile) response);
+      responseObserver.onNext(((AppProfile) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -265,10 +281,10 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
     Object response = responses.remove();
     if (response instanceof ListAppProfilesResponse) {
       requests.add(request);
-      responseObserver.onNext((ListAppProfilesResponse) response);
+      responseObserver.onNext(((ListAppProfilesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -280,10 +296,10 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -295,10 +311,10 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -309,10 +325,10 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
     Object response = responses.remove();
     if (response instanceof Policy) {
       requests.add(request);
-      responseObserver.onNext((Policy) response);
+      responseObserver.onNext(((Policy) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -323,10 +339,10 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
     Object response = responses.remove();
     if (response instanceof Policy) {
       requests.add(request);
-      responseObserver.onNext((Policy) response);
+      responseObserver.onNext(((Policy) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -339,10 +355,10 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
     Object response = responses.remove();
     if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
-      responseObserver.onNext((TestIamPermissionsResponse) response);
+      responseObserver.onNext(((TestIamPermissionsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }

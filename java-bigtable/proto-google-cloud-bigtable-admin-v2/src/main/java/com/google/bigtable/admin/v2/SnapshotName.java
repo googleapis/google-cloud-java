@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,21 +23,35 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class SnapshotName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_INSTANCE_CLUSTER_SNAPSHOT =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String instance;
   private final String cluster;
   private final String snapshot;
+
+  @Deprecated
+  protected SnapshotName() {
+    project = null;
+    instance = null;
+    cluster = null;
+    snapshot = null;
+  }
+
+  private SnapshotName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    instance = Preconditions.checkNotNull(builder.getInstance());
+    cluster = Preconditions.checkNotNull(builder.getCluster());
+    snapshot = Preconditions.checkNotNull(builder.getSnapshot());
+  }
 
   public String getProject() {
     return project;
@@ -61,13 +75,6 @@ public class SnapshotName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private SnapshotName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    instance = Preconditions.checkNotNull(builder.getInstance());
-    cluster = Preconditions.checkNotNull(builder.getCluster());
-    snapshot = Preconditions.checkNotNull(builder.getSnapshot());
   }
 
   public static SnapshotName of(String project, String instance, String cluster, String snapshot) {
@@ -94,7 +101,7 @@ public class SnapshotName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_INSTANCE_CLUSTER_SNAPSHOT.validatedMatch(
             formattedString, "SnapshotName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
@@ -112,7 +119,7 @@ public class SnapshotName implements ResourceName {
   }
 
   public static List<String> toStringList(List<SnapshotName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (SnapshotName value : values) {
       if (value == null) {
         list.add("");
@@ -124,18 +131,27 @@ public class SnapshotName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_INSTANCE_CLUSTER_SNAPSHOT.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("instance", instance);
-          fieldMapBuilder.put("cluster", cluster);
-          fieldMapBuilder.put("snapshot", snapshot);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (instance != null) {
+            fieldMapBuilder.put("instance", instance);
+          }
+          if (cluster != null) {
+            fieldMapBuilder.put("cluster", cluster);
+          }
+          if (snapshot != null) {
+            fieldMapBuilder.put("snapshot", snapshot);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -149,17 +165,49 @@ public class SnapshotName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_INSTANCE_CLUSTER_SNAPSHOT.instantiate(
         "project", project, "instance", instance, "cluster", cluster, "snapshot", snapshot);
   }
 
-  /** Builder for SnapshotName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      SnapshotName that = ((SnapshotName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.instance, that.instance)
+          && Objects.equals(this.cluster, that.cluster)
+          && Objects.equals(this.snapshot, that.snapshot);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(instance);
+    h *= 1000003;
+    h ^= Objects.hashCode(cluster);
+    h *= 1000003;
+    h ^= Objects.hashCode(snapshot);
+    return h;
+  }
+
+  /**
+   * Builder for projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}.
+   */
+  public static class Builder {
     private String project;
     private String instance;
     private String cluster;
     private String snapshot;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -197,8 +245,6 @@ public class SnapshotName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(SnapshotName snapshotName) {
       project = snapshotName.project;
       instance = snapshotName.instance;
@@ -209,34 +255,5 @@ public class SnapshotName implements ResourceName {
     public SnapshotName build() {
       return new SnapshotName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof SnapshotName) {
-      SnapshotName that = (SnapshotName) o;
-      return (this.project.equals(that.project))
-          && (this.instance.equals(that.instance))
-          && (this.cluster.equals(that.cluster))
-          && (this.snapshot.equals(that.snapshot));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= instance.hashCode();
-    h *= 1000003;
-    h ^= cluster.hashCode();
-    h *= 1000003;
-    h ^= snapshot.hashCode();
-    return h;
   }
 }

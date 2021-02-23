@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,21 +23,35 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class BackupName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_INSTANCE_CLUSTER_BACKUP =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String instance;
   private final String cluster;
   private final String backup;
+
+  @Deprecated
+  protected BackupName() {
+    project = null;
+    instance = null;
+    cluster = null;
+    backup = null;
+  }
+
+  private BackupName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    instance = Preconditions.checkNotNull(builder.getInstance());
+    cluster = Preconditions.checkNotNull(builder.getCluster());
+    backup = Preconditions.checkNotNull(builder.getBackup());
+  }
 
   public String getProject() {
     return project;
@@ -61,13 +75,6 @@ public class BackupName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private BackupName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    instance = Preconditions.checkNotNull(builder.getInstance());
-    cluster = Preconditions.checkNotNull(builder.getCluster());
-    backup = Preconditions.checkNotNull(builder.getBackup());
   }
 
   public static BackupName of(String project, String instance, String cluster, String backup) {
@@ -94,7 +101,7 @@ public class BackupName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_INSTANCE_CLUSTER_BACKUP.validatedMatch(
             formattedString, "BackupName.parse: formattedString not in valid format");
     return of(
         matchMap.get("project"),
@@ -112,7 +119,7 @@ public class BackupName implements ResourceName {
   }
 
   public static List<String> toStringList(List<BackupName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (BackupName value : values) {
       if (value == null) {
         list.add("");
@@ -124,18 +131,27 @@ public class BackupName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_INSTANCE_CLUSTER_BACKUP.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("instance", instance);
-          fieldMapBuilder.put("cluster", cluster);
-          fieldMapBuilder.put("backup", backup);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (instance != null) {
+            fieldMapBuilder.put("instance", instance);
+          }
+          if (cluster != null) {
+            fieldMapBuilder.put("cluster", cluster);
+          }
+          if (backup != null) {
+            fieldMapBuilder.put("backup", backup);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -149,17 +165,47 @@ public class BackupName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_INSTANCE_CLUSTER_BACKUP.instantiate(
         "project", project, "instance", instance, "cluster", cluster, "backup", backup);
   }
 
-  /** Builder for BackupName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      BackupName that = ((BackupName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.instance, that.instance)
+          && Objects.equals(this.cluster, that.cluster)
+          && Objects.equals(this.backup, that.backup);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(instance);
+    h *= 1000003;
+    h ^= Objects.hashCode(cluster);
+    h *= 1000003;
+    h ^= Objects.hashCode(backup);
+    return h;
+  }
+
+  /** Builder for projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup}. */
+  public static class Builder {
     private String project;
     private String instance;
     private String cluster;
     private String backup;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -197,8 +243,6 @@ public class BackupName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(BackupName backupName) {
       project = backupName.project;
       instance = backupName.instance;
@@ -209,34 +253,5 @@ public class BackupName implements ResourceName {
     public BackupName build() {
       return new BackupName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof BackupName) {
-      BackupName that = (BackupName) o;
-      return (this.project.equals(that.project))
-          && (this.instance.equals(that.instance))
-          && (this.cluster.equals(that.cluster))
-          && (this.backup.equals(that.backup));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= instance.hashCode();
-    h *= 1000003;
-    h ^= cluster.hashCode();
-    h *= 1000003;
-    h ^= backup.hashCode();
-    return h;
   }
 }

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigtable.admin.v2.stub;
 
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
@@ -84,7 +85,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link BigtableInstanceAdminStub}.
  *
@@ -101,22 +102,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getInstance to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * BigtableInstanceAdminStubSettings.Builder baseBigtableInstanceAdminSettingsBuilder =
  *     BigtableInstanceAdminStubSettings.newBuilder();
  * baseBigtableInstanceAdminSettingsBuilder
  *     .getInstanceSettings()
  *     .setRetrySettings(
- *         baseBigtableInstanceAdminSettingsBuilder.getInstanceSettings().getRetrySettings().toBuilder()
+ *         baseBigtableInstanceAdminSettingsBuilder
+ *             .getInstanceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * BigtableInstanceAdminStubSettings baseBigtableInstanceAdminSettings = baseBigtableInstanceAdminSettingsBuilder.build();
- * </code>
- * </pre>
+ * BigtableInstanceAdminStubSettings baseBigtableInstanceAdminSettings =
+ *     baseBigtableInstanceAdminSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class BigtableInstanceAdminStubSettings
     extends StubSettings<BigtableInstanceAdminStubSettings> {
   /** The default scopes of the service. */
@@ -125,10 +127,8 @@ public class BigtableInstanceAdminStubSettings
           .add("https://www.googleapis.com/auth/bigtable.admin")
           .add("https://www.googleapis.com/auth/bigtable.admin.cluster")
           .add("https://www.googleapis.com/auth/bigtable.admin.instance")
-          .add("https://www.googleapis.com/auth/bigtable.admin.table")
           .add("https://www.googleapis.com/auth/cloud-bigtable.admin")
           .add("https://www.googleapis.com/auth/cloud-bigtable.admin.cluster")
-          .add("https://www.googleapis.com/auth/cloud-bigtable.admin.table")
           .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/cloud-platform.read-only")
           .build();
@@ -139,6 +139,7 @@ public class BigtableInstanceAdminStubSettings
   private final UnaryCallSettings<GetInstanceRequest, Instance> getInstanceSettings;
   private final UnaryCallSettings<ListInstancesRequest, ListInstancesResponse>
       listInstancesSettings;
+  private final UnaryCallSettings<Instance, Instance> updateInstanceSettings;
   private final UnaryCallSettings<PartialUpdateInstanceRequest, Operation>
       partialUpdateInstanceSettings;
   private final OperationCallSettings<
@@ -168,13 +169,68 @@ public class BigtableInstanceAdminStubSettings
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
 
+  private static final PagedListDescriptor<
+          ListAppProfilesRequest, ListAppProfilesResponse, AppProfile>
+      LIST_APP_PROFILES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListAppProfilesRequest, ListAppProfilesResponse, AppProfile>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAppProfilesRequest injectToken(
+                ListAppProfilesRequest payload, String token) {
+              return ListAppProfilesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAppProfilesRequest injectPageSize(
+                ListAppProfilesRequest payload, int pageSize) {
+              return ListAppProfilesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAppProfilesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAppProfilesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AppProfile> extractResources(ListAppProfilesResponse payload) {
+              return payload.getAppProfilesList() == null
+                  ? ImmutableList.<AppProfile>of()
+                  : payload.getAppProfilesList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAppProfilesRequest, ListAppProfilesResponse, ListAppProfilesPagedResponse>
+      LIST_APP_PROFILES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAppProfilesRequest, ListAppProfilesResponse, ListAppProfilesPagedResponse>() {
+            @Override
+            public ApiFuture<ListAppProfilesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAppProfilesRequest, ListAppProfilesResponse> callable,
+                ListAppProfilesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAppProfilesResponse> futureResponse) {
+              PageContext<ListAppProfilesRequest, ListAppProfilesResponse, AppProfile> pageContext =
+                  PageContext.create(callable, LIST_APP_PROFILES_PAGE_STR_DESC, request, context);
+              return ListAppProfilesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to createInstance. */
   public UnaryCallSettings<CreateInstanceRequest, Operation> createInstanceSettings() {
     return createInstanceSettings;
   }
 
   /** Returns the object with the settings used for calls to createInstance. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<CreateInstanceRequest, Instance, CreateInstanceMetadata>
       createInstanceOperationSettings() {
     return createInstanceOperationSettings;
@@ -190,6 +246,11 @@ public class BigtableInstanceAdminStubSettings
     return listInstancesSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateInstance. */
+  public UnaryCallSettings<Instance, Instance> updateInstanceSettings() {
+    return updateInstanceSettings;
+  }
+
   /** Returns the object with the settings used for calls to partialUpdateInstance. */
   public UnaryCallSettings<PartialUpdateInstanceRequest, Operation>
       partialUpdateInstanceSettings() {
@@ -197,7 +258,6 @@ public class BigtableInstanceAdminStubSettings
   }
 
   /** Returns the object with the settings used for calls to partialUpdateInstance. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<PartialUpdateInstanceRequest, Instance, UpdateInstanceMetadata>
       partialUpdateInstanceOperationSettings() {
     return partialUpdateInstanceOperationSettings;
@@ -214,7 +274,6 @@ public class BigtableInstanceAdminStubSettings
   }
 
   /** Returns the object with the settings used for calls to createCluster. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<CreateClusterRequest, Cluster, CreateClusterMetadata>
       createClusterOperationSettings() {
     return createClusterOperationSettings;
@@ -236,7 +295,6 @@ public class BigtableInstanceAdminStubSettings
   }
 
   /** Returns the object with the settings used for calls to updateCluster. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<Cluster, Cluster, UpdateClusterMetadata>
       updateClusterOperationSettings() {
     return updateClusterOperationSettings;
@@ -270,7 +328,6 @@ public class BigtableInstanceAdminStubSettings
   }
 
   /** Returns the object with the settings used for calls to updateAppProfile. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<UpdateAppProfileRequest, AppProfile, UpdateAppProfileMetadata>
       updateAppProfileOperationSettings() {
     return updateAppProfileOperationSettings;
@@ -303,10 +360,10 @@ public class BigtableInstanceAdminStubSettings
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcBigtableInstanceAdminStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -370,6 +427,7 @@ public class BigtableInstanceAdminStubSettings
     createInstanceOperationSettings = settingsBuilder.createInstanceOperationSettings().build();
     getInstanceSettings = settingsBuilder.getInstanceSettings().build();
     listInstancesSettings = settingsBuilder.listInstancesSettings().build();
+    updateInstanceSettings = settingsBuilder.updateInstanceSettings().build();
     partialUpdateInstanceSettings = settingsBuilder.partialUpdateInstanceSettings().build();
     partialUpdateInstanceOperationSettings =
         settingsBuilder.partialUpdateInstanceOperationSettings().build();
@@ -392,67 +450,10 @@ public class BigtableInstanceAdminStubSettings
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListAppProfilesRequest, ListAppProfilesResponse, AppProfile>
-      LIST_APP_PROFILES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListAppProfilesRequest, ListAppProfilesResponse, AppProfile>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListAppProfilesRequest injectToken(
-                ListAppProfilesRequest payload, String token) {
-              return ListAppProfilesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListAppProfilesRequest injectPageSize(
-                ListAppProfilesRequest payload, int pageSize) {
-              return ListAppProfilesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListAppProfilesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListAppProfilesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<AppProfile> extractResources(ListAppProfilesResponse payload) {
-              return payload.getAppProfilesList() != null
-                  ? payload.getAppProfilesList()
-                  : ImmutableList.<AppProfile>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListAppProfilesRequest, ListAppProfilesResponse, ListAppProfilesPagedResponse>
-      LIST_APP_PROFILES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListAppProfilesRequest, ListAppProfilesResponse, ListAppProfilesPagedResponse>() {
-            @Override
-            public ApiFuture<ListAppProfilesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListAppProfilesRequest, ListAppProfilesResponse> callable,
-                ListAppProfilesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListAppProfilesResponse> futureResponse) {
-              PageContext<ListAppProfilesRequest, ListAppProfilesResponse, AppProfile> pageContext =
-                  PageContext.create(callable, LIST_APP_PROFILES_PAGE_STR_DESC, request, context);
-              return ListAppProfilesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for BigtableInstanceAdminStubSettings. */
   public static class Builder
       extends StubSettings.Builder<BigtableInstanceAdminStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateInstanceRequest, Operation>
         createInstanceSettings;
     private final OperationCallSettings.Builder<
@@ -461,6 +462,7 @@ public class BigtableInstanceAdminStubSettings
     private final UnaryCallSettings.Builder<GetInstanceRequest, Instance> getInstanceSettings;
     private final UnaryCallSettings.Builder<ListInstancesRequest, ListInstancesResponse>
         listInstancesSettings;
+    private final UnaryCallSettings.Builder<Instance, Instance> updateInstanceSettings;
     private final UnaryCallSettings.Builder<PartialUpdateInstanceRequest, Operation>
         partialUpdateInstanceSettings;
     private final OperationCallSettings.Builder<
@@ -495,7 +497,6 @@ public class BigtableInstanceAdminStubSettings
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -503,11 +504,14 @@ public class BigtableInstanceAdminStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_6_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+                  StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
+      definitions.put(
+          "no_retry_7_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -518,87 +522,64 @@ public class BigtableInstanceAdminStubSettings
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(300000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(300000L))
+              .setTotalTimeout(Duration.ofMillis(300000L))
+              .build();
+      definitions.put("no_retry_5_params", settings);
+      settings =
+          RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(2.0)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("idempotent_params", settings);
+      definitions.put("retry_policy_6_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setRetryDelayMultiplier(1.0)
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("non_idempotent_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setRetryDelayMultiplier(1.0)
-              .setInitialRpcTimeout(Duration.ofMillis(300000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(300000L))
-              .setTotalTimeout(Duration.ofMillis(300000L))
-              .build();
-      definitions.put("non_idempotent_heavy_params", settings);
+      definitions.put("no_retry_7_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createInstanceOperationSettings = OperationCallSettings.newBuilder();
-
       getInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
+      updateInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       partialUpdateInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       partialUpdateInstanceOperationSettings = OperationCallSettings.newBuilder();
-
       deleteInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createClusterOperationSettings = OperationCallSettings.newBuilder();
-
       getClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listClustersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateClusterOperationSettings = OperationCallSettings.newBuilder();
-
       deleteClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createAppProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getAppProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listAppProfilesSettings = PagedCallSettings.newBuilder(LIST_APP_PROFILES_PAGE_STR_FACT);
-
       updateAppProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateAppProfileOperationSettings = OperationCallSettings.newBuilder();
-
       deleteAppProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -606,6 +587,7 @@ public class BigtableInstanceAdminStubSettings
               createInstanceSettings,
               getInstanceSettings,
               listInstancesSettings,
+              updateInstanceSettings,
               partialUpdateInstanceSettings,
               deleteInstanceSettings,
               createClusterSettings,
@@ -621,226 +603,7 @@ public class BigtableInstanceAdminStubSettings
               getIamPolicySettings,
               setIamPolicySettings,
               testIamPermissionsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createInstanceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_heavy_params"));
-
-      builder
-          .getInstanceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-
-      builder
-          .listInstancesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-
-      builder
-          .partialUpdateInstanceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-
-      builder
-          .deleteInstanceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"));
-
-      builder
-          .createClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"));
-
-      builder
-          .getClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-
-      builder
-          .listClustersSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-
-      builder
-          .updateClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-
-      builder
-          .deleteClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"));
-
-      builder
-          .createAppProfileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"));
-
-      builder
-          .getAppProfileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-
-      builder
-          .listAppProfilesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-
-      builder
-          .updateAppProfileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-
-      builder
-          .deleteAppProfileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"));
-
-      builder
-          .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-
-      builder
-          .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"));
-
-      builder
-          .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-      builder
-          .createInstanceOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<CreateInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_heavy_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(CreateInstanceMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(600000L))
-                      .build()));
-      builder
-          .partialUpdateInstanceOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<PartialUpdateInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(UpdateInstanceMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(600000L))
-                      .build()));
-      builder
-          .createClusterOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<CreateClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Cluster.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(CreateClusterMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(60000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(21600000L))
-                      .build()));
-      builder
-          .updateClusterOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings.<Cluster, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Cluster.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(UpdateClusterMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(600000L))
-                      .build()));
-      builder
-          .updateAppProfileOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<UpdateAppProfileRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(AppProfile.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(UpdateAppProfileMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(600000L))
-                      .build()));
-
-      return builder;
     }
 
     protected Builder(BigtableInstanceAdminStubSettings settings) {
@@ -850,6 +613,7 @@ public class BigtableInstanceAdminStubSettings
       createInstanceOperationSettings = settings.createInstanceOperationSettings.toBuilder();
       getInstanceSettings = settings.getInstanceSettings.toBuilder();
       listInstancesSettings = settings.listInstancesSettings.toBuilder();
+      updateInstanceSettings = settings.updateInstanceSettings.toBuilder();
       partialUpdateInstanceSettings = settings.partialUpdateInstanceSettings.toBuilder();
       partialUpdateInstanceOperationSettings =
           settings.partialUpdateInstanceOperationSettings.toBuilder();
@@ -876,6 +640,7 @@ public class BigtableInstanceAdminStubSettings
               createInstanceSettings,
               getInstanceSettings,
               listInstancesSettings,
+              updateInstanceSettings,
               partialUpdateInstanceSettings,
               deleteInstanceSettings,
               createClusterSettings,
@@ -893,7 +658,236 @@ public class BigtableInstanceAdminStubSettings
               testIamPermissionsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
+
+      builder
+          .getInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .listInstancesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .updateInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .partialUpdateInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .deleteInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+
+      builder
+          .createClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+
+      builder
+          .getClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .listClustersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .updateClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .deleteClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+
+      builder
+          .createAppProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+
+      builder
+          .getAppProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .listAppProfilesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .updateAppProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .deleteAppProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .createInstanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(CreateInstanceMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .partialUpdateInstanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PartialUpdateInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(UpdateInstanceMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .createClusterOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Cluster.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(CreateClusterMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(60000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(21600000L))
+                      .build()));
+
+      builder
+          .updateClusterOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<Cluster, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Cluster.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(UpdateClusterMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .updateAppProfileOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateAppProfileRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AppProfile.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(UpdateAppProfileMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -931,6 +925,11 @@ public class BigtableInstanceAdminStubSettings
     public UnaryCallSettings.Builder<ListInstancesRequest, ListInstancesResponse>
         listInstancesSettings() {
       return listInstancesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateInstance. */
+    public UnaryCallSettings.Builder<Instance, Instance> updateInstanceSettings() {
+      return updateInstanceSettings;
     }
 
     /** Returns the builder for the settings used for calls to partialUpdateInstance. */

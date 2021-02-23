@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigtable.admin.v2.stub;
 
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPagedResponse;
@@ -92,7 +93,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link BigtableTableAdminStub}.
  *
@@ -109,32 +110,30 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createTable to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * BigtableTableAdminStubSettings.Builder baseBigtableTableAdminSettingsBuilder =
  *     BigtableTableAdminStubSettings.newBuilder();
  * baseBigtableTableAdminSettingsBuilder
  *     .createTableSettings()
  *     .setRetrySettings(
- *         baseBigtableTableAdminSettingsBuilder.createTableSettings().getRetrySettings().toBuilder()
+ *         baseBigtableTableAdminSettingsBuilder
+ *             .createTableSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * BigtableTableAdminStubSettings baseBigtableTableAdminSettings = baseBigtableTableAdminSettingsBuilder.build();
- * </code>
- * </pre>
+ * BigtableTableAdminStubSettings baseBigtableTableAdminSettings =
+ *     baseBigtableTableAdminSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAdminStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/bigtable.admin")
-          .add("https://www.googleapis.com/auth/bigtable.admin.cluster")
-          .add("https://www.googleapis.com/auth/bigtable.admin.instance")
           .add("https://www.googleapis.com/auth/bigtable.admin.table")
           .add("https://www.googleapis.com/auth/cloud-bigtable.admin")
-          .add("https://www.googleapis.com/auth/cloud-bigtable.admin.cluster")
           .add("https://www.googleapis.com/auth/cloud-bigtable.admin.table")
           .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/cloud-platform.read-only")
@@ -156,10 +155,6 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
       generateConsistencyTokenSettings;
   private final UnaryCallSettings<CheckConsistencyRequest, CheckConsistencyResponse>
       checkConsistencySettings;
-  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
-  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
-  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings;
   private final UnaryCallSettings<SnapshotTableRequest, Operation> snapshotTableSettings;
   private final OperationCallSettings<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
       snapshotTableOperationSettings;
@@ -172,13 +167,176 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
   private final OperationCallSettings<CreateBackupRequest, Backup, CreateBackupMetadata>
       createBackupOperationSettings;
   private final UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings;
-  private final PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
-      listBackupsSettings;
   private final UnaryCallSettings<UpdateBackupRequest, Backup> updateBackupSettings;
   private final UnaryCallSettings<DeleteBackupRequest, Empty> deleteBackupSettings;
+  private final PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings;
   private final UnaryCallSettings<RestoreTableRequest, Operation> restoreTableSettings;
   private final OperationCallSettings<RestoreTableRequest, Table, RestoreTableMetadata>
       restoreTableOperationSettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
+
+  private static final PagedListDescriptor<ListTablesRequest, ListTablesResponse, Table>
+      LIST_TABLES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListTablesRequest, ListTablesResponse, Table>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTablesRequest injectToken(ListTablesRequest payload, String token) {
+              return ListTablesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTablesRequest injectPageSize(ListTablesRequest payload, int pageSize) {
+              return ListTablesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTablesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTablesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Table> extractResources(ListTablesResponse payload) {
+              return payload.getTablesList() == null
+                  ? ImmutableList.<Table>of()
+                  : payload.getTablesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot>
+      LIST_SNAPSHOTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSnapshotsRequest injectToken(ListSnapshotsRequest payload, String token) {
+              return ListSnapshotsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSnapshotsRequest injectPageSize(ListSnapshotsRequest payload, int pageSize) {
+              return ListSnapshotsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSnapshotsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSnapshotsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Snapshot> extractResources(ListSnapshotsResponse payload) {
+              return payload.getSnapshotsList() == null
+                  ? ImmutableList.<Snapshot>of()
+                  : payload.getSnapshotsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListBackupsRequest, ListBackupsResponse, Backup>
+      LIST_BACKUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListBackupsRequest, ListBackupsResponse, Backup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupsRequest injectToken(ListBackupsRequest payload, String token) {
+              return ListBackupsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBackupsRequest injectPageSize(ListBackupsRequest payload, int pageSize) {
+              return ListBackupsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Backup> extractResources(ListBackupsResponse payload) {
+              return payload.getBackupsList() == null
+                  ? ImmutableList.<Backup>of()
+                  : payload.getBackupsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>
+      LIST_TABLES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>() {
+            @Override
+            public ApiFuture<ListTablesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTablesRequest, ListTablesResponse> callable,
+                ListTablesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTablesResponse> futureResponse) {
+              PageContext<ListTablesRequest, ListTablesResponse, Table> pageContext =
+                  PageContext.create(callable, LIST_TABLES_PAGE_STR_DESC, request, context);
+              return ListTablesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
+      LIST_SNAPSHOTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSnapshotsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> callable,
+                ListSnapshotsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSnapshotsResponse> futureResponse) {
+              PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> pageContext =
+                  PageContext.create(callable, LIST_SNAPSHOTS_PAGE_STR_DESC, request, context);
+              return ListSnapshotsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      LIST_BACKUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupsRequest, ListBackupsResponse> callable,
+                ListBackupsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupsResponse> futureResponse) {
+              PageContext<ListBackupsRequest, ListBackupsResponse, Backup> pageContext =
+                  PageContext.create(callable, LIST_BACKUPS_PAGE_STR_DESC, request, context);
+              return ListBackupsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to createTable. */
   public UnaryCallSettings<CreateTableRequest, Table> createTableSettings() {
@@ -192,7 +350,6 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
   }
 
   /** Returns the object with the settings used for calls to createTableFromSnapshot. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<
           CreateTableFromSnapshotRequest, Table, CreateTableFromSnapshotMetadata>
       createTableFromSnapshotOperationSettings() {
@@ -237,29 +394,12 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     return checkConsistencySettings;
   }
 
-  /** Returns the object with the settings used for calls to getIamPolicy. */
-  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-    return getIamPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to setIamPolicy. */
-  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-    return setIamPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to testIamPermissions. */
-  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings() {
-    return testIamPermissionsSettings;
-  }
-
   /** Returns the object with the settings used for calls to snapshotTable. */
   public UnaryCallSettings<SnapshotTableRequest, Operation> snapshotTableSettings() {
     return snapshotTableSettings;
   }
 
   /** Returns the object with the settings used for calls to snapshotTable. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
       snapshotTableOperationSettings() {
     return snapshotTableOperationSettings;
@@ -287,7 +427,6 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
   }
 
   /** Returns the object with the settings used for calls to createBackup. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<CreateBackupRequest, Backup, CreateBackupMetadata>
       createBackupOperationSettings() {
     return createBackupOperationSettings;
@@ -296,12 +435,6 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
   /** Returns the object with the settings used for calls to getBackup. */
   public UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings() {
     return getBackupSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listBackups. */
-  public PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
-      listBackupsSettings() {
-    return listBackupsSettings;
   }
 
   /** Returns the object with the settings used for calls to updateBackup. */
@@ -314,16 +447,37 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     return deleteBackupSettings;
   }
 
+  /** Returns the object with the settings used for calls to listBackups. */
+  public PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings() {
+    return listBackupsSettings;
+  }
+
   /** Returns the object with the settings used for calls to restoreTable. */
   public UnaryCallSettings<RestoreTableRequest, Operation> restoreTableSettings() {
     return restoreTableSettings;
   }
 
   /** Returns the object with the settings used for calls to restoreTable. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<RestoreTableRequest, Table, RestoreTableMetadata>
       restoreTableOperationSettings() {
     return restoreTableOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -332,10 +486,10 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcBigtableTableAdminStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -406,9 +560,6 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     dropRowRangeSettings = settingsBuilder.dropRowRangeSettings().build();
     generateConsistencyTokenSettings = settingsBuilder.generateConsistencyTokenSettings().build();
     checkConsistencySettings = settingsBuilder.checkConsistencySettings().build();
-    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
-    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
-    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     snapshotTableSettings = settingsBuilder.snapshotTableSettings().build();
     snapshotTableOperationSettings = settingsBuilder.snapshotTableOperationSettings().build();
     getSnapshotSettings = settingsBuilder.getSnapshotSettings().build();
@@ -417,177 +568,20 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     createBackupSettings = settingsBuilder.createBackupSettings().build();
     createBackupOperationSettings = settingsBuilder.createBackupOperationSettings().build();
     getBackupSettings = settingsBuilder.getBackupSettings().build();
-    listBackupsSettings = settingsBuilder.listBackupsSettings().build();
     updateBackupSettings = settingsBuilder.updateBackupSettings().build();
     deleteBackupSettings = settingsBuilder.deleteBackupSettings().build();
+    listBackupsSettings = settingsBuilder.listBackupsSettings().build();
     restoreTableSettings = settingsBuilder.restoreTableSettings().build();
     restoreTableOperationSettings = settingsBuilder.restoreTableOperationSettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
-
-  private static final PagedListDescriptor<ListTablesRequest, ListTablesResponse, Table>
-      LIST_TABLES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListTablesRequest, ListTablesResponse, Table>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListTablesRequest injectToken(ListTablesRequest payload, String token) {
-              return ListTablesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListTablesRequest injectPageSize(ListTablesRequest payload, int pageSize) {
-              return ListTablesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListTablesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListTablesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Table> extractResources(ListTablesResponse payload) {
-              return payload.getTablesList() != null
-                  ? payload.getTablesList()
-                  : ImmutableList.<Table>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot>
-      LIST_SNAPSHOTS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListSnapshotsRequest injectToken(ListSnapshotsRequest payload, String token) {
-              return ListSnapshotsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListSnapshotsRequest injectPageSize(ListSnapshotsRequest payload, int pageSize) {
-              return ListSnapshotsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListSnapshotsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListSnapshotsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Snapshot> extractResources(ListSnapshotsResponse payload) {
-              return payload.getSnapshotsList() != null
-                  ? payload.getSnapshotsList()
-                  : ImmutableList.<Snapshot>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListBackupsRequest, ListBackupsResponse, Backup>
-      LIST_BACKUPS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListBackupsRequest, ListBackupsResponse, Backup>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListBackupsRequest injectToken(ListBackupsRequest payload, String token) {
-              return ListBackupsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListBackupsRequest injectPageSize(ListBackupsRequest payload, int pageSize) {
-              return ListBackupsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListBackupsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListBackupsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Backup> extractResources(ListBackupsResponse payload) {
-              return payload.getBackupsList() != null
-                  ? payload.getBackupsList()
-                  : ImmutableList.<Backup>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>
-      LIST_TABLES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>() {
-            @Override
-            public ApiFuture<ListTablesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListTablesRequest, ListTablesResponse> callable,
-                ListTablesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListTablesResponse> futureResponse) {
-              PageContext<ListTablesRequest, ListTablesResponse, Table> pageContext =
-                  PageContext.create(callable, LIST_TABLES_PAGE_STR_DESC, request, context);
-              return ListTablesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
-      LIST_SNAPSHOTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>() {
-            @Override
-            public ApiFuture<ListSnapshotsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> callable,
-                ListSnapshotsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListSnapshotsResponse> futureResponse) {
-              PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> pageContext =
-                  PageContext.create(callable, LIST_SNAPSHOTS_PAGE_STR_DESC, request, context);
-              return ListSnapshotsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
-      LIST_BACKUPS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>() {
-            @Override
-            public ApiFuture<ListBackupsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListBackupsRequest, ListBackupsResponse> callable,
-                ListBackupsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListBackupsResponse> futureResponse) {
-              PageContext<ListBackupsRequest, ListBackupsResponse, Backup> pageContext =
-                  PageContext.create(callable, LIST_BACKUPS_PAGE_STR_DESC, request, context);
-              return ListBackupsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
 
   /** Builder for BigtableTableAdminStubSettings. */
   public static class Builder
       extends StubSettings.Builder<BigtableTableAdminStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateTableRequest, Table> createTableSettings;
     private final UnaryCallSettings.Builder<CreateTableFromSnapshotRequest, Operation>
         createTableFromSnapshotSettings;
@@ -607,10 +601,6 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
         generateConsistencyTokenSettings;
     private final UnaryCallSettings.Builder<CheckConsistencyRequest, CheckConsistencyResponse>
         checkConsistencySettings;
-    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
-    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
-    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings;
     private final UnaryCallSettings.Builder<SnapshotTableRequest, Operation> snapshotTableSettings;
     private final OperationCallSettings.Builder<
             SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
@@ -624,15 +614,18 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     private final OperationCallSettings.Builder<CreateBackupRequest, Backup, CreateBackupMetadata>
         createBackupOperationSettings;
     private final UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings;
+    private final UnaryCallSettings.Builder<UpdateBackupRequest, Backup> updateBackupSettings;
+    private final UnaryCallSettings.Builder<DeleteBackupRequest, Empty> deleteBackupSettings;
     private final PagedCallSettings.Builder<
             ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
         listBackupsSettings;
-    private final UnaryCallSettings.Builder<UpdateBackupRequest, Backup> updateBackupSettings;
-    private final UnaryCallSettings.Builder<DeleteBackupRequest, Empty> deleteBackupSettings;
     private final UnaryCallSettings.Builder<RestoreTableRequest, Operation> restoreTableSettings;
     private final OperationCallSettings.Builder<RestoreTableRequest, Table, RestoreTableMetadata>
         restoreTableOperationSettings;
-
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -640,11 +633,22 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_2_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+                  StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_3_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -655,103 +659,88 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(300000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(300000L))
+              .setTotalTimeout(Duration.ofMillis(300000L))
+              .build();
+      definitions.put("no_retry_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(2.0)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("idempotent_params", settings);
+      definitions.put("retry_policy_2_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setRetryDelayMultiplier(1.0)
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("non_idempotent_params", settings);
+      definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setRetryDelayMultiplier(1.0)
-              .setInitialRpcTimeout(Duration.ofMillis(300000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(300000L))
-              .setTotalTimeout(Duration.ofMillis(300000L))
-              .build();
-      definitions.put("non_idempotent_heavy_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setRetryDelayMultiplier(1.0)
               .setInitialRpcTimeout(Duration.ofMillis(3600000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(3600000L))
               .setTotalTimeout(Duration.ofMillis(3600000L))
               .build();
-      definitions.put("drop_row_range_params", settings);
+      definitions.put("no_retry_4_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setRetryDelayMultiplier(2.0)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("retry_policy_3_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createTableFromSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createTableFromSnapshotOperationSettings = OperationCallSettings.newBuilder();
-
       listTablesSettings = PagedCallSettings.newBuilder(LIST_TABLES_PAGE_STR_FACT);
-
       getTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       modifyColumnFamiliesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       dropRowRangeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       generateConsistencyTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       checkConsistencySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       snapshotTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       snapshotTableOperationSettings = OperationCallSettings.newBuilder();
-
       getSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listSnapshotsSettings = PagedCallSettings.newBuilder(LIST_SNAPSHOTS_PAGE_STR_FACT);
-
       deleteSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createBackupOperationSettings = OperationCallSettings.newBuilder();
-
       getBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      listBackupsSettings = PagedCallSettings.newBuilder(LIST_BACKUPS_PAGE_STR_FACT);
-
       updateBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
+      listBackupsSettings = PagedCallSettings.newBuilder(LIST_BACKUPS_PAGE_STR_FACT);
       restoreTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       restoreTableOperationSettings = OperationCallSettings.newBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -764,238 +753,20 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
               dropRowRangeSettings,
               generateConsistencyTokenSettings,
               checkConsistencySettings,
-              getIamPolicySettings,
-              setIamPolicySettings,
-              testIamPermissionsSettings,
               snapshotTableSettings,
               getSnapshotSettings,
               listSnapshotsSettings,
               deleteSnapshotSettings,
               createBackupSettings,
               getBackupSettings,
-              listBackupsSettings,
               updateBackupSettings,
               deleteBackupSettings,
-              restoreTableSettings);
-
+              listBackupsSettings,
+              restoreTableSettings,
+              getIamPolicySettings,
+              setIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createTableSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_heavy_params"));
-
-      builder
-          .createTableFromSnapshotSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"));
-
-      builder
-          .listTablesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-
-      builder
-          .getTableSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-
-      builder
-          .deleteTableSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"));
-
-      builder
-          .modifyColumnFamiliesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_heavy_params"));
-
-      builder
-          .dropRowRangeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("drop_row_range_params"));
-
-      builder
-          .generateConsistencyTokenSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-
-      builder
-          .checkConsistencySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-
-      builder
-          .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-
-      builder
-          .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"));
-
-      builder
-          .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-
-      builder
-          .snapshotTableSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"));
-
-      builder
-          .getSnapshotSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-
-      builder
-          .listSnapshotsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-
-      builder
-          .deleteSnapshotSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"));
-
-      builder
-          .createBackupSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"));
-
-      builder
-          .getBackupSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-
-      builder
-          .listBackupsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
-
-      builder
-          .updateBackupSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"));
-
-      builder
-          .deleteBackupSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"));
-
-      builder
-          .restoreTableSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"));
-      builder
-          .createTableFromSnapshotOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<CreateTableFromSnapshotRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Table.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(
-                  CreateTableFromSnapshotMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(60000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(3600000L))
-                      .build()));
-      builder
-          .snapshotTableOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<SnapshotTableRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Snapshot.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(SnapshotTableMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(600000L))
-                      .build()));
-      builder
-          .createBackupOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<CreateBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Backup.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(CreateBackupMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(600000L))
-                      .build()));
-      builder
-          .restoreTableOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<RestoreTableRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Table.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(RestoreTableMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(600000L))
-                      .build()));
-
-      return builder;
     }
 
     protected Builder(BigtableTableAdminStubSettings settings) {
@@ -1012,9 +783,6 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
       dropRowRangeSettings = settings.dropRowRangeSettings.toBuilder();
       generateConsistencyTokenSettings = settings.generateConsistencyTokenSettings.toBuilder();
       checkConsistencySettings = settings.checkConsistencySettings.toBuilder();
-      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
-      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
-      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       snapshotTableSettings = settings.snapshotTableSettings.toBuilder();
       snapshotTableOperationSettings = settings.snapshotTableOperationSettings.toBuilder();
       getSnapshotSettings = settings.getSnapshotSettings.toBuilder();
@@ -1023,11 +791,14 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
       createBackupSettings = settings.createBackupSettings.toBuilder();
       createBackupOperationSettings = settings.createBackupOperationSettings.toBuilder();
       getBackupSettings = settings.getBackupSettings.toBuilder();
-      listBackupsSettings = settings.listBackupsSettings.toBuilder();
       updateBackupSettings = settings.updateBackupSettings.toBuilder();
       deleteBackupSettings = settings.deleteBackupSettings.toBuilder();
+      listBackupsSettings = settings.listBackupsSettings.toBuilder();
       restoreTableSettings = settings.restoreTableSettings.toBuilder();
       restoreTableOperationSettings = settings.restoreTableOperationSettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1040,22 +811,244 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
               dropRowRangeSettings,
               generateConsistencyTokenSettings,
               checkConsistencySettings,
-              getIamPolicySettings,
-              setIamPolicySettings,
-              testIamPermissionsSettings,
               snapshotTableSettings,
               getSnapshotSettings,
               listSnapshotsSettings,
               deleteSnapshotSettings,
               createBackupSettings,
               getBackupSettings,
-              listBackupsSettings,
               updateBackupSettings,
               deleteBackupSettings,
-              restoreTableSettings);
+              listBackupsSettings,
+              restoreTableSettings,
+              getIamPolicySettings,
+              setIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createTableSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createTableFromSnapshotSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listTablesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .getTableSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .deleteTableSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .modifyColumnFamiliesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .dropRowRangeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+
+      builder
+          .generateConsistencyTokenSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
+
+      builder
+          .checkConsistencySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
+
+      builder
+          .snapshotTableSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getSnapshotSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .listSnapshotsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
+
+      builder
+          .deleteSnapshotSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .updateBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listBackupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .restoreTableSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
+
+      builder
+          .createTableFromSnapshotOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateTableFromSnapshotRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Table.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  CreateTableFromSnapshotMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(60000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(3600000L))
+                      .build()));
+
+      builder
+          .snapshotTableOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SnapshotTableRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Snapshot.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(SnapshotTableMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .createBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Backup.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(CreateBackupMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .restoreTableOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RestoreTableRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Table.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(RestoreTableMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -1131,22 +1124,6 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
       return checkConsistencySettings;
     }
 
-    /** Returns the builder for the settings used for calls to getIamPolicy. */
-    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-      return getIamPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to setIamPolicy. */
-    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-      return setIamPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to testIamPermissions. */
-    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings() {
-      return testIamPermissionsSettings;
-    }
-
     /** Returns the builder for the settings used for calls to snapshotTable. */
     public UnaryCallSettings.Builder<SnapshotTableRequest, Operation> snapshotTableSettings() {
       return snapshotTableSettings;
@@ -1195,13 +1172,6 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
       return getBackupSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listBackups. */
-    public PagedCallSettings.Builder<
-            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
-        listBackupsSettings() {
-      return listBackupsSettings;
-    }
-
     /** Returns the builder for the settings used for calls to updateBackup. */
     public UnaryCallSettings.Builder<UpdateBackupRequest, Backup> updateBackupSettings() {
       return updateBackupSettings;
@@ -1210,6 +1180,13 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     /** Returns the builder for the settings used for calls to deleteBackup. */
     public UnaryCallSettings.Builder<DeleteBackupRequest, Empty> deleteBackupSettings() {
       return deleteBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackups. */
+    public PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings() {
+      return listBackupsSettings;
     }
 
     /** Returns the builder for the settings used for calls to restoreTable. */
@@ -1223,6 +1200,22 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     public OperationCallSettings.Builder<RestoreTableRequest, Table, RestoreTableMetadata>
         restoreTableOperationSettings() {
       return restoreTableOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,20 +23,32 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class AppProfileName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_INSTANCE_APP_PROFILE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/instances/{instance}/appProfiles/{app_profile}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String instance;
   private final String appProfile;
+
+  @Deprecated
+  protected AppProfileName() {
+    project = null;
+    instance = null;
+    appProfile = null;
+  }
+
+  private AppProfileName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    instance = Preconditions.checkNotNull(builder.getInstance());
+    appProfile = Preconditions.checkNotNull(builder.getAppProfile());
+  }
 
   public String getProject() {
     return project;
@@ -58,12 +70,6 @@ public class AppProfileName implements ResourceName {
     return new Builder(this);
   }
 
-  private AppProfileName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    instance = Preconditions.checkNotNull(builder.getInstance());
-    appProfile = Preconditions.checkNotNull(builder.getAppProfile());
-  }
-
   public static AppProfileName of(String project, String instance, String appProfile) {
     return newBuilder().setProject(project).setInstance(instance).setAppProfile(appProfile).build();
   }
@@ -82,7 +88,7 @@ public class AppProfileName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_INSTANCE_APP_PROFILE.validatedMatch(
             formattedString, "AppProfileName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("instance"), matchMap.get("app_profile"));
   }
@@ -96,7 +102,7 @@ public class AppProfileName implements ResourceName {
   }
 
   public static List<String> toStringList(List<AppProfileName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (AppProfileName value : values) {
       if (value == null) {
         list.add("");
@@ -108,17 +114,24 @@ public class AppProfileName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_INSTANCE_APP_PROFILE.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("instance", instance);
-          fieldMapBuilder.put("appProfile", appProfile);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (instance != null) {
+            fieldMapBuilder.put("instance", instance);
+          }
+          if (appProfile != null) {
+            fieldMapBuilder.put("app_profile", appProfile);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -132,16 +145,43 @@ public class AppProfileName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_INSTANCE_APP_PROFILE.instantiate(
         "project", project, "instance", instance, "app_profile", appProfile);
   }
 
-  /** Builder for AppProfileName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      AppProfileName that = ((AppProfileName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.instance, that.instance)
+          && Objects.equals(this.appProfile, that.appProfile);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(instance);
+    h *= 1000003;
+    h ^= Objects.hashCode(appProfile);
+    return h;
+  }
+
+  /** Builder for projects/{project}/instances/{instance}/appProfiles/{app_profile}. */
+  public static class Builder {
     private String project;
     private String instance;
     private String appProfile;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -170,8 +210,6 @@ public class AppProfileName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(AppProfileName appProfileName) {
       project = appProfileName.project;
       instance = appProfileName.instance;
@@ -181,31 +219,5 @@ public class AppProfileName implements ResourceName {
     public AppProfileName build() {
       return new AppProfileName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof AppProfileName) {
-      AppProfileName that = (AppProfileName) o;
-      return (this.project.equals(that.project))
-          && (this.instance.equals(that.instance))
-          && (this.appProfile.equals(that.appProfile));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= instance.hashCode();
-    h *= 1000003;
-    h ^= appProfile.hashCode();
-    return h;
   }
 }

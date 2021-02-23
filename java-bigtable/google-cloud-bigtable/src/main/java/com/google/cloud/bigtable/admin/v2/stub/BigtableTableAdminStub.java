@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigtable.admin.v2.stub;
 
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -65,13 +65,12 @@ import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /** For internal use only. */
 @Generated("by gapic-generator")
 @InternalApi
 public abstract class BigtableTableAdminStub implements BackgroundResource {
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationsStub getOperationsStub() {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
@@ -80,7 +79,6 @@ public abstract class BigtableTableAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createTableCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateTableFromSnapshotRequest, Table, CreateTableFromSnapshotMetadata>
       createTableFromSnapshotOperationCallable() {
     throw new UnsupportedOperationException(
@@ -126,20 +124,6 @@ public abstract class BigtableTableAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: checkConsistencyCallable()");
   }
 
-  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
-  }
-
-  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
-  }
-
-  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
       snapshotTableOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: snapshotTableOperationCallable()");
@@ -166,7 +150,6 @@ public abstract class BigtableTableAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteSnapshotCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateBackupRequest, Backup, CreateBackupMetadata>
       createBackupOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: createBackupOperationCallable()");
@@ -180,14 +163,6 @@ public abstract class BigtableTableAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getBackupCallable()");
   }
 
-  public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listBackupsPagedCallable()");
-  }
-
-  public UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
-    throw new UnsupportedOperationException("Not implemented: listBackupsCallable()");
-  }
-
   public UnaryCallable<UpdateBackupRequest, Backup> updateBackupCallable() {
     throw new UnsupportedOperationException("Not implemented: updateBackupCallable()");
   }
@@ -196,7 +171,14 @@ public abstract class BigtableTableAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteBackupCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBackupsPagedCallable()");
+  }
+
+  public UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBackupsCallable()");
+  }
+
   public OperationCallable<RestoreTableRequest, Table, RestoreTableMetadata>
       restoreTableOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: restoreTableOperationCallable()");
@@ -204,6 +186,19 @@ public abstract class BigtableTableAdminStub implements BackgroundResource {
 
   public UnaryCallable<RestoreTableRequest, Operation> restoreTableCallable() {
     throw new UnsupportedOperationException("Not implemented: restoreTableCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

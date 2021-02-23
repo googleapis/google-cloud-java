@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigtable.admin.v2.stub;
 
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -76,12 +76,11 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /** For internal use only. */
 @Generated("by gapic-generator")
 @InternalApi
 public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
-
   private static final MethodDescriptor<CreateTableRequest, Table> createTableMethodDescriptor =
       MethodDescriptor.<CreateTableRequest, Table>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -89,6 +88,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateTableRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Table.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreateTableFromSnapshotRequest, Operation>
       createTableFromSnapshotMethodDescriptor =
           MethodDescriptor.<CreateTableFromSnapshotRequest, Operation>newBuilder()
@@ -99,6 +99,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
                   ProtoUtils.marshaller(CreateTableFromSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListTablesRequest, ListTablesResponse>
       listTablesMethodDescriptor =
           MethodDescriptor.<ListTablesRequest, ListTablesResponse>newBuilder()
@@ -107,6 +108,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListTablesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTablesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetTableRequest, Table> getTableMethodDescriptor =
       MethodDescriptor.<GetTableRequest, Table>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -114,6 +116,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetTableRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Table.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeleteTableRequest, Empty> deleteTableMethodDescriptor =
       MethodDescriptor.<DeleteTableRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -121,6 +124,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTableRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ModifyColumnFamiliesRequest, Table>
       modifyColumnFamiliesMethodDescriptor =
           MethodDescriptor.<ModifyColumnFamiliesRequest, Table>newBuilder()
@@ -130,6 +134,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
                   ProtoUtils.marshaller(ModifyColumnFamiliesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Table.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DropRowRangeRequest, Empty> dropRowRangeMethodDescriptor =
       MethodDescriptor.<DropRowRangeRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -137,6 +142,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DropRowRangeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<
           GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse>
       generateConsistencyTokenMethodDescriptor =
@@ -150,6 +156,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateConsistencyTokenResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CheckConsistencyRequest, CheckConsistencyResponse>
       checkConsistencyMethodDescriptor =
           MethodDescriptor.<CheckConsistencyRequest, CheckConsistencyResponse>newBuilder()
@@ -160,30 +167,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CheckConsistencyResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
-      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/GetIamPolicy")
-          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
-      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/SetIamPolicy")
-          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsMethodDescriptor =
-          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/TestIamPermissions")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
-              .build();
+
   private static final MethodDescriptor<SnapshotTableRequest, Operation>
       snapshotTableMethodDescriptor =
           MethodDescriptor.<SnapshotTableRequest, Operation>newBuilder()
@@ -193,6 +177,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
                   ProtoUtils.marshaller(SnapshotTableRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetSnapshotRequest, Snapshot> getSnapshotMethodDescriptor =
       MethodDescriptor.<GetSnapshotRequest, Snapshot>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -200,6 +185,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetSnapshotRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Snapshot.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListSnapshotsRequest, ListSnapshotsResponse>
       listSnapshotsMethodDescriptor =
           MethodDescriptor.<ListSnapshotsRequest, ListSnapshotsResponse>newBuilder()
@@ -210,6 +196,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSnapshotsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteSnapshotRequest, Empty>
       deleteSnapshotMethodDescriptor =
           MethodDescriptor.<DeleteSnapshotRequest, Empty>newBuilder()
@@ -219,6 +206,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
                   ProtoUtils.marshaller(DeleteSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateBackupRequest, Operation>
       createBackupMethodDescriptor =
           MethodDescriptor.<CreateBackupRequest, Operation>newBuilder()
@@ -227,6 +215,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
               .setRequestMarshaller(ProtoUtils.marshaller(CreateBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetBackupRequest, Backup> getBackupMethodDescriptor =
       MethodDescriptor.<GetBackupRequest, Backup>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -234,6 +223,23 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetBackupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Backup.getDefaultInstance()))
           .build();
+
+  private static final MethodDescriptor<UpdateBackupRequest, Backup> updateBackupMethodDescriptor =
+      MethodDescriptor.<UpdateBackupRequest, Backup>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/UpdateBackup")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateBackupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Backup.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<DeleteBackupRequest, Empty> deleteBackupMethodDescriptor =
+      MethodDescriptor.<DeleteBackupRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/DeleteBackup")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteBackupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+
   private static final MethodDescriptor<ListBackupsRequest, ListBackupsResponse>
       listBackupsMethodDescriptor =
           MethodDescriptor.<ListBackupsRequest, ListBackupsResponse>newBuilder()
@@ -243,20 +249,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupsResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<UpdateBackupRequest, Backup> updateBackupMethodDescriptor =
-      MethodDescriptor.<UpdateBackupRequest, Backup>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/UpdateBackup")
-          .setRequestMarshaller(ProtoUtils.marshaller(UpdateBackupRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Backup.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<DeleteBackupRequest, Empty> deleteBackupMethodDescriptor =
-      MethodDescriptor.<DeleteBackupRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/DeleteBackup")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteBackupRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
+
   private static final MethodDescriptor<RestoreTableRequest, Operation>
       restoreTableMethodDescriptor =
           MethodDescriptor.<RestoreTableRequest, Operation>newBuilder()
@@ -266,8 +259,32 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
+      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/GetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
+      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/SetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/TestIamPermissions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .build();
 
   private final UnaryCallable<CreateTableRequest, Table> createTableCallable;
   private final UnaryCallable<CreateTableFromSnapshotRequest, Operation>
@@ -285,10 +302,6 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
       generateConsistencyTokenCallable;
   private final UnaryCallable<CheckConsistencyRequest, CheckConsistencyResponse>
       checkConsistencyCallable;
-  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
-  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
-  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable;
   private final UnaryCallable<SnapshotTableRequest, Operation> snapshotTableCallable;
   private final OperationCallable<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
       snapshotTableOperationCallable;
@@ -301,15 +314,21 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
   private final OperationCallable<CreateBackupRequest, Backup, CreateBackupMetadata>
       createBackupOperationCallable;
   private final UnaryCallable<GetBackupRequest, Backup> getBackupCallable;
+  private final UnaryCallable<UpdateBackupRequest, Backup> updateBackupCallable;
+  private final UnaryCallable<DeleteBackupRequest, Empty> deleteBackupCallable;
   private final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable;
   private final UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse>
       listBackupsPagedCallable;
-  private final UnaryCallable<UpdateBackupRequest, Backup> updateBackupCallable;
-  private final UnaryCallable<DeleteBackupRequest, Empty> deleteBackupCallable;
   private final UnaryCallable<RestoreTableRequest, Operation> restoreTableCallable;
   private final OperationCallable<RestoreTableRequest, Table, RestoreTableMetadata>
       restoreTableOperationCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcBigtableTableAdminStub create(BigtableTableAdminStubSettings settings)
@@ -473,46 +492,6 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
                       }
                     })
                 .build();
-    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
-        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
-            .setMethodDescriptor(getIamPolicyMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<GetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
-        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
-            .setMethodDescriptor(setIamPolicyMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<SetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsTransportSettings =
-            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
-                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(TestIamPermissionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("resource", String.valueOf(request.getResource()));
-                        return params.build();
-                      }
-                    })
-                .build();
     GrpcCallSettings<SnapshotTableRequest, Operation> snapshotTableTransportSettings =
         GrpcCallSettings.<SnapshotTableRequest, Operation>newBuilder()
             .setMethodDescriptor(snapshotTableMethodDescriptor)
@@ -591,19 +570,6 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
                   }
                 })
             .build();
-    GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
-        GrpcCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
-            .setMethodDescriptor(listBackupsMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<ListBackupsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListBackupsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<UpdateBackupRequest, Backup> updateBackupTransportSettings =
         GrpcCallSettings.<UpdateBackupRequest, Backup>newBuilder()
             .setMethodDescriptor(updateBackupMethodDescriptor)
@@ -630,6 +596,19 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
                   }
                 })
             .build();
+    GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
+        GrpcCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
+            .setMethodDescriptor(listBackupsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListBackupsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListBackupsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<RestoreTableRequest, Operation> restoreTableTransportSettings =
         GrpcCallSettings.<RestoreTableRequest, Operation>newBuilder()
             .setMethodDescriptor(restoreTableMethodDescriptor)
@@ -643,6 +622,46 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
                   }
                 })
             .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<SetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(SetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
+                      @Override
+                      public Map<String, String> extract(TestIamPermissionsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("resource", String.valueOf(request.getResource()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.createTableCallable =
         callableFactory.createUnaryCallable(
@@ -657,7 +676,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
             createTableFromSnapshotTransportSettings,
             settings.createTableFromSnapshotOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.listTablesCallable =
         callableFactory.createUnaryCallable(
             listTablesTransportSettings, settings.listTablesSettings(), clientContext);
@@ -686,17 +705,6 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
     this.checkConsistencyCallable =
         callableFactory.createUnaryCallable(
             checkConsistencyTransportSettings, settings.checkConsistencySettings(), clientContext);
-    this.getIamPolicyCallable =
-        callableFactory.createUnaryCallable(
-            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
-    this.setIamPolicyCallable =
-        callableFactory.createUnaryCallable(
-            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
-    this.testIamPermissionsCallable =
-        callableFactory.createUnaryCallable(
-            testIamPermissionsTransportSettings,
-            settings.testIamPermissionsSettings(),
-            clientContext);
     this.snapshotTableCallable =
         callableFactory.createUnaryCallable(
             snapshotTableTransportSettings, settings.snapshotTableSettings(), clientContext);
@@ -705,7 +713,7 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
             snapshotTableTransportSettings,
             settings.snapshotTableOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getSnapshotCallable =
         callableFactory.createUnaryCallable(
             getSnapshotTransportSettings, settings.getSnapshotSettings(), clientContext);
@@ -726,22 +734,22 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
             createBackupTransportSettings,
             settings.createBackupOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getBackupCallable =
         callableFactory.createUnaryCallable(
             getBackupTransportSettings, settings.getBackupSettings(), clientContext);
-    this.listBackupsCallable =
-        callableFactory.createUnaryCallable(
-            listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
-    this.listBackupsPagedCallable =
-        callableFactory.createPagedCallable(
-            listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
     this.updateBackupCallable =
         callableFactory.createUnaryCallable(
             updateBackupTransportSettings, settings.updateBackupSettings(), clientContext);
     this.deleteBackupCallable =
         callableFactory.createUnaryCallable(
             deleteBackupTransportSettings, settings.deleteBackupSettings(), clientContext);
+    this.listBackupsCallable =
+        callableFactory.createUnaryCallable(
+            listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
+    this.listBackupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
     this.restoreTableCallable =
         callableFactory.createUnaryCallable(
             restoreTableTransportSettings, settings.restoreTableSettings(), clientContext);
@@ -750,12 +758,23 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
             restoreTableTransportSettings,
             settings.restoreTableOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
@@ -764,23 +783,22 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
     return createTableCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CreateTableFromSnapshotRequest, Table, CreateTableFromSnapshotMetadata>
-      createTableFromSnapshotOperationCallable() {
-    return createTableFromSnapshotOperationCallable;
-  }
-
   public UnaryCallable<CreateTableFromSnapshotRequest, Operation>
       createTableFromSnapshotCallable() {
     return createTableFromSnapshotCallable;
   }
 
-  public UnaryCallable<ListTablesRequest, ListTablesPagedResponse> listTablesPagedCallable() {
-    return listTablesPagedCallable;
+  public OperationCallable<CreateTableFromSnapshotRequest, Table, CreateTableFromSnapshotMetadata>
+      createTableFromSnapshotOperationCallable() {
+    return createTableFromSnapshotOperationCallable;
   }
 
   public UnaryCallable<ListTablesRequest, ListTablesResponse> listTablesCallable() {
     return listTablesCallable;
+  }
+
+  public UnaryCallable<ListTablesRequest, ListTablesPagedResponse> listTablesPagedCallable() {
+    return listTablesPagedCallable;
   }
 
   public UnaryCallable<GetTableRequest, Table> getTableCallable() {
@@ -809,6 +827,70 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
     return checkConsistencyCallable;
   }
 
+  public UnaryCallable<SnapshotTableRequest, Operation> snapshotTableCallable() {
+    return snapshotTableCallable;
+  }
+
+  public OperationCallable<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
+      snapshotTableOperationCallable() {
+    return snapshotTableOperationCallable;
+  }
+
+  public UnaryCallable<GetSnapshotRequest, Snapshot> getSnapshotCallable() {
+    return getSnapshotCallable;
+  }
+
+  public UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsCallable() {
+    return listSnapshotsCallable;
+  }
+
+  public UnaryCallable<ListSnapshotsRequest, ListSnapshotsPagedResponse>
+      listSnapshotsPagedCallable() {
+    return listSnapshotsPagedCallable;
+  }
+
+  public UnaryCallable<DeleteSnapshotRequest, Empty> deleteSnapshotCallable() {
+    return deleteSnapshotCallable;
+  }
+
+  public UnaryCallable<CreateBackupRequest, Operation> createBackupCallable() {
+    return createBackupCallable;
+  }
+
+  public OperationCallable<CreateBackupRequest, Backup, CreateBackupMetadata>
+      createBackupOperationCallable() {
+    return createBackupOperationCallable;
+  }
+
+  public UnaryCallable<GetBackupRequest, Backup> getBackupCallable() {
+    return getBackupCallable;
+  }
+
+  public UnaryCallable<UpdateBackupRequest, Backup> updateBackupCallable() {
+    return updateBackupCallable;
+  }
+
+  public UnaryCallable<DeleteBackupRequest, Empty> deleteBackupCallable() {
+    return deleteBackupCallable;
+  }
+
+  public UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
+    return listBackupsCallable;
+  }
+
+  public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
+    return listBackupsPagedCallable;
+  }
+
+  public UnaryCallable<RestoreTableRequest, Operation> restoreTableCallable() {
+    return restoreTableCallable;
+  }
+
+  public OperationCallable<RestoreTableRequest, Table, RestoreTableMetadata>
+      restoreTableOperationCallable() {
+    return restoreTableOperationCallable;
+  }
+
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
@@ -820,73 +902,6 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
-      snapshotTableOperationCallable() {
-    return snapshotTableOperationCallable;
-  }
-
-  public UnaryCallable<SnapshotTableRequest, Operation> snapshotTableCallable() {
-    return snapshotTableCallable;
-  }
-
-  public UnaryCallable<GetSnapshotRequest, Snapshot> getSnapshotCallable() {
-    return getSnapshotCallable;
-  }
-
-  public UnaryCallable<ListSnapshotsRequest, ListSnapshotsPagedResponse>
-      listSnapshotsPagedCallable() {
-    return listSnapshotsPagedCallable;
-  }
-
-  public UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsCallable() {
-    return listSnapshotsCallable;
-  }
-
-  public UnaryCallable<DeleteSnapshotRequest, Empty> deleteSnapshotCallable() {
-    return deleteSnapshotCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CreateBackupRequest, Backup, CreateBackupMetadata>
-      createBackupOperationCallable() {
-    return createBackupOperationCallable;
-  }
-
-  public UnaryCallable<CreateBackupRequest, Operation> createBackupCallable() {
-    return createBackupCallable;
-  }
-
-  public UnaryCallable<GetBackupRequest, Backup> getBackupCallable() {
-    return getBackupCallable;
-  }
-
-  public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
-    return listBackupsPagedCallable;
-  }
-
-  public UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
-    return listBackupsCallable;
-  }
-
-  public UnaryCallable<UpdateBackupRequest, Backup> updateBackupCallable() {
-    return updateBackupCallable;
-  }
-
-  public UnaryCallable<DeleteBackupRequest, Empty> deleteBackupCallable() {
-    return deleteBackupCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<RestoreTableRequest, Table, RestoreTableMetadata>
-      restoreTableOperationCallable() {
-    return restoreTableOperationCallable;
-  }
-
-  public UnaryCallable<RestoreTableRequest, Operation> restoreTableCallable() {
-    return restoreTableCallable;
   }
 
   @Override

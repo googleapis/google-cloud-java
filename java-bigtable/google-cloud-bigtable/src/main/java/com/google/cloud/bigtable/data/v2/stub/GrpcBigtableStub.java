@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigtable.data.v2.stub;
 
 import com.google.api.core.InternalApi;
@@ -37,6 +38,7 @@ import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -44,12 +46,11 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /** For internal use only. */
 @Generated("by gapic-generator")
 @InternalApi
 public class GrpcBigtableStub extends BigtableStub {
-
   private static final MethodDescriptor<ReadRowsRequest, ReadRowsResponse>
       readRowsMethodDescriptor =
           MethodDescriptor.<ReadRowsRequest, ReadRowsResponse>newBuilder()
@@ -58,6 +59,7 @@ public class GrpcBigtableStub extends BigtableStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ReadRowsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReadRowsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<SampleRowKeysRequest, SampleRowKeysResponse>
       sampleRowKeysMethodDescriptor =
           MethodDescriptor.<SampleRowKeysRequest, SampleRowKeysResponse>newBuilder()
@@ -68,6 +70,7 @@ public class GrpcBigtableStub extends BigtableStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SampleRowKeysResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<MutateRowRequest, MutateRowResponse>
       mutateRowMethodDescriptor =
           MethodDescriptor.<MutateRowRequest, MutateRowResponse>newBuilder()
@@ -76,6 +79,7 @@ public class GrpcBigtableStub extends BigtableStub {
               .setRequestMarshaller(ProtoUtils.marshaller(MutateRowRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MutateRowResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<MutateRowsRequest, MutateRowsResponse>
       mutateRowsMethodDescriptor =
           MethodDescriptor.<MutateRowsRequest, MutateRowsResponse>newBuilder()
@@ -84,6 +88,7 @@ public class GrpcBigtableStub extends BigtableStub {
               .setRequestMarshaller(ProtoUtils.marshaller(MutateRowsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MutateRowsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CheckAndMutateRowRequest, CheckAndMutateRowResponse>
       checkAndMutateRowMethodDescriptor =
           MethodDescriptor.<CheckAndMutateRowRequest, CheckAndMutateRowResponse>newBuilder()
@@ -94,6 +99,7 @@ public class GrpcBigtableStub extends BigtableStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CheckAndMutateRowResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
       readModifyWriteRowMethodDescriptor =
           MethodDescriptor.<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>newBuilder()
@@ -105,8 +111,6 @@ public class GrpcBigtableStub extends BigtableStub {
                   ProtoUtils.marshaller(ReadModifyWriteRowResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> readRowsCallable;
   private final ServerStreamingCallable<SampleRowKeysRequest, SampleRowKeysResponse>
       sampleRowKeysCallable;
@@ -117,6 +121,8 @@ public class GrpcBigtableStub extends BigtableStub {
   private final UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
       readModifyWriteRowCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcBigtableStub create(BigtableStubSettings settings) throws IOException {
@@ -152,6 +158,7 @@ public class GrpcBigtableStub extends BigtableStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ReadRowsRequest, ReadRowsResponse> readRowsTransportSettings =
         GrpcCallSettings.<ReadRowsRequest, ReadRowsResponse>newBuilder()
@@ -257,7 +264,12 @@ public class GrpcBigtableStub extends BigtableStub {
             settings.readModifyWriteRowSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> readRowsCallable() {
