@@ -58,7 +58,7 @@
     <grpc.version>1.36.0</grpc.version>
     <gax.version>1.61.0</gax.version>
     <guava.version>30.1-android</guava.version>
-    <protobuf.version>3.15.0</protobuf.version>
+    <protobuf.version>3.15.1</protobuf.version>
     <google.api-common.version>1.10.1</google.api-common.version>
     <google.common-protos.version>2.0.1</google.common-protos.version>
     <google.core.version>1.94.1</google.core.version>
