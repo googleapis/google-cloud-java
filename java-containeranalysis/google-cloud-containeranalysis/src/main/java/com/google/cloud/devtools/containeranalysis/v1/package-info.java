@@ -32,6 +32,14 @@
  * to that note.
  *
  * <p>Sample for ContainerAnalysisClient:
+ *
+ * <pre>{@code
+ * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+ *   ResourceName resource = ProjectName.of("[PROJECT]");
+ *   Policy policy = Policy.newBuilder().build();
+ *   Policy response = containerAnalysisClient.setIamPolicy(resource, policy);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.devtools.containeranalysis.v1;

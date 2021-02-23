@@ -53,6 +53,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+ *   ResourceName resource = ProjectName.of("[PROJECT]");
+ *   Policy policy = Policy.newBuilder().build();
+ *   Policy response = containerAnalysisClient.setIamPolicy(resource, policy);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ContainerAnalysisClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -172,6 +180,16 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * <p>The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for notes and
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = containerAnalysisClient.setIamPolicy(resource, policy);
+   * }
+   * }</pre>
+   *
    * @param resource REQUIRED: The resource for which the policy is being specified. See the
    *     operation documentation for the appropriate value for this field.
    * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
@@ -197,6 +215,16 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * <p>The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for notes and
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   String resource = ProjectName.of("[PROJECT]").toString();
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = containerAnalysisClient.setIamPolicy(resource, policy);
+   * }
+   * }</pre>
+   *
    * @param resource REQUIRED: The resource for which the policy is being specified. See the
    *     operation documentation for the appropriate value for this field.
    * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
@@ -219,6 +247,19 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * <p>The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for notes and
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .build();
+   *   Policy response = containerAnalysisClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -236,6 +277,19 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = containerAnalysisClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
@@ -249,6 +303,15 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <p>The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for notes and
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
+   *   Policy response = containerAnalysisClient.getIamPolicy(resource);
+   * }
+   * }</pre>
    *
    * @param resource REQUIRED: The resource for which the policy is being requested. See the
    *     operation documentation for the appropriate value for this field.
@@ -271,6 +334,15 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * <p>The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for notes and
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   String resource = ProjectName.of("[PROJECT]").toString();
+   *   Policy response = containerAnalysisClient.getIamPolicy(resource);
+   * }
+   * }</pre>
+   *
    * @param resource REQUIRED: The resource for which the policy is being requested. See the
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -289,6 +361,19 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * <p>The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for notes and
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = containerAnalysisClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -306,6 +391,19 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = containerAnalysisClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
@@ -318,6 +416,17 @@ public class ContainerAnalysisClient implements BackgroundResource {
    *
    * <p>The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for notes and
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
+   *   List<String> permissions = new ArrayList<>();
+   *   TestIamPermissionsResponse response =
+   *       containerAnalysisClient.testIamPermissions(resource, permissions);
+   * }
+   * }</pre>
    *
    * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
    *     operation documentation for the appropriate value for this field.
@@ -344,6 +453,17 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * <p>The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for notes and
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   String resource = ProjectName.of("[PROJECT]").toString();
+   *   List<String> permissions = new ArrayList<>();
+   *   TestIamPermissionsResponse response =
+   *       containerAnalysisClient.testIamPermissions(resource, permissions);
+   * }
+   * }</pre>
+   *
    * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
    *     operation documentation for the appropriate value for this field.
    * @param permissions The set of permissions to check for the `resource`. Permissions with
@@ -369,6 +489,19 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * <p>The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for notes and
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = containerAnalysisClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -385,6 +518,20 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       containerAnalysisClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
@@ -394,6 +541,17 @@ public class ContainerAnalysisClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a summary of the number and severity of occurrences.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String filter = "filter-1274492040";
+   *   VulnerabilityOccurrencesSummary response =
+   *       containerAnalysisClient.getVulnerabilityOccurrencesSummary(parent, filter);
+   * }
+   * }</pre>
    *
    * @param parent The name of the project to get a vulnerability summary for in the form of
    *     `projects/[PROJECT_ID]`.
@@ -414,6 +572,17 @@ public class ContainerAnalysisClient implements BackgroundResource {
   /**
    * Gets a summary of the number and severity of occurrences.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   String filter = "filter-1274492040";
+   *   VulnerabilityOccurrencesSummary response =
+   *       containerAnalysisClient.getVulnerabilityOccurrencesSummary(parent, filter);
+   * }
+   * }</pre>
+   *
    * @param parent The name of the project to get a vulnerability summary for in the form of
    *     `projects/[PROJECT_ID]`.
    * @param filter The filter expression.
@@ -433,6 +602,20 @@ public class ContainerAnalysisClient implements BackgroundResource {
   /**
    * Gets a summary of the number and severity of occurrences.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   GetVulnerabilityOccurrencesSummaryRequest request =
+   *       GetVulnerabilityOccurrencesSummaryRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   VulnerabilityOccurrencesSummary response =
+   *       containerAnalysisClient.getVulnerabilityOccurrencesSummary(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -446,6 +629,20 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * Gets a summary of the number and severity of occurrences.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   GetVulnerabilityOccurrencesSummaryRequest request =
+   *       GetVulnerabilityOccurrencesSummaryRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<VulnerabilityOccurrencesSummary> future =
+   *       containerAnalysisClient.getVulnerabilityOccurrencesSummaryCallable().futureCall(request);
+   *   // Do something.
+   *   VulnerabilityOccurrencesSummary response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>

@@ -226,19 +226,23 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
   }
 
+  @Override
   public UnaryCallable<GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
       getVulnerabilityOccurrencesSummaryCallable() {
     return getVulnerabilityOccurrencesSummaryCallable;
