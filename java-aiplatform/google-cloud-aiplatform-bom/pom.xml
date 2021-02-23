@@ -77,8 +77,18 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-aiplatform-v1</artifactId>
+        <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-aiplatform-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-aiplatform-v1beta1</artifactId>
         <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-aiplatform-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-aiplatform-v1</artifactId>
+        <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-aiplatform-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

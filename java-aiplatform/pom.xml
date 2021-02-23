@@ -38,7 +38,7 @@
     <tag>HEAD</tag>
   </scm>
   <issueManagement>
-    <url>https://github.com/googleapis/java-/issues</url>
+    <url>https://github.com/googleapis/java-aiplatform/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
   <distributionManagement>
@@ -74,15 +74,24 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-aiplatform-v1</artifactId>
+        <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-aiplatform-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-aiplatform-v1beta1</artifactId>
         <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-aiplatform-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-aiplatform-v1</artifactId>
+        <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-aiplatform-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-aiplatform-v1beta1</artifactId>
         <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-aiplatform-v1beta1:current} -->
       </dependency>
-
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
@@ -113,7 +122,9 @@
   <modules>
     <module>google-cloud-aiplatform</module>
     <module>proto-google-cloud-aiplatform-v1beta1</module>
+    <module>proto-google-cloud-aiplatform-v1</module>
     <module>grpc-google-cloud-aiplatform-v1beta1</module>
+    <module>grpc-google-cloud-aiplatform-v1</module>
     <module>google-cloud-aiplatform-bom</module>
   </modules>
 

@@ -19,7 +19,7 @@ import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
 service = 'aiplatform'
-versions = ['v1beta1']
+versions = ['v1beta1', 'v1']
 
 for version in versions:
   java.bazel_library(

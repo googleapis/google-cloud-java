@@ -30,7 +30,7 @@ import org.junit.Test;
 public class PredictImageObjectDetectionSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String FILE_NAME = "resources/caprese_salad.jpg";
+  private static final String FILE_NAME = "resources/iod_caprese_salad.jpg";
   private static final String ENDPOINT_ID = System.getenv("IMAGE_OBJECT_DETECTION_ENDPOINT_ID");
   private ByteArrayOutputStream bout;
   private PrintStream out;

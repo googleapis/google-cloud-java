@@ -32,6 +32,15 @@
         "language": "java",
         "generator": "bazel"
       }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "aiplatform",
+        "apiVersion": "v1",
+        "language": "java",
+        "generator": "bazel"
+      }
     }
   ],
   "generatedFiles": [
