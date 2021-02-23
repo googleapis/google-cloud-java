@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.1.4](https://www.github.com/googleapis/java-logging/compare/v2.1.3...v2.1.4) (2021-02-22)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#423](https://www.github.com/googleapis/java-logging/issues/423)) ([8649f2f](https://www.github.com/googleapis/java-logging/commit/8649f2fa8d8d730422ea426142fba2bf3ebfec94))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#439](https://www.github.com/googleapis/java-logging/issues/439)) ([9cd8474](https://www.github.com/googleapis/java-logging/commit/9cd8474fdcd313f08216642254d72de9ce1a3214))
+
 ### [2.1.3](https://www.github.com/googleapis/java-logging/compare/v2.1.2...v2.1.3) (2021-01-22)
 
 
