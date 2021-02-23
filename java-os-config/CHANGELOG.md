@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.1.5](https://www.github.com/googleapis/java-os-config/compare/v1.1.4...v1.1.5) (2021-02-22)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#210](https://www.github.com/googleapis/java-os-config/issues/210)) ([bbbc522](https://www.github.com/googleapis/java-os-config/commit/bbbc522dc27abab01df996412cd27568e0f03f8e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#220](https://www.github.com/googleapis/java-os-config/issues/220)) ([fc13336](https://www.github.com/googleapis/java-os-config/commit/fc13336c9a498a781b6dfe596b7301cacc936224))
+
 ### [1.1.4](https://www.github.com/googleapis/java-os-config/compare/v1.1.3...v1.1.4) (2021-01-14)
 
 
