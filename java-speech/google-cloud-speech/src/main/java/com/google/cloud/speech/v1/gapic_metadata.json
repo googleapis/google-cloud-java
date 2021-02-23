@@ -1,0 +1,27 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.speech.v1",
+  "libraryPackage": "com.google.cloud.speech.v1",
+  "services": {
+    "Speech": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SpeechClient",
+          "rpcs": {
+            "LongRunningRecognize": {
+              "methods": ["longRunningRecognizeAsync", "longRunningRecognizeAsync", "longRunningRecognizeOperationCallable", "longRunningRecognizeCallable"]
+            },
+            "Recognize": {
+              "methods": ["recognize", "recognize", "recognizeCallable"]
+            },
+            "StreamingRecognize": {
+              "methods": ["streamingRecognizeCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

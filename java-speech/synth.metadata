@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-speech.git",
-        "sha": "1c8b23666cb4cccc91d080eb250d030ff3e63036"
+        "sha": "cd50bdf91cdff1b923070ac7483e425f39f62f8d"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "56c65edc8b946c95fa7ea0e4458412d3a8219c83",
-        "internalRef": "358182033"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "56c65edc8b946c95fa7ea0e4458412d3a8219c83",
-        "internalRef": "358182033"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -120,6 +120,7 @@
     "codecov.yaml",
     "google-cloud-speech/src/main/java/com/google/cloud/speech/v1/SpeechClient.java",
     "google-cloud-speech/src/main/java/com/google/cloud/speech/v1/SpeechSettings.java",
+    "google-cloud-speech/src/main/java/com/google/cloud/speech/v1/gapic_metadata.json",
     "google-cloud-speech/src/main/java/com/google/cloud/speech/v1/package-info.java",
     "google-cloud-speech/src/main/java/com/google/cloud/speech/v1/stub/GrpcSpeechCallableFactory.java",
     "google-cloud-speech/src/main/java/com/google/cloud/speech/v1/stub/GrpcSpeechStub.java",
@@ -129,6 +130,7 @@
     "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/AdaptationSettings.java",
     "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechClient.java",
     "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechSettings.java",
+    "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/gapic_metadata.json",
     "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/package-info.java",
     "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/stub/AdaptationStub.java",
     "google-cloud-speech/src/main/java/com/google/cloud/speech/v1p1beta1/stub/AdaptationStubSettings.java",
