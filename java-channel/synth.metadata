@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-channel.git",
-        "sha": "9071df63ce0c21ccf6e2d7ec149e361ff81c0cd7"
+        "sha": "8496f5e44499b2ff0b0a7da163516edbb982562a"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
-        "internalRef": "358516065"
+        "sha": "2916ac4a35c49441baa5dc8c7e2ad5a1205ed2ca",
+        "internalRef": "358862009"
       }
     },
     {

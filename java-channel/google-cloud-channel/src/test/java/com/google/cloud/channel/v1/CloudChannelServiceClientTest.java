@@ -1577,7 +1577,6 @@ public class CloudChannelServiceClientTest {
         CreateChannelPartnerLinkRequest.newBuilder()
             .setParent("parent-995424086")
             .setChannelPartnerLink(ChannelPartnerLink.newBuilder().build())
-            .setDomain("domain-1326197564")
             .build();
 
     ChannelPartnerLink actualResponse = client.createChannelPartnerLink(request);
@@ -1590,7 +1589,6 @@ public class CloudChannelServiceClientTest {
 
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getChannelPartnerLink(), actualRequest.getChannelPartnerLink());
-    Assert.assertEquals(request.getDomain(), actualRequest.getDomain());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1607,7 +1605,6 @@ public class CloudChannelServiceClientTest {
           CreateChannelPartnerLinkRequest.newBuilder()
               .setParent("parent-995424086")
               .setChannelPartnerLink(ChannelPartnerLink.newBuilder().build())
-              .setDomain("domain-1326197564")
               .build();
       client.createChannelPartnerLink(request);
       Assert.fail("No exception raised");

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <className>com/google/cloud/channel/v1/CreateChannelPartnerLinkRequest*</className>
+    <differenceType>7002</differenceType>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <className>com/google/cloud/channel/v1/CreateChannelPartnerLinkRequest*</className>
+    <differenceType>7002</differenceType>
+    <method>* set*(*)</method>
+  </difference>
+  <difference>
+    <className>com/google/cloud/channel/v1/CreateChannelPartnerLinkRequest*</className>
+    <differenceType>7002</differenceType>
+    <method>* clear*(*)</method>
+  </difference>
+  <difference>
+    <className>com/google/cloud/channel/v1/TransferableSku*</className>
+    <differenceType>7002</differenceType>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <className>com/google/cloud/channel/v1/TransferableSku*</className>
+    <differenceType>7002</differenceType>
+    <method>* has*(*)</method>
+  </difference>
+  <difference>
+  <className>com/google/cloud/channel/v1/TransferableSku*</className>
+  <differenceType>7002</differenceType>
+  <method>* clear*(*)</method>
+</difference>
+  <difference>
+    <className>com/google/cloud/channel/v1/TransferableSku*</className>
+    <differenceType>7002</differenceType>
+    <method>* set*(*)</method>
+  </difference>
+  <difference>
+    <className>com/google/cloud/channel/v1/TransferableSku*</className>
+    <differenceType>7002</differenceType>
+    <method>* merge*(*)</method>
+  </difference>
+  <difference>
+    <className>com/google/cloud/channel/v1/CreateChannelPartnerLinkRequest*</className>
+    <differenceType>6011</differenceType>
+    <field>*_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <className>com/google/cloud/channel/v1/TransferableSku*</className>
+    <differenceType>6011</differenceType>
+    <field>*_FIELD_NUMBER</field>
+  </difference>
+</differences>

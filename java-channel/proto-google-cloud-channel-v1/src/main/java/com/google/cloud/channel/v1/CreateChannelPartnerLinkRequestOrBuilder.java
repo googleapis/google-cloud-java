@@ -98,33 +98,4 @@ public interface CreateChannelPartnerLinkRequestOrBuilder
    * </code>
    */
   com.google.cloud.channel.v1.ChannelPartnerLinkOrBuilder getChannelPartnerLinkOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The invited partner's domain. Either domain or
-   * channel_partner_link.reseller_cloud_identity_id can be used to create a
-   * link.
-   * </pre>
-   *
-   * <code>string domain = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The domain.
-   */
-  java.lang.String getDomain();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The invited partner's domain. Either domain or
-   * channel_partner_link.reseller_cloud_identity_id can be used to create a
-   * link.
-   * </pre>
-   *
-   * <code>string domain = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The bytes for domain.
-   */
-  com.google.protobuf.ByteString getDomainBytes();
 }

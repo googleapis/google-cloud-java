@@ -70,36 +70,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
           case 0:
             done = true;
             break;
-          case 50:
-            {
-              com.google.protobuf.BoolValue.Builder subBuilder = null;
-              if (isCommitment_ != null) {
-                subBuilder = isCommitment_.toBuilder();
-              }
-              isCommitment_ =
-                  input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(isCommitment_);
-                isCommitment_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (commitmentEndTimestamp_ != null) {
-                subBuilder = commitmentEndTimestamp_.toBuilder();
-              }
-              commitmentEndTimestamp_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(commitmentEndTimestamp_);
-                commitmentEndTimestamp_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
           case 74:
             {
               com.google.cloud.channel.v1.TransferEligibility.Builder subBuilder = null;
@@ -162,102 +132,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
         .ensureFieldAccessorsInitialized(
             com.google.cloud.channel.v1.TransferableSku.class,
             com.google.cloud.channel.v1.TransferableSku.Builder.class);
-  }
-
-  public static final int IS_COMMITMENT_FIELD_NUMBER = 6;
-  private com.google.protobuf.BoolValue isCommitment_;
-  /**
-   *
-   *
-   * <pre>
-   * Whether a transferable SKU is commitment-based or not.
-   * </pre>
-   *
-   * <code>.google.protobuf.BoolValue is_commitment = 6;</code>
-   *
-   * @return Whether the isCommitment field is set.
-   */
-  @java.lang.Override
-  public boolean hasIsCommitment() {
-    return isCommitment_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Whether a transferable SKU is commitment-based or not.
-   * </pre>
-   *
-   * <code>.google.protobuf.BoolValue is_commitment = 6;</code>
-   *
-   * @return The isCommitment.
-   */
-  @java.lang.Override
-  public com.google.protobuf.BoolValue getIsCommitment() {
-    return isCommitment_ == null
-        ? com.google.protobuf.BoolValue.getDefaultInstance()
-        : isCommitment_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Whether a transferable SKU is commitment-based or not.
-   * </pre>
-   *
-   * <code>.google.protobuf.BoolValue is_commitment = 6;</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.BoolValueOrBuilder getIsCommitmentOrBuilder() {
-    return getIsCommitment();
-  }
-
-  public static final int COMMITMENT_END_TIMESTAMP_FIELD_NUMBER = 7;
-  private com.google.protobuf.Timestamp commitmentEndTimestamp_;
-  /**
-   *
-   *
-   * <pre>
-   * Commitment end timestamp.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp commitment_end_timestamp = 7;</code>
-   *
-   * @return Whether the commitmentEndTimestamp field is set.
-   */
-  @java.lang.Override
-  public boolean hasCommitmentEndTimestamp() {
-    return commitmentEndTimestamp_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Commitment end timestamp.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp commitment_end_timestamp = 7;</code>
-   *
-   * @return The commitmentEndTimestamp.
-   */
-  @java.lang.Override
-  public com.google.protobuf.Timestamp getCommitmentEndTimestamp() {
-    return commitmentEndTimestamp_ == null
-        ? com.google.protobuf.Timestamp.getDefaultInstance()
-        : commitmentEndTimestamp_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Commitment end timestamp.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp commitment_end_timestamp = 7;</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.TimestampOrBuilder getCommitmentEndTimestampOrBuilder() {
-    return getCommitmentEndTimestamp();
   }
 
   public static final int TRANSFER_ELIGIBILITY_FIELD_NUMBER = 9;
@@ -369,12 +243,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (isCommitment_ != null) {
-      output.writeMessage(6, getIsCommitment());
-    }
-    if (commitmentEndTimestamp_ != null) {
-      output.writeMessage(7, getCommitmentEndTimestamp());
-    }
     if (transferEligibility_ != null) {
       output.writeMessage(9, getTransferEligibility());
     }
@@ -390,13 +258,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (isCommitment_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getIsCommitment());
-    }
-    if (commitmentEndTimestamp_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCommitmentEndTimestamp());
-    }
     if (transferEligibility_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getTransferEligibility());
     }
@@ -419,14 +280,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.channel.v1.TransferableSku other =
         (com.google.cloud.channel.v1.TransferableSku) obj;
 
-    if (hasIsCommitment() != other.hasIsCommitment()) return false;
-    if (hasIsCommitment()) {
-      if (!getIsCommitment().equals(other.getIsCommitment())) return false;
-    }
-    if (hasCommitmentEndTimestamp() != other.hasCommitmentEndTimestamp()) return false;
-    if (hasCommitmentEndTimestamp()) {
-      if (!getCommitmentEndTimestamp().equals(other.getCommitmentEndTimestamp())) return false;
-    }
     if (hasTransferEligibility() != other.hasTransferEligibility()) return false;
     if (hasTransferEligibility()) {
       if (!getTransferEligibility().equals(other.getTransferEligibility())) return false;
@@ -446,14 +299,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasIsCommitment()) {
-      hash = (37 * hash) + IS_COMMITMENT_FIELD_NUMBER;
-      hash = (53 * hash) + getIsCommitment().hashCode();
-    }
-    if (hasCommitmentEndTimestamp()) {
-      hash = (37 * hash) + COMMITMENT_END_TIMESTAMP_FIELD_NUMBER;
-      hash = (53 * hash) + getCommitmentEndTimestamp().hashCode();
-    }
     if (hasTransferEligibility()) {
       hash = (37 * hash) + TRANSFER_ELIGIBILITY_FIELD_NUMBER;
       hash = (53 * hash) + getTransferEligibility().hashCode();
@@ -609,18 +454,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (isCommitmentBuilder_ == null) {
-        isCommitment_ = null;
-      } else {
-        isCommitment_ = null;
-        isCommitmentBuilder_ = null;
-      }
-      if (commitmentEndTimestampBuilder_ == null) {
-        commitmentEndTimestamp_ = null;
-      } else {
-        commitmentEndTimestamp_ = null;
-        commitmentEndTimestampBuilder_ = null;
-      }
       if (transferEligibilityBuilder_ == null) {
         transferEligibility_ = null;
       } else {
@@ -660,16 +493,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.channel.v1.TransferableSku buildPartial() {
       com.google.cloud.channel.v1.TransferableSku result =
           new com.google.cloud.channel.v1.TransferableSku(this);
-      if (isCommitmentBuilder_ == null) {
-        result.isCommitment_ = isCommitment_;
-      } else {
-        result.isCommitment_ = isCommitmentBuilder_.build();
-      }
-      if (commitmentEndTimestampBuilder_ == null) {
-        result.commitmentEndTimestamp_ = commitmentEndTimestamp_;
-      } else {
-        result.commitmentEndTimestamp_ = commitmentEndTimestampBuilder_.build();
-      }
       if (transferEligibilityBuilder_ == null) {
         result.transferEligibility_ = transferEligibility_;
       } else {
@@ -729,12 +552,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
 
     public Builder mergeFrom(com.google.cloud.channel.v1.TransferableSku other) {
       if (other == com.google.cloud.channel.v1.TransferableSku.getDefaultInstance()) return this;
-      if (other.hasIsCommitment()) {
-        mergeIsCommitment(other.getIsCommitment());
-      }
-      if (other.hasCommitmentEndTimestamp()) {
-        mergeCommitmentEndTimestamp(other.getCommitmentEndTimestamp());
-      }
       if (other.hasTransferEligibility()) {
         mergeTransferEligibility(other.getTransferEligibility());
       }
@@ -768,377 +585,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
         }
       }
       return this;
-    }
-
-    private com.google.protobuf.BoolValue isCommitment_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.BoolValue,
-            com.google.protobuf.BoolValue.Builder,
-            com.google.protobuf.BoolValueOrBuilder>
-        isCommitmentBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Whether a transferable SKU is commitment-based or not.
-     * </pre>
-     *
-     * <code>.google.protobuf.BoolValue is_commitment = 6;</code>
-     *
-     * @return Whether the isCommitment field is set.
-     */
-    public boolean hasIsCommitment() {
-      return isCommitmentBuilder_ != null || isCommitment_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Whether a transferable SKU is commitment-based or not.
-     * </pre>
-     *
-     * <code>.google.protobuf.BoolValue is_commitment = 6;</code>
-     *
-     * @return The isCommitment.
-     */
-    public com.google.protobuf.BoolValue getIsCommitment() {
-      if (isCommitmentBuilder_ == null) {
-        return isCommitment_ == null
-            ? com.google.protobuf.BoolValue.getDefaultInstance()
-            : isCommitment_;
-      } else {
-        return isCommitmentBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Whether a transferable SKU is commitment-based or not.
-     * </pre>
-     *
-     * <code>.google.protobuf.BoolValue is_commitment = 6;</code>
-     */
-    public Builder setIsCommitment(com.google.protobuf.BoolValue value) {
-      if (isCommitmentBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        isCommitment_ = value;
-        onChanged();
-      } else {
-        isCommitmentBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Whether a transferable SKU is commitment-based or not.
-     * </pre>
-     *
-     * <code>.google.protobuf.BoolValue is_commitment = 6;</code>
-     */
-    public Builder setIsCommitment(com.google.protobuf.BoolValue.Builder builderForValue) {
-      if (isCommitmentBuilder_ == null) {
-        isCommitment_ = builderForValue.build();
-        onChanged();
-      } else {
-        isCommitmentBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Whether a transferable SKU is commitment-based or not.
-     * </pre>
-     *
-     * <code>.google.protobuf.BoolValue is_commitment = 6;</code>
-     */
-    public Builder mergeIsCommitment(com.google.protobuf.BoolValue value) {
-      if (isCommitmentBuilder_ == null) {
-        if (isCommitment_ != null) {
-          isCommitment_ =
-              com.google.protobuf.BoolValue.newBuilder(isCommitment_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          isCommitment_ = value;
-        }
-        onChanged();
-      } else {
-        isCommitmentBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Whether a transferable SKU is commitment-based or not.
-     * </pre>
-     *
-     * <code>.google.protobuf.BoolValue is_commitment = 6;</code>
-     */
-    public Builder clearIsCommitment() {
-      if (isCommitmentBuilder_ == null) {
-        isCommitment_ = null;
-        onChanged();
-      } else {
-        isCommitment_ = null;
-        isCommitmentBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Whether a transferable SKU is commitment-based or not.
-     * </pre>
-     *
-     * <code>.google.protobuf.BoolValue is_commitment = 6;</code>
-     */
-    public com.google.protobuf.BoolValue.Builder getIsCommitmentBuilder() {
-
-      onChanged();
-      return getIsCommitmentFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Whether a transferable SKU is commitment-based or not.
-     * </pre>
-     *
-     * <code>.google.protobuf.BoolValue is_commitment = 6;</code>
-     */
-    public com.google.protobuf.BoolValueOrBuilder getIsCommitmentOrBuilder() {
-      if (isCommitmentBuilder_ != null) {
-        return isCommitmentBuilder_.getMessageOrBuilder();
-      } else {
-        return isCommitment_ == null
-            ? com.google.protobuf.BoolValue.getDefaultInstance()
-            : isCommitment_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Whether a transferable SKU is commitment-based or not.
-     * </pre>
-     *
-     * <code>.google.protobuf.BoolValue is_commitment = 6;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.BoolValue,
-            com.google.protobuf.BoolValue.Builder,
-            com.google.protobuf.BoolValueOrBuilder>
-        getIsCommitmentFieldBuilder() {
-      if (isCommitmentBuilder_ == null) {
-        isCommitmentBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.BoolValue,
-                com.google.protobuf.BoolValue.Builder,
-                com.google.protobuf.BoolValueOrBuilder>(
-                getIsCommitment(), getParentForChildren(), isClean());
-        isCommitment_ = null;
-      }
-      return isCommitmentBuilder_;
-    }
-
-    private com.google.protobuf.Timestamp commitmentEndTimestamp_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
-        commitmentEndTimestampBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Commitment end timestamp.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp commitment_end_timestamp = 7;</code>
-     *
-     * @return Whether the commitmentEndTimestamp field is set.
-     */
-    public boolean hasCommitmentEndTimestamp() {
-      return commitmentEndTimestampBuilder_ != null || commitmentEndTimestamp_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Commitment end timestamp.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp commitment_end_timestamp = 7;</code>
-     *
-     * @return The commitmentEndTimestamp.
-     */
-    public com.google.protobuf.Timestamp getCommitmentEndTimestamp() {
-      if (commitmentEndTimestampBuilder_ == null) {
-        return commitmentEndTimestamp_ == null
-            ? com.google.protobuf.Timestamp.getDefaultInstance()
-            : commitmentEndTimestamp_;
-      } else {
-        return commitmentEndTimestampBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Commitment end timestamp.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp commitment_end_timestamp = 7;</code>
-     */
-    public Builder setCommitmentEndTimestamp(com.google.protobuf.Timestamp value) {
-      if (commitmentEndTimestampBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        commitmentEndTimestamp_ = value;
-        onChanged();
-      } else {
-        commitmentEndTimestampBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Commitment end timestamp.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp commitment_end_timestamp = 7;</code>
-     */
-    public Builder setCommitmentEndTimestamp(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (commitmentEndTimestampBuilder_ == null) {
-        commitmentEndTimestamp_ = builderForValue.build();
-        onChanged();
-      } else {
-        commitmentEndTimestampBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Commitment end timestamp.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp commitment_end_timestamp = 7;</code>
-     */
-    public Builder mergeCommitmentEndTimestamp(com.google.protobuf.Timestamp value) {
-      if (commitmentEndTimestampBuilder_ == null) {
-        if (commitmentEndTimestamp_ != null) {
-          commitmentEndTimestamp_ =
-              com.google.protobuf.Timestamp.newBuilder(commitmentEndTimestamp_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          commitmentEndTimestamp_ = value;
-        }
-        onChanged();
-      } else {
-        commitmentEndTimestampBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Commitment end timestamp.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp commitment_end_timestamp = 7;</code>
-     */
-    public Builder clearCommitmentEndTimestamp() {
-      if (commitmentEndTimestampBuilder_ == null) {
-        commitmentEndTimestamp_ = null;
-        onChanged();
-      } else {
-        commitmentEndTimestamp_ = null;
-        commitmentEndTimestampBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Commitment end timestamp.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp commitment_end_timestamp = 7;</code>
-     */
-    public com.google.protobuf.Timestamp.Builder getCommitmentEndTimestampBuilder() {
-
-      onChanged();
-      return getCommitmentEndTimestampFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Commitment end timestamp.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp commitment_end_timestamp = 7;</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getCommitmentEndTimestampOrBuilder() {
-      if (commitmentEndTimestampBuilder_ != null) {
-        return commitmentEndTimestampBuilder_.getMessageOrBuilder();
-      } else {
-        return commitmentEndTimestamp_ == null
-            ? com.google.protobuf.Timestamp.getDefaultInstance()
-            : commitmentEndTimestamp_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Commitment end timestamp.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp commitment_end_timestamp = 7;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
-        getCommitmentEndTimestampFieldBuilder() {
-      if (commitmentEndTimestampBuilder_ == null) {
-        commitmentEndTimestampBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.Timestamp,
-                com.google.protobuf.Timestamp.Builder,
-                com.google.protobuf.TimestampOrBuilder>(
-                getCommitmentEndTimestamp(), getParentForChildren(), isClean());
-        commitmentEndTimestamp_ = null;
-      }
-      return commitmentEndTimestampBuilder_;
     }
 
     private com.google.cloud.channel.v1.TransferEligibility transferEligibility_;
