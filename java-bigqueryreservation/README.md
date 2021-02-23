@@ -17,18 +17,18 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigqueryreservation</artifactId>
-  <version>1.0.8</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigqueryreservation:1.0.8'
+compile 'com.google.cloud:google-cloud-bigqueryreservation:1.1.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigqueryreservation" % "1.0.8"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigqueryreservation" % "1.1.0"
 ```
 
 ## Authentication
