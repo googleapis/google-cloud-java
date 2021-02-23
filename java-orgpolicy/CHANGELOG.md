@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-orgpolicy/compare/v1.0.11...v1.1.0) (2021-02-23)
+
+
+### Features
+
+* add v2 client ([#149](https://www.github.com/googleapis/java-orgpolicy/issues/149)) ([f5526bb](https://www.github.com/googleapis/java-orgpolicy/commit/f5526bb819aaf867790fb12789a212bbc64b94e9))
+
+
+### Bug Fixes
+
+* don't log downloads ([33dcb78](https://www.github.com/googleapis/java-orgpolicy/commit/33dcb787e57312832e4f67a8a800af9565db9e56))
+
 ### [1.0.11](https://www.github.com/googleapis/java-orgpolicy/compare/v1.0.10...v1.0.11) (2021-02-19)
 
 
