@@ -79,6 +79,10 @@ public class FakeBigQueryWrite implements MockGrpcService {
     serviceImpl.setResponseDelay(delay);
   }
 
+  public void setResponseSleep(Duration sleep) {
+    serviceImpl.setResponseSleep(sleep);
+  }
+
   public void setExecutor(ScheduledExecutorService executor) {
     serviceImpl.setExecutor(executor);
   }

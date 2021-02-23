@@ -16,6 +16,7 @@
 package com.google.cloud.bigquery.storage.v1beta2;
 
 import com.google.common.base.Optional;
+import com.google.common.util.concurrent.Uninterruptibles;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +45,7 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
   private boolean autoPublishResponse;
   private ScheduledExecutorService executor = null;
   private Duration responseDelay = Duration.ZERO;
+  private Duration responseSleep = Duration.ZERO;
 
   /** Class used to save the state of a possible response. */
   private static class Response {
@@ -121,10 +123,16 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
             LOG.info("Get request:" + value.toString());
             final Response response = responses.remove();
             requests.add(value);
+            if (responseSleep.compareTo(Duration.ZERO) > 0) {
+              LOG.info("Sleeping before response for " + responseSleep.toString());
+              Uninterruptibles.sleepUninterruptibly(
+                  responseSleep.toMillis(), TimeUnit.MILLISECONDS);
+            }
             if (responseDelay == Duration.ZERO) {
               sendResponse(response, responseObserver);
             } else {
               final Response responseToSend = response;
+              // TODO(yirutang): This is very wrong because it messes up response/complete ordering.
               LOG.info("Schedule a response to be sent at delay");
               executor.schedule(
                   new Runnable() {
@@ -170,6 +178,12 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
   /** Set an amount of time by which to delay publish responses. */
   public FakeBigQueryWriteImpl setResponseDelay(Duration responseDelay) {
     this.responseDelay = responseDelay;
+    return this;
+  }
+
+  /** Set an amount of time by which to sleep before publishing responses. */
+  public FakeBigQueryWriteImpl setResponseSleep(Duration responseSleep) {
+    this.responseSleep = responseSleep;
     return this;
   }
 
