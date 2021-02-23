@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.0.13](https://www.github.com/googleapis/java-monitoring/compare/v2.0.12...v2.0.13) (2021-02-23)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#419](https://www.github.com/googleapis/java-monitoring/issues/419)) ([66f4480](https://www.github.com/googleapis/java-monitoring/commit/66f448033b8513186040a45863d7431f82b69454))
+* **samples:** fix NPE in DeleteMetricDescriptorIT#testDeleteMetricDescriptor ([#388](https://www.github.com/googleapis/java-monitoring/issues/388)) ([8475219](https://www.github.com/googleapis/java-monitoring/commit/84752197487103e08cba5a8b3da04d856266363a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#431](https://www.github.com/googleapis/java-monitoring/issues/431)) ([228c745](https://www.github.com/googleapis/java-monitoring/commit/228c74532f781f6c39cb5f3f3e413f34b5506e35))
+* update dependency com.google.protobuf:protobuf-java-util to v3.15.0 ([#428](https://www.github.com/googleapis/java-monitoring/issues/428)) ([56ec572](https://www.github.com/googleapis/java-monitoring/commit/56ec572360902025048d7e4a6c45d578d699ca3c))
+
 ### [2.0.12](https://www.github.com/googleapis/java-monitoring/compare/v2.0.11...v2.0.12) (2021-01-14)
 
 
