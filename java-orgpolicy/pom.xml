@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-orgpolicy-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.1.0</version><!-- {x-version-update:proto-google-cloud-orgpolicy-v1:current} -->
+  <version>1.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-orgpolicy-v1:current} -->
   <name>Google Cloud Org Policy Parent</name>
   <url>https://github.com/googleapis/java-orgpolicy</url>
   <description>
@@ -70,22 +70,22 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>google-cloud-orgpolicy</artifactId>
-        <version>1.1.0</version><!-- {x-version-update:google-cloud-orgpolicy:current} -->
+        <version>1.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-orgpolicy:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-orgpolicy-v1</artifactId>
-        <version>1.1.0</version><!-- {x-version-update:proto-google-cloud-orgpolicy-v1:current} -->
+        <version>1.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-orgpolicy-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-orgpolicy-v2</artifactId>
-        <version>1.1.0</version><!-- {x-version-update:proto-google-cloud-orgpolicy-v2:current} -->
+        <version>1.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-orgpolicy-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-orgpolicy-v2</artifactId>
-        <version>1.1.0</version><!-- {x-version-update:grpc-google-cloud-orgpolicy-v2:current} -->
+        <version>1.1.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-orgpolicy-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
