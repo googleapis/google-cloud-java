@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.0.9](https://www.github.com/googleapis/java-bigqueryconnection/compare/v1.0.8...v1.0.9) (2021-02-23)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#300](https://www.github.com/googleapis/java-bigqueryconnection/issues/300)) ([3980794](https://www.github.com/googleapis/java-bigqueryconnection/commit/3980794301b44ea51c90385aa9fb8ea3ee5444cd))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#310](https://www.github.com/googleapis/java-bigqueryconnection/issues/310)) ([98ee3cf](https://www.github.com/googleapis/java-bigqueryconnection/commit/98ee3cf4a022efaf53ad0d29a96ae68509ac5232))
+* update dependency com.google.protobuf:protobuf-java-util to v3.15.0 ([#308](https://www.github.com/googleapis/java-bigqueryconnection/issues/308)) ([1af206a](https://www.github.com/googleapis/java-bigqueryconnection/commit/1af206abf6f9de6efd0faf65604d199c7321949e))
+* update dependency com.google.protobuf:protobuf-java-util to v3.15.1 ([#311](https://www.github.com/googleapis/java-bigqueryconnection/issues/311)) ([cc53329](https://www.github.com/googleapis/java-bigqueryconnection/commit/cc53329ba117aab63cb22e19e65c0ce3785003f9))
+
 ### [1.0.8](https://www.github.com/googleapis/java-bigqueryconnection/compare/v1.0.7...v1.0.8) (2021-01-14)
 
 
