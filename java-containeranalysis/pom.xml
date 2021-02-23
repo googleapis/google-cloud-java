@@ -96,7 +96,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>0.18.0</version>
+        <version>0.19.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -105,7 +105,7 @@
       <dependency>
         <groupId>io.grafeas</groupId>
         <artifactId>grafeas</artifactId>
-        <version>1.0.8</version>
+        <version>1.0.9</version>
       </dependency>
       <!-- TODO: Until gax-grpc && grafeas align  -->
 
