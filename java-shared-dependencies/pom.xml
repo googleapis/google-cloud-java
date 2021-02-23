@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-shared-dependencies</artifactId>
   <packaging>pom</packaging>
-  <version>0.19.0</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+  <version>0.19.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
   <name>Google Cloud Shared Dependencies</name>
   <url>https://github.com/googleapis/java-shared-dependencies</url>
   <description>
