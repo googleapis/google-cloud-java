@@ -23,24 +23,29 @@ versions = ['v1']
 
 gapic = gcp.GAPICBazel()
 
-for version in versions:
-  library = gapic.java_library(
+library = gapic.java_library(
     service=service,
-    version=version,
-    proto_path=f'google/cloud/orgpolicy/{version}',
-    bazel_target=f'//google/cloud/orgpolicy/{version}:google-cloud-orgpolicy-{version}-java',
-  )
-  library = library / f"google-cloud-orgpolicy-{version}-java"
-  java.fix_proto_headers(library / f"proto-google-cloud-orgpolicy-{version}-java")
-  s.copy(
-    [library / f"proto-google-cloud-orgpolicy-{version}-java/src"],
-    f"proto-google-cloud-orgpolicy-{version}/src",
+    version='v1',
+    proto_path=f'google/cloud/orgpolicy/v1',
+    bazel_target=f'//google/cloud/orgpolicy/v1:google-cloud-orgpolicy-v1-java',
+)
+library = library / f"google-cloud-orgpolicy-v1-java"
+java.fix_proto_headers(library / f"proto-google-cloud-orgpolicy-v1-java")
+s.copy(
+    [library / f"proto-google-cloud-orgpolicy-v1-java/src"],
+    f"proto-google-cloud-orgpolicy-v1/src",
     required=True,
-  )
-  java.format_code(f"proto-google-cloud-orgpolicy-{version}/src")
+)
+java.format_code(f"proto-google-cloud-orgpolicy-v1/src")
 
+
+java.pregenerated_library(
+    service=service,
+    version='v2',
+    path=f'google/cloud/{service}/v2',
+)
 java.common_templates(excludes=[
-  'README.md',
-  'samples/*',
-  '.github/workflows/samples.yaml',
+    'README.md',
+    'samples/*',
+    '.github/workflows/samples.yaml',
 ])
