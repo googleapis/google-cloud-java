@@ -28,6 +28,14 @@
  * of the build.
  *
  * <p>Sample for CloudBuildClient:
+ *
+ * <pre>{@code
+ * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+ *   String projectId = "projectId-894832108";
+ *   String id = "id3355";
+ *   Build response = cloudBuildClient.getBuild(projectId, id);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.devtools.cloudbuild.v1;
