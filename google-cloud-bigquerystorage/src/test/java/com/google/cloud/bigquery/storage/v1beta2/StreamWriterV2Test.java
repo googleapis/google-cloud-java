@@ -142,6 +142,22 @@ public class StreamWriterV2Test {
         });
   }
 
+  private void verifyAppendIsBlocked(final StreamWriterV2 writer) throws Exception {
+    Thread appendThread =
+        new Thread(
+            new Runnable() {
+              @Override
+              public void run() {
+                sendTestMessage(writer, new String[] {"A"});
+              }
+            });
+    // Start a separate thread to append and verify that it is still alive after 2 seoncds.
+    appendThread.start();
+    TimeUnit.SECONDS.sleep(2);
+    assertTrue(appendThread.isAlive());
+    appendThread.interrupt();
+  }
+
   @Test
   public void testAppendSuccess() throws Exception {
     StreamWriterV2 writer = getTestStreamWriterV2();
@@ -288,6 +304,69 @@ public class StreamWriterV2Test {
       assertEquals(Code.INTERNAL, actualError.getStatusCode().getCode());
     }
 
+    writer.close();
+  }
+
+  @Test
+  public void testZeroMaxInflightRequests() throws Exception {
+    StreamWriterV2 writer =
+        StreamWriterV2.newBuilder(TEST_STREAM, client).setMaxInflightRequests(0).build();
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+    verifyAppendIsBlocked(writer);
+    writer.close();
+  }
+
+  @Test
+  public void testZeroMaxInflightBytes() throws Exception {
+    StreamWriterV2 writer =
+        StreamWriterV2.newBuilder(TEST_STREAM, client).setMaxInflightBytes(0).build();
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+    verifyAppendIsBlocked(writer);
+    writer.close();
+  }
+
+  @Test
+  public void testOneMaxInflightRequests() throws Exception {
+    StreamWriterV2 writer =
+        StreamWriterV2.newBuilder(TEST_STREAM, client).setMaxInflightRequests(1).build();
+    // Server will sleep 1 second before every response.
+    testBigQueryWrite.setResponseSleep(Duration.ofSeconds(1));
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+
+    long appendStartTimeMs = System.currentTimeMillis();
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
+    long appendElapsedMs = System.currentTimeMillis() - appendStartTimeMs;
+    assertTrue(appendElapsedMs >= 1000);
+    assertEquals(0, appendFuture1.get().getAppendResult().getOffset().getValue());
+    writer.close();
+  }
+
+  @Test
+  public void testAppendsWithTinyMaxInflightBytes() throws Exception {
+    StreamWriterV2 writer =
+        StreamWriterV2.newBuilder(TEST_STREAM, client).setMaxInflightBytes(1).build();
+    // Server will sleep 100ms before every response.
+    testBigQueryWrite.setResponseSleep(Duration.ofMillis(100));
+    long appendCount = 10;
+    for (int i = 0; i < appendCount; i++) {
+      testBigQueryWrite.addResponse(createAppendResponse(i));
+    }
+
+    List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+    long appendStartTimeMs = System.currentTimeMillis();
+    for (int i = 0; i < appendCount; i++) {
+      futures.add(writer.append(createAppendRequest(new String[] {String.valueOf(i)}, i)));
+    }
+    long appendElapsedMs = System.currentTimeMillis() - appendStartTimeMs;
+    assertTrue(appendElapsedMs >= 1000);
+
+    for (int i = 0; i < appendCount; i++) {
+      assertEquals(i, futures.get(i).get().getAppendResult().getOffset().getValue());
+    }
+    assertEquals(appendCount, testBigQueryWrite.getAppendRequests().size());
+    for (int i = 0; i < appendCount; i++) {
+      assertEquals(i, testBigQueryWrite.getAppendRequests().get(i).getOffset().getValue());
+    }
     writer.close();
   }
 
