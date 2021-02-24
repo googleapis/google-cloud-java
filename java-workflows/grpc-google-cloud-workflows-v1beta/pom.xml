@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-workflows-v1beta</artifactId>
-  <version>0.2.0</version><!-- {x-version-update:grpc-google-cloud-workflows-v1beta:current} -->
+  <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-workflows-v1beta:current} -->
   <name>grpc-google-cloud-workflows-v1beta</name>
   <description>GRPC library for google-cloud-workflows</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-workflows-parent</artifactId>
-    <version>0.2.0</version><!-- {x-version-update:google-cloud-workflows:current} -->
+    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-workflows:current} -->
   </parent>
   <dependencies>
     <dependency>
