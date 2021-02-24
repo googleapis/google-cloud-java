@@ -1,5 +1,22 @@
 # Changelog
 
+### [0.1.5](https://www.github.com/googleapis/java-workflow-executions/compare/v0.1.4...v0.1.5) (2021-02-24)
+
+
+### Bug Fixes
+
+* update repo name ([#53](https://www.github.com/googleapis/java-workflow-executions/issues/53)) ([d177e1d](https://www.github.com/googleapis/java-workflow-executions/commit/d177e1d797b6793c913f1c7d5e5fa8bf91319041))
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#56](https://www.github.com/googleapis/java-workflow-executions/issues/56)) ([26bc136](https://www.github.com/googleapis/java-workflow-executions/commit/26bc136677c81c22030ce8efffc6c5387e99d8c9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#64](https://www.github.com/googleapis/java-workflow-executions/issues/64)) ([2e0ea20](https://www.github.com/googleapis/java-workflow-executions/commit/2e0ea20f17dc5cff6296b12cbc65ba07101b0cf7))
+
 ### [0.1.4](https://www.github.com/googleapis/java-workflow-executions/compare/v0.1.3...v0.1.4) (2021-01-14)
 
 
