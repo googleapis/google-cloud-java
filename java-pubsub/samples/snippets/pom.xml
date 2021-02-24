@@ -56,7 +56,6 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-pubsub</artifactId>
-      <version>1.111.0</version>
     </dependency>
     <!-- [END pubsub_install_with_bom] -->
 
@@ -88,5 +87,7 @@
       <version>1.1.2</version>
       <scope>test</scope>
     </dependency>
+  <!-- [START pubsub_install_with_bom] -->
   </dependencies>
+  <!-- [END pubsub_install_with_bom] -->
 </project>
