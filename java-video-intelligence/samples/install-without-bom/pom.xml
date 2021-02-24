@@ -34,13 +34,13 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage</artifactId>
-      <version>1.113.8</version>
+      <version>1.113.11</version>
     </dependency>
     <!-- [END videointelligence_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage</artifactId>
-      <version>1.113.8</version>
+      <version>1.113.11</version>
     </dependency>
 
     <dependency>
