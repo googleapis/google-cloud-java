@@ -39,7 +39,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-translate</artifactId>
-  <version>1.95.7</version>
+  <version>1.95.9</version>
 </dependency>
 
 ```
