@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-networkconnectivity</artifactId>
-      <version>0.0.0</version>
+      <version>0.1.0</version>
     </dependency>
     <!-- [END networkconnectivity_install_without_bom] -->
 
