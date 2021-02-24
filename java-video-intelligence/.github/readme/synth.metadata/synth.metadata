@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-video-intelligence.git",
-        "sha": "b3c4e44dc9e79ec73872e1b02768be6a5c995129"
+        "sha": "edcd79bd41c4ae32e0687de087b9f8a4af37954c"
       }
     },
     {
