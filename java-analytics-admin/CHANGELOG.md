@@ -1,5 +1,22 @@
 # Changelog
 
+### [0.3.1](https://www.github.com/googleapis/java-analytics-admin/compare/v0.3.0...v0.3.1) (2021-02-22)
+
+
+### Bug Fixes
+
+* don't log downloads ([#168](https://www.github.com/googleapis/java-analytics-admin/issues/168)) ([a781d7d](https://www.github.com/googleapis/java-analytics-admin/commit/a781d7d77c3314456b9bdc7982f1ef89c7acd0e5))
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#152](https://www.github.com/googleapis/java-analytics-admin/issues/152)) ([62b6cd9](https://www.github.com/googleapis/java-analytics-admin/commit/62b6cd925df28035c247d67fbe86c5e46d810d4d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#169](https://www.github.com/googleapis/java-analytics-admin/issues/169)) ([52b071b](https://www.github.com/googleapis/java-analytics-admin/commit/52b071b0f15d347510d722daacd071838c930249))
+
 ## [0.3.0](https://www.github.com/googleapis/java-analytics-admin/compare/v0.2.5...v0.3.0) (2021-01-19)
 
 
