@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-websecurityscanner</artifactId>
-      <version>1.1.0</version>
+      <version>1.1.1</version>
     </dependency>
     <!-- [END websecurityscanner_install_without_bom] -->
 
