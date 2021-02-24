@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.11.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.10.0...v1.11.0) (2021-02-24)
+
+
+### Features
+
+* Add max size check to StreamWriterV2 ([#873](https://www.github.com/googleapis/java-bigquerystorage/issues/873)) ([0261af4](https://www.github.com/googleapis/java-bigquerystorage/commit/0261af4e2dff5fd8515109c6336796815acb6c3c))
+* Support building a BigQueryWriteClient within the StreamWriterV2 ([#876](https://www.github.com/googleapis/java-bigquerystorage/issues/876)) ([237c827](https://www.github.com/googleapis/java-bigquerystorage/commit/237c82711649672de1ce2e7382b909b74c0cd709))
+* Support inflight control in StreamWriterV2 ([#875](https://www.github.com/googleapis/java-bigquerystorage/issues/875)) ([854c81e](https://www.github.com/googleapis/java-bigquerystorage/commit/854c81e20c3651295fd2dd5c9e87f48c67a9eeff))
+
+
+### Documentation
+
+* **samples:** add a new sample for parallel append ([#863](https://www.github.com/googleapis/java-bigquerystorage/issues/863)) ([ed1c265](https://www.github.com/googleapis/java-bigquerystorage/commit/ed1c26588ceb3e0d852fabefe8b3a89b8c74e6dd))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.127.4 ([#869](https://www.github.com/googleapis/java-bigquerystorage/issues/869)) ([de747ec](https://www.github.com/googleapis/java-bigquerystorage/commit/de747ec971f28919438b14c9f77ec7a2fa3a5628))
+
 ## [1.10.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.9.1...v1.10.0) (2021-02-23)
 
 
