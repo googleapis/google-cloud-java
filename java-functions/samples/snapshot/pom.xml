@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-functions</artifactId>
-      <version>1.0.5</version>
+      <version>1.0.7</version>
     </dependency>
   <!-- {x-version-update-end} -->
 
