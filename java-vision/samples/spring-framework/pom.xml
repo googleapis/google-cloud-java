@@ -42,7 +42,7 @@ limitations under the License.
       <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-gcp-dependencies</artifactId>
-        <version>1.2.6.RELEASE</version>
+        <version>1.2.7.RELEASE</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
