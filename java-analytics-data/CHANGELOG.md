@@ -1,5 +1,22 @@
 # Changelog
 
+### [0.5.5](https://www.github.com/googleapis/java-analytics-data/compare/v0.5.4...v0.5.5) (2021-02-22)
+
+
+### Bug Fixes
+
+* don't log downloads ([#152](https://www.github.com/googleapis/java-analytics-data/issues/152)) ([e173782](https://www.github.com/googleapis/java-analytics-data/commit/e17378207bf50ccd1b5f931481cf1c894908fe25))
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#135](https://www.github.com/googleapis/java-analytics-data/issues/135)) ([0470fd1](https://www.github.com/googleapis/java-analytics-data/commit/0470fd12172a87ff90d279775b1931e48ece51d0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#153](https://www.github.com/googleapis/java-analytics-data/issues/153)) ([535c757](https://www.github.com/googleapis/java-analytics-data/commit/535c757a963f8e771f892244421dfb364a96256f))
+
 ### [0.5.4](https://www.github.com/googleapis/java-analytics-data/compare/v0.5.3...v0.5.4) (2021-01-14)
 
 
