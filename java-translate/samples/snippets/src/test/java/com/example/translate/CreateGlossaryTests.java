@@ -45,6 +45,7 @@ public class CreateGlossaryTests {
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -62,6 +63,7 @@ public class CreateGlossaryTests {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
@@ -69,8 +71,9 @@ public class CreateGlossaryTests {
   public void tearDown() throws InterruptedException, ExecutionException, IOException {
     // Delete the created glossary
     DeleteGlossary.deleteGlossary(PROJECT_ID, GLOSSARY_ID);
-
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test
