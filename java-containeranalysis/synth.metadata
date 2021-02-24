@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-containeranalysis.git",
-        "sha": "76a20e87ca73b574ae8e7d15cd94eeae6ea0ce82"
+        "sha": "792daa15c0a78a9e68df445ce36fe0c7d9f47469"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -103,6 +103,7 @@
     "codecov.yaml",
     "google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/ContainerAnalysisClient.java",
     "google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/ContainerAnalysisSettings.java",
+    "google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/gapic_metadata.json",
     "google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/package-info.java",
     "google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/stub/ContainerAnalysisStub.java",
     "google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/stub/ContainerAnalysisStubSettings.java",
