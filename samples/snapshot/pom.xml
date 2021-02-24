@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-datastore</artifactId>
-      <version>1.105.7</version>
+      <version>1.105.8</version>
     </dependency>
 
     <dependency>
