@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-servicedirectory.git",
-        "sha": "72585aaf9d2d01fdf52641dc8b8359e8ae1a934a"
+        "sha": "e1bedf7a3ac562c16491717d9af8fbccd4ae249a"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "2414b817065726eae0bc525346c7e874f969369d"
+        "sha": "79ab0b44a2cc7d803d07c107f9faf07729fc4012"
       }
     }
   ]
