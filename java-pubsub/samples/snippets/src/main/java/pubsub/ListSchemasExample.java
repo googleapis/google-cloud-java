@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,30 +16,29 @@
 
 package pubsub;
 
-// [START pubsub_create_topic]
-// [START pubsub_quickstart_create_topic]
-
-import com.google.cloud.pubsub.v1.TopicAdminClient;
-import com.google.pubsub.v1.Topic;
-import com.google.pubsub.v1.TopicName;
+// [START pubsub_list_schemas]
+import com.google.cloud.pubsub.v1.SchemaServiceClient;
+import com.google.pubsub.v1.ProjectName;
+import com.google.pubsub.v1.Schema;
 import java.io.IOException;
 
-public class CreateTopicExample {
+public class ListSchemasExample {
   public static void main(String... args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
-    String topicId = "your-topic-id";
 
-    createTopicExample(projectId, topicId);
+    listSchemasExample(projectId);
   }
 
-  public static void createTopicExample(String projectId, String topicId) throws IOException {
-    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-      TopicName topicName = TopicName.of(projectId, topicId);
-      Topic topic = topicAdminClient.createTopic(topicName);
-      System.out.println("Created topic: " + topic.getName());
+  public static void listSchemasExample(String projectId) throws IOException {
+    ProjectName projectName = ProjectName.of(projectId);
+
+    try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+      for (Schema schema : schemaServiceClient.listSchemas(projectName).iterateAll()) {
+        System.out.println(schema);
+      }
+      System.out.println("Listed schemas.");
     }
   }
 }
-// [END pubsub_create_topic]
-// [END pubsub_quickstart_create_topic]
+// [END pubsub_list_schemas]

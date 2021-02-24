@@ -48,6 +48,23 @@
     <!-- {x-version-update-end} -->
 
     <dependency>
+      <groupId>org.apache.avro</groupId>
+      <artifactId>avro</artifactId>
+      <version>1.10.1</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.xerial.snappy</groupId>
+      <artifactId>snappy-java</artifactId>
+      <version>1.1.8.4</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java-util</artifactId>
+      <version>3.14.0</version>
+    </dependency>
+
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.13.2</version>
@@ -81,6 +98,19 @@
             </configuration>
           </execution>
           <execution>
+            <id>add-snippets-resources</id>
+            <goals>
+              <goal>add-resource</goal>
+            </goals>
+            <configuration>
+              <resources>
+                <resource>
+                  <directory>../snippets/src/main/resources</directory>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+          <execution>
             <id>add-snippets-tests</id>
             <goals>
               <goal>add-test-source</goal>
@@ -89,6 +119,19 @@
               <sources>
                 <source>../snippets/src/test/java</source>
               </sources>
+            </configuration>
+          </execution>
+          <execution>
+            <id>add-snippets-tests-resource</id>
+            <goals>
+              <goal>add-test-resource</goal>
+            </goals>
+            <configuration>
+              <resources>
+                <resource>
+                  <directory>../snippets/src/test/resources</directory>>
+                </resource>
+              </resources>
             </configuration>
           </execution>
         </executions>

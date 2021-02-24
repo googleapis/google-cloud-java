@@ -183,7 +183,6 @@ public class AdminIT {
     assertThat(bout.toString()).contains("Created a subscription with ordering");
     assertThat(bout.toString()).contains("enable_message_ordering=true");
 
-
     bout.reset();
     // Test delete subscription. Run twice to delete both pull and push subscriptions.
     DeleteSubscriptionExample.deleteSubscriptionExample(projectId, pullSubscriptionId);

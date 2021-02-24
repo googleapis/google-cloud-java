@@ -56,10 +56,7 @@ public class RemoveDeadLetterPolicyExample {
               .build();
 
       // Construct a field mask to indicate which field to update in the subscription.
-      FieldMask updateMask =
-          FieldMask.newBuilder()
-              .addPaths("dead_letter_policy")
-              .build();
+      FieldMask updateMask = FieldMask.newBuilder().addPaths("dead_letter_policy").build();
 
       UpdateSubscriptionRequest request =
           UpdateSubscriptionRequest.newBuilder()
