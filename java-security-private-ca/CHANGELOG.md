@@ -1,5 +1,22 @@
 # Changelog
 
+### [0.2.7](https://www.github.com/googleapis/java-security-private-ca/compare/v0.2.6...v0.2.7) (2021-02-24)
+
+
+### Bug Fixes
+
+* update repo name ([#113](https://www.github.com/googleapis/java-security-private-ca/issues/113)) ([edd4850](https://www.github.com/googleapis/java-security-private-ca/commit/edd485063f3f415a2944e52c70f52885f86c039c))
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#116](https://www.github.com/googleapis/java-security-private-ca/issues/116)) ([2031414](https://www.github.com/googleapis/java-security-private-ca/commit/203141411d0ddbe30d51d0a5888c6a8fe2cab1b8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#125](https://www.github.com/googleapis/java-security-private-ca/issues/125)) ([dbf1419](https://www.github.com/googleapis/java-security-private-ca/commit/dbf1419fa1940ad26431e683bf549ad55a852778))
+
 ### [0.2.6](https://www.github.com/googleapis/java-security-private-ca/compare/v0.2.5...v0.2.6) (2021-01-14)
 
 
