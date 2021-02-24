@@ -31,6 +31,7 @@ import com.google.protobuf.DescriptorProtos;
 import com.google.protobuf.Int64Value;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -81,7 +82,7 @@ public class StreamWriterV2Test {
     serviceHelper.stop();
   }
 
-  private StreamWriterV2 getTestStreamWriterV2() {
+  private StreamWriterV2 getTestStreamWriterV2() throws IOException {
     return StreamWriterV2.newBuilder(TEST_STREAM, client).build();
   }
 
@@ -156,6 +157,20 @@ public class StreamWriterV2Test {
     TimeUnit.SECONDS.sleep(2);
     assertTrue(appendThread.isAlive());
     appendThread.interrupt();
+  }
+
+  @Test
+  public void testBuildBigQueryWriteClientInWriter() throws Exception {
+    StreamWriterV2 writer =
+        StreamWriterV2.newBuilder(TEST_STREAM)
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setChannelProvider(serviceHelper.createChannelProvider())
+            .build();
+
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
+    assertEquals(0, appendFuture1.get().getAppendResult().getOffset().getValue());
+    writer.close();
   }
 
   @Test
@@ -371,7 +386,7 @@ public class StreamWriterV2Test {
   }
 
   @Test
-  public void testMessageTooLarge() {
+  public void testMessageTooLarge() throws Exception {
     StreamWriterV2 writer = getTestStreamWriterV2();
 
     String oversized = Strings.repeat("a", (int) (StreamWriterV2.getApiMaxRequestBytes() + 1));

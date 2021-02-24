@@ -17,6 +17,8 @@ package com.google.cloud.bigquery.storage.v1beta2;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.bigquery.storage.v1beta2.StreamConnection.DoneCallback;
 import com.google.cloud.bigquery.storage.v1beta2.StreamConnection.RequestCallback;
 import com.google.common.base.Preconditions;
@@ -24,6 +26,7 @@ import com.google.common.util.concurrent.Uninterruptibles;
 import io.grpc.Status;
 import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
+import java.io.IOException;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.concurrent.TimeUnit;
@@ -35,8 +38,6 @@ import javax.annotation.concurrent.GuardedBy;
 
 /**
  * A BigQuery Stream Writer that can be used to write data into BigQuery Table.
- *
- * <p>TODO: Add credential support.
  *
  * <p>TODO: Attach schema.
  *
@@ -105,6 +106,16 @@ public class StreamWriterV2 implements AutoCloseable {
   private final Deque<AppendRequestAndResponse> inflightRequestQueue;
 
   /*
+   * A client used to interact with BigQuery.
+   */
+  private BigQueryWriteClient client;
+
+  /*
+   * If true, the client above is created by this writer and should be closed.
+   */
+  private boolean ownsBigQueryWriteClient = false;
+
+  /*
    * Wraps the underlying bi-directional stream connection with server.
    */
   private StreamConnection streamConnection;
@@ -119,7 +130,7 @@ public class StreamWriterV2 implements AutoCloseable {
     return 8L * 1000L * 1000L; // 8 megabytes (https://en.wikipedia.org/wiki/Megabyte)
   }
 
-  private StreamWriterV2(Builder builder) {
+  private StreamWriterV2(Builder builder) throws IOException {
     this.lock = new ReentrantLock();
     this.hasMessageInWaitingQueue = lock.newCondition();
     this.inflightReduced = lock.newCondition();
@@ -128,9 +139,22 @@ public class StreamWriterV2 implements AutoCloseable {
     this.maxInflightBytes = builder.maxInflightBytes;
     this.waitingRequestQueue = new LinkedList<AppendRequestAndResponse>();
     this.inflightRequestQueue = new LinkedList<AppendRequestAndResponse>();
+    if (builder.client == null) {
+      BigQueryWriteSettings stubSettings =
+          BigQueryWriteSettings.newBuilder()
+              .setCredentialsProvider(builder.credentialsProvider)
+              .setTransportChannelProvider(builder.channelProvider)
+              .setEndpoint(builder.endpoint)
+              .build();
+      this.client = BigQueryWriteClient.create(stubSettings);
+      this.ownsBigQueryWriteClient = true;
+    } else {
+      this.client = builder.client;
+      this.ownsBigQueryWriteClient = false;
+    }
     this.streamConnection =
         new StreamConnection(
-            builder.client,
+            this.client,
             new RequestCallback() {
               @Override
               public void run(AppendRowsResponse response) {
@@ -260,6 +284,9 @@ public class StreamWriterV2 implements AutoCloseable {
       // Unexpected. Just swallow the exception with logging.
       log.warning(
           "Append handler join is interrupted. Stream: " + streamName + " Error: " + e.toString());
+    }
+    if (this.ownsBigQueryWriteClient) {
+      this.client.close();
     }
   }
 
@@ -405,6 +432,11 @@ public class StreamWriterV2 implements AutoCloseable {
     return new StreamWriterV2.Builder(streamName, client);
   }
 
+  /** Constructs a new {@link StreamWriterV2.Builder} using the given stream. */
+  public static StreamWriterV2.Builder newBuilder(String streamName) {
+    return new StreamWriterV2.Builder(streamName);
+  }
+
   /** A builder of {@link StreamWriterV2}s. */
   public static final class Builder {
 
@@ -419,6 +451,19 @@ public class StreamWriterV2 implements AutoCloseable {
     private long maxInflightRequest = DEFAULT_MAX_INFLIGHT_REQUESTS;
 
     private long maxInflightBytes = DEFAULT_MAX_INFLIGHT_BYTES;
+
+    private String endpoint = BigQueryWriteSettings.getDefaultEndpoint();
+
+    private TransportChannelProvider channelProvider =
+        BigQueryWriteSettings.defaultGrpcTransportProviderBuilder().setChannelsPerCpu(1).build();
+
+    private CredentialsProvider credentialsProvider =
+        BigQueryWriteSettings.defaultCredentialsProviderBuilder().build();
+
+    private Builder(String streamName) {
+      this.streamName = Preconditions.checkNotNull(streamName);
+      this.client = null;
+    }
 
     private Builder(String streamName, BigQueryWriteClient client) {
       this.streamName = Preconditions.checkNotNull(streamName);
@@ -435,8 +480,34 @@ public class StreamWriterV2 implements AutoCloseable {
       return this;
     }
 
+    /** Gives the ability to override the gRPC endpoint. */
+    public Builder setEndpoint(String endpoint) {
+      this.endpoint = Preconditions.checkNotNull(endpoint, "Endpoint is null.");
+      return this;
+    }
+
+    /**
+     * {@code ChannelProvider} to use to create Channels, which must point at Cloud BigQuery Storage
+     * API endpoint.
+     *
+     * <p>For performance, this client benefits from having multiple underlying connections. See
+     * {@link com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder#setPoolSize(int)}.
+     */
+    public Builder setChannelProvider(TransportChannelProvider channelProvider) {
+      this.channelProvider =
+          Preconditions.checkNotNull(channelProvider, "ChannelProvider is null.");
+      return this;
+    }
+
+    /** {@code CredentialsProvider} to use to create Credentials to authenticate calls. */
+    public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
+      this.credentialsProvider =
+          Preconditions.checkNotNull(credentialsProvider, "CredentialsProvider is null.");
+      return this;
+    }
+
     /** Builds the {@code StreamWriterV2}. */
-    public StreamWriterV2 build() {
+    public StreamWriterV2 build() throws IOException {
       return new StreamWriterV2(this);
     }
   }
