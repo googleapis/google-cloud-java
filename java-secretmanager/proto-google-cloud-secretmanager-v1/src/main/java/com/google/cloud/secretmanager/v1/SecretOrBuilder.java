@@ -223,6 +223,73 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
+   * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+   * control plane operations are called on the secret or its versions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.secretmanager.v1.Topic> getTopicsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+   * control plane operations are called on the secret or its versions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.secretmanager.v1.Topic getTopics(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+   * control plane operations are called on the secret or its versions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getTopicsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+   * control plane operations are called on the secret or its versions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.secretmanager.v1.TopicOrBuilder>
+      getTopicsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
+   * control plane operations are called on the secret or its versions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.secretmanager.v1.Topic topics = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.secretmanager.v1.TopicOrBuilder getTopicsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
    * always provided on output, regardless of what was sent on input.
    * </pre>
