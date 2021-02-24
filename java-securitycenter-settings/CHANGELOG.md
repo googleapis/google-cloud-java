@@ -1,5 +1,22 @@
 # Changelog
 
+### [0.3.13](https://www.github.com/googleapis/java-securitycenter-settings/compare/v0.3.12...v0.3.13) (2021-02-24)
+
+
+### Bug Fixes
+
+* update repo name ([#235](https://www.github.com/googleapis/java-securitycenter-settings/issues/235)) ([49c37b8](https://www.github.com/googleapis/java-securitycenter-settings/commit/49c37b8cd1960b02fd2d6b5c5f143601f7685ab9))
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#238](https://www.github.com/googleapis/java-securitycenter-settings/issues/238)) ([8e64a6c](https://www.github.com/googleapis/java-securitycenter-settings/commit/8e64a6cbd1d845c93dcd700799cf3976dead74d0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#248](https://www.github.com/googleapis/java-securitycenter-settings/issues/248)) ([04361cb](https://www.github.com/googleapis/java-securitycenter-settings/commit/04361cb0786e98371cb6227a0b8bccd508b79878))
+
 ### [0.3.12](https://www.github.com/googleapis/java-securitycenter-settings/compare/v0.3.11...v0.3.12) (2021-01-14)
 
 
