@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-memcache.git",
-        "sha": "d1bc0313a7dd4348e5e7425b1c072cb0c9031320"
+        "sha": "e0f2c07a336b955bec81663129d00488ca3573c3"
       }
     },
     {
