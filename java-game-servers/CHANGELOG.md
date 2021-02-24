@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.8](https://www.github.com/googleapis/java-game-servers/compare/v1.0.7...v1.0.8) (2021-02-24)
+
+
+### Documentation
+
+* generate sample code in the javadocs ([#355](https://www.github.com/googleapis/java-game-servers/issues/355)) ([c4aa1fd](https://www.github.com/googleapis/java-game-servers/commit/c4aa1fd5f83ad13eba5c2833698a8827e61ddc51))
+
 ### [1.0.7](https://www.github.com/googleapis/java-game-servers/compare/v1.0.6...v1.0.7) (2021-02-19)
 
 
