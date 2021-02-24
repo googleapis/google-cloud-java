@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-secretmanager.git",
-        "sha": "338235758e8e8243bb2cfa75303366b85f619ad1"
+        "sha": "fa1983209471dd2cb7a643aef1208e159cae5727"
       }
     },
     {
