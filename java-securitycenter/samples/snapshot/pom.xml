@@ -34,7 +34,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-pubsub</artifactId>
-      <version>1.111.0</version>
+      <version>1.111.2</version>
     </dependency>
 
     <dependency>
