@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-logging-logback</artifactId>
-      <version>0.119.7-alpha</version>
+      <version>0.120.1-alpha</version>
     </dependency>
     <!-- [END logging-logback_install_without_bom] -->
 
