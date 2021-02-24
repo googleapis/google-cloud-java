@@ -561,91 +561,112 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateBuildRequest, Operation> createBuildCallable() {
     return createBuildCallable;
   }
 
+  @Override
   public OperationCallable<CreateBuildRequest, Build, BuildOperationMetadata>
       createBuildOperationCallable() {
     return createBuildOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetBuildRequest, Build> getBuildCallable() {
     return getBuildCallable;
   }
 
+  @Override
   public UnaryCallable<ListBuildsRequest, ListBuildsResponse> listBuildsCallable() {
     return listBuildsCallable;
   }
 
+  @Override
   public UnaryCallable<ListBuildsRequest, ListBuildsPagedResponse> listBuildsPagedCallable() {
     return listBuildsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<CancelBuildRequest, Build> cancelBuildCallable() {
     return cancelBuildCallable;
   }
 
+  @Override
   public UnaryCallable<RetryBuildRequest, Operation> retryBuildCallable() {
     return retryBuildCallable;
   }
 
+  @Override
   public OperationCallable<RetryBuildRequest, Build, BuildOperationMetadata>
       retryBuildOperationCallable() {
     return retryBuildOperationCallable;
   }
 
+  @Override
   public UnaryCallable<CreateBuildTriggerRequest, BuildTrigger> createBuildTriggerCallable() {
     return createBuildTriggerCallable;
   }
 
+  @Override
   public UnaryCallable<GetBuildTriggerRequest, BuildTrigger> getBuildTriggerCallable() {
     return getBuildTriggerCallable;
   }
 
+  @Override
   public UnaryCallable<ListBuildTriggersRequest, ListBuildTriggersResponse>
       listBuildTriggersCallable() {
     return listBuildTriggersCallable;
   }
 
+  @Override
   public UnaryCallable<ListBuildTriggersRequest, ListBuildTriggersPagedResponse>
       listBuildTriggersPagedCallable() {
     return listBuildTriggersPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerCallable() {
     return deleteBuildTriggerCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateBuildTriggerRequest, BuildTrigger> updateBuildTriggerCallable() {
     return updateBuildTriggerCallable;
   }
 
+  @Override
   public UnaryCallable<RunBuildTriggerRequest, Operation> runBuildTriggerCallable() {
     return runBuildTriggerCallable;
   }
 
+  @Override
   public OperationCallable<RunBuildTriggerRequest, Build, BuildOperationMetadata>
       runBuildTriggerOperationCallable() {
     return runBuildTriggerOperationCallable;
   }
 
+  @Override
   public UnaryCallable<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolCallable() {
     return createWorkerPoolCallable;
   }
 
+  @Override
   public UnaryCallable<GetWorkerPoolRequest, WorkerPool> getWorkerPoolCallable() {
     return getWorkerPoolCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteWorkerPoolRequest, Empty> deleteWorkerPoolCallable() {
     return deleteWorkerPoolCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateWorkerPoolRequest, WorkerPool> updateWorkerPoolCallable() {
     return updateWorkerPoolCallable;
   }
 
+  @Override
   public UnaryCallable<ListWorkerPoolsRequest, ListWorkerPoolsResponse> listWorkerPoolsCallable() {
     return listWorkerPoolsCallable;
   }

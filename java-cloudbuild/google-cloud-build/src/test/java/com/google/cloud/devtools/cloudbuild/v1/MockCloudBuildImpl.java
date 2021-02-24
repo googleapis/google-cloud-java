@@ -92,7 +92,13 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateBuild, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -106,7 +112,13 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBuild, expected %s or %s",
+                  response.getClass().getName(),
+                  Build.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -121,7 +133,13 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBuilds, expected %s or %s",
+                  response.getClass().getName(),
+                  ListBuildsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -135,7 +153,13 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelBuild, expected %s or %s",
+                  response.getClass().getName(),
+                  Build.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -149,7 +173,13 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RetryBuild, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -164,7 +194,13 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateBuildTrigger, expected %s or %s",
+                  response.getClass().getName(),
+                  BuildTrigger.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -179,7 +215,13 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBuildTrigger, expected %s or %s",
+                  response.getClass().getName(),
+                  BuildTrigger.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -195,7 +237,13 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBuildTriggers, expected %s or %s",
+                  response.getClass().getName(),
+                  ListBuildTriggersResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -210,7 +258,13 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteBuildTrigger, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -225,7 +279,13 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateBuildTrigger, expected %s or %s",
+                  response.getClass().getName(),
+                  BuildTrigger.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -240,7 +300,13 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RunBuildTrigger, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -255,7 +321,13 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateWorkerPool, expected %s or %s",
+                  response.getClass().getName(),
+                  WorkerPool.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -270,7 +342,13 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetWorkerPool, expected %s or %s",
+                  response.getClass().getName(),
+                  WorkerPool.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -285,7 +363,13 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteWorkerPool, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -300,7 +384,13 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateWorkerPool, expected %s or %s",
+                  response.getClass().getName(),
+                  WorkerPool.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -315,7 +405,13 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListWorkerPools, expected %s or %s",
+                  response.getClass().getName(),
+                  ListWorkerPoolsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }
