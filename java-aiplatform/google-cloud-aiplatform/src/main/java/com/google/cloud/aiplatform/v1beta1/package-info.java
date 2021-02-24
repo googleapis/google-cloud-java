@@ -21,15 +21,37 @@
  *
  * <p>Sample for DatasetServiceClient:
  *
+ * <pre>{@code
+ * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+ *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+ *   Dataset response = datasetServiceClient.getDataset(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= EndpointServiceClient =======================
  *
  * <p>Sample for EndpointServiceClient:
+ *
+ * <pre>{@code
+ * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+ *   EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+ *   Endpoint response = endpointServiceClient.getEndpoint(name);
+ * }
+ * }</pre>
  *
  * <p>======================= JobServiceClient =======================
  *
  * <p>Service Description: A service for creating and managing AI Platform's jobs.
  *
  * <p>Sample for JobServiceClient:
+ *
+ * <pre>{@code
+ * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   CustomJob customJob = CustomJob.newBuilder().build();
+ *   CustomJob response = jobServiceClient.createCustomJob(parent, customJob);
+ * }
+ * }</pre>
  *
  * <p>======================= MigrationServiceClient =======================
  *
@@ -38,11 +60,28 @@
  *
  * <p>Sample for MigrationServiceClient:
  *
+ * <pre>{@code
+ * try (MigrationServiceClient migrationServiceClient = MigrationServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   for (MigratableResource element :
+ *       migrationServiceClient.searchMigratableResources(parent).iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
+ * }
+ * }</pre>
+ *
  * <p>======================= ModelServiceClient =======================
  *
  * <p>Service Description: A service for managing AI Platform's machine learning Models.
  *
  * <p>Sample for ModelServiceClient:
+ *
+ * <pre>{@code
+ * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+ *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+ *   Model response = modelServiceClient.getModel(name);
+ * }
+ * }</pre>
  *
  * <p>======================= PipelineServiceClient =======================
  *
@@ -50,11 +89,29 @@
  *
  * <p>Sample for PipelineServiceClient:
  *
+ * <pre>{@code
+ * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   TrainingPipeline trainingPipeline = TrainingPipeline.newBuilder().build();
+ *   TrainingPipeline response =
+ *       pipelineServiceClient.createTrainingPipeline(parent, trainingPipeline);
+ * }
+ * }</pre>
+ *
  * <p>======================= PredictionServiceClient =======================
  *
  * <p>Service Description: A service for online predictions and explanations.
  *
  * <p>Sample for PredictionServiceClient:
+ *
+ * <pre>{@code
+ * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+ *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+ *   List<Value> instances = new ArrayList<>();
+ *   Value parameters = Value.newBuilder().build();
+ *   PredictResponse response = predictionServiceClient.predict(endpoint, instances, parameters);
+ * }
+ * }</pre>
  *
  * <p>======================= SpecialistPoolServiceClient =======================
  *
@@ -65,6 +122,15 @@
  * CrowdCompute console.
  *
  * <p>Sample for SpecialistPoolServiceClient:
+ *
+ * <pre>{@code
+ * try (SpecialistPoolServiceClient specialistPoolServiceClient =
+ *     SpecialistPoolServiceClient.create()) {
+ *   SpecialistPoolName name =
+ *       SpecialistPoolName.of("[PROJECT]", "[LOCATION]", "[SPECIALIST_POOL]");
+ *   SpecialistPool response = specialistPoolServiceClient.getSpecialistPool(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.aiplatform.v1beta1;

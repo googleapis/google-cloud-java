@@ -11,8 +11,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "ad3bb00ed7750cd0625b3a36e0e2eff29f778e4a",
-        "internalRef": "350067652"
+        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
+        "internalRef": "357800868"
       }
     },
     {
@@ -756,7 +756,6 @@
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/data_item_payload.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/dataset_metadata.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/geometry.proto",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/io_format.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/predict/instance/image_classification.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/predict/instance/image_object_detection.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/predict/instance/image_segmentation.proto",
@@ -783,8 +782,6 @@
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/predict/prediction/video_action_recognition.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/predict/prediction/video_classification.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/predict/prediction/video_object_tracking.proto",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/saved_query_metadata.proto",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_forecasting.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_image_classification.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_image_object_detection.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_image_segmentation.proto",
@@ -792,6 +789,7 @@
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_text_classification.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_text_extraction.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_text_sentiment.proto",
+    "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_time_series_forecasting.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_video_action_recognition.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_video_classification.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_video_object_tracking.proto",

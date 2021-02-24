@@ -340,54 +340,66 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateEndpointRequest, Operation> createEndpointCallable() {
     return createEndpointCallable;
   }
 
+  @Override
   public OperationCallable<CreateEndpointRequest, Endpoint, CreateEndpointOperationMetadata>
       createEndpointOperationCallable() {
     return createEndpointOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetEndpointRequest, Endpoint> getEndpointCallable() {
     return getEndpointCallable;
   }
 
+  @Override
   public UnaryCallable<ListEndpointsRequest, ListEndpointsResponse> listEndpointsCallable() {
     return listEndpointsCallable;
   }
 
+  @Override
   public UnaryCallable<ListEndpointsRequest, ListEndpointsPagedResponse>
       listEndpointsPagedCallable() {
     return listEndpointsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateEndpointRequest, Endpoint> updateEndpointCallable() {
     return updateEndpointCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteEndpointRequest, Operation> deleteEndpointCallable() {
     return deleteEndpointCallable;
   }
 
+  @Override
   public OperationCallable<DeleteEndpointRequest, Empty, DeleteOperationMetadata>
       deleteEndpointOperationCallable() {
     return deleteEndpointOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeployModelRequest, Operation> deployModelCallable() {
     return deployModelCallable;
   }
 
+  @Override
   public OperationCallable<DeployModelRequest, DeployModelResponse, DeployModelOperationMetadata>
       deployModelOperationCallable() {
     return deployModelOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UndeployModelRequest, Operation> undeployModelCallable() {
     return undeployModelCallable;
   }
 
+  @Override
   public OperationCallable<
           UndeployModelRequest, UndeployModelResponse, UndeployModelOperationMetadata>
       undeployModelOperationCallable() {

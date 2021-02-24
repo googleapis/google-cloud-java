@@ -283,34 +283,41 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateTrainingPipelineRequest, TrainingPipeline>
       createTrainingPipelineCallable() {
     return createTrainingPipelineCallable;
   }
 
+  @Override
   public UnaryCallable<GetTrainingPipelineRequest, TrainingPipeline> getTrainingPipelineCallable() {
     return getTrainingPipelineCallable;
   }
 
+  @Override
   public UnaryCallable<ListTrainingPipelinesRequest, ListTrainingPipelinesResponse>
       listTrainingPipelinesCallable() {
     return listTrainingPipelinesCallable;
   }
 
+  @Override
   public UnaryCallable<ListTrainingPipelinesRequest, ListTrainingPipelinesPagedResponse>
       listTrainingPipelinesPagedCallable() {
     return listTrainingPipelinesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteTrainingPipelineRequest, Operation> deleteTrainingPipelineCallable() {
     return deleteTrainingPipelineCallable;
   }
 
+  @Override
   public OperationCallable<DeleteTrainingPipelineRequest, Empty, DeleteOperationMetadata>
       deleteTrainingPipelineOperationCallable() {
     return deleteTrainingPipelineOperationCallable;
   }
 
+  @Override
   public UnaryCallable<CancelTrainingPipelineRequest, Empty> cancelTrainingPipelineCallable() {
     return cancelTrainingPipelineCallable;
   }

@@ -22,8 +22,7 @@ package com.google.cloud.aiplatform.v1beta1.schema.predict.prediction;
  *
  *
  * <pre>
- * Represents a line of JSONL in the text sentiment batch prediction output
- * file. This is a hack to allow printing of integer values.
+ * Prediction output format for Text Sentiment
  * </pre>
  *
  * Protobuf type {@code
@@ -70,44 +69,9 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
           case 0:
             done = true;
             break;
-          case 10:
+          case 8:
             {
-              com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-                      .TextSentimentPredictionInstance.Builder
-                  subBuilder = null;
-              if (instance_ != null) {
-                subBuilder = instance_.toBuilder();
-              }
-              instance_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-                          .TextSentimentPredictionInstance.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(instance_);
-                instance_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                      .TextSentimentPredictionResult.Prediction.Builder
-                  subBuilder = null;
-              if (prediction_ != null) {
-                subBuilder = prediction_.toBuilder();
-              }
-              prediction_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                          .TextSentimentPredictionResult.Prediction.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(prediction_);
-                prediction_ = subBuilder.buildPartial();
-              }
-
+              sentiment_ = input.readInt32();
               break;
             }
           default:
@@ -148,770 +112,26 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
                 .TextSentimentPredictionResult.Builder.class);
   }
 
-  public interface PredictionOrBuilder
-      extends
-      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     *
-     *
-     * <pre>
-     * The integer sentiment labels between 0 (inclusive) and sentimentMax label
-     * (inclusive), while 0 maps to the least positive sentiment and
-     * sentimentMax maps to the most positive one. The higher the score is, the
-     * more positive the sentiment in the text snippet is. Note: sentimentMax is
-     * an integer value between 1 (inclusive) and 10 (inclusive).
-     * </pre>
-     *
-     * <code>int32 sentiment = 1;</code>
-     *
-     * @return The sentiment.
-     */
-    int getSentiment();
-  }
+  public static final int SENTIMENT_FIELD_NUMBER = 1;
+  private int sentiment_;
   /**
    *
    *
    * <pre>
-   * Prediction output format for Text Sentiment.
+   * The integer sentiment labels between 0 (inclusive) and sentimentMax label
+   * (inclusive), while 0 maps to the least positive sentiment and
+   * sentimentMax maps to the most positive one. The higher the score is, the
+   * more positive the sentiment in the text snippet is. Note: sentimentMax is
+   * an integer value between 1 (inclusive) and 10 (inclusive).
    * </pre>
    *
-   * Protobuf type {@code
-   * google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction}
-   */
-  public static final class Prediction extends com.google.protobuf.GeneratedMessageV3
-      implements
-      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction)
-      PredictionOrBuilder {
-    private static final long serialVersionUID = 0L;
-    // Use Prediction.newBuilder() to construct.
-    private Prediction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private Prediction() {}
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new Prediction();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
-    private Prediction(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                sentiment_ = input.readInt32();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-          .TextSentimentPredictionResultProto
-          .internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_TextSentimentPredictionResult_Prediction_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-          .TextSentimentPredictionResultProto
-          .internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_TextSentimentPredictionResult_Prediction_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                  .TextSentimentPredictionResult.Prediction.class,
-              com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                  .TextSentimentPredictionResult.Prediction.Builder.class);
-    }
-
-    public static final int SENTIMENT_FIELD_NUMBER = 1;
-    private int sentiment_;
-    /**
-     *
-     *
-     * <pre>
-     * The integer sentiment labels between 0 (inclusive) and sentimentMax label
-     * (inclusive), while 0 maps to the least positive sentiment and
-     * sentimentMax maps to the most positive one. The higher the score is, the
-     * more positive the sentiment in the text snippet is. Note: sentimentMax is
-     * an integer value between 1 (inclusive) and 10 (inclusive).
-     * </pre>
-     *
-     * <code>int32 sentiment = 1;</code>
-     *
-     * @return The sentiment.
-     */
-    @java.lang.Override
-    public int getSentiment() {
-      return sentiment_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (sentiment_ != 0) {
-        output.writeInt32(1, sentiment_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (sentiment_ != 0) {
-        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, sentiment_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj
-          instanceof
-          com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-              .TextSentimentPredictionResult.Prediction)) {
-        return super.equals(obj);
-      }
-      com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult
-              .Prediction
-          other =
-              (com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                      .TextSentimentPredictionResult.Prediction)
-                  obj;
-
-      if (getSentiment() != other.getSentiment()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SENTIMENT_FIELD_NUMBER;
-      hash = (53 * hash) + getSentiment();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.Prediction
-        parseFrom(java.nio.ByteBuffer data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.Prediction
-        parseFrom(
-            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.Prediction
-        parseFrom(com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.Prediction
-        parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.Prediction
-        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.Prediction
-        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.Prediction
-        parseFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.Prediction
-        parseFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.Prediction
-        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.Prediction
-        parseDelimitedFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.Prediction
-        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.Prediction
-        parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(
-        com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult
-                .Prediction
-            prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Prediction output format for Text Sentiment.
-     * </pre>
-     *
-     * Protobuf type {@code
-     * google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction}
-     */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-        implements
-        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction)
-        com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult
-            .PredictionOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResultProto
-            .internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_TextSentimentPredictionResult_Prediction_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResultProto
-            .internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_TextSentimentPredictionResult_Prediction_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                    .TextSentimentPredictionResult.Prediction.class,
-                com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                    .TextSentimentPredictionResult.Prediction.Builder.class);
-      }
-
-      // Construct using
-      // com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
-      }
-
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        sentiment_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResultProto
-            .internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_TextSentimentPredictionResult_Prediction_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-              .TextSentimentPredictionResult.Prediction
-          getDefaultInstanceForType() {
-        return com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.Prediction.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-              .TextSentimentPredictionResult.Prediction
-          build() {
-        com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult
-                .Prediction
-            result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-              .TextSentimentPredictionResult.Prediction
-          buildPartial() {
-        com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult
-                .Prediction
-            result =
-                new com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                    .TextSentimentPredictionResult.Prediction(this);
-        result.sentiment_ = sentiment_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other
-            instanceof
-            com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                .TextSentimentPredictionResult.Prediction) {
-          return mergeFrom(
-              (com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                      .TextSentimentPredictionResult.Prediction)
-                  other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(
-          com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                  .TextSentimentPredictionResult.Prediction
-              other) {
-        if (other
-            == com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                .TextSentimentPredictionResult.Prediction.getDefaultInstance()) return this;
-        if (other.getSentiment() != 0) {
-          setSentiment(other.getSentiment());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult
-                .Prediction
-            parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                      .TextSentimentPredictionResult.Prediction)
-                  e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int sentiment_;
-      /**
-       *
-       *
-       * <pre>
-       * The integer sentiment labels between 0 (inclusive) and sentimentMax label
-       * (inclusive), while 0 maps to the least positive sentiment and
-       * sentimentMax maps to the most positive one. The higher the score is, the
-       * more positive the sentiment in the text snippet is. Note: sentimentMax is
-       * an integer value between 1 (inclusive) and 10 (inclusive).
-       * </pre>
-       *
-       * <code>int32 sentiment = 1;</code>
-       *
-       * @return The sentiment.
-       */
-      @java.lang.Override
-      public int getSentiment() {
-        return sentiment_;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The integer sentiment labels between 0 (inclusive) and sentimentMax label
-       * (inclusive), while 0 maps to the least positive sentiment and
-       * sentimentMax maps to the most positive one. The higher the score is, the
-       * more positive the sentiment in the text snippet is. Note: sentimentMax is
-       * an integer value between 1 (inclusive) and 10 (inclusive).
-       * </pre>
-       *
-       * <code>int32 sentiment = 1;</code>
-       *
-       * @param value The sentiment to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSentiment(int value) {
-
-        sentiment_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The integer sentiment labels between 0 (inclusive) and sentimentMax label
-       * (inclusive), while 0 maps to the least positive sentiment and
-       * sentimentMax maps to the most positive one. The higher the score is, the
-       * more positive the sentiment in the text snippet is. Note: sentimentMax is
-       * an integer value between 1 (inclusive) and 10 (inclusive).
-       * </pre>
-       *
-       * <code>int32 sentiment = 1;</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearSentiment() {
-
-        sentiment_ = 0;
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction)
-    private static final com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.Prediction
-        DEFAULT_INSTANCE;
-
-    static {
-      DEFAULT_INSTANCE =
-          new com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-              .TextSentimentPredictionResult.Prediction();
-    }
-
-    public static com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.Prediction
-        getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Prediction> PARSER =
-        new com.google.protobuf.AbstractParser<Prediction>() {
-          @java.lang.Override
-          public Prediction parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Prediction(input, extensionRegistry);
-          }
-        };
-
-    public static com.google.protobuf.Parser<Prediction> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Prediction> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.Prediction
-        getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-  }
-
-  public static final int INSTANCE_FIELD_NUMBER = 1;
-  private com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-          .TextSentimentPredictionInstance
-      instance_;
-  /**
+   * <code>int32 sentiment = 1;</code>
    *
-   *
-   * <pre>
-   * User's input instance.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance instance = 1;
-   * </code>
-   *
-   * @return Whether the instance field is set.
+   * @return The sentiment.
    */
   @java.lang.Override
-  public boolean hasInstance() {
-    return instance_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * User's input instance.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance instance = 1;
-   * </code>
-   *
-   * @return The instance.
-   */
-  @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance
-      getInstance() {
-    return instance_ == null
-        ? com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-            .TextSentimentPredictionInstance.getDefaultInstance()
-        : instance_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * User's input instance.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance instance = 1;
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-          .TextSentimentPredictionInstanceOrBuilder
-      getInstanceOrBuilder() {
-    return getInstance();
-  }
-
-  public static final int PREDICTION_FIELD_NUMBER = 2;
-  private com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-          .TextSentimentPredictionResult.Prediction
-      prediction_;
-  /**
-   *
-   *
-   * <pre>
-   * The prediction result.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction prediction = 2;
-   * </code>
-   *
-   * @return Whether the prediction field is set.
-   */
-  @java.lang.Override
-  public boolean hasPrediction() {
-    return prediction_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The prediction result.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction prediction = 2;
-   * </code>
-   *
-   * @return The prediction.
-   */
-  @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult
-          .Prediction
-      getPrediction() {
-    return prediction_ == null
-        ? com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.Prediction.getDefaultInstance()
-        : prediction_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The prediction result.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction prediction = 2;
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult
-          .PredictionOrBuilder
-      getPredictionOrBuilder() {
-    return getPrediction();
+  public int getSentiment() {
+    return sentiment_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -928,11 +148,8 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (instance_ != null) {
-      output.writeMessage(1, getInstance());
-    }
-    if (prediction_ != null) {
-      output.writeMessage(2, getPrediction());
+    if (sentiment_ != 0) {
+      output.writeInt32(1, sentiment_);
     }
     unknownFields.writeTo(output);
   }
@@ -943,11 +160,8 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
     if (size != -1) return size;
 
     size = 0;
-    if (instance_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getInstance());
-    }
-    if (prediction_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getPrediction());
+    if (sentiment_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, sentiment_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -971,14 +185,7 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
                     .TextSentimentPredictionResult)
                 obj;
 
-    if (hasInstance() != other.hasInstance()) return false;
-    if (hasInstance()) {
-      if (!getInstance().equals(other.getInstance())) return false;
-    }
-    if (hasPrediction() != other.hasPrediction()) return false;
-    if (hasPrediction()) {
-      if (!getPrediction().equals(other.getPrediction())) return false;
-    }
+    if (getSentiment() != other.getSentiment()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -990,14 +197,8 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasInstance()) {
-      hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
-      hash = (53 * hash) + getInstance().hashCode();
-    }
-    if (hasPrediction()) {
-      hash = (37 * hash) + PREDICTION_FIELD_NUMBER;
-      hash = (53 * hash) + getPrediction().hashCode();
-    }
+    hash = (37 * hash) + SENTIMENT_FIELD_NUMBER;
+    hash = (53 * hash) + getSentiment();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1122,8 +323,7 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Represents a line of JSONL in the text sentiment batch prediction output
-   * file. This is a hack to allow printing of integer values.
+   * Prediction output format for Text Sentiment
    * </pre>
    *
    * Protobuf type {@code
@@ -1171,18 +371,8 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (instanceBuilder_ == null) {
-        instance_ = null;
-      } else {
-        instance_ = null;
-        instanceBuilder_ = null;
-      }
-      if (predictionBuilder_ == null) {
-        prediction_ = null;
-      } else {
-        prediction_ = null;
-        predictionBuilder_ = null;
-      }
+      sentiment_ = 0;
+
       return this;
     }
 
@@ -1221,16 +411,7 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
           result =
               new com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
                   .TextSentimentPredictionResult(this);
-      if (instanceBuilder_ == null) {
-        result.instance_ = instance_;
-      } else {
-        result.instance_ = instanceBuilder_.build();
-      }
-      if (predictionBuilder_ == null) {
-        result.prediction_ = prediction_;
-      } else {
-        result.prediction_ = predictionBuilder_.build();
-      }
+      result.sentiment_ = sentiment_;
       onBuilt();
       return result;
     }
@@ -1290,11 +471,8 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
       if (other
           == com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
               .TextSentimentPredictionResult.getDefaultInstance()) return this;
-      if (other.hasInstance()) {
-        mergeInstance(other.getInstance());
-      }
-      if (other.hasPrediction()) {
-        mergePrediction(other.getPrediction());
+      if (other.getSentiment() != 0) {
+        setSentiment(other.getSentiment());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1329,466 +507,68 @@ public final class TextSentimentPredictionResult extends com.google.protobuf.Gen
       return this;
     }
 
-    private com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-            .TextSentimentPredictionInstance
-        instance_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-                .TextSentimentPredictionInstance,
-            com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-                .TextSentimentPredictionInstance.Builder,
-            com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-                .TextSentimentPredictionInstanceOrBuilder>
-        instanceBuilder_;
+    private int sentiment_;
     /**
      *
      *
      * <pre>
-     * User's input instance.
+     * The integer sentiment labels between 0 (inclusive) and sentimentMax label
+     * (inclusive), while 0 maps to the least positive sentiment and
+     * sentimentMax maps to the most positive one. The higher the score is, the
+     * more positive the sentiment in the text snippet is. Note: sentimentMax is
+     * an integer value between 1 (inclusive) and 10 (inclusive).
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance instance = 1;
-     * </code>
+     * <code>int32 sentiment = 1;</code>
      *
-     * @return Whether the instance field is set.
+     * @return The sentiment.
      */
-    public boolean hasInstance() {
-      return instanceBuilder_ != null || instance_ != null;
+    @java.lang.Override
+    public int getSentiment() {
+      return sentiment_;
     }
     /**
      *
      *
      * <pre>
-     * User's input instance.
+     * The integer sentiment labels between 0 (inclusive) and sentimentMax label
+     * (inclusive), while 0 maps to the least positive sentiment and
+     * sentimentMax maps to the most positive one. The higher the score is, the
+     * more positive the sentiment in the text snippet is. Note: sentimentMax is
+     * an integer value between 1 (inclusive) and 10 (inclusive).
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance instance = 1;
-     * </code>
+     * <code>int32 sentiment = 1;</code>
      *
-     * @return The instance.
+     * @param value The sentiment to set.
+     * @return This builder for chaining.
      */
-    public com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-            .TextSentimentPredictionInstance
-        getInstance() {
-      if (instanceBuilder_ == null) {
-        return instance_ == null
-            ? com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-                .TextSentimentPredictionInstance.getDefaultInstance()
-            : instance_;
-      } else {
-        return instanceBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User's input instance.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance instance = 1;
-     * </code>
-     */
-    public Builder setInstance(
-        com.google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance
-            value) {
-      if (instanceBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        instance_ = value;
-        onChanged();
-      } else {
-        instanceBuilder_.setMessage(value);
-      }
+    public Builder setSentiment(int value) {
 
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User's input instance.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance instance = 1;
-     * </code>
-     */
-    public Builder setInstance(
-        com.google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance
-                .Builder
-            builderForValue) {
-      if (instanceBuilder_ == null) {
-        instance_ = builderForValue.build();
-        onChanged();
-      } else {
-        instanceBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User's input instance.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance instance = 1;
-     * </code>
-     */
-    public Builder mergeInstance(
-        com.google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance
-            value) {
-      if (instanceBuilder_ == null) {
-        if (instance_ != null) {
-          instance_ =
-              com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-                  .TextSentimentPredictionInstance.newBuilder(instance_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          instance_ = value;
-        }
-        onChanged();
-      } else {
-        instanceBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User's input instance.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance instance = 1;
-     * </code>
-     */
-    public Builder clearInstance() {
-      if (instanceBuilder_ == null) {
-        instance_ = null;
-        onChanged();
-      } else {
-        instance_ = null;
-        instanceBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User's input instance.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance instance = 1;
-     * </code>
-     */
-    public com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-            .TextSentimentPredictionInstance.Builder
-        getInstanceBuilder() {
-
+      sentiment_ = value;
       onChanged();
-      return getInstanceFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User's input instance.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance instance = 1;
-     * </code>
-     */
-    public com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-            .TextSentimentPredictionInstanceOrBuilder
-        getInstanceOrBuilder() {
-      if (instanceBuilder_ != null) {
-        return instanceBuilder_.getMessageOrBuilder();
-      } else {
-        return instance_ == null
-            ? com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-                .TextSentimentPredictionInstance.getDefaultInstance()
-            : instance_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * User's input instance.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance instance = 1;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-                .TextSentimentPredictionInstance,
-            com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-                .TextSentimentPredictionInstance.Builder,
-            com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-                .TextSentimentPredictionInstanceOrBuilder>
-        getInstanceFieldBuilder() {
-      if (instanceBuilder_ == null) {
-        instanceBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-                    .TextSentimentPredictionInstance,
-                com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-                    .TextSentimentPredictionInstance.Builder,
-                com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-                    .TextSentimentPredictionInstanceOrBuilder>(
-                getInstance(), getParentForChildren(), isClean());
-        instance_ = null;
-      }
-      return instanceBuilder_;
-    }
-
-    private com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.Prediction
-        prediction_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                .TextSentimentPredictionResult.Prediction,
-            com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                .TextSentimentPredictionResult.Prediction.Builder,
-            com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                .TextSentimentPredictionResult.PredictionOrBuilder>
-        predictionBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * The prediction result.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction prediction = 2;
-     * </code>
-     *
-     * @return Whether the prediction field is set.
-     */
-    public boolean hasPrediction() {
-      return predictionBuilder_ != null || prediction_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The prediction result.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction prediction = 2;
-     * </code>
-     *
-     * @return The prediction.
-     */
-    public com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.Prediction
-        getPrediction() {
-      if (predictionBuilder_ == null) {
-        return prediction_ == null
-            ? com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                .TextSentimentPredictionResult.Prediction.getDefaultInstance()
-            : prediction_;
-      } else {
-        return predictionBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The prediction result.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction prediction = 2;
-     * </code>
-     */
-    public Builder setPrediction(
-        com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult
-                .Prediction
-            value) {
-      if (predictionBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        prediction_ = value;
-        onChanged();
-      } else {
-        predictionBuilder_.setMessage(value);
-      }
-
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The prediction result.
+     * The integer sentiment labels between 0 (inclusive) and sentimentMax label
+     * (inclusive), while 0 maps to the least positive sentiment and
+     * sentimentMax maps to the most positive one. The higher the score is, the
+     * more positive the sentiment in the text snippet is. Note: sentimentMax is
+     * an integer value between 1 (inclusive) and 10 (inclusive).
      * </pre>
      *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction prediction = 2;
-     * </code>
+     * <code>int32 sentiment = 1;</code>
+     *
+     * @return This builder for chaining.
      */
-    public Builder setPrediction(
-        com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult
-                .Prediction.Builder
-            builderForValue) {
-      if (predictionBuilder_ == null) {
-        prediction_ = builderForValue.build();
-        onChanged();
-      } else {
-        predictionBuilder_.setMessage(builderForValue.build());
-      }
+    public Builder clearSentiment() {
 
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The prediction result.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction prediction = 2;
-     * </code>
-     */
-    public Builder mergePrediction(
-        com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult
-                .Prediction
-            value) {
-      if (predictionBuilder_ == null) {
-        if (prediction_ != null) {
-          prediction_ =
-              com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                  .TextSentimentPredictionResult.Prediction.newBuilder(prediction_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          prediction_ = value;
-        }
-        onChanged();
-      } else {
-        predictionBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The prediction result.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction prediction = 2;
-     * </code>
-     */
-    public Builder clearPrediction() {
-      if (predictionBuilder_ == null) {
-        prediction_ = null;
-        onChanged();
-      } else {
-        prediction_ = null;
-        predictionBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The prediction result.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction prediction = 2;
-     * </code>
-     */
-    public com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.Prediction.Builder
-        getPredictionBuilder() {
-
+      sentiment_ = 0;
       onChanged();
-      return getPredictionFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The prediction result.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction prediction = 2;
-     * </code>
-     */
-    public com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-            .TextSentimentPredictionResult.PredictionOrBuilder
-        getPredictionOrBuilder() {
-      if (predictionBuilder_ != null) {
-        return predictionBuilder_.getMessageOrBuilder();
-      } else {
-        return prediction_ == null
-            ? com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                .TextSentimentPredictionResult.Prediction.getDefaultInstance()
-            : prediction_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The prediction result.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction prediction = 2;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                .TextSentimentPredictionResult.Prediction,
-            com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                .TextSentimentPredictionResult.Prediction.Builder,
-            com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                .TextSentimentPredictionResult.PredictionOrBuilder>
-        getPredictionFieldBuilder() {
-      if (predictionBuilder_ == null) {
-        predictionBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                    .TextSentimentPredictionResult.Prediction,
-                com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                    .TextSentimentPredictionResult.Prediction.Builder,
-                com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                    .TextSentimentPredictionResult.PredictionOrBuilder>(
-                getPrediction(), getParentForChildren(), isClean());
-        prediction_ = null;
-      }
-      return predictionBuilder_;
+      return this;
     }
 
     @java.lang.Override

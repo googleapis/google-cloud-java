@@ -150,6 +150,18 @@ public final class AutoMlVideoClassificationInputs extends com.google.protobuf.G
      * <code>MOBILE_VERSATILE_1 = 2;</code>
      */
     MOBILE_VERSATILE_1(2),
+    /**
+     *
+     *
+     * <pre>
+     * A model that, in addition to being available within Google Cloud, can
+     * also be exported (see ModelService.ExportModel) to a Jetson device
+     * afterwards.
+     * </pre>
+     *
+     * <code>MOBILE_JETSON_VERSATILE_1 = 3;</code>
+     */
+    MOBILE_JETSON_VERSATILE_1(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -186,6 +198,18 @@ public final class AutoMlVideoClassificationInputs extends com.google.protobuf.G
      * <code>MOBILE_VERSATILE_1 = 2;</code>
      */
     public static final int MOBILE_VERSATILE_1_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * A model that, in addition to being available within Google Cloud, can
+     * also be exported (see ModelService.ExportModel) to a Jetson device
+     * afterwards.
+     * </pre>
+     *
+     * <code>MOBILE_JETSON_VERSATILE_1 = 3;</code>
+     */
+    public static final int MOBILE_JETSON_VERSATILE_1_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -217,6 +241,8 @@ public final class AutoMlVideoClassificationInputs extends com.google.protobuf.G
           return CLOUD;
         case 2:
           return MOBILE_VERSATILE_1;
+        case 3:
+          return MOBILE_JETSON_VERSATILE_1;
         default:
           return null;
       }

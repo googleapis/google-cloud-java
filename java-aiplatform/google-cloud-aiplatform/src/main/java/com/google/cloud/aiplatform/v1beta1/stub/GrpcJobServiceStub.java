@@ -821,134 +821,162 @@ public class GrpcJobServiceStub extends JobServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateCustomJobRequest, CustomJob> createCustomJobCallable() {
     return createCustomJobCallable;
   }
 
+  @Override
   public UnaryCallable<GetCustomJobRequest, CustomJob> getCustomJobCallable() {
     return getCustomJobCallable;
   }
 
+  @Override
   public UnaryCallable<ListCustomJobsRequest, ListCustomJobsResponse> listCustomJobsCallable() {
     return listCustomJobsCallable;
   }
 
+  @Override
   public UnaryCallable<ListCustomJobsRequest, ListCustomJobsPagedResponse>
       listCustomJobsPagedCallable() {
     return listCustomJobsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteCustomJobRequest, Operation> deleteCustomJobCallable() {
     return deleteCustomJobCallable;
   }
 
+  @Override
   public OperationCallable<DeleteCustomJobRequest, Empty, DeleteOperationMetadata>
       deleteCustomJobOperationCallable() {
     return deleteCustomJobOperationCallable;
   }
 
+  @Override
   public UnaryCallable<CancelCustomJobRequest, Empty> cancelCustomJobCallable() {
     return cancelCustomJobCallable;
   }
 
+  @Override
   public UnaryCallable<CreateDataLabelingJobRequest, DataLabelingJob>
       createDataLabelingJobCallable() {
     return createDataLabelingJobCallable;
   }
 
+  @Override
   public UnaryCallable<GetDataLabelingJobRequest, DataLabelingJob> getDataLabelingJobCallable() {
     return getDataLabelingJobCallable;
   }
 
+  @Override
   public UnaryCallable<ListDataLabelingJobsRequest, ListDataLabelingJobsResponse>
       listDataLabelingJobsCallable() {
     return listDataLabelingJobsCallable;
   }
 
+  @Override
   public UnaryCallable<ListDataLabelingJobsRequest, ListDataLabelingJobsPagedResponse>
       listDataLabelingJobsPagedCallable() {
     return listDataLabelingJobsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteDataLabelingJobRequest, Operation> deleteDataLabelingJobCallable() {
     return deleteDataLabelingJobCallable;
   }
 
+  @Override
   public OperationCallable<DeleteDataLabelingJobRequest, Empty, DeleteOperationMetadata>
       deleteDataLabelingJobOperationCallable() {
     return deleteDataLabelingJobOperationCallable;
   }
 
+  @Override
   public UnaryCallable<CancelDataLabelingJobRequest, Empty> cancelDataLabelingJobCallable() {
     return cancelDataLabelingJobCallable;
   }
 
+  @Override
   public UnaryCallable<CreateHyperparameterTuningJobRequest, HyperparameterTuningJob>
       createHyperparameterTuningJobCallable() {
     return createHyperparameterTuningJobCallable;
   }
 
+  @Override
   public UnaryCallable<GetHyperparameterTuningJobRequest, HyperparameterTuningJob>
       getHyperparameterTuningJobCallable() {
     return getHyperparameterTuningJobCallable;
   }
 
+  @Override
   public UnaryCallable<ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse>
       listHyperparameterTuningJobsCallable() {
     return listHyperparameterTuningJobsCallable;
   }
 
+  @Override
   public UnaryCallable<
           ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsPagedResponse>
       listHyperparameterTuningJobsPagedCallable() {
     return listHyperparameterTuningJobsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteHyperparameterTuningJobRequest, Operation>
       deleteHyperparameterTuningJobCallable() {
     return deleteHyperparameterTuningJobCallable;
   }
 
+  @Override
   public OperationCallable<DeleteHyperparameterTuningJobRequest, Empty, DeleteOperationMetadata>
       deleteHyperparameterTuningJobOperationCallable() {
     return deleteHyperparameterTuningJobOperationCallable;
   }
 
+  @Override
   public UnaryCallable<CancelHyperparameterTuningJobRequest, Empty>
       cancelHyperparameterTuningJobCallable() {
     return cancelHyperparameterTuningJobCallable;
   }
 
+  @Override
   public UnaryCallable<CreateBatchPredictionJobRequest, BatchPredictionJob>
       createBatchPredictionJobCallable() {
     return createBatchPredictionJobCallable;
   }
 
+  @Override
   public UnaryCallable<GetBatchPredictionJobRequest, BatchPredictionJob>
       getBatchPredictionJobCallable() {
     return getBatchPredictionJobCallable;
   }
 
+  @Override
   public UnaryCallable<ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse>
       listBatchPredictionJobsCallable() {
     return listBatchPredictionJobsCallable;
   }
 
+  @Override
   public UnaryCallable<ListBatchPredictionJobsRequest, ListBatchPredictionJobsPagedResponse>
       listBatchPredictionJobsPagedCallable() {
     return listBatchPredictionJobsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteBatchPredictionJobRequest, Operation>
       deleteBatchPredictionJobCallable() {
     return deleteBatchPredictionJobCallable;
   }
 
+  @Override
   public OperationCallable<DeleteBatchPredictionJobRequest, Empty, DeleteOperationMetadata>
       deleteBatchPredictionJobOperationCallable() {
     return deleteBatchPredictionJobOperationCallable;
   }
 
+  @Override
   public UnaryCallable<CancelBatchPredictionJobRequest, Empty> cancelBatchPredictionJobCallable() {
     return cancelBatchPredictionJobCallable;
   }

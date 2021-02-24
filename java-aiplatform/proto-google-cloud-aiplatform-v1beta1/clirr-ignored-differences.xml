@@ -3,17 +3,107 @@
 <!-- TODO: remove after next major version is released -->
 <differences>
   <difference>
+    <className>com/google/cloud/aiplatform/v1beta1/*OrBuilder</className>
+    <differenceType>7012</differenceType>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <className>com/google/cloud/aiplatform/v1beta1/*OrBuilder</className>
+    <differenceType>7012</differenceType>
+    <method>* has*(*)</method>
+  </difference>
+  <difference>
     <className>
-      com/google/cloud/aiplatform/v1beta1/*OrBuilder
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*OrBuilder
     </className>
     <differenceType>7012</differenceType>
     <method>* get*(*)</method>
   </difference>
   <difference>
     <className>
-      com/google/cloud/aiplatform/v1beta1/*OrBuilder
+      com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/*OrBuilder
     </className>
     <differenceType>7012</differenceType>
-    <method>* has*()</method>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <className>
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result
+    </className>
+    <differenceType>7006</differenceType>
+    <method>* get*(*)</method>
+    <to>java.lang.String</to>
+  </difference>
+  <difference>
+    <className>
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result$Builder
+    </className>
+    <differenceType>7006</differenceType>
+    <method>* get*(*)</method>
+    <to>java.lang.String</to>
+  </difference>
+  <difference>
+    <className>
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*OrBuilder
+    </className>
+    <differenceType>7006</differenceType>
+    <method>* get*(*)</method>
+    <to>java.lang.String</to>
+  </difference>
+  <difference>
+    <className>
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result$Builder
+    </className>
+    <differenceType>7005</differenceType>
+    <method>* set*(*)</method>
+    <to>* set*(*)</to>
+  </difference>
+  <difference>
+    <className>
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result
+    </className>
+    <differenceType>6011</differenceType>
+    <field>*FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <className>
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/TextSentimentPredictionResult$Prediction*
+    </className>
+    <differenceType>8001</differenceType>
+  </difference>
+  <difference>
+    <className>
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result*
+    </className>
+    <differenceType>7002</differenceType>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <className>
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result*
+    </className>
+    <differenceType>7002</differenceType>
+    <method>* has*(*)</method>
+  </difference>
+  <difference>
+    <className>
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result*
+    </className>
+    <differenceType>7002</differenceType>
+    <method>* clear*(*)</method>
+  </difference>
+  <difference>
+    <className>
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result*
+    </className>
+    <differenceType>7002</differenceType>
+    <method>* merge*(*)</method>
+  </difference>
+  <difference>
+    <className>
+      com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/*Result*
+    </className>
+    <differenceType>7002</differenceType>
+    <method>* set*(*)</method>
   </difference>
 </differences>

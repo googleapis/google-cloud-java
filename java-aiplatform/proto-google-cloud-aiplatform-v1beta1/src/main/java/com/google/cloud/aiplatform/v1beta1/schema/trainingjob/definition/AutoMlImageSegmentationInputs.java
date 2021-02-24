@@ -162,6 +162,20 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
      * <code>CLOUD_LOW_ACCURACY_1 = 2;</code>
      */
     CLOUD_LOW_ACCURACY_1(2),
+    /**
+     *
+     *
+     * <pre>
+     * A model that, in addition to being available within Google
+     * Cloud, can also be exported (see ModelService.ExportModel) as TensorFlow
+     * model and used on a mobile or edge device afterwards.
+     * Expected to have low latency, but may have lower prediction
+     * quality than other mobile models.
+     * </pre>
+     *
+     * <code>MOBILE_TF_LOW_LATENCY_1 = 3;</code>
+     */
+    MOBILE_TF_LOW_LATENCY_1(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -198,6 +212,20 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
      * <code>CLOUD_LOW_ACCURACY_1 = 2;</code>
      */
     public static final int CLOUD_LOW_ACCURACY_1_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * A model that, in addition to being available within Google
+     * Cloud, can also be exported (see ModelService.ExportModel) as TensorFlow
+     * model and used on a mobile or edge device afterwards.
+     * Expected to have low latency, but may have lower prediction
+     * quality than other mobile models.
+     * </pre>
+     *
+     * <code>MOBILE_TF_LOW_LATENCY_1 = 3;</code>
+     */
+    public static final int MOBILE_TF_LOW_LATENCY_1_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -229,6 +257,8 @@ public final class AutoMlImageSegmentationInputs extends com.google.protobuf.Gen
           return CLOUD_HIGH_ACCURACY_1;
         case 2:
           return CLOUD_LOW_ACCURACY_1;
+        case 3:
+          return MOBILE_TF_LOW_LATENCY_1;
         default:
           return null;
       }

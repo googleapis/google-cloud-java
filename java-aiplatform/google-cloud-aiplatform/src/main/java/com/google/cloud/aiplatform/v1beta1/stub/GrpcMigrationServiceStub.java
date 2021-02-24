@@ -191,20 +191,24 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<SearchMigratableResourcesRequest, SearchMigratableResourcesResponse>
       searchMigratableResourcesCallable() {
     return searchMigratableResourcesCallable;
   }
 
+  @Override
   public UnaryCallable<SearchMigratableResourcesRequest, SearchMigratableResourcesPagedResponse>
       searchMigratableResourcesPagedCallable() {
     return searchMigratableResourcesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<BatchMigrateResourcesRequest, Operation> batchMigrateResourcesCallable() {
     return batchMigrateResourcesCallable;
   }
 
+  @Override
   public OperationCallable<
           BatchMigrateResourcesRequest,
           BatchMigrateResourcesResponse,

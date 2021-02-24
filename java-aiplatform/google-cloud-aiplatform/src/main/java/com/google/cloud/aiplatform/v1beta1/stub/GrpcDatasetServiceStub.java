@@ -442,75 +442,92 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateDatasetRequest, Operation> createDatasetCallable() {
     return createDatasetCallable;
   }
 
+  @Override
   public OperationCallable<CreateDatasetRequest, Dataset, CreateDatasetOperationMetadata>
       createDatasetOperationCallable() {
     return createDatasetOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable() {
     return getDatasetCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateDatasetRequest, Dataset> updateDatasetCallable() {
     return updateDatasetCallable;
   }
 
+  @Override
   public UnaryCallable<ListDatasetsRequest, ListDatasetsResponse> listDatasetsCallable() {
     return listDatasetsCallable;
   }
 
+  @Override
   public UnaryCallable<ListDatasetsRequest, ListDatasetsPagedResponse> listDatasetsPagedCallable() {
     return listDatasetsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteDatasetRequest, Operation> deleteDatasetCallable() {
     return deleteDatasetCallable;
   }
 
+  @Override
   public OperationCallable<DeleteDatasetRequest, Empty, DeleteOperationMetadata>
       deleteDatasetOperationCallable() {
     return deleteDatasetOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ImportDataRequest, Operation> importDataCallable() {
     return importDataCallable;
   }
 
+  @Override
   public OperationCallable<ImportDataRequest, ImportDataResponse, ImportDataOperationMetadata>
       importDataOperationCallable() {
     return importDataOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
     return exportDataCallable;
   }
 
+  @Override
   public OperationCallable<ExportDataRequest, ExportDataResponse, ExportDataOperationMetadata>
       exportDataOperationCallable() {
     return exportDataOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ListDataItemsRequest, ListDataItemsResponse> listDataItemsCallable() {
     return listDataItemsCallable;
   }
 
+  @Override
   public UnaryCallable<ListDataItemsRequest, ListDataItemsPagedResponse>
       listDataItemsPagedCallable() {
     return listDataItemsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecCallable() {
     return getAnnotationSpecCallable;
   }
 
+  @Override
   public UnaryCallable<ListAnnotationsRequest, ListAnnotationsResponse> listAnnotationsCallable() {
     return listAnnotationsCallable;
   }
 
+  @Override
   public UnaryCallable<ListAnnotationsRequest, ListAnnotationsPagedResponse>
       listAnnotationsPagedCallable() {
     return listAnnotationsPagedCallable;

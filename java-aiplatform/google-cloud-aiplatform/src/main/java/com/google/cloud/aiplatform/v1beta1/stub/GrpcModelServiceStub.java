@@ -450,73 +450,89 @@ public class GrpcModelServiceStub extends ModelServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<UploadModelRequest, Operation> uploadModelCallable() {
     return uploadModelCallable;
   }
 
+  @Override
   public OperationCallable<UploadModelRequest, UploadModelResponse, UploadModelOperationMetadata>
       uploadModelOperationCallable() {
     return uploadModelOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetModelRequest, Model> getModelCallable() {
     return getModelCallable;
   }
 
+  @Override
   public UnaryCallable<ListModelsRequest, ListModelsResponse> listModelsCallable() {
     return listModelsCallable;
   }
 
+  @Override
   public UnaryCallable<ListModelsRequest, ListModelsPagedResponse> listModelsPagedCallable() {
     return listModelsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateModelRequest, Model> updateModelCallable() {
     return updateModelCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable() {
     return deleteModelCallable;
   }
 
+  @Override
   public OperationCallable<DeleteModelRequest, Empty, DeleteOperationMetadata>
       deleteModelOperationCallable() {
     return deleteModelOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ExportModelRequest, Operation> exportModelCallable() {
     return exportModelCallable;
   }
 
+  @Override
   public OperationCallable<ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
       exportModelOperationCallable() {
     return exportModelOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetModelEvaluationRequest, ModelEvaluation> getModelEvaluationCallable() {
     return getModelEvaluationCallable;
   }
 
+  @Override
   public UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
       listModelEvaluationsCallable() {
     return listModelEvaluationsCallable;
   }
 
+  @Override
   public UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsPagedResponse>
       listModelEvaluationsPagedCallable() {
     return listModelEvaluationsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetModelEvaluationSliceRequest, ModelEvaluationSlice>
       getModelEvaluationSliceCallable() {
     return getModelEvaluationSliceCallable;
   }
 
+  @Override
   public UnaryCallable<ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse>
       listModelEvaluationSlicesCallable() {
     return listModelEvaluationSlicesCallable;
   }
 
+  @Override
   public UnaryCallable<ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesPagedResponse>
       listModelEvaluationSlicesPagedCallable() {
     return listModelEvaluationSlicesPagedCallable;

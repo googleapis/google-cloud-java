@@ -27,88 +27,16 @@ public interface TextSentimentPredictionResultOrBuilder
    *
    *
    * <pre>
-   * User's input instance.
+   * The integer sentiment labels between 0 (inclusive) and sentimentMax label
+   * (inclusive), while 0 maps to the least positive sentiment and
+   * sentimentMax maps to the most positive one. The higher the score is, the
+   * more positive the sentiment in the text snippet is. Note: sentimentMax is
+   * an integer value between 1 (inclusive) and 10 (inclusive).
    * </pre>
    *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance instance = 1;
-   * </code>
+   * <code>int32 sentiment = 1;</code>
    *
-   * @return Whether the instance field is set.
+   * @return The sentiment.
    */
-  boolean hasInstance();
-  /**
-   *
-   *
-   * <pre>
-   * User's input instance.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance instance = 1;
-   * </code>
-   *
-   * @return The instance.
-   */
-  com.google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance
-      getInstance();
-  /**
-   *
-   *
-   * <pre>
-   * User's input instance.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.schema.predict.instance.TextSentimentPredictionInstance instance = 1;
-   * </code>
-   */
-  com.google.cloud.aiplatform.v1beta1.schema.predict.instance
-          .TextSentimentPredictionInstanceOrBuilder
-      getInstanceOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * The prediction result.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction prediction = 2;
-   * </code>
-   *
-   * @return Whether the prediction field is set.
-   */
-  boolean hasPrediction();
-  /**
-   *
-   *
-   * <pre>
-   * The prediction result.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction prediction = 2;
-   * </code>
-   *
-   * @return The prediction.
-   */
-  com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult
-          .Prediction
-      getPrediction();
-  /**
-   *
-   *
-   * <pre>
-   * The prediction result.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult.Prediction prediction = 2;
-   * </code>
-   */
-  com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextSentimentPredictionResult
-          .PredictionOrBuilder
-      getPredictionOrBuilder();
+  int getSentiment();
 }
