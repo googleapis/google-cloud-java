@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-assured-workloads</artifactId>
-      <version>0.1.4</version>
+      <version>0.2.2</version>
     </dependency>
   <!-- {x-version-update-end} -->
 
