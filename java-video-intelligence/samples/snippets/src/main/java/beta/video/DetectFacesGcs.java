@@ -91,9 +91,10 @@ public class DetectFacesGcs {
           TimestampedObject firstTimestampedObject = track.getTimestampedObjects(0);
 
           for (DetectedAttribute attribute : firstTimestampedObject.getAttributesList()) {
-            // Attributes include unique pieces of clothing, like glasses,
-            // poses, or hair color.
-            System.out.printf("\tAttribute: %s;\n", attribute.getName());
+            // Attributes include glasses, headwear, smiling, direction of gaze
+            System.out.printf(
+                "\tAttribute %s: %s %s\n",
+                attribute.getName(), attribute.getValue(), attribute.getConfidence());
           }
         }
       }
