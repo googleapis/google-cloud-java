@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-assured-workloads/compare/v0.2.2...v0.3.0) (2021-02-24)
+
+
+### Features
+
+* add US_REGIONAL_ACCESS to create workloads with compliance regime ([#154](https://www.github.com/googleapis/java-assured-workloads/issues/154)) ([afe69be](https://www.github.com/googleapis/java-assured-workloads/commit/afe69be2ff36bcf0c0a248d7660fb190f7be2e1e))
+* generate sample code in the Java microgenerator ([#170](https://www.github.com/googleapis/java-assured-workloads/issues/170)) ([61624c6](https://www.github.com/googleapis/java-assured-workloads/commit/61624c6652c6ccc77be61eb07b214f6a303671f5))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#175](https://www.github.com/googleapis/java-assured-workloads/issues/175)) ([8122a56](https://www.github.com/googleapis/java-assured-workloads/commit/8122a5694591c6d7e5d905443a6d6842ec86a940))
+
 ### [0.2.2](https://www.github.com/googleapis/java-assured-workloads/compare/v0.2.1...v0.2.2) (2021-01-14)
 
 
