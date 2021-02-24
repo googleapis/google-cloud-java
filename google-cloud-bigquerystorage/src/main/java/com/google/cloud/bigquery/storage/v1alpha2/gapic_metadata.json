@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.bigquery.storage.v1alpha2",
+  "libraryPackage": "com.google.cloud.bigquery.storage.v1alpha2",
+  "services": {
+    "BigQueryWrite": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BigQueryWriteClient",
+          "rpcs": {
+            "AppendRows": {
+              "methods": ["appendRowsCallable"]
+            },
+            "BatchCommitWriteStreams": {
+              "methods": ["batchCommitWriteStreams", "batchCommitWriteStreams", "batchCommitWriteStreams", "batchCommitWriteStreamsCallable"]
+            },
+            "CreateWriteStream": {
+              "methods": ["createWriteStream", "createWriteStream", "createWriteStream", "createWriteStreamCallable"]
+            },
+            "FinalizeWriteStream": {
+              "methods": ["finalizeWriteStream", "finalizeWriteStream", "finalizeWriteStream", "finalizeWriteStreamCallable"]
+            },
+            "FlushRows": {
+              "methods": ["flushRows", "flushRows", "flushRows", "flushRowsCallable"]
+            },
+            "GetWriteStream": {
+              "methods": ["getWriteStream", "getWriteStream", "getWriteStream", "getWriteStreamCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

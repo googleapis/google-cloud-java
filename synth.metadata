@@ -11,39 +11,39 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigquerystorage.git",
-        "sha": "60219209d9ba38c75903fe33addda90716a979f8"
+        "sha": "3a942cda09b263d910454b584273b45eee03406c"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "af8f71dae961ee036a0ac52a1965270149a6b2c9",
+        "internalRef": "358516065"
       }
     },
     {
@@ -158,6 +158,7 @@
     "codecov.yaml",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/BaseBigQueryReadClient.java",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/BaseBigQueryReadSettings.java",
+    "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/gapic_metadata.json",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/package-info.java",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/stub/BigQueryReadStub.java",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/stub/BigQueryReadStubSettings.java",
@@ -165,6 +166,7 @@
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/stub/GrpcBigQueryReadStub.java",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1alpha2/BigQueryWriteClient.java",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1alpha2/BigQueryWriteSettings.java",
+    "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1alpha2/gapic_metadata.json",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1alpha2/package-info.java",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1alpha2/stub/BigQueryWriteStub.java",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1alpha2/stub/BigQueryWriteStubSettings.java",
@@ -172,6 +174,7 @@
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1alpha2/stub/GrpcBigQueryWriteStub.java",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/BaseBigQueryStorageClient.java",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/BaseBigQueryStorageSettings.java",
+    "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/gapic_metadata.json",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/package-info.java",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/stub/BigQueryStorageStub.java",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta1/stub/BigQueryStorageStubSettings.java",
@@ -181,6 +184,7 @@
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta2/BaseBigQueryReadSettings.java",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta2/BigQueryWriteClient.java",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta2/BigQueryWriteSettings.java",
+    "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta2/gapic_metadata.json",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta2/package-info.java",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta2/stub/BigQueryReadStub.java",
     "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1beta2/stub/BigQueryReadStubSettings.java",
