@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-monitoring-dashboard</artifactId>
-      <version>1.0.7</version>
+      <version>1.0.9</version>
     </dependency>
     <!-- [END monitoring-dashboards_install_without_bom] -->
 
