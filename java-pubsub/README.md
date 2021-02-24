@@ -12,24 +12,7 @@ Java idiomatic client for [Cloud Pub/Sub][product-docs].
 
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
 ```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>17.0.0</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
-
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-pubsub</artifactId>
-    <version>1.111.0</version>
-  </dependency>
+</dependencies>
 
 ```
 
@@ -52,12 +35,12 @@ compile 'com.google.cloud:google-cloud-pubsub'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-pubsub:1.111.1'
+compile 'com.google.cloud:google-cloud-pubsub:1.111.2'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "1.111.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "1.111.2"
 ```
 
 ## Authentication
