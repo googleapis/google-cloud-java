@@ -47,7 +47,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -275,13 +274,8 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
     }
 
     private boolean isGcloudInstalled() {
-      Map<String, String> env = System.getenv();
-      for (String envName : env.keySet()) {
-        if ("PATH".equals(envName)) {
-          return env.get(envName).contains("google-cloud-sdk");
-        }
-      }
-      return false;
+      String path = System.getenv("PATH");
+      return path != null && path.contains("google-cloud-sdk");
     }
 
     private boolean isEmulatorUpToDate() throws IOException, InterruptedException {
