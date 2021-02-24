@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.1.8](https://www.github.com/googleapis/java-video-transcoder/compare/v0.1.7...v0.1.8) (2021-02-22)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#108](https://www.github.com/googleapis/java-video-transcoder/issues/108)) ([5fe6226](https://www.github.com/googleapis/java-video-transcoder/commit/5fe6226fdbc87aab888a049fd2d5040dbedbd0d2))
+* put FPS table in code block ([#88](https://www.github.com/googleapis/java-video-transcoder/issues/88)) ([65d7c6f](https://www.github.com/googleapis/java-video-transcoder/commit/65d7c6fa2ce0917bc77f2e8e94fd53c2c0a432b4))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.18.0 ([#92](https://www.github.com/googleapis/java-video-transcoder/issues/92)) ([0ce5f5b](https://www.github.com/googleapis/java-video-transcoder/commit/0ce5f5ba364654ebd4391b73577163c277cdc538))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#116](https://www.github.com/googleapis/java-video-transcoder/issues/116)) ([d643ba3](https://www.github.com/googleapis/java-video-transcoder/commit/d643ba3ccbb17c30042540434554dae5ff74a12c))
+
 ### [0.1.7](https://www.github.com/googleapis/java-video-transcoder/compare/v0.1.6...v0.1.7) (2020-12-15)
 
 
