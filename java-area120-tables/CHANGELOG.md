@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.1.10](https://www.github.com/googleapis/java-area120-tables/compare/v0.1.9...v0.1.10) (2021-02-24)
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#114](https://www.github.com/googleapis/java-area120-tables/issues/114)) ([e2657ea](https://www.github.com/googleapis/java-area120-tables/commit/e2657eac38719c7ca6c6b604756d93cf35aef056))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#119](https://www.github.com/googleapis/java-area120-tables/issues/119)) ([6a50a66](https://www.github.com/googleapis/java-area120-tables/commit/6a50a66a086a4207933c0c9d7c77c0ebe94d6ee7))
+
 ### [0.1.9](https://www.github.com/googleapis/java-area120-tables/compare/v0.1.8...v0.1.9) (2021-01-14)
 
 
