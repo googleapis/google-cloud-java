@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.31.0](https://www.github.com/googleapis/java-tasks/compare/v1.30.13...v1.31.0) (2021-02-24)
+
+
+### Features
+
+* **v2beta2:** add QueueStats message ([13b383c](https://www.github.com/googleapis/java-tasks/commit/13b383cce54ff09a0cffcd84f88ccd6283a18b7b))
+* **v2beta2:** add tombstoning and task retention ([#365](https://www.github.com/googleapis/java-tasks/issues/365)) ([13b383c](https://www.github.com/googleapis/java-tasks/commit/13b383cce54ff09a0cffcd84f88ccd6283a18b7b))
+* **v2beta3:** add QueueStats message ([13b383c](https://www.github.com/googleapis/java-tasks/commit/13b383cce54ff09a0cffcd84f88ccd6283a18b7b))
+* **v2beta3:** add tombstoning and task retention ([13b383c](https://www.github.com/googleapis/java-tasks/commit/13b383cce54ff09a0cffcd84f88ccd6283a18b7b))
+
+
+### Documentation
+
+* updates to AppEngineHttpRequest description ([13b383c](https://www.github.com/googleapis/java-tasks/commit/13b383cce54ff09a0cffcd84f88ccd6283a18b7b))
+
 ### [1.30.13](https://www.github.com/googleapis/java-tasks/compare/v1.30.12...v1.30.13) (2021-02-22)
 
 
