@@ -20,19 +20,19 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-mediatranslation</artifactId>
-  <version>0.2.9</version>
+  <version>0.2.11</version>
 </dependency>
 
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-mediatranslation:0.2.10'
+compile 'com.google.cloud:google-cloud-mediatranslation:0.2.11'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-mediatranslation" % "0.2.10"
+libraryDependencies += "com.google.cloud" % "google-cloud-mediatranslation" % "0.2.11"
 ```
 
 ## Authentication
