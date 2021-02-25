@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-memcache/compare/v0.4.0...v1.0.0) (2021-02-24)
+
+
+### Features
+
+* promote to 1.0.0 ([#314](https://www.github.com/googleapis/java-memcache/issues/314)) ([e0f2c07](https://www.github.com/googleapis/java-memcache/commit/e0f2c07a336b955bec81663129d00488ca3573c3))
+
 ## [0.4.0](https://www.github.com/googleapis/java-memcache/compare/v0.3.0...v0.4.0) (2021-02-22)
 
 
