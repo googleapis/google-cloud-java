@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-area120-tables/compare/v0.1.10...v0.2.0) (2021-02-25)
+
+
+### Features
+
+* Added ListWorkspaces, GetWorkspace, BatchDeleteRows APIs ([#121](https://www.github.com/googleapis/java-area120-tables/issues/121)) ([4e7da19](https://www.github.com/googleapis/java-area120-tables/commit/4e7da1964b8656a787fb8d1d6d358c2a20c7cc9a))
+
 ### [0.1.10](https://www.github.com/googleapis/java-area120-tables/compare/v0.1.9...v0.1.10) (2021-02-24)
 
 
