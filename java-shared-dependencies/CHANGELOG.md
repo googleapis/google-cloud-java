@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.20.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.19.0...v0.20.0) (2021-02-25)
+
+
+### Dependencies
+
+* update dependency com.google.auth:google-auth-library-bom to v0.24.0 ([#284](https://www.github.com/googleapis/java-shared-dependencies/issues/284)) ([5e4914c](https://www.github.com/googleapis/java-shared-dependencies/commit/5e4914cc4a8ccd41a219f150a7455da116d1594b))
+* update dependency com.google.http-client:google-http-client-bom to v1.39.0 ([#288](https://www.github.com/googleapis/java-shared-dependencies/issues/288)) ([70bb862](https://www.github.com/googleapis/java-shared-dependencies/commit/70bb862029b840fbd99ba0109fa2b8f585812793))
+* update dependency com.google.protobuf:protobuf-bom to v3.15.1 ([#282](https://www.github.com/googleapis/java-shared-dependencies/issues/282)) ([44283bd](https://www.github.com/googleapis/java-shared-dependencies/commit/44283bdfdc9288b4a8d16b6ed3a61541792d147e))
+* update dependency com.google.protobuf:protobuf-bom to v3.15.2 ([#287](https://www.github.com/googleapis/java-shared-dependencies/issues/287)) ([bdae560](https://www.github.com/googleapis/java-shared-dependencies/commit/bdae5600f9033219ef8beb6c4d1c521fb062eaec))
+* update dependency io.grpc:grpc-bom to v1.36.0 ([#285](https://www.github.com/googleapis/java-shared-dependencies/issues/285)) ([c59771b](https://www.github.com/googleapis/java-shared-dependencies/commit/c59771b2436ac1a4fbc92b48049900472dd6d3ff))
+* update gax.version to v1.62.0 ([#291](https://www.github.com/googleapis/java-shared-dependencies/issues/291)) ([66bd070](https://www.github.com/googleapis/java-shared-dependencies/commit/66bd0702bd3deb64e0f6c73635e0ffd51a4d637e))
+* update google.common-protos.version to v2.1.0 ([#289](https://www.github.com/googleapis/java-shared-dependencies/issues/289)) ([43c9f02](https://www.github.com/googleapis/java-shared-dependencies/commit/43c9f026b1fa82f38dcb93b902281c2559e82d8e))
+* update iam.version to v1.0.9 ([#281](https://www.github.com/googleapis/java-shared-dependencies/issues/281)) ([ee44d0b](https://www.github.com/googleapis/java-shared-dependencies/commit/ee44d0b41e101931ccf5de2561dfcfcc9ff88b88))
+
 ## [0.19.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.18.0...v0.19.0) (2021-02-19)
 
 
