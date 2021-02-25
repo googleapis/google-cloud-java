@@ -296,6 +296,7 @@ public class StreamWriterV2 implements AutoCloseable {
    * It takes requests from waiting queue and sends them to server.
    */
   private void appendLoop() {
+    boolean isFirstRequestInConnection = true;
     Deque<AppendRequestAndResponse> localQueue = new LinkedList<AppendRequestAndResponse>();
     while (!waitingQueueDrained()) {
       this.lock.lock();
@@ -322,7 +323,11 @@ public class StreamWriterV2 implements AutoCloseable {
 
       // TODO: Add reconnection here.
       while (!localQueue.isEmpty()) {
-        this.streamConnection.send(localQueue.pollFirst().message);
+        AppendRowsRequest preparedRequest =
+            prepareRequestBasedOnPosition(
+                localQueue.pollFirst().message, isFirstRequestInConnection);
+        this.streamConnection.send(preparedRequest);
+        isFirstRequestInConnection = false;
       }
     }
 
@@ -369,6 +374,18 @@ public class StreamWriterV2 implements AutoCloseable {
       }
       Uninterruptibles.sleepUninterruptibly(100, TimeUnit.MILLISECONDS);
     }
+  }
+
+  private AppendRowsRequest prepareRequestBasedOnPosition(
+      AppendRowsRequest original, boolean isFirstRequest) {
+    AppendRowsRequest.Builder requestBuilder = original.toBuilder();
+    if (isFirstRequest) {
+      requestBuilder.setWriteStream(this.streamName);
+    } else {
+      requestBuilder.clearWriteStream();
+      requestBuilder.getProtoRowsBuilder().clearWriterSchema();
+    }
+    return requestBuilder.build();
   }
 
   private void cleanupInflightRequests() {

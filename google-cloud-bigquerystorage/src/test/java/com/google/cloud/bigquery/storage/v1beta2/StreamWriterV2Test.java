@@ -16,6 +16,7 @@
 package com.google.cloud.bigquery.storage.v1beta2;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
@@ -197,6 +198,19 @@ public class StreamWriterV2Test {
       assertEquals(i, futures.get(i).get().getAppendResult().getOffset().getValue());
     }
     assertEquals(appendCount, testBigQueryWrite.getAppendRequests().size());
+
+    for (int i = 0; i < appendCount; i++) {
+      AppendRowsRequest serverRequest = testBigQueryWrite.getAppendRequests().get(i);
+      if (i == 0) {
+        // First request received by server should have schema and stream name.
+        assertTrue(serverRequest.getProtoRows().hasWriterSchema());
+        assertEquals(serverRequest.getWriteStream(), TEST_STREAM);
+      } else {
+        // Following request should not have schema and stream name.
+        assertFalse(serverRequest.getProtoRows().hasWriterSchema());
+        assertEquals(serverRequest.getWriteStream(), "");
+      }
+    }
 
     writer.close();
   }
