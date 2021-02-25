@@ -57,8 +57,8 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-pubsub</artifactId>
     </dependency>
-    <!-- [END pubsub_install_with_bom] -->
-
+    
+    <!-- [START_EXCLUDE] -->
     <dependency>
       <groupId>org.apache.avro</groupId>
       <artifactId>avro</artifactId>
@@ -87,7 +87,7 @@
       <version>1.1.2</version>
       <scope>test</scope>
     </dependency>
-  <!-- [START pubsub_install_with_bom] -->
+    <!-- [END_EXCLUDE] -->
   </dependencies>
   <!-- [END pubsub_install_with_bom] -->
 </project>
