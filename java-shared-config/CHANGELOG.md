@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.11.0](https://www.github.com/googleapis/java-shared-config/compare/v0.10.0...v0.11.0) (2021-02-25)
+
+
+### Features
+
+* migrate releases to the new Google Sonatype endpoint to address Sonatype errors. ([#230](https://www.github.com/googleapis/java-shared-config/issues/230)) ([ff6a95f](https://www.github.com/googleapis/java-shared-config/commit/ff6a95f7b0d24a1c37c38ba8ac6c6624ee97cc15))
+
+
+### Dependencies
+
+* update dependency com.puppycrawl.tools:checkstyle to v8.40 ([#221](https://www.github.com/googleapis/java-shared-config/issues/221)) ([d9b2d4a](https://www.github.com/googleapis/java-shared-config/commit/d9b2d4aab9a9bba1c2df6fcb52ac96ee8b001ad6))
+* update dependency org.apache.maven.plugins:maven-checkstyle-plugin to v3.1.2 ([#219](https://www.github.com/googleapis/java-shared-config/issues/219)) ([f7c3f79](https://www.github.com/googleapis/java-shared-config/commit/f7c3f798ef8ad1bc59ae673c84fbdd9f93ee2413))
+
 ## [0.10.0](https://www.github.com/googleapis/java-shared-config/compare/v0.9.4...v0.10.0) (2021-01-21)
 
 
