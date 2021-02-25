@@ -22,30 +22,29 @@ package com.google.area120.tables.v1alpha1;
  *
  *
  * <pre>
- * Request message for TablesService.GetRow.
+ * Request message for TablesService.GetWorkspace.
  * </pre>
  *
- * Protobuf type {@code google.area120.tables.v1alpha1.GetRowRequest}
+ * Protobuf type {@code google.area120.tables.v1alpha1.GetWorkspaceRequest}
  */
-public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
+public final class GetWorkspaceRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.area120.tables.v1alpha1.GetRowRequest)
-    GetRowRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.area120.tables.v1alpha1.GetWorkspaceRequest)
+    GetWorkspaceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use GetRowRequest.newBuilder() to construct.
-  private GetRowRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetWorkspaceRequest.newBuilder() to construct.
+  private GetWorkspaceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private GetRowRequest() {
+  private GetWorkspaceRequest() {
     name_ = "";
-    view_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new GetRowRequest();
+    return new GetWorkspaceRequest();
   }
 
   @java.lang.Override
@@ -53,7 +52,7 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private GetRowRequest(
+  private GetWorkspaceRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -78,13 +77,6 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
               name_ = s;
               break;
             }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-
-              view_ = rawValue;
-              break;
-            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -106,17 +98,17 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.area120.tables.v1alpha1.TablesProto
-        .internal_static_google_area120_tables_v1alpha1_GetRowRequest_descriptor;
+        .internal_static_google_area120_tables_v1alpha1_GetWorkspaceRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.area120.tables.v1alpha1.TablesProto
-        .internal_static_google_area120_tables_v1alpha1_GetRowRequest_fieldAccessorTable
+        .internal_static_google_area120_tables_v1alpha1_GetWorkspaceRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.area120.tables.v1alpha1.GetRowRequest.class,
-            com.google.area120.tables.v1alpha1.GetRowRequest.Builder.class);
+            com.google.area120.tables.v1alpha1.GetWorkspaceRequest.class,
+            com.google.area120.tables.v1alpha1.GetWorkspaceRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -125,8 +117,8 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the row to retrieve.
-   * Format: tables/{table}/rows/{row}
+   * Required. The name of the workspace to retrieve.
+   * Format: workspaces/{workspace}
    * </pre>
    *
    * <code>
@@ -151,8 +143,8 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the row to retrieve.
-   * Format: tables/{table}/rows/{row}
+   * Required. The name of the workspace to retrieve.
+   * Format: workspaces/{workspace}
    * </pre>
    *
    * <code>
@@ -174,46 +166,6 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int VIEW_FIELD_NUMBER = 2;
-  private int view_;
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Column key to use for values in the row.
-   * Defaults to user entered name.
-   * </pre>
-   *
-   * <code>.google.area120.tables.v1alpha1.View view = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The enum numeric value on the wire for view.
-   */
-  @java.lang.Override
-  public int getViewValue() {
-    return view_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Column key to use for values in the row.
-   * Defaults to user entered name.
-   * </pre>
-   *
-   * <code>.google.area120.tables.v1alpha1.View view = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The view.
-   */
-  @java.lang.Override
-  public com.google.area120.tables.v1alpha1.View getView() {
-    @SuppressWarnings("deprecation")
-    com.google.area120.tables.v1alpha1.View result =
-        com.google.area120.tables.v1alpha1.View.valueOf(view_);
-    return result == null ? com.google.area120.tables.v1alpha1.View.UNRECOGNIZED : result;
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -231,9 +183,6 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (view_ != com.google.area120.tables.v1alpha1.View.VIEW_UNSPECIFIED.getNumber()) {
-      output.writeEnum(2, view_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -246,9 +195,6 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (view_ != com.google.area120.tables.v1alpha1.View.VIEW_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, view_);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -259,14 +205,13 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.area120.tables.v1alpha1.GetRowRequest)) {
+    if (!(obj instanceof com.google.area120.tables.v1alpha1.GetWorkspaceRequest)) {
       return super.equals(obj);
     }
-    com.google.area120.tables.v1alpha1.GetRowRequest other =
-        (com.google.area120.tables.v1alpha1.GetRowRequest) obj;
+    com.google.area120.tables.v1alpha1.GetWorkspaceRequest other =
+        (com.google.area120.tables.v1alpha1.GetWorkspaceRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (view_ != other.view_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -280,78 +225,76 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + VIEW_FIELD_NUMBER;
-    hash = (53 * hash) + view_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseFrom(java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.area120.tables.v1alpha1.GetWorkspaceRequest parseFrom(
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.GetWorkspaceRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.GetWorkspaceRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.GetWorkspaceRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseFrom(byte[] data)
+  public static com.google.area120.tables.v1alpha1.GetWorkspaceRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.GetWorkspaceRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.GetWorkspaceRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.GetWorkspaceRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseDelimitedFrom(
+  public static com.google.area120.tables.v1alpha1.GetWorkspaceRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseDelimitedFrom(
+  public static com.google.area120.tables.v1alpha1.GetWorkspaceRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.GetWorkspaceRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.GetWorkspaceRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -368,7 +311,8 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.area120.tables.v1alpha1.GetRowRequest prototype) {
+  public static Builder newBuilder(
+      com.google.area120.tables.v1alpha1.GetWorkspaceRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -386,31 +330,31 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Request message for TablesService.GetRow.
+   * Request message for TablesService.GetWorkspace.
    * </pre>
    *
-   * Protobuf type {@code google.area120.tables.v1alpha1.GetRowRequest}
+   * Protobuf type {@code google.area120.tables.v1alpha1.GetWorkspaceRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.area120.tables.v1alpha1.GetRowRequest)
-      com.google.area120.tables.v1alpha1.GetRowRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.area120.tables.v1alpha1.GetWorkspaceRequest)
+      com.google.area120.tables.v1alpha1.GetWorkspaceRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.area120.tables.v1alpha1.TablesProto
-          .internal_static_google_area120_tables_v1alpha1_GetRowRequest_descriptor;
+          .internal_static_google_area120_tables_v1alpha1_GetWorkspaceRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.area120.tables.v1alpha1.TablesProto
-          .internal_static_google_area120_tables_v1alpha1_GetRowRequest_fieldAccessorTable
+          .internal_static_google_area120_tables_v1alpha1_GetWorkspaceRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.area120.tables.v1alpha1.GetRowRequest.class,
-              com.google.area120.tables.v1alpha1.GetRowRequest.Builder.class);
+              com.google.area120.tables.v1alpha1.GetWorkspaceRequest.class,
+              com.google.area120.tables.v1alpha1.GetWorkspaceRequest.Builder.class);
     }
 
-    // Construct using com.google.area120.tables.v1alpha1.GetRowRequest.newBuilder()
+    // Construct using com.google.area120.tables.v1alpha1.GetWorkspaceRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -429,25 +373,23 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       name_ = "";
 
-      view_ = 0;
-
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.area120.tables.v1alpha1.TablesProto
-          .internal_static_google_area120_tables_v1alpha1_GetRowRequest_descriptor;
+          .internal_static_google_area120_tables_v1alpha1_GetWorkspaceRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.area120.tables.v1alpha1.GetRowRequest getDefaultInstanceForType() {
-      return com.google.area120.tables.v1alpha1.GetRowRequest.getDefaultInstance();
+    public com.google.area120.tables.v1alpha1.GetWorkspaceRequest getDefaultInstanceForType() {
+      return com.google.area120.tables.v1alpha1.GetWorkspaceRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.area120.tables.v1alpha1.GetRowRequest build() {
-      com.google.area120.tables.v1alpha1.GetRowRequest result = buildPartial();
+    public com.google.area120.tables.v1alpha1.GetWorkspaceRequest build() {
+      com.google.area120.tables.v1alpha1.GetWorkspaceRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -455,11 +397,10 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.area120.tables.v1alpha1.GetRowRequest buildPartial() {
-      com.google.area120.tables.v1alpha1.GetRowRequest result =
-          new com.google.area120.tables.v1alpha1.GetRowRequest(this);
+    public com.google.area120.tables.v1alpha1.GetWorkspaceRequest buildPartial() {
+      com.google.area120.tables.v1alpha1.GetWorkspaceRequest result =
+          new com.google.area120.tables.v1alpha1.GetWorkspaceRequest(this);
       result.name_ = name_;
-      result.view_ = view_;
       onBuilt();
       return result;
     }
@@ -499,23 +440,20 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.area120.tables.v1alpha1.GetRowRequest) {
-        return mergeFrom((com.google.area120.tables.v1alpha1.GetRowRequest) other);
+      if (other instanceof com.google.area120.tables.v1alpha1.GetWorkspaceRequest) {
+        return mergeFrom((com.google.area120.tables.v1alpha1.GetWorkspaceRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.area120.tables.v1alpha1.GetRowRequest other) {
-      if (other == com.google.area120.tables.v1alpha1.GetRowRequest.getDefaultInstance())
+    public Builder mergeFrom(com.google.area120.tables.v1alpha1.GetWorkspaceRequest other) {
+      if (other == com.google.area120.tables.v1alpha1.GetWorkspaceRequest.getDefaultInstance())
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
-      }
-      if (other.view_ != 0) {
-        setViewValue(other.getViewValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -532,11 +470,12 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.area120.tables.v1alpha1.GetRowRequest parsedMessage = null;
+      com.google.area120.tables.v1alpha1.GetWorkspaceRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.area120.tables.v1alpha1.GetRowRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.area120.tables.v1alpha1.GetWorkspaceRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -551,8 +490,8 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the row to retrieve.
-     * Format: tables/{table}/rows/{row}
+     * Required. The name of the workspace to retrieve.
+     * Format: workspaces/{workspace}
      * </pre>
      *
      * <code>
@@ -576,8 +515,8 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the row to retrieve.
-     * Format: tables/{table}/rows/{row}
+     * Required. The name of the workspace to retrieve.
+     * Format: workspaces/{workspace}
      * </pre>
      *
      * <code>
@@ -601,8 +540,8 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the row to retrieve.
-     * Format: tables/{table}/rows/{row}
+     * Required. The name of the workspace to retrieve.
+     * Format: workspaces/{workspace}
      * </pre>
      *
      * <code>
@@ -625,8 +564,8 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the row to retrieve.
-     * Format: tables/{table}/rows/{row}
+     * Required. The name of the workspace to retrieve.
+     * Format: workspaces/{workspace}
      * </pre>
      *
      * <code>
@@ -645,8 +584,8 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the row to retrieve.
-     * Format: tables/{table}/rows/{row}
+     * Required. The name of the workspace to retrieve.
+     * Format: workspaces/{workspace}
      * </pre>
      *
      * <code>
@@ -667,112 +606,6 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int view_ = 0;
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Column key to use for values in the row.
-     * Defaults to user entered name.
-     * </pre>
-     *
-     * <code>
-     * .google.area120.tables.v1alpha1.View view = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return The enum numeric value on the wire for view.
-     */
-    @java.lang.Override
-    public int getViewValue() {
-      return view_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Column key to use for values in the row.
-     * Defaults to user entered name.
-     * </pre>
-     *
-     * <code>
-     * .google.area120.tables.v1alpha1.View view = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @param value The enum numeric value on the wire for view to set.
-     * @return This builder for chaining.
-     */
-    public Builder setViewValue(int value) {
-
-      view_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Column key to use for values in the row.
-     * Defaults to user entered name.
-     * </pre>
-     *
-     * <code>
-     * .google.area120.tables.v1alpha1.View view = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return The view.
-     */
-    @java.lang.Override
-    public com.google.area120.tables.v1alpha1.View getView() {
-      @SuppressWarnings("deprecation")
-      com.google.area120.tables.v1alpha1.View result =
-          com.google.area120.tables.v1alpha1.View.valueOf(view_);
-      return result == null ? com.google.area120.tables.v1alpha1.View.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Column key to use for values in the row.
-     * Defaults to user entered name.
-     * </pre>
-     *
-     * <code>
-     * .google.area120.tables.v1alpha1.View view = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @param value The view to set.
-     * @return This builder for chaining.
-     */
-    public Builder setView(com.google.area120.tables.v1alpha1.View value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      view_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Column key to use for values in the row.
-     * Defaults to user entered name.
-     * </pre>
-     *
-     * <code>
-     * .google.area120.tables.v1alpha1.View view = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearView() {
-
-      view_ = 0;
-      onChanged();
-      return this;
-    }
-
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -784,42 +617,42 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.area120.tables.v1alpha1.GetRowRequest)
+    // @@protoc_insertion_point(builder_scope:google.area120.tables.v1alpha1.GetWorkspaceRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.area120.tables.v1alpha1.GetRowRequest)
-  private static final com.google.area120.tables.v1alpha1.GetRowRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.area120.tables.v1alpha1.GetWorkspaceRequest)
+  private static final com.google.area120.tables.v1alpha1.GetWorkspaceRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.area120.tables.v1alpha1.GetRowRequest();
+    DEFAULT_INSTANCE = new com.google.area120.tables.v1alpha1.GetWorkspaceRequest();
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest getDefaultInstance() {
+  public static com.google.area120.tables.v1alpha1.GetWorkspaceRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetRowRequest> PARSER =
-      new com.google.protobuf.AbstractParser<GetRowRequest>() {
+  private static final com.google.protobuf.Parser<GetWorkspaceRequest> PARSER =
+      new com.google.protobuf.AbstractParser<GetWorkspaceRequest>() {
         @java.lang.Override
-        public GetRowRequest parsePartialFrom(
+        public GetWorkspaceRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetRowRequest(input, extensionRegistry);
+          return new GetWorkspaceRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<GetRowRequest> parser() {
+  public static com.google.protobuf.Parser<GetWorkspaceRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetRowRequest> getParserForType() {
+  public com.google.protobuf.Parser<GetWorkspaceRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.area120.tables.v1alpha1.GetRowRequest getDefaultInstanceForType() {
+  public com.google.area120.tables.v1alpha1.GetWorkspaceRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

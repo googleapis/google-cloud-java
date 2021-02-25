@@ -18,39 +18,33 @@
 
 package com.google.area120.tables.v1alpha1;
 
-public interface GetTableRequestOrBuilder
+public interface RelationshipDetailsOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.area120.tables.v1alpha1.GetTableRequest)
+    // @@protoc_insertion_point(interface_extends:google.area120.tables.v1alpha1.RelationshipDetails)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The name of the table to retrieve.
-   * Format: tables/{table}
+   * The name of the table this relationship is linked to.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string linked_table = 1;</code>
    *
-   * @return The name.
+   * @return The linkedTable.
    */
-  java.lang.String getName();
+  java.lang.String getLinkedTable();
   /**
    *
    *
    * <pre>
-   * Required. The name of the table to retrieve.
-   * Format: tables/{table}
+   * The name of the table this relationship is linked to.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string linked_table = 1;</code>
    *
-   * @return The bytes for name.
+   * @return The bytes for linkedTable.
    */
-  com.google.protobuf.ByteString getNameBytes();
+  com.google.protobuf.ByteString getLinkedTableBytes();
 }

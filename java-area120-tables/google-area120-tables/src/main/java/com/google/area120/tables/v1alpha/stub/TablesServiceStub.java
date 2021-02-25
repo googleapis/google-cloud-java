@@ -18,25 +18,31 @@ package com.google.area120.tables.v1alpha.stub;
 
 import static com.google.area120.tables.v1alpha.TablesServiceClient.ListRowsPagedResponse;
 import static com.google.area120.tables.v1alpha.TablesServiceClient.ListTablesPagedResponse;
+import static com.google.area120.tables.v1alpha.TablesServiceClient.ListWorkspacesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.area120.tables.v1alpha1.BatchCreateRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchCreateRowsResponse;
+import com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchUpdateRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchUpdateRowsResponse;
 import com.google.area120.tables.v1alpha1.CreateRowRequest;
 import com.google.area120.tables.v1alpha1.DeleteRowRequest;
 import com.google.area120.tables.v1alpha1.GetRowRequest;
 import com.google.area120.tables.v1alpha1.GetTableRequest;
+import com.google.area120.tables.v1alpha1.GetWorkspaceRequest;
 import com.google.area120.tables.v1alpha1.ListRowsRequest;
 import com.google.area120.tables.v1alpha1.ListRowsResponse;
 import com.google.area120.tables.v1alpha1.ListTablesRequest;
 import com.google.area120.tables.v1alpha1.ListTablesResponse;
+import com.google.area120.tables.v1alpha1.ListWorkspacesRequest;
+import com.google.area120.tables.v1alpha1.ListWorkspacesResponse;
 import com.google.area120.tables.v1alpha1.Row;
 import com.google.area120.tables.v1alpha1.Table;
 import com.google.area120.tables.v1alpha1.UpdateRowRequest;
+import com.google.area120.tables.v1alpha1.Workspace;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -60,6 +66,19 @@ public abstract class TablesServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListTablesRequest, ListTablesResponse> listTablesCallable() {
     throw new UnsupportedOperationException("Not implemented: listTablesCallable()");
+  }
+
+  public UnaryCallable<GetWorkspaceRequest, Workspace> getWorkspaceCallable() {
+    throw new UnsupportedOperationException("Not implemented: getWorkspaceCallable()");
+  }
+
+  public UnaryCallable<ListWorkspacesRequest, ListWorkspacesPagedResponse>
+      listWorkspacesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listWorkspacesPagedCallable()");
+  }
+
+  public UnaryCallable<ListWorkspacesRequest, ListWorkspacesResponse> listWorkspacesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listWorkspacesCallable()");
   }
 
   public UnaryCallable<GetRowRequest, Row> getRowCallable() {
@@ -92,6 +111,10 @@ public abstract class TablesServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteRowRequest, Empty> deleteRowCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteRowCallable()");
+  }
+
+  public UnaryCallable<BatchDeleteRowsRequest, Empty> batchDeleteRowsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchDeleteRowsCallable()");
   }
 
   @Override

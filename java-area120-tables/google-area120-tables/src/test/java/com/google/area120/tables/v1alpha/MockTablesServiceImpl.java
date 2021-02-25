@@ -19,20 +19,25 @@ package com.google.area120.tables.v1alpha;
 import com.google.api.core.BetaApi;
 import com.google.area120.tables.v1alpha1.BatchCreateRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchCreateRowsResponse;
+import com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchUpdateRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchUpdateRowsResponse;
 import com.google.area120.tables.v1alpha1.CreateRowRequest;
 import com.google.area120.tables.v1alpha1.DeleteRowRequest;
 import com.google.area120.tables.v1alpha1.GetRowRequest;
 import com.google.area120.tables.v1alpha1.GetTableRequest;
+import com.google.area120.tables.v1alpha1.GetWorkspaceRequest;
 import com.google.area120.tables.v1alpha1.ListRowsRequest;
 import com.google.area120.tables.v1alpha1.ListRowsResponse;
 import com.google.area120.tables.v1alpha1.ListTablesRequest;
 import com.google.area120.tables.v1alpha1.ListTablesResponse;
+import com.google.area120.tables.v1alpha1.ListWorkspacesRequest;
+import com.google.area120.tables.v1alpha1.ListWorkspacesResponse;
 import com.google.area120.tables.v1alpha1.Row;
 import com.google.area120.tables.v1alpha1.Table;
 import com.google.area120.tables.v1alpha1.TablesServiceGrpc.TablesServiceImplBase;
 import com.google.area120.tables.v1alpha1.UpdateRowRequest;
+import com.google.area120.tables.v1alpha1.Workspace;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
@@ -84,7 +89,13 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetTable, expected %s or %s",
+                  response.getClass().getName(),
+                  Table.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -99,7 +110,55 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListTables, expected %s or %s",
+                  response.getClass().getName(),
+                  ListTablesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getWorkspace(
+      GetWorkspaceRequest request, StreamObserver<Workspace> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Workspace) {
+      requests.add(request);
+      responseObserver.onNext(((Workspace) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetWorkspace, expected %s or %s",
+                  response.getClass().getName(),
+                  Workspace.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listWorkspaces(
+      ListWorkspacesRequest request, StreamObserver<ListWorkspacesResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ListWorkspacesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListWorkspacesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListWorkspaces, expected %s or %s",
+                  response.getClass().getName(),
+                  ListWorkspacesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -113,7 +172,11 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRow, expected %s or %s",
+                  response.getClass().getName(), Row.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -127,7 +190,13 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRows, expected %s or %s",
+                  response.getClass().getName(),
+                  ListRowsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -141,7 +210,11 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateRow, expected %s or %s",
+                  response.getClass().getName(), Row.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -156,7 +229,13 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchCreateRows, expected %s or %s",
+                  response.getClass().getName(),
+                  BatchCreateRowsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -170,7 +249,11 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateRow, expected %s or %s",
+                  response.getClass().getName(), Row.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -185,7 +268,13 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchUpdateRows, expected %s or %s",
+                  response.getClass().getName(),
+                  BatchUpdateRowsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -199,7 +288,34 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteRow, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void batchDeleteRows(
+      BatchDeleteRowsRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchDeleteRows, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

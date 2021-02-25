@@ -125,4 +125,33 @@ public interface ListRowsRequestOrBuilder
    * @return The view.
    */
   com.google.area120.tables.v1alpha1.View getView();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Raw text query to search for in rows of the table.
+   * Special characters must be escaped. Logical operators and field specific
+   * filtering not supported.
+   * </pre>
+   *
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Raw text query to search for in rows of the table.
+   * Special characters must be escaped. Logical operators and field specific
+   * filtering not supported.
+   * </pre>
+   *
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
 }

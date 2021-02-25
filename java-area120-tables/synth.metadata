@@ -3,34 +3,23 @@
     {
       "git": {
         "name": ".",
-        "remote": "https://github.com/googleapis/java-area120-tables.git",
-        "sha": "e2657eac38719c7ca6c6b604756d93cf35aef056"
+        "remote": "git@github.com:googleapis/java-area120-tables.git",
+        "sha": "97951ca30af9f85a02e2f49dfa67e1dadb71a1b8"
       }
     },
     {
       "git": {
-        "name": "googleapis",
-        "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "8d8c008e56f1af31d57f75561e0f1848ffb29eeb",
-        "internalRef": "356341083"
+        "name": "googleapis-gen",
+        "remote": "https://github.com/googleapis/googleapis-gen.git",
+        "sha": "6b8f5a4176ad9a07314ceee2d5d347b4b46979e6",
+        "internalRef": "359545173"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "2414b817065726eae0bc525346c7e874f969369d"
-      }
-    }
-  ],
-  "destinations": [
-    {
-      "client": {
-        "source": "googleapis",
-        "apiName": "area120-tables",
-        "apiVersion": "v1alpha1",
-        "language": "java",
-        "generator": "bazel"
+        "sha": "0199c79b8324fba66476300824aa931788c47e2d"
       }
     }
   ],
@@ -103,6 +92,7 @@
     "codecov.yaml",
     "google-area120-tables/src/main/java/com/google/area120/tables/v1alpha/TablesServiceClient.java",
     "google-area120-tables/src/main/java/com/google/area120/tables/v1alpha/TablesServiceSettings.java",
+    "google-area120-tables/src/main/java/com/google/area120/tables/v1alpha/gapic_metadata.json",
     "google-area120-tables/src/main/java/com/google/area120/tables/v1alpha/package-info.java",
     "google-area120-tables/src/main/java/com/google/area120/tables/v1alpha/stub/GrpcTablesServiceCallableFactory.java",
     "google-area120-tables/src/main/java/com/google/area120/tables/v1alpha/stub/GrpcTablesServiceStub.java",
@@ -118,6 +108,8 @@
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/BatchCreateRowsRequestOrBuilder.java",
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/BatchCreateRowsResponse.java",
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/BatchCreateRowsResponseOrBuilder.java",
+    "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/BatchDeleteRowsRequest.java",
+    "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/BatchDeleteRowsRequestOrBuilder.java",
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/BatchUpdateRowsRequest.java",
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/BatchUpdateRowsRequestOrBuilder.java",
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/BatchUpdateRowsResponse.java",
@@ -132,6 +124,10 @@
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/GetRowRequestOrBuilder.java",
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/GetTableRequest.java",
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/GetTableRequestOrBuilder.java",
+    "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/GetWorkspaceRequest.java",
+    "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/GetWorkspaceRequestOrBuilder.java",
+    "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/LabeledItem.java",
+    "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/LabeledItemOrBuilder.java",
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/ListRowsRequest.java",
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/ListRowsRequestOrBuilder.java",
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/ListRowsResponse.java",
@@ -140,6 +136,14 @@
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/ListTablesRequestOrBuilder.java",
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/ListTablesResponse.java",
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/ListTablesResponseOrBuilder.java",
+    "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/ListWorkspacesRequest.java",
+    "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/ListWorkspacesRequestOrBuilder.java",
+    "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/ListWorkspacesResponse.java",
+    "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/ListWorkspacesResponseOrBuilder.java",
+    "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/LookupDetails.java",
+    "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/LookupDetailsOrBuilder.java",
+    "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/RelationshipDetails.java",
+    "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/RelationshipDetailsOrBuilder.java",
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/Row.java",
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/RowName.java",
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/RowOrBuilder.java",
@@ -150,6 +154,9 @@
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/UpdateRowRequest.java",
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/UpdateRowRequestOrBuilder.java",
     "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/View.java",
+    "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/Workspace.java",
+    "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/WorkspaceName.java",
+    "proto-google-area120-tables-v1alpha1/src/main/java/com/google/area120/tables/v1alpha1/WorkspaceOrBuilder.java",
     "proto-google-area120-tables-v1alpha1/src/main/proto/google/area120/tables/v1alpha1/tables.proto",
     "renovate.json",
     "samples/install-without-bom/pom.xml",

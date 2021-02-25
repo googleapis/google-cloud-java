@@ -18,22 +18,19 @@
 
 package com.google.area120.tables.v1alpha1;
 
-public interface GetRowRequestOrBuilder
+public interface LabeledItemOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.area120.tables.v1alpha1.GetRowRequest)
+    // @@protoc_insertion_point(interface_extends:google.area120.tables.v1alpha1.LabeledItem)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The name of the row to retrieve.
-   * Format: tables/{table}/rows/{row}
+   * Display string as entered by user.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 1;</code>
    *
    * @return The name.
    */
@@ -42,13 +39,10 @@ public interface GetRowRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the row to retrieve.
-   * Format: tables/{table}/rows/{row}
+   * Display string as entered by user.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 1;</code>
    *
    * @return The bytes for name.
    */
@@ -58,28 +52,24 @@ public interface GetRowRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Column key to use for values in the row.
-   * Defaults to user entered name.
+   * Internal id associated with the item.
    * </pre>
    *
-   * <code>.google.area120.tables.v1alpha1.View view = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>string id = 2;</code>
    *
-   * @return The enum numeric value on the wire for view.
+   * @return The id.
    */
-  int getViewValue();
+  java.lang.String getId();
   /**
    *
    *
    * <pre>
-   * Optional. Column key to use for values in the row.
-   * Defaults to user entered name.
+   * Internal id associated with the item.
    * </pre>
    *
-   * <code>.google.area120.tables.v1alpha1.View view = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>string id = 2;</code>
    *
-   * @return The view.
+   * @return The bytes for id.
    */
-  com.google.area120.tables.v1alpha1.View getView();
+  com.google.protobuf.ByteString getIdBytes();
 }

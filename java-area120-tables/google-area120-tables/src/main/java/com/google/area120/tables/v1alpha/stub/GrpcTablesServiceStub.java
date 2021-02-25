@@ -18,6 +18,7 @@ package com.google.area120.tables.v1alpha.stub;
 
 import static com.google.area120.tables.v1alpha.TablesServiceClient.ListRowsPagedResponse;
 import static com.google.area120.tables.v1alpha.TablesServiceClient.ListTablesPagedResponse;
+import static com.google.area120.tables.v1alpha.TablesServiceClient.ListWorkspacesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -29,19 +30,24 @@ import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.area120.tables.v1alpha1.BatchCreateRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchCreateRowsResponse;
+import com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchUpdateRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchUpdateRowsResponse;
 import com.google.area120.tables.v1alpha1.CreateRowRequest;
 import com.google.area120.tables.v1alpha1.DeleteRowRequest;
 import com.google.area120.tables.v1alpha1.GetRowRequest;
 import com.google.area120.tables.v1alpha1.GetTableRequest;
+import com.google.area120.tables.v1alpha1.GetWorkspaceRequest;
 import com.google.area120.tables.v1alpha1.ListRowsRequest;
 import com.google.area120.tables.v1alpha1.ListRowsResponse;
 import com.google.area120.tables.v1alpha1.ListTablesRequest;
 import com.google.area120.tables.v1alpha1.ListTablesResponse;
+import com.google.area120.tables.v1alpha1.ListWorkspacesRequest;
+import com.google.area120.tables.v1alpha1.ListWorkspacesResponse;
 import com.google.area120.tables.v1alpha1.Row;
 import com.google.area120.tables.v1alpha1.Table;
 import com.google.area120.tables.v1alpha1.UpdateRowRequest;
+import com.google.area120.tables.v1alpha1.Workspace;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -76,6 +82,26 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
               .setFullMethodName("google.area120.tables.v1alpha1.TablesService/ListTables")
               .setRequestMarshaller(ProtoUtils.marshaller(ListTablesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTablesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetWorkspaceRequest, Workspace>
+      getWorkspaceMethodDescriptor =
+          MethodDescriptor.<GetWorkspaceRequest, Workspace>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.area120.tables.v1alpha1.TablesService/GetWorkspace")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetWorkspaceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Workspace.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListWorkspacesRequest, ListWorkspacesResponse>
+      listWorkspacesMethodDescriptor =
+          MethodDescriptor.<ListWorkspacesRequest, ListWorkspacesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.area120.tables.v1alpha1.TablesService/ListWorkspaces")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListWorkspacesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListWorkspacesResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<GetRowRequest, Row> getRowMethodDescriptor =
@@ -141,9 +167,23 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<BatchDeleteRowsRequest, Empty>
+      batchDeleteRowsMethodDescriptor =
+          MethodDescriptor.<BatchDeleteRowsRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.area120.tables.v1alpha1.TablesService/BatchDeleteRows")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchDeleteRowsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<GetTableRequest, Table> getTableCallable;
   private final UnaryCallable<ListTablesRequest, ListTablesResponse> listTablesCallable;
   private final UnaryCallable<ListTablesRequest, ListTablesPagedResponse> listTablesPagedCallable;
+  private final UnaryCallable<GetWorkspaceRequest, Workspace> getWorkspaceCallable;
+  private final UnaryCallable<ListWorkspacesRequest, ListWorkspacesResponse> listWorkspacesCallable;
+  private final UnaryCallable<ListWorkspacesRequest, ListWorkspacesPagedResponse>
+      listWorkspacesPagedCallable;
   private final UnaryCallable<GetRowRequest, Row> getRowCallable;
   private final UnaryCallable<ListRowsRequest, ListRowsResponse> listRowsCallable;
   private final UnaryCallable<ListRowsRequest, ListRowsPagedResponse> listRowsPagedCallable;
@@ -154,6 +194,7 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
   private final UnaryCallable<BatchUpdateRowsRequest, BatchUpdateRowsResponse>
       batchUpdateRowsCallable;
   private final UnaryCallable<DeleteRowRequest, Empty> deleteRowCallable;
+  private final UnaryCallable<BatchDeleteRowsRequest, Empty> batchDeleteRowsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -214,6 +255,24 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
         GrpcCallSettings.<ListTablesRequest, ListTablesResponse>newBuilder()
             .setMethodDescriptor(listTablesMethodDescriptor)
             .build();
+    GrpcCallSettings<GetWorkspaceRequest, Workspace> getWorkspaceTransportSettings =
+        GrpcCallSettings.<GetWorkspaceRequest, Workspace>newBuilder()
+            .setMethodDescriptor(getWorkspaceMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetWorkspaceRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetWorkspaceRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ListWorkspacesRequest, ListWorkspacesResponse>
+        listWorkspacesTransportSettings =
+            GrpcCallSettings.<ListWorkspacesRequest, ListWorkspacesResponse>newBuilder()
+                .setMethodDescriptor(listWorkspacesMethodDescriptor)
+                .build();
     GrpcCallSettings<GetRowRequest, Row> getRowTransportSettings =
         GrpcCallSettings.<GetRowRequest, Row>newBuilder()
             .setMethodDescriptor(getRowMethodDescriptor)
@@ -307,6 +366,19 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<BatchDeleteRowsRequest, Empty> batchDeleteRowsTransportSettings =
+        GrpcCallSettings.<BatchDeleteRowsRequest, Empty>newBuilder()
+            .setMethodDescriptor(batchDeleteRowsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<BatchDeleteRowsRequest>() {
+                  @Override
+                  public Map<String, String> extract(BatchDeleteRowsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
 
     this.getTableCallable =
         callableFactory.createUnaryCallable(
@@ -317,6 +389,15 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
     this.listTablesPagedCallable =
         callableFactory.createPagedCallable(
             listTablesTransportSettings, settings.listTablesSettings(), clientContext);
+    this.getWorkspaceCallable =
+        callableFactory.createUnaryCallable(
+            getWorkspaceTransportSettings, settings.getWorkspaceSettings(), clientContext);
+    this.listWorkspacesCallable =
+        callableFactory.createUnaryCallable(
+            listWorkspacesTransportSettings, settings.listWorkspacesSettings(), clientContext);
+    this.listWorkspacesPagedCallable =
+        callableFactory.createPagedCallable(
+            listWorkspacesTransportSettings, settings.listWorkspacesSettings(), clientContext);
     this.getRowCallable =
         callableFactory.createUnaryCallable(
             getRowTransportSettings, settings.getRowSettings(), clientContext);
@@ -341,6 +422,9 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
     this.deleteRowCallable =
         callableFactory.createUnaryCallable(
             deleteRowTransportSettings, settings.deleteRowSettings(), clientContext);
+    this.batchDeleteRowsCallable =
+        callableFactory.createUnaryCallable(
+            batchDeleteRowsTransportSettings, settings.batchDeleteRowsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -350,48 +434,80 @@ public class GrpcTablesServiceStub extends TablesServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetTableRequest, Table> getTableCallable() {
     return getTableCallable;
   }
 
+  @Override
   public UnaryCallable<ListTablesRequest, ListTablesResponse> listTablesCallable() {
     return listTablesCallable;
   }
 
+  @Override
   public UnaryCallable<ListTablesRequest, ListTablesPagedResponse> listTablesPagedCallable() {
     return listTablesPagedCallable;
   }
 
+  @Override
+  public UnaryCallable<GetWorkspaceRequest, Workspace> getWorkspaceCallable() {
+    return getWorkspaceCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWorkspacesRequest, ListWorkspacesResponse> listWorkspacesCallable() {
+    return listWorkspacesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWorkspacesRequest, ListWorkspacesPagedResponse>
+      listWorkspacesPagedCallable() {
+    return listWorkspacesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<GetRowRequest, Row> getRowCallable() {
     return getRowCallable;
   }
 
+  @Override
   public UnaryCallable<ListRowsRequest, ListRowsResponse> listRowsCallable() {
     return listRowsCallable;
   }
 
+  @Override
   public UnaryCallable<ListRowsRequest, ListRowsPagedResponse> listRowsPagedCallable() {
     return listRowsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<CreateRowRequest, Row> createRowCallable() {
     return createRowCallable;
   }
 
+  @Override
   public UnaryCallable<BatchCreateRowsRequest, BatchCreateRowsResponse> batchCreateRowsCallable() {
     return batchCreateRowsCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateRowRequest, Row> updateRowCallable() {
     return updateRowCallable;
   }
 
+  @Override
   public UnaryCallable<BatchUpdateRowsRequest, BatchUpdateRowsResponse> batchUpdateRowsCallable() {
     return batchUpdateRowsCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteRowRequest, Empty> deleteRowCallable() {
     return deleteRowCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchDeleteRowsRequest, Empty> batchDeleteRowsCallable() {
+    return batchDeleteRowsCallable;
   }
 
   @Override

@@ -48,7 +48,7 @@ python3 -m docuploader create-metadata \
  --version ${VERSION} \
  --language java
 
-# upload yml
+# upload yml to production bucket
 python3 -m docuploader upload . \
  --credentials ${CREDENTIALS} \
  --staging-bucket ${STAGING_BUCKET_V2} \

@@ -30,20 +30,27 @@ import com.google.area120.tables.v1alpha.stub.TablesServiceStub;
 import com.google.area120.tables.v1alpha.stub.TablesServiceStubSettings;
 import com.google.area120.tables.v1alpha1.BatchCreateRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchCreateRowsResponse;
+import com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchUpdateRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchUpdateRowsResponse;
 import com.google.area120.tables.v1alpha1.CreateRowRequest;
 import com.google.area120.tables.v1alpha1.DeleteRowRequest;
 import com.google.area120.tables.v1alpha1.GetRowRequest;
 import com.google.area120.tables.v1alpha1.GetTableRequest;
+import com.google.area120.tables.v1alpha1.GetWorkspaceRequest;
 import com.google.area120.tables.v1alpha1.ListRowsRequest;
 import com.google.area120.tables.v1alpha1.ListRowsResponse;
 import com.google.area120.tables.v1alpha1.ListTablesRequest;
 import com.google.area120.tables.v1alpha1.ListTablesResponse;
+import com.google.area120.tables.v1alpha1.ListWorkspacesRequest;
+import com.google.area120.tables.v1alpha1.ListWorkspacesResponse;
 import com.google.area120.tables.v1alpha1.Row;
 import com.google.area120.tables.v1alpha1.RowName;
 import com.google.area120.tables.v1alpha1.Table;
+import com.google.area120.tables.v1alpha1.TableName;
 import com.google.area120.tables.v1alpha1.UpdateRowRequest;
+import com.google.area120.tables.v1alpha1.Workspace;
+import com.google.area120.tables.v1alpha1.WorkspaceName;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -63,12 +70,15 @@ import javax.annotation.Generated;
  * <p>- Each Table has a collection of [Row][google.area120.tables.v1alpha1.Row] resources, named
  * `tables/&#42;/rows/&#42;`
  *
+ * <p>- The API has a collection of [Workspace][google.area120.tables.v1alpha1.Workspace] resources,
+ * named `workspaces/&#42;`.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
  * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
- *   String name = "name3373707";
+ *   TableName name = TableName.of("[TABLE]");
  *   Table response = tablesServiceClient.getTable(name);
  * }
  * }</pre>
@@ -181,7 +191,29 @@ public class TablesServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   String name = "name3373707";
+   *   TableName name = TableName.of("[TABLE]");
+   *   Table response = tablesServiceClient.getTable(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the table to retrieve. Format: tables/{table}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Table getTable(TableName name) {
+    GetTableRequest request =
+        GetTableRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getTable(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a table. Returns NOT_FOUND if the table does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
+   *   String name = TableName.of("[TABLE]").toString();
    *   Table response = tablesServiceClient.getTable(name);
    * }
    * }</pre>
@@ -202,7 +234,8 @@ public class TablesServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   GetTableRequest request = GetTableRequest.newBuilder().setName("name3373707").build();
+   *   GetTableRequest request =
+   *       GetTableRequest.newBuilder().setName(TableName.of("[TABLE]").toString()).build();
    *   Table response = tablesServiceClient.getTable(request);
    * }
    * }</pre>
@@ -222,7 +255,8 @@ public class TablesServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   GetTableRequest request = GetTableRequest.newBuilder().setName("name3373707").build();
+   *   GetTableRequest request =
+   *       GetTableRequest.newBuilder().setName(TableName.of("[TABLE]").toString()).build();
    *   ApiFuture<Table> future = tablesServiceClient.getTableCallable().futureCall(request);
    *   // Do something.
    *   Table response = future.get();
@@ -313,13 +347,205 @@ public class TablesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Gets a workspace. Returns NOT_FOUND if the workspace does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
+   *   WorkspaceName name = WorkspaceName.of("[WORKSPACE]");
+   *   Workspace response = tablesServiceClient.getWorkspace(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the workspace to retrieve. Format: workspaces/{workspace}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Workspace getWorkspace(WorkspaceName name) {
+    GetWorkspaceRequest request =
+        GetWorkspaceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getWorkspace(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a workspace. Returns NOT_FOUND if the workspace does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
+   *   String name = WorkspaceName.of("[WORKSPACE]").toString();
+   *   Workspace response = tablesServiceClient.getWorkspace(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the workspace to retrieve. Format: workspaces/{workspace}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Workspace getWorkspace(String name) {
+    GetWorkspaceRequest request = GetWorkspaceRequest.newBuilder().setName(name).build();
+    return getWorkspace(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a workspace. Returns NOT_FOUND if the workspace does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
+   *   GetWorkspaceRequest request =
+   *       GetWorkspaceRequest.newBuilder()
+   *           .setName(WorkspaceName.of("[WORKSPACE]").toString())
+   *           .build();
+   *   Workspace response = tablesServiceClient.getWorkspace(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Workspace getWorkspace(GetWorkspaceRequest request) {
+    return getWorkspaceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a workspace. Returns NOT_FOUND if the workspace does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
+   *   GetWorkspaceRequest request =
+   *       GetWorkspaceRequest.newBuilder()
+   *           .setName(WorkspaceName.of("[WORKSPACE]").toString())
+   *           .build();
+   *   ApiFuture<Workspace> future = tablesServiceClient.getWorkspaceCallable().futureCall(request);
+   *   // Do something.
+   *   Workspace response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetWorkspaceRequest, Workspace> getWorkspaceCallable() {
+    return stub.getWorkspaceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists workspaces for the user.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
+   *   ListWorkspacesRequest request =
+   *       ListWorkspacesRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Workspace element : tablesServiceClient.listWorkspaces(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListWorkspacesPagedResponse listWorkspaces(ListWorkspacesRequest request) {
+    return listWorkspacesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists workspaces for the user.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
+   *   ListWorkspacesRequest request =
+   *       ListWorkspacesRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Workspace> future =
+   *       tablesServiceClient.listWorkspacesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Workspace element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListWorkspacesRequest, ListWorkspacesPagedResponse>
+      listWorkspacesPagedCallable() {
+    return stub.listWorkspacesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists workspaces for the user.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
+   *   while (true) {
+   *     ListWorkspacesResponse response =
+   *         tablesServiceClient.listWorkspacesCallable().call(request);
+   *     for (Workspace element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListWorkspacesRequest, ListWorkspacesResponse>
+      listWorkspacesCallable() {
+    return stub.listWorkspacesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Gets a row. Returns NOT_FOUND if the row does not exist in the table.
    *
    * <p>Sample code:
    *
    * <pre>{@code
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   String name = "name3373707";
+   *   RowName name = RowName.of("[TABLE]", "[ROW]");
+   *   Row response = tablesServiceClient.getRow(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the row to retrieve. Format: tables/{table}/rows/{row}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Row getRow(RowName name) {
+    GetRowRequest request =
+        GetRowRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getRow(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a row. Returns NOT_FOUND if the row does not exist in the table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
+   *   String name = RowName.of("[TABLE]", "[ROW]").toString();
    *   Row response = tablesServiceClient.getRow(name);
    * }
    * }</pre>
@@ -340,7 +566,11 @@ public class TablesServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   GetRowRequest request = GetRowRequest.newBuilder().setName("name3373707").build();
+   *   GetRowRequest request =
+   *       GetRowRequest.newBuilder()
+   *           .setName(RowName.of("[TABLE]", "[ROW]").toString())
+   *           .setView(View.forNumber(0))
+   *           .build();
    *   Row response = tablesServiceClient.getRow(request);
    * }
    * }</pre>
@@ -360,7 +590,11 @@ public class TablesServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
-   *   GetRowRequest request = GetRowRequest.newBuilder().setName("name3373707").build();
+   *   GetRowRequest request =
+   *       GetRowRequest.newBuilder()
+   *           .setName(RowName.of("[TABLE]", "[ROW]").toString())
+   *           .setView(View.forNumber(0))
+   *           .build();
    *   ApiFuture<Row> future = tablesServiceClient.getRowCallable().futureCall(request);
    *   // Do something.
    *   Row response = future.get();
@@ -407,6 +641,8 @@ public class TablesServiceClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setView(View.forNumber(0))
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (Row element : tablesServiceClient.listRows(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -434,6 +670,8 @@ public class TablesServiceClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setView(View.forNumber(0))
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<Row> future = tablesServiceClient.listRowsPagedCallable().futureCall(request);
    *   // Do something.
@@ -509,6 +747,7 @@ public class TablesServiceClient implements BackgroundResource {
    *       CreateRowRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setRow(Row.newBuilder().build())
+   *           .setView(View.forNumber(0))
    *           .build();
    *   Row response = tablesServiceClient.createRow(request);
    * }
@@ -533,6 +772,7 @@ public class TablesServiceClient implements BackgroundResource {
    *       CreateRowRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setRow(Row.newBuilder().build())
+   *           .setView(View.forNumber(0))
    *           .build();
    *   ApiFuture<Row> future = tablesServiceClient.createRowCallable().futureCall(request);
    *   // Do something.
@@ -629,6 +869,7 @@ public class TablesServiceClient implements BackgroundResource {
    *       UpdateRowRequest.newBuilder()
    *           .setRow(Row.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setView(View.forNumber(0))
    *           .build();
    *   Row response = tablesServiceClient.updateRow(request);
    * }
@@ -653,6 +894,7 @@ public class TablesServiceClient implements BackgroundResource {
    *       UpdateRowRequest.newBuilder()
    *           .setRow(Row.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setView(View.forNumber(0))
    *           .build();
    *   ApiFuture<Row> future = tablesServiceClient.updateRowCallable().futureCall(request);
    *   // Do something.
@@ -797,6 +1039,53 @@ public class TablesServiceClient implements BackgroundResource {
     return stub.deleteRowCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes multiple rows.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
+   *   BatchDeleteRowsRequest request =
+   *       BatchDeleteRowsRequest.newBuilder()
+   *           .setParent(TableName.of("[TABLE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   tablesServiceClient.batchDeleteRows(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void batchDeleteRows(BatchDeleteRowsRequest request) {
+    batchDeleteRowsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes multiple rows.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
+   *   BatchDeleteRowsRequest request =
+   *       BatchDeleteRowsRequest.newBuilder()
+   *           .setParent(TableName.of("[TABLE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<Empty> future = tablesServiceClient.batchDeleteRowsCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchDeleteRowsRequest, Empty> batchDeleteRowsCallable() {
+    return stub.batchDeleteRowsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -904,6 +1193,87 @@ public class TablesServiceClient implements BackgroundResource {
     protected ListTablesFixedSizeCollection createCollection(
         List<ListTablesPage> pages, int collectionSize) {
       return new ListTablesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListWorkspacesPagedResponse
+      extends AbstractPagedListResponse<
+          ListWorkspacesRequest,
+          ListWorkspacesResponse,
+          Workspace,
+          ListWorkspacesPage,
+          ListWorkspacesFixedSizeCollection> {
+
+    public static ApiFuture<ListWorkspacesPagedResponse> createAsync(
+        PageContext<ListWorkspacesRequest, ListWorkspacesResponse, Workspace> context,
+        ApiFuture<ListWorkspacesResponse> futureResponse) {
+      ApiFuture<ListWorkspacesPage> futurePage =
+          ListWorkspacesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListWorkspacesPage, ListWorkspacesPagedResponse>() {
+            @Override
+            public ListWorkspacesPagedResponse apply(ListWorkspacesPage input) {
+              return new ListWorkspacesPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListWorkspacesPagedResponse(ListWorkspacesPage page) {
+      super(page, ListWorkspacesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListWorkspacesPage
+      extends AbstractPage<
+          ListWorkspacesRequest, ListWorkspacesResponse, Workspace, ListWorkspacesPage> {
+
+    private ListWorkspacesPage(
+        PageContext<ListWorkspacesRequest, ListWorkspacesResponse, Workspace> context,
+        ListWorkspacesResponse response) {
+      super(context, response);
+    }
+
+    private static ListWorkspacesPage createEmptyPage() {
+      return new ListWorkspacesPage(null, null);
+    }
+
+    @Override
+    protected ListWorkspacesPage createPage(
+        PageContext<ListWorkspacesRequest, ListWorkspacesResponse, Workspace> context,
+        ListWorkspacesResponse response) {
+      return new ListWorkspacesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListWorkspacesPage> createPageAsync(
+        PageContext<ListWorkspacesRequest, ListWorkspacesResponse, Workspace> context,
+        ApiFuture<ListWorkspacesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListWorkspacesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListWorkspacesRequest,
+          ListWorkspacesResponse,
+          Workspace,
+          ListWorkspacesPage,
+          ListWorkspacesFixedSizeCollection> {
+
+    private ListWorkspacesFixedSizeCollection(List<ListWorkspacesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListWorkspacesFixedSizeCollection createEmptyCollection() {
+      return new ListWorkspacesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListWorkspacesFixedSizeCollection createCollection(
+        List<ListWorkspacesPage> pages, int collectionSize) {
+      return new ListWorkspacesFixedSizeCollection(pages, collectionSize);
     }
   }
 

@@ -18,17 +18,17 @@
 
 package com.google.area120.tables.v1alpha1;
 
-public interface GetRowRequestOrBuilder
+public interface GetWorkspaceRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.area120.tables.v1alpha1.GetRowRequest)
+    // @@protoc_insertion_point(interface_extends:google.area120.tables.v1alpha1.GetWorkspaceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The name of the row to retrieve.
-   * Format: tables/{table}/rows/{row}
+   * Required. The name of the workspace to retrieve.
+   * Format: workspaces/{workspace}
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface GetRowRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the row to retrieve.
-   * Format: tables/{table}/rows/{row}
+   * Required. The name of the workspace to retrieve.
+   * Format: workspaces/{workspace}
    * </pre>
    *
    * <code>
@@ -53,33 +53,4 @@ public interface GetRowRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Column key to use for values in the row.
-   * Defaults to user entered name.
-   * </pre>
-   *
-   * <code>.google.area120.tables.v1alpha1.View view = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The enum numeric value on the wire for view.
-   */
-  int getViewValue();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Column key to use for values in the row.
-   * Defaults to user entered name.
-   * </pre>
-   *
-   * <code>.google.area120.tables.v1alpha1.View view = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The view.
-   */
-  com.google.area120.tables.v1alpha1.View getView();
 }

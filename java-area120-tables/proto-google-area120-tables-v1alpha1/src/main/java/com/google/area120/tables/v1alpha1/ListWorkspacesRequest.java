@@ -22,29 +22,29 @@ package com.google.area120.tables.v1alpha1;
  *
  *
  * <pre>
- * Request message for TablesService.GetTable.
+ * Request message for TablesService.ListWorkspaces.
  * </pre>
  *
- * Protobuf type {@code google.area120.tables.v1alpha1.GetTableRequest}
+ * Protobuf type {@code google.area120.tables.v1alpha1.ListWorkspacesRequest}
  */
-public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV3
+public final class ListWorkspacesRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.area120.tables.v1alpha1.GetTableRequest)
-    GetTableRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.area120.tables.v1alpha1.ListWorkspacesRequest)
+    ListWorkspacesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use GetTableRequest.newBuilder() to construct.
-  private GetTableRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ListWorkspacesRequest.newBuilder() to construct.
+  private ListWorkspacesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private GetTableRequest() {
-    name_ = "";
+  private ListWorkspacesRequest() {
+    pageToken_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new GetTableRequest();
+    return new ListWorkspacesRequest();
   }
 
   @java.lang.Override
@@ -52,7 +52,7 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private GetTableRequest(
+  private ListWorkspacesRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -70,11 +70,16 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
           case 0:
             done = true;
             break;
-          case 10:
+          case 8:
+            {
+              pageSize_ = input.readInt32();
+              break;
+            }
+          case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              pageToken_ = s;
               break;
             }
           default:
@@ -98,44 +103,65 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.area120.tables.v1alpha1.TablesProto
-        .internal_static_google_area120_tables_v1alpha1_GetTableRequest_descriptor;
+        .internal_static_google_area120_tables_v1alpha1_ListWorkspacesRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.area120.tables.v1alpha1.TablesProto
-        .internal_static_google_area120_tables_v1alpha1_GetTableRequest_fieldAccessorTable
+        .internal_static_google_area120_tables_v1alpha1_ListWorkspacesRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.area120.tables.v1alpha1.GetTableRequest.class,
-            com.google.area120.tables.v1alpha1.GetTableRequest.Builder.class);
+            com.google.area120.tables.v1alpha1.ListWorkspacesRequest.class,
+            com.google.area120.tables.v1alpha1.ListWorkspacesRequest.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  public static final int PAGE_SIZE_FIELD_NUMBER = 1;
+  private int pageSize_;
   /**
    *
    *
    * <pre>
-   * Required. The name of the table to retrieve.
-   * Format: tables/{table}
+   * The maximum number of workspaces to return. The service may return fewer
+   * than this value.
+   * If unspecified, at most 10 workspaces are returned. The maximum value is
+   * 25; values above 25 are coerced to 25.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>int32 page_size = 1;</code>
    *
-   * @return The name.
+   * @return The pageSize.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public int getPageSize() {
+    return pageSize_;
+  }
+
+  public static final int PAGE_TOKEN_FIELD_NUMBER = 2;
+  private volatile java.lang.Object pageToken_;
+  /**
+   *
+   *
+   * <pre>
+   * A page token, received from a previous `ListWorkspaces` call.
+   * Provide this to retrieve the subsequent page.
+   * When paginating, all other parameters provided to `ListWorkspaces` must
+   * match the call that provided the page token.
+   * </pre>
+   *
+   * <code>string page_token = 2;</code>
+   *
+   * @return The pageToken.
+   */
+  @java.lang.Override
+  public java.lang.String getPageToken() {
+    java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      pageToken_ = s;
       return s;
     }
   }
@@ -143,23 +169,23 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The name of the table to retrieve.
-   * Format: tables/{table}
+   * A page token, received from a previous `ListWorkspaces` call.
+   * Provide this to retrieve the subsequent page.
+   * When paginating, all other parameters provided to `ListWorkspaces` must
+   * match the call that provided the page token.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string page_token = 2;</code>
    *
-   * @return The bytes for name.
+   * @return The bytes for pageToken.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getNameBytes() {
-    java.lang.Object ref = name_;
+  public com.google.protobuf.ByteString getPageTokenBytes() {
+    java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      name_ = b;
+      pageToken_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -180,8 +206,11 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (pageSize_ != 0) {
+      output.writeInt32(1, pageSize_);
+    }
+    if (!getPageTokenBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pageToken_);
     }
     unknownFields.writeTo(output);
   }
@@ -192,8 +221,11 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (pageSize_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, pageSize_);
+    }
+    if (!getPageTokenBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pageToken_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -205,13 +237,14 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.area120.tables.v1alpha1.GetTableRequest)) {
+    if (!(obj instanceof com.google.area120.tables.v1alpha1.ListWorkspacesRequest)) {
       return super.equals(obj);
     }
-    com.google.area120.tables.v1alpha1.GetTableRequest other =
-        (com.google.area120.tables.v1alpha1.GetTableRequest) obj;
+    com.google.area120.tables.v1alpha1.ListWorkspacesRequest other =
+        (com.google.area120.tables.v1alpha1.ListWorkspacesRequest) obj;
 
-    if (!getName().equals(other.getName())) return false;
+    if (getPageSize() != other.getPageSize()) return false;
+    if (!getPageToken().equals(other.getPageToken())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -223,78 +256,80 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getPageSize();
+    hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getPageToken().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.area120.tables.v1alpha1.GetTableRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.ListWorkspacesRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetTableRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.ListWorkspacesRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetTableRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.ListWorkspacesRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetTableRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.ListWorkspacesRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetTableRequest parseFrom(byte[] data)
+  public static com.google.area120.tables.v1alpha1.ListWorkspacesRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetTableRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.ListWorkspacesRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetTableRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.ListWorkspacesRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetTableRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.ListWorkspacesRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetTableRequest parseDelimitedFrom(
+  public static com.google.area120.tables.v1alpha1.ListWorkspacesRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetTableRequest parseDelimitedFrom(
+  public static com.google.area120.tables.v1alpha1.ListWorkspacesRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetTableRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.ListWorkspacesRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetTableRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.ListWorkspacesRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -311,7 +346,8 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.area120.tables.v1alpha1.GetTableRequest prototype) {
+  public static Builder newBuilder(
+      com.google.area120.tables.v1alpha1.ListWorkspacesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -329,31 +365,31 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Request message for TablesService.GetTable.
+   * Request message for TablesService.ListWorkspaces.
    * </pre>
    *
-   * Protobuf type {@code google.area120.tables.v1alpha1.GetTableRequest}
+   * Protobuf type {@code google.area120.tables.v1alpha1.ListWorkspacesRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.area120.tables.v1alpha1.GetTableRequest)
-      com.google.area120.tables.v1alpha1.GetTableRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.area120.tables.v1alpha1.ListWorkspacesRequest)
+      com.google.area120.tables.v1alpha1.ListWorkspacesRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.area120.tables.v1alpha1.TablesProto
-          .internal_static_google_area120_tables_v1alpha1_GetTableRequest_descriptor;
+          .internal_static_google_area120_tables_v1alpha1_ListWorkspacesRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.area120.tables.v1alpha1.TablesProto
-          .internal_static_google_area120_tables_v1alpha1_GetTableRequest_fieldAccessorTable
+          .internal_static_google_area120_tables_v1alpha1_ListWorkspacesRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.area120.tables.v1alpha1.GetTableRequest.class,
-              com.google.area120.tables.v1alpha1.GetTableRequest.Builder.class);
+              com.google.area120.tables.v1alpha1.ListWorkspacesRequest.class,
+              com.google.area120.tables.v1alpha1.ListWorkspacesRequest.Builder.class);
     }
 
-    // Construct using com.google.area120.tables.v1alpha1.GetTableRequest.newBuilder()
+    // Construct using com.google.area120.tables.v1alpha1.ListWorkspacesRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -370,7 +406,9 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
+      pageSize_ = 0;
+
+      pageToken_ = "";
 
       return this;
     }
@@ -378,17 +416,17 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.area120.tables.v1alpha1.TablesProto
-          .internal_static_google_area120_tables_v1alpha1_GetTableRequest_descriptor;
+          .internal_static_google_area120_tables_v1alpha1_ListWorkspacesRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.area120.tables.v1alpha1.GetTableRequest getDefaultInstanceForType() {
-      return com.google.area120.tables.v1alpha1.GetTableRequest.getDefaultInstance();
+    public com.google.area120.tables.v1alpha1.ListWorkspacesRequest getDefaultInstanceForType() {
+      return com.google.area120.tables.v1alpha1.ListWorkspacesRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.area120.tables.v1alpha1.GetTableRequest build() {
-      com.google.area120.tables.v1alpha1.GetTableRequest result = buildPartial();
+    public com.google.area120.tables.v1alpha1.ListWorkspacesRequest build() {
+      com.google.area120.tables.v1alpha1.ListWorkspacesRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -396,10 +434,11 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     @java.lang.Override
-    public com.google.area120.tables.v1alpha1.GetTableRequest buildPartial() {
-      com.google.area120.tables.v1alpha1.GetTableRequest result =
-          new com.google.area120.tables.v1alpha1.GetTableRequest(this);
-      result.name_ = name_;
+    public com.google.area120.tables.v1alpha1.ListWorkspacesRequest buildPartial() {
+      com.google.area120.tables.v1alpha1.ListWorkspacesRequest result =
+          new com.google.area120.tables.v1alpha1.ListWorkspacesRequest(this);
+      result.pageSize_ = pageSize_;
+      result.pageToken_ = pageToken_;
       onBuilt();
       return result;
     }
@@ -439,19 +478,22 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.area120.tables.v1alpha1.GetTableRequest) {
-        return mergeFrom((com.google.area120.tables.v1alpha1.GetTableRequest) other);
+      if (other instanceof com.google.area120.tables.v1alpha1.ListWorkspacesRequest) {
+        return mergeFrom((com.google.area120.tables.v1alpha1.ListWorkspacesRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.area120.tables.v1alpha1.GetTableRequest other) {
-      if (other == com.google.area120.tables.v1alpha1.GetTableRequest.getDefaultInstance())
+    public Builder mergeFrom(com.google.area120.tables.v1alpha1.ListWorkspacesRequest other) {
+      if (other == com.google.area120.tables.v1alpha1.ListWorkspacesRequest.getDefaultInstance())
         return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+      if (other.getPageSize() != 0) {
+        setPageSize(other.getPageSize());
+      }
+      if (!other.getPageToken().isEmpty()) {
+        pageToken_ = other.pageToken_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -469,12 +511,12 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.area120.tables.v1alpha1.GetTableRequest parsedMessage = null;
+      com.google.area120.tables.v1alpha1.ListWorkspacesRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.area120.tables.v1alpha1.GetTableRequest) e.getUnfinishedMessage();
+            (com.google.area120.tables.v1alpha1.ListWorkspacesRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -484,27 +526,88 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private int pageSize_;
     /**
      *
      *
      * <pre>
-     * Required. The name of the table to retrieve.
-     * Format: tables/{table}
+     * The maximum number of workspaces to return. The service may return fewer
+     * than this value.
+     * If unspecified, at most 10 workspaces are returned. The maximum value is
+     * 25; values above 25 are coerced to 25.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>int32 page_size = 1;</code>
      *
-     * @return The name.
+     * @return The pageSize.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    @java.lang.Override
+    public int getPageSize() {
+      return pageSize_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of workspaces to return. The service may return fewer
+     * than this value.
+     * If unspecified, at most 10 workspaces are returned. The maximum value is
+     * 25; values above 25 are coerced to 25.
+     * </pre>
+     *
+     * <code>int32 page_size = 1;</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPageSize(int value) {
+
+      pageSize_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of workspaces to return. The service may return fewer
+     * than this value.
+     * If unspecified, at most 10 workspaces are returned. The maximum value is
+     * 25; values above 25 are coerced to 25.
+     * </pre>
+     *
+     * <code>int32 page_size = 1;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPageSize() {
+
+      pageSize_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pageToken_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A page token, received from a previous `ListWorkspaces` call.
+     * Provide this to retrieve the subsequent page.
+     * When paginating, all other parameters provided to `ListWorkspaces` must
+     * match the call that provided the page token.
+     * </pre>
+     *
+     * <code>string page_token = 2;</code>
+     *
+     * @return The pageToken.
+     */
+    public java.lang.String getPageToken() {
+      java.lang.Object ref = pageToken_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        pageToken_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -514,22 +617,22 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the table to retrieve.
-     * Format: tables/{table}
+     * A page token, received from a previous `ListWorkspaces` call.
+     * Provide this to retrieve the subsequent page.
+     * When paginating, all other parameters provided to `ListWorkspaces` must
+     * match the call that provided the page token.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string page_token = 2;</code>
      *
-     * @return The bytes for name.
+     * @return The bytes for pageToken.
      */
-    public com.google.protobuf.ByteString getNameBytes() {
-      java.lang.Object ref = name_;
+    public com.google.protobuf.ByteString getPageTokenBytes() {
+      java.lang.Object ref = pageToken_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        name_ = b;
+        pageToken_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -539,23 +642,23 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the table to retrieve.
-     * Format: tables/{table}
+     * A page token, received from a previous `ListWorkspaces` call.
+     * Provide this to retrieve the subsequent page.
+     * When paginating, all other parameters provided to `ListWorkspaces` must
+     * match the call that provided the page token.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string page_token = 2;</code>
      *
-     * @param value The name to set.
+     * @param value The pageToken to set.
      * @return This builder for chaining.
      */
-    public Builder setName(java.lang.String value) {
+    public Builder setPageToken(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      name_ = value;
+      pageToken_ = value;
       onChanged();
       return this;
     }
@@ -563,19 +666,19 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the table to retrieve.
-     * Format: tables/{table}
+     * A page token, received from a previous `ListWorkspaces` call.
+     * Provide this to retrieve the subsequent page.
+     * When paginating, all other parameters provided to `ListWorkspaces` must
+     * match the call that provided the page token.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string page_token = 2;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    public Builder clearPageToken() {
 
-      name_ = getDefaultInstance().getName();
+      pageToken_ = getDefaultInstance().getPageToken();
       onChanged();
       return this;
     }
@@ -583,24 +686,24 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The name of the table to retrieve.
-     * Format: tables/{table}
+     * A page token, received from a previous `ListWorkspaces` call.
+     * Provide this to retrieve the subsequent page.
+     * When paginating, all other parameters provided to `ListWorkspaces` must
+     * match the call that provided the page token.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string page_token = 2;</code>
      *
-     * @param value The bytes for name to set.
+     * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+    public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      name_ = value;
+      pageToken_ = value;
       onChanged();
       return this;
     }
@@ -616,42 +719,42 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.area120.tables.v1alpha1.GetTableRequest)
+    // @@protoc_insertion_point(builder_scope:google.area120.tables.v1alpha1.ListWorkspacesRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.area120.tables.v1alpha1.GetTableRequest)
-  private static final com.google.area120.tables.v1alpha1.GetTableRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.area120.tables.v1alpha1.ListWorkspacesRequest)
+  private static final com.google.area120.tables.v1alpha1.ListWorkspacesRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.area120.tables.v1alpha1.GetTableRequest();
+    DEFAULT_INSTANCE = new com.google.area120.tables.v1alpha1.ListWorkspacesRequest();
   }
 
-  public static com.google.area120.tables.v1alpha1.GetTableRequest getDefaultInstance() {
+  public static com.google.area120.tables.v1alpha1.ListWorkspacesRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetTableRequest> PARSER =
-      new com.google.protobuf.AbstractParser<GetTableRequest>() {
+  private static final com.google.protobuf.Parser<ListWorkspacesRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ListWorkspacesRequest>() {
         @java.lang.Override
-        public GetTableRequest parsePartialFrom(
+        public ListWorkspacesRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetTableRequest(input, extensionRegistry);
+          return new ListWorkspacesRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<GetTableRequest> parser() {
+  public static com.google.protobuf.Parser<ListWorkspacesRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetTableRequest> getParserForType() {
+  public com.google.protobuf.Parser<ListWorkspacesRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.area120.tables.v1alpha1.GetTableRequest getDefaultInstanceForType() {
+  public com.google.area120.tables.v1alpha1.ListWorkspacesRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

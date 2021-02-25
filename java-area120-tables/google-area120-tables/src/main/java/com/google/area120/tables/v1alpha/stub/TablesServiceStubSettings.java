@@ -18,6 +18,7 @@ package com.google.area120.tables.v1alpha.stub;
 
 import static com.google.area120.tables.v1alpha.TablesServiceClient.ListRowsPagedResponse;
 import static com.google.area120.tables.v1alpha.TablesServiceClient.ListTablesPagedResponse;
+import static com.google.area120.tables.v1alpha.TablesServiceClient.ListWorkspacesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -43,19 +44,24 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.area120.tables.v1alpha1.BatchCreateRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchCreateRowsResponse;
+import com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchUpdateRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchUpdateRowsResponse;
 import com.google.area120.tables.v1alpha1.CreateRowRequest;
 import com.google.area120.tables.v1alpha1.DeleteRowRequest;
 import com.google.area120.tables.v1alpha1.GetRowRequest;
 import com.google.area120.tables.v1alpha1.GetTableRequest;
+import com.google.area120.tables.v1alpha1.GetWorkspaceRequest;
 import com.google.area120.tables.v1alpha1.ListRowsRequest;
 import com.google.area120.tables.v1alpha1.ListRowsResponse;
 import com.google.area120.tables.v1alpha1.ListTablesRequest;
 import com.google.area120.tables.v1alpha1.ListTablesResponse;
+import com.google.area120.tables.v1alpha1.ListWorkspacesRequest;
+import com.google.area120.tables.v1alpha1.ListWorkspacesResponse;
 import com.google.area120.tables.v1alpha1.Row;
 import com.google.area120.tables.v1alpha1.Table;
 import com.google.area120.tables.v1alpha1.UpdateRowRequest;
+import com.google.area120.tables.v1alpha1.Workspace;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -109,11 +115,16 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
           .add("https://www.googleapis.com/auth/drive.readonly")
           .add("https://www.googleapis.com/auth/spreadsheets")
           .add("https://www.googleapis.com/auth/spreadsheets.readonly")
+          .add("https://www.googleapis.com/auth/tables")
           .build();
 
   private final UnaryCallSettings<GetTableRequest, Table> getTableSettings;
   private final PagedCallSettings<ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>
       listTablesSettings;
+  private final UnaryCallSettings<GetWorkspaceRequest, Workspace> getWorkspaceSettings;
+  private final PagedCallSettings<
+          ListWorkspacesRequest, ListWorkspacesResponse, ListWorkspacesPagedResponse>
+      listWorkspacesSettings;
   private final UnaryCallSettings<GetRowRequest, Row> getRowSettings;
   private final PagedCallSettings<ListRowsRequest, ListRowsResponse, ListRowsPagedResponse>
       listRowsSettings;
@@ -124,6 +135,7 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
   private final UnaryCallSettings<BatchUpdateRowsRequest, BatchUpdateRowsResponse>
       batchUpdateRowsSettings;
   private final UnaryCallSettings<DeleteRowRequest, Empty> deleteRowSettings;
+  private final UnaryCallSettings<BatchDeleteRowsRequest, Empty> batchDeleteRowsSettings;
 
   private static final PagedListDescriptor<ListTablesRequest, ListTablesResponse, Table>
       LIST_TABLES_PAGE_STR_DESC =
@@ -158,6 +170,43 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
               return payload.getTablesList() == null
                   ? ImmutableList.<Table>of()
                   : payload.getTablesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListWorkspacesRequest, ListWorkspacesResponse, Workspace>
+      LIST_WORKSPACES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListWorkspacesRequest, ListWorkspacesResponse, Workspace>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListWorkspacesRequest injectToken(ListWorkspacesRequest payload, String token) {
+              return ListWorkspacesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListWorkspacesRequest injectPageSize(
+                ListWorkspacesRequest payload, int pageSize) {
+              return ListWorkspacesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListWorkspacesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListWorkspacesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Workspace> extractResources(ListWorkspacesResponse payload) {
+              return payload.getWorkspacesList() == null
+                  ? ImmutableList.<Workspace>of()
+                  : payload.getWorkspacesList();
             }
           };
 
@@ -215,6 +264,23 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
           };
 
   private static final PagedListResponseFactory<
+          ListWorkspacesRequest, ListWorkspacesResponse, ListWorkspacesPagedResponse>
+      LIST_WORKSPACES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListWorkspacesRequest, ListWorkspacesResponse, ListWorkspacesPagedResponse>() {
+            @Override
+            public ApiFuture<ListWorkspacesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListWorkspacesRequest, ListWorkspacesResponse> callable,
+                ListWorkspacesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListWorkspacesResponse> futureResponse) {
+              PageContext<ListWorkspacesRequest, ListWorkspacesResponse, Workspace> pageContext =
+                  PageContext.create(callable, LIST_WORKSPACES_PAGE_STR_DESC, request, context);
+              return ListWorkspacesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListRowsRequest, ListRowsResponse, ListRowsPagedResponse>
       LIST_ROWS_PAGE_STR_FACT =
           new PagedListResponseFactory<ListRowsRequest, ListRowsResponse, ListRowsPagedResponse>() {
@@ -239,6 +305,18 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
   public PagedCallSettings<ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>
       listTablesSettings() {
     return listTablesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getWorkspace. */
+  public UnaryCallSettings<GetWorkspaceRequest, Workspace> getWorkspaceSettings() {
+    return getWorkspaceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listWorkspaces. */
+  public PagedCallSettings<
+          ListWorkspacesRequest, ListWorkspacesResponse, ListWorkspacesPagedResponse>
+      listWorkspacesSettings() {
+    return listWorkspacesSettings;
   }
 
   /** Returns the object with the settings used for calls to getRow. */
@@ -277,6 +355,11 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
   /** Returns the object with the settings used for calls to deleteRow. */
   public UnaryCallSettings<DeleteRowRequest, Empty> deleteRowSettings() {
     return deleteRowSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteRows. */
+  public UnaryCallSettings<BatchDeleteRowsRequest, Empty> batchDeleteRowsSettings() {
+    return batchDeleteRowsSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -350,6 +433,8 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
 
     getTableSettings = settingsBuilder.getTableSettings().build();
     listTablesSettings = settingsBuilder.listTablesSettings().build();
+    getWorkspaceSettings = settingsBuilder.getWorkspaceSettings().build();
+    listWorkspacesSettings = settingsBuilder.listWorkspacesSettings().build();
     getRowSettings = settingsBuilder.getRowSettings().build();
     listRowsSettings = settingsBuilder.listRowsSettings().build();
     createRowSettings = settingsBuilder.createRowSettings().build();
@@ -357,6 +442,7 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
     updateRowSettings = settingsBuilder.updateRowSettings().build();
     batchUpdateRowsSettings = settingsBuilder.batchUpdateRowsSettings().build();
     deleteRowSettings = settingsBuilder.deleteRowSettings().build();
+    batchDeleteRowsSettings = settingsBuilder.batchDeleteRowsSettings().build();
   }
 
   /** Builder for TablesServiceStubSettings. */
@@ -366,6 +452,10 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
     private final PagedCallSettings.Builder<
             ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>
         listTablesSettings;
+    private final UnaryCallSettings.Builder<GetWorkspaceRequest, Workspace> getWorkspaceSettings;
+    private final PagedCallSettings.Builder<
+            ListWorkspacesRequest, ListWorkspacesResponse, ListWorkspacesPagedResponse>
+        listWorkspacesSettings;
     private final UnaryCallSettings.Builder<GetRowRequest, Row> getRowSettings;
     private final PagedCallSettings.Builder<
             ListRowsRequest, ListRowsResponse, ListRowsPagedResponse>
@@ -377,6 +467,7 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
     private final UnaryCallSettings.Builder<BatchUpdateRowsRequest, BatchUpdateRowsResponse>
         batchUpdateRowsSettings;
     private final UnaryCallSettings.Builder<DeleteRowRequest, Empty> deleteRowSettings;
+    private final UnaryCallSettings.Builder<BatchDeleteRowsRequest, Empty> batchDeleteRowsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -413,6 +504,8 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
 
       getTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listTablesSettings = PagedCallSettings.newBuilder(LIST_TABLES_PAGE_STR_FACT);
+      getWorkspaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listWorkspacesSettings = PagedCallSettings.newBuilder(LIST_WORKSPACES_PAGE_STR_FACT);
       getRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listRowsSettings = PagedCallSettings.newBuilder(LIST_ROWS_PAGE_STR_FACT);
       createRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -420,18 +513,22 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
       updateRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchUpdateRowsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeleteRowsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getTableSettings,
               listTablesSettings,
+              getWorkspaceSettings,
+              listWorkspacesSettings,
               getRowSettings,
               listRowsSettings,
               createRowSettings,
               batchCreateRowsSettings,
               updateRowSettings,
               batchUpdateRowsSettings,
-              deleteRowSettings);
+              deleteRowSettings,
+              batchDeleteRowsSettings);
       initDefaults(this);
     }
 
@@ -440,6 +537,8 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
 
       getTableSettings = settings.getTableSettings.toBuilder();
       listTablesSettings = settings.listTablesSettings.toBuilder();
+      getWorkspaceSettings = settings.getWorkspaceSettings.toBuilder();
+      listWorkspacesSettings = settings.listWorkspacesSettings.toBuilder();
       getRowSettings = settings.getRowSettings.toBuilder();
       listRowsSettings = settings.listRowsSettings.toBuilder();
       createRowSettings = settings.createRowSettings.toBuilder();
@@ -447,18 +546,22 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
       updateRowSettings = settings.updateRowSettings.toBuilder();
       batchUpdateRowsSettings = settings.batchUpdateRowsSettings.toBuilder();
       deleteRowSettings = settings.deleteRowSettings.toBuilder();
+      batchDeleteRowsSettings = settings.batchDeleteRowsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getTableSettings,
               listTablesSettings,
+              getWorkspaceSettings,
+              listWorkspacesSettings,
               getRowSettings,
               listRowsSettings,
               createRowSettings,
               batchCreateRowsSettings,
               updateRowSettings,
               batchUpdateRowsSettings,
-              deleteRowSettings);
+              deleteRowSettings,
+              batchDeleteRowsSettings);
     }
 
     private static Builder createDefault() {
@@ -480,6 +583,16 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
 
       builder
           .listTablesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getWorkspaceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listWorkspacesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -518,6 +631,11 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .batchDeleteRowsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
       return builder;
     }
 
@@ -546,6 +664,18 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
     public PagedCallSettings.Builder<ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>
         listTablesSettings() {
       return listTablesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getWorkspace. */
+    public UnaryCallSettings.Builder<GetWorkspaceRequest, Workspace> getWorkspaceSettings() {
+      return getWorkspaceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listWorkspaces. */
+    public PagedCallSettings.Builder<
+            ListWorkspacesRequest, ListWorkspacesResponse, ListWorkspacesPagedResponse>
+        listWorkspacesSettings() {
+      return listWorkspacesSettings;
     }
 
     /** Returns the builder for the settings used for calls to getRow. */
@@ -584,6 +714,11 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
     /** Returns the builder for the settings used for calls to deleteRow. */
     public UnaryCallSettings.Builder<DeleteRowRequest, Empty> deleteRowSettings() {
       return deleteRowSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteRows. */
+    public UnaryCallSettings.Builder<BatchDeleteRowsRequest, Empty> batchDeleteRowsSettings() {
+      return batchDeleteRowsSettings;
     }
 
     @Override

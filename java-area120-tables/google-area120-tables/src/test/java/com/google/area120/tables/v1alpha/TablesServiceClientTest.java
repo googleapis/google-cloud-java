@@ -18,6 +18,7 @@ package com.google.area120.tables.v1alpha;
 
 import static com.google.area120.tables.v1alpha.TablesServiceClient.ListRowsPagedResponse;
 import static com.google.area120.tables.v1alpha.TablesServiceClient.ListTablesPagedResponse;
+import static com.google.area120.tables.v1alpha.TablesServiceClient.ListWorkspacesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -28,6 +29,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.area120.tables.v1alpha1.BatchCreateRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchCreateRowsResponse;
+import com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchUpdateRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchUpdateRowsResponse;
 import com.google.area120.tables.v1alpha1.ColumnDescription;
@@ -35,15 +37,20 @@ import com.google.area120.tables.v1alpha1.CreateRowRequest;
 import com.google.area120.tables.v1alpha1.DeleteRowRequest;
 import com.google.area120.tables.v1alpha1.GetRowRequest;
 import com.google.area120.tables.v1alpha1.GetTableRequest;
+import com.google.area120.tables.v1alpha1.GetWorkspaceRequest;
 import com.google.area120.tables.v1alpha1.ListRowsRequest;
 import com.google.area120.tables.v1alpha1.ListRowsResponse;
 import com.google.area120.tables.v1alpha1.ListTablesRequest;
 import com.google.area120.tables.v1alpha1.ListTablesResponse;
+import com.google.area120.tables.v1alpha1.ListWorkspacesRequest;
+import com.google.area120.tables.v1alpha1.ListWorkspacesResponse;
 import com.google.area120.tables.v1alpha1.Row;
 import com.google.area120.tables.v1alpha1.RowName;
 import com.google.area120.tables.v1alpha1.Table;
 import com.google.area120.tables.v1alpha1.TableName;
 import com.google.area120.tables.v1alpha1.UpdateRowRequest;
+import com.google.area120.tables.v1alpha1.Workspace;
+import com.google.area120.tables.v1alpha1.WorkspaceName;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
@@ -112,6 +119,46 @@ public class TablesServiceClientTest {
             .build();
     mockTablesService.addResponse(expectedResponse);
 
+    TableName name = TableName.of("[TABLE]");
+
+    Table actualResponse = client.getTable(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTablesService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetTableRequest actualRequest = ((GetTableRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getTableExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTablesService.addException(exception);
+
+    try {
+      TableName name = TableName.of("[TABLE]");
+      client.getTable(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTableTest2() throws Exception {
+    Table expectedResponse =
+        Table.newBuilder()
+            .setName(TableName.of("[TABLE]").toString())
+            .setDisplayName("displayName1714148973")
+            .addAllColumns(new ArrayList<ColumnDescription>())
+            .build();
+    mockTablesService.addResponse(expectedResponse);
+
     String name = "name3373707";
 
     Table actualResponse = client.getTable(name);
@@ -129,7 +176,7 @@ public class TablesServiceClientTest {
   }
 
   @Test
-  public void getTableExceptionTest() throws Exception {
+  public void getTableExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTablesService.addException(exception);
 
@@ -196,7 +243,179 @@ public class TablesServiceClientTest {
   }
 
   @Test
+  public void getWorkspaceTest() throws Exception {
+    Workspace expectedResponse =
+        Workspace.newBuilder()
+            .setName(WorkspaceName.of("[WORKSPACE]").toString())
+            .setDisplayName("displayName1714148973")
+            .addAllTables(new ArrayList<Table>())
+            .build();
+    mockTablesService.addResponse(expectedResponse);
+
+    WorkspaceName name = WorkspaceName.of("[WORKSPACE]");
+
+    Workspace actualResponse = client.getWorkspace(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTablesService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetWorkspaceRequest actualRequest = ((GetWorkspaceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getWorkspaceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTablesService.addException(exception);
+
+    try {
+      WorkspaceName name = WorkspaceName.of("[WORKSPACE]");
+      client.getWorkspace(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getWorkspaceTest2() throws Exception {
+    Workspace expectedResponse =
+        Workspace.newBuilder()
+            .setName(WorkspaceName.of("[WORKSPACE]").toString())
+            .setDisplayName("displayName1714148973")
+            .addAllTables(new ArrayList<Table>())
+            .build();
+    mockTablesService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Workspace actualResponse = client.getWorkspace(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTablesService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetWorkspaceRequest actualRequest = ((GetWorkspaceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getWorkspaceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTablesService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getWorkspace(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listWorkspacesTest() throws Exception {
+    Workspace responsesElement = Workspace.newBuilder().build();
+    ListWorkspacesResponse expectedResponse =
+        ListWorkspacesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllWorkspaces(Arrays.asList(responsesElement))
+            .build();
+    mockTablesService.addResponse(expectedResponse);
+
+    ListWorkspacesRequest request =
+        ListWorkspacesRequest.newBuilder()
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    ListWorkspacesPagedResponse pagedListResponse = client.listWorkspaces(request);
+
+    List<Workspace> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getWorkspacesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTablesService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListWorkspacesRequest actualRequest = ((ListWorkspacesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listWorkspacesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTablesService.addException(exception);
+
+    try {
+      ListWorkspacesRequest request =
+          ListWorkspacesRequest.newBuilder()
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.listWorkspaces(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getRowTest() throws Exception {
+    Row expectedResponse =
+        Row.newBuilder()
+            .setName(RowName.of("[TABLE]", "[ROW]").toString())
+            .putAllValues(new HashMap<String, Value>())
+            .build();
+    mockTablesService.addResponse(expectedResponse);
+
+    RowName name = RowName.of("[TABLE]", "[ROW]");
+
+    Row actualResponse = client.getRow(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTablesService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRowRequest actualRequest = ((GetRowRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRowExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTablesService.addException(exception);
+
+    try {
+      RowName name = RowName.of("[TABLE]", "[ROW]");
+      client.getRow(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRowTest2() throws Exception {
     Row expectedResponse =
         Row.newBuilder()
             .setName(RowName.of("[TABLE]", "[ROW]").toString())
@@ -221,7 +440,7 @@ public class TablesServiceClientTest {
   }
 
   @Test
-  public void getRowExceptionTest() throws Exception {
+  public void getRowExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockTablesService.addException(exception);
 
@@ -514,6 +733,49 @@ public class TablesServiceClientTest {
     try {
       String name = "name3373707";
       client.deleteRow(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchDeleteRowsTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockTablesService.addResponse(expectedResponse);
+
+    BatchDeleteRowsRequest request =
+        BatchDeleteRowsRequest.newBuilder()
+            .setParent(TableName.of("[TABLE]").toString())
+            .addAllNames(new ArrayList<String>())
+            .build();
+
+    client.batchDeleteRows(request);
+
+    List<AbstractMessage> actualRequests = mockTablesService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchDeleteRowsRequest actualRequest = ((BatchDeleteRowsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getNamesList(), actualRequest.getNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchDeleteRowsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTablesService.addException(exception);
+
+    try {
+      BatchDeleteRowsRequest request =
+          BatchDeleteRowsRequest.newBuilder()
+              .setParent(TableName.of("[TABLE]").toString())
+              .addAllNames(new ArrayList<String>())
+              .build();
+      client.batchDeleteRows(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

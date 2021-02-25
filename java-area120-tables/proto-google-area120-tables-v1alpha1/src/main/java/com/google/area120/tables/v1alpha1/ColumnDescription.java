@@ -41,6 +41,7 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     name_ = "";
     dataType_ = "";
     id_ = "";
+    labels_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -62,6 +63,7 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -93,6 +95,50 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
               id_ = s;
               break;
             }
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                labels_ = new java.util.ArrayList<com.google.area120.tables.v1alpha1.LabeledItem>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              labels_.add(
+                  input.readMessage(
+                      com.google.area120.tables.v1alpha1.LabeledItem.parser(), extensionRegistry));
+              break;
+            }
+          case 42:
+            {
+              com.google.area120.tables.v1alpha1.RelationshipDetails.Builder subBuilder = null;
+              if (relationshipDetails_ != null) {
+                subBuilder = relationshipDetails_.toBuilder();
+              }
+              relationshipDetails_ =
+                  input.readMessage(
+                      com.google.area120.tables.v1alpha1.RelationshipDetails.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(relationshipDetails_);
+                relationshipDetails_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 50:
+            {
+              com.google.area120.tables.v1alpha1.LookupDetails.Builder subBuilder = null;
+              if (lookupDetails_ != null) {
+                subBuilder = lookupDetails_.toBuilder();
+              }
+              lookupDetails_ =
+                  input.readMessage(
+                      com.google.area120.tables.v1alpha1.LookupDetails.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lookupDetails_);
+                lookupDetails_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -107,6 +153,9 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        labels_ = java.util.Collections.unmodifiableList(labels_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -183,8 +232,12 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Data type of the column
-   * Supported types are number, text, boolean, number_list, text_list,
-   * boolean_list.
+   * Supported types are auto_id, boolean, boolean_list, creator,
+   * create_timestamp, date, dropdown, location, integer,
+   * integer_list, number, number_list, person, person_list, tags, check_list,
+   * text, text_list, update_timestamp, updater, relationship,
+   * file_attachment_list.
+   * These types directly map to the column types supported on Tables website.
    * </pre>
    *
    * <code>string data_type = 2;</code>
@@ -208,8 +261,12 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Data type of the column
-   * Supported types are number, text, boolean, number_list, text_list,
-   * boolean_list.
+   * Supported types are auto_id, boolean, boolean_list, creator,
+   * create_timestamp, date, dropdown, location, integer,
+   * integer_list, number, number_list, person, person_list, tags, check_list,
+   * text, text_list, update_timestamp, updater, relationship,
+   * file_attachment_list.
+   * These types directly map to the column types supported on Tables website.
    * </pre>
    *
    * <code>string data_type = 2;</code>
@@ -278,6 +335,221 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int LABELS_FIELD_NUMBER = 4;
+  private java.util.List<com.google.area120.tables.v1alpha1.LabeledItem> labels_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Range of labeled values for the column.
+   * Some columns like tags and drop-downs limit the values to a set of
+   * possible values. We return the range of values in such cases to help
+   * clients implement better user data validation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.area120.tables.v1alpha1.LabeledItem> getLabelsList() {
+    return labels_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Range of labeled values for the column.
+   * Some columns like tags and drop-downs limit the values to a set of
+   * possible values. We return the range of values in such cases to help
+   * clients implement better user data validation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.area120.tables.v1alpha1.LabeledItemOrBuilder>
+      getLabelsOrBuilderList() {
+    return labels_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Range of labeled values for the column.
+   * Some columns like tags and drop-downs limit the values to a set of
+   * possible values. We return the range of values in such cases to help
+   * clients implement better user data validation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getLabelsCount() {
+    return labels_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Range of labeled values for the column.
+   * Some columns like tags and drop-downs limit the values to a set of
+   * possible values. We return the range of values in such cases to help
+   * clients implement better user data validation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.area120.tables.v1alpha1.LabeledItem getLabels(int index) {
+    return labels_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Range of labeled values for the column.
+   * Some columns like tags and drop-downs limit the values to a set of
+   * possible values. We return the range of values in such cases to help
+   * clients implement better user data validation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.area120.tables.v1alpha1.LabeledItemOrBuilder getLabelsOrBuilder(int index) {
+    return labels_.get(index);
+  }
+
+  public static final int RELATIONSHIP_DETAILS_FIELD_NUMBER = 5;
+  private com.google.area120.tables.v1alpha1.RelationshipDetails relationshipDetails_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional details about a relationship column. Specified when data_type
+   * is relationship.
+   * </pre>
+   *
+   * <code>
+   * .google.area120.tables.v1alpha1.RelationshipDetails relationship_details = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the relationshipDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasRelationshipDetails() {
+    return relationshipDetails_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional details about a relationship column. Specified when data_type
+   * is relationship.
+   * </pre>
+   *
+   * <code>
+   * .google.area120.tables.v1alpha1.RelationshipDetails relationship_details = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The relationshipDetails.
+   */
+  @java.lang.Override
+  public com.google.area120.tables.v1alpha1.RelationshipDetails getRelationshipDetails() {
+    return relationshipDetails_ == null
+        ? com.google.area120.tables.v1alpha1.RelationshipDetails.getDefaultInstance()
+        : relationshipDetails_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional details about a relationship column. Specified when data_type
+   * is relationship.
+   * </pre>
+   *
+   * <code>
+   * .google.area120.tables.v1alpha1.RelationshipDetails relationship_details = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.area120.tables.v1alpha1.RelationshipDetailsOrBuilder
+      getRelationshipDetailsOrBuilder() {
+    return getRelationshipDetails();
+  }
+
+  public static final int LOOKUP_DETAILS_FIELD_NUMBER = 6;
+  private com.google.area120.tables.v1alpha1.LookupDetails lookupDetails_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates that this is a lookup column whose value is derived from the
+   * relationship column specified in the details. Lookup columns can not be
+   * updated directly. To change the value you must update the associated
+   * relationship column.
+   * </pre>
+   *
+   * <code>
+   * .google.area120.tables.v1alpha1.LookupDetails lookup_details = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the lookupDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasLookupDetails() {
+    return lookupDetails_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates that this is a lookup column whose value is derived from the
+   * relationship column specified in the details. Lookup columns can not be
+   * updated directly. To change the value you must update the associated
+   * relationship column.
+   * </pre>
+   *
+   * <code>
+   * .google.area120.tables.v1alpha1.LookupDetails lookup_details = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The lookupDetails.
+   */
+  @java.lang.Override
+  public com.google.area120.tables.v1alpha1.LookupDetails getLookupDetails() {
+    return lookupDetails_ == null
+        ? com.google.area120.tables.v1alpha1.LookupDetails.getDefaultInstance()
+        : lookupDetails_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates that this is a lookup column whose value is derived from the
+   * relationship column specified in the details. Lookup columns can not be
+   * updated directly. To change the value you must update the associated
+   * relationship column.
+   * </pre>
+   *
+   * <code>
+   * .google.area120.tables.v1alpha1.LookupDetails lookup_details = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.area120.tables.v1alpha1.LookupDetailsOrBuilder getLookupDetailsOrBuilder() {
+    return getLookupDetails();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -301,6 +573,15 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     if (!getIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
     }
+    for (int i = 0; i < labels_.size(); i++) {
+      output.writeMessage(4, labels_.get(i));
+    }
+    if (relationshipDetails_ != null) {
+      output.writeMessage(5, getRelationshipDetails());
+    }
+    if (lookupDetails_ != null) {
+      output.writeMessage(6, getLookupDetails());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -318,6 +599,15 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     }
     if (!getIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
+    }
+    for (int i = 0; i < labels_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, labels_.get(i));
+    }
+    if (relationshipDetails_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getRelationshipDetails());
+    }
+    if (lookupDetails_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getLookupDetails());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -338,6 +628,15 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     if (!getName().equals(other.getName())) return false;
     if (!getDataType().equals(other.getDataType())) return false;
     if (!getId().equals(other.getId())) return false;
+    if (!getLabelsList().equals(other.getLabelsList())) return false;
+    if (hasRelationshipDetails() != other.hasRelationshipDetails()) return false;
+    if (hasRelationshipDetails()) {
+      if (!getRelationshipDetails().equals(other.getRelationshipDetails())) return false;
+    }
+    if (hasLookupDetails() != other.hasLookupDetails()) return false;
+    if (hasLookupDetails()) {
+      if (!getLookupDetails().equals(other.getLookupDetails())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -355,6 +654,18 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getDataType().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
+    if (getLabelsCount() > 0) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + getLabelsList().hashCode();
+    }
+    if (hasRelationshipDetails()) {
+      hash = (37 * hash) + RELATIONSHIP_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getRelationshipDetails().hashCode();
+    }
+    if (hasLookupDetails()) {
+      hash = (37 * hash) + LOOKUP_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getLookupDetails().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -494,7 +805,9 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getLabelsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -506,6 +819,24 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
 
       id_ = "";
 
+      if (labelsBuilder_ == null) {
+        labels_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        labelsBuilder_.clear();
+      }
+      if (relationshipDetailsBuilder_ == null) {
+        relationshipDetails_ = null;
+      } else {
+        relationshipDetails_ = null;
+        relationshipDetailsBuilder_ = null;
+      }
+      if (lookupDetailsBuilder_ == null) {
+        lookupDetails_ = null;
+      } else {
+        lookupDetails_ = null;
+        lookupDetailsBuilder_ = null;
+      }
       return this;
     }
 
@@ -533,9 +864,29 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     public com.google.area120.tables.v1alpha1.ColumnDescription buildPartial() {
       com.google.area120.tables.v1alpha1.ColumnDescription result =
           new com.google.area120.tables.v1alpha1.ColumnDescription(this);
+      int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.dataType_ = dataType_;
       result.id_ = id_;
+      if (labelsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          labels_ = java.util.Collections.unmodifiableList(labels_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.labels_ = labels_;
+      } else {
+        result.labels_ = labelsBuilder_.build();
+      }
+      if (relationshipDetailsBuilder_ == null) {
+        result.relationshipDetails_ = relationshipDetails_;
+      } else {
+        result.relationshipDetails_ = relationshipDetailsBuilder_.build();
+      }
+      if (lookupDetailsBuilder_ == null) {
+        result.lookupDetails_ = lookupDetails_;
+      } else {
+        result.lookupDetails_ = lookupDetailsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -598,6 +949,39 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         id_ = other.id_;
         onChanged();
       }
+      if (labelsBuilder_ == null) {
+        if (!other.labels_.isEmpty()) {
+          if (labels_.isEmpty()) {
+            labels_ = other.labels_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureLabelsIsMutable();
+            labels_.addAll(other.labels_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.labels_.isEmpty()) {
+          if (labelsBuilder_.isEmpty()) {
+            labelsBuilder_.dispose();
+            labelsBuilder_ = null;
+            labels_ = other.labels_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            labelsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getLabelsFieldBuilder()
+                    : null;
+          } else {
+            labelsBuilder_.addAllMessages(other.labels_);
+          }
+        }
+      }
+      if (other.hasRelationshipDetails()) {
+        mergeRelationshipDetails(other.getRelationshipDetails());
+      }
+      if (other.hasLookupDetails()) {
+        mergeLookupDetails(other.getLookupDetails());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -627,6 +1011,8 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -740,8 +1126,12 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Data type of the column
-     * Supported types are number, text, boolean, number_list, text_list,
-     * boolean_list.
+     * Supported types are auto_id, boolean, boolean_list, creator,
+     * create_timestamp, date, dropdown, location, integer,
+     * integer_list, number, number_list, person, person_list, tags, check_list,
+     * text, text_list, update_timestamp, updater, relationship,
+     * file_attachment_list.
+     * These types directly map to the column types supported on Tables website.
      * </pre>
      *
      * <code>string data_type = 2;</code>
@@ -764,8 +1154,12 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Data type of the column
-     * Supported types are number, text, boolean, number_list, text_list,
-     * boolean_list.
+     * Supported types are auto_id, boolean, boolean_list, creator,
+     * create_timestamp, date, dropdown, location, integer,
+     * integer_list, number, number_list, person, person_list, tags, check_list,
+     * text, text_list, update_timestamp, updater, relationship,
+     * file_attachment_list.
+     * These types directly map to the column types supported on Tables website.
      * </pre>
      *
      * <code>string data_type = 2;</code>
@@ -788,8 +1182,12 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Data type of the column
-     * Supported types are number, text, boolean, number_list, text_list,
-     * boolean_list.
+     * Supported types are auto_id, boolean, boolean_list, creator,
+     * create_timestamp, date, dropdown, location, integer,
+     * integer_list, number, number_list, person, person_list, tags, check_list,
+     * text, text_list, update_timestamp, updater, relationship,
+     * file_attachment_list.
+     * These types directly map to the column types supported on Tables website.
      * </pre>
      *
      * <code>string data_type = 2;</code>
@@ -811,8 +1209,12 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Data type of the column
-     * Supported types are number, text, boolean, number_list, text_list,
-     * boolean_list.
+     * Supported types are auto_id, boolean, boolean_list, creator,
+     * create_timestamp, date, dropdown, location, integer,
+     * integer_list, number, number_list, person, person_list, tags, check_list,
+     * text, text_list, update_timestamp, updater, relationship,
+     * file_attachment_list.
+     * These types directly map to the column types supported on Tables website.
      * </pre>
      *
      * <code>string data_type = 2;</code>
@@ -830,8 +1232,12 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Data type of the column
-     * Supported types are number, text, boolean, number_list, text_list,
-     * boolean_list.
+     * Supported types are auto_id, boolean, boolean_list, creator,
+     * create_timestamp, date, dropdown, location, integer,
+     * integer_list, number, number_list, person, person_list, tags, check_list,
+     * text, text_list, update_timestamp, updater, relationship,
+     * file_attachment_list.
+     * These types directly map to the column types supported on Tables website.
      * </pre>
      *
      * <code>string data_type = 2;</code>
@@ -954,6 +1360,895 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       id_ = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.area120.tables.v1alpha1.LabeledItem> labels_ =
+        java.util.Collections.emptyList();
+
+    private void ensureLabelsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        labels_ = new java.util.ArrayList<com.google.area120.tables.v1alpha1.LabeledItem>(labels_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.area120.tables.v1alpha1.LabeledItem,
+            com.google.area120.tables.v1alpha1.LabeledItem.Builder,
+            com.google.area120.tables.v1alpha1.LabeledItemOrBuilder>
+        labelsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.area120.tables.v1alpha1.LabeledItem> getLabelsList() {
+      if (labelsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(labels_);
+      } else {
+        return labelsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getLabelsCount() {
+      if (labelsBuilder_ == null) {
+        return labels_.size();
+      } else {
+        return labelsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.area120.tables.v1alpha1.LabeledItem getLabels(int index) {
+      if (labelsBuilder_ == null) {
+        return labels_.get(index);
+      } else {
+        return labelsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLabels(int index, com.google.area120.tables.v1alpha1.LabeledItem value) {
+      if (labelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLabelsIsMutable();
+        labels_.set(index, value);
+        onChanged();
+      } else {
+        labelsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLabels(
+        int index, com.google.area120.tables.v1alpha1.LabeledItem.Builder builderForValue) {
+      if (labelsBuilder_ == null) {
+        ensureLabelsIsMutable();
+        labels_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        labelsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addLabels(com.google.area120.tables.v1alpha1.LabeledItem value) {
+      if (labelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLabelsIsMutable();
+        labels_.add(value);
+        onChanged();
+      } else {
+        labelsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addLabels(int index, com.google.area120.tables.v1alpha1.LabeledItem value) {
+      if (labelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLabelsIsMutable();
+        labels_.add(index, value);
+        onChanged();
+      } else {
+        labelsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addLabels(
+        com.google.area120.tables.v1alpha1.LabeledItem.Builder builderForValue) {
+      if (labelsBuilder_ == null) {
+        ensureLabelsIsMutable();
+        labels_.add(builderForValue.build());
+        onChanged();
+      } else {
+        labelsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addLabels(
+        int index, com.google.area120.tables.v1alpha1.LabeledItem.Builder builderForValue) {
+      if (labelsBuilder_ == null) {
+        ensureLabelsIsMutable();
+        labels_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        labelsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllLabels(
+        java.lang.Iterable<? extends com.google.area120.tables.v1alpha1.LabeledItem> values) {
+      if (labelsBuilder_ == null) {
+        ensureLabelsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, labels_);
+        onChanged();
+      } else {
+        labelsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearLabels() {
+      if (labelsBuilder_ == null) {
+        labels_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        labelsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeLabels(int index) {
+      if (labelsBuilder_ == null) {
+        ensureLabelsIsMutable();
+        labels_.remove(index);
+        onChanged();
+      } else {
+        labelsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.area120.tables.v1alpha1.LabeledItem.Builder getLabelsBuilder(int index) {
+      return getLabelsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.area120.tables.v1alpha1.LabeledItemOrBuilder getLabelsOrBuilder(int index) {
+      if (labelsBuilder_ == null) {
+        return labels_.get(index);
+      } else {
+        return labelsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.area120.tables.v1alpha1.LabeledItemOrBuilder>
+        getLabelsOrBuilderList() {
+      if (labelsBuilder_ != null) {
+        return labelsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(labels_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.area120.tables.v1alpha1.LabeledItem.Builder addLabelsBuilder() {
+      return getLabelsFieldBuilder()
+          .addBuilder(com.google.area120.tables.v1alpha1.LabeledItem.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.area120.tables.v1alpha1.LabeledItem.Builder addLabelsBuilder(int index) {
+      return getLabelsFieldBuilder()
+          .addBuilder(index, com.google.area120.tables.v1alpha1.LabeledItem.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Range of labeled values for the column.
+     * Some columns like tags and drop-downs limit the values to a set of
+     * possible values. We return the range of values in such cases to help
+     * clients implement better user data validation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.area120.tables.v1alpha1.LabeledItem labels = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.area120.tables.v1alpha1.LabeledItem.Builder>
+        getLabelsBuilderList() {
+      return getLabelsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.area120.tables.v1alpha1.LabeledItem,
+            com.google.area120.tables.v1alpha1.LabeledItem.Builder,
+            com.google.area120.tables.v1alpha1.LabeledItemOrBuilder>
+        getLabelsFieldBuilder() {
+      if (labelsBuilder_ == null) {
+        labelsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.area120.tables.v1alpha1.LabeledItem,
+                com.google.area120.tables.v1alpha1.LabeledItem.Builder,
+                com.google.area120.tables.v1alpha1.LabeledItemOrBuilder>(
+                labels_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        labels_ = null;
+      }
+      return labelsBuilder_;
+    }
+
+    private com.google.area120.tables.v1alpha1.RelationshipDetails relationshipDetails_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.area120.tables.v1alpha1.RelationshipDetails,
+            com.google.area120.tables.v1alpha1.RelationshipDetails.Builder,
+            com.google.area120.tables.v1alpha1.RelationshipDetailsOrBuilder>
+        relationshipDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional details about a relationship column. Specified when data_type
+     * is relationship.
+     * </pre>
+     *
+     * <code>
+     * .google.area120.tables.v1alpha1.RelationshipDetails relationship_details = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the relationshipDetails field is set.
+     */
+    public boolean hasRelationshipDetails() {
+      return relationshipDetailsBuilder_ != null || relationshipDetails_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional details about a relationship column. Specified when data_type
+     * is relationship.
+     * </pre>
+     *
+     * <code>
+     * .google.area120.tables.v1alpha1.RelationshipDetails relationship_details = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The relationshipDetails.
+     */
+    public com.google.area120.tables.v1alpha1.RelationshipDetails getRelationshipDetails() {
+      if (relationshipDetailsBuilder_ == null) {
+        return relationshipDetails_ == null
+            ? com.google.area120.tables.v1alpha1.RelationshipDetails.getDefaultInstance()
+            : relationshipDetails_;
+      } else {
+        return relationshipDetailsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional details about a relationship column. Specified when data_type
+     * is relationship.
+     * </pre>
+     *
+     * <code>
+     * .google.area120.tables.v1alpha1.RelationshipDetails relationship_details = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRelationshipDetails(
+        com.google.area120.tables.v1alpha1.RelationshipDetails value) {
+      if (relationshipDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        relationshipDetails_ = value;
+        onChanged();
+      } else {
+        relationshipDetailsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional details about a relationship column. Specified when data_type
+     * is relationship.
+     * </pre>
+     *
+     * <code>
+     * .google.area120.tables.v1alpha1.RelationshipDetails relationship_details = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRelationshipDetails(
+        com.google.area120.tables.v1alpha1.RelationshipDetails.Builder builderForValue) {
+      if (relationshipDetailsBuilder_ == null) {
+        relationshipDetails_ = builderForValue.build();
+        onChanged();
+      } else {
+        relationshipDetailsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional details about a relationship column. Specified when data_type
+     * is relationship.
+     * </pre>
+     *
+     * <code>
+     * .google.area120.tables.v1alpha1.RelationshipDetails relationship_details = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRelationshipDetails(
+        com.google.area120.tables.v1alpha1.RelationshipDetails value) {
+      if (relationshipDetailsBuilder_ == null) {
+        if (relationshipDetails_ != null) {
+          relationshipDetails_ =
+              com.google.area120.tables.v1alpha1.RelationshipDetails.newBuilder(
+                      relationshipDetails_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          relationshipDetails_ = value;
+        }
+        onChanged();
+      } else {
+        relationshipDetailsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional details about a relationship column. Specified when data_type
+     * is relationship.
+     * </pre>
+     *
+     * <code>
+     * .google.area120.tables.v1alpha1.RelationshipDetails relationship_details = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRelationshipDetails() {
+      if (relationshipDetailsBuilder_ == null) {
+        relationshipDetails_ = null;
+        onChanged();
+      } else {
+        relationshipDetails_ = null;
+        relationshipDetailsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional details about a relationship column. Specified when data_type
+     * is relationship.
+     * </pre>
+     *
+     * <code>
+     * .google.area120.tables.v1alpha1.RelationshipDetails relationship_details = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.area120.tables.v1alpha1.RelationshipDetails.Builder
+        getRelationshipDetailsBuilder() {
+
+      onChanged();
+      return getRelationshipDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional details about a relationship column. Specified when data_type
+     * is relationship.
+     * </pre>
+     *
+     * <code>
+     * .google.area120.tables.v1alpha1.RelationshipDetails relationship_details = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.area120.tables.v1alpha1.RelationshipDetailsOrBuilder
+        getRelationshipDetailsOrBuilder() {
+      if (relationshipDetailsBuilder_ != null) {
+        return relationshipDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        return relationshipDetails_ == null
+            ? com.google.area120.tables.v1alpha1.RelationshipDetails.getDefaultInstance()
+            : relationshipDetails_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional details about a relationship column. Specified when data_type
+     * is relationship.
+     * </pre>
+     *
+     * <code>
+     * .google.area120.tables.v1alpha1.RelationshipDetails relationship_details = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.area120.tables.v1alpha1.RelationshipDetails,
+            com.google.area120.tables.v1alpha1.RelationshipDetails.Builder,
+            com.google.area120.tables.v1alpha1.RelationshipDetailsOrBuilder>
+        getRelationshipDetailsFieldBuilder() {
+      if (relationshipDetailsBuilder_ == null) {
+        relationshipDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.area120.tables.v1alpha1.RelationshipDetails,
+                com.google.area120.tables.v1alpha1.RelationshipDetails.Builder,
+                com.google.area120.tables.v1alpha1.RelationshipDetailsOrBuilder>(
+                getRelationshipDetails(), getParentForChildren(), isClean());
+        relationshipDetails_ = null;
+      }
+      return relationshipDetailsBuilder_;
+    }
+
+    private com.google.area120.tables.v1alpha1.LookupDetails lookupDetails_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.area120.tables.v1alpha1.LookupDetails,
+            com.google.area120.tables.v1alpha1.LookupDetails.Builder,
+            com.google.area120.tables.v1alpha1.LookupDetailsOrBuilder>
+        lookupDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates that this is a lookup column whose value is derived from the
+     * relationship column specified in the details. Lookup columns can not be
+     * updated directly. To change the value you must update the associated
+     * relationship column.
+     * </pre>
+     *
+     * <code>
+     * .google.area120.tables.v1alpha1.LookupDetails lookup_details = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the lookupDetails field is set.
+     */
+    public boolean hasLookupDetails() {
+      return lookupDetailsBuilder_ != null || lookupDetails_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates that this is a lookup column whose value is derived from the
+     * relationship column specified in the details. Lookup columns can not be
+     * updated directly. To change the value you must update the associated
+     * relationship column.
+     * </pre>
+     *
+     * <code>
+     * .google.area120.tables.v1alpha1.LookupDetails lookup_details = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The lookupDetails.
+     */
+    public com.google.area120.tables.v1alpha1.LookupDetails getLookupDetails() {
+      if (lookupDetailsBuilder_ == null) {
+        return lookupDetails_ == null
+            ? com.google.area120.tables.v1alpha1.LookupDetails.getDefaultInstance()
+            : lookupDetails_;
+      } else {
+        return lookupDetailsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates that this is a lookup column whose value is derived from the
+     * relationship column specified in the details. Lookup columns can not be
+     * updated directly. To change the value you must update the associated
+     * relationship column.
+     * </pre>
+     *
+     * <code>
+     * .google.area120.tables.v1alpha1.LookupDetails lookup_details = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLookupDetails(com.google.area120.tables.v1alpha1.LookupDetails value) {
+      if (lookupDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        lookupDetails_ = value;
+        onChanged();
+      } else {
+        lookupDetailsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates that this is a lookup column whose value is derived from the
+     * relationship column specified in the details. Lookup columns can not be
+     * updated directly. To change the value you must update the associated
+     * relationship column.
+     * </pre>
+     *
+     * <code>
+     * .google.area120.tables.v1alpha1.LookupDetails lookup_details = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLookupDetails(
+        com.google.area120.tables.v1alpha1.LookupDetails.Builder builderForValue) {
+      if (lookupDetailsBuilder_ == null) {
+        lookupDetails_ = builderForValue.build();
+        onChanged();
+      } else {
+        lookupDetailsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates that this is a lookup column whose value is derived from the
+     * relationship column specified in the details. Lookup columns can not be
+     * updated directly. To change the value you must update the associated
+     * relationship column.
+     * </pre>
+     *
+     * <code>
+     * .google.area120.tables.v1alpha1.LookupDetails lookup_details = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeLookupDetails(com.google.area120.tables.v1alpha1.LookupDetails value) {
+      if (lookupDetailsBuilder_ == null) {
+        if (lookupDetails_ != null) {
+          lookupDetails_ =
+              com.google.area120.tables.v1alpha1.LookupDetails.newBuilder(lookupDetails_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          lookupDetails_ = value;
+        }
+        onChanged();
+      } else {
+        lookupDetailsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates that this is a lookup column whose value is derived from the
+     * relationship column specified in the details. Lookup columns can not be
+     * updated directly. To change the value you must update the associated
+     * relationship column.
+     * </pre>
+     *
+     * <code>
+     * .google.area120.tables.v1alpha1.LookupDetails lookup_details = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearLookupDetails() {
+      if (lookupDetailsBuilder_ == null) {
+        lookupDetails_ = null;
+        onChanged();
+      } else {
+        lookupDetails_ = null;
+        lookupDetailsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates that this is a lookup column whose value is derived from the
+     * relationship column specified in the details. Lookup columns can not be
+     * updated directly. To change the value you must update the associated
+     * relationship column.
+     * </pre>
+     *
+     * <code>
+     * .google.area120.tables.v1alpha1.LookupDetails lookup_details = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.area120.tables.v1alpha1.LookupDetails.Builder getLookupDetailsBuilder() {
+
+      onChanged();
+      return getLookupDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates that this is a lookup column whose value is derived from the
+     * relationship column specified in the details. Lookup columns can not be
+     * updated directly. To change the value you must update the associated
+     * relationship column.
+     * </pre>
+     *
+     * <code>
+     * .google.area120.tables.v1alpha1.LookupDetails lookup_details = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.area120.tables.v1alpha1.LookupDetailsOrBuilder getLookupDetailsOrBuilder() {
+      if (lookupDetailsBuilder_ != null) {
+        return lookupDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        return lookupDetails_ == null
+            ? com.google.area120.tables.v1alpha1.LookupDetails.getDefaultInstance()
+            : lookupDetails_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates that this is a lookup column whose value is derived from the
+     * relationship column specified in the details. Lookup columns can not be
+     * updated directly. To change the value you must update the associated
+     * relationship column.
+     * </pre>
+     *
+     * <code>
+     * .google.area120.tables.v1alpha1.LookupDetails lookup_details = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.area120.tables.v1alpha1.LookupDetails,
+            com.google.area120.tables.v1alpha1.LookupDetails.Builder,
+            com.google.area120.tables.v1alpha1.LookupDetailsOrBuilder>
+        getLookupDetailsFieldBuilder() {
+      if (lookupDetailsBuilder_ == null) {
+        lookupDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.area120.tables.v1alpha1.LookupDetails,
+                com.google.area120.tables.v1alpha1.LookupDetails.Builder,
+                com.google.area120.tables.v1alpha1.LookupDetailsOrBuilder>(
+                getLookupDetails(), getParentForChildren(), isClean());
+        lookupDetails_ = null;
+      }
+      return lookupDetailsBuilder_;
     }
 
     @java.lang.Override

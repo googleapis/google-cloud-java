@@ -32,6 +32,9 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *   resources, named `tables/&#42;`
  * - Each Table has a collection of [Row][google.area120.tables.v1alpha1.Row]
  *   resources, named `tables/&#42;&#47;rows/&#42;`
+ * - The API has a collection of
+ *   [Workspace][google.area120.tables.v1alpha1.Workspace]
+ *   resources, named `workspaces/&#42;`.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -133,6 +136,99 @@ public final class TablesServiceGrpc {
       }
     }
     return getListTablesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.area120.tables.v1alpha1.GetWorkspaceRequest,
+          com.google.area120.tables.v1alpha1.Workspace>
+      getGetWorkspaceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetWorkspace",
+      requestType = com.google.area120.tables.v1alpha1.GetWorkspaceRequest.class,
+      responseType = com.google.area120.tables.v1alpha1.Workspace.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.area120.tables.v1alpha1.GetWorkspaceRequest,
+          com.google.area120.tables.v1alpha1.Workspace>
+      getGetWorkspaceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.area120.tables.v1alpha1.GetWorkspaceRequest,
+            com.google.area120.tables.v1alpha1.Workspace>
+        getGetWorkspaceMethod;
+    if ((getGetWorkspaceMethod = TablesServiceGrpc.getGetWorkspaceMethod) == null) {
+      synchronized (TablesServiceGrpc.class) {
+        if ((getGetWorkspaceMethod = TablesServiceGrpc.getGetWorkspaceMethod) == null) {
+          TablesServiceGrpc.getGetWorkspaceMethod =
+              getGetWorkspaceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.area120.tables.v1alpha1.GetWorkspaceRequest,
+                          com.google.area120.tables.v1alpha1.Workspace>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetWorkspace"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.area120.tables.v1alpha1.GetWorkspaceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.area120.tables.v1alpha1.Workspace.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TablesServiceMethodDescriptorSupplier("GetWorkspace"))
+                      .build();
+        }
+      }
+    }
+    return getGetWorkspaceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.area120.tables.v1alpha1.ListWorkspacesRequest,
+          com.google.area120.tables.v1alpha1.ListWorkspacesResponse>
+      getListWorkspacesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListWorkspaces",
+      requestType = com.google.area120.tables.v1alpha1.ListWorkspacesRequest.class,
+      responseType = com.google.area120.tables.v1alpha1.ListWorkspacesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.area120.tables.v1alpha1.ListWorkspacesRequest,
+          com.google.area120.tables.v1alpha1.ListWorkspacesResponse>
+      getListWorkspacesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.area120.tables.v1alpha1.ListWorkspacesRequest,
+            com.google.area120.tables.v1alpha1.ListWorkspacesResponse>
+        getListWorkspacesMethod;
+    if ((getListWorkspacesMethod = TablesServiceGrpc.getListWorkspacesMethod) == null) {
+      synchronized (TablesServiceGrpc.class) {
+        if ((getListWorkspacesMethod = TablesServiceGrpc.getListWorkspacesMethod) == null) {
+          TablesServiceGrpc.getListWorkspacesMethod =
+              getListWorkspacesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.area120.tables.v1alpha1.ListWorkspacesRequest,
+                          com.google.area120.tables.v1alpha1.ListWorkspacesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListWorkspaces"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.area120.tables.v1alpha1.ListWorkspacesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.area120.tables.v1alpha1.ListWorkspacesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TablesServiceMethodDescriptorSupplier("ListWorkspaces"))
+                      .build();
+        }
+      }
+    }
+    return getListWorkspacesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -450,6 +546,49 @@ public final class TablesServiceGrpc {
     return getDeleteRowMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest, com.google.protobuf.Empty>
+      getBatchDeleteRowsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchDeleteRows",
+      requestType = com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest, com.google.protobuf.Empty>
+      getBatchDeleteRowsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest, com.google.protobuf.Empty>
+        getBatchDeleteRowsMethod;
+    if ((getBatchDeleteRowsMethod = TablesServiceGrpc.getBatchDeleteRowsMethod) == null) {
+      synchronized (TablesServiceGrpc.class) {
+        if ((getBatchDeleteRowsMethod = TablesServiceGrpc.getBatchDeleteRowsMethod) == null) {
+          TablesServiceGrpc.getBatchDeleteRowsMethod =
+              getBatchDeleteRowsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchDeleteRows"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TablesServiceMethodDescriptorSupplier("BatchDeleteRows"))
+                      .build();
+        }
+      }
+    }
+    return getBatchDeleteRowsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static TablesServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<TablesServiceStub> factory =
@@ -501,6 +640,9 @@ public final class TablesServiceGrpc {
    *   resources, named `tables/&#42;`
    * - Each Table has a collection of [Row][google.area120.tables.v1alpha1.Row]
    *   resources, named `tables/&#42;&#47;rows/&#42;`
+   * - The API has a collection of
+   *   [Workspace][google.area120.tables.v1alpha1.Workspace]
+   *   resources, named `workspaces/&#42;`.
    * </pre>
    */
   public abstract static class TablesServiceImplBase implements io.grpc.BindableService {
@@ -530,6 +672,34 @@ public final class TablesServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.area120.tables.v1alpha1.ListTablesResponse>
             responseObserver) {
       asyncUnimplementedUnaryCall(getListTablesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a workspace. Returns NOT_FOUND if the workspace does not exist.
+     * </pre>
+     */
+    public void getWorkspace(
+        com.google.area120.tables.v1alpha1.GetWorkspaceRequest request,
+        io.grpc.stub.StreamObserver<com.google.area120.tables.v1alpha1.Workspace>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getGetWorkspaceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists workspaces for the user.
+     * </pre>
+     */
+    public void listWorkspaces(
+        com.google.area120.tables.v1alpha1.ListWorkspacesRequest request,
+        io.grpc.stub.StreamObserver<com.google.area120.tables.v1alpha1.ListWorkspacesResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getListWorkspacesMethod(), responseObserver);
     }
 
     /**
@@ -626,6 +796,19 @@ public final class TablesServiceGrpc {
       asyncUnimplementedUnaryCall(getDeleteRowMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Deletes multiple rows.
+     * </pre>
+     */
+    public void batchDeleteRows(
+        com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnimplementedUnaryCall(getBatchDeleteRowsMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -642,6 +825,19 @@ public final class TablesServiceGrpc {
                       com.google.area120.tables.v1alpha1.ListTablesRequest,
                       com.google.area120.tables.v1alpha1.ListTablesResponse>(
                       this, METHODID_LIST_TABLES)))
+          .addMethod(
+              getGetWorkspaceMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.area120.tables.v1alpha1.GetWorkspaceRequest,
+                      com.google.area120.tables.v1alpha1.Workspace>(this, METHODID_GET_WORKSPACE)))
+          .addMethod(
+              getListWorkspacesMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.area120.tables.v1alpha1.ListWorkspacesRequest,
+                      com.google.area120.tables.v1alpha1.ListWorkspacesResponse>(
+                      this, METHODID_LIST_WORKSPACES)))
           .addMethod(
               getGetRowMethod(),
               asyncUnaryCall(
@@ -687,6 +883,12 @@ public final class TablesServiceGrpc {
                   new MethodHandlers<
                       com.google.area120.tables.v1alpha1.DeleteRowRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_ROW)))
+          .addMethod(
+              getBatchDeleteRowsMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest,
+                      com.google.protobuf.Empty>(this, METHODID_BATCH_DELETE_ROWS)))
           .build();
     }
   }
@@ -701,6 +903,9 @@ public final class TablesServiceGrpc {
    *   resources, named `tables/&#42;`
    * - Each Table has a collection of [Row][google.area120.tables.v1alpha1.Row]
    *   resources, named `tables/&#42;&#47;rows/&#42;`
+   * - The API has a collection of
+   *   [Workspace][google.area120.tables.v1alpha1.Workspace]
+   *   resources, named `workspaces/&#42;`.
    * </pre>
    */
   public static final class TablesServiceStub
@@ -741,6 +946,40 @@ public final class TablesServiceGrpc {
             responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getListTablesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a workspace. Returns NOT_FOUND if the workspace does not exist.
+     * </pre>
+     */
+    public void getWorkspace(
+        com.google.area120.tables.v1alpha1.GetWorkspaceRequest request,
+        io.grpc.stub.StreamObserver<com.google.area120.tables.v1alpha1.Workspace>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetWorkspaceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists workspaces for the user.
+     * </pre>
+     */
+    public void listWorkspaces(
+        com.google.area120.tables.v1alpha1.ListWorkspacesRequest request,
+        io.grpc.stub.StreamObserver<com.google.area120.tables.v1alpha1.ListWorkspacesResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListWorkspacesMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
 
     /**
@@ -847,6 +1086,22 @@ public final class TablesServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getDeleteRowMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes multiple rows.
+     * </pre>
+     */
+    public void batchDeleteRows(
+        com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getBatchDeleteRowsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -859,6 +1114,9 @@ public final class TablesServiceGrpc {
    *   resources, named `tables/&#42;`
    * - Each Table has a collection of [Row][google.area120.tables.v1alpha1.Row]
    *   resources, named `tables/&#42;&#47;rows/&#42;`
+   * - The API has a collection of
+   *   [Workspace][google.area120.tables.v1alpha1.Workspace]
+   *   resources, named `workspaces/&#42;`.
    * </pre>
    */
   public static final class TablesServiceBlockingStub
@@ -895,6 +1153,30 @@ public final class TablesServiceGrpc {
     public com.google.area120.tables.v1alpha1.ListTablesResponse listTables(
         com.google.area120.tables.v1alpha1.ListTablesRequest request) {
       return blockingUnaryCall(getChannel(), getListTablesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a workspace. Returns NOT_FOUND if the workspace does not exist.
+     * </pre>
+     */
+    public com.google.area120.tables.v1alpha1.Workspace getWorkspace(
+        com.google.area120.tables.v1alpha1.GetWorkspaceRequest request) {
+      return blockingUnaryCall(getChannel(), getGetWorkspaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists workspaces for the user.
+     * </pre>
+     */
+    public com.google.area120.tables.v1alpha1.ListWorkspacesResponse listWorkspaces(
+        com.google.area120.tables.v1alpha1.ListWorkspacesRequest request) {
+      return blockingUnaryCall(getChannel(), getListWorkspacesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -980,6 +1262,18 @@ public final class TablesServiceGrpc {
         com.google.area120.tables.v1alpha1.DeleteRowRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteRowMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes multiple rows.
+     * </pre>
+     */
+    public com.google.protobuf.Empty batchDeleteRows(
+        com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest request) {
+      return blockingUnaryCall(getChannel(), getBatchDeleteRowsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -992,6 +1286,9 @@ public final class TablesServiceGrpc {
    *   resources, named `tables/&#42;`
    * - Each Table has a collection of [Row][google.area120.tables.v1alpha1.Row]
    *   resources, named `tables/&#42;&#47;rows/&#42;`
+   * - The API has a collection of
+   *   [Workspace][google.area120.tables.v1alpha1.Workspace]
+   *   resources, named `workspaces/&#42;`.
    * </pre>
    */
   public static final class TablesServiceFutureStub
@@ -1031,6 +1328,34 @@ public final class TablesServiceGrpc {
         listTables(com.google.area120.tables.v1alpha1.ListTablesRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getListTablesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a workspace. Returns NOT_FOUND if the workspace does not exist.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.area120.tables.v1alpha1.Workspace>
+        getWorkspace(com.google.area120.tables.v1alpha1.GetWorkspaceRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetWorkspaceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists workspaces for the user.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.area120.tables.v1alpha1.ListWorkspacesResponse>
+        listWorkspaces(com.google.area120.tables.v1alpha1.ListWorkspacesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListWorkspacesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1124,17 +1449,33 @@ public final class TablesServiceGrpc {
         com.google.area120.tables.v1alpha1.DeleteRowRequest request) {
       return futureUnaryCall(getChannel().newCall(getDeleteRowMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes multiple rows.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        batchDeleteRows(com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getBatchDeleteRowsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_TABLE = 0;
   private static final int METHODID_LIST_TABLES = 1;
-  private static final int METHODID_GET_ROW = 2;
-  private static final int METHODID_LIST_ROWS = 3;
-  private static final int METHODID_CREATE_ROW = 4;
-  private static final int METHODID_BATCH_CREATE_ROWS = 5;
-  private static final int METHODID_UPDATE_ROW = 6;
-  private static final int METHODID_BATCH_UPDATE_ROWS = 7;
-  private static final int METHODID_DELETE_ROW = 8;
+  private static final int METHODID_GET_WORKSPACE = 2;
+  private static final int METHODID_LIST_WORKSPACES = 3;
+  private static final int METHODID_GET_ROW = 4;
+  private static final int METHODID_LIST_ROWS = 5;
+  private static final int METHODID_CREATE_ROW = 6;
+  private static final int METHODID_BATCH_CREATE_ROWS = 7;
+  private static final int METHODID_UPDATE_ROW = 8;
+  private static final int METHODID_BATCH_UPDATE_ROWS = 9;
+  private static final int METHODID_DELETE_ROW = 10;
+  private static final int METHODID_BATCH_DELETE_ROWS = 11;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1163,6 +1504,19 @@ public final class TablesServiceGrpc {
           serviceImpl.listTables(
               (com.google.area120.tables.v1alpha1.ListTablesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.area120.tables.v1alpha1.ListTablesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_WORKSPACE:
+          serviceImpl.getWorkspace(
+              (com.google.area120.tables.v1alpha1.GetWorkspaceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.area120.tables.v1alpha1.Workspace>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_WORKSPACES:
+          serviceImpl.listWorkspaces(
+              (com.google.area120.tables.v1alpha1.ListWorkspacesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.area120.tables.v1alpha1.ListWorkspacesResponse>)
                   responseObserver);
           break;
         case METHODID_GET_ROW:
@@ -1206,6 +1560,11 @@ public final class TablesServiceGrpc {
         case METHODID_DELETE_ROW:
           serviceImpl.deleteRow(
               (com.google.area120.tables.v1alpha1.DeleteRowRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_BATCH_DELETE_ROWS:
+          serviceImpl.batchDeleteRows(
+              (com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
@@ -1274,6 +1633,8 @@ public final class TablesServiceGrpc {
                       .setSchemaDescriptor(new TablesServiceFileDescriptorSupplier())
                       .addMethod(getGetTableMethod())
                       .addMethod(getListTablesMethod())
+                      .addMethod(getGetWorkspaceMethod())
+                      .addMethod(getListWorkspacesMethod())
                       .addMethod(getGetRowMethod())
                       .addMethod(getListRowsMethod())
                       .addMethod(getCreateRowMethod())
@@ -1281,6 +1642,7 @@ public final class TablesServiceGrpc {
                       .addMethod(getUpdateRowMethod())
                       .addMethod(getBatchUpdateRowsMethod())
                       .addMethod(getDeleteRowMethod())
+                      .addMethod(getBatchDeleteRowsMethod())
                       .build();
         }
       }

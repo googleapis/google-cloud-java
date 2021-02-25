@@ -22,30 +22,31 @@ package com.google.area120.tables.v1alpha1;
  *
  *
  * <pre>
- * Request message for TablesService.GetRow.
+ * Details about a lookup column whose value comes from the associated
+ * relationship.
  * </pre>
  *
- * Protobuf type {@code google.area120.tables.v1alpha1.GetRowRequest}
+ * Protobuf type {@code google.area120.tables.v1alpha1.LookupDetails}
  */
-public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
+public final class LookupDetails extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.area120.tables.v1alpha1.GetRowRequest)
-    GetRowRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.area120.tables.v1alpha1.LookupDetails)
+    LookupDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use GetRowRequest.newBuilder() to construct.
-  private GetRowRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use LookupDetails.newBuilder() to construct.
+  private LookupDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private GetRowRequest() {
-    name_ = "";
-    view_ = 0;
+  private LookupDetails() {
+    relationshipColumn_ = "";
+    relationshipColumnId_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new GetRowRequest();
+    return new LookupDetails();
   }
 
   @java.lang.Override
@@ -53,7 +54,7 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private GetRowRequest(
+  private LookupDetails(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -75,14 +76,14 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              relationshipColumn_ = s;
               break;
             }
-          case 16:
+          case 18:
             {
-              int rawValue = input.readEnum();
+              java.lang.String s = input.readStringRequireUtf8();
 
-              view_ = rawValue;
+              relationshipColumnId_ = s;
               break;
             }
           default:
@@ -106,44 +107,41 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.area120.tables.v1alpha1.TablesProto
-        .internal_static_google_area120_tables_v1alpha1_GetRowRequest_descriptor;
+        .internal_static_google_area120_tables_v1alpha1_LookupDetails_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.area120.tables.v1alpha1.TablesProto
-        .internal_static_google_area120_tables_v1alpha1_GetRowRequest_fieldAccessorTable
+        .internal_static_google_area120_tables_v1alpha1_LookupDetails_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.area120.tables.v1alpha1.GetRowRequest.class,
-            com.google.area120.tables.v1alpha1.GetRowRequest.Builder.class);
+            com.google.area120.tables.v1alpha1.LookupDetails.class,
+            com.google.area120.tables.v1alpha1.LookupDetails.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  public static final int RELATIONSHIP_COLUMN_FIELD_NUMBER = 1;
+  private volatile java.lang.Object relationshipColumn_;
   /**
    *
    *
    * <pre>
-   * Required. The name of the row to retrieve.
-   * Format: tables/{table}/rows/{row}
+   * The name of the relationship column associated with the lookup.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string relationship_column = 1;</code>
    *
-   * @return The name.
+   * @return The relationshipColumn.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getRelationshipColumn() {
+    java.lang.Object ref = relationshipColumn_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      relationshipColumn_ = s;
       return s;
     }
   }
@@ -151,67 +149,73 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the row to retrieve.
-   * Format: tables/{table}/rows/{row}
+   * The name of the relationship column associated with the lookup.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string relationship_column = 1;</code>
    *
-   * @return The bytes for name.
+   * @return The bytes for relationshipColumn.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getNameBytes() {
-    java.lang.Object ref = name_;
+  public com.google.protobuf.ByteString getRelationshipColumnBytes() {
+    java.lang.Object ref = relationshipColumn_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      name_ = b;
+      relationshipColumn_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int VIEW_FIELD_NUMBER = 2;
-  private int view_;
+  public static final int RELATIONSHIP_COLUMN_ID_FIELD_NUMBER = 2;
+  private volatile java.lang.Object relationshipColumnId_;
   /**
    *
    *
    * <pre>
-   * Optional. Column key to use for values in the row.
-   * Defaults to user entered name.
+   * The id of the relationship column.
    * </pre>
    *
-   * <code>.google.area120.tables.v1alpha1.View view = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>string relationship_column_id = 2;</code>
    *
-   * @return The enum numeric value on the wire for view.
+   * @return The relationshipColumnId.
    */
   @java.lang.Override
-  public int getViewValue() {
-    return view_;
+  public java.lang.String getRelationshipColumnId() {
+    java.lang.Object ref = relationshipColumnId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      relationshipColumnId_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * Optional. Column key to use for values in the row.
-   * Defaults to user entered name.
+   * The id of the relationship column.
    * </pre>
    *
-   * <code>.google.area120.tables.v1alpha1.View view = 2 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>string relationship_column_id = 2;</code>
    *
-   * @return The view.
+   * @return The bytes for relationshipColumnId.
    */
   @java.lang.Override
-  public com.google.area120.tables.v1alpha1.View getView() {
-    @SuppressWarnings("deprecation")
-    com.google.area120.tables.v1alpha1.View result =
-        com.google.area120.tables.v1alpha1.View.valueOf(view_);
-    return result == null ? com.google.area120.tables.v1alpha1.View.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getRelationshipColumnIdBytes() {
+    java.lang.Object ref = relationshipColumnId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      relationshipColumnId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -228,11 +232,11 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!getRelationshipColumnBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, relationshipColumn_);
     }
-    if (view_ != com.google.area120.tables.v1alpha1.View.VIEW_UNSPECIFIED.getNumber()) {
-      output.writeEnum(2, view_);
+    if (!getRelationshipColumnIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, relationshipColumnId_);
     }
     unknownFields.writeTo(output);
   }
@@ -243,11 +247,11 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!getRelationshipColumnBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, relationshipColumn_);
     }
-    if (view_ != com.google.area120.tables.v1alpha1.View.VIEW_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, view_);
+    if (!getRelationshipColumnIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, relationshipColumnId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -259,14 +263,14 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.area120.tables.v1alpha1.GetRowRequest)) {
+    if (!(obj instanceof com.google.area120.tables.v1alpha1.LookupDetails)) {
       return super.equals(obj);
     }
-    com.google.area120.tables.v1alpha1.GetRowRequest other =
-        (com.google.area120.tables.v1alpha1.GetRowRequest) obj;
+    com.google.area120.tables.v1alpha1.LookupDetails other =
+        (com.google.area120.tables.v1alpha1.LookupDetails) obj;
 
-    if (!getName().equals(other.getName())) return false;
-    if (view_ != other.view_) return false;
+    if (!getRelationshipColumn().equals(other.getRelationshipColumn())) return false;
+    if (!getRelationshipColumnId().equals(other.getRelationshipColumnId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -278,80 +282,80 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + VIEW_FIELD_NUMBER;
-    hash = (53 * hash) + view_;
+    hash = (37 * hash) + RELATIONSHIP_COLUMN_FIELD_NUMBER;
+    hash = (53 * hash) + getRelationshipColumn().hashCode();
+    hash = (37 * hash) + RELATIONSHIP_COLUMN_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRelationshipColumnId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseFrom(java.nio.ByteBuffer data)
+  public static com.google.area120.tables.v1alpha1.LookupDetails parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.LookupDetails parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.LookupDetails parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.LookupDetails parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseFrom(byte[] data)
+  public static com.google.area120.tables.v1alpha1.LookupDetails parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.LookupDetails parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.LookupDetails parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.LookupDetails parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseDelimitedFrom(
+  public static com.google.area120.tables.v1alpha1.LookupDetails parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseDelimitedFrom(
+  public static com.google.area120.tables.v1alpha1.LookupDetails parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.LookupDetails parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest parseFrom(
+  public static com.google.area120.tables.v1alpha1.LookupDetails parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -368,7 +372,7 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.area120.tables.v1alpha1.GetRowRequest prototype) {
+  public static Builder newBuilder(com.google.area120.tables.v1alpha1.LookupDetails prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -386,31 +390,32 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Request message for TablesService.GetRow.
+   * Details about a lookup column whose value comes from the associated
+   * relationship.
    * </pre>
    *
-   * Protobuf type {@code google.area120.tables.v1alpha1.GetRowRequest}
+   * Protobuf type {@code google.area120.tables.v1alpha1.LookupDetails}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.area120.tables.v1alpha1.GetRowRequest)
-      com.google.area120.tables.v1alpha1.GetRowRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.area120.tables.v1alpha1.LookupDetails)
+      com.google.area120.tables.v1alpha1.LookupDetailsOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.area120.tables.v1alpha1.TablesProto
-          .internal_static_google_area120_tables_v1alpha1_GetRowRequest_descriptor;
+          .internal_static_google_area120_tables_v1alpha1_LookupDetails_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.area120.tables.v1alpha1.TablesProto
-          .internal_static_google_area120_tables_v1alpha1_GetRowRequest_fieldAccessorTable
+          .internal_static_google_area120_tables_v1alpha1_LookupDetails_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.area120.tables.v1alpha1.GetRowRequest.class,
-              com.google.area120.tables.v1alpha1.GetRowRequest.Builder.class);
+              com.google.area120.tables.v1alpha1.LookupDetails.class,
+              com.google.area120.tables.v1alpha1.LookupDetails.Builder.class);
     }
 
-    // Construct using com.google.area120.tables.v1alpha1.GetRowRequest.newBuilder()
+    // Construct using com.google.area120.tables.v1alpha1.LookupDetails.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -427,9 +432,9 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
+      relationshipColumn_ = "";
 
-      view_ = 0;
+      relationshipColumnId_ = "";
 
       return this;
     }
@@ -437,17 +442,17 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.area120.tables.v1alpha1.TablesProto
-          .internal_static_google_area120_tables_v1alpha1_GetRowRequest_descriptor;
+          .internal_static_google_area120_tables_v1alpha1_LookupDetails_descriptor;
     }
 
     @java.lang.Override
-    public com.google.area120.tables.v1alpha1.GetRowRequest getDefaultInstanceForType() {
-      return com.google.area120.tables.v1alpha1.GetRowRequest.getDefaultInstance();
+    public com.google.area120.tables.v1alpha1.LookupDetails getDefaultInstanceForType() {
+      return com.google.area120.tables.v1alpha1.LookupDetails.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.area120.tables.v1alpha1.GetRowRequest build() {
-      com.google.area120.tables.v1alpha1.GetRowRequest result = buildPartial();
+    public com.google.area120.tables.v1alpha1.LookupDetails build() {
+      com.google.area120.tables.v1alpha1.LookupDetails result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -455,11 +460,11 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.area120.tables.v1alpha1.GetRowRequest buildPartial() {
-      com.google.area120.tables.v1alpha1.GetRowRequest result =
-          new com.google.area120.tables.v1alpha1.GetRowRequest(this);
-      result.name_ = name_;
-      result.view_ = view_;
+    public com.google.area120.tables.v1alpha1.LookupDetails buildPartial() {
+      com.google.area120.tables.v1alpha1.LookupDetails result =
+          new com.google.area120.tables.v1alpha1.LookupDetails(this);
+      result.relationshipColumn_ = relationshipColumn_;
+      result.relationshipColumnId_ = relationshipColumnId_;
       onBuilt();
       return result;
     }
@@ -499,23 +504,24 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.area120.tables.v1alpha1.GetRowRequest) {
-        return mergeFrom((com.google.area120.tables.v1alpha1.GetRowRequest) other);
+      if (other instanceof com.google.area120.tables.v1alpha1.LookupDetails) {
+        return mergeFrom((com.google.area120.tables.v1alpha1.LookupDetails) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.area120.tables.v1alpha1.GetRowRequest other) {
-      if (other == com.google.area120.tables.v1alpha1.GetRowRequest.getDefaultInstance())
+    public Builder mergeFrom(com.google.area120.tables.v1alpha1.LookupDetails other) {
+      if (other == com.google.area120.tables.v1alpha1.LookupDetails.getDefaultInstance())
         return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+      if (!other.getRelationshipColumn().isEmpty()) {
+        relationshipColumn_ = other.relationshipColumn_;
         onChanged();
       }
-      if (other.view_ != 0) {
-        setViewValue(other.getViewValue());
+      if (!other.getRelationshipColumnId().isEmpty()) {
+        relationshipColumnId_ = other.relationshipColumnId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -532,11 +538,11 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.area120.tables.v1alpha1.GetRowRequest parsedMessage = null;
+      com.google.area120.tables.v1alpha1.LookupDetails parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.area120.tables.v1alpha1.GetRowRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.area120.tables.v1alpha1.LookupDetails) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -546,27 +552,24 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object relationshipColumn_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The name of the row to retrieve.
-     * Format: tables/{table}/rows/{row}
+     * The name of the relationship column associated with the lookup.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string relationship_column = 1;</code>
      *
-     * @return The name.
+     * @return The relationshipColumn.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getRelationshipColumn() {
+      java.lang.Object ref = relationshipColumn_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        relationshipColumn_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -576,22 +579,19 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the row to retrieve.
-     * Format: tables/{table}/rows/{row}
+     * The name of the relationship column associated with the lookup.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string relationship_column = 1;</code>
      *
-     * @return The bytes for name.
+     * @return The bytes for relationshipColumn.
      */
-    public com.google.protobuf.ByteString getNameBytes() {
-      java.lang.Object ref = name_;
+    public com.google.protobuf.ByteString getRelationshipColumnBytes() {
+      java.lang.Object ref = relationshipColumn_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        name_ = b;
+        relationshipColumn_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -601,23 +601,20 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the row to retrieve.
-     * Format: tables/{table}/rows/{row}
+     * The name of the relationship column associated with the lookup.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string relationship_column = 1;</code>
      *
-     * @param value The name to set.
+     * @param value The relationshipColumn to set.
      * @return This builder for chaining.
      */
-    public Builder setName(java.lang.String value) {
+    public Builder setRelationshipColumn(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      name_ = value;
+      relationshipColumn_ = value;
       onChanged();
       return this;
     }
@@ -625,19 +622,16 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the row to retrieve.
-     * Format: tables/{table}/rows/{row}
+     * The name of the relationship column associated with the lookup.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string relationship_column = 1;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    public Builder clearRelationshipColumn() {
 
-      name_ = getDefaultInstance().getName();
+      relationshipColumn_ = getDefaultInstance().getRelationshipColumn();
       onChanged();
       return this;
     }
@@ -645,110 +639,88 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the row to retrieve.
-     * Format: tables/{table}/rows/{row}
+     * The name of the relationship column associated with the lookup.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string relationship_column = 1;</code>
      *
-     * @param value The bytes for name to set.
+     * @param value The bytes for relationshipColumn to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+    public Builder setRelationshipColumnBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      name_ = value;
+      relationshipColumn_ = value;
       onChanged();
       return this;
     }
 
-    private int view_ = 0;
+    private java.lang.Object relationshipColumnId_ = "";
     /**
      *
      *
      * <pre>
-     * Optional. Column key to use for values in the row.
-     * Defaults to user entered name.
+     * The id of the relationship column.
      * </pre>
      *
-     * <code>
-     * .google.area120.tables.v1alpha1.View view = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>string relationship_column_id = 2;</code>
      *
-     * @return The enum numeric value on the wire for view.
+     * @return The relationshipColumnId.
      */
-    @java.lang.Override
-    public int getViewValue() {
-      return view_;
+    public java.lang.String getRelationshipColumnId() {
+      java.lang.Object ref = relationshipColumnId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        relationshipColumnId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * Optional. Column key to use for values in the row.
-     * Defaults to user entered name.
+     * The id of the relationship column.
      * </pre>
      *
-     * <code>
-     * .google.area120.tables.v1alpha1.View view = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>string relationship_column_id = 2;</code>
      *
-     * @param value The enum numeric value on the wire for view to set.
+     * @return The bytes for relationshipColumnId.
+     */
+    public com.google.protobuf.ByteString getRelationshipColumnIdBytes() {
+      java.lang.Object ref = relationshipColumnId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        relationshipColumnId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The id of the relationship column.
+     * </pre>
+     *
+     * <code>string relationship_column_id = 2;</code>
+     *
+     * @param value The relationshipColumnId to set.
      * @return This builder for chaining.
      */
-    public Builder setViewValue(int value) {
-
-      view_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Column key to use for values in the row.
-     * Defaults to user entered name.
-     * </pre>
-     *
-     * <code>
-     * .google.area120.tables.v1alpha1.View view = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return The view.
-     */
-    @java.lang.Override
-    public com.google.area120.tables.v1alpha1.View getView() {
-      @SuppressWarnings("deprecation")
-      com.google.area120.tables.v1alpha1.View result =
-          com.google.area120.tables.v1alpha1.View.valueOf(view_);
-      return result == null ? com.google.area120.tables.v1alpha1.View.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Column key to use for values in the row.
-     * Defaults to user entered name.
-     * </pre>
-     *
-     * <code>
-     * .google.area120.tables.v1alpha1.View view = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @param value The view to set.
-     * @return This builder for chaining.
-     */
-    public Builder setView(com.google.area120.tables.v1alpha1.View value) {
+    public Builder setRelationshipColumnId(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      view_ = value.getNumber();
+      relationshipColumnId_ = value;
       onChanged();
       return this;
     }
@@ -756,19 +728,38 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Column key to use for values in the row.
-     * Defaults to user entered name.
+     * The id of the relationship column.
      * </pre>
      *
-     * <code>
-     * .google.area120.tables.v1alpha1.View view = 2 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>string relationship_column_id = 2;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearView() {
+    public Builder clearRelationshipColumnId() {
 
-      view_ = 0;
+      relationshipColumnId_ = getDefaultInstance().getRelationshipColumnId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The id of the relationship column.
+     * </pre>
+     *
+     * <code>string relationship_column_id = 2;</code>
+     *
+     * @param value The bytes for relationshipColumnId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRelationshipColumnIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      relationshipColumnId_ = value;
       onChanged();
       return this;
     }
@@ -784,42 +775,42 @@ public final class GetRowRequest extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.area120.tables.v1alpha1.GetRowRequest)
+    // @@protoc_insertion_point(builder_scope:google.area120.tables.v1alpha1.LookupDetails)
   }
 
-  // @@protoc_insertion_point(class_scope:google.area120.tables.v1alpha1.GetRowRequest)
-  private static final com.google.area120.tables.v1alpha1.GetRowRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.area120.tables.v1alpha1.LookupDetails)
+  private static final com.google.area120.tables.v1alpha1.LookupDetails DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.area120.tables.v1alpha1.GetRowRequest();
+    DEFAULT_INSTANCE = new com.google.area120.tables.v1alpha1.LookupDetails();
   }
 
-  public static com.google.area120.tables.v1alpha1.GetRowRequest getDefaultInstance() {
+  public static com.google.area120.tables.v1alpha1.LookupDetails getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetRowRequest> PARSER =
-      new com.google.protobuf.AbstractParser<GetRowRequest>() {
+  private static final com.google.protobuf.Parser<LookupDetails> PARSER =
+      new com.google.protobuf.AbstractParser<LookupDetails>() {
         @java.lang.Override
-        public GetRowRequest parsePartialFrom(
+        public LookupDetails parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetRowRequest(input, extensionRegistry);
+          return new LookupDetails(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<GetRowRequest> parser() {
+  public static com.google.protobuf.Parser<LookupDetails> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetRowRequest> getParserForType() {
+  public com.google.protobuf.Parser<LookupDetails> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.area120.tables.v1alpha1.GetRowRequest getDefaultInstanceForType() {
+  public com.google.area120.tables.v1alpha1.LookupDetails getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

@@ -28,11 +28,14 @@
  * <p>- Each Table has a collection of [Row][google.area120.tables.v1alpha1.Row] resources, named
  * `tables/&#42;/rows/&#42;`
  *
+ * <p>- The API has a collection of [Workspace][google.area120.tables.v1alpha1.Workspace] resources,
+ * named `workspaces/&#42;`.
+ *
  * <p>Sample for TablesServiceClient:
  *
  * <pre>{@code
  * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
- *   String name = "name3373707";
+ *   TableName name = TableName.of("[TABLE]");
  *   Table response = tablesServiceClient.getTable(name);
  * }
  * }</pre>

@@ -14,20 +14,17 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
-import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
 service = 'area120-tables'
 versions = ['v1alpha1']
 
 for version in versions:
-  java.bazel_library(
-      service=service,
-      version=version,
-      proto_path=f'google/area120/tables/{version}',
-      bazel_target=f'//google/area120/tables/{version}:google-{service}-{version}-java',
-      cloud_api=False,
+  java.pregenerated_library(
+    service=service,
+    version=version,
+    path=f'google/area120/tables/{version}',
+    cloud_api=False,
   )
 
 java.common_templates()

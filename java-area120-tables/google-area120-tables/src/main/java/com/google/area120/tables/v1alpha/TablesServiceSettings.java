@@ -18,6 +18,7 @@ package com.google.area120.tables.v1alpha;
 
 import static com.google.area120.tables.v1alpha.TablesServiceClient.ListRowsPagedResponse;
 import static com.google.area120.tables.v1alpha.TablesServiceClient.ListTablesPagedResponse;
+import static com.google.area120.tables.v1alpha.TablesServiceClient.ListWorkspacesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -33,19 +34,24 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.area120.tables.v1alpha.stub.TablesServiceStubSettings;
 import com.google.area120.tables.v1alpha1.BatchCreateRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchCreateRowsResponse;
+import com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchUpdateRowsRequest;
 import com.google.area120.tables.v1alpha1.BatchUpdateRowsResponse;
 import com.google.area120.tables.v1alpha1.CreateRowRequest;
 import com.google.area120.tables.v1alpha1.DeleteRowRequest;
 import com.google.area120.tables.v1alpha1.GetRowRequest;
 import com.google.area120.tables.v1alpha1.GetTableRequest;
+import com.google.area120.tables.v1alpha1.GetWorkspaceRequest;
 import com.google.area120.tables.v1alpha1.ListRowsRequest;
 import com.google.area120.tables.v1alpha1.ListRowsResponse;
 import com.google.area120.tables.v1alpha1.ListTablesRequest;
 import com.google.area120.tables.v1alpha1.ListTablesResponse;
+import com.google.area120.tables.v1alpha1.ListWorkspacesRequest;
+import com.google.area120.tables.v1alpha1.ListWorkspacesResponse;
 import com.google.area120.tables.v1alpha1.Row;
 import com.google.area120.tables.v1alpha1.Table;
 import com.google.area120.tables.v1alpha1.UpdateRowRequest;
+import com.google.area120.tables.v1alpha1.Workspace;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -97,6 +103,18 @@ public class TablesServiceSettings extends ClientSettings<TablesServiceSettings>
     return ((TablesServiceStubSettings) getStubSettings()).listTablesSettings();
   }
 
+  /** Returns the object with the settings used for calls to getWorkspace. */
+  public UnaryCallSettings<GetWorkspaceRequest, Workspace> getWorkspaceSettings() {
+    return ((TablesServiceStubSettings) getStubSettings()).getWorkspaceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listWorkspaces. */
+  public PagedCallSettings<
+          ListWorkspacesRequest, ListWorkspacesResponse, ListWorkspacesPagedResponse>
+      listWorkspacesSettings() {
+    return ((TablesServiceStubSettings) getStubSettings()).listWorkspacesSettings();
+  }
+
   /** Returns the object with the settings used for calls to getRow. */
   public UnaryCallSettings<GetRowRequest, Row> getRowSettings() {
     return ((TablesServiceStubSettings) getStubSettings()).getRowSettings();
@@ -133,6 +151,11 @@ public class TablesServiceSettings extends ClientSettings<TablesServiceSettings>
   /** Returns the object with the settings used for calls to deleteRow. */
   public UnaryCallSettings<DeleteRowRequest, Empty> deleteRowSettings() {
     return ((TablesServiceStubSettings) getStubSettings()).deleteRowSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteRows. */
+  public UnaryCallSettings<BatchDeleteRowsRequest, Empty> batchDeleteRowsSettings() {
+    return ((TablesServiceStubSettings) getStubSettings()).batchDeleteRowsSettings();
   }
 
   public static final TablesServiceSettings create(TablesServiceStubSettings stub)
@@ -244,6 +267,18 @@ public class TablesServiceSettings extends ClientSettings<TablesServiceSettings>
       return getStubSettingsBuilder().listTablesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getWorkspace. */
+    public UnaryCallSettings.Builder<GetWorkspaceRequest, Workspace> getWorkspaceSettings() {
+      return getStubSettingsBuilder().getWorkspaceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listWorkspaces. */
+    public PagedCallSettings.Builder<
+            ListWorkspacesRequest, ListWorkspacesResponse, ListWorkspacesPagedResponse>
+        listWorkspacesSettings() {
+      return getStubSettingsBuilder().listWorkspacesSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getRow. */
     public UnaryCallSettings.Builder<GetRowRequest, Row> getRowSettings() {
       return getStubSettingsBuilder().getRowSettings();
@@ -280,6 +315,11 @@ public class TablesServiceSettings extends ClientSettings<TablesServiceSettings>
     /** Returns the builder for the settings used for calls to deleteRow. */
     public UnaryCallSettings.Builder<DeleteRowRequest, Empty> deleteRowSettings() {
       return getStubSettingsBuilder().deleteRowSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteRows. */
+    public UnaryCallSettings.Builder<BatchDeleteRowsRequest, Empty> batchDeleteRowsSettings() {
+      return getStubSettingsBuilder().batchDeleteRowsSettings();
     }
 
     @Override
