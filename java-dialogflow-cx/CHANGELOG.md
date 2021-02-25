@@ -1,5 +1,37 @@
 # Changelog
 
+## [0.6.0](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.5.0...v0.6.0) (2021-02-25)
+
+
+### Features
+
+* add experiment and security settings API docs: update comments on parameters and agent ([#124](https://www.github.com/googleapis/java-dialogflow-cx/issues/124)) ([06ee69a](https://www.github.com/googleapis/java-dialogflow-cx/commit/06ee69ac49cdd2f0cc6316e7613d120434dfb65f))
+* Add new Experiment service ([a79149b](https://www.github.com/googleapis/java-dialogflow-cx/commit/a79149b73f3c74b7d35ec230702fc9f61c2ede3b))
+* added support for test cases and agent validation ([#141](https://www.github.com/googleapis/java-dialogflow-cx/issues/141)) ([a79149b](https://www.github.com/googleapis/java-dialogflow-cx/commit/a79149b73f3c74b7d35ec230702fc9f61c2ede3b))
+* Support transition route group coverage for Test Cases ([a79149b](https://www.github.com/googleapis/java-dialogflow-cx/commit/a79149b73f3c74b7d35ec230702fc9f61c2ede3b))
+* supports SentimentAnalysisResult in webhook request ([a79149b](https://www.github.com/googleapis/java-dialogflow-cx/commit/a79149b73f3c74b7d35ec230702fc9f61c2ede3b))
+
+
+### Bug Fixes
+
+* don't log downloads ([#143](https://www.github.com/googleapis/java-dialogflow-cx/issues/143)) ([7cfb674](https://www.github.com/googleapis/java-dialogflow-cx/commit/7cfb6749ede7e7b01d606e83b6ac414466d23378))
+* RunTestCase http template. PHP REST client lib can be generated ([a79149b](https://www.github.com/googleapis/java-dialogflow-cx/commit/a79149b73f3c74b7d35ec230702fc9f61c2ede3b))
+* update repo name ([#138](https://www.github.com/googleapis/java-dialogflow-cx/issues/138)) ([5a6c5d1](https://www.github.com/googleapis/java-dialogflow-cx/commit/5a6c5d127d298c4d3acd5fdf13839c17b9f64d08))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#127](https://www.github.com/googleapis/java-dialogflow-cx/issues/127)) ([0452e5c](https://www.github.com/googleapis/java-dialogflow-cx/commit/0452e5cc405d1fadf4d76f20d92db79375da7cd6))
+
+
+### Documentation
+
+* fix languages link ([#146](https://www.github.com/googleapis/java-dialogflow-cx/issues/146)) ([89f5b49](https://www.github.com/googleapis/java-dialogflow-cx/commit/89f5b49f8b973f626dbe76286b6cf8273d447837))
+* generate sample code in the Java microgenerator ([a79149b](https://www.github.com/googleapis/java-dialogflow-cx/commit/a79149b73f3c74b7d35ec230702fc9f61c2ede3b))
+* minor doc update on redact field in intent.proto and page.proto ([a79149b](https://www.github.com/googleapis/java-dialogflow-cx/commit/a79149b73f3c74b7d35ec230702fc9f61c2ede3b))
+* minor updates in wording ([a79149b](https://www.github.com/googleapis/java-dialogflow-cx/commit/a79149b73f3c74b7d35ec230702fc9f61c2ede3b))
+* test cases doc update ([a79149b](https://www.github.com/googleapis/java-dialogflow-cx/commit/a79149b73f3c74b7d35ec230702fc9f61c2ede3b))
+
 ## [0.5.0](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.4.1...v0.5.0) (2020-12-15)
 
 
