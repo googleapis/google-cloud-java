@@ -1,4 +1,4 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-shared-config:0.11.0:0.11.0
+google-cloud-shared-config:0.11.0:0.11.1-SNAPSHOT
