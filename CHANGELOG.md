@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.12.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.11.0...v1.12.0) (2021-02-25)
+
+
+### Features
+
+* StreamWriterV2 sets exception for response with error ([#884](https://www.github.com/googleapis/java-bigquerystorage/issues/884)) ([4677d7b](https://www.github.com/googleapis/java-bigquerystorage/commit/4677d7bd56db6c76106daeb7be38fa65f1c9c745))
+
+
+### Documentation
+
+* **sample:** Update parallel append sample to use StreamWriterV2 ([#883](https://www.github.com/googleapis/java-bigquerystorage/issues/883)) ([5c5c690](https://www.github.com/googleapis/java-bigquerystorage/commit/5c5c690fe39b3055596712dbd39064aed0b023da))
+
 ## [1.11.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.10.0...v1.11.0) (2021-02-24)
 
 
