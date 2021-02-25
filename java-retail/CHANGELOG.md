@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.2.1](https://www.github.com/googleapis/java-retail/compare/v0.2.0...v0.2.1) (2021-02-25)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.0 ([#54](https://www.github.com/googleapis/java-retail/issues/54)) ([f04501f](https://www.github.com/googleapis/java-retail/commit/f04501fdac508979e2bc5c575a012ad3ba14098c))
+
 ## [0.2.0](https://www.github.com/googleapis/java-retail/compare/v0.1.1...v0.2.0) (2021-02-25)
 
 
