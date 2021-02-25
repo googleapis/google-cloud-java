@@ -401,7 +401,15 @@ public class StreamWriterV2 implements AutoCloseable {
     } finally {
       this.lock.unlock();
     }
-    requestWrapper.appendResult.set(response);
+    if (response.hasError()) {
+      StatusRuntimeException exception =
+          new StatusRuntimeException(
+              Status.fromCodeValue(response.getError().getCode())
+                  .withDescription(response.getError().getMessage()));
+      requestWrapper.appendResult.setException(exception);
+    } else {
+      requestWrapper.appendResult.set(response);
+    }
   }
 
   private void doneCallback(Throwable finalStatus) {

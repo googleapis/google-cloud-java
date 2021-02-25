@@ -122,6 +122,12 @@ public class StreamWriterV2Test {
         .build();
   }
 
+  private AppendRowsResponse createAppendResponseWithError(Status.Code code, String message) {
+    return AppendRowsResponse.newBuilder()
+        .setError(com.google.rpc.Status.newBuilder().setCode(code.value()).setMessage(message))
+        .build();
+  }
+
   private ApiFuture<AppendRowsResponse> sendTestMessage(StreamWriterV2 writer, String[] messages) {
     return writer.append(createAppendRequest(messages, -1));
   }
@@ -196,7 +202,7 @@ public class StreamWriterV2Test {
   }
 
   @Test
-  public void testAppendSuccessAndError() throws Exception {
+  public void testAppendSuccessAndConnectionError() throws Exception {
     StreamWriterV2 writer = getTestStreamWriterV2();
     testBigQueryWrite.addResponse(createAppendResponse(0));
     testBigQueryWrite.addException(Status.INTERNAL.asException());
@@ -207,6 +213,28 @@ public class StreamWriterV2Test {
     assertEquals(0, appendFuture1.get().getAppendResult().getOffset().getValue());
     ApiException actualError = assertFutureException(ApiException.class, appendFuture2);
     assertEquals(Code.INTERNAL, actualError.getStatusCode().getCode());
+
+    writer.close();
+  }
+
+  @Test
+  public void testAppendSuccessAndInStreamError() throws Exception {
+    StreamWriterV2 writer = getTestStreamWriterV2();
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+    testBigQueryWrite.addResponse(
+        createAppendResponseWithError(Status.INVALID_ARGUMENT.getCode(), "test message"));
+    testBigQueryWrite.addResponse(createAppendResponse(1));
+
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
+    ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
+    ApiFuture<AppendRowsResponse> appendFuture3 = sendTestMessage(writer, new String[] {"C"});
+
+    assertEquals(0, appendFuture1.get().getAppendResult().getOffset().getValue());
+    StatusRuntimeException actualError =
+        assertFutureException(StatusRuntimeException.class, appendFuture2);
+    assertEquals(Status.Code.INVALID_ARGUMENT, actualError.getStatus().getCode());
+    assertEquals("test message", actualError.getStatus().getDescription());
+    assertEquals(1, appendFuture3.get().getAppendResult().getOffset().getValue());
 
     writer.close();
   }
