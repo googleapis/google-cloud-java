@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.1](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v1.1.0...v1.1.1) (2021-02-25)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.0 ([#378](https://www.github.com/googleapis/java-recaptchaenterprise/issues/378)) ([880696a](https://www.github.com/googleapis/java-recaptchaenterprise/commit/880696aba0880f4064ed433b56cde742931f3f53))
+
 ## [1.1.0](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v1.0.10...v1.1.0) (2021-02-22)
 
 
