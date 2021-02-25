@@ -12,6 +12,24 @@ Java idiomatic client for [Cloud Pub/Sub][product-docs].
 
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
 ```xml
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>libraries-bom</artifactId>
+      <version>17.0.0</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+
+<dependencies>
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-pubsub</artifactId>
+  </dependency>
+
 </dependencies>
 
 ```
@@ -29,7 +47,7 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:17.0.0')
+implementation platform('com.google.cloud:libraries-bom:18.0.0')
 
 compile 'com.google.cloud:google-cloud-pubsub'
 ```
