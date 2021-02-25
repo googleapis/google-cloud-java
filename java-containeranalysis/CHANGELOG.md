@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.13](https://www.github.com/googleapis/java-containeranalysis/compare/v1.2.12...v1.2.13) (2021-02-25)
+
+
+### Documentation
+
+* generate samples in gapic client classes ([#454](https://www.github.com/googleapis/java-containeranalysis/issues/454)) ([874915c](https://www.github.com/googleapis/java-containeranalysis/commit/874915cb9c8f42c1e56824cd4a8de44affbc7dc9))
+
 ### [1.2.12](https://www.github.com/googleapis/java-containeranalysis/compare/v1.2.11...v1.2.12) (2021-02-23)
 
 
