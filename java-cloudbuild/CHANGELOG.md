@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-cloudbuild/compare/v2.1.11...v2.2.0) (2021-02-25)
+
+
+### Features
+
+* generate sample code in the Java microgenerator ([#389](https://www.github.com/googleapis/java-cloudbuild/issues/389)) ([8e125d1](https://www.github.com/googleapis/java-cloudbuild/commit/8e125d1544b811bfba006bb02a1ef6e0e52aa435))
+
 ### [2.1.11](https://www.github.com/googleapis/java-cloudbuild/compare/v2.1.10...v2.1.11) (2021-02-19)
 
 
