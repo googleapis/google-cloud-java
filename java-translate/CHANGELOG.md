@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.95.10](https://www.github.com/googleapis/java-translate/compare/v1.95.9...v1.95.10) (2021-02-25)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.0 ([#444](https://www.github.com/googleapis/java-translate/issues/444)) ([9563ac8](https://www.github.com/googleapis/java-translate/commit/9563ac82cae03a2b1003658eff8d151e88e6eed6))
+
 ### [1.95.9](https://www.github.com/googleapis/java-translate/compare/v1.95.8...v1.95.9) (2021-02-23)
 
 
