@@ -109,7 +109,7 @@ public interface UpdateTransitionRouteGroupRequestOrBuilder
    * [TransitionRoute][google.cloud.dialogflow.cx.v3.TransitionRoute] is language dependent.
    * If not specified, the agent's default language is used.
    * [Many
-   * languages](https://cloud.google.com/dialogflow/docs/reference/language)
+   * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
    * are supported.
    * Note: languages must be enabled in the agent before they can be used.
    * </pre>
@@ -128,7 +128,7 @@ public interface UpdateTransitionRouteGroupRequestOrBuilder
    * [TransitionRoute][google.cloud.dialogflow.cx.v3.TransitionRoute] is language dependent.
    * If not specified, the agent's default language is used.
    * [Many
-   * languages](https://cloud.google.com/dialogflow/docs/reference/language)
+   * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
    * are supported.
    * Note: languages must be enabled in the agent before they can be used.
    * </pre>

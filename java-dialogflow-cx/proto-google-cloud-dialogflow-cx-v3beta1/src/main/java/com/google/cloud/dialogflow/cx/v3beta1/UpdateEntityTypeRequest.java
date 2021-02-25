@@ -209,7 +209,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    * *   `EntityType.excluded_phrases.value`
    * If not specified, the agent's default language is used.
    * [Many
-   * languages](https://cloud.google.com/dialogflow/docs/reference/language)
+   * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
    * are supported.
    * Note: languages must be enabled in the agent before they can be used.
    * </pre>
@@ -240,7 +240,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    * *   `EntityType.excluded_phrases.value`
    * If not specified, the agent's default language is used.
    * [Many
-   * languages](https://cloud.google.com/dialogflow/docs/reference/language)
+   * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
    * are supported.
    * Note: languages must be enabled in the agent before they can be used.
    * </pre>
@@ -901,7 +901,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * *   `EntityType.excluded_phrases.value`
      * If not specified, the agent's default language is used.
      * [Many
-     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
+     * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      * are supported.
      * Note: languages must be enabled in the agent before they can be used.
      * </pre>
@@ -931,7 +931,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * *   `EntityType.excluded_phrases.value`
      * If not specified, the agent's default language is used.
      * [Many
-     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
+     * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      * are supported.
      * Note: languages must be enabled in the agent before they can be used.
      * </pre>
@@ -961,7 +961,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * *   `EntityType.excluded_phrases.value`
      * If not specified, the agent's default language is used.
      * [Many
-     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
+     * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      * are supported.
      * Note: languages must be enabled in the agent before they can be used.
      * </pre>
@@ -990,7 +990,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * *   `EntityType.excluded_phrases.value`
      * If not specified, the agent's default language is used.
      * [Many
-     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
+     * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      * are supported.
      * Note: languages must be enabled in the agent before they can be used.
      * </pre>
@@ -1015,7 +1015,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      * *   `EntityType.excluded_phrases.value`
      * If not specified, the agent's default language is used.
      * [Many
-     * languages](https://cloud.google.com/dialogflow/docs/reference/language)
+     * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      * are supported.
      * Note: languages must be enabled in the agent before they can be used.
      * </pre>
