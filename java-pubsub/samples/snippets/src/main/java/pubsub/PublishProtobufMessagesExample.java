@@ -56,7 +56,7 @@ public class PublishProtobufMessagesExample {
 
     Publisher publisher = null;
 
-    // Create an object of an avro-tools-generated class.
+    // Instantiate a protoc-generated class defined in `us-states.proto`.
     State state = State.newBuilder().setName("Alaska").setPostAbbr("AK").build();
 
     block:

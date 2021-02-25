@@ -30,5 +30,5 @@
   <suppress checks="WhitespaceAroundCheck" files="StateProto.java"/>
   <suppress checks="IllegalTokenTextCheck" files="StateProto.java"/>
   <suppress checks="ParameterNameCheck" files="State.java"/>
-  <suppress checks="LineLengthCheck" files="State.java"/>
+  <suppress checks="LineLengthCheck" files="State.java|StateProto.java"/>
 </suppressions>

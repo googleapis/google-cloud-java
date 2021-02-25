@@ -54,7 +54,7 @@ public class CreateAvroSchemaExample {
               projectName,
               Schema.newBuilder()
                   .setName(schemaName.toString())
-                  .setType(com.google.pubsub.v1.Schema.Type.AVRO)
+                  .setType(Schema.Type.AVRO)
                   .setDefinition(avscSource)
                   .build(),
               schemaId);

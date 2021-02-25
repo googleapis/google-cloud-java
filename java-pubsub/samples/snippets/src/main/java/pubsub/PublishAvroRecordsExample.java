@@ -56,7 +56,7 @@ public class PublishAvroRecordsExample {
       encoding = topicAdminClient.getTopic(topicName).getSchemaSettings().getEncoding();
     }
 
-    // Create an object of an avro-tools-generated class.
+    // Instantiate an avro-tools-generated class defined in `us-states.avsc`.
     State state = State.newBuilder().setName("Alaska").setPostAbbr("AK").build();
 
     Publisher publisher = null;

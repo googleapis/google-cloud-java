@@ -19,6 +19,18 @@
  *
  * <p>DO NOT EDIT DIRECTLY
  */
+
+/**
+ * This file is created using Avro tools.
+ *
+ * To download, visit https://avro.apache.org/releases.html#Download
+ *
+ * Run the following command from the `samples/snippets` directory to
+ * generate this class:
+ *
+ *`java -jar /location/to/your/avro-tools-1.10.1.jar compile schema src/main/resources/us-states.avsc src/main/java/`
+ */
+
 package utilities;
 
 import org.apache.avro.message.BinaryMessageDecoder;
