@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-networkconnectivity/compare/v0.1.0...v0.2.0) (2021-02-25)
+
+
+### Features
+
+* Add state field in resources ([#19](https://www.github.com/googleapis/java-networkconnectivity/issues/19)) ([e00b4f1](https://www.github.com/googleapis/java-networkconnectivity/commit/e00b4f1a24dab451215cb4b7ff3df5f5a03662ca))
+
+
+### Bug Fixes
+
+* update repo name ([#21](https://www.github.com/googleapis/java-networkconnectivity/issues/21)) ([07a3c70](https://www.github.com/googleapis/java-networkconnectivity/commit/07a3c70e8eb7fb79bc5c6d3f2929a10851f837f2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#30](https://www.github.com/googleapis/java-networkconnectivity/issues/30)) ([6553595](https://www.github.com/googleapis/java-networkconnectivity/commit/6553595295cb755ade627baf4da1e602cdc780d1))
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#25](https://www.github.com/googleapis/java-networkconnectivity/issues/25)) ([ed7ae3d](https://www.github.com/googleapis/java-networkconnectivity/commit/ed7ae3d1e88c4a951f5649ee2c27a80195110e26))
+* Minor changes ([e00b4f1](https://www.github.com/googleapis/java-networkconnectivity/commit/e00b4f1a24dab451215cb4b7ff3df5f5a03662ca))
+
 ## 0.1.0 (2021-01-28)
 
 
