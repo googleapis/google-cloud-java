@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-errorreporting</artifactId>
-      <version>0.120.32-beta</version>
+      <version>0.120.33-beta</version>
     </dependency>
     <!-- [END clouderrorreporting_install_without_bom] -->
 
