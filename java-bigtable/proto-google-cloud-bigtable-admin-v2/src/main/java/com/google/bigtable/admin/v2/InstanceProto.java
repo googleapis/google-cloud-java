@@ -40,6 +40,10 @@ public final class InstanceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_Cluster_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_Cluster_EncryptionConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_Cluster_EncryptionConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_bigtable_admin_v2_AppProfile_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_AppProfile_fieldAccessorTable;
@@ -76,35 +80,43 @@ public final class InstanceProto {
           + "UNSPECIFIED\020\000\022\016\n\nPRODUCTION\020\001\022\017\n\013DEVELOP"
           + "MENT\020\002:N\352AK\n bigtable.googleapis.com/Ins"
           + "tance\022\'projects/{project}/instances/{ins"
-          + "tance}\"\247\003\n\007Cluster\022\021\n\004name\030\001 \001(\tB\003\340A\003\0228\n"
+          + "tance}\"\315\004\n\007Cluster\022\021\n\004name\030\001 \001(\tB\003\340A\003\0228\n"
           + "\010location\030\002 \001(\tB&\372A#\n!locations.googleap"
           + "is.com/Location\022;\n\005state\030\003 \001(\0162\'.google."
           + "bigtable.admin.v2.Cluster.StateB\003\340A\003\022\030\n\013"
           + "serve_nodes\030\004 \001(\005B\003\340A\002\022C\n\024default_storag"
           + "e_type\030\005 \001(\0162%.google.bigtable.admin.v2."
-          + "StorageType\"Q\n\005State\022\023\n\017STATE_NOT_KNOWN\020"
-          + "\000\022\t\n\005READY\020\001\022\014\n\010CREATING\020\002\022\014\n\010RESIZING\020\003"
-          + "\022\014\n\010DISABLED\020\004:`\352A]\n\037bigtable.googleapis"
-          + ".com/Cluster\022:projects/{project}/instanc"
-          + "es/{instance}/clusters/{cluster}\"\356\003\n\nApp"
-          + "Profile\022\014\n\004name\030\001 \001(\t\022\014\n\004etag\030\002 \001(\t\022\023\n\013d"
-          + "escription\030\003 \001(\t\022g\n\035multi_cluster_routin"
-          + "g_use_any\030\005 \001(\0132>.google.bigtable.admin."
-          + "v2.AppProfile.MultiClusterRoutingUseAnyH"
-          + "\000\022[\n\026single_cluster_routing\030\006 \001(\01329.goog"
-          + "le.bigtable.admin.v2.AppProfile.SingleCl"
-          + "usterRoutingH\000\032\033\n\031MultiClusterRoutingUse"
-          + "Any\032N\n\024SingleClusterRouting\022\022\n\ncluster_i"
-          + "d\030\001 \001(\t\022\"\n\032allow_transactional_writes\030\002 "
-          + "\001(\010:j\352Ag\n\"bigtable.googleapis.com/AppPro"
-          + "file\022Aprojects/{project}/instances/{inst"
-          + "ance}/appProfiles/{app_profile}B\020\n\016routi"
-          + "ng_policyB\325\001\n\034com.google.bigtable.admin."
-          + "v2B\rInstanceProtoP\001Z=google.golang.org/g"
-          + "enproto/googleapis/bigtable/admin/v2;adm"
-          + "in\252\002\036Google.Cloud.Bigtable.Admin.V2\312\002\036Go"
-          + "ogle\\Cloud\\Bigtable\\Admin\\V2\352\002\"Google::C"
-          + "loud::Bigtable::Admin::V2b\006proto3"
+          + "StorageType\022R\n\021encryption_config\030\006 \001(\01322"
+          + ".google.bigtable.admin.v2.Cluster.Encryp"
+          + "tionConfigB\003\340A\005\032P\n\020EncryptionConfig\022<\n\014k"
+          + "ms_key_name\030\001 \001(\tB&\372A#\n!cloudkms.googlea"
+          + "pis.com/CryptoKey\"Q\n\005State\022\023\n\017STATE_NOT_"
+          + "KNOWN\020\000\022\t\n\005READY\020\001\022\014\n\010CREATING\020\002\022\014\n\010RESI"
+          + "ZING\020\003\022\014\n\010DISABLED\020\004:`\352A]\n\037bigtable.goog"
+          + "leapis.com/Cluster\022:projects/{project}/i"
+          + "nstances/{instance}/clusters/{cluster}\"\356"
+          + "\003\n\nAppProfile\022\014\n\004name\030\001 \001(\t\022\014\n\004etag\030\002 \001("
+          + "\t\022\023\n\013description\030\003 \001(\t\022g\n\035multi_cluster_"
+          + "routing_use_any\030\005 \001(\0132>.google.bigtable."
+          + "admin.v2.AppProfile.MultiClusterRoutingU"
+          + "seAnyH\000\022[\n\026single_cluster_routing\030\006 \001(\0132"
+          + "9.google.bigtable.admin.v2.AppProfile.Si"
+          + "ngleClusterRoutingH\000\032\033\n\031MultiClusterRout"
+          + "ingUseAny\032N\n\024SingleClusterRouting\022\022\n\nclu"
+          + "ster_id\030\001 \001(\t\022\"\n\032allow_transactional_wri"
+          + "tes\030\002 \001(\010:j\352Ag\n\"bigtable.googleapis.com/"
+          + "AppProfile\022Aprojects/{project}/instances"
+          + "/{instance}/appProfiles/{app_profile}B\020\n"
+          + "\016routing_policyB\320\002\n\034com.google.bigtable."
+          + "admin.v2B\rInstanceProtoP\001Z=google.golang"
+          + ".org/genproto/googleapis/bigtable/admin/"
+          + "v2;admin\252\002\036Google.Cloud.Bigtable.Admin.V"
+          + "2\312\002\036Google\\Cloud\\Bigtable\\Admin\\V2\352\002\"Goo"
+          + "gle::Cloud::Bigtable::Admin::V2\352Ax\n!clou"
+          + "dkms.googleapis.com/CryptoKey\022Sprojects/"
+          + "{project}/locations/{location}/keyRings/"
+          + "{key_ring}/cryptoKeys/{crypto_key}b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -136,7 +148,15 @@ public final class InstanceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_Cluster_descriptor,
             new java.lang.String[] {
-              "Name", "Location", "State", "ServeNodes", "DefaultStorageType",
+              "Name", "Location", "State", "ServeNodes", "DefaultStorageType", "EncryptionConfig",
+            });
+    internal_static_google_bigtable_admin_v2_Cluster_EncryptionConfig_descriptor =
+        internal_static_google_bigtable_admin_v2_Cluster_descriptor.getNestedTypes().get(0);
+    internal_static_google_bigtable_admin_v2_Cluster_EncryptionConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_Cluster_EncryptionConfig_descriptor,
+            new java.lang.String[] {
+              "KmsKeyName",
             });
     internal_static_google_bigtable_admin_v2_AppProfile_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -169,6 +189,7 @@ public final class InstanceProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);

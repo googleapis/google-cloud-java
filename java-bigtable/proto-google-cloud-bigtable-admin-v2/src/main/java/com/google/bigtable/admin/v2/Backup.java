@@ -143,6 +143,22 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
               state_ = rawValue;
               break;
             }
+          case 74:
+            {
+              com.google.bigtable.admin.v2.EncryptionInfo.Builder subBuilder = null;
+              if (encryptionInfo_ != null) {
+                subBuilder = encryptionInfo_.toBuilder();
+              }
+              encryptionInfo_ =
+                  input.readMessage(
+                      com.google.bigtable.admin.v2.EncryptionInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(encryptionInfo_);
+                encryptionInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -690,6 +706,60 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.bigtable.admin.v2.Backup.State.UNRECOGNIZED : result;
   }
 
+  public static final int ENCRYPTION_INFO_FIELD_NUMBER = 9;
+  private com.google.bigtable.admin.v2.EncryptionInfo encryptionInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The encryption information for the backup.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.EncryptionInfo encryption_info = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the encryptionInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionInfo() {
+    return encryptionInfo_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The encryption information for the backup.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.EncryptionInfo encryption_info = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The encryptionInfo.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.EncryptionInfo getEncryptionInfo() {
+    return encryptionInfo_ == null
+        ? com.google.bigtable.admin.v2.EncryptionInfo.getDefaultInstance()
+        : encryptionInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The encryption information for the backup.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.EncryptionInfo encryption_info = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder() {
+    return getEncryptionInfo();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -725,6 +795,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (state_ != com.google.bigtable.admin.v2.Backup.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(7, state_);
     }
+    if (encryptionInfo_ != null) {
+      output.writeMessage(9, getEncryptionInfo());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -754,6 +827,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     }
     if (state_ != com.google.bigtable.admin.v2.Backup.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, state_);
+    }
+    if (encryptionInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getEncryptionInfo());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -786,6 +862,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     }
     if (getSizeBytes() != other.getSizeBytes()) return false;
     if (state_ != other.state_) return false;
+    if (hasEncryptionInfo() != other.hasEncryptionInfo()) return false;
+    if (hasEncryptionInfo()) {
+      if (!getEncryptionInfo().equals(other.getEncryptionInfo())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -817,6 +897,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSizeBytes());
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    if (hasEncryptionInfo()) {
+      hash = (37 * hash) + ENCRYPTION_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionInfo().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -987,6 +1071,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
 
       state_ = 0;
 
+      if (encryptionInfoBuilder_ == null) {
+        encryptionInfo_ = null;
+      } else {
+        encryptionInfo_ = null;
+        encryptionInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -1032,6 +1122,11 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       result.sizeBytes_ = sizeBytes_;
       result.state_ = state_;
+      if (encryptionInfoBuilder_ == null) {
+        result.encryptionInfo_ = encryptionInfo_;
+      } else {
+        result.encryptionInfo_ = encryptionInfoBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1103,6 +1198,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
+      }
+      if (other.hasEncryptionInfo()) {
+        mergeEncryptionInfo(other.getEncryptionInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2205,6 +2303,210 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       state_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.bigtable.admin.v2.EncryptionInfo encryptionInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.EncryptionInfo,
+            com.google.bigtable.admin.v2.EncryptionInfo.Builder,
+            com.google.bigtable.admin.v2.EncryptionInfoOrBuilder>
+        encryptionInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The encryption information for the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.EncryptionInfo encryption_info = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the encryptionInfo field is set.
+     */
+    public boolean hasEncryptionInfo() {
+      return encryptionInfoBuilder_ != null || encryptionInfo_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The encryption information for the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.EncryptionInfo encryption_info = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The encryptionInfo.
+     */
+    public com.google.bigtable.admin.v2.EncryptionInfo getEncryptionInfo() {
+      if (encryptionInfoBuilder_ == null) {
+        return encryptionInfo_ == null
+            ? com.google.bigtable.admin.v2.EncryptionInfo.getDefaultInstance()
+            : encryptionInfo_;
+      } else {
+        return encryptionInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The encryption information for the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.EncryptionInfo encryption_info = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEncryptionInfo(com.google.bigtable.admin.v2.EncryptionInfo value) {
+      if (encryptionInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionInfo_ = value;
+        onChanged();
+      } else {
+        encryptionInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The encryption information for the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.EncryptionInfo encryption_info = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEncryptionInfo(
+        com.google.bigtable.admin.v2.EncryptionInfo.Builder builderForValue) {
+      if (encryptionInfoBuilder_ == null) {
+        encryptionInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        encryptionInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The encryption information for the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.EncryptionInfo encryption_info = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeEncryptionInfo(com.google.bigtable.admin.v2.EncryptionInfo value) {
+      if (encryptionInfoBuilder_ == null) {
+        if (encryptionInfo_ != null) {
+          encryptionInfo_ =
+              com.google.bigtable.admin.v2.EncryptionInfo.newBuilder(encryptionInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          encryptionInfo_ = value;
+        }
+        onChanged();
+      } else {
+        encryptionInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The encryption information for the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.EncryptionInfo encryption_info = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearEncryptionInfo() {
+      if (encryptionInfoBuilder_ == null) {
+        encryptionInfo_ = null;
+        onChanged();
+      } else {
+        encryptionInfo_ = null;
+        encryptionInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The encryption information for the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.EncryptionInfo encryption_info = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.bigtable.admin.v2.EncryptionInfo.Builder getEncryptionInfoBuilder() {
+
+      onChanged();
+      return getEncryptionInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The encryption information for the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.EncryptionInfo encryption_info = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.bigtable.admin.v2.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder() {
+      if (encryptionInfoBuilder_ != null) {
+        return encryptionInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionInfo_ == null
+            ? com.google.bigtable.admin.v2.EncryptionInfo.getDefaultInstance()
+            : encryptionInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The encryption information for the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.EncryptionInfo encryption_info = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.EncryptionInfo,
+            com.google.bigtable.admin.v2.EncryptionInfo.Builder,
+            com.google.bigtable.admin.v2.EncryptionInfoOrBuilder>
+        getEncryptionInfoFieldBuilder() {
+      if (encryptionInfoBuilder_ == null) {
+        encryptionInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.EncryptionInfo,
+                com.google.bigtable.admin.v2.EncryptionInfo.Builder,
+                com.google.bigtable.admin.v2.EncryptionInfoOrBuilder>(
+                getEncryptionInfo(), getParentForChildren(), isClean());
+        encryptionInfo_ = null;
+      }
+      return encryptionInfoBuilder_;
     }
 
     @java.lang.Override

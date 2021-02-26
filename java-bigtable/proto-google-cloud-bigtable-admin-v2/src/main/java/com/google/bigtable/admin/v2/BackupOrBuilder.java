@@ -279,4 +279,45 @@ public interface BackupOrBuilder
    * @return The state.
    */
   com.google.bigtable.admin.v2.Backup.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The encryption information for the backup.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.EncryptionInfo encryption_info = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the encryptionInfo field is set.
+   */
+  boolean hasEncryptionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The encryption information for the backup.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.EncryptionInfo encryption_info = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The encryptionInfo.
+   */
+  com.google.bigtable.admin.v2.EncryptionInfo getEncryptionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The encryption information for the backup.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.EncryptionInfo encryption_info = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.bigtable.admin.v2.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder();
 }

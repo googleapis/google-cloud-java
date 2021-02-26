@@ -272,28 +272,34 @@ public class GrpcBigtableStub extends BigtableStub {
     return operationsStub;
   }
 
+  @Override
   public ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> readRowsCallable() {
     return readRowsCallable;
   }
 
+  @Override
   public ServerStreamingCallable<SampleRowKeysRequest, SampleRowKeysResponse>
       sampleRowKeysCallable() {
     return sampleRowKeysCallable;
   }
 
+  @Override
   public UnaryCallable<MutateRowRequest, MutateRowResponse> mutateRowCallable() {
     return mutateRowCallable;
   }
 
+  @Override
   public ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> mutateRowsCallable() {
     return mutateRowsCallable;
   }
 
+  @Override
   public UnaryCallable<CheckAndMutateRowRequest, CheckAndMutateRowResponse>
       checkAndMutateRowCallable() {
     return checkAndMutateRowCallable;
   }
 
+  @Override
   public UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
       readModifyWriteRowCallable() {
     return readModifyWriteRowCallable;

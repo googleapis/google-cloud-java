@@ -108,6 +108,23 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
               defaultStorageType_ = rawValue;
               break;
             }
+          case 50:
+            {
+              com.google.bigtable.admin.v2.Cluster.EncryptionConfig.Builder subBuilder = null;
+              if (encryptionConfig_ != null) {
+                subBuilder = encryptionConfig_.toBuilder();
+              }
+              encryptionConfig_ =
+                  input.readMessage(
+                      com.google.bigtable.admin.v2.Cluster.EncryptionConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(encryptionConfig_);
+                encryptionConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -357,6 +374,724 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.bigtable.admin.v2.Cluster.State)
   }
 
+  public interface EncryptionConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Cluster.EncryptionConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes the Cloud KMS encryption key that will be used to protect the
+     * destination Bigtable cluster. The requirements for this key are:
+     *  1) The Cloud Bigtable service account associated with the project that
+     *  contains this cluster must be granted the
+     *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
+     *  2) Only regional keys can be used and the region of the CMEK key must
+     *  match the region of the cluster.
+     * 3) All clusters within an instance must use the same CMEK key.
+     * </pre>
+     *
+     * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The kmsKeyName.
+     */
+    java.lang.String getKmsKeyName();
+    /**
+     *
+     *
+     * <pre>
+     * Describes the Cloud KMS encryption key that will be used to protect the
+     * destination Bigtable cluster. The requirements for this key are:
+     *  1) The Cloud Bigtable service account associated with the project that
+     *  contains this cluster must be granted the
+     *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
+     *  2) Only regional keys can be used and the region of the CMEK key must
+     *  match the region of the cluster.
+     * 3) All clusters within an instance must use the same CMEK key.
+     * </pre>
+     *
+     * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for kmsKeyName.
+     */
+    com.google.protobuf.ByteString getKmsKeyNameBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Key Management Service (Cloud KMS) settings for a CMEK-protected
+   * cluster.
+   * </pre>
+   *
+   * Protobuf type {@code google.bigtable.admin.v2.Cluster.EncryptionConfig}
+   */
+  public static final class EncryptionConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Cluster.EncryptionConfig)
+      EncryptionConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use EncryptionConfig.newBuilder() to construct.
+    private EncryptionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private EncryptionConfig() {
+      kmsKeyName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new EncryptionConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private EncryptionConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                kmsKeyName_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.InstanceProto
+          .internal_static_google_bigtable_admin_v2_Cluster_EncryptionConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.bigtable.admin.v2.InstanceProto
+          .internal_static_google_bigtable_admin_v2_Cluster_EncryptionConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.bigtable.admin.v2.Cluster.EncryptionConfig.class,
+              com.google.bigtable.admin.v2.Cluster.EncryptionConfig.Builder.class);
+    }
+
+    public static final int KMS_KEY_NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object kmsKeyName_;
+    /**
+     *
+     *
+     * <pre>
+     * Describes the Cloud KMS encryption key that will be used to protect the
+     * destination Bigtable cluster. The requirements for this key are:
+     *  1) The Cloud Bigtable service account associated with the project that
+     *  contains this cluster must be granted the
+     *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
+     *  2) Only regional keys can be used and the region of the CMEK key must
+     *  match the region of the cluster.
+     * 3) All clusters within an instance must use the same CMEK key.
+     * </pre>
+     *
+     * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The kmsKeyName.
+     */
+    @java.lang.Override
+    public java.lang.String getKmsKeyName() {
+      java.lang.Object ref = kmsKeyName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKeyName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes the Cloud KMS encryption key that will be used to protect the
+     * destination Bigtable cluster. The requirements for this key are:
+     *  1) The Cloud Bigtable service account associated with the project that
+     *  contains this cluster must be granted the
+     *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
+     *  2) Only regional keys can be used and the region of the CMEK key must
+     *  match the region of the cluster.
+     * 3) All clusters within an instance must use the same CMEK key.
+     * </pre>
+     *
+     * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for kmsKeyName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getKmsKeyNameBytes() {
+      java.lang.Object ref = kmsKeyName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKeyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!getKmsKeyNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kmsKeyName_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getKmsKeyNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kmsKeyName_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.bigtable.admin.v2.Cluster.EncryptionConfig)) {
+        return super.equals(obj);
+      }
+      com.google.bigtable.admin.v2.Cluster.EncryptionConfig other =
+          (com.google.bigtable.admin.v2.Cluster.EncryptionConfig) obj;
+
+      if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getKmsKeyName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.EncryptionConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.EncryptionConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.EncryptionConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.EncryptionConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.EncryptionConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.EncryptionConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.EncryptionConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.EncryptionConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.EncryptionConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.EncryptionConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.EncryptionConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.EncryptionConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.bigtable.admin.v2.Cluster.EncryptionConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Key Management Service (Cloud KMS) settings for a CMEK-protected
+     * cluster.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.Cluster.EncryptionConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Cluster.EncryptionConfig)
+        com.google.bigtable.admin.v2.Cluster.EncryptionConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.InstanceProto
+            .internal_static_google_bigtable_admin_v2_Cluster_EncryptionConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.InstanceProto
+            .internal_static_google_bigtable_admin_v2_Cluster_EncryptionConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.Cluster.EncryptionConfig.class,
+                com.google.bigtable.admin.v2.Cluster.EncryptionConfig.Builder.class);
+      }
+
+      // Construct using com.google.bigtable.admin.v2.Cluster.EncryptionConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        kmsKeyName_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.bigtable.admin.v2.InstanceProto
+            .internal_static_google_bigtable_admin_v2_Cluster_EncryptionConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Cluster.EncryptionConfig getDefaultInstanceForType() {
+        return com.google.bigtable.admin.v2.Cluster.EncryptionConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Cluster.EncryptionConfig build() {
+        com.google.bigtable.admin.v2.Cluster.EncryptionConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.Cluster.EncryptionConfig buildPartial() {
+        com.google.bigtable.admin.v2.Cluster.EncryptionConfig result =
+            new com.google.bigtable.admin.v2.Cluster.EncryptionConfig(this);
+        result.kmsKeyName_ = kmsKeyName_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.bigtable.admin.v2.Cluster.EncryptionConfig) {
+          return mergeFrom((com.google.bigtable.admin.v2.Cluster.EncryptionConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.bigtable.admin.v2.Cluster.EncryptionConfig other) {
+        if (other == com.google.bigtable.admin.v2.Cluster.EncryptionConfig.getDefaultInstance())
+          return this;
+        if (!other.getKmsKeyName().isEmpty()) {
+          kmsKeyName_ = other.kmsKeyName_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.bigtable.admin.v2.Cluster.EncryptionConfig parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.bigtable.admin.v2.Cluster.EncryptionConfig) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object kmsKeyName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Describes the Cloud KMS encryption key that will be used to protect the
+       * destination Bigtable cluster. The requirements for this key are:
+       *  1) The Cloud Bigtable service account associated with the project that
+       *  contains this cluster must be granted the
+       *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
+       *  2) Only regional keys can be used and the region of the CMEK key must
+       *  match the region of the cluster.
+       * 3) All clusters within an instance must use the same CMEK key.
+       * </pre>
+       *
+       * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The kmsKeyName.
+       */
+      public java.lang.String getKmsKeyName() {
+        java.lang.Object ref = kmsKeyName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          kmsKeyName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Describes the Cloud KMS encryption key that will be used to protect the
+       * destination Bigtable cluster. The requirements for this key are:
+       *  1) The Cloud Bigtable service account associated with the project that
+       *  contains this cluster must be granted the
+       *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
+       *  2) Only regional keys can be used and the region of the CMEK key must
+       *  match the region of the cluster.
+       * 3) All clusters within an instance must use the same CMEK key.
+       * </pre>
+       *
+       * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The bytes for kmsKeyName.
+       */
+      public com.google.protobuf.ByteString getKmsKeyNameBytes() {
+        java.lang.Object ref = kmsKeyName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          kmsKeyName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Describes the Cloud KMS encryption key that will be used to protect the
+       * destination Bigtable cluster. The requirements for this key are:
+       *  1) The Cloud Bigtable service account associated with the project that
+       *  contains this cluster must be granted the
+       *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
+       *  2) Only regional keys can be used and the region of the CMEK key must
+       *  match the region of the cluster.
+       * 3) All clusters within an instance must use the same CMEK key.
+       * </pre>
+       *
+       * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param value The kmsKeyName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKmsKeyName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        kmsKeyName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Describes the Cloud KMS encryption key that will be used to protect the
+       * destination Bigtable cluster. The requirements for this key are:
+       *  1) The Cloud Bigtable service account associated with the project that
+       *  contains this cluster must be granted the
+       *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
+       *  2) Only regional keys can be used and the region of the CMEK key must
+       *  match the region of the cluster.
+       * 3) All clusters within an instance must use the same CMEK key.
+       * </pre>
+       *
+       * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearKmsKeyName() {
+
+        kmsKeyName_ = getDefaultInstance().getKmsKeyName();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Describes the Cloud KMS encryption key that will be used to protect the
+       * destination Bigtable cluster. The requirements for this key are:
+       *  1) The Cloud Bigtable service account associated with the project that
+       *  contains this cluster must be granted the
+       *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
+       *  2) Only regional keys can be used and the region of the CMEK key must
+       *  match the region of the cluster.
+       * 3) All clusters within an instance must use the same CMEK key.
+       * </pre>
+       *
+       * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param value The bytes for kmsKeyName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKmsKeyNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        kmsKeyName_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Cluster.EncryptionConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Cluster.EncryptionConfig)
+    private static final com.google.bigtable.admin.v2.Cluster.EncryptionConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.Cluster.EncryptionConfig();
+    }
+
+    public static com.google.bigtable.admin.v2.Cluster.EncryptionConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EncryptionConfig> PARSER =
+        new com.google.protobuf.AbstractParser<EncryptionConfig>() {
+          @java.lang.Override
+          public EncryptionConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new EncryptionConfig(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<EncryptionConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EncryptionConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Cluster.EncryptionConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -564,6 +1299,61 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.bigtable.admin.v2.StorageType.UNRECOGNIZED : result;
   }
 
+  public static final int ENCRYPTION_CONFIG_FIELD_NUMBER = 6;
+  private com.google.bigtable.admin.v2.Cluster.EncryptionConfig encryptionConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The encryption configuration for CMEK-protected clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.Cluster.EncryptionConfig encryption_config = 6 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the encryptionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionConfig() {
+    return encryptionConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The encryption configuration for CMEK-protected clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.Cluster.EncryptionConfig encryption_config = 6 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The encryptionConfig.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Cluster.EncryptionConfig getEncryptionConfig() {
+    return encryptionConfig_ == null
+        ? com.google.bigtable.admin.v2.Cluster.EncryptionConfig.getDefaultInstance()
+        : encryptionConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The encryption configuration for CMEK-protected clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.Cluster.EncryptionConfig encryption_config = 6 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Cluster.EncryptionConfigOrBuilder
+      getEncryptionConfigOrBuilder() {
+    return getEncryptionConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -594,6 +1384,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         != com.google.bigtable.admin.v2.StorageType.STORAGE_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, defaultStorageType_);
     }
+    if (encryptionConfig_ != null) {
+      output.writeMessage(6, getEncryptionConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -619,6 +1412,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         != com.google.bigtable.admin.v2.StorageType.STORAGE_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, defaultStorageType_);
     }
+    if (encryptionConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getEncryptionConfig());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -639,6 +1435,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (state_ != other.state_) return false;
     if (getServeNodes() != other.getServeNodes()) return false;
     if (defaultStorageType_ != other.defaultStorageType_) return false;
+    if (hasEncryptionConfig() != other.hasEncryptionConfig()) return false;
+    if (hasEncryptionConfig()) {
+      if (!getEncryptionConfig().equals(other.getEncryptionConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -660,6 +1460,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getServeNodes();
     hash = (37 * hash) + DEFAULT_STORAGE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + defaultStorageType_;
+    if (hasEncryptionConfig()) {
+      hash = (37 * hash) + ENCRYPTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionConfig().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -816,6 +1620,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
       defaultStorageType_ = 0;
 
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfig_ = null;
+      } else {
+        encryptionConfig_ = null;
+        encryptionConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -847,6 +1657,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       result.state_ = state_;
       result.serveNodes_ = serveNodes_;
       result.defaultStorageType_ = defaultStorageType_;
+      if (encryptionConfigBuilder_ == null) {
+        result.encryptionConfig_ = encryptionConfig_;
+      } else {
+        result.encryptionConfig_ = encryptionConfigBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -912,6 +1727,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.defaultStorageType_ != 0) {
         setDefaultStorageTypeValue(other.getDefaultStorageTypeValue());
+      }
+      if (other.hasEncryptionConfig()) {
+        mergeEncryptionConfig(other.getEncryptionConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1434,6 +2252,214 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       defaultStorageType_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.bigtable.admin.v2.Cluster.EncryptionConfig encryptionConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Cluster.EncryptionConfig,
+            com.google.bigtable.admin.v2.Cluster.EncryptionConfig.Builder,
+            com.google.bigtable.admin.v2.Cluster.EncryptionConfigOrBuilder>
+        encryptionConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The encryption configuration for CMEK-protected clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Cluster.EncryptionConfig encryption_config = 6 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the encryptionConfig field is set.
+     */
+    public boolean hasEncryptionConfig() {
+      return encryptionConfigBuilder_ != null || encryptionConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The encryption configuration for CMEK-protected clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Cluster.EncryptionConfig encryption_config = 6 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The encryptionConfig.
+     */
+    public com.google.bigtable.admin.v2.Cluster.EncryptionConfig getEncryptionConfig() {
+      if (encryptionConfigBuilder_ == null) {
+        return encryptionConfig_ == null
+            ? com.google.bigtable.admin.v2.Cluster.EncryptionConfig.getDefaultInstance()
+            : encryptionConfig_;
+      } else {
+        return encryptionConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The encryption configuration for CMEK-protected clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Cluster.EncryptionConfig encryption_config = 6 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setEncryptionConfig(
+        com.google.bigtable.admin.v2.Cluster.EncryptionConfig value) {
+      if (encryptionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionConfig_ = value;
+        onChanged();
+      } else {
+        encryptionConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The encryption configuration for CMEK-protected clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Cluster.EncryptionConfig encryption_config = 6 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setEncryptionConfig(
+        com.google.bigtable.admin.v2.Cluster.EncryptionConfig.Builder builderForValue) {
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        encryptionConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The encryption configuration for CMEK-protected clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Cluster.EncryptionConfig encryption_config = 6 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeEncryptionConfig(
+        com.google.bigtable.admin.v2.Cluster.EncryptionConfig value) {
+      if (encryptionConfigBuilder_ == null) {
+        if (encryptionConfig_ != null) {
+          encryptionConfig_ =
+              com.google.bigtable.admin.v2.Cluster.EncryptionConfig.newBuilder(encryptionConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          encryptionConfig_ = value;
+        }
+        onChanged();
+      } else {
+        encryptionConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The encryption configuration for CMEK-protected clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Cluster.EncryptionConfig encryption_config = 6 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearEncryptionConfig() {
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfig_ = null;
+        onChanged();
+      } else {
+        encryptionConfig_ = null;
+        encryptionConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The encryption configuration for CMEK-protected clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Cluster.EncryptionConfig encryption_config = 6 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.bigtable.admin.v2.Cluster.EncryptionConfig.Builder
+        getEncryptionConfigBuilder() {
+
+      onChanged();
+      return getEncryptionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The encryption configuration for CMEK-protected clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Cluster.EncryptionConfig encryption_config = 6 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.bigtable.admin.v2.Cluster.EncryptionConfigOrBuilder
+        getEncryptionConfigOrBuilder() {
+      if (encryptionConfigBuilder_ != null) {
+        return encryptionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionConfig_ == null
+            ? com.google.bigtable.admin.v2.Cluster.EncryptionConfig.getDefaultInstance()
+            : encryptionConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The encryption configuration for CMEK-protected clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Cluster.EncryptionConfig encryption_config = 6 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Cluster.EncryptionConfig,
+            com.google.bigtable.admin.v2.Cluster.EncryptionConfig.Builder,
+            com.google.bigtable.admin.v2.Cluster.EncryptionConfigOrBuilder>
+        getEncryptionConfigFieldBuilder() {
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.Cluster.EncryptionConfig,
+                com.google.bigtable.admin.v2.Cluster.EncryptionConfig.Builder,
+                com.google.bigtable.admin.v2.Cluster.EncryptionConfigOrBuilder>(
+                getEncryptionConfig(), getParentForChildren(), isClean());
+        encryptionConfig_ = null;
+      }
+      return encryptionConfigBuilder_;
     }
 
     @java.lang.Override

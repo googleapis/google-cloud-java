@@ -1,0 +1,150 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.bigtable.admin.v2",
+  "libraryPackage": "com.google.cloud.bigtable.admin.v2",
+  "services": {
+    "BigtableInstanceAdmin": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BaseBigtableInstanceAdminClient",
+          "rpcs": {
+            "CreateAppProfile": {
+              "methods": ["createAppProfile", "createAppProfile", "createAppProfile", "createAppProfileCallable"]
+            },
+            "CreateCluster": {
+              "methods": ["createClusterAsync", "createClusterAsync", "createClusterAsync", "createClusterOperationCallable", "createClusterCallable"]
+            },
+            "CreateInstance": {
+              "methods": ["createInstanceAsync", "createInstanceAsync", "createInstanceAsync", "createInstanceOperationCallable", "createInstanceCallable"]
+            },
+            "DeleteAppProfile": {
+              "methods": ["deleteAppProfile", "deleteAppProfile", "deleteAppProfile", "deleteAppProfileCallable"]
+            },
+            "DeleteCluster": {
+              "methods": ["deleteCluster", "deleteCluster", "deleteCluster", "deleteClusterCallable"]
+            },
+            "DeleteInstance": {
+              "methods": ["deleteInstance", "deleteInstance", "deleteInstance", "deleteInstanceCallable"]
+            },
+            "GetAppProfile": {
+              "methods": ["getAppProfile", "getAppProfile", "getAppProfile", "getAppProfileCallable"]
+            },
+            "GetCluster": {
+              "methods": ["getCluster", "getCluster", "getCluster", "getClusterCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetInstance": {
+              "methods": ["getInstance", "getInstance", "getInstance", "getInstanceCallable"]
+            },
+            "ListAppProfiles": {
+              "methods": ["listAppProfiles", "listAppProfiles", "listAppProfiles", "listAppProfilesPagedCallable", "listAppProfilesCallable"]
+            },
+            "ListClusters": {
+              "methods": ["listClusters", "listClusters", "listClusters", "listClustersCallable"]
+            },
+            "ListInstances": {
+              "methods": ["listInstances", "listInstances", "listInstances", "listInstancesCallable"]
+            },
+            "PartialUpdateInstance": {
+              "methods": ["partialUpdateInstanceAsync", "partialUpdateInstanceAsync", "partialUpdateInstanceOperationCallable", "partialUpdateInstanceCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateAppProfile": {
+              "methods": ["updateAppProfileAsync", "updateAppProfileAsync", "updateAppProfileOperationCallable", "updateAppProfileCallable"]
+            },
+            "UpdateCluster": {
+              "methods": ["updateClusterAsync", "updateClusterOperationCallable", "updateClusterCallable"]
+            },
+            "UpdateInstance": {
+              "methods": ["updateInstance", "updateInstanceCallable"]
+            }
+          }
+        }
+      }
+    },
+    "BigtableTableAdmin": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BaseBigtableTableAdminClient",
+          "rpcs": {
+            "CheckConsistency": {
+              "methods": ["checkConsistency", "checkConsistency", "checkConsistency", "checkConsistencyCallable"]
+            },
+            "CreateBackup": {
+              "methods": ["createBackupAsync", "createBackupAsync", "createBackupAsync", "createBackupOperationCallable", "createBackupCallable"]
+            },
+            "CreateTable": {
+              "methods": ["createTable", "createTable", "createTable", "createTableCallable"]
+            },
+            "CreateTableFromSnapshot": {
+              "methods": ["createTableFromSnapshotAsync", "createTableFromSnapshotAsync", "createTableFromSnapshotAsync", "createTableFromSnapshotAsync", "createTableFromSnapshotAsync", "createTableFromSnapshotOperationCallable", "createTableFromSnapshotCallable"]
+            },
+            "DeleteBackup": {
+              "methods": ["deleteBackup", "deleteBackup", "deleteBackup", "deleteBackupCallable"]
+            },
+            "DeleteSnapshot": {
+              "methods": ["deleteSnapshot", "deleteSnapshot", "deleteSnapshot", "deleteSnapshotCallable"]
+            },
+            "DeleteTable": {
+              "methods": ["deleteTable", "deleteTable", "deleteTable", "deleteTableCallable"]
+            },
+            "DropRowRange": {
+              "methods": ["dropRowRange", "dropRowRangeCallable"]
+            },
+            "GenerateConsistencyToken": {
+              "methods": ["generateConsistencyToken", "generateConsistencyToken", "generateConsistencyToken", "generateConsistencyTokenCallable"]
+            },
+            "GetBackup": {
+              "methods": ["getBackup", "getBackup", "getBackup", "getBackupCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetSnapshot": {
+              "methods": ["getSnapshot", "getSnapshot", "getSnapshot", "getSnapshotCallable"]
+            },
+            "GetTable": {
+              "methods": ["getTable", "getTable", "getTable", "getTableCallable"]
+            },
+            "ListBackups": {
+              "methods": ["listBackups", "listBackups", "listBackups", "listBackupsPagedCallable", "listBackupsCallable"]
+            },
+            "ListSnapshots": {
+              "methods": ["listSnapshots", "listSnapshots", "listSnapshots", "listSnapshotsPagedCallable", "listSnapshotsCallable"]
+            },
+            "ListTables": {
+              "methods": ["listTables", "listTables", "listTables", "listTablesPagedCallable", "listTablesCallable"]
+            },
+            "ModifyColumnFamilies": {
+              "methods": ["modifyColumnFamilies", "modifyColumnFamilies", "modifyColumnFamilies", "modifyColumnFamiliesCallable"]
+            },
+            "RestoreTable": {
+              "methods": ["restoreTableAsync", "restoreTableOperationCallable", "restoreTableCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "SnapshotTable": {
+              "methods": ["snapshotTableAsync", "snapshotTableAsync", "snapshotTableAsync", "snapshotTableAsync", "snapshotTableAsync", "snapshotTableOperationCallable", "snapshotTableCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateBackup": {
+              "methods": ["updateBackup", "updateBackup", "updateBackupCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

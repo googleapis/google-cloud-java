@@ -154,4 +154,45 @@ public interface ClusterOrBuilder
    * @return The defaultStorageType.
    */
   com.google.bigtable.admin.v2.StorageType getDefaultStorageType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The encryption configuration for CMEK-protected clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.Cluster.EncryptionConfig encryption_config = 6 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the encryptionConfig field is set.
+   */
+  boolean hasEncryptionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The encryption configuration for CMEK-protected clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.Cluster.EncryptionConfig encryption_config = 6 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The encryptionConfig.
+   */
+  com.google.bigtable.admin.v2.Cluster.EncryptionConfig getEncryptionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The encryption configuration for CMEK-protected clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.Cluster.EncryptionConfig encryption_config = 6 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.bigtable.admin.v2.Cluster.EncryptionConfigOrBuilder getEncryptionConfigOrBuilder();
 }

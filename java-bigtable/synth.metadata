@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigtable.git",
-        "sha": "97fafff4750152c95d339b48d1d7892e24cb2edb"
+        "sha": "60d17dc1d0a0a568a8bdd3bcc1e7491c17142af3"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "8d8c008e56f1af31d57f75561e0f1848ffb29eeb",
-        "internalRef": "356341083"
+        "sha": "eabec5a21219401bad79e1cc7d900c1658aee5fd",
+        "internalRef": "359130387"
       }
     },
     {
@@ -108,6 +108,7 @@
     "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminSettings.java",
     "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableTableAdminClient.java",
     "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableTableAdminSettings.java",
+    "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/gapic_metadata.json",
     "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/BigtableInstanceAdminStub.java",
     "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/BigtableInstanceAdminStubSettings.java",
     "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/BigtableTableAdminStub.java",
@@ -116,6 +117,7 @@
     "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableInstanceAdminStub.java",
     "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableTableAdminCallableFactory.java",
     "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/stub/GrpcBigtableTableAdminStub.java",
+    "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/gapic_metadata.json",
     "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStub.java",
     "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStubSettings.java",
     "google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableCallableFactory.java",
@@ -171,6 +173,8 @@
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateTableFromSnapshotRequestOrBuilder.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateTableRequest.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CreateTableRequestOrBuilder.java",
+    "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CryptoKeyName.java",
+    "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/CryptoKeyVersionName.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DeleteAppProfileRequest.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DeleteAppProfileRequestOrBuilder.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DeleteBackupRequest.java",
@@ -185,6 +189,8 @@
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DeleteTableRequestOrBuilder.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DropRowRangeRequest.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/DropRowRangeRequestOrBuilder.java",
+    "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/EncryptionInfo.java",
+    "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/EncryptionInfoOrBuilder.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/GcRule.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/GcRuleOrBuilder.java",
     "proto-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/GenerateConsistencyTokenRequest.java",

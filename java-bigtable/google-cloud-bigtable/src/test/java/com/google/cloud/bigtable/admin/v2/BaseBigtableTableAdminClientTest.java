@@ -42,6 +42,7 @@ import com.google.bigtable.admin.v2.DeleteBackupRequest;
 import com.google.bigtable.admin.v2.DeleteSnapshotRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
+import com.google.bigtable.admin.v2.EncryptionInfo;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
 import com.google.bigtable.admin.v2.GetBackupRequest;
@@ -1486,6 +1487,7 @@ public class BaseBigtableTableAdminClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setSizeBytes(-1796325715)
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1543,6 +1545,7 @@ public class BaseBigtableTableAdminClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setSizeBytes(-1796325715)
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1600,6 +1603,7 @@ public class BaseBigtableTableAdminClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setSizeBytes(-1796325715)
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
@@ -1643,6 +1647,7 @@ public class BaseBigtableTableAdminClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setSizeBytes(-1796325715)
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
@@ -1686,6 +1691,7 @@ public class BaseBigtableTableAdminClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setSizeBytes(-1796325715)
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 

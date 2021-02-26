@@ -779,126 +779,155 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateTableRequest, Table> createTableCallable() {
     return createTableCallable;
   }
 
+  @Override
   public UnaryCallable<CreateTableFromSnapshotRequest, Operation>
       createTableFromSnapshotCallable() {
     return createTableFromSnapshotCallable;
   }
 
+  @Override
   public OperationCallable<CreateTableFromSnapshotRequest, Table, CreateTableFromSnapshotMetadata>
       createTableFromSnapshotOperationCallable() {
     return createTableFromSnapshotOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ListTablesRequest, ListTablesResponse> listTablesCallable() {
     return listTablesCallable;
   }
 
+  @Override
   public UnaryCallable<ListTablesRequest, ListTablesPagedResponse> listTablesPagedCallable() {
     return listTablesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetTableRequest, Table> getTableCallable() {
     return getTableCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteTableRequest, Empty> deleteTableCallable() {
     return deleteTableCallable;
   }
 
+  @Override
   public UnaryCallable<ModifyColumnFamiliesRequest, Table> modifyColumnFamiliesCallable() {
     return modifyColumnFamiliesCallable;
   }
 
+  @Override
   public UnaryCallable<DropRowRangeRequest, Empty> dropRowRangeCallable() {
     return dropRowRangeCallable;
   }
 
+  @Override
   public UnaryCallable<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse>
       generateConsistencyTokenCallable() {
     return generateConsistencyTokenCallable;
   }
 
+  @Override
   public UnaryCallable<CheckConsistencyRequest, CheckConsistencyResponse>
       checkConsistencyCallable() {
     return checkConsistencyCallable;
   }
 
+  @Override
   public UnaryCallable<SnapshotTableRequest, Operation> snapshotTableCallable() {
     return snapshotTableCallable;
   }
 
+  @Override
   public OperationCallable<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
       snapshotTableOperationCallable() {
     return snapshotTableOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetSnapshotRequest, Snapshot> getSnapshotCallable() {
     return getSnapshotCallable;
   }
 
+  @Override
   public UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsCallable() {
     return listSnapshotsCallable;
   }
 
+  @Override
   public UnaryCallable<ListSnapshotsRequest, ListSnapshotsPagedResponse>
       listSnapshotsPagedCallable() {
     return listSnapshotsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteSnapshotRequest, Empty> deleteSnapshotCallable() {
     return deleteSnapshotCallable;
   }
 
+  @Override
   public UnaryCallable<CreateBackupRequest, Operation> createBackupCallable() {
     return createBackupCallable;
   }
 
+  @Override
   public OperationCallable<CreateBackupRequest, Backup, CreateBackupMetadata>
       createBackupOperationCallable() {
     return createBackupOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetBackupRequest, Backup> getBackupCallable() {
     return getBackupCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateBackupRequest, Backup> updateBackupCallable() {
     return updateBackupCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteBackupRequest, Empty> deleteBackupCallable() {
     return deleteBackupCallable;
   }
 
+  @Override
   public UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
     return listBackupsCallable;
   }
 
+  @Override
   public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
     return listBackupsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<RestoreTableRequest, Operation> restoreTableCallable() {
     return restoreTableCallable;
   }
 
+  @Override
   public OperationCallable<RestoreTableRequest, Table, RestoreTableMetadata>
       restoreTableOperationCallable() {
     return restoreTableOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

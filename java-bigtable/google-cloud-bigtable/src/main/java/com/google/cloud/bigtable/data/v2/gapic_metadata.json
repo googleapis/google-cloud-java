@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.bigtable.v2",
+  "libraryPackage": "com.google.cloud.bigtable.data.v2",
+  "services": {
+    "Bigtable": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BaseBigtableDataClient",
+          "rpcs": {
+            "CheckAndMutateRow": {
+              "methods": ["checkAndMutateRow", "checkAndMutateRow", "checkAndMutateRow", "checkAndMutateRow", "checkAndMutateRow", "checkAndMutateRowCallable"]
+            },
+            "MutateRow": {
+              "methods": ["mutateRow", "mutateRow", "mutateRow", "mutateRow", "mutateRow", "mutateRowCallable"]
+            },
+            "MutateRows": {
+              "methods": ["mutateRowsCallable"]
+            },
+            "ReadModifyWriteRow": {
+              "methods": ["readModifyWriteRow", "readModifyWriteRow", "readModifyWriteRow", "readModifyWriteRow", "readModifyWriteRow", "readModifyWriteRowCallable"]
+            },
+            "ReadRows": {
+              "methods": ["readRowsCallable"]
+            },
+            "SampleRowKeys": {
+              "methods": ["sampleRowKeysCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

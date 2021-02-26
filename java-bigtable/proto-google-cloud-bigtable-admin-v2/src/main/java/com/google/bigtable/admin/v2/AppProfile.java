@@ -1469,7 +1469,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * (`OutputOnly`)
    * The unique name of the app profile. Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/appProfiles/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
+   * `projects/{project}/instances/{instance}/appProfiles/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1494,7 +1494,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * (`OutputOnly`)
    * The unique name of the app profile. Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/appProfiles/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
+   * `projects/{project}/instances/{instance}/appProfiles/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -2185,7 +2185,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * (`OutputOnly`)
      * The unique name of the app profile. Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/appProfiles/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
+     * `projects/{project}/instances/{instance}/appProfiles/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2209,7 +2209,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * (`OutputOnly`)
      * The unique name of the app profile. Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/appProfiles/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
+     * `projects/{project}/instances/{instance}/appProfiles/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2233,7 +2233,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * (`OutputOnly`)
      * The unique name of the app profile. Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/appProfiles/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
+     * `projects/{project}/instances/{instance}/appProfiles/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2256,7 +2256,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * (`OutputOnly`)
      * The unique name of the app profile. Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/appProfiles/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
+     * `projects/{project}/instances/{instance}/appProfiles/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2275,7 +2275,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * (`OutputOnly`)
      * The unique name of the app profile. Values are of the form
-     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/appProfiles/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
+     * `projects/{project}/instances/{instance}/appProfiles/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
      * </pre>
      *
      * <code>string name = 1;</code>

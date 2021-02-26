@@ -689,108 +689,133 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable() {
     return createInstanceCallable;
   }
 
+  @Override
   public OperationCallable<CreateInstanceRequest, Instance, CreateInstanceMetadata>
       createInstanceOperationCallable() {
     return createInstanceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
     return getInstanceCallable;
   }
 
+  @Override
   public UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable() {
     return listInstancesCallable;
   }
 
+  @Override
   public UnaryCallable<Instance, Instance> updateInstanceCallable() {
     return updateInstanceCallable;
   }
 
+  @Override
   public UnaryCallable<PartialUpdateInstanceRequest, Operation> partialUpdateInstanceCallable() {
     return partialUpdateInstanceCallable;
   }
 
+  @Override
   public OperationCallable<PartialUpdateInstanceRequest, Instance, UpdateInstanceMetadata>
       partialUpdateInstanceOperationCallable() {
     return partialUpdateInstanceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteInstanceRequest, Empty> deleteInstanceCallable() {
     return deleteInstanceCallable;
   }
 
+  @Override
   public UnaryCallable<CreateClusterRequest, Operation> createClusterCallable() {
     return createClusterCallable;
   }
 
+  @Override
   public OperationCallable<CreateClusterRequest, Cluster, CreateClusterMetadata>
       createClusterOperationCallable() {
     return createClusterOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetClusterRequest, Cluster> getClusterCallable() {
     return getClusterCallable;
   }
 
+  @Override
   public UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable() {
     return listClustersCallable;
   }
 
+  @Override
   public UnaryCallable<Cluster, Operation> updateClusterCallable() {
     return updateClusterCallable;
   }
 
+  @Override
   public OperationCallable<Cluster, Cluster, UpdateClusterMetadata>
       updateClusterOperationCallable() {
     return updateClusterOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteClusterRequest, Empty> deleteClusterCallable() {
     return deleteClusterCallable;
   }
 
+  @Override
   public UnaryCallable<CreateAppProfileRequest, AppProfile> createAppProfileCallable() {
     return createAppProfileCallable;
   }
 
+  @Override
   public UnaryCallable<GetAppProfileRequest, AppProfile> getAppProfileCallable() {
     return getAppProfileCallable;
   }
 
+  @Override
   public UnaryCallable<ListAppProfilesRequest, ListAppProfilesResponse> listAppProfilesCallable() {
     return listAppProfilesCallable;
   }
 
+  @Override
   public UnaryCallable<ListAppProfilesRequest, ListAppProfilesPagedResponse>
       listAppProfilesPagedCallable() {
     return listAppProfilesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateAppProfileRequest, Operation> updateAppProfileCallable() {
     return updateAppProfileCallable;
   }
 
+  @Override
   public OperationCallable<UpdateAppProfileRequest, AppProfile, UpdateAppProfileMetadata>
       updateAppProfileOperationCallable() {
     return updateAppProfileOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteAppProfileRequest, Empty> deleteAppProfileCallable() {
     return deleteAppProfileCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

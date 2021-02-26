@@ -6,4 +6,19 @@
         <className>com/google/bigtable/admin/v2/TableOrBuilder</className>
         <method>*Restore*</method>
     </difference>
+    <difference>
+        <differenceType>7012</differenceType>
+        <className>com/google/bigtable/admin/v2/*OrBuilder</className>
+        <method>* get*(*)</method>
+    </difference>
+    <difference>
+        <differenceType>7012</differenceType>
+        <className>com/google/bigtable/admin/v2/*OrBuilder</className>
+        <method>boolean contains*(*)</method>
+    </difference>
+    <difference>
+        <differenceType>7012</differenceType>
+        <className>com/google/bigtable/admin/v2/*OrBuilder</className>
+        <method>boolean has*(*)</method>
+    </difference>
 </differences>
