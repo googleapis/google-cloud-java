@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.0.14](https://www.github.com/googleapis/java-monitoring/compare/v2.0.13...v2.0.14) (2021-02-26)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.0 ([#443](https://www.github.com/googleapis/java-monitoring/issues/443)) ([9117bb1](https://www.github.com/googleapis/java-monitoring/commit/9117bb15c8430f63eb30c9bd400c429dc4fc51c7))
+* update dependency com.google.protobuf:protobuf-java-util to v3.15.3 ([#437](https://www.github.com/googleapis/java-monitoring/issues/437)) ([f68a6c3](https://www.github.com/googleapis/java-monitoring/commit/f68a6c3276836286a23ef49118b7d39bcad4bb15))
+
 ### [2.0.13](https://www.github.com/googleapis/java-monitoring/compare/v2.0.12...v2.0.13) (2021-02-23)
 
 
