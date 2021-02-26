@@ -20,19 +20,19 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-notebooks</artifactId>
-  <version>0.2.5</version>
+  <version>0.2.6</version>
 </dependency>
 
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-notebooks:0.2.5'
+compile 'com.google.cloud:google-cloud-notebooks:0.2.6'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-notebooks" % "0.2.5"
+libraryDependencies += "com.google.cloud" % "google-cloud-notebooks" % "0.2.6"
 ```
 
 ## Authentication
