@@ -38,7 +38,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-iot</artifactId>
-  <version>1.1.13</version>
+  <version>1.1.14</version>
 </dependency>
 
 ```
@@ -51,12 +51,12 @@ compile 'com.google.cloud:google-cloud-iot'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-iot:1.1.13'
+compile 'com.google.cloud:google-cloud-iot:1.1.14'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-iot" % "1.1.13"
+libraryDependencies += "com.google.cloud" % "google-cloud-iot" % "1.1.14"
 ```
 
 ## Authentication
