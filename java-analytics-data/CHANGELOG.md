@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.6.0](https://www.github.com/googleapis/java-analytics-data/compare/v0.5.5...v0.6.0) (2021-02-26)
+
+
+### Features
+
+* add v1beta client ([#158](https://www.github.com/googleapis/java-analytics-data/issues/158)) ([545cca0](https://www.github.com/googleapis/java-analytics-data/commit/545cca098dd4a054d3110761347cfe3aabc41ccd))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.0 ([#159](https://www.github.com/googleapis/java-analytics-data/issues/159)) ([009ac70](https://www.github.com/googleapis/java-analytics-data/commit/009ac70ab39adf5b0edad5fe80799dc5a51eb7f8))
+
 ### [0.5.5](https://www.github.com/googleapis/java-analytics-data/compare/v0.5.4...v0.5.5) (2021-02-22)
 
 
