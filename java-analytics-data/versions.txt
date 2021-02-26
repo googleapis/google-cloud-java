@@ -3,4 +3,6 @@
 
 google-analytics-data:0.5.5:0.5.6-SNAPSHOT
 proto-google-analytics-data-v1alpha:0.5.5:0.5.6-SNAPSHOT
+proto-google-analytics-data-v1beta:0.5.5:0.5.6-SNAPSHOT
 grpc-google-analytics-data-v1alpha:0.5.5:0.5.6-SNAPSHOT
+grpc-google-analytics-data-v1beta:0.5.5:0.5.6-SNAPSHOT

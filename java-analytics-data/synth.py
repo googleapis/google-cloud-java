@@ -17,7 +17,7 @@
 import synthtool.languages.java as java
 
 service = 'analytics-data'
-versions = ['v1alpha']
+versions = ['v1alpha', 'v1beta']
 
 for version in versions:
   java.pregenerated_library(

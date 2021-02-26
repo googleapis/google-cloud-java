@@ -77,8 +77,18 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-analytics-data-v1beta</artifactId>
+        <version>0.5.6-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-data-v1beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-analytics-data-v1alpha</artifactId>
         <version>0.5.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-data-v1alpha:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-analytics-data-v1beta</artifactId>
+        <version>0.5.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-data-v1beta:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
