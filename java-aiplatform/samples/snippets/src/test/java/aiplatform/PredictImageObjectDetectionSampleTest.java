@@ -25,6 +25,7 @@ import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class PredictImageObjectDetectionSampleTest {
@@ -63,6 +64,7 @@ public class PredictImageObjectDetectionSampleTest {
     System.setOut(originalPrintStream);
   }
 
+  @Ignore("See https://github.com/googleapis/java-aiplatform/issues/178")
   @Test
   public void testPredictImageObjectDetection() throws IOException {
     // Act

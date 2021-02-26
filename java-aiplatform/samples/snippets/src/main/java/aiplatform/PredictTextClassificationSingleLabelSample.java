@@ -44,7 +44,7 @@ public class PredictTextClassificationSingleLabelSample {
       String project, String content, String endpointId) throws IOException {
     PredictionServiceSettings predictionServiceSettings =
         PredictionServiceSettings.newBuilder()
-            .setEndpoint("us-central1-prediction-aiplatform.googleapis.com:443")
+            .setEndpoint("us-central1-aiplatform.googleapis.com:443")
             .build();
 
     // Initialize client that will be used to send requests. This client only needs to be created
