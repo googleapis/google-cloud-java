@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.4.0](https://www.github.com/googleapis/java-secretmanager/compare/v1.3.0...v1.4.0) (2021-02-26)
+
+
+### Features
+
+* added topic field to Secret ([#389](https://www.github.com/googleapis/java-secretmanager/issues/389)) ([32286cc](https://www.github.com/googleapis/java-secretmanager/commit/32286ccdff4e39afbb4a4bf1602f735ac119f43f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.0 ([#394](https://www.github.com/googleapis/java-secretmanager/issues/394)) ([7371c34](https://www.github.com/googleapis/java-secretmanager/commit/7371c34e22c000ce2f896be600aecbb676e33ed6))
+* update dependency com.google.protobuf:protobuf-java-util to v3.15.3 ([#395](https://www.github.com/googleapis/java-secretmanager/issues/395)) ([99aa3a0](https://www.github.com/googleapis/java-secretmanager/commit/99aa3a098df6dd0857c99323ee0e1d61d64f9b78))
+
 ## [1.3.0](https://www.github.com/googleapis/java-secretmanager/compare/v1.2.9...v1.3.0) (2021-02-22)
 
 
