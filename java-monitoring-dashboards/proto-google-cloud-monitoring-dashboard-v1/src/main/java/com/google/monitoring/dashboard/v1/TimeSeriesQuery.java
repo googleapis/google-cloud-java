@@ -324,6 +324,20 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
    *
    * <code>string time_series_query_language = 3;</code>
    *
+   * @return Whether the timeSeriesQueryLanguage field is set.
+   */
+  public boolean hasTimeSeriesQueryLanguage() {
+    return sourceCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A query used to fetch time series.
+   * </pre>
+   *
+   * <code>string time_series_query_language = 3;</code>
+   *
    * @return The timeSeriesQueryLanguage.
    */
   public java.lang.String getTimeSeriesQueryLanguage() {
@@ -1291,6 +1305,21 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       return timeSeriesFilterRatioBuilder_;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * A query used to fetch time series.
+     * </pre>
+     *
+     * <code>string time_series_query_language = 3;</code>
+     *
+     * @return Whether the timeSeriesQueryLanguage field is set.
+     */
+    @java.lang.Override
+    public boolean hasTimeSeriesQueryLanguage() {
+      return sourceCase_ == 3;
+    }
     /**
      *
      *

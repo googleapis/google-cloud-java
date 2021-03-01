@@ -106,6 +106,18 @@ public interface TimeSeriesQueryOrBuilder
    *
    * <code>string time_series_query_language = 3;</code>
    *
+   * @return Whether the timeSeriesQueryLanguage field is set.
+   */
+  boolean hasTimeSeriesQueryLanguage();
+  /**
+   *
+   *
+   * <pre>
+   * A query used to fetch time series.
+   * </pre>
+   *
+   * <code>string time_series_query_language = 3;</code>
+   *
    * @return The timeSeriesQueryLanguage.
    */
   java.lang.String getTimeSeriesQueryLanguage();
