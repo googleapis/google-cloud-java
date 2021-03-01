@@ -1162,6 +1162,18 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * <code>string role = 1;</code>
      *
+     * @return Whether the role field is set.
+     */
+    boolean hasRole();
+    /**
+     *
+     *
+     * <pre>
+     * The role.
+     * </pre>
+     *
+     * <code>string role = 1;</code>
+     *
      * @return The role.
      */
     java.lang.String getRole();
@@ -1178,6 +1190,18 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      */
     com.google.protobuf.ByteString getRoleBytes();
 
+    /**
+     *
+     *
+     * <pre>
+     * The permission.
+     * </pre>
+     *
+     * <code>string permission = 2;</code>
+     *
+     * @return Whether the permission field is set.
+     */
+    boolean hasPermission();
     /**
      *
      *
@@ -1413,6 +1437,20 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * <code>string role = 1;</code>
      *
+     * @return Whether the role field is set.
+     */
+    public boolean hasRole() {
+      return oneofAccessCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The role.
+     * </pre>
+     *
+     * <code>string role = 1;</code>
+     *
      * @return The role.
      */
     public java.lang.String getRole() {
@@ -1460,6 +1498,20 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
     }
 
     public static final int PERMISSION_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The permission.
+     * </pre>
+     *
+     * <code>string permission = 2;</code>
+     *
+     * @return Whether the permission field is set.
+     */
+    public boolean hasPermission() {
+      return oneofAccessCase_ == 2;
+    }
     /**
      *
      *
@@ -1985,6 +2037,21 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
        *
        * <code>string role = 1;</code>
        *
+       * @return Whether the role field is set.
+       */
+      @java.lang.Override
+      public boolean hasRole() {
+        return oneofAccessCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The role.
+       * </pre>
+       *
+       * <code>string role = 1;</code>
+       *
        * @return The role.
        */
       @java.lang.Override
@@ -2095,6 +2162,21 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
         return this;
       }
 
+      /**
+       *
+       *
+       * <pre>
+       * The permission.
+       * </pre>
+       *
+       * <code>string permission = 2;</code>
+       *
+       * @return Whether the permission field is set.
+       */
+      @java.lang.Override
+      public boolean hasPermission() {
+        return oneofAccessCase_ == 2;
+      }
       /**
        *
        *

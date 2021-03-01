@@ -36,6 +36,22 @@ public interface GcsDestinationOrBuilder
    *
    * <code>string uri = 1;</code>
    *
+   * @return Whether the uri field is set.
+   */
+  boolean hasUri();
+  /**
+   *
+   *
+   * <pre>
+   * The uri of the Cloud Storage object. It's the same uri that is used by
+   * gsutil. For example: "gs://bucket_name/object_name". See [Viewing and
+   * Editing Object
+   * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
+   * for more information.
+   * </pre>
+   *
+   * <code>string uri = 1;</code>
+   *
    * @return The uri.
    */
   java.lang.String getUri();

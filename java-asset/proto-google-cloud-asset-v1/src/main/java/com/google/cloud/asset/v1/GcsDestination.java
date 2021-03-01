@@ -177,6 +177,24 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string uri = 1;</code>
    *
+   * @return Whether the uri field is set.
+   */
+  public boolean hasUri() {
+    return objectUriCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The uri of the Cloud Storage object. It's the same uri that is used by
+   * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
+   * Editing Object
+   * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
+   * for more information.
+   * </pre>
+   *
+   * <code>string uri = 1;</code>
+   *
    * @return The uri.
    */
   public java.lang.String getUri() {
@@ -228,6 +246,28 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URI_PREFIX_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * The uri prefix of all generated Cloud Storage objects. Example:
+   * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+   * "gs://bucket_name/object_name_prefix/&lt;asset type&gt;/&lt;shard number&gt; and only
+   * contains assets for that type. &lt;shard number&gt; starts from 0. Example:
+   * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
+   * the first shard of output objects containing all
+   * compute.googleapis.com/Disk assets. An INVALID_ARGUMENT error will be
+   * returned if file with the same name "gs://bucket_name/object_name_prefix"
+   * already exists.
+   * </pre>
+   *
+   * <code>string uri_prefix = 2;</code>
+   *
+   * @return Whether the uriPrefix field is set.
+   */
+  public boolean hasUriPrefix() {
+    return objectUriCase_ == 2;
+  }
   /**
    *
    *
@@ -689,6 +729,25 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string uri = 1;</code>
      *
+     * @return Whether the uri field is set.
+     */
+    @java.lang.Override
+    public boolean hasUri() {
+      return objectUriCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The uri of the Cloud Storage object. It's the same uri that is used by
+     * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
+     * Editing Object
+     * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
+     * for more information.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
      * @return The uri.
      */
     @java.lang.Override
@@ -815,6 +874,29 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * The uri prefix of all generated Cloud Storage objects. Example:
+     * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+     * "gs://bucket_name/object_name_prefix/&lt;asset type&gt;/&lt;shard number&gt; and only
+     * contains assets for that type. &lt;shard number&gt; starts from 0. Example:
+     * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
+     * the first shard of output objects containing all
+     * compute.googleapis.com/Disk assets. An INVALID_ARGUMENT error will be
+     * returned if file with the same name "gs://bucket_name/object_name_prefix"
+     * already exists.
+     * </pre>
+     *
+     * <code>string uri_prefix = 2;</code>
+     *
+     * @return Whether the uriPrefix field is set.
+     */
+    @java.lang.Override
+    public boolean hasUriPrefix() {
+      return objectUriCase_ == 2;
+    }
     /**
      *
      *
