@@ -290,6 +290,19 @@ public interface BuildTriggerOrBuilder
    *
    * <code>string filename = 8;</code>
    *
+   * @return Whether the filename field is set.
+   */
+  boolean hasFilename();
+  /**
+   *
+   *
+   * <pre>
+   * Path, from the source root, to a file whose contents is used for the
+   * template.
+   * </pre>
+   *
+   * <code>string filename = 8;</code>
+   *
    * @return The filename.
    */
   java.lang.String getFilename();

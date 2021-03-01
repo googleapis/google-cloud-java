@@ -86,6 +86,20 @@ public interface RepoSourceOrBuilder
    *
    * <code>string branch_name = 3;</code>
    *
+   * @return Whether the branchName field is set.
+   */
+  boolean hasBranchName();
+  /**
+   *
+   *
+   * <pre>
+   * Regex matching branches to build.
+   * The syntax of the regular expressions accepted is the syntax accepted by
+   * RE2 and described at https://github.com/google/re2/wiki/Syntax
+   * </pre>
+   *
+   * <code>string branch_name = 3;</code>
+   *
    * @return The branchName.
    */
   java.lang.String getBranchName();
@@ -115,6 +129,20 @@ public interface RepoSourceOrBuilder
    *
    * <code>string tag_name = 4;</code>
    *
+   * @return Whether the tagName field is set.
+   */
+  boolean hasTagName();
+  /**
+   *
+   *
+   * <pre>
+   * Regex matching tags to build.
+   * The syntax of the regular expressions accepted is the syntax accepted by
+   * RE2 and described at https://github.com/google/re2/wiki/Syntax
+   * </pre>
+   *
+   * <code>string tag_name = 4;</code>
+   *
    * @return The tagName.
    */
   java.lang.String getTagName();
@@ -133,6 +161,18 @@ public interface RepoSourceOrBuilder
    */
   com.google.protobuf.ByteString getTagNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Explicit commit SHA to build.
+   * </pre>
+   *
+   * <code>string commit_sha = 5;</code>
+   *
+   * @return Whether the commitSha field is set.
+   */
+  boolean hasCommitSha();
   /**
    *
    *
