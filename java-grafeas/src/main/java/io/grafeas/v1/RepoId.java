@@ -229,6 +229,20 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string uid = 2;</code>
    *
+   * @return Whether the uid field is set.
+   */
+  public boolean hasUid() {
+    return idCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A server-assigned, globally unique identifier.
+   * </pre>
+   *
+   * <code>string uid = 2;</code>
+   *
    * @return The uid.
    */
   public java.lang.String getUid() {
@@ -854,6 +868,21 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       return projectRepoIdBuilder_;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * A server-assigned, globally unique identifier.
+     * </pre>
+     *
+     * <code>string uid = 2;</code>
+     *
+     * @return Whether the uid field is set.
+     */
+    @java.lang.Override
+    public boolean hasUid() {
+      return idCase_ == 2;
+    }
     /**
      *
      *

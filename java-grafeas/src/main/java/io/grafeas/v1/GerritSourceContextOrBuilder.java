@@ -87,6 +87,18 @@ public interface GerritSourceContextOrBuilder
    *
    * <code>string revision_id = 3;</code>
    *
+   * @return Whether the revisionId field is set.
+   */
+  boolean hasRevisionId();
+  /**
+   *
+   *
+   * <pre>
+   * A revision (commit) ID.
+   * </pre>
+   *
+   * <code>string revision_id = 3;</code>
+   *
    * @return The revisionId.
    */
   java.lang.String getRevisionId();

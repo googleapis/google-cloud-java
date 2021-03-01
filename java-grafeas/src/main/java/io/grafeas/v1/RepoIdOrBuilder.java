@@ -68,6 +68,18 @@ public interface RepoIdOrBuilder
    *
    * <code>string uid = 2;</code>
    *
+   * @return Whether the uid field is set.
+   */
+  boolean hasUid();
+  /**
+   *
+   *
+   * <pre>
+   * A server-assigned, globally unique identifier.
+   * </pre>
+   *
+   * <code>string uid = 2;</code>
+   *
    * @return The uid.
    */
   java.lang.String getUid();
