@@ -87,31 +87,39 @@ public class StreamWriterV2Test {
     return StreamWriterV2.newBuilder(TEST_STREAM, client).build();
   }
 
+  private ProtoSchema createProtoSchema() {
+    return ProtoSchema.newBuilder()
+        .setProtoDescriptor(
+            DescriptorProtos.DescriptorProto.newBuilder()
+                .setName("Message")
+                .addField(
+                    DescriptorProtos.FieldDescriptorProto.newBuilder()
+                        .setName("foo")
+                        .setType(DescriptorProtos.FieldDescriptorProto.Type.TYPE_STRING)
+                        .setNumber(1)
+                        .build())
+                .build())
+        .build();
+  }
+
+  private ProtoRows createProtoRows(String[] messages) {
+    ProtoRows.Builder rowsBuilder = ProtoRows.newBuilder();
+    for (String message : messages) {
+      FooType foo = FooType.newBuilder().setFoo(message).build();
+      rowsBuilder.addSerializedRows(foo.toByteString());
+    }
+    return rowsBuilder.build();
+  }
+
   private AppendRowsRequest createAppendRequest(String[] messages, long offset) {
     AppendRowsRequest.Builder requestBuilder = AppendRowsRequest.newBuilder();
     AppendRowsRequest.ProtoData.Builder dataBuilder = AppendRowsRequest.ProtoData.newBuilder();
-    dataBuilder.setWriterSchema(
-        ProtoSchema.newBuilder()
-            .setProtoDescriptor(
-                DescriptorProtos.DescriptorProto.newBuilder()
-                    .setName("Message")
-                    .addField(
-                        DescriptorProtos.FieldDescriptorProto.newBuilder()
-                            .setName("foo")
-                            .setType(DescriptorProtos.FieldDescriptorProto.Type.TYPE_STRING)
-                            .setNumber(1)
-                            .build())
-                    .build()));
-    ProtoRows.Builder rows = ProtoRows.newBuilder();
-    for (String message : messages) {
-      FooType foo = FooType.newBuilder().setFoo(message).build();
-      rows.addSerializedRows(foo.toByteString());
-    }
+    dataBuilder.setWriterSchema(createProtoSchema());
     if (offset > 0) {
       requestBuilder.setOffset(Int64Value.of(offset));
     }
     return requestBuilder
-        .setProtoRows(dataBuilder.setRows(rows.build()).build())
+        .setProtoRows(dataBuilder.setRows(createProtoRows(messages)).build())
         .setWriteStream(TEST_STREAM)
         .build();
   }
@@ -166,6 +174,24 @@ public class StreamWriterV2Test {
     appendThread.interrupt();
   }
 
+  private void verifyAppendRequests(long appendCount) {
+    assertEquals(appendCount, testBigQueryWrite.getAppendRequests().size());
+    for (int i = 0; i < appendCount; i++) {
+      AppendRowsRequest serverRequest = testBigQueryWrite.getAppendRequests().get(i);
+      assertTrue(serverRequest.getProtoRows().getRows().getSerializedRowsCount() > 0);
+      assertEquals(i, serverRequest.getOffset().getValue());
+      if (i == 0) {
+        // First request received by server should have schema and stream name.
+        assertTrue(serverRequest.getProtoRows().hasWriterSchema());
+        assertEquals(serverRequest.getWriteStream(), TEST_STREAM);
+      } else {
+        // Following request should not have schema and stream name.
+        assertFalse(serverRequest.getProtoRows().hasWriterSchema());
+        assertEquals(serverRequest.getWriteStream(), "");
+      }
+    }
+  }
+
   @Test
   public void testBuildBigQueryWriteClientInWriter() throws Exception {
     StreamWriterV2 writer =
@@ -181,7 +207,31 @@ public class StreamWriterV2Test {
   }
 
   @Test
-  public void testAppendSuccess() throws Exception {
+  public void testAppendWithRowsSuccess() throws Exception {
+    StreamWriterV2 writer =
+        StreamWriterV2.newBuilder(TEST_STREAM, client).setWriterSchema(createProtoSchema()).build();
+
+    long appendCount = 100;
+    for (int i = 0; i < appendCount; i++) {
+      testBigQueryWrite.addResponse(createAppendResponse(i));
+    }
+
+    List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+    for (int i = 0; i < appendCount; i++) {
+      futures.add(writer.append(createProtoRows(new String[] {String.valueOf(i)}), i));
+    }
+
+    for (int i = 0; i < appendCount; i++) {
+      assertEquals(i, futures.get(i).get().getAppendResult().getOffset().getValue());
+    }
+
+    verifyAppendRequests(appendCount);
+
+    writer.close();
+  }
+
+  @Test
+  public void testAppendWithMessageSuccess() throws Exception {
     StreamWriterV2 writer = getTestStreamWriterV2();
 
     long appendCount = 1000;
@@ -191,28 +241,32 @@ public class StreamWriterV2Test {
 
     List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
     for (int i = 0; i < appendCount; i++) {
-      futures.add(sendTestMessage(writer, new String[] {String.valueOf(i)}));
+      futures.add(writer.append(createAppendRequest(new String[] {String.valueOf(i)}, i)));
     }
 
     for (int i = 0; i < appendCount; i++) {
       assertEquals(i, futures.get(i).get().getAppendResult().getOffset().getValue());
     }
-    assertEquals(appendCount, testBigQueryWrite.getAppendRequests().size());
 
-    for (int i = 0; i < appendCount; i++) {
-      AppendRowsRequest serverRequest = testBigQueryWrite.getAppendRequests().get(i);
-      if (i == 0) {
-        // First request received by server should have schema and stream name.
-        assertTrue(serverRequest.getProtoRows().hasWriterSchema());
-        assertEquals(serverRequest.getWriteStream(), TEST_STREAM);
-      } else {
-        // Following request should not have schema and stream name.
-        assertFalse(serverRequest.getProtoRows().hasWriterSchema());
-        assertEquals(serverRequest.getWriteStream(), "");
-      }
-    }
+    verifyAppendRequests(appendCount);
 
     writer.close();
+  }
+
+  @Test
+  public void testAppendWithRowsNoSchema() throws Exception {
+    final StreamWriterV2 writer = getTestStreamWriterV2();
+    StatusRuntimeException ex =
+        assertThrows(
+            StatusRuntimeException.class,
+            new ThrowingRunnable() {
+              @Override
+              public void run() throws Throwable {
+                writer.append(createProtoRows(new String[] {"A"}), -1);
+              }
+            });
+    assertEquals(ex.getStatus().getCode(), Status.INVALID_ARGUMENT.getCode());
+    assertTrue(ex.getStatus().getDescription().contains("Writer schema must be provided"));
   }
 
   @Test

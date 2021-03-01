@@ -19,10 +19,12 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest.ProtoData;
 import com.google.cloud.bigquery.storage.v1beta2.StreamConnection.DoneCallback;
 import com.google.cloud.bigquery.storage.v1beta2.StreamConnection.RequestCallback;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.Uninterruptibles;
+import com.google.protobuf.Int64Value;
 import io.grpc.Status;
 import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
@@ -38,8 +40,6 @@ import javax.annotation.concurrent.GuardedBy;
 
 /**
  * A BigQuery Stream Writer that can be used to write data into BigQuery Table.
- *
- * <p>TODO: Attach schema.
  *
  * <p>TODO: Attach traceId.
  *
@@ -58,6 +58,11 @@ public class StreamWriterV2 implements AutoCloseable {
    * The identifier of stream to write to.
    */
   private final String streamName;
+
+  /*
+   * The proto schema of rows to write.
+   */
+  private final ProtoSchema writerSchema;
 
   /*
    * Max allowed inflight requests in the stream. Method append is blocked at this.
@@ -135,6 +140,7 @@ public class StreamWriterV2 implements AutoCloseable {
     this.hasMessageInWaitingQueue = lock.newCondition();
     this.inflightReduced = lock.newCondition();
     this.streamName = builder.streamName;
+    this.writerSchema = builder.writerSchema;
     this.maxInflightRequests = builder.maxInflightRequest;
     this.maxInflightBytes = builder.maxInflightBytes;
     this.waitingRequestQueue = new LinkedList<AppendRequestAndResponse>();
@@ -188,10 +194,52 @@ public class StreamWriterV2 implements AutoCloseable {
    * ApiFuture<AppendRowsResponse> messageIdFuture = writer.append(message);
    * ApiFutures.addCallback(messageIdFuture, new ApiFutureCallback<AppendRowsResponse>() {
    *   public void onSuccess(AppendRowsResponse response) {
-   *     if (response.hasOffset()) {
-   *       System.out.println("written with offset: " + response.getOffset());
+   *     if (!response.hasError()) {
+   *       System.out.println("written with offset: " + response.getAppendResult().getOffset());
    *     } else {
-   *       System.out.println("received an in stream error: " + response.error().toString());
+   *       System.out.println("received an in stream error: " + response.getError().toString());
+   *     }
+   *   }
+   *
+   *   public void onFailure(Throwable t) {
+   *     System.out.println("failed to write: " + t);
+   *   }
+   * }, MoreExecutors.directExecutor());
+   * }</pre>
+   *
+   * @param rows the rows in serialized format to write to BigQuery.
+   * @param offset the offset of the first row.
+   * @return the append response wrapped in a future.
+   */
+  public ApiFuture<AppendRowsResponse> append(ProtoRows rows, long offset) {
+    // TODO: Move this check to builder after the other append is removed.
+    if (this.writerSchema == null) {
+      throw new StatusRuntimeException(
+          Status.fromCode(Code.INVALID_ARGUMENT)
+              .withDescription("Writer schema must be provided when building this writer."));
+    }
+    AppendRowsRequest.Builder requestBuilder = AppendRowsRequest.newBuilder();
+    requestBuilder.setProtoRows(ProtoData.newBuilder().setRows(rows).build());
+    if (offset >= 0) {
+      requestBuilder.setOffset(Int64Value.of(offset));
+    }
+    return append(requestBuilder.build());
+  }
+
+  /**
+   * Schedules the writing of a message.
+   *
+   * <p>Example of writing a message.
+   *
+   * <pre>{@code
+   * AppendRowsRequest message;
+   * ApiFuture<AppendRowsResponse> messageIdFuture = writer.append(message);
+   * ApiFutures.addCallback(messageIdFuture, new ApiFutureCallback<AppendRowsResponse>() {
+   *   public void onSuccess(AppendRowsResponse response) {
+   *     if (!response.hasError()) {
+   *       System.out.println("written with offset: " + response.getAppendResult().getOffset());
+   *     } else {
+   *       System.out.println("received an in stream error: " + response.getError().toString());
    *     }
    *   }
    *
@@ -202,8 +250,9 @@ public class StreamWriterV2 implements AutoCloseable {
    * }</pre>
    *
    * @param message the message in serialized format to write to BigQuery.
-   * @return the message ID wrapped in a future.
+   * @return the append response wrapped in a future.
    */
+  @Deprecated
   public ApiFuture<AppendRowsResponse> append(AppendRowsRequest message) {
     AppendRequestAndResponse requestWrapper = new AppendRequestAndResponse(message);
     if (requestWrapper.messageSize > getApiMaxRequestBytes()) {
@@ -380,6 +429,9 @@ public class StreamWriterV2 implements AutoCloseable {
       AppendRowsRequest original, boolean isFirstRequest) {
     AppendRowsRequest.Builder requestBuilder = original.toBuilder();
     if (isFirstRequest) {
+      if (this.writerSchema != null) {
+        requestBuilder.getProtoRowsBuilder().setWriterSchema(this.writerSchema);
+      }
       requestBuilder.setWriteStream(this.streamName);
     } else {
       requestBuilder.clearWriteStream();
@@ -473,6 +525,8 @@ public class StreamWriterV2 implements AutoCloseable {
 
     private BigQueryWriteClient client;
 
+    private ProtoSchema writerSchema = null;
+
     private long maxInflightRequest = DEFAULT_MAX_INFLIGHT_REQUESTS;
 
     private long maxInflightBytes = DEFAULT_MAX_INFLIGHT_BYTES;
@@ -493,6 +547,12 @@ public class StreamWriterV2 implements AutoCloseable {
     private Builder(String streamName, BigQueryWriteClient client) {
       this.streamName = Preconditions.checkNotNull(streamName);
       this.client = Preconditions.checkNotNull(client);
+    }
+
+    /** Sets the proto schema of the rows. */
+    public Builder setWriterSchema(ProtoSchema writerSchema) {
+      this.writerSchema = writerSchema;
+      return this;
     }
 
     public Builder setMaxInflightRequests(long value) {
