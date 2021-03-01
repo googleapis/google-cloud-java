@@ -59,6 +59,18 @@ public interface VmImageOrBuilder
    *
    * <code>string image_name = 2;</code>
    *
+   * @return Whether the imageName field is set.
+   */
+  boolean hasImageName();
+  /**
+   *
+   *
+   * <pre>
+   * Use VM image name to find the image.
+   * </pre>
+   *
+   * <code>string image_name = 2;</code>
+   *
    * @return The imageName.
    */
   java.lang.String getImageName();
@@ -75,6 +87,19 @@ public interface VmImageOrBuilder
    */
   com.google.protobuf.ByteString getImageNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Use this VM image family to find the image; the newest image in this
+   * family will be used.
+   * </pre>
+   *
+   * <code>string image_family = 3;</code>
+   *
+   * @return Whether the imageFamily field is set.
+   */
+  boolean hasImageFamily();
   /**
    *
    *
