@@ -33,4 +33,4 @@ for version in versions:
     gapic=gapic,
   )
 
-java.common_templates()
+java.common_templates(excludes=['.kokoro/dependencies.sh'])
