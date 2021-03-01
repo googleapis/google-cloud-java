@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.13.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.12.0...v1.13.0) (2021-03-01)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#898](https://www.github.com/googleapis/java-bigquerystorage/issues/898)) ([2f277d6](https://www.github.com/googleapis/java-bigquerystorage/commit/2f277d650e8f617c6253843baf73d5d220713a61))
+* in StreamWriterV2, supports new append, which takes rows and offset ([#894](https://www.github.com/googleapis/java-bigquerystorage/issues/894)) ([f3865b0](https://www.github.com/googleapis/java-bigquerystorage/commit/f3865b06ea7c61e95d3ee9bc7b46857d9d3080cc))
+* StreamWriterV2 will handle schema/streamName attachment ([#877](https://www.github.com/googleapis/java-bigquerystorage/issues/877)) ([c54bcfe](https://www.github.com/googleapis/java-bigquerystorage/commit/c54bcfec1706eef58eaf9dad8b49dc79fc8da133))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.127.5 ([#896](https://www.github.com/googleapis/java-bigquerystorage/issues/896)) ([d211c76](https://www.github.com/googleapis/java-bigquerystorage/commit/d211c76dff747121d4560b55818c10bf595ef1c3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.0 ([#892](https://www.github.com/googleapis/java-bigquerystorage/issues/892)) ([438f1c3](https://www.github.com/googleapis/java-bigquerystorage/commit/438f1c3b551e6b97a3241c69f2006a5a6be78c4f))
+
 ## [1.12.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.11.0...v1.12.0) (2021-02-25)
 
 
