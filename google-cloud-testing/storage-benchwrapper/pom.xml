@@ -7,7 +7,7 @@
   <groupId>com.google.cloud</groupId>
 
   <properties>
-    <grpcVersion>1.35.0</grpcVersion>
+    <grpcVersion>1.36.0</grpcVersion>
     <protobufVersion>3.9.2</protobufVersion>
   </properties>
   
@@ -76,7 +76,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage</artifactId>
-      <version>1.113.10</version><!-- {x-version-update:google-cloud-storage:current} -->
+      <version>1.113.11</version><!-- {x-version-update:google-cloud-storage:current} -->
     </dependency>
 
     <!-- protobuf  -->
