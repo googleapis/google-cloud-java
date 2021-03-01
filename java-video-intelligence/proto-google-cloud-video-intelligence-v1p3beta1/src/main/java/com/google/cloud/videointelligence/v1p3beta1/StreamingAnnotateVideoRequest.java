@@ -256,6 +256,27 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
    *
    * <code>bytes input_content = 2;</code>
    *
+   * @return Whether the inputContent field is set.
+   */
+  @java.lang.Override
+  public boolean hasInputContent() {
+    return streamingRequestCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The video data to be annotated. Chunks of video data are sequentially
+   * sent in `StreamingAnnotateVideoRequest` messages. Except the initial
+   * `StreamingAnnotateVideoRequest` message containing only
+   * `video_config`, all subsequent `AnnotateStreamingVideoRequest`
+   * messages must only contain `input_content` field.
+   * Note: as with all bytes fields, protobuffers use a pure binary
+   * representation (not base64).
+   * </pre>
+   *
+   * <code>bytes input_content = 2;</code>
+   *
    * @return The inputContent.
    */
   @java.lang.Override
@@ -918,6 +939,26 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
       return videoConfigBuilder_;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * The video data to be annotated. Chunks of video data are sequentially
+     * sent in `StreamingAnnotateVideoRequest` messages. Except the initial
+     * `StreamingAnnotateVideoRequest` message containing only
+     * `video_config`, all subsequent `AnnotateStreamingVideoRequest`
+     * messages must only contain `input_content` field.
+     * Note: as with all bytes fields, protobuffers use a pure binary
+     * representation (not base64).
+     * </pre>
+     *
+     * <code>bytes input_content = 2;</code>
+     *
+     * @return Whether the inputContent field is set.
+     */
+    public boolean hasInputContent() {
+      return streamingRequestCase_ == 2;
+    }
     /**
      *
      *

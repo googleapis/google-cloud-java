@@ -75,6 +75,23 @@ public interface ObjectTrackingAnnotationOrBuilder
    *
    * <code>int64 track_id = 5;</code>
    *
+   * @return Whether the trackId field is set.
+   */
+  boolean hasTrackId();
+  /**
+   *
+   *
+   * <pre>
+   * Streaming mode ONLY.
+   * In streaming mode, we do not know the end time of a tracked object
+   * before it is completed. Hence, there is no VideoSegment info returned.
+   * Instead, we provide a unique identifiable integer track_id so that
+   * the customers can correlate the results of the ongoing
+   * ObjectTrackAnnotation of the same track_id over time.
+   * </pre>
+   *
+   * <code>int64 track_id = 5;</code>
+   *
    * @return The trackId.
    */
   long getTrackId();

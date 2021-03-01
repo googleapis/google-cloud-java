@@ -80,6 +80,24 @@ public interface StreamingAnnotateVideoRequestOrBuilder
    *
    * <code>bytes input_content = 2;</code>
    *
+   * @return Whether the inputContent field is set.
+   */
+  boolean hasInputContent();
+  /**
+   *
+   *
+   * <pre>
+   * The video data to be annotated. Chunks of video data are sequentially
+   * sent in `StreamingAnnotateVideoRequest` messages. Except the initial
+   * `StreamingAnnotateVideoRequest` message containing only
+   * `video_config`, all subsequent `AnnotateStreamingVideoRequest`
+   * messages must only contain `input_content` field.
+   * Note: as with all bytes fields, protobuffers use a pure binary
+   * representation (not base64).
+   * </pre>
+   *
+   * <code>bytes input_content = 2;</code>
+   *
    * @return The inputContent.
    */
   com.google.protobuf.ByteString getInputContent();
