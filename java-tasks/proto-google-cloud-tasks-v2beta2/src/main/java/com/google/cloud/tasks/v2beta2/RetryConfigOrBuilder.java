@@ -35,10 +35,37 @@ public interface RetryConfigOrBuilder
    *
    * <code>int32 max_attempts = 1;</code>
    *
+   * @return Whether the maxAttempts field is set.
+   */
+  boolean hasMaxAttempts();
+  /**
+   *
+   *
+   * <pre>
+   * The maximum number of attempts for a task.
+   * Cloud Tasks will attempt the task `max_attempts` times (that
+   * is, if the first attempt fails, then there will be
+   * `max_attempts - 1` retries).  Must be &gt; 0.
+   * </pre>
+   *
+   * <code>int32 max_attempts = 1;</code>
+   *
    * @return The maxAttempts.
    */
   int getMaxAttempts();
 
+  /**
+   *
+   *
+   * <pre>
+   * If true, then the number of attempts is unlimited.
+   * </pre>
+   *
+   * <code>bool unlimited_attempts = 2;</code>
+   *
+   * @return Whether the unlimitedAttempts field is set.
+   */
+  boolean hasUnlimitedAttempts();
   /**
    *
    *
