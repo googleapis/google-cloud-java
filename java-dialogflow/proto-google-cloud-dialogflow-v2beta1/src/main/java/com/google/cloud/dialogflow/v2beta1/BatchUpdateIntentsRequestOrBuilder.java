@@ -69,6 +69,20 @@ public interface BatchUpdateIntentsRequestOrBuilder
    *
    * <code>string intent_batch_uri = 2;</code>
    *
+   * @return Whether the intentBatchUri field is set.
+   */
+  boolean hasIntentBatchUri();
+  /**
+   *
+   *
+   * <pre>
+   * The URI to a Google Cloud Storage file containing intents to update or
+   * create. The file format can either be a serialized proto (of IntentBatch
+   * type) or JSON object. Note: The URI must start with "gs://".
+   * </pre>
+   *
+   * <code>string intent_batch_uri = 2;</code>
+   *
    * @return The intentBatchUri.
    */
   java.lang.String getIntentBatchUri();

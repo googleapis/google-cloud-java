@@ -285,6 +285,22 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    *
    * <code>string intent_batch_uri = 2;</code>
    *
+   * @return Whether the intentBatchUri field is set.
+   */
+  public boolean hasIntentBatchUri() {
+    return intentBatchCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URI to a Google Cloud Storage file containing intents to update or
+   * create. The file format can either be a serialized proto (of IntentBatch
+   * type) or JSON object. Note: The URI must start with "gs://".
+   * </pre>
+   *
+   * <code>string intent_batch_uri = 2;</code>
+   *
    * @return The intentBatchUri.
    */
   public java.lang.String getIntentBatchUri() {
@@ -1119,6 +1135,23 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * The URI to a Google Cloud Storage file containing intents to update or
+     * create. The file format can either be a serialized proto (of IntentBatch
+     * type) or JSON object. Note: The URI must start with "gs://".
+     * </pre>
+     *
+     * <code>string intent_batch_uri = 2;</code>
+     *
+     * @return Whether the intentBatchUri field is set.
+     */
+    @java.lang.Override
+    public boolean hasIntentBatchUri() {
+      return intentBatchCase_ == 2;
+    }
     /**
      *
      *

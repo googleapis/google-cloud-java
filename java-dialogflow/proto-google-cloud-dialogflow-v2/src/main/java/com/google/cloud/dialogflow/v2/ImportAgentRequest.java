@@ -237,6 +237,21 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    * <code>string agent_uri = 2;</code>
    *
+   * @return Whether the agentUri field is set.
+   */
+  public boolean hasAgentUri() {
+    return agentCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URI to a Google Cloud Storage file containing the agent to import.
+   * Note: The URI must start with "gs://".
+   * </pre>
+   *
+   * <code>string agent_uri = 2;</code>
+   *
    * @return The agentUri.
    */
   public java.lang.String getAgentUri() {
@@ -285,6 +300,21 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int AGENT_CONTENT_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Zip compressed raw byte content for agent.
+   * </pre>
+   *
+   * <code>bytes agent_content = 3;</code>
+   *
+   * @return Whether the agentContent field is set.
+   */
+  @java.lang.Override
+  public boolean hasAgentContent() {
+    return agentCase_ == 3;
+  }
   /**
    *
    *
@@ -831,6 +861,22 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      * <code>string agent_uri = 2;</code>
      *
+     * @return Whether the agentUri field is set.
+     */
+    @java.lang.Override
+    public boolean hasAgentUri() {
+      return agentCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URI to a Google Cloud Storage file containing the agent to import.
+     * Note: The URI must start with "gs://".
+     * </pre>
+     *
+     * <code>string agent_uri = 2;</code>
+     *
      * @return The agentUri.
      */
     @java.lang.Override
@@ -945,6 +991,20 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Zip compressed raw byte content for agent.
+     * </pre>
+     *
+     * <code>bytes agent_content = 3;</code>
+     *
+     * @return Whether the agentContent field is set.
+     */
+    public boolean hasAgentContent() {
+      return agentCase_ == 3;
+    }
     /**
      *
      *

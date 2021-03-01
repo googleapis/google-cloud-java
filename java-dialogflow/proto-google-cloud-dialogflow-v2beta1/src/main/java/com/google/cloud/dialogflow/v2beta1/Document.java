@@ -1780,6 +1780,26 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string content_uri = 5;</code>
    *
+   * @return Whether the contentUri field is set.
+   */
+  public boolean hasContentUri() {
+    return sourceCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URI where the file content is located.
+   * For documents stored in Google Cloud Storage, these URIs must have
+   * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   * NOTE: External URLs must correspond to public webpages, i.e., they must
+   * be indexed by Google Search. In particular, URLs for showing documents in
+   * Google Cloud Storage (i.e. the URL in your browser) are not supported.
+   * Instead use the `gs://` format URI described above.
+   * </pre>
+   *
+   * <code>string content_uri = 5;</code>
+   *
    * @return The contentUri.
    */
   public java.lang.String getContentUri() {
@@ -1845,6 +1865,24 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string content = 6 [deprecated = true];</code>
    *
+   * @return Whether the content field is set.
+   */
+  @java.lang.Deprecated
+  public boolean hasContent() {
+    return sourceCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The raw content of the document. This field is only permitted for
+   * EXTRACTIVE_QA and FAQ knowledge types.
+   * Note: This field is in the process of being deprecated, please use
+   * raw_content instead.
+   * </pre>
+   *
+   * <code>string content = 6 [deprecated = true];</code>
+   *
    * @return The content.
    */
   @java.lang.Deprecated
@@ -1897,6 +1935,22 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RAW_CONTENT_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * The raw content of the document. This field is only permitted for
+   * EXTRACTIVE_QA and FAQ knowledge types.
+   * </pre>
+   *
+   * <code>bytes raw_content = 9;</code>
+   *
+   * @return Whether the rawContent field is set.
+   */
+  @java.lang.Override
+  public boolean hasRawContent() {
+    return sourceCase_ == 9;
+  }
   /**
    *
    *
@@ -3152,6 +3206,27 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string content_uri = 5;</code>
      *
+     * @return Whether the contentUri field is set.
+     */
+    @java.lang.Override
+    public boolean hasContentUri() {
+      return sourceCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URI where the file content is located.
+     * For documents stored in Google Cloud Storage, these URIs must have
+     * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     * NOTE: External URLs must correspond to public webpages, i.e., they must
+     * be indexed by Google Search. In particular, URLs for showing documents in
+     * Google Cloud Storage (i.e. the URL in your browser) are not supported.
+     * Instead use the `gs://` format URI described above.
+     * </pre>
+     *
+     * <code>string content_uri = 5;</code>
+     *
      * @return The contentUri.
      */
     @java.lang.Override
@@ -3298,6 +3373,25 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string content = 6 [deprecated = true];</code>
      *
+     * @return Whether the content field is set.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public boolean hasContent() {
+      return sourceCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The raw content of the document. This field is only permitted for
+     * EXTRACTIVE_QA and FAQ knowledge types.
+     * Note: This field is in the process of being deprecated, please use
+     * raw_content instead.
+     * </pre>
+     *
+     * <code>string content = 6 [deprecated = true];</code>
+     *
      * @return The content.
      */
     @java.lang.Override
@@ -3425,6 +3519,21 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * The raw content of the document. This field is only permitted for
+     * EXTRACTIVE_QA and FAQ knowledge types.
+     * </pre>
+     *
+     * <code>bytes raw_content = 9;</code>
+     *
+     * @return Whether the rawContent field is set.
+     */
+    public boolean hasRawContent() {
+      return sourceCase_ == 9;
+    }
     /**
      *
      *

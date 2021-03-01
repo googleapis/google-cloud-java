@@ -195,6 +195,24 @@ public interface DocumentOrBuilder
    *
    * <code>string content_uri = 5;</code>
    *
+   * @return Whether the contentUri field is set.
+   */
+  boolean hasContentUri();
+  /**
+   *
+   *
+   * <pre>
+   * The URI where the file content is located.
+   * For documents stored in Google Cloud Storage, these URIs must have
+   * the form `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   * NOTE: External URLs must correspond to public webpages, i.e., they must
+   * be indexed by Google Search. In particular, URLs for showing documents in
+   * Google Cloud Storage (i.e. the URL in your browser) are not supported.
+   * Instead use the `gs://` format URI described above.
+   * </pre>
+   *
+   * <code>string content_uri = 5;</code>
+   *
    * @return The contentUri.
    */
   java.lang.String getContentUri();
@@ -229,6 +247,22 @@ public interface DocumentOrBuilder
    *
    * <code>string content = 6 [deprecated = true];</code>
    *
+   * @return Whether the content field is set.
+   */
+  @java.lang.Deprecated
+  boolean hasContent();
+  /**
+   *
+   *
+   * <pre>
+   * The raw content of the document. This field is only permitted for
+   * EXTRACTIVE_QA and FAQ knowledge types.
+   * Note: This field is in the process of being deprecated, please use
+   * raw_content instead.
+   * </pre>
+   *
+   * <code>string content = 6 [deprecated = true];</code>
+   *
    * @return The content.
    */
   @java.lang.Deprecated
@@ -250,6 +284,19 @@ public interface DocumentOrBuilder
   @java.lang.Deprecated
   com.google.protobuf.ByteString getContentBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The raw content of the document. This field is only permitted for
+   * EXTRACTIVE_QA and FAQ knowledge types.
+   * </pre>
+   *
+   * <code>bytes raw_content = 9;</code>
+   *
+   * @return Whether the rawContent field is set.
+   */
+  boolean hasRawContent();
   /**
    *
    *

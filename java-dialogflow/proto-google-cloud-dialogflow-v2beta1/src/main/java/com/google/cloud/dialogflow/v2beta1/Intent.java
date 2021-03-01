@@ -28934,6 +28934,18 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>string text = 1;</code>
        *
+       * @return Whether the text field is set.
+       */
+      boolean hasText();
+      /**
+       *
+       *
+       * <pre>
+       * The raw text to be synthesized.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       *
        * @return The text.
        */
       java.lang.String getText();
@@ -28950,6 +28962,19 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getTextBytes();
 
+      /**
+       *
+       *
+       * <pre>
+       * The SSML to be synthesized. For more information, see
+       * [SSML](https://developers.google.com/actions/reference/ssml).
+       * </pre>
+       *
+       * <code>string ssml = 2;</code>
+       *
+       * @return Whether the ssml field is set.
+       */
+      boolean hasSsml();
       /**
        *
        *
@@ -29143,6 +29168,20 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>string text = 1;</code>
        *
+       * @return Whether the text field is set.
+       */
+      public boolean hasText() {
+        return sourceCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The raw text to be synthesized.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       *
        * @return The text.
        */
       public java.lang.String getText() {
@@ -29190,6 +29229,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int SSML_FIELD_NUMBER = 2;
+      /**
+       *
+       *
+       * <pre>
+       * The SSML to be synthesized. For more information, see
+       * [SSML](https://developers.google.com/actions/reference/ssml).
+       * </pre>
+       *
+       * <code>string ssml = 2;</code>
+       *
+       * @return Whether the ssml field is set.
+       */
+      public boolean hasSsml() {
+        return sourceCase_ == 2;
+      }
       /**
        *
        *
@@ -29673,6 +29727,21 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * <code>string text = 1;</code>
          *
+         * @return Whether the text field is set.
+         */
+        @java.lang.Override
+        public boolean hasText() {
+          return sourceCase_ == 1;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The raw text to be synthesized.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         *
          * @return The text.
          */
         @java.lang.Override
@@ -29783,6 +29852,22 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        /**
+         *
+         *
+         * <pre>
+         * The SSML to be synthesized. For more information, see
+         * [SSML](https://developers.google.com/actions/reference/ssml).
+         * </pre>
+         *
+         * <code>string ssml = 2;</code>
+         *
+         * @return Whether the ssml field is set.
+         */
+        @java.lang.Override
+        public boolean hasSsml() {
+          return sourceCase_ == 2;
+        }
         /**
          *
          *
