@@ -326,6 +326,18 @@ public interface TransferRunOrBuilder
    *
    * <code>string destination_dataset_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
+   * @return Whether the destinationDatasetId field is set.
+   */
+  boolean hasDestinationDatasetId();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The BigQuery target dataset id.
+   * </pre>
+   *
+   * <code>string destination_dataset_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
    * @return The destinationDatasetId.
    */
   java.lang.String getDestinationDatasetId();

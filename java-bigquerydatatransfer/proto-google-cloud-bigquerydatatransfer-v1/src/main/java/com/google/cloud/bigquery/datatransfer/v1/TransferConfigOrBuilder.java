@@ -69,6 +69,18 @@ public interface TransferConfigOrBuilder
    *
    * <code>string destination_dataset_id = 2;</code>
    *
+   * @return Whether the destinationDatasetId field is set.
+   */
+  boolean hasDestinationDatasetId();
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery target dataset id.
+   * </pre>
+   *
+   * <code>string destination_dataset_id = 2;</code>
+   *
    * @return The destinationDatasetId.
    */
   java.lang.String getDestinationDatasetId();

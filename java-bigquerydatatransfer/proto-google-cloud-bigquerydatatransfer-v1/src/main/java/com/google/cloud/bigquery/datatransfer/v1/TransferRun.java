@@ -726,6 +726,20 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string destination_dataset_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
+   * @return Whether the destinationDatasetId field is set.
+   */
+  public boolean hasDestinationDatasetId() {
+    return destinationCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The BigQuery target dataset id.
+   * </pre>
+   *
+   * <code>string destination_dataset_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
    * @return The destinationDatasetId.
    */
   public java.lang.String getDestinationDatasetId() {
@@ -3171,6 +3185,21 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       return paramsBuilder_;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The BigQuery target dataset id.
+     * </pre>
+     *
+     * <code>string destination_dataset_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the destinationDatasetId field is set.
+     */
+    @java.lang.Override
+    public boolean hasDestinationDatasetId() {
+      return destinationCase_ == 2;
+    }
     /**
      *
      *
