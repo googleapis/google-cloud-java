@@ -33,6 +33,19 @@ public interface PersonNameOrBuilder
    *
    * <code>string formatted_name = 1;</code>
    *
+   * @return Whether the formattedName field is set.
+   */
+  boolean hasFormattedName();
+  /**
+   *
+   *
+   * <pre>
+   * A string represents a person's full name. For example, "Dr. John Smith".
+   * Number of characters allowed is 100.
+   * </pre>
+   *
+   * <code>string formatted_name = 1;</code>
+   *
    * @return The formattedName.
    */
   java.lang.String getFormattedName();

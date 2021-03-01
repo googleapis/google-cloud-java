@@ -203,6 +203,20 @@ public interface EducationRecordOrBuilder
    *
    * <code>string degree_description = 6;</code>
    *
+   * @return Whether the degreeDescription field is set.
+   */
+  boolean hasDegreeDescription();
+  /**
+   *
+   *
+   * <pre>
+   * The full description of the degree.
+   * For example, "Master of Science in Computer Science", "B.S in Math".
+   * Number of characters allowed is 100.
+   * </pre>
+   *
+   * <code>string degree_description = 6;</code>
+   *
    * @return The degreeDescription.
    */
   java.lang.String getDegreeDescription();

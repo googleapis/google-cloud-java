@@ -552,6 +552,20 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
    *
+   * @return Whether the roadTraffic field is set.
+   */
+  public boolean hasRoadTraffic() {
+    return trafficOptionCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the traffic density to use when calculating commute time.
+   * </pre>
+   *
+   * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
+   *
    * @return The enum numeric value on the wire for roadTraffic.
    */
   public int getRoadTrafficValue() {
@@ -1685,6 +1699,21 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the traffic density to use when calculating commute time.
+     * </pre>
+     *
+     * <code>.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic road_traffic = 5;</code>
+     *
+     * @return Whether the roadTraffic field is set.
+     */
+    @java.lang.Override
+    public boolean hasRoadTraffic() {
+      return trafficOptionCase_ == 5;
+    }
     /**
      *
      *

@@ -160,6 +160,18 @@ public interface CommuteFilterOrBuilder
    *
    * <code>.google.cloud.talent.v4.CommuteFilter.RoadTraffic road_traffic = 5;</code>
    *
+   * @return Whether the roadTraffic field is set.
+   */
+  boolean hasRoadTraffic();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the traffic density to use when calculating commute time.
+   * </pre>
+   *
+   * <code>.google.cloud.talent.v4.CommuteFilter.RoadTraffic road_traffic = 5;</code>
+   *
    * @return The enum numeric value on the wire for roadTraffic.
    */
   int getRoadTrafficValue();
