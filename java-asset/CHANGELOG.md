@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.3.2](https://www.github.com/googleapis/java-asset/compare/v2.3.1...v2.3.2) (2021-03-01)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-orgpolicy-v1 to v1.1.1 ([#564](https://www.github.com/googleapis/java-asset/issues/564)) ([d234f0a](https://www.github.com/googleapis/java-asset/commit/d234f0a63684b317aaf741d1a559d104a6bbded2))
+* update dependency com.google.api.grpc:proto-google-cloud-os-config-v1 to v1.1.6 ([#560](https://www.github.com/googleapis/java-asset/issues/560)) ([bb6a6d7](https://www.github.com/googleapis/java-asset/commit/bb6a6d79f3015fac1ccb134fd5b64a737777e923))
+* update dependency com.google.api.grpc:proto-google-cloud-pubsub-v1 to v1.93.4 ([#533](https://www.github.com/googleapis/java-asset/issues/533)) ([cad9c20](https://www.github.com/googleapis/java-asset/commit/cad9c20ec30caf6d6c96f10774d3c5e96e7c6ac0))
+* update dependency com.google.api.grpc:proto-google-identity-accesscontextmanager-v1 to v1.0.14 ([#573](https://www.github.com/googleapis/java-asset/issues/573)) ([8f93e00](https://www.github.com/googleapis/java-asset/commit/8f93e000b2b949a5f12974e3fbb4c76330b98ab7))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.127.5 ([#546](https://www.github.com/googleapis/java-asset/issues/546)) ([3c97067](https://www.github.com/googleapis/java-asset/commit/3c970673c154ce2a47ec28a3bc91acb41ef0c301))
+* update dependency com.google.cloud:google-cloud-resourcemanager to v0.118.10-alpha ([#557](https://www.github.com/googleapis/java-asset/issues/557)) ([e038586](https://www.github.com/googleapis/java-asset/commit/e03858683df2bf62b2b50e0269696417104f25aa))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.0 ([#572](https://www.github.com/googleapis/java-asset/issues/572)) ([6df29d8](https://www.github.com/googleapis/java-asset/commit/6df29d88212ad6e8fd5768c04c058045fe2c9911))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.11 ([#561](https://www.github.com/googleapis/java-asset/issues/561)) ([6d81810](https://www.github.com/googleapis/java-asset/commit/6d81810c1c1d36d6c64471cc10ce70431c0b4116))
+
 ### [2.3.1](https://www.github.com/googleapis/java-asset/compare/v2.3.0...v2.3.1) (2021-02-22)
 
 
