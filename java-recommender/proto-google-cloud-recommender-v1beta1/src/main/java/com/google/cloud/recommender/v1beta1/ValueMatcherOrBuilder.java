@@ -34,6 +34,20 @@ public interface ValueMatcherOrBuilder
    *
    * <code>string matches_pattern = 1;</code>
    *
+   * @return Whether the matchesPattern field is set.
+   */
+  boolean hasMatchesPattern();
+  /**
+   *
+   *
+   * <pre>
+   * To be used for full regex matching. The regular expression is using the
+   * Google RE2 syntax (https://github.com/google/re2/wiki/Syntax), so to be
+   * used with RE2::FullMatch
+   * </pre>
+   *
+   * <code>string matches_pattern = 1;</code>
+   *
    * @return The matchesPattern.
    */
   java.lang.String getMatchesPattern();
