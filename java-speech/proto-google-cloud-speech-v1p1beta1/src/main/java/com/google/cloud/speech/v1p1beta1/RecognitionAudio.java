@@ -177,6 +177,23 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
    *
    * <code>bytes content = 1;</code>
    *
+   * @return Whether the content field is set.
+   */
+  @java.lang.Override
+  public boolean hasContent() {
+    return audioSourceCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The audio data bytes encoded as specified in
+   * `RecognitionConfig`. Note: as with all bytes fields, proto buffers use a
+   * pure binary representation, whereas JSON representations use base64.
+   * </pre>
+   *
+   * <code>bytes content = 1;</code>
+   *
    * @return The content.
    */
   @java.lang.Override
@@ -188,6 +205,27 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int URI_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * URI that points to a file that contains audio data bytes as specified in
+   * `RecognitionConfig`. The file must not be compressed (for example, gzip).
+   * Currently, only Google Cloud Storage URIs are
+   * supported, which must be specified in the following format:
+   * `gs://bucket_name/object_name` (other URI formats return
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]).
+   * For more information, see [Request
+   * URIs](https://cloud.google.com/storage/docs/reference-uris).
+   * </pre>
+   *
+   * <code>string uri = 2;</code>
+   *
+   * @return Whether the uri field is set.
+   */
+  public boolean hasUri() {
+    return audioSourceCase_ == 2;
+  }
   /**
    *
    *
@@ -651,6 +689,22 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
      *
      * <code>bytes content = 1;</code>
      *
+     * @return Whether the content field is set.
+     */
+    public boolean hasContent() {
+      return audioSourceCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The audio data bytes encoded as specified in
+     * `RecognitionConfig`. Note: as with all bytes fields, proto buffers use a
+     * pure binary representation, whereas JSON representations use base64.
+     * </pre>
+     *
+     * <code>bytes content = 1;</code>
+     *
      * @return The content.
      */
     public com.google.protobuf.ByteString getContent() {
@@ -704,6 +758,28 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * URI that points to a file that contains audio data bytes as specified in
+     * `RecognitionConfig`. The file must not be compressed (for example, gzip).
+     * Currently, only Google Cloud Storage URIs are
+     * supported, which must be specified in the following format:
+     * `gs://bucket_name/object_name` (other URI formats return
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]).
+     * For more information, see [Request
+     * URIs](https://cloud.google.com/storage/docs/reference-uris).
+     * </pre>
+     *
+     * <code>string uri = 2;</code>
+     *
+     * @return Whether the uri field is set.
+     */
+    @java.lang.Override
+    public boolean hasUri() {
+      return audioSourceCase_ == 2;
+    }
     /**
      *
      *

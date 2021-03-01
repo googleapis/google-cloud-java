@@ -34,10 +34,42 @@ public interface RecognitionAudioOrBuilder
    *
    * <code>bytes content = 1;</code>
    *
+   * @return Whether the content field is set.
+   */
+  boolean hasContent();
+  /**
+   *
+   *
+   * <pre>
+   * The audio data bytes encoded as specified in
+   * `RecognitionConfig`. Note: as with all bytes fields, proto buffers use a
+   * pure binary representation, whereas JSON representations use base64.
+   * </pre>
+   *
+   * <code>bytes content = 1;</code>
+   *
    * @return The content.
    */
   com.google.protobuf.ByteString getContent();
 
+  /**
+   *
+   *
+   * <pre>
+   * URI that points to a file that contains audio data bytes as specified in
+   * `RecognitionConfig`. The file must not be compressed (for example, gzip).
+   * Currently, only Google Cloud Storage URIs are
+   * supported, which must be specified in the following format:
+   * `gs://bucket_name/object_name` (other URI formats return
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
+   * [Request URIs](https://cloud.google.com/storage/docs/reference-uris).
+   * </pre>
+   *
+   * <code>string uri = 2;</code>
+   *
+   * @return Whether the uri field is set.
+   */
+  boolean hasUri();
   /**
    *
    *
