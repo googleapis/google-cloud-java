@@ -35,6 +35,21 @@ public interface SubordinateConfigOrBuilder
    *
    * <code>string certificate_authority = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
+   * @return Whether the certificateAuthority field is set.
+   */
+  boolean hasCertificateAuthority();
+  /**
+   *
+   *
+   * <pre>
+   * Required. This can refer to a [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority] in the same project that
+   * was used to create a subordinate [CertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthority]. This field
+   * is used for information and usability purposes only. The resource name
+   * is in the format `projects/&#42;&#47;locations/&#42;&#47;certificateAuthorities/&#42;`.
+   * </pre>
+   *
+   * <code>string certificate_authority = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
    * @return The certificateAuthority.
    */
   java.lang.String getCertificateAuthority();

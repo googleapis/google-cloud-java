@@ -59,6 +59,18 @@ public interface CertificateOrBuilder
    *
    * <code>string pem_csr = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
+   * @return Whether the pemCsr field is set.
+   */
+  boolean hasPemCsr();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. A pem-encoded X.509 certificate signing request (CSR).
+   * </pre>
+   *
+   * <code>string pem_csr = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
    * @return The pemCsr.
    */
   java.lang.String getPemCsr();

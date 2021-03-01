@@ -10962,6 +10962,22 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      * <code>string cloud_kms_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
+     * @return Whether the cloudKmsKeyVersion field is set.
+     */
+    boolean hasCloudKmsKeyVersion();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource name for an existing Cloud KMS CryptoKeyVersion in the
+     * format
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
+     * This option enables full flexibility in the key's capabilities and
+     * properties.
+     * </pre>
+     *
+     * <code>string cloud_kms_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
      * @return The cloudKmsKeyVersion.
      */
     java.lang.String getCloudKmsKeyVersion();
@@ -10982,6 +10998,22 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      */
     com.google.protobuf.ByteString getCloudKmsKeyVersionBytes();
 
+    /**
+     *
+     *
+     * <pre>
+     * Required. The algorithm to use for creating a managed Cloud KMS key for a for a
+     * simplified experience. All managed keys will be have their
+     * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] as `HSM`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1beta1.CertificateAuthority.SignHashAlgorithm algorithm = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the algorithm field is set.
+     */
+    boolean hasAlgorithm();
     /**
      *
      *
@@ -11181,6 +11213,24 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      * <code>string cloud_kms_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
+     * @return Whether the cloudKmsKeyVersion field is set.
+     */
+    public boolean hasCloudKmsKeyVersion() {
+      return keyVersionCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource name for an existing Cloud KMS CryptoKeyVersion in the
+     * format
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
+     * This option enables full flexibility in the key's capabilities and
+     * properties.
+     * </pre>
+     *
+     * <code>string cloud_kms_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
      * @return The cloudKmsKeyVersion.
      */
     public java.lang.String getCloudKmsKeyVersion() {
@@ -11232,6 +11282,24 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     }
 
     public static final int ALGORITHM_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The algorithm to use for creating a managed Cloud KMS key for a for a
+     * simplified experience. All managed keys will be have their
+     * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] as `HSM`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1beta1.CertificateAuthority.SignHashAlgorithm algorithm = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the algorithm field is set.
+     */
+    public boolean hasAlgorithm() {
+      return keyVersionCase_ == 2;
+    }
     /**
      *
      *
@@ -11708,6 +11776,25 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        *
        * <code>string cloud_kms_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
+       * @return Whether the cloudKmsKeyVersion field is set.
+       */
+      @java.lang.Override
+      public boolean hasCloudKmsKeyVersion() {
+        return keyVersionCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The resource name for an existing Cloud KMS CryptoKeyVersion in the
+       * format
+       * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
+       * This option enables full flexibility in the key's capabilities and
+       * properties.
+       * </pre>
+       *
+       * <code>string cloud_kms_key_version = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
        * @return The cloudKmsKeyVersion.
        */
       @java.lang.Override
@@ -11834,6 +11921,25 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         return this;
       }
 
+      /**
+       *
+       *
+       * <pre>
+       * Required. The algorithm to use for creating a managed Cloud KMS key for a for a
+       * simplified experience. All managed keys will be have their
+       * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] as `HSM`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.security.privateca.v1beta1.CertificateAuthority.SignHashAlgorithm algorithm = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the algorithm field is set.
+       */
+      @java.lang.Override
+      public boolean hasAlgorithm() {
+        return keyVersionCase_ == 2;
+      }
       /**
        *
        *
