@@ -32,6 +32,18 @@ public interface SynthesisInputOrBuilder
    *
    * <code>string text = 1;</code>
    *
+   * @return Whether the text field is set.
+   */
+  boolean hasText();
+  /**
+   *
+   *
+   * <pre>
+   * The raw text to be synthesized.
+   * </pre>
+   *
+   * <code>string text = 1;</code>
+   *
    * @return The text.
    */
   java.lang.String getText();
@@ -48,6 +60,21 @@ public interface SynthesisInputOrBuilder
    */
   com.google.protobuf.ByteString getTextBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The SSML document to be synthesized. The SSML document must be valid
+   * and well-formed. Otherwise the RPC will fail and return
+   * [google.rpc.Code.INVALID_ARGUMENT][]. For more information, see
+   * [SSML](https://cloud.google.com/text-to-speech/docs/ssml).
+   * </pre>
+   *
+   * <code>string ssml = 2;</code>
+   *
+   * @return Whether the ssml field is set.
+   */
+  boolean hasSsml();
   /**
    *
    *

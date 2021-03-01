@@ -176,6 +176,20 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string text = 1;</code>
    *
+   * @return Whether the text field is set.
+   */
+  public boolean hasText() {
+    return inputSourceCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The raw text to be synthesized.
+   * </pre>
+   *
+   * <code>string text = 1;</code>
+   *
    * @return The text.
    */
   public java.lang.String getText() {
@@ -223,6 +237,23 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SSML_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * The SSML document to be synthesized. The SSML document must be valid
+   * and well-formed. Otherwise the RPC will fail and return
+   * [google.rpc.Code.INVALID_ARGUMENT][]. For more information, see
+   * [SSML](https://cloud.google.com/text-to-speech/docs/ssml).
+   * </pre>
+   *
+   * <code>string ssml = 2;</code>
+   *
+   * @return Whether the ssml field is set.
+   */
+  public boolean hasSsml() {
+    return inputSourceCase_ == 2;
+  }
   /**
    *
    *
@@ -676,6 +707,21 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string text = 1;</code>
      *
+     * @return Whether the text field is set.
+     */
+    @java.lang.Override
+    public boolean hasText() {
+      return inputSourceCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The raw text to be synthesized.
+     * </pre>
+     *
+     * <code>string text = 1;</code>
+     *
      * @return The text.
      */
     @java.lang.Override
@@ -786,6 +832,24 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * The SSML document to be synthesized. The SSML document must be valid
+     * and well-formed. Otherwise the RPC will fail and return
+     * [google.rpc.Code.INVALID_ARGUMENT][]. For more information, see
+     * [SSML](https://cloud.google.com/text-to-speech/docs/ssml).
+     * </pre>
+     *
+     * <code>string ssml = 2;</code>
+     *
+     * @return Whether the ssml field is set.
+     */
+    @java.lang.Override
+    public boolean hasSsml() {
+      return inputSourceCase_ == 2;
+    }
     /**
      *
      *
