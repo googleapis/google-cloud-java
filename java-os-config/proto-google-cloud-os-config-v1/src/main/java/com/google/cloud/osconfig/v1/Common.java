@@ -41,10 +41,35 @@ public final class Common {
      *
      * <code>int32 fixed = 1;</code>
      *
+     * @return Whether the fixed field is set.
+     */
+    boolean hasFixed();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a fixed value.
+     * </pre>
+     *
+     * <code>int32 fixed = 1;</code>
+     *
      * @return The fixed.
      */
     int getFixed();
 
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the relative value defined as a percentage, which will be
+     * multiplied by a reference value.
+     * </pre>
+     *
+     * <code>int32 percent = 2;</code>
+     *
+     * @return Whether the percent field is set.
+     */
+    boolean hasPercent();
     /**
      *
      *
@@ -215,6 +240,21 @@ public final class Common {
      *
      * <code>int32 fixed = 1;</code>
      *
+     * @return Whether the fixed field is set.
+     */
+    @java.lang.Override
+    public boolean hasFixed() {
+      return modeCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a fixed value.
+     * </pre>
+     *
+     * <code>int32 fixed = 1;</code>
+     *
      * @return The fixed.
      */
     @java.lang.Override
@@ -226,6 +266,22 @@ public final class Common {
     }
 
     public static final int PERCENT_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the relative value defined as a percentage, which will be
+     * multiplied by a reference value.
+     * </pre>
+     *
+     * <code>int32 percent = 2;</code>
+     *
+     * @return Whether the percent field is set.
+     */
+    @java.lang.Override
+    public boolean hasPercent() {
+      return modeCase_ == 2;
+    }
     /**
      *
      *
@@ -640,6 +696,20 @@ public final class Common {
        *
        * <code>int32 fixed = 1;</code>
        *
+       * @return Whether the fixed field is set.
+       */
+      public boolean hasFixed() {
+        return modeCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies a fixed value.
+       * </pre>
+       *
+       * <code>int32 fixed = 1;</code>
+       *
        * @return The fixed.
        */
       public int getFixed() {
@@ -686,6 +756,21 @@ public final class Common {
         return this;
       }
 
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the relative value defined as a percentage, which will be
+       * multiplied by a reference value.
+       * </pre>
+       *
+       * <code>int32 percent = 2;</code>
+       *
+       * @return Whether the percent field is set.
+       */
+      public boolean hasPercent() {
+        return modeCase_ == 2;
+      }
       /**
        *
        *

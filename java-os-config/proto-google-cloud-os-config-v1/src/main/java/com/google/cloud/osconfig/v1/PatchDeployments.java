@@ -9397,6 +9397,21 @@ public final class PatchDeployments {
      *
      * <code>int32 month_day = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
+     * @return Whether the monthDay field is set.
+     */
+    boolean hasMonthDay();
+    /**
+     *
+     *
+     * <pre>
+     * Required. One day of the month. 1-31 indicates the 1st to the 31st day.
+     * -1 indicates the last day of the month. Months without the target day
+     * will be skipped. For example, a schedule to run "every month on the 31st"
+     * will not run in February, April, June, etc.
+     * </pre>
+     *
+     * <code>int32 month_day = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
      * @return The monthDay.
      */
     int getMonthDay();
@@ -9622,6 +9637,24 @@ public final class PatchDeployments {
     }
 
     public static final int MONTH_DAY_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Required. One day of the month. 1-31 indicates the 1st to the 31st day.
+     * -1 indicates the last day of the month. Months without the target day
+     * will be skipped. For example, a schedule to run "every month on the 31st"
+     * will not run in February, April, June, etc.
+     * </pre>
+     *
+     * <code>int32 month_day = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the monthDay field is set.
+     */
+    @java.lang.Override
+    public boolean hasMonthDay() {
+      return dayOfMonthCase_ == 2;
+    }
     /**
      *
      *
@@ -10273,6 +10306,23 @@ public final class PatchDeployments {
         return weekDayOfMonthBuilder_;
       }
 
+      /**
+       *
+       *
+       * <pre>
+       * Required. One day of the month. 1-31 indicates the 1st to the 31st day.
+       * -1 indicates the last day of the month. Months without the target day
+       * will be skipped. For example, a schedule to run "every month on the 31st"
+       * will not run in February, April, June, etc.
+       * </pre>
+       *
+       * <code>int32 month_day = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return Whether the monthDay field is set.
+       */
+      public boolean hasMonthDay() {
+        return dayOfMonthCase_ == 2;
+      }
       /**
        *
        *

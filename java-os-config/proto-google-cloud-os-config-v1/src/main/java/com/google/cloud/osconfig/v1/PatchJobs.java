@@ -29282,6 +29282,18 @@ public final class PatchJobs {
      *
      * <code>string local_path = 1;</code>
      *
+     * @return Whether the localPath field is set.
+     */
+    boolean hasLocalPath();
+    /**
+     *
+     *
+     * <pre>
+     * An absolute path to the executable on the VM.
+     * </pre>
+     *
+     * <code>string local_path = 1;</code>
+     *
      * @return The localPath.
      */
     java.lang.String getLocalPath();
@@ -29769,6 +29781,20 @@ public final class PatchJobs {
     }
 
     public static final int LOCAL_PATH_FIELD_NUMBER = 1;
+    /**
+     *
+     *
+     * <pre>
+     * An absolute path to the executable on the VM.
+     * </pre>
+     *
+     * <code>string local_path = 1;</code>
+     *
+     * @return Whether the localPath field is set.
+     */
+    public boolean hasLocalPath() {
+      return executableCase_ == 1;
+    }
     /**
      *
      *
@@ -30428,6 +30454,21 @@ public final class PatchJobs {
 
       private int bitField0_;
 
+      /**
+       *
+       *
+       * <pre>
+       * An absolute path to the executable on the VM.
+       * </pre>
+       *
+       * <code>string local_path = 1;</code>
+       *
+       * @return Whether the localPath field is set.
+       */
+      @java.lang.Override
+      public boolean hasLocalPath() {
+        return executableCase_ == 1;
+      }
       /**
        *
        *
