@@ -260,6 +260,21 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
    *
    * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
    *
+   * @return Whether the name field is set.
+   */
+  public boolean hasName() {
+    return schemaSpecCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name of the schema against which to validate.
+   * Format is `projects/{project}/schemas/{schema}`.
+   * </pre>
+   *
+   * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
+   *
    * @return The name.
    */
   public java.lang.String getName() {
@@ -960,6 +975,22 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Name of the schema against which to validate.
+     * Format is `projects/{project}/schemas/{schema}`.
+     * </pre>
+     *
+     * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return Whether the name field is set.
+     */
+    @java.lang.Override
+    public boolean hasName() {
+      return schemaSpecCase_ == 2;
+    }
     /**
      *
      *

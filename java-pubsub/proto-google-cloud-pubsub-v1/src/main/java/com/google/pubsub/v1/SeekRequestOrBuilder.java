@@ -128,6 +128,20 @@ public interface SeekRequestOrBuilder
    *
    * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
    *
+   * @return Whether the snapshot field is set.
+   */
+  boolean hasSnapshot();
+  /**
+   *
+   *
+   * <pre>
+   * The snapshot to seek to. The snapshot's topic must be the same as that of
+   * the provided subscription.
+   * Format is `projects/{project}/snapshots/{snap}`.
+   * </pre>
+   *
+   * <code>string snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+   *
    * @return The snapshot.
    */
   java.lang.String getSnapshot();
