@@ -166,6 +166,23 @@ public final class ImportErrorsConfig extends com.google.protobuf.GeneratedMessa
    *
    * <code>string gcs_prefix = 1;</code>
    *
+   * @return Whether the gcsPrefix field is set.
+   */
+  public boolean hasGcsPrefix() {
+    return destinationCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Google Cloud Storage path for import errors. This must be an empty,
+   * existing Cloud Storage bucket. Import errors will be written to a file in
+   * this bucket, one per line, as a JSON-encoded
+   * `google.rpc.Status` message.
+   * </pre>
+   *
+   * <code>string gcs_prefix = 1;</code>
+   *
    * @return The gcsPrefix.
    */
   public java.lang.String getGcsPrefix() {
@@ -577,6 +594,24 @@ public final class ImportErrorsConfig extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Google Cloud Storage path for import errors. This must be an empty,
+     * existing Cloud Storage bucket. Import errors will be written to a file in
+     * this bucket, one per line, as a JSON-encoded
+     * `google.rpc.Status` message.
+     * </pre>
+     *
+     * <code>string gcs_prefix = 1;</code>
+     *
+     * @return Whether the gcsPrefix field is set.
+     */
+    @java.lang.Override
+    public boolean hasGcsPrefix() {
+      return destinationCase_ == 1;
+    }
     /**
      *
      *
