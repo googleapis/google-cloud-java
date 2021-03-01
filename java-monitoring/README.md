@@ -39,7 +39,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-monitoring</artifactId>
-  <version>2.0.14</version>
+  <version>2.0.15-SNAPSHOT</version>
 </dependency>
 
 ```
@@ -52,12 +52,12 @@ compile 'com.google.cloud:google-cloud-monitoring'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-monitoring:2.0.13'
+compile 'com.google.cloud:google-cloud-monitoring:2.0.14'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-monitoring" % "2.0.13"
+libraryDependencies += "com.google.cloud" % "google-cloud-monitoring" % "2.0.14"
 ```
 
 ## Authentication
