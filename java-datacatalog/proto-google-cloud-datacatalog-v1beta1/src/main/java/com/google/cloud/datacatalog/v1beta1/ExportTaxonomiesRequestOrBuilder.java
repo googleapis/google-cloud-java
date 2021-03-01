@@ -122,6 +122,18 @@ public interface ExportTaxonomiesRequestOrBuilder
    *
    * <code>bool serialized_taxonomies = 3;</code>
    *
+   * @return Whether the serializedTaxonomies field is set.
+   */
+  boolean hasSerializedTaxonomies();
+  /**
+   *
+   *
+   * <pre>
+   * Export taxonomies as serialized taxonomies.
+   * </pre>
+   *
+   * <code>bool serialized_taxonomies = 3;</code>
+   *
    * @return The serializedTaxonomies.
    */
   boolean getSerializedTaxonomies();

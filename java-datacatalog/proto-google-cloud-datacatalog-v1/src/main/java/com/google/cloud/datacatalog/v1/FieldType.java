@@ -2209,6 +2209,20 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datacatalog.v1.FieldType.PrimitiveType primitive_type = 1;</code>
    *
+   * @return Whether the primitiveType field is set.
+   */
+  public boolean hasPrimitiveType() {
+    return typeDeclCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents primitive types - string, bool etc.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.FieldType.PrimitiveType primitive_type = 1;</code>
+   *
    * @return The enum numeric value on the wire for primitiveType.
    */
   public int getPrimitiveTypeValue() {
@@ -2665,6 +2679,21 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Represents primitive types - string, bool etc.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.FieldType.PrimitiveType primitive_type = 1;</code>
+     *
+     * @return Whether the primitiveType field is set.
+     */
+    @java.lang.Override
+    public boolean hasPrimitiveType() {
+      return typeDeclCase_ == 1;
+    }
     /**
      *
      *

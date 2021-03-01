@@ -381,6 +381,24 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string column = 4;</code>
    *
+   * @return Whether the column field is set.
+   */
+  public boolean hasColumn() {
+    return scopeCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resources like Entry can have schemas associated with them. This scope
+   * allows users to attach tags to an individual column based on that schema.
+   * For attaching a tag to a nested column, use `.` to separate the column
+   * names. Example:
+   * * `outer_column.inner_column`
+   * </pre>
+   *
+   * <code>string column = 4;</code>
+   *
    * @return The column.
    */
   public java.lang.String getColumn() {
@@ -1345,6 +1363,25 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Resources like Entry can have schemas associated with them. This scope
+     * allows users to attach tags to an individual column based on that schema.
+     * For attaching a tag to a nested column, use `.` to separate the column
+     * names. Example:
+     * * `outer_column.inner_column`
+     * </pre>
+     *
+     * <code>string column = 4;</code>
+     *
+     * @return Whether the column field is set.
+     */
+    @java.lang.Override
+    public boolean hasColumn() {
+      return scopeCase_ == 4;
+    }
     /**
      *
      *

@@ -155,6 +155,21 @@ public interface SearchCatalogResultOrBuilder
    * .google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @return Whether the integratedSystem field is set.
+   */
+  boolean hasIntegratedSystem();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field indicates the entry's source system that Data Catalog
+   * integrates with, such as BigQuery or Cloud Pub/Sub.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
    * @return The enum numeric value on the wire for integratedSystem.
    */
   int getIntegratedSystemValue();
@@ -174,6 +189,19 @@ public interface SearchCatalogResultOrBuilder
    */
   com.google.cloud.datacatalog.v1.IntegratedSystem getIntegratedSystem();
 
+  /**
+   *
+   *
+   * <pre>
+   * This field indicates the entry's source system that Data Catalog does not
+   * integrate with.
+   * </pre>
+   *
+   * <code>string user_specified_system = 9;</code>
+   *
+   * @return Whether the userSpecifiedSystem field is set.
+   */
+  boolean hasUserSpecifiedSystem();
   /**
    *
    *

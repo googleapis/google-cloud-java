@@ -105,6 +105,19 @@ public interface EntryOrBuilder
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
    *
+   * @return Whether the type field is set.
+   */
+  boolean hasType();
+  /**
+   *
+   *
+   * <pre>
+   * The type of the entry.
+   * Only used for Entries with types in the EntryType enum.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1beta1.EntryType type = 2;</code>
+   *
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
@@ -122,6 +135,26 @@ public interface EntryOrBuilder
    */
   com.google.cloud.datacatalog.v1beta1.EntryType getType();
 
+  /**
+   *
+   *
+   * <pre>
+   * Entry type if it does not fit any of the input-allowed values listed in
+   * `EntryType` enum above. When creating an entry, users should check the
+   * enum values first, if nothing matches the entry to be created, then
+   * provide a custom value, for example "my_special_type".
+   * `user_specified_type` strings must begin with a letter or underscore and
+   * can only contain letters, numbers, and underscores; are case insensitive;
+   * must be at least 1 character and at most 64 characters long.
+   * Currently, only FILESET enum value is allowed. All other entries created
+   * through Data Catalog must use `user_specified_type`.
+   * </pre>
+   *
+   * <code>string user_specified_type = 16;</code>
+   *
+   * @return Whether the userSpecifiedType field is set.
+   */
+  boolean hasUserSpecifiedType();
   /**
    *
    *
@@ -175,6 +208,21 @@ public interface EntryOrBuilder
    * .google.cloud.datacatalog.v1beta1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @return Whether the integratedSystem field is set.
+   */
+  boolean hasIntegratedSystem();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field indicates the entry's source system that Data Catalog
+   * integrates with, such as BigQuery or Pub/Sub.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1beta1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
    * @return The enum numeric value on the wire for integratedSystem.
    */
   int getIntegratedSystemValue();
@@ -194,6 +242,22 @@ public interface EntryOrBuilder
    */
   com.google.cloud.datacatalog.v1beta1.IntegratedSystem getIntegratedSystem();
 
+  /**
+   *
+   *
+   * <pre>
+   * This field indicates the entry's source system that Data Catalog does not
+   * integrate with. `user_specified_system` strings must begin with a letter
+   * or underscore and can only contain letters, numbers, and underscores; are
+   * case insensitive; must be at least 1 character and at most 64 characters
+   * long.
+   * </pre>
+   *
+   * <code>string user_specified_system = 18;</code>
+   *
+   * @return Whether the userSpecifiedSystem field is set.
+   */
+  boolean hasUserSpecifiedSystem();
   /**
    *
    *

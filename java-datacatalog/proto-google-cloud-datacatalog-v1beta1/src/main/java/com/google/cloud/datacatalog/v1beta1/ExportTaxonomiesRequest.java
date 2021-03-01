@@ -311,6 +311,21 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    * <code>bool serialized_taxonomies = 3;</code>
    *
+   * @return Whether the serializedTaxonomies field is set.
+   */
+  @java.lang.Override
+  public boolean hasSerializedTaxonomies() {
+    return destinationCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Export taxonomies as serialized taxonomies.
+   * </pre>
+   *
+   * <code>bool serialized_taxonomies = 3;</code>
+   *
    * @return The serializedTaxonomies.
    */
   @java.lang.Override
@@ -1041,6 +1056,20 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Export taxonomies as serialized taxonomies.
+     * </pre>
+     *
+     * <code>bool serialized_taxonomies = 3;</code>
+     *
+     * @return Whether the serializedTaxonomies field is set.
+     */
+    public boolean hasSerializedTaxonomies() {
+      return destinationCase_ == 3;
+    }
     /**
      *
      *

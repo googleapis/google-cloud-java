@@ -121,6 +121,22 @@ public interface TagOrBuilder
    *
    * <code>string column = 4;</code>
    *
+   * @return Whether the column field is set.
+   */
+  boolean hasColumn();
+  /**
+   *
+   *
+   * <pre>
+   * Resources like Entry can have schemas associated with them. This scope
+   * allows users to attach tags to an individual column based on that schema.
+   * For attaching a tag to a nested column, use `.` to separate the column
+   * names. Example:
+   * * `outer_column.inner_column`
+   * </pre>
+   *
+   * <code>string column = 4;</code>
+   *
    * @return The column.
    */
   java.lang.String getColumn();
