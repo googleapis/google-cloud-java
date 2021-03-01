@@ -149,6 +149,20 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
    * </code>
    *
+   * @return Whether the commonAlphabet field is set.
+   */
+  boolean hasCommonAlphabet();
+  /**
+   *
+   *
+   * <pre>
+   * Common alphabets.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
+   * </code>
+   *
    * @return The enum numeric value on the wire for commonAlphabet.
    */
   int getCommonAlphabetValue();
@@ -167,6 +181,27 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    */
   com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet getCommonAlphabet();
 
+  /**
+   *
+   *
+   * <pre>
+   * This is supported by mapping these to the alphanumeric characters
+   * that the FFX mode natively supports. This happens before/after
+   * encryption/decryption.
+   * Each character listed must appear only once.
+   * Number of characters must be in the range [2, 95].
+   * This must be encoded as ASCII.
+   * The order of characters does not matter.
+   * The full list of allowed characters is:
+   * &lt;code&gt;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+   * ~`!&#64;#$%^&amp;*()_-+={[}]|&#92;:;"'&lt;,&gt;.?/&lt;/code&gt;
+   * </pre>
+   *
+   * <code>string custom_alphabet = 5;</code>
+   *
+   * @return Whether the customAlphabet field is set.
+   */
+  boolean hasCustomAlphabet();
   /**
    *
    *
@@ -210,6 +245,18 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    */
   com.google.protobuf.ByteString getCustomAlphabetBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The native way to select the alphabet. Must be in the range [2, 95].
+   * </pre>
+   *
+   * <code>int32 radix = 6;</code>
+   *
+   * @return Whether the radix field is set.
+   */
+  boolean hasRadix();
   /**
    *
    *

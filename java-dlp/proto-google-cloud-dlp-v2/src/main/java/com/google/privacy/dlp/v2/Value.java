@@ -255,6 +255,21 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int64 integer_value = 1;</code>
    *
+   * @return Whether the integerValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasIntegerValue() {
+    return typeCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * integer
+   * </pre>
+   *
+   * <code>int64 integer_value = 1;</code>
+   *
    * @return The integerValue.
    */
   @java.lang.Override
@@ -275,6 +290,21 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>double float_value = 2;</code>
    *
+   * @return Whether the floatValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasFloatValue() {
+    return typeCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * float
+   * </pre>
+   *
+   * <code>double float_value = 2;</code>
+   *
    * @return The floatValue.
    */
   @java.lang.Override
@@ -286,6 +316,20 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * string
+   * </pre>
+   *
+   * <code>string string_value = 3;</code>
+   *
+   * @return Whether the stringValue field is set.
+   */
+  public boolean hasStringValue() {
+    return typeCase_ == 3;
+  }
   /**
    *
    *
@@ -342,6 +386,21 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOLEAN_VALUE_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * boolean
+   * </pre>
+   *
+   * <code>bool boolean_value = 4;</code>
+   *
+   * @return Whether the booleanValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasBooleanValue() {
+    return typeCase_ == 4;
+  }
   /**
    *
    *
@@ -515,6 +574,20 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DAY_OF_WEEK_VALUE_FIELD_NUMBER = 8;
+  /**
+   *
+   *
+   * <pre>
+   * day of week
+   * </pre>
+   *
+   * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
+   *
+   * @return Whether the dayOfWeekValue field is set.
+   */
+  public boolean hasDayOfWeekValue() {
+    return typeCase_ == 8;
+  }
   /**
    *
    *
@@ -1092,6 +1165,20 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>int64 integer_value = 1;</code>
      *
+     * @return Whether the integerValue field is set.
+     */
+    public boolean hasIntegerValue() {
+      return typeCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * integer
+     * </pre>
+     *
+     * <code>int64 integer_value = 1;</code>
+     *
      * @return The integerValue.
      */
     public long getIntegerValue() {
@@ -1147,6 +1234,20 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>double float_value = 2;</code>
      *
+     * @return Whether the floatValue field is set.
+     */
+    public boolean hasFloatValue() {
+      return typeCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * float
+     * </pre>
+     *
+     * <code>double float_value = 2;</code>
+     *
      * @return The floatValue.
      */
     public double getFloatValue() {
@@ -1193,6 +1294,21 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * string
+     * </pre>
+     *
+     * <code>string string_value = 3;</code>
+     *
+     * @return Whether the stringValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasStringValue() {
+      return typeCase_ == 3;
+    }
     /**
      *
      *
@@ -1312,6 +1428,20 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * boolean
+     * </pre>
+     *
+     * <code>bool boolean_value = 4;</code>
+     *
+     * @return Whether the booleanValue field is set.
+     */
+    public boolean hasBooleanValue() {
+      return typeCase_ == 4;
+    }
     /**
      *
      *
@@ -1973,6 +2103,21 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return dateValueBuilder_;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * day of week
+     * </pre>
+     *
+     * <code>.google.type.DayOfWeek day_of_week_value = 8;</code>
+     *
+     * @return Whether the dayOfWeekValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasDayOfWeekValue() {
+      return typeCase_ == 8;
+    }
     /**
      *
      *

@@ -119,6 +119,20 @@ public interface QuasiIdOrBuilder
    *
    * <code>string custom_tag = 3;</code>
    *
+   * @return Whether the customTag field is set.
+   */
+  boolean hasCustomTag();
+  /**
+   *
+   *
+   * <pre>
+   * A column can be tagged with a custom tag. In this case, the user must
+   * indicate an auxiliary table that contains statistical information on
+   * the possible values of this column (below).
+   * </pre>
+   *
+   * <code>string custom_tag = 3;</code>
+   *
    * @return The customTag.
    */
   java.lang.String getCustomTag();

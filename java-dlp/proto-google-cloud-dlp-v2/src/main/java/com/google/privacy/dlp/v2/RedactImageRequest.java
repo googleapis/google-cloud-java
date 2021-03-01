@@ -235,6 +235,19 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      *
      * <code>bool redact_all_text = 2;</code>
      *
+     * @return Whether the redactAllText field is set.
+     */
+    boolean hasRedactAllText();
+    /**
+     *
+     *
+     * <pre>
+     * If true, all text found in the image, regardless whether it matches an
+     * info_type, is redacted. Only one should be provided.
+     * </pre>
+     *
+     * <code>bool redact_all_text = 2;</code>
+     *
      * @return The redactAllText.
      */
     boolean getRedactAllText();
@@ -509,6 +522,22 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int REDACT_ALL_TEXT_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * If true, all text found in the image, regardless whether it matches an
+     * info_type, is redacted. Only one should be provided.
+     * </pre>
+     *
+     * <code>bool redact_all_text = 2;</code>
+     *
+     * @return Whether the redactAllText field is set.
+     */
+    @java.lang.Override
+    public boolean hasRedactAllText() {
+      return targetCase_ == 2;
+    }
     /**
      *
      *
@@ -1238,6 +1267,21 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         return infoTypeBuilder_;
       }
 
+      /**
+       *
+       *
+       * <pre>
+       * If true, all text found in the image, regardless whether it matches an
+       * info_type, is redacted. Only one should be provided.
+       * </pre>
+       *
+       * <code>bool redact_all_text = 2;</code>
+       *
+       * @return Whether the redactAllText field is set.
+       */
+      public boolean hasRedactAllText() {
+        return targetCase_ == 2;
+      }
       /**
        *
        *

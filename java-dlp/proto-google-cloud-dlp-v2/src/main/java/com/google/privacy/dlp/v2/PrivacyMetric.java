@@ -5129,6 +5129,20 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>string custom_tag = 3;</code>
        *
+       * @return Whether the customTag field is set.
+       */
+      boolean hasCustomTag();
+      /**
+       *
+       *
+       * <pre>
+       * A column can be tagged with a custom tag. In this case, the user must
+       * indicate an auxiliary table that contains statistical information on
+       * the possible values of this column (below).
+       * </pre>
+       *
+       * <code>string custom_tag = 3;</code>
+       *
        * @return The customTag.
        */
       java.lang.String getCustomTag();
@@ -5490,6 +5504,22 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int CUSTOM_TAG_FIELD_NUMBER = 3;
+      /**
+       *
+       *
+       * <pre>
+       * A column can be tagged with a custom tag. In this case, the user must
+       * indicate an auxiliary table that contains statistical information on
+       * the possible values of this column (below).
+       * </pre>
+       *
+       * <code>string custom_tag = 3;</code>
+       *
+       * @return Whether the customTag field is set.
+       */
+      public boolean hasCustomTag() {
+        return tagCase_ == 3;
+      }
       /**
        *
        *
@@ -6499,6 +6529,23 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
           return infoTypeBuilder_;
         }
 
+        /**
+         *
+         *
+         * <pre>
+         * A column can be tagged with a custom tag. In this case, the user must
+         * indicate an auxiliary table that contains statistical information on
+         * the possible values of this column (below).
+         * </pre>
+         *
+         * <code>string custom_tag = 3;</code>
+         *
+         * @return Whether the customTag field is set.
+         */
+        @java.lang.Override
+        public boolean hasCustomTag() {
+          return tagCase_ == 3;
+        }
         /**
          *
          *

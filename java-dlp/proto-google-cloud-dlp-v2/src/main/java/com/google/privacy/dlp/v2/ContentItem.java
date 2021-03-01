@@ -200,6 +200,20 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string value = 3;</code>
    *
+   * @return Whether the value field is set.
+   */
+  public boolean hasValue() {
+    return dataItemCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * String data to inspect or redact.
+   * </pre>
+   *
+   * <code>string value = 3;</code>
+   *
    * @return The value.
    */
   public java.lang.String getValue() {
@@ -761,6 +775,21 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * String data to inspect or redact.
+     * </pre>
+     *
+     * <code>string value = 3;</code>
+     *
+     * @return Whether the value field is set.
+     */
+    @java.lang.Override
+    public boolean hasValue() {
+      return dataItemCase_ == 3;
+    }
     /**
      *
      *
