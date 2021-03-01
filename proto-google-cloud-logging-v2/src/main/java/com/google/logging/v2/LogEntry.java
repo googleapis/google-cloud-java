@@ -567,6 +567,20 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string text_payload = 3;</code>
    *
+   * @return Whether the textPayload field is set.
+   */
+  public boolean hasTextPayload() {
+    return payloadCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The log entry payload, represented as a Unicode string (UTF-8).
+   * </pre>
+   *
+   * <code>string text_payload = 3;</code>
+   *
    * @return The textPayload.
    */
   public java.lang.String getTextPayload() {
@@ -2675,6 +2689,21 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       return protoPayloadBuilder_;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * The log entry payload, represented as a Unicode string (UTF-8).
+     * </pre>
+     *
+     * <code>string text_payload = 3;</code>
+     *
+     * @return Whether the textPayload field is set.
+     */
+    @java.lang.Override
+    public boolean hasTextPayload() {
+      return payloadCase_ == 3;
+    }
     /**
      *
      *
