@@ -243,6 +243,21 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int64 int_value = 2;</code>
    *
+   * @return Whether the intValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasIntValue() {
+    return valueCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A 64-bit signed integer.
+   * </pre>
+   *
+   * <code>int64 int_value = 2;</code>
+   *
    * @return The intValue.
    */
   @java.lang.Override
@@ -254,6 +269,21 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOL_VALUE_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * A Boolean value represented by `true` or `false`.
+   * </pre>
+   *
+   * <code>bool bool_value = 3;</code>
+   *
+   * @return Whether the boolValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasBoolValue() {
+    return valueCase_ == 3;
+  }
   /**
    *
    *
@@ -897,6 +927,20 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>int64 int_value = 2;</code>
      *
+     * @return Whether the intValue field is set.
+     */
+    public boolean hasIntValue() {
+      return valueCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A 64-bit signed integer.
+     * </pre>
+     *
+     * <code>int64 int_value = 2;</code>
+     *
      * @return The intValue.
      */
     public long getIntValue() {
@@ -943,6 +987,20 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * A Boolean value represented by `true` or `false`.
+     * </pre>
+     *
+     * <code>bool bool_value = 3;</code>
+     *
+     * @return Whether the boolValue field is set.
+     */
+    public boolean hasBoolValue() {
+      return valueCase_ == 3;
+    }
     /**
      *
      *
