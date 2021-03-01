@@ -274,6 +274,20 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string main_jar_file_uri = 1;</code>
    *
+   * @return Whether the mainJarFileUri field is set.
+   */
+  public boolean hasMainJarFileUri() {
+    return driverCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The HCFS URI of the jar file that contains the main class.
+   * </pre>
+   *
+   * <code>string main_jar_file_uri = 1;</code>
+   *
    * @return The mainJarFileUri.
    */
   public java.lang.String getMainJarFileUri() {
@@ -321,6 +335,21 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAIN_CLASS_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * The name of the driver's main class. The jar file that contains the class
+   * must be in the default CLASSPATH or specified in `jar_file_uris`.
+   * </pre>
+   *
+   * <code>string main_class = 2;</code>
+   *
+   * @return Whether the mainClass field is set.
+   */
+  public boolean hasMainClass() {
+    return driverCase_ == 2;
+  }
   /**
    *
    *
@@ -1405,6 +1434,21 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string main_jar_file_uri = 1;</code>
      *
+     * @return Whether the mainJarFileUri field is set.
+     */
+    @java.lang.Override
+    public boolean hasMainJarFileUri() {
+      return driverCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The HCFS URI of the jar file that contains the main class.
+     * </pre>
+     *
+     * <code>string main_jar_file_uri = 1;</code>
+     *
      * @return The mainJarFileUri.
      */
     @java.lang.Override
@@ -1515,6 +1559,22 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * The name of the driver's main class. The jar file that contains the class
+     * must be in the default CLASSPATH or specified in `jar_file_uris`.
+     * </pre>
+     *
+     * <code>string main_class = 2;</code>
+     *
+     * @return Whether the mainClass field is set.
+     */
+    @java.lang.Override
+    public boolean hasMainClass() {
+      return driverCase_ == 2;
+    }
     /**
      *
      *
