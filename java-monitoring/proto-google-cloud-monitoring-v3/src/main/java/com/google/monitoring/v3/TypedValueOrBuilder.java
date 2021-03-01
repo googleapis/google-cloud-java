@@ -32,10 +32,34 @@ public interface TypedValueOrBuilder
    *
    * <code>bool bool_value = 1;</code>
    *
+   * @return Whether the boolValue field is set.
+   */
+  boolean hasBoolValue();
+  /**
+   *
+   *
+   * <pre>
+   * A Boolean value: `true` or `false`.
+   * </pre>
+   *
+   * <code>bool bool_value = 1;</code>
+   *
    * @return The boolValue.
    */
   boolean getBoolValue();
 
+  /**
+   *
+   *
+   * <pre>
+   * A 64-bit integer. Its range is approximately &amp;plusmn;9.2x10&lt;sup&gt;18&lt;/sup&gt;.
+   * </pre>
+   *
+   * <code>int64 int64_value = 2;</code>
+   *
+   * @return Whether the int64Value field is set.
+   */
+  boolean hasInt64Value();
   /**
    *
    *
@@ -60,10 +84,36 @@ public interface TypedValueOrBuilder
    *
    * <code>double double_value = 3;</code>
    *
+   * @return Whether the doubleValue field is set.
+   */
+  boolean hasDoubleValue();
+  /**
+   *
+   *
+   * <pre>
+   * A 64-bit double-precision floating-point number. Its magnitude
+   * is approximately &amp;plusmn;10&lt;sup&gt;&amp;plusmn;300&lt;/sup&gt; and it has 16
+   * significant digits of precision.
+   * </pre>
+   *
+   * <code>double double_value = 3;</code>
+   *
    * @return The doubleValue.
    */
   double getDoubleValue();
 
+  /**
+   *
+   *
+   * <pre>
+   * A variable-length string value.
+   * </pre>
+   *
+   * <code>string string_value = 4;</code>
+   *
+   * @return Whether the stringValue field is set.
+   */
+  boolean hasStringValue();
   /**
    *
    *

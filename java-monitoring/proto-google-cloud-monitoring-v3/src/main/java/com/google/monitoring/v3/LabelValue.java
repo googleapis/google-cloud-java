@@ -181,6 +181,21 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bool bool_value = 1;</code>
    *
+   * @return Whether the boolValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasBoolValue() {
+    return valueCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A bool label value.
+   * </pre>
+   *
+   * <code>bool bool_value = 1;</code>
+   *
    * @return The boolValue.
    */
   @java.lang.Override
@@ -201,6 +216,21 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int64 int64_value = 2;</code>
    *
+   * @return Whether the int64Value field is set.
+   */
+  @java.lang.Override
+  public boolean hasInt64Value() {
+    return valueCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An int64 label value.
+   * </pre>
+   *
+   * <code>int64 int64_value = 2;</code>
+   *
    * @return The int64Value.
    */
   @java.lang.Override
@@ -212,6 +242,20 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * A string label value.
+   * </pre>
+   *
+   * <code>string string_value = 3;</code>
+   *
+   * @return Whether the stringValue field is set.
+   */
+  public boolean hasStringValue() {
+    return valueCase_ == 3;
+  }
   /**
    *
    *
@@ -674,6 +718,20 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bool bool_value = 1;</code>
      *
+     * @return Whether the boolValue field is set.
+     */
+    public boolean hasBoolValue() {
+      return valueCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A bool label value.
+     * </pre>
+     *
+     * <code>bool bool_value = 1;</code>
+     *
      * @return The boolValue.
      */
     public boolean getBoolValue() {
@@ -729,6 +787,20 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>int64 int64_value = 2;</code>
      *
+     * @return Whether the int64Value field is set.
+     */
+    public boolean hasInt64Value() {
+      return valueCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An int64 label value.
+     * </pre>
+     *
+     * <code>int64 int64_value = 2;</code>
+     *
      * @return The int64Value.
      */
     public long getInt64Value() {
@@ -775,6 +847,21 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * A string label value.
+     * </pre>
+     *
+     * <code>string string_value = 3;</code>
+     *
+     * @return Whether the stringValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasStringValue() {
+      return valueCase_ == 3;
+    }
     /**
      *
      *

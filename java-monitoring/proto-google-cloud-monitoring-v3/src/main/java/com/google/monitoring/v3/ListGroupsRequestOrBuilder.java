@@ -66,6 +66,21 @@ public interface ListGroupsRequestOrBuilder
    *
    * <code>string children_of_group = 2 [(.google.api.resource_reference) = { ... }</code>
    *
+   * @return Whether the childrenOfGroup field is set.
+   */
+  boolean hasChildrenOfGroup();
+  /**
+   *
+   *
+   * <pre>
+   * A group name. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   * Returns groups whose `parent_name` field contains the group
+   * name.  If no groups have this parent, the results are empty.
+   * </pre>
+   *
+   * <code>string children_of_group = 2 [(.google.api.resource_reference) = { ... }</code>
+   *
    * @return The childrenOfGroup.
    */
   java.lang.String getChildrenOfGroup();
@@ -85,6 +100,23 @@ public interface ListGroupsRequestOrBuilder
    */
   com.google.protobuf.ByteString getChildrenOfGroupBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * A group name. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   * Returns groups that are ancestors of the specified group.
+   * The groups are returned in order, starting with the immediate parent and
+   * ending with the most distant ancestor.  If the specified group has no
+   * immediate parent, the results are empty.
+   * </pre>
+   *
+   * <code>string ancestors_of_group = 3 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the ancestorsOfGroup field is set.
+   */
+  boolean hasAncestorsOfGroup();
   /**
    *
    *
@@ -120,6 +152,22 @@ public interface ListGroupsRequestOrBuilder
    */
   com.google.protobuf.ByteString getAncestorsOfGroupBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * A group name. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   * Returns the descendants of the specified group.  This is a superset of
+   * the results returned by the `children_of_group` filter, and includes
+   * children-of-children, and so forth.
+   * </pre>
+   *
+   * <code>string descendants_of_group = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the descendantsOfGroup field is set.
+   */
+  boolean hasDescendantsOfGroup();
   /**
    *
    *

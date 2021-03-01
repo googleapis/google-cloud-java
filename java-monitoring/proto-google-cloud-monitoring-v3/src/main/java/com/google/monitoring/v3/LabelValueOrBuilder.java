@@ -32,6 +32,18 @@ public interface LabelValueOrBuilder
    *
    * <code>bool bool_value = 1;</code>
    *
+   * @return Whether the boolValue field is set.
+   */
+  boolean hasBoolValue();
+  /**
+   *
+   *
+   * <pre>
+   * A bool label value.
+   * </pre>
+   *
+   * <code>bool bool_value = 1;</code>
+   *
    * @return The boolValue.
    */
   boolean getBoolValue();
@@ -45,10 +57,34 @@ public interface LabelValueOrBuilder
    *
    * <code>int64 int64_value = 2;</code>
    *
+   * @return Whether the int64Value field is set.
+   */
+  boolean hasInt64Value();
+  /**
+   *
+   *
+   * <pre>
+   * An int64 label value.
+   * </pre>
+   *
+   * <code>int64 int64_value = 2;</code>
+   *
    * @return The int64Value.
    */
   long getInt64Value();
 
+  /**
+   *
+   *
+   * <pre>
+   * A string label value.
+   * </pre>
+   *
+   * <code>string string_value = 3;</code>
+   *
+   * @return Whether the stringValue field is set.
+   */
+  boolean hasStringValue();
   /**
    *
    *

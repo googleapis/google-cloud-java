@@ -34,6 +34,20 @@ public interface WindowsBasedSliOrBuilder
    *
    * <code>string good_bad_metric_filter = 5;</code>
    *
+   * @return Whether the goodBadMetricFilter field is set.
+   */
+  boolean hasGoodBadMetricFilter();
+  /**
+   *
+   *
+   * <pre>
+   * A [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+   * specifying a `TimeSeries` with `ValueType = BOOL`. The window is good if
+   * any `true` values appear in the window.
+   * </pre>
+   *
+   * <code>string good_bad_metric_filter = 5;</code>
+   *
    * @return The goodBadMetricFilter.
    */
   java.lang.String getGoodBadMetricFilter();
