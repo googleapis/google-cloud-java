@@ -32,6 +32,18 @@ public interface MetricValueOrBuilder
    *
    * <code>string value = 4;</code>
    *
+   * @return Whether the value field is set.
+   */
+  boolean hasValue();
+  /**
+   *
+   *
+   * <pre>
+   * Measurement value. See MetricHeader for type.
+   * </pre>
+   *
+   * <code>string value = 4;</code>
+   *
    * @return The value.
    */
   java.lang.String getValue();

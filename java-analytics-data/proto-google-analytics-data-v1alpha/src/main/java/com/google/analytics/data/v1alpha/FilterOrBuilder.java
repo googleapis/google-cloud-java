@@ -62,6 +62,21 @@ public interface FilterOrBuilder
    *
    * <code>bool null_filter = 2;</code>
    *
+   * @return Whether the nullFilter field is set.
+   */
+  boolean hasNullFilter();
+  /**
+   *
+   *
+   * <pre>
+   * A filter for null values. If True, a null dimension value is matched by
+   * this filter. Null filter is commonly used inside a NOT filter
+   * expression. For example, a NOT expression of a null filter removes rows
+   * when a dimension is null.
+   * </pre>
+   *
+   * <code>bool null_filter = 2;</code>
+   *
    * @return The nullFilter.
    */
   boolean getNullFilter();

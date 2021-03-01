@@ -4649,6 +4649,24 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bool null_filter = 2;</code>
    *
+   * @return Whether the nullFilter field is set.
+   */
+  @java.lang.Override
+  public boolean hasNullFilter() {
+    return oneFilterCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A filter for null values. If True, a null dimension value is matched by
+   * this filter. Null filter is commonly used inside a NOT filter
+   * expression. For example, a NOT expression of a null filter removes rows
+   * when a dimension is null.
+   * </pre>
+   *
+   * <code>bool null_filter = 2;</code>
+   *
    * @return The nullFilter.
    */
   @java.lang.Override
@@ -5454,6 +5472,23 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * A filter for null values. If True, a null dimension value is matched by
+     * this filter. Null filter is commonly used inside a NOT filter
+     * expression. For example, a NOT expression of a null filter removes rows
+     * when a dimension is null.
+     * </pre>
+     *
+     * <code>bool null_filter = 2;</code>
+     *
+     * @return Whether the nullFilter field is set.
+     */
+    public boolean hasNullFilter() {
+      return oneFilterCase_ == 2;
+    }
     /**
      *
      *

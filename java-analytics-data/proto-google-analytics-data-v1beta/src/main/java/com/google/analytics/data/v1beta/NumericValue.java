@@ -171,6 +171,21 @@ public final class NumericValue extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int64 int64_value = 1;</code>
    *
+   * @return Whether the int64Value field is set.
+   */
+  @java.lang.Override
+  public boolean hasInt64Value() {
+    return oneValueCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Integer value
+   * </pre>
+   *
+   * <code>int64 int64_value = 1;</code>
+   *
    * @return The int64Value.
    */
   @java.lang.Override
@@ -182,6 +197,21 @@ public final class NumericValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOUBLE_VALUE_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Double value
+   * </pre>
+   *
+   * <code>double double_value = 2;</code>
+   *
+   * @return Whether the doubleValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasDoubleValue() {
+    return oneValueCase_ == 2;
+  }
   /**
    *
    *
@@ -592,6 +622,20 @@ public final class NumericValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>int64 int64_value = 1;</code>
      *
+     * @return Whether the int64Value field is set.
+     */
+    public boolean hasInt64Value() {
+      return oneValueCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integer value
+     * </pre>
+     *
+     * <code>int64 int64_value = 1;</code>
+     *
      * @return The int64Value.
      */
     public long getInt64Value() {
@@ -638,6 +682,20 @@ public final class NumericValue extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Double value
+     * </pre>
+     *
+     * <code>double double_value = 2;</code>
+     *
+     * @return Whether the doubleValue field is set.
+     */
+    public boolean hasDoubleValue() {
+      return oneValueCase_ == 2;
+    }
     /**
      *
      *

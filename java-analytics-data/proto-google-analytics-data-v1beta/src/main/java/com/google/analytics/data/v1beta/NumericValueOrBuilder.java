@@ -32,10 +32,34 @@ public interface NumericValueOrBuilder
    *
    * <code>int64 int64_value = 1;</code>
    *
+   * @return Whether the int64Value field is set.
+   */
+  boolean hasInt64Value();
+  /**
+   *
+   *
+   * <pre>
+   * Integer value
+   * </pre>
+   *
+   * <code>int64 int64_value = 1;</code>
+   *
    * @return The int64Value.
    */
   long getInt64Value();
 
+  /**
+   *
+   *
+   * <pre>
+   * Double value
+   * </pre>
+   *
+   * <code>double double_value = 2;</code>
+   *
+   * @return Whether the doubleValue field is set.
+   */
+  boolean hasDoubleValue();
   /**
    *
    *

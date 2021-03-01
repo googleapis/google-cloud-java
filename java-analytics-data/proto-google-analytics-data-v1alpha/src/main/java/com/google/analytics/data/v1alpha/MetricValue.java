@@ -163,6 +163,20 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string value = 4;</code>
    *
+   * @return Whether the value field is set.
+   */
+  public boolean hasValue() {
+    return oneValueCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Measurement value. See MetricHeader for type.
+   * </pre>
+   *
+   * <code>string value = 4;</code>
+   *
    * @return The value.
    */
   public java.lang.String getValue() {
@@ -564,6 +578,21 @@ public final class MetricValue extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Measurement value. See MetricHeader for type.
+     * </pre>
+     *
+     * <code>string value = 4;</code>
+     *
+     * @return Whether the value field is set.
+     */
+    @java.lang.Override
+    public boolean hasValue() {
+      return oneValueCase_ == 4;
+    }
     /**
      *
      *

@@ -3,24 +3,24 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:googleapis/java-analytics-data.git",
-        "sha": "8712e2e42f418591a8dc410f268a867315ec9741"
+        "remote": "https://github.com/googleapis/java-analytics-data.git",
+        "sha": "7192fb5542df47710dfd4ac1d2ecbca1051d1162"
       }
     },
     {
       "git": {
         "name": "googleapis-gen",
         "remote": "https://github.com/googleapis/googleapis-gen.git",
-        "sha": "0c7a837ed1c99453da44cea7d8a49c0ccc36beb7",
-        "internalRef": "359594504"
+        "sha": "a9e44ab7eba5717fe7d64ce093aafbb160fce0ba",
+        "internalRef": "359781040"
       }
     },
     {
       "git": {
         "name": "googleapis-gen",
         "remote": "https://github.com/googleapis/googleapis-gen.git",
-        "sha": "0c7a837ed1c99453da44cea7d8a49c0ccc36beb7",
-        "internalRef": "359594504"
+        "sha": "a9e44ab7eba5717fe7d64ce093aafbb160fce0ba",
+        "internalRef": "359781040"
       }
     },
     {

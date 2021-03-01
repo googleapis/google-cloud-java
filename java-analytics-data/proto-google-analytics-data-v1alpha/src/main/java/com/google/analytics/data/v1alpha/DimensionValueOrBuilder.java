@@ -32,6 +32,18 @@ public interface DimensionValueOrBuilder
    *
    * <code>string value = 1;</code>
    *
+   * @return Whether the value field is set.
+   */
+  boolean hasValue();
+  /**
+   *
+   *
+   * <pre>
+   * Value as a string if the dimension type is a string.
+   * </pre>
+   *
+   * <code>string value = 1;</code>
+   *
    * @return The value.
    */
   java.lang.String getValue();
