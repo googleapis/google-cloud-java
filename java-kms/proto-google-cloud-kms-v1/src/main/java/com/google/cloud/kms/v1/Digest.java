@@ -178,6 +178,21 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bytes sha256 = 1;</code>
    *
+   * @return Whether the sha256 field is set.
+   */
+  @java.lang.Override
+  public boolean hasSha256() {
+    return digestCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A message digest produced with the SHA-256 algorithm.
+   * </pre>
+   *
+   * <code>bytes sha256 = 1;</code>
+   *
    * @return The sha256.
    */
   @java.lang.Override
@@ -198,6 +213,21 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bytes sha384 = 2;</code>
    *
+   * @return Whether the sha384 field is set.
+   */
+  @java.lang.Override
+  public boolean hasSha384() {
+    return digestCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A message digest produced with the SHA-384 algorithm.
+   * </pre>
+   *
+   * <code>bytes sha384 = 2;</code>
+   *
    * @return The sha384.
    */
   @java.lang.Override
@@ -209,6 +239,21 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SHA512_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * A message digest produced with the SHA-512 algorithm.
+   * </pre>
+   *
+   * <code>bytes sha512 = 3;</code>
+   *
+   * @return Whether the sha512 field is set.
+   */
+  @java.lang.Override
+  public boolean hasSha512() {
+    return digestCase_ == 3;
+  }
   /**
    *
    *
@@ -632,6 +677,20 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bytes sha256 = 1;</code>
      *
+     * @return Whether the sha256 field is set.
+     */
+    public boolean hasSha256() {
+      return digestCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A message digest produced with the SHA-256 algorithm.
+     * </pre>
+     *
+     * <code>bytes sha256 = 1;</code>
+     *
      * @return The sha256.
      */
     public com.google.protobuf.ByteString getSha256() {
@@ -690,6 +749,20 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bytes sha384 = 2;</code>
      *
+     * @return Whether the sha384 field is set.
+     */
+    public boolean hasSha384() {
+      return digestCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A message digest produced with the SHA-384 algorithm.
+     * </pre>
+     *
+     * <code>bytes sha384 = 2;</code>
+     *
      * @return The sha384.
      */
     public com.google.protobuf.ByteString getSha384() {
@@ -739,6 +812,20 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * A message digest produced with the SHA-512 algorithm.
+     * </pre>
+     *
+     * <code>bytes sha512 = 3;</code>
+     *
+     * @return Whether the sha512 field is set.
+     */
+    public boolean hasSha512() {
+      return digestCase_ == 3;
+    }
     /**
      *
      *

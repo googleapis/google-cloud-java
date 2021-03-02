@@ -32,6 +32,18 @@ public interface DigestOrBuilder
    *
    * <code>bytes sha256 = 1;</code>
    *
+   * @return Whether the sha256 field is set.
+   */
+  boolean hasSha256();
+  /**
+   *
+   *
+   * <pre>
+   * A message digest produced with the SHA-256 algorithm.
+   * </pre>
+   *
+   * <code>bytes sha256 = 1;</code>
+   *
    * @return The sha256.
    */
   com.google.protobuf.ByteString getSha256();
@@ -45,10 +57,34 @@ public interface DigestOrBuilder
    *
    * <code>bytes sha384 = 2;</code>
    *
+   * @return Whether the sha384 field is set.
+   */
+  boolean hasSha384();
+  /**
+   *
+   *
+   * <pre>
+   * A message digest produced with the SHA-384 algorithm.
+   * </pre>
+   *
+   * <code>bytes sha384 = 2;</code>
+   *
    * @return The sha384.
    */
   com.google.protobuf.ByteString getSha384();
 
+  /**
+   *
+   *
+   * <pre>
+   * A message digest produced with the SHA-512 algorithm.
+   * </pre>
+   *
+   * <code>bytes sha512 = 3;</code>
+   *
+   * @return Whether the sha512 field is set.
+   */
+  boolean hasSha512();
   /**
    *
    *
