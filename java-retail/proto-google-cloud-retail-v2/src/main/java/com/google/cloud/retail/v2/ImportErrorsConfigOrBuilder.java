@@ -35,6 +35,21 @@ public interface ImportErrorsConfigOrBuilder
    *
    * <code>string gcs_prefix = 1;</code>
    *
+   * @return Whether the gcsPrefix field is set.
+   */
+  boolean hasGcsPrefix();
+  /**
+   *
+   *
+   * <pre>
+   * Google Cloud Storage path for import errors. This must be an empty,
+   * existing Cloud Storage bucket. Import errors will be written to a file in
+   * this bucket, one per line, as a JSON-encoded
+   * `google.rpc.Status` message.
+   * </pre>
+   *
+   * <code>string gcs_prefix = 1;</code>
+   *
    * @return The gcsPrefix.
    */
   java.lang.String getGcsPrefix();
