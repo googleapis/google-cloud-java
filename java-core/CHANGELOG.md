@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.94.3](https://www.github.com/googleapis/java-core/compare/v1.94.2...v1.94.3) (2021-03-02)
+
+
+### Dependencies
+
+* update dependency com.google.api-client:google-api-client-bom to v1.31.3 ([#394](https://www.github.com/googleapis/java-core/issues/394)) ([278cb03](https://www.github.com/googleapis/java-core/commit/278cb032dd201a9729ef6a6e6e3c177bf9b3cd7e))
+* update dependency com.google.auth:google-auth-library-bom to v0.24.1 ([#390](https://www.github.com/googleapis/java-core/issues/390)) ([9948791](https://www.github.com/googleapis/java-core/commit/99487914834709cd97b283c59ac14fb7b945c9e7))
+
 ### [1.94.2](https://www.github.com/googleapis/java-core/compare/v1.94.1...v1.94.2) (2021-03-01)
 
 
