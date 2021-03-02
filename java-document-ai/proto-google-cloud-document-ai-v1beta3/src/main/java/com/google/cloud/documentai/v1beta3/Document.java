@@ -34289,11 +34289,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Canonical id. This will be a unique value in the entity list
+     * Optional. Canonical id. This will be a unique value in the entity list
      * for this document.
      * </pre>
      *
-     * <code>string id = 7;</code>
+     * <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The id.
      */
@@ -34302,11 +34302,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Canonical id. This will be a unique value in the entity list
+     * Optional. Canonical id. This will be a unique value in the entity list
      * for this document.
      * </pre>
      *
-     * <code>string id = 7;</code>
+     * <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for id.
      */
@@ -34874,6 +34874,20 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * Boolean value. Can be used for entities with binary values, or for
+       * checkboxes.
+       * </pre>
+       *
+       * <code>bool boolean_value = 6;</code>
+       *
+       * @return The booleanValue.
+       */
+      boolean getBooleanValue();
+
+      /**
+       *
+       *
+       * <pre>
        * Required. Normalized entity value stored as a string. This field is populated for
        * supported document type (e.g. Invoice). For some entity types, one of
        * respective 'structured_value' fields may also be populated.
@@ -35027,6 +35041,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                   structuredValueCase_ = 5;
                   break;
                 }
+              case 48:
+                {
+                  structuredValueCase_ = 6;
+                  structuredValue_ = input.readBool();
+                  break;
+                }
               default:
                 {
                   if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -35073,6 +35093,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         DATE_VALUE(3),
         DATETIME_VALUE(4),
         ADDRESS_VALUE(5),
+        BOOLEAN_VALUE(6),
         STRUCTUREDVALUE_NOT_SET(0);
         private final int value;
 
@@ -35099,6 +35120,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               return DATETIME_VALUE;
             case 5:
               return ADDRESS_VALUE;
+            case 6:
+              return BOOLEAN_VALUE;
             case 0:
               return STRUCTUREDVALUE_NOT_SET;
             default:
@@ -35343,6 +35366,27 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.PostalAddress.getDefaultInstance();
       }
 
+      public static final int BOOLEAN_VALUE_FIELD_NUMBER = 6;
+      /**
+       *
+       *
+       * <pre>
+       * Boolean value. Can be used for entities with binary values, or for
+       * checkboxes.
+       * </pre>
+       *
+       * <code>bool boolean_value = 6;</code>
+       *
+       * @return The booleanValue.
+       */
+      @java.lang.Override
+      public boolean getBooleanValue() {
+        if (structuredValueCase_ == 6) {
+          return (java.lang.Boolean) structuredValue_;
+        }
+        return false;
+      }
+
       public static final int TEXT_FIELD_NUMBER = 1;
       private volatile java.lang.Object text_;
       /**
@@ -35431,6 +35475,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (structuredValueCase_ == 5) {
           output.writeMessage(5, (com.google.type.PostalAddress) structuredValue_);
         }
+        if (structuredValueCase_ == 6) {
+          output.writeBool(6, (boolean) ((java.lang.Boolean) structuredValue_));
+        }
         unknownFields.writeTo(output);
       }
 
@@ -35463,6 +35510,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedOutputStream.computeMessageSize(
                   5, (com.google.type.PostalAddress) structuredValue_);
         }
+        if (structuredValueCase_ == 6) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeBoolSize(
+                  6, (boolean) ((java.lang.Boolean) structuredValue_));
+        }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
@@ -35493,6 +35545,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             break;
           case 5:
             if (!getAddressValue().equals(other.getAddressValue())) return false;
+            break;
+          case 6:
+            if (getBooleanValue() != other.getBooleanValue()) return false;
             break;
           case 0:
           default:
@@ -35526,6 +35581,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           case 5:
             hash = (37 * hash) + ADDRESS_VALUE_FIELD_NUMBER;
             hash = (53 * hash) + getAddressValue().hashCode();
+            break;
+          case 6:
+            hash = (37 * hash) + BOOLEAN_VALUE_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getBooleanValue());
             break;
           case 0:
           default:
@@ -35744,6 +35803,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               result.structuredValue_ = addressValueBuilder_.build();
             }
           }
+          if (structuredValueCase_ == 6) {
+            result.structuredValue_ = structuredValue_;
+          }
           result.text_ = text_;
           result.structuredValueCase_ = structuredValueCase_;
           onBuilt();
@@ -35825,6 +35887,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             case ADDRESS_VALUE:
               {
                 mergeAddressValue(other.getAddressValue());
+                break;
+              }
+            case BOOLEAN_VALUE:
+              {
+                setBooleanValue(other.getBooleanValue());
                 break;
               }
             case STRUCTUREDVALUE_NOT_SET:
@@ -36768,6 +36835,64 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           return addressValueBuilder_;
         }
 
+        /**
+         *
+         *
+         * <pre>
+         * Boolean value. Can be used for entities with binary values, or for
+         * checkboxes.
+         * </pre>
+         *
+         * <code>bool boolean_value = 6;</code>
+         *
+         * @return The booleanValue.
+         */
+        public boolean getBooleanValue() {
+          if (structuredValueCase_ == 6) {
+            return (java.lang.Boolean) structuredValue_;
+          }
+          return false;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Boolean value. Can be used for entities with binary values, or for
+         * checkboxes.
+         * </pre>
+         *
+         * <code>bool boolean_value = 6;</code>
+         *
+         * @param value The booleanValue to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBooleanValue(boolean value) {
+          structuredValueCase_ = 6;
+          structuredValue_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Boolean value. Can be used for entities with binary values, or for
+         * checkboxes.
+         * </pre>
+         *
+         * <code>bool boolean_value = 6;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearBooleanValue() {
+          if (structuredValueCase_ == 6) {
+            structuredValueCase_ = 0;
+            structuredValue_ = null;
+            onChanged();
+          }
+          return this;
+        }
+
         private java.lang.Object text_ = "";
         /**
          *
@@ -37236,11 +37361,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Canonical id. This will be a unique value in the entity list
+     * Optional. Canonical id. This will be a unique value in the entity list
      * for this document.
      * </pre>
      *
-     * <code>string id = 7;</code>
+     * <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The id.
      */
@@ -37260,11 +37385,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Canonical id. This will be a unique value in the entity list
+     * Optional. Canonical id. This will be a unique value in the entity list
      * for this document.
      * </pre>
      *
-     * <code>string id = 7;</code>
+     * <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for id.
      */
@@ -38866,11 +38991,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Canonical id. This will be a unique value in the entity list
+       * Optional. Canonical id. This will be a unique value in the entity list
        * for this document.
        * </pre>
        *
-       * <code>string id = 7;</code>
+       * <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The id.
        */
@@ -38889,11 +39014,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Canonical id. This will be a unique value in the entity list
+       * Optional. Canonical id. This will be a unique value in the entity list
        * for this document.
        * </pre>
        *
-       * <code>string id = 7;</code>
+       * <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for id.
        */
@@ -38912,11 +39037,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Canonical id. This will be a unique value in the entity list
+       * Optional. Canonical id. This will be a unique value in the entity list
        * for this document.
        * </pre>
        *
-       * <code>string id = 7;</code>
+       * <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The id to set.
        * @return This builder for chaining.
@@ -38934,11 +39059,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Canonical id. This will be a unique value in the entity list
+       * Optional. Canonical id. This will be a unique value in the entity list
        * for this document.
        * </pre>
        *
-       * <code>string id = 7;</code>
+       * <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -38952,11 +39077,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Canonical id. This will be a unique value in the entity list
+       * Optional. Canonical id. This will be a unique value in the entity list
        * for this document.
        * </pre>
        *
-       * <code>string id = 7;</code>
+       * <code>string id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for id to set.
        * @return This builder for chaining.
@@ -44988,7 +45113,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element
+       * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element, for example using
+       * [Document.pages][page_refs.page] to locate the related page element.
        * </pre>
        *
        * <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -45497,7 +45623,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element
+       * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element, for example using
+       * [Document.pages][page_refs.page] to locate the related page element.
        * </pre>
        *
        * <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -46062,7 +46189,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element
+         * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element, for example using
+         * [Document.pages][page_refs.page] to locate the related page element.
          * </pre>
          *
          * <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -46077,7 +46205,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element
+         * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element, for example using
+         * [Document.pages][page_refs.page] to locate the related page element.
          * </pre>
          *
          * <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -46095,7 +46224,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element
+         * Required. Index into the [Document.pages][google.cloud.documentai.v1beta3.Document.pages] element, for example using
+         * [Document.pages][page_refs.page] to locate the related page element.
          * </pre>
          *
          * <code>int64 page = 1 [(.google.api.field_behavior) = REQUIRED];</code>
