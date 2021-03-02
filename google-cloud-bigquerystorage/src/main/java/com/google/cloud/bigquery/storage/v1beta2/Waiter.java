@@ -66,6 +66,7 @@ class Waiter {
 
   public synchronized void release(long messageSize) throws IllegalStateException {
     lock.lock();
+    LOG.fine("release: " + pendingCount + " to " + (pendingCount - 1));
     --pendingCount;
     if (pendingCount < 0) {
       throw new IllegalStateException("pendingCount cannot be less than 0");
@@ -82,6 +83,7 @@ class Waiter {
   public void acquire(long messageSize) throws FlowController.FlowControlException {
     lock.lock();
     try {
+      LOG.fine("acquire " + pendingCount + " to " + (pendingCount + 1));
       if (pendingCount >= countLimit
           && behavior == FlowController.LimitExceededBehavior.ThrowException) {
         throw new FlowController.MaxOutstandingElementCountReachedException(countLimit);

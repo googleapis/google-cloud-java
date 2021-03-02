@@ -39,6 +39,10 @@ public class FakeBigQueryWrite implements MockGrpcService {
     return new LinkedList<AbstractMessage>(serviceImpl.getCapturedRequests());
   }
 
+  public void waitForResponseScheduled() throws InterruptedException {
+    serviceImpl.waitForResponseScheduled();
+  }
+
   public List<AppendRowsRequest> getAppendRequests() {
     return serviceImpl.getCapturedRequests();
   }
