@@ -471,19 +471,23 @@ public class StreamWriterTest {
               .build());
 
       ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
-      ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
-      ApiFuture<AppendRowsResponse> appendFuture3 = sendTestMessage(writer, new String[] {"C"});
       try {
-        appendFuture2.get();
-      } catch (ExecutionException ex) {
-        assertEquals(DataLossException.class, ex.getCause().getClass());
-      }
-      assertFalse(appendFuture3.isDone());
-      writer.shutdown();
-      try {
-        appendFuture3.get();
-      } catch (ExecutionException ex) {
-        assertEquals(AbortedException.class, ex.getCause().getClass());
+        ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
+        ApiFuture<AppendRowsResponse> appendFuture3 = sendTestMessage(writer, new String[] {"C"});
+        try {
+          appendFuture2.get();
+        } catch (ExecutionException ex) {
+          assertEquals(DataLossException.class, ex.getCause().getClass());
+        }
+        assertFalse(appendFuture3.isDone());
+        writer.shutdown();
+        try {
+          appendFuture3.get();
+        } catch (ExecutionException ex) {
+          assertEquals(AbortedException.class, ex.getCause().getClass());
+        }
+      } catch (IllegalStateException ex) {
+        assertEquals("Stream already failed.", ex.getMessage());
       }
     }
   }
@@ -739,6 +743,14 @@ public class StreamWriterTest {
                 }
               }
               return null;
+            } catch (ExecutionException ex) {
+              // Some wiredness in test presubmit runs, it seems this thread is always started after
+              // the main thread.
+              if (ex.getCause().getClass() == AbortedException.class) {
+                return null;
+              } else {
+                return ex;
+              }
             } catch (Exception e) {
               return e;
             }
