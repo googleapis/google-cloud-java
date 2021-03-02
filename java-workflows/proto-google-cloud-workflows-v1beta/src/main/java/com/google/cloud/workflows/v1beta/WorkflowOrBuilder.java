@@ -391,6 +391,18 @@ public interface WorkflowOrBuilder
    *
    * <code>string source_contents = 10;</code>
    *
+   * @return Whether the sourceContents field is set.
+   */
+  boolean hasSourceContents();
+  /**
+   *
+   *
+   * <pre>
+   * Workflow code to be executed. The size limit is 32KB.
+   * </pre>
+   *
+   * <code>string source_contents = 10;</code>
+   *
    * @return The sourceContents.
    */
   java.lang.String getSourceContents();

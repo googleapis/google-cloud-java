@@ -951,6 +951,20 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string source_contents = 10;</code>
    *
+   * @return Whether the sourceContents field is set.
+   */
+  public boolean hasSourceContents() {
+    return sourceCodeCase_ == 10;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Workflow code to be executed. The size limit is 32KB.
+   * </pre>
+   *
+   * <code>string source_contents = 10;</code>
+   *
    * @return The sourceContents.
    */
   public java.lang.String getSourceContents() {
@@ -2975,6 +2989,21 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Workflow code to be executed. The size limit is 32KB.
+     * </pre>
+     *
+     * <code>string source_contents = 10;</code>
+     *
+     * @return Whether the sourceContents field is set.
+     */
+    @java.lang.Override
+    public boolean hasSourceContents() {
+      return sourceCodeCase_ == 10;
+    }
     /**
      *
      *
