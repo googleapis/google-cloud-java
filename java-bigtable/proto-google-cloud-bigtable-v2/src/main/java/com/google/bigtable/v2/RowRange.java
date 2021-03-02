@@ -228,6 +228,21 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bytes start_key_closed = 1;</code>
    *
+   * @return Whether the startKeyClosed field is set.
+   */
+  @java.lang.Override
+  public boolean hasStartKeyClosed() {
+    return startKeyCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Used when giving an inclusive lower bound for the range.
+   * </pre>
+   *
+   * <code>bytes start_key_closed = 1;</code>
+   *
    * @return The startKeyClosed.
    */
   @java.lang.Override
@@ -239,6 +254,21 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int START_KEY_OPEN_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Used when giving an exclusive lower bound for the range.
+   * </pre>
+   *
+   * <code>bytes start_key_open = 2;</code>
+   *
+   * @return Whether the startKeyOpen field is set.
+   */
+  @java.lang.Override
+  public boolean hasStartKeyOpen() {
+    return startKeyCase_ == 2;
+  }
   /**
    *
    *
@@ -268,6 +298,21 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bytes end_key_open = 3;</code>
    *
+   * @return Whether the endKeyOpen field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndKeyOpen() {
+    return endKeyCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Used when giving an exclusive upper bound for the range.
+   * </pre>
+   *
+   * <code>bytes end_key_open = 3;</code>
+   *
    * @return The endKeyOpen.
    */
   @java.lang.Override
@@ -279,6 +324,21 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int END_KEY_CLOSED_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Used when giving an inclusive upper bound for the range.
+   * </pre>
+   *
+   * <code>bytes end_key_closed = 4;</code>
+   *
+   * @return Whether the endKeyClosed field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndKeyClosed() {
+    return endKeyCase_ == 4;
+  }
   /**
    *
    *
@@ -759,6 +819,20 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bytes start_key_closed = 1;</code>
      *
+     * @return Whether the startKeyClosed field is set.
+     */
+    public boolean hasStartKeyClosed() {
+      return startKeyCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used when giving an inclusive lower bound for the range.
+     * </pre>
+     *
+     * <code>bytes start_key_closed = 1;</code>
+     *
      * @return The startKeyClosed.
      */
     public com.google.protobuf.ByteString getStartKeyClosed() {
@@ -808,6 +882,20 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Used when giving an exclusive lower bound for the range.
+     * </pre>
+     *
+     * <code>bytes start_key_open = 2;</code>
+     *
+     * @return Whether the startKeyOpen field is set.
+     */
+    public boolean hasStartKeyOpen() {
+      return startKeyCase_ == 2;
+    }
     /**
      *
      *
@@ -875,6 +963,20 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bytes end_key_open = 3;</code>
      *
+     * @return Whether the endKeyOpen field is set.
+     */
+    public boolean hasEndKeyOpen() {
+      return endKeyCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used when giving an exclusive upper bound for the range.
+     * </pre>
+     *
+     * <code>bytes end_key_open = 3;</code>
+     *
      * @return The endKeyOpen.
      */
     public com.google.protobuf.ByteString getEndKeyOpen() {
@@ -924,6 +1026,20 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Used when giving an inclusive upper bound for the range.
+     * </pre>
+     *
+     * <code>bytes end_key_closed = 4;</code>
+     *
+     * @return Whether the endKeyClosed field is set.
+     */
+    public boolean hasEndKeyClosed() {
+      return endKeyCase_ == 4;
+    }
     /**
      *
      *

@@ -291,6 +291,21 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bytes start_qualifier_closed = 2;</code>
    *
+   * @return Whether the startQualifierClosed field is set.
+   */
+  @java.lang.Override
+  public boolean hasStartQualifierClosed() {
+    return startQualifierCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Used when giving an inclusive lower bound for the range.
+   * </pre>
+   *
+   * <code>bytes start_qualifier_closed = 2;</code>
+   *
    * @return The startQualifierClosed.
    */
   @java.lang.Override
@@ -302,6 +317,21 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int START_QUALIFIER_OPEN_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Used when giving an exclusive lower bound for the range.
+   * </pre>
+   *
+   * <code>bytes start_qualifier_open = 3;</code>
+   *
+   * @return Whether the startQualifierOpen field is set.
+   */
+  @java.lang.Override
+  public boolean hasStartQualifierOpen() {
+    return startQualifierCase_ == 3;
+  }
   /**
    *
    *
@@ -331,6 +361,21 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bytes end_qualifier_closed = 4;</code>
    *
+   * @return Whether the endQualifierClosed field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndQualifierClosed() {
+    return endQualifierCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Used when giving an inclusive upper bound for the range.
+   * </pre>
+   *
+   * <code>bytes end_qualifier_closed = 4;</code>
+   *
    * @return The endQualifierClosed.
    */
   @java.lang.Override
@@ -342,6 +387,21 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int END_QUALIFIER_OPEN_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Used when giving an exclusive upper bound for the range.
+   * </pre>
+   *
+   * <code>bytes end_qualifier_open = 5;</code>
+   *
+   * @return Whether the endQualifierOpen field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndQualifierOpen() {
+    return endQualifierCase_ == 5;
+  }
   /**
    *
    *
@@ -948,6 +1008,20 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bytes start_qualifier_closed = 2;</code>
      *
+     * @return Whether the startQualifierClosed field is set.
+     */
+    public boolean hasStartQualifierClosed() {
+      return startQualifierCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used when giving an inclusive lower bound for the range.
+     * </pre>
+     *
+     * <code>bytes start_qualifier_closed = 2;</code>
+     *
      * @return The startQualifierClosed.
      */
     public com.google.protobuf.ByteString getStartQualifierClosed() {
@@ -997,6 +1071,20 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Used when giving an exclusive lower bound for the range.
+     * </pre>
+     *
+     * <code>bytes start_qualifier_open = 3;</code>
+     *
+     * @return Whether the startQualifierOpen field is set.
+     */
+    public boolean hasStartQualifierOpen() {
+      return startQualifierCase_ == 3;
+    }
     /**
      *
      *
@@ -1064,6 +1152,20 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bytes end_qualifier_closed = 4;</code>
      *
+     * @return Whether the endQualifierClosed field is set.
+     */
+    public boolean hasEndQualifierClosed() {
+      return endQualifierCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used when giving an inclusive upper bound for the range.
+     * </pre>
+     *
+     * <code>bytes end_qualifier_closed = 4;</code>
+     *
      * @return The endQualifierClosed.
      */
     public com.google.protobuf.ByteString getEndQualifierClosed() {
@@ -1113,6 +1215,20 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Used when giving an exclusive upper bound for the range.
+     * </pre>
+     *
+     * <code>bytes end_qualifier_open = 5;</code>
+     *
+     * @return Whether the endQualifierOpen field is set.
+     */
+    public boolean hasEndQualifierOpen() {
+      return endQualifierCase_ == 5;
+    }
     /**
      *
      *

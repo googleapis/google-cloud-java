@@ -2195,6 +2195,21 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int32 max_num_versions = 1;</code>
    *
+   * @return Whether the maxNumVersions field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxNumVersions() {
+    return ruleCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Delete all cells in a column except the most recent N.
+   * </pre>
+   *
+   * <code>int32 max_num_versions = 1;</code>
+   *
    * @return The maxNumVersions.
    */
   @java.lang.Override
@@ -2797,6 +2812,20 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Delete all cells in a column except the most recent N.
+     * </pre>
+     *
+     * <code>int32 max_num_versions = 1;</code>
+     *
+     * @return Whether the maxNumVersions field is set.
+     */
+    public boolean hasMaxNumVersions() {
+      return ruleCase_ == 1;
+    }
     /**
      *
      *

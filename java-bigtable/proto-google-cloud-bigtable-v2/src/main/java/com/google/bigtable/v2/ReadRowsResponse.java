@@ -367,10 +367,36 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <code>bool reset_row = 8;</code>
      *
+     * @return Whether the resetRow field is set.
+     */
+    boolean hasResetRow();
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the client should drop all previous chunks for
+     * `row_key`, as it will be re-read from the beginning.
+     * </pre>
+     *
+     * <code>bool reset_row = 8;</code>
+     *
      * @return The resetRow.
      */
     boolean getResetRow();
 
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the client can safely process all previous chunks for
+     * `row_key`, as its data has been fully read.
+     * </pre>
+     *
+     * <code>bool commit_row = 9;</code>
+     *
+     * @return Whether the commitRow field is set.
+     */
+    boolean hasCommitRow();
     /**
      *
      *
@@ -889,6 +915,22 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <code>bool reset_row = 8;</code>
      *
+     * @return Whether the resetRow field is set.
+     */
+    @java.lang.Override
+    public boolean hasResetRow() {
+      return rowStatusCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the client should drop all previous chunks for
+     * `row_key`, as it will be re-read from the beginning.
+     * </pre>
+     *
+     * <code>bool reset_row = 8;</code>
+     *
      * @return The resetRow.
      */
     @java.lang.Override
@@ -900,6 +942,22 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int COMMIT_ROW_FIELD_NUMBER = 9;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the client can safely process all previous chunks for
+     * `row_key`, as its data has been fully read.
+     * </pre>
+     *
+     * <code>bool commit_row = 9;</code>
+     *
+     * @return Whether the commitRow field is set.
+     */
+    @java.lang.Override
+    public boolean hasCommitRow() {
+      return rowStatusCase_ == 9;
+    }
     /**
      *
      *
@@ -2369,6 +2427,21 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
        *
        * <code>bool reset_row = 8;</code>
        *
+       * @return Whether the resetRow field is set.
+       */
+      public boolean hasResetRow() {
+        return rowStatusCase_ == 8;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that the client should drop all previous chunks for
+       * `row_key`, as it will be re-read from the beginning.
+       * </pre>
+       *
+       * <code>bool reset_row = 8;</code>
+       *
        * @return The resetRow.
        */
       public boolean getResetRow() {
@@ -2417,6 +2490,21 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that the client can safely process all previous chunks for
+       * `row_key`, as its data has been fully read.
+       * </pre>
+       *
+       * <code>bool commit_row = 9;</code>
+       *
+       * @return Whether the commitRow field is set.
+       */
+      public boolean hasCommitRow() {
+        return rowStatusCase_ == 9;
+      }
       /**
        *
        *

@@ -248,6 +248,19 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      * <code>bool drop = 4;</code>
      *
+     * @return Whether the drop field is set.
+     */
+    boolean hasDrop();
+    /**
+     *
+     *
+     * <pre>
+     * Drop (delete) the column family with the given ID, or fail if no such
+     * family exists.
+     * </pre>
+     *
+     * <code>bool drop = 4;</code>
+     *
      * @return The drop.
      */
     boolean getDrop();
@@ -594,6 +607,22 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
     }
 
     public static final int DROP_FIELD_NUMBER = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Drop (delete) the column family with the given ID, or fail if no such
+     * family exists.
+     * </pre>
+     *
+     * <code>bool drop = 4;</code>
+     *
+     * @return Whether the drop field is set.
+     */
+    @java.lang.Override
+    public boolean hasDrop() {
+      return modCase_ == 4;
+    }
     /**
      *
      *
@@ -1597,6 +1626,21 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         return updateBuilder_;
       }
 
+      /**
+       *
+       *
+       * <pre>
+       * Drop (delete) the column family with the given ID, or fail if no such
+       * family exists.
+       * </pre>
+       *
+       * <code>bool drop = 4;</code>
+       *
+       * @return Whether the drop field is set.
+       */
+      public boolean hasDrop() {
+        return modCase_ == 4;
+      }
       /**
        *
        *

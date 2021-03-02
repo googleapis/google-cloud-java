@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/bigtable/v2/*OrBuilder</className>
+    <method>* has*(*)</method>
+  </difference>
+</differences>

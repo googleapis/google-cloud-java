@@ -230,6 +230,21 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bytes start_value_closed = 1;</code>
    *
+   * @return Whether the startValueClosed field is set.
+   */
+  @java.lang.Override
+  public boolean hasStartValueClosed() {
+    return startValueCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Used when giving an inclusive lower bound for the range.
+   * </pre>
+   *
+   * <code>bytes start_value_closed = 1;</code>
+   *
    * @return The startValueClosed.
    */
   @java.lang.Override
@@ -241,6 +256,21 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int START_VALUE_OPEN_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Used when giving an exclusive lower bound for the range.
+   * </pre>
+   *
+   * <code>bytes start_value_open = 2;</code>
+   *
+   * @return Whether the startValueOpen field is set.
+   */
+  @java.lang.Override
+  public boolean hasStartValueOpen() {
+    return startValueCase_ == 2;
+  }
   /**
    *
    *
@@ -270,6 +300,21 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bytes end_value_closed = 3;</code>
    *
+   * @return Whether the endValueClosed field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndValueClosed() {
+    return endValueCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Used when giving an inclusive upper bound for the range.
+   * </pre>
+   *
+   * <code>bytes end_value_closed = 3;</code>
+   *
    * @return The endValueClosed.
    */
   @java.lang.Override
@@ -281,6 +326,21 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int END_VALUE_OPEN_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Used when giving an exclusive upper bound for the range.
+   * </pre>
+   *
+   * <code>bytes end_value_open = 4;</code>
+   *
+   * @return Whether the endValueOpen field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndValueOpen() {
+    return endValueCase_ == 4;
+  }
   /**
    *
    *
@@ -762,6 +822,20 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bytes start_value_closed = 1;</code>
      *
+     * @return Whether the startValueClosed field is set.
+     */
+    public boolean hasStartValueClosed() {
+      return startValueCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used when giving an inclusive lower bound for the range.
+     * </pre>
+     *
+     * <code>bytes start_value_closed = 1;</code>
+     *
      * @return The startValueClosed.
      */
     public com.google.protobuf.ByteString getStartValueClosed() {
@@ -811,6 +885,20 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Used when giving an exclusive lower bound for the range.
+     * </pre>
+     *
+     * <code>bytes start_value_open = 2;</code>
+     *
+     * @return Whether the startValueOpen field is set.
+     */
+    public boolean hasStartValueOpen() {
+      return startValueCase_ == 2;
+    }
     /**
      *
      *
@@ -878,6 +966,20 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bytes end_value_closed = 3;</code>
      *
+     * @return Whether the endValueClosed field is set.
+     */
+    public boolean hasEndValueClosed() {
+      return endValueCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used when giving an inclusive upper bound for the range.
+     * </pre>
+     *
+     * <code>bytes end_value_closed = 3;</code>
+     *
      * @return The endValueClosed.
      */
     public com.google.protobuf.ByteString getEndValueClosed() {
@@ -927,6 +1029,20 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Used when giving an exclusive upper bound for the range.
+     * </pre>
+     *
+     * <code>bytes end_value_open = 4;</code>
+     *
+     * @return Whether the endValueOpen field is set.
+     */
+    public boolean hasEndValueOpen() {
+      return endValueCase_ == 4;
+    }
     /**
      *
      *

@@ -76,10 +76,39 @@ public interface ReadModifyWriteRuleOrBuilder
    *
    * <code>bytes append_value = 3;</code>
    *
+   * @return Whether the appendValue field is set.
+   */
+  boolean hasAppendValue();
+  /**
+   *
+   *
+   * <pre>
+   * Rule specifying that `append_value` be appended to the existing value.
+   * If the targeted cell is unset, it will be treated as containing the
+   * empty string.
+   * </pre>
+   *
+   * <code>bytes append_value = 3;</code>
+   *
    * @return The appendValue.
    */
   com.google.protobuf.ByteString getAppendValue();
 
+  /**
+   *
+   *
+   * <pre>
+   * Rule specifying that `increment_amount` be added to the existing value.
+   * If the targeted cell is unset, it will be treated as containing a zero.
+   * Otherwise, the targeted cell must contain an 8-byte value (interpreted
+   * as a 64-bit big-endian signed integer), or the entire request will fail.
+   * </pre>
+   *
+   * <code>int64 increment_amount = 4;</code>
+   *
+   * @return Whether the incrementAmount field is set.
+   */
+  boolean hasIncrementAmount();
   /**
    *
    *

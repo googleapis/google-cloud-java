@@ -66,10 +66,35 @@ public interface DropRowRangeRequestOrBuilder
    *
    * <code>bytes row_key_prefix = 2;</code>
    *
+   * @return Whether the rowKeyPrefix field is set.
+   */
+  boolean hasRowKeyPrefix();
+  /**
+   *
+   *
+   * <pre>
+   * Delete all rows that start with this row key prefix. Prefix cannot be
+   * zero length.
+   * </pre>
+   *
+   * <code>bytes row_key_prefix = 2;</code>
+   *
    * @return The rowKeyPrefix.
    */
   com.google.protobuf.ByteString getRowKeyPrefix();
 
+  /**
+   *
+   *
+   * <pre>
+   * Delete all rows in the table. Setting this to false is a no-op.
+   * </pre>
+   *
+   * <code>bool delete_all_data_from_table = 3;</code>
+   *
+   * @return Whether the deleteAllDataFromTable field is set.
+   */
+  boolean hasDeleteAllDataFromTable();
   /**
    *
    *

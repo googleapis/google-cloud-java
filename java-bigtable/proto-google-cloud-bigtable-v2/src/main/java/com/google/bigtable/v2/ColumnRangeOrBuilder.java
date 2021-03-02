@@ -57,10 +57,34 @@ public interface ColumnRangeOrBuilder
    *
    * <code>bytes start_qualifier_closed = 2;</code>
    *
+   * @return Whether the startQualifierClosed field is set.
+   */
+  boolean hasStartQualifierClosed();
+  /**
+   *
+   *
+   * <pre>
+   * Used when giving an inclusive lower bound for the range.
+   * </pre>
+   *
+   * <code>bytes start_qualifier_closed = 2;</code>
+   *
    * @return The startQualifierClosed.
    */
   com.google.protobuf.ByteString getStartQualifierClosed();
 
+  /**
+   *
+   *
+   * <pre>
+   * Used when giving an exclusive lower bound for the range.
+   * </pre>
+   *
+   * <code>bytes start_qualifier_open = 3;</code>
+   *
+   * @return Whether the startQualifierOpen field is set.
+   */
+  boolean hasStartQualifierOpen();
   /**
    *
    *
@@ -83,10 +107,34 @@ public interface ColumnRangeOrBuilder
    *
    * <code>bytes end_qualifier_closed = 4;</code>
    *
+   * @return Whether the endQualifierClosed field is set.
+   */
+  boolean hasEndQualifierClosed();
+  /**
+   *
+   *
+   * <pre>
+   * Used when giving an inclusive upper bound for the range.
+   * </pre>
+   *
+   * <code>bytes end_qualifier_closed = 4;</code>
+   *
    * @return The endQualifierClosed.
    */
   com.google.protobuf.ByteString getEndQualifierClosed();
 
+  /**
+   *
+   *
+   * <pre>
+   * Used when giving an exclusive upper bound for the range.
+   * </pre>
+   *
+   * <code>bytes end_qualifier_open = 5;</code>
+   *
+   * @return Whether the endQualifierOpen field is set.
+   */
+  boolean hasEndQualifierOpen();
   /**
    *
    *

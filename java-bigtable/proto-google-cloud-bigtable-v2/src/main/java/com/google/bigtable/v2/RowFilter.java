@@ -4721,6 +4721,74 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bool sink = 16;</code>
    *
+   * @return Whether the sink field is set.
+   */
+  @java.lang.Override
+  public boolean hasSink() {
+    return filterCase_ == 16;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * ADVANCED USE ONLY.
+   * Hook for introspection into the RowFilter. Outputs all cells directly to
+   * the output of the read rather than to any parent filter. Consider the
+   * following example:
+   *     Chain(
+   *       FamilyRegex("A"),
+   *       Interleave(
+   *         All(),
+   *         Chain(Label("foo"), Sink())
+   *       ),
+   *       QualifierRegex("B")
+   *     )
+   *                         A,A,1,w
+   *                         A,B,2,x
+   *                         B,B,4,z
+   *                            |
+   *                     FamilyRegex("A")
+   *                            |
+   *                         A,A,1,w
+   *                         A,B,2,x
+   *                            |
+   *               +------------+-------------+
+   *               |                          |
+   *             All()                    Label(foo)
+   *               |                          |
+   *            A,A,1,w              A,A,1,w,labels:[foo]
+   *            A,B,2,x              A,B,2,x,labels:[foo]
+   *               |                          |
+   *               |                        Sink() --------------+
+   *               |                          |                  |
+   *               +------------+      x------+          A,A,1,w,labels:[foo]
+   *                            |                        A,B,2,x,labels:[foo]
+   *                         A,A,1,w                             |
+   *                         A,B,2,x                             |
+   *                            |                                |
+   *                    QualifierRegex("B")                      |
+   *                            |                                |
+   *                         A,B,2,x                             |
+   *                            |                                |
+   *                            +--------------------------------+
+   *                            |
+   *                         A,A,1,w,labels:[foo]
+   *                         A,B,2,x,labels:[foo]  // could be switched
+   *                         A,B,2,x               // could be switched
+   * Despite being excluded by the qualifier filter, a copy of every cell
+   * that reaches the sink is present in the final result.
+   * As with an [Interleave][google.bigtable.v2.RowFilter.Interleave],
+   * duplicate cells are possible, and appear in an unspecified mutual order.
+   * In this case we have a duplicate with column "A:B" and timestamp 2,
+   * because one copy passed through the all filter while the other was
+   * passed through the label and sink. Note that one copy has label "foo",
+   * while the other does not.
+   * Cannot be used within the `predicate_filter`, `true_filter`, or
+   * `false_filter` of a [Condition][google.bigtable.v2.RowFilter.Condition].
+   * </pre>
+   *
+   * <code>bool sink = 16;</code>
+   *
    * @return The sink.
    */
   @java.lang.Override
@@ -4742,6 +4810,22 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bool pass_all_filter = 17;</code>
    *
+   * @return Whether the passAllFilter field is set.
+   */
+  @java.lang.Override
+  public boolean hasPassAllFilter() {
+    return filterCase_ == 17;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Matches all cells, regardless of input. Functionally equivalent to
+   * leaving `filter` unset, but included for completeness.
+   * </pre>
+   *
+   * <code>bool pass_all_filter = 17;</code>
+   *
    * @return The passAllFilter.
    */
   @java.lang.Override
@@ -4753,6 +4837,22 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BLOCK_ALL_FILTER_FIELD_NUMBER = 18;
+  /**
+   *
+   *
+   * <pre>
+   * Does not match any cells, regardless of input. Useful for temporarily
+   * disabling just part of a filter.
+   * </pre>
+   *
+   * <code>bool block_all_filter = 18;</code>
+   *
+   * @return Whether the blockAllFilter field is set.
+   */
+  @java.lang.Override
+  public boolean hasBlockAllFilter() {
+    return filterCase_ == 18;
+  }
   /**
    *
    *
@@ -4789,6 +4889,27 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bytes row_key_regex_filter = 4;</code>
    *
+   * @return Whether the rowKeyRegexFilter field is set.
+   */
+  @java.lang.Override
+  public boolean hasRowKeyRegexFilter() {
+    return filterCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Matches only cells from rows whose keys satisfy the given RE2 regex. In
+   * other words, passes through the entire row when the key matches, and
+   * otherwise produces an empty row.
+   * Note that, since row keys can contain arbitrary bytes, the `&#92;C` escape
+   * sequence must be used if a true wildcard is desired. The `.` character
+   * will not match the new line character `&#92;n`, which may be present in a
+   * binary key.
+   * </pre>
+   *
+   * <code>bytes row_key_regex_filter = 4;</code>
+   *
    * @return The rowKeyRegexFilter.
    */
   @java.lang.Override
@@ -4810,6 +4931,22 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>double row_sample_filter = 14;</code>
    *
+   * @return Whether the rowSampleFilter field is set.
+   */
+  @java.lang.Override
+  public boolean hasRowSampleFilter() {
+    return filterCase_ == 14;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Matches all cells from a row with probability p, and matches no cells
+   * from the row with probability 1-p.
+   * </pre>
+   *
+   * <code>double row_sample_filter = 14;</code>
+   *
    * @return The rowSampleFilter.
    */
   @java.lang.Override
@@ -4821,6 +4958,25 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FAMILY_NAME_REGEX_FILTER_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Matches only cells from columns whose families satisfy the given RE2
+   * regex. For technical reasons, the regex must not contain the `:`
+   * character, even if it is not being used as a literal.
+   * Note that, since column families cannot contain the new line character
+   * `&#92;n`, it is sufficient to use `.` as a full wildcard when matching
+   * column family names.
+   * </pre>
+   *
+   * <code>string family_name_regex_filter = 5;</code>
+   *
+   * @return Whether the familyNameRegexFilter field is set.
+   */
+  public boolean hasFamilyNameRegexFilter() {
+    return filterCase_ == 5;
+  }
   /**
    *
    *
@@ -4887,6 +5043,26 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COLUMN_QUALIFIER_REGEX_FILTER_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Matches only cells from columns whose qualifiers satisfy the given RE2
+   * regex.
+   * Note that, since column qualifiers can contain arbitrary bytes, the `&#92;C`
+   * escape sequence must be used if a true wildcard is desired. The `.`
+   * character will not match the new line character `&#92;n`, which may be
+   * present in a binary qualifier.
+   * </pre>
+   *
+   * <code>bytes column_qualifier_regex_filter = 6;</code>
+   *
+   * @return Whether the columnQualifierRegexFilter field is set.
+   */
+  @java.lang.Override
+  public boolean hasColumnQualifierRegexFilter() {
+    return filterCase_ == 6;
+  }
   /**
    *
    *
@@ -5027,6 +5203,25 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bytes value_regex_filter = 9;</code>
    *
+   * @return Whether the valueRegexFilter field is set.
+   */
+  @java.lang.Override
+  public boolean hasValueRegexFilter() {
+    return filterCase_ == 9;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Matches only cells with values that satisfy the given regular expression.
+   * Note that, since cell values can contain arbitrary bytes, the `&#92;C` escape
+   * sequence must be used if a true wildcard is desired. The `.` character
+   * will not match the new line character `&#92;n`, which may be present in a
+   * binary value.
+   * </pre>
+   *
+   * <code>bytes value_regex_filter = 9;</code>
+   *
    * @return The valueRegexFilter.
    */
   @java.lang.Override
@@ -5100,6 +5295,23 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int32 cells_per_row_offset_filter = 10;</code>
    *
+   * @return Whether the cellsPerRowOffsetFilter field is set.
+   */
+  @java.lang.Override
+  public boolean hasCellsPerRowOffsetFilter() {
+    return filterCase_ == 10;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Skips the first N cells of each row, matching all subsequent cells.
+   * If duplicate cells are present, as is possible when using an Interleave,
+   * each copy of the cell is counted separately.
+   * </pre>
+   *
+   * <code>int32 cells_per_row_offset_filter = 10;</code>
+   *
    * @return The cellsPerRowOffsetFilter.
    */
   @java.lang.Override
@@ -5111,6 +5323,23 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CELLS_PER_ROW_LIMIT_FILTER_FIELD_NUMBER = 11;
+  /**
+   *
+   *
+   * <pre>
+   * Matches only the first N cells of each row.
+   * If duplicate cells are present, as is possible when using an Interleave,
+   * each copy of the cell is counted separately.
+   * </pre>
+   *
+   * <code>int32 cells_per_row_limit_filter = 11;</code>
+   *
+   * @return Whether the cellsPerRowLimitFilter field is set.
+   */
+  @java.lang.Override
+  public boolean hasCellsPerRowLimitFilter() {
+    return filterCase_ == 11;
+  }
   /**
    *
    *
@@ -5147,6 +5376,26 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int32 cells_per_column_limit_filter = 12;</code>
    *
+   * @return Whether the cellsPerColumnLimitFilter field is set.
+   */
+  @java.lang.Override
+  public boolean hasCellsPerColumnLimitFilter() {
+    return filterCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Matches only the most recent N cells within each column. For example,
+   * if N=2, this filter would match column `foo:bar` at timestamps 10 and 9,
+   * skip all earlier cells in `foo:bar`, and then begin matching again in
+   * column `foo:bar2`.
+   * If duplicate cells are present, as is possible when using an Interleave,
+   * each copy of the cell is counted separately.
+   * </pre>
+   *
+   * <code>int32 cells_per_column_limit_filter = 12;</code>
+   *
    * @return The cellsPerColumnLimitFilter.
    */
   @java.lang.Override
@@ -5167,6 +5416,21 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bool strip_value_transformer = 13;</code>
    *
+   * @return Whether the stripValueTransformer field is set.
+   */
+  @java.lang.Override
+  public boolean hasStripValueTransformer() {
+    return filterCase_ == 13;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Replaces each cell's value with the empty string.
+   * </pre>
+   *
+   * <code>bool strip_value_transformer = 13;</code>
+   *
    * @return The stripValueTransformer.
    */
   @java.lang.Override
@@ -5178,6 +5442,30 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int APPLY_LABEL_TRANSFORMER_FIELD_NUMBER = 19;
+  /**
+   *
+   *
+   * <pre>
+   * Applies the given label to all cells in the output row. This allows
+   * the client to determine which results were produced from which part of
+   * the filter.
+   * Values must be at most 15 characters in length, and match the RE2
+   * pattern `[a-z0-9&#92;&#92;-]+`
+   * Due to a technical limitation, it is not currently possible to apply
+   * multiple labels to a cell. As a result, a Chain may have no more than
+   * one sub-filter which contains a `apply_label_transformer`. It is okay for
+   * an Interleave to contain multiple `apply_label_transformers`, as they
+   * will be applied to separate copies of the input. This may be relaxed in
+   * the future.
+   * </pre>
+   *
+   * <code>string apply_label_transformer = 19;</code>
+   *
+   * @return Whether the applyLabelTransformer field is set.
+   */
+  public boolean hasApplyLabelTransformer() {
+    return filterCase_ == 19;
+  }
   /**
    *
    *
@@ -6790,6 +7078,73 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bool sink = 16;</code>
      *
+     * @return Whether the sink field is set.
+     */
+    public boolean hasSink() {
+      return filterCase_ == 16;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ADVANCED USE ONLY.
+     * Hook for introspection into the RowFilter. Outputs all cells directly to
+     * the output of the read rather than to any parent filter. Consider the
+     * following example:
+     *     Chain(
+     *       FamilyRegex("A"),
+     *       Interleave(
+     *         All(),
+     *         Chain(Label("foo"), Sink())
+     *       ),
+     *       QualifierRegex("B")
+     *     )
+     *                         A,A,1,w
+     *                         A,B,2,x
+     *                         B,B,4,z
+     *                            |
+     *                     FamilyRegex("A")
+     *                            |
+     *                         A,A,1,w
+     *                         A,B,2,x
+     *                            |
+     *               +------------+-------------+
+     *               |                          |
+     *             All()                    Label(foo)
+     *               |                          |
+     *            A,A,1,w              A,A,1,w,labels:[foo]
+     *            A,B,2,x              A,B,2,x,labels:[foo]
+     *               |                          |
+     *               |                        Sink() --------------+
+     *               |                          |                  |
+     *               +------------+      x------+          A,A,1,w,labels:[foo]
+     *                            |                        A,B,2,x,labels:[foo]
+     *                         A,A,1,w                             |
+     *                         A,B,2,x                             |
+     *                            |                                |
+     *                    QualifierRegex("B")                      |
+     *                            |                                |
+     *                         A,B,2,x                             |
+     *                            |                                |
+     *                            +--------------------------------+
+     *                            |
+     *                         A,A,1,w,labels:[foo]
+     *                         A,B,2,x,labels:[foo]  // could be switched
+     *                         A,B,2,x               // could be switched
+     * Despite being excluded by the qualifier filter, a copy of every cell
+     * that reaches the sink is present in the final result.
+     * As with an [Interleave][google.bigtable.v2.RowFilter.Interleave],
+     * duplicate cells are possible, and appear in an unspecified mutual order.
+     * In this case we have a duplicate with column "A:B" and timestamp 2,
+     * because one copy passed through the all filter while the other was
+     * passed through the label and sink. Note that one copy has label "foo",
+     * while the other does not.
+     * Cannot be used within the `predicate_filter`, `true_filter`, or
+     * `false_filter` of a [Condition][google.bigtable.v2.RowFilter.Condition].
+     * </pre>
+     *
+     * <code>bool sink = 16;</code>
+     *
      * @return The sink.
      */
     public boolean getSink() {
@@ -6952,6 +7307,21 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bool pass_all_filter = 17;</code>
      *
+     * @return Whether the passAllFilter field is set.
+     */
+    public boolean hasPassAllFilter() {
+      return filterCase_ == 17;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Matches all cells, regardless of input. Functionally equivalent to
+     * leaving `filter` unset, but included for completeness.
+     * </pre>
+     *
+     * <code>bool pass_all_filter = 17;</code>
+     *
      * @return The passAllFilter.
      */
     public boolean getPassAllFilter() {
@@ -7010,6 +7380,21 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bool block_all_filter = 18;</code>
      *
+     * @return Whether the blockAllFilter field is set.
+     */
+    public boolean hasBlockAllFilter() {
+      return filterCase_ == 18;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Does not match any cells, regardless of input. Useful for temporarily
+     * disabling just part of a filter.
+     * </pre>
+     *
+     * <code>bool block_all_filter = 18;</code>
+     *
      * @return The blockAllFilter.
      */
     public boolean getBlockAllFilter() {
@@ -7058,6 +7443,26 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Matches only cells from rows whose keys satisfy the given RE2 regex. In
+     * other words, passes through the entire row when the key matches, and
+     * otherwise produces an empty row.
+     * Note that, since row keys can contain arbitrary bytes, the `&#92;C` escape
+     * sequence must be used if a true wildcard is desired. The `.` character
+     * will not match the new line character `&#92;n`, which may be present in a
+     * binary key.
+     * </pre>
+     *
+     * <code>bytes row_key_regex_filter = 4;</code>
+     *
+     * @return Whether the rowKeyRegexFilter field is set.
+     */
+    public boolean hasRowKeyRegexFilter() {
+      return filterCase_ == 4;
+    }
     /**
      *
      *
@@ -7144,6 +7549,21 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>double row_sample_filter = 14;</code>
      *
+     * @return Whether the rowSampleFilter field is set.
+     */
+    public boolean hasRowSampleFilter() {
+      return filterCase_ == 14;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Matches all cells from a row with probability p, and matches no cells
+     * from the row with probability 1-p.
+     * </pre>
+     *
+     * <code>double row_sample_filter = 14;</code>
+     *
      * @return The rowSampleFilter.
      */
     public double getRowSampleFilter() {
@@ -7192,6 +7612,26 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Matches only cells from columns whose families satisfy the given RE2
+     * regex. For technical reasons, the regex must not contain the `:`
+     * character, even if it is not being used as a literal.
+     * Note that, since column families cannot contain the new line character
+     * `&#92;n`, it is sufficient to use `.` as a full wildcard when matching
+     * column family names.
+     * </pre>
+     *
+     * <code>string family_name_regex_filter = 5;</code>
+     *
+     * @return Whether the familyNameRegexFilter field is set.
+     */
+    @java.lang.Override
+    public boolean hasFamilyNameRegexFilter() {
+      return filterCase_ == 5;
+    }
     /**
      *
      *
@@ -7336,6 +7776,25 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Matches only cells from columns whose qualifiers satisfy the given RE2
+     * regex.
+     * Note that, since column qualifiers can contain arbitrary bytes, the `&#92;C`
+     * escape sequence must be used if a true wildcard is desired. The `.`
+     * character will not match the new line character `&#92;n`, which may be
+     * present in a binary qualifier.
+     * </pre>
+     *
+     * <code>bytes column_qualifier_regex_filter = 6;</code>
+     *
+     * @return Whether the columnQualifierRegexFilter field is set.
+     */
+    public boolean hasColumnQualifierRegexFilter() {
+      return filterCase_ == 6;
+    }
     /**
      *
      *
@@ -7836,6 +8295,24 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bytes value_regex_filter = 9;</code>
      *
+     * @return Whether the valueRegexFilter field is set.
+     */
+    public boolean hasValueRegexFilter() {
+      return filterCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Matches only cells with values that satisfy the given regular expression.
+     * Note that, since cell values can contain arbitrary bytes, the `&#92;C` escape
+     * sequence must be used if a true wildcard is desired. The `.` character
+     * will not match the new line character `&#92;n`, which may be present in a
+     * binary value.
+     * </pre>
+     *
+     * <code>bytes value_regex_filter = 9;</code>
+     *
      * @return The valueRegexFilter.
      */
     public com.google.protobuf.ByteString getValueRegexFilter() {
@@ -8110,6 +8587,22 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>int32 cells_per_row_offset_filter = 10;</code>
      *
+     * @return Whether the cellsPerRowOffsetFilter field is set.
+     */
+    public boolean hasCellsPerRowOffsetFilter() {
+      return filterCase_ == 10;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Skips the first N cells of each row, matching all subsequent cells.
+     * If duplicate cells are present, as is possible when using an Interleave,
+     * each copy of the cell is counted separately.
+     * </pre>
+     *
+     * <code>int32 cells_per_row_offset_filter = 10;</code>
+     *
      * @return The cellsPerRowOffsetFilter.
      */
     public int getCellsPerRowOffsetFilter() {
@@ -8171,6 +8664,22 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>int32 cells_per_row_limit_filter = 11;</code>
      *
+     * @return Whether the cellsPerRowLimitFilter field is set.
+     */
+    public boolean hasCellsPerRowLimitFilter() {
+      return filterCase_ == 11;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Matches only the first N cells of each row.
+     * If duplicate cells are present, as is possible when using an Interleave,
+     * each copy of the cell is counted separately.
+     * </pre>
+     *
+     * <code>int32 cells_per_row_limit_filter = 11;</code>
+     *
      * @return The cellsPerRowLimitFilter.
      */
     public int getCellsPerRowLimitFilter() {
@@ -8221,6 +8730,25 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Matches only the most recent N cells within each column. For example,
+     * if N=2, this filter would match column `foo:bar` at timestamps 10 and 9,
+     * skip all earlier cells in `foo:bar`, and then begin matching again in
+     * column `foo:bar2`.
+     * If duplicate cells are present, as is possible when using an Interleave,
+     * each copy of the cell is counted separately.
+     * </pre>
+     *
+     * <code>int32 cells_per_column_limit_filter = 12;</code>
+     *
+     * @return Whether the cellsPerColumnLimitFilter field is set.
+     */
+    public boolean hasCellsPerColumnLimitFilter() {
+      return filterCase_ == 12;
+    }
     /**
      *
      *
@@ -8300,6 +8828,20 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bool strip_value_transformer = 13;</code>
      *
+     * @return Whether the stripValueTransformer field is set.
+     */
+    public boolean hasStripValueTransformer() {
+      return filterCase_ == 13;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Replaces each cell's value with the empty string.
+     * </pre>
+     *
+     * <code>bool strip_value_transformer = 13;</code>
+     *
      * @return The stripValueTransformer.
      */
     public boolean getStripValueTransformer() {
@@ -8346,6 +8888,31 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Applies the given label to all cells in the output row. This allows
+     * the client to determine which results were produced from which part of
+     * the filter.
+     * Values must be at most 15 characters in length, and match the RE2
+     * pattern `[a-z0-9&#92;&#92;-]+`
+     * Due to a technical limitation, it is not currently possible to apply
+     * multiple labels to a cell. As a result, a Chain may have no more than
+     * one sub-filter which contains a `apply_label_transformer`. It is okay for
+     * an Interleave to contain multiple `apply_label_transformers`, as they
+     * will be applied to separate copies of the input. This may be relaxed in
+     * the future.
+     * </pre>
+     *
+     * <code>string apply_label_transformer = 19;</code>
+     *
+     * @return Whether the applyLabelTransformer field is set.
+     */
+    @java.lang.Override
+    public boolean hasApplyLabelTransformer() {
+      return filterCase_ == 19;
+    }
     /**
      *
      *

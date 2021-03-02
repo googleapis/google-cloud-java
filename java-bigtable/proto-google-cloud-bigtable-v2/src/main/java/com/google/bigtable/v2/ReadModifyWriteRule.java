@@ -260,6 +260,23 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
    *
    * <code>bytes append_value = 3;</code>
    *
+   * @return Whether the appendValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasAppendValue() {
+    return ruleCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Rule specifying that `append_value` be appended to the existing value.
+   * If the targeted cell is unset, it will be treated as containing the
+   * empty string.
+   * </pre>
+   *
+   * <code>bytes append_value = 3;</code>
+   *
    * @return The appendValue.
    */
   @java.lang.Override
@@ -271,6 +288,24 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
   }
 
   public static final int INCREMENT_AMOUNT_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Rule specifying that `increment_amount` be added to the existing value.
+   * If the targeted cell is unset, it will be treated as containing a zero.
+   * Otherwise, the targeted cell must contain an 8-byte value (interpreted
+   * as a 64-bit big-endian signed integer), or the entire request will fail.
+   * </pre>
+   *
+   * <code>int64 increment_amount = 4;</code>
+   *
+   * @return Whether the incrementAmount field is set.
+   */
+  @java.lang.Override
+  public boolean hasIncrementAmount() {
+    return ruleCase_ == 4;
+  }
   /**
    *
    *
@@ -886,6 +921,22 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
      *
      * <code>bytes append_value = 3;</code>
      *
+     * @return Whether the appendValue field is set.
+     */
+    public boolean hasAppendValue() {
+      return ruleCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rule specifying that `append_value` be appended to the existing value.
+     * If the targeted cell is unset, it will be treated as containing the
+     * empty string.
+     * </pre>
+     *
+     * <code>bytes append_value = 3;</code>
+     *
      * @return The appendValue.
      */
     public com.google.protobuf.ByteString getAppendValue() {
@@ -939,6 +990,23 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Rule specifying that `increment_amount` be added to the existing value.
+     * If the targeted cell is unset, it will be treated as containing a zero.
+     * Otherwise, the targeted cell must contain an 8-byte value (interpreted
+     * as a 64-bit big-endian signed integer), or the entire request will fail.
+     * </pre>
+     *
+     * <code>int64 increment_amount = 4;</code>
+     *
+     * @return Whether the incrementAmount field is set.
+     */
+    public boolean hasIncrementAmount() {
+      return ruleCase_ == 4;
+    }
     /**
      *
      *
