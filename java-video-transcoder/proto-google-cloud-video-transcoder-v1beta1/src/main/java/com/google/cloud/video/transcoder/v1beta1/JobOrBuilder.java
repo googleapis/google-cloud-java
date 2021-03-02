@@ -124,6 +124,23 @@ public interface JobOrBuilder
    *
    * <code>string template_id = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    *
+   * @return Whether the templateId field is set.
+   */
+  boolean hasTemplateId();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Specify the `template_id` to use for populating `Job.config`. The default
+   * is `preset/web-hd`.
+   * Preset Transcoder templates:
+   * - `preset/{preset_id}`
+   * - User defined JobTemplate:
+   *   `{job_template_id}`
+   * </pre>
+   *
+   * <code>string template_id = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
    * @return The templateId.
    */
   java.lang.String getTemplateId();

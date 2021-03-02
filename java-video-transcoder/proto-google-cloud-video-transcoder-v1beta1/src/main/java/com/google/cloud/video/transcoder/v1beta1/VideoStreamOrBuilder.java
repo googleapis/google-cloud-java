@@ -339,6 +339,19 @@ public interface VideoStreamOrBuilder
    *
    * <code>int32 gop_frame_count = 15;</code>
    *
+   * @return Whether the gopFrameCount field is set.
+   */
+  boolean hasGopFrameCount();
+  /**
+   *
+   *
+   * <pre>
+   * Select the GOP size based on the specified frame count. Must be greater
+   * than zero.
+   * </pre>
+   *
+   * <code>int32 gop_frame_count = 15;</code>
+   *
    * @return The gopFrameCount.
    */
   int getGopFrameCount();
