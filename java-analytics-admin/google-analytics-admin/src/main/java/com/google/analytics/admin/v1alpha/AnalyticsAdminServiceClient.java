@@ -487,9 +487,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param account Required. The account to update. The account's `name` field is used to identify
    *     the account.
-   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
-   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
-   *     fields.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Account updateAccount(Account account, FieldMask updateMask) {
@@ -1096,9 +1096,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param property Required. The property to update. The property's `name` field is used to
    *     identify the property to be updated.
-   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
-   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
-   *     fields.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Property updateProperty(Property property, FieldMask updateMask) {
@@ -2263,9 +2263,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param webDataStream Required. The web stream to update. The `name` field is used to identify
    *     the web stream to be updated.
-   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
-   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
-   *     fields.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WebDataStream updateWebDataStream(
@@ -2820,9 +2820,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param iosAppDataStream Required. The iOS app stream to update. The `name` field is used to
    *     identify the iOS app stream to be updated.
-   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
-   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
-   *     fields.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final IosAppDataStream updateIosAppDataStream(
@@ -2888,7 +2888,13 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an iOS app data stream with the specified location and attributes.
+   * Creates an iOS app stream with the specified location and attributes.
+   *
+   * <p>Note that an iOS app stream must be linked to a Firebase app to receive traffic.
+   *
+   * <p>To create a working app stream, make sure your property is linked to a Firebase project.
+   * Then, use the Firebase API to create a Firebase app, which will also create an appropriate data
+   * stream in Analytics (may take up to 24 hours).
    *
    * <p>Sample code:
    *
@@ -2919,7 +2925,13 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an iOS app data stream with the specified location and attributes.
+   * Creates an iOS app stream with the specified location and attributes.
+   *
+   * <p>Note that an iOS app stream must be linked to a Firebase app to receive traffic.
+   *
+   * <p>To create a working app stream, make sure your property is linked to a Firebase project.
+   * Then, use the Firebase API to create a Firebase app, which will also create an appropriate data
+   * stream in Analytics (may take up to 24 hours).
    *
    * <p>Sample code:
    *
@@ -2950,7 +2962,13 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an iOS app data stream with the specified location and attributes.
+   * Creates an iOS app stream with the specified location and attributes.
+   *
+   * <p>Note that an iOS app stream must be linked to a Firebase app to receive traffic.
+   *
+   * <p>To create a working app stream, make sure your property is linked to a Firebase project.
+   * Then, use the Firebase API to create a Firebase app, which will also create an appropriate data
+   * stream in Analytics (may take up to 24 hours).
    *
    * <p>Sample code:
    *
@@ -2975,7 +2993,13 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an iOS app data stream with the specified location and attributes.
+   * Creates an iOS app stream with the specified location and attributes.
+   *
+   * <p>Note that an iOS app stream must be linked to a Firebase app to receive traffic.
+   *
+   * <p>To create a working app stream, make sure your property is linked to a Firebase project.
+   * Then, use the Firebase API to create a Firebase app, which will also create an appropriate data
+   * stream in Analytics (may take up to 24 hours).
    *
    * <p>Sample code:
    *
@@ -3388,9 +3412,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param androidAppDataStream Required. The android app stream to update. The `name` field is
    *     used to identify the android app stream to be updated.
-   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
-   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
-   *     fields.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AndroidAppDataStream updateAndroidAppDataStream(
@@ -3458,7 +3482,13 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an android app stream with the specified location and attributes.
+   * Creates an Android app stream with the specified location and attributes.
+   *
+   * <p>Note that an Android app stream must be linked to a Firebase app to receive traffic.
+   *
+   * <p>To create a working app stream, make sure your property is linked to a Firebase project.
+   * Then, use the Firebase API to create a Firebase app, which will also create an appropriate data
+   * stream in Analytics (may take up to 24 hours).
    *
    * <p>Sample code:
    *
@@ -3489,7 +3519,13 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an android app stream with the specified location and attributes.
+   * Creates an Android app stream with the specified location and attributes.
+   *
+   * <p>Note that an Android app stream must be linked to a Firebase app to receive traffic.
+   *
+   * <p>To create a working app stream, make sure your property is linked to a Firebase project.
+   * Then, use the Firebase API to create a Firebase app, which will also create an appropriate data
+   * stream in Analytics (may take up to 24 hours).
    *
    * <p>Sample code:
    *
@@ -3521,7 +3557,13 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an android app stream with the specified location and attributes.
+   * Creates an Android app stream with the specified location and attributes.
+   *
+   * <p>Note that an Android app stream must be linked to a Firebase app to receive traffic.
+   *
+   * <p>To create a working app stream, make sure your property is linked to a Firebase project.
+   * Then, use the Firebase API to create a Firebase app, which will also create an appropriate data
+   * stream in Analytics (may take up to 24 hours).
    *
    * <p>Sample code:
    *
@@ -3549,7 +3591,13 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an android app stream with the specified location and attributes.
+   * Creates an Android app stream with the specified location and attributes.
+   *
+   * <p>Note that an Android app stream must be linked to a Firebase app to receive traffic.
+   *
+   * <p>To create a working app stream, make sure your property is linked to a Firebase project.
+   * Then, use the Firebase API to create a Firebase app, which will also create an appropriate data
+   * stream in Analytics (may take up to 24 hours).
    *
    * <p>Sample code:
    *
@@ -3874,9 +3922,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param enhancedMeasurementSettings Required. The settings to update. The `name` field is used
    *     to identify the settings to be updated.
-   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
-   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
-   *     fields.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EnhancedMeasurementSettings updateEnhancedMeasurementSettings(
@@ -4077,9 +4125,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param firebaseLink Required. The Firebase link to update.
-   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
-   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
-   *     fields.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FirebaseLink updateFirebaseLink(FirebaseLink firebaseLink, FieldMask updateMask) {
@@ -4606,9 +4654,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param googleAdsLink The GoogleAdsLink to update
-   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
-   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
-   *     fields.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GoogleAdsLink updateGoogleAdsLink(
