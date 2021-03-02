@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.21.0](https://www.github.com/googleapis/java-bigtable/compare/v1.20.1...v1.21.0) (2021-03-02)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#654](https://www.github.com/googleapis/java-bigtable/issues/654)) ([4b0c59a](https://www.github.com/googleapis/java-bigtable/commit/4b0c59a17d668e724fb79369ad7a6f7fbbb31d89))
+* migrate to java microgenerator ([#629](https://www.github.com/googleapis/java-bigtable/issues/629)) ([60d17dc](https://www.github.com/googleapis/java-bigtable/commit/60d17dc1d0a0a568a8bdd3bcc1e7491c17142af3))
+* publish new fields for CMEK support ([#646](https://www.github.com/googleapis/java-bigtable/issues/646)) ([e039386](https://www.github.com/googleapis/java-bigtable/commit/e039386898b82f7b03f5a4064c5dcca0fdd3f330))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-gcloud-maven-plugin to v0.1.2 ([#652](https://www.github.com/googleapis/java-bigtable/issues/652)) ([71a8fd7](https://www.github.com/googleapis/java-bigtable/commit/71a8fd7fe55bd40ad32963ffdfc06999be2ff7fc))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.0 ([#653](https://www.github.com/googleapis/java-bigtable/issues/653)) ([c5049c1](https://www.github.com/googleapis/java-bigtable/commit/c5049c1f988e0f4465d9d805fd092087bfa69fdc))
+
 ### [1.20.1](https://www.github.com/googleapis/java-bigtable/compare/v1.20.0...v1.20.1) (2021-02-22)
 
 
