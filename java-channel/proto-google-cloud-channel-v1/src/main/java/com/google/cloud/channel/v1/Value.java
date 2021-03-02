@@ -198,6 +198,21 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int64 int64_value = 1;</code>
    *
+   * @return Whether the int64Value field is set.
+   */
+  @java.lang.Override
+  public boolean hasInt64Value() {
+    return kindCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents an int64 value.
+   * </pre>
+   *
+   * <code>int64 int64_value = 1;</code>
+   *
    * @return The int64Value.
    */
   @java.lang.Override
@@ -209,6 +224,20 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Represents a string value.
+   * </pre>
+   *
+   * <code>string string_value = 2;</code>
+   *
+   * @return Whether the stringValue field is set.
+   */
+  public boolean hasStringValue() {
+    return kindCase_ == 2;
+  }
   /**
    *
    *
@@ -265,6 +294,21 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOUBLE_VALUE_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Represents a double value.
+   * </pre>
+   *
+   * <code>double double_value = 3;</code>
+   *
+   * @return Whether the doubleValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasDoubleValue() {
+    return kindCase_ == 3;
+  }
   /**
    *
    *
@@ -773,6 +817,20 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>int64 int64_value = 1;</code>
      *
+     * @return Whether the int64Value field is set.
+     */
+    public boolean hasInt64Value() {
+      return kindCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents an int64 value.
+     * </pre>
+     *
+     * <code>int64 int64_value = 1;</code>
+     *
      * @return The int64Value.
      */
     public long getInt64Value() {
@@ -819,6 +877,21 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Represents a string value.
+     * </pre>
+     *
+     * <code>string string_value = 2;</code>
+     *
+     * @return Whether the stringValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasStringValue() {
+      return kindCase_ == 2;
+    }
     /**
      *
      *
@@ -938,6 +1011,20 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Represents a double value.
+     * </pre>
+     *
+     * <code>double double_value = 3;</code>
+     *
+     * @return Whether the doubleValue field is set.
+     */
+    public boolean hasDoubleValue() {
+      return kindCase_ == 3;
+    }
     /**
      *
      *

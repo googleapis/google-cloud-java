@@ -32,6 +32,18 @@ public interface ListTransferableSkusRequestOrBuilder
    *
    * <code>string cloud_identity_id = 4;</code>
    *
+   * @return Whether the cloudIdentityId field is set.
+   */
+  boolean hasCloudIdentityId();
+  /**
+   *
+   *
+   * <pre>
+   * Customer's Cloud Identity ID
+   * </pre>
+   *
+   * <code>string cloud_identity_id = 4;</code>
+   *
    * @return The cloudIdentityId.
    */
   java.lang.String getCloudIdentityId();
@@ -48,6 +60,21 @@ public interface ListTransferableSkusRequestOrBuilder
    */
   com.google.protobuf.ByteString getCloudIdentityIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * A reseller is required to create a customer and use the resource name of
+   * the created customer here.
+   * The customer_name takes the format:
+   * accounts/{account_id}/customers/{customer_id}
+   * </pre>
+   *
+   * <code>string customer_name = 7;</code>
+   *
+   * @return Whether the customerName field is set.
+   */
+  boolean hasCustomerName();
   /**
    *
    *

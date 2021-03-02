@@ -51,4 +51,9 @@
     <differenceType>6011</differenceType>
     <field>*_FIELD_NUMBER</field>
   </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/channel/v1/*OrBuilder</className>
+    <method>* has*(*)</method>
+  </difference>
 </differences>

@@ -32,10 +32,34 @@ public interface ValueOrBuilder
    *
    * <code>int64 int64_value = 1;</code>
    *
+   * @return Whether the int64Value field is set.
+   */
+  boolean hasInt64Value();
+  /**
+   *
+   *
+   * <pre>
+   * Represents an int64 value.
+   * </pre>
+   *
+   * <code>int64 int64_value = 1;</code>
+   *
    * @return The int64Value.
    */
   long getInt64Value();
 
+  /**
+   *
+   *
+   * <pre>
+   * Represents a string value.
+   * </pre>
+   *
+   * <code>string string_value = 2;</code>
+   *
+   * @return Whether the stringValue field is set.
+   */
+  boolean hasStringValue();
   /**
    *
    *
@@ -61,6 +85,18 @@ public interface ValueOrBuilder
    */
   com.google.protobuf.ByteString getStringValueBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Represents a double value.
+   * </pre>
+   *
+   * <code>double double_value = 3;</code>
+   *
+   * @return Whether the doubleValue field is set.
+   */
+  boolean hasDoubleValue();
   /**
    *
    *
