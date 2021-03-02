@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-scheduler.git",
-        "sha": "666862546a26fe0d3c593bc5520977f8b435bb8d"
+        "sha": "4737d4e75b537909fa6ebb8151b4370f6e214849"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "6946fd71ae9215b0e7ae188f5057df765ee6d7d2"
+        "sha": "21da7d9fa02f6916d9f87cf4072b3547b5c72eb5"
       }
     }
   ],
@@ -67,7 +67,6 @@
     ".kokoro/continuous/common.cfg",
     ".kokoro/continuous/java8.cfg",
     ".kokoro/continuous/readme.cfg",
-    ".kokoro/dependencies.sh",
     ".kokoro/nightly/common.cfg",
     ".kokoro/nightly/integration.cfg",
     ".kokoro/nightly/java11.cfg",
