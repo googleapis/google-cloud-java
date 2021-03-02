@@ -67,6 +67,18 @@ public interface GameServerConfigOverrideOrBuilder
    *
    * <code>string config_version = 100;</code>
    *
+   * @return Whether the configVersion field is set.
+   */
+  boolean hasConfigVersion();
+  /**
+   *
+   *
+   * <pre>
+   * The game server config for this override.
+   * </pre>
+   *
+   * <code>string config_version = 100;</code>
+   *
    * @return The configVersion.
    */
   java.lang.String getConfigVersion();
