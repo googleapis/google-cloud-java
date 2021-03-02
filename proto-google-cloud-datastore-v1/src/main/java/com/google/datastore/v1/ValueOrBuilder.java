@@ -32,6 +32,18 @@ public interface ValueOrBuilder
    *
    * <code>.google.protobuf.NullValue null_value = 11;</code>
    *
+   * @return Whether the nullValue field is set.
+   */
+  boolean hasNullValue();
+  /**
+   *
+   *
+   * <pre>
+   * A null value.
+   * </pre>
+   *
+   * <code>.google.protobuf.NullValue null_value = 11;</code>
+   *
    * @return The enum numeric value on the wire for nullValue.
    */
   int getNullValueValue();
@@ -57,6 +69,18 @@ public interface ValueOrBuilder
    *
    * <code>bool boolean_value = 1;</code>
    *
+   * @return Whether the booleanValue field is set.
+   */
+  boolean hasBooleanValue();
+  /**
+   *
+   *
+   * <pre>
+   * A boolean value.
+   * </pre>
+   *
+   * <code>bool boolean_value = 1;</code>
+   *
    * @return The booleanValue.
    */
   boolean getBooleanValue();
@@ -70,10 +94,34 @@ public interface ValueOrBuilder
    *
    * <code>int64 integer_value = 2;</code>
    *
+   * @return Whether the integerValue field is set.
+   */
+  boolean hasIntegerValue();
+  /**
+   *
+   *
+   * <pre>
+   * An integer value.
+   * </pre>
+   *
+   * <code>int64 integer_value = 2;</code>
+   *
    * @return The integerValue.
    */
   long getIntegerValue();
 
+  /**
+   *
+   *
+   * <pre>
+   * A double value.
+   * </pre>
+   *
+   * <code>double double_value = 3;</code>
+   *
+   * @return Whether the doubleValue field is set.
+   */
+  boolean hasDoubleValue();
   /**
    *
    *
@@ -174,6 +222,20 @@ public interface ValueOrBuilder
    *
    * <code>string string_value = 17;</code>
    *
+   * @return Whether the stringValue field is set.
+   */
+  boolean hasStringValue();
+  /**
+   *
+   *
+   * <pre>
+   * A UTF-8 encoded string value.
+   * When `exclude_from_indexes` is false (it is indexed), may have at most
+   * 1500 bytes. Otherwise, may be set to at most 1,000,000 bytes.
+   * </pre>
+   *
+   * <code>string string_value = 17;</code>
+   *
    * @return The stringValue.
    */
   java.lang.String getStringValue();
@@ -192,6 +254,21 @@ public interface ValueOrBuilder
    */
   com.google.protobuf.ByteString getStringValueBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * A blob value.
+   * May have at most 1,000,000 bytes.
+   * When `exclude_from_indexes` is false, may have at most 1500 bytes.
+   * In JSON requests, must be base64-encoded.
+   * </pre>
+   *
+   * <code>bytes blob_value = 18;</code>
+   *
+   * @return Whether the blobValue field is set.
+   */
+  boolean hasBlobValue();
   /**
    *
    *

@@ -84,6 +84,20 @@ public interface CommitRequestOrBuilder
    *
    * <code>bytes transaction = 1;</code>
    *
+   * @return Whether the transaction field is set.
+   */
+  boolean hasTransaction();
+  /**
+   *
+   *
+   * <pre>
+   * The identifier of the transaction associated with the commit. A
+   * transaction identifier is returned by a call to
+   * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
+   * </pre>
+   *
+   * <code>bytes transaction = 1;</code>
+   *
    * @return The transaction.
    */
   com.google.protobuf.ByteString getTransaction();

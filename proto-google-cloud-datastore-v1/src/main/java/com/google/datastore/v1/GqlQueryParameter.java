@@ -232,6 +232,22 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
    *
    * <code>bytes cursor = 3;</code>
    *
+   * @return Whether the cursor field is set.
+   */
+  @java.lang.Override
+  public boolean hasCursor() {
+    return parameterTypeCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A query cursor. Query cursors are returned in query
+   * result batches.
+   * </pre>
+   *
+   * <code>bytes cursor = 3;</code>
+   *
    * @return The cursor.
    */
   @java.lang.Override
@@ -830,6 +846,21 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
       return valueBuilder_;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * A query cursor. Query cursors are returned in query
+     * result batches.
+     * </pre>
+     *
+     * <code>bytes cursor = 3;</code>
+     *
+     * @return Whether the cursor field is set.
+     */
+    public boolean hasCursor() {
+      return parameterTypeCase_ == 3;
+    }
     /**
      *
      *

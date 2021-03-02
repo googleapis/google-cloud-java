@@ -185,6 +185,19 @@ public interface MutationOrBuilder
    *
    * <code>int64 base_version = 8;</code>
    *
+   * @return Whether the baseVersion field is set.
+   */
+  boolean hasBaseVersion();
+  /**
+   *
+   *
+   * <pre>
+   * The version of the entity that this mutation is being applied to. If this
+   * does not match the current version on the server, the mutation conflicts.
+   * </pre>
+   *
+   * <code>int64 base_version = 8;</code>
+   *
    * @return The baseVersion.
    */
   long getBaseVersion();

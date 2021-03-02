@@ -68,6 +68,19 @@ public interface GqlQueryParameterOrBuilder
    *
    * <code>bytes cursor = 3;</code>
    *
+   * @return Whether the cursor field is set.
+   */
+  boolean hasCursor();
+  /**
+   *
+   *
+   * <pre>
+   * A query cursor. Query cursors are returned in query
+   * result batches.
+   * </pre>
+   *
+   * <code>bytes cursor = 3;</code>
+   *
    * @return The cursor.
    */
   com.google.protobuf.ByteString getCursor();

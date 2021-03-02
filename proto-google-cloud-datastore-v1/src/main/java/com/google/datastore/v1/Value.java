@@ -307,6 +307,20 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.NullValue null_value = 11;</code>
    *
+   * @return Whether the nullValue field is set.
+   */
+  public boolean hasNullValue() {
+    return valueTypeCase_ == 11;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A null value.
+   * </pre>
+   *
+   * <code>.google.protobuf.NullValue null_value = 11;</code>
+   *
    * @return The enum numeric value on the wire for nullValue.
    */
   public int getNullValueValue() {
@@ -346,6 +360,21 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bool boolean_value = 1;</code>
    *
+   * @return Whether the booleanValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasBooleanValue() {
+    return valueTypeCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A boolean value.
+   * </pre>
+   *
+   * <code>bool boolean_value = 1;</code>
+   *
    * @return The booleanValue.
    */
   @java.lang.Override
@@ -366,6 +395,21 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int64 integer_value = 2;</code>
    *
+   * @return Whether the integerValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasIntegerValue() {
+    return valueTypeCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An integer value.
+   * </pre>
+   *
+   * <code>int64 integer_value = 2;</code>
+   *
    * @return The integerValue.
    */
   @java.lang.Override
@@ -377,6 +421,21 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOUBLE_VALUE_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * A double value.
+   * </pre>
+   *
+   * <code>double double_value = 3;</code>
+   *
+   * @return Whether the doubleValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasDoubleValue() {
+    return valueTypeCase_ == 3;
+  }
   /**
    *
    *
@@ -516,6 +575,22 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string string_value = 17;</code>
    *
+   * @return Whether the stringValue field is set.
+   */
+  public boolean hasStringValue() {
+    return valueTypeCase_ == 17;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A UTF-8 encoded string value.
+   * When `exclude_from_indexes` is false (it is indexed), may have at most
+   * 1500 bytes. Otherwise, may be set to at most 1,000,000 bytes.
+   * </pre>
+   *
+   * <code>string string_value = 17;</code>
+   *
    * @return The stringValue.
    */
   public java.lang.String getStringValue() {
@@ -565,6 +640,24 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BLOB_VALUE_FIELD_NUMBER = 18;
+  /**
+   *
+   *
+   * <pre>
+   * A blob value.
+   * May have at most 1,000,000 bytes.
+   * When `exclude_from_indexes` is false, may have at most 1500 bytes.
+   * In JSON requests, must be base64-encoded.
+   * </pre>
+   *
+   * <code>bytes blob_value = 18;</code>
+   *
+   * @return Whether the blobValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasBlobValue() {
+    return valueTypeCase_ == 18;
+  }
   /**
    *
    *
@@ -1440,6 +1533,21 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.NullValue null_value = 11;</code>
      *
+     * @return Whether the nullValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasNullValue() {
+      return valueTypeCase_ == 11;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A null value.
+     * </pre>
+     *
+     * <code>.google.protobuf.NullValue null_value = 11;</code>
+     *
      * @return The enum numeric value on the wire for nullValue.
      */
     @java.lang.Override
@@ -1538,6 +1646,20 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bool boolean_value = 1;</code>
      *
+     * @return Whether the booleanValue field is set.
+     */
+    public boolean hasBooleanValue() {
+      return valueTypeCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A boolean value.
+     * </pre>
+     *
+     * <code>bool boolean_value = 1;</code>
+     *
      * @return The booleanValue.
      */
     public boolean getBooleanValue() {
@@ -1593,6 +1715,20 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>int64 integer_value = 2;</code>
      *
+     * @return Whether the integerValue field is set.
+     */
+    public boolean hasIntegerValue() {
+      return valueTypeCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An integer value.
+     * </pre>
+     *
+     * <code>int64 integer_value = 2;</code>
+     *
      * @return The integerValue.
      */
     public long getIntegerValue() {
@@ -1639,6 +1775,20 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * A double value.
+     * </pre>
+     *
+     * <code>double double_value = 3;</code>
+     *
+     * @return Whether the doubleValue field is set.
+     */
+    public boolean hasDoubleValue() {
+      return valueTypeCase_ == 3;
+    }
     /**
      *
      *
@@ -2132,6 +2282,23 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string string_value = 17;</code>
      *
+     * @return Whether the stringValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasStringValue() {
+      return valueTypeCase_ == 17;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A UTF-8 encoded string value.
+     * When `exclude_from_indexes` is false (it is indexed), may have at most
+     * 1500 bytes. Otherwise, may be set to at most 1,000,000 bytes.
+     * </pre>
+     *
+     * <code>string string_value = 17;</code>
+     *
      * @return The stringValue.
      */
     @java.lang.Override
@@ -2250,6 +2417,23 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * A blob value.
+     * May have at most 1,000,000 bytes.
+     * When `exclude_from_indexes` is false, may have at most 1500 bytes.
+     * In JSON requests, must be base64-encoded.
+     * </pre>
+     *
+     * <code>bytes blob_value = 18;</code>
+     *
+     * @return Whether the blobValue field is set.
+     */
+    public boolean hasBlobValue() {
+      return valueTypeCase_ == 18;
+    }
     /**
      *
      *

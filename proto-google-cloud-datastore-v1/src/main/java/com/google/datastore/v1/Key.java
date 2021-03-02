@@ -183,10 +183,39 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>int64 id = 2;</code>
      *
+     * @return Whether the id field is set.
+     */
+    boolean hasId();
+    /**
+     *
+     *
+     * <pre>
+     * The auto-allocated ID of the entity.
+     * Never equal to zero. Values less than zero are discouraged and may not
+     * be supported in the future.
+     * </pre>
+     *
+     * <code>int64 id = 2;</code>
+     *
      * @return The id.
      */
     long getId();
 
+    /**
+     *
+     *
+     * <pre>
+     * The name of the entity.
+     * A name matching regex `__.*__` is reserved/read-only.
+     * A name must not be more than 1500 bytes when UTF-8 encoded.
+     * Cannot be `""`.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    boolean hasName();
     /**
      *
      *
@@ -442,6 +471,23 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>int64 id = 2;</code>
      *
+     * @return Whether the id field is set.
+     */
+    @java.lang.Override
+    public boolean hasId() {
+      return idTypeCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The auto-allocated ID of the entity.
+     * Never equal to zero. Values less than zero are discouraged and may not
+     * be supported in the future.
+     * </pre>
+     *
+     * <code>int64 id = 2;</code>
+     *
      * @return The id.
      */
     @java.lang.Override
@@ -453,6 +499,23 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int NAME_FIELD_NUMBER = 3;
+    /**
+     *
+     *
+     * <pre>
+     * The name of the entity.
+     * A name matching regex `__.*__` is reserved/read-only.
+     * A name must not be more than 1500 bytes when UTF-8 encoded.
+     * Cannot be `""`.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return idTypeCase_ == 3;
+    }
     /**
      *
      *
@@ -1045,6 +1108,22 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>int64 id = 2;</code>
        *
+       * @return Whether the id field is set.
+       */
+      public boolean hasId() {
+        return idTypeCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The auto-allocated ID of the entity.
+       * Never equal to zero. Values less than zero are discouraged and may not
+       * be supported in the future.
+       * </pre>
+       *
+       * <code>int64 id = 2;</code>
+       *
        * @return The id.
        */
       public long getId() {
@@ -1095,6 +1174,24 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      /**
+       *
+       *
+       * <pre>
+       * The name of the entity.
+       * A name matching regex `__.*__` is reserved/read-only.
+       * A name must not be more than 1500 bytes when UTF-8 encoded.
+       * Cannot be `""`.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       *
+       * @return Whether the name field is set.
+       */
+      @java.lang.Override
+      public boolean hasName() {
+        return idTypeCase_ == 3;
+      }
       /**
        *
        *

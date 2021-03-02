@@ -491,6 +491,22 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int64 base_version = 8;</code>
    *
+   * @return Whether the baseVersion field is set.
+   */
+  @java.lang.Override
+  public boolean hasBaseVersion() {
+    return conflictDetectionStrategyCase_ == 8;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The version of the entity that this mutation is being applied to. If this
+   * does not match the current version on the server, the mutation conflicts.
+   * </pre>
+   *
+   * <code>int64 base_version = 8;</code>
+   *
    * @return The baseVersion.
    */
   @java.lang.Override
@@ -1849,6 +1865,21 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       return deleteBuilder_;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * The version of the entity that this mutation is being applied to. If this
+     * does not match the current version on the server, the mutation conflicts.
+     * </pre>
+     *
+     * <code>int64 base_version = 8;</code>
+     *
+     * @return Whether the baseVersion field is set.
+     */
+    public boolean hasBaseVersion() {
+      return conflictDetectionStrategyCase_ == 8;
+    }
     /**
      *
      *
