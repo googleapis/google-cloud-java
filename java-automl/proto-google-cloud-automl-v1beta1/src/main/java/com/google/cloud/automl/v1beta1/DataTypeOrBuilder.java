@@ -118,6 +118,28 @@ public interface DataTypeOrBuilder
    *
    * <code>string time_format = 5;</code>
    *
+   * @return Whether the timeFormat field is set.
+   */
+  boolean hasTimeFormat();
+  /**
+   *
+   *
+   * <pre>
+   * If [type_code][google.cloud.automl.v1beta1.DataType.type_code] == [TIMESTAMP][google.cloud.automl.v1beta1.TypeCode.TIMESTAMP]
+   * then `time_format` provides the format in which that time field is
+   * expressed. The time_format must either be one of:
+   * * `UNIX_SECONDS`
+   * * `UNIX_MILLISECONDS`
+   * * `UNIX_MICROSECONDS`
+   * * `UNIX_NANOSECONDS`
+   * (for respectively number of seconds, milliseconds, microseconds and
+   * nanoseconds since start of the Unix epoch);
+   * or be written in `strftime` syntax. If time_format is not set, then the
+   * default format as described on the type_code is used.
+   * </pre>
+   *
+   * <code>string time_format = 5;</code>
+   *
    * @return The timeFormat.
    */
   java.lang.String getTimeFormat();

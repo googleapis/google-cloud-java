@@ -154,6 +154,19 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      *
      * <code>string gcs_output_directory = 1;</code>
      *
+     * @return Whether the gcsOutputDirectory field is set.
+     */
+    boolean hasGcsOutputDirectory();
+    /**
+     *
+     *
+     * <pre>
+     * The full path of the Google Cloud Storage directory created, into which
+     * the prediction output is written.
+     * </pre>
+     *
+     * <code>string gcs_output_directory = 1;</code>
+     *
      * @return The gcsOutputDirectory.
      */
     java.lang.String getGcsOutputDirectory();
@@ -171,6 +184,19 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      */
     com.google.protobuf.ByteString getGcsOutputDirectoryBytes();
 
+    /**
+     *
+     *
+     * <pre>
+     * The path of the BigQuery dataset created, in bq://projectId.bqDatasetId
+     * format, into which the prediction output is written.
+     * </pre>
+     *
+     * <code>string bigquery_output_dataset = 2;</code>
+     *
+     * @return Whether the bigqueryOutputDataset field is set.
+     */
+    boolean hasBigqueryOutputDataset();
     /**
      *
      *
@@ -363,6 +389,21 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      *
      * <code>string gcs_output_directory = 1;</code>
      *
+     * @return Whether the gcsOutputDirectory field is set.
+     */
+    public boolean hasGcsOutputDirectory() {
+      return outputLocationCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full path of the Google Cloud Storage directory created, into which
+     * the prediction output is written.
+     * </pre>
+     *
+     * <code>string gcs_output_directory = 1;</code>
+     *
      * @return The gcsOutputDirectory.
      */
     public java.lang.String getGcsOutputDirectory() {
@@ -411,6 +452,21 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
     }
 
     public static final int BIGQUERY_OUTPUT_DATASET_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The path of the BigQuery dataset created, in bq://projectId.bqDatasetId
+     * format, into which the prediction output is written.
+     * </pre>
+     *
+     * <code>string bigquery_output_dataset = 2;</code>
+     *
+     * @return Whether the bigqueryOutputDataset field is set.
+     */
+    public boolean hasBigqueryOutputDataset() {
+      return outputLocationCase_ == 2;
+    }
     /**
      *
      *
@@ -908,6 +964,22 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
        *
        * <code>string gcs_output_directory = 1;</code>
        *
+       * @return Whether the gcsOutputDirectory field is set.
+       */
+      @java.lang.Override
+      public boolean hasGcsOutputDirectory() {
+        return outputLocationCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The full path of the Google Cloud Storage directory created, into which
+       * the prediction output is written.
+       * </pre>
+       *
+       * <code>string gcs_output_directory = 1;</code>
+       *
        * @return The gcsOutputDirectory.
        */
       @java.lang.Override
@@ -1022,6 +1094,22 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
         return this;
       }
 
+      /**
+       *
+       *
+       * <pre>
+       * The path of the BigQuery dataset created, in bq://projectId.bqDatasetId
+       * format, into which the prediction output is written.
+       * </pre>
+       *
+       * <code>string bigquery_output_dataset = 2;</code>
+       *
+       * @return Whether the bigqueryOutputDataset field is set.
+       */
+      @java.lang.Override
+      public boolean hasBigqueryOutputDataset() {
+        return outputLocationCase_ == 2;
+      }
       /**
        *
        *

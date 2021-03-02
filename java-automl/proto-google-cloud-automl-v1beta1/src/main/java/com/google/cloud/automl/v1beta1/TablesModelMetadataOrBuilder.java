@@ -33,10 +33,36 @@ public interface TablesModelMetadataOrBuilder
    *
    * <code>float optimization_objective_recall_value = 17;</code>
    *
+   * @return Whether the optimizationObjectiveRecallValue field is set.
+   */
+  boolean hasOptimizationObjectiveRecallValue();
+  /**
+   *
+   *
+   * <pre>
+   * Required when optimization_objective is "MAXIMIZE_PRECISION_AT_RECALL".
+   * Must be between 0 and 1, inclusive.
+   * </pre>
+   *
+   * <code>float optimization_objective_recall_value = 17;</code>
+   *
    * @return The optimizationObjectiveRecallValue.
    */
   float getOptimizationObjectiveRecallValue();
 
+  /**
+   *
+   *
+   * <pre>
+   * Required when optimization_objective is "MAXIMIZE_RECALL_AT_PRECISION".
+   * Must be between 0 and 1, inclusive.
+   * </pre>
+   *
+   * <code>float optimization_objective_precision_value = 18;</code>
+   *
+   * @return Whether the optimizationObjectivePrecisionValue field is set.
+   */
+  boolean hasOptimizationObjectivePrecisionValue();
   /**
    *
    *

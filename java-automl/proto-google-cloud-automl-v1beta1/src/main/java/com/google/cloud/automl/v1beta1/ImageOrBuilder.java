@@ -34,6 +34,20 @@ public interface ImageOrBuilder
    *
    * <code>bytes image_bytes = 1;</code>
    *
+   * @return Whether the imageBytes field is set.
+   */
+  boolean hasImageBytes();
+  /**
+   *
+   *
+   * <pre>
+   * Image content represented as a stream of bytes.
+   * Note: As with all `bytes` fields, protobuffers use a pure binary
+   * representation, whereas JSON representations use base64.
+   * </pre>
+   *
+   * <code>bytes image_bytes = 1;</code>
+   *
    * @return The imageBytes.
    */
   com.google.protobuf.ByteString getImageBytes();

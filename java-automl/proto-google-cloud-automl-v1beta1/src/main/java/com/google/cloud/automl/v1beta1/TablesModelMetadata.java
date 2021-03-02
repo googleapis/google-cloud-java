@@ -248,6 +248,22 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * <code>float optimization_objective_recall_value = 17;</code>
    *
+   * @return Whether the optimizationObjectiveRecallValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasOptimizationObjectiveRecallValue() {
+    return additionalOptimizationObjectiveConfigCase_ == 17;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required when optimization_objective is "MAXIMIZE_PRECISION_AT_RECALL".
+   * Must be between 0 and 1, inclusive.
+   * </pre>
+   *
+   * <code>float optimization_objective_recall_value = 17;</code>
+   *
    * @return The optimizationObjectiveRecallValue.
    */
   @java.lang.Override
@@ -259,6 +275,22 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
   }
 
   public static final int OPTIMIZATION_OBJECTIVE_PRECISION_VALUE_FIELD_NUMBER = 18;
+  /**
+   *
+   *
+   * <pre>
+   * Required when optimization_objective is "MAXIMIZE_RECALL_AT_PRECISION".
+   * Must be between 0 and 1, inclusive.
+   * </pre>
+   *
+   * <code>float optimization_objective_precision_value = 18;</code>
+   *
+   * @return Whether the optimizationObjectivePrecisionValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasOptimizationObjectivePrecisionValue() {
+    return additionalOptimizationObjectiveConfigCase_ == 18;
+  }
   /**
    *
    *
@@ -1335,6 +1367,21 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * <code>float optimization_objective_recall_value = 17;</code>
      *
+     * @return Whether the optimizationObjectiveRecallValue field is set.
+     */
+    public boolean hasOptimizationObjectiveRecallValue() {
+      return additionalOptimizationObjectiveConfigCase_ == 17;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required when optimization_objective is "MAXIMIZE_PRECISION_AT_RECALL".
+     * Must be between 0 and 1, inclusive.
+     * </pre>
+     *
+     * <code>float optimization_objective_recall_value = 17;</code>
+     *
      * @return The optimizationObjectiveRecallValue.
      */
     public float getOptimizationObjectiveRecallValue() {
@@ -1383,6 +1430,21 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Required when optimization_objective is "MAXIMIZE_RECALL_AT_PRECISION".
+     * Must be between 0 and 1, inclusive.
+     * </pre>
+     *
+     * <code>float optimization_objective_precision_value = 18;</code>
+     *
+     * @return Whether the optimizationObjectivePrecisionValue field is set.
+     */
+    public boolean hasOptimizationObjectivePrecisionValue() {
+      return additionalOptimizationObjectiveConfigCase_ == 18;
+    }
     /**
      *
      *

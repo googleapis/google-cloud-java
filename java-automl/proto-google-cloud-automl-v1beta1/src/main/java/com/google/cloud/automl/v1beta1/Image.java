@@ -193,6 +193,23 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bytes image_bytes = 1;</code>
    *
+   * @return Whether the imageBytes field is set.
+   */
+  @java.lang.Override
+  public boolean hasImageBytes() {
+    return dataCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Image content represented as a stream of bytes.
+   * Note: As with all `bytes` fields, protobuffers use a pure binary
+   * representation, whereas JSON representations use base64.
+   * </pre>
+   *
+   * <code>bytes image_bytes = 1;</code>
+   *
    * @return The imageBytes.
    */
   @java.lang.Override
@@ -700,6 +717,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Image content represented as a stream of bytes.
+     * Note: As with all `bytes` fields, protobuffers use a pure binary
+     * representation, whereas JSON representations use base64.
+     * </pre>
+     *
+     * <code>bytes image_bytes = 1;</code>
+     *
+     * @return Whether the imageBytes field is set.
+     */
+    public boolean hasImageBytes() {
+      return dataCase_ == 1;
+    }
     /**
      *
      *
