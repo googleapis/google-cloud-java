@@ -34880,6 +34880,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>bool boolean_value = 6;</code>
        *
+       * @return Whether the booleanValue field is set.
+       */
+      boolean hasBooleanValue();
+      /**
+       *
+       *
+       * <pre>
+       * Boolean value. Can be used for entities with binary values, or for
+       * checkboxes.
+       * </pre>
+       *
+       * <code>bool boolean_value = 6;</code>
+       *
        * @return The booleanValue.
        */
       boolean getBooleanValue();
@@ -35367,6 +35380,22 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int BOOLEAN_VALUE_FIELD_NUMBER = 6;
+      /**
+       *
+       *
+       * <pre>
+       * Boolean value. Can be used for entities with binary values, or for
+       * checkboxes.
+       * </pre>
+       *
+       * <code>bool boolean_value = 6;</code>
+       *
+       * @return Whether the booleanValue field is set.
+       */
+      @java.lang.Override
+      public boolean hasBooleanValue() {
+        return structuredValueCase_ == 6;
+      }
       /**
        *
        *
@@ -36835,6 +36864,21 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           return addressValueBuilder_;
         }
 
+        /**
+         *
+         *
+         * <pre>
+         * Boolean value. Can be used for entities with binary values, or for
+         * checkboxes.
+         * </pre>
+         *
+         * <code>bool boolean_value = 6;</code>
+         *
+         * @return Whether the booleanValue field is set.
+         */
+        public boolean hasBooleanValue() {
+          return structuredValueCase_ == 6;
+        }
         /**
          *
          *
@@ -49972,6 +50016,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string agent = 4;</code>
      *
+     * @return Whether the agent field is set.
+     */
+    boolean hasAgent();
+    /**
+     *
+     *
+     * <pre>
+     * If the change was made by a person specify the name or id of that
+     * person.
+     * </pre>
+     *
+     * <code>string agent = 4;</code>
+     *
      * @return The agent.
      */
     java.lang.String getAgent();
@@ -49989,6 +50046,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getAgentBytes();
 
+    /**
+     *
+     *
+     * <pre>
+     * If the annotation was made by processor identify the processor by its
+     * resource name.
+     * </pre>
+     *
+     * <code>string processor = 5;</code>
+     *
+     * @return Whether the processor field is set.
+     */
+    boolean hasProcessor();
     /**
      *
      *
@@ -51263,6 +51333,21 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string agent = 4;</code>
      *
+     * @return Whether the agent field is set.
+     */
+    public boolean hasAgent() {
+      return sourceCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the change was made by a person specify the name or id of that
+     * person.
+     * </pre>
+     *
+     * <code>string agent = 4;</code>
+     *
      * @return The agent.
      */
     public java.lang.String getAgent() {
@@ -51311,6 +51396,21 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PROCESSOR_FIELD_NUMBER = 5;
+    /**
+     *
+     *
+     * <pre>
+     * If the annotation was made by processor identify the processor by its
+     * resource name.
+     * </pre>
+     *
+     * <code>string processor = 5;</code>
+     *
+     * @return Whether the processor field is set.
+     */
+    public boolean hasProcessor() {
+      return sourceCase_ == 5;
+    }
     /**
      *
      *
@@ -52080,6 +52180,22 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>string agent = 4;</code>
        *
+       * @return Whether the agent field is set.
+       */
+      @java.lang.Override
+      public boolean hasAgent() {
+        return sourceCase_ == 4;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the change was made by a person specify the name or id of that
+       * person.
+       * </pre>
+       *
+       * <code>string agent = 4;</code>
+       *
        * @return The agent.
        */
       @java.lang.Override
@@ -52194,6 +52310,22 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      /**
+       *
+       *
+       * <pre>
+       * If the annotation was made by processor identify the processor by its
+       * resource name.
+       * </pre>
+       *
+       * <code>string processor = 5;</code>
+       *
+       * @return Whether the processor field is set.
+       */
+      @java.lang.Override
+      public boolean hasProcessor() {
+        return sourceCase_ == 5;
+      }
       /**
        *
        *
@@ -54664,6 +54796,24 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string uri = 1;</code>
    *
+   * @return Whether the uri field is set.
+   */
+  public boolean hasUri() {
+    return sourceCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Currently supports Google Cloud Storage URI of the form
+   *    `gs://bucket_name/object_name`. Object versioning is not supported.
+   *    See [Google Cloud Storage Request
+   *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
+   *    info.
+   * </pre>
+   *
+   * <code>string uri = 1;</code>
+   *
    * @return The uri.
    */
   public java.lang.String getUri() {
@@ -54715,6 +54865,23 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTENT_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Inline document content, represented as a stream of bytes.
+   * Note: As with all `bytes` fields, protobuffers use a pure binary
+   * representation, whereas JSON representations use base64.
+   * </pre>
+   *
+   * <code>bytes content = 2;</code>
+   *
+   * @return Whether the content field is set.
+   */
+  @java.lang.Override
+  public boolean hasContent() {
+    return sourceCase_ == 2;
+  }
   /**
    *
    *
@@ -56319,6 +56486,25 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string uri = 1;</code>
      *
+     * @return Whether the uri field is set.
+     */
+    @java.lang.Override
+    public boolean hasUri() {
+      return sourceCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Currently supports Google Cloud Storage URI of the form
+     *    `gs://bucket_name/object_name`. Object versioning is not supported.
+     *    See [Google Cloud Storage Request
+     *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
+     *    info.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
      * @return The uri.
      */
     @java.lang.Override
@@ -56445,6 +56631,22 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Inline document content, represented as a stream of bytes.
+     * Note: As with all `bytes` fields, protobuffers use a pure binary
+     * representation, whereas JSON representations use base64.
+     * </pre>
+     *
+     * <code>bytes content = 2;</code>
+     *
+     * @return Whether the content field is set.
+     */
+    public boolean hasContent() {
+      return sourceCase_ == 2;
+    }
     /**
      *
      *

@@ -247,6 +247,24 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bytes contents = 3;</code>
    *
+   * @return Whether the contents field is set.
+   */
+  @java.lang.Override
+  public boolean hasContents() {
+    return sourceCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Content in bytes, represented as a stream of bytes.
+   * Note: As with all `bytes` fields, proto buffer messages use a pure binary
+   * representation, whereas JSON representations use base64.
+   * This field only works for synchronous ProcessDocument method.
+   * </pre>
+   *
+   * <code>bytes contents = 3;</code>
+   *
    * @return The contents.
    */
   @java.lang.Override
@@ -931,6 +949,23 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       return gcsSourceBuilder_;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Content in bytes, represented as a stream of bytes.
+     * Note: As with all `bytes` fields, proto buffer messages use a pure binary
+     * representation, whereas JSON representations use base64.
+     * This field only works for synchronous ProcessDocument method.
+     * </pre>
+     *
+     * <code>bytes contents = 3;</code>
+     *
+     * @return Whether the contents field is set.
+     */
+    public boolean hasContents() {
+      return sourceCase_ == 3;
+    }
     /**
      *
      *

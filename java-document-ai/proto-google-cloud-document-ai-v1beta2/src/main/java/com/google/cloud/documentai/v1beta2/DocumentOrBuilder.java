@@ -36,6 +36,22 @@ public interface DocumentOrBuilder
    *
    * <code>string uri = 1;</code>
    *
+   * @return Whether the uri field is set.
+   */
+  boolean hasUri();
+  /**
+   *
+   *
+   * <pre>
+   * Currently supports Google Cloud Storage URI of the form
+   *    `gs://bucket_name/object_name`. Object versioning is not supported.
+   *    See [Google Cloud Storage Request
+   *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
+   *    info.
+   * </pre>
+   *
+   * <code>string uri = 1;</code>
+   *
    * @return The uri.
    */
   java.lang.String getUri();
@@ -56,6 +72,20 @@ public interface DocumentOrBuilder
    */
   com.google.protobuf.ByteString getUriBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Inline document content, represented as a stream of bytes.
+   * Note: As with all `bytes` fields, protobuffers use a pure binary
+   * representation, whereas JSON representations use base64.
+   * </pre>
+   *
+   * <code>bytes content = 2;</code>
+   *
+   * @return Whether the content field is set.
+   */
+  boolean hasContent();
   /**
    *
    *

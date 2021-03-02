@@ -73,6 +73,21 @@ public interface InputConfigOrBuilder
    *
    * <code>bytes contents = 3;</code>
    *
+   * @return Whether the contents field is set.
+   */
+  boolean hasContents();
+  /**
+   *
+   *
+   * <pre>
+   * Content in bytes, represented as a stream of bytes.
+   * Note: As with all `bytes` fields, proto buffer messages use a pure binary
+   * representation, whereas JSON representations use base64.
+   * This field only works for synchronous ProcessDocument method.
+   * </pre>
+   *
+   * <code>bytes contents = 3;</code>
+   *
    * @return The contents.
    */
   com.google.protobuf.ByteString getContents();
