@@ -386,6 +386,21 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string content = 2;</code>
    *
+   * @return Whether the content field is set.
+   */
+  public boolean hasContent() {
+    return sourceCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The content of the input in string format.
+   * Cloud audit logging exempt since it is based on user data.
+   * </pre>
+   *
+   * <code>string content = 2;</code>
+   *
    * @return The content.
    */
   public java.lang.String getContent() {
@@ -434,6 +449,23 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GCS_CONTENT_URI_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * The Google Cloud Storage URI where the file content is located.
+   * This URI must be of the form: gs://bucket_name/object_name. For more
+   * details, see https://cloud.google.com/storage/docs/reference-uris.
+   * NOTE: Cloud Storage object versioning is not supported.
+   * </pre>
+   *
+   * <code>string gcs_content_uri = 3;</code>
+   *
+   * @return Whether the gcsContentUri field is set.
+   */
+  public boolean hasGcsContentUri() {
+    return sourceCase_ == 3;
+  }
   /**
    *
    *
@@ -1073,6 +1105,22 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string content = 2;</code>
      *
+     * @return Whether the content field is set.
+     */
+    @java.lang.Override
+    public boolean hasContent() {
+      return sourceCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The content of the input in string format.
+     * Cloud audit logging exempt since it is based on user data.
+     * </pre>
+     *
+     * <code>string content = 2;</code>
+     *
      * @return The content.
      */
     @java.lang.Override
@@ -1187,6 +1235,24 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * The Google Cloud Storage URI where the file content is located.
+     * This URI must be of the form: gs://bucket_name/object_name. For more
+     * details, see https://cloud.google.com/storage/docs/reference-uris.
+     * NOTE: Cloud Storage object versioning is not supported.
+     * </pre>
+     *
+     * <code>string gcs_content_uri = 3;</code>
+     *
+     * @return Whether the gcsContentUri field is set.
+     */
+    @java.lang.Override
+    public boolean hasGcsContentUri() {
+      return sourceCase_ == 3;
+    }
     /**
      *
      *
