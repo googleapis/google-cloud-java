@@ -69,6 +69,19 @@ public interface PurgeProductsRequestOrBuilder
    *
    * <code>bool delete_orphan_products = 3;</code>
    *
+   * @return Whether the deleteOrphanProducts field is set.
+   */
+  boolean hasDeleteOrphanProducts();
+  /**
+   *
+   *
+   * <pre>
+   * If delete_orphan_products is true, all Products that are not in any
+   * ProductSet will be deleted.
+   * </pre>
+   *
+   * <code>bool delete_orphan_products = 3;</code>
+   *
    * @return The deleteOrphanProducts.
    */
   boolean getDeleteOrphanProducts();
