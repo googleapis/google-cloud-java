@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.120.17](https://www.github.com/googleapis/java-errorreporting/compare/v0.120.16...v0.120.17) (2021-03-02)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.94.2 ([#451](https://www.github.com/googleapis/java-errorreporting/issues/451)) ([2ee0010](https://www.github.com/googleapis/java-errorreporting/commit/2ee0010b5ddd8bdb588b09920f2e0fa446e8d49d))
+
 ### [0.120.16](https://www.github.com/googleapis/java-errorreporting/compare/v0.120.15...v0.120.16) (2021-02-25)
 
 
