@@ -3,8 +3,8 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:googleapis/java-area120-tables.git",
-        "sha": "97951ca30af9f85a02e2f49dfa67e1dadb71a1b8"
+        "remote": "https://github.com/googleapis/java-area120-tables.git",
+        "sha": "519d19c480ef23e1fa7bb430393dffab8958c8dd"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "0199c79b8324fba66476300824aa931788c47e2d"
+        "sha": "21da7d9fa02f6916d9f87cf4072b3547b5c72eb5"
       }
     }
   ],
