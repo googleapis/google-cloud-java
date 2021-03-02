@@ -271,6 +271,28 @@ public final class StreamingTranslateSpeechRequest extends com.google.protobuf.G
    *
    * <code>bytes audio_content = 2;</code>
    *
+   * @return Whether the audioContent field is set.
+   */
+  @java.lang.Override
+  public boolean hasAudioContent() {
+    return streamingRequestCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The audio data to be translated. Sequential chunks of audio data are sent
+   * in sequential `StreamingTranslateSpeechRequest` messages. The first
+   * `StreamingTranslateSpeechRequest` message must not contain
+   * `audio_content` data and all subsequent `StreamingTranslateSpeechRequest`
+   * messages must contain `audio_content` data. The audio bytes must be
+   * encoded as specified in `StreamingTranslateSpeechConfig`. Note: as with
+   * all bytes fields, protobuffers use a pure binary representation (not
+   * base64).
+   * </pre>
+   *
+   * <code>bytes audio_content = 2;</code>
+   *
    * @return The audioContent.
    */
   @java.lang.Override
@@ -951,6 +973,27 @@ public final class StreamingTranslateSpeechRequest extends com.google.protobuf.G
       return streamingConfigBuilder_;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * The audio data to be translated. Sequential chunks of audio data are sent
+     * in sequential `StreamingTranslateSpeechRequest` messages. The first
+     * `StreamingTranslateSpeechRequest` message must not contain
+     * `audio_content` data and all subsequent `StreamingTranslateSpeechRequest`
+     * messages must contain `audio_content` data. The audio bytes must be
+     * encoded as specified in `StreamingTranslateSpeechConfig`. Note: as with
+     * all bytes fields, protobuffers use a pure binary representation (not
+     * base64).
+     * </pre>
+     *
+     * <code>bytes audio_content = 2;</code>
+     *
+     * @return Whether the audioContent field is set.
+     */
+    public boolean hasAudioContent() {
+      return streamingRequestCase_ == 2;
+    }
     /**
      *
      *
