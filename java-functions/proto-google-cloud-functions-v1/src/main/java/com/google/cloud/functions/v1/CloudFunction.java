@@ -900,6 +900,21 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string source_archive_url = 3;</code>
    *
+   * @return Whether the sourceArchiveUrl field is set.
+   */
+  public boolean hasSourceArchiveUrl() {
+    return sourceCodeCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Google Cloud Storage URL, starting with gs://, pointing to the zip
+   * archive which contains the function.
+   * </pre>
+   *
+   * <code>string source_archive_url = 3;</code>
+   *
    * @return The sourceArchiveUrl.
    */
   public java.lang.String getSourceArchiveUrl() {
@@ -1002,6 +1017,21 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_UPLOAD_URL_FIELD_NUMBER = 16;
+  /**
+   *
+   *
+   * <pre>
+   * The Google Cloud Storage signed URL used for source uploading, generated
+   * by [google.cloud.functions.v1.GenerateUploadUrl][]
+   * </pre>
+   *
+   * <code>string source_upload_url = 16;</code>
+   *
+   * @return Whether the sourceUploadUrl field is set.
+   */
+  public boolean hasSourceUploadUrl() {
+    return sourceCodeCase_ == 16;
+  }
   /**
    *
    *
@@ -3079,6 +3109,22 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string source_archive_url = 3;</code>
      *
+     * @return Whether the sourceArchiveUrl field is set.
+     */
+    @java.lang.Override
+    public boolean hasSourceArchiveUrl() {
+      return sourceCodeCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Google Cloud Storage URL, starting with gs://, pointing to the zip
+     * archive which contains the function.
+     * </pre>
+     *
+     * <code>string source_archive_url = 3;</code>
+     *
      * @return The sourceArchiveUrl.
      */
     @java.lang.Override
@@ -3411,6 +3457,22 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       return sourceRepositoryBuilder_;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * The Google Cloud Storage signed URL used for source uploading, generated
+     * by [google.cloud.functions.v1.GenerateUploadUrl][]
+     * </pre>
+     *
+     * <code>string source_upload_url = 16;</code>
+     *
+     * @return Whether the sourceUploadUrl field is set.
+     */
+    @java.lang.Override
+    public boolean hasSourceUploadUrl() {
+      return sourceCodeCase_ == 16;
+    }
     /**
      *
      *

@@ -85,6 +85,19 @@ public interface CloudFunctionOrBuilder
    *
    * <code>string source_archive_url = 3;</code>
    *
+   * @return Whether the sourceArchiveUrl field is set.
+   */
+  boolean hasSourceArchiveUrl();
+  /**
+   *
+   *
+   * <pre>
+   * The Google Cloud Storage URL, starting with gs://, pointing to the zip
+   * archive which contains the function.
+   * </pre>
+   *
+   * <code>string source_archive_url = 3;</code>
+   *
    * @return The sourceArchiveUrl.
    */
   java.lang.String getSourceArchiveUrl();
@@ -140,6 +153,19 @@ public interface CloudFunctionOrBuilder
    */
   com.google.cloud.functions.v1.SourceRepositoryOrBuilder getSourceRepositoryOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The Google Cloud Storage signed URL used for source uploading, generated
+   * by [google.cloud.functions.v1.GenerateUploadUrl][]
+   * </pre>
+   *
+   * <code>string source_upload_url = 16;</code>
+   *
+   * @return Whether the sourceUploadUrl field is set.
+   */
+  boolean hasSourceUploadUrl();
   /**
    *
    *
