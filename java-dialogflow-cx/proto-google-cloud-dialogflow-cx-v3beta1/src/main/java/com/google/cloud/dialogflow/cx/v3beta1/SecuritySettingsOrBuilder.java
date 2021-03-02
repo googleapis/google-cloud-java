@@ -185,6 +185,22 @@ public interface SecuritySettingsOrBuilder
    *
    * <code>int32 retention_window_days = 6;</code>
    *
+   * @return Whether the retentionWindowDays field is set.
+   */
+  boolean hasRetentionWindowDays();
+  /**
+   *
+   *
+   * <pre>
+   * Retains the data for the specified number of days.
+   * User must Set a value lower than Dialogflow's default 30d TTL. Setting a
+   * value higher than that has no effect.
+   * A missing value or setting to 0 also means we use Dialogflow's default
+   * TTL.
+   * </pre>
+   *
+   * <code>int32 retention_window_days = 6;</code>
+   *
    * @return The retentionWindowDays.
    */
   int getRetentionWindowDays();

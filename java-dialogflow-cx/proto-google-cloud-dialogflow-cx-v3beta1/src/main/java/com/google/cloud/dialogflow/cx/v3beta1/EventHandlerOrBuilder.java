@@ -128,6 +128,20 @@ public interface EventHandlerOrBuilder
    *
    * <code>string target_page = 2 [(.google.api.resource_reference) = { ... }</code>
    *
+   * @return Whether the targetPage field is set.
+   */
+  boolean hasTargetPage();
+  /**
+   *
+   *
+   * <pre>
+   * The target page to transition to.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * </pre>
+   *
+   * <code>string target_page = 2 [(.google.api.resource_reference) = { ... }</code>
+   *
    * @return The targetPage.
    */
   java.lang.String getTargetPage();
@@ -146,6 +160,20 @@ public interface EventHandlerOrBuilder
    */
   com.google.protobuf.ByteString getTargetPageBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The target flow to transition to.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * </pre>
+   *
+   * <code>string target_flow = 3 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the targetFlow field is set.
+   */
+  boolean hasTargetFlow();
   /**
    *
    *

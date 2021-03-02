@@ -2804,6 +2804,18 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      * <code>string text = 1;</code>
      *
+     * @return Whether the text field is set.
+     */
+    boolean hasText();
+    /**
+     *
+     *
+     * <pre>
+     * The raw text to be synthesized.
+     * </pre>
+     *
+     * <code>string text = 1;</code>
+     *
      * @return The text.
      */
     java.lang.String getText();
@@ -2820,6 +2832,19 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getTextBytes();
 
+    /**
+     *
+     *
+     * <pre>
+     * The SSML text to be synthesized. For more information, see
+     * [SSML](/speech/text-to-speech/docs/ssml).
+     * </pre>
+     *
+     * <code>string ssml = 2;</code>
+     *
+     * @return Whether the ssml field is set.
+     */
+    boolean hasSsml();
     /**
      *
      *
@@ -3027,6 +3052,20 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      * <code>string text = 1;</code>
      *
+     * @return Whether the text field is set.
+     */
+    public boolean hasText() {
+      return sourceCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The raw text to be synthesized.
+     * </pre>
+     *
+     * <code>string text = 1;</code>
+     *
      * @return The text.
      */
     public java.lang.String getText() {
@@ -3074,6 +3113,21 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int SSML_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The SSML text to be synthesized. For more information, see
+     * [SSML](/speech/text-to-speech/docs/ssml).
+     * </pre>
+     *
+     * <code>string ssml = 2;</code>
+     *
+     * @return Whether the ssml field is set.
+     */
+    public boolean hasSsml() {
+      return sourceCase_ == 2;
+    }
     /**
      *
      *
@@ -3575,6 +3629,21 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        * <code>string text = 1;</code>
        *
+       * @return Whether the text field is set.
+       */
+      @java.lang.Override
+      public boolean hasText() {
+        return sourceCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The raw text to be synthesized.
+       * </pre>
+       *
+       * <code>string text = 1;</code>
+       *
        * @return The text.
        */
       @java.lang.Override
@@ -3685,6 +3754,22 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         return this;
       }
 
+      /**
+       *
+       *
+       * <pre>
+       * The SSML text to be synthesized. For more information, see
+       * [SSML](/speech/text-to-speech/docs/ssml).
+       * </pre>
+       *
+       * <code>string ssml = 2;</code>
+       *
+       * @return Whether the ssml field is set.
+       */
+      @java.lang.Override
+      public boolean hasSsml() {
+        return sourceCase_ == 2;
+      }
       /**
        *
        *
@@ -5383,10 +5468,36 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        * <code>bytes audio = 1;</code>
        *
+       * @return Whether the audio field is set.
+       */
+      boolean hasAudio();
+      /**
+       *
+       *
+       * <pre>
+       * Raw audio synthesized from the Dialogflow agent's response using
+       * the output config specified in the request.
+       * </pre>
+       *
+       * <code>bytes audio = 1;</code>
+       *
        * @return The audio.
        */
       com.google.protobuf.ByteString getAudio();
 
+      /**
+       *
+       *
+       * <pre>
+       * Client-specific URI that points to an audio clip accessible to the
+       * client. Dialogflow does not impose any validation on it.
+       * </pre>
+       *
+       * <code>string uri = 2;</code>
+       *
+       * @return Whether the uri field is set.
+       */
+      boolean hasUri();
       /**
        *
        *
@@ -5595,6 +5706,22 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        * <code>bytes audio = 1;</code>
        *
+       * @return Whether the audio field is set.
+       */
+      @java.lang.Override
+      public boolean hasAudio() {
+        return contentCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Raw audio synthesized from the Dialogflow agent's response using
+       * the output config specified in the request.
+       * </pre>
+       *
+       * <code>bytes audio = 1;</code>
+       *
        * @return The audio.
        */
       @java.lang.Override
@@ -5606,6 +5733,21 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       }
 
       public static final int URI_FIELD_NUMBER = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Client-specific URI that points to an audio clip accessible to the
+       * client. Dialogflow does not impose any validation on it.
+       * </pre>
+       *
+       * <code>string uri = 2;</code>
+       *
+       * @return Whether the uri field is set.
+       */
+      public boolean hasUri() {
+        return contentCase_ == 2;
+      }
       /**
        *
        *
@@ -6118,6 +6260,21 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
          *
          * <code>bytes audio = 1;</code>
          *
+         * @return Whether the audio field is set.
+         */
+        public boolean hasAudio() {
+          return contentCase_ == 1;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Raw audio synthesized from the Dialogflow agent's response using
+         * the output config specified in the request.
+         * </pre>
+         *
+         * <code>bytes audio = 1;</code>
+         *
          * @return The audio.
          */
         public com.google.protobuf.ByteString getAudio() {
@@ -6169,6 +6326,22 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           return this;
         }
 
+        /**
+         *
+         *
+         * <pre>
+         * Client-specific URI that points to an audio clip accessible to the
+         * client. Dialogflow does not impose any validation on it.
+         * </pre>
+         *
+         * <code>string uri = 2;</code>
+         *
+         * @return Whether the uri field is set.
+         */
+        @java.lang.Override
+        public boolean hasUri() {
+          return contentCase_ == 2;
+        }
         /**
          *
          *
@@ -7711,8 +7884,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    * Output only. A signal that indicates the interaction with the Dialogflow agent has
    * ended.
    * This message is generated by Dialogflow only when the conversation
-   * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-   * defined by the user.
+   * reaches `END_SESSION` page. It is not supposed to be defined by the user.
    * It's guaranteed that there is at most one such message in each response.
    * </pre>
    *
@@ -7733,8 +7905,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    * Output only. A signal that indicates the interaction with the Dialogflow agent has
    * ended.
    * This message is generated by Dialogflow only when the conversation
-   * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-   * defined by the user.
+   * reaches `END_SESSION` page. It is not supposed to be defined by the user.
    * It's guaranteed that there is at most one such message in each response.
    * </pre>
    *
@@ -7759,8 +7930,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    * Output only. A signal that indicates the interaction with the Dialogflow agent has
    * ended.
    * This message is generated by Dialogflow only when the conversation
-   * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-   * defined by the user.
+   * reaches `END_SESSION` page. It is not supposed to be defined by the user.
    * It's guaranteed that there is at most one such message in each response.
    * </pre>
    *
@@ -9647,8 +9817,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * Output only. A signal that indicates the interaction with the Dialogflow agent has
      * ended.
      * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-     * defined by the user.
+     * reaches `END_SESSION` page. It is not supposed to be defined by the user.
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -9669,8 +9838,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * Output only. A signal that indicates the interaction with the Dialogflow agent has
      * ended.
      * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-     * defined by the user.
+     * reaches `END_SESSION` page. It is not supposed to be defined by the user.
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -9704,8 +9872,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * Output only. A signal that indicates the interaction with the Dialogflow agent has
      * ended.
      * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-     * defined by the user.
+     * reaches `END_SESSION` page. It is not supposed to be defined by the user.
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -9734,8 +9901,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * Output only. A signal that indicates the interaction with the Dialogflow agent has
      * ended.
      * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-     * defined by the user.
+     * reaches `END_SESSION` page. It is not supposed to be defined by the user.
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -9762,8 +9928,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * Output only. A signal that indicates the interaction with the Dialogflow agent has
      * ended.
      * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-     * defined by the user.
+     * reaches `END_SESSION` page. It is not supposed to be defined by the user.
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -9804,8 +9969,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * Output only. A signal that indicates the interaction with the Dialogflow agent has
      * ended.
      * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-     * defined by the user.
+     * reaches `END_SESSION` page. It is not supposed to be defined by the user.
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -9836,8 +10000,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * Output only. A signal that indicates the interaction with the Dialogflow agent has
      * ended.
      * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-     * defined by the user.
+     * reaches `END_SESSION` page. It is not supposed to be defined by the user.
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -9856,8 +10019,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * Output only. A signal that indicates the interaction with the Dialogflow agent has
      * ended.
      * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-     * defined by the user.
+     * reaches `END_SESSION` page. It is not supposed to be defined by the user.
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -9885,8 +10047,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * Output only. A signal that indicates the interaction with the Dialogflow agent has
      * ended.
      * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` or `END_PAGE` page. It is not supposed to be
-     * defined by the user.
+     * reaches `END_SESSION` page. It is not supposed to be defined by the user.
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *

@@ -33,6 +33,19 @@ public interface ExportAgentResponseOrBuilder
    *
    * <code>string agent_uri = 1;</code>
    *
+   * @return Whether the agentUri field is set.
+   */
+  boolean hasAgentUri();
+  /**
+   *
+   *
+   * <pre>
+   * The URI to a file containing the exported agent. This field is populated
+   * only if `agent_uri` is specified in [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+   * </pre>
+   *
+   * <code>string agent_uri = 1;</code>
+   *
    * @return The agentUri.
    */
   java.lang.String getAgentUri();
@@ -50,6 +63,18 @@ public interface ExportAgentResponseOrBuilder
    */
   com.google.protobuf.ByteString getAgentUriBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Uncompressed raw byte content for agent.
+   * </pre>
+   *
+   * <code>bytes agent_content = 2;</code>
+   *
+   * @return Whether the agentContent field is set.
+   */
+  boolean hasAgentContent();
   /**
    *
    *

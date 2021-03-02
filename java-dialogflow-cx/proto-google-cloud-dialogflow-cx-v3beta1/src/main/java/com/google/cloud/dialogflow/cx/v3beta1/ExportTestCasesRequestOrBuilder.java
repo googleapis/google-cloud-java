@@ -66,6 +66,21 @@ public interface ExportTestCasesRequestOrBuilder
    *
    * <code>string gcs_uri = 2;</code>
    *
+   * @return Whether the gcsUri field is set.
+   */
+  boolean hasGcsUri();
+  /**
+   *
+   *
+   * <pre>
+   * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
+   * export the test cases to. The format of this URI must be
+   * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If unspecified, the serialized test
+   * cases is returned inline.
+   * </pre>
+   *
+   * <code>string gcs_uri = 2;</code>
+   *
    * @return The gcsUri.
    */
   java.lang.String getGcsUri();

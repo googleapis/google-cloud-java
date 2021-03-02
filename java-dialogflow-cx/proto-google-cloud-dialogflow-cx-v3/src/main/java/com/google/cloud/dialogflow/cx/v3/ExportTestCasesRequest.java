@@ -405,6 +405,23 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
    *
    * <code>string gcs_uri = 2;</code>
    *
+   * @return Whether the gcsUri field is set.
+   */
+  public boolean hasGcsUri() {
+    return destinationCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
+   * export the test cases to. The format of this URI must be
+   * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If unspecified, the serialized test
+   * cases is returned inline.
+   * </pre>
+   *
+   * <code>string gcs_uri = 2;</code>
+   *
    * @return The gcsUri.
    */
   public java.lang.String getGcsUri() {
@@ -1087,6 +1104,24 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
+     * export the test cases to. The format of this URI must be
+     * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If unspecified, the serialized test
+     * cases is returned inline.
+     * </pre>
+     *
+     * <code>string gcs_uri = 2;</code>
+     *
+     * @return Whether the gcsUri field is set.
+     */
+    @java.lang.Override
+    public boolean hasGcsUri() {
+      return destinationCase_ == 2;
+    }
     /**
      *
      *

@@ -238,6 +238,22 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>string agent_uri = 2;</code>
    *
+   * @return Whether the agentUri field is set.
+   */
+  public boolean hasAgentUri() {
+    return agentCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
+   * to restore agent from. The format of this URI must be
+   * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   * </pre>
+   *
+   * <code>string agent_uri = 2;</code>
+   *
    * @return The agentUri.
    */
   public java.lang.String getAgentUri() {
@@ -287,6 +303,21 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int AGENT_CONTENT_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Uncompressed raw byte content for agent.
+   * </pre>
+   *
+   * <code>bytes agent_content = 3;</code>
+   *
+   * @return Whether the agentContent field is set.
+   */
+  @java.lang.Override
+  public boolean hasAgentContent() {
+    return agentCase_ == 3;
+  }
   /**
    *
    *
@@ -835,6 +866,23 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      *
      * <code>string agent_uri = 2;</code>
      *
+     * @return Whether the agentUri field is set.
+     */
+    @java.lang.Override
+    public boolean hasAgentUri() {
+      return agentCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
+     * to restore agent from. The format of this URI must be
+     * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     * </pre>
+     *
+     * <code>string agent_uri = 2;</code>
+     *
      * @return The agentUri.
      */
     @java.lang.Override
@@ -953,6 +1001,20 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Uncompressed raw byte content for agent.
+     * </pre>
+     *
+     * <code>bytes agent_content = 3;</code>
+     *
+     * @return Whether the agentContent field is set.
+     */
+    public boolean hasAgentContent() {
+      return agentCase_ == 3;
+    }
     /**
      *
      *
