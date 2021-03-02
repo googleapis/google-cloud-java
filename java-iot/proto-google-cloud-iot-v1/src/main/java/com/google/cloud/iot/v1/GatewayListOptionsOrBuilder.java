@@ -34,6 +34,20 @@ public interface GatewayListOptionsOrBuilder
    *
    * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
    *
+   * @return Whether the gatewayType field is set.
+   */
+  boolean hasGatewayType();
+  /**
+   *
+   *
+   * <pre>
+   * If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY`
+   * is specified, only non-gateway devices are returned. If
+   * `GATEWAY_TYPE_UNSPECIFIED` is specified, all devices are returned.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+   *
    * @return The enum numeric value on the wire for gatewayType.
    */
   int getGatewayTypeValue();
@@ -52,6 +66,21 @@ public interface GatewayListOptionsOrBuilder
    */
   com.google.cloud.iot.v1.GatewayType getGatewayType();
 
+  /**
+   *
+   *
+   * <pre>
+   * If set, only devices associated with the specified gateway are returned.
+   * The gateway ID can be numeric (`num_id`) or the user-defined string
+   * (`id`). For example, if `123` is specified, only devices bound to the
+   * gateway with `num_id` 123 are returned.
+   * </pre>
+   *
+   * <code>string associations_gateway_id = 2;</code>
+   *
+   * @return Whether the associationsGatewayId field is set.
+   */
+  boolean hasAssociationsGatewayId();
   /**
    *
    *
@@ -83,6 +112,21 @@ public interface GatewayListOptionsOrBuilder
    */
   com.google.protobuf.ByteString getAssociationsGatewayIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * If set, returns only the gateways with which the specified device is
+   * associated. The device ID can be numeric (`num_id`) or the user-defined
+   * string (`id`). For example, if `456` is specified, returns only the
+   * gateways to which the device with `num_id` 456 is bound.
+   * </pre>
+   *
+   * <code>string associations_device_id = 3;</code>
+   *
+   * @return Whether the associationsDeviceId field is set.
+   */
+  boolean hasAssociationsDeviceId();
   /**
    *
    *

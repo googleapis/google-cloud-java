@@ -185,6 +185,22 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
    *
+   * @return Whether the gatewayType field is set.
+   */
+  public boolean hasGatewayType() {
+    return filterCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY`
+   * is specified, only non-gateway devices are returned. If
+   * `GATEWAY_TYPE_UNSPECIFIED` is specified, all devices are returned.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+   *
    * @return The enum numeric value on the wire for gatewayType.
    */
   public int getGatewayTypeValue() {
@@ -217,6 +233,23 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ASSOCIATIONS_GATEWAY_ID_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * If set, only devices associated with the specified gateway are returned.
+   * The gateway ID can be numeric (`num_id`) or the user-defined string
+   * (`id`). For example, if `123` is specified, only devices bound to the
+   * gateway with `num_id` 123 are returned.
+   * </pre>
+   *
+   * <code>string associations_gateway_id = 2;</code>
+   *
+   * @return Whether the associationsGatewayId field is set.
+   */
+  public boolean hasAssociationsGatewayId() {
+    return filterCase_ == 2;
+  }
   /**
    *
    *
@@ -279,6 +312,23 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ASSOCIATIONS_DEVICE_ID_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * If set, returns only the gateways with which the specified device is
+   * associated. The device ID can be numeric (`num_id`) or the user-defined
+   * string (`id`). For example, if `456` is specified, returns only the
+   * gateways to which the device with `num_id` 456 is bound.
+   * </pre>
+   *
+   * <code>string associations_device_id = 3;</code>
+   *
+   * @return Whether the associationsDeviceId field is set.
+   */
+  public boolean hasAssociationsDeviceId() {
+    return filterCase_ == 3;
+  }
   /**
    *
    *
@@ -751,6 +801,23 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      *
      * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
      *
+     * @return Whether the gatewayType field is set.
+     */
+    @java.lang.Override
+    public boolean hasGatewayType() {
+      return filterCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY`
+     * is specified, only non-gateway devices are returned. If
+     * `GATEWAY_TYPE_UNSPECIFIED` is specified, all devices are returned.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayType gateway_type = 1;</code>
+     *
      * @return The enum numeric value on the wire for gatewayType.
      */
     @java.lang.Override
@@ -848,6 +915,24 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * If set, only devices associated with the specified gateway are returned.
+     * The gateway ID can be numeric (`num_id`) or the user-defined string
+     * (`id`). For example, if `123` is specified, only devices bound to the
+     * gateway with `num_id` 123 are returned.
+     * </pre>
+     *
+     * <code>string associations_gateway_id = 2;</code>
+     *
+     * @return Whether the associationsGatewayId field is set.
+     */
+    @java.lang.Override
+    public boolean hasAssociationsGatewayId() {
+      return filterCase_ == 2;
+    }
     /**
      *
      *
@@ -982,6 +1067,24 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * If set, returns only the gateways with which the specified device is
+     * associated. The device ID can be numeric (`num_id`) or the user-defined
+     * string (`id`). For example, if `456` is specified, returns only the
+     * gateways to which the device with `num_id` 456 is bound.
+     * </pre>
+     *
+     * <code>string associations_device_id = 3;</code>
+     *
+     * @return Whether the associationsDeviceId field is set.
+     */
+    @java.lang.Override
+    public boolean hasAssociationsDeviceId() {
+      return filterCase_ == 3;
+    }
     /**
      *
      *
