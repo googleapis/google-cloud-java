@@ -41,8 +41,6 @@ import javax.annotation.concurrent.GuardedBy;
 /**
  * A BigQuery Stream Writer that can be used to write data into BigQuery Table.
  *
- * <p>TODO: Attach traceId.
- *
  * <p>TODO: Support batching.
  *
  * <p>TODO: Support schema change.
@@ -73,6 +71,11 @@ public class StreamWriterV2 implements AutoCloseable {
    * Max allowed inflight bytes in the stream. Method append is blocked at this.
    */
   private final long maxInflightBytes;
+
+  /*
+   * TraceId for debugging purpose.
+   */
+  private final String traceId;
 
   /*
    * Tracks current inflight requests in the stream.
@@ -143,6 +146,7 @@ public class StreamWriterV2 implements AutoCloseable {
     this.writerSchema = builder.writerSchema;
     this.maxInflightRequests = builder.maxInflightRequest;
     this.maxInflightBytes = builder.maxInflightBytes;
+    this.traceId = builder.traceId;
     this.waitingRequestQueue = new LinkedList<AppendRequestAndResponse>();
     this.inflightRequestQueue = new LinkedList<AppendRequestAndResponse>();
     if (builder.client == null) {
@@ -433,6 +437,9 @@ public class StreamWriterV2 implements AutoCloseable {
         requestBuilder.getProtoRowsBuilder().setWriterSchema(this.writerSchema);
       }
       requestBuilder.setWriteStream(this.streamName);
+      if (this.traceId != null) {
+        requestBuilder.setTraceId(this.traceId);
+      }
     } else {
       requestBuilder.clearWriteStream();
       requestBuilder.getProtoRowsBuilder().clearWriterSchema();
@@ -539,6 +546,8 @@ public class StreamWriterV2 implements AutoCloseable {
     private CredentialsProvider credentialsProvider =
         BigQueryWriteSettings.defaultCredentialsProviderBuilder().build();
 
+    private String traceId = null;
+
     private Builder(String streamName) {
       this.streamName = Preconditions.checkNotNull(streamName);
       this.client = null;
@@ -588,6 +597,20 @@ public class StreamWriterV2 implements AutoCloseable {
     public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
       this.credentialsProvider =
           Preconditions.checkNotNull(credentialsProvider, "CredentialsProvider is null.");
+      return this;
+    }
+
+    /**
+     * Sets traceId for debuging purpose. TraceId must follow the format of
+     * CustomerDomain:DebugString, e.g. DATAFLOW:job_id_x.
+     */
+    public Builder setTraceId(String traceId) {
+      int colonIndex = traceId.indexOf(':');
+      if (colonIndex == -1 || colonIndex == 0 || colonIndex == traceId.length() - 1) {
+        throw new IllegalArgumentException(
+            "TraceId must follow the format of A:B. Actual:" + traceId);
+      }
+      this.traceId = traceId;
       return this;
     }
 

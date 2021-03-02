@@ -54,6 +54,7 @@ import org.threeten.bp.Duration;
 public class StreamWriterV2Test {
   private static final Logger log = Logger.getLogger(StreamWriterV2Test.class.getName());
   private static final String TEST_STREAM = "projects/p/datasets/d/tables/t/streams/s";
+  private static final String TEST_TRACE_ID = "DATAFLOW:job_id";
   private FakeScheduledExecutorService fakeExecutor;
   private FakeBigQueryWrite testBigQueryWrite;
   private static MockServiceHelper serviceHelper;
@@ -84,7 +85,7 @@ public class StreamWriterV2Test {
   }
 
   private StreamWriterV2 getTestStreamWriterV2() throws IOException {
-    return StreamWriterV2.newBuilder(TEST_STREAM, client).build();
+    return StreamWriterV2.newBuilder(TEST_STREAM, client).setTraceId(TEST_TRACE_ID).build();
   }
 
   private ProtoSchema createProtoSchema() {
@@ -184,10 +185,12 @@ public class StreamWriterV2Test {
         // First request received by server should have schema and stream name.
         assertTrue(serverRequest.getProtoRows().hasWriterSchema());
         assertEquals(serverRequest.getWriteStream(), TEST_STREAM);
+        assertEquals(serverRequest.getTraceId(), TEST_TRACE_ID);
       } else {
         // Following request should not have schema and stream name.
         assertFalse(serverRequest.getProtoRows().hasWriterSchema());
         assertEquals(serverRequest.getWriteStream(), "");
+        assertEquals(serverRequest.getTraceId(), "");
       }
     }
   }
@@ -209,7 +212,10 @@ public class StreamWriterV2Test {
   @Test
   public void testAppendWithRowsSuccess() throws Exception {
     StreamWriterV2 writer =
-        StreamWriterV2.newBuilder(TEST_STREAM, client).setWriterSchema(createProtoSchema()).build();
+        StreamWriterV2.newBuilder(TEST_STREAM, client)
+            .setWriterSchema(createProtoSchema())
+            .setTraceId(TEST_TRACE_ID)
+            .build();
 
     long appendCount = 100;
     for (int i = 0; i < appendCount; i++) {
@@ -267,6 +273,34 @@ public class StreamWriterV2Test {
             });
     assertEquals(ex.getStatus().getCode(), Status.INVALID_ARGUMENT.getCode());
     assertTrue(ex.getStatus().getDescription().contains("Writer schema must be provided"));
+  }
+
+  @Test
+  public void testInvalidTraceId() throws Exception {
+    assertThrows(
+        IllegalArgumentException.class,
+        new ThrowingRunnable() {
+          @Override
+          public void run() throws Throwable {
+            StreamWriterV2.newBuilder(TEST_STREAM).setTraceId("abc");
+          }
+        });
+    assertThrows(
+        IllegalArgumentException.class,
+        new ThrowingRunnable() {
+          @Override
+          public void run() throws Throwable {
+            StreamWriterV2.newBuilder(TEST_STREAM).setTraceId("abc:");
+          }
+        });
+    assertThrows(
+        IllegalArgumentException.class,
+        new ThrowingRunnable() {
+          @Override
+          public void run() throws Throwable {
+            StreamWriterV2.newBuilder(TEST_STREAM).setTraceId(":abc");
+          }
+        });
   }
 
   @Test
