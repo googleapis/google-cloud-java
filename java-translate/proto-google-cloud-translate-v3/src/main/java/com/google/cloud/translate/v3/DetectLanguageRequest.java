@@ -339,6 +339,20 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>string content = 1;</code>
    *
+   * @return Whether the content field is set.
+   */
+  public boolean hasContent() {
+    return sourceCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The content of the input stored as a string.
+   * </pre>
+   *
+   * <code>string content = 1;</code>
+   *
    * @return The content.
    */
   public java.lang.String getContent() {
@@ -1285,6 +1299,21 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * The content of the input stored as a string.
+     * </pre>
+     *
+     * <code>string content = 1;</code>
+     *
+     * @return Whether the content field is set.
+     */
+    @java.lang.Override
+    public boolean hasContent() {
+      return sourceCase_ == 1;
+    }
     /**
      *
      *
