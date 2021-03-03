@@ -40,6 +40,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
   private Plan() {
     paymentPlan_ = 0;
     paymentType_ = 0;
+    billingAccount_ = "";
   }
 
   @java.lang.Override
@@ -113,6 +114,13 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
                 trialPeriod_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              billingAccount_ = s;
               break;
             }
           default:
@@ -334,6 +342,57 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
     return getTrialPeriod();
   }
 
+  public static final int BILLING_ACCOUNT_FIELD_NUMBER = 5;
+  private volatile java.lang.Object billingAccount_;
+  /**
+   *
+   *
+   * <pre>
+   * Reseller Billing account to charge after an offer transaction.
+   * Only present for Google Cloud Platform offers.
+   * </pre>
+   *
+   * <code>string billing_account = 5;</code>
+   *
+   * @return The billingAccount.
+   */
+  @java.lang.Override
+  public java.lang.String getBillingAccount() {
+    java.lang.Object ref = billingAccount_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      billingAccount_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Reseller Billing account to charge after an offer transaction.
+   * Only present for Google Cloud Platform offers.
+   * </pre>
+   *
+   * <code>string billing_account = 5;</code>
+   *
+   * @return The bytes for billingAccount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBillingAccountBytes() {
+    java.lang.Object ref = billingAccount_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      billingAccount_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -362,6 +421,9 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
     if (trialPeriod_ != null) {
       output.writeMessage(4, getTrialPeriod());
     }
+    if (!getBillingAccountBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, billingAccount_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -384,6 +446,9 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
     }
     if (trialPeriod_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTrialPeriod());
+    }
+    if (!getBillingAccountBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, billingAccount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -410,6 +475,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
     if (hasTrialPeriod()) {
       if (!getTrialPeriod().equals(other.getTrialPeriod())) return false;
     }
+    if (!getBillingAccount().equals(other.getBillingAccount())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -433,6 +499,8 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + TRIAL_PERIOD_FIELD_NUMBER;
       hash = (53 * hash) + getTrialPeriod().hashCode();
     }
+    hash = (37 * hash) + BILLING_ACCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getBillingAccount().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -593,6 +661,8 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
         trialPeriod_ = null;
         trialPeriodBuilder_ = null;
       }
+      billingAccount_ = "";
+
       return this;
     }
 
@@ -631,6 +701,7 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.trialPeriod_ = trialPeriodBuilder_.build();
       }
+      result.billingAccount_ = billingAccount_;
       onBuilt();
       return result;
     }
@@ -691,6 +762,10 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasTrialPeriod()) {
         mergeTrialPeriod(other.getTrialPeriod());
+      }
+      if (!other.getBillingAccount().isEmpty()) {
+        billingAccount_ = other.billingAccount_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1325,6 +1400,117 @@ public final class Plan extends com.google.protobuf.GeneratedMessageV3
         trialPeriod_ = null;
       }
       return trialPeriodBuilder_;
+    }
+
+    private java.lang.Object billingAccount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Reseller Billing account to charge after an offer transaction.
+     * Only present for Google Cloud Platform offers.
+     * </pre>
+     *
+     * <code>string billing_account = 5;</code>
+     *
+     * @return The billingAccount.
+     */
+    public java.lang.String getBillingAccount() {
+      java.lang.Object ref = billingAccount_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        billingAccount_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reseller Billing account to charge after an offer transaction.
+     * Only present for Google Cloud Platform offers.
+     * </pre>
+     *
+     * <code>string billing_account = 5;</code>
+     *
+     * @return The bytes for billingAccount.
+     */
+    public com.google.protobuf.ByteString getBillingAccountBytes() {
+      java.lang.Object ref = billingAccount_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        billingAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reseller Billing account to charge after an offer transaction.
+     * Only present for Google Cloud Platform offers.
+     * </pre>
+     *
+     * <code>string billing_account = 5;</code>
+     *
+     * @param value The billingAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBillingAccount(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      billingAccount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reseller Billing account to charge after an offer transaction.
+     * Only present for Google Cloud Platform offers.
+     * </pre>
+     *
+     * <code>string billing_account = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBillingAccount() {
+
+      billingAccount_ = getDefaultInstance().getBillingAccount();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reseller Billing account to charge after an offer transaction.
+     * Only present for Google Cloud Platform offers.
+     * </pre>
+     *
+     * <code>string billing_account = 5;</code>
+     *
+     * @param value The bytes for billingAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBillingAccountBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      billingAccount_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

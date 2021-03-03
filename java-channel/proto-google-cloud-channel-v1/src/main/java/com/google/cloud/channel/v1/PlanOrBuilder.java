@@ -160,4 +160,31 @@ public interface PlanOrBuilder
    * <code>.google.cloud.channel.v1.Period trial_period = 4;</code>
    */
   com.google.cloud.channel.v1.PeriodOrBuilder getTrialPeriodOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reseller Billing account to charge after an offer transaction.
+   * Only present for Google Cloud Platform offers.
+   * </pre>
+   *
+   * <code>string billing_account = 5;</code>
+   *
+   * @return The billingAccount.
+   */
+  java.lang.String getBillingAccount();
+  /**
+   *
+   *
+   * <pre>
+   * Reseller Billing account to charge after an offer transaction.
+   * Only present for Google Cloud Platform offers.
+   * </pre>
+   *
+   * <code>string billing_account = 5;</code>
+   *
+   * @return The bytes for billingAccount.
+   */
+  com.google.protobuf.ByteString getBillingAccountBytes();
 }

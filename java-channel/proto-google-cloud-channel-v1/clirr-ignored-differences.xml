@@ -56,4 +56,9 @@
     <className>com/google/cloud/channel/v1/*OrBuilder</className>
     <method>* has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/channel/v1/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
 </differences>
