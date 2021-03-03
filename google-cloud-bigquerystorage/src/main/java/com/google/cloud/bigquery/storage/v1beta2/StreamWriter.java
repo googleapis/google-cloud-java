@@ -265,7 +265,9 @@ public class StreamWriter implements AutoCloseable {
       List<InflightBatch> batchesToSend;
       batchesToSend = messagesBatch.add(outstandingAppend);
       // Setup the next duration based delivery alarm if there are messages batched.
-      setupAlarm();
+      if (batchingSettings.getDelayThreshold() != null) {
+        setupAlarm();
+      }
       if (!batchesToSend.isEmpty()) {
         for (final InflightBatch batch : batchesToSend) {
           LOG.fine("Scheduling a batch for immediate sending");
@@ -738,58 +740,31 @@ public class StreamWriter implements AutoCloseable {
       if (batchingSettings.getRequestByteThreshold() > getApiMaxRequestBytes()) {
         builder.setRequestByteThreshold(getApiMaxRequestBytes());
       }
-      Preconditions.checkNotNull(batchingSettings.getDelayThreshold());
-      Preconditions.checkArgument(batchingSettings.getDelayThreshold().toMillis() > 0);
+      LOG.info("here" + batchingSettings.getFlowControlSettings());
       if (batchingSettings.getFlowControlSettings() == null) {
         builder.setFlowControlSettings(DEFAULT_FLOW_CONTROL_SETTINGS);
       } else {
-
-        if (batchingSettings.getFlowControlSettings().getMaxOutstandingElementCount() == null) {
-          builder.setFlowControlSettings(
-              batchingSettings
-                  .getFlowControlSettings()
-                  .toBuilder()
-                  .setMaxOutstandingElementCount(
-                      DEFAULT_FLOW_CONTROL_SETTINGS.getMaxOutstandingElementCount())
-                  .build());
-        } else {
-          Preconditions.checkArgument(
-              batchingSettings.getFlowControlSettings().getMaxOutstandingElementCount() > 0);
-          if (batchingSettings.getFlowControlSettings().getMaxOutstandingElementCount()
-              > getApiMaxInflightRequests()) {
-            builder.setFlowControlSettings(
-                batchingSettings
-                    .getFlowControlSettings()
-                    .toBuilder()
-                    .setMaxOutstandingElementCount(getApiMaxInflightRequests())
-                    .build());
-          }
+        Long elementCount =
+            batchingSettings.getFlowControlSettings().getMaxOutstandingElementCount();
+        if (elementCount == null || elementCount > getApiMaxInflightRequests()) {
+          elementCount = DEFAULT_FLOW_CONTROL_SETTINGS.getMaxOutstandingElementCount();
         }
-        if (batchingSettings.getFlowControlSettings().getMaxOutstandingRequestBytes() == null) {
-          builder.setFlowControlSettings(
-              batchingSettings
-                  .getFlowControlSettings()
-                  .toBuilder()
-                  .setMaxOutstandingRequestBytes(
-                      DEFAULT_FLOW_CONTROL_SETTINGS.getMaxOutstandingRequestBytes())
-                  .build());
-        } else {
-          Preconditions.checkArgument(
-              batchingSettings.getFlowControlSettings().getMaxOutstandingRequestBytes() > 0);
+        Long elementSize =
+            batchingSettings.getFlowControlSettings().getMaxOutstandingRequestBytes();
+        if (elementSize == null || elementSize < 0) {
+          elementSize = DEFAULT_FLOW_CONTROL_SETTINGS.getMaxOutstandingRequestBytes();
         }
-        if (batchingSettings.getFlowControlSettings().getLimitExceededBehavior() == null) {
-          builder.setFlowControlSettings(
-              batchingSettings
-                  .getFlowControlSettings()
-                  .toBuilder()
-                  .setLimitExceededBehavior(
-                      DEFAULT_FLOW_CONTROL_SETTINGS.getLimitExceededBehavior())
-                  .build());
-        } else {
-          Preconditions.checkArgument(
-              batchingSettings.getFlowControlSettings().getLimitExceededBehavior()
-                  != FlowController.LimitExceededBehavior.Ignore);
+        FlowController.LimitExceededBehavior behavior =
+            batchingSettings.getFlowControlSettings().getLimitExceededBehavior();
+        if (behavior == null || behavior == FlowController.LimitExceededBehavior.Ignore) {
+          behavior = DEFAULT_FLOW_CONTROL_SETTINGS.getLimitExceededBehavior();
         }
+        builder.setFlowControlSettings(
+            FlowControlSettings.newBuilder()
+                .setMaxOutstandingElementCount(elementCount)
+                .setMaxOutstandingRequestBytes(elementSize)
+                .setLimitExceededBehavior(behavior)
+                .build());
       }
       this.batchingSettings = builder.build();
       return this;

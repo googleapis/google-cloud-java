@@ -17,9 +17,8 @@ package com.google.cloud.bigquery.storage.v1beta2;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
+import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.core.CredentialsProvider;
-import com.google.api.gax.core.ExecutorProvider;
-import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.bigquery.Schema;
 import com.google.common.base.Preconditions;
@@ -51,6 +50,7 @@ public class JsonStreamWriter implements AutoCloseable {
   private BigQueryWriteClient client;
   private String streamName;
   private StreamWriter streamWriter;
+  private StreamWriter.Builder streamWriterBuilder;
   private Descriptor descriptor;
   private TableSchema tableSchema;
 
@@ -66,20 +66,16 @@ public class JsonStreamWriter implements AutoCloseable {
     this.descriptor =
         BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(builder.tableSchema);
 
-    StreamWriter.Builder streamWriterBuilder;
     if (this.client == null) {
       streamWriterBuilder = StreamWriter.newBuilder(builder.streamOrTableName);
     } else {
       streamWriterBuilder = StreamWriter.newBuilder(builder.streamOrTableName, builder.client);
     }
     setStreamWriterSettings(
-        streamWriterBuilder,
         builder.channelProvider,
         builder.credentialsProvider,
-        builder.batchingSettings,
-        builder.retrySettings,
-        builder.executorProvider,
         builder.endpoint,
+        builder.flowControlSettings,
         builder.createDefaultStream);
     this.streamWriter = streamWriterBuilder.build();
     this.streamName = this.streamWriter.getStreamNameString();
@@ -134,17 +130,17 @@ public class JsonStreamWriter implements AutoCloseable {
   }
 
   /**
-   * Refreshes connection for a JsonStreamWriter by first flushing all remaining rows, then calling
-   * refreshAppend(), and finally setting the descriptor. All of these actions need to be performed
-   * atomically to avoid having synchronization issues with append(). Flushing all rows first is
-   * necessary since if there are rows remaining when the connection refreshes, it will send out the
-   * old writer schema instead of the new one.
+   * Refreshes connection for a JsonStreamWriter by first flushing all remaining rows, then
+   * recreates stream writer, and finally setting the descriptor. All of these actions need to be
+   * performed atomically to avoid having synchronization issues with append(). Flushing all rows
+   * first is necessary since if there are rows remaining when the connection refreshes, it will
+   * send out the old writer schema instead of the new one.
    */
   void refreshConnection()
       throws IOException, InterruptedException, Descriptors.DescriptorValidationException {
     synchronized (this) {
-      this.streamWriter.writeAllOutstanding();
-      this.streamWriter.refreshAppend();
+      this.streamWriter.shutdown();
+      this.streamWriter = streamWriterBuilder.build();
       this.descriptor =
           BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(this.tableSchema);
     }
@@ -170,39 +166,37 @@ public class JsonStreamWriter implements AutoCloseable {
 
   /** Sets all StreamWriter settings. */
   private void setStreamWriterSettings(
-      StreamWriter.Builder builder,
       @Nullable TransportChannelProvider channelProvider,
       @Nullable CredentialsProvider credentialsProvider,
-      @Nullable BatchingSettings batchingSettings,
-      @Nullable RetrySettings retrySettings,
-      @Nullable ExecutorProvider executorProvider,
       @Nullable String endpoint,
+      @Nullable FlowControlSettings flowControlSettings,
       Boolean createDefaultStream) {
     if (channelProvider != null) {
-      builder.setChannelProvider(channelProvider);
+      streamWriterBuilder.setChannelProvider(channelProvider);
     }
     if (credentialsProvider != null) {
-      builder.setCredentialsProvider(credentialsProvider);
+      streamWriterBuilder.setCredentialsProvider(credentialsProvider);
     }
-    if (batchingSettings != null) {
-      builder.setBatchingSettings(batchingSettings);
-    }
-    if (retrySettings != null) {
-      builder.setRetrySettings(retrySettings);
-    }
-    if (executorProvider != null) {
-      builder.setExecutorProvider(executorProvider);
+    BatchingSettings.Builder batchSettingBuilder =
+        BatchingSettings.newBuilder()
+            .setElementCountThreshold(1L)
+            .setRequestByteThreshold(4 * 1024 * 1024L);
+    if (flowControlSettings != null) {
+      streamWriterBuilder.setBatchingSettings(
+          batchSettingBuilder.setFlowControlSettings(flowControlSettings).build());
+    } else {
+      streamWriterBuilder.setBatchingSettings(batchSettingBuilder.build());
     }
     if (endpoint != null) {
-      builder.setEndpoint(endpoint);
+      streamWriterBuilder.setEndpoint(endpoint);
     }
     if (createDefaultStream) {
-      builder.createDefaultStream();
+      streamWriterBuilder.createDefaultStream();
     }
     JsonStreamWriterOnSchemaUpdateRunnable jsonStreamWriterOnSchemaUpdateRunnable =
         new JsonStreamWriterOnSchemaUpdateRunnable();
     jsonStreamWriterOnSchemaUpdateRunnable.setJsonStreamWriter(this);
-    builder.setOnSchemaUpdateRunnable(jsonStreamWriterOnSchemaUpdateRunnable);
+    streamWriterBuilder.setOnSchemaUpdateRunnable(jsonStreamWriterOnSchemaUpdateRunnable);
   }
 
   /**
@@ -313,9 +307,7 @@ public class JsonStreamWriter implements AutoCloseable {
 
     private TransportChannelProvider channelProvider;
     private CredentialsProvider credentialsProvider;
-    private BatchingSettings batchingSettings;
-    private RetrySettings retrySettings;
-    private ExecutorProvider executorProvider;
+    private FlowControlSettings flowControlSettings;
     private String endpoint;
     private boolean createDefaultStream = false;
 
@@ -359,37 +351,15 @@ public class JsonStreamWriter implements AutoCloseable {
     }
 
     /**
-     * Setter for the underlying StreamWriter's BatchingSettings.
+     * Setter for the underlying StreamWriter's FlowControlSettings.
      *
-     * @param batchingSettings
+     * @param flowControlSettings
      * @return Builder
      */
-    public Builder setBatchingSettings(BatchingSettings batchingSettings) {
-      this.batchingSettings =
-          Preconditions.checkNotNull(batchingSettings, "BatchingSettings is null.");
-      return this;
-    }
-
-    /**
-     * Setter for the underlying StreamWriter's RetrySettings.
-     *
-     * @param retrySettings
-     * @return Builder
-     */
-    public Builder setRetrySettings(RetrySettings retrySettings) {
-      this.retrySettings = Preconditions.checkNotNull(retrySettings, "RetrySettings is null.");
-      return this;
-    }
-
-    /**
-     * Setter for the underlying StreamWriter's ExecutorProvider.
-     *
-     * @param executorProvider
-     * @return Builder
-     */
-    public Builder setExecutorProvider(ExecutorProvider executorProvider) {
-      this.executorProvider =
-          Preconditions.checkNotNull(executorProvider, "ExecutorProvider is null.");
+    public Builder setFlowControlSettings(FlowControlSettings flowControlSettings) {
+      Preconditions.checkNotNull(flowControlSettings, "FlowControlSettings is null.");
+      this.flowControlSettings =
+          Preconditions.checkNotNull(flowControlSettings, "FlowControlSettings is null.");
       return this;
     }
 

@@ -205,7 +205,7 @@ public class ITBigQueryWriteManualClientTest {
   }
 
   @Test
-  public void testJsonStreamWriterBatchWriteWithCommittedStream()
+  public void testJsonStreamWriterWriteWithCommittedStream()
       throws IOException, InterruptedException, ExecutionException,
           Descriptors.DescriptorValidationException {
     String tableName = "JsonTable";
@@ -235,15 +235,7 @@ public class ITBigQueryWriteManualClientTest {
                     WriteStream.newBuilder().setType(WriteStream.Type.COMMITTED).build())
                 .build());
     try (JsonStreamWriter jsonStreamWriter =
-        JsonStreamWriter.newBuilder(writeStream.getName(), writeStream.getTableSchema())
-            .setBatchingSettings(
-                StreamWriter.Builder.DEFAULT_BATCHING_SETTINGS
-                    .toBuilder()
-                    .setRequestByteThreshold(1024 * 1024L) // 1 Mb
-                    .setElementCountThreshold(2L)
-                    .setDelayThreshold(Duration.ofSeconds(2))
-                    .build())
-            .build()) {
+        JsonStreamWriter.newBuilder(writeStream.getName(), writeStream.getTableSchema()).build()) {
       LOG.info("Sending one message");
       JSONObject row1 = new JSONObject();
       row1.put("test_str", "aaa");
@@ -316,13 +308,6 @@ public class ITBigQueryWriteManualClientTest {
     try (JsonStreamWriter jsonStreamWriter =
         JsonStreamWriter.newBuilder(parent.toString(), tableInfo.getDefinition().getSchema())
             .createDefaultStream()
-            .setBatchingSettings(
-                StreamWriter.Builder.DEFAULT_BATCHING_SETTINGS
-                    .toBuilder()
-                    .setRequestByteThreshold(1024 * 1024L) // 1 Mb
-                    .setElementCountThreshold(2L)
-                    .setDelayThreshold(Duration.ofSeconds(2))
-                    .build())
             .build()) {
       LOG.info("Sending one message");
       JSONObject row1 = new JSONObject();
