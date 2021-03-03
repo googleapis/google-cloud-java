@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-aiplatform.git",
-        "sha": "faff19b2820146d6cf49525f49ae187449171641"
+        "sha": "aef7867c4edccaea0b59270e6ec3a3cfa2c9eccd"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "0780323da96d5a53925fe0547757181fe76e8f1e"
+        "sha": "2e7bd5cc66a3f0b90ce1c150eb35c89eeb9872d6"
       }
     }
   ]

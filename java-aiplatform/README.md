@@ -19,7 +19,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-aiplatform</artifactId>
-    <version>0.2.0</version>
+    <version>0.3.0</version>
   </dependency>
 
 ```
@@ -30,14 +30,14 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-aiplatform</artifactId>
-  <version>0.2.0</version>
+  <version>0.3.0</version>
 </dependency>
 
 ```
 
 If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:18.0.0')
+implementation platform('com.google.cloud:libraries-bom:18.1.0')
 
 compile 'com.google.cloud:google-cloud-aiplatform'
 ```
