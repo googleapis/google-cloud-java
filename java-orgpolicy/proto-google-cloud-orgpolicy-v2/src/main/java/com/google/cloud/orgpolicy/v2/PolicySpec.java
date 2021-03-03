@@ -208,6 +208,19 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bool allow_all = 2;</code>
      *
+     * @return Whether the allowAll field is set.
+     */
+    boolean hasAllowAll();
+    /**
+     *
+     *
+     * <pre>
+     * Setting this to true means that all values are allowed. This field can
+     * be set only in Policies for list constraints.
+     * </pre>
+     *
+     * <code>bool allow_all = 2;</code>
+     *
      * @return The allowAll.
      */
     boolean getAllowAll();
@@ -222,10 +235,37 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bool deny_all = 3;</code>
      *
+     * @return Whether the denyAll field is set.
+     */
+    boolean hasDenyAll();
+    /**
+     *
+     *
+     * <pre>
+     * Setting this to true means that all values are denied. This field can
+     * be set only in Policies for list constraints.
+     * </pre>
+     *
+     * <code>bool deny_all = 3;</code>
+     *
      * @return The denyAll.
      */
     boolean getDenyAll();
 
+    /**
+     *
+     *
+     * <pre>
+     * If `true`, then the `Policy` is enforced. If `false`, then any
+     * configuration is acceptable.
+     * This field can be set only in Policies for boolean constraints.
+     * </pre>
+     *
+     * <code>bool enforce = 4;</code>
+     *
+     * @return Whether the enforce field is set.
+     */
+    boolean hasEnforce();
     /**
      *
      *
@@ -1706,6 +1746,22 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bool allow_all = 2;</code>
      *
+     * @return Whether the allowAll field is set.
+     */
+    @java.lang.Override
+    public boolean hasAllowAll() {
+      return kindCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Setting this to true means that all values are allowed. This field can
+     * be set only in Policies for list constraints.
+     * </pre>
+     *
+     * <code>bool allow_all = 2;</code>
+     *
      * @return The allowAll.
      */
     @java.lang.Override
@@ -1727,6 +1783,22 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bool deny_all = 3;</code>
      *
+     * @return Whether the denyAll field is set.
+     */
+    @java.lang.Override
+    public boolean hasDenyAll() {
+      return kindCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Setting this to true means that all values are denied. This field can
+     * be set only in Policies for list constraints.
+     * </pre>
+     *
+     * <code>bool deny_all = 3;</code>
+     *
      * @return The denyAll.
      */
     @java.lang.Override
@@ -1738,6 +1810,23 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ENFORCE_FIELD_NUMBER = 4;
+    /**
+     *
+     *
+     * <pre>
+     * If `true`, then the `Policy` is enforced. If `false`, then any
+     * configuration is acceptable.
+     * This field can be set only in Policies for boolean constraints.
+     * </pre>
+     *
+     * <code>bool enforce = 4;</code>
+     *
+     * @return Whether the enforce field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnforce() {
+      return kindCase_ == 4;
+    }
     /**
      *
      *
@@ -2533,6 +2622,21 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>bool allow_all = 2;</code>
        *
+       * @return Whether the allowAll field is set.
+       */
+      public boolean hasAllowAll() {
+        return kindCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Setting this to true means that all values are allowed. This field can
+       * be set only in Policies for list constraints.
+       * </pre>
+       *
+       * <code>bool allow_all = 2;</code>
+       *
        * @return The allowAll.
        */
       public boolean getAllowAll() {
@@ -2591,6 +2695,21 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>bool deny_all = 3;</code>
        *
+       * @return Whether the denyAll field is set.
+       */
+      public boolean hasDenyAll() {
+        return kindCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Setting this to true means that all values are denied. This field can
+       * be set only in Policies for list constraints.
+       * </pre>
+       *
+       * <code>bool deny_all = 3;</code>
+       *
        * @return The denyAll.
        */
       public boolean getDenyAll() {
@@ -2639,6 +2758,22 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      /**
+       *
+       *
+       * <pre>
+       * If `true`, then the `Policy` is enforced. If `false`, then any
+       * configuration is acceptable.
+       * This field can be set only in Policies for boolean constraints.
+       * </pre>
+       *
+       * <code>bool enforce = 4;</code>
+       *
+       * @return Whether the enforce field is set.
+       */
+      public boolean hasEnforce() {
+        return kindCase_ == 4;
+      }
       /**
        *
        *

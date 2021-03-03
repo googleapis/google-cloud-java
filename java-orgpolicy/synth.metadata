@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-orgpolicy.git",
-        "sha": "fc8bf81304b4be71765ff45678c372060d41179d"
+        "sha": "418da760b4bf90611bee9692aa47e9e7c30f49cf"
       }
     },
     {
@@ -17,9 +17,17 @@
     },
     {
       "git": {
+        "name": "googleapis-gen",
+        "remote": "https://github.com/googleapis/googleapis-gen.git",
+        "sha": "ee82b2b8fc167d02b122230b5759bfabb821442d",
+        "internalRef": "360469636"
+      }
+    },
+    {
+      "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "6946fd71ae9215b0e7ae188f5057df765ee6d7d2"
+        "sha": "21da7d9fa02f6916d9f87cf4072b3547b5c72eb5"
       }
     }
   ],
@@ -100,12 +108,59 @@
     "CONTRIBUTING.md",
     "LICENSE",
     "codecov.yaml",
+    "google-cloud-orgpolicy/src/main/java/com/google/cloud/orgpolicy/v2/OrgPolicyClient.java",
+    "google-cloud-orgpolicy/src/main/java/com/google/cloud/orgpolicy/v2/OrgPolicySettings.java",
+    "google-cloud-orgpolicy/src/main/java/com/google/cloud/orgpolicy/v2/gapic_metadata.json",
+    "google-cloud-orgpolicy/src/main/java/com/google/cloud/orgpolicy/v2/package-info.java",
+    "google-cloud-orgpolicy/src/main/java/com/google/cloud/orgpolicy/v2/stub/GrpcOrgPolicyCallableFactory.java",
+    "google-cloud-orgpolicy/src/main/java/com/google/cloud/orgpolicy/v2/stub/GrpcOrgPolicyStub.java",
+    "google-cloud-orgpolicy/src/main/java/com/google/cloud/orgpolicy/v2/stub/OrgPolicyStub.java",
+    "google-cloud-orgpolicy/src/main/java/com/google/cloud/orgpolicy/v2/stub/OrgPolicyStubSettings.java",
+    "google-cloud-orgpolicy/src/test/java/com/google/cloud/orgpolicy/v2/MockOrgPolicy.java",
+    "google-cloud-orgpolicy/src/test/java/com/google/cloud/orgpolicy/v2/MockOrgPolicyImpl.java",
+    "google-cloud-orgpolicy/src/test/java/com/google/cloud/orgpolicy/v2/OrgPolicyClientTest.java",
+    "grpc-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/OrgPolicyGrpc.java",
     "java.header",
     "license-checks.xml",
     "proto-google-cloud-orgpolicy-v1/src/main/java/com/google/cloud/orgpolicy/v1/OrgPolicyProto.java",
     "proto-google-cloud-orgpolicy-v1/src/main/java/com/google/cloud/orgpolicy/v1/Policy.java",
     "proto-google-cloud-orgpolicy-v1/src/main/java/com/google/cloud/orgpolicy/v1/PolicyOrBuilder.java",
     "proto-google-cloud-orgpolicy-v1/src/main/proto/google/cloud/orgpolicy/v1/orgpolicy.proto",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/AlternatePolicySpec.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/AlternatePolicySpecOrBuilder.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/Constraint.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/ConstraintName.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/ConstraintOrBuilder.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/ConstraintProto.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/CreatePolicyRequest.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/CreatePolicyRequestOrBuilder.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/DeletePolicyRequest.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/DeletePolicyRequestOrBuilder.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/FolderName.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/GetEffectivePolicyRequest.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/GetEffectivePolicyRequestOrBuilder.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/GetPolicyRequest.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/GetPolicyRequestOrBuilder.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/ListConstraintsRequest.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/ListConstraintsRequestOrBuilder.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/ListConstraintsResponse.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/ListConstraintsResponseOrBuilder.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/ListPoliciesRequest.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/ListPoliciesRequestOrBuilder.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/ListPoliciesResponse.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/ListPoliciesResponseOrBuilder.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/OrgPolicyProto.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/OrganizationName.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/Policy.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/PolicyName.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/PolicyOrBuilder.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/PolicySpec.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/PolicySpecOrBuilder.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/ProjectName.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/UpdatePolicyRequest.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/java/com/google/cloud/orgpolicy/v2/UpdatePolicyRequestOrBuilder.java",
+    "proto-google-cloud-orgpolicy-v2/src/main/proto/google/cloud/orgpolicy/v2/constraint.proto",
+    "proto-google-cloud-orgpolicy-v2/src/main/proto/google/cloud/orgpolicy/v2/orgpolicy.proto",
     "renovate.json"
   ]
 }
