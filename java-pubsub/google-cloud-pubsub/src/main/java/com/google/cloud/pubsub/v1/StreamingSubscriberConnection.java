@@ -149,8 +149,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
   @Override
   protected void doStop() {
-    messageDispatcher.stop();
-    ackOperationsWaiter.waitComplete();
+    runShutdown();
 
     lock.lock();
     try {
@@ -159,6 +158,11 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       lock.unlock();
       notifyStopped();
     }
+  }
+
+  private void runShutdown() {
+    messageDispatcher.stop();
+    ackOperationsWaiter.waitComplete();
   }
 
   private class StreamingPullResponseObserver implements ResponseObserver<StreamingPullResponse> {
@@ -282,6 +286,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                   ApiExceptionFactory.createException(
                       cause, GrpcStatusCode.of(Status.fromThrowable(cause).getCode()), false);
               logger.log(Level.SEVERE, "terminated streaming with exception", gaxException);
+              runShutdown();
               notifyFailed(gaxException);
               return;
             }

@@ -308,9 +308,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
               public void run() {
                 try {
                   // stop connection is no-op if connections haven't been started.
-                  stopAllStreamingConnections();
-                  shutdownBackgroundResources();
-                  subStub.shutdownNow();
+                  runShutdown();
                   notifyStopped();
                 } catch (Exception e) {
                   notifyFailed(e);
@@ -318,6 +316,12 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
               }
             })
         .start();
+  }
+
+  private void runShutdown() {
+    stopAllStreamingConnections();
+    shutdownBackgroundResources();
+    subStub.shutdownNow();
   }
 
   private void startStreamingConnections() {
@@ -352,8 +356,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
             public void failed(State from, Throwable failure) {
               // If a connection failed is because of a fatal error, we should fail the
               // whole subscriber.
-              stopAllStreamingConnections();
-              shutdownBackgroundResources();
+              runShutdown();
               try {
                 notifyFailed(failure);
               } catch (IllegalStateException e) {
