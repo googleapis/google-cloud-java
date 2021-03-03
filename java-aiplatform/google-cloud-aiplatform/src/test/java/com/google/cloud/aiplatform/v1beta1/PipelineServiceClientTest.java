@@ -107,6 +107,7 @@ public class PipelineServiceClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -164,6 +165,7 @@ public class PipelineServiceClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -221,6 +223,7 @@ public class PipelineServiceClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -276,6 +279,7 @@ public class PipelineServiceClientTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockPipelineService.addResponse(expectedResponse);
 

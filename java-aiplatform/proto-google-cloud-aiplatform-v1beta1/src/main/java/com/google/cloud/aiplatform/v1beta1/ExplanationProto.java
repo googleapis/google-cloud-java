@@ -71,6 +71,22 @@ public final class ExplanationProto {
       internal_static_google_cloud_aiplatform_v1beta1_FeatureNoiseSigma_NoiseSigmaForFeature_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_FeatureNoiseSigma_NoiseSigmaForFeature_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ExplanationSpecOverride_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ExplanationSpecOverride_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_InputMetadataOverride_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_InputMetadataOverride_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_InputsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_InputsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -128,10 +144,23 @@ public final class ExplanationProto {
           + "gle.cloud.aiplatform.v1beta1.FeatureNois"
           + "eSigma.NoiseSigmaForFeature\0323\n\024NoiseSigm"
           + "aForFeature\022\014\n\004name\030\001 \001(\t\022\r\n\005sigma\030\002 \001(\002"
-          + "B\204\001\n#com.google.cloud.aiplatform.v1beta1"
-          + "B\020ExplanationProtoP\001ZIgoogle.golang.org/"
-          + "genproto/googleapis/cloud/aiplatform/v1b"
-          + "eta1;aiplatformb\006proto3"
+          + "\"\265\001\n\027ExplanationSpecOverride\022J\n\nparamete"
+          + "rs\030\001 \001(\01326.google.cloud.aiplatform.v1bet"
+          + "a1.ExplanationParameters\022N\n\010metadata\030\002 \001"
+          + "(\0132<.google.cloud.aiplatform.v1beta1.Exp"
+          + "lanationMetadataOverride\"\312\002\n\033Explanation"
+          + "MetadataOverride\022]\n\006inputs\030\001 \003(\0132H.googl"
+          + "e.cloud.aiplatform.v1beta1.ExplanationMe"
+          + "tadataOverride.InputsEntryB\003\340A\002\032H\n\025Input"
+          + "MetadataOverride\022/\n\017input_baselines\030\001 \003("
+          + "\0132\026.google.protobuf.Value\032\201\001\n\013InputsEntr"
+          + "y\022\013\n\003key\030\001 \001(\t\022a\n\005value\030\002 \001(\0132R.google.c"
+          + "loud.aiplatform.v1beta1.ExplanationMetad"
+          + "ataOverride.InputMetadataOverride:\0028\001B\204\001"
+          + "\n#com.google.cloud.aiplatform.v1beta1B\020E"
+          + "xplanationProtoP\001ZIgoogle.golang.org/gen"
+          + "proto/googleapis/cloud/aiplatform/v1beta"
+          + "1;aiplatformb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -242,6 +271,42 @@ public final class ExplanationProto {
             internal_static_google_cloud_aiplatform_v1beta1_FeatureNoiseSigma_NoiseSigmaForFeature_descriptor,
             new java.lang.String[] {
               "Name", "Sigma",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ExplanationSpecOverride_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_aiplatform_v1beta1_ExplanationSpecOverride_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ExplanationSpecOverride_descriptor,
+            new java.lang.String[] {
+              "Parameters", "Metadata",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_descriptor,
+            new java.lang.String[] {
+              "Inputs",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_InputMetadataOverride_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_InputMetadataOverride_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_InputMetadataOverride_descriptor,
+            new java.lang.String[] {
+              "InputBaselines",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_InputsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_InputsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_InputsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

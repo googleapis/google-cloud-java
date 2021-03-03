@@ -27,7 +27,7 @@ public interface DiskSpecOrBuilder
    *
    *
    * <pre>
-   * Type of the boot disk (default is "pd-standard").
+   * Type of the boot disk (default is "pd-ssd").
    * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
    * "pd-standard" (Persistent Disk Hard Disk Drive).
    * </pre>
@@ -41,7 +41,7 @@ public interface DiskSpecOrBuilder
    *
    *
    * <pre>
-   * Type of the boot disk (default is "pd-standard").
+   * Type of the boot disk (default is "pd-ssd").
    * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
    * "pd-standard" (Persistent Disk Hard Disk Drive).
    * </pre>

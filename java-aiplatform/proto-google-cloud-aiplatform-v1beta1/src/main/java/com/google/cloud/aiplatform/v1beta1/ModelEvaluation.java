@@ -42,6 +42,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     name_ = "";
     metricsSchemaUri_ = "";
     sliceDimensions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    explanationSpecs_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -144,6 +145,22 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
 
               break;
             }
+          case 74:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                explanationSpecs_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.aiplatform.v1beta1.ModelEvaluation
+                            .ModelEvaluationExplanationSpec>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              explanationSpecs_.add(
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1beta1.ModelEvaluation
+                          .ModelEvaluationExplanationSpec.parser(),
+                      extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -160,6 +177,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         sliceDimensions_ = sliceDimensions_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        explanationSpecs_ = java.util.Collections.unmodifiableList(explanationSpecs_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -179,6 +199,1031 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         .ensureFieldAccessorsInitialized(
             com.google.cloud.aiplatform.v1beta1.ModelEvaluation.class,
             com.google.cloud.aiplatform.v1beta1.ModelEvaluation.Builder.class);
+  }
+
+  public interface ModelEvaluationExplanationSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Explanation type.
+     * For AutoML Image Classification models, possible values are:
+     *   * `image-integrated-gradients`
+     *   * `image-xrai`
+     * </pre>
+     *
+     * <code>string explanation_type = 1;</code>
+     *
+     * @return The explanationType.
+     */
+    java.lang.String getExplanationType();
+    /**
+     *
+     *
+     * <pre>
+     * Explanation type.
+     * For AutoML Image Classification models, possible values are:
+     *   * `image-integrated-gradients`
+     *   * `image-xrai`
+     * </pre>
+     *
+     * <code>string explanation_type = 1;</code>
+     *
+     * @return The bytes for explanationType.
+     */
+    com.google.protobuf.ByteString getExplanationTypeBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Explanation spec details.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 2;</code>
+     *
+     * @return Whether the explanationSpec field is set.
+     */
+    boolean hasExplanationSpec();
+    /**
+     *
+     *
+     * <pre>
+     * Explanation spec details.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 2;</code>
+     *
+     * @return The explanationSpec.
+     */
+    com.google.cloud.aiplatform.v1beta1.ExplanationSpec getExplanationSpec();
+    /**
+     *
+     *
+     * <pre>
+     * Explanation spec details.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 2;</code>
+     */
+    com.google.cloud.aiplatform.v1beta1.ExplanationSpecOrBuilder getExplanationSpecOrBuilder();
+  }
+  /**
+   * Protobuf type {@code
+   * google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec}
+   */
+  public static final class ModelEvaluationExplanationSpec
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec)
+      ModelEvaluationExplanationSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ModelEvaluationExplanationSpec.newBuilder() to construct.
+    private ModelEvaluationExplanationSpec(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ModelEvaluationExplanationSpec() {
+      explanationType_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ModelEvaluationExplanationSpec();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private ModelEvaluationExplanationSpec(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                explanationType_ = s;
+                break;
+              }
+            case 18:
+              {
+                com.google.cloud.aiplatform.v1beta1.ExplanationSpec.Builder subBuilder = null;
+                if (explanationSpec_ != null) {
+                  subBuilder = explanationSpec_.toBuilder();
+                }
+                explanationSpec_ =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.ExplanationSpec.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(explanationSpec_);
+                  explanationSpec_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.ModelEvaluationProto
+          .internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_ModelEvaluationExplanationSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.ModelEvaluationProto
+          .internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_ModelEvaluationExplanationSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+                  .class,
+              com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+                  .Builder.class);
+    }
+
+    public static final int EXPLANATION_TYPE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object explanationType_;
+    /**
+     *
+     *
+     * <pre>
+     * Explanation type.
+     * For AutoML Image Classification models, possible values are:
+     *   * `image-integrated-gradients`
+     *   * `image-xrai`
+     * </pre>
+     *
+     * <code>string explanation_type = 1;</code>
+     *
+     * @return The explanationType.
+     */
+    @java.lang.Override
+    public java.lang.String getExplanationType() {
+      java.lang.Object ref = explanationType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        explanationType_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation type.
+     * For AutoML Image Classification models, possible values are:
+     *   * `image-integrated-gradients`
+     *   * `image-xrai`
+     * </pre>
+     *
+     * <code>string explanation_type = 1;</code>
+     *
+     * @return The bytes for explanationType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getExplanationTypeBytes() {
+      java.lang.Object ref = explanationType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        explanationType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EXPLANATION_SPEC_FIELD_NUMBER = 2;
+    private com.google.cloud.aiplatform.v1beta1.ExplanationSpec explanationSpec_;
+    /**
+     *
+     *
+     * <pre>
+     * Explanation spec details.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 2;</code>
+     *
+     * @return Whether the explanationSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasExplanationSpec() {
+      return explanationSpec_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation spec details.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 2;</code>
+     *
+     * @return The explanationSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ExplanationSpec getExplanationSpec() {
+      return explanationSpec_ == null
+          ? com.google.cloud.aiplatform.v1beta1.ExplanationSpec.getDefaultInstance()
+          : explanationSpec_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Explanation spec details.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ExplanationSpecOrBuilder
+        getExplanationSpecOrBuilder() {
+      return getExplanationSpec();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!getExplanationTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, explanationType_);
+      }
+      if (explanationSpec_ != null) {
+        output.writeMessage(2, getExplanationSpec());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getExplanationTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, explanationType_);
+      }
+      if (explanationSpec_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getExplanationSpec());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec other =
+          (com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec) obj;
+
+      if (!getExplanationType().equals(other.getExplanationType())) return false;
+      if (hasExplanationSpec() != other.hasExplanationSpec()) return false;
+      if (hasExplanationSpec()) {
+        if (!getExplanationSpec().equals(other.getExplanationSpec())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + EXPLANATION_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getExplanationType().hashCode();
+      if (hasExplanationSpec()) {
+        hash = (37 * hash) + EXPLANATION_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getExplanationSpec().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec)
+        com.google.cloud.aiplatform.v1beta1.ModelEvaluation
+            .ModelEvaluationExplanationSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ModelEvaluationProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_ModelEvaluationExplanationSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ModelEvaluationProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_ModelEvaluationExplanationSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+                    .class,
+                com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        explanationType_ = "";
+
+        if (explanationSpecBuilder_ == null) {
+          explanationSpec_ = null;
+        } else {
+          explanationSpec_ = null;
+          explanationSpecBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.ModelEvaluationProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_ModelEvaluationExplanationSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+          build() {
+        com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+          buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec result =
+            new com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec(
+                this);
+        result.explanationType_ = explanationType_;
+        if (explanationSpecBuilder_ == null) {
+          result.explanationSpec_ = explanationSpec_;
+        } else {
+          result.explanationSpec_ = explanationSpecBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+              other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+                .getDefaultInstance()) return this;
+        if (!other.getExplanationType().isEmpty()) {
+          explanationType_ = other.explanationType_;
+          onChanged();
+        }
+        if (other.hasExplanationSpec()) {
+          mergeExplanationSpec(other.getExplanationSpec());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+            parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object explanationType_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Explanation type.
+       * For AutoML Image Classification models, possible values are:
+       *   * `image-integrated-gradients`
+       *   * `image-xrai`
+       * </pre>
+       *
+       * <code>string explanation_type = 1;</code>
+       *
+       * @return The explanationType.
+       */
+      public java.lang.String getExplanationType() {
+        java.lang.Object ref = explanationType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          explanationType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Explanation type.
+       * For AutoML Image Classification models, possible values are:
+       *   * `image-integrated-gradients`
+       *   * `image-xrai`
+       * </pre>
+       *
+       * <code>string explanation_type = 1;</code>
+       *
+       * @return The bytes for explanationType.
+       */
+      public com.google.protobuf.ByteString getExplanationTypeBytes() {
+        java.lang.Object ref = explanationType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          explanationType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Explanation type.
+       * For AutoML Image Classification models, possible values are:
+       *   * `image-integrated-gradients`
+       *   * `image-xrai`
+       * </pre>
+       *
+       * <code>string explanation_type = 1;</code>
+       *
+       * @param value The explanationType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExplanationType(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        explanationType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Explanation type.
+       * For AutoML Image Classification models, possible values are:
+       *   * `image-integrated-gradients`
+       *   * `image-xrai`
+       * </pre>
+       *
+       * <code>string explanation_type = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExplanationType() {
+
+        explanationType_ = getDefaultInstance().getExplanationType();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Explanation type.
+       * For AutoML Image Classification models, possible values are:
+       *   * `image-integrated-gradients`
+       *   * `image-xrai`
+       * </pre>
+       *
+       * <code>string explanation_type = 1;</code>
+       *
+       * @param value The bytes for explanationType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExplanationTypeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        explanationType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.aiplatform.v1beta1.ExplanationSpec explanationSpec_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.ExplanationSpec,
+              com.google.cloud.aiplatform.v1beta1.ExplanationSpec.Builder,
+              com.google.cloud.aiplatform.v1beta1.ExplanationSpecOrBuilder>
+          explanationSpecBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Explanation spec details.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 2;</code>
+       *
+       * @return Whether the explanationSpec field is set.
+       */
+      public boolean hasExplanationSpec() {
+        return explanationSpecBuilder_ != null || explanationSpec_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Explanation spec details.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 2;</code>
+       *
+       * @return The explanationSpec.
+       */
+      public com.google.cloud.aiplatform.v1beta1.ExplanationSpec getExplanationSpec() {
+        if (explanationSpecBuilder_ == null) {
+          return explanationSpec_ == null
+              ? com.google.cloud.aiplatform.v1beta1.ExplanationSpec.getDefaultInstance()
+              : explanationSpec_;
+        } else {
+          return explanationSpecBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Explanation spec details.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 2;</code>
+       */
+      public Builder setExplanationSpec(com.google.cloud.aiplatform.v1beta1.ExplanationSpec value) {
+        if (explanationSpecBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          explanationSpec_ = value;
+          onChanged();
+        } else {
+          explanationSpecBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Explanation spec details.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 2;</code>
+       */
+      public Builder setExplanationSpec(
+          com.google.cloud.aiplatform.v1beta1.ExplanationSpec.Builder builderForValue) {
+        if (explanationSpecBuilder_ == null) {
+          explanationSpec_ = builderForValue.build();
+          onChanged();
+        } else {
+          explanationSpecBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Explanation spec details.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 2;</code>
+       */
+      public Builder mergeExplanationSpec(
+          com.google.cloud.aiplatform.v1beta1.ExplanationSpec value) {
+        if (explanationSpecBuilder_ == null) {
+          if (explanationSpec_ != null) {
+            explanationSpec_ =
+                com.google.cloud.aiplatform.v1beta1.ExplanationSpec.newBuilder(explanationSpec_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            explanationSpec_ = value;
+          }
+          onChanged();
+        } else {
+          explanationSpecBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Explanation spec details.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 2;</code>
+       */
+      public Builder clearExplanationSpec() {
+        if (explanationSpecBuilder_ == null) {
+          explanationSpec_ = null;
+          onChanged();
+        } else {
+          explanationSpec_ = null;
+          explanationSpecBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Explanation spec details.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 2;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.ExplanationSpec.Builder
+          getExplanationSpecBuilder() {
+
+        onChanged();
+        return getExplanationSpecFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Explanation spec details.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 2;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.ExplanationSpecOrBuilder
+          getExplanationSpecOrBuilder() {
+        if (explanationSpecBuilder_ != null) {
+          return explanationSpecBuilder_.getMessageOrBuilder();
+        } else {
+          return explanationSpec_ == null
+              ? com.google.cloud.aiplatform.v1beta1.ExplanationSpec.getDefaultInstance()
+              : explanationSpec_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Explanation spec details.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.ExplanationSpec,
+              com.google.cloud.aiplatform.v1beta1.ExplanationSpec.Builder,
+              com.google.cloud.aiplatform.v1beta1.ExplanationSpecOrBuilder>
+          getExplanationSpecFieldBuilder() {
+        if (explanationSpecBuilder_ == null) {
+          explanationSpecBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.ExplanationSpec,
+                  com.google.cloud.aiplatform.v1beta1.ExplanationSpec.Builder,
+                  com.google.cloud.aiplatform.v1beta1.ExplanationSpecOrBuilder>(
+                  getExplanationSpec(), getParentForChildren(), isClean());
+          explanationSpec_ = null;
+        }
+        return explanationSpecBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec)
+    private static final com.google.cloud.aiplatform.v1beta1.ModelEvaluation
+            .ModelEvaluationExplanationSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ModelEvaluationExplanationSpec> PARSER =
+        new com.google.protobuf.AbstractParser<ModelEvaluationExplanationSpec>() {
+          @java.lang.Override
+          public ModelEvaluationExplanationSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ModelEvaluationExplanationSpec(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<ModelEvaluationExplanationSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ModelEvaluationExplanationSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -517,6 +1562,99 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     return getModelExplanation();
   }
 
+  public static final int EXPLANATION_SPECS_FIELD_NUMBER = 9;
+  private java.util.List<
+          com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec>
+      explanationSpecs_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+   * the predicted values on the evaluated data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec>
+      getExplanationSpecsList() {
+    return explanationSpecs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+   * the predicted values on the evaluated data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.cloud.aiplatform.v1beta1.ModelEvaluation
+                  .ModelEvaluationExplanationSpecOrBuilder>
+      getExplanationSpecsOrBuilderList() {
+    return explanationSpecs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+   * the predicted values on the evaluated data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getExplanationSpecsCount() {
+    return explanationSpecs_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+   * the predicted values on the evaluated data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+      getExplanationSpecs(int index) {
+    return explanationSpecs_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+   * the predicted values on the evaluated data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpecOrBuilder
+      getExplanationSpecsOrBuilder(int index) {
+    return explanationSpecs_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -548,6 +1686,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     }
     if (modelExplanation_ != null) {
       output.writeMessage(8, getModelExplanation());
+    }
+    for (int i = 0; i < explanationSpecs_.size(); i++) {
+      output.writeMessage(9, explanationSpecs_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -581,6 +1722,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     if (modelExplanation_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getModelExplanation());
     }
+    for (int i = 0; i < explanationSpecs_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, explanationSpecs_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -612,6 +1756,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     if (hasModelExplanation()) {
       if (!getModelExplanation().equals(other.getModelExplanation())) return false;
     }
+    if (!getExplanationSpecsList().equals(other.getExplanationSpecsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -642,6 +1787,10 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     if (hasModelExplanation()) {
       hash = (37 * hash) + MODEL_EXPLANATION_FIELD_NUMBER;
       hash = (53 * hash) + getModelExplanation().hashCode();
+    }
+    if (getExplanationSpecsCount() > 0) {
+      hash = (37 * hash) + EXPLANATION_SPECS_FIELD_NUMBER;
+      hash = (53 * hash) + getExplanationSpecsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -783,7 +1932,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getExplanationSpecsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -812,6 +1963,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       } else {
         modelExplanation_ = null;
         modelExplanationBuilder_ = null;
+      }
+      if (explanationSpecsBuilder_ == null) {
+        explanationSpecs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        explanationSpecsBuilder_.clear();
       }
       return this;
     }
@@ -862,6 +2019,15 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         result.modelExplanation_ = modelExplanation_;
       } else {
         result.modelExplanation_ = modelExplanationBuilder_.build();
+      }
+      if (explanationSpecsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          explanationSpecs_ = java.util.Collections.unmodifiableList(explanationSpecs_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.explanationSpecs_ = explanationSpecs_;
+      } else {
+        result.explanationSpecs_ = explanationSpecsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -939,6 +2105,33 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       }
       if (other.hasModelExplanation()) {
         mergeModelExplanation(other.getModelExplanation());
+      }
+      if (explanationSpecsBuilder_ == null) {
+        if (!other.explanationSpecs_.isEmpty()) {
+          if (explanationSpecs_.isEmpty()) {
+            explanationSpecs_ = other.explanationSpecs_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureExplanationSpecsIsMutable();
+            explanationSpecs_.addAll(other.explanationSpecs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.explanationSpecs_.isEmpty()) {
+          if (explanationSpecsBuilder_.isEmpty()) {
+            explanationSpecsBuilder_.dispose();
+            explanationSpecsBuilder_ = null;
+            explanationSpecs_ = other.explanationSpecs_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            explanationSpecsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getExplanationSpecsFieldBuilder()
+                    : null;
+          } else {
+            explanationSpecsBuilder_.addAllMessages(other.explanationSpecs_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2014,6 +3207,458 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         modelExplanation_ = null;
       }
       return modelExplanationBuilder_;
+    }
+
+    private java.util.List<
+            com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec>
+        explanationSpecs_ = java.util.Collections.emptyList();
+
+    private void ensureExplanationSpecsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        explanationSpecs_ =
+            new java.util.ArrayList<
+                com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec>(
+                explanationSpecs_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec,
+            com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+                .Builder,
+            com.google.cloud.aiplatform.v1beta1.ModelEvaluation
+                .ModelEvaluationExplanationSpecOrBuilder>
+        explanationSpecsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * the predicted values on the evaluated data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec>
+        getExplanationSpecsList() {
+      if (explanationSpecsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(explanationSpecs_);
+      } else {
+        return explanationSpecsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * the predicted values on the evaluated data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getExplanationSpecsCount() {
+      if (explanationSpecsBuilder_ == null) {
+        return explanationSpecs_.size();
+      } else {
+        return explanationSpecsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * the predicted values on the evaluated data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+        getExplanationSpecs(int index) {
+      if (explanationSpecsBuilder_ == null) {
+        return explanationSpecs_.get(index);
+      } else {
+        return explanationSpecsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * the predicted values on the evaluated data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setExplanationSpecs(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec value) {
+      if (explanationSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExplanationSpecsIsMutable();
+        explanationSpecs_.set(index, value);
+        onChanged();
+      } else {
+        explanationSpecsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * the predicted values on the evaluated data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setExplanationSpecs(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec.Builder
+            builderForValue) {
+      if (explanationSpecsBuilder_ == null) {
+        ensureExplanationSpecsIsMutable();
+        explanationSpecs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        explanationSpecsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * the predicted values on the evaluated data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addExplanationSpecs(
+        com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec value) {
+      if (explanationSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExplanationSpecsIsMutable();
+        explanationSpecs_.add(value);
+        onChanged();
+      } else {
+        explanationSpecsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * the predicted values on the evaluated data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addExplanationSpecs(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec value) {
+      if (explanationSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExplanationSpecsIsMutable();
+        explanationSpecs_.add(index, value);
+        onChanged();
+      } else {
+        explanationSpecsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * the predicted values on the evaluated data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addExplanationSpecs(
+        com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec.Builder
+            builderForValue) {
+      if (explanationSpecsBuilder_ == null) {
+        ensureExplanationSpecsIsMutable();
+        explanationSpecs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        explanationSpecsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * the predicted values on the evaluated data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addExplanationSpecs(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec.Builder
+            builderForValue) {
+      if (explanationSpecsBuilder_ == null) {
+        ensureExplanationSpecsIsMutable();
+        explanationSpecs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        explanationSpecsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * the predicted values on the evaluated data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllExplanationSpecs(
+        java.lang.Iterable<
+                ? extends
+                    com.google.cloud.aiplatform.v1beta1.ModelEvaluation
+                        .ModelEvaluationExplanationSpec>
+            values) {
+      if (explanationSpecsBuilder_ == null) {
+        ensureExplanationSpecsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, explanationSpecs_);
+        onChanged();
+      } else {
+        explanationSpecsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * the predicted values on the evaluated data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearExplanationSpecs() {
+      if (explanationSpecsBuilder_ == null) {
+        explanationSpecs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        explanationSpecsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * the predicted values on the evaluated data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeExplanationSpecs(int index) {
+      if (explanationSpecsBuilder_ == null) {
+        ensureExplanationSpecsIsMutable();
+        explanationSpecs_.remove(index);
+        onChanged();
+      } else {
+        explanationSpecsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * the predicted values on the evaluated data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+            .Builder
+        getExplanationSpecsBuilder(int index) {
+      return getExplanationSpecsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * the predicted values on the evaluated data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelEvaluation
+            .ModelEvaluationExplanationSpecOrBuilder
+        getExplanationSpecsOrBuilder(int index) {
+      if (explanationSpecsBuilder_ == null) {
+        return explanationSpecs_.get(index);
+      } else {
+        return explanationSpecsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * the predicted values on the evaluated data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.aiplatform.v1beta1.ModelEvaluation
+                    .ModelEvaluationExplanationSpecOrBuilder>
+        getExplanationSpecsOrBuilderList() {
+      if (explanationSpecsBuilder_ != null) {
+        return explanationSpecsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(explanationSpecs_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * the predicted values on the evaluated data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+            .Builder
+        addExplanationSpecsBuilder() {
+      return getExplanationSpecsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * the predicted values on the evaluated data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+            .Builder
+        addExplanationSpecsBuilder(int index) {
+      return getExplanationSpecsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+     * the predicted values on the evaluated data.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+                .Builder>
+        getExplanationSpecsBuilderList() {
+      return getExplanationSpecsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec,
+            com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+                .Builder,
+            com.google.cloud.aiplatform.v1beta1.ModelEvaluation
+                .ModelEvaluationExplanationSpecOrBuilder>
+        getExplanationSpecsFieldBuilder() {
+      if (explanationSpecsBuilder_ == null) {
+        explanationSpecsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec,
+                com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+                    .Builder,
+                com.google.cloud.aiplatform.v1beta1.ModelEvaluation
+                    .ModelEvaluationExplanationSpecOrBuilder>(
+                explanationSpecs_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        explanationSpecs_ = null;
+      }
+      return explanationSpecsBuilder_;
     }
 
     @java.lang.Override

@@ -264,4 +264,77 @@ public interface ModelEvaluationOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ModelExplanationOrBuilder getModelExplanationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+   * the predicted values on the evaluated data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec>
+      getExplanationSpecsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+   * the predicted values on the evaluated data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
+      getExplanationSpecs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+   * the predicted values on the evaluated data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getExplanationSpecsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+   * the predicted values on the evaluated data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.aiplatform.v1beta1.ModelEvaluation
+                  .ModelEvaluationExplanationSpecOrBuilder>
+      getExplanationSpecsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes the values of [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] that are used for explaining
+   * the predicted values on the evaluated data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec explanation_specs = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpecOrBuilder
+      getExplanationSpecsOrBuilder(int index);
 }

@@ -263,7 +263,7 @@ public interface TrainingPipelineOrBuilder
    *
    *
    * <pre>
-   * Describes the Model that may be uploaded (via [ModelService.UploadMode][])
+   * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
    * by this TrainingPipeline. The TrainingPipeline's
    * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
    * description should be populated, and if there are any special requirements
@@ -288,7 +288,7 @@ public interface TrainingPipelineOrBuilder
    *
    *
    * <pre>
-   * Describes the Model that may be uploaded (via [ModelService.UploadMode][])
+   * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
    * by this TrainingPipeline. The TrainingPipeline's
    * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
    * description should be populated, and if there are any special requirements
@@ -313,7 +313,7 @@ public interface TrainingPipelineOrBuilder
    *
    *
    * <pre>
-   * Describes the Model that may be uploaded (via [ModelService.UploadMode][])
+   * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
    * by this TrainingPipeline. The TrainingPipeline's
    * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
    * description should be populated, and if there are any special requirements
@@ -634,4 +634,48 @@ public interface TrainingPipelineOrBuilder
    * <code>map&lt;string, string&gt; labels = 15;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a TrainingPipeline. If set, this
+   * TrainingPipeline will be secured by this key.
+   * Note: Model trained by this TrainingPipeline is also secured by this key if
+   * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a TrainingPipeline. If set, this
+   * TrainingPipeline will be secured by this key.
+   * Note: Model trained by this TrainingPipeline is also secured by this key if
+   * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a TrainingPipeline. If set, this
+   * TrainingPipeline will be secured by this key.
+   * Note: Model trained by this TrainingPipeline is also secured by this key if
+   * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
 }

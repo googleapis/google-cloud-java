@@ -58,7 +58,17 @@ public interface ListDatasetsRequestOrBuilder
    *
    *
    * <pre>
-   * The standard list filter.
+   * An expression for filtering the results of the request. For field names
+   * both snake_case and camelCase are supported.
+   *   * `display_name`: supports = and !=
+   *   * `metadata_schema_uri`: supports = and !=
+   *   * `labels` supports general map functions that is:
+   *     * `labels.key=value` - key:value equality
+   *     * `labels.key:* or labels:key - key existence
+   *     * A key including a space must be quoted. `labels."a key"`.
+   * Some examples:
+   *   * `displayName="myDisplayName"`
+   *   * `labels.myKey="myValue"`
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -70,7 +80,17 @@ public interface ListDatasetsRequestOrBuilder
    *
    *
    * <pre>
-   * The standard list filter.
+   * An expression for filtering the results of the request. For field names
+   * both snake_case and camelCase are supported.
+   *   * `display_name`: supports = and !=
+   *   * `metadata_schema_uri`: supports = and !=
+   *   * `labels` supports general map functions that is:
+   *     * `labels.key=value` - key:value equality
+   *     * `labels.key:* or labels:key - key existence
+   *     * A key including a space must be quoted. `labels."a key"`.
+   * Some examples:
+   *   * `displayName="myDisplayName"`
+   *   * `labels.myKey="myValue"`
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -160,7 +180,7 @@ public interface ListDatasetsRequestOrBuilder
    * Use "desc" after a field name for descending.
    * Supported fields:
    *   * `display_name`
-   *   * `data_item_count`   * `create_time`
+   *   * `create_time`
    *   * `update_time`
    * </pre>
    *
@@ -177,7 +197,7 @@ public interface ListDatasetsRequestOrBuilder
    * Use "desc" after a field name for descending.
    * Supported fields:
    *   * `display_name`
-   *   * `data_item_count`   * `create_time`
+   *   * `create_time`
    *   * `update_time`
    * </pre>
    *

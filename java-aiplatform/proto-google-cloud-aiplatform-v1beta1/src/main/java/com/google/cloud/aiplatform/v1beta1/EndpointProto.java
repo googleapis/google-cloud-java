@@ -55,44 +55,47 @@ public final class EndpointProto {
       "\n.google/cloud/aiplatform/v1beta1/endpoi"
           + "nt.proto\022\037google.cloud.aiplatform.v1beta"
           + "1\032\037google/api/field_behavior.proto\032\031goog"
-          + "le/api/resource.proto\0321google/cloud/aipl"
-          + "atform/v1beta1/explanation.proto\0327google"
-          + "/cloud/aiplatform/v1beta1/machine_resour"
-          + "ces.proto\032\037google/protobuf/timestamp.pro"
-          + "to\032\034google/api/annotations.proto\"\373\004\n\010End"
-          + "point\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014display_name"
-          + "\030\002 \001(\tB\003\340A\002\022\023\n\013description\030\003 \001(\t\022L\n\017depl"
-          + "oyed_models\030\004 \003(\0132..google.cloud.aiplatf"
-          + "orm.v1beta1.DeployedModelB\003\340A\003\022R\n\rtraffi"
-          + "c_split\030\005 \003(\0132;.google.cloud.aiplatform."
-          + "v1beta1.Endpoint.TrafficSplitEntry\022\014\n\004et"
-          + "ag\030\006 \001(\t\022E\n\006labels\030\007 \003(\01325.google.cloud."
-          + "aiplatform.v1beta1.Endpoint.LabelsEntry\022"
-          + "4\n\013create_time\030\010 \001(\0132\032.google.protobuf.T"
-          + "imestampB\003\340A\003\0224\n\013update_time\030\t \001(\0132\032.goo"
-          + "gle.protobuf.TimestampB\003\340A\003\0323\n\021TrafficSp"
-          + "litEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\005:\0028\001"
-          + "\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 "
-          + "\001(\t:\0028\001:e\352Ab\n\"aiplatform.googleapis.com/"
-          + "Endpoint\022<projects/{project}/locations/{"
-          + "location}/endpoints/{endpoint}\"\212\004\n\rDeplo"
-          + "yedModel\022R\n\023dedicated_resources\030\007 \001(\01323."
-          + "google.cloud.aiplatform.v1beta1.Dedicate"
-          + "dResourcesH\000\022R\n\023automatic_resources\030\010 \001("
-          + "\01323.google.cloud.aiplatform.v1beta1.Auto"
-          + "maticResourcesH\000\022\017\n\002id\030\001 \001(\tB\003\340A\003\0226\n\005mod"
-          + "el\030\002 \001(\tB\'\340A\002\372A!\n\037aiplatform.googleapis."
-          + "com/Model\022\024\n\014display_name\030\003 \001(\t\0224\n\013creat"
-          + "e_time\030\006 \001(\0132\032.google.protobuf.Timestamp"
-          + "B\003\340A\003\022J\n\020explanation_spec\030\t \001(\01320.google"
-          + ".cloud.aiplatform.v1beta1.ExplanationSpe"
-          + "c\022\027\n\017service_account\030\013 \001(\t\022 \n\030enable_con"
-          + "tainer_logging\030\014 \001(\010\022\035\n\025enable_access_lo"
-          + "gging\030\r \001(\010B\026\n\024prediction_resourcesB\201\001\n#"
-          + "com.google.cloud.aiplatform.v1beta1B\rEnd"
-          + "pointProtoP\001ZIgoogle.golang.org/genproto"
-          + "/googleapis/cloud/aiplatform/v1beta1;aip"
-          + "latformb\006proto3"
+          + "le/api/resource.proto\0325google/cloud/aipl"
+          + "atform/v1beta1/encryption_spec.proto\0321go"
+          + "ogle/cloud/aiplatform/v1beta1/explanatio"
+          + "n.proto\0327google/cloud/aiplatform/v1beta1"
+          + "/machine_resources.proto\032\037google/protobu"
+          + "f/timestamp.proto\032\034google/api/annotation"
+          + "s.proto\"\305\005\n\010Endpoint\022\021\n\004name\030\001 \001(\tB\003\340A\003\022"
+          + "\031\n\014display_name\030\002 \001(\tB\003\340A\002\022\023\n\013descriptio"
+          + "n\030\003 \001(\t\022L\n\017deployed_models\030\004 \003(\0132..googl"
+          + "e.cloud.aiplatform.v1beta1.DeployedModel"
+          + "B\003\340A\003\022R\n\rtraffic_split\030\005 \003(\0132;.google.cl"
+          + "oud.aiplatform.v1beta1.Endpoint.TrafficS"
+          + "plitEntry\022\014\n\004etag\030\006 \001(\t\022E\n\006labels\030\007 \003(\0132"
+          + "5.google.cloud.aiplatform.v1beta1.Endpoi"
+          + "nt.LabelsEntry\0224\n\013create_time\030\010 \001(\0132\032.go"
+          + "ogle.protobuf.TimestampB\003\340A\003\0224\n\013update_t"
+          + "ime\030\t \001(\0132\032.google.protobuf.TimestampB\003\340"
+          + "A\003\022H\n\017encryption_spec\030\n \001(\0132/.google.clo"
+          + "ud.aiplatform.v1beta1.EncryptionSpec\0323\n\021"
+          + "TrafficSplitEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
+          + "\002 \001(\005:\0028\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001:e\352Ab\n\"aiplatform.google"
+          + "apis.com/Endpoint\022<projects/{project}/lo"
+          + "cations/{location}/endpoints/{endpoint}\""
+          + "\212\004\n\rDeployedModel\022R\n\023dedicated_resources"
+          + "\030\007 \001(\01323.google.cloud.aiplatform.v1beta1"
+          + ".DedicatedResourcesH\000\022R\n\023automatic_resou"
+          + "rces\030\010 \001(\01323.google.cloud.aiplatform.v1b"
+          + "eta1.AutomaticResourcesH\000\022\017\n\002id\030\001 \001(\tB\003\340"
+          + "A\003\0226\n\005model\030\002 \001(\tB\'\340A\002\372A!\n\037aiplatform.go"
+          + "ogleapis.com/Model\022\024\n\014display_name\030\003 \001(\t"
+          + "\0224\n\013create_time\030\006 \001(\0132\032.google.protobuf."
+          + "TimestampB\003\340A\003\022J\n\020explanation_spec\030\t \001(\013"
+          + "20.google.cloud.aiplatform.v1beta1.Expla"
+          + "nationSpec\022\027\n\017service_account\030\013 \001(\t\022 \n\030e"
+          + "nable_container_logging\030\014 \001(\010\022\035\n\025enable_"
+          + "access_logging\030\r \001(\010B\026\n\024prediction_resou"
+          + "rcesB\201\001\n#com.google.cloud.aiplatform.v1b"
+          + "eta1B\rEndpointProtoP\001ZIgoogle.golang.org"
+          + "/genproto/googleapis/cloud/aiplatform/v1"
+          + "beta1;aiplatformb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -100,6 +103,7 @@ public final class EndpointProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.ExplanationProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.MachineResourcesProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -120,6 +124,7 @@ public final class EndpointProto {
               "Labels",
               "CreateTime",
               "UpdateTime",
+              "EncryptionSpec",
             });
     internal_static_google_cloud_aiplatform_v1beta1_Endpoint_TrafficSplitEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_Endpoint_descriptor.getNestedTypes().get(0);
@@ -164,6 +169,7 @@ public final class EndpointProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.ExplanationProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.MachineResourcesProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

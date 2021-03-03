@@ -49,40 +49,43 @@ public final class HyperparameterTuningJobProto {
           + "aiplatform.v1beta1\032\037google/api/field_beh"
           + "avior.proto\032\031google/api/resource.proto\0320"
           + "google/cloud/aiplatform/v1beta1/custom_j"
-          + "ob.proto\032/google/cloud/aiplatform/v1beta"
-          + "1/job_state.proto\032+google/cloud/aiplatfo"
-          + "rm/v1beta1/study.proto\032\037google/protobuf/"
-          + "timestamp.proto\032\027google/rpc/status.proto"
-          + "\032\034google/api/annotations.proto\"\317\007\n\027Hyper"
-          + "parameterTuningJob\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n"
-          + "\014display_name\030\002 \001(\tB\003\340A\002\022C\n\nstudy_spec\030\004"
-          + " \001(\0132*.google.cloud.aiplatform.v1beta1.S"
-          + "tudySpecB\003\340A\002\022\034\n\017max_trial_count\030\005 \001(\005B\003"
-          + "\340A\002\022!\n\024parallel_trial_count\030\006 \001(\005B\003\340A\002\022\036"
-          + "\n\026max_failed_trial_count\030\007 \001(\005\022K\n\016trial_"
-          + "job_spec\030\010 \001(\0132..google.cloud.aiplatform"
-          + ".v1beta1.CustomJobSpecB\003\340A\002\022;\n\006trials\030\t "
-          + "\003(\0132&.google.cloud.aiplatform.v1beta1.Tr"
-          + "ialB\003\340A\003\022=\n\005state\030\n \001(\0162).google.cloud.a"
-          + "iplatform.v1beta1.JobStateB\003\340A\003\0224\n\013creat"
-          + "e_time\030\013 \001(\0132\032.google.protobuf.Timestamp"
-          + "B\003\340A\003\0223\n\nstart_time\030\014 \001(\0132\032.google.proto"
-          + "buf.TimestampB\003\340A\003\0221\n\010end_time\030\r \001(\0132\032.g"
-          + "oogle.protobuf.TimestampB\003\340A\003\0224\n\013update_"
-          + "time\030\016 \001(\0132\032.google.protobuf.TimestampB\003"
-          + "\340A\003\022&\n\005error\030\017 \001(\0132\022.google.rpc.StatusB\003"
-          + "\340A\003\022T\n\006labels\030\020 \003(\0132D.google.cloud.aipla"
-          + "tform.v1beta1.HyperparameterTuningJob.La"
-          + "belsEntry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001:\225\001\352A\221\001\n1aiplatform.goog"
-          + "leapis.com/HyperparameterTuningJob\022\\proj"
-          + "ects/{project}/locations/{location}/hype"
-          + "rparameterTuningJobs/{hyperparameter_tun"
-          + "ing_job}B\220\001\n#com.google.cloud.aiplatform"
-          + ".v1beta1B\034HyperparameterTuningJobProtoP\001"
-          + "ZIgoogle.golang.org/genproto/googleapis/"
-          + "cloud/aiplatform/v1beta1;aiplatformb\006pro"
-          + "to3"
+          + "ob.proto\0325google/cloud/aiplatform/v1beta"
+          + "1/encryption_spec.proto\032/google/cloud/ai"
+          + "platform/v1beta1/job_state.proto\032+google"
+          + "/cloud/aiplatform/v1beta1/study.proto\032\037g"
+          + "oogle/protobuf/timestamp.proto\032\027google/r"
+          + "pc/status.proto\032\034google/api/annotations."
+          + "proto\"\231\010\n\027HyperparameterTuningJob\022\021\n\004nam"
+          + "e\030\001 \001(\tB\003\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022"
+          + "C\n\nstudy_spec\030\004 \001(\0132*.google.cloud.aipla"
+          + "tform.v1beta1.StudySpecB\003\340A\002\022\034\n\017max_tria"
+          + "l_count\030\005 \001(\005B\003\340A\002\022!\n\024parallel_trial_cou"
+          + "nt\030\006 \001(\005B\003\340A\002\022\036\n\026max_failed_trial_count\030"
+          + "\007 \001(\005\022K\n\016trial_job_spec\030\010 \001(\0132..google.c"
+          + "loud.aiplatform.v1beta1.CustomJobSpecB\003\340"
+          + "A\002\022;\n\006trials\030\t \003(\0132&.google.cloud.aiplat"
+          + "form.v1beta1.TrialB\003\340A\003\022=\n\005state\030\n \001(\0162)"
+          + ".google.cloud.aiplatform.v1beta1.JobStat"
+          + "eB\003\340A\003\0224\n\013create_time\030\013 \001(\0132\032.google.pro"
+          + "tobuf.TimestampB\003\340A\003\0223\n\nstart_time\030\014 \001(\013"
+          + "2\032.google.protobuf.TimestampB\003\340A\003\0221\n\010end"
+          + "_time\030\r \001(\0132\032.google.protobuf.TimestampB"
+          + "\003\340A\003\0224\n\013update_time\030\016 \001(\0132\032.google.proto"
+          + "buf.TimestampB\003\340A\003\022&\n\005error\030\017 \001(\0132\022.goog"
+          + "le.rpc.StatusB\003\340A\003\022T\n\006labels\030\020 \003(\0132D.goo"
+          + "gle.cloud.aiplatform.v1beta1.Hyperparame"
+          + "terTuningJob.LabelsEntry\022H\n\017encryption_s"
+          + "pec\030\021 \001(\0132/.google.cloud.aiplatform.v1be"
+          + "ta1.EncryptionSpec\032-\n\013LabelsEntry\022\013\n\003key"
+          + "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\225\001\352A\221\001\n1aiplat"
+          + "form.googleapis.com/HyperparameterTuning"
+          + "Job\022\\projects/{project}/locations/{locat"
+          + "ion}/hyperparameterTuningJobs/{hyperpara"
+          + "meter_tuning_job}B\220\001\n#com.google.cloud.a"
+          + "iplatform.v1beta1B\034HyperparameterTuningJ"
+          + "obProtoP\001ZIgoogle.golang.org/genproto/go"
+          + "ogleapis/cloud/aiplatform/v1beta1;aiplat"
+          + "formb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -91,6 +94,7 @@ public final class HyperparameterTuningJobProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.CustomJobProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.JobStateProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.StudyProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -118,6 +122,7 @@ public final class HyperparameterTuningJobProto {
               "UpdateTime",
               "Error",
               "Labels",
+              "EncryptionSpec",
             });
     internal_static_google_cloud_aiplatform_v1beta1_HyperparameterTuningJob_LabelsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_HyperparameterTuningJob_descriptor
@@ -138,6 +143,7 @@ public final class HyperparameterTuningJobProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.CustomJobProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.JobStateProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.StudyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

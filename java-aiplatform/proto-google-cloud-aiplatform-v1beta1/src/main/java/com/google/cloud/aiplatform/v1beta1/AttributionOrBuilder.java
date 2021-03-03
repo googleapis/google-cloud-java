@@ -214,8 +214,8 @@ public interface AttributionOrBuilder
    *
    *
    * <pre>
-   * Output only. The display name of the output identified by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index], e.g. the
-   * predicted class name by a multi-classification Model.
+   * Output only. The display name of the output identified by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index]. For example,
+   * the predicted class name by a multi-classification Model.
    * This field is only populated iff the Model predicts display names as a
    * separate field along with the explained output. The predicted display name
    * must has the same shape of the explained output, and can be located using
@@ -231,8 +231,8 @@ public interface AttributionOrBuilder
    *
    *
    * <pre>
-   * Output only. The display name of the output identified by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index], e.g. the
-   * predicted class name by a multi-classification Model.
+   * Output only. The display name of the output identified by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index]. For example,
+   * the predicted class name by a multi-classification Model.
    * This field is only populated iff the Model predicts display names as a
    * separate field along with the explained output. The predicted display name
    * must has the same shape of the explained output, and can be located using
@@ -251,20 +251,19 @@ public interface AttributionOrBuilder
    * <pre>
    * Output only. Error of [feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] caused by approximation used in the
    * explanation method. Lower value means more precise attributions.
-   * * For [Sampled Shapley
-   * attribution][ExplanationParameters.sampled_shapley_attribution], increasing
-   * [path_count][google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.path_count] may reduce the error.
-   * * For [Integrated Gradients
-   * attribution][ExplanationParameters.integrated_gradients_attribution],
-   * increasing [step_count][google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution.step_count] may
+   * * For Sampled Shapley
+   * [attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.sampled_shapley_attribution],
+   * increasing [path_count][google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.path_count] might reduce
+   * the error.
+   * * For Integrated Gradients
+   * [attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution],
+   * increasing [step_count][google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution.step_count] might
    * reduce the error.
-   * * For [XRAI
-   * attribution][ExplanationParameters.xrai_attribution], increasing
-   * [step_count][google.cloud.aiplatform.v1beta1.XraiAttribution.step_count] may reduce the error.
-   * Refer to  AI Explanations Whitepaper for more details:
-   * https:
-   * //storage.googleapis.com/cloud-ai-whitep
-   * // apers/AI%20Explainability%20Whitepaper.pdf
+   * * For [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution],
+   * increasing
+   * [step_count][google.cloud.aiplatform.v1beta1.XraiAttribution.step_count] might reduce the error.
+   * See [this introduction](/ai-platform-unified/docs/explainable-ai/overview)
+   * for more information.
    * </pre>
    *
    * <code>double approximation_error = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

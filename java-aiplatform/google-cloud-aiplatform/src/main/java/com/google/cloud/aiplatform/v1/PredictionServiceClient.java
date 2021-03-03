@@ -34,6 +34,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+ *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+ *   List<Value> instances = new ArrayList<>();
+ *   Value parameters = Value.newBuilder().build();
+ *   PredictResponse response = predictionServiceClient.predict(endpoint, instances, parameters);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the PredictionServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -140,6 +149,17 @@ public class PredictionServiceClient implements BackgroundResource {
   /**
    * Perform an online prediction.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+   *   List<Value> instances = new ArrayList<>();
+   *   Value parameters = Value.newBuilder().build();
+   *   PredictResponse response = predictionServiceClient.predict(endpoint, instances, parameters);
+   * }
+   * }</pre>
+   *
    * @param endpoint Required. The name of the Endpoint requested to serve the prediction. Format:
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
    * @param instances Required. The instances that are the input to the prediction call. A
@@ -172,6 +192,17 @@ public class PredictionServiceClient implements BackgroundResource {
   /**
    * Perform an online prediction.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   String endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString();
+   *   List<Value> instances = new ArrayList<>();
+   *   Value parameters = Value.newBuilder().build();
+   *   PredictResponse response = predictionServiceClient.predict(endpoint, instances, parameters);
+   * }
+   * }</pre>
+   *
    * @param endpoint Required. The name of the Endpoint requested to serve the prediction. Format:
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
    * @param instances Required. The instances that are the input to the prediction call. A
@@ -203,6 +234,20 @@ public class PredictionServiceClient implements BackgroundResource {
   /**
    * Perform an online prediction.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   PredictRequest request =
+   *       PredictRequest.newBuilder()
+   *           .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .addAllInstances(new ArrayList<Value>())
+   *           .setParameters(Value.newBuilder().build())
+   *           .build();
+   *   PredictResponse response = predictionServiceClient.predict(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -215,6 +260,21 @@ public class PredictionServiceClient implements BackgroundResource {
    * Perform an online prediction.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   PredictRequest request =
+   *       PredictRequest.newBuilder()
+   *           .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .addAllInstances(new ArrayList<Value>())
+   *           .setParameters(Value.newBuilder().build())
+   *           .build();
+   *   ApiFuture<PredictResponse> future =
+   *       predictionServiceClient.predictCallable().futureCall(request);
+   *   // Do something.
+   *   PredictResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PredictRequest, PredictResponse> predictCallable() {
     return stub.predictCallable();

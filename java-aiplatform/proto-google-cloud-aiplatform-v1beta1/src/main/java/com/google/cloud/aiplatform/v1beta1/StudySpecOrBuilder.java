@@ -172,4 +172,63 @@ public interface StudySpecOrBuilder
    * @return The algorithm.
    */
   com.google.cloud.aiplatform.v1beta1.StudySpec.Algorithm getAlgorithm();
+
+  /**
+   *
+   *
+   * <pre>
+   * The observation noise level of the study.
+   * Currently only supported by the Vizier service. Not supported by
+   * HyperparamterTuningJob or TrainingPipeline.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise observation_noise = 6;</code>
+   *
+   * @return The enum numeric value on the wire for observationNoise.
+   */
+  int getObservationNoiseValue();
+  /**
+   *
+   *
+   * <pre>
+   * The observation noise level of the study.
+   * Currently only supported by the Vizier service. Not supported by
+   * HyperparamterTuningJob or TrainingPipeline.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise observation_noise = 6;</code>
+   *
+   * @return The observationNoise.
+   */
+  com.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise getObservationNoise();
+
+  /**
+   *
+   *
+   * <pre>
+   * Describe which measurement selection type will be used
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType measurement_selection_type = 7;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for measurementSelectionType.
+   */
+  int getMeasurementSelectionTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Describe which measurement selection type will be used
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType measurement_selection_type = 7;
+   * </code>
+   *
+   * @return The measurementSelectionType.
+   */
+  com.google.cloud.aiplatform.v1beta1.StudySpec.MeasurementSelectionType
+      getMeasurementSelectionType();
 }

@@ -416,4 +416,45 @@ public interface CustomJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key options for a CustomJob. If this is set,
+   * then all resources created by the CustomJob will be encrypted with the
+   * provided encryption key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 12;</code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key options for a CustomJob. If this is set,
+   * then all resources created by the CustomJob will be encrypted with the
+   * provided encryption key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 12;</code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key options for a CustomJob. If this is set,
+   * then all resources created by the CustomJob will be encrypted with the
+   * provided encryption key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 12;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
 }

@@ -174,7 +174,7 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Variables that reference a $(VAR_NAME) are expanded
+   * Required. Variables that reference a $(VAR_NAME) are expanded
    * using the previous defined environment variables in the container and
    * any service environment variables. If a variable cannot be resolved,
    * the reference in the input string will be unchanged. The $(VAR_NAME)
@@ -183,7 +183,7 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
    * exists or not.
    * </pre>
    *
-   * <code>string value = 2;</code>
+   * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The value.
    */
@@ -203,7 +203,7 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Variables that reference a $(VAR_NAME) are expanded
+   * Required. Variables that reference a $(VAR_NAME) are expanded
    * using the previous defined environment variables in the container and
    * any service environment variables. If a variable cannot be resolved,
    * the reference in the input string will be unchanged. The $(VAR_NAME)
@@ -212,7 +212,7 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
    * exists or not.
    * </pre>
    *
-   * <code>string value = 2;</code>
+   * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for value.
    */
@@ -672,7 +672,7 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Variables that reference a $(VAR_NAME) are expanded
+     * Required. Variables that reference a $(VAR_NAME) are expanded
      * using the previous defined environment variables in the container and
      * any service environment variables. If a variable cannot be resolved,
      * the reference in the input string will be unchanged. The $(VAR_NAME)
@@ -681,7 +681,7 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
      * exists or not.
      * </pre>
      *
-     * <code>string value = 2;</code>
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The value.
      */
@@ -700,7 +700,7 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Variables that reference a $(VAR_NAME) are expanded
+     * Required. Variables that reference a $(VAR_NAME) are expanded
      * using the previous defined environment variables in the container and
      * any service environment variables. If a variable cannot be resolved,
      * the reference in the input string will be unchanged. The $(VAR_NAME)
@@ -709,7 +709,7 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
      * exists or not.
      * </pre>
      *
-     * <code>string value = 2;</code>
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for value.
      */
@@ -728,7 +728,7 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Variables that reference a $(VAR_NAME) are expanded
+     * Required. Variables that reference a $(VAR_NAME) are expanded
      * using the previous defined environment variables in the container and
      * any service environment variables. If a variable cannot be resolved,
      * the reference in the input string will be unchanged. The $(VAR_NAME)
@@ -737,7 +737,7 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
      * exists or not.
      * </pre>
      *
-     * <code>string value = 2;</code>
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The value to set.
      * @return This builder for chaining.
@@ -755,7 +755,7 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Variables that reference a $(VAR_NAME) are expanded
+     * Required. Variables that reference a $(VAR_NAME) are expanded
      * using the previous defined environment variables in the container and
      * any service environment variables. If a variable cannot be resolved,
      * the reference in the input string will be unchanged. The $(VAR_NAME)
@@ -764,7 +764,7 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
      * exists or not.
      * </pre>
      *
-     * <code>string value = 2;</code>
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -778,7 +778,7 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Variables that reference a $(VAR_NAME) are expanded
+     * Required. Variables that reference a $(VAR_NAME) are expanded
      * using the previous defined environment variables in the container and
      * any service environment variables. If a variable cannot be resolved,
      * the reference in the input string will be unchanged. The $(VAR_NAME)
@@ -787,7 +787,7 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
      * exists or not.
      * </pre>
      *
-     * <code>string value = 2;</code>
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for value to set.
      * @return This builder for chaining.

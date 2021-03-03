@@ -43,12 +43,12 @@ public final class EnvVarProto {
       "\n-google/cloud/aiplatform/v1beta1/env_va"
           + "r.proto\022\037google.cloud.aiplatform.v1beta1"
           + "\032\037google/api/field_behavior.proto\032\034googl"
-          + "e/api/annotations.proto\"*\n\006EnvVar\022\021\n\004nam"
-          + "e\030\001 \001(\tB\003\340A\002\022\r\n\005value\030\002 \001(\tB\177\n#com.googl"
-          + "e.cloud.aiplatform.v1beta1B\013EnvVarProtoP"
-          + "\001ZIgoogle.golang.org/genproto/googleapis"
-          + "/cloud/aiplatform/v1beta1;aiplatformb\006pr"
-          + "oto3"
+          + "e/api/annotations.proto\"/\n\006EnvVar\022\021\n\004nam"
+          + "e\030\001 \001(\tB\003\340A\002\022\022\n\005value\030\002 \001(\tB\003\340A\002B\177\n#com."
+          + "google.cloud.aiplatform.v1beta1B\013EnvVarP"
+          + "rotoP\001ZIgoogle.golang.org/genproto/googl"
+          + "eapis/cloud/aiplatform/v1beta1;aiplatfor"
+          + "mb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

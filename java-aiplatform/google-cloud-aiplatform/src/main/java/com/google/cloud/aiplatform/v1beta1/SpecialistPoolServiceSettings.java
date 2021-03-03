@@ -70,6 +70,7 @@ import javax.annotation.Generated;
  *     specialistPoolServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class SpecialistPoolServiceSettings extends ClientSettings<SpecialistPoolServiceSettings> {
 

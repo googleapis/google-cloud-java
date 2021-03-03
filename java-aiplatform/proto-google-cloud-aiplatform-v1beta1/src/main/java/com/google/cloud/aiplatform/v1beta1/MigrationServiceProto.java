@@ -75,6 +75,10 @@ public final class MigrationServiceProto {
       internal_static_google_cloud_aiplatform_v1beta1_BatchMigrateResourcesOperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_BatchMigrateResourcesOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_BatchMigrateResourcesOperationMetadata_PartialResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_BatchMigrateResourcesOperationMetadata_PartialResult_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -95,86 +99,97 @@ public final class MigrationServiceProto {
           + "rm/v1beta1/migratable_resource.proto\032/go"
           + "ogle/cloud/aiplatform/v1beta1/operation."
           + "proto\032#google/longrunning/operations.pro"
-          + "to\"\204\001\n SearchMigratableResourcesRequest\022"
-          + "9\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations.googl"
-          + "eapis.com/Location\022\021\n\tpage_size\030\002 \001(\005\022\022\n"
-          + "\npage_token\030\003 \001(\t\"\217\001\n!SearchMigratableRe"
-          + "sourcesResponse\022Q\n\024migratable_resources\030"
-          + "\001 \003(\01323.google.cloud.aiplatform.v1beta1."
-          + "MigratableResource\022\027\n\017next_page_token\030\002 "
-          + "\001(\t\"\272\001\n\034BatchMigrateResourcesRequest\0229\n\006"
-          + "parent\030\001 \001(\tB)\340A\002\372A#\n!locations.googleap"
-          + "is.com/Location\022_\n\031migrate_resource_requ"
-          + "ests\030\002 \003(\01327.google.cloud.aiplatform.v1b"
-          + "eta1.MigrateResourceRequestB\003\340A\002\"\374\n\n\026Mig"
-          + "rateResourceRequest\022\213\001\n&migrate_ml_engin"
-          + "e_model_version_config\030\001 \001(\0132Y.google.cl"
-          + "oud.aiplatform.v1beta1.MigrateResourceRe"
-          + "quest.MigrateMlEngineModelVersionConfigH"
-          + "\000\022w\n\033migrate_automl_model_config\030\002 \001(\0132P"
+          + "to\032\027google/rpc/status.proto\"\224\001\n SearchMi"
+          + "gratableResourcesRequest\0229\n\006parent\030\001 \001(\t"
+          + "B)\340A\002\372A#\n!locations.googleapis.com/Locat"
+          + "ion\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001"
+          + "(\t\022\016\n\006filter\030\004 \001(\t\"\217\001\n!SearchMigratableR"
+          + "esourcesResponse\022Q\n\024migratable_resources"
+          + "\030\001 \003(\01323.google.cloud.aiplatform.v1beta1"
+          + ".MigratableResource\022\027\n\017next_page_token\030\002"
+          + " \001(\t\"\272\001\n\034BatchMigrateResourcesRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations.googlea"
+          + "pis.com/Location\022_\n\031migrate_resource_req"
+          + "uests\030\002 \003(\01327.google.cloud.aiplatform.v1"
+          + "beta1.MigrateResourceRequestB\003\340A\002\"\374\n\n\026Mi"
+          + "grateResourceRequest\022\213\001\n&migrate_ml_engi"
+          + "ne_model_version_config\030\001 \001(\0132Y.google.c"
+          + "loud.aiplatform.v1beta1.MigrateResourceR"
+          + "equest.MigrateMlEngineModelVersionConfig"
+          + "H\000\022w\n\033migrate_automl_model_config\030\002 \001(\0132"
+          + "P.google.cloud.aiplatform.v1beta1.Migrat"
+          + "eResourceRequest.MigrateAutomlModelConfi"
+          + "gH\000\022{\n\035migrate_automl_dataset_config\030\003 \001"
+          + "(\0132R.google.cloud.aiplatform.v1beta1.Mig"
+          + "rateResourceRequest.MigrateAutomlDataset"
+          + "ConfigH\000\022\210\001\n$migrate_data_labeling_datas"
+          + "et_config\030\004 \001(\0132X.google.cloud.aiplatfor"
+          + "m.v1beta1.MigrateResourceRequest.Migrate"
+          + "DataLabelingDatasetConfigH\000\032\225\001\n!MigrateM"
+          + "lEngineModelVersionConfig\022\025\n\010endpoint\030\001 "
+          + "\001(\tB\003\340A\002\0228\n\rmodel_version\030\002 \001(\tB!\340A\002\372A\033\n"
+          + "\031ml.googleapis.com/Version\022\037\n\022model_disp"
+          + "lay_name\030\003 \001(\tB\003\340A\002\032o\n\030MigrateAutomlMode"
+          + "lConfig\0222\n\005model\030\001 \001(\tB#\340A\002\372A\035\n\033automl.g"
+          + "oogleapis.com/Model\022\037\n\022model_display_nam"
+          + "e\030\002 \001(\tB\003\340A\001\032w\n\032MigrateAutomlDatasetConf"
+          + "ig\0226\n\007dataset\030\001 \001(\tB%\340A\002\372A\037\n\035automl.goog"
+          + "leapis.com/Dataset\022!\n\024dataset_display_na"
+          + "me\030\002 \001(\tB\003\340A\002\032\305\003\n MigrateDataLabelingDat"
+          + "asetConfig\022<\n\007dataset\030\001 \001(\tB+\340A\002\372A%\n#dat"
+          + "alabeling.googleapis.com/Dataset\022!\n\024data"
+          + "set_display_name\030\002 \001(\tB\003\340A\001\022\301\001\n/migrate_"
+          + "data_labeling_annotated_dataset_configs\030"
+          + "\003 \003(\0132\202\001.google.cloud.aiplatform.v1beta1"
+          + ".MigrateResourceRequest.MigrateDataLabel"
+          + "ingDatasetConfig.MigrateDataLabelingAnno"
+          + "tatedDatasetConfigB\003\340A\001\032|\n)MigrateDataLa"
+          + "belingAnnotatedDatasetConfig\022O\n\021annotate"
+          + "d_dataset\030\001 \001(\tB4\340A\002\372A.\n,datalabeling.go"
+          + "ogleapis.com/AnnotatedDatasetB\t\n\007request"
+          + "\"}\n\035BatchMigrateResourcesResponse\022\\\n\032mig"
+          + "rate_resource_responses\030\001 \003(\01328.google.c"
+          + "loud.aiplatform.v1beta1.MigrateResourceR"
+          + "esponse\"\362\001\n\027MigrateResourceResponse\0229\n\007d"
+          + "ataset\030\001 \001(\tB&\372A#\n!aiplatform.googleapis"
+          + ".com/DatasetH\000\0225\n\005model\030\002 \001(\tB$\372A!\n\037aipl"
+          + "atform.googleapis.com/ModelH\000\022P\n\023migrata"
+          + "ble_resource\030\003 \001(\01323.google.cloud.aiplat"
+          + "form.v1beta1.MigratableResourceB\023\n\021migra"
+          + "ted_resource\"\352\003\n&BatchMigrateResourcesOp"
+          + "erationMetadata\022S\n\020generic_metadata\030\001 \001("
+          + "\01329.google.cloud.aiplatform.v1beta1.Gene"
+          + "ricOperationMetadata\022n\n\017partial_results\030"
+          + "\002 \003(\0132U.google.cloud.aiplatform.v1beta1."
+          + "BatchMigrateResourcesOperationMetadata.P"
+          + "artialResult\032\372\001\n\rPartialResult\022#\n\005error\030"
+          + "\002 \001(\0132\022.google.rpc.StatusH\000\0225\n\005model\030\003 \001"
+          + "(\tB$\372A!\n\037aiplatform.googleapis.com/Model"
+          + "H\000\0229\n\007dataset\030\004 \001(\tB&\372A#\n!aiplatform.goo"
+          + "gleapis.com/DatasetH\000\022H\n\007request\030\001 \001(\01327"
           + ".google.cloud.aiplatform.v1beta1.Migrate"
-          + "ResourceRequest.MigrateAutomlModelConfig"
-          + "H\000\022{\n\035migrate_automl_dataset_config\030\003 \001("
-          + "\0132R.google.cloud.aiplatform.v1beta1.Migr"
-          + "ateResourceRequest.MigrateAutomlDatasetC"
-          + "onfigH\000\022\210\001\n$migrate_data_labeling_datase"
-          + "t_config\030\004 \001(\0132X.google.cloud.aiplatform"
-          + ".v1beta1.MigrateResourceRequest.MigrateD"
-          + "ataLabelingDatasetConfigH\000\032\225\001\n!MigrateMl"
-          + "EngineModelVersionConfig\022\025\n\010endpoint\030\001 \001"
-          + "(\tB\003\340A\002\0228\n\rmodel_version\030\002 \001(\tB!\340A\002\372A\033\n\031"
-          + "ml.googleapis.com/Version\022\037\n\022model_displ"
-          + "ay_name\030\003 \001(\tB\003\340A\002\032o\n\030MigrateAutomlModel"
-          + "Config\0222\n\005model\030\001 \001(\tB#\340A\002\372A\035\n\033automl.go"
-          + "ogleapis.com/Model\022\037\n\022model_display_name"
-          + "\030\002 \001(\tB\003\340A\001\032w\n\032MigrateAutomlDatasetConfi"
-          + "g\0226\n\007dataset\030\001 \001(\tB%\340A\002\372A\037\n\035automl.googl"
-          + "eapis.com/Dataset\022!\n\024dataset_display_nam"
-          + "e\030\002 \001(\tB\003\340A\002\032\305\003\n MigrateDataLabelingData"
-          + "setConfig\022<\n\007dataset\030\001 \001(\tB+\340A\002\372A%\n#data"
-          + "labeling.googleapis.com/Dataset\022!\n\024datas"
-          + "et_display_name\030\002 \001(\tB\003\340A\001\022\301\001\n/migrate_d"
-          + "ata_labeling_annotated_dataset_configs\030\003"
-          + " \003(\0132\202\001.google.cloud.aiplatform.v1beta1."
-          + "MigrateResourceRequest.MigrateDataLabeli"
-          + "ngDatasetConfig.MigrateDataLabelingAnnot"
-          + "atedDatasetConfigB\003\340A\001\032|\n)MigrateDataLab"
-          + "elingAnnotatedDatasetConfig\022O\n\021annotated"
-          + "_dataset\030\001 \001(\tB4\340A\002\372A.\n,datalabeling.goo"
-          + "gleapis.com/AnnotatedDatasetB\t\n\007request\""
-          + "}\n\035BatchMigrateResourcesResponse\022\\\n\032migr"
-          + "ate_resource_responses\030\001 \003(\01328.google.cl"
-          + "oud.aiplatform.v1beta1.MigrateResourceRe"
-          + "sponse\"\362\001\n\027MigrateResourceResponse\0229\n\007da"
-          + "taset\030\001 \001(\tB&\372A#\n!aiplatform.googleapis."
-          + "com/DatasetH\000\0225\n\005model\030\002 \001(\tB$\372A!\n\037aipla"
-          + "tform.googleapis.com/ModelH\000\022P\n\023migratab"
-          + "le_resource\030\003 \001(\01323.google.cloud.aiplatf"
-          + "orm.v1beta1.MigratableResourceB\023\n\021migrat"
-          + "ed_resource\"}\n&BatchMigrateResourcesOper"
-          + "ationMetadata\022S\n\020generic_metadata\030\001 \001(\0132"
-          + "9.google.cloud.aiplatform.v1beta1.Generi"
-          + "cOperationMetadata2\233\005\n\020MigrationService\022"
-          + "\373\001\n\031SearchMigratableResources\022A.google.c"
-          + "loud.aiplatform.v1beta1.SearchMigratable"
-          + "ResourcesRequest\032B.google.cloud.aiplatfo"
-          + "rm.v1beta1.SearchMigratableResourcesResp"
-          + "onse\"W\202\323\344\223\002H\"C/v1beta1/{parent=projects/"
-          + "*/locations/*}/migratableResources:searc"
-          + "h:\001*\332A\006parent\022\271\002\n\025BatchMigrateResources\022"
-          + "=.google.cloud.aiplatform.v1beta1.BatchM"
-          + "igrateResourcesRequest\032\035.google.longrunn"
-          + "ing.Operation\"\301\001\202\323\344\223\002N\"I/v1beta1/{parent"
-          + "=projects/*/locations/*}/migratableResou"
-          + "rces:batchMigrate:\001*\332A parent,migrate_re"
-          + "source_requests\312AG\n\035BatchMigrateResource"
-          + "sResponse\022&BatchMigrateResourcesOperatio"
-          + "nMetadata\032M\312A\031aiplatform.googleapis.com\322"
-          + "A.https://www.googleapis.com/auth/cloud-"
-          + "platformB\211\001\n#com.google.cloud.aiplatform"
-          + ".v1beta1B\025MigrationServiceProtoP\001ZIgoogl"
-          + "e.golang.org/genproto/googleapis/cloud/a"
-          + "iplatform/v1beta1;aiplatformb\006proto3"
+          + "ResourceRequestB\010\n\006result2\233\005\n\020MigrationS"
+          + "ervice\022\373\001\n\031SearchMigratableResources\022A.g"
+          + "oogle.cloud.aiplatform.v1beta1.SearchMig"
+          + "ratableResourcesRequest\032B.google.cloud.a"
+          + "iplatform.v1beta1.SearchMigratableResour"
+          + "cesResponse\"W\202\323\344\223\002H\"C/v1beta1/{parent=pr"
+          + "ojects/*/locations/*}/migratableResource"
+          + "s:search:\001*\332A\006parent\022\271\002\n\025BatchMigrateRes"
+          + "ources\022=.google.cloud.aiplatform.v1beta1"
+          + ".BatchMigrateResourcesRequest\032\035.google.l"
+          + "ongrunning.Operation\"\301\001\202\323\344\223\002N\"I/v1beta1/"
+          + "{parent=projects/*/locations/*}/migratab"
+          + "leResources:batchMigrate:\001*\332A parent,mig"
+          + "rate_resource_requests\312AG\n\035BatchMigrateR"
+          + "esourcesResponse\022&BatchMigrateResourcesO"
+          + "perationMetadata\032M\312A\031aiplatform.googleap"
+          + "is.com\322A.https://www.googleapis.com/auth"
+          + "/cloud-platformB\211\001\n#com.google.cloud.aip"
+          + "latform.v1beta1B\025MigrationServiceProtoP\001"
+          + "ZIgoogle.golang.org/genproto/googleapis/"
+          + "cloud/aiplatform/v1beta1;aiplatformb\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -189,6 +204,7 @@ public final class MigrationServiceProto {
               com.google.cloud.aiplatform.v1beta1.MigratableResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.OperationProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_SearchMigratableResourcesRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -196,7 +212,7 @@ public final class MigrationServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_SearchMigratableResourcesRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken",
+              "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_aiplatform_v1beta1_SearchMigratableResourcesResponse_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -298,7 +314,17 @@ public final class MigrationServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_BatchMigrateResourcesOperationMetadata_descriptor,
             new java.lang.String[] {
-              "GenericMetadata",
+              "GenericMetadata", "PartialResults",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_BatchMigrateResourcesOperationMetadata_PartialResult_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_BatchMigrateResourcesOperationMetadata_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_BatchMigrateResourcesOperationMetadata_PartialResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_BatchMigrateResourcesOperationMetadata_PartialResult_descriptor,
+            new java.lang.String[] {
+              "Error", "Model", "Dataset", "Request", "Result",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -320,6 +346,7 @@ public final class MigrationServiceProto {
     com.google.cloud.aiplatform.v1beta1.MigratableResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.OperationProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
+    com.google.rpc.StatusProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
