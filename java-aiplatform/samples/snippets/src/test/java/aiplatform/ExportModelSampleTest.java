@@ -34,7 +34,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ExportModelSampleTest {
 
-  private static final String PROJECT_ID = "ucaip-sample-tests";
+  private static final String PROJECT_ID = System.getenv("UCAIP_PROJECT_ID");
   private static final String MODEL_ID = "3422489426196955136";
   private static final String GCS_DESTINATION_URI_PREFIX =
       "gs://ucaip-samples-test-output/tmp/export_model_test";
@@ -52,6 +52,7 @@ public class ExportModelSampleTest {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
+    requireEnvVar("UCAIP_PROJECT_ID");
   }
 
   @Before

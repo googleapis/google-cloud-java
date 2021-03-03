@@ -32,7 +32,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class GetModelSampleTest {
 
-  private static final String PROJECT_ID = "ucaip-sample-tests";
+  private static final String PROJECT_ID = System.getenv("UCAIP_PROJECT_ID");
   private static final String MODEL_ID = "3512561418744365056";
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -47,6 +47,7 @@ public class GetModelSampleTest {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
+    requireEnvVar("UCAIP_PROJECT_ID");
   }
 
   @Before

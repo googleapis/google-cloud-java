@@ -34,7 +34,7 @@ import org.junit.Test;
 
 public class DeployModelCustomTrainedModelSampleTest {
 
-  private static final String PROJECT_ID = "ucaip-sample-tests";
+  private static final String PROJECT_ID = System.getenv("UCAIP_PROJECT_ID");
   private static final String MODEL_ID = "4992732768149438464";
   private static final String ENDPOINT_ID = "4366591682456584192";
   private ByteArrayOutputStream bout;
@@ -50,6 +50,7 @@ public class DeployModelCustomTrainedModelSampleTest {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
+    requireEnvVar("UCAIP_PROJECT_ID");
   }
 
   @Before

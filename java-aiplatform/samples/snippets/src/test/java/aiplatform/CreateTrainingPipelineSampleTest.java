@@ -36,7 +36,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class CreateTrainingPipelineSampleTest {
 
-  private static final String PROJECT_ID = "ucaip-sample-tests";
+  private static final String PROJECT_ID = System.getenv("UCAIP_PROJECT_ID");
   private static final String DATASET_ID = "1084241610289446912";
   private static final String TRAINING_TASK_DEFINITION =
       "gs://google-cloud-aiplatform/schema/trainingjob/definition/"
@@ -55,6 +55,7 @@ public class CreateTrainingPipelineSampleTest {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
+    requireEnvVar("UCAIP_PROJECT_ID");
   }
 
   @Before
