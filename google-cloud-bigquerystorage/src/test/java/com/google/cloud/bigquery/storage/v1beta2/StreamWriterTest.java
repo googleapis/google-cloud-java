@@ -678,6 +678,7 @@ public class StreamWriterTest {
                     .toBuilder()
                     // When shutdown, we should have something in batch.
                     .setElementCountThreshold(3L)
+                    .setDelayThreshold(Duration.ofSeconds(1000))
                     .setFlowControlSettings(
                         StreamWriter.Builder.DEFAULT_FLOW_CONTROL_SETTINGS
                             .toBuilder()
@@ -1072,6 +1073,7 @@ public class StreamWriterTest {
                 StreamWriter.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(2L)
+                    .setDelayThreshold(Duration.ofSeconds(1000))
                     .build())
             .build()) {
 

@@ -924,7 +924,7 @@ public class StreamWriter implements AutoCloseable {
             IllegalStateException exception =
                 new IllegalStateException(
                     String.format(
-                        "The append result offset %s does not match " + "the expected offset %s.",
+                        "The append result offset %s does not match the expected offset %s.",
                         response.getAppendResult().getOffset().getValue(),
                         inflightBatch.getExpectedOffset()));
             inflightBatch.onFailure(exception);
