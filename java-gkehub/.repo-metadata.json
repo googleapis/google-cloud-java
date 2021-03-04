@@ -1,0 +1,15 @@
+{
+  "name": "gkehub",
+  "name_pretty": "GKE Hub API",
+  "product_documentation": "https://cloud.google.com/anthos/gke/docs/",
+  "api_description": "provides a unified way to work with Kubernetes clusters as part of Anthos, extending GKE to work in multiple environments. You have consistent, unified, and secure infrastructure, cluster, and container management, whether you're using Anthos on Google Cloud (with traditional GKE), hybrid cloud, or multiple public clouds.",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-gkehub/latest/index.html",
+  "release_level": "beta",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-gkehub",
+  "repo_short": "java-gkehub",
+  "distribution_name": "com.google.cloud:google-cloud-gkehub",
+  "api_id": "gkehub.googleapis.com",
+  "requires_billing": true
+}
