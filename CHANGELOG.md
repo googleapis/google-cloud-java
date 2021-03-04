@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.14.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.13.0...v1.14.0) (2021-03-04)
+
+
+### Features
+
+* update StreamWriterV2 to support trace id ([#895](https://www.github.com/googleapis/java-bigquerystorage/issues/895)) ([2e49ce8](https://www.github.com/googleapis/java-bigquerystorage/commit/2e49ce8c79cb059840c3307898ba16980f6892fa))
+
+
+### Bug Fixes
+
+* add schema update back to json writer ([#905](https://www.github.com/googleapis/java-bigquerystorage/issues/905)) ([a2adbf8](https://www.github.com/googleapis/java-bigquerystorage/commit/a2adbf80753161cbddd23d5a7db75e9250db58fa))
+* Add unit test for concurrent issues we worried about, and fix some locking issues ([#854](https://www.github.com/googleapis/java-bigquerystorage/issues/854)) ([0870797](https://www.github.com/googleapis/java-bigquerystorage/commit/087079728195e20f93701e8d5e1e59ba29a7d21b))
+* test failure testAppendWhileShutdownSuccess ([#904](https://www.github.com/googleapis/java-bigquerystorage/issues/904)) ([b80183e](https://www.github.com/googleapis/java-bigquerystorage/commit/b80183ea23c8b78611a42d22d8c62a4ba4904a80))
+* testAppendWhileShutdownSuccess race ([#907](https://www.github.com/googleapis/java-bigquerystorage/issues/907)) ([d39443d](https://www.github.com/googleapis/java-bigquerystorage/commit/d39443d51d2625e4b3aee59d1e593229e9e449d3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.127.6 ([#909](https://www.github.com/googleapis/java-bigquerystorage/issues/909)) ([505938b](https://www.github.com/googleapis/java-bigquerystorage/commit/505938bcba5a4a7af9e618572bbc41f365702f47))
+
 ## [1.13.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.12.0...v1.13.0) (2021-03-01)
 
 
