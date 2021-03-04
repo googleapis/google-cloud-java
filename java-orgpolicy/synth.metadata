@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-orgpolicy.git",
-        "sha": "418da760b4bf90611bee9692aa47e9e7c30f49cf"
+        "sha": "943c4635f4d64ed87e9c5858eb68b864d67459d5"
       }
     },
     {
@@ -19,8 +19,8 @@
       "git": {
         "name": "googleapis-gen",
         "remote": "https://github.com/googleapis/googleapis-gen.git",
-        "sha": "ee82b2b8fc167d02b122230b5759bfabb821442d",
-        "internalRef": "360469636"
+        "sha": "1ad043d44370c3639640b1f1f549296c005448f5",
+        "internalRef": "360805639"
       }
     },
     {
