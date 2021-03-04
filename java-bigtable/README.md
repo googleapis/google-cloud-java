@@ -17,7 +17,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>18.0.0</version>
+      <version>18.1.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -45,18 +45,18 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:18.0.0')
+implementation platform('com.google.cloud:libraries-bom:18.1.0')
 
 compile 'com.google.cloud:google-cloud-bigtable'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigtable:1.20.1'
+compile 'com.google.cloud:google-cloud-bigtable:1.21.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "1.20.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "1.21.0"
 ```
 
 ## Authentication
