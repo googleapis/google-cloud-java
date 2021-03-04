@@ -45,7 +45,7 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:18.1.0')
+implementation platform('com.google.cloud:libraries-bom:19.0.0')
 
 compile 'com.google.cloud:google-cloud-iamcredentials'
 ```
