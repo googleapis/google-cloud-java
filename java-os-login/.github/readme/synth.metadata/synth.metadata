@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-os-login.git",
-        "sha": "7b7fdd5d70cbd3c8e6e92bc05827ba638eefba6d"
+        "sha": "c19849625dcdf584dec3d409d07deb2f5de30cd3"
       }
     },
     {
