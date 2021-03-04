@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -931,6 +931,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setView(VersionView.forNumber(0))
    *           .build();
    *   for (Version element : artifactRegistryClient.listVersions(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -958,6 +959,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setView(VersionView.forNumber(0))
    *           .build();
    *   ApiFuture<Version> future =
    *       artifactRegistryClient.listVersionsPagedCallable().futureCall(request);
@@ -1029,7 +1031,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
-   *   GetVersionRequest request = GetVersionRequest.newBuilder().setName("name3373707").build();
+   *   GetVersionRequest request =
+   *       GetVersionRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setView(VersionView.forNumber(0))
+   *           .build();
    *   Version response = artifactRegistryClient.getVersion(request);
    * }
    * }</pre>
@@ -1049,7 +1055,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
-   *   GetVersionRequest request = GetVersionRequest.newBuilder().setName("name3373707").build();
+   *   GetVersionRequest request =
+   *       GetVersionRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setView(VersionView.forNumber(0))
+   *           .build();
    *   ApiFuture<Version> future = artifactRegistryClient.getVersionCallable().futureCall(request);
    *   // Do something.
    *   Version response = future.get();

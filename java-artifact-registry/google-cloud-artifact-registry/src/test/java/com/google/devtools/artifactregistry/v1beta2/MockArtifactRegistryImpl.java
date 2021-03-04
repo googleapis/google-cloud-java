@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,7 +76,13 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRepositories, expected %s or %s",
+                  response.getClass().getName(),
+                  ListRepositoriesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -91,7 +97,13 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRepository, expected %s or %s",
+                  response.getClass().getName(),
+                  Repository.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -106,7 +118,13 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateRepository, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -121,7 +139,13 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateRepository, expected %s or %s",
+                  response.getClass().getName(),
+                  Repository.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -136,7 +160,13 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteRepository, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -151,7 +181,13 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPackages, expected %s or %s",
+                  response.getClass().getName(),
+                  ListPackagesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -165,7 +201,13 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetPackage, expected %s or %s",
+                  response.getClass().getName(),
+                  Package.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -180,7 +222,13 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeletePackage, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -195,7 +243,13 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListVersions, expected %s or %s",
+                  response.getClass().getName(),
+                  ListVersionsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -209,7 +263,13 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetVersion, expected %s or %s",
+                  response.getClass().getName(),
+                  Version.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -224,7 +284,13 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteVersion, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -239,7 +305,13 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListFiles, expected %s or %s",
+                  response.getClass().getName(),
+                  ListFilesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -253,7 +325,11 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetFile, expected %s or %s",
+                  response.getClass().getName(), File.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -267,7 +343,13 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListTags, expected %s or %s",
+                  response.getClass().getName(),
+                  ListTagsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -281,7 +363,11 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetTag, expected %s or %s",
+                  response.getClass().getName(), Tag.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -295,7 +381,11 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateTag, expected %s or %s",
+                  response.getClass().getName(), Tag.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -309,7 +399,11 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateTag, expected %s or %s",
+                  response.getClass().getName(), Tag.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -323,7 +417,13 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteTag, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -337,7 +437,13 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -351,7 +457,13 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -367,7 +479,13 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
+                  response.getClass().getName(),
+                  TestIamPermissionsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

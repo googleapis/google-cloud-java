@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -765,128 +765,158 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListRepositoriesRequest, ListRepositoriesResponse>
       listRepositoriesCallable() {
     return listRepositoriesCallable;
   }
 
+  @Override
   public UnaryCallable<ListRepositoriesRequest, ListRepositoriesPagedResponse>
       listRepositoriesPagedCallable() {
     return listRepositoriesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetRepositoryRequest, Repository> getRepositoryCallable() {
     return getRepositoryCallable;
   }
 
+  @Override
   public UnaryCallable<CreateRepositoryRequest, Operation> createRepositoryCallable() {
     return createRepositoryCallable;
   }
 
+  @Override
   public OperationCallable<CreateRepositoryRequest, Repository, OperationMetadata>
       createRepositoryOperationCallable() {
     return createRepositoryOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateRepositoryRequest, Repository> updateRepositoryCallable() {
     return updateRepositoryCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteRepositoryRequest, Operation> deleteRepositoryCallable() {
     return deleteRepositoryCallable;
   }
 
+  @Override
   public OperationCallable<DeleteRepositoryRequest, Empty, OperationMetadata>
       deleteRepositoryOperationCallable() {
     return deleteRepositoryOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ListPackagesRequest, ListPackagesResponse> listPackagesCallable() {
     return listPackagesCallable;
   }
 
+  @Override
   public UnaryCallable<ListPackagesRequest, ListPackagesPagedResponse> listPackagesPagedCallable() {
     return listPackagesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetPackageRequest, Package> getPackageCallable() {
     return getPackageCallable;
   }
 
+  @Override
   public UnaryCallable<DeletePackageRequest, Operation> deletePackageCallable() {
     return deletePackageCallable;
   }
 
+  @Override
   public OperationCallable<DeletePackageRequest, Empty, OperationMetadata>
       deletePackageOperationCallable() {
     return deletePackageOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ListVersionsRequest, ListVersionsResponse> listVersionsCallable() {
     return listVersionsCallable;
   }
 
+  @Override
   public UnaryCallable<ListVersionsRequest, ListVersionsPagedResponse> listVersionsPagedCallable() {
     return listVersionsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetVersionRequest, Version> getVersionCallable() {
     return getVersionCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteVersionRequest, Operation> deleteVersionCallable() {
     return deleteVersionCallable;
   }
 
+  @Override
   public OperationCallable<DeleteVersionRequest, Empty, OperationMetadata>
       deleteVersionOperationCallable() {
     return deleteVersionOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ListFilesRequest, ListFilesResponse> listFilesCallable() {
     return listFilesCallable;
   }
 
+  @Override
   public UnaryCallable<ListFilesRequest, ListFilesPagedResponse> listFilesPagedCallable() {
     return listFilesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetFileRequest, File> getFileCallable() {
     return getFileCallable;
   }
 
+  @Override
   public UnaryCallable<ListTagsRequest, ListTagsResponse> listTagsCallable() {
     return listTagsCallable;
   }
 
+  @Override
   public UnaryCallable<ListTagsRequest, ListTagsPagedResponse> listTagsPagedCallable() {
     return listTagsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetTagRequest, Tag> getTagCallable() {
     return getTagCallable;
   }
 
+  @Override
   public UnaryCallable<CreateTagRequest, Tag> createTagCallable() {
     return createTagCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateTagRequest, Tag> updateTagCallable() {
     return updateTagCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable() {
     return deleteTagCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
