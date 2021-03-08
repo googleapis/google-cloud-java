@@ -16,11 +16,6 @@
 package com.google.webrisk.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -244,7 +239,8 @@ public final class WebRiskServiceV1Beta1Grpc {
         com.google.webrisk.v1beta1.ComputeThreatListDiffRequest request,
         io.grpc.stub.StreamObserver<com.google.webrisk.v1beta1.ComputeThreatListDiffResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getComputeThreatListDiffMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getComputeThreatListDiffMethod(), responseObserver);
     }
 
     /**
@@ -258,7 +254,7 @@ public final class WebRiskServiceV1Beta1Grpc {
         com.google.webrisk.v1beta1.SearchUrisRequest request,
         io.grpc.stub.StreamObserver<com.google.webrisk.v1beta1.SearchUrisResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSearchUrisMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchUrisMethod(), responseObserver);
     }
 
     /**
@@ -276,7 +272,8 @@ public final class WebRiskServiceV1Beta1Grpc {
         com.google.webrisk.v1beta1.SearchHashesRequest request,
         io.grpc.stub.StreamObserver<com.google.webrisk.v1beta1.SearchHashesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSearchHashesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSearchHashesMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -284,20 +281,20 @@ public final class WebRiskServiceV1Beta1Grpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getComputeThreatListDiffMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.webrisk.v1beta1.ComputeThreatListDiffRequest,
                       com.google.webrisk.v1beta1.ComputeThreatListDiffResponse>(
                       this, METHODID_COMPUTE_THREAT_LIST_DIFF)))
           .addMethod(
               getSearchUrisMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.webrisk.v1beta1.SearchUrisRequest,
                       com.google.webrisk.v1beta1.SearchUrisResponse>(this, METHODID_SEARCH_URIS)))
           .addMethod(
               getSearchHashesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.webrisk.v1beta1.SearchHashesRequest,
                       com.google.webrisk.v1beta1.SearchHashesResponse>(
@@ -337,7 +334,7 @@ public final class WebRiskServiceV1Beta1Grpc {
         com.google.webrisk.v1beta1.ComputeThreatListDiffRequest request,
         io.grpc.stub.StreamObserver<com.google.webrisk.v1beta1.ComputeThreatListDiffResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getComputeThreatListDiffMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -354,7 +351,7 @@ public final class WebRiskServiceV1Beta1Grpc {
         com.google.webrisk.v1beta1.SearchUrisRequest request,
         io.grpc.stub.StreamObserver<com.google.webrisk.v1beta1.SearchUrisResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSearchUrisMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -373,7 +370,7 @@ public final class WebRiskServiceV1Beta1Grpc {
         com.google.webrisk.v1beta1.SearchHashesRequest request,
         io.grpc.stub.StreamObserver<com.google.webrisk.v1beta1.SearchHashesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSearchHashesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -410,7 +407,7 @@ public final class WebRiskServiceV1Beta1Grpc {
      */
     public com.google.webrisk.v1beta1.ComputeThreatListDiffResponse computeThreatListDiff(
         com.google.webrisk.v1beta1.ComputeThreatListDiffRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getComputeThreatListDiffMethod(), getCallOptions(), request);
     }
 
@@ -423,7 +420,8 @@ public final class WebRiskServiceV1Beta1Grpc {
      */
     public com.google.webrisk.v1beta1.SearchUrisResponse searchUris(
         com.google.webrisk.v1beta1.SearchUrisRequest request) {
-      return blockingUnaryCall(getChannel(), getSearchUrisMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchUrisMethod(), getCallOptions(), request);
     }
 
     /**
@@ -439,7 +437,8 @@ public final class WebRiskServiceV1Beta1Grpc {
      */
     public com.google.webrisk.v1beta1.SearchHashesResponse searchHashes(
         com.google.webrisk.v1beta1.SearchHashesRequest request) {
-      return blockingUnaryCall(getChannel(), getSearchHashesMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchHashesMethod(), getCallOptions(), request);
     }
   }
 
@@ -474,7 +473,7 @@ public final class WebRiskServiceV1Beta1Grpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.webrisk.v1beta1.ComputeThreatListDiffResponse>
         computeThreatListDiff(com.google.webrisk.v1beta1.ComputeThreatListDiffRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getComputeThreatListDiffMethod(), getCallOptions()), request);
     }
 
@@ -488,7 +487,7 @@ public final class WebRiskServiceV1Beta1Grpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.webrisk.v1beta1.SearchUrisResponse>
         searchUris(com.google.webrisk.v1beta1.SearchUrisRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchUrisMethod(), getCallOptions()), request);
     }
 
@@ -506,7 +505,7 @@ public final class WebRiskServiceV1Beta1Grpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.webrisk.v1beta1.SearchHashesResponse>
         searchHashes(com.google.webrisk.v1beta1.SearchHashesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchHashesMethod(), getCallOptions()), request);
     }
   }
