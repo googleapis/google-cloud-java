@@ -16,11 +16,6 @@
 package com.google.cloud.networkconnectivity.v1alpha1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -559,7 +554,7 @@ public final class HubServiceGrpc {
         com.google.cloud.networkconnectivity.v1alpha1.ListHubsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.networkconnectivity.v1alpha1.ListHubsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListHubsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListHubsMethod(), responseObserver);
     }
 
     /**
@@ -573,7 +568,7 @@ public final class HubServiceGrpc {
         com.google.cloud.networkconnectivity.v1alpha1.GetHubRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.networkconnectivity.v1alpha1.Hub>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetHubMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetHubMethod(), responseObserver);
     }
 
     /**
@@ -586,7 +581,7 @@ public final class HubServiceGrpc {
     public void createHub(
         com.google.cloud.networkconnectivity.v1alpha1.CreateHubRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateHubMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateHubMethod(), responseObserver);
     }
 
     /**
@@ -599,7 +594,7 @@ public final class HubServiceGrpc {
     public void updateHub(
         com.google.cloud.networkconnectivity.v1alpha1.UpdateHubRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateHubMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateHubMethod(), responseObserver);
     }
 
     /**
@@ -612,7 +607,7 @@ public final class HubServiceGrpc {
     public void deleteHub(
         com.google.cloud.networkconnectivity.v1alpha1.DeleteHubRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteHubMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteHubMethod(), responseObserver);
     }
 
     /**
@@ -627,7 +622,7 @@ public final class HubServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.networkconnectivity.v1alpha1.ListSpokesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListSpokesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListSpokesMethod(), responseObserver);
     }
 
     /**
@@ -641,7 +636,7 @@ public final class HubServiceGrpc {
         com.google.cloud.networkconnectivity.v1alpha1.GetSpokeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.networkconnectivity.v1alpha1.Spoke>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetSpokeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSpokeMethod(), responseObserver);
     }
 
     /**
@@ -654,7 +649,8 @@ public final class HubServiceGrpc {
     public void createSpoke(
         com.google.cloud.networkconnectivity.v1alpha1.CreateSpokeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateSpokeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateSpokeMethod(), responseObserver);
     }
 
     /**
@@ -667,7 +663,8 @@ public final class HubServiceGrpc {
     public void updateSpoke(
         com.google.cloud.networkconnectivity.v1alpha1.UpdateSpokeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateSpokeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSpokeMethod(), responseObserver);
     }
 
     /**
@@ -680,7 +677,8 @@ public final class HubServiceGrpc {
     public void deleteSpoke(
         com.google.cloud.networkconnectivity.v1alpha1.DeleteSpokeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteSpokeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteSpokeMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -688,64 +686,64 @@ public final class HubServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListHubsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.networkconnectivity.v1alpha1.ListHubsRequest,
                       com.google.cloud.networkconnectivity.v1alpha1.ListHubsResponse>(
                       this, METHODID_LIST_HUBS)))
           .addMethod(
               getGetHubMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.networkconnectivity.v1alpha1.GetHubRequest,
                       com.google.cloud.networkconnectivity.v1alpha1.Hub>(this, METHODID_GET_HUB)))
           .addMethod(
               getCreateHubMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.networkconnectivity.v1alpha1.CreateHubRequest,
                       com.google.longrunning.Operation>(this, METHODID_CREATE_HUB)))
           .addMethod(
               getUpdateHubMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.networkconnectivity.v1alpha1.UpdateHubRequest,
                       com.google.longrunning.Operation>(this, METHODID_UPDATE_HUB)))
           .addMethod(
               getDeleteHubMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.networkconnectivity.v1alpha1.DeleteHubRequest,
                       com.google.longrunning.Operation>(this, METHODID_DELETE_HUB)))
           .addMethod(
               getListSpokesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.networkconnectivity.v1alpha1.ListSpokesRequest,
                       com.google.cloud.networkconnectivity.v1alpha1.ListSpokesResponse>(
                       this, METHODID_LIST_SPOKES)))
           .addMethod(
               getGetSpokeMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.networkconnectivity.v1alpha1.GetSpokeRequest,
                       com.google.cloud.networkconnectivity.v1alpha1.Spoke>(
                       this, METHODID_GET_SPOKE)))
           .addMethod(
               getCreateSpokeMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.networkconnectivity.v1alpha1.CreateSpokeRequest,
                       com.google.longrunning.Operation>(this, METHODID_CREATE_SPOKE)))
           .addMethod(
               getUpdateSpokeMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.networkconnectivity.v1alpha1.UpdateSpokeRequest,
                       com.google.longrunning.Operation>(this, METHODID_UPDATE_SPOKE)))
           .addMethod(
               getDeleteSpokeMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.networkconnectivity.v1alpha1.DeleteSpokeRequest,
                       com.google.longrunning.Operation>(this, METHODID_DELETE_SPOKE)))
@@ -784,7 +782,7 @@ public final class HubServiceGrpc {
         com.google.cloud.networkconnectivity.v1alpha1.ListHubsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.networkconnectivity.v1alpha1.ListHubsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListHubsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -799,7 +797,7 @@ public final class HubServiceGrpc {
         com.google.cloud.networkconnectivity.v1alpha1.GetHubRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.networkconnectivity.v1alpha1.Hub>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetHubMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -813,7 +811,7 @@ public final class HubServiceGrpc {
     public void createHub(
         com.google.cloud.networkconnectivity.v1alpha1.CreateHubRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateHubMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -827,7 +825,7 @@ public final class HubServiceGrpc {
     public void updateHub(
         com.google.cloud.networkconnectivity.v1alpha1.UpdateHubRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateHubMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -841,7 +839,7 @@ public final class HubServiceGrpc {
     public void deleteHub(
         com.google.cloud.networkconnectivity.v1alpha1.DeleteHubRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteHubMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -857,7 +855,7 @@ public final class HubServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.networkconnectivity.v1alpha1.ListSpokesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListSpokesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -872,7 +870,7 @@ public final class HubServiceGrpc {
         com.google.cloud.networkconnectivity.v1alpha1.GetSpokeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.networkconnectivity.v1alpha1.Spoke>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetSpokeMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -886,7 +884,7 @@ public final class HubServiceGrpc {
     public void createSpoke(
         com.google.cloud.networkconnectivity.v1alpha1.CreateSpokeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateSpokeMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -902,7 +900,7 @@ public final class HubServiceGrpc {
     public void updateSpoke(
         com.google.cloud.networkconnectivity.v1alpha1.UpdateSpokeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateSpokeMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -918,7 +916,7 @@ public final class HubServiceGrpc {
     public void deleteSpoke(
         com.google.cloud.networkconnectivity.v1alpha1.DeleteSpokeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteSpokeMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -956,7 +954,8 @@ public final class HubServiceGrpc {
      */
     public com.google.cloud.networkconnectivity.v1alpha1.ListHubsResponse listHubs(
         com.google.cloud.networkconnectivity.v1alpha1.ListHubsRequest request) {
-      return blockingUnaryCall(getChannel(), getListHubsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListHubsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -968,7 +967,8 @@ public final class HubServiceGrpc {
      */
     public com.google.cloud.networkconnectivity.v1alpha1.Hub getHub(
         com.google.cloud.networkconnectivity.v1alpha1.GetHubRequest request) {
-      return blockingUnaryCall(getChannel(), getGetHubMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetHubMethod(), getCallOptions(), request);
     }
 
     /**
@@ -980,7 +980,8 @@ public final class HubServiceGrpc {
      */
     public com.google.longrunning.Operation createHub(
         com.google.cloud.networkconnectivity.v1alpha1.CreateHubRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateHubMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateHubMethod(), getCallOptions(), request);
     }
 
     /**
@@ -992,7 +993,8 @@ public final class HubServiceGrpc {
      */
     public com.google.longrunning.Operation updateHub(
         com.google.cloud.networkconnectivity.v1alpha1.UpdateHubRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateHubMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateHubMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1004,7 +1006,8 @@ public final class HubServiceGrpc {
      */
     public com.google.longrunning.Operation deleteHub(
         com.google.cloud.networkconnectivity.v1alpha1.DeleteHubRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteHubMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteHubMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1016,7 +1019,8 @@ public final class HubServiceGrpc {
      */
     public com.google.cloud.networkconnectivity.v1alpha1.ListSpokesResponse listSpokes(
         com.google.cloud.networkconnectivity.v1alpha1.ListSpokesRequest request) {
-      return blockingUnaryCall(getChannel(), getListSpokesMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSpokesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1028,7 +1032,8 @@ public final class HubServiceGrpc {
      */
     public com.google.cloud.networkconnectivity.v1alpha1.Spoke getSpoke(
         com.google.cloud.networkconnectivity.v1alpha1.GetSpokeRequest request) {
-      return blockingUnaryCall(getChannel(), getGetSpokeMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSpokeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1040,7 +1045,8 @@ public final class HubServiceGrpc {
      */
     public com.google.longrunning.Operation createSpoke(
         com.google.cloud.networkconnectivity.v1alpha1.CreateSpokeRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateSpokeMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSpokeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1052,7 +1058,8 @@ public final class HubServiceGrpc {
      */
     public com.google.longrunning.Operation updateSpoke(
         com.google.cloud.networkconnectivity.v1alpha1.UpdateSpokeRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateSpokeMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSpokeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1064,7 +1071,8 @@ public final class HubServiceGrpc {
      */
     public com.google.longrunning.Operation deleteSpoke(
         com.google.cloud.networkconnectivity.v1alpha1.DeleteSpokeRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteSpokeMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSpokeMethod(), getCallOptions(), request);
     }
   }
 
@@ -1099,7 +1107,8 @@ public final class HubServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.networkconnectivity.v1alpha1.ListHubsResponse>
         listHubs(com.google.cloud.networkconnectivity.v1alpha1.ListHubsRequest request) {
-      return futureUnaryCall(getChannel().newCall(getListHubsMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListHubsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1112,7 +1121,8 @@ public final class HubServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.networkconnectivity.v1alpha1.Hub>
         getHub(com.google.cloud.networkconnectivity.v1alpha1.GetHubRequest request) {
-      return futureUnaryCall(getChannel().newCall(getGetHubMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetHubMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1124,7 +1134,8 @@ public final class HubServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createHub(com.google.cloud.networkconnectivity.v1alpha1.CreateHubRequest request) {
-      return futureUnaryCall(getChannel().newCall(getCreateHubMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateHubMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1136,7 +1147,8 @@ public final class HubServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateHub(com.google.cloud.networkconnectivity.v1alpha1.UpdateHubRequest request) {
-      return futureUnaryCall(getChannel().newCall(getUpdateHubMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateHubMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1148,7 +1160,8 @@ public final class HubServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteHub(com.google.cloud.networkconnectivity.v1alpha1.DeleteHubRequest request) {
-      return futureUnaryCall(getChannel().newCall(getDeleteHubMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteHubMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1161,7 +1174,7 @@ public final class HubServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.networkconnectivity.v1alpha1.ListSpokesResponse>
         listSpokes(com.google.cloud.networkconnectivity.v1alpha1.ListSpokesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListSpokesMethod(), getCallOptions()), request);
     }
 
@@ -1175,7 +1188,8 @@ public final class HubServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.networkconnectivity.v1alpha1.Spoke>
         getSpoke(com.google.cloud.networkconnectivity.v1alpha1.GetSpokeRequest request) {
-      return futureUnaryCall(getChannel().newCall(getGetSpokeMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSpokeMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1187,7 +1201,7 @@ public final class HubServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createSpoke(com.google.cloud.networkconnectivity.v1alpha1.CreateSpokeRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateSpokeMethod(), getCallOptions()), request);
     }
 
@@ -1200,7 +1214,7 @@ public final class HubServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateSpoke(com.google.cloud.networkconnectivity.v1alpha1.UpdateSpokeRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateSpokeMethod(), getCallOptions()), request);
     }
 
@@ -1213,7 +1227,7 @@ public final class HubServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteSpoke(com.google.cloud.networkconnectivity.v1alpha1.DeleteSpokeRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteSpokeMethod(), getCallOptions()), request);
     }
   }
