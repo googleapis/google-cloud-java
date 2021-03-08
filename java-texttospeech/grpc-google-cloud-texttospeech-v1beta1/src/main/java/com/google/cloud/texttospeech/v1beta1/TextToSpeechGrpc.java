@@ -16,11 +16,6 @@
 package com.google.cloud.texttospeech.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -193,7 +188,7 @@ public final class TextToSpeechGrpc {
         com.google.cloud.texttospeech.v1beta1.ListVoicesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.texttospeech.v1beta1.ListVoicesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListVoicesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListVoicesMethod(), responseObserver);
     }
 
     /**
@@ -208,7 +203,8 @@ public final class TextToSpeechGrpc {
         com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSynthesizeSpeechMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSynthesizeSpeechMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -216,14 +212,14 @@ public final class TextToSpeechGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListVoicesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.texttospeech.v1beta1.ListVoicesRequest,
                       com.google.cloud.texttospeech.v1beta1.ListVoicesResponse>(
                       this, METHODID_LIST_VOICES)))
           .addMethod(
               getSynthesizeSpeechMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest,
                       com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechResponse>(
@@ -261,7 +257,7 @@ public final class TextToSpeechGrpc {
         com.google.cloud.texttospeech.v1beta1.ListVoicesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.texttospeech.v1beta1.ListVoicesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListVoicesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -277,7 +273,7 @@ public final class TextToSpeechGrpc {
         com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSynthesizeSpeechMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -312,7 +308,8 @@ public final class TextToSpeechGrpc {
      */
     public com.google.cloud.texttospeech.v1beta1.ListVoicesResponse listVoices(
         com.google.cloud.texttospeech.v1beta1.ListVoicesRequest request) {
-      return blockingUnaryCall(getChannel(), getListVoicesMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVoicesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -325,7 +322,7 @@ public final class TextToSpeechGrpc {
      */
     public com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechResponse synthesizeSpeech(
         com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSynthesizeSpeechMethod(), getCallOptions(), request);
     }
   }
@@ -359,7 +356,7 @@ public final class TextToSpeechGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.texttospeech.v1beta1.ListVoicesResponse>
         listVoices(com.google.cloud.texttospeech.v1beta1.ListVoicesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListVoicesMethod(), getCallOptions()), request);
     }
 
@@ -374,7 +371,7 @@ public final class TextToSpeechGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechResponse>
         synthesizeSpeech(com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSynthesizeSpeechMethod(), getCallOptions()), request);
     }
   }
