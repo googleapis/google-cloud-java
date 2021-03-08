@@ -16,11 +16,6 @@
 package com.google.cloud.talent.v4beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -326,7 +321,8 @@ public final class CompanyServiceGrpc {
     public void createCompany(
         com.google.cloud.talent.v4beta1.CreateCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Company> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateCompanyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateCompanyMethod(), responseObserver);
     }
 
     /**
@@ -339,7 +335,7 @@ public final class CompanyServiceGrpc {
     public void getCompany(
         com.google.cloud.talent.v4beta1.GetCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Company> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCompanyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCompanyMethod(), responseObserver);
     }
 
     /**
@@ -352,7 +348,8 @@ public final class CompanyServiceGrpc {
     public void updateCompany(
         com.google.cloud.talent.v4beta1.UpdateCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Company> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateCompanyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateCompanyMethod(), responseObserver);
     }
 
     /**
@@ -366,7 +363,8 @@ public final class CompanyServiceGrpc {
     public void deleteCompany(
         com.google.cloud.talent.v4beta1.DeleteCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteCompanyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteCompanyMethod(), responseObserver);
     }
 
     /**
@@ -380,7 +378,8 @@ public final class CompanyServiceGrpc {
         com.google.cloud.talent.v4beta1.ListCompaniesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListCompaniesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListCompaniesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListCompaniesMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -388,31 +387,31 @@ public final class CompanyServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreateCompanyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.CreateCompanyRequest,
                       com.google.cloud.talent.v4beta1.Company>(this, METHODID_CREATE_COMPANY)))
           .addMethod(
               getGetCompanyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.GetCompanyRequest,
                       com.google.cloud.talent.v4beta1.Company>(this, METHODID_GET_COMPANY)))
           .addMethod(
               getUpdateCompanyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.UpdateCompanyRequest,
                       com.google.cloud.talent.v4beta1.Company>(this, METHODID_UPDATE_COMPANY)))
           .addMethod(
               getDeleteCompanyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.DeleteCompanyRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_COMPANY)))
           .addMethod(
               getListCompaniesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.ListCompaniesRequest,
                       com.google.cloud.talent.v4beta1.ListCompaniesResponse>(
@@ -449,7 +448,7 @@ public final class CompanyServiceGrpc {
     public void createCompany(
         com.google.cloud.talent.v4beta1.CreateCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Company> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateCompanyMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -465,7 +464,7 @@ public final class CompanyServiceGrpc {
     public void getCompany(
         com.google.cloud.talent.v4beta1.GetCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Company> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCompanyMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -479,7 +478,7 @@ public final class CompanyServiceGrpc {
     public void updateCompany(
         com.google.cloud.talent.v4beta1.UpdateCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Company> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateCompanyMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -496,7 +495,7 @@ public final class CompanyServiceGrpc {
     public void deleteCompany(
         com.google.cloud.talent.v4beta1.DeleteCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteCompanyMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -513,7 +512,7 @@ public final class CompanyServiceGrpc {
         com.google.cloud.talent.v4beta1.ListCompaniesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListCompaniesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListCompaniesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -548,7 +547,8 @@ public final class CompanyServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.Company createCompany(
         com.google.cloud.talent.v4beta1.CreateCompanyRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateCompanyMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCompanyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -560,7 +560,8 @@ public final class CompanyServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.Company getCompany(
         com.google.cloud.talent.v4beta1.GetCompanyRequest request) {
-      return blockingUnaryCall(getChannel(), getGetCompanyMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCompanyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -572,7 +573,8 @@ public final class CompanyServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.Company updateCompany(
         com.google.cloud.talent.v4beta1.UpdateCompanyRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateCompanyMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCompanyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -585,7 +587,8 @@ public final class CompanyServiceGrpc {
      */
     public com.google.protobuf.Empty deleteCompany(
         com.google.cloud.talent.v4beta1.DeleteCompanyRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteCompanyMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCompanyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -597,7 +600,8 @@ public final class CompanyServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.ListCompaniesResponse listCompanies(
         com.google.cloud.talent.v4beta1.ListCompaniesRequest request) {
-      return blockingUnaryCall(getChannel(), getListCompaniesMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCompaniesMethod(), getCallOptions(), request);
     }
   }
 
@@ -630,7 +634,7 @@ public final class CompanyServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Company>
         createCompany(com.google.cloud.talent.v4beta1.CreateCompanyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateCompanyMethod(), getCallOptions()), request);
     }
 
@@ -644,7 +648,7 @@ public final class CompanyServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Company>
         getCompany(com.google.cloud.talent.v4beta1.GetCompanyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCompanyMethod(), getCallOptions()), request);
     }
 
@@ -658,7 +662,7 @@ public final class CompanyServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Company>
         updateCompany(com.google.cloud.talent.v4beta1.UpdateCompanyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateCompanyMethod(), getCallOptions()), request);
     }
 
@@ -672,7 +676,7 @@ public final class CompanyServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteCompany(com.google.cloud.talent.v4beta1.DeleteCompanyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteCompanyMethod(), getCallOptions()), request);
     }
 
@@ -686,7 +690,7 @@ public final class CompanyServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.ListCompaniesResponse>
         listCompanies(com.google.cloud.talent.v4beta1.ListCompaniesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListCompaniesMethod(), getCallOptions()), request);
     }
   }

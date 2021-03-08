@@ -16,11 +16,6 @@
 package com.google.cloud.talent.v4;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -151,7 +146,8 @@ public final class EventServiceGrpc {
     public void createClientEvent(
         com.google.cloud.talent.v4.CreateClientEventRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.ClientEvent> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateClientEventMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateClientEventMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -159,7 +155,7 @@ public final class EventServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreateClientEventMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4.CreateClientEventRequest,
                       com.google.cloud.talent.v4.ClientEvent>(this, METHODID_CREATE_CLIENT_EVENT)))
@@ -201,7 +197,7 @@ public final class EventServiceGrpc {
     public void createClientEvent(
         com.google.cloud.talent.v4.CreateClientEventRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.ClientEvent> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateClientEventMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -242,7 +238,7 @@ public final class EventServiceGrpc {
      */
     public com.google.cloud.talent.v4.ClientEvent createClientEvent(
         com.google.cloud.talent.v4.CreateClientEventRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateClientEventMethod(), getCallOptions(), request);
     }
   }
@@ -282,7 +278,7 @@ public final class EventServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4.ClientEvent>
         createClientEvent(com.google.cloud.talent.v4.CreateClientEventRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateClientEventMethod(), getCallOptions()), request);
     }
   }

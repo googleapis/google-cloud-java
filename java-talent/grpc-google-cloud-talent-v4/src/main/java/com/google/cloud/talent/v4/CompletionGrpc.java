@@ -16,11 +16,6 @@
 package com.google.cloud.talent.v4;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -145,7 +140,8 @@ public final class CompletionGrpc {
         com.google.cloud.talent.v4.CompleteQueryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.CompleteQueryResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCompleteQueryMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCompleteQueryMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -153,7 +149,7 @@ public final class CompletionGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCompleteQueryMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4.CompleteQueryRequest,
                       com.google.cloud.talent.v4.CompleteQueryResponse>(
@@ -191,7 +187,7 @@ public final class CompletionGrpc {
         com.google.cloud.talent.v4.CompleteQueryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.CompleteQueryResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCompleteQueryMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -227,7 +223,8 @@ public final class CompletionGrpc {
      */
     public com.google.cloud.talent.v4.CompleteQueryResponse completeQuery(
         com.google.cloud.talent.v4.CompleteQueryRequest request) {
-      return blockingUnaryCall(getChannel(), getCompleteQueryMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCompleteQueryMethod(), getCallOptions(), request);
     }
   }
 
@@ -260,7 +257,7 @@ public final class CompletionGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4.CompleteQueryResponse>
         completeQuery(com.google.cloud.talent.v4.CompleteQueryRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCompleteQueryMethod(), getCallOptions()), request);
     }
   }

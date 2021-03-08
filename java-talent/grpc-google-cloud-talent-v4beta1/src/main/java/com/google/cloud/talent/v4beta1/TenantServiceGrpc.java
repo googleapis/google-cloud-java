@@ -16,11 +16,6 @@
 package com.google.cloud.talent.v4beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -323,7 +318,8 @@ public final class TenantServiceGrpc {
     public void createTenant(
         com.google.cloud.talent.v4beta1.CreateTenantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Tenant> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateTenantMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateTenantMethod(), responseObserver);
     }
 
     /**
@@ -336,7 +332,7 @@ public final class TenantServiceGrpc {
     public void getTenant(
         com.google.cloud.talent.v4beta1.GetTenantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Tenant> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetTenantMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTenantMethod(), responseObserver);
     }
 
     /**
@@ -349,7 +345,8 @@ public final class TenantServiceGrpc {
     public void updateTenant(
         com.google.cloud.talent.v4beta1.UpdateTenantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Tenant> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateTenantMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateTenantMethod(), responseObserver);
     }
 
     /**
@@ -362,7 +359,8 @@ public final class TenantServiceGrpc {
     public void deleteTenant(
         com.google.cloud.talent.v4beta1.DeleteTenantRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteTenantMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteTenantMethod(), responseObserver);
     }
 
     /**
@@ -376,7 +374,8 @@ public final class TenantServiceGrpc {
         com.google.cloud.talent.v4beta1.ListTenantsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListTenantsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListTenantsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListTenantsMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -384,31 +383,31 @@ public final class TenantServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreateTenantMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.CreateTenantRequest,
                       com.google.cloud.talent.v4beta1.Tenant>(this, METHODID_CREATE_TENANT)))
           .addMethod(
               getGetTenantMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.GetTenantRequest,
                       com.google.cloud.talent.v4beta1.Tenant>(this, METHODID_GET_TENANT)))
           .addMethod(
               getUpdateTenantMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.UpdateTenantRequest,
                       com.google.cloud.talent.v4beta1.Tenant>(this, METHODID_UPDATE_TENANT)))
           .addMethod(
               getDeleteTenantMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.DeleteTenantRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_TENANT)))
           .addMethod(
               getListTenantsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.ListTenantsRequest,
                       com.google.cloud.talent.v4beta1.ListTenantsResponse>(
@@ -445,7 +444,7 @@ public final class TenantServiceGrpc {
     public void createTenant(
         com.google.cloud.talent.v4beta1.CreateTenantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Tenant> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateTenantMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -461,7 +460,7 @@ public final class TenantServiceGrpc {
     public void getTenant(
         com.google.cloud.talent.v4beta1.GetTenantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Tenant> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetTenantMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -475,7 +474,7 @@ public final class TenantServiceGrpc {
     public void updateTenant(
         com.google.cloud.talent.v4beta1.UpdateTenantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Tenant> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateTenantMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -491,7 +490,7 @@ public final class TenantServiceGrpc {
     public void deleteTenant(
         com.google.cloud.talent.v4beta1.DeleteTenantRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteTenantMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -508,7 +507,7 @@ public final class TenantServiceGrpc {
         com.google.cloud.talent.v4beta1.ListTenantsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListTenantsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListTenantsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -543,7 +542,8 @@ public final class TenantServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.Tenant createTenant(
         com.google.cloud.talent.v4beta1.CreateTenantRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateTenantMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTenantMethod(), getCallOptions(), request);
     }
 
     /**
@@ -555,7 +555,8 @@ public final class TenantServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.Tenant getTenant(
         com.google.cloud.talent.v4beta1.GetTenantRequest request) {
-      return blockingUnaryCall(getChannel(), getGetTenantMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTenantMethod(), getCallOptions(), request);
     }
 
     /**
@@ -567,7 +568,8 @@ public final class TenantServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.Tenant updateTenant(
         com.google.cloud.talent.v4beta1.UpdateTenantRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateTenantMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTenantMethod(), getCallOptions(), request);
     }
 
     /**
@@ -579,7 +581,8 @@ public final class TenantServiceGrpc {
      */
     public com.google.protobuf.Empty deleteTenant(
         com.google.cloud.talent.v4beta1.DeleteTenantRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteTenantMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTenantMethod(), getCallOptions(), request);
     }
 
     /**
@@ -591,7 +594,8 @@ public final class TenantServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.ListTenantsResponse listTenants(
         com.google.cloud.talent.v4beta1.ListTenantsRequest request) {
-      return blockingUnaryCall(getChannel(), getListTenantsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTenantsMethod(), getCallOptions(), request);
     }
   }
 
@@ -624,7 +628,7 @@ public final class TenantServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Tenant>
         createTenant(com.google.cloud.talent.v4beta1.CreateTenantRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateTenantMethod(), getCallOptions()), request);
     }
 
@@ -638,7 +642,8 @@ public final class TenantServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Tenant>
         getTenant(com.google.cloud.talent.v4beta1.GetTenantRequest request) {
-      return futureUnaryCall(getChannel().newCall(getGetTenantMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetTenantMethod(), getCallOptions()), request);
     }
 
     /**
@@ -651,7 +656,7 @@ public final class TenantServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Tenant>
         updateTenant(com.google.cloud.talent.v4beta1.UpdateTenantRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateTenantMethod(), getCallOptions()), request);
     }
 
@@ -664,7 +669,7 @@ public final class TenantServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteTenant(com.google.cloud.talent.v4beta1.DeleteTenantRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteTenantMethod(), getCallOptions()), request);
     }
 
@@ -678,7 +683,7 @@ public final class TenantServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.ListTenantsResponse>
         listTenants(com.google.cloud.talent.v4beta1.ListTenantsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListTenantsMethod(), getCallOptions()), request);
     }
   }

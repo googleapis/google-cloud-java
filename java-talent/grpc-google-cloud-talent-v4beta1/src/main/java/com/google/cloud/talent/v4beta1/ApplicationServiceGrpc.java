@@ -16,11 +16,6 @@
 package com.google.cloud.talent.v4beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -333,7 +328,8 @@ public final class ApplicationServiceGrpc {
     public void createApplication(
         com.google.cloud.talent.v4beta1.CreateApplicationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Application> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateApplicationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateApplicationMethod(), responseObserver);
     }
 
     /**
@@ -346,7 +342,8 @@ public final class ApplicationServiceGrpc {
     public void getApplication(
         com.google.cloud.talent.v4beta1.GetApplicationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Application> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetApplicationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetApplicationMethod(), responseObserver);
     }
 
     /**
@@ -359,7 +356,8 @@ public final class ApplicationServiceGrpc {
     public void updateApplication(
         com.google.cloud.talent.v4beta1.UpdateApplicationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Application> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateApplicationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateApplicationMethod(), responseObserver);
     }
 
     /**
@@ -372,7 +370,8 @@ public final class ApplicationServiceGrpc {
     public void deleteApplication(
         com.google.cloud.talent.v4beta1.DeleteApplicationRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteApplicationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteApplicationMethod(), responseObserver);
     }
 
     /**
@@ -386,7 +385,8 @@ public final class ApplicationServiceGrpc {
         com.google.cloud.talent.v4beta1.ListApplicationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListApplicationsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListApplicationsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListApplicationsMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -394,33 +394,33 @@ public final class ApplicationServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreateApplicationMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.CreateApplicationRequest,
                       com.google.cloud.talent.v4beta1.Application>(
                       this, METHODID_CREATE_APPLICATION)))
           .addMethod(
               getGetApplicationMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.GetApplicationRequest,
                       com.google.cloud.talent.v4beta1.Application>(this, METHODID_GET_APPLICATION)))
           .addMethod(
               getUpdateApplicationMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.UpdateApplicationRequest,
                       com.google.cloud.talent.v4beta1.Application>(
                       this, METHODID_UPDATE_APPLICATION)))
           .addMethod(
               getDeleteApplicationMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.DeleteApplicationRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_APPLICATION)))
           .addMethod(
               getListApplicationsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.talent.v4beta1.ListApplicationsRequest,
                       com.google.cloud.talent.v4beta1.ListApplicationsResponse>(
@@ -459,7 +459,7 @@ public final class ApplicationServiceGrpc {
     public void createApplication(
         com.google.cloud.talent.v4beta1.CreateApplicationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Application> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateApplicationMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -475,7 +475,7 @@ public final class ApplicationServiceGrpc {
     public void getApplication(
         com.google.cloud.talent.v4beta1.GetApplicationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Application> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetApplicationMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -491,7 +491,7 @@ public final class ApplicationServiceGrpc {
     public void updateApplication(
         com.google.cloud.talent.v4beta1.UpdateApplicationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.Application> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateApplicationMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -507,7 +507,7 @@ public final class ApplicationServiceGrpc {
     public void deleteApplication(
         com.google.cloud.talent.v4beta1.DeleteApplicationRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteApplicationMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -524,7 +524,7 @@ public final class ApplicationServiceGrpc {
         com.google.cloud.talent.v4beta1.ListApplicationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.ListApplicationsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListApplicationsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -561,7 +561,7 @@ public final class ApplicationServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.Application createApplication(
         com.google.cloud.talent.v4beta1.CreateApplicationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateApplicationMethod(), getCallOptions(), request);
     }
 
@@ -574,7 +574,8 @@ public final class ApplicationServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.Application getApplication(
         com.google.cloud.talent.v4beta1.GetApplicationRequest request) {
-      return blockingUnaryCall(getChannel(), getGetApplicationMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetApplicationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -586,7 +587,7 @@ public final class ApplicationServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.Application updateApplication(
         com.google.cloud.talent.v4beta1.UpdateApplicationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateApplicationMethod(), getCallOptions(), request);
     }
 
@@ -599,7 +600,7 @@ public final class ApplicationServiceGrpc {
      */
     public com.google.protobuf.Empty deleteApplication(
         com.google.cloud.talent.v4beta1.DeleteApplicationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteApplicationMethod(), getCallOptions(), request);
     }
 
@@ -612,7 +613,7 @@ public final class ApplicationServiceGrpc {
      */
     public com.google.cloud.talent.v4beta1.ListApplicationsResponse listApplications(
         com.google.cloud.talent.v4beta1.ListApplicationsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListApplicationsMethod(), getCallOptions(), request);
     }
   }
@@ -647,7 +648,7 @@ public final class ApplicationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Application>
         createApplication(com.google.cloud.talent.v4beta1.CreateApplicationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateApplicationMethod(), getCallOptions()), request);
     }
 
@@ -661,7 +662,7 @@ public final class ApplicationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Application>
         getApplication(com.google.cloud.talent.v4beta1.GetApplicationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetApplicationMethod(), getCallOptions()), request);
     }
 
@@ -675,7 +676,7 @@ public final class ApplicationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.Application>
         updateApplication(com.google.cloud.talent.v4beta1.UpdateApplicationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateApplicationMethod(), getCallOptions()), request);
     }
 
@@ -688,7 +689,7 @@ public final class ApplicationServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteApplication(com.google.cloud.talent.v4beta1.DeleteApplicationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteApplicationMethod(), getCallOptions()), request);
     }
 
@@ -702,7 +703,7 @@ public final class ApplicationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.talent.v4beta1.ListApplicationsResponse>
         listApplications(com.google.cloud.talent.v4beta1.ListApplicationsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListApplicationsMethod(), getCallOptions()), request);
     }
   }
