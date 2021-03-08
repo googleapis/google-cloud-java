@@ -16,11 +16,6 @@
 package com.google.cloud.dialogflow.cx.v3;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -362,7 +357,8 @@ public final class VersionsGrpc {
         com.google.cloud.dialogflow.cx.v3.ListVersionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListVersionsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListVersionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListVersionsMethod(), responseObserver);
     }
 
     /**
@@ -375,7 +371,7 @@ public final class VersionsGrpc {
     public void getVersion(
         com.google.cloud.dialogflow.cx.v3.GetVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Version> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetVersionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetVersionMethod(), responseObserver);
     }
 
     /**
@@ -388,7 +384,8 @@ public final class VersionsGrpc {
     public void createVersion(
         com.google.cloud.dialogflow.cx.v3.CreateVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateVersionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateVersionMethod(), responseObserver);
     }
 
     /**
@@ -401,7 +398,8 @@ public final class VersionsGrpc {
     public void updateVersion(
         com.google.cloud.dialogflow.cx.v3.UpdateVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Version> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateVersionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateVersionMethod(), responseObserver);
     }
 
     /**
@@ -414,7 +412,8 @@ public final class VersionsGrpc {
     public void deleteVersion(
         com.google.cloud.dialogflow.cx.v3.DeleteVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteVersionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteVersionMethod(), responseObserver);
     }
 
     /**
@@ -427,7 +426,8 @@ public final class VersionsGrpc {
     public void loadVersion(
         com.google.cloud.dialogflow.cx.v3.LoadVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getLoadVersionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getLoadVersionMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -435,38 +435,38 @@ public final class VersionsGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListVersionsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.ListVersionsRequest,
                       com.google.cloud.dialogflow.cx.v3.ListVersionsResponse>(
                       this, METHODID_LIST_VERSIONS)))
           .addMethod(
               getGetVersionMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.GetVersionRequest,
                       com.google.cloud.dialogflow.cx.v3.Version>(this, METHODID_GET_VERSION)))
           .addMethod(
               getCreateVersionMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.CreateVersionRequest,
                       com.google.longrunning.Operation>(this, METHODID_CREATE_VERSION)))
           .addMethod(
               getUpdateVersionMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.UpdateVersionRequest,
                       com.google.cloud.dialogflow.cx.v3.Version>(this, METHODID_UPDATE_VERSION)))
           .addMethod(
               getDeleteVersionMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.DeleteVersionRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_VERSION)))
           .addMethod(
               getLoadVersionMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.LoadVersionRequest,
                       com.google.longrunning.Operation>(this, METHODID_LOAD_VERSION)))
@@ -502,7 +502,7 @@ public final class VersionsGrpc {
         com.google.cloud.dialogflow.cx.v3.ListVersionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListVersionsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListVersionsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -518,7 +518,7 @@ public final class VersionsGrpc {
     public void getVersion(
         com.google.cloud.dialogflow.cx.v3.GetVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Version> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetVersionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -532,7 +532,7 @@ public final class VersionsGrpc {
     public void createVersion(
         com.google.cloud.dialogflow.cx.v3.CreateVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateVersionMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -548,7 +548,7 @@ public final class VersionsGrpc {
     public void updateVersion(
         com.google.cloud.dialogflow.cx.v3.UpdateVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Version> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateVersionMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -564,7 +564,7 @@ public final class VersionsGrpc {
     public void deleteVersion(
         com.google.cloud.dialogflow.cx.v3.DeleteVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteVersionMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -580,7 +580,7 @@ public final class VersionsGrpc {
     public void loadVersion(
         com.google.cloud.dialogflow.cx.v3.LoadVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getLoadVersionMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -614,7 +614,8 @@ public final class VersionsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.ListVersionsResponse listVersions(
         com.google.cloud.dialogflow.cx.v3.ListVersionsRequest request) {
-      return blockingUnaryCall(getChannel(), getListVersionsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVersionsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -626,7 +627,8 @@ public final class VersionsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.Version getVersion(
         com.google.cloud.dialogflow.cx.v3.GetVersionRequest request) {
-      return blockingUnaryCall(getChannel(), getGetVersionMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVersionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -638,7 +640,8 @@ public final class VersionsGrpc {
      */
     public com.google.longrunning.Operation createVersion(
         com.google.cloud.dialogflow.cx.v3.CreateVersionRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateVersionMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateVersionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -650,7 +653,8 @@ public final class VersionsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.Version updateVersion(
         com.google.cloud.dialogflow.cx.v3.UpdateVersionRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateVersionMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateVersionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -662,7 +666,8 @@ public final class VersionsGrpc {
      */
     public com.google.protobuf.Empty deleteVersion(
         com.google.cloud.dialogflow.cx.v3.DeleteVersionRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteVersionMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteVersionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -674,7 +679,8 @@ public final class VersionsGrpc {
      */
     public com.google.longrunning.Operation loadVersion(
         com.google.cloud.dialogflow.cx.v3.LoadVersionRequest request) {
-      return blockingUnaryCall(getChannel(), getLoadVersionMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLoadVersionMethod(), getCallOptions(), request);
     }
   }
 
@@ -706,7 +712,7 @@ public final class VersionsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.ListVersionsResponse>
         listVersions(com.google.cloud.dialogflow.cx.v3.ListVersionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListVersionsMethod(), getCallOptions()), request);
     }
 
@@ -720,7 +726,7 @@ public final class VersionsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Version>
         getVersion(com.google.cloud.dialogflow.cx.v3.GetVersionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetVersionMethod(), getCallOptions()), request);
     }
 
@@ -733,7 +739,7 @@ public final class VersionsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createVersion(com.google.cloud.dialogflow.cx.v3.CreateVersionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateVersionMethod(), getCallOptions()), request);
     }
 
@@ -747,7 +753,7 @@ public final class VersionsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Version>
         updateVersion(com.google.cloud.dialogflow.cx.v3.UpdateVersionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateVersionMethod(), getCallOptions()), request);
     }
 
@@ -760,7 +766,7 @@ public final class VersionsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteVersion(com.google.cloud.dialogflow.cx.v3.DeleteVersionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteVersionMethod(), getCallOptions()), request);
     }
 
@@ -773,7 +779,7 @@ public final class VersionsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         loadVersion(com.google.cloud.dialogflow.cx.v3.LoadVersionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getLoadVersionMethod(), getCallOptions()), request);
     }
   }

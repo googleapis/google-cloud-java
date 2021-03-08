@@ -16,11 +16,6 @@
 package com.google.cloud.dialogflow.cx.v3;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -319,7 +314,7 @@ public final class PagesGrpc {
         com.google.cloud.dialogflow.cx.v3.ListPagesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListPagesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListPagesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPagesMethod(), responseObserver);
     }
 
     /**
@@ -332,7 +327,7 @@ public final class PagesGrpc {
     public void getPage(
         com.google.cloud.dialogflow.cx.v3.GetPageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Page> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetPageMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPageMethod(), responseObserver);
     }
 
     /**
@@ -345,7 +340,7 @@ public final class PagesGrpc {
     public void createPage(
         com.google.cloud.dialogflow.cx.v3.CreatePageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Page> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreatePageMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreatePageMethod(), responseObserver);
     }
 
     /**
@@ -358,7 +353,7 @@ public final class PagesGrpc {
     public void updatePage(
         com.google.cloud.dialogflow.cx.v3.UpdatePageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Page> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdatePageMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdatePageMethod(), responseObserver);
     }
 
     /**
@@ -371,7 +366,7 @@ public final class PagesGrpc {
     public void deletePage(
         com.google.cloud.dialogflow.cx.v3.DeletePageRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeletePageMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeletePageMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -379,32 +374,32 @@ public final class PagesGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListPagesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.ListPagesRequest,
                       com.google.cloud.dialogflow.cx.v3.ListPagesResponse>(
                       this, METHODID_LIST_PAGES)))
           .addMethod(
               getGetPageMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.GetPageRequest,
                       com.google.cloud.dialogflow.cx.v3.Page>(this, METHODID_GET_PAGE)))
           .addMethod(
               getCreatePageMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.CreatePageRequest,
                       com.google.cloud.dialogflow.cx.v3.Page>(this, METHODID_CREATE_PAGE)))
           .addMethod(
               getUpdatePageMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.UpdatePageRequest,
                       com.google.cloud.dialogflow.cx.v3.Page>(this, METHODID_UPDATE_PAGE)))
           .addMethod(
               getDeletePageMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.DeletePageRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_PAGE)))
@@ -440,7 +435,7 @@ public final class PagesGrpc {
         com.google.cloud.dialogflow.cx.v3.ListPagesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListPagesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListPagesMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -454,7 +449,7 @@ public final class PagesGrpc {
     public void getPage(
         com.google.cloud.dialogflow.cx.v3.GetPageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Page> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPageMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -468,7 +463,7 @@ public final class PagesGrpc {
     public void createPage(
         com.google.cloud.dialogflow.cx.v3.CreatePageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Page> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreatePageMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -482,7 +477,7 @@ public final class PagesGrpc {
     public void updatePage(
         com.google.cloud.dialogflow.cx.v3.UpdatePageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Page> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdatePageMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -496,7 +491,7 @@ public final class PagesGrpc {
     public void deletePage(
         com.google.cloud.dialogflow.cx.v3.DeletePageRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeletePageMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -528,7 +523,8 @@ public final class PagesGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.ListPagesResponse listPages(
         com.google.cloud.dialogflow.cx.v3.ListPagesRequest request) {
-      return blockingUnaryCall(getChannel(), getListPagesMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPagesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -540,7 +536,8 @@ public final class PagesGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.Page getPage(
         com.google.cloud.dialogflow.cx.v3.GetPageRequest request) {
-      return blockingUnaryCall(getChannel(), getGetPageMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPageMethod(), getCallOptions(), request);
     }
 
     /**
@@ -552,7 +549,8 @@ public final class PagesGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.Page createPage(
         com.google.cloud.dialogflow.cx.v3.CreatePageRequest request) {
-      return blockingUnaryCall(getChannel(), getCreatePageMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePageMethod(), getCallOptions(), request);
     }
 
     /**
@@ -564,7 +562,8 @@ public final class PagesGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.Page updatePage(
         com.google.cloud.dialogflow.cx.v3.UpdatePageRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdatePageMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePageMethod(), getCallOptions(), request);
     }
 
     /**
@@ -576,7 +575,8 @@ public final class PagesGrpc {
      */
     public com.google.protobuf.Empty deletePage(
         com.google.cloud.dialogflow.cx.v3.DeletePageRequest request) {
-      return blockingUnaryCall(getChannel(), getDeletePageMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePageMethod(), getCallOptions(), request);
     }
   }
 
@@ -608,7 +608,8 @@ public final class PagesGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.ListPagesResponse>
         listPages(com.google.cloud.dialogflow.cx.v3.ListPagesRequest request) {
-      return futureUnaryCall(getChannel().newCall(getListPagesMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPagesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -621,7 +622,8 @@ public final class PagesGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Page>
         getPage(com.google.cloud.dialogflow.cx.v3.GetPageRequest request) {
-      return futureUnaryCall(getChannel().newCall(getGetPageMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPageMethod(), getCallOptions()), request);
     }
 
     /**
@@ -634,7 +636,7 @@ public final class PagesGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Page>
         createPage(com.google.cloud.dialogflow.cx.v3.CreatePageRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreatePageMethod(), getCallOptions()), request);
     }
 
@@ -648,7 +650,7 @@ public final class PagesGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Page>
         updatePage(com.google.cloud.dialogflow.cx.v3.UpdatePageRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdatePageMethod(), getCallOptions()), request);
     }
 
@@ -661,7 +663,7 @@ public final class PagesGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deletePage(
         com.google.cloud.dialogflow.cx.v3.DeletePageRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeletePageMethod(), getCallOptions()), request);
     }
   }

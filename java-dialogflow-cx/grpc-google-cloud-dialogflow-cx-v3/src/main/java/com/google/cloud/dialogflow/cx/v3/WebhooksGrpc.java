@@ -16,11 +16,6 @@
 package com.google.cloud.dialogflow.cx.v3;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -322,7 +317,8 @@ public final class WebhooksGrpc {
         com.google.cloud.dialogflow.cx.v3.ListWebhooksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListWebhooksResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListWebhooksMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListWebhooksMethod(), responseObserver);
     }
 
     /**
@@ -335,7 +331,7 @@ public final class WebhooksGrpc {
     public void getWebhook(
         com.google.cloud.dialogflow.cx.v3.GetWebhookRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Webhook> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetWebhookMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetWebhookMethod(), responseObserver);
     }
 
     /**
@@ -348,7 +344,8 @@ public final class WebhooksGrpc {
     public void createWebhook(
         com.google.cloud.dialogflow.cx.v3.CreateWebhookRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Webhook> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateWebhookMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateWebhookMethod(), responseObserver);
     }
 
     /**
@@ -361,7 +358,8 @@ public final class WebhooksGrpc {
     public void updateWebhook(
         com.google.cloud.dialogflow.cx.v3.UpdateWebhookRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Webhook> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateWebhookMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateWebhookMethod(), responseObserver);
     }
 
     /**
@@ -374,7 +372,8 @@ public final class WebhooksGrpc {
     public void deleteWebhook(
         com.google.cloud.dialogflow.cx.v3.DeleteWebhookRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteWebhookMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteWebhookMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -382,32 +381,32 @@ public final class WebhooksGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListWebhooksMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.ListWebhooksRequest,
                       com.google.cloud.dialogflow.cx.v3.ListWebhooksResponse>(
                       this, METHODID_LIST_WEBHOOKS)))
           .addMethod(
               getGetWebhookMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.GetWebhookRequest,
                       com.google.cloud.dialogflow.cx.v3.Webhook>(this, METHODID_GET_WEBHOOK)))
           .addMethod(
               getCreateWebhookMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.CreateWebhookRequest,
                       com.google.cloud.dialogflow.cx.v3.Webhook>(this, METHODID_CREATE_WEBHOOK)))
           .addMethod(
               getUpdateWebhookMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.UpdateWebhookRequest,
                       com.google.cloud.dialogflow.cx.v3.Webhook>(this, METHODID_UPDATE_WEBHOOK)))
           .addMethod(
               getDeleteWebhookMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.DeleteWebhookRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_WEBHOOK)))
@@ -443,7 +442,7 @@ public final class WebhooksGrpc {
         com.google.cloud.dialogflow.cx.v3.ListWebhooksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListWebhooksResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListWebhooksMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -459,7 +458,7 @@ public final class WebhooksGrpc {
     public void getWebhook(
         com.google.cloud.dialogflow.cx.v3.GetWebhookRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Webhook> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetWebhookMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -473,7 +472,7 @@ public final class WebhooksGrpc {
     public void createWebhook(
         com.google.cloud.dialogflow.cx.v3.CreateWebhookRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Webhook> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateWebhookMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -489,7 +488,7 @@ public final class WebhooksGrpc {
     public void updateWebhook(
         com.google.cloud.dialogflow.cx.v3.UpdateWebhookRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Webhook> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateWebhookMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -505,7 +504,7 @@ public final class WebhooksGrpc {
     public void deleteWebhook(
         com.google.cloud.dialogflow.cx.v3.DeleteWebhookRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteWebhookMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -539,7 +538,8 @@ public final class WebhooksGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.ListWebhooksResponse listWebhooks(
         com.google.cloud.dialogflow.cx.v3.ListWebhooksRequest request) {
-      return blockingUnaryCall(getChannel(), getListWebhooksMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListWebhooksMethod(), getCallOptions(), request);
     }
 
     /**
@@ -551,7 +551,8 @@ public final class WebhooksGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.Webhook getWebhook(
         com.google.cloud.dialogflow.cx.v3.GetWebhookRequest request) {
-      return blockingUnaryCall(getChannel(), getGetWebhookMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetWebhookMethod(), getCallOptions(), request);
     }
 
     /**
@@ -563,7 +564,8 @@ public final class WebhooksGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.Webhook createWebhook(
         com.google.cloud.dialogflow.cx.v3.CreateWebhookRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateWebhookMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateWebhookMethod(), getCallOptions(), request);
     }
 
     /**
@@ -575,7 +577,8 @@ public final class WebhooksGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.Webhook updateWebhook(
         com.google.cloud.dialogflow.cx.v3.UpdateWebhookRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateWebhookMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateWebhookMethod(), getCallOptions(), request);
     }
 
     /**
@@ -587,7 +590,8 @@ public final class WebhooksGrpc {
      */
     public com.google.protobuf.Empty deleteWebhook(
         com.google.cloud.dialogflow.cx.v3.DeleteWebhookRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteWebhookMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteWebhookMethod(), getCallOptions(), request);
     }
   }
 
@@ -619,7 +623,7 @@ public final class WebhooksGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.ListWebhooksResponse>
         listWebhooks(com.google.cloud.dialogflow.cx.v3.ListWebhooksRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListWebhooksMethod(), getCallOptions()), request);
     }
 
@@ -633,7 +637,7 @@ public final class WebhooksGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Webhook>
         getWebhook(com.google.cloud.dialogflow.cx.v3.GetWebhookRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetWebhookMethod(), getCallOptions()), request);
     }
 
@@ -647,7 +651,7 @@ public final class WebhooksGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Webhook>
         createWebhook(com.google.cloud.dialogflow.cx.v3.CreateWebhookRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateWebhookMethod(), getCallOptions()), request);
     }
 
@@ -661,7 +665,7 @@ public final class WebhooksGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Webhook>
         updateWebhook(com.google.cloud.dialogflow.cx.v3.UpdateWebhookRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateWebhookMethod(), getCallOptions()), request);
     }
 
@@ -674,7 +678,7 @@ public final class WebhooksGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteWebhook(com.google.cloud.dialogflow.cx.v3.DeleteWebhookRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteWebhookMethod(), getCallOptions()), request);
     }
   }

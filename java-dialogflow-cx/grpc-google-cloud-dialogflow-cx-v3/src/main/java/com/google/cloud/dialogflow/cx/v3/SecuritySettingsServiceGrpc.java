@@ -16,11 +16,6 @@
 package com.google.cloud.dialogflow.cx.v3;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -362,7 +357,8 @@ public final class SecuritySettingsServiceGrpc {
         com.google.cloud.dialogflow.cx.v3.CreateSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.SecuritySettings>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateSecuritySettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateSecuritySettingsMethod(), responseObserver);
     }
 
     /**
@@ -377,7 +373,8 @@ public final class SecuritySettingsServiceGrpc {
         com.google.cloud.dialogflow.cx.v3.GetSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.SecuritySettings>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetSecuritySettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSecuritySettingsMethod(), responseObserver);
     }
 
     /**
@@ -391,7 +388,8 @@ public final class SecuritySettingsServiceGrpc {
         com.google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.SecuritySettings>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateSecuritySettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSecuritySettingsMethod(), responseObserver);
     }
 
     /**
@@ -405,7 +403,8 @@ public final class SecuritySettingsServiceGrpc {
         com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListSecuritySettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSecuritySettingsMethod(), responseObserver);
     }
 
     /**
@@ -418,7 +417,8 @@ public final class SecuritySettingsServiceGrpc {
     public void deleteSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.DeleteSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteSecuritySettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteSecuritySettingsMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -426,35 +426,35 @@ public final class SecuritySettingsServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreateSecuritySettingsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.CreateSecuritySettingsRequest,
                       com.google.cloud.dialogflow.cx.v3.SecuritySettings>(
                       this, METHODID_CREATE_SECURITY_SETTINGS)))
           .addMethod(
               getGetSecuritySettingsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.GetSecuritySettingsRequest,
                       com.google.cloud.dialogflow.cx.v3.SecuritySettings>(
                       this, METHODID_GET_SECURITY_SETTINGS)))
           .addMethod(
               getUpdateSecuritySettingsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest,
                       com.google.cloud.dialogflow.cx.v3.SecuritySettings>(
                       this, METHODID_UPDATE_SECURITY_SETTINGS)))
           .addMethod(
               getListSecuritySettingsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsRequest,
                       com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsResponse>(
                       this, METHODID_LIST_SECURITY_SETTINGS)))
           .addMethod(
               getDeleteSecuritySettingsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.DeleteSecuritySettingsRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_SECURITY_SETTINGS)))
@@ -492,7 +492,7 @@ public final class SecuritySettingsServiceGrpc {
         com.google.cloud.dialogflow.cx.v3.CreateSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.SecuritySettings>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateSecuritySettingsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -510,7 +510,7 @@ public final class SecuritySettingsServiceGrpc {
         com.google.cloud.dialogflow.cx.v3.GetSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.SecuritySettings>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetSecuritySettingsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -527,7 +527,7 @@ public final class SecuritySettingsServiceGrpc {
         com.google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.SecuritySettings>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateSecuritySettingsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -544,7 +544,7 @@ public final class SecuritySettingsServiceGrpc {
         com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListSecuritySettingsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -560,7 +560,7 @@ public final class SecuritySettingsServiceGrpc {
     public void deleteSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.DeleteSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteSecuritySettingsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -596,7 +596,7 @@ public final class SecuritySettingsServiceGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.SecuritySettings createSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.CreateSecuritySettingsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateSecuritySettingsMethod(), getCallOptions(), request);
     }
 
@@ -610,7 +610,7 @@ public final class SecuritySettingsServiceGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.SecuritySettings getSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.GetSecuritySettingsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetSecuritySettingsMethod(), getCallOptions(), request);
     }
 
@@ -623,7 +623,7 @@ public final class SecuritySettingsServiceGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.SecuritySettings updateSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateSecuritySettingsMethod(), getCallOptions(), request);
     }
 
@@ -636,7 +636,7 @@ public final class SecuritySettingsServiceGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsResponse listSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListSecuritySettingsMethod(), getCallOptions(), request);
     }
 
@@ -649,7 +649,7 @@ public final class SecuritySettingsServiceGrpc {
      */
     public com.google.protobuf.Empty deleteSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.DeleteSecuritySettingsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteSecuritySettingsMethod(), getCallOptions(), request);
     }
   }
@@ -685,7 +685,7 @@ public final class SecuritySettingsServiceGrpc {
             com.google.cloud.dialogflow.cx.v3.SecuritySettings>
         createSecuritySettings(
             com.google.cloud.dialogflow.cx.v3.CreateSecuritySettingsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateSecuritySettingsMethod(), getCallOptions()), request);
     }
 
@@ -700,7 +700,7 @@ public final class SecuritySettingsServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.SecuritySettings>
         getSecuritySettings(com.google.cloud.dialogflow.cx.v3.GetSecuritySettingsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetSecuritySettingsMethod(), getCallOptions()), request);
     }
 
@@ -715,7 +715,7 @@ public final class SecuritySettingsServiceGrpc {
             com.google.cloud.dialogflow.cx.v3.SecuritySettings>
         updateSecuritySettings(
             com.google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateSecuritySettingsMethod(), getCallOptions()), request);
     }
 
@@ -730,7 +730,7 @@ public final class SecuritySettingsServiceGrpc {
             com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsResponse>
         listSecuritySettings(
             com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListSecuritySettingsMethod(), getCallOptions()), request);
     }
 
@@ -744,7 +744,7 @@ public final class SecuritySettingsServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteSecuritySettings(
             com.google.cloud.dialogflow.cx.v3.DeleteSecuritySettingsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteSecuritySettingsMethod(), getCallOptions()), request);
     }
   }

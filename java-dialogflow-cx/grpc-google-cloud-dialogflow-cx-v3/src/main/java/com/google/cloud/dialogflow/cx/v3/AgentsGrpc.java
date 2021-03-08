@@ -16,11 +16,6 @@
 package com.google.cloud.dialogflow.cx.v3;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -502,7 +497,7 @@ public final class AgentsGrpc {
         com.google.cloud.dialogflow.cx.v3.ListAgentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListAgentsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListAgentsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAgentsMethod(), responseObserver);
     }
 
     /**
@@ -515,7 +510,7 @@ public final class AgentsGrpc {
     public void getAgent(
         com.google.cloud.dialogflow.cx.v3.GetAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Agent> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetAgentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAgentMethod(), responseObserver);
     }
 
     /**
@@ -528,7 +523,8 @@ public final class AgentsGrpc {
     public void createAgent(
         com.google.cloud.dialogflow.cx.v3.CreateAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Agent> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateAgentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAgentMethod(), responseObserver);
     }
 
     /**
@@ -541,7 +537,8 @@ public final class AgentsGrpc {
     public void updateAgent(
         com.google.cloud.dialogflow.cx.v3.UpdateAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Agent> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateAgentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAgentMethod(), responseObserver);
     }
 
     /**
@@ -554,7 +551,8 @@ public final class AgentsGrpc {
     public void deleteAgent(
         com.google.cloud.dialogflow.cx.v3.DeleteAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteAgentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAgentMethod(), responseObserver);
     }
 
     /**
@@ -567,7 +565,8 @@ public final class AgentsGrpc {
     public void exportAgent(
         com.google.cloud.dialogflow.cx.v3.ExportAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getExportAgentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportAgentMethod(), responseObserver);
     }
 
     /**
@@ -582,7 +581,8 @@ public final class AgentsGrpc {
     public void restoreAgent(
         com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getRestoreAgentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRestoreAgentMethod(), responseObserver);
     }
 
     /**
@@ -598,7 +598,8 @@ public final class AgentsGrpc {
         com.google.cloud.dialogflow.cx.v3.ValidateAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.AgentValidationResult>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getValidateAgentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getValidateAgentMethod(), responseObserver);
     }
 
     /**
@@ -613,7 +614,8 @@ public final class AgentsGrpc {
         com.google.cloud.dialogflow.cx.v3.GetAgentValidationResultRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.AgentValidationResult>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetAgentValidationResultMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAgentValidationResultMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -621,57 +623,57 @@ public final class AgentsGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListAgentsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.ListAgentsRequest,
                       com.google.cloud.dialogflow.cx.v3.ListAgentsResponse>(
                       this, METHODID_LIST_AGENTS)))
           .addMethod(
               getGetAgentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.GetAgentRequest,
                       com.google.cloud.dialogflow.cx.v3.Agent>(this, METHODID_GET_AGENT)))
           .addMethod(
               getCreateAgentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.CreateAgentRequest,
                       com.google.cloud.dialogflow.cx.v3.Agent>(this, METHODID_CREATE_AGENT)))
           .addMethod(
               getUpdateAgentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.UpdateAgentRequest,
                       com.google.cloud.dialogflow.cx.v3.Agent>(this, METHODID_UPDATE_AGENT)))
           .addMethod(
               getDeleteAgentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.DeleteAgentRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_AGENT)))
           .addMethod(
               getExportAgentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.ExportAgentRequest,
                       com.google.longrunning.Operation>(this, METHODID_EXPORT_AGENT)))
           .addMethod(
               getRestoreAgentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest,
                       com.google.longrunning.Operation>(this, METHODID_RESTORE_AGENT)))
           .addMethod(
               getValidateAgentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.ValidateAgentRequest,
                       com.google.cloud.dialogflow.cx.v3.AgentValidationResult>(
                       this, METHODID_VALIDATE_AGENT)))
           .addMethod(
               getGetAgentValidationResultMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.GetAgentValidationResultRequest,
                       com.google.cloud.dialogflow.cx.v3.AgentValidationResult>(
@@ -708,7 +710,7 @@ public final class AgentsGrpc {
         com.google.cloud.dialogflow.cx.v3.ListAgentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListAgentsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListAgentsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -722,7 +724,7 @@ public final class AgentsGrpc {
     public void getAgent(
         com.google.cloud.dialogflow.cx.v3.GetAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Agent> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAgentMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -736,7 +738,7 @@ public final class AgentsGrpc {
     public void createAgent(
         com.google.cloud.dialogflow.cx.v3.CreateAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Agent> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateAgentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -752,7 +754,7 @@ public final class AgentsGrpc {
     public void updateAgent(
         com.google.cloud.dialogflow.cx.v3.UpdateAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Agent> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateAgentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -768,7 +770,7 @@ public final class AgentsGrpc {
     public void deleteAgent(
         com.google.cloud.dialogflow.cx.v3.DeleteAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteAgentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -784,7 +786,7 @@ public final class AgentsGrpc {
     public void exportAgent(
         com.google.cloud.dialogflow.cx.v3.ExportAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getExportAgentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -802,7 +804,7 @@ public final class AgentsGrpc {
     public void restoreAgent(
         com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRestoreAgentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -821,7 +823,7 @@ public final class AgentsGrpc {
         com.google.cloud.dialogflow.cx.v3.ValidateAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.AgentValidationResult>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getValidateAgentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -839,7 +841,7 @@ public final class AgentsGrpc {
         com.google.cloud.dialogflow.cx.v3.GetAgentValidationResultRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.AgentValidationResult>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAgentValidationResultMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -873,7 +875,8 @@ public final class AgentsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.ListAgentsResponse listAgents(
         com.google.cloud.dialogflow.cx.v3.ListAgentsRequest request) {
-      return blockingUnaryCall(getChannel(), getListAgentsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAgentsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -885,7 +888,8 @@ public final class AgentsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.Agent getAgent(
         com.google.cloud.dialogflow.cx.v3.GetAgentRequest request) {
-      return blockingUnaryCall(getChannel(), getGetAgentMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAgentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -897,7 +901,8 @@ public final class AgentsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.Agent createAgent(
         com.google.cloud.dialogflow.cx.v3.CreateAgentRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateAgentMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAgentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -909,7 +914,8 @@ public final class AgentsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.Agent updateAgent(
         com.google.cloud.dialogflow.cx.v3.UpdateAgentRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateAgentMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAgentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -921,7 +927,8 @@ public final class AgentsGrpc {
      */
     public com.google.protobuf.Empty deleteAgent(
         com.google.cloud.dialogflow.cx.v3.DeleteAgentRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteAgentMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAgentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -933,7 +940,8 @@ public final class AgentsGrpc {
      */
     public com.google.longrunning.Operation exportAgent(
         com.google.cloud.dialogflow.cx.v3.ExportAgentRequest request) {
-      return blockingUnaryCall(getChannel(), getExportAgentMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportAgentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -947,7 +955,8 @@ public final class AgentsGrpc {
      */
     public com.google.longrunning.Operation restoreAgent(
         com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest request) {
-      return blockingUnaryCall(getChannel(), getRestoreAgentMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestoreAgentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -961,7 +970,8 @@ public final class AgentsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.AgentValidationResult validateAgent(
         com.google.cloud.dialogflow.cx.v3.ValidateAgentRequest request) {
-      return blockingUnaryCall(getChannel(), getValidateAgentMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getValidateAgentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -974,7 +984,7 @@ public final class AgentsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.AgentValidationResult getAgentValidationResult(
         com.google.cloud.dialogflow.cx.v3.GetAgentValidationResultRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAgentValidationResultMethod(), getCallOptions(), request);
     }
   }
@@ -1007,7 +1017,7 @@ public final class AgentsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.ListAgentsResponse>
         listAgents(com.google.cloud.dialogflow.cx.v3.ListAgentsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListAgentsMethod(), getCallOptions()), request);
     }
 
@@ -1021,7 +1031,8 @@ public final class AgentsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Agent>
         getAgent(com.google.cloud.dialogflow.cx.v3.GetAgentRequest request) {
-      return futureUnaryCall(getChannel().newCall(getGetAgentMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAgentMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1034,7 +1045,7 @@ public final class AgentsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Agent>
         createAgent(com.google.cloud.dialogflow.cx.v3.CreateAgentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateAgentMethod(), getCallOptions()), request);
     }
 
@@ -1048,7 +1059,7 @@ public final class AgentsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Agent>
         updateAgent(com.google.cloud.dialogflow.cx.v3.UpdateAgentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateAgentMethod(), getCallOptions()), request);
     }
 
@@ -1061,7 +1072,7 @@ public final class AgentsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteAgent(com.google.cloud.dialogflow.cx.v3.DeleteAgentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteAgentMethod(), getCallOptions()), request);
     }
 
@@ -1074,7 +1085,7 @@ public final class AgentsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         exportAgent(com.google.cloud.dialogflow.cx.v3.ExportAgentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getExportAgentMethod(), getCallOptions()), request);
     }
 
@@ -1089,7 +1100,7 @@ public final class AgentsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         restoreAgent(com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRestoreAgentMethod(), getCallOptions()), request);
     }
 
@@ -1105,7 +1116,7 @@ public final class AgentsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.AgentValidationResult>
         validateAgent(com.google.cloud.dialogflow.cx.v3.ValidateAgentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getValidateAgentMethod(), getCallOptions()), request);
     }
 
@@ -1121,7 +1132,7 @@ public final class AgentsGrpc {
             com.google.cloud.dialogflow.cx.v3.AgentValidationResult>
         getAgentValidationResult(
             com.google.cloud.dialogflow.cx.v3.GetAgentValidationResultRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAgentValidationResultMethod(), getCallOptions()), request);
     }
   }

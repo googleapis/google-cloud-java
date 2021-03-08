@@ -16,11 +16,6 @@
 package com.google.cloud.dialogflow.cx.v3;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -378,7 +373,8 @@ public final class EnvironmentsGrpc {
         com.google.cloud.dialogflow.cx.v3.ListEnvironmentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListEnvironmentsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListEnvironmentsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListEnvironmentsMethod(), responseObserver);
     }
 
     /**
@@ -392,7 +388,8 @@ public final class EnvironmentsGrpc {
         com.google.cloud.dialogflow.cx.v3.GetEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Environment>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetEnvironmentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetEnvironmentMethod(), responseObserver);
     }
 
     /**
@@ -405,7 +402,8 @@ public final class EnvironmentsGrpc {
     public void createEnvironment(
         com.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateEnvironmentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateEnvironmentMethod(), responseObserver);
     }
 
     /**
@@ -418,7 +416,8 @@ public final class EnvironmentsGrpc {
     public void updateEnvironment(
         com.google.cloud.dialogflow.cx.v3.UpdateEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateEnvironmentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateEnvironmentMethod(), responseObserver);
     }
 
     /**
@@ -431,7 +430,8 @@ public final class EnvironmentsGrpc {
     public void deleteEnvironment(
         com.google.cloud.dialogflow.cx.v3.DeleteEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteEnvironmentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteEnvironmentMethod(), responseObserver);
     }
 
     /**
@@ -446,7 +446,8 @@ public final class EnvironmentsGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getLookupEnvironmentHistoryMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getLookupEnvironmentHistoryMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -454,39 +455,39 @@ public final class EnvironmentsGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListEnvironmentsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.ListEnvironmentsRequest,
                       com.google.cloud.dialogflow.cx.v3.ListEnvironmentsResponse>(
                       this, METHODID_LIST_ENVIRONMENTS)))
           .addMethod(
               getGetEnvironmentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.GetEnvironmentRequest,
                       com.google.cloud.dialogflow.cx.v3.Environment>(
                       this, METHODID_GET_ENVIRONMENT)))
           .addMethod(
               getCreateEnvironmentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest,
                       com.google.longrunning.Operation>(this, METHODID_CREATE_ENVIRONMENT)))
           .addMethod(
               getUpdateEnvironmentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.UpdateEnvironmentRequest,
                       com.google.longrunning.Operation>(this, METHODID_UPDATE_ENVIRONMENT)))
           .addMethod(
               getDeleteEnvironmentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.DeleteEnvironmentRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_ENVIRONMENT)))
           .addMethod(
               getLookupEnvironmentHistoryMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryRequest,
                       com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryResponse>(
@@ -524,7 +525,7 @@ public final class EnvironmentsGrpc {
         com.google.cloud.dialogflow.cx.v3.ListEnvironmentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListEnvironmentsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListEnvironmentsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -541,7 +542,7 @@ public final class EnvironmentsGrpc {
         com.google.cloud.dialogflow.cx.v3.GetEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Environment>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetEnvironmentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -557,7 +558,7 @@ public final class EnvironmentsGrpc {
     public void createEnvironment(
         com.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateEnvironmentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -573,7 +574,7 @@ public final class EnvironmentsGrpc {
     public void updateEnvironment(
         com.google.cloud.dialogflow.cx.v3.UpdateEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateEnvironmentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -589,7 +590,7 @@ public final class EnvironmentsGrpc {
     public void deleteEnvironment(
         com.google.cloud.dialogflow.cx.v3.DeleteEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteEnvironmentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -607,7 +608,7 @@ public final class EnvironmentsGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getLookupEnvironmentHistoryMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -642,7 +643,7 @@ public final class EnvironmentsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.ListEnvironmentsResponse listEnvironments(
         com.google.cloud.dialogflow.cx.v3.ListEnvironmentsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListEnvironmentsMethod(), getCallOptions(), request);
     }
 
@@ -655,7 +656,8 @@ public final class EnvironmentsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.Environment getEnvironment(
         com.google.cloud.dialogflow.cx.v3.GetEnvironmentRequest request) {
-      return blockingUnaryCall(getChannel(), getGetEnvironmentMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEnvironmentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -667,7 +669,7 @@ public final class EnvironmentsGrpc {
      */
     public com.google.longrunning.Operation createEnvironment(
         com.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -680,7 +682,7 @@ public final class EnvironmentsGrpc {
      */
     public com.google.longrunning.Operation updateEnvironment(
         com.google.cloud.dialogflow.cx.v3.UpdateEnvironmentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -693,7 +695,7 @@ public final class EnvironmentsGrpc {
      */
     public com.google.protobuf.Empty deleteEnvironment(
         com.google.cloud.dialogflow.cx.v3.DeleteEnvironmentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -707,7 +709,7 @@ public final class EnvironmentsGrpc {
     public com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryResponse
         lookupEnvironmentHistory(
             com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLookupEnvironmentHistoryMethod(), getCallOptions(), request);
     }
   }
@@ -741,7 +743,7 @@ public final class EnvironmentsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.ListEnvironmentsResponse>
         listEnvironments(com.google.cloud.dialogflow.cx.v3.ListEnvironmentsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListEnvironmentsMethod(), getCallOptions()), request);
     }
 
@@ -755,7 +757,7 @@ public final class EnvironmentsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Environment>
         getEnvironment(com.google.cloud.dialogflow.cx.v3.GetEnvironmentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetEnvironmentMethod(), getCallOptions()), request);
     }
 
@@ -768,7 +770,7 @@ public final class EnvironmentsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createEnvironment(com.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateEnvironmentMethod(), getCallOptions()), request);
     }
 
@@ -781,7 +783,7 @@ public final class EnvironmentsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateEnvironment(com.google.cloud.dialogflow.cx.v3.UpdateEnvironmentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateEnvironmentMethod(), getCallOptions()), request);
     }
 
@@ -794,7 +796,7 @@ public final class EnvironmentsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteEnvironment(com.google.cloud.dialogflow.cx.v3.DeleteEnvironmentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteEnvironmentMethod(), getCallOptions()), request);
     }
 
@@ -809,7 +811,7 @@ public final class EnvironmentsGrpc {
             com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryResponse>
         lookupEnvironmentHistory(
             com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getLookupEnvironmentHistoryMethod(), getCallOptions()), request);
     }
   }

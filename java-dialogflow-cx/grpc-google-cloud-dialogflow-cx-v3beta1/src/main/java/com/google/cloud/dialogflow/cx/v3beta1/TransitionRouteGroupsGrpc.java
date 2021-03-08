@@ -16,11 +16,6 @@
 package com.google.cloud.dialogflow.cx.v3beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -366,7 +361,8 @@ public final class TransitionRouteGroupsGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.dialogflow.cx.v3beta1.ListTransitionRouteGroupsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListTransitionRouteGroupsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListTransitionRouteGroupsMethod(), responseObserver);
     }
 
     /**
@@ -380,7 +376,8 @@ public final class TransitionRouteGroupsGrpc {
         com.google.cloud.dialogflow.cx.v3beta1.GetTransitionRouteGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetTransitionRouteGroupMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetTransitionRouteGroupMethod(), responseObserver);
     }
 
     /**
@@ -394,7 +391,8 @@ public final class TransitionRouteGroupsGrpc {
         com.google.cloud.dialogflow.cx.v3beta1.CreateTransitionRouteGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateTransitionRouteGroupMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateTransitionRouteGroupMethod(), responseObserver);
     }
 
     /**
@@ -408,7 +406,8 @@ public final class TransitionRouteGroupsGrpc {
         com.google.cloud.dialogflow.cx.v3beta1.UpdateTransitionRouteGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateTransitionRouteGroupMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateTransitionRouteGroupMethod(), responseObserver);
     }
 
     /**
@@ -421,7 +420,8 @@ public final class TransitionRouteGroupsGrpc {
     public void deleteTransitionRouteGroup(
         com.google.cloud.dialogflow.cx.v3beta1.DeleteTransitionRouteGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteTransitionRouteGroupMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteTransitionRouteGroupMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -429,35 +429,35 @@ public final class TransitionRouteGroupsGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListTransitionRouteGroupsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3beta1.ListTransitionRouteGroupsRequest,
                       com.google.cloud.dialogflow.cx.v3beta1.ListTransitionRouteGroupsResponse>(
                       this, METHODID_LIST_TRANSITION_ROUTE_GROUPS)))
           .addMethod(
               getGetTransitionRouteGroupMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3beta1.GetTransitionRouteGroupRequest,
                       com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup>(
                       this, METHODID_GET_TRANSITION_ROUTE_GROUP)))
           .addMethod(
               getCreateTransitionRouteGroupMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3beta1.CreateTransitionRouteGroupRequest,
                       com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup>(
                       this, METHODID_CREATE_TRANSITION_ROUTE_GROUP)))
           .addMethod(
               getUpdateTransitionRouteGroupMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3beta1.UpdateTransitionRouteGroupRequest,
                       com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup>(
                       this, METHODID_UPDATE_TRANSITION_ROUTE_GROUP)))
           .addMethod(
               getDeleteTransitionRouteGroupMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3beta1.DeleteTransitionRouteGroupRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_TRANSITION_ROUTE_GROUP)))
@@ -496,7 +496,7 @@ public final class TransitionRouteGroupsGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.dialogflow.cx.v3beta1.ListTransitionRouteGroupsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListTransitionRouteGroupsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -513,7 +513,7 @@ public final class TransitionRouteGroupsGrpc {
         com.google.cloud.dialogflow.cx.v3beta1.GetTransitionRouteGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetTransitionRouteGroupMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -530,7 +530,7 @@ public final class TransitionRouteGroupsGrpc {
         com.google.cloud.dialogflow.cx.v3beta1.CreateTransitionRouteGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateTransitionRouteGroupMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -547,7 +547,7 @@ public final class TransitionRouteGroupsGrpc {
         com.google.cloud.dialogflow.cx.v3beta1.UpdateTransitionRouteGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateTransitionRouteGroupMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -563,7 +563,7 @@ public final class TransitionRouteGroupsGrpc {
     public void deleteTransitionRouteGroup(
         com.google.cloud.dialogflow.cx.v3beta1.DeleteTransitionRouteGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteTransitionRouteGroupMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -600,7 +600,7 @@ public final class TransitionRouteGroupsGrpc {
     public com.google.cloud.dialogflow.cx.v3beta1.ListTransitionRouteGroupsResponse
         listTransitionRouteGroups(
             com.google.cloud.dialogflow.cx.v3beta1.ListTransitionRouteGroupsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListTransitionRouteGroupsMethod(), getCallOptions(), request);
     }
 
@@ -613,7 +613,7 @@ public final class TransitionRouteGroupsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup getTransitionRouteGroup(
         com.google.cloud.dialogflow.cx.v3beta1.GetTransitionRouteGroupRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetTransitionRouteGroupMethod(), getCallOptions(), request);
     }
 
@@ -626,7 +626,7 @@ public final class TransitionRouteGroupsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup createTransitionRouteGroup(
         com.google.cloud.dialogflow.cx.v3beta1.CreateTransitionRouteGroupRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateTransitionRouteGroupMethod(), getCallOptions(), request);
     }
 
@@ -639,7 +639,7 @@ public final class TransitionRouteGroupsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup updateTransitionRouteGroup(
         com.google.cloud.dialogflow.cx.v3beta1.UpdateTransitionRouteGroupRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateTransitionRouteGroupMethod(), getCallOptions(), request);
     }
 
@@ -652,7 +652,7 @@ public final class TransitionRouteGroupsGrpc {
      */
     public com.google.protobuf.Empty deleteTransitionRouteGroup(
         com.google.cloud.dialogflow.cx.v3beta1.DeleteTransitionRouteGroupRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteTransitionRouteGroupMethod(), getCallOptions(), request);
     }
   }
@@ -688,7 +688,7 @@ public final class TransitionRouteGroupsGrpc {
             com.google.cloud.dialogflow.cx.v3beta1.ListTransitionRouteGroupsResponse>
         listTransitionRouteGroups(
             com.google.cloud.dialogflow.cx.v3beta1.ListTransitionRouteGroupsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListTransitionRouteGroupsMethod(), getCallOptions()), request);
     }
 
@@ -703,7 +703,7 @@ public final class TransitionRouteGroupsGrpc {
             com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup>
         getTransitionRouteGroup(
             com.google.cloud.dialogflow.cx.v3beta1.GetTransitionRouteGroupRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetTransitionRouteGroupMethod(), getCallOptions()), request);
     }
 
@@ -718,7 +718,7 @@ public final class TransitionRouteGroupsGrpc {
             com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup>
         createTransitionRouteGroup(
             com.google.cloud.dialogflow.cx.v3beta1.CreateTransitionRouteGroupRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateTransitionRouteGroupMethod(), getCallOptions()), request);
     }
 
@@ -733,7 +733,7 @@ public final class TransitionRouteGroupsGrpc {
             com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup>
         updateTransitionRouteGroup(
             com.google.cloud.dialogflow.cx.v3beta1.UpdateTransitionRouteGroupRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateTransitionRouteGroupMethod(), getCallOptions()), request);
     }
 
@@ -747,7 +747,7 @@ public final class TransitionRouteGroupsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteTransitionRouteGroup(
             com.google.cloud.dialogflow.cx.v3beta1.DeleteTransitionRouteGroupRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteTransitionRouteGroupMethod(), getCallOptions()), request);
     }
   }

@@ -16,11 +16,6 @@
 package com.google.cloud.dialogflow.cx.v3;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -418,7 +413,8 @@ public final class ExperimentsGrpc {
         com.google.cloud.dialogflow.cx.v3.ListExperimentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListExperimentsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListExperimentsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListExperimentsMethod(), responseObserver);
     }
 
     /**
@@ -432,7 +428,8 @@ public final class ExperimentsGrpc {
         com.google.cloud.dialogflow.cx.v3.GetExperimentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Experiment>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetExperimentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetExperimentMethod(), responseObserver);
     }
 
     /**
@@ -446,7 +443,8 @@ public final class ExperimentsGrpc {
         com.google.cloud.dialogflow.cx.v3.CreateExperimentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Experiment>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateExperimentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateExperimentMethod(), responseObserver);
     }
 
     /**
@@ -460,7 +458,8 @@ public final class ExperimentsGrpc {
         com.google.cloud.dialogflow.cx.v3.UpdateExperimentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Experiment>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateExperimentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateExperimentMethod(), responseObserver);
     }
 
     /**
@@ -473,7 +472,8 @@ public final class ExperimentsGrpc {
     public void deleteExperiment(
         com.google.cloud.dialogflow.cx.v3.DeleteExperimentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteExperimentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteExperimentMethod(), responseObserver);
     }
 
     /**
@@ -488,7 +488,8 @@ public final class ExperimentsGrpc {
         com.google.cloud.dialogflow.cx.v3.StartExperimentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Experiment>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getStartExperimentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getStartExperimentMethod(), responseObserver);
     }
 
     /**
@@ -503,7 +504,8 @@ public final class ExperimentsGrpc {
         com.google.cloud.dialogflow.cx.v3.StopExperimentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Experiment>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getStopExperimentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getStopExperimentMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -511,47 +513,47 @@ public final class ExperimentsGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListExperimentsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.ListExperimentsRequest,
                       com.google.cloud.dialogflow.cx.v3.ListExperimentsResponse>(
                       this, METHODID_LIST_EXPERIMENTS)))
           .addMethod(
               getGetExperimentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.GetExperimentRequest,
                       com.google.cloud.dialogflow.cx.v3.Experiment>(this, METHODID_GET_EXPERIMENT)))
           .addMethod(
               getCreateExperimentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.CreateExperimentRequest,
                       com.google.cloud.dialogflow.cx.v3.Experiment>(
                       this, METHODID_CREATE_EXPERIMENT)))
           .addMethod(
               getUpdateExperimentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.UpdateExperimentRequest,
                       com.google.cloud.dialogflow.cx.v3.Experiment>(
                       this, METHODID_UPDATE_EXPERIMENT)))
           .addMethod(
               getDeleteExperimentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.DeleteExperimentRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_EXPERIMENT)))
           .addMethod(
               getStartExperimentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.StartExperimentRequest,
                       com.google.cloud.dialogflow.cx.v3.Experiment>(
                       this, METHODID_START_EXPERIMENT)))
           .addMethod(
               getStopExperimentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.StopExperimentRequest,
                       com.google.cloud.dialogflow.cx.v3.Experiment>(
@@ -589,7 +591,7 @@ public final class ExperimentsGrpc {
         com.google.cloud.dialogflow.cx.v3.ListExperimentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListExperimentsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListExperimentsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -606,7 +608,7 @@ public final class ExperimentsGrpc {
         com.google.cloud.dialogflow.cx.v3.GetExperimentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Experiment>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetExperimentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -623,7 +625,7 @@ public final class ExperimentsGrpc {
         com.google.cloud.dialogflow.cx.v3.CreateExperimentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Experiment>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateExperimentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -640,7 +642,7 @@ public final class ExperimentsGrpc {
         com.google.cloud.dialogflow.cx.v3.UpdateExperimentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Experiment>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateExperimentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -656,7 +658,7 @@ public final class ExperimentsGrpc {
     public void deleteExperiment(
         com.google.cloud.dialogflow.cx.v3.DeleteExperimentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteExperimentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -674,7 +676,7 @@ public final class ExperimentsGrpc {
         com.google.cloud.dialogflow.cx.v3.StartExperimentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Experiment>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getStartExperimentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -692,7 +694,7 @@ public final class ExperimentsGrpc {
         com.google.cloud.dialogflow.cx.v3.StopExperimentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Experiment>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getStopExperimentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -727,7 +729,8 @@ public final class ExperimentsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.ListExperimentsResponse listExperiments(
         com.google.cloud.dialogflow.cx.v3.ListExperimentsRequest request) {
-      return blockingUnaryCall(getChannel(), getListExperimentsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListExperimentsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -739,7 +742,8 @@ public final class ExperimentsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.Experiment getExperiment(
         com.google.cloud.dialogflow.cx.v3.GetExperimentRequest request) {
-      return blockingUnaryCall(getChannel(), getGetExperimentMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetExperimentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -751,7 +755,7 @@ public final class ExperimentsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.Experiment createExperiment(
         com.google.cloud.dialogflow.cx.v3.CreateExperimentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateExperimentMethod(), getCallOptions(), request);
     }
 
@@ -764,7 +768,7 @@ public final class ExperimentsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.Experiment updateExperiment(
         com.google.cloud.dialogflow.cx.v3.UpdateExperimentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateExperimentMethod(), getCallOptions(), request);
     }
 
@@ -777,7 +781,7 @@ public final class ExperimentsGrpc {
      */
     public com.google.protobuf.Empty deleteExperiment(
         com.google.cloud.dialogflow.cx.v3.DeleteExperimentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteExperimentMethod(), getCallOptions(), request);
     }
 
@@ -791,7 +795,8 @@ public final class ExperimentsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.Experiment startExperiment(
         com.google.cloud.dialogflow.cx.v3.StartExperimentRequest request) {
-      return blockingUnaryCall(getChannel(), getStartExperimentMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStartExperimentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -804,7 +809,8 @@ public final class ExperimentsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.Experiment stopExperiment(
         com.google.cloud.dialogflow.cx.v3.StopExperimentRequest request) {
-      return blockingUnaryCall(getChannel(), getStopExperimentMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStopExperimentMethod(), getCallOptions(), request);
     }
   }
 
@@ -837,7 +843,7 @@ public final class ExperimentsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.ListExperimentsResponse>
         listExperiments(com.google.cloud.dialogflow.cx.v3.ListExperimentsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListExperimentsMethod(), getCallOptions()), request);
     }
 
@@ -851,7 +857,7 @@ public final class ExperimentsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Experiment>
         getExperiment(com.google.cloud.dialogflow.cx.v3.GetExperimentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetExperimentMethod(), getCallOptions()), request);
     }
 
@@ -865,7 +871,7 @@ public final class ExperimentsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Experiment>
         createExperiment(com.google.cloud.dialogflow.cx.v3.CreateExperimentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateExperimentMethod(), getCallOptions()), request);
     }
 
@@ -879,7 +885,7 @@ public final class ExperimentsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Experiment>
         updateExperiment(com.google.cloud.dialogflow.cx.v3.UpdateExperimentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateExperimentMethod(), getCallOptions()), request);
     }
 
@@ -892,7 +898,7 @@ public final class ExperimentsGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteExperiment(com.google.cloud.dialogflow.cx.v3.DeleteExperimentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteExperimentMethod(), getCallOptions()), request);
     }
 
@@ -907,7 +913,7 @@ public final class ExperimentsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Experiment>
         startExperiment(com.google.cloud.dialogflow.cx.v3.StartExperimentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getStartExperimentMethod(), getCallOptions()), request);
     }
 
@@ -922,7 +928,7 @@ public final class ExperimentsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Experiment>
         stopExperiment(com.google.cloud.dialogflow.cx.v3.StopExperimentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getStopExperimentMethod(), getCallOptions()), request);
     }
   }

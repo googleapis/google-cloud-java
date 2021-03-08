@@ -16,11 +16,6 @@
 package com.google.cloud.dialogflow.cx.v3;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -600,7 +595,8 @@ public final class TestCasesGrpc {
         com.google.cloud.dialogflow.cx.v3.ListTestCasesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListTestCasesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListTestCasesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListTestCasesMethod(), responseObserver);
     }
 
     /**
@@ -613,7 +609,8 @@ public final class TestCasesGrpc {
     public void batchDeleteTestCases(
         com.google.cloud.dialogflow.cx.v3.BatchDeleteTestCasesRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchDeleteTestCasesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchDeleteTestCasesMethod(), responseObserver);
     }
 
     /**
@@ -626,7 +623,8 @@ public final class TestCasesGrpc {
     public void getTestCase(
         com.google.cloud.dialogflow.cx.v3.GetTestCaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.TestCase> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetTestCaseMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetTestCaseMethod(), responseObserver);
     }
 
     /**
@@ -639,7 +637,8 @@ public final class TestCasesGrpc {
     public void createTestCase(
         com.google.cloud.dialogflow.cx.v3.CreateTestCaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.TestCase> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateTestCaseMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateTestCaseMethod(), responseObserver);
     }
 
     /**
@@ -652,7 +651,8 @@ public final class TestCasesGrpc {
     public void updateTestCase(
         com.google.cloud.dialogflow.cx.v3.UpdateTestCaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.TestCase> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateTestCaseMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateTestCaseMethod(), responseObserver);
     }
 
     /**
@@ -665,7 +665,8 @@ public final class TestCasesGrpc {
     public void runTestCase(
         com.google.cloud.dialogflow.cx.v3.RunTestCaseRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getRunTestCaseMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRunTestCaseMethod(), responseObserver);
     }
 
     /**
@@ -678,7 +679,8 @@ public final class TestCasesGrpc {
     public void batchRunTestCases(
         com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchRunTestCasesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchRunTestCasesMethod(), responseObserver);
     }
 
     /**
@@ -692,7 +694,8 @@ public final class TestCasesGrpc {
         com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.CalculateCoverageResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCalculateCoverageMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCalculateCoverageMethod(), responseObserver);
     }
 
     /**
@@ -707,7 +710,8 @@ public final class TestCasesGrpc {
     public void importTestCases(
         com.google.cloud.dialogflow.cx.v3.ImportTestCasesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getImportTestCasesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getImportTestCasesMethod(), responseObserver);
     }
 
     /**
@@ -721,7 +725,8 @@ public final class TestCasesGrpc {
     public void exportTestCases(
         com.google.cloud.dialogflow.cx.v3.ExportTestCasesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getExportTestCasesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportTestCasesMethod(), responseObserver);
     }
 
     /**
@@ -735,7 +740,8 @@ public final class TestCasesGrpc {
         com.google.cloud.dialogflow.cx.v3.ListTestCaseResultsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListTestCaseResultsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListTestCaseResultsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListTestCaseResultsMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -743,69 +749,69 @@ public final class TestCasesGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListTestCasesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.ListTestCasesRequest,
                       com.google.cloud.dialogflow.cx.v3.ListTestCasesResponse>(
                       this, METHODID_LIST_TEST_CASES)))
           .addMethod(
               getBatchDeleteTestCasesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.BatchDeleteTestCasesRequest,
                       com.google.protobuf.Empty>(this, METHODID_BATCH_DELETE_TEST_CASES)))
           .addMethod(
               getGetTestCaseMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.GetTestCaseRequest,
                       com.google.cloud.dialogflow.cx.v3.TestCase>(this, METHODID_GET_TEST_CASE)))
           .addMethod(
               getCreateTestCaseMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.CreateTestCaseRequest,
                       com.google.cloud.dialogflow.cx.v3.TestCase>(this, METHODID_CREATE_TEST_CASE)))
           .addMethod(
               getUpdateTestCaseMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.UpdateTestCaseRequest,
                       com.google.cloud.dialogflow.cx.v3.TestCase>(this, METHODID_UPDATE_TEST_CASE)))
           .addMethod(
               getRunTestCaseMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.RunTestCaseRequest,
                       com.google.longrunning.Operation>(this, METHODID_RUN_TEST_CASE)))
           .addMethod(
               getBatchRunTestCasesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest,
                       com.google.longrunning.Operation>(this, METHODID_BATCH_RUN_TEST_CASES)))
           .addMethod(
               getCalculateCoverageMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest,
                       com.google.cloud.dialogflow.cx.v3.CalculateCoverageResponse>(
                       this, METHODID_CALCULATE_COVERAGE)))
           .addMethod(
               getImportTestCasesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.ImportTestCasesRequest,
                       com.google.longrunning.Operation>(this, METHODID_IMPORT_TEST_CASES)))
           .addMethod(
               getExportTestCasesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.ExportTestCasesRequest,
                       com.google.longrunning.Operation>(this, METHODID_EXPORT_TEST_CASES)))
           .addMethod(
               getListTestCaseResultsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3.ListTestCaseResultsRequest,
                       com.google.cloud.dialogflow.cx.v3.ListTestCaseResultsResponse>(
@@ -843,7 +849,7 @@ public final class TestCasesGrpc {
         com.google.cloud.dialogflow.cx.v3.ListTestCasesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListTestCasesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListTestCasesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -859,7 +865,7 @@ public final class TestCasesGrpc {
     public void batchDeleteTestCases(
         com.google.cloud.dialogflow.cx.v3.BatchDeleteTestCasesRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchDeleteTestCasesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -875,7 +881,7 @@ public final class TestCasesGrpc {
     public void getTestCase(
         com.google.cloud.dialogflow.cx.v3.GetTestCaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.TestCase> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetTestCaseMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -891,7 +897,7 @@ public final class TestCasesGrpc {
     public void createTestCase(
         com.google.cloud.dialogflow.cx.v3.CreateTestCaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.TestCase> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateTestCaseMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -907,7 +913,7 @@ public final class TestCasesGrpc {
     public void updateTestCase(
         com.google.cloud.dialogflow.cx.v3.UpdateTestCaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.TestCase> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateTestCaseMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -923,7 +929,7 @@ public final class TestCasesGrpc {
     public void runTestCase(
         com.google.cloud.dialogflow.cx.v3.RunTestCaseRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRunTestCaseMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -939,7 +945,7 @@ public final class TestCasesGrpc {
     public void batchRunTestCases(
         com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchRunTestCasesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -956,7 +962,7 @@ public final class TestCasesGrpc {
         com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.CalculateCoverageResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCalculateCoverageMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -974,7 +980,7 @@ public final class TestCasesGrpc {
     public void importTestCases(
         com.google.cloud.dialogflow.cx.v3.ImportTestCasesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getImportTestCasesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -991,7 +997,7 @@ public final class TestCasesGrpc {
     public void exportTestCases(
         com.google.cloud.dialogflow.cx.v3.ExportTestCasesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getExportTestCasesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1008,7 +1014,7 @@ public final class TestCasesGrpc {
         com.google.cloud.dialogflow.cx.v3.ListTestCaseResultsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListTestCaseResultsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListTestCaseResultsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1044,7 +1050,8 @@ public final class TestCasesGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.ListTestCasesResponse listTestCases(
         com.google.cloud.dialogflow.cx.v3.ListTestCasesRequest request) {
-      return blockingUnaryCall(getChannel(), getListTestCasesMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTestCasesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1056,7 +1063,7 @@ public final class TestCasesGrpc {
      */
     public com.google.protobuf.Empty batchDeleteTestCases(
         com.google.cloud.dialogflow.cx.v3.BatchDeleteTestCasesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchDeleteTestCasesMethod(), getCallOptions(), request);
     }
 
@@ -1069,7 +1076,8 @@ public final class TestCasesGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.TestCase getTestCase(
         com.google.cloud.dialogflow.cx.v3.GetTestCaseRequest request) {
-      return blockingUnaryCall(getChannel(), getGetTestCaseMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTestCaseMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1081,7 +1089,8 @@ public final class TestCasesGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.TestCase createTestCase(
         com.google.cloud.dialogflow.cx.v3.CreateTestCaseRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateTestCaseMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTestCaseMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1093,7 +1102,8 @@ public final class TestCasesGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.TestCase updateTestCase(
         com.google.cloud.dialogflow.cx.v3.UpdateTestCaseRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateTestCaseMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTestCaseMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1105,7 +1115,8 @@ public final class TestCasesGrpc {
      */
     public com.google.longrunning.Operation runTestCase(
         com.google.cloud.dialogflow.cx.v3.RunTestCaseRequest request) {
-      return blockingUnaryCall(getChannel(), getRunTestCaseMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunTestCaseMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1117,7 +1128,7 @@ public final class TestCasesGrpc {
      */
     public com.google.longrunning.Operation batchRunTestCases(
         com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchRunTestCasesMethod(), getCallOptions(), request);
     }
 
@@ -1130,7 +1141,7 @@ public final class TestCasesGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.CalculateCoverageResponse calculateCoverage(
         com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCalculateCoverageMethod(), getCallOptions(), request);
     }
 
@@ -1145,7 +1156,8 @@ public final class TestCasesGrpc {
      */
     public com.google.longrunning.Operation importTestCases(
         com.google.cloud.dialogflow.cx.v3.ImportTestCasesRequest request) {
-      return blockingUnaryCall(getChannel(), getImportTestCasesMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportTestCasesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1158,7 +1170,8 @@ public final class TestCasesGrpc {
      */
     public com.google.longrunning.Operation exportTestCases(
         com.google.cloud.dialogflow.cx.v3.ExportTestCasesRequest request) {
-      return blockingUnaryCall(getChannel(), getExportTestCasesMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportTestCasesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1170,7 +1183,7 @@ public final class TestCasesGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.ListTestCaseResultsResponse listTestCaseResults(
         com.google.cloud.dialogflow.cx.v3.ListTestCaseResultsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListTestCaseResultsMethod(), getCallOptions(), request);
     }
   }
@@ -1204,7 +1217,7 @@ public final class TestCasesGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.ListTestCasesResponse>
         listTestCases(com.google.cloud.dialogflow.cx.v3.ListTestCasesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListTestCasesMethod(), getCallOptions()), request);
     }
 
@@ -1218,7 +1231,7 @@ public final class TestCasesGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         batchDeleteTestCases(
             com.google.cloud.dialogflow.cx.v3.BatchDeleteTestCasesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchDeleteTestCasesMethod(), getCallOptions()), request);
     }
 
@@ -1232,7 +1245,7 @@ public final class TestCasesGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.TestCase>
         getTestCase(com.google.cloud.dialogflow.cx.v3.GetTestCaseRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetTestCaseMethod(), getCallOptions()), request);
     }
 
@@ -1246,7 +1259,7 @@ public final class TestCasesGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.TestCase>
         createTestCase(com.google.cloud.dialogflow.cx.v3.CreateTestCaseRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateTestCaseMethod(), getCallOptions()), request);
     }
 
@@ -1260,7 +1273,7 @@ public final class TestCasesGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.TestCase>
         updateTestCase(com.google.cloud.dialogflow.cx.v3.UpdateTestCaseRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateTestCaseMethod(), getCallOptions()), request);
     }
 
@@ -1273,7 +1286,7 @@ public final class TestCasesGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         runTestCase(com.google.cloud.dialogflow.cx.v3.RunTestCaseRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRunTestCaseMethod(), getCallOptions()), request);
     }
 
@@ -1286,7 +1299,7 @@ public final class TestCasesGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         batchRunTestCases(com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchRunTestCasesMethod(), getCallOptions()), request);
     }
 
@@ -1300,7 +1313,7 @@ public final class TestCasesGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.CalculateCoverageResponse>
         calculateCoverage(com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCalculateCoverageMethod(), getCallOptions()), request);
     }
 
@@ -1315,7 +1328,7 @@ public final class TestCasesGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         importTestCases(com.google.cloud.dialogflow.cx.v3.ImportTestCasesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getImportTestCasesMethod(), getCallOptions()), request);
     }
 
@@ -1329,7 +1342,7 @@ public final class TestCasesGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         exportTestCases(com.google.cloud.dialogflow.cx.v3.ExportTestCasesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getExportTestCasesMethod(), getCallOptions()), request);
     }
 
@@ -1343,7 +1356,7 @@ public final class TestCasesGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.ListTestCaseResultsResponse>
         listTestCaseResults(com.google.cloud.dialogflow.cx.v3.ListTestCaseResultsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListTestCaseResultsMethod(), getCallOptions()), request);
     }
   }
