@@ -16,11 +16,6 @@
 package com.google.cloud.bigquery.reservation.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -1061,7 +1056,8 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.CreateReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateReservationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateReservationMethod(), responseObserver);
     }
 
     /**
@@ -1076,7 +1072,8 @@ public final class ReservationServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.reservation.v1.ListReservationsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListReservationsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListReservationsMethod(), responseObserver);
     }
 
     /**
@@ -1090,7 +1087,8 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.GetReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetReservationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetReservationMethod(), responseObserver);
     }
 
     /**
@@ -1105,7 +1103,8 @@ public final class ReservationServiceGrpc {
     public void deleteReservation(
         com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteReservationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteReservationMethod(), responseObserver);
     }
 
     /**
@@ -1119,7 +1118,8 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateReservationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateReservationMethod(), responseObserver);
     }
 
     /**
@@ -1133,7 +1133,8 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateCapacityCommitmentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateCapacityCommitmentMethod(), responseObserver);
     }
 
     /**
@@ -1148,7 +1149,8 @@ public final class ReservationServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListCapacityCommitmentsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListCapacityCommitmentsMethod(), responseObserver);
     }
 
     /**
@@ -1162,7 +1164,8 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCapacityCommitmentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetCapacityCommitmentMethod(), responseObserver);
     }
 
     /**
@@ -1177,7 +1180,8 @@ public final class ReservationServiceGrpc {
     public void deleteCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteCapacityCommitmentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteCapacityCommitmentMethod(), responseObserver);
     }
 
     /**
@@ -1195,7 +1199,8 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateCapacityCommitmentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateCapacityCommitmentMethod(), responseObserver);
     }
 
     /**
@@ -1215,7 +1220,8 @@ public final class ReservationServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSplitCapacityCommitmentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSplitCapacityCommitmentMethod(), responseObserver);
     }
 
     /**
@@ -1233,7 +1239,8 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getMergeCapacityCommitmentsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getMergeCapacityCommitmentsMethod(), responseObserver);
     }
 
     /**
@@ -1269,7 +1276,8 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Assignment>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateAssignmentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAssignmentMethod(), responseObserver);
     }
 
     /**
@@ -1298,7 +1306,8 @@ public final class ReservationServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.reservation.v1.ListAssignmentsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListAssignmentsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAssignmentsMethod(), responseObserver);
     }
 
     /**
@@ -1322,7 +1331,8 @@ public final class ReservationServiceGrpc {
     public void deleteAssignment(
         com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteAssignmentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAssignmentMethod(), responseObserver);
     }
 
     /**
@@ -1353,7 +1363,8 @@ public final class ReservationServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSearchAssignmentsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSearchAssignmentsMethod(), responseObserver);
     }
 
     /**
@@ -1370,7 +1381,8 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Assignment>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getMoveAssignmentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getMoveAssignmentMethod(), responseObserver);
     }
 
     /**
@@ -1384,7 +1396,8 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.BiReservation>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetBiReservationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetBiReservationMethod(), responseObserver);
     }
 
     /**
@@ -1403,7 +1416,8 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.BiReservation>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateBiReservationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateBiReservationMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -1411,130 +1425,130 @@ public final class ReservationServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreateReservationMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.reservation.v1.CreateReservationRequest,
                       com.google.cloud.bigquery.reservation.v1.Reservation>(
                       this, METHODID_CREATE_RESERVATION)))
           .addMethod(
               getListReservationsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.reservation.v1.ListReservationsRequest,
                       com.google.cloud.bigquery.reservation.v1.ListReservationsResponse>(
                       this, METHODID_LIST_RESERVATIONS)))
           .addMethod(
               getGetReservationMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.reservation.v1.GetReservationRequest,
                       com.google.cloud.bigquery.reservation.v1.Reservation>(
                       this, METHODID_GET_RESERVATION)))
           .addMethod(
               getDeleteReservationMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_RESERVATION)))
           .addMethod(
               getUpdateReservationMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest,
                       com.google.cloud.bigquery.reservation.v1.Reservation>(
                       this, METHODID_UPDATE_RESERVATION)))
           .addMethod(
               getCreateCapacityCommitmentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest,
                       com.google.cloud.bigquery.reservation.v1.CapacityCommitment>(
                       this, METHODID_CREATE_CAPACITY_COMMITMENT)))
           .addMethod(
               getListCapacityCommitmentsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsRequest,
                       com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsResponse>(
                       this, METHODID_LIST_CAPACITY_COMMITMENTS)))
           .addMethod(
               getGetCapacityCommitmentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest,
                       com.google.cloud.bigquery.reservation.v1.CapacityCommitment>(
                       this, METHODID_GET_CAPACITY_COMMITMENT)))
           .addMethod(
               getDeleteCapacityCommitmentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_CAPACITY_COMMITMENT)))
           .addMethod(
               getUpdateCapacityCommitmentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest,
                       com.google.cloud.bigquery.reservation.v1.CapacityCommitment>(
                       this, METHODID_UPDATE_CAPACITY_COMMITMENT)))
           .addMethod(
               getSplitCapacityCommitmentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest,
                       com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse>(
                       this, METHODID_SPLIT_CAPACITY_COMMITMENT)))
           .addMethod(
               getMergeCapacityCommitmentsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest,
                       com.google.cloud.bigquery.reservation.v1.CapacityCommitment>(
                       this, METHODID_MERGE_CAPACITY_COMMITMENTS)))
           .addMethod(
               getCreateAssignmentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest,
                       com.google.cloud.bigquery.reservation.v1.Assignment>(
                       this, METHODID_CREATE_ASSIGNMENT)))
           .addMethod(
               getListAssignmentsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.reservation.v1.ListAssignmentsRequest,
                       com.google.cloud.bigquery.reservation.v1.ListAssignmentsResponse>(
                       this, METHODID_LIST_ASSIGNMENTS)))
           .addMethod(
               getDeleteAssignmentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_ASSIGNMENT)))
           .addMethod(
               getSearchAssignmentsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest,
                       com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse>(
                       this, METHODID_SEARCH_ASSIGNMENTS)))
           .addMethod(
               getMoveAssignmentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest,
                       com.google.cloud.bigquery.reservation.v1.Assignment>(
                       this, METHODID_MOVE_ASSIGNMENT)))
           .addMethod(
               getGetBiReservationMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest,
                       com.google.cloud.bigquery.reservation.v1.BiReservation>(
                       this, METHODID_GET_BI_RESERVATION)))
           .addMethod(
               getUpdateBiReservationMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest,
                       com.google.cloud.bigquery.reservation.v1.BiReservation>(
@@ -1585,7 +1599,7 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.CreateReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateReservationMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1603,7 +1617,7 @@ public final class ReservationServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.reservation.v1.ListReservationsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListReservationsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1620,7 +1634,7 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.GetReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetReservationMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1638,7 +1652,7 @@ public final class ReservationServiceGrpc {
     public void deleteReservation(
         com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteReservationMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1655,7 +1669,7 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateReservationMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1672,7 +1686,7 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateCapacityCommitmentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1690,7 +1704,7 @@ public final class ReservationServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListCapacityCommitmentsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1707,7 +1721,7 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCapacityCommitmentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1725,7 +1739,7 @@ public final class ReservationServiceGrpc {
     public void deleteCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteCapacityCommitmentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1746,7 +1760,7 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateCapacityCommitmentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1769,7 +1783,7 @@ public final class ReservationServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSplitCapacityCommitmentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1790,7 +1804,7 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMergeCapacityCommitmentsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1829,7 +1843,7 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Assignment>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateAssignmentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1861,7 +1875,7 @@ public final class ReservationServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.reservation.v1.ListAssignmentsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListAssignmentsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1888,7 +1902,7 @@ public final class ReservationServiceGrpc {
     public void deleteAssignment(
         com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteAssignmentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1922,7 +1936,7 @@ public final class ReservationServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSearchAssignmentsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1942,7 +1956,7 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Assignment>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMoveAssignmentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1959,7 +1973,7 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.BiReservation>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetBiReservationMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1981,7 +1995,7 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.BiReservation>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateBiReservationMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2029,7 +2043,7 @@ public final class ReservationServiceGrpc {
      */
     public com.google.cloud.bigquery.reservation.v1.Reservation createReservation(
         com.google.cloud.bigquery.reservation.v1.CreateReservationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateReservationMethod(), getCallOptions(), request);
     }
 
@@ -2042,7 +2056,7 @@ public final class ReservationServiceGrpc {
      */
     public com.google.cloud.bigquery.reservation.v1.ListReservationsResponse listReservations(
         com.google.cloud.bigquery.reservation.v1.ListReservationsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListReservationsMethod(), getCallOptions(), request);
     }
 
@@ -2055,7 +2069,8 @@ public final class ReservationServiceGrpc {
      */
     public com.google.cloud.bigquery.reservation.v1.Reservation getReservation(
         com.google.cloud.bigquery.reservation.v1.GetReservationRequest request) {
-      return blockingUnaryCall(getChannel(), getGetReservationMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReservationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2069,7 +2084,7 @@ public final class ReservationServiceGrpc {
      */
     public com.google.protobuf.Empty deleteReservation(
         com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteReservationMethod(), getCallOptions(), request);
     }
 
@@ -2082,7 +2097,7 @@ public final class ReservationServiceGrpc {
      */
     public com.google.cloud.bigquery.reservation.v1.Reservation updateReservation(
         com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateReservationMethod(), getCallOptions(), request);
     }
 
@@ -2095,7 +2110,7 @@ public final class ReservationServiceGrpc {
      */
     public com.google.cloud.bigquery.reservation.v1.CapacityCommitment createCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateCapacityCommitmentMethod(), getCallOptions(), request);
     }
 
@@ -2109,7 +2124,7 @@ public final class ReservationServiceGrpc {
     public com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsResponse
         listCapacityCommitments(
             com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListCapacityCommitmentsMethod(), getCallOptions(), request);
     }
 
@@ -2122,7 +2137,7 @@ public final class ReservationServiceGrpc {
      */
     public com.google.cloud.bigquery.reservation.v1.CapacityCommitment getCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetCapacityCommitmentMethod(), getCallOptions(), request);
     }
 
@@ -2137,7 +2152,7 @@ public final class ReservationServiceGrpc {
      */
     public com.google.protobuf.Empty deleteCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteCapacityCommitmentMethod(), getCallOptions(), request);
     }
 
@@ -2154,7 +2169,7 @@ public final class ReservationServiceGrpc {
      */
     public com.google.cloud.bigquery.reservation.v1.CapacityCommitment updateCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateCapacityCommitmentMethod(), getCallOptions(), request);
     }
 
@@ -2173,7 +2188,7 @@ public final class ReservationServiceGrpc {
     public com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse
         splitCapacityCommitment(
             com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSplitCapacityCommitmentMethod(), getCallOptions(), request);
     }
 
@@ -2190,7 +2205,7 @@ public final class ReservationServiceGrpc {
      */
     public com.google.cloud.bigquery.reservation.v1.CapacityCommitment mergeCapacityCommitments(
         com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMergeCapacityCommitmentsMethod(), getCallOptions(), request);
     }
 
@@ -2225,7 +2240,7 @@ public final class ReservationServiceGrpc {
      */
     public com.google.cloud.bigquery.reservation.v1.Assignment createAssignment(
         com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateAssignmentMethod(), getCallOptions(), request);
     }
 
@@ -2252,7 +2267,8 @@ public final class ReservationServiceGrpc {
      */
     public com.google.cloud.bigquery.reservation.v1.ListAssignmentsResponse listAssignments(
         com.google.cloud.bigquery.reservation.v1.ListAssignmentsRequest request) {
-      return blockingUnaryCall(getChannel(), getListAssignmentsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAssignmentsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2275,7 +2291,7 @@ public final class ReservationServiceGrpc {
      */
     public com.google.protobuf.Empty deleteAssignment(
         com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteAssignmentMethod(), getCallOptions(), request);
     }
 
@@ -2304,7 +2320,7 @@ public final class ReservationServiceGrpc {
      */
     public com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse searchAssignments(
         com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSearchAssignmentsMethod(), getCallOptions(), request);
     }
 
@@ -2320,7 +2336,8 @@ public final class ReservationServiceGrpc {
      */
     public com.google.cloud.bigquery.reservation.v1.Assignment moveAssignment(
         com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest request) {
-      return blockingUnaryCall(getChannel(), getMoveAssignmentMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMoveAssignmentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2332,7 +2349,7 @@ public final class ReservationServiceGrpc {
      */
     public com.google.cloud.bigquery.reservation.v1.BiReservation getBiReservation(
         com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetBiReservationMethod(), getCallOptions(), request);
     }
 
@@ -2350,7 +2367,7 @@ public final class ReservationServiceGrpc {
      */
     public com.google.cloud.bigquery.reservation.v1.BiReservation updateBiReservation(
         com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateBiReservationMethod(), getCallOptions(), request);
     }
   }
@@ -2397,7 +2414,7 @@ public final class ReservationServiceGrpc {
             com.google.cloud.bigquery.reservation.v1.Reservation>
         createReservation(
             com.google.cloud.bigquery.reservation.v1.CreateReservationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateReservationMethod(), getCallOptions()), request);
     }
 
@@ -2411,7 +2428,7 @@ public final class ReservationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.ListReservationsResponse>
         listReservations(com.google.cloud.bigquery.reservation.v1.ListReservationsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListReservationsMethod(), getCallOptions()), request);
     }
 
@@ -2425,7 +2442,7 @@ public final class ReservationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.Reservation>
         getReservation(com.google.cloud.bigquery.reservation.v1.GetReservationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetReservationMethod(), getCallOptions()), request);
     }
 
@@ -2441,7 +2458,7 @@ public final class ReservationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteReservation(
             com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteReservationMethod(), getCallOptions()), request);
     }
 
@@ -2456,7 +2473,7 @@ public final class ReservationServiceGrpc {
             com.google.cloud.bigquery.reservation.v1.Reservation>
         updateReservation(
             com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateReservationMethod(), getCallOptions()), request);
     }
 
@@ -2471,7 +2488,7 @@ public final class ReservationServiceGrpc {
             com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
         createCapacityCommitment(
             com.google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateCapacityCommitmentMethod(), getCallOptions()), request);
     }
 
@@ -2486,7 +2503,7 @@ public final class ReservationServiceGrpc {
             com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsResponse>
         listCapacityCommitments(
             com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListCapacityCommitmentsMethod(), getCallOptions()), request);
     }
 
@@ -2501,7 +2518,7 @@ public final class ReservationServiceGrpc {
             com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
         getCapacityCommitment(
             com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCapacityCommitmentMethod(), getCallOptions()), request);
     }
 
@@ -2517,7 +2534,7 @@ public final class ReservationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteCapacityCommitment(
             com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteCapacityCommitmentMethod(), getCallOptions()), request);
     }
 
@@ -2536,7 +2553,7 @@ public final class ReservationServiceGrpc {
             com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
         updateCapacityCommitment(
             com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateCapacityCommitmentMethod(), getCallOptions()), request);
     }
 
@@ -2556,7 +2573,7 @@ public final class ReservationServiceGrpc {
             com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse>
         splitCapacityCommitment(
             com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSplitCapacityCommitmentMethod(), getCallOptions()), request);
     }
 
@@ -2575,7 +2592,7 @@ public final class ReservationServiceGrpc {
             com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
         mergeCapacityCommitments(
             com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMergeCapacityCommitmentsMethod(), getCallOptions()), request);
     }
 
@@ -2611,7 +2628,7 @@ public final class ReservationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.Assignment>
         createAssignment(com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateAssignmentMethod(), getCallOptions()), request);
     }
 
@@ -2639,7 +2656,7 @@ public final class ReservationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.ListAssignmentsResponse>
         listAssignments(com.google.cloud.bigquery.reservation.v1.ListAssignmentsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListAssignmentsMethod(), getCallOptions()), request);
     }
 
@@ -2663,7 +2680,7 @@ public final class ReservationServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteAssignment(com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteAssignmentMethod(), getCallOptions()), request);
     }
 
@@ -2694,7 +2711,7 @@ public final class ReservationServiceGrpc {
             com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse>
         searchAssignments(
             com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchAssignmentsMethod(), getCallOptions()), request);
     }
 
@@ -2711,7 +2728,7 @@ public final class ReservationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.Assignment>
         moveAssignment(com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMoveAssignmentMethod(), getCallOptions()), request);
     }
 
@@ -2725,7 +2742,7 @@ public final class ReservationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.reservation.v1.BiReservation>
         getBiReservation(com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetBiReservationMethod(), getCallOptions()), request);
     }
 
@@ -2745,7 +2762,7 @@ public final class ReservationServiceGrpc {
             com.google.cloud.bigquery.reservation.v1.BiReservation>
         updateBiReservation(
             com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateBiReservationMethod(), getCallOptions()), request);
     }
   }
