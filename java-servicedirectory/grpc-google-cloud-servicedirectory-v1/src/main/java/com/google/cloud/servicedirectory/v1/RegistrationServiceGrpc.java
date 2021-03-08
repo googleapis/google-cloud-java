@@ -16,11 +16,6 @@
 package com.google.cloud.servicedirectory.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -929,7 +924,8 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.CreateNamespaceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.Namespace>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateNamespaceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateNamespaceMethod(), responseObserver);
     }
 
     /**
@@ -943,7 +939,8 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.ListNamespacesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.ListNamespacesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListNamespacesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListNamespacesMethod(), responseObserver);
     }
 
     /**
@@ -957,7 +954,8 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.GetNamespaceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.Namespace>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetNamespaceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetNamespaceMethod(), responseObserver);
     }
 
     /**
@@ -971,7 +969,8 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.UpdateNamespaceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.Namespace>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateNamespaceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateNamespaceMethod(), responseObserver);
     }
 
     /**
@@ -985,7 +984,8 @@ public final class RegistrationServiceGrpc {
     public void deleteNamespace(
         com.google.cloud.servicedirectory.v1.DeleteNamespaceRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteNamespaceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteNamespaceMethod(), responseObserver);
     }
 
     /**
@@ -999,7 +999,8 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.CreateServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.Service>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateServiceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateServiceMethod(), responseObserver);
     }
 
     /**
@@ -1013,7 +1014,8 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.ListServicesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.ListServicesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListServicesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListServicesMethod(), responseObserver);
     }
 
     /**
@@ -1027,7 +1029,7 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.GetServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.Service>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetServiceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetServiceMethod(), responseObserver);
     }
 
     /**
@@ -1041,7 +1043,8 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.UpdateServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.Service>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateServiceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateServiceMethod(), responseObserver);
     }
 
     /**
@@ -1055,7 +1058,8 @@ public final class RegistrationServiceGrpc {
     public void deleteService(
         com.google.cloud.servicedirectory.v1.DeleteServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteServiceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteServiceMethod(), responseObserver);
     }
 
     /**
@@ -1069,7 +1073,8 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.CreateEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.Endpoint>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateEndpointMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateEndpointMethod(), responseObserver);
     }
 
     /**
@@ -1083,7 +1088,8 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.ListEndpointsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.ListEndpointsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListEndpointsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListEndpointsMethod(), responseObserver);
     }
 
     /**
@@ -1097,7 +1103,8 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.GetEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.Endpoint>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetEndpointMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetEndpointMethod(), responseObserver);
     }
 
     /**
@@ -1111,7 +1118,8 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.UpdateEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.Endpoint>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateEndpointMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateEndpointMethod(), responseObserver);
     }
 
     /**
@@ -1124,7 +1132,8 @@ public final class RegistrationServiceGrpc {
     public void deleteEndpoint(
         com.google.cloud.servicedirectory.v1.DeleteEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteEndpointMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteEndpointMethod(), responseObserver);
     }
 
     /**
@@ -1137,7 +1146,8 @@ public final class RegistrationServiceGrpc {
     public void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetIamPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -1150,7 +1160,8 @@ public final class RegistrationServiceGrpc {
     public void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetIamPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -1164,7 +1175,8 @@ public final class RegistrationServiceGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getTestIamPermissionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getTestIamPermissionsMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -1172,117 +1184,117 @@ public final class RegistrationServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreateNamespaceMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.servicedirectory.v1.CreateNamespaceRequest,
                       com.google.cloud.servicedirectory.v1.Namespace>(
                       this, METHODID_CREATE_NAMESPACE)))
           .addMethod(
               getListNamespacesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.servicedirectory.v1.ListNamespacesRequest,
                       com.google.cloud.servicedirectory.v1.ListNamespacesResponse>(
                       this, METHODID_LIST_NAMESPACES)))
           .addMethod(
               getGetNamespaceMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.servicedirectory.v1.GetNamespaceRequest,
                       com.google.cloud.servicedirectory.v1.Namespace>(
                       this, METHODID_GET_NAMESPACE)))
           .addMethod(
               getUpdateNamespaceMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.servicedirectory.v1.UpdateNamespaceRequest,
                       com.google.cloud.servicedirectory.v1.Namespace>(
                       this, METHODID_UPDATE_NAMESPACE)))
           .addMethod(
               getDeleteNamespaceMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.servicedirectory.v1.DeleteNamespaceRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_NAMESPACE)))
           .addMethod(
               getCreateServiceMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.servicedirectory.v1.CreateServiceRequest,
                       com.google.cloud.servicedirectory.v1.Service>(this, METHODID_CREATE_SERVICE)))
           .addMethod(
               getListServicesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.servicedirectory.v1.ListServicesRequest,
                       com.google.cloud.servicedirectory.v1.ListServicesResponse>(
                       this, METHODID_LIST_SERVICES)))
           .addMethod(
               getGetServiceMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.servicedirectory.v1.GetServiceRequest,
                       com.google.cloud.servicedirectory.v1.Service>(this, METHODID_GET_SERVICE)))
           .addMethod(
               getUpdateServiceMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.servicedirectory.v1.UpdateServiceRequest,
                       com.google.cloud.servicedirectory.v1.Service>(this, METHODID_UPDATE_SERVICE)))
           .addMethod(
               getDeleteServiceMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.servicedirectory.v1.DeleteServiceRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_SERVICE)))
           .addMethod(
               getCreateEndpointMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.servicedirectory.v1.CreateEndpointRequest,
                       com.google.cloud.servicedirectory.v1.Endpoint>(
                       this, METHODID_CREATE_ENDPOINT)))
           .addMethod(
               getListEndpointsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.servicedirectory.v1.ListEndpointsRequest,
                       com.google.cloud.servicedirectory.v1.ListEndpointsResponse>(
                       this, METHODID_LIST_ENDPOINTS)))
           .addMethod(
               getGetEndpointMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.servicedirectory.v1.GetEndpointRequest,
                       com.google.cloud.servicedirectory.v1.Endpoint>(this, METHODID_GET_ENDPOINT)))
           .addMethod(
               getUpdateEndpointMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.servicedirectory.v1.UpdateEndpointRequest,
                       com.google.cloud.servicedirectory.v1.Endpoint>(
                       this, METHODID_UPDATE_ENDPOINT)))
           .addMethod(
               getDeleteEndpointMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.servicedirectory.v1.DeleteEndpointRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_ENDPOINT)))
           .addMethod(
               getGetIamPolicyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
                       this, METHODID_GET_IAM_POLICY)))
           .addMethod(
               getSetIamPolicyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
                       this, METHODID_SET_IAM_POLICY)))
           .addMethod(
               getTestIamPermissionsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.TestIamPermissionsRequest,
                       com.google.iam.v1.TestIamPermissionsResponse>(
@@ -1332,7 +1344,7 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.CreateNamespaceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.Namespace>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateNamespaceMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1349,7 +1361,7 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.ListNamespacesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.ListNamespacesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListNamespacesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1366,7 +1378,7 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.GetNamespaceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.Namespace>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetNamespaceMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1383,7 +1395,7 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.UpdateNamespaceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.Namespace>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateNamespaceMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1400,7 +1412,7 @@ public final class RegistrationServiceGrpc {
     public void deleteNamespace(
         com.google.cloud.servicedirectory.v1.DeleteNamespaceRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteNamespaceMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1417,7 +1429,7 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.CreateServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.Service>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateServiceMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1434,7 +1446,7 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.ListServicesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.ListServicesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListServicesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1451,7 +1463,7 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.GetServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.Service>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetServiceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1466,7 +1478,7 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.UpdateServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.Service>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateServiceMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1483,7 +1495,7 @@ public final class RegistrationServiceGrpc {
     public void deleteService(
         com.google.cloud.servicedirectory.v1.DeleteServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteServiceMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1500,7 +1512,7 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.CreateEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.Endpoint>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateEndpointMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1517,7 +1529,7 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.ListEndpointsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.ListEndpointsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListEndpointsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1534,7 +1546,7 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.GetEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.Endpoint>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetEndpointMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1551,7 +1563,7 @@ public final class RegistrationServiceGrpc {
         com.google.cloud.servicedirectory.v1.UpdateEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.Endpoint>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateEndpointMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1567,7 +1579,7 @@ public final class RegistrationServiceGrpc {
     public void deleteEndpoint(
         com.google.cloud.servicedirectory.v1.DeleteEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteEndpointMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1583,7 +1595,7 @@ public final class RegistrationServiceGrpc {
     public void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1599,7 +1611,7 @@ public final class RegistrationServiceGrpc {
     public void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1616,7 +1628,7 @@ public final class RegistrationServiceGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1663,7 +1675,8 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.cloud.servicedirectory.v1.Namespace createNamespace(
         com.google.cloud.servicedirectory.v1.CreateNamespaceRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateNamespaceMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateNamespaceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1675,7 +1688,8 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.cloud.servicedirectory.v1.ListNamespacesResponse listNamespaces(
         com.google.cloud.servicedirectory.v1.ListNamespacesRequest request) {
-      return blockingUnaryCall(getChannel(), getListNamespacesMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNamespacesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1687,7 +1701,8 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.cloud.servicedirectory.v1.Namespace getNamespace(
         com.google.cloud.servicedirectory.v1.GetNamespaceRequest request) {
-      return blockingUnaryCall(getChannel(), getGetNamespaceMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNamespaceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1699,7 +1714,8 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.cloud.servicedirectory.v1.Namespace updateNamespace(
         com.google.cloud.servicedirectory.v1.UpdateNamespaceRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateNamespaceMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateNamespaceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1712,7 +1728,8 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.protobuf.Empty deleteNamespace(
         com.google.cloud.servicedirectory.v1.DeleteNamespaceRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteNamespaceMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteNamespaceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1724,7 +1741,8 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.cloud.servicedirectory.v1.Service createService(
         com.google.cloud.servicedirectory.v1.CreateServiceRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateServiceMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateServiceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1736,7 +1754,8 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.cloud.servicedirectory.v1.ListServicesResponse listServices(
         com.google.cloud.servicedirectory.v1.ListServicesRequest request) {
-      return blockingUnaryCall(getChannel(), getListServicesMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServicesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1748,7 +1767,8 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.cloud.servicedirectory.v1.Service getService(
         com.google.cloud.servicedirectory.v1.GetServiceRequest request) {
-      return blockingUnaryCall(getChannel(), getGetServiceMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServiceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1760,7 +1780,8 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.cloud.servicedirectory.v1.Service updateService(
         com.google.cloud.servicedirectory.v1.UpdateServiceRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateServiceMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateServiceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1773,7 +1794,8 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.protobuf.Empty deleteService(
         com.google.cloud.servicedirectory.v1.DeleteServiceRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteServiceMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteServiceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1785,7 +1807,8 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.cloud.servicedirectory.v1.Endpoint createEndpoint(
         com.google.cloud.servicedirectory.v1.CreateEndpointRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateEndpointMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEndpointMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1797,7 +1820,8 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.cloud.servicedirectory.v1.ListEndpointsResponse listEndpoints(
         com.google.cloud.servicedirectory.v1.ListEndpointsRequest request) {
-      return blockingUnaryCall(getChannel(), getListEndpointsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEndpointsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1809,7 +1833,8 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.cloud.servicedirectory.v1.Endpoint getEndpoint(
         com.google.cloud.servicedirectory.v1.GetEndpointRequest request) {
-      return blockingUnaryCall(getChannel(), getGetEndpointMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEndpointMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1821,7 +1846,8 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.cloud.servicedirectory.v1.Endpoint updateEndpoint(
         com.google.cloud.servicedirectory.v1.UpdateEndpointRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateEndpointMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEndpointMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1833,7 +1859,8 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.protobuf.Empty deleteEndpoint(
         com.google.cloud.servicedirectory.v1.DeleteEndpointRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteEndpointMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEndpointMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1844,7 +1871,8 @@ public final class RegistrationServiceGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return blockingUnaryCall(getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1855,7 +1883,8 @@ public final class RegistrationServiceGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return blockingUnaryCall(getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1867,7 +1896,7 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
   }
@@ -1913,7 +1942,7 @@ public final class RegistrationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.servicedirectory.v1.Namespace>
         createNamespace(com.google.cloud.servicedirectory.v1.CreateNamespaceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateNamespaceMethod(), getCallOptions()), request);
     }
 
@@ -1927,7 +1956,7 @@ public final class RegistrationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.servicedirectory.v1.ListNamespacesResponse>
         listNamespaces(com.google.cloud.servicedirectory.v1.ListNamespacesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListNamespacesMethod(), getCallOptions()), request);
     }
 
@@ -1941,7 +1970,7 @@ public final class RegistrationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.servicedirectory.v1.Namespace>
         getNamespace(com.google.cloud.servicedirectory.v1.GetNamespaceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetNamespaceMethod(), getCallOptions()), request);
     }
 
@@ -1955,7 +1984,7 @@ public final class RegistrationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.servicedirectory.v1.Namespace>
         updateNamespace(com.google.cloud.servicedirectory.v1.UpdateNamespaceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateNamespaceMethod(), getCallOptions()), request);
     }
 
@@ -1969,7 +1998,7 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteNamespace(com.google.cloud.servicedirectory.v1.DeleteNamespaceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteNamespaceMethod(), getCallOptions()), request);
     }
 
@@ -1983,7 +2012,7 @@ public final class RegistrationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.servicedirectory.v1.Service>
         createService(com.google.cloud.servicedirectory.v1.CreateServiceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateServiceMethod(), getCallOptions()), request);
     }
 
@@ -1997,7 +2026,7 @@ public final class RegistrationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.servicedirectory.v1.ListServicesResponse>
         listServices(com.google.cloud.servicedirectory.v1.ListServicesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListServicesMethod(), getCallOptions()), request);
     }
 
@@ -2011,7 +2040,7 @@ public final class RegistrationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.servicedirectory.v1.Service>
         getService(com.google.cloud.servicedirectory.v1.GetServiceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetServiceMethod(), getCallOptions()), request);
     }
 
@@ -2025,7 +2054,7 @@ public final class RegistrationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.servicedirectory.v1.Service>
         updateService(com.google.cloud.servicedirectory.v1.UpdateServiceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateServiceMethod(), getCallOptions()), request);
     }
 
@@ -2039,7 +2068,7 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteService(com.google.cloud.servicedirectory.v1.DeleteServiceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteServiceMethod(), getCallOptions()), request);
     }
 
@@ -2053,7 +2082,7 @@ public final class RegistrationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.servicedirectory.v1.Endpoint>
         createEndpoint(com.google.cloud.servicedirectory.v1.CreateEndpointRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateEndpointMethod(), getCallOptions()), request);
     }
 
@@ -2067,7 +2096,7 @@ public final class RegistrationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.servicedirectory.v1.ListEndpointsResponse>
         listEndpoints(com.google.cloud.servicedirectory.v1.ListEndpointsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListEndpointsMethod(), getCallOptions()), request);
     }
 
@@ -2081,7 +2110,7 @@ public final class RegistrationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.servicedirectory.v1.Endpoint>
         getEndpoint(com.google.cloud.servicedirectory.v1.GetEndpointRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetEndpointMethod(), getCallOptions()), request);
     }
 
@@ -2095,7 +2124,7 @@ public final class RegistrationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.servicedirectory.v1.Endpoint>
         updateEndpoint(com.google.cloud.servicedirectory.v1.UpdateEndpointRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateEndpointMethod(), getCallOptions()), request);
     }
 
@@ -2108,7 +2137,7 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteEndpoint(com.google.cloud.servicedirectory.v1.DeleteEndpointRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteEndpointMethod(), getCallOptions()), request);
     }
 
@@ -2121,7 +2150,7 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()), request);
     }
 
@@ -2134,7 +2163,7 @@ public final class RegistrationServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()), request);
     }
 
@@ -2148,7 +2177,7 @@ public final class RegistrationServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.iam.v1.TestIamPermissionsResponse>
         testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
     }
   }

@@ -16,11 +16,6 @@
 package com.google.cloud.servicedirectory.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -149,7 +144,8 @@ public final class LookupServiceGrpc {
         com.google.cloud.servicedirectory.v1.ResolveServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.ResolveServiceResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getResolveServiceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getResolveServiceMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -157,7 +153,7 @@ public final class LookupServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getResolveServiceMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.servicedirectory.v1.ResolveServiceRequest,
                       com.google.cloud.servicedirectory.v1.ResolveServiceResponse>(
@@ -197,7 +193,7 @@ public final class LookupServiceGrpc {
         com.google.cloud.servicedirectory.v1.ResolveServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.servicedirectory.v1.ResolveServiceResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getResolveServiceMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -234,7 +230,8 @@ public final class LookupServiceGrpc {
      */
     public com.google.cloud.servicedirectory.v1.ResolveServiceResponse resolveService(
         com.google.cloud.servicedirectory.v1.ResolveServiceRequest request) {
-      return blockingUnaryCall(getChannel(), getResolveServiceMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResolveServiceMethod(), getCallOptions(), request);
     }
   }
 
@@ -269,7 +266,7 @@ public final class LookupServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.servicedirectory.v1.ResolveServiceResponse>
         resolveService(com.google.cloud.servicedirectory.v1.ResolveServiceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getResolveServiceMethod(), getCallOptions()), request);
     }
   }
