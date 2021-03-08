@@ -16,11 +16,6 @@
 package com.google.phishingprotection.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -159,7 +154,8 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
         com.google.phishingprotection.v1beta1.ReportPhishingRequest request,
         io.grpc.stub.StreamObserver<com.google.phishingprotection.v1beta1.ReportPhishingResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getReportPhishingMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getReportPhishingMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -167,7 +163,7 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getReportPhishingMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.phishingprotection.v1beta1.ReportPhishingRequest,
                       com.google.phishingprotection.v1beta1.ReportPhishingResponse>(
@@ -213,7 +209,7 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
         com.google.phishingprotection.v1beta1.ReportPhishingRequest request,
         io.grpc.stub.StreamObserver<com.google.phishingprotection.v1beta1.ReportPhishingResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getReportPhishingMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -255,7 +251,8 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
      */
     public com.google.phishingprotection.v1beta1.ReportPhishingResponse reportPhishing(
         com.google.phishingprotection.v1beta1.ReportPhishingRequest request) {
-      return blockingUnaryCall(getChannel(), getReportPhishingMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReportPhishingMethod(), getCallOptions(), request);
     }
   }
 
@@ -295,7 +292,7 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.phishingprotection.v1beta1.ReportPhishingResponse>
         reportPhishing(com.google.phishingprotection.v1beta1.ReportPhishingRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getReportPhishingMethod(), getCallOptions()), request);
     }
   }
