@@ -16,11 +16,6 @@
 package com.google.container.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -1483,7 +1478,8 @@ public final class ClusterManagerGrpc {
         com.google.container.v1.ListClustersRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.ListClustersResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListClustersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListClustersMethod(), responseObserver);
     }
 
     /**
@@ -1496,7 +1492,7 @@ public final class ClusterManagerGrpc {
     public void getCluster(
         com.google.container.v1.GetClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Cluster> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetClusterMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetClusterMethod(), responseObserver);
     }
 
     /**
@@ -1519,7 +1515,8 @@ public final class ClusterManagerGrpc {
     public void createCluster(
         com.google.container.v1.CreateClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateClusterMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateClusterMethod(), responseObserver);
     }
 
     /**
@@ -1532,7 +1529,8 @@ public final class ClusterManagerGrpc {
     public void updateCluster(
         com.google.container.v1.UpdateClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateClusterMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateClusterMethod(), responseObserver);
     }
 
     /**
@@ -1545,7 +1543,8 @@ public final class ClusterManagerGrpc {
     public void updateNodePool(
         com.google.container.v1.UpdateNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateNodePoolMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateNodePoolMethod(), responseObserver);
     }
 
     /**
@@ -1558,7 +1557,8 @@ public final class ClusterManagerGrpc {
     public void setNodePoolAutoscaling(
         com.google.container.v1.SetNodePoolAutoscalingRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetNodePoolAutoscalingMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetNodePoolAutoscalingMethod(), responseObserver);
     }
 
     /**
@@ -1571,7 +1571,8 @@ public final class ClusterManagerGrpc {
     public void setLoggingService(
         com.google.container.v1.SetLoggingServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetLoggingServiceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetLoggingServiceMethod(), responseObserver);
     }
 
     /**
@@ -1584,7 +1585,8 @@ public final class ClusterManagerGrpc {
     public void setMonitoringService(
         com.google.container.v1.SetMonitoringServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetMonitoringServiceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetMonitoringServiceMethod(), responseObserver);
     }
 
     /**
@@ -1597,7 +1599,8 @@ public final class ClusterManagerGrpc {
     public void setAddonsConfig(
         com.google.container.v1.SetAddonsConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetAddonsConfigMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetAddonsConfigMethod(), responseObserver);
     }
 
     /**
@@ -1614,7 +1617,8 @@ public final class ClusterManagerGrpc {
     public void setLocations(
         com.google.container.v1.SetLocationsRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetLocationsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetLocationsMethod(), responseObserver);
     }
 
     /**
@@ -1627,7 +1631,8 @@ public final class ClusterManagerGrpc {
     public void updateMaster(
         com.google.container.v1.UpdateMasterRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateMasterMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateMasterMethod(), responseObserver);
     }
 
     /**
@@ -1642,7 +1647,8 @@ public final class ClusterManagerGrpc {
     public void setMasterAuth(
         com.google.container.v1.SetMasterAuthRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetMasterAuthMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetMasterAuthMethod(), responseObserver);
     }
 
     /**
@@ -1661,7 +1667,8 @@ public final class ClusterManagerGrpc {
     public void deleteCluster(
         com.google.container.v1.DeleteClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteClusterMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteClusterMethod(), responseObserver);
     }
 
     /**
@@ -1675,7 +1682,8 @@ public final class ClusterManagerGrpc {
         com.google.container.v1.ListOperationsRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.ListOperationsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListOperationsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListOperationsMethod(), responseObserver);
     }
 
     /**
@@ -1688,7 +1696,8 @@ public final class ClusterManagerGrpc {
     public void getOperation(
         com.google.container.v1.GetOperationRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetOperationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetOperationMethod(), responseObserver);
     }
 
     /**
@@ -1701,7 +1710,8 @@ public final class ClusterManagerGrpc {
     public void cancelOperation(
         com.google.container.v1.CancelOperationRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getCancelOperationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCancelOperationMethod(), responseObserver);
     }
 
     /**
@@ -1714,7 +1724,8 @@ public final class ClusterManagerGrpc {
     public void getServerConfig(
         com.google.container.v1.GetServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.ServerConfig> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetServerConfigMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetServerConfigMethod(), responseObserver);
     }
 
     /**
@@ -1731,7 +1742,8 @@ public final class ClusterManagerGrpc {
         com.google.container.v1.GetJSONWebKeysRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.GetJSONWebKeysResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetJSONWebKeysMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetJSONWebKeysMethod(), responseObserver);
     }
 
     /**
@@ -1745,7 +1757,8 @@ public final class ClusterManagerGrpc {
         com.google.container.v1.ListNodePoolsRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.ListNodePoolsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListNodePoolsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListNodePoolsMethod(), responseObserver);
     }
 
     /**
@@ -1758,7 +1771,8 @@ public final class ClusterManagerGrpc {
     public void getNodePool(
         com.google.container.v1.GetNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.NodePool> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetNodePoolMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetNodePoolMethod(), responseObserver);
     }
 
     /**
@@ -1771,7 +1785,8 @@ public final class ClusterManagerGrpc {
     public void createNodePool(
         com.google.container.v1.CreateNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateNodePoolMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateNodePoolMethod(), responseObserver);
     }
 
     /**
@@ -1784,7 +1799,8 @@ public final class ClusterManagerGrpc {
     public void deleteNodePool(
         com.google.container.v1.DeleteNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteNodePoolMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteNodePoolMethod(), responseObserver);
     }
 
     /**
@@ -1798,7 +1814,8 @@ public final class ClusterManagerGrpc {
     public void rollbackNodePoolUpgrade(
         com.google.container.v1.RollbackNodePoolUpgradeRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getRollbackNodePoolUpgradeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRollbackNodePoolUpgradeMethod(), responseObserver);
     }
 
     /**
@@ -1811,7 +1828,8 @@ public final class ClusterManagerGrpc {
     public void setNodePoolManagement(
         com.google.container.v1.SetNodePoolManagementRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetNodePoolManagementMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetNodePoolManagementMethod(), responseObserver);
     }
 
     /**
@@ -1824,7 +1842,7 @@ public final class ClusterManagerGrpc {
     public void setLabels(
         com.google.container.v1.SetLabelsRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetLabelsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetLabelsMethod(), responseObserver);
     }
 
     /**
@@ -1837,7 +1855,8 @@ public final class ClusterManagerGrpc {
     public void setLegacyAbac(
         com.google.container.v1.SetLegacyAbacRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetLegacyAbacMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetLegacyAbacMethod(), responseObserver);
     }
 
     /**
@@ -1850,7 +1869,8 @@ public final class ClusterManagerGrpc {
     public void startIPRotation(
         com.google.container.v1.StartIPRotationRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getStartIPRotationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getStartIPRotationMethod(), responseObserver);
     }
 
     /**
@@ -1863,7 +1883,8 @@ public final class ClusterManagerGrpc {
     public void completeIPRotation(
         com.google.container.v1.CompleteIPRotationRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCompleteIPRotationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCompleteIPRotationMethod(), responseObserver);
     }
 
     /**
@@ -1876,7 +1897,8 @@ public final class ClusterManagerGrpc {
     public void setNodePoolSize(
         com.google.container.v1.SetNodePoolSizeRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetNodePoolSizeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetNodePoolSizeMethod(), responseObserver);
     }
 
     /**
@@ -1889,7 +1911,8 @@ public final class ClusterManagerGrpc {
     public void setNetworkPolicy(
         com.google.container.v1.SetNetworkPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetNetworkPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetNetworkPolicyMethod(), responseObserver);
     }
 
     /**
@@ -1902,7 +1925,8 @@ public final class ClusterManagerGrpc {
     public void setMaintenancePolicy(
         com.google.container.v1.SetMaintenancePolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetMaintenancePolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetMaintenancePolicyMethod(), responseObserver);
     }
 
     /**
@@ -1916,7 +1940,8 @@ public final class ClusterManagerGrpc {
         com.google.container.v1.ListUsableSubnetworksRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.ListUsableSubnetworksResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListUsableSubnetworksMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListUsableSubnetworksMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -1924,197 +1949,197 @@ public final class ClusterManagerGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListClustersMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.ListClustersRequest,
                       com.google.container.v1.ListClustersResponse>(this, METHODID_LIST_CLUSTERS)))
           .addMethod(
               getGetClusterMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.GetClusterRequest, com.google.container.v1.Cluster>(
                       this, METHODID_GET_CLUSTER)))
           .addMethod(
               getCreateClusterMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.CreateClusterRequest,
                       com.google.container.v1.Operation>(this, METHODID_CREATE_CLUSTER)))
           .addMethod(
               getUpdateClusterMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.UpdateClusterRequest,
                       com.google.container.v1.Operation>(this, METHODID_UPDATE_CLUSTER)))
           .addMethod(
               getUpdateNodePoolMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.UpdateNodePoolRequest,
                       com.google.container.v1.Operation>(this, METHODID_UPDATE_NODE_POOL)))
           .addMethod(
               getSetNodePoolAutoscalingMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.SetNodePoolAutoscalingRequest,
                       com.google.container.v1.Operation>(this, METHODID_SET_NODE_POOL_AUTOSCALING)))
           .addMethod(
               getSetLoggingServiceMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.SetLoggingServiceRequest,
                       com.google.container.v1.Operation>(this, METHODID_SET_LOGGING_SERVICE)))
           .addMethod(
               getSetMonitoringServiceMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.SetMonitoringServiceRequest,
                       com.google.container.v1.Operation>(this, METHODID_SET_MONITORING_SERVICE)))
           .addMethod(
               getSetAddonsConfigMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.SetAddonsConfigRequest,
                       com.google.container.v1.Operation>(this, METHODID_SET_ADDONS_CONFIG)))
           .addMethod(
               getSetLocationsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.SetLocationsRequest,
                       com.google.container.v1.Operation>(this, METHODID_SET_LOCATIONS)))
           .addMethod(
               getUpdateMasterMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.UpdateMasterRequest,
                       com.google.container.v1.Operation>(this, METHODID_UPDATE_MASTER)))
           .addMethod(
               getSetMasterAuthMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.SetMasterAuthRequest,
                       com.google.container.v1.Operation>(this, METHODID_SET_MASTER_AUTH)))
           .addMethod(
               getDeleteClusterMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.DeleteClusterRequest,
                       com.google.container.v1.Operation>(this, METHODID_DELETE_CLUSTER)))
           .addMethod(
               getListOperationsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.ListOperationsRequest,
                       com.google.container.v1.ListOperationsResponse>(
                       this, METHODID_LIST_OPERATIONS)))
           .addMethod(
               getGetOperationMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.GetOperationRequest,
                       com.google.container.v1.Operation>(this, METHODID_GET_OPERATION)))
           .addMethod(
               getCancelOperationMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.CancelOperationRequest, com.google.protobuf.Empty>(
                       this, METHODID_CANCEL_OPERATION)))
           .addMethod(
               getGetServerConfigMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.GetServerConfigRequest,
                       com.google.container.v1.ServerConfig>(this, METHODID_GET_SERVER_CONFIG)))
           .addMethod(
               getGetJSONWebKeysMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.GetJSONWebKeysRequest,
                       com.google.container.v1.GetJSONWebKeysResponse>(
                       this, METHODID_GET_JSONWEB_KEYS)))
           .addMethod(
               getListNodePoolsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.ListNodePoolsRequest,
                       com.google.container.v1.ListNodePoolsResponse>(
                       this, METHODID_LIST_NODE_POOLS)))
           .addMethod(
               getGetNodePoolMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.GetNodePoolRequest, com.google.container.v1.NodePool>(
                       this, METHODID_GET_NODE_POOL)))
           .addMethod(
               getCreateNodePoolMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.CreateNodePoolRequest,
                       com.google.container.v1.Operation>(this, METHODID_CREATE_NODE_POOL)))
           .addMethod(
               getDeleteNodePoolMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.DeleteNodePoolRequest,
                       com.google.container.v1.Operation>(this, METHODID_DELETE_NODE_POOL)))
           .addMethod(
               getRollbackNodePoolUpgradeMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.RollbackNodePoolUpgradeRequest,
                       com.google.container.v1.Operation>(
                       this, METHODID_ROLLBACK_NODE_POOL_UPGRADE)))
           .addMethod(
               getSetNodePoolManagementMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.SetNodePoolManagementRequest,
                       com.google.container.v1.Operation>(this, METHODID_SET_NODE_POOL_MANAGEMENT)))
           .addMethod(
               getSetLabelsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.SetLabelsRequest, com.google.container.v1.Operation>(
                       this, METHODID_SET_LABELS)))
           .addMethod(
               getSetLegacyAbacMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.SetLegacyAbacRequest,
                       com.google.container.v1.Operation>(this, METHODID_SET_LEGACY_ABAC)))
           .addMethod(
               getStartIPRotationMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.StartIPRotationRequest,
                       com.google.container.v1.Operation>(this, METHODID_START_IPROTATION)))
           .addMethod(
               getCompleteIPRotationMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.CompleteIPRotationRequest,
                       com.google.container.v1.Operation>(this, METHODID_COMPLETE_IPROTATION)))
           .addMethod(
               getSetNodePoolSizeMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.SetNodePoolSizeRequest,
                       com.google.container.v1.Operation>(this, METHODID_SET_NODE_POOL_SIZE)))
           .addMethod(
               getSetNetworkPolicyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.SetNetworkPolicyRequest,
                       com.google.container.v1.Operation>(this, METHODID_SET_NETWORK_POLICY)))
           .addMethod(
               getSetMaintenancePolicyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.SetMaintenancePolicyRequest,
                       com.google.container.v1.Operation>(this, METHODID_SET_MAINTENANCE_POLICY)))
           .addMethod(
               getListUsableSubnetworksMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.container.v1.ListUsableSubnetworksRequest,
                       com.google.container.v1.ListUsableSubnetworksResponse>(
@@ -2153,7 +2178,7 @@ public final class ClusterManagerGrpc {
         com.google.container.v1.ListClustersRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.ListClustersResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListClustersMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2169,7 +2194,7 @@ public final class ClusterManagerGrpc {
     public void getCluster(
         com.google.container.v1.GetClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Cluster> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetClusterMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2193,7 +2218,7 @@ public final class ClusterManagerGrpc {
     public void createCluster(
         com.google.container.v1.CreateClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateClusterMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2209,7 +2234,7 @@ public final class ClusterManagerGrpc {
     public void updateCluster(
         com.google.container.v1.UpdateClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateClusterMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2225,7 +2250,7 @@ public final class ClusterManagerGrpc {
     public void updateNodePool(
         com.google.container.v1.UpdateNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateNodePoolMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2241,7 +2266,7 @@ public final class ClusterManagerGrpc {
     public void setNodePoolAutoscaling(
         com.google.container.v1.SetNodePoolAutoscalingRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetNodePoolAutoscalingMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2257,7 +2282,7 @@ public final class ClusterManagerGrpc {
     public void setLoggingService(
         com.google.container.v1.SetLoggingServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetLoggingServiceMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2273,7 +2298,7 @@ public final class ClusterManagerGrpc {
     public void setMonitoringService(
         com.google.container.v1.SetMonitoringServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetMonitoringServiceMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2289,7 +2314,7 @@ public final class ClusterManagerGrpc {
     public void setAddonsConfig(
         com.google.container.v1.SetAddonsConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetAddonsConfigMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2309,7 +2334,7 @@ public final class ClusterManagerGrpc {
     public void setLocations(
         com.google.container.v1.SetLocationsRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetLocationsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2325,7 +2350,7 @@ public final class ClusterManagerGrpc {
     public void updateMaster(
         com.google.container.v1.UpdateMasterRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateMasterMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2343,7 +2368,7 @@ public final class ClusterManagerGrpc {
     public void setMasterAuth(
         com.google.container.v1.SetMasterAuthRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetMasterAuthMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2365,7 +2390,7 @@ public final class ClusterManagerGrpc {
     public void deleteCluster(
         com.google.container.v1.DeleteClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteClusterMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2382,7 +2407,7 @@ public final class ClusterManagerGrpc {
         com.google.container.v1.ListOperationsRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.ListOperationsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListOperationsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2398,7 +2423,7 @@ public final class ClusterManagerGrpc {
     public void getOperation(
         com.google.container.v1.GetOperationRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetOperationMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2414,7 +2439,7 @@ public final class ClusterManagerGrpc {
     public void cancelOperation(
         com.google.container.v1.CancelOperationRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCancelOperationMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2430,7 +2455,7 @@ public final class ClusterManagerGrpc {
     public void getServerConfig(
         com.google.container.v1.GetServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.ServerConfig> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetServerConfigMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2450,7 +2475,7 @@ public final class ClusterManagerGrpc {
         com.google.container.v1.GetJSONWebKeysRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.GetJSONWebKeysResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetJSONWebKeysMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2467,7 +2492,7 @@ public final class ClusterManagerGrpc {
         com.google.container.v1.ListNodePoolsRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.ListNodePoolsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListNodePoolsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2483,7 +2508,7 @@ public final class ClusterManagerGrpc {
     public void getNodePool(
         com.google.container.v1.GetNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.NodePool> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetNodePoolMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2499,7 +2524,7 @@ public final class ClusterManagerGrpc {
     public void createNodePool(
         com.google.container.v1.CreateNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateNodePoolMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2515,7 +2540,7 @@ public final class ClusterManagerGrpc {
     public void deleteNodePool(
         com.google.container.v1.DeleteNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteNodePoolMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2532,7 +2557,7 @@ public final class ClusterManagerGrpc {
     public void rollbackNodePoolUpgrade(
         com.google.container.v1.RollbackNodePoolUpgradeRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRollbackNodePoolUpgradeMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2548,7 +2573,7 @@ public final class ClusterManagerGrpc {
     public void setNodePoolManagement(
         com.google.container.v1.SetNodePoolManagementRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetNodePoolManagementMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2564,7 +2589,7 @@ public final class ClusterManagerGrpc {
     public void setLabels(
         com.google.container.v1.SetLabelsRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetLabelsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2578,7 +2603,7 @@ public final class ClusterManagerGrpc {
     public void setLegacyAbac(
         com.google.container.v1.SetLegacyAbacRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetLegacyAbacMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2594,7 +2619,7 @@ public final class ClusterManagerGrpc {
     public void startIPRotation(
         com.google.container.v1.StartIPRotationRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getStartIPRotationMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2610,7 +2635,7 @@ public final class ClusterManagerGrpc {
     public void completeIPRotation(
         com.google.container.v1.CompleteIPRotationRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCompleteIPRotationMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2626,7 +2651,7 @@ public final class ClusterManagerGrpc {
     public void setNodePoolSize(
         com.google.container.v1.SetNodePoolSizeRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetNodePoolSizeMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2642,7 +2667,7 @@ public final class ClusterManagerGrpc {
     public void setNetworkPolicy(
         com.google.container.v1.SetNetworkPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetNetworkPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2658,7 +2683,7 @@ public final class ClusterManagerGrpc {
     public void setMaintenancePolicy(
         com.google.container.v1.SetMaintenancePolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetMaintenancePolicyMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2675,7 +2700,7 @@ public final class ClusterManagerGrpc {
         com.google.container.v1.ListUsableSubnetworksRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.ListUsableSubnetworksResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListUsableSubnetworksMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2711,7 +2736,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.ListClustersResponse listClusters(
         com.google.container.v1.ListClustersRequest request) {
-      return blockingUnaryCall(getChannel(), getListClustersMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListClustersMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2723,7 +2749,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Cluster getCluster(
         com.google.container.v1.GetClusterRequest request) {
-      return blockingUnaryCall(getChannel(), getGetClusterMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetClusterMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2745,7 +2772,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation createCluster(
         com.google.container.v1.CreateClusterRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateClusterMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateClusterMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2757,7 +2785,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation updateCluster(
         com.google.container.v1.UpdateClusterRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2769,7 +2798,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation updateNodePool(
         com.google.container.v1.UpdateNodePoolRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateNodePoolMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateNodePoolMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2781,7 +2811,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation setNodePoolAutoscaling(
         com.google.container.v1.SetNodePoolAutoscalingRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSetNodePoolAutoscalingMethod(), getCallOptions(), request);
     }
 
@@ -2794,7 +2824,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation setLoggingService(
         com.google.container.v1.SetLoggingServiceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSetLoggingServiceMethod(), getCallOptions(), request);
     }
 
@@ -2807,7 +2837,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation setMonitoringService(
         com.google.container.v1.SetMonitoringServiceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSetMonitoringServiceMethod(), getCallOptions(), request);
     }
 
@@ -2820,7 +2850,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation setAddonsConfig(
         com.google.container.v1.SetAddonsConfigRequest request) {
-      return blockingUnaryCall(getChannel(), getSetAddonsConfigMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetAddonsConfigMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2836,7 +2867,8 @@ public final class ClusterManagerGrpc {
     @java.lang.Deprecated
     public com.google.container.v1.Operation setLocations(
         com.google.container.v1.SetLocationsRequest request) {
-      return blockingUnaryCall(getChannel(), getSetLocationsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetLocationsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2848,7 +2880,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation updateMaster(
         com.google.container.v1.UpdateMasterRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateMasterMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMasterMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2862,7 +2895,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation setMasterAuth(
         com.google.container.v1.SetMasterAuthRequest request) {
-      return blockingUnaryCall(getChannel(), getSetMasterAuthMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetMasterAuthMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2880,7 +2914,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation deleteCluster(
         com.google.container.v1.DeleteClusterRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2892,7 +2927,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.ListOperationsResponse listOperations(
         com.google.container.v1.ListOperationsRequest request) {
-      return blockingUnaryCall(getChannel(), getListOperationsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOperationsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2904,7 +2940,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation getOperation(
         com.google.container.v1.GetOperationRequest request) {
-      return blockingUnaryCall(getChannel(), getGetOperationMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetOperationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2916,7 +2953,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.protobuf.Empty cancelOperation(
         com.google.container.v1.CancelOperationRequest request) {
-      return blockingUnaryCall(getChannel(), getCancelOperationMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelOperationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2928,7 +2966,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.ServerConfig getServerConfig(
         com.google.container.v1.GetServerConfigRequest request) {
-      return blockingUnaryCall(getChannel(), getGetServerConfigMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServerConfigMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2943,7 +2982,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.GetJSONWebKeysResponse getJSONWebKeys(
         com.google.container.v1.GetJSONWebKeysRequest request) {
-      return blockingUnaryCall(getChannel(), getGetJSONWebKeysMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetJSONWebKeysMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2955,7 +2995,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.ListNodePoolsResponse listNodePools(
         com.google.container.v1.ListNodePoolsRequest request) {
-      return blockingUnaryCall(getChannel(), getListNodePoolsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNodePoolsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2967,7 +3008,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.NodePool getNodePool(
         com.google.container.v1.GetNodePoolRequest request) {
-      return blockingUnaryCall(getChannel(), getGetNodePoolMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNodePoolMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2979,7 +3021,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation createNodePool(
         com.google.container.v1.CreateNodePoolRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateNodePoolMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateNodePoolMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2991,7 +3034,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation deleteNodePool(
         com.google.container.v1.DeleteNodePoolRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteNodePoolMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteNodePoolMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3004,7 +3048,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation rollbackNodePoolUpgrade(
         com.google.container.v1.RollbackNodePoolUpgradeRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRollbackNodePoolUpgradeMethod(), getCallOptions(), request);
     }
 
@@ -3017,7 +3061,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation setNodePoolManagement(
         com.google.container.v1.SetNodePoolManagementRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSetNodePoolManagementMethod(), getCallOptions(), request);
     }
 
@@ -3030,7 +3074,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation setLabels(
         com.google.container.v1.SetLabelsRequest request) {
-      return blockingUnaryCall(getChannel(), getSetLabelsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetLabelsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3042,7 +3087,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation setLegacyAbac(
         com.google.container.v1.SetLegacyAbacRequest request) {
-      return blockingUnaryCall(getChannel(), getSetLegacyAbacMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetLegacyAbacMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3054,7 +3100,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation startIPRotation(
         com.google.container.v1.StartIPRotationRequest request) {
-      return blockingUnaryCall(getChannel(), getStartIPRotationMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStartIPRotationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3066,7 +3113,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation completeIPRotation(
         com.google.container.v1.CompleteIPRotationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCompleteIPRotationMethod(), getCallOptions(), request);
     }
 
@@ -3079,7 +3126,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation setNodePoolSize(
         com.google.container.v1.SetNodePoolSizeRequest request) {
-      return blockingUnaryCall(getChannel(), getSetNodePoolSizeMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetNodePoolSizeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3091,7 +3139,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation setNetworkPolicy(
         com.google.container.v1.SetNetworkPolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSetNetworkPolicyMethod(), getCallOptions(), request);
     }
 
@@ -3104,7 +3152,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.Operation setMaintenancePolicy(
         com.google.container.v1.SetMaintenancePolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSetMaintenancePolicyMethod(), getCallOptions(), request);
     }
 
@@ -3117,7 +3165,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.container.v1.ListUsableSubnetworksResponse listUsableSubnetworks(
         com.google.container.v1.ListUsableSubnetworksRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListUsableSubnetworksMethod(), getCallOptions(), request);
     }
   }
@@ -3152,7 +3200,7 @@ public final class ClusterManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.container.v1.ListClustersResponse>
         listClusters(com.google.container.v1.ListClustersRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListClustersMethod(), getCallOptions()), request);
     }
 
@@ -3165,7 +3213,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Cluster>
         getCluster(com.google.container.v1.GetClusterRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetClusterMethod(), getCallOptions()), request);
     }
 
@@ -3188,7 +3236,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         createCluster(com.google.container.v1.CreateClusterRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateClusterMethod(), getCallOptions()), request);
     }
 
@@ -3201,7 +3249,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         updateCluster(com.google.container.v1.UpdateClusterRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateClusterMethod(), getCallOptions()), request);
     }
 
@@ -3214,7 +3262,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         updateNodePool(com.google.container.v1.UpdateNodePoolRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateNodePoolMethod(), getCallOptions()), request);
     }
 
@@ -3227,7 +3275,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         setNodePoolAutoscaling(com.google.container.v1.SetNodePoolAutoscalingRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetNodePoolAutoscalingMethod(), getCallOptions()), request);
     }
 
@@ -3240,7 +3288,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         setLoggingService(com.google.container.v1.SetLoggingServiceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetLoggingServiceMethod(), getCallOptions()), request);
     }
 
@@ -3253,7 +3301,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         setMonitoringService(com.google.container.v1.SetMonitoringServiceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetMonitoringServiceMethod(), getCallOptions()), request);
     }
 
@@ -3266,7 +3314,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         setAddonsConfig(com.google.container.v1.SetAddonsConfigRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetAddonsConfigMethod(), getCallOptions()), request);
     }
 
@@ -3283,7 +3331,7 @@ public final class ClusterManagerGrpc {
     @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         setLocations(com.google.container.v1.SetLocationsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetLocationsMethod(), getCallOptions()), request);
     }
 
@@ -3296,7 +3344,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         updateMaster(com.google.container.v1.UpdateMasterRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateMasterMethod(), getCallOptions()), request);
     }
 
@@ -3311,7 +3359,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         setMasterAuth(com.google.container.v1.SetMasterAuthRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetMasterAuthMethod(), getCallOptions()), request);
     }
 
@@ -3330,7 +3378,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         deleteCluster(com.google.container.v1.DeleteClusterRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteClusterMethod(), getCallOptions()), request);
     }
 
@@ -3344,7 +3392,7 @@ public final class ClusterManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.container.v1.ListOperationsResponse>
         listOperations(com.google.container.v1.ListOperationsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListOperationsMethod(), getCallOptions()), request);
     }
 
@@ -3357,7 +3405,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         getOperation(com.google.container.v1.GetOperationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetOperationMethod(), getCallOptions()), request);
     }
 
@@ -3370,7 +3418,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         cancelOperation(com.google.container.v1.CancelOperationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCancelOperationMethod(), getCallOptions()), request);
     }
 
@@ -3383,7 +3431,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.ServerConfig>
         getServerConfig(com.google.container.v1.GetServerConfigRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetServerConfigMethod(), getCallOptions()), request);
     }
 
@@ -3400,7 +3448,7 @@ public final class ClusterManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.container.v1.GetJSONWebKeysResponse>
         getJSONWebKeys(com.google.container.v1.GetJSONWebKeysRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetJSONWebKeysMethod(), getCallOptions()), request);
     }
 
@@ -3414,7 +3462,7 @@ public final class ClusterManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.container.v1.ListNodePoolsResponse>
         listNodePools(com.google.container.v1.ListNodePoolsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListNodePoolsMethod(), getCallOptions()), request);
     }
 
@@ -3427,7 +3475,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.NodePool>
         getNodePool(com.google.container.v1.GetNodePoolRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetNodePoolMethod(), getCallOptions()), request);
     }
 
@@ -3440,7 +3488,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         createNodePool(com.google.container.v1.CreateNodePoolRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateNodePoolMethod(), getCallOptions()), request);
     }
 
@@ -3453,7 +3501,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         deleteNodePool(com.google.container.v1.DeleteNodePoolRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteNodePoolMethod(), getCallOptions()), request);
     }
 
@@ -3467,7 +3515,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         rollbackNodePoolUpgrade(com.google.container.v1.RollbackNodePoolUpgradeRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRollbackNodePoolUpgradeMethod(), getCallOptions()), request);
     }
 
@@ -3480,7 +3528,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         setNodePoolManagement(com.google.container.v1.SetNodePoolManagementRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetNodePoolManagementMethod(), getCallOptions()), request);
     }
 
@@ -3493,7 +3541,8 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         setLabels(com.google.container.v1.SetLabelsRequest request) {
-      return futureUnaryCall(getChannel().newCall(getSetLabelsMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSetLabelsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3505,7 +3554,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         setLegacyAbac(com.google.container.v1.SetLegacyAbacRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetLegacyAbacMethod(), getCallOptions()), request);
     }
 
@@ -3518,7 +3567,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         startIPRotation(com.google.container.v1.StartIPRotationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getStartIPRotationMethod(), getCallOptions()), request);
     }
 
@@ -3531,7 +3580,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         completeIPRotation(com.google.container.v1.CompleteIPRotationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCompleteIPRotationMethod(), getCallOptions()), request);
     }
 
@@ -3544,7 +3593,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         setNodePoolSize(com.google.container.v1.SetNodePoolSizeRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetNodePoolSizeMethod(), getCallOptions()), request);
     }
 
@@ -3557,7 +3606,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         setNetworkPolicy(com.google.container.v1.SetNetworkPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetNetworkPolicyMethod(), getCallOptions()), request);
     }
 
@@ -3570,7 +3619,7 @@ public final class ClusterManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation>
         setMaintenancePolicy(com.google.container.v1.SetMaintenancePolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetMaintenancePolicyMethod(), getCallOptions()), request);
     }
 
@@ -3584,7 +3633,7 @@ public final class ClusterManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.container.v1.ListUsableSubnetworksResponse>
         listUsableSubnetworks(com.google.container.v1.ListUsableSubnetworksRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListUsableSubnetworksMethod(), getCallOptions()), request);
     }
   }
