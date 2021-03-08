@@ -16,11 +16,6 @@
 package com.google.cloud.asset.v1p2beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -315,7 +310,7 @@ public final class AssetServiceGrpc {
     public void createFeed(
         com.google.cloud.asset.v1p2beta1.CreateFeedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p2beta1.Feed> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateFeedMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateFeedMethod(), responseObserver);
     }
 
     /**
@@ -328,7 +323,7 @@ public final class AssetServiceGrpc {
     public void getFeed(
         com.google.cloud.asset.v1p2beta1.GetFeedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p2beta1.Feed> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetFeedMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetFeedMethod(), responseObserver);
     }
 
     /**
@@ -342,7 +337,7 @@ public final class AssetServiceGrpc {
         com.google.cloud.asset.v1p2beta1.ListFeedsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p2beta1.ListFeedsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListFeedsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListFeedsMethod(), responseObserver);
     }
 
     /**
@@ -355,7 +350,7 @@ public final class AssetServiceGrpc {
     public void updateFeed(
         com.google.cloud.asset.v1p2beta1.UpdateFeedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p2beta1.Feed> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateFeedMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateFeedMethod(), responseObserver);
     }
 
     /**
@@ -368,7 +363,7 @@ public final class AssetServiceGrpc {
     public void deleteFeed(
         com.google.cloud.asset.v1p2beta1.DeleteFeedRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteFeedMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteFeedMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -376,32 +371,32 @@ public final class AssetServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreateFeedMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.asset.v1p2beta1.CreateFeedRequest,
                       com.google.cloud.asset.v1p2beta1.Feed>(this, METHODID_CREATE_FEED)))
           .addMethod(
               getGetFeedMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.asset.v1p2beta1.GetFeedRequest,
                       com.google.cloud.asset.v1p2beta1.Feed>(this, METHODID_GET_FEED)))
           .addMethod(
               getListFeedsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.asset.v1p2beta1.ListFeedsRequest,
                       com.google.cloud.asset.v1p2beta1.ListFeedsResponse>(
                       this, METHODID_LIST_FEEDS)))
           .addMethod(
               getUpdateFeedMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.asset.v1p2beta1.UpdateFeedRequest,
                       com.google.cloud.asset.v1p2beta1.Feed>(this, METHODID_UPDATE_FEED)))
           .addMethod(
               getDeleteFeedMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.asset.v1p2beta1.DeleteFeedRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_FEED)))
@@ -438,7 +433,7 @@ public final class AssetServiceGrpc {
     public void createFeed(
         com.google.cloud.asset.v1p2beta1.CreateFeedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p2beta1.Feed> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateFeedMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -452,7 +447,7 @@ public final class AssetServiceGrpc {
     public void getFeed(
         com.google.cloud.asset.v1p2beta1.GetFeedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p2beta1.Feed> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetFeedMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -467,7 +462,7 @@ public final class AssetServiceGrpc {
         com.google.cloud.asset.v1p2beta1.ListFeedsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p2beta1.ListFeedsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListFeedsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -481,7 +476,7 @@ public final class AssetServiceGrpc {
     public void updateFeed(
         com.google.cloud.asset.v1p2beta1.UpdateFeedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p2beta1.Feed> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateFeedMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -495,7 +490,7 @@ public final class AssetServiceGrpc {
     public void deleteFeed(
         com.google.cloud.asset.v1p2beta1.DeleteFeedRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteFeedMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -529,7 +524,8 @@ public final class AssetServiceGrpc {
      */
     public com.google.cloud.asset.v1p2beta1.Feed createFeed(
         com.google.cloud.asset.v1p2beta1.CreateFeedRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateFeedMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateFeedMethod(), getCallOptions(), request);
     }
 
     /**
@@ -541,7 +537,8 @@ public final class AssetServiceGrpc {
      */
     public com.google.cloud.asset.v1p2beta1.Feed getFeed(
         com.google.cloud.asset.v1p2beta1.GetFeedRequest request) {
-      return blockingUnaryCall(getChannel(), getGetFeedMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetFeedMethod(), getCallOptions(), request);
     }
 
     /**
@@ -553,7 +550,8 @@ public final class AssetServiceGrpc {
      */
     public com.google.cloud.asset.v1p2beta1.ListFeedsResponse listFeeds(
         com.google.cloud.asset.v1p2beta1.ListFeedsRequest request) {
-      return blockingUnaryCall(getChannel(), getListFeedsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFeedsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -565,7 +563,8 @@ public final class AssetServiceGrpc {
      */
     public com.google.cloud.asset.v1p2beta1.Feed updateFeed(
         com.google.cloud.asset.v1p2beta1.UpdateFeedRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateFeedMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateFeedMethod(), getCallOptions(), request);
     }
 
     /**
@@ -577,7 +576,8 @@ public final class AssetServiceGrpc {
      */
     public com.google.protobuf.Empty deleteFeed(
         com.google.cloud.asset.v1p2beta1.DeleteFeedRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteFeedMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteFeedMethod(), getCallOptions(), request);
     }
   }
 
@@ -610,7 +610,7 @@ public final class AssetServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.asset.v1p2beta1.Feed>
         createFeed(com.google.cloud.asset.v1p2beta1.CreateFeedRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateFeedMethod(), getCallOptions()), request);
     }
 
@@ -623,7 +623,8 @@ public final class AssetServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.asset.v1p2beta1.Feed>
         getFeed(com.google.cloud.asset.v1p2beta1.GetFeedRequest request) {
-      return futureUnaryCall(getChannel().newCall(getGetFeedMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetFeedMethod(), getCallOptions()), request);
     }
 
     /**
@@ -636,7 +637,8 @@ public final class AssetServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.asset.v1p2beta1.ListFeedsResponse>
         listFeeds(com.google.cloud.asset.v1p2beta1.ListFeedsRequest request) {
-      return futureUnaryCall(getChannel().newCall(getListFeedsMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListFeedsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -648,7 +650,7 @@ public final class AssetServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.asset.v1p2beta1.Feed>
         updateFeed(com.google.cloud.asset.v1p2beta1.UpdateFeedRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateFeedMethod(), getCallOptions()), request);
     }
 
@@ -661,7 +663,7 @@ public final class AssetServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteFeed(
         com.google.cloud.asset.v1p2beta1.DeleteFeedRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteFeedMethod(), getCallOptions()), request);
     }
   }

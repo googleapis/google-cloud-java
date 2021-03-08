@@ -16,11 +16,6 @@
 package com.google.cloud.asset.v1p5beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -147,7 +142,7 @@ public final class AssetServiceGrpc {
         com.google.cloud.asset.v1p5beta1.ListAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p5beta1.ListAssetsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListAssetsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAssetsMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -155,7 +150,7 @@ public final class AssetServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListAssetsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.asset.v1p5beta1.ListAssetsRequest,
                       com.google.cloud.asset.v1p5beta1.ListAssetsResponse>(
@@ -194,7 +189,7 @@ public final class AssetServiceGrpc {
         com.google.cloud.asset.v1p5beta1.ListAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p5beta1.ListAssetsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListAssetsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -228,7 +223,8 @@ public final class AssetServiceGrpc {
      */
     public com.google.cloud.asset.v1p5beta1.ListAssetsResponse listAssets(
         com.google.cloud.asset.v1p5beta1.ListAssetsRequest request) {
-      return blockingUnaryCall(getChannel(), getListAssetsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAssetsMethod(), getCallOptions(), request);
     }
   }
 
@@ -262,7 +258,7 @@ public final class AssetServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.asset.v1p5beta1.ListAssetsResponse>
         listAssets(com.google.cloud.asset.v1p5beta1.ListAssetsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListAssetsMethod(), getCallOptions()), request);
     }
   }
