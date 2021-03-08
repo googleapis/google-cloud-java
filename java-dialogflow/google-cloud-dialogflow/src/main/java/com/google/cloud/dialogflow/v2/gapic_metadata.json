@@ -41,6 +41,21 @@
         }
       }
     },
+    "AnswerRecords": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AnswerRecordsClient",
+          "rpcs": {
+            "ListAnswerRecords": {
+              "methods": ["listAnswerRecords", "listAnswerRecords", "listAnswerRecords", "listAnswerRecords", "listAnswerRecordsPagedCallable", "listAnswerRecordsCallable"]
+            },
+            "UpdateAnswerRecord": {
+              "methods": ["updateAnswerRecord", "updateAnswerRecord", "updateAnswerRecordCallable"]
+            }
+          }
+        }
+      }
+    },
     "Contexts": {
       "clients": {
         "grpc": {
@@ -63,6 +78,90 @@
             },
             "UpdateContext": {
               "methods": ["updateContext", "updateContext", "updateContextCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Conversations": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConversationsClient",
+          "rpcs": {
+            "CompleteConversation": {
+              "methods": ["completeConversation", "completeConversation", "completeConversation", "completeConversationCallable"]
+            },
+            "CreateCallMatcher": {
+              "methods": ["createCallMatcher", "createCallMatcher", "createCallMatcher", "createCallMatcherCallable"]
+            },
+            "CreateConversation": {
+              "methods": ["createConversation", "createConversation", "createConversation", "createConversation", "createConversationCallable"]
+            },
+            "DeleteCallMatcher": {
+              "methods": ["deleteCallMatcher", "deleteCallMatcher", "deleteCallMatcher", "deleteCallMatcherCallable"]
+            },
+            "GetConversation": {
+              "methods": ["getConversation", "getConversation", "getConversation", "getConversationCallable"]
+            },
+            "ListCallMatchers": {
+              "methods": ["listCallMatchers", "listCallMatchers", "listCallMatchers", "listCallMatchersPagedCallable", "listCallMatchersCallable"]
+            },
+            "ListConversations": {
+              "methods": ["listConversations", "listConversations", "listConversations", "listConversations", "listConversationsPagedCallable", "listConversationsCallable"]
+            },
+            "ListMessages": {
+              "methods": ["listMessages", "listMessages", "listMessages", "listMessagesPagedCallable", "listMessagesCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ConversationProfiles": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConversationProfilesClient",
+          "rpcs": {
+            "CreateConversationProfile": {
+              "methods": ["createConversationProfile", "createConversationProfile", "createConversationProfile", "createConversationProfile", "createConversationProfileCallable"]
+            },
+            "DeleteConversationProfile": {
+              "methods": ["deleteConversationProfile", "deleteConversationProfile", "deleteConversationProfile", "deleteConversationProfileCallable"]
+            },
+            "GetConversationProfile": {
+              "methods": ["getConversationProfile", "getConversationProfile", "getConversationProfile", "getConversationProfileCallable"]
+            },
+            "ListConversationProfiles": {
+              "methods": ["listConversationProfiles", "listConversationProfiles", "listConversationProfiles", "listConversationProfiles", "listConversationProfilesPagedCallable", "listConversationProfilesCallable"]
+            },
+            "UpdateConversationProfile": {
+              "methods": ["updateConversationProfile", "updateConversationProfile", "updateConversationProfileCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Documents": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DocumentsClient",
+          "rpcs": {
+            "CreateDocument": {
+              "methods": ["createDocumentAsync", "createDocumentAsync", "createDocumentAsync", "createDocumentOperationCallable", "createDocumentCallable"]
+            },
+            "DeleteDocument": {
+              "methods": ["deleteDocumentAsync", "deleteDocumentAsync", "deleteDocumentAsync", "deleteDocumentOperationCallable", "deleteDocumentCallable"]
+            },
+            "GetDocument": {
+              "methods": ["getDocument", "getDocument", "getDocument", "getDocumentCallable"]
+            },
+            "ListDocuments": {
+              "methods": ["listDocuments", "listDocuments", "listDocuments", "listDocumentsPagedCallable", "listDocumentsCallable"]
+            },
+            "ReloadDocument": {
+              "methods": ["reloadDocumentAsync", "reloadDocumentAsync", "reloadDocumentAsync", "reloadDocumentOperationCallable", "reloadDocumentCallable"]
+            },
+            "UpdateDocument": {
+              "methods": ["updateDocumentAsync", "updateDocumentAsync", "updateDocumentOperationCallable", "updateDocumentCallable"]
             }
           }
         }
@@ -144,6 +243,63 @@
             },
             "UpdateIntent": {
               "methods": ["updateIntent", "updateIntent", "updateIntent", "updateIntentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "KnowledgeBases": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "KnowledgeBasesClient",
+          "rpcs": {
+            "CreateKnowledgeBase": {
+              "methods": ["createKnowledgeBase", "createKnowledgeBase", "createKnowledgeBase", "createKnowledgeBase", "createKnowledgeBaseCallable"]
+            },
+            "DeleteKnowledgeBase": {
+              "methods": ["deleteKnowledgeBase", "deleteKnowledgeBase", "deleteKnowledgeBase", "deleteKnowledgeBaseCallable"]
+            },
+            "GetKnowledgeBase": {
+              "methods": ["getKnowledgeBase", "getKnowledgeBase", "getKnowledgeBase", "getKnowledgeBaseCallable"]
+            },
+            "ListKnowledgeBases": {
+              "methods": ["listKnowledgeBases", "listKnowledgeBases", "listKnowledgeBases", "listKnowledgeBases", "listKnowledgeBasesPagedCallable", "listKnowledgeBasesCallable"]
+            },
+            "UpdateKnowledgeBase": {
+              "methods": ["updateKnowledgeBase", "updateKnowledgeBase", "updateKnowledgeBaseCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Participants": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ParticipantsClient",
+          "rpcs": {
+            "AnalyzeContent": {
+              "methods": ["analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContentCallable"]
+            },
+            "CreateParticipant": {
+              "methods": ["createParticipant", "createParticipant", "createParticipant", "createParticipantCallable"]
+            },
+            "GetParticipant": {
+              "methods": ["getParticipant", "getParticipant", "getParticipant", "getParticipantCallable"]
+            },
+            "ListParticipants": {
+              "methods": ["listParticipants", "listParticipants", "listParticipants", "listParticipantsPagedCallable", "listParticipantsCallable"]
+            },
+            "StreamingAnalyzeContent": {
+              "methods": ["streamingAnalyzeContentCallable"]
+            },
+            "SuggestArticles": {
+              "methods": ["suggestArticles", "suggestArticles", "suggestArticles", "suggestArticlesCallable"]
+            },
+            "SuggestFaqAnswers": {
+              "methods": ["suggestFaqAnswers", "suggestFaqAnswers", "suggestFaqAnswers", "suggestFaqAnswersCallable"]
+            },
+            "UpdateParticipant": {
+              "methods": ["updateParticipant", "updateParticipant", "updateParticipantCallable"]
             }
           }
         }

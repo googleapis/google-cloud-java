@@ -384,5 +384,74 @@ public interface DocumentOrBuilder
   com.google.cloud.dialogflow.v2beta1.Document.ReloadStatusOrBuilder
       getLatestReloadStatusOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata for the document. The metadata supports arbitrary
+   * key-value pairs. Suggested use cases include storing a document's title,
+   * an external URL distinct from the document's content_uri, etc.
+   * The max size of a `key` or a `value` of the metadata is 1024 bytes.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  int getMetadataCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata for the document. The metadata supports arbitrary
+   * key-value pairs. Suggested use cases include storing a document's title,
+   * an external URL distinct from the document's content_uri, etc.
+   * The max size of a `key` or a `value` of the metadata is 1024 bytes.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  boolean containsMetadata(java.lang.String key);
+  /** Use {@link #getMetadataMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata for the document. The metadata supports arbitrary
+   * key-value pairs. Suggested use cases include storing a document's title,
+   * an external URL distinct from the document's content_uri, etc.
+   * The max size of a `key` or a `value` of the metadata is 1024 bytes.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata for the document. The metadata supports arbitrary
+   * key-value pairs. Suggested use cases include storing a document's title,
+   * an external URL distinct from the document's content_uri, etc.
+   * The max size of a `key` or a `value` of the metadata is 1024 bytes.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.lang.String getMetadataOrDefault(java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata for the document. The metadata supports arbitrary
+   * key-value pairs. Suggested use cases include storing a document's title,
+   * an external URL distinct from the document's content_uri, etc.
+   * The max size of a `key` or a `value` of the metadata is 1024 bytes.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.lang.String getMetadataOrThrow(java.lang.String key);
+
   public com.google.cloud.dialogflow.v2beta1.Document.SourceCase getSourceCase();
 }

@@ -55,6 +55,10 @@ public final class AudioConfigProto {
       internal_static_google_cloud_dialogflow_v2beta1_TelephonyDtmfEvents_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_TelephonyDtmfEvents_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_SpeechToTextConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_SpeechToTextConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -75,7 +79,7 @@ public final class AudioConfigProto {
           + "\001(\t\022/\n\014start_offset\030\001 \001(\0132\031.google.proto"
           + "buf.Duration\022-\n\nend_offset\030\002 \001(\0132\031.googl"
           + "e.protobuf.Duration\022\022\n\nconfidence\030\004 \001(\002\""
-          + "\376\002\n\020InputAudioConfig\022F\n\016audio_encoding\030\001"
+          + "\252\003\n\020InputAudioConfig\022F\n\016audio_encoding\030\001"
           + " \001(\0162..google.cloud.dialogflow.v2beta1.A"
           + "udioEncoding\022\031\n\021sample_rate_hertz\030\002 \001(\005\022"
           + "\025\n\rlanguage_code\030\003 \001(\t\022\030\n\020enable_word_in"
@@ -84,51 +88,55 @@ public final class AudioConfigProto {
           + "gflow.v2beta1.SpeechContext\022\r\n\005model\030\007 \001"
           + "(\t\022J\n\rmodel_variant\030\n \001(\01623.google.cloud"
           + ".dialogflow.v2beta1.SpeechModelVariant\022\030"
-          + "\n\020single_utterance\030\010 \001(\010\"k\n\024VoiceSelecti"
-          + "onParams\022\014\n\004name\030\001 \001(\t\022E\n\013ssml_gender\030\002 "
-          + "\001(\01620.google.cloud.dialogflow.v2beta1.Ss"
-          + "mlVoiceGender\"\270\001\n\026SynthesizeSpeechConfig"
-          + "\022\025\n\rspeaking_rate\030\001 \001(\001\022\r\n\005pitch\030\002 \001(\001\022\026"
-          + "\n\016volume_gain_db\030\003 \001(\001\022\032\n\022effects_profil"
-          + "e_id\030\005 \003(\t\022D\n\005voice\030\004 \001(\01325.google.cloud"
-          + ".dialogflow.v2beta1.VoiceSelectionParams"
-          + "\"\334\001\n\021OutputAudioConfig\022Q\n\016audio_encoding"
-          + "\030\001 \001(\01624.google.cloud.dialogflow.v2beta1"
-          + ".OutputAudioEncodingB\003\340A\002\022\031\n\021sample_rate"
-          + "_hertz\030\002 \001(\005\022Y\n\030synthesize_speech_config"
-          + "\030\003 \001(\01327.google.cloud.dialogflow.v2beta1"
-          + ".SynthesizeSpeechConfig\"Z\n\023TelephonyDtmf"
-          + "Events\022C\n\013dtmf_events\030\001 \003(\0162..google.clo"
-          + "ud.dialogflow.v2beta1.TelephonyDtmf*\373\001\n\r"
-          + "AudioEncoding\022\036\n\032AUDIO_ENCODING_UNSPECIF"
-          + "IED\020\000\022\034\n\030AUDIO_ENCODING_LINEAR_16\020\001\022\027\n\023A"
-          + "UDIO_ENCODING_FLAC\020\002\022\030\n\024AUDIO_ENCODING_M"
-          + "ULAW\020\003\022\026\n\022AUDIO_ENCODING_AMR\020\004\022\031\n\025AUDIO_"
-          + "ENCODING_AMR_WB\020\005\022\033\n\027AUDIO_ENCODING_OGG_"
-          + "OPUS\020\006\022)\n%AUDIO_ENCODING_SPEEX_WITH_HEAD"
-          + "ER_BYTE\020\007*v\n\022SpeechModelVariant\022$\n SPEEC"
-          + "H_MODEL_VARIANT_UNSPECIFIED\020\000\022\026\n\022USE_BES"
-          + "T_AVAILABLE\020\001\022\020\n\014USE_STANDARD\020\002\022\020\n\014USE_E"
-          + "NHANCED\020\003*\215\001\n\017SsmlVoiceGender\022!\n\035SSML_VO"
-          + "ICE_GENDER_UNSPECIFIED\020\000\022\032\n\026SSML_VOICE_G"
-          + "ENDER_MALE\020\001\022\034\n\030SSML_VOICE_GENDER_FEMALE"
-          + "\020\002\022\035\n\031SSML_VOICE_GENDER_NEUTRAL\020\003*\244\001\n\023Ou"
-          + "tputAudioEncoding\022%\n!OUTPUT_AUDIO_ENCODI"
-          + "NG_UNSPECIFIED\020\000\022#\n\037OUTPUT_AUDIO_ENCODIN"
-          + "G_LINEAR_16\020\001\022\035\n\031OUTPUT_AUDIO_ENCODING_M"
-          + "P3\020\002\022\"\n\036OUTPUT_AUDIO_ENCODING_OGG_OPUS\020\003"
-          + "*\224\002\n\rTelephonyDtmf\022\036\n\032TELEPHONY_DTMF_UNS"
-          + "PECIFIED\020\000\022\014\n\010DTMF_ONE\020\001\022\014\n\010DTMF_TWO\020\002\022\016"
-          + "\n\nDTMF_THREE\020\003\022\r\n\tDTMF_FOUR\020\004\022\r\n\tDTMF_FI"
-          + "VE\020\005\022\014\n\010DTMF_SIX\020\006\022\016\n\nDTMF_SEVEN\020\007\022\016\n\nDT"
-          + "MF_EIGHT\020\010\022\r\n\tDTMF_NINE\020\t\022\r\n\tDTMF_ZERO\020\n"
-          + "\022\n\n\006DTMF_A\020\013\022\n\n\006DTMF_B\020\014\022\n\n\006DTMF_C\020\r\022\n\n\006"
-          + "DTMF_D\020\016\022\r\n\tDTMF_STAR\020\017\022\016\n\nDTMF_POUND\020\020B"
-          + "\256\001\n#com.google.cloud.dialogflow.v2beta1B"
-          + "\020AudioConfigProtoP\001ZIgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/dialogflow/v2be"
-          + "ta1;dialogflow\370\001\001\242\002\002DF\252\002\037Google.Cloud.Di"
-          + "alogflow.V2beta1b\006proto3"
+          + "\n\020single_utterance\030\010 \001(\010\022*\n\"disable_no_s"
+          + "peech_recognized_event\030\016 \001(\010\"k\n\024VoiceSel"
+          + "ectionParams\022\014\n\004name\030\001 \001(\t\022E\n\013ssml_gende"
+          + "r\030\002 \001(\01620.google.cloud.dialogflow.v2beta"
+          + "1.SsmlVoiceGender\"\270\001\n\026SynthesizeSpeechCo"
+          + "nfig\022\025\n\rspeaking_rate\030\001 \001(\001\022\r\n\005pitch\030\002 \001"
+          + "(\001\022\026\n\016volume_gain_db\030\003 \001(\001\022\032\n\022effects_pr"
+          + "ofile_id\030\005 \003(\t\022D\n\005voice\030\004 \001(\01325.google.c"
+          + "loud.dialogflow.v2beta1.VoiceSelectionPa"
+          + "rams\"\334\001\n\021OutputAudioConfig\022Q\n\016audio_enco"
+          + "ding\030\001 \001(\01624.google.cloud.dialogflow.v2b"
+          + "eta1.OutputAudioEncodingB\003\340A\002\022\031\n\021sample_"
+          + "rate_hertz\030\002 \001(\005\022Y\n\030synthesize_speech_co"
+          + "nfig\030\003 \001(\01327.google.cloud.dialogflow.v2b"
+          + "eta1.SynthesizeSpeechConfig\"Z\n\023Telephony"
+          + "DtmfEvents\022C\n\013dtmf_events\030\001 \003(\0162..google"
+          + ".cloud.dialogflow.v2beta1.TelephonyDtmf\""
+          + "l\n\022SpeechToTextConfig\022V\n\024speech_model_va"
+          + "riant\030\001 \001(\01623.google.cloud.dialogflow.v2"
+          + "beta1.SpeechModelVariantB\003\340A\001*\373\001\n\rAudioE"
+          + "ncoding\022\036\n\032AUDIO_ENCODING_UNSPECIFIED\020\000\022"
+          + "\034\n\030AUDIO_ENCODING_LINEAR_16\020\001\022\027\n\023AUDIO_E"
+          + "NCODING_FLAC\020\002\022\030\n\024AUDIO_ENCODING_MULAW\020\003"
+          + "\022\026\n\022AUDIO_ENCODING_AMR\020\004\022\031\n\025AUDIO_ENCODI"
+          + "NG_AMR_WB\020\005\022\033\n\027AUDIO_ENCODING_OGG_OPUS\020\006"
+          + "\022)\n%AUDIO_ENCODING_SPEEX_WITH_HEADER_BYT"
+          + "E\020\007*v\n\022SpeechModelVariant\022$\n SPEECH_MODE"
+          + "L_VARIANT_UNSPECIFIED\020\000\022\026\n\022USE_BEST_AVAI"
+          + "LABLE\020\001\022\020\n\014USE_STANDARD\020\002\022\020\n\014USE_ENHANCE"
+          + "D\020\003*\215\001\n\017SsmlVoiceGender\022!\n\035SSML_VOICE_GE"
+          + "NDER_UNSPECIFIED\020\000\022\032\n\026SSML_VOICE_GENDER_"
+          + "MALE\020\001\022\034\n\030SSML_VOICE_GENDER_FEMALE\020\002\022\035\n\031"
+          + "SSML_VOICE_GENDER_NEUTRAL\020\003*\244\001\n\023OutputAu"
+          + "dioEncoding\022%\n!OUTPUT_AUDIO_ENCODING_UNS"
+          + "PECIFIED\020\000\022#\n\037OUTPUT_AUDIO_ENCODING_LINE"
+          + "AR_16\020\001\022\035\n\031OUTPUT_AUDIO_ENCODING_MP3\020\002\022\""
+          + "\n\036OUTPUT_AUDIO_ENCODING_OGG_OPUS\020\003*\224\002\n\rT"
+          + "elephonyDtmf\022\036\n\032TELEPHONY_DTMF_UNSPECIFI"
+          + "ED\020\000\022\014\n\010DTMF_ONE\020\001\022\014\n\010DTMF_TWO\020\002\022\016\n\nDTMF"
+          + "_THREE\020\003\022\r\n\tDTMF_FOUR\020\004\022\r\n\tDTMF_FIVE\020\005\022\014"
+          + "\n\010DTMF_SIX\020\006\022\016\n\nDTMF_SEVEN\020\007\022\016\n\nDTMF_EIG"
+          + "HT\020\010\022\r\n\tDTMF_NINE\020\t\022\r\n\tDTMF_ZERO\020\n\022\n\n\006DT"
+          + "MF_A\020\013\022\n\n\006DTMF_B\020\014\022\n\n\006DTMF_C\020\r\022\n\n\006DTMF_D"
+          + "\020\016\022\r\n\tDTMF_STAR\020\017\022\016\n\nDTMF_POUND\020\020B\256\001\n#co"
+          + "m.google.cloud.dialogflow.v2beta1B\020Audio"
+          + "ConfigProtoP\001ZIgoogle.golang.org/genprot"
+          + "o/googleapis/cloud/dialogflow/v2beta1;di"
+          + "alogflow\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogfl"
+          + "ow.V2beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -171,6 +179,7 @@ public final class AudioConfigProto {
               "Model",
               "ModelVariant",
               "SingleUtterance",
+              "DisableNoSpeechRecognizedEvent",
             });
     internal_static_google_cloud_dialogflow_v2beta1_VoiceSelectionParams_descriptor =
         getDescriptor().getMessageTypes().get(3);
@@ -203,6 +212,14 @@ public final class AudioConfigProto {
             internal_static_google_cloud_dialogflow_v2beta1_TelephonyDtmfEvents_descriptor,
             new java.lang.String[] {
               "DtmfEvents",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_SpeechToTextConfig_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_dialogflow_v2beta1_SpeechToTextConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_SpeechToTextConfig_descriptor,
+            new java.lang.String[] {
+              "SpeechModelVariant",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

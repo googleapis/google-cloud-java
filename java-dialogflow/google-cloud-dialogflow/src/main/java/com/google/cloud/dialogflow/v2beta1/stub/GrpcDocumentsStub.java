@@ -31,6 +31,8 @@ import com.google.cloud.dialogflow.v2beta1.CreateDocumentRequest;
 import com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest;
 import com.google.cloud.dialogflow.v2beta1.Document;
 import com.google.cloud.dialogflow.v2beta1.GetDocumentRequest;
+import com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest;
+import com.google.cloud.dialogflow.v2beta1.ImportDocumentsResponse;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata;
 import com.google.cloud.dialogflow.v2beta1.ListDocumentsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListDocumentsResponse;
@@ -85,6 +87,16 @@ public class GrpcDocumentsStub extends DocumentsStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ImportDocumentsRequest, Operation>
+      importDocumentsMethodDescriptor =
+          MethodDescriptor.<ImportDocumentsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.v2beta1.Documents/ImportDocuments")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportDocumentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<DeleteDocumentRequest, Operation>
       deleteDocumentMethodDescriptor =
           MethodDescriptor.<DeleteDocumentRequest, Operation>newBuilder()
@@ -122,6 +134,10 @@ public class GrpcDocumentsStub extends DocumentsStub {
   private final UnaryCallable<CreateDocumentRequest, Operation> createDocumentCallable;
   private final OperationCallable<CreateDocumentRequest, Document, KnowledgeOperationMetadata>
       createDocumentOperationCallable;
+  private final UnaryCallable<ImportDocumentsRequest, Operation> importDocumentsCallable;
+  private final OperationCallable<
+          ImportDocumentsRequest, ImportDocumentsResponse, KnowledgeOperationMetadata>
+      importDocumentsOperationCallable;
   private final UnaryCallable<DeleteDocumentRequest, Operation> deleteDocumentCallable;
   private final OperationCallable<DeleteDocumentRequest, Empty, KnowledgeOperationMetadata>
       deleteDocumentOperationCallable;
@@ -212,6 +228,19 @@ public class GrpcDocumentsStub extends DocumentsStub {
                   }
                 })
             .build();
+    GrpcCallSettings<ImportDocumentsRequest, Operation> importDocumentsTransportSettings =
+        GrpcCallSettings.<ImportDocumentsRequest, Operation>newBuilder()
+            .setMethodDescriptor(importDocumentsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ImportDocumentsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ImportDocumentsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<DeleteDocumentRequest, Operation> deleteDocumentTransportSettings =
         GrpcCallSettings.<DeleteDocumentRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteDocumentMethodDescriptor)
@@ -268,6 +297,15 @@ public class GrpcDocumentsStub extends DocumentsStub {
         callableFactory.createOperationCallable(
             createDocumentTransportSettings,
             settings.createDocumentOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.importDocumentsCallable =
+        callableFactory.createUnaryCallable(
+            importDocumentsTransportSettings, settings.importDocumentsSettings(), clientContext);
+    this.importDocumentsOperationCallable =
+        callableFactory.createOperationCallable(
+            importDocumentsTransportSettings,
+            settings.importDocumentsOperationSettings(),
             clientContext,
             operationsStub);
     this.deleteDocumentCallable =
@@ -331,6 +369,18 @@ public class GrpcDocumentsStub extends DocumentsStub {
   public OperationCallable<CreateDocumentRequest, Document, KnowledgeOperationMetadata>
       createDocumentOperationCallable() {
     return createDocumentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportDocumentsRequest, Operation> importDocumentsCallable() {
+    return importDocumentsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ImportDocumentsRequest, ImportDocumentsResponse, KnowledgeOperationMetadata>
+      importDocumentsOperationCallable() {
+    return importDocumentsOperationCallable;
   }
 
   @Override

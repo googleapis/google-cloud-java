@@ -154,6 +154,11 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
 
               break;
             }
+          case 56:
+            {
+              liveAgentHandoff_ = input.readBool();
+              break;
+            }
           case 64:
             {
               endInteraction_ = input.readBool();
@@ -619,6 +624,27 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     return getFollowupEventInput();
   }
 
+  public static final int LIVE_AGENT_HANDOFF_FIELD_NUMBER = 7;
+  private boolean liveAgentHandoff_;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates that a live agent should be brought in to handle the
+   * interaction with the user. In most cases, when you set this flag to true,
+   * you would also want to set end_interaction to true as well. Default is
+   * false.
+   * </pre>
+   *
+   * <code>bool live_agent_handoff = 7;</code>
+   *
+   * @return The liveAgentHandoff.
+   */
+  @java.lang.Override
+  public boolean getLiveAgentHandoff() {
+    return liveAgentHandoff_;
+  }
+
   public static final int END_INTERACTION_FIELD_NUMBER = 8;
   private boolean endInteraction_;
   /**
@@ -767,6 +793,9 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     if (followupEventInput_ != null) {
       output.writeMessage(6, getFollowupEventInput());
     }
+    if (liveAgentHandoff_ != false) {
+      output.writeBool(7, liveAgentHandoff_);
+    }
     if (endInteraction_ != false) {
       output.writeBool(8, endInteraction_);
     }
@@ -800,6 +829,9 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     }
     if (followupEventInput_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getFollowupEventInput());
+    }
+    if (liveAgentHandoff_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, liveAgentHandoff_);
     }
     if (endInteraction_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, endInteraction_);
@@ -836,6 +868,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     if (hasFollowupEventInput()) {
       if (!getFollowupEventInput().equals(other.getFollowupEventInput())) return false;
     }
+    if (getLiveAgentHandoff() != other.getLiveAgentHandoff()) return false;
     if (getEndInteraction() != other.getEndInteraction()) return false;
     if (!getSessionEntityTypesList().equals(other.getSessionEntityTypesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -869,6 +902,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + FOLLOWUP_EVENT_INPUT_FIELD_NUMBER;
       hash = (53 * hash) + getFollowupEventInput().hashCode();
     }
+    hash = (37 * hash) + LIVE_AGENT_HANDOFF_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLiveAgentHandoff());
     hash = (37 * hash) + END_INTERACTION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEndInteraction());
     if (getSessionEntityTypesCount() > 0) {
@@ -1062,6 +1097,8 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
         followupEventInput_ = null;
         followupEventInputBuilder_ = null;
       }
+      liveAgentHandoff_ = false;
+
       endInteraction_ = false;
 
       if (sessionEntityTypesBuilder_ == null) {
@@ -1128,6 +1165,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
       } else {
         result.followupEventInput_ = followupEventInputBuilder_.build();
       }
+      result.liveAgentHandoff_ = liveAgentHandoff_;
       result.endInteraction_ = endInteraction_;
       if (sessionEntityTypesBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)) {
@@ -1255,6 +1293,9 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
       }
       if (other.hasFollowupEventInput()) {
         mergeFollowupEventInput(other.getFollowupEventInput());
+      }
+      if (other.getLiveAgentHandoff() != false) {
+        setLiveAgentHandoff(other.getLiveAgentHandoff());
       }
       if (other.getEndInteraction() != false) {
         setEndInteraction(other.getEndInteraction());
@@ -2850,6 +2891,67 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
         followupEventInput_ = null;
       }
       return followupEventInputBuilder_;
+    }
+
+    private boolean liveAgentHandoff_;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that a live agent should be brought in to handle the
+     * interaction with the user. In most cases, when you set this flag to true,
+     * you would also want to set end_interaction to true as well. Default is
+     * false.
+     * </pre>
+     *
+     * <code>bool live_agent_handoff = 7;</code>
+     *
+     * @return The liveAgentHandoff.
+     */
+    @java.lang.Override
+    public boolean getLiveAgentHandoff() {
+      return liveAgentHandoff_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that a live agent should be brought in to handle the
+     * interaction with the user. In most cases, when you set this flag to true,
+     * you would also want to set end_interaction to true as well. Default is
+     * false.
+     * </pre>
+     *
+     * <code>bool live_agent_handoff = 7;</code>
+     *
+     * @param value The liveAgentHandoff to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLiveAgentHandoff(boolean value) {
+
+      liveAgentHandoff_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that a live agent should be brought in to handle the
+     * interaction with the user. In most cases, when you set this flag to true,
+     * you would also want to set end_interaction to true as well. Default is
+     * false.
+     * </pre>
+     *
+     * <code>bool live_agent_handoff = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLiveAgentHandoff() {
+
+      liveAgentHandoff_ = false;
+      onChanged();
+      return this;
     }
 
     private boolean endInteraction_;

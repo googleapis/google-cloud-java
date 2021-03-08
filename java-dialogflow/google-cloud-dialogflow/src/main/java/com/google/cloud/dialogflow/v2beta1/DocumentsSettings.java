@@ -94,6 +94,18 @@ public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
     return ((DocumentsStubSettings) getStubSettings()).createDocumentOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to importDocuments. */
+  public UnaryCallSettings<ImportDocumentsRequest, Operation> importDocumentsSettings() {
+    return ((DocumentsStubSettings) getStubSettings()).importDocumentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importDocuments. */
+  public OperationCallSettings<
+          ImportDocumentsRequest, ImportDocumentsResponse, KnowledgeOperationMetadata>
+      importDocumentsOperationSettings() {
+    return ((DocumentsStubSettings) getStubSettings()).importDocumentsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteDocument. */
   public UnaryCallSettings<DeleteDocumentRequest, Operation> deleteDocumentSettings() {
     return ((DocumentsStubSettings) getStubSettings()).deleteDocumentSettings();
@@ -246,6 +258,18 @@ public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
             CreateDocumentRequest, Document, KnowledgeOperationMetadata>
         createDocumentOperationSettings() {
       return getStubSettingsBuilder().createDocumentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importDocuments. */
+    public UnaryCallSettings.Builder<ImportDocumentsRequest, Operation> importDocumentsSettings() {
+      return getStubSettingsBuilder().importDocumentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importDocuments. */
+    public OperationCallSettings.Builder<
+            ImportDocumentsRequest, ImportDocumentsResponse, KnowledgeOperationMetadata>
+        importDocumentsOperationSettings() {
+      return getStubSettingsBuilder().importDocumentsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteDocument. */

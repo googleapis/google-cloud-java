@@ -142,6 +142,11 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
               enableWordInfo_ = input.readBool();
               break;
             }
+          case 112:
+            {
+              disableNoSpeechRecognizedEvent_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -630,6 +635,27 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     return singleUtterance_;
   }
 
+  public static final int DISABLE_NO_SPEECH_RECOGNIZED_EVENT_FIELD_NUMBER = 14;
+  private boolean disableNoSpeechRecognizedEvent_;
+  /**
+   *
+   *
+   * <pre>
+   * Only used in [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent] and
+   * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent].
+   * If `false` and recognition doesn't return any result, trigger
+   * `NO_SPEECH_RECOGNIZED` event to Dialogflow agent.
+   * </pre>
+   *
+   * <code>bool disable_no_speech_recognized_event = 14;</code>
+   *
+   * @return The disableNoSpeechRecognizedEvent.
+   */
+  @java.lang.Override
+  public boolean getDisableNoSpeechRecognizedEvent() {
+    return disableNoSpeechRecognizedEvent_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -674,6 +700,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
     if (enableWordInfo_ != false) {
       output.writeBool(13, enableWordInfo_);
+    }
+    if (disableNoSpeechRecognizedEvent_ != false) {
+      output.writeBool(14, disableNoSpeechRecognizedEvent_);
     }
     unknownFields.writeTo(output);
   }
@@ -720,6 +749,11 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (enableWordInfo_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, enableWordInfo_);
     }
+    if (disableNoSpeechRecognizedEvent_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              14, disableNoSpeechRecognizedEvent_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -745,6 +779,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (!getModel().equals(other.getModel())) return false;
     if (modelVariant_ != other.modelVariant_) return false;
     if (getSingleUtterance() != other.getSingleUtterance()) return false;
+    if (getDisableNoSpeechRecognizedEvent() != other.getDisableNoSpeechRecognizedEvent())
+      return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -778,6 +814,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + modelVariant_;
     hash = (37 * hash) + SINGLE_UTTERANCE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSingleUtterance());
+    hash = (37 * hash) + DISABLE_NO_SPEECH_RECOGNIZED_EVENT_FIELD_NUMBER;
+    hash =
+        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableNoSpeechRecognizedEvent());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -947,6 +986,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
 
       singleUtterance_ = false;
 
+      disableNoSpeechRecognizedEvent_ = false;
+
       return this;
     }
 
@@ -996,6 +1037,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       result.model_ = model_;
       result.modelVariant_ = modelVariant_;
       result.singleUtterance_ = singleUtterance_;
+      result.disableNoSpeechRecognizedEvent_ = disableNoSpeechRecognizedEvent_;
       onBuilt();
       return result;
     }
@@ -1105,6 +1147,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.getSingleUtterance() != false) {
         setSingleUtterance(other.getSingleUtterance());
+      }
+      if (other.getDisableNoSpeechRecognizedEvent() != false) {
+        setDisableNoSpeechRecognizedEvent(other.getDisableNoSpeechRecognizedEvent());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2462,6 +2507,67 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearSingleUtterance() {
 
       singleUtterance_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean disableNoSpeechRecognizedEvent_;
+    /**
+     *
+     *
+     * <pre>
+     * Only used in [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent] and
+     * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent].
+     * If `false` and recognition doesn't return any result, trigger
+     * `NO_SPEECH_RECOGNIZED` event to Dialogflow agent.
+     * </pre>
+     *
+     * <code>bool disable_no_speech_recognized_event = 14;</code>
+     *
+     * @return The disableNoSpeechRecognizedEvent.
+     */
+    @java.lang.Override
+    public boolean getDisableNoSpeechRecognizedEvent() {
+      return disableNoSpeechRecognizedEvent_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Only used in [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent] and
+     * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent].
+     * If `false` and recognition doesn't return any result, trigger
+     * `NO_SPEECH_RECOGNIZED` event to Dialogflow agent.
+     * </pre>
+     *
+     * <code>bool disable_no_speech_recognized_event = 14;</code>
+     *
+     * @param value The disableNoSpeechRecognizedEvent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableNoSpeechRecognizedEvent(boolean value) {
+
+      disableNoSpeechRecognizedEvent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Only used in [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent] and
+     * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent].
+     * If `false` and recognition doesn't return any result, trigger
+     * `NO_SPEECH_RECOGNIZED` event to Dialogflow agent.
+     * </pre>
+     *
+     * <code>bool disable_no_speech_recognized_event = 14;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableNoSpeechRecognizedEvent() {
+
+      disableNoSpeechRecognizedEvent_ = false;
       onChanged();
       return this;
     }

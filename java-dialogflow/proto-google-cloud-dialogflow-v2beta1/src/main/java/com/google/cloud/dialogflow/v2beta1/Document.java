@@ -138,6 +138,21 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               source_ = s;
               break;
             }
+          case 58:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                metadata_ =
+                    com.google.protobuf.MapField.newMapField(
+                        MetadataDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> metadata__ =
+                  input.readMessage(
+                      MetadataDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              metadata_.getMutableMap().put(metadata__.getKey(), metadata__.getValue());
+              break;
+            }
           case 74:
             {
               sourceCase_ = 9;
@@ -191,6 +206,17 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.DocumentProto
         .internal_static_google_cloud_dialogflow_v2beta1_Document_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 7:
+        return internalGetMetadata();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -249,6 +275,27 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>EXTRACTIVE_QA = 2;</code>
      */
     EXTRACTIVE_QA(2),
+    /**
+     *
+     *
+     * <pre>
+     * The entire document content as a whole can be used for query results.
+     * Only for Contact Center Solutions on Dialogflow.
+     * </pre>
+     *
+     * <code>ARTICLE_SUGGESTION = 3;</code>
+     */
+    ARTICLE_SUGGESTION(3),
+    /**
+     *
+     *
+     * <pre>
+     * The legacy enum for agent-facing smart reply feature.
+     * </pre>
+     *
+     * <code>SMART_REPLY = 4;</code>
+     */
+    SMART_REPLY(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -288,6 +335,27 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>EXTRACTIVE_QA = 2;</code>
      */
     public static final int EXTRACTIVE_QA_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The entire document content as a whole can be used for query results.
+     * Only for Contact Center Solutions on Dialogflow.
+     * </pre>
+     *
+     * <code>ARTICLE_SUGGESTION = 3;</code>
+     */
+    public static final int ARTICLE_SUGGESTION_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * The legacy enum for agent-facing smart reply feature.
+     * </pre>
+     *
+     * <code>SMART_REPLY = 4;</code>
+     */
+    public static final int SMART_REPLY_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -319,6 +387,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           return FAQ;
         case 2:
           return EXTRACTIVE_QA;
+        case 3:
+          return ARTICLE_SUGGESTION;
+        case 4:
+          return SMART_REPLY;
         default:
           return null;
       }
@@ -2062,6 +2134,117 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     return getLatestReloadStatus();
   }
 
+  public static final int METADATA_FIELD_NUMBER = 7;
+
+  private static final class MetadataDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dialogflow.v2beta1.DocumentProto
+                .internal_static_google_cloud_dialogflow_v2beta1_Document_MetadataEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
+    if (metadata_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(MetadataDefaultEntryHolder.defaultEntry);
+    }
+    return metadata_;
+  }
+
+  public int getMetadataCount() {
+    return internalGetMetadata().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata for the document. The metadata supports arbitrary
+   * key-value pairs. Suggested use cases include storing a document's title,
+   * an external URL distinct from the document's content_uri, etc.
+   * The max size of a `key` or a `value` of the metadata is 1024 bytes.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public boolean containsMetadata(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetMetadata().getMap().containsKey(key);
+  }
+  /** Use {@link #getMetadataMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+    return getMetadataMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata for the document. The metadata supports arbitrary
+   * key-value pairs. Suggested use cases include storing a document's title,
+   * an external URL distinct from the document's content_uri, etc.
+   * The max size of a `key` or a `value` of the metadata is 1024 bytes.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+    return internalGetMetadata().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata for the document. The metadata supports arbitrary
+   * key-value pairs. Suggested use cases include storing a document's title,
+   * an external URL distinct from the document's content_uri, etc.
+   * The max size of a `key` or a `value` of the metadata is 1024 bytes.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.lang.String getMetadataOrDefault(
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata for the document. The metadata supports arbitrary
+   * key-value pairs. Suggested use cases include storing a document's title,
+   * an external URL distinct from the document's content_uri, etc.
+   * The max size of a `key` or a `value` of the metadata is 1024 bytes.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.lang.String getMetadataOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2099,6 +2282,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (sourceCase_ == 6) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, source_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 7);
     if (sourceCase_ == 9) {
       output.writeBytes(9, (com.google.protobuf.ByteString) source_);
     }
@@ -2145,6 +2330,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (sourceCase_ == 6) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, source_);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetMetadata().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> metadata__ =
+          MetadataDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, metadata__);
+    }
     if (sourceCase_ == 9) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBytesSize(
@@ -2181,6 +2376,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (hasLatestReloadStatus()) {
       if (!getLatestReloadStatus().equals(other.getLatestReloadStatus())) return false;
     }
+    if (!internalGetMetadata().equals(other.internalGetMetadata())) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 5:
@@ -2221,6 +2417,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (hasLatestReloadStatus()) {
       hash = (37 * hash) + LATEST_RELOAD_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getLatestReloadStatus().hashCode();
+    }
+    if (!internalGetMetadata().getMap().isEmpty()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetMetadata().hashCode();
     }
     switch (sourceCase_) {
       case 5:
@@ -2360,6 +2560,26 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_dialogflow_v2beta1_Document_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 7:
+          return internalGetMetadata();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 7:
+          return internalGetMutableMetadata();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -2403,6 +2623,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         latestReloadStatus_ = null;
         latestReloadStatusBuilder_ = null;
       }
+      internalGetMutableMetadata().clear();
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -2456,6 +2677,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.latestReloadStatus_ = latestReloadStatusBuilder_.build();
       }
+      result.metadata_ = internalGetMetadata();
+      result.metadata_.makeImmutable();
       result.sourceCase_ = sourceCase_;
       onBuilt();
       return result;
@@ -2534,6 +2757,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (other.hasLatestReloadStatus()) {
         mergeLatestReloadStatus(other.getLatestReloadStatus());
       }
+      internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
       switch (other.getSourceCase()) {
         case CONTENT_URI:
           {
@@ -3908,6 +4132,192 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         latestReloadStatus_ = null;
       }
       return latestReloadStatusBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
+      if (metadata_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(MetadataDefaultEntryHolder.defaultEntry);
+      }
+      return metadata_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableMetadata() {
+      onChanged();
+      ;
+      if (metadata_ == null) {
+        metadata_ =
+            com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
+      }
+      if (!metadata_.isMutable()) {
+        metadata_ = metadata_.copy();
+      }
+      return metadata_;
+    }
+
+    public int getMetadataCount() {
+      return internalGetMetadata().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for the document. The metadata supports arbitrary
+     * key-value pairs. Suggested use cases include storing a document's title,
+     * an external URL distinct from the document's content_uri, etc.
+     * The max size of a `key` or a `value` of the metadata is 1024 bytes.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsMetadata(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetMetadata().getMap().containsKey(key);
+    }
+    /** Use {@link #getMetadataMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+      return getMetadataMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for the document. The metadata supports arbitrary
+     * key-value pairs. Suggested use cases include storing a document's title,
+     * an external URL distinct from the document's content_uri, etc.
+     * The max size of a `key` or a `value` of the metadata is 1024 bytes.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+      return internalGetMetadata().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for the document. The metadata supports arbitrary
+     * key-value pairs. Suggested use cases include storing a document's title,
+     * an external URL distinct from the document's content_uri, etc.
+     * The max size of a `key` or a `value` of the metadata is 1024 bytes.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getMetadataOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for the document. The metadata supports arbitrary
+     * key-value pairs. Suggested use cases include storing a document's title,
+     * an external URL distinct from the document's content_uri, etc.
+     * The max size of a `key` or a `value` of the metadata is 1024 bytes.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getMetadataOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearMetadata() {
+      internalGetMutableMetadata().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for the document. The metadata supports arbitrary
+     * key-value pairs. Suggested use cases include storing a document's title,
+     * an external URL distinct from the document's content_uri, etc.
+     * The max size of a `key` or a `value` of the metadata is 1024 bytes.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeMetadata(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableMetadata().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
+      return internalGetMutableMetadata().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for the document. The metadata supports arbitrary
+     * key-value pairs. Suggested use cases include storing a document's title,
+     * an external URL distinct from the document's content_uri, etc.
+     * The max size of a `key` or a `value` of the metadata is 1024 bytes.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putMetadata(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableMetadata().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata for the document. The metadata supports arbitrary
+     * key-value pairs. Suggested use cases include storing a document's title,
+     * an external URL distinct from the document's content_uri, etc.
+     * The max size of a `key` or a `value` of the metadata is 1024 bytes.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableMetadata().getMutableMap().putAll(values);
+      return this;
     }
 
     @java.lang.Override

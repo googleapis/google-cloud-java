@@ -605,6 +605,92 @@ public class DocumentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Create documents by importing data from external sources.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   ImportDocumentsRequest request =
+   *       ImportDocumentsRequest.newBuilder()
+   *           .setParent(
+   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *                   .toString())
+   *           .setDocumentTemplate(ImportDocumentTemplate.newBuilder().build())
+   *           .setImportGcsCustomMetadata(true)
+   *           .build();
+   *   ImportDocumentsResponse response = documentsClient.importDocumentsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportDocumentsResponse, KnowledgeOperationMetadata>
+      importDocumentsAsync(ImportDocumentsRequest request) {
+    return importDocumentsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create documents by importing data from external sources.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   ImportDocumentsRequest request =
+   *       ImportDocumentsRequest.newBuilder()
+   *           .setParent(
+   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *                   .toString())
+   *           .setDocumentTemplate(ImportDocumentTemplate.newBuilder().build())
+   *           .setImportGcsCustomMetadata(true)
+   *           .build();
+   *   OperationFuture<ImportDocumentsResponse, KnowledgeOperationMetadata> future =
+   *       documentsClient.importDocumentsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ImportDocumentsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ImportDocumentsRequest, ImportDocumentsResponse, KnowledgeOperationMetadata>
+      importDocumentsOperationCallable() {
+    return stub.importDocumentsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create documents by importing data from external sources.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   ImportDocumentsRequest request =
+   *       ImportDocumentsRequest.newBuilder()
+   *           .setParent(
+   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *                   .toString())
+   *           .setDocumentTemplate(ImportDocumentTemplate.newBuilder().build())
+   *           .setImportGcsCustomMetadata(true)
+   *           .build();
+   *   ApiFuture<Operation> future = documentsClient.importDocumentsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ImportDocumentsRequest, Operation> importDocumentsCallable() {
+    return stub.importDocumentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes the specified document.
    *
    * <p>Note: The `projects.agent.knowledgeBases.documents` resource is deprecated; only use

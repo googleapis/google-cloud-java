@@ -176,6 +176,51 @@ public final class DocumentsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest,
+          com.google.longrunning.Operation>
+      getImportDocumentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportDocuments",
+      requestType = com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest,
+          com.google.longrunning.Operation>
+      getImportDocumentsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest,
+            com.google.longrunning.Operation>
+        getImportDocumentsMethod;
+    if ((getImportDocumentsMethod = DocumentsGrpc.getImportDocumentsMethod) == null) {
+      synchronized (DocumentsGrpc.class) {
+        if ((getImportDocumentsMethod = DocumentsGrpc.getImportDocumentsMethod) == null) {
+          DocumentsGrpc.getImportDocumentsMethod =
+              getImportDocumentsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ImportDocuments"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new DocumentsMethodDescriptorSupplier("ImportDocuments"))
+                      .build();
+        }
+      }
+    }
+    return getImportDocumentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest,
           com.google.longrunning.Operation>
       getDeleteDocumentMethod;
@@ -410,6 +455,19 @@ public final class DocumentsGrpc {
      *
      *
      * <pre>
+     * Create documents by importing data from external sources.
+     * </pre>
+     */
+    public void importDocuments(
+        com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getImportDocumentsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the specified document.
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
@@ -479,6 +537,12 @@ public final class DocumentsGrpc {
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.CreateDocumentRequest,
                       com.google.longrunning.Operation>(this, METHODID_CREATE_DOCUMENT)))
+          .addMethod(
+              getImportDocumentsMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest,
+                      com.google.longrunning.Operation>(this, METHODID_IMPORT_DOCUMENTS)))
           .addMethod(
               getDeleteDocumentMethod(),
               asyncUnaryCall(
@@ -570,6 +634,22 @@ public final class DocumentsGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getCreateDocumentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create documents by importing data from external sources.
+     * </pre>
+     */
+    public void importDocuments(
+        com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getImportDocumentsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -700,6 +780,18 @@ public final class DocumentsGrpc {
      *
      *
      * <pre>
+     * Create documents by importing data from external sources.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importDocuments(
+        com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest request) {
+      return blockingUnaryCall(getChannel(), getImportDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the specified document.
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
@@ -814,6 +906,19 @@ public final class DocumentsGrpc {
      *
      *
      * <pre>
+     * Create documents by importing data from external sources.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        importDocuments(com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getImportDocumentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the specified document.
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
@@ -865,9 +970,10 @@ public final class DocumentsGrpc {
   private static final int METHODID_LIST_DOCUMENTS = 0;
   private static final int METHODID_GET_DOCUMENT = 1;
   private static final int METHODID_CREATE_DOCUMENT = 2;
-  private static final int METHODID_DELETE_DOCUMENT = 3;
-  private static final int METHODID_UPDATE_DOCUMENT = 4;
-  private static final int METHODID_RELOAD_DOCUMENT = 5;
+  private static final int METHODID_IMPORT_DOCUMENTS = 3;
+  private static final int METHODID_DELETE_DOCUMENT = 4;
+  private static final int METHODID_UPDATE_DOCUMENT = 5;
+  private static final int METHODID_RELOAD_DOCUMENT = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -902,6 +1008,11 @@ public final class DocumentsGrpc {
         case METHODID_CREATE_DOCUMENT:
           serviceImpl.createDocument(
               (com.google.cloud.dialogflow.v2beta1.CreateDocumentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_IMPORT_DOCUMENTS:
+          serviceImpl.importDocuments(
+              (com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_DOCUMENT:
@@ -986,6 +1097,7 @@ public final class DocumentsGrpc {
                       .addMethod(getListDocumentsMethod())
                       .addMethod(getGetDocumentMethod())
                       .addMethod(getCreateDocumentMethod())
+                      .addMethod(getImportDocumentsMethod())
                       .addMethod(getDeleteDocumentMethod())
                       .addMethod(getUpdateDocumentMethod())
                       .addMethod(getReloadDocumentMethod())

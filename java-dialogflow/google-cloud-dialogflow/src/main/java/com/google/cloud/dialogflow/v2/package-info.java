@@ -30,6 +30,21 @@
  * }
  * }</pre>
  *
+ * <p>======================= AnswerRecordsClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [AnswerRecords][google.cloud.dialogflow.v2.AnswerRecord].
+ *
+ * <p>Sample for AnswerRecordsClient:
+ *
+ * <pre>{@code
+ * try (AnswerRecordsClient answerRecordsClient = AnswerRecordsClient.create()) {
+ *   AnswerRecord answerRecord = AnswerRecord.newBuilder().build();
+ *   FieldMask updateMask = FieldMask.newBuilder().build();
+ *   AnswerRecord response = answerRecordsClient.updateAnswerRecord(answerRecord, updateMask);
+ * }
+ * }</pre>
+ *
  * <p>======================= ContextsClient =======================
  *
  * <p>Service Description: Service for managing [Contexts][google.cloud.dialogflow.v2.Context].
@@ -41,6 +56,54 @@
  *   ContextName name =
  *       ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
  *   Context response = contextsClient.getContext(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ConversationsClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [Conversations][google.cloud.dialogflow.v2.Conversation].
+ *
+ * <p>Sample for ConversationsClient:
+ *
+ * <pre>{@code
+ * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   Conversation conversation = Conversation.newBuilder().build();
+ *   Conversation response = conversationsClient.createConversation(parent, conversation);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ConversationProfilesClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [ConversationProfiles][google.cloud.dialogflow.v2.ConversationProfile].
+ *
+ * <p>Sample for ConversationProfilesClient:
+ *
+ * <pre>{@code
+ * try (ConversationProfilesClient conversationProfilesClient =
+ *     ConversationProfilesClient.create()) {
+ *   ConversationProfileName name =
+ *       ConversationProfileName.ofProjectConversationProfileName(
+ *           "[PROJECT]", "[CONVERSATION_PROFILE]");
+ *   ConversationProfile response = conversationProfilesClient.getConversationProfile(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= DocumentsClient =======================
+ *
+ * <p>Service Description: Service for managing knowledge
+ * [Documents][google.cloud.dialogflow.v2.Document].
+ *
+ * <p>Sample for DocumentsClient:
+ *
+ * <pre>{@code
+ * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+ *   DocumentName name =
+ *       DocumentName.ofProjectKnowledgeBaseDocumentName(
+ *           "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
+ *   Document response = documentsClient.getDocument(name);
  * }
  * }</pre>
  *
@@ -89,6 +152,37 @@
  * try (IntentsClient intentsClient = IntentsClient.create()) {
  *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
  *   Intent response = intentsClient.getIntent(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= KnowledgeBasesClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [KnowledgeBases][google.cloud.dialogflow.v2.KnowledgeBase].
+ *
+ * <p>Sample for KnowledgeBasesClient:
+ *
+ * <pre>{@code
+ * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
+ *   KnowledgeBaseName name =
+ *       KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]");
+ *   KnowledgeBase response = knowledgeBasesClient.getKnowledgeBase(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ParticipantsClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [Participants][google.cloud.dialogflow.v2.Participant].
+ *
+ * <p>Sample for ParticipantsClient:
+ *
+ * <pre>{@code
+ * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+ *   ConversationName parent =
+ *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
+ *   Participant participant = Participant.newBuilder().build();
+ *   Participant response = participantsClient.createParticipant(parent, participant);
  * }
  * }</pre>
  *

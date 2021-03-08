@@ -26,6 +26,8 @@ import com.google.cloud.dialogflow.v2beta1.CreateDocumentRequest;
 import com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest;
 import com.google.cloud.dialogflow.v2beta1.Document;
 import com.google.cloud.dialogflow.v2beta1.GetDocumentRequest;
+import com.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest;
+import com.google.cloud.dialogflow.v2beta1.ImportDocumentsResponse;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata;
 import com.google.cloud.dialogflow.v2beta1.ListDocumentsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListDocumentsResponse;
@@ -70,6 +72,16 @@ public abstract class DocumentsStub implements BackgroundResource {
 
   public UnaryCallable<CreateDocumentRequest, Operation> createDocumentCallable() {
     throw new UnsupportedOperationException("Not implemented: createDocumentCallable()");
+  }
+
+  public OperationCallable<
+          ImportDocumentsRequest, ImportDocumentsResponse, KnowledgeOperationMetadata>
+      importDocumentsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: importDocumentsOperationCallable()");
+  }
+
+  public UnaryCallable<ImportDocumentsRequest, Operation> importDocumentsCallable() {
+    throw new UnsupportedOperationException("Not implemented: importDocumentsCallable()");
   }
 
   public OperationCallable<DeleteDocumentRequest, Empty, KnowledgeOperationMetadata>

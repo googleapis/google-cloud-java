@@ -355,4 +355,20 @@ public interface InputAudioConfigOrBuilder
    * @return The singleUtterance.
    */
   boolean getSingleUtterance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Only used in [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent] and
+   * [Participants.StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent].
+   * If `false` and recognition doesn't return any result, trigger
+   * `NO_SPEECH_RECOGNIZED` event to Dialogflow agent.
+   * </pre>
+   *
+   * <code>bool disable_no_speech_recognized_event = 14;</code>
+   *
+   * @return The disableNoSpeechRecognizedEvent.
+   */
+  boolean getDisableNoSpeechRecognizedEvent();
 }
