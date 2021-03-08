@@ -16,11 +16,6 @@
 package com.google.cloud.security.privateca.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -1175,7 +1170,8 @@ public final class CertificateAuthorityServiceGrpc {
         com.google.cloud.security.privateca.v1beta1.CreateCertificateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.security.privateca.v1beta1.Certificate>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateCertificateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateCertificateMethod(), responseObserver);
     }
 
     /**
@@ -1189,7 +1185,8 @@ public final class CertificateAuthorityServiceGrpc {
         com.google.cloud.security.privateca.v1beta1.GetCertificateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.security.privateca.v1beta1.Certificate>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCertificateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetCertificateMethod(), responseObserver);
     }
 
     /**
@@ -1204,7 +1201,8 @@ public final class CertificateAuthorityServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.security.privateca.v1beta1.ListCertificatesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListCertificatesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListCertificatesMethod(), responseObserver);
     }
 
     /**
@@ -1218,7 +1216,8 @@ public final class CertificateAuthorityServiceGrpc {
         com.google.cloud.security.privateca.v1beta1.RevokeCertificateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.security.privateca.v1beta1.Certificate>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getRevokeCertificateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRevokeCertificateMethod(), responseObserver);
     }
 
     /**
@@ -1233,7 +1232,8 @@ public final class CertificateAuthorityServiceGrpc {
         com.google.cloud.security.privateca.v1beta1.UpdateCertificateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.security.privateca.v1beta1.Certificate>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateCertificateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateCertificateMethod(), responseObserver);
     }
 
     /**
@@ -1251,7 +1251,8 @@ public final class CertificateAuthorityServiceGrpc {
     public void activateCertificateAuthority(
         com.google.cloud.security.privateca.v1beta1.ActivateCertificateAuthorityRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getActivateCertificateAuthorityMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getActivateCertificateAuthorityMethod(), responseObserver);
     }
 
     /**
@@ -1264,7 +1265,8 @@ public final class CertificateAuthorityServiceGrpc {
     public void createCertificateAuthority(
         com.google.cloud.security.privateca.v1beta1.CreateCertificateAuthorityRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateCertificateAuthorityMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateCertificateAuthorityMethod(), responseObserver);
     }
 
     /**
@@ -1277,7 +1279,8 @@ public final class CertificateAuthorityServiceGrpc {
     public void disableCertificateAuthority(
         com.google.cloud.security.privateca.v1beta1.DisableCertificateAuthorityRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDisableCertificateAuthorityMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDisableCertificateAuthorityMethod(), responseObserver);
     }
 
     /**
@@ -1290,7 +1293,8 @@ public final class CertificateAuthorityServiceGrpc {
     public void enableCertificateAuthority(
         com.google.cloud.security.privateca.v1beta1.EnableCertificateAuthorityRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getEnableCertificateAuthorityMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getEnableCertificateAuthorityMethod(), responseObserver);
     }
 
     /**
@@ -1311,7 +1315,8 @@ public final class CertificateAuthorityServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.security.privateca.v1beta1.FetchCertificateAuthorityCsrResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getFetchCertificateAuthorityCsrMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchCertificateAuthorityCsrMethod(), responseObserver);
     }
 
     /**
@@ -1326,7 +1331,8 @@ public final class CertificateAuthorityServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.security.privateca.v1beta1.CertificateAuthority>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCertificateAuthorityMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetCertificateAuthorityMethod(), responseObserver);
     }
 
     /**
@@ -1341,7 +1347,8 @@ public final class CertificateAuthorityServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.security.privateca.v1beta1.ListCertificateAuthoritiesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListCertificateAuthoritiesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListCertificateAuthoritiesMethod(), responseObserver);
     }
 
     /**
@@ -1354,7 +1361,8 @@ public final class CertificateAuthorityServiceGrpc {
     public void restoreCertificateAuthority(
         com.google.cloud.security.privateca.v1beta1.RestoreCertificateAuthorityRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getRestoreCertificateAuthorityMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRestoreCertificateAuthorityMethod(), responseObserver);
     }
 
     /**
@@ -1368,7 +1376,8 @@ public final class CertificateAuthorityServiceGrpc {
         com.google.cloud.security.privateca.v1beta1.ScheduleDeleteCertificateAuthorityRequest
             request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getScheduleDeleteCertificateAuthorityMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getScheduleDeleteCertificateAuthorityMethod(), responseObserver);
     }
 
     /**
@@ -1381,7 +1390,8 @@ public final class CertificateAuthorityServiceGrpc {
     public void updateCertificateAuthority(
         com.google.cloud.security.privateca.v1beta1.UpdateCertificateAuthorityRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateCertificateAuthorityMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateCertificateAuthorityMethod(), responseObserver);
     }
 
     /**
@@ -1396,7 +1406,8 @@ public final class CertificateAuthorityServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.security.privateca.v1beta1.CertificateRevocationList>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCertificateRevocationListMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetCertificateRevocationListMethod(), responseObserver);
     }
 
     /**
@@ -1411,7 +1422,8 @@ public final class CertificateAuthorityServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.security.privateca.v1beta1.ListCertificateRevocationListsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListCertificateRevocationListsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListCertificateRevocationListsMethod(), responseObserver);
     }
 
     /**
@@ -1424,7 +1436,8 @@ public final class CertificateAuthorityServiceGrpc {
     public void updateCertificateRevocationList(
         com.google.cloud.security.privateca.v1beta1.UpdateCertificateRevocationListRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateCertificateRevocationListMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateCertificateRevocationListMethod(), responseObserver);
     }
 
     /**
@@ -1438,7 +1451,8 @@ public final class CertificateAuthorityServiceGrpc {
         com.google.cloud.security.privateca.v1beta1.GetReusableConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.security.privateca.v1beta1.ReusableConfig>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetReusableConfigMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetReusableConfigMethod(), responseObserver);
     }
 
     /**
@@ -1453,7 +1467,8 @@ public final class CertificateAuthorityServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.security.privateca.v1beta1.ListReusableConfigsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListReusableConfigsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListReusableConfigsMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -1461,42 +1476,42 @@ public final class CertificateAuthorityServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreateCertificateMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.security.privateca.v1beta1.CreateCertificateRequest,
                       com.google.cloud.security.privateca.v1beta1.Certificate>(
                       this, METHODID_CREATE_CERTIFICATE)))
           .addMethod(
               getGetCertificateMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.security.privateca.v1beta1.GetCertificateRequest,
                       com.google.cloud.security.privateca.v1beta1.Certificate>(
                       this, METHODID_GET_CERTIFICATE)))
           .addMethod(
               getListCertificatesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.security.privateca.v1beta1.ListCertificatesRequest,
                       com.google.cloud.security.privateca.v1beta1.ListCertificatesResponse>(
                       this, METHODID_LIST_CERTIFICATES)))
           .addMethod(
               getRevokeCertificateMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.security.privateca.v1beta1.RevokeCertificateRequest,
                       com.google.cloud.security.privateca.v1beta1.Certificate>(
                       this, METHODID_REVOKE_CERTIFICATE)))
           .addMethod(
               getUpdateCertificateMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.security.privateca.v1beta1.UpdateCertificateRequest,
                       com.google.cloud.security.privateca.v1beta1.Certificate>(
                       this, METHODID_UPDATE_CERTIFICATE)))
           .addMethod(
               getActivateCertificateAuthorityMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.security.privateca.v1beta1
                           .ActivateCertificateAuthorityRequest,
@@ -1504,14 +1519,14 @@ public final class CertificateAuthorityServiceGrpc {
                       this, METHODID_ACTIVATE_CERTIFICATE_AUTHORITY)))
           .addMethod(
               getCreateCertificateAuthorityMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.security.privateca.v1beta1.CreateCertificateAuthorityRequest,
                       com.google.longrunning.Operation>(
                       this, METHODID_CREATE_CERTIFICATE_AUTHORITY)))
           .addMethod(
               getDisableCertificateAuthorityMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.security.privateca.v1beta1
                           .DisableCertificateAuthorityRequest,
@@ -1519,14 +1534,14 @@ public final class CertificateAuthorityServiceGrpc {
                       this, METHODID_DISABLE_CERTIFICATE_AUTHORITY)))
           .addMethod(
               getEnableCertificateAuthorityMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.security.privateca.v1beta1.EnableCertificateAuthorityRequest,
                       com.google.longrunning.Operation>(
                       this, METHODID_ENABLE_CERTIFICATE_AUTHORITY)))
           .addMethod(
               getFetchCertificateAuthorityCsrMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.security.privateca.v1beta1
                           .FetchCertificateAuthorityCsrRequest,
@@ -1535,14 +1550,14 @@ public final class CertificateAuthorityServiceGrpc {
                       this, METHODID_FETCH_CERTIFICATE_AUTHORITY_CSR)))
           .addMethod(
               getGetCertificateAuthorityMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.security.privateca.v1beta1.GetCertificateAuthorityRequest,
                       com.google.cloud.security.privateca.v1beta1.CertificateAuthority>(
                       this, METHODID_GET_CERTIFICATE_AUTHORITY)))
           .addMethod(
               getListCertificateAuthoritiesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.security.privateca.v1beta1.ListCertificateAuthoritiesRequest,
                       com.google.cloud.security.privateca.v1beta1
@@ -1550,7 +1565,7 @@ public final class CertificateAuthorityServiceGrpc {
                       this, METHODID_LIST_CERTIFICATE_AUTHORITIES)))
           .addMethod(
               getRestoreCertificateAuthorityMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.security.privateca.v1beta1
                           .RestoreCertificateAuthorityRequest,
@@ -1558,7 +1573,7 @@ public final class CertificateAuthorityServiceGrpc {
                       this, METHODID_RESTORE_CERTIFICATE_AUTHORITY)))
           .addMethod(
               getScheduleDeleteCertificateAuthorityMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.security.privateca.v1beta1
                           .ScheduleDeleteCertificateAuthorityRequest,
@@ -1566,14 +1581,14 @@ public final class CertificateAuthorityServiceGrpc {
                       this, METHODID_SCHEDULE_DELETE_CERTIFICATE_AUTHORITY)))
           .addMethod(
               getUpdateCertificateAuthorityMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.security.privateca.v1beta1.UpdateCertificateAuthorityRequest,
                       com.google.longrunning.Operation>(
                       this, METHODID_UPDATE_CERTIFICATE_AUTHORITY)))
           .addMethod(
               getGetCertificateRevocationListMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.security.privateca.v1beta1
                           .GetCertificateRevocationListRequest,
@@ -1581,7 +1596,7 @@ public final class CertificateAuthorityServiceGrpc {
                       this, METHODID_GET_CERTIFICATE_REVOCATION_LIST)))
           .addMethod(
               getListCertificateRevocationListsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.security.privateca.v1beta1
                           .ListCertificateRevocationListsRequest,
@@ -1590,7 +1605,7 @@ public final class CertificateAuthorityServiceGrpc {
                       this, METHODID_LIST_CERTIFICATE_REVOCATION_LISTS)))
           .addMethod(
               getUpdateCertificateRevocationListMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.security.privateca.v1beta1
                           .UpdateCertificateRevocationListRequest,
@@ -1598,14 +1613,14 @@ public final class CertificateAuthorityServiceGrpc {
                       this, METHODID_UPDATE_CERTIFICATE_REVOCATION_LIST)))
           .addMethod(
               getGetReusableConfigMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.security.privateca.v1beta1.GetReusableConfigRequest,
                       com.google.cloud.security.privateca.v1beta1.ReusableConfig>(
                       this, METHODID_GET_REUSABLE_CONFIG)))
           .addMethod(
               getListReusableConfigsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.security.privateca.v1beta1.ListReusableConfigsRequest,
                       com.google.cloud.security.privateca.v1beta1.ListReusableConfigsResponse>(
@@ -1647,7 +1662,7 @@ public final class CertificateAuthorityServiceGrpc {
         com.google.cloud.security.privateca.v1beta1.CreateCertificateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.security.privateca.v1beta1.Certificate>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateCertificateMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1664,7 +1679,7 @@ public final class CertificateAuthorityServiceGrpc {
         com.google.cloud.security.privateca.v1beta1.GetCertificateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.security.privateca.v1beta1.Certificate>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCertificateMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1682,7 +1697,7 @@ public final class CertificateAuthorityServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.security.privateca.v1beta1.ListCertificatesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListCertificatesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1699,7 +1714,7 @@ public final class CertificateAuthorityServiceGrpc {
         com.google.cloud.security.privateca.v1beta1.RevokeCertificateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.security.privateca.v1beta1.Certificate>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRevokeCertificateMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1717,7 +1732,7 @@ public final class CertificateAuthorityServiceGrpc {
         com.google.cloud.security.privateca.v1beta1.UpdateCertificateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.security.privateca.v1beta1.Certificate>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateCertificateMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1738,7 +1753,7 @@ public final class CertificateAuthorityServiceGrpc {
     public void activateCertificateAuthority(
         com.google.cloud.security.privateca.v1beta1.ActivateCertificateAuthorityRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getActivateCertificateAuthorityMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1754,7 +1769,7 @@ public final class CertificateAuthorityServiceGrpc {
     public void createCertificateAuthority(
         com.google.cloud.security.privateca.v1beta1.CreateCertificateAuthorityRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateCertificateAuthorityMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1770,7 +1785,7 @@ public final class CertificateAuthorityServiceGrpc {
     public void disableCertificateAuthority(
         com.google.cloud.security.privateca.v1beta1.DisableCertificateAuthorityRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDisableCertificateAuthorityMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1786,7 +1801,7 @@ public final class CertificateAuthorityServiceGrpc {
     public void enableCertificateAuthority(
         com.google.cloud.security.privateca.v1beta1.EnableCertificateAuthorityRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getEnableCertificateAuthorityMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1810,7 +1825,7 @@ public final class CertificateAuthorityServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.security.privateca.v1beta1.FetchCertificateAuthorityCsrResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFetchCertificateAuthorityCsrMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1828,7 +1843,7 @@ public final class CertificateAuthorityServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.security.privateca.v1beta1.CertificateAuthority>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCertificateAuthorityMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1846,7 +1861,7 @@ public final class CertificateAuthorityServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.security.privateca.v1beta1.ListCertificateAuthoritiesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListCertificateAuthoritiesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1862,7 +1877,7 @@ public final class CertificateAuthorityServiceGrpc {
     public void restoreCertificateAuthority(
         com.google.cloud.security.privateca.v1beta1.RestoreCertificateAuthorityRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRestoreCertificateAuthorityMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1879,7 +1894,7 @@ public final class CertificateAuthorityServiceGrpc {
         com.google.cloud.security.privateca.v1beta1.ScheduleDeleteCertificateAuthorityRequest
             request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getScheduleDeleteCertificateAuthorityMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1895,7 +1910,7 @@ public final class CertificateAuthorityServiceGrpc {
     public void updateCertificateAuthority(
         com.google.cloud.security.privateca.v1beta1.UpdateCertificateAuthorityRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateCertificateAuthorityMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1913,7 +1928,7 @@ public final class CertificateAuthorityServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.security.privateca.v1beta1.CertificateRevocationList>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCertificateRevocationListMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1931,7 +1946,7 @@ public final class CertificateAuthorityServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.security.privateca.v1beta1.ListCertificateRevocationListsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListCertificateRevocationListsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1947,7 +1962,7 @@ public final class CertificateAuthorityServiceGrpc {
     public void updateCertificateRevocationList(
         com.google.cloud.security.privateca.v1beta1.UpdateCertificateRevocationListRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateCertificateRevocationListMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1964,7 +1979,7 @@ public final class CertificateAuthorityServiceGrpc {
         com.google.cloud.security.privateca.v1beta1.GetReusableConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.security.privateca.v1beta1.ReusableConfig>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetReusableConfigMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1982,7 +1997,7 @@ public final class CertificateAuthorityServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.security.privateca.v1beta1.ListReusableConfigsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListReusableConfigsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2020,7 +2035,7 @@ public final class CertificateAuthorityServiceGrpc {
      */
     public com.google.cloud.security.privateca.v1beta1.Certificate createCertificate(
         com.google.cloud.security.privateca.v1beta1.CreateCertificateRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateCertificateMethod(), getCallOptions(), request);
     }
 
@@ -2033,7 +2048,8 @@ public final class CertificateAuthorityServiceGrpc {
      */
     public com.google.cloud.security.privateca.v1beta1.Certificate getCertificate(
         com.google.cloud.security.privateca.v1beta1.GetCertificateRequest request) {
-      return blockingUnaryCall(getChannel(), getGetCertificateMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCertificateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2045,7 +2061,7 @@ public final class CertificateAuthorityServiceGrpc {
      */
     public com.google.cloud.security.privateca.v1beta1.ListCertificatesResponse listCertificates(
         com.google.cloud.security.privateca.v1beta1.ListCertificatesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListCertificatesMethod(), getCallOptions(), request);
     }
 
@@ -2058,7 +2074,7 @@ public final class CertificateAuthorityServiceGrpc {
      */
     public com.google.cloud.security.privateca.v1beta1.Certificate revokeCertificate(
         com.google.cloud.security.privateca.v1beta1.RevokeCertificateRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRevokeCertificateMethod(), getCallOptions(), request);
     }
 
@@ -2072,7 +2088,7 @@ public final class CertificateAuthorityServiceGrpc {
      */
     public com.google.cloud.security.privateca.v1beta1.Certificate updateCertificate(
         com.google.cloud.security.privateca.v1beta1.UpdateCertificateRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateCertificateMethod(), getCallOptions(), request);
     }
 
@@ -2090,7 +2106,7 @@ public final class CertificateAuthorityServiceGrpc {
      */
     public com.google.longrunning.Operation activateCertificateAuthority(
         com.google.cloud.security.privateca.v1beta1.ActivateCertificateAuthorityRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getActivateCertificateAuthorityMethod(), getCallOptions(), request);
     }
 
@@ -2103,7 +2119,7 @@ public final class CertificateAuthorityServiceGrpc {
      */
     public com.google.longrunning.Operation createCertificateAuthority(
         com.google.cloud.security.privateca.v1beta1.CreateCertificateAuthorityRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateCertificateAuthorityMethod(), getCallOptions(), request);
     }
 
@@ -2116,7 +2132,7 @@ public final class CertificateAuthorityServiceGrpc {
      */
     public com.google.longrunning.Operation disableCertificateAuthority(
         com.google.cloud.security.privateca.v1beta1.DisableCertificateAuthorityRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDisableCertificateAuthorityMethod(), getCallOptions(), request);
     }
 
@@ -2129,7 +2145,7 @@ public final class CertificateAuthorityServiceGrpc {
      */
     public com.google.longrunning.Operation enableCertificateAuthority(
         com.google.cloud.security.privateca.v1beta1.EnableCertificateAuthorityRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getEnableCertificateAuthorityMethod(), getCallOptions(), request);
     }
 
@@ -2150,7 +2166,7 @@ public final class CertificateAuthorityServiceGrpc {
         fetchCertificateAuthorityCsr(
             com.google.cloud.security.privateca.v1beta1.FetchCertificateAuthorityCsrRequest
                 request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFetchCertificateAuthorityCsrMethod(), getCallOptions(), request);
     }
 
@@ -2163,7 +2179,7 @@ public final class CertificateAuthorityServiceGrpc {
      */
     public com.google.cloud.security.privateca.v1beta1.CertificateAuthority getCertificateAuthority(
         com.google.cloud.security.privateca.v1beta1.GetCertificateAuthorityRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetCertificateAuthorityMethod(), getCallOptions(), request);
     }
 
@@ -2177,7 +2193,7 @@ public final class CertificateAuthorityServiceGrpc {
     public com.google.cloud.security.privateca.v1beta1.ListCertificateAuthoritiesResponse
         listCertificateAuthorities(
             com.google.cloud.security.privateca.v1beta1.ListCertificateAuthoritiesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListCertificateAuthoritiesMethod(), getCallOptions(), request);
     }
 
@@ -2190,7 +2206,7 @@ public final class CertificateAuthorityServiceGrpc {
      */
     public com.google.longrunning.Operation restoreCertificateAuthority(
         com.google.cloud.security.privateca.v1beta1.RestoreCertificateAuthorityRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRestoreCertificateAuthorityMethod(), getCallOptions(), request);
     }
 
@@ -2204,7 +2220,7 @@ public final class CertificateAuthorityServiceGrpc {
     public com.google.longrunning.Operation scheduleDeleteCertificateAuthority(
         com.google.cloud.security.privateca.v1beta1.ScheduleDeleteCertificateAuthorityRequest
             request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getScheduleDeleteCertificateAuthorityMethod(), getCallOptions(), request);
     }
 
@@ -2217,7 +2233,7 @@ public final class CertificateAuthorityServiceGrpc {
      */
     public com.google.longrunning.Operation updateCertificateAuthority(
         com.google.cloud.security.privateca.v1beta1.UpdateCertificateAuthorityRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateCertificateAuthorityMethod(), getCallOptions(), request);
     }
 
@@ -2232,7 +2248,7 @@ public final class CertificateAuthorityServiceGrpc {
         getCertificateRevocationList(
             com.google.cloud.security.privateca.v1beta1.GetCertificateRevocationListRequest
                 request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetCertificateRevocationListMethod(), getCallOptions(), request);
     }
 
@@ -2247,7 +2263,7 @@ public final class CertificateAuthorityServiceGrpc {
         listCertificateRevocationLists(
             com.google.cloud.security.privateca.v1beta1.ListCertificateRevocationListsRequest
                 request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListCertificateRevocationListsMethod(), getCallOptions(), request);
     }
 
@@ -2261,7 +2277,7 @@ public final class CertificateAuthorityServiceGrpc {
     public com.google.longrunning.Operation updateCertificateRevocationList(
         com.google.cloud.security.privateca.v1beta1.UpdateCertificateRevocationListRequest
             request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateCertificateRevocationListMethod(), getCallOptions(), request);
     }
 
@@ -2274,7 +2290,7 @@ public final class CertificateAuthorityServiceGrpc {
      */
     public com.google.cloud.security.privateca.v1beta1.ReusableConfig getReusableConfig(
         com.google.cloud.security.privateca.v1beta1.GetReusableConfigRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetReusableConfigMethod(), getCallOptions(), request);
     }
 
@@ -2288,7 +2304,7 @@ public final class CertificateAuthorityServiceGrpc {
     public com.google.cloud.security.privateca.v1beta1.ListReusableConfigsResponse
         listReusableConfigs(
             com.google.cloud.security.privateca.v1beta1.ListReusableConfigsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListReusableConfigsMethod(), getCallOptions(), request);
     }
   }
@@ -2326,7 +2342,7 @@ public final class CertificateAuthorityServiceGrpc {
             com.google.cloud.security.privateca.v1beta1.Certificate>
         createCertificate(
             com.google.cloud.security.privateca.v1beta1.CreateCertificateRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateCertificateMethod(), getCallOptions()), request);
     }
 
@@ -2340,7 +2356,7 @@ public final class CertificateAuthorityServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.security.privateca.v1beta1.Certificate>
         getCertificate(com.google.cloud.security.privateca.v1beta1.GetCertificateRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCertificateMethod(), getCallOptions()), request);
     }
 
@@ -2355,7 +2371,7 @@ public final class CertificateAuthorityServiceGrpc {
             com.google.cloud.security.privateca.v1beta1.ListCertificatesResponse>
         listCertificates(
             com.google.cloud.security.privateca.v1beta1.ListCertificatesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListCertificatesMethod(), getCallOptions()), request);
     }
 
@@ -2370,7 +2386,7 @@ public final class CertificateAuthorityServiceGrpc {
             com.google.cloud.security.privateca.v1beta1.Certificate>
         revokeCertificate(
             com.google.cloud.security.privateca.v1beta1.RevokeCertificateRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRevokeCertificateMethod(), getCallOptions()), request);
     }
 
@@ -2386,7 +2402,7 @@ public final class CertificateAuthorityServiceGrpc {
             com.google.cloud.security.privateca.v1beta1.Certificate>
         updateCertificate(
             com.google.cloud.security.privateca.v1beta1.UpdateCertificateRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateCertificateMethod(), getCallOptions()), request);
     }
 
@@ -2406,7 +2422,7 @@ public final class CertificateAuthorityServiceGrpc {
         activateCertificateAuthority(
             com.google.cloud.security.privateca.v1beta1.ActivateCertificateAuthorityRequest
                 request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getActivateCertificateAuthorityMethod(), getCallOptions()), request);
     }
 
@@ -2420,7 +2436,7 @@ public final class CertificateAuthorityServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createCertificateAuthority(
             com.google.cloud.security.privateca.v1beta1.CreateCertificateAuthorityRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateCertificateAuthorityMethod(), getCallOptions()), request);
     }
 
@@ -2435,7 +2451,7 @@ public final class CertificateAuthorityServiceGrpc {
         disableCertificateAuthority(
             com.google.cloud.security.privateca.v1beta1.DisableCertificateAuthorityRequest
                 request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDisableCertificateAuthorityMethod(), getCallOptions()), request);
     }
 
@@ -2449,7 +2465,7 @@ public final class CertificateAuthorityServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         enableCertificateAuthority(
             com.google.cloud.security.privateca.v1beta1.EnableCertificateAuthorityRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getEnableCertificateAuthorityMethod(), getCallOptions()), request);
     }
 
@@ -2471,7 +2487,7 @@ public final class CertificateAuthorityServiceGrpc {
         fetchCertificateAuthorityCsr(
             com.google.cloud.security.privateca.v1beta1.FetchCertificateAuthorityCsrRequest
                 request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFetchCertificateAuthorityCsrMethod(), getCallOptions()), request);
     }
 
@@ -2486,7 +2502,7 @@ public final class CertificateAuthorityServiceGrpc {
             com.google.cloud.security.privateca.v1beta1.CertificateAuthority>
         getCertificateAuthority(
             com.google.cloud.security.privateca.v1beta1.GetCertificateAuthorityRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCertificateAuthorityMethod(), getCallOptions()), request);
     }
 
@@ -2501,7 +2517,7 @@ public final class CertificateAuthorityServiceGrpc {
             com.google.cloud.security.privateca.v1beta1.ListCertificateAuthoritiesResponse>
         listCertificateAuthorities(
             com.google.cloud.security.privateca.v1beta1.ListCertificateAuthoritiesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListCertificateAuthoritiesMethod(), getCallOptions()), request);
     }
 
@@ -2516,7 +2532,7 @@ public final class CertificateAuthorityServiceGrpc {
         restoreCertificateAuthority(
             com.google.cloud.security.privateca.v1beta1.RestoreCertificateAuthorityRequest
                 request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRestoreCertificateAuthorityMethod(), getCallOptions()), request);
     }
 
@@ -2531,7 +2547,7 @@ public final class CertificateAuthorityServiceGrpc {
         scheduleDeleteCertificateAuthority(
             com.google.cloud.security.privateca.v1beta1.ScheduleDeleteCertificateAuthorityRequest
                 request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getScheduleDeleteCertificateAuthorityMethod(), getCallOptions()),
           request);
     }
@@ -2546,7 +2562,7 @@ public final class CertificateAuthorityServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateCertificateAuthority(
             com.google.cloud.security.privateca.v1beta1.UpdateCertificateAuthorityRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateCertificateAuthorityMethod(), getCallOptions()), request);
     }
 
@@ -2562,7 +2578,7 @@ public final class CertificateAuthorityServiceGrpc {
         getCertificateRevocationList(
             com.google.cloud.security.privateca.v1beta1.GetCertificateRevocationListRequest
                 request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCertificateRevocationListMethod(), getCallOptions()), request);
     }
 
@@ -2578,7 +2594,7 @@ public final class CertificateAuthorityServiceGrpc {
         listCertificateRevocationLists(
             com.google.cloud.security.privateca.v1beta1.ListCertificateRevocationListsRequest
                 request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListCertificateRevocationListsMethod(), getCallOptions()),
           request);
     }
@@ -2594,7 +2610,7 @@ public final class CertificateAuthorityServiceGrpc {
         updateCertificateRevocationList(
             com.google.cloud.security.privateca.v1beta1.UpdateCertificateRevocationListRequest
                 request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateCertificateRevocationListMethod(), getCallOptions()),
           request);
     }
@@ -2610,7 +2626,7 @@ public final class CertificateAuthorityServiceGrpc {
             com.google.cloud.security.privateca.v1beta1.ReusableConfig>
         getReusableConfig(
             com.google.cloud.security.privateca.v1beta1.GetReusableConfigRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetReusableConfigMethod(), getCallOptions()), request);
     }
 
@@ -2625,7 +2641,7 @@ public final class CertificateAuthorityServiceGrpc {
             com.google.cloud.security.privateca.v1beta1.ListReusableConfigsResponse>
         listReusableConfigs(
             com.google.cloud.security.privateca.v1beta1.ListReusableConfigsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListReusableConfigsMethod(), getCallOptions()), request);
     }
   }
