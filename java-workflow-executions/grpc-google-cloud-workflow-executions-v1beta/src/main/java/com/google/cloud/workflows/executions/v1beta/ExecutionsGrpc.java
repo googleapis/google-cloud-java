@@ -16,11 +16,6 @@
 package com.google.cloud.workflows.executions.v1beta;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -291,7 +286,8 @@ public final class ExecutionsGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.workflows.executions.v1beta.ListExecutionsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListExecutionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListExecutionsMethod(), responseObserver);
     }
 
     /**
@@ -305,7 +301,8 @@ public final class ExecutionsGrpc {
         com.google.cloud.workflows.executions.v1beta.CreateExecutionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.workflows.executions.v1beta.Execution>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateExecutionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateExecutionMethod(), responseObserver);
     }
 
     /**
@@ -319,7 +316,8 @@ public final class ExecutionsGrpc {
         com.google.cloud.workflows.executions.v1beta.GetExecutionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.workflows.executions.v1beta.Execution>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetExecutionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetExecutionMethod(), responseObserver);
     }
 
     /**
@@ -333,7 +331,8 @@ public final class ExecutionsGrpc {
         com.google.cloud.workflows.executions.v1beta.CancelExecutionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.workflows.executions.v1beta.Execution>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCancelExecutionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCancelExecutionMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -341,28 +340,28 @@ public final class ExecutionsGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListExecutionsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.workflows.executions.v1beta.ListExecutionsRequest,
                       com.google.cloud.workflows.executions.v1beta.ListExecutionsResponse>(
                       this, METHODID_LIST_EXECUTIONS)))
           .addMethod(
               getCreateExecutionMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.workflows.executions.v1beta.CreateExecutionRequest,
                       com.google.cloud.workflows.executions.v1beta.Execution>(
                       this, METHODID_CREATE_EXECUTION)))
           .addMethod(
               getGetExecutionMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.workflows.executions.v1beta.GetExecutionRequest,
                       com.google.cloud.workflows.executions.v1beta.Execution>(
                       this, METHODID_GET_EXECUTION)))
           .addMethod(
               getCancelExecutionMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.workflows.executions.v1beta.CancelExecutionRequest,
                       com.google.cloud.workflows.executions.v1beta.Execution>(
@@ -404,7 +403,7 @@ public final class ExecutionsGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.workflows.executions.v1beta.ListExecutionsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListExecutionsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -421,7 +420,7 @@ public final class ExecutionsGrpc {
         com.google.cloud.workflows.executions.v1beta.CreateExecutionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.workflows.executions.v1beta.Execution>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateExecutionMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -438,7 +437,7 @@ public final class ExecutionsGrpc {
         com.google.cloud.workflows.executions.v1beta.GetExecutionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.workflows.executions.v1beta.Execution>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetExecutionMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -455,7 +454,7 @@ public final class ExecutionsGrpc {
         com.google.cloud.workflows.executions.v1beta.CancelExecutionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.workflows.executions.v1beta.Execution>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCancelExecutionMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -494,7 +493,8 @@ public final class ExecutionsGrpc {
      */
     public com.google.cloud.workflows.executions.v1beta.ListExecutionsResponse listExecutions(
         com.google.cloud.workflows.executions.v1beta.ListExecutionsRequest request) {
-      return blockingUnaryCall(getChannel(), getListExecutionsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListExecutionsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -506,7 +506,8 @@ public final class ExecutionsGrpc {
      */
     public com.google.cloud.workflows.executions.v1beta.Execution createExecution(
         com.google.cloud.workflows.executions.v1beta.CreateExecutionRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateExecutionMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateExecutionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -518,7 +519,8 @@ public final class ExecutionsGrpc {
      */
     public com.google.cloud.workflows.executions.v1beta.Execution getExecution(
         com.google.cloud.workflows.executions.v1beta.GetExecutionRequest request) {
-      return blockingUnaryCall(getChannel(), getGetExecutionMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetExecutionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -530,7 +532,8 @@ public final class ExecutionsGrpc {
      */
     public com.google.cloud.workflows.executions.v1beta.Execution cancelExecution(
         com.google.cloud.workflows.executions.v1beta.CancelExecutionRequest request) {
-      return blockingUnaryCall(getChannel(), getCancelExecutionMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelExecutionMethod(), getCallOptions(), request);
     }
   }
 
@@ -566,7 +569,7 @@ public final class ExecutionsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.workflows.executions.v1beta.ListExecutionsResponse>
         listExecutions(com.google.cloud.workflows.executions.v1beta.ListExecutionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListExecutionsMethod(), getCallOptions()), request);
     }
 
@@ -581,7 +584,7 @@ public final class ExecutionsGrpc {
             com.google.cloud.workflows.executions.v1beta.Execution>
         createExecution(
             com.google.cloud.workflows.executions.v1beta.CreateExecutionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateExecutionMethod(), getCallOptions()), request);
     }
 
@@ -595,7 +598,7 @@ public final class ExecutionsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.workflows.executions.v1beta.Execution>
         getExecution(com.google.cloud.workflows.executions.v1beta.GetExecutionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetExecutionMethod(), getCallOptions()), request);
     }
 
@@ -610,7 +613,7 @@ public final class ExecutionsGrpc {
             com.google.cloud.workflows.executions.v1beta.Execution>
         cancelExecution(
             com.google.cloud.workflows.executions.v1beta.CancelExecutionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCancelExecutionMethod(), getCallOptions()), request);
     }
   }
