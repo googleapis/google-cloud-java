@@ -16,11 +16,6 @@
 package com.google.monitoring.v3;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -338,7 +333,8 @@ public final class AlertPolicyServiceGrpc {
         com.google.monitoring.v3.ListAlertPoliciesRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ListAlertPoliciesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListAlertPoliciesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAlertPoliciesMethod(), responseObserver);
     }
 
     /**
@@ -351,7 +347,8 @@ public final class AlertPolicyServiceGrpc {
     public void getAlertPolicy(
         com.google.monitoring.v3.GetAlertPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.AlertPolicy> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetAlertPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAlertPolicyMethod(), responseObserver);
     }
 
     /**
@@ -364,7 +361,8 @@ public final class AlertPolicyServiceGrpc {
     public void createAlertPolicy(
         com.google.monitoring.v3.CreateAlertPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.AlertPolicy> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateAlertPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAlertPolicyMethod(), responseObserver);
     }
 
     /**
@@ -377,7 +375,8 @@ public final class AlertPolicyServiceGrpc {
     public void deleteAlertPolicy(
         com.google.monitoring.v3.DeleteAlertPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteAlertPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAlertPolicyMethod(), responseObserver);
     }
 
     /**
@@ -393,7 +392,8 @@ public final class AlertPolicyServiceGrpc {
     public void updateAlertPolicy(
         com.google.monitoring.v3.UpdateAlertPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.AlertPolicy> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateAlertPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAlertPolicyMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -401,32 +401,32 @@ public final class AlertPolicyServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListAlertPoliciesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.monitoring.v3.ListAlertPoliciesRequest,
                       com.google.monitoring.v3.ListAlertPoliciesResponse>(
                       this, METHODID_LIST_ALERT_POLICIES)))
           .addMethod(
               getGetAlertPolicyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.monitoring.v3.GetAlertPolicyRequest,
                       com.google.monitoring.v3.AlertPolicy>(this, METHODID_GET_ALERT_POLICY)))
           .addMethod(
               getCreateAlertPolicyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.monitoring.v3.CreateAlertPolicyRequest,
                       com.google.monitoring.v3.AlertPolicy>(this, METHODID_CREATE_ALERT_POLICY)))
           .addMethod(
               getDeleteAlertPolicyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.monitoring.v3.DeleteAlertPolicyRequest, com.google.protobuf.Empty>(
                       this, METHODID_DELETE_ALERT_POLICY)))
           .addMethod(
               getUpdateAlertPolicyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.monitoring.v3.UpdateAlertPolicyRequest,
                       com.google.monitoring.v3.AlertPolicy>(this, METHODID_UPDATE_ALERT_POLICY)))
@@ -472,7 +472,7 @@ public final class AlertPolicyServiceGrpc {
         com.google.monitoring.v3.ListAlertPoliciesRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ListAlertPoliciesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListAlertPoliciesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -488,7 +488,7 @@ public final class AlertPolicyServiceGrpc {
     public void getAlertPolicy(
         com.google.monitoring.v3.GetAlertPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.AlertPolicy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAlertPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -504,7 +504,7 @@ public final class AlertPolicyServiceGrpc {
     public void createAlertPolicy(
         com.google.monitoring.v3.CreateAlertPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.AlertPolicy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateAlertPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -520,7 +520,7 @@ public final class AlertPolicyServiceGrpc {
     public void deleteAlertPolicy(
         com.google.monitoring.v3.DeleteAlertPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteAlertPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -539,7 +539,7 @@ public final class AlertPolicyServiceGrpc {
     public void updateAlertPolicy(
         com.google.monitoring.v3.UpdateAlertPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.AlertPolicy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateAlertPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -583,7 +583,7 @@ public final class AlertPolicyServiceGrpc {
      */
     public com.google.monitoring.v3.ListAlertPoliciesResponse listAlertPolicies(
         com.google.monitoring.v3.ListAlertPoliciesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListAlertPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -596,7 +596,8 @@ public final class AlertPolicyServiceGrpc {
      */
     public com.google.monitoring.v3.AlertPolicy getAlertPolicy(
         com.google.monitoring.v3.GetAlertPolicyRequest request) {
-      return blockingUnaryCall(getChannel(), getGetAlertPolicyMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAlertPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -608,7 +609,7 @@ public final class AlertPolicyServiceGrpc {
      */
     public com.google.monitoring.v3.AlertPolicy createAlertPolicy(
         com.google.monitoring.v3.CreateAlertPolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateAlertPolicyMethod(), getCallOptions(), request);
     }
 
@@ -621,7 +622,7 @@ public final class AlertPolicyServiceGrpc {
      */
     public com.google.protobuf.Empty deleteAlertPolicy(
         com.google.monitoring.v3.DeleteAlertPolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteAlertPolicyMethod(), getCallOptions(), request);
     }
 
@@ -637,7 +638,7 @@ public final class AlertPolicyServiceGrpc {
      */
     public com.google.monitoring.v3.AlertPolicy updateAlertPolicy(
         com.google.monitoring.v3.UpdateAlertPolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateAlertPolicyMethod(), getCallOptions(), request);
     }
   }
@@ -679,7 +680,7 @@ public final class AlertPolicyServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.monitoring.v3.ListAlertPoliciesResponse>
         listAlertPolicies(com.google.monitoring.v3.ListAlertPoliciesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListAlertPoliciesMethod(), getCallOptions()), request);
     }
 
@@ -692,7 +693,7 @@ public final class AlertPolicyServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.v3.AlertPolicy>
         getAlertPolicy(com.google.monitoring.v3.GetAlertPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAlertPolicyMethod(), getCallOptions()), request);
     }
 
@@ -705,7 +706,7 @@ public final class AlertPolicyServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.v3.AlertPolicy>
         createAlertPolicy(com.google.monitoring.v3.CreateAlertPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateAlertPolicyMethod(), getCallOptions()), request);
     }
 
@@ -718,7 +719,7 @@ public final class AlertPolicyServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteAlertPolicy(com.google.monitoring.v3.DeleteAlertPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteAlertPolicyMethod(), getCallOptions()), request);
     }
 
@@ -734,7 +735,7 @@ public final class AlertPolicyServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.v3.AlertPolicy>
         updateAlertPolicy(com.google.monitoring.v3.UpdateAlertPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateAlertPolicyMethod(), getCallOptions()), request);
     }
   }
