@@ -16,11 +16,6 @@
 package com.google.cloud.videointelligence.v1p1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -150,7 +145,8 @@ public final class VideoIntelligenceServiceGrpc {
     public void annotateVideo(
         com.google.cloud.videointelligence.v1p1beta1.AnnotateVideoRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getAnnotateVideoMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAnnotateVideoMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -158,7 +154,7 @@ public final class VideoIntelligenceServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getAnnotateVideoMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.videointelligence.v1p1beta1.AnnotateVideoRequest,
                       com.google.longrunning.Operation>(this, METHODID_ANNOTATE_VIDEO)))
@@ -198,7 +194,7 @@ public final class VideoIntelligenceServiceGrpc {
     public void annotateVideo(
         com.google.cloud.videointelligence.v1p1beta1.AnnotateVideoRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAnnotateVideoMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -237,7 +233,8 @@ public final class VideoIntelligenceServiceGrpc {
      */
     public com.google.longrunning.Operation annotateVideo(
         com.google.cloud.videointelligence.v1p1beta1.AnnotateVideoRequest request) {
-      return blockingUnaryCall(getChannel(), getAnnotateVideoMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnnotateVideoMethod(), getCallOptions(), request);
     }
   }
 
@@ -273,7 +270,7 @@ public final class VideoIntelligenceServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         annotateVideo(com.google.cloud.videointelligence.v1p1beta1.AnnotateVideoRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAnnotateVideoMethod(), getCallOptions()), request);
     }
   }
