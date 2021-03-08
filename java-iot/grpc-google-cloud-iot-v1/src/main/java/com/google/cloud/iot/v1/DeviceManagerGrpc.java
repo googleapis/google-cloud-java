@@ -16,11 +16,6 @@
 package com.google.cloud.iot.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -952,7 +947,8 @@ public final class DeviceManagerGrpc {
     public void createDeviceRegistry(
         com.google.cloud.iot.v1.CreateDeviceRegistryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.DeviceRegistry> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateDeviceRegistryMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateDeviceRegistryMethod(), responseObserver);
     }
 
     /**
@@ -965,7 +961,8 @@ public final class DeviceManagerGrpc {
     public void getDeviceRegistry(
         com.google.cloud.iot.v1.GetDeviceRegistryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.DeviceRegistry> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetDeviceRegistryMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDeviceRegistryMethod(), responseObserver);
     }
 
     /**
@@ -978,7 +975,8 @@ public final class DeviceManagerGrpc {
     public void updateDeviceRegistry(
         com.google.cloud.iot.v1.UpdateDeviceRegistryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.DeviceRegistry> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateDeviceRegistryMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateDeviceRegistryMethod(), responseObserver);
     }
 
     /**
@@ -991,7 +989,8 @@ public final class DeviceManagerGrpc {
     public void deleteDeviceRegistry(
         com.google.cloud.iot.v1.DeleteDeviceRegistryRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteDeviceRegistryMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteDeviceRegistryMethod(), responseObserver);
     }
 
     /**
@@ -1005,7 +1004,8 @@ public final class DeviceManagerGrpc {
         com.google.cloud.iot.v1.ListDeviceRegistriesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.ListDeviceRegistriesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListDeviceRegistriesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDeviceRegistriesMethod(), responseObserver);
     }
 
     /**
@@ -1018,7 +1018,8 @@ public final class DeviceManagerGrpc {
     public void createDevice(
         com.google.cloud.iot.v1.CreateDeviceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.Device> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateDeviceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateDeviceMethod(), responseObserver);
     }
 
     /**
@@ -1031,7 +1032,7 @@ public final class DeviceManagerGrpc {
     public void getDevice(
         com.google.cloud.iot.v1.GetDeviceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.Device> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetDeviceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDeviceMethod(), responseObserver);
     }
 
     /**
@@ -1044,7 +1045,8 @@ public final class DeviceManagerGrpc {
     public void updateDevice(
         com.google.cloud.iot.v1.UpdateDeviceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.Device> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateDeviceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateDeviceMethod(), responseObserver);
     }
 
     /**
@@ -1057,7 +1059,8 @@ public final class DeviceManagerGrpc {
     public void deleteDevice(
         com.google.cloud.iot.v1.DeleteDeviceRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteDeviceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteDeviceMethod(), responseObserver);
     }
 
     /**
@@ -1070,7 +1073,8 @@ public final class DeviceManagerGrpc {
     public void listDevices(
         com.google.cloud.iot.v1.ListDevicesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.ListDevicesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListDevicesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDevicesMethod(), responseObserver);
     }
 
     /**
@@ -1085,7 +1089,8 @@ public final class DeviceManagerGrpc {
     public void modifyCloudToDeviceConfig(
         com.google.cloud.iot.v1.ModifyCloudToDeviceConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.DeviceConfig> responseObserver) {
-      asyncUnimplementedUnaryCall(getModifyCloudToDeviceConfigMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getModifyCloudToDeviceConfigMethod(), responseObserver);
     }
 
     /**
@@ -1100,7 +1105,8 @@ public final class DeviceManagerGrpc {
         com.google.cloud.iot.v1.ListDeviceConfigVersionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.ListDeviceConfigVersionsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListDeviceConfigVersionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDeviceConfigVersionsMethod(), responseObserver);
     }
 
     /**
@@ -1115,7 +1121,8 @@ public final class DeviceManagerGrpc {
         com.google.cloud.iot.v1.ListDeviceStatesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.ListDeviceStatesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListDeviceStatesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDeviceStatesMethod(), responseObserver);
     }
 
     /**
@@ -1129,7 +1136,8 @@ public final class DeviceManagerGrpc {
     public void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetIamPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -1144,7 +1152,8 @@ public final class DeviceManagerGrpc {
     public void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetIamPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -1160,7 +1169,8 @@ public final class DeviceManagerGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getTestIamPermissionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getTestIamPermissionsMethod(), responseObserver);
     }
 
     /**
@@ -1186,7 +1196,8 @@ public final class DeviceManagerGrpc {
         com.google.cloud.iot.v1.SendCommandToDeviceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.SendCommandToDeviceResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSendCommandToDeviceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSendCommandToDeviceMethod(), responseObserver);
     }
 
     /**
@@ -1200,7 +1211,8 @@ public final class DeviceManagerGrpc {
         com.google.cloud.iot.v1.BindDeviceToGatewayRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.BindDeviceToGatewayResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getBindDeviceToGatewayMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBindDeviceToGatewayMethod(), responseObserver);
     }
 
     /**
@@ -1214,7 +1226,8 @@ public final class DeviceManagerGrpc {
         com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUnbindDeviceFromGatewayMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUnbindDeviceFromGatewayMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -1222,124 +1235,124 @@ public final class DeviceManagerGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreateDeviceRegistryMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.iot.v1.CreateDeviceRegistryRequest,
                       com.google.cloud.iot.v1.DeviceRegistry>(
                       this, METHODID_CREATE_DEVICE_REGISTRY)))
           .addMethod(
               getGetDeviceRegistryMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.iot.v1.GetDeviceRegistryRequest,
                       com.google.cloud.iot.v1.DeviceRegistry>(this, METHODID_GET_DEVICE_REGISTRY)))
           .addMethod(
               getUpdateDeviceRegistryMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.iot.v1.UpdateDeviceRegistryRequest,
                       com.google.cloud.iot.v1.DeviceRegistry>(
                       this, METHODID_UPDATE_DEVICE_REGISTRY)))
           .addMethod(
               getDeleteDeviceRegistryMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.iot.v1.DeleteDeviceRegistryRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_DEVICE_REGISTRY)))
           .addMethod(
               getListDeviceRegistriesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.iot.v1.ListDeviceRegistriesRequest,
                       com.google.cloud.iot.v1.ListDeviceRegistriesResponse>(
                       this, METHODID_LIST_DEVICE_REGISTRIES)))
           .addMethod(
               getCreateDeviceMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.iot.v1.CreateDeviceRequest, com.google.cloud.iot.v1.Device>(
                       this, METHODID_CREATE_DEVICE)))
           .addMethod(
               getGetDeviceMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.iot.v1.GetDeviceRequest, com.google.cloud.iot.v1.Device>(
                       this, METHODID_GET_DEVICE)))
           .addMethod(
               getUpdateDeviceMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.iot.v1.UpdateDeviceRequest, com.google.cloud.iot.v1.Device>(
                       this, METHODID_UPDATE_DEVICE)))
           .addMethod(
               getDeleteDeviceMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.iot.v1.DeleteDeviceRequest, com.google.protobuf.Empty>(
                       this, METHODID_DELETE_DEVICE)))
           .addMethod(
               getListDevicesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.iot.v1.ListDevicesRequest,
                       com.google.cloud.iot.v1.ListDevicesResponse>(this, METHODID_LIST_DEVICES)))
           .addMethod(
               getModifyCloudToDeviceConfigMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.iot.v1.ModifyCloudToDeviceConfigRequest,
                       com.google.cloud.iot.v1.DeviceConfig>(
                       this, METHODID_MODIFY_CLOUD_TO_DEVICE_CONFIG)))
           .addMethod(
               getListDeviceConfigVersionsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.iot.v1.ListDeviceConfigVersionsRequest,
                       com.google.cloud.iot.v1.ListDeviceConfigVersionsResponse>(
                       this, METHODID_LIST_DEVICE_CONFIG_VERSIONS)))
           .addMethod(
               getListDeviceStatesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.iot.v1.ListDeviceStatesRequest,
                       com.google.cloud.iot.v1.ListDeviceStatesResponse>(
                       this, METHODID_LIST_DEVICE_STATES)))
           .addMethod(
               getSetIamPolicyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
                       this, METHODID_SET_IAM_POLICY)))
           .addMethod(
               getGetIamPolicyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
                       this, METHODID_GET_IAM_POLICY)))
           .addMethod(
               getTestIamPermissionsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.TestIamPermissionsRequest,
                       com.google.iam.v1.TestIamPermissionsResponse>(
                       this, METHODID_TEST_IAM_PERMISSIONS)))
           .addMethod(
               getSendCommandToDeviceMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.iot.v1.SendCommandToDeviceRequest,
                       com.google.cloud.iot.v1.SendCommandToDeviceResponse>(
                       this, METHODID_SEND_COMMAND_TO_DEVICE)))
           .addMethod(
               getBindDeviceToGatewayMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.iot.v1.BindDeviceToGatewayRequest,
                       com.google.cloud.iot.v1.BindDeviceToGatewayResponse>(
                       this, METHODID_BIND_DEVICE_TO_GATEWAY)))
           .addMethod(
               getUnbindDeviceFromGatewayMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest,
                       com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse>(
@@ -1376,7 +1389,7 @@ public final class DeviceManagerGrpc {
     public void createDeviceRegistry(
         com.google.cloud.iot.v1.CreateDeviceRegistryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.DeviceRegistry> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateDeviceRegistryMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1392,7 +1405,7 @@ public final class DeviceManagerGrpc {
     public void getDeviceRegistry(
         com.google.cloud.iot.v1.GetDeviceRegistryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.DeviceRegistry> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetDeviceRegistryMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1408,7 +1421,7 @@ public final class DeviceManagerGrpc {
     public void updateDeviceRegistry(
         com.google.cloud.iot.v1.UpdateDeviceRegistryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.DeviceRegistry> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateDeviceRegistryMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1424,7 +1437,7 @@ public final class DeviceManagerGrpc {
     public void deleteDeviceRegistry(
         com.google.cloud.iot.v1.DeleteDeviceRegistryRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteDeviceRegistryMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1441,7 +1454,7 @@ public final class DeviceManagerGrpc {
         com.google.cloud.iot.v1.ListDeviceRegistriesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.ListDeviceRegistriesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDeviceRegistriesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1457,7 +1470,7 @@ public final class DeviceManagerGrpc {
     public void createDevice(
         com.google.cloud.iot.v1.CreateDeviceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.Device> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateDeviceMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1473,7 +1486,7 @@ public final class DeviceManagerGrpc {
     public void getDevice(
         com.google.cloud.iot.v1.GetDeviceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.Device> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetDeviceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1487,7 +1500,7 @@ public final class DeviceManagerGrpc {
     public void updateDevice(
         com.google.cloud.iot.v1.UpdateDeviceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.Device> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateDeviceMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1503,7 +1516,7 @@ public final class DeviceManagerGrpc {
     public void deleteDevice(
         com.google.cloud.iot.v1.DeleteDeviceRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteDeviceMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1519,7 +1532,7 @@ public final class DeviceManagerGrpc {
     public void listDevices(
         com.google.cloud.iot.v1.ListDevicesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.ListDevicesResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDevicesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1537,7 +1550,7 @@ public final class DeviceManagerGrpc {
     public void modifyCloudToDeviceConfig(
         com.google.cloud.iot.v1.ModifyCloudToDeviceConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.DeviceConfig> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getModifyCloudToDeviceConfigMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1555,7 +1568,7 @@ public final class DeviceManagerGrpc {
         com.google.cloud.iot.v1.ListDeviceConfigVersionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.ListDeviceConfigVersionsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDeviceConfigVersionsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1573,7 +1586,7 @@ public final class DeviceManagerGrpc {
         com.google.cloud.iot.v1.ListDeviceStatesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.ListDeviceStatesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDeviceStatesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1590,7 +1603,7 @@ public final class DeviceManagerGrpc {
     public void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1608,7 +1621,7 @@ public final class DeviceManagerGrpc {
     public void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1627,7 +1640,7 @@ public final class DeviceManagerGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1656,7 +1669,7 @@ public final class DeviceManagerGrpc {
         com.google.cloud.iot.v1.SendCommandToDeviceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.SendCommandToDeviceResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSendCommandToDeviceMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1673,7 +1686,7 @@ public final class DeviceManagerGrpc {
         com.google.cloud.iot.v1.BindDeviceToGatewayRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.BindDeviceToGatewayResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBindDeviceToGatewayMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1690,7 +1703,7 @@ public final class DeviceManagerGrpc {
         com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUnbindDeviceFromGatewayMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1725,7 +1738,7 @@ public final class DeviceManagerGrpc {
      */
     public com.google.cloud.iot.v1.DeviceRegistry createDeviceRegistry(
         com.google.cloud.iot.v1.CreateDeviceRegistryRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateDeviceRegistryMethod(), getCallOptions(), request);
     }
 
@@ -1738,7 +1751,7 @@ public final class DeviceManagerGrpc {
      */
     public com.google.cloud.iot.v1.DeviceRegistry getDeviceRegistry(
         com.google.cloud.iot.v1.GetDeviceRegistryRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetDeviceRegistryMethod(), getCallOptions(), request);
     }
 
@@ -1751,7 +1764,7 @@ public final class DeviceManagerGrpc {
      */
     public com.google.cloud.iot.v1.DeviceRegistry updateDeviceRegistry(
         com.google.cloud.iot.v1.UpdateDeviceRegistryRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateDeviceRegistryMethod(), getCallOptions(), request);
     }
 
@@ -1764,7 +1777,7 @@ public final class DeviceManagerGrpc {
      */
     public com.google.protobuf.Empty deleteDeviceRegistry(
         com.google.cloud.iot.v1.DeleteDeviceRegistryRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteDeviceRegistryMethod(), getCallOptions(), request);
     }
 
@@ -1777,7 +1790,7 @@ public final class DeviceManagerGrpc {
      */
     public com.google.cloud.iot.v1.ListDeviceRegistriesResponse listDeviceRegistries(
         com.google.cloud.iot.v1.ListDeviceRegistriesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDeviceRegistriesMethod(), getCallOptions(), request);
     }
 
@@ -1790,7 +1803,8 @@ public final class DeviceManagerGrpc {
      */
     public com.google.cloud.iot.v1.Device createDevice(
         com.google.cloud.iot.v1.CreateDeviceRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateDeviceMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDeviceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1802,7 +1816,8 @@ public final class DeviceManagerGrpc {
      */
     public com.google.cloud.iot.v1.Device getDevice(
         com.google.cloud.iot.v1.GetDeviceRequest request) {
-      return blockingUnaryCall(getChannel(), getGetDeviceMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDeviceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1814,7 +1829,8 @@ public final class DeviceManagerGrpc {
      */
     public com.google.cloud.iot.v1.Device updateDevice(
         com.google.cloud.iot.v1.UpdateDeviceRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateDeviceMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDeviceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1826,7 +1842,8 @@ public final class DeviceManagerGrpc {
      */
     public com.google.protobuf.Empty deleteDevice(
         com.google.cloud.iot.v1.DeleteDeviceRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteDeviceMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDeviceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1838,7 +1855,8 @@ public final class DeviceManagerGrpc {
      */
     public com.google.cloud.iot.v1.ListDevicesResponse listDevices(
         com.google.cloud.iot.v1.ListDevicesRequest request) {
-      return blockingUnaryCall(getChannel(), getListDevicesMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDevicesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1852,7 +1870,7 @@ public final class DeviceManagerGrpc {
      */
     public com.google.cloud.iot.v1.DeviceConfig modifyCloudToDeviceConfig(
         com.google.cloud.iot.v1.ModifyCloudToDeviceConfigRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getModifyCloudToDeviceConfigMethod(), getCallOptions(), request);
     }
 
@@ -1866,7 +1884,7 @@ public final class DeviceManagerGrpc {
      */
     public com.google.cloud.iot.v1.ListDeviceConfigVersionsResponse listDeviceConfigVersions(
         com.google.cloud.iot.v1.ListDeviceConfigVersionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDeviceConfigVersionsMethod(), getCallOptions(), request);
     }
 
@@ -1880,7 +1898,7 @@ public final class DeviceManagerGrpc {
      */
     public com.google.cloud.iot.v1.ListDeviceStatesResponse listDeviceStates(
         com.google.cloud.iot.v1.ListDeviceStatesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDeviceStatesMethod(), getCallOptions(), request);
     }
 
@@ -1893,7 +1911,8 @@ public final class DeviceManagerGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return blockingUnaryCall(getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1906,7 +1925,8 @@ public final class DeviceManagerGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return blockingUnaryCall(getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1920,7 +1940,7 @@ public final class DeviceManagerGrpc {
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
 
@@ -1945,7 +1965,7 @@ public final class DeviceManagerGrpc {
      */
     public com.google.cloud.iot.v1.SendCommandToDeviceResponse sendCommandToDevice(
         com.google.cloud.iot.v1.SendCommandToDeviceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSendCommandToDeviceMethod(), getCallOptions(), request);
     }
 
@@ -1958,7 +1978,7 @@ public final class DeviceManagerGrpc {
      */
     public com.google.cloud.iot.v1.BindDeviceToGatewayResponse bindDeviceToGateway(
         com.google.cloud.iot.v1.BindDeviceToGatewayRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBindDeviceToGatewayMethod(), getCallOptions(), request);
     }
 
@@ -1971,7 +1991,7 @@ public final class DeviceManagerGrpc {
      */
     public com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse unbindDeviceFromGateway(
         com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUnbindDeviceFromGatewayMethod(), getCallOptions(), request);
     }
   }
@@ -2005,7 +2025,7 @@ public final class DeviceManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.iot.v1.DeviceRegistry>
         createDeviceRegistry(com.google.cloud.iot.v1.CreateDeviceRegistryRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateDeviceRegistryMethod(), getCallOptions()), request);
     }
 
@@ -2019,7 +2039,7 @@ public final class DeviceManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.iot.v1.DeviceRegistry>
         getDeviceRegistry(com.google.cloud.iot.v1.GetDeviceRegistryRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetDeviceRegistryMethod(), getCallOptions()), request);
     }
 
@@ -2033,7 +2053,7 @@ public final class DeviceManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.iot.v1.DeviceRegistry>
         updateDeviceRegistry(com.google.cloud.iot.v1.UpdateDeviceRegistryRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateDeviceRegistryMethod(), getCallOptions()), request);
     }
 
@@ -2046,7 +2066,7 @@ public final class DeviceManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteDeviceRegistry(com.google.cloud.iot.v1.DeleteDeviceRegistryRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteDeviceRegistryMethod(), getCallOptions()), request);
     }
 
@@ -2060,7 +2080,7 @@ public final class DeviceManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.iot.v1.ListDeviceRegistriesResponse>
         listDeviceRegistries(com.google.cloud.iot.v1.ListDeviceRegistriesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDeviceRegistriesMethod(), getCallOptions()), request);
     }
 
@@ -2073,7 +2093,7 @@ public final class DeviceManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.iot.v1.Device>
         createDevice(com.google.cloud.iot.v1.CreateDeviceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateDeviceMethod(), getCallOptions()), request);
     }
 
@@ -2086,7 +2106,8 @@ public final class DeviceManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.iot.v1.Device>
         getDevice(com.google.cloud.iot.v1.GetDeviceRequest request) {
-      return futureUnaryCall(getChannel().newCall(getGetDeviceMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDeviceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2098,7 +2119,7 @@ public final class DeviceManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.iot.v1.Device>
         updateDevice(com.google.cloud.iot.v1.UpdateDeviceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateDeviceMethod(), getCallOptions()), request);
     }
 
@@ -2111,7 +2132,7 @@ public final class DeviceManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteDevice(com.google.cloud.iot.v1.DeleteDeviceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteDeviceMethod(), getCallOptions()), request);
     }
 
@@ -2125,7 +2146,7 @@ public final class DeviceManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.iot.v1.ListDevicesResponse>
         listDevices(com.google.cloud.iot.v1.ListDevicesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDevicesMethod(), getCallOptions()), request);
     }
 
@@ -2141,7 +2162,7 @@ public final class DeviceManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.iot.v1.DeviceConfig>
         modifyCloudToDeviceConfig(
             com.google.cloud.iot.v1.ModifyCloudToDeviceConfigRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getModifyCloudToDeviceConfigMethod(), getCallOptions()), request);
     }
 
@@ -2156,7 +2177,7 @@ public final class DeviceManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.iot.v1.ListDeviceConfigVersionsResponse>
         listDeviceConfigVersions(com.google.cloud.iot.v1.ListDeviceConfigVersionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDeviceConfigVersionsMethod(), getCallOptions()), request);
     }
 
@@ -2171,7 +2192,7 @@ public final class DeviceManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.iot.v1.ListDeviceStatesResponse>
         listDeviceStates(com.google.cloud.iot.v1.ListDeviceStatesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDeviceStatesMethod(), getCallOptions()), request);
     }
 
@@ -2185,7 +2206,7 @@ public final class DeviceManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()), request);
     }
 
@@ -2200,7 +2221,7 @@ public final class DeviceManagerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()), request);
     }
 
@@ -2216,7 +2237,7 @@ public final class DeviceManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.iam.v1.TestIamPermissionsResponse>
         testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
     }
 
@@ -2242,7 +2263,7 @@ public final class DeviceManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.iot.v1.SendCommandToDeviceResponse>
         sendCommandToDevice(com.google.cloud.iot.v1.SendCommandToDeviceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSendCommandToDeviceMethod(), getCallOptions()), request);
     }
 
@@ -2256,7 +2277,7 @@ public final class DeviceManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.iot.v1.BindDeviceToGatewayResponse>
         bindDeviceToGateway(com.google.cloud.iot.v1.BindDeviceToGatewayRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBindDeviceToGatewayMethod(), getCallOptions()), request);
     }
 
@@ -2270,7 +2291,7 @@ public final class DeviceManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse>
         unbindDeviceFromGateway(com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUnbindDeviceFromGatewayMethod(), getCallOptions()), request);
     }
   }
