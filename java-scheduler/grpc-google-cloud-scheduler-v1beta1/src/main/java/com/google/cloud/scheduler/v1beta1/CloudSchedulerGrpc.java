@@ -16,11 +16,6 @@
 package com.google.cloud.scheduler.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -456,7 +451,7 @@ public final class CloudSchedulerGrpc {
         com.google.cloud.scheduler.v1beta1.ListJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.ListJobsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListJobsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListJobsMethod(), responseObserver);
     }
 
     /**
@@ -469,7 +464,7 @@ public final class CloudSchedulerGrpc {
     public void getJob(
         com.google.cloud.scheduler.v1beta1.GetJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetJobMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetJobMethod(), responseObserver);
     }
 
     /**
@@ -482,7 +477,7 @@ public final class CloudSchedulerGrpc {
     public void createJob(
         com.google.cloud.scheduler.v1beta1.CreateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateJobMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateJobMethod(), responseObserver);
     }
 
     /**
@@ -501,7 +496,7 @@ public final class CloudSchedulerGrpc {
     public void updateJob(
         com.google.cloud.scheduler.v1beta1.UpdateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateJobMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateJobMethod(), responseObserver);
     }
 
     /**
@@ -514,7 +509,7 @@ public final class CloudSchedulerGrpc {
     public void deleteJob(
         com.google.cloud.scheduler.v1beta1.DeleteJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteJobMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteJobMethod(), responseObserver);
     }
 
     /**
@@ -532,7 +527,7 @@ public final class CloudSchedulerGrpc {
     public void pauseJob(
         com.google.cloud.scheduler.v1beta1.PauseJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
-      asyncUnimplementedUnaryCall(getPauseJobMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPauseJobMethod(), responseObserver);
     }
 
     /**
@@ -549,7 +544,7 @@ public final class CloudSchedulerGrpc {
     public void resumeJob(
         com.google.cloud.scheduler.v1beta1.ResumeJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
-      asyncUnimplementedUnaryCall(getResumeJobMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getResumeJobMethod(), responseObserver);
     }
 
     /**
@@ -564,7 +559,7 @@ public final class CloudSchedulerGrpc {
     public void runJob(
         com.google.cloud.scheduler.v1beta1.RunJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
-      asyncUnimplementedUnaryCall(getRunJobMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRunJobMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -572,50 +567,50 @@ public final class CloudSchedulerGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListJobsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.scheduler.v1beta1.ListJobsRequest,
                       com.google.cloud.scheduler.v1beta1.ListJobsResponse>(
                       this, METHODID_LIST_JOBS)))
           .addMethod(
               getGetJobMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.scheduler.v1beta1.GetJobRequest,
                       com.google.cloud.scheduler.v1beta1.Job>(this, METHODID_GET_JOB)))
           .addMethod(
               getCreateJobMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.scheduler.v1beta1.CreateJobRequest,
                       com.google.cloud.scheduler.v1beta1.Job>(this, METHODID_CREATE_JOB)))
           .addMethod(
               getUpdateJobMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.scheduler.v1beta1.UpdateJobRequest,
                       com.google.cloud.scheduler.v1beta1.Job>(this, METHODID_UPDATE_JOB)))
           .addMethod(
               getDeleteJobMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.scheduler.v1beta1.DeleteJobRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_JOB)))
           .addMethod(
               getPauseJobMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.scheduler.v1beta1.PauseJobRequest,
                       com.google.cloud.scheduler.v1beta1.Job>(this, METHODID_PAUSE_JOB)))
           .addMethod(
               getResumeJobMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.scheduler.v1beta1.ResumeJobRequest,
                       com.google.cloud.scheduler.v1beta1.Job>(this, METHODID_RESUME_JOB)))
           .addMethod(
               getRunJobMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.scheduler.v1beta1.RunJobRequest,
                       com.google.cloud.scheduler.v1beta1.Job>(this, METHODID_RUN_JOB)))
@@ -653,7 +648,7 @@ public final class CloudSchedulerGrpc {
         com.google.cloud.scheduler.v1beta1.ListJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.ListJobsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListJobsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -667,7 +662,7 @@ public final class CloudSchedulerGrpc {
     public void getJob(
         com.google.cloud.scheduler.v1beta1.GetJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetJobMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -681,7 +676,7 @@ public final class CloudSchedulerGrpc {
     public void createJob(
         com.google.cloud.scheduler.v1beta1.CreateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateJobMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -701,7 +696,7 @@ public final class CloudSchedulerGrpc {
     public void updateJob(
         com.google.cloud.scheduler.v1beta1.UpdateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateJobMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -715,7 +710,7 @@ public final class CloudSchedulerGrpc {
     public void deleteJob(
         com.google.cloud.scheduler.v1beta1.DeleteJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteJobMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -734,7 +729,7 @@ public final class CloudSchedulerGrpc {
     public void pauseJob(
         com.google.cloud.scheduler.v1beta1.PauseJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPauseJobMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -752,7 +747,7 @@ public final class CloudSchedulerGrpc {
     public void resumeJob(
         com.google.cloud.scheduler.v1beta1.ResumeJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getResumeJobMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -768,7 +763,7 @@ public final class CloudSchedulerGrpc {
     public void runJob(
         com.google.cloud.scheduler.v1beta1.RunJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRunJobMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -802,7 +797,8 @@ public final class CloudSchedulerGrpc {
      */
     public com.google.cloud.scheduler.v1beta1.ListJobsResponse listJobs(
         com.google.cloud.scheduler.v1beta1.ListJobsRequest request) {
-      return blockingUnaryCall(getChannel(), getListJobsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListJobsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -814,7 +810,8 @@ public final class CloudSchedulerGrpc {
      */
     public com.google.cloud.scheduler.v1beta1.Job getJob(
         com.google.cloud.scheduler.v1beta1.GetJobRequest request) {
-      return blockingUnaryCall(getChannel(), getGetJobMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -826,7 +823,8 @@ public final class CloudSchedulerGrpc {
      */
     public com.google.cloud.scheduler.v1beta1.Job createJob(
         com.google.cloud.scheduler.v1beta1.CreateJobRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateJobMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -844,7 +842,8 @@ public final class CloudSchedulerGrpc {
      */
     public com.google.cloud.scheduler.v1beta1.Job updateJob(
         com.google.cloud.scheduler.v1beta1.UpdateJobRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateJobMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -856,7 +855,8 @@ public final class CloudSchedulerGrpc {
      */
     public com.google.protobuf.Empty deleteJob(
         com.google.cloud.scheduler.v1beta1.DeleteJobRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteJobMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -873,7 +873,8 @@ public final class CloudSchedulerGrpc {
      */
     public com.google.cloud.scheduler.v1beta1.Job pauseJob(
         com.google.cloud.scheduler.v1beta1.PauseJobRequest request) {
-      return blockingUnaryCall(getChannel(), getPauseJobMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPauseJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -889,7 +890,8 @@ public final class CloudSchedulerGrpc {
      */
     public com.google.cloud.scheduler.v1beta1.Job resumeJob(
         com.google.cloud.scheduler.v1beta1.ResumeJobRequest request) {
-      return blockingUnaryCall(getChannel(), getResumeJobMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResumeJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -903,7 +905,8 @@ public final class CloudSchedulerGrpc {
      */
     public com.google.cloud.scheduler.v1beta1.Job runJob(
         com.google.cloud.scheduler.v1beta1.RunJobRequest request) {
-      return blockingUnaryCall(getChannel(), getRunJobMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunJobMethod(), getCallOptions(), request);
     }
   }
 
@@ -937,7 +940,8 @@ public final class CloudSchedulerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.scheduler.v1beta1.ListJobsResponse>
         listJobs(com.google.cloud.scheduler.v1beta1.ListJobsRequest request) {
-      return futureUnaryCall(getChannel().newCall(getListJobsMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListJobsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -950,7 +954,8 @@ public final class CloudSchedulerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.scheduler.v1beta1.Job>
         getJob(com.google.cloud.scheduler.v1beta1.GetJobRequest request) {
-      return futureUnaryCall(getChannel().newCall(getGetJobMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -963,7 +968,8 @@ public final class CloudSchedulerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.scheduler.v1beta1.Job>
         createJob(com.google.cloud.scheduler.v1beta1.CreateJobRequest request) {
-      return futureUnaryCall(getChannel().newCall(getCreateJobMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -982,7 +988,8 @@ public final class CloudSchedulerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.scheduler.v1beta1.Job>
         updateJob(com.google.cloud.scheduler.v1beta1.UpdateJobRequest request) {
-      return futureUnaryCall(getChannel().newCall(getUpdateJobMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -994,7 +1001,8 @@ public final class CloudSchedulerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteJob(
         com.google.cloud.scheduler.v1beta1.DeleteJobRequest request) {
-      return futureUnaryCall(getChannel().newCall(getDeleteJobMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1012,7 +1020,8 @@ public final class CloudSchedulerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.scheduler.v1beta1.Job>
         pauseJob(com.google.cloud.scheduler.v1beta1.PauseJobRequest request) {
-      return futureUnaryCall(getChannel().newCall(getPauseJobMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPauseJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1029,7 +1038,8 @@ public final class CloudSchedulerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.scheduler.v1beta1.Job>
         resumeJob(com.google.cloud.scheduler.v1beta1.ResumeJobRequest request) {
-      return futureUnaryCall(getChannel().newCall(getResumeJobMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getResumeJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1044,7 +1054,8 @@ public final class CloudSchedulerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.scheduler.v1beta1.Job>
         runJob(com.google.cloud.scheduler.v1beta1.RunJobRequest request) {
-      return futureUnaryCall(getChannel().newCall(getRunJobMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRunJobMethod(), getCallOptions()), request);
     }
   }
 
