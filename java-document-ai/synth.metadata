@@ -4,31 +4,31 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-document-ai.git",
-        "sha": "52135656aa3decdc57ed15eb39ccfa79d5e755e0"
+        "sha": "495b17716b7a580360902f4e9a1ff4dd0c6330c1"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "3befd26ca55723d3e8111909331eac1249837987",
-        "internalRef": "360805639"
+        "sha": "0e915217fb5261c1e57bfaf0e16ee5c7feaaba89",
+        "internalRef": "361377784"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "3befd26ca55723d3e8111909331eac1249837987",
-        "internalRef": "360805639"
+        "sha": "0e915217fb5261c1e57bfaf0e16ee5c7feaaba89",
+        "internalRef": "361377784"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "3befd26ca55723d3e8111909331eac1249837987",
-        "internalRef": "360805639"
+        "sha": "0e915217fb5261c1e57bfaf0e16ee5c7feaaba89",
+        "internalRef": "361377784"
       }
     },
     {
