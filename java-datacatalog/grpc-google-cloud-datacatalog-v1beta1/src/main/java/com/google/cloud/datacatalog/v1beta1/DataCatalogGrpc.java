@@ -16,11 +16,6 @@
 package com.google.cloud.datacatalog.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -1335,7 +1330,8 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSearchCatalogMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSearchCatalogMethod(), responseObserver);
     }
 
     /**
@@ -1354,7 +1350,8 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.EntryGroup>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateEntryGroupMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateEntryGroupMethod(), responseObserver);
     }
 
     /**
@@ -1372,7 +1369,8 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.EntryGroup>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateEntryGroupMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateEntryGroupMethod(), responseObserver);
     }
 
     /**
@@ -1386,7 +1384,8 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.GetEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.EntryGroup>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetEntryGroupMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetEntryGroupMethod(), responseObserver);
     }
 
     /**
@@ -1403,7 +1402,8 @@ public final class DataCatalogGrpc {
     public void deleteEntryGroup(
         com.google.cloud.datacatalog.v1beta1.DeleteEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteEntryGroupMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteEntryGroupMethod(), responseObserver);
     }
 
     /**
@@ -1417,7 +1417,8 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.ListEntryGroupsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListEntryGroupsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListEntryGroupsMethod(), responseObserver);
     }
 
     /**
@@ -1436,7 +1437,8 @@ public final class DataCatalogGrpc {
     public void createEntry(
         com.google.cloud.datacatalog.v1beta1.CreateEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Entry> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateEntryMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateEntryMethod(), responseObserver);
     }
 
     /**
@@ -1453,7 +1455,8 @@ public final class DataCatalogGrpc {
     public void updateEntry(
         com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Entry> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateEntryMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateEntryMethod(), responseObserver);
     }
 
     /**
@@ -1472,7 +1475,8 @@ public final class DataCatalogGrpc {
     public void deleteEntry(
         com.google.cloud.datacatalog.v1beta1.DeleteEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteEntryMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteEntryMethod(), responseObserver);
     }
 
     /**
@@ -1485,7 +1489,7 @@ public final class DataCatalogGrpc {
     public void getEntry(
         com.google.cloud.datacatalog.v1beta1.GetEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Entry> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetEntryMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetEntryMethod(), responseObserver);
     }
 
     /**
@@ -1500,7 +1504,8 @@ public final class DataCatalogGrpc {
     public void lookupEntry(
         com.google.cloud.datacatalog.v1beta1.LookupEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Entry> responseObserver) {
-      asyncUnimplementedUnaryCall(getLookupEntryMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getLookupEntryMethod(), responseObserver);
     }
 
     /**
@@ -1514,7 +1519,8 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.ListEntriesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.ListEntriesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListEntriesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListEntriesMethod(), responseObserver);
     }
 
     /**
@@ -1532,7 +1538,8 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.CreateTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplate>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateTagTemplateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateTagTemplateMethod(), responseObserver);
     }
 
     /**
@@ -1546,7 +1553,8 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.GetTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplate>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetTagTemplateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetTagTemplateMethod(), responseObserver);
     }
 
     /**
@@ -1566,7 +1574,8 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplate>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateTagTemplateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateTagTemplateMethod(), responseObserver);
     }
 
     /**
@@ -1583,7 +1592,8 @@ public final class DataCatalogGrpc {
     public void deleteTagTemplate(
         com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteTagTemplateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteTagTemplateMethod(), responseObserver);
     }
 
     /**
@@ -1601,7 +1611,8 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.CreateTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplateField>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateTagTemplateFieldMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateTagTemplateFieldMethod(), responseObserver);
     }
 
     /**
@@ -1619,7 +1630,8 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplateField>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateTagTemplateFieldMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateTagTemplateFieldMethod(), responseObserver);
     }
 
     /**
@@ -1637,7 +1649,8 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplateField>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getRenameTagTemplateFieldMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRenameTagTemplateFieldMethod(), responseObserver);
     }
 
     /**
@@ -1654,7 +1667,8 @@ public final class DataCatalogGrpc {
     public void deleteTagTemplateField(
         com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteTagTemplateFieldMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteTagTemplateFieldMethod(), responseObserver);
     }
 
     /**
@@ -1673,7 +1687,7 @@ public final class DataCatalogGrpc {
     public void createTag(
         com.google.cloud.datacatalog.v1beta1.CreateTagRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Tag> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateTagMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateTagMethod(), responseObserver);
     }
 
     /**
@@ -1686,7 +1700,7 @@ public final class DataCatalogGrpc {
     public void updateTag(
         com.google.cloud.datacatalog.v1beta1.UpdateTagRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Tag> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateTagMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateTagMethod(), responseObserver);
     }
 
     /**
@@ -1699,7 +1713,7 @@ public final class DataCatalogGrpc {
     public void deleteTag(
         com.google.cloud.datacatalog.v1beta1.DeleteTagRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteTagMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTagMethod(), responseObserver);
     }
 
     /**
@@ -1713,7 +1727,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.ListTagsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.ListTagsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListTagsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTagsMethod(), responseObserver);
     }
 
     /**
@@ -1738,7 +1752,8 @@ public final class DataCatalogGrpc {
     public void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetIamPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -1764,7 +1779,8 @@ public final class DataCatalogGrpc {
     public void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetIamPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -1788,7 +1804,8 @@ public final class DataCatalogGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getTestIamPermissionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getTestIamPermissionsMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -1796,176 +1813,176 @@ public final class DataCatalogGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getSearchCatalogMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest,
                       com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse>(
                       this, METHODID_SEARCH_CATALOG)))
           .addMethod(
               getCreateEntryGroupMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest,
                       com.google.cloud.datacatalog.v1beta1.EntryGroup>(
                       this, METHODID_CREATE_ENTRY_GROUP)))
           .addMethod(
               getUpdateEntryGroupMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest,
                       com.google.cloud.datacatalog.v1beta1.EntryGroup>(
                       this, METHODID_UPDATE_ENTRY_GROUP)))
           .addMethod(
               getGetEntryGroupMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.GetEntryGroupRequest,
                       com.google.cloud.datacatalog.v1beta1.EntryGroup>(
                       this, METHODID_GET_ENTRY_GROUP)))
           .addMethod(
               getDeleteEntryGroupMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.DeleteEntryGroupRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_ENTRY_GROUP)))
           .addMethod(
               getListEntryGroupsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.ListEntryGroupsRequest,
                       com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse>(
                       this, METHODID_LIST_ENTRY_GROUPS)))
           .addMethod(
               getCreateEntryMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.CreateEntryRequest,
                       com.google.cloud.datacatalog.v1beta1.Entry>(this, METHODID_CREATE_ENTRY)))
           .addMethod(
               getUpdateEntryMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest,
                       com.google.cloud.datacatalog.v1beta1.Entry>(this, METHODID_UPDATE_ENTRY)))
           .addMethod(
               getDeleteEntryMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.DeleteEntryRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_ENTRY)))
           .addMethod(
               getGetEntryMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.GetEntryRequest,
                       com.google.cloud.datacatalog.v1beta1.Entry>(this, METHODID_GET_ENTRY)))
           .addMethod(
               getLookupEntryMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.LookupEntryRequest,
                       com.google.cloud.datacatalog.v1beta1.Entry>(this, METHODID_LOOKUP_ENTRY)))
           .addMethod(
               getListEntriesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.ListEntriesRequest,
                       com.google.cloud.datacatalog.v1beta1.ListEntriesResponse>(
                       this, METHODID_LIST_ENTRIES)))
           .addMethod(
               getCreateTagTemplateMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.CreateTagTemplateRequest,
                       com.google.cloud.datacatalog.v1beta1.TagTemplate>(
                       this, METHODID_CREATE_TAG_TEMPLATE)))
           .addMethod(
               getGetTagTemplateMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.GetTagTemplateRequest,
                       com.google.cloud.datacatalog.v1beta1.TagTemplate>(
                       this, METHODID_GET_TAG_TEMPLATE)))
           .addMethod(
               getUpdateTagTemplateMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest,
                       com.google.cloud.datacatalog.v1beta1.TagTemplate>(
                       this, METHODID_UPDATE_TAG_TEMPLATE)))
           .addMethod(
               getDeleteTagTemplateMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_TAG_TEMPLATE)))
           .addMethod(
               getCreateTagTemplateFieldMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.CreateTagTemplateFieldRequest,
                       com.google.cloud.datacatalog.v1beta1.TagTemplateField>(
                       this, METHODID_CREATE_TAG_TEMPLATE_FIELD)))
           .addMethod(
               getUpdateTagTemplateFieldMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateFieldRequest,
                       com.google.cloud.datacatalog.v1beta1.TagTemplateField>(
                       this, METHODID_UPDATE_TAG_TEMPLATE_FIELD)))
           .addMethod(
               getRenameTagTemplateFieldMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldRequest,
                       com.google.cloud.datacatalog.v1beta1.TagTemplateField>(
                       this, METHODID_RENAME_TAG_TEMPLATE_FIELD)))
           .addMethod(
               getDeleteTagTemplateFieldMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateFieldRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_TAG_TEMPLATE_FIELD)))
           .addMethod(
               getCreateTagMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.CreateTagRequest,
                       com.google.cloud.datacatalog.v1beta1.Tag>(this, METHODID_CREATE_TAG)))
           .addMethod(
               getUpdateTagMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.UpdateTagRequest,
                       com.google.cloud.datacatalog.v1beta1.Tag>(this, METHODID_UPDATE_TAG)))
           .addMethod(
               getDeleteTagMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.DeleteTagRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_TAG)))
           .addMethod(
               getListTagsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.datacatalog.v1beta1.ListTagsRequest,
                       com.google.cloud.datacatalog.v1beta1.ListTagsResponse>(
                       this, METHODID_LIST_TAGS)))
           .addMethod(
               getSetIamPolicyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
                       this, METHODID_SET_IAM_POLICY)))
           .addMethod(
               getGetIamPolicyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
                       this, METHODID_GET_IAM_POLICY)))
           .addMethod(
               getTestIamPermissionsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.TestIamPermissionsRequest,
                       com.google.iam.v1.TestIamPermissionsResponse>(
@@ -2016,7 +2033,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSearchCatalogMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2038,7 +2055,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.EntryGroup>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateEntryGroupMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2059,7 +2076,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.EntryGroup>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateEntryGroupMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2076,7 +2093,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.GetEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.EntryGroup>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetEntryGroupMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2096,7 +2113,7 @@ public final class DataCatalogGrpc {
     public void deleteEntryGroup(
         com.google.cloud.datacatalog.v1beta1.DeleteEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteEntryGroupMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2113,7 +2130,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.ListEntryGroupsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListEntryGroupsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2135,7 +2152,7 @@ public final class DataCatalogGrpc {
     public void createEntry(
         com.google.cloud.datacatalog.v1beta1.CreateEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Entry> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateEntryMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2155,7 +2172,7 @@ public final class DataCatalogGrpc {
     public void updateEntry(
         com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Entry> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateEntryMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2177,7 +2194,7 @@ public final class DataCatalogGrpc {
     public void deleteEntry(
         com.google.cloud.datacatalog.v1beta1.DeleteEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteEntryMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2193,7 +2210,7 @@ public final class DataCatalogGrpc {
     public void getEntry(
         com.google.cloud.datacatalog.v1beta1.GetEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Entry> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetEntryMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2209,7 +2226,7 @@ public final class DataCatalogGrpc {
     public void lookupEntry(
         com.google.cloud.datacatalog.v1beta1.LookupEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Entry> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getLookupEntryMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2226,7 +2243,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.ListEntriesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.ListEntriesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListEntriesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2247,7 +2264,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.CreateTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplate>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateTagTemplateMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2264,7 +2281,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.GetTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplate>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetTagTemplateMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2287,7 +2304,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplate>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateTagTemplateMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2307,7 +2324,7 @@ public final class DataCatalogGrpc {
     public void deleteTagTemplate(
         com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteTagTemplateMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2328,7 +2345,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.CreateTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplateField>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateTagTemplateFieldMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2349,7 +2366,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplateField>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateTagTemplateFieldMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2370,7 +2387,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplateField>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRenameTagTemplateFieldMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2390,7 +2407,7 @@ public final class DataCatalogGrpc {
     public void deleteTagTemplateField(
         com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteTagTemplateFieldMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2412,7 +2429,7 @@ public final class DataCatalogGrpc {
     public void createTag(
         com.google.cloud.datacatalog.v1beta1.CreateTagRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Tag> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateTagMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2426,7 +2443,7 @@ public final class DataCatalogGrpc {
     public void updateTag(
         com.google.cloud.datacatalog.v1beta1.UpdateTagRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.Tag> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateTagMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2440,7 +2457,7 @@ public final class DataCatalogGrpc {
     public void deleteTag(
         com.google.cloud.datacatalog.v1beta1.DeleteTagRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteTagMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2455,7 +2472,7 @@ public final class DataCatalogGrpc {
         com.google.cloud.datacatalog.v1beta1.ListTagsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.ListTagsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListTagsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -2481,7 +2498,7 @@ public final class DataCatalogGrpc {
     public void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2510,7 +2527,7 @@ public final class DataCatalogGrpc {
     public void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2537,7 +2554,7 @@ public final class DataCatalogGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2585,7 +2602,8 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse searchCatalog(
         com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest request) {
-      return blockingUnaryCall(getChannel(), getSearchCatalogMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchCatalogMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2602,7 +2620,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.EntryGroup createEntryGroup(
         com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateEntryGroupMethod(), getCallOptions(), request);
     }
 
@@ -2619,7 +2637,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.EntryGroup updateEntryGroup(
         com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateEntryGroupMethod(), getCallOptions(), request);
     }
 
@@ -2632,7 +2650,8 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.EntryGroup getEntryGroup(
         com.google.cloud.datacatalog.v1beta1.GetEntryGroupRequest request) {
-      return blockingUnaryCall(getChannel(), getGetEntryGroupMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEntryGroupMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2648,7 +2667,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.protobuf.Empty deleteEntryGroup(
         com.google.cloud.datacatalog.v1beta1.DeleteEntryGroupRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteEntryGroupMethod(), getCallOptions(), request);
     }
 
@@ -2661,7 +2680,8 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse listEntryGroups(
         com.google.cloud.datacatalog.v1beta1.ListEntryGroupsRequest request) {
-      return blockingUnaryCall(getChannel(), getListEntryGroupsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEntryGroupsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2679,7 +2699,8 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.Entry createEntry(
         com.google.cloud.datacatalog.v1beta1.CreateEntryRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateEntryMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEntryMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2695,7 +2716,8 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.Entry updateEntry(
         com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateEntryMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEntryMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2713,7 +2735,8 @@ public final class DataCatalogGrpc {
      */
     public com.google.protobuf.Empty deleteEntry(
         com.google.cloud.datacatalog.v1beta1.DeleteEntryRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteEntryMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEntryMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2725,7 +2748,8 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.Entry getEntry(
         com.google.cloud.datacatalog.v1beta1.GetEntryRequest request) {
-      return blockingUnaryCall(getChannel(), getGetEntryMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEntryMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2739,7 +2763,8 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.Entry lookupEntry(
         com.google.cloud.datacatalog.v1beta1.LookupEntryRequest request) {
-      return blockingUnaryCall(getChannel(), getLookupEntryMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLookupEntryMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2751,7 +2776,8 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.ListEntriesResponse listEntries(
         com.google.cloud.datacatalog.v1beta1.ListEntriesRequest request) {
-      return blockingUnaryCall(getChannel(), getListEntriesMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEntriesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2767,7 +2793,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.TagTemplate createTagTemplate(
         com.google.cloud.datacatalog.v1beta1.CreateTagTemplateRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateTagTemplateMethod(), getCallOptions(), request);
     }
 
@@ -2780,7 +2806,8 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.TagTemplate getTagTemplate(
         com.google.cloud.datacatalog.v1beta1.GetTagTemplateRequest request) {
-      return blockingUnaryCall(getChannel(), getGetTagTemplateMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTagTemplateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2798,7 +2825,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.TagTemplate updateTagTemplate(
         com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateTagTemplateMethod(), getCallOptions(), request);
     }
 
@@ -2815,7 +2842,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.protobuf.Empty deleteTagTemplate(
         com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteTagTemplateMethod(), getCallOptions(), request);
     }
 
@@ -2832,7 +2859,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.TagTemplateField createTagTemplateField(
         com.google.cloud.datacatalog.v1beta1.CreateTagTemplateFieldRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateTagTemplateFieldMethod(), getCallOptions(), request);
     }
 
@@ -2849,7 +2876,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.TagTemplateField updateTagTemplateField(
         com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateFieldRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateTagTemplateFieldMethod(), getCallOptions(), request);
     }
 
@@ -2866,7 +2893,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.TagTemplateField renameTagTemplateField(
         com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRenameTagTemplateFieldMethod(), getCallOptions(), request);
     }
 
@@ -2883,7 +2910,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.protobuf.Empty deleteTagTemplateField(
         com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateFieldRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteTagTemplateFieldMethod(), getCallOptions(), request);
     }
 
@@ -2902,7 +2929,8 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.Tag createTag(
         com.google.cloud.datacatalog.v1beta1.CreateTagRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateTagMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTagMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2914,7 +2942,8 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.Tag updateTag(
         com.google.cloud.datacatalog.v1beta1.UpdateTagRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateTagMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTagMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2926,7 +2955,8 @@ public final class DataCatalogGrpc {
      */
     public com.google.protobuf.Empty deleteTag(
         com.google.cloud.datacatalog.v1beta1.DeleteTagRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteTagMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTagMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2938,7 +2968,8 @@ public final class DataCatalogGrpc {
      */
     public com.google.cloud.datacatalog.v1beta1.ListTagsResponse listTags(
         com.google.cloud.datacatalog.v1beta1.ListTagsRequest request) {
-      return blockingUnaryCall(getChannel(), getListTagsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTagsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2961,7 +2992,8 @@ public final class DataCatalogGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return blockingUnaryCall(getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2985,7 +3017,8 @@ public final class DataCatalogGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return blockingUnaryCall(getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3007,7 +3040,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
   }
@@ -3054,7 +3087,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1beta1.SearchCatalogResponse>
         searchCatalog(com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchCatalogMethod(), getCallOptions()), request);
     }
 
@@ -3073,7 +3106,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1beta1.EntryGroup>
         createEntryGroup(com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateEntryGroupMethod(), getCallOptions()), request);
     }
 
@@ -3091,7 +3124,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1beta1.EntryGroup>
         updateEntryGroup(com.google.cloud.datacatalog.v1beta1.UpdateEntryGroupRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateEntryGroupMethod(), getCallOptions()), request);
     }
 
@@ -3105,7 +3138,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1beta1.EntryGroup>
         getEntryGroup(com.google.cloud.datacatalog.v1beta1.GetEntryGroupRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetEntryGroupMethod(), getCallOptions()), request);
     }
 
@@ -3122,7 +3155,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteEntryGroup(com.google.cloud.datacatalog.v1beta1.DeleteEntryGroupRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteEntryGroupMethod(), getCallOptions()), request);
     }
 
@@ -3136,7 +3169,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1beta1.ListEntryGroupsResponse>
         listEntryGroups(com.google.cloud.datacatalog.v1beta1.ListEntryGroupsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListEntryGroupsMethod(), getCallOptions()), request);
     }
 
@@ -3156,7 +3189,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1beta1.Entry>
         createEntry(com.google.cloud.datacatalog.v1beta1.CreateEntryRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateEntryMethod(), getCallOptions()), request);
     }
 
@@ -3174,7 +3207,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1beta1.Entry>
         updateEntry(com.google.cloud.datacatalog.v1beta1.UpdateEntryRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateEntryMethod(), getCallOptions()), request);
     }
 
@@ -3193,7 +3226,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteEntry(com.google.cloud.datacatalog.v1beta1.DeleteEntryRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteEntryMethod(), getCallOptions()), request);
     }
 
@@ -3207,7 +3240,8 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1beta1.Entry>
         getEntry(com.google.cloud.datacatalog.v1beta1.GetEntryRequest request) {
-      return futureUnaryCall(getChannel().newCall(getGetEntryMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetEntryMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3222,7 +3256,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1beta1.Entry>
         lookupEntry(com.google.cloud.datacatalog.v1beta1.LookupEntryRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getLookupEntryMethod(), getCallOptions()), request);
     }
 
@@ -3236,7 +3270,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1beta1.ListEntriesResponse>
         listEntries(com.google.cloud.datacatalog.v1beta1.ListEntriesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListEntriesMethod(), getCallOptions()), request);
     }
 
@@ -3254,7 +3288,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1beta1.TagTemplate>
         createTagTemplate(com.google.cloud.datacatalog.v1beta1.CreateTagTemplateRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateTagTemplateMethod(), getCallOptions()), request);
     }
 
@@ -3268,7 +3302,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1beta1.TagTemplate>
         getTagTemplate(com.google.cloud.datacatalog.v1beta1.GetTagTemplateRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetTagTemplateMethod(), getCallOptions()), request);
     }
 
@@ -3288,7 +3322,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1beta1.TagTemplate>
         updateTagTemplate(com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateTagTemplateMethod(), getCallOptions()), request);
     }
 
@@ -3305,7 +3339,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteTagTemplate(com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteTagTemplateMethod(), getCallOptions()), request);
     }
 
@@ -3324,7 +3358,7 @@ public final class DataCatalogGrpc {
             com.google.cloud.datacatalog.v1beta1.TagTemplateField>
         createTagTemplateField(
             com.google.cloud.datacatalog.v1beta1.CreateTagTemplateFieldRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateTagTemplateFieldMethod(), getCallOptions()), request);
     }
 
@@ -3343,7 +3377,7 @@ public final class DataCatalogGrpc {
             com.google.cloud.datacatalog.v1beta1.TagTemplateField>
         updateTagTemplateField(
             com.google.cloud.datacatalog.v1beta1.UpdateTagTemplateFieldRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateTagTemplateFieldMethod(), getCallOptions()), request);
     }
 
@@ -3362,7 +3396,7 @@ public final class DataCatalogGrpc {
             com.google.cloud.datacatalog.v1beta1.TagTemplateField>
         renameTagTemplateField(
             com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRenameTagTemplateFieldMethod(), getCallOptions()), request);
     }
 
@@ -3380,7 +3414,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteTagTemplateField(
             com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateFieldRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteTagTemplateFieldMethod(), getCallOptions()), request);
     }
 
@@ -3400,7 +3434,8 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1beta1.Tag>
         createTag(com.google.cloud.datacatalog.v1beta1.CreateTagRequest request) {
-      return futureUnaryCall(getChannel().newCall(getCreateTagMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateTagMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3413,7 +3448,8 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1beta1.Tag>
         updateTag(com.google.cloud.datacatalog.v1beta1.UpdateTagRequest request) {
-      return futureUnaryCall(getChannel().newCall(getUpdateTagMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateTagMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3425,7 +3461,8 @@ public final class DataCatalogGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteTag(
         com.google.cloud.datacatalog.v1beta1.DeleteTagRequest request) {
-      return futureUnaryCall(getChannel().newCall(getDeleteTagMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteTagMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3438,7 +3475,8 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1beta1.ListTagsResponse>
         listTags(com.google.cloud.datacatalog.v1beta1.ListTagsRequest request) {
-      return futureUnaryCall(getChannel().newCall(getListTagsMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListTagsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3462,7 +3500,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()), request);
     }
 
@@ -3488,7 +3526,7 @@ public final class DataCatalogGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()), request);
     }
 
@@ -3512,7 +3550,7 @@ public final class DataCatalogGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.iam.v1.TestIamPermissionsResponse>
         testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
     }
   }
