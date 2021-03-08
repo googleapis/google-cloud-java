@@ -16,11 +16,6 @@
 package com.google.cloud.retail.v2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -310,7 +305,8 @@ public final class ProductServiceGrpc {
     public void createProduct(
         com.google.cloud.retail.v2.CreateProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.Product> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateProductMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateProductMethod(), responseObserver);
     }
 
     /**
@@ -323,7 +319,7 @@ public final class ProductServiceGrpc {
     public void getProduct(
         com.google.cloud.retail.v2.GetProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.Product> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetProductMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetProductMethod(), responseObserver);
     }
 
     /**
@@ -336,7 +332,8 @@ public final class ProductServiceGrpc {
     public void updateProduct(
         com.google.cloud.retail.v2.UpdateProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.Product> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateProductMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateProductMethod(), responseObserver);
     }
 
     /**
@@ -349,7 +346,8 @@ public final class ProductServiceGrpc {
     public void deleteProduct(
         com.google.cloud.retail.v2.DeleteProductRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteProductMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteProductMethod(), responseObserver);
     }
 
     /**
@@ -366,7 +364,8 @@ public final class ProductServiceGrpc {
     public void importProducts(
         com.google.cloud.retail.v2.ImportProductsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getImportProductsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getImportProductsMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -374,31 +373,31 @@ public final class ProductServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreateProductMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.retail.v2.CreateProductRequest,
                       com.google.cloud.retail.v2.Product>(this, METHODID_CREATE_PRODUCT)))
           .addMethod(
               getGetProductMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.retail.v2.GetProductRequest,
                       com.google.cloud.retail.v2.Product>(this, METHODID_GET_PRODUCT)))
           .addMethod(
               getUpdateProductMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.retail.v2.UpdateProductRequest,
                       com.google.cloud.retail.v2.Product>(this, METHODID_UPDATE_PRODUCT)))
           .addMethod(
               getDeleteProductMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.retail.v2.DeleteProductRequest, com.google.protobuf.Empty>(
                       this, METHODID_DELETE_PRODUCT)))
           .addMethod(
               getImportProductsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.retail.v2.ImportProductsRequest,
                       com.google.longrunning.Operation>(this, METHODID_IMPORT_PRODUCTS)))
@@ -435,7 +434,7 @@ public final class ProductServiceGrpc {
     public void createProduct(
         com.google.cloud.retail.v2.CreateProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.Product> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateProductMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -451,7 +450,7 @@ public final class ProductServiceGrpc {
     public void getProduct(
         com.google.cloud.retail.v2.GetProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.Product> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetProductMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -465,7 +464,7 @@ public final class ProductServiceGrpc {
     public void updateProduct(
         com.google.cloud.retail.v2.UpdateProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.Product> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateProductMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -481,7 +480,7 @@ public final class ProductServiceGrpc {
     public void deleteProduct(
         com.google.cloud.retail.v2.DeleteProductRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteProductMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -501,7 +500,7 @@ public final class ProductServiceGrpc {
     public void importProducts(
         com.google.cloud.retail.v2.ImportProductsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getImportProductsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -537,7 +536,8 @@ public final class ProductServiceGrpc {
      */
     public com.google.cloud.retail.v2.Product createProduct(
         com.google.cloud.retail.v2.CreateProductRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateProductMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateProductMethod(), getCallOptions(), request);
     }
 
     /**
@@ -549,7 +549,8 @@ public final class ProductServiceGrpc {
      */
     public com.google.cloud.retail.v2.Product getProduct(
         com.google.cloud.retail.v2.GetProductRequest request) {
-      return blockingUnaryCall(getChannel(), getGetProductMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProductMethod(), getCallOptions(), request);
     }
 
     /**
@@ -561,7 +562,8 @@ public final class ProductServiceGrpc {
      */
     public com.google.cloud.retail.v2.Product updateProduct(
         com.google.cloud.retail.v2.UpdateProductRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateProductMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateProductMethod(), getCallOptions(), request);
     }
 
     /**
@@ -573,7 +575,8 @@ public final class ProductServiceGrpc {
      */
     public com.google.protobuf.Empty deleteProduct(
         com.google.cloud.retail.v2.DeleteProductRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteProductMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteProductMethod(), getCallOptions(), request);
     }
 
     /**
@@ -589,7 +592,8 @@ public final class ProductServiceGrpc {
      */
     public com.google.longrunning.Operation importProducts(
         com.google.cloud.retail.v2.ImportProductsRequest request) {
-      return blockingUnaryCall(getChannel(), getImportProductsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportProductsMethod(), getCallOptions(), request);
     }
   }
 
@@ -622,7 +626,7 @@ public final class ProductServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.retail.v2.Product>
         createProduct(com.google.cloud.retail.v2.CreateProductRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateProductMethod(), getCallOptions()), request);
     }
 
@@ -635,7 +639,7 @@ public final class ProductServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.retail.v2.Product>
         getProduct(com.google.cloud.retail.v2.GetProductRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetProductMethod(), getCallOptions()), request);
     }
 
@@ -648,7 +652,7 @@ public final class ProductServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.retail.v2.Product>
         updateProduct(com.google.cloud.retail.v2.UpdateProductRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateProductMethod(), getCallOptions()), request);
     }
 
@@ -661,7 +665,7 @@ public final class ProductServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteProduct(com.google.cloud.retail.v2.DeleteProductRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteProductMethod(), getCallOptions()), request);
     }
 
@@ -678,7 +682,7 @@ public final class ProductServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         importProducts(com.google.cloud.retail.v2.ImportProductsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getImportProductsMethod(), getCallOptions()), request);
     }
   }

@@ -16,11 +16,6 @@
 package com.google.cloud.retail.v2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -313,7 +308,8 @@ public final class UserEventServiceGrpc {
     public void writeUserEvent(
         com.google.cloud.retail.v2.WriteUserEventRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.UserEvent> responseObserver) {
-      asyncUnimplementedUnaryCall(getWriteUserEventMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getWriteUserEventMethod(), responseObserver);
     }
 
     /**
@@ -329,7 +325,8 @@ public final class UserEventServiceGrpc {
     public void collectUserEvent(
         com.google.cloud.retail.v2.CollectUserEventRequest request,
         io.grpc.stub.StreamObserver<com.google.api.HttpBody> responseObserver) {
-      asyncUnimplementedUnaryCall(getCollectUserEventMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCollectUserEventMethod(), responseObserver);
     }
 
     /**
@@ -345,7 +342,8 @@ public final class UserEventServiceGrpc {
     public void purgeUserEvents(
         com.google.cloud.retail.v2.PurgeUserEventsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getPurgeUserEventsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPurgeUserEventsMethod(), responseObserver);
     }
 
     /**
@@ -363,7 +361,8 @@ public final class UserEventServiceGrpc {
     public void importUserEvents(
         com.google.cloud.retail.v2.ImportUserEventsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getImportUserEventsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getImportUserEventsMethod(), responseObserver);
     }
 
     /**
@@ -382,7 +381,8 @@ public final class UserEventServiceGrpc {
     public void rejoinUserEvents(
         com.google.cloud.retail.v2.RejoinUserEventsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getRejoinUserEventsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRejoinUserEventsMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -390,31 +390,31 @@ public final class UserEventServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getWriteUserEventMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.retail.v2.WriteUserEventRequest,
                       com.google.cloud.retail.v2.UserEvent>(this, METHODID_WRITE_USER_EVENT)))
           .addMethod(
               getCollectUserEventMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.retail.v2.CollectUserEventRequest, com.google.api.HttpBody>(
                       this, METHODID_COLLECT_USER_EVENT)))
           .addMethod(
               getPurgeUserEventsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.retail.v2.PurgeUserEventsRequest,
                       com.google.longrunning.Operation>(this, METHODID_PURGE_USER_EVENTS)))
           .addMethod(
               getImportUserEventsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.retail.v2.ImportUserEventsRequest,
                       com.google.longrunning.Operation>(this, METHODID_IMPORT_USER_EVENTS)))
           .addMethod(
               getRejoinUserEventsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.retail.v2.RejoinUserEventsRequest,
                       com.google.longrunning.Operation>(this, METHODID_REJOIN_USER_EVENTS)))
@@ -450,7 +450,7 @@ public final class UserEventServiceGrpc {
     public void writeUserEvent(
         com.google.cloud.retail.v2.WriteUserEventRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.UserEvent> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getWriteUserEventMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -469,7 +469,7 @@ public final class UserEventServiceGrpc {
     public void collectUserEvent(
         com.google.cloud.retail.v2.CollectUserEventRequest request,
         io.grpc.stub.StreamObserver<com.google.api.HttpBody> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCollectUserEventMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -488,7 +488,7 @@ public final class UserEventServiceGrpc {
     public void purgeUserEvents(
         com.google.cloud.retail.v2.PurgeUserEventsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPurgeUserEventsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -509,7 +509,7 @@ public final class UserEventServiceGrpc {
     public void importUserEvents(
         com.google.cloud.retail.v2.ImportUserEventsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getImportUserEventsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -531,7 +531,7 @@ public final class UserEventServiceGrpc {
     public void rejoinUserEvents(
         com.google.cloud.retail.v2.RejoinUserEventsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRejoinUserEventsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -566,7 +566,8 @@ public final class UserEventServiceGrpc {
      */
     public com.google.cloud.retail.v2.UserEvent writeUserEvent(
         com.google.cloud.retail.v2.WriteUserEventRequest request) {
-      return blockingUnaryCall(getChannel(), getWriteUserEventMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getWriteUserEventMethod(), getCallOptions(), request);
     }
 
     /**
@@ -581,7 +582,7 @@ public final class UserEventServiceGrpc {
      */
     public com.google.api.HttpBody collectUserEvent(
         com.google.cloud.retail.v2.CollectUserEventRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCollectUserEventMethod(), getCallOptions(), request);
     }
 
@@ -597,7 +598,8 @@ public final class UserEventServiceGrpc {
      */
     public com.google.longrunning.Operation purgeUserEvents(
         com.google.cloud.retail.v2.PurgeUserEventsRequest request) {
-      return blockingUnaryCall(getChannel(), getPurgeUserEventsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPurgeUserEventsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -614,7 +616,7 @@ public final class UserEventServiceGrpc {
      */
     public com.google.longrunning.Operation importUserEvents(
         com.google.cloud.retail.v2.ImportUserEventsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getImportUserEventsMethod(), getCallOptions(), request);
     }
 
@@ -633,7 +635,7 @@ public final class UserEventServiceGrpc {
      */
     public com.google.longrunning.Operation rejoinUserEvents(
         com.google.cloud.retail.v2.RejoinUserEventsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRejoinUserEventsMethod(), getCallOptions(), request);
     }
   }
@@ -666,7 +668,7 @@ public final class UserEventServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.retail.v2.UserEvent>
         writeUserEvent(com.google.cloud.retail.v2.WriteUserEventRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getWriteUserEventMethod(), getCallOptions()), request);
     }
 
@@ -682,7 +684,7 @@ public final class UserEventServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.api.HttpBody>
         collectUserEvent(com.google.cloud.retail.v2.CollectUserEventRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCollectUserEventMethod(), getCallOptions()), request);
     }
 
@@ -698,7 +700,7 @@ public final class UserEventServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         purgeUserEvents(com.google.cloud.retail.v2.PurgeUserEventsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPurgeUserEventsMethod(), getCallOptions()), request);
     }
 
@@ -716,7 +718,7 @@ public final class UserEventServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         importUserEvents(com.google.cloud.retail.v2.ImportUserEventsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getImportUserEventsMethod(), getCallOptions()), request);
     }
 
@@ -735,7 +737,7 @@ public final class UserEventServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         rejoinUserEvents(com.google.cloud.retail.v2.RejoinUserEventsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRejoinUserEventsMethod(), getCallOptions()), request);
     }
   }
