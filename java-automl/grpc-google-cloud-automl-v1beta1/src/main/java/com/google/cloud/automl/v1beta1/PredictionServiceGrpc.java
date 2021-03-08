@@ -16,11 +16,6 @@
 package com.google.cloud.automl.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -208,7 +203,7 @@ public final class PredictionServiceGrpc {
         com.google.cloud.automl.v1beta1.PredictRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.PredictResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getPredictMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPredictMethod(), responseObserver);
     }
 
     /**
@@ -232,7 +227,8 @@ public final class PredictionServiceGrpc {
     public void batchPredict(
         com.google.cloud.automl.v1beta1.BatchPredictRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchPredictMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchPredictMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -240,13 +236,13 @@ public final class PredictionServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getPredictMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.PredictRequest,
                       com.google.cloud.automl.v1beta1.PredictResponse>(this, METHODID_PREDICT)))
           .addMethod(
               getBatchPredictMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.automl.v1beta1.BatchPredictRequest,
                       com.google.longrunning.Operation>(this, METHODID_BATCH_PREDICT)))
@@ -303,7 +299,7 @@ public final class PredictionServiceGrpc {
         com.google.cloud.automl.v1beta1.PredictRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.PredictResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPredictMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -328,7 +324,7 @@ public final class PredictionServiceGrpc {
     public void batchPredict(
         com.google.cloud.automl.v1beta1.BatchPredictRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchPredictMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -383,7 +379,8 @@ public final class PredictionServiceGrpc {
      */
     public com.google.cloud.automl.v1beta1.PredictResponse predict(
         com.google.cloud.automl.v1beta1.PredictRequest request) {
-      return blockingUnaryCall(getChannel(), getPredictMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPredictMethod(), getCallOptions(), request);
     }
 
     /**
@@ -406,7 +403,8 @@ public final class PredictionServiceGrpc {
      */
     public com.google.longrunning.Operation batchPredict(
         com.google.cloud.automl.v1beta1.BatchPredictRequest request) {
-      return blockingUnaryCall(getChannel(), getBatchPredictMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchPredictMethod(), getCallOptions(), request);
     }
   }
 
@@ -458,7 +456,8 @@ public final class PredictionServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.automl.v1beta1.PredictResponse>
         predict(com.google.cloud.automl.v1beta1.PredictRequest request) {
-      return futureUnaryCall(getChannel().newCall(getPredictMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPredictMethod(), getCallOptions()), request);
     }
 
     /**
@@ -481,7 +480,7 @@ public final class PredictionServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         batchPredict(com.google.cloud.automl.v1beta1.BatchPredictRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchPredictMethod(), getCallOptions()), request);
     }
   }
