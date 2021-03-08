@@ -16,11 +16,6 @@
 package com.google.cloud.video.transcoder.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -481,7 +476,7 @@ public final class TranscoderServiceGrpc {
         com.google.cloud.video.transcoder.v1beta1.CreateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.video.transcoder.v1beta1.Job>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateJobMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateJobMethod(), responseObserver);
     }
 
     /**
@@ -495,7 +490,7 @@ public final class TranscoderServiceGrpc {
         com.google.cloud.video.transcoder.v1beta1.ListJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.video.transcoder.v1beta1.ListJobsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListJobsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListJobsMethod(), responseObserver);
     }
 
     /**
@@ -509,7 +504,7 @@ public final class TranscoderServiceGrpc {
         com.google.cloud.video.transcoder.v1beta1.GetJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.video.transcoder.v1beta1.Job>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetJobMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetJobMethod(), responseObserver);
     }
 
     /**
@@ -522,7 +517,7 @@ public final class TranscoderServiceGrpc {
     public void deleteJob(
         com.google.cloud.video.transcoder.v1beta1.DeleteJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteJobMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteJobMethod(), responseObserver);
     }
 
     /**
@@ -536,7 +531,8 @@ public final class TranscoderServiceGrpc {
         com.google.cloud.video.transcoder.v1beta1.CreateJobTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.video.transcoder.v1beta1.JobTemplate>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateJobTemplateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateJobTemplateMethod(), responseObserver);
     }
 
     /**
@@ -551,7 +547,8 @@ public final class TranscoderServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.video.transcoder.v1beta1.ListJobTemplatesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListJobTemplatesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListJobTemplatesMethod(), responseObserver);
     }
 
     /**
@@ -565,7 +562,8 @@ public final class TranscoderServiceGrpc {
         com.google.cloud.video.transcoder.v1beta1.GetJobTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.video.transcoder.v1beta1.JobTemplate>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetJobTemplateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetJobTemplateMethod(), responseObserver);
     }
 
     /**
@@ -578,7 +576,8 @@ public final class TranscoderServiceGrpc {
     public void deleteJobTemplate(
         com.google.cloud.video.transcoder.v1beta1.DeleteJobTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteJobTemplateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteJobTemplateMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -586,53 +585,53 @@ public final class TranscoderServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreateJobMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.video.transcoder.v1beta1.CreateJobRequest,
                       com.google.cloud.video.transcoder.v1beta1.Job>(this, METHODID_CREATE_JOB)))
           .addMethod(
               getListJobsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.video.transcoder.v1beta1.ListJobsRequest,
                       com.google.cloud.video.transcoder.v1beta1.ListJobsResponse>(
                       this, METHODID_LIST_JOBS)))
           .addMethod(
               getGetJobMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.video.transcoder.v1beta1.GetJobRequest,
                       com.google.cloud.video.transcoder.v1beta1.Job>(this, METHODID_GET_JOB)))
           .addMethod(
               getDeleteJobMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.video.transcoder.v1beta1.DeleteJobRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_JOB)))
           .addMethod(
               getCreateJobTemplateMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.video.transcoder.v1beta1.CreateJobTemplateRequest,
                       com.google.cloud.video.transcoder.v1beta1.JobTemplate>(
                       this, METHODID_CREATE_JOB_TEMPLATE)))
           .addMethod(
               getListJobTemplatesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.video.transcoder.v1beta1.ListJobTemplatesRequest,
                       com.google.cloud.video.transcoder.v1beta1.ListJobTemplatesResponse>(
                       this, METHODID_LIST_JOB_TEMPLATES)))
           .addMethod(
               getGetJobTemplateMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.video.transcoder.v1beta1.GetJobTemplateRequest,
                       com.google.cloud.video.transcoder.v1beta1.JobTemplate>(
                       this, METHODID_GET_JOB_TEMPLATE)))
           .addMethod(
               getDeleteJobTemplateMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.video.transcoder.v1beta1.DeleteJobTemplateRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_JOB_TEMPLATE)))
@@ -675,7 +674,7 @@ public final class TranscoderServiceGrpc {
         com.google.cloud.video.transcoder.v1beta1.CreateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.video.transcoder.v1beta1.Job>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateJobMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -690,7 +689,7 @@ public final class TranscoderServiceGrpc {
         com.google.cloud.video.transcoder.v1beta1.ListJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.video.transcoder.v1beta1.ListJobsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListJobsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -705,7 +704,7 @@ public final class TranscoderServiceGrpc {
         com.google.cloud.video.transcoder.v1beta1.GetJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.video.transcoder.v1beta1.Job>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetJobMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -719,7 +718,7 @@ public final class TranscoderServiceGrpc {
     public void deleteJob(
         com.google.cloud.video.transcoder.v1beta1.DeleteJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteJobMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -734,7 +733,7 @@ public final class TranscoderServiceGrpc {
         com.google.cloud.video.transcoder.v1beta1.CreateJobTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.video.transcoder.v1beta1.JobTemplate>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateJobTemplateMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -752,7 +751,7 @@ public final class TranscoderServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.video.transcoder.v1beta1.ListJobTemplatesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListJobTemplatesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -769,7 +768,7 @@ public final class TranscoderServiceGrpc {
         com.google.cloud.video.transcoder.v1beta1.GetJobTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.video.transcoder.v1beta1.JobTemplate>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetJobTemplateMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -785,7 +784,7 @@ public final class TranscoderServiceGrpc {
     public void deleteJobTemplate(
         com.google.cloud.video.transcoder.v1beta1.DeleteJobTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteJobTemplateMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -826,7 +825,8 @@ public final class TranscoderServiceGrpc {
      */
     public com.google.cloud.video.transcoder.v1beta1.Job createJob(
         com.google.cloud.video.transcoder.v1beta1.CreateJobRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateJobMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -838,7 +838,8 @@ public final class TranscoderServiceGrpc {
      */
     public com.google.cloud.video.transcoder.v1beta1.ListJobsResponse listJobs(
         com.google.cloud.video.transcoder.v1beta1.ListJobsRequest request) {
-      return blockingUnaryCall(getChannel(), getListJobsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListJobsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -850,7 +851,8 @@ public final class TranscoderServiceGrpc {
      */
     public com.google.cloud.video.transcoder.v1beta1.Job getJob(
         com.google.cloud.video.transcoder.v1beta1.GetJobRequest request) {
-      return blockingUnaryCall(getChannel(), getGetJobMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -862,7 +864,8 @@ public final class TranscoderServiceGrpc {
      */
     public com.google.protobuf.Empty deleteJob(
         com.google.cloud.video.transcoder.v1beta1.DeleteJobRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteJobMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -874,7 +877,7 @@ public final class TranscoderServiceGrpc {
      */
     public com.google.cloud.video.transcoder.v1beta1.JobTemplate createJobTemplate(
         com.google.cloud.video.transcoder.v1beta1.CreateJobTemplateRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateJobTemplateMethod(), getCallOptions(), request);
     }
 
@@ -887,7 +890,7 @@ public final class TranscoderServiceGrpc {
      */
     public com.google.cloud.video.transcoder.v1beta1.ListJobTemplatesResponse listJobTemplates(
         com.google.cloud.video.transcoder.v1beta1.ListJobTemplatesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListJobTemplatesMethod(), getCallOptions(), request);
     }
 
@@ -900,7 +903,8 @@ public final class TranscoderServiceGrpc {
      */
     public com.google.cloud.video.transcoder.v1beta1.JobTemplate getJobTemplate(
         com.google.cloud.video.transcoder.v1beta1.GetJobTemplateRequest request) {
-      return blockingUnaryCall(getChannel(), getGetJobTemplateMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetJobTemplateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -912,7 +916,7 @@ public final class TranscoderServiceGrpc {
      */
     public com.google.protobuf.Empty deleteJobTemplate(
         com.google.cloud.video.transcoder.v1beta1.DeleteJobTemplateRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteJobTemplateMethod(), getCallOptions(), request);
     }
   }
@@ -951,7 +955,8 @@ public final class TranscoderServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.video.transcoder.v1beta1.Job>
         createJob(com.google.cloud.video.transcoder.v1beta1.CreateJobRequest request) {
-      return futureUnaryCall(getChannel().newCall(getCreateJobMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -964,7 +969,8 @@ public final class TranscoderServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.video.transcoder.v1beta1.ListJobsResponse>
         listJobs(com.google.cloud.video.transcoder.v1beta1.ListJobsRequest request) {
-      return futureUnaryCall(getChannel().newCall(getListJobsMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListJobsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -977,7 +983,8 @@ public final class TranscoderServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.video.transcoder.v1beta1.Job>
         getJob(com.google.cloud.video.transcoder.v1beta1.GetJobRequest request) {
-      return futureUnaryCall(getChannel().newCall(getGetJobMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -989,7 +996,8 @@ public final class TranscoderServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteJob(
         com.google.cloud.video.transcoder.v1beta1.DeleteJobRequest request) {
-      return futureUnaryCall(getChannel().newCall(getDeleteJobMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1003,7 +1011,7 @@ public final class TranscoderServiceGrpc {
             com.google.cloud.video.transcoder.v1beta1.JobTemplate>
         createJobTemplate(
             com.google.cloud.video.transcoder.v1beta1.CreateJobTemplateRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateJobTemplateMethod(), getCallOptions()), request);
     }
 
@@ -1018,7 +1026,7 @@ public final class TranscoderServiceGrpc {
             com.google.cloud.video.transcoder.v1beta1.ListJobTemplatesResponse>
         listJobTemplates(
             com.google.cloud.video.transcoder.v1beta1.ListJobTemplatesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListJobTemplatesMethod(), getCallOptions()), request);
     }
 
@@ -1032,7 +1040,7 @@ public final class TranscoderServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.video.transcoder.v1beta1.JobTemplate>
         getJobTemplate(com.google.cloud.video.transcoder.v1beta1.GetJobTemplateRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetJobTemplateMethod(), getCallOptions()), request);
     }
 
@@ -1046,7 +1054,7 @@ public final class TranscoderServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteJobTemplate(
             com.google.cloud.video.transcoder.v1beta1.DeleteJobTemplateRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteJobTemplateMethod(), getCallOptions()), request);
     }
   }
