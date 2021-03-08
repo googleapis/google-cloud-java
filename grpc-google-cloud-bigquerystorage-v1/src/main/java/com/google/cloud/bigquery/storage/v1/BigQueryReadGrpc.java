@@ -16,14 +16,6 @@
 package com.google.cloud.bigquery.storage.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -260,7 +252,8 @@ public final class BigQueryReadGrpc {
         com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1.ReadSession>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateReadSessionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateReadSessionMethod(), responseObserver);
     }
 
     /**
@@ -279,7 +272,7 @@ public final class BigQueryReadGrpc {
         com.google.cloud.bigquery.storage.v1.ReadRowsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1.ReadRowsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getReadRowsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReadRowsMethod(), responseObserver);
     }
 
     /**
@@ -303,7 +296,8 @@ public final class BigQueryReadGrpc {
         com.google.cloud.bigquery.storage.v1.SplitReadStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1.SplitReadStreamResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSplitReadStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSplitReadStreamMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -311,21 +305,21 @@ public final class BigQueryReadGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreateReadSessionMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest,
                       com.google.cloud.bigquery.storage.v1.ReadSession>(
                       this, METHODID_CREATE_READ_SESSION)))
           .addMethod(
               getReadRowsMethod(),
-              asyncServerStreamingCall(
+              io.grpc.stub.ServerCalls.asyncServerStreamingCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.storage.v1.ReadRowsRequest,
                       com.google.cloud.bigquery.storage.v1.ReadRowsResponse>(
                       this, METHODID_READ_ROWS)))
           .addMethod(
               getSplitReadStreamMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.storage.v1.SplitReadStreamRequest,
                       com.google.cloud.bigquery.storage.v1.SplitReadStreamResponse>(
@@ -379,7 +373,7 @@ public final class BigQueryReadGrpc {
         com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1.ReadSession>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateReadSessionMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -401,7 +395,7 @@ public final class BigQueryReadGrpc {
         com.google.cloud.bigquery.storage.v1.ReadRowsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1.ReadRowsResponse>
             responseObserver) {
-      asyncServerStreamingCall(
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getReadRowsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -426,7 +420,7 @@ public final class BigQueryReadGrpc {
         com.google.cloud.bigquery.storage.v1.SplitReadStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1.SplitReadStreamResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSplitReadStreamMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -477,7 +471,7 @@ public final class BigQueryReadGrpc {
      */
     public com.google.cloud.bigquery.storage.v1.ReadSession createReadSession(
         com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateReadSessionMethod(), getCallOptions(), request);
     }
 
@@ -495,7 +489,7 @@ public final class BigQueryReadGrpc {
      */
     public java.util.Iterator<com.google.cloud.bigquery.storage.v1.ReadRowsResponse> readRows(
         com.google.cloud.bigquery.storage.v1.ReadRowsRequest request) {
-      return blockingServerStreamingCall(
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getReadRowsMethod(), getCallOptions(), request);
     }
 
@@ -518,7 +512,8 @@ public final class BigQueryReadGrpc {
      */
     public com.google.cloud.bigquery.storage.v1.SplitReadStreamResponse splitReadStream(
         com.google.cloud.bigquery.storage.v1.SplitReadStreamRequest request) {
-      return blockingUnaryCall(getChannel(), getSplitReadStreamMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSplitReadStreamMethod(), getCallOptions(), request);
     }
   }
 
@@ -567,7 +562,7 @@ public final class BigQueryReadGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.storage.v1.ReadSession>
         createReadSession(com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateReadSessionMethod(), getCallOptions()), request);
     }
 
@@ -591,7 +586,7 @@ public final class BigQueryReadGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.storage.v1.SplitReadStreamResponse>
         splitReadStream(com.google.cloud.bigquery.storage.v1.SplitReadStreamRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSplitReadStreamMethod(), getCallOptions()), request);
     }
   }
