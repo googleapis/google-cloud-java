@@ -16,11 +16,6 @@
 package com.google.cloud.language.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -387,7 +382,8 @@ public final class LanguageServiceGrpc {
         com.google.cloud.language.v1.AnalyzeSentimentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1.AnalyzeSentimentResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getAnalyzeSentimentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAnalyzeSentimentMethod(), responseObserver);
     }
 
     /**
@@ -403,7 +399,8 @@ public final class LanguageServiceGrpc {
         com.google.cloud.language.v1.AnalyzeEntitiesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1.AnalyzeEntitiesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getAnalyzeEntitiesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAnalyzeEntitiesMethod(), responseObserver);
     }
 
     /**
@@ -418,7 +415,8 @@ public final class LanguageServiceGrpc {
         com.google.cloud.language.v1.AnalyzeEntitySentimentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1.AnalyzeEntitySentimentResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getAnalyzeEntitySentimentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAnalyzeEntitySentimentMethod(), responseObserver);
     }
 
     /**
@@ -434,7 +432,8 @@ public final class LanguageServiceGrpc {
         com.google.cloud.language.v1.AnalyzeSyntaxRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1.AnalyzeSyntaxResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getAnalyzeSyntaxMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAnalyzeSyntaxMethod(), responseObserver);
     }
 
     /**
@@ -448,7 +447,8 @@ public final class LanguageServiceGrpc {
         com.google.cloud.language.v1.ClassifyTextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1.ClassifyTextResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getClassifyTextMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getClassifyTextMethod(), responseObserver);
     }
 
     /**
@@ -463,7 +463,8 @@ public final class LanguageServiceGrpc {
         com.google.cloud.language.v1.AnnotateTextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1.AnnotateTextResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getAnnotateTextMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAnnotateTextMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -471,42 +472,42 @@ public final class LanguageServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getAnalyzeSentimentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.language.v1.AnalyzeSentimentRequest,
                       com.google.cloud.language.v1.AnalyzeSentimentResponse>(
                       this, METHODID_ANALYZE_SENTIMENT)))
           .addMethod(
               getAnalyzeEntitiesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.language.v1.AnalyzeEntitiesRequest,
                       com.google.cloud.language.v1.AnalyzeEntitiesResponse>(
                       this, METHODID_ANALYZE_ENTITIES)))
           .addMethod(
               getAnalyzeEntitySentimentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.language.v1.AnalyzeEntitySentimentRequest,
                       com.google.cloud.language.v1.AnalyzeEntitySentimentResponse>(
                       this, METHODID_ANALYZE_ENTITY_SENTIMENT)))
           .addMethod(
               getAnalyzeSyntaxMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.language.v1.AnalyzeSyntaxRequest,
                       com.google.cloud.language.v1.AnalyzeSyntaxResponse>(
                       this, METHODID_ANALYZE_SYNTAX)))
           .addMethod(
               getClassifyTextMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.language.v1.ClassifyTextRequest,
                       com.google.cloud.language.v1.ClassifyTextResponse>(
                       this, METHODID_CLASSIFY_TEXT)))
           .addMethod(
               getAnnotateTextMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.language.v1.AnnotateTextRequest,
                       com.google.cloud.language.v1.AnnotateTextResponse>(
@@ -545,7 +546,7 @@ public final class LanguageServiceGrpc {
         com.google.cloud.language.v1.AnalyzeSentimentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1.AnalyzeSentimentResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAnalyzeSentimentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -564,7 +565,7 @@ public final class LanguageServiceGrpc {
         com.google.cloud.language.v1.AnalyzeEntitiesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1.AnalyzeEntitiesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAnalyzeEntitiesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -582,7 +583,7 @@ public final class LanguageServiceGrpc {
         com.google.cloud.language.v1.AnalyzeEntitySentimentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1.AnalyzeEntitySentimentResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAnalyzeEntitySentimentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -601,7 +602,7 @@ public final class LanguageServiceGrpc {
         com.google.cloud.language.v1.AnalyzeSyntaxRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1.AnalyzeSyntaxResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAnalyzeSyntaxMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -618,7 +619,7 @@ public final class LanguageServiceGrpc {
         com.google.cloud.language.v1.ClassifyTextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1.ClassifyTextResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getClassifyTextMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -636,7 +637,7 @@ public final class LanguageServiceGrpc {
         com.google.cloud.language.v1.AnnotateTextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1.AnnotateTextResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAnnotateTextMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -672,7 +673,7 @@ public final class LanguageServiceGrpc {
      */
     public com.google.cloud.language.v1.AnalyzeSentimentResponse analyzeSentiment(
         com.google.cloud.language.v1.AnalyzeSentimentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAnalyzeSentimentMethod(), getCallOptions(), request);
     }
 
@@ -687,7 +688,8 @@ public final class LanguageServiceGrpc {
      */
     public com.google.cloud.language.v1.AnalyzeEntitiesResponse analyzeEntities(
         com.google.cloud.language.v1.AnalyzeEntitiesRequest request) {
-      return blockingUnaryCall(getChannel(), getAnalyzeEntitiesMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalyzeEntitiesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -700,7 +702,7 @@ public final class LanguageServiceGrpc {
      */
     public com.google.cloud.language.v1.AnalyzeEntitySentimentResponse analyzeEntitySentiment(
         com.google.cloud.language.v1.AnalyzeEntitySentimentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAnalyzeEntitySentimentMethod(), getCallOptions(), request);
     }
 
@@ -715,7 +717,8 @@ public final class LanguageServiceGrpc {
      */
     public com.google.cloud.language.v1.AnalyzeSyntaxResponse analyzeSyntax(
         com.google.cloud.language.v1.AnalyzeSyntaxRequest request) {
-      return blockingUnaryCall(getChannel(), getAnalyzeSyntaxMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalyzeSyntaxMethod(), getCallOptions(), request);
     }
 
     /**
@@ -727,7 +730,8 @@ public final class LanguageServiceGrpc {
      */
     public com.google.cloud.language.v1.ClassifyTextResponse classifyText(
         com.google.cloud.language.v1.ClassifyTextRequest request) {
-      return blockingUnaryCall(getChannel(), getClassifyTextMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getClassifyTextMethod(), getCallOptions(), request);
     }
 
     /**
@@ -740,7 +744,8 @@ public final class LanguageServiceGrpc {
      */
     public com.google.cloud.language.v1.AnnotateTextResponse annotateText(
         com.google.cloud.language.v1.AnnotateTextRequest request) {
-      return blockingUnaryCall(getChannel(), getAnnotateTextMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnnotateTextMethod(), getCallOptions(), request);
     }
   }
 
@@ -774,7 +779,7 @@ public final class LanguageServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.language.v1.AnalyzeSentimentResponse>
         analyzeSentiment(com.google.cloud.language.v1.AnalyzeSentimentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAnalyzeSentimentMethod(), getCallOptions()), request);
     }
 
@@ -790,7 +795,7 @@ public final class LanguageServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.language.v1.AnalyzeEntitiesResponse>
         analyzeEntities(com.google.cloud.language.v1.AnalyzeEntitiesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAnalyzeEntitiesMethod(), getCallOptions()), request);
     }
 
@@ -805,7 +810,7 @@ public final class LanguageServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.language.v1.AnalyzeEntitySentimentResponse>
         analyzeEntitySentiment(com.google.cloud.language.v1.AnalyzeEntitySentimentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAnalyzeEntitySentimentMethod(), getCallOptions()), request);
     }
 
@@ -821,7 +826,7 @@ public final class LanguageServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.language.v1.AnalyzeSyntaxResponse>
         analyzeSyntax(com.google.cloud.language.v1.AnalyzeSyntaxRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAnalyzeSyntaxMethod(), getCallOptions()), request);
     }
 
@@ -835,7 +840,7 @@ public final class LanguageServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.language.v1.ClassifyTextResponse>
         classifyText(com.google.cloud.language.v1.ClassifyTextRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getClassifyTextMethod(), getCallOptions()), request);
     }
 
@@ -850,7 +855,7 @@ public final class LanguageServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.language.v1.AnnotateTextResponse>
         annotateText(com.google.cloud.language.v1.AnnotateTextRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAnnotateTextMethod(), getCallOptions()), request);
     }
   }
