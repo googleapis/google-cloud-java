@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-securitycenter-settings.git",
-        "sha": "dd78ce469693af0d38eb9a0f464743dd70f1598d"
+        "sha": "7cecdfb64230d35a96315ad3d3a97ececbe9aec8"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "3befd26ca55723d3e8111909331eac1249837987",
-        "internalRef": "360805639"
+        "sha": "0e915217fb5261c1e57bfaf0e16ee5c7feaaba89",
+        "internalRef": "361377784"
       }
     },
     {
