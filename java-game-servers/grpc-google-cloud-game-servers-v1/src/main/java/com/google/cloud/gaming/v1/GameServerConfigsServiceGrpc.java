@@ -16,11 +16,6 @@
 package com.google.cloud.gaming.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -309,7 +304,8 @@ public final class GameServerConfigsServiceGrpc {
         com.google.cloud.gaming.v1.ListGameServerConfigsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.ListGameServerConfigsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListGameServerConfigsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListGameServerConfigsMethod(), responseObserver);
     }
 
     /**
@@ -322,7 +318,8 @@ public final class GameServerConfigsServiceGrpc {
     public void getGameServerConfig(
         com.google.cloud.gaming.v1.GetGameServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.GameServerConfig> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetGameServerConfigMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetGameServerConfigMethod(), responseObserver);
     }
 
     /**
@@ -337,7 +334,8 @@ public final class GameServerConfigsServiceGrpc {
     public void createGameServerConfig(
         com.google.cloud.gaming.v1.CreateGameServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateGameServerConfigMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateGameServerConfigMethod(), responseObserver);
     }
 
     /**
@@ -351,7 +349,8 @@ public final class GameServerConfigsServiceGrpc {
     public void deleteGameServerConfig(
         com.google.cloud.gaming.v1.DeleteGameServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteGameServerConfigMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteGameServerConfigMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -359,27 +358,27 @@ public final class GameServerConfigsServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListGameServerConfigsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1.ListGameServerConfigsRequest,
                       com.google.cloud.gaming.v1.ListGameServerConfigsResponse>(
                       this, METHODID_LIST_GAME_SERVER_CONFIGS)))
           .addMethod(
               getGetGameServerConfigMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1.GetGameServerConfigRequest,
                       com.google.cloud.gaming.v1.GameServerConfig>(
                       this, METHODID_GET_GAME_SERVER_CONFIG)))
           .addMethod(
               getCreateGameServerConfigMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1.CreateGameServerConfigRequest,
                       com.google.longrunning.Operation>(this, METHODID_CREATE_GAME_SERVER_CONFIG)))
           .addMethod(
               getDeleteGameServerConfigMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1.DeleteGameServerConfigRequest,
                       com.google.longrunning.Operation>(this, METHODID_DELETE_GAME_SERVER_CONFIG)))
@@ -418,7 +417,7 @@ public final class GameServerConfigsServiceGrpc {
         com.google.cloud.gaming.v1.ListGameServerConfigsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.ListGameServerConfigsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListGameServerConfigsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -434,7 +433,7 @@ public final class GameServerConfigsServiceGrpc {
     public void getGameServerConfig(
         com.google.cloud.gaming.v1.GetGameServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.GameServerConfig> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetGameServerConfigMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -452,7 +451,7 @@ public final class GameServerConfigsServiceGrpc {
     public void createGameServerConfig(
         com.google.cloud.gaming.v1.CreateGameServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateGameServerConfigMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -469,7 +468,7 @@ public final class GameServerConfigsServiceGrpc {
     public void deleteGameServerConfig(
         com.google.cloud.gaming.v1.DeleteGameServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteGameServerConfigMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -506,7 +505,7 @@ public final class GameServerConfigsServiceGrpc {
      */
     public com.google.cloud.gaming.v1.ListGameServerConfigsResponse listGameServerConfigs(
         com.google.cloud.gaming.v1.ListGameServerConfigsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListGameServerConfigsMethod(), getCallOptions(), request);
     }
 
@@ -519,7 +518,7 @@ public final class GameServerConfigsServiceGrpc {
      */
     public com.google.cloud.gaming.v1.GameServerConfig getGameServerConfig(
         com.google.cloud.gaming.v1.GetGameServerConfigRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetGameServerConfigMethod(), getCallOptions(), request);
     }
 
@@ -534,7 +533,7 @@ public final class GameServerConfigsServiceGrpc {
      */
     public com.google.longrunning.Operation createGameServerConfig(
         com.google.cloud.gaming.v1.CreateGameServerConfigRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateGameServerConfigMethod(), getCallOptions(), request);
     }
 
@@ -548,7 +547,7 @@ public final class GameServerConfigsServiceGrpc {
      */
     public com.google.longrunning.Operation deleteGameServerConfig(
         com.google.cloud.gaming.v1.DeleteGameServerConfigRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteGameServerConfigMethod(), getCallOptions(), request);
     }
   }
@@ -584,7 +583,7 @@ public final class GameServerConfigsServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1.ListGameServerConfigsResponse>
         listGameServerConfigs(com.google.cloud.gaming.v1.ListGameServerConfigsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListGameServerConfigsMethod(), getCallOptions()), request);
     }
 
@@ -598,7 +597,7 @@ public final class GameServerConfigsServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1.GameServerConfig>
         getGameServerConfig(com.google.cloud.gaming.v1.GetGameServerConfigRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetGameServerConfigMethod(), getCallOptions()), request);
     }
 
@@ -613,7 +612,7 @@ public final class GameServerConfigsServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createGameServerConfig(com.google.cloud.gaming.v1.CreateGameServerConfigRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateGameServerConfigMethod(), getCallOptions()), request);
     }
 
@@ -627,7 +626,7 @@ public final class GameServerConfigsServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteGameServerConfig(com.google.cloud.gaming.v1.DeleteGameServerConfigRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteGameServerConfigMethod(), getCallOptions()), request);
     }
   }

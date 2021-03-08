@@ -16,11 +16,6 @@
 package com.google.cloud.gaming.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -357,7 +352,7 @@ public final class RealmsServiceGrpc {
         com.google.cloud.gaming.v1.ListRealmsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.ListRealmsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListRealmsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListRealmsMethod(), responseObserver);
     }
 
     /**
@@ -370,7 +365,7 @@ public final class RealmsServiceGrpc {
     public void getRealm(
         com.google.cloud.gaming.v1.GetRealmRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.Realm> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetRealmMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRealmMethod(), responseObserver);
     }
 
     /**
@@ -383,7 +378,8 @@ public final class RealmsServiceGrpc {
     public void createRealm(
         com.google.cloud.gaming.v1.CreateRealmRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateRealmMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateRealmMethod(), responseObserver);
     }
 
     /**
@@ -396,7 +392,8 @@ public final class RealmsServiceGrpc {
     public void deleteRealm(
         com.google.cloud.gaming.v1.DeleteRealmRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteRealmMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteRealmMethod(), responseObserver);
     }
 
     /**
@@ -409,7 +406,8 @@ public final class RealmsServiceGrpc {
     public void updateRealm(
         com.google.cloud.gaming.v1.UpdateRealmRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateRealmMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateRealmMethod(), responseObserver);
     }
 
     /**
@@ -423,7 +421,8 @@ public final class RealmsServiceGrpc {
         com.google.cloud.gaming.v1.PreviewRealmUpdateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.PreviewRealmUpdateResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getPreviewRealmUpdateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPreviewRealmUpdateMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -431,37 +430,37 @@ public final class RealmsServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListRealmsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1.ListRealmsRequest,
                       com.google.cloud.gaming.v1.ListRealmsResponse>(this, METHODID_LIST_REALMS)))
           .addMethod(
               getGetRealmMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1.GetRealmRequest, com.google.cloud.gaming.v1.Realm>(
                       this, METHODID_GET_REALM)))
           .addMethod(
               getCreateRealmMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1.CreateRealmRequest,
                       com.google.longrunning.Operation>(this, METHODID_CREATE_REALM)))
           .addMethod(
               getDeleteRealmMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1.DeleteRealmRequest,
                       com.google.longrunning.Operation>(this, METHODID_DELETE_REALM)))
           .addMethod(
               getUpdateRealmMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1.UpdateRealmRequest,
                       com.google.longrunning.Operation>(this, METHODID_UPDATE_REALM)))
           .addMethod(
               getPreviewRealmUpdateMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1.PreviewRealmUpdateRequest,
                       com.google.cloud.gaming.v1.PreviewRealmUpdateResponse>(
@@ -500,7 +499,7 @@ public final class RealmsServiceGrpc {
         com.google.cloud.gaming.v1.ListRealmsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.ListRealmsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListRealmsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -514,7 +513,7 @@ public final class RealmsServiceGrpc {
     public void getRealm(
         com.google.cloud.gaming.v1.GetRealmRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.Realm> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetRealmMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -528,7 +527,7 @@ public final class RealmsServiceGrpc {
     public void createRealm(
         com.google.cloud.gaming.v1.CreateRealmRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateRealmMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -544,7 +543,7 @@ public final class RealmsServiceGrpc {
     public void deleteRealm(
         com.google.cloud.gaming.v1.DeleteRealmRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteRealmMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -560,7 +559,7 @@ public final class RealmsServiceGrpc {
     public void updateRealm(
         com.google.cloud.gaming.v1.UpdateRealmRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateRealmMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -577,7 +576,7 @@ public final class RealmsServiceGrpc {
         com.google.cloud.gaming.v1.PreviewRealmUpdateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.PreviewRealmUpdateResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPreviewRealmUpdateMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -613,7 +612,8 @@ public final class RealmsServiceGrpc {
      */
     public com.google.cloud.gaming.v1.ListRealmsResponse listRealms(
         com.google.cloud.gaming.v1.ListRealmsRequest request) {
-      return blockingUnaryCall(getChannel(), getListRealmsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRealmsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -625,7 +625,8 @@ public final class RealmsServiceGrpc {
      */
     public com.google.cloud.gaming.v1.Realm getRealm(
         com.google.cloud.gaming.v1.GetRealmRequest request) {
-      return blockingUnaryCall(getChannel(), getGetRealmMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRealmMethod(), getCallOptions(), request);
     }
 
     /**
@@ -637,7 +638,8 @@ public final class RealmsServiceGrpc {
      */
     public com.google.longrunning.Operation createRealm(
         com.google.cloud.gaming.v1.CreateRealmRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateRealmMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRealmMethod(), getCallOptions(), request);
     }
 
     /**
@@ -649,7 +651,8 @@ public final class RealmsServiceGrpc {
      */
     public com.google.longrunning.Operation deleteRealm(
         com.google.cloud.gaming.v1.DeleteRealmRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteRealmMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRealmMethod(), getCallOptions(), request);
     }
 
     /**
@@ -661,7 +664,8 @@ public final class RealmsServiceGrpc {
      */
     public com.google.longrunning.Operation updateRealm(
         com.google.cloud.gaming.v1.UpdateRealmRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateRealmMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRealmMethod(), getCallOptions(), request);
     }
 
     /**
@@ -673,7 +677,7 @@ public final class RealmsServiceGrpc {
      */
     public com.google.cloud.gaming.v1.PreviewRealmUpdateResponse previewRealmUpdate(
         com.google.cloud.gaming.v1.PreviewRealmUpdateRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPreviewRealmUpdateMethod(), getCallOptions(), request);
     }
   }
@@ -708,7 +712,7 @@ public final class RealmsServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1.ListRealmsResponse>
         listRealms(com.google.cloud.gaming.v1.ListRealmsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListRealmsMethod(), getCallOptions()), request);
     }
 
@@ -721,7 +725,8 @@ public final class RealmsServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.gaming.v1.Realm>
         getRealm(com.google.cloud.gaming.v1.GetRealmRequest request) {
-      return futureUnaryCall(getChannel().newCall(getGetRealmMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetRealmMethod(), getCallOptions()), request);
     }
 
     /**
@@ -733,7 +738,7 @@ public final class RealmsServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createRealm(com.google.cloud.gaming.v1.CreateRealmRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateRealmMethod(), getCallOptions()), request);
     }
 
@@ -746,7 +751,7 @@ public final class RealmsServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteRealm(com.google.cloud.gaming.v1.DeleteRealmRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteRealmMethod(), getCallOptions()), request);
     }
 
@@ -759,7 +764,7 @@ public final class RealmsServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateRealm(com.google.cloud.gaming.v1.UpdateRealmRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateRealmMethod(), getCallOptions()), request);
     }
 
@@ -773,7 +778,7 @@ public final class RealmsServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1.PreviewRealmUpdateResponse>
         previewRealmUpdate(com.google.cloud.gaming.v1.PreviewRealmUpdateRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPreviewRealmUpdateMethod(), getCallOptions()), request);
     }
   }

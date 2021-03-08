@@ -16,11 +16,6 @@
 package com.google.cloud.gaming.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -576,7 +571,8 @@ public final class GameServerDeploymentsServiceGrpc {
         com.google.cloud.gaming.v1.ListGameServerDeploymentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.ListGameServerDeploymentsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListGameServerDeploymentsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListGameServerDeploymentsMethod(), responseObserver);
     }
 
     /**
@@ -590,7 +586,8 @@ public final class GameServerDeploymentsServiceGrpc {
         com.google.cloud.gaming.v1.GetGameServerDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.GameServerDeployment>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetGameServerDeploymentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetGameServerDeploymentMethod(), responseObserver);
     }
 
     /**
@@ -603,7 +600,8 @@ public final class GameServerDeploymentsServiceGrpc {
     public void createGameServerDeployment(
         com.google.cloud.gaming.v1.CreateGameServerDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateGameServerDeploymentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateGameServerDeploymentMethod(), responseObserver);
     }
 
     /**
@@ -616,7 +614,8 @@ public final class GameServerDeploymentsServiceGrpc {
     public void deleteGameServerDeployment(
         com.google.cloud.gaming.v1.DeleteGameServerDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteGameServerDeploymentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteGameServerDeploymentMethod(), responseObserver);
     }
 
     /**
@@ -629,7 +628,8 @@ public final class GameServerDeploymentsServiceGrpc {
     public void updateGameServerDeployment(
         com.google.cloud.gaming.v1.UpdateGameServerDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateGameServerDeploymentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateGameServerDeploymentMethod(), responseObserver);
     }
 
     /**
@@ -643,7 +643,8 @@ public final class GameServerDeploymentsServiceGrpc {
         com.google.cloud.gaming.v1.GetGameServerDeploymentRolloutRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.GameServerDeploymentRollout>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetGameServerDeploymentRolloutMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetGameServerDeploymentRolloutMethod(), responseObserver);
     }
 
     /**
@@ -661,7 +662,8 @@ public final class GameServerDeploymentsServiceGrpc {
     public void updateGameServerDeploymentRollout(
         com.google.cloud.gaming.v1.UpdateGameServerDeploymentRolloutRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateGameServerDeploymentRolloutMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateGameServerDeploymentRolloutMethod(), responseObserver);
     }
 
     /**
@@ -677,7 +679,8 @@ public final class GameServerDeploymentsServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getPreviewGameServerDeploymentRolloutMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPreviewGameServerDeploymentRolloutMethod(), responseObserver);
     }
 
     /**
@@ -693,7 +696,8 @@ public final class GameServerDeploymentsServiceGrpc {
         com.google.cloud.gaming.v1.FetchDeploymentStateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.FetchDeploymentStateResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getFetchDeploymentStateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchDeploymentStateMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -701,63 +705,63 @@ public final class GameServerDeploymentsServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListGameServerDeploymentsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1.ListGameServerDeploymentsRequest,
                       com.google.cloud.gaming.v1.ListGameServerDeploymentsResponse>(
                       this, METHODID_LIST_GAME_SERVER_DEPLOYMENTS)))
           .addMethod(
               getGetGameServerDeploymentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1.GetGameServerDeploymentRequest,
                       com.google.cloud.gaming.v1.GameServerDeployment>(
                       this, METHODID_GET_GAME_SERVER_DEPLOYMENT)))
           .addMethod(
               getCreateGameServerDeploymentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1.CreateGameServerDeploymentRequest,
                       com.google.longrunning.Operation>(
                       this, METHODID_CREATE_GAME_SERVER_DEPLOYMENT)))
           .addMethod(
               getDeleteGameServerDeploymentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1.DeleteGameServerDeploymentRequest,
                       com.google.longrunning.Operation>(
                       this, METHODID_DELETE_GAME_SERVER_DEPLOYMENT)))
           .addMethod(
               getUpdateGameServerDeploymentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1.UpdateGameServerDeploymentRequest,
                       com.google.longrunning.Operation>(
                       this, METHODID_UPDATE_GAME_SERVER_DEPLOYMENT)))
           .addMethod(
               getGetGameServerDeploymentRolloutMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1.GetGameServerDeploymentRolloutRequest,
                       com.google.cloud.gaming.v1.GameServerDeploymentRollout>(
                       this, METHODID_GET_GAME_SERVER_DEPLOYMENT_ROLLOUT)))
           .addMethod(
               getUpdateGameServerDeploymentRolloutMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1.UpdateGameServerDeploymentRolloutRequest,
                       com.google.longrunning.Operation>(
                       this, METHODID_UPDATE_GAME_SERVER_DEPLOYMENT_ROLLOUT)))
           .addMethod(
               getPreviewGameServerDeploymentRolloutMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutRequest,
                       com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutResponse>(
                       this, METHODID_PREVIEW_GAME_SERVER_DEPLOYMENT_ROLLOUT)))
           .addMethod(
               getFetchDeploymentStateMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1.FetchDeploymentStateRequest,
                       com.google.cloud.gaming.v1.FetchDeploymentStateResponse>(
@@ -798,7 +802,7 @@ public final class GameServerDeploymentsServiceGrpc {
         com.google.cloud.gaming.v1.ListGameServerDeploymentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.ListGameServerDeploymentsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListGameServerDeploymentsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -815,7 +819,7 @@ public final class GameServerDeploymentsServiceGrpc {
         com.google.cloud.gaming.v1.GetGameServerDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.GameServerDeployment>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetGameServerDeploymentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -831,7 +835,7 @@ public final class GameServerDeploymentsServiceGrpc {
     public void createGameServerDeployment(
         com.google.cloud.gaming.v1.CreateGameServerDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateGameServerDeploymentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -847,7 +851,7 @@ public final class GameServerDeploymentsServiceGrpc {
     public void deleteGameServerDeployment(
         com.google.cloud.gaming.v1.DeleteGameServerDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteGameServerDeploymentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -863,7 +867,7 @@ public final class GameServerDeploymentsServiceGrpc {
     public void updateGameServerDeployment(
         com.google.cloud.gaming.v1.UpdateGameServerDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateGameServerDeploymentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -880,7 +884,7 @@ public final class GameServerDeploymentsServiceGrpc {
         com.google.cloud.gaming.v1.GetGameServerDeploymentRolloutRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.GameServerDeploymentRollout>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetGameServerDeploymentRolloutMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -901,7 +905,7 @@ public final class GameServerDeploymentsServiceGrpc {
     public void updateGameServerDeploymentRollout(
         com.google.cloud.gaming.v1.UpdateGameServerDeploymentRolloutRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateGameServerDeploymentRolloutMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -920,7 +924,7 @@ public final class GameServerDeploymentsServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPreviewGameServerDeploymentRolloutMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -939,7 +943,7 @@ public final class GameServerDeploymentsServiceGrpc {
         com.google.cloud.gaming.v1.FetchDeploymentStateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.FetchDeploymentStateResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFetchDeploymentStateMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -976,7 +980,7 @@ public final class GameServerDeploymentsServiceGrpc {
      */
     public com.google.cloud.gaming.v1.ListGameServerDeploymentsResponse listGameServerDeployments(
         com.google.cloud.gaming.v1.ListGameServerDeploymentsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListGameServerDeploymentsMethod(), getCallOptions(), request);
     }
 
@@ -989,7 +993,7 @@ public final class GameServerDeploymentsServiceGrpc {
      */
     public com.google.cloud.gaming.v1.GameServerDeployment getGameServerDeployment(
         com.google.cloud.gaming.v1.GetGameServerDeploymentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetGameServerDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -1002,7 +1006,7 @@ public final class GameServerDeploymentsServiceGrpc {
      */
     public com.google.longrunning.Operation createGameServerDeployment(
         com.google.cloud.gaming.v1.CreateGameServerDeploymentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateGameServerDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -1015,7 +1019,7 @@ public final class GameServerDeploymentsServiceGrpc {
      */
     public com.google.longrunning.Operation deleteGameServerDeployment(
         com.google.cloud.gaming.v1.DeleteGameServerDeploymentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteGameServerDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -1028,7 +1032,7 @@ public final class GameServerDeploymentsServiceGrpc {
      */
     public com.google.longrunning.Operation updateGameServerDeployment(
         com.google.cloud.gaming.v1.UpdateGameServerDeploymentRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateGameServerDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -1041,7 +1045,7 @@ public final class GameServerDeploymentsServiceGrpc {
      */
     public com.google.cloud.gaming.v1.GameServerDeploymentRollout getGameServerDeploymentRollout(
         com.google.cloud.gaming.v1.GetGameServerDeploymentRolloutRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetGameServerDeploymentRolloutMethod(), getCallOptions(), request);
     }
 
@@ -1059,7 +1063,7 @@ public final class GameServerDeploymentsServiceGrpc {
      */
     public com.google.longrunning.Operation updateGameServerDeploymentRollout(
         com.google.cloud.gaming.v1.UpdateGameServerDeploymentRolloutRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateGameServerDeploymentRolloutMethod(), getCallOptions(), request);
     }
 
@@ -1074,7 +1078,7 @@ public final class GameServerDeploymentsServiceGrpc {
     public com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutResponse
         previewGameServerDeploymentRollout(
             com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPreviewGameServerDeploymentRolloutMethod(), getCallOptions(), request);
     }
 
@@ -1089,7 +1093,7 @@ public final class GameServerDeploymentsServiceGrpc {
      */
     public com.google.cloud.gaming.v1.FetchDeploymentStateResponse fetchDeploymentState(
         com.google.cloud.gaming.v1.FetchDeploymentStateRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFetchDeploymentStateMethod(), getCallOptions(), request);
     }
   }
@@ -1126,7 +1130,7 @@ public final class GameServerDeploymentsServiceGrpc {
             com.google.cloud.gaming.v1.ListGameServerDeploymentsResponse>
         listGameServerDeployments(
             com.google.cloud.gaming.v1.ListGameServerDeploymentsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListGameServerDeploymentsMethod(), getCallOptions()), request);
     }
 
@@ -1140,7 +1144,7 @@ public final class GameServerDeploymentsServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1.GameServerDeployment>
         getGameServerDeployment(com.google.cloud.gaming.v1.GetGameServerDeploymentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetGameServerDeploymentMethod(), getCallOptions()), request);
     }
 
@@ -1154,7 +1158,7 @@ public final class GameServerDeploymentsServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createGameServerDeployment(
             com.google.cloud.gaming.v1.CreateGameServerDeploymentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateGameServerDeploymentMethod(), getCallOptions()), request);
     }
 
@@ -1168,7 +1172,7 @@ public final class GameServerDeploymentsServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteGameServerDeployment(
             com.google.cloud.gaming.v1.DeleteGameServerDeploymentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteGameServerDeploymentMethod(), getCallOptions()), request);
     }
 
@@ -1182,7 +1186,7 @@ public final class GameServerDeploymentsServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateGameServerDeployment(
             com.google.cloud.gaming.v1.UpdateGameServerDeploymentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateGameServerDeploymentMethod(), getCallOptions()), request);
     }
 
@@ -1197,7 +1201,7 @@ public final class GameServerDeploymentsServiceGrpc {
             com.google.cloud.gaming.v1.GameServerDeploymentRollout>
         getGameServerDeploymentRollout(
             com.google.cloud.gaming.v1.GetGameServerDeploymentRolloutRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetGameServerDeploymentRolloutMethod(), getCallOptions()),
           request);
     }
@@ -1217,7 +1221,7 @@ public final class GameServerDeploymentsServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateGameServerDeploymentRollout(
             com.google.cloud.gaming.v1.UpdateGameServerDeploymentRolloutRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateGameServerDeploymentRolloutMethod(), getCallOptions()),
           request);
     }
@@ -1234,7 +1238,7 @@ public final class GameServerDeploymentsServiceGrpc {
             com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutResponse>
         previewGameServerDeploymentRollout(
             com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPreviewGameServerDeploymentRolloutMethod(), getCallOptions()),
           request);
     }
@@ -1251,7 +1255,7 @@ public final class GameServerDeploymentsServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1.FetchDeploymentStateResponse>
         fetchDeploymentState(com.google.cloud.gaming.v1.FetchDeploymentStateRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFetchDeploymentStateMethod(), getCallOptions()), request);
     }
   }

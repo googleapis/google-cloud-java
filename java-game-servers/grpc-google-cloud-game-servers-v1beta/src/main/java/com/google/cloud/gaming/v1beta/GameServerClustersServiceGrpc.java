@@ -16,11 +16,6 @@
 package com.google.cloud.gaming.v1beta;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -524,7 +519,8 @@ public final class GameServerClustersServiceGrpc {
         com.google.cloud.gaming.v1beta.ListGameServerClustersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1beta.ListGameServerClustersResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListGameServerClustersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListGameServerClustersMethod(), responseObserver);
     }
 
     /**
@@ -538,7 +534,8 @@ public final class GameServerClustersServiceGrpc {
         com.google.cloud.gaming.v1beta.GetGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1beta.GameServerCluster>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetGameServerClusterMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetGameServerClusterMethod(), responseObserver);
     }
 
     /**
@@ -551,7 +548,8 @@ public final class GameServerClustersServiceGrpc {
     public void createGameServerCluster(
         com.google.cloud.gaming.v1beta.CreateGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateGameServerClusterMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateGameServerClusterMethod(), responseObserver);
     }
 
     /**
@@ -567,7 +565,8 @@ public final class GameServerClustersServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.gaming.v1beta.PreviewCreateGameServerClusterResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getPreviewCreateGameServerClusterMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPreviewCreateGameServerClusterMethod(), responseObserver);
     }
 
     /**
@@ -580,7 +579,8 @@ public final class GameServerClustersServiceGrpc {
     public void deleteGameServerCluster(
         com.google.cloud.gaming.v1beta.DeleteGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteGameServerClusterMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteGameServerClusterMethod(), responseObserver);
     }
 
     /**
@@ -595,7 +595,8 @@ public final class GameServerClustersServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.gaming.v1beta.PreviewDeleteGameServerClusterResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getPreviewDeleteGameServerClusterMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPreviewDeleteGameServerClusterMethod(), responseObserver);
     }
 
     /**
@@ -608,7 +609,8 @@ public final class GameServerClustersServiceGrpc {
     public void updateGameServerCluster(
         com.google.cloud.gaming.v1beta.UpdateGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateGameServerClusterMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateGameServerClusterMethod(), responseObserver);
     }
 
     /**
@@ -623,7 +625,8 @@ public final class GameServerClustersServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.gaming.v1beta.PreviewUpdateGameServerClusterResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getPreviewUpdateGameServerClusterMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPreviewUpdateGameServerClusterMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -631,53 +634,53 @@ public final class GameServerClustersServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListGameServerClustersMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1beta.ListGameServerClustersRequest,
                       com.google.cloud.gaming.v1beta.ListGameServerClustersResponse>(
                       this, METHODID_LIST_GAME_SERVER_CLUSTERS)))
           .addMethod(
               getGetGameServerClusterMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1beta.GetGameServerClusterRequest,
                       com.google.cloud.gaming.v1beta.GameServerCluster>(
                       this, METHODID_GET_GAME_SERVER_CLUSTER)))
           .addMethod(
               getCreateGameServerClusterMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1beta.CreateGameServerClusterRequest,
                       com.google.longrunning.Operation>(this, METHODID_CREATE_GAME_SERVER_CLUSTER)))
           .addMethod(
               getPreviewCreateGameServerClusterMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1beta.PreviewCreateGameServerClusterRequest,
                       com.google.cloud.gaming.v1beta.PreviewCreateGameServerClusterResponse>(
                       this, METHODID_PREVIEW_CREATE_GAME_SERVER_CLUSTER)))
           .addMethod(
               getDeleteGameServerClusterMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1beta.DeleteGameServerClusterRequest,
                       com.google.longrunning.Operation>(this, METHODID_DELETE_GAME_SERVER_CLUSTER)))
           .addMethod(
               getPreviewDeleteGameServerClusterMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1beta.PreviewDeleteGameServerClusterRequest,
                       com.google.cloud.gaming.v1beta.PreviewDeleteGameServerClusterResponse>(
                       this, METHODID_PREVIEW_DELETE_GAME_SERVER_CLUSTER)))
           .addMethod(
               getUpdateGameServerClusterMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1beta.UpdateGameServerClusterRequest,
                       com.google.longrunning.Operation>(this, METHODID_UPDATE_GAME_SERVER_CLUSTER)))
           .addMethod(
               getPreviewUpdateGameServerClusterMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gaming.v1beta.PreviewUpdateGameServerClusterRequest,
                       com.google.cloud.gaming.v1beta.PreviewUpdateGameServerClusterResponse>(
@@ -718,7 +721,7 @@ public final class GameServerClustersServiceGrpc {
         com.google.cloud.gaming.v1beta.ListGameServerClustersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1beta.ListGameServerClustersResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListGameServerClustersMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -735,7 +738,7 @@ public final class GameServerClustersServiceGrpc {
         com.google.cloud.gaming.v1beta.GetGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1beta.GameServerCluster>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetGameServerClusterMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -751,7 +754,7 @@ public final class GameServerClustersServiceGrpc {
     public void createGameServerCluster(
         com.google.cloud.gaming.v1beta.CreateGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateGameServerClusterMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -770,7 +773,7 @@ public final class GameServerClustersServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.gaming.v1beta.PreviewCreateGameServerClusterResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPreviewCreateGameServerClusterMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -786,7 +789,7 @@ public final class GameServerClustersServiceGrpc {
     public void deleteGameServerCluster(
         com.google.cloud.gaming.v1beta.DeleteGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteGameServerClusterMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -804,7 +807,7 @@ public final class GameServerClustersServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.gaming.v1beta.PreviewDeleteGameServerClusterResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPreviewDeleteGameServerClusterMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -820,7 +823,7 @@ public final class GameServerClustersServiceGrpc {
     public void updateGameServerCluster(
         com.google.cloud.gaming.v1beta.UpdateGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateGameServerClusterMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -838,7 +841,7 @@ public final class GameServerClustersServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.gaming.v1beta.PreviewUpdateGameServerClusterResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPreviewUpdateGameServerClusterMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -875,7 +878,7 @@ public final class GameServerClustersServiceGrpc {
      */
     public com.google.cloud.gaming.v1beta.ListGameServerClustersResponse listGameServerClusters(
         com.google.cloud.gaming.v1beta.ListGameServerClustersRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListGameServerClustersMethod(), getCallOptions(), request);
     }
 
@@ -888,7 +891,7 @@ public final class GameServerClustersServiceGrpc {
      */
     public com.google.cloud.gaming.v1beta.GameServerCluster getGameServerCluster(
         com.google.cloud.gaming.v1beta.GetGameServerClusterRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetGameServerClusterMethod(), getCallOptions(), request);
     }
 
@@ -901,7 +904,7 @@ public final class GameServerClustersServiceGrpc {
      */
     public com.google.longrunning.Operation createGameServerCluster(
         com.google.cloud.gaming.v1beta.CreateGameServerClusterRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateGameServerClusterMethod(), getCallOptions(), request);
     }
 
@@ -916,7 +919,7 @@ public final class GameServerClustersServiceGrpc {
     public com.google.cloud.gaming.v1beta.PreviewCreateGameServerClusterResponse
         previewCreateGameServerCluster(
             com.google.cloud.gaming.v1beta.PreviewCreateGameServerClusterRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPreviewCreateGameServerClusterMethod(), getCallOptions(), request);
     }
 
@@ -929,7 +932,7 @@ public final class GameServerClustersServiceGrpc {
      */
     public com.google.longrunning.Operation deleteGameServerCluster(
         com.google.cloud.gaming.v1beta.DeleteGameServerClusterRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteGameServerClusterMethod(), getCallOptions(), request);
     }
 
@@ -943,7 +946,7 @@ public final class GameServerClustersServiceGrpc {
     public com.google.cloud.gaming.v1beta.PreviewDeleteGameServerClusterResponse
         previewDeleteGameServerCluster(
             com.google.cloud.gaming.v1beta.PreviewDeleteGameServerClusterRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPreviewDeleteGameServerClusterMethod(), getCallOptions(), request);
     }
 
@@ -956,7 +959,7 @@ public final class GameServerClustersServiceGrpc {
      */
     public com.google.longrunning.Operation updateGameServerCluster(
         com.google.cloud.gaming.v1beta.UpdateGameServerClusterRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateGameServerClusterMethod(), getCallOptions(), request);
     }
 
@@ -970,7 +973,7 @@ public final class GameServerClustersServiceGrpc {
     public com.google.cloud.gaming.v1beta.PreviewUpdateGameServerClusterResponse
         previewUpdateGameServerCluster(
             com.google.cloud.gaming.v1beta.PreviewUpdateGameServerClusterRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPreviewUpdateGameServerClusterMethod(), getCallOptions(), request);
     }
   }
@@ -1007,7 +1010,7 @@ public final class GameServerClustersServiceGrpc {
             com.google.cloud.gaming.v1beta.ListGameServerClustersResponse>
         listGameServerClusters(
             com.google.cloud.gaming.v1beta.ListGameServerClustersRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListGameServerClustersMethod(), getCallOptions()), request);
     }
 
@@ -1021,7 +1024,7 @@ public final class GameServerClustersServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1beta.GameServerCluster>
         getGameServerCluster(com.google.cloud.gaming.v1beta.GetGameServerClusterRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetGameServerClusterMethod(), getCallOptions()), request);
     }
 
@@ -1035,7 +1038,7 @@ public final class GameServerClustersServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createGameServerCluster(
             com.google.cloud.gaming.v1beta.CreateGameServerClusterRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateGameServerClusterMethod(), getCallOptions()), request);
     }
 
@@ -1051,7 +1054,7 @@ public final class GameServerClustersServiceGrpc {
             com.google.cloud.gaming.v1beta.PreviewCreateGameServerClusterResponse>
         previewCreateGameServerCluster(
             com.google.cloud.gaming.v1beta.PreviewCreateGameServerClusterRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPreviewCreateGameServerClusterMethod(), getCallOptions()),
           request);
     }
@@ -1066,7 +1069,7 @@ public final class GameServerClustersServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteGameServerCluster(
             com.google.cloud.gaming.v1beta.DeleteGameServerClusterRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteGameServerClusterMethod(), getCallOptions()), request);
     }
 
@@ -1081,7 +1084,7 @@ public final class GameServerClustersServiceGrpc {
             com.google.cloud.gaming.v1beta.PreviewDeleteGameServerClusterResponse>
         previewDeleteGameServerCluster(
             com.google.cloud.gaming.v1beta.PreviewDeleteGameServerClusterRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPreviewDeleteGameServerClusterMethod(), getCallOptions()),
           request);
     }
@@ -1096,7 +1099,7 @@ public final class GameServerClustersServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateGameServerCluster(
             com.google.cloud.gaming.v1beta.UpdateGameServerClusterRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateGameServerClusterMethod(), getCallOptions()), request);
     }
 
@@ -1111,7 +1114,7 @@ public final class GameServerClustersServiceGrpc {
             com.google.cloud.gaming.v1beta.PreviewUpdateGameServerClusterResponse>
         previewUpdateGameServerCluster(
             com.google.cloud.gaming.v1beta.PreviewUpdateGameServerClusterRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPreviewUpdateGameServerClusterMethod(), getCallOptions()),
           request);
     }
