@@ -16,11 +16,6 @@
 package com.google.cloud.bigquery.connection.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -456,7 +451,8 @@ public final class ConnectionServiceGrpc {
         com.google.cloud.bigquery.connection.v1.CreateConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.connection.v1.Connection>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateConnectionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateConnectionMethod(), responseObserver);
     }
 
     /**
@@ -470,7 +466,8 @@ public final class ConnectionServiceGrpc {
         com.google.cloud.bigquery.connection.v1.GetConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.connection.v1.Connection>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetConnectionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetConnectionMethod(), responseObserver);
     }
 
     /**
@@ -484,7 +481,8 @@ public final class ConnectionServiceGrpc {
         com.google.cloud.bigquery.connection.v1.ListConnectionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.connection.v1.ListConnectionsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListConnectionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListConnectionsMethod(), responseObserver);
     }
 
     /**
@@ -499,7 +497,8 @@ public final class ConnectionServiceGrpc {
         com.google.cloud.bigquery.connection.v1.UpdateConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.connection.v1.Connection>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateConnectionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateConnectionMethod(), responseObserver);
     }
 
     /**
@@ -512,7 +511,8 @@ public final class ConnectionServiceGrpc {
     public void deleteConnection(
         com.google.cloud.bigquery.connection.v1.DeleteConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteConnectionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteConnectionMethod(), responseObserver);
     }
 
     /**
@@ -527,7 +527,8 @@ public final class ConnectionServiceGrpc {
     public void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetIamPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -542,7 +543,8 @@ public final class ConnectionServiceGrpc {
     public void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetIamPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -561,7 +563,8 @@ public final class ConnectionServiceGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getTestIamPermissionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getTestIamPermissionsMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -569,53 +572,53 @@ public final class ConnectionServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreateConnectionMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.connection.v1.CreateConnectionRequest,
                       com.google.cloud.bigquery.connection.v1.Connection>(
                       this, METHODID_CREATE_CONNECTION)))
           .addMethod(
               getGetConnectionMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.connection.v1.GetConnectionRequest,
                       com.google.cloud.bigquery.connection.v1.Connection>(
                       this, METHODID_GET_CONNECTION)))
           .addMethod(
               getListConnectionsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.connection.v1.ListConnectionsRequest,
                       com.google.cloud.bigquery.connection.v1.ListConnectionsResponse>(
                       this, METHODID_LIST_CONNECTIONS)))
           .addMethod(
               getUpdateConnectionMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.connection.v1.UpdateConnectionRequest,
                       com.google.cloud.bigquery.connection.v1.Connection>(
                       this, METHODID_UPDATE_CONNECTION)))
           .addMethod(
               getDeleteConnectionMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.bigquery.connection.v1.DeleteConnectionRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_CONNECTION)))
           .addMethod(
               getGetIamPolicyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
                       this, METHODID_GET_IAM_POLICY)))
           .addMethod(
               getSetIamPolicyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
                       this, METHODID_SET_IAM_POLICY)))
           .addMethod(
               getTestIamPermissionsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.TestIamPermissionsRequest,
                       com.google.iam.v1.TestIamPermissionsResponse>(
@@ -654,7 +657,7 @@ public final class ConnectionServiceGrpc {
         com.google.cloud.bigquery.connection.v1.CreateConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.connection.v1.Connection>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateConnectionMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -671,7 +674,7 @@ public final class ConnectionServiceGrpc {
         com.google.cloud.bigquery.connection.v1.GetConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.connection.v1.Connection>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetConnectionMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -688,7 +691,7 @@ public final class ConnectionServiceGrpc {
         com.google.cloud.bigquery.connection.v1.ListConnectionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.connection.v1.ListConnectionsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListConnectionsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -706,7 +709,7 @@ public final class ConnectionServiceGrpc {
         com.google.cloud.bigquery.connection.v1.UpdateConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.connection.v1.Connection>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateConnectionMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -722,7 +725,7 @@ public final class ConnectionServiceGrpc {
     public void deleteConnection(
         com.google.cloud.bigquery.connection.v1.DeleteConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteConnectionMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -740,7 +743,7 @@ public final class ConnectionServiceGrpc {
     public void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -758,7 +761,7 @@ public final class ConnectionServiceGrpc {
     public void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -780,7 +783,7 @@ public final class ConnectionServiceGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -816,7 +819,7 @@ public final class ConnectionServiceGrpc {
      */
     public com.google.cloud.bigquery.connection.v1.Connection createConnection(
         com.google.cloud.bigquery.connection.v1.CreateConnectionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -829,7 +832,8 @@ public final class ConnectionServiceGrpc {
      */
     public com.google.cloud.bigquery.connection.v1.Connection getConnection(
         com.google.cloud.bigquery.connection.v1.GetConnectionRequest request) {
-      return blockingUnaryCall(getChannel(), getGetConnectionMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConnectionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -841,7 +845,8 @@ public final class ConnectionServiceGrpc {
      */
     public com.google.cloud.bigquery.connection.v1.ListConnectionsResponse listConnections(
         com.google.cloud.bigquery.connection.v1.ListConnectionsRequest request) {
-      return blockingUnaryCall(getChannel(), getListConnectionsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConnectionsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -854,7 +859,7 @@ public final class ConnectionServiceGrpc {
      */
     public com.google.cloud.bigquery.connection.v1.Connection updateConnection(
         com.google.cloud.bigquery.connection.v1.UpdateConnectionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -867,7 +872,7 @@ public final class ConnectionServiceGrpc {
      */
     public com.google.protobuf.Empty deleteConnection(
         com.google.cloud.bigquery.connection.v1.DeleteConnectionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteConnectionMethod(), getCallOptions(), request);
     }
 
@@ -881,7 +886,8 @@ public final class ConnectionServiceGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return blockingUnaryCall(getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -894,7 +900,8 @@ public final class ConnectionServiceGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return blockingUnaryCall(getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -911,7 +918,7 @@ public final class ConnectionServiceGrpc {
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
   }
@@ -945,7 +952,7 @@ public final class ConnectionServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.connection.v1.Connection>
         createConnection(com.google.cloud.bigquery.connection.v1.CreateConnectionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateConnectionMethod(), getCallOptions()), request);
     }
 
@@ -959,7 +966,7 @@ public final class ConnectionServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.connection.v1.Connection>
         getConnection(com.google.cloud.bigquery.connection.v1.GetConnectionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetConnectionMethod(), getCallOptions()), request);
     }
 
@@ -973,7 +980,7 @@ public final class ConnectionServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.connection.v1.ListConnectionsResponse>
         listConnections(com.google.cloud.bigquery.connection.v1.ListConnectionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListConnectionsMethod(), getCallOptions()), request);
     }
 
@@ -988,7 +995,7 @@ public final class ConnectionServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.connection.v1.Connection>
         updateConnection(com.google.cloud.bigquery.connection.v1.UpdateConnectionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateConnectionMethod(), getCallOptions()), request);
     }
 
@@ -1001,7 +1008,7 @@ public final class ConnectionServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteConnection(com.google.cloud.bigquery.connection.v1.DeleteConnectionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteConnectionMethod(), getCallOptions()), request);
     }
 
@@ -1016,7 +1023,7 @@ public final class ConnectionServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()), request);
     }
 
@@ -1031,7 +1038,7 @@ public final class ConnectionServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()), request);
     }
 
@@ -1050,7 +1057,7 @@ public final class ConnectionServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.iam.v1.TestIamPermissionsResponse>
         testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
     }
   }
