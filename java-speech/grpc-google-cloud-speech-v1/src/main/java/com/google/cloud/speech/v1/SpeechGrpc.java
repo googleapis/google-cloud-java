@@ -16,14 +16,6 @@
 package com.google.cloud.speech.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -236,7 +228,7 @@ public final class SpeechGrpc {
         com.google.cloud.speech.v1.RecognizeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1.RecognizeResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getRecognizeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRecognizeMethod(), responseObserver);
     }
 
     /**
@@ -254,7 +246,8 @@ public final class SpeechGrpc {
     public void longRunningRecognize(
         com.google.cloud.speech.v1.LongRunningRecognizeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getLongRunningRecognizeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getLongRunningRecognizeMethod(), responseObserver);
     }
 
     /**
@@ -269,7 +262,8 @@ public final class SpeechGrpc {
         streamingRecognize(
             io.grpc.stub.StreamObserver<com.google.cloud.speech.v1.StreamingRecognizeResponse>
                 responseObserver) {
-      return asyncUnimplementedStreamingCall(getStreamingRecognizeMethod(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
+          getStreamingRecognizeMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -277,19 +271,19 @@ public final class SpeechGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getRecognizeMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.speech.v1.RecognizeRequest,
                       com.google.cloud.speech.v1.RecognizeResponse>(this, METHODID_RECOGNIZE)))
           .addMethod(
               getLongRunningRecognizeMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.speech.v1.LongRunningRecognizeRequest,
                       com.google.longrunning.Operation>(this, METHODID_LONG_RUNNING_RECOGNIZE)))
           .addMethod(
               getStreamingRecognizeMethod(),
-              asyncBidiStreamingCall(
+              io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
                   new MethodHandlers<
                       com.google.cloud.speech.v1.StreamingRecognizeRequest,
                       com.google.cloud.speech.v1.StreamingRecognizeResponse>(
@@ -327,7 +321,7 @@ public final class SpeechGrpc {
         com.google.cloud.speech.v1.RecognizeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1.RecognizeResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRecognizeMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -346,7 +340,7 @@ public final class SpeechGrpc {
     public void longRunningRecognize(
         com.google.cloud.speech.v1.LongRunningRecognizeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getLongRunningRecognizeMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -364,7 +358,7 @@ public final class SpeechGrpc {
         streamingRecognize(
             io.grpc.stub.StreamObserver<com.google.cloud.speech.v1.StreamingRecognizeResponse>
                 responseObserver) {
-      return asyncBidiStreamingCall(
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
           getChannel().newCall(getStreamingRecognizeMethod(), getCallOptions()), responseObserver);
     }
   }
@@ -397,7 +391,8 @@ public final class SpeechGrpc {
      */
     public com.google.cloud.speech.v1.RecognizeResponse recognize(
         com.google.cloud.speech.v1.RecognizeRequest request) {
-      return blockingUnaryCall(getChannel(), getRecognizeMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRecognizeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -414,7 +409,7 @@ public final class SpeechGrpc {
      */
     public com.google.longrunning.Operation longRunningRecognize(
         com.google.cloud.speech.v1.LongRunningRecognizeRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLongRunningRecognizeMethod(), getCallOptions(), request);
     }
   }
@@ -448,7 +443,8 @@ public final class SpeechGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.speech.v1.RecognizeResponse>
         recognize(com.google.cloud.speech.v1.RecognizeRequest request) {
-      return futureUnaryCall(getChannel().newCall(getRecognizeMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRecognizeMethod(), getCallOptions()), request);
     }
 
     /**
@@ -465,7 +461,7 @@ public final class SpeechGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         longRunningRecognize(com.google.cloud.speech.v1.LongRunningRecognizeRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getLongRunningRecognizeMethod(), getCallOptions()), request);
     }
   }

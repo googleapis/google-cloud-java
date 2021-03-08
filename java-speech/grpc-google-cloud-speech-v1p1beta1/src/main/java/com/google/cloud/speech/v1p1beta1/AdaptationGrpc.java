@@ -16,11 +16,6 @@
 package com.google.cloud.speech.v1p1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -553,7 +548,8 @@ public final class AdaptationGrpc {
     public void createPhraseSet(
         com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1p1beta1.PhraseSet> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreatePhraseSetMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreatePhraseSetMethod(), responseObserver);
     }
 
     /**
@@ -566,7 +562,8 @@ public final class AdaptationGrpc {
     public void getPhraseSet(
         com.google.cloud.speech.v1p1beta1.GetPhraseSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1p1beta1.PhraseSet> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetPhraseSetMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetPhraseSetMethod(), responseObserver);
     }
 
     /**
@@ -580,7 +577,8 @@ public final class AdaptationGrpc {
         com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1p1beta1.ListPhraseSetResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListPhraseSetMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListPhraseSetMethod(), responseObserver);
     }
 
     /**
@@ -593,7 +591,8 @@ public final class AdaptationGrpc {
     public void updatePhraseSet(
         com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1p1beta1.PhraseSet> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdatePhraseSetMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdatePhraseSetMethod(), responseObserver);
     }
 
     /**
@@ -606,7 +605,8 @@ public final class AdaptationGrpc {
     public void deletePhraseSet(
         com.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeletePhraseSetMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeletePhraseSetMethod(), responseObserver);
     }
 
     /**
@@ -620,7 +620,8 @@ public final class AdaptationGrpc {
         com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1p1beta1.CustomClass>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateCustomClassMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateCustomClassMethod(), responseObserver);
     }
 
     /**
@@ -634,7 +635,8 @@ public final class AdaptationGrpc {
         com.google.cloud.speech.v1p1beta1.GetCustomClassRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1p1beta1.CustomClass>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCustomClassMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetCustomClassMethod(), responseObserver);
     }
 
     /**
@@ -648,7 +650,8 @@ public final class AdaptationGrpc {
         com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1p1beta1.ListCustomClassesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListCustomClassesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListCustomClassesMethod(), responseObserver);
     }
 
     /**
@@ -662,7 +665,8 @@ public final class AdaptationGrpc {
         com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1p1beta1.CustomClass>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateCustomClassMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateCustomClassMethod(), responseObserver);
     }
 
     /**
@@ -675,7 +679,8 @@ public final class AdaptationGrpc {
     public void deleteCustomClass(
         com.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteCustomClassMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteCustomClassMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -683,68 +688,68 @@ public final class AdaptationGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreatePhraseSetMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest,
                       com.google.cloud.speech.v1p1beta1.PhraseSet>(
                       this, METHODID_CREATE_PHRASE_SET)))
           .addMethod(
               getGetPhraseSetMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.speech.v1p1beta1.GetPhraseSetRequest,
                       com.google.cloud.speech.v1p1beta1.PhraseSet>(this, METHODID_GET_PHRASE_SET)))
           .addMethod(
               getListPhraseSetMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest,
                       com.google.cloud.speech.v1p1beta1.ListPhraseSetResponse>(
                       this, METHODID_LIST_PHRASE_SET)))
           .addMethod(
               getUpdatePhraseSetMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest,
                       com.google.cloud.speech.v1p1beta1.PhraseSet>(
                       this, METHODID_UPDATE_PHRASE_SET)))
           .addMethod(
               getDeletePhraseSetMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_PHRASE_SET)))
           .addMethod(
               getCreateCustomClassMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest,
                       com.google.cloud.speech.v1p1beta1.CustomClass>(
                       this, METHODID_CREATE_CUSTOM_CLASS)))
           .addMethod(
               getGetCustomClassMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.speech.v1p1beta1.GetCustomClassRequest,
                       com.google.cloud.speech.v1p1beta1.CustomClass>(
                       this, METHODID_GET_CUSTOM_CLASS)))
           .addMethod(
               getListCustomClassesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest,
                       com.google.cloud.speech.v1p1beta1.ListCustomClassesResponse>(
                       this, METHODID_LIST_CUSTOM_CLASSES)))
           .addMethod(
               getUpdateCustomClassMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest,
                       com.google.cloud.speech.v1p1beta1.CustomClass>(
                       this, METHODID_UPDATE_CUSTOM_CLASS)))
           .addMethod(
               getDeleteCustomClassMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_CUSTOM_CLASS)))
@@ -781,7 +786,7 @@ public final class AdaptationGrpc {
     public void createPhraseSet(
         com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1p1beta1.PhraseSet> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreatePhraseSetMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -797,7 +802,7 @@ public final class AdaptationGrpc {
     public void getPhraseSet(
         com.google.cloud.speech.v1p1beta1.GetPhraseSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1p1beta1.PhraseSet> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPhraseSetMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -814,7 +819,7 @@ public final class AdaptationGrpc {
         com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1p1beta1.ListPhraseSetResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListPhraseSetMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -830,7 +835,7 @@ public final class AdaptationGrpc {
     public void updatePhraseSet(
         com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1p1beta1.PhraseSet> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdatePhraseSetMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -846,7 +851,7 @@ public final class AdaptationGrpc {
     public void deletePhraseSet(
         com.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeletePhraseSetMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -863,7 +868,7 @@ public final class AdaptationGrpc {
         com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1p1beta1.CustomClass>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateCustomClassMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -880,7 +885,7 @@ public final class AdaptationGrpc {
         com.google.cloud.speech.v1p1beta1.GetCustomClassRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1p1beta1.CustomClass>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCustomClassMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -897,7 +902,7 @@ public final class AdaptationGrpc {
         com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1p1beta1.ListCustomClassesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListCustomClassesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -914,7 +919,7 @@ public final class AdaptationGrpc {
         com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1p1beta1.CustomClass>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateCustomClassMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -930,7 +935,7 @@ public final class AdaptationGrpc {
     public void deleteCustomClass(
         com.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteCustomClassMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -967,7 +972,8 @@ public final class AdaptationGrpc {
      */
     public com.google.cloud.speech.v1p1beta1.PhraseSet createPhraseSet(
         com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest request) {
-      return blockingUnaryCall(getChannel(), getCreatePhraseSetMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePhraseSetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -979,7 +985,8 @@ public final class AdaptationGrpc {
      */
     public com.google.cloud.speech.v1p1beta1.PhraseSet getPhraseSet(
         com.google.cloud.speech.v1p1beta1.GetPhraseSetRequest request) {
-      return blockingUnaryCall(getChannel(), getGetPhraseSetMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPhraseSetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -991,7 +998,8 @@ public final class AdaptationGrpc {
      */
     public com.google.cloud.speech.v1p1beta1.ListPhraseSetResponse listPhraseSet(
         com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest request) {
-      return blockingUnaryCall(getChannel(), getListPhraseSetMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPhraseSetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1003,7 +1011,8 @@ public final class AdaptationGrpc {
      */
     public com.google.cloud.speech.v1p1beta1.PhraseSet updatePhraseSet(
         com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdatePhraseSetMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePhraseSetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1015,7 +1024,8 @@ public final class AdaptationGrpc {
      */
     public com.google.protobuf.Empty deletePhraseSet(
         com.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest request) {
-      return blockingUnaryCall(getChannel(), getDeletePhraseSetMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePhraseSetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1027,7 +1037,7 @@ public final class AdaptationGrpc {
      */
     public com.google.cloud.speech.v1p1beta1.CustomClass createCustomClass(
         com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateCustomClassMethod(), getCallOptions(), request);
     }
 
@@ -1040,7 +1050,8 @@ public final class AdaptationGrpc {
      */
     public com.google.cloud.speech.v1p1beta1.CustomClass getCustomClass(
         com.google.cloud.speech.v1p1beta1.GetCustomClassRequest request) {
-      return blockingUnaryCall(getChannel(), getGetCustomClassMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCustomClassMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1052,7 +1063,7 @@ public final class AdaptationGrpc {
      */
     public com.google.cloud.speech.v1p1beta1.ListCustomClassesResponse listCustomClasses(
         com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListCustomClassesMethod(), getCallOptions(), request);
     }
 
@@ -1065,7 +1076,7 @@ public final class AdaptationGrpc {
      */
     public com.google.cloud.speech.v1p1beta1.CustomClass updateCustomClass(
         com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateCustomClassMethod(), getCallOptions(), request);
     }
 
@@ -1078,7 +1089,7 @@ public final class AdaptationGrpc {
      */
     public com.google.protobuf.Empty deleteCustomClass(
         com.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteCustomClassMethod(), getCallOptions(), request);
     }
   }
@@ -1113,7 +1124,7 @@ public final class AdaptationGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.speech.v1p1beta1.PhraseSet>
         createPhraseSet(com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreatePhraseSetMethod(), getCallOptions()), request);
     }
 
@@ -1127,7 +1138,7 @@ public final class AdaptationGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.speech.v1p1beta1.PhraseSet>
         getPhraseSet(com.google.cloud.speech.v1p1beta1.GetPhraseSetRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetPhraseSetMethod(), getCallOptions()), request);
     }
 
@@ -1141,7 +1152,7 @@ public final class AdaptationGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.speech.v1p1beta1.ListPhraseSetResponse>
         listPhraseSet(com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListPhraseSetMethod(), getCallOptions()), request);
     }
 
@@ -1155,7 +1166,7 @@ public final class AdaptationGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.speech.v1p1beta1.PhraseSet>
         updatePhraseSet(com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdatePhraseSetMethod(), getCallOptions()), request);
     }
 
@@ -1168,7 +1179,7 @@ public final class AdaptationGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deletePhraseSet(com.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeletePhraseSetMethod(), getCallOptions()), request);
     }
 
@@ -1182,7 +1193,7 @@ public final class AdaptationGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.speech.v1p1beta1.CustomClass>
         createCustomClass(com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateCustomClassMethod(), getCallOptions()), request);
     }
 
@@ -1196,7 +1207,7 @@ public final class AdaptationGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.speech.v1p1beta1.CustomClass>
         getCustomClass(com.google.cloud.speech.v1p1beta1.GetCustomClassRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCustomClassMethod(), getCallOptions()), request);
     }
 
@@ -1210,7 +1221,7 @@ public final class AdaptationGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.speech.v1p1beta1.ListCustomClassesResponse>
         listCustomClasses(com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListCustomClassesMethod(), getCallOptions()), request);
     }
 
@@ -1224,7 +1235,7 @@ public final class AdaptationGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.speech.v1p1beta1.CustomClass>
         updateCustomClass(com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateCustomClassMethod(), getCallOptions()), request);
     }
 
@@ -1237,7 +1248,7 @@ public final class AdaptationGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteCustomClass(com.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteCustomClassMethod(), getCallOptions()), request);
     }
   }
