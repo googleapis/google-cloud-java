@@ -16,11 +16,6 @@
 package com.google.cloud.dataproc.v1beta2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -402,7 +397,7 @@ public final class JobControllerGrpc {
     public void submitJob(
         com.google.cloud.dataproc.v1beta2.SubmitJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1beta2.Job> responseObserver) {
-      asyncUnimplementedUnaryCall(getSubmitJobMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSubmitJobMethod(), responseObserver);
     }
 
     /**
@@ -415,7 +410,8 @@ public final class JobControllerGrpc {
     public void submitJobAsOperation(
         com.google.cloud.dataproc.v1beta2.SubmitJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getSubmitJobAsOperationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSubmitJobAsOperationMethod(), responseObserver);
     }
 
     /**
@@ -428,7 +424,7 @@ public final class JobControllerGrpc {
     public void getJob(
         com.google.cloud.dataproc.v1beta2.GetJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1beta2.Job> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetJobMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetJobMethod(), responseObserver);
     }
 
     /**
@@ -442,7 +438,7 @@ public final class JobControllerGrpc {
         com.google.cloud.dataproc.v1beta2.ListJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1beta2.ListJobsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListJobsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListJobsMethod(), responseObserver);
     }
 
     /**
@@ -455,7 +451,7 @@ public final class JobControllerGrpc {
     public void updateJob(
         com.google.cloud.dataproc.v1beta2.UpdateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1beta2.Job> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateJobMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateJobMethod(), responseObserver);
     }
 
     /**
@@ -472,7 +468,7 @@ public final class JobControllerGrpc {
     public void cancelJob(
         com.google.cloud.dataproc.v1beta2.CancelJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1beta2.Job> responseObserver) {
-      asyncUnimplementedUnaryCall(getCancelJobMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCancelJobMethod(), responseObserver);
     }
 
     /**
@@ -486,7 +482,7 @@ public final class JobControllerGrpc {
     public void deleteJob(
         com.google.cloud.dataproc.v1beta2.DeleteJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteJobMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteJobMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -494,44 +490,44 @@ public final class JobControllerGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getSubmitJobMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dataproc.v1beta2.SubmitJobRequest,
                       com.google.cloud.dataproc.v1beta2.Job>(this, METHODID_SUBMIT_JOB)))
           .addMethod(
               getSubmitJobAsOperationMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dataproc.v1beta2.SubmitJobRequest,
                       com.google.longrunning.Operation>(this, METHODID_SUBMIT_JOB_AS_OPERATION)))
           .addMethod(
               getGetJobMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dataproc.v1beta2.GetJobRequest,
                       com.google.cloud.dataproc.v1beta2.Job>(this, METHODID_GET_JOB)))
           .addMethod(
               getListJobsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dataproc.v1beta2.ListJobsRequest,
                       com.google.cloud.dataproc.v1beta2.ListJobsResponse>(
                       this, METHODID_LIST_JOBS)))
           .addMethod(
               getUpdateJobMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dataproc.v1beta2.UpdateJobRequest,
                       com.google.cloud.dataproc.v1beta2.Job>(this, METHODID_UPDATE_JOB)))
           .addMethod(
               getCancelJobMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dataproc.v1beta2.CancelJobRequest,
                       com.google.cloud.dataproc.v1beta2.Job>(this, METHODID_CANCEL_JOB)))
           .addMethod(
               getDeleteJobMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dataproc.v1beta2.DeleteJobRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_JOB)))
@@ -567,7 +563,7 @@ public final class JobControllerGrpc {
     public void submitJob(
         com.google.cloud.dataproc.v1beta2.SubmitJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1beta2.Job> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSubmitJobMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -581,7 +577,7 @@ public final class JobControllerGrpc {
     public void submitJobAsOperation(
         com.google.cloud.dataproc.v1beta2.SubmitJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSubmitJobAsOperationMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -597,7 +593,7 @@ public final class JobControllerGrpc {
     public void getJob(
         com.google.cloud.dataproc.v1beta2.GetJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1beta2.Job> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetJobMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -612,7 +608,7 @@ public final class JobControllerGrpc {
         com.google.cloud.dataproc.v1beta2.ListJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1beta2.ListJobsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListJobsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -626,7 +622,7 @@ public final class JobControllerGrpc {
     public void updateJob(
         com.google.cloud.dataproc.v1beta2.UpdateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1beta2.Job> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateJobMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -644,7 +640,7 @@ public final class JobControllerGrpc {
     public void cancelJob(
         com.google.cloud.dataproc.v1beta2.CancelJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1beta2.Job> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCancelJobMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -659,7 +655,7 @@ public final class JobControllerGrpc {
     public void deleteJob(
         com.google.cloud.dataproc.v1beta2.DeleteJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteJobMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -692,7 +688,8 @@ public final class JobControllerGrpc {
      */
     public com.google.cloud.dataproc.v1beta2.Job submitJob(
         com.google.cloud.dataproc.v1beta2.SubmitJobRequest request) {
-      return blockingUnaryCall(getChannel(), getSubmitJobMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSubmitJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -704,7 +701,7 @@ public final class JobControllerGrpc {
      */
     public com.google.longrunning.Operation submitJobAsOperation(
         com.google.cloud.dataproc.v1beta2.SubmitJobRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSubmitJobAsOperationMethod(), getCallOptions(), request);
     }
 
@@ -717,7 +714,8 @@ public final class JobControllerGrpc {
      */
     public com.google.cloud.dataproc.v1beta2.Job getJob(
         com.google.cloud.dataproc.v1beta2.GetJobRequest request) {
-      return blockingUnaryCall(getChannel(), getGetJobMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -729,7 +727,8 @@ public final class JobControllerGrpc {
      */
     public com.google.cloud.dataproc.v1beta2.ListJobsResponse listJobs(
         com.google.cloud.dataproc.v1beta2.ListJobsRequest request) {
-      return blockingUnaryCall(getChannel(), getListJobsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListJobsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -741,7 +740,8 @@ public final class JobControllerGrpc {
      */
     public com.google.cloud.dataproc.v1beta2.Job updateJob(
         com.google.cloud.dataproc.v1beta2.UpdateJobRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateJobMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -757,7 +757,8 @@ public final class JobControllerGrpc {
      */
     public com.google.cloud.dataproc.v1beta2.Job cancelJob(
         com.google.cloud.dataproc.v1beta2.CancelJobRequest request) {
-      return blockingUnaryCall(getChannel(), getCancelJobMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -770,7 +771,8 @@ public final class JobControllerGrpc {
      */
     public com.google.protobuf.Empty deleteJob(
         com.google.cloud.dataproc.v1beta2.DeleteJobRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteJobMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteJobMethod(), getCallOptions(), request);
     }
   }
 
@@ -802,7 +804,8 @@ public final class JobControllerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataproc.v1beta2.Job>
         submitJob(com.google.cloud.dataproc.v1beta2.SubmitJobRequest request) {
-      return futureUnaryCall(getChannel().newCall(getSubmitJobMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSubmitJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -814,7 +817,7 @@ public final class JobControllerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         submitJobAsOperation(com.google.cloud.dataproc.v1beta2.SubmitJobRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSubmitJobAsOperationMethod(), getCallOptions()), request);
     }
 
@@ -827,7 +830,8 @@ public final class JobControllerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataproc.v1beta2.Job>
         getJob(com.google.cloud.dataproc.v1beta2.GetJobRequest request) {
-      return futureUnaryCall(getChannel().newCall(getGetJobMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -840,7 +844,8 @@ public final class JobControllerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dataproc.v1beta2.ListJobsResponse>
         listJobs(com.google.cloud.dataproc.v1beta2.ListJobsRequest request) {
-      return futureUnaryCall(getChannel().newCall(getListJobsMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListJobsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -852,7 +857,8 @@ public final class JobControllerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataproc.v1beta2.Job>
         updateJob(com.google.cloud.dataproc.v1beta2.UpdateJobRequest request) {
-      return futureUnaryCall(getChannel().newCall(getUpdateJobMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -868,7 +874,8 @@ public final class JobControllerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataproc.v1beta2.Job>
         cancelJob(com.google.cloud.dataproc.v1beta2.CancelJobRequest request) {
-      return futureUnaryCall(getChannel().newCall(getCancelJobMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCancelJobMethod(), getCallOptions()), request);
     }
 
     /**
@@ -881,7 +888,8 @@ public final class JobControllerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteJob(
         com.google.cloud.dataproc.v1beta2.DeleteJobRequest request) {
-      return futureUnaryCall(getChannel().newCall(getDeleteJobMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteJobMethod(), getCallOptions()), request);
     }
   }
 
