@@ -16,11 +16,6 @@
 package com.google.cloud.assuredworkloads.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -336,7 +331,8 @@ public final class AssuredWorkloadsServiceGrpc {
     public void createWorkload(
         com.google.cloud.assuredworkloads.v1beta1.CreateWorkloadRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateWorkloadMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateWorkloadMethod(), responseObserver);
     }
 
     /**
@@ -353,7 +349,8 @@ public final class AssuredWorkloadsServiceGrpc {
         com.google.cloud.assuredworkloads.v1beta1.UpdateWorkloadRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.assuredworkloads.v1beta1.Workload>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateWorkloadMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateWorkloadMethod(), responseObserver);
     }
 
     /**
@@ -368,7 +365,8 @@ public final class AssuredWorkloadsServiceGrpc {
     public void deleteWorkload(
         com.google.cloud.assuredworkloads.v1beta1.DeleteWorkloadRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteWorkloadMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteWorkloadMethod(), responseObserver);
     }
 
     /**
@@ -382,7 +380,8 @@ public final class AssuredWorkloadsServiceGrpc {
         com.google.cloud.assuredworkloads.v1beta1.GetWorkloadRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.assuredworkloads.v1beta1.Workload>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetWorkloadMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetWorkloadMethod(), responseObserver);
     }
 
     /**
@@ -396,7 +395,8 @@ public final class AssuredWorkloadsServiceGrpc {
         com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListWorkloadsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListWorkloadsMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -404,33 +404,33 @@ public final class AssuredWorkloadsServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreateWorkloadMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.assuredworkloads.v1beta1.CreateWorkloadRequest,
                       com.google.longrunning.Operation>(this, METHODID_CREATE_WORKLOAD)))
           .addMethod(
               getUpdateWorkloadMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.assuredworkloads.v1beta1.UpdateWorkloadRequest,
                       com.google.cloud.assuredworkloads.v1beta1.Workload>(
                       this, METHODID_UPDATE_WORKLOAD)))
           .addMethod(
               getDeleteWorkloadMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.assuredworkloads.v1beta1.DeleteWorkloadRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_WORKLOAD)))
           .addMethod(
               getGetWorkloadMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.assuredworkloads.v1beta1.GetWorkloadRequest,
                       com.google.cloud.assuredworkloads.v1beta1.Workload>(
                       this, METHODID_GET_WORKLOAD)))
           .addMethod(
               getListWorkloadsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsRequest,
                       com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsResponse>(
@@ -468,7 +468,7 @@ public final class AssuredWorkloadsServiceGrpc {
     public void createWorkload(
         com.google.cloud.assuredworkloads.v1beta1.CreateWorkloadRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateWorkloadMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -488,7 +488,7 @@ public final class AssuredWorkloadsServiceGrpc {
         com.google.cloud.assuredworkloads.v1beta1.UpdateWorkloadRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.assuredworkloads.v1beta1.Workload>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateWorkloadMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -506,7 +506,7 @@ public final class AssuredWorkloadsServiceGrpc {
     public void deleteWorkload(
         com.google.cloud.assuredworkloads.v1beta1.DeleteWorkloadRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteWorkloadMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -523,7 +523,7 @@ public final class AssuredWorkloadsServiceGrpc {
         com.google.cloud.assuredworkloads.v1beta1.GetWorkloadRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.assuredworkloads.v1beta1.Workload>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetWorkloadMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -540,7 +540,7 @@ public final class AssuredWorkloadsServiceGrpc {
         com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListWorkloadsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -576,7 +576,8 @@ public final class AssuredWorkloadsServiceGrpc {
      */
     public com.google.longrunning.Operation createWorkload(
         com.google.cloud.assuredworkloads.v1beta1.CreateWorkloadRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateWorkloadMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateWorkloadMethod(), getCallOptions(), request);
     }
 
     /**
@@ -591,7 +592,8 @@ public final class AssuredWorkloadsServiceGrpc {
      */
     public com.google.cloud.assuredworkloads.v1beta1.Workload updateWorkload(
         com.google.cloud.assuredworkloads.v1beta1.UpdateWorkloadRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateWorkloadMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateWorkloadMethod(), getCallOptions(), request);
     }
 
     /**
@@ -605,7 +607,8 @@ public final class AssuredWorkloadsServiceGrpc {
      */
     public com.google.protobuf.Empty deleteWorkload(
         com.google.cloud.assuredworkloads.v1beta1.DeleteWorkloadRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteWorkloadMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteWorkloadMethod(), getCallOptions(), request);
     }
 
     /**
@@ -617,7 +620,8 @@ public final class AssuredWorkloadsServiceGrpc {
      */
     public com.google.cloud.assuredworkloads.v1beta1.Workload getWorkload(
         com.google.cloud.assuredworkloads.v1beta1.GetWorkloadRequest request) {
-      return blockingUnaryCall(getChannel(), getGetWorkloadMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetWorkloadMethod(), getCallOptions(), request);
     }
 
     /**
@@ -629,7 +633,8 @@ public final class AssuredWorkloadsServiceGrpc {
      */
     public com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsResponse listWorkloads(
         com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsRequest request) {
-      return blockingUnaryCall(getChannel(), getListWorkloadsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListWorkloadsMethod(), getCallOptions(), request);
     }
   }
 
@@ -662,7 +667,7 @@ public final class AssuredWorkloadsServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createWorkload(com.google.cloud.assuredworkloads.v1beta1.CreateWorkloadRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateWorkloadMethod(), getCallOptions()), request);
     }
 
@@ -679,7 +684,7 @@ public final class AssuredWorkloadsServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.assuredworkloads.v1beta1.Workload>
         updateWorkload(com.google.cloud.assuredworkloads.v1beta1.UpdateWorkloadRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateWorkloadMethod(), getCallOptions()), request);
     }
 
@@ -694,7 +699,7 @@ public final class AssuredWorkloadsServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteWorkload(com.google.cloud.assuredworkloads.v1beta1.DeleteWorkloadRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteWorkloadMethod(), getCallOptions()), request);
     }
 
@@ -708,7 +713,7 @@ public final class AssuredWorkloadsServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.assuredworkloads.v1beta1.Workload>
         getWorkload(com.google.cloud.assuredworkloads.v1beta1.GetWorkloadRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetWorkloadMethod(), getCallOptions()), request);
     }
 
@@ -722,7 +727,7 @@ public final class AssuredWorkloadsServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsResponse>
         listWorkloads(com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListWorkloadsMethod(), getCallOptions()), request);
     }
   }
