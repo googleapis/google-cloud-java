@@ -16,11 +16,6 @@
 package com.google.cloud.recommendationengine.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -333,7 +328,8 @@ public final class UserEventServiceGrpc {
         com.google.cloud.recommendationengine.v1beta1.WriteUserEventRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommendationengine.v1beta1.UserEvent>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getWriteUserEventMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getWriteUserEventMethod(), responseObserver);
     }
 
     /**
@@ -349,7 +345,8 @@ public final class UserEventServiceGrpc {
     public void collectUserEvent(
         com.google.cloud.recommendationengine.v1beta1.CollectUserEventRequest request,
         io.grpc.stub.StreamObserver<com.google.api.HttpBody> responseObserver) {
-      asyncUnimplementedUnaryCall(getCollectUserEventMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCollectUserEventMethod(), responseObserver);
     }
 
     /**
@@ -364,7 +361,8 @@ public final class UserEventServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.recommendationengine.v1beta1.ListUserEventsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListUserEventsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListUserEventsMethod(), responseObserver);
     }
 
     /**
@@ -380,7 +378,8 @@ public final class UserEventServiceGrpc {
     public void purgeUserEvents(
         com.google.cloud.recommendationengine.v1beta1.PurgeUserEventsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getPurgeUserEventsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPurgeUserEventsMethod(), responseObserver);
     }
 
     /**
@@ -398,7 +397,8 @@ public final class UserEventServiceGrpc {
     public void importUserEvents(
         com.google.cloud.recommendationengine.v1beta1.ImportUserEventsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getImportUserEventsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getImportUserEventsMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -406,33 +406,33 @@ public final class UserEventServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getWriteUserEventMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.recommendationengine.v1beta1.WriteUserEventRequest,
                       com.google.cloud.recommendationengine.v1beta1.UserEvent>(
                       this, METHODID_WRITE_USER_EVENT)))
           .addMethod(
               getCollectUserEventMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.recommendationengine.v1beta1.CollectUserEventRequest,
                       com.google.api.HttpBody>(this, METHODID_COLLECT_USER_EVENT)))
           .addMethod(
               getListUserEventsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.recommendationengine.v1beta1.ListUserEventsRequest,
                       com.google.cloud.recommendationengine.v1beta1.ListUserEventsResponse>(
                       this, METHODID_LIST_USER_EVENTS)))
           .addMethod(
               getPurgeUserEventsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.recommendationengine.v1beta1.PurgeUserEventsRequest,
                       com.google.longrunning.Operation>(this, METHODID_PURGE_USER_EVENTS)))
           .addMethod(
               getImportUserEventsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.recommendationengine.v1beta1.ImportUserEventsRequest,
                       com.google.longrunning.Operation>(this, METHODID_IMPORT_USER_EVENTS)))
@@ -469,7 +469,7 @@ public final class UserEventServiceGrpc {
         com.google.cloud.recommendationengine.v1beta1.WriteUserEventRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommendationengine.v1beta1.UserEvent>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getWriteUserEventMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -488,7 +488,7 @@ public final class UserEventServiceGrpc {
     public void collectUserEvent(
         com.google.cloud.recommendationengine.v1beta1.CollectUserEventRequest request,
         io.grpc.stub.StreamObserver<com.google.api.HttpBody> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCollectUserEventMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -506,7 +506,7 @@ public final class UserEventServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.recommendationengine.v1beta1.ListUserEventsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListUserEventsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -525,7 +525,7 @@ public final class UserEventServiceGrpc {
     public void purgeUserEvents(
         com.google.cloud.recommendationengine.v1beta1.PurgeUserEventsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPurgeUserEventsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -546,7 +546,7 @@ public final class UserEventServiceGrpc {
     public void importUserEvents(
         com.google.cloud.recommendationengine.v1beta1.ImportUserEventsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getImportUserEventsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -581,7 +581,8 @@ public final class UserEventServiceGrpc {
      */
     public com.google.cloud.recommendationengine.v1beta1.UserEvent writeUserEvent(
         com.google.cloud.recommendationengine.v1beta1.WriteUserEventRequest request) {
-      return blockingUnaryCall(getChannel(), getWriteUserEventMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getWriteUserEventMethod(), getCallOptions(), request);
     }
 
     /**
@@ -596,7 +597,7 @@ public final class UserEventServiceGrpc {
      */
     public com.google.api.HttpBody collectUserEvent(
         com.google.cloud.recommendationengine.v1beta1.CollectUserEventRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCollectUserEventMethod(), getCallOptions(), request);
     }
 
@@ -609,7 +610,8 @@ public final class UserEventServiceGrpc {
      */
     public com.google.cloud.recommendationengine.v1beta1.ListUserEventsResponse listUserEvents(
         com.google.cloud.recommendationengine.v1beta1.ListUserEventsRequest request) {
-      return blockingUnaryCall(getChannel(), getListUserEventsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListUserEventsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -624,7 +626,8 @@ public final class UserEventServiceGrpc {
      */
     public com.google.longrunning.Operation purgeUserEvents(
         com.google.cloud.recommendationengine.v1beta1.PurgeUserEventsRequest request) {
-      return blockingUnaryCall(getChannel(), getPurgeUserEventsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPurgeUserEventsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -641,7 +644,7 @@ public final class UserEventServiceGrpc {
      */
     public com.google.longrunning.Operation importUserEvents(
         com.google.cloud.recommendationengine.v1beta1.ImportUserEventsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getImportUserEventsMethod(), getCallOptions(), request);
     }
   }
@@ -676,7 +679,7 @@ public final class UserEventServiceGrpc {
             com.google.cloud.recommendationengine.v1beta1.UserEvent>
         writeUserEvent(
             com.google.cloud.recommendationengine.v1beta1.WriteUserEventRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getWriteUserEventMethod(), getCallOptions()), request);
     }
 
@@ -693,7 +696,7 @@ public final class UserEventServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.api.HttpBody>
         collectUserEvent(
             com.google.cloud.recommendationengine.v1beta1.CollectUserEventRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCollectUserEventMethod(), getCallOptions()), request);
     }
 
@@ -708,7 +711,7 @@ public final class UserEventServiceGrpc {
             com.google.cloud.recommendationengine.v1beta1.ListUserEventsResponse>
         listUserEvents(
             com.google.cloud.recommendationengine.v1beta1.ListUserEventsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListUserEventsMethod(), getCallOptions()), request);
     }
 
@@ -725,7 +728,7 @@ public final class UserEventServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         purgeUserEvents(
             com.google.cloud.recommendationengine.v1beta1.PurgeUserEventsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPurgeUserEventsMethod(), getCallOptions()), request);
     }
 
@@ -744,7 +747,7 @@ public final class UserEventServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         importUserEvents(
             com.google.cloud.recommendationengine.v1beta1.ImportUserEventsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getImportUserEventsMethod(), getCallOptions()), request);
     }
   }

@@ -16,11 +16,6 @@
 package com.google.cloud.recommendationengine.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -286,7 +281,8 @@ public final class PredictionApiKeyRegistryGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreatePredictionApiKeyRegistrationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreatePredictionApiKeyRegistrationMethod(), responseObserver);
     }
 
     /**
@@ -303,7 +299,8 @@ public final class PredictionApiKeyRegistryGrpc {
                 com.google.cloud.recommendationengine.v1beta1
                     .ListPredictionApiKeyRegistrationsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListPredictionApiKeyRegistrationsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListPredictionApiKeyRegistrationsMethod(), responseObserver);
     }
 
     /**
@@ -317,7 +314,8 @@ public final class PredictionApiKeyRegistryGrpc {
         com.google.cloud.recommendationengine.v1beta1.DeletePredictionApiKeyRegistrationRequest
             request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeletePredictionApiKeyRegistrationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeletePredictionApiKeyRegistrationMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -325,7 +323,7 @@ public final class PredictionApiKeyRegistryGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreatePredictionApiKeyRegistrationMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.recommendationengine.v1beta1
                           .CreatePredictionApiKeyRegistrationRequest,
@@ -333,7 +331,7 @@ public final class PredictionApiKeyRegistryGrpc {
                       this, METHODID_CREATE_PREDICTION_API_KEY_REGISTRATION)))
           .addMethod(
               getListPredictionApiKeyRegistrationsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.recommendationengine.v1beta1
                           .ListPredictionApiKeyRegistrationsRequest,
@@ -342,7 +340,7 @@ public final class PredictionApiKeyRegistryGrpc {
                       this, METHODID_LIST_PREDICTION_API_KEY_REGISTRATIONS)))
           .addMethod(
               getDeletePredictionApiKeyRegistrationMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.recommendationengine.v1beta1
                           .DeletePredictionApiKeyRegistrationRequest,
@@ -388,7 +386,7 @@ public final class PredictionApiKeyRegistryGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreatePredictionApiKeyRegistrationMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -408,7 +406,7 @@ public final class PredictionApiKeyRegistryGrpc {
                 com.google.cloud.recommendationengine.v1beta1
                     .ListPredictionApiKeyRegistrationsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListPredictionApiKeyRegistrationsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -425,7 +423,7 @@ public final class PredictionApiKeyRegistryGrpc {
         com.google.cloud.recommendationengine.v1beta1.DeletePredictionApiKeyRegistrationRequest
             request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeletePredictionApiKeyRegistrationMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -467,7 +465,7 @@ public final class PredictionApiKeyRegistryGrpc {
         createPredictionApiKeyRegistration(
             com.google.cloud.recommendationengine.v1beta1.CreatePredictionApiKeyRegistrationRequest
                 request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreatePredictionApiKeyRegistrationMethod(), getCallOptions(), request);
     }
 
@@ -482,7 +480,7 @@ public final class PredictionApiKeyRegistryGrpc {
         listPredictionApiKeyRegistrations(
             com.google.cloud.recommendationengine.v1beta1.ListPredictionApiKeyRegistrationsRequest
                 request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListPredictionApiKeyRegistrationsMethod(), getCallOptions(), request);
     }
 
@@ -496,7 +494,7 @@ public final class PredictionApiKeyRegistryGrpc {
     public com.google.protobuf.Empty deletePredictionApiKeyRegistration(
         com.google.cloud.recommendationengine.v1beta1.DeletePredictionApiKeyRegistrationRequest
             request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeletePredictionApiKeyRegistrationMethod(), getCallOptions(), request);
     }
   }
@@ -537,7 +535,7 @@ public final class PredictionApiKeyRegistryGrpc {
         createPredictionApiKeyRegistration(
             com.google.cloud.recommendationengine.v1beta1.CreatePredictionApiKeyRegistrationRequest
                 request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreatePredictionApiKeyRegistrationMethod(), getCallOptions()),
           request);
     }
@@ -554,7 +552,7 @@ public final class PredictionApiKeyRegistryGrpc {
         listPredictionApiKeyRegistrations(
             com.google.cloud.recommendationengine.v1beta1.ListPredictionApiKeyRegistrationsRequest
                 request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListPredictionApiKeyRegistrationsMethod(), getCallOptions()),
           request);
     }
@@ -570,7 +568,7 @@ public final class PredictionApiKeyRegistryGrpc {
         deletePredictionApiKeyRegistration(
             com.google.cloud.recommendationengine.v1beta1.DeletePredictionApiKeyRegistrationRequest
                 request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeletePredictionApiKeyRegistrationMethod(), getCallOptions()),
           request);
     }

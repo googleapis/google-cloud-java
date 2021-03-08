@@ -16,11 +16,6 @@
 package com.google.cloud.recommendationengine.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -382,7 +377,8 @@ public final class CatalogServiceGrpc {
         com.google.cloud.recommendationengine.v1beta1.CreateCatalogItemRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommendationengine.v1beta1.CatalogItem>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateCatalogItemMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateCatalogItemMethod(), responseObserver);
     }
 
     /**
@@ -396,7 +392,8 @@ public final class CatalogServiceGrpc {
         com.google.cloud.recommendationengine.v1beta1.GetCatalogItemRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommendationengine.v1beta1.CatalogItem>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetCatalogItemMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetCatalogItemMethod(), responseObserver);
     }
 
     /**
@@ -411,7 +408,8 @@ public final class CatalogServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.recommendationengine.v1beta1.ListCatalogItemsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListCatalogItemsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListCatalogItemsMethod(), responseObserver);
     }
 
     /**
@@ -426,7 +424,8 @@ public final class CatalogServiceGrpc {
         com.google.cloud.recommendationengine.v1beta1.UpdateCatalogItemRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommendationengine.v1beta1.CatalogItem>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateCatalogItemMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateCatalogItemMethod(), responseObserver);
     }
 
     /**
@@ -439,7 +438,8 @@ public final class CatalogServiceGrpc {
     public void deleteCatalogItem(
         com.google.cloud.recommendationengine.v1beta1.DeleteCatalogItemRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteCatalogItemMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteCatalogItemMethod(), responseObserver);
     }
 
     /**
@@ -456,7 +456,8 @@ public final class CatalogServiceGrpc {
     public void importCatalogItems(
         com.google.cloud.recommendationengine.v1beta1.ImportCatalogItemsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getImportCatalogItemsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getImportCatalogItemsMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -464,41 +465,41 @@ public final class CatalogServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreateCatalogItemMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.recommendationengine.v1beta1.CreateCatalogItemRequest,
                       com.google.cloud.recommendationengine.v1beta1.CatalogItem>(
                       this, METHODID_CREATE_CATALOG_ITEM)))
           .addMethod(
               getGetCatalogItemMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.recommendationengine.v1beta1.GetCatalogItemRequest,
                       com.google.cloud.recommendationengine.v1beta1.CatalogItem>(
                       this, METHODID_GET_CATALOG_ITEM)))
           .addMethod(
               getListCatalogItemsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.recommendationengine.v1beta1.ListCatalogItemsRequest,
                       com.google.cloud.recommendationengine.v1beta1.ListCatalogItemsResponse>(
                       this, METHODID_LIST_CATALOG_ITEMS)))
           .addMethod(
               getUpdateCatalogItemMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.recommendationengine.v1beta1.UpdateCatalogItemRequest,
                       com.google.cloud.recommendationengine.v1beta1.CatalogItem>(
                       this, METHODID_UPDATE_CATALOG_ITEM)))
           .addMethod(
               getDeleteCatalogItemMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.recommendationengine.v1beta1.DeleteCatalogItemRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_CATALOG_ITEM)))
           .addMethod(
               getImportCatalogItemsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.recommendationengine.v1beta1.ImportCatalogItemsRequest,
                       com.google.longrunning.Operation>(this, METHODID_IMPORT_CATALOG_ITEMS)))
@@ -535,7 +536,7 @@ public final class CatalogServiceGrpc {
         com.google.cloud.recommendationengine.v1beta1.CreateCatalogItemRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommendationengine.v1beta1.CatalogItem>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateCatalogItemMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -552,7 +553,7 @@ public final class CatalogServiceGrpc {
         com.google.cloud.recommendationengine.v1beta1.GetCatalogItemRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommendationengine.v1beta1.CatalogItem>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCatalogItemMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -570,7 +571,7 @@ public final class CatalogServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.recommendationengine.v1beta1.ListCatalogItemsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListCatalogItemsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -588,7 +589,7 @@ public final class CatalogServiceGrpc {
         com.google.cloud.recommendationengine.v1beta1.UpdateCatalogItemRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommendationengine.v1beta1.CatalogItem>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateCatalogItemMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -604,7 +605,7 @@ public final class CatalogServiceGrpc {
     public void deleteCatalogItem(
         com.google.cloud.recommendationengine.v1beta1.DeleteCatalogItemRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteCatalogItemMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -624,7 +625,7 @@ public final class CatalogServiceGrpc {
     public void importCatalogItems(
         com.google.cloud.recommendationengine.v1beta1.ImportCatalogItemsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getImportCatalogItemsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -659,7 +660,7 @@ public final class CatalogServiceGrpc {
      */
     public com.google.cloud.recommendationengine.v1beta1.CatalogItem createCatalogItem(
         com.google.cloud.recommendationengine.v1beta1.CreateCatalogItemRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateCatalogItemMethod(), getCallOptions(), request);
     }
 
@@ -672,7 +673,8 @@ public final class CatalogServiceGrpc {
      */
     public com.google.cloud.recommendationengine.v1beta1.CatalogItem getCatalogItem(
         com.google.cloud.recommendationengine.v1beta1.GetCatalogItemRequest request) {
-      return blockingUnaryCall(getChannel(), getGetCatalogItemMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCatalogItemMethod(), getCallOptions(), request);
     }
 
     /**
@@ -684,7 +686,7 @@ public final class CatalogServiceGrpc {
      */
     public com.google.cloud.recommendationengine.v1beta1.ListCatalogItemsResponse listCatalogItems(
         com.google.cloud.recommendationengine.v1beta1.ListCatalogItemsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListCatalogItemsMethod(), getCallOptions(), request);
     }
 
@@ -698,7 +700,7 @@ public final class CatalogServiceGrpc {
      */
     public com.google.cloud.recommendationengine.v1beta1.CatalogItem updateCatalogItem(
         com.google.cloud.recommendationengine.v1beta1.UpdateCatalogItemRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateCatalogItemMethod(), getCallOptions(), request);
     }
 
@@ -711,7 +713,7 @@ public final class CatalogServiceGrpc {
      */
     public com.google.protobuf.Empty deleteCatalogItem(
         com.google.cloud.recommendationengine.v1beta1.DeleteCatalogItemRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteCatalogItemMethod(), getCallOptions(), request);
     }
 
@@ -728,7 +730,7 @@ public final class CatalogServiceGrpc {
      */
     public com.google.longrunning.Operation importCatalogItems(
         com.google.cloud.recommendationengine.v1beta1.ImportCatalogItemsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getImportCatalogItemsMethod(), getCallOptions(), request);
     }
   }
@@ -763,7 +765,7 @@ public final class CatalogServiceGrpc {
             com.google.cloud.recommendationengine.v1beta1.CatalogItem>
         createCatalogItem(
             com.google.cloud.recommendationengine.v1beta1.CreateCatalogItemRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateCatalogItemMethod(), getCallOptions()), request);
     }
 
@@ -778,7 +780,7 @@ public final class CatalogServiceGrpc {
             com.google.cloud.recommendationengine.v1beta1.CatalogItem>
         getCatalogItem(
             com.google.cloud.recommendationengine.v1beta1.GetCatalogItemRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCatalogItemMethod(), getCallOptions()), request);
     }
 
@@ -793,7 +795,7 @@ public final class CatalogServiceGrpc {
             com.google.cloud.recommendationengine.v1beta1.ListCatalogItemsResponse>
         listCatalogItems(
             com.google.cloud.recommendationengine.v1beta1.ListCatalogItemsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListCatalogItemsMethod(), getCallOptions()), request);
     }
 
@@ -809,7 +811,7 @@ public final class CatalogServiceGrpc {
             com.google.cloud.recommendationengine.v1beta1.CatalogItem>
         updateCatalogItem(
             com.google.cloud.recommendationengine.v1beta1.UpdateCatalogItemRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateCatalogItemMethod(), getCallOptions()), request);
     }
 
@@ -823,7 +825,7 @@ public final class CatalogServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteCatalogItem(
             com.google.cloud.recommendationengine.v1beta1.DeleteCatalogItemRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteCatalogItemMethod(), getCallOptions()), request);
     }
 
@@ -841,7 +843,7 @@ public final class CatalogServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         importCatalogItems(
             com.google.cloud.recommendationengine.v1beta1.ImportCatalogItemsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getImportCatalogItemsMethod(), getCallOptions()), request);
     }
   }
