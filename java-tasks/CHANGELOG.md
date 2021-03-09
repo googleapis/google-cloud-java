@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.32.0](https://www.github.com/googleapis/java-tasks/compare/v1.31.1...v1.32.0) (2021-03-09)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#377](https://www.github.com/googleapis/java-tasks/issues/377)) ([5c71783](https://www.github.com/googleapis/java-tasks/commit/5c71783e654d8b0a6c09182909a3113fab786b5b))
+
 ### [1.31.1](https://www.github.com/googleapis/java-tasks/compare/v1.31.0...v1.31.1) (2021-02-25)
 
 
