@@ -85,7 +85,10 @@ public class StreamWriterV2Test {
   }
 
   private StreamWriterV2 getTestStreamWriterV2() throws IOException {
-    return StreamWriterV2.newBuilder(TEST_STREAM, client).setTraceId(TEST_TRACE_ID).build();
+    return StreamWriterV2.newBuilder(TEST_STREAM, client)
+        .setWriterSchema(createProtoSchema())
+        .setTraceId(TEST_TRACE_ID)
+        .build();
   }
 
   private ProtoSchema createProtoSchema() {
@@ -112,19 +115,6 @@ public class StreamWriterV2Test {
     return rowsBuilder.build();
   }
 
-  private AppendRowsRequest createAppendRequest(String[] messages, long offset) {
-    AppendRowsRequest.Builder requestBuilder = AppendRowsRequest.newBuilder();
-    AppendRowsRequest.ProtoData.Builder dataBuilder = AppendRowsRequest.ProtoData.newBuilder();
-    dataBuilder.setWriterSchema(createProtoSchema());
-    if (offset > 0) {
-      requestBuilder.setOffset(Int64Value.of(offset));
-    }
-    return requestBuilder
-        .setProtoRows(dataBuilder.setRows(createProtoRows(messages)).build())
-        .setWriteStream(TEST_STREAM)
-        .build();
-  }
-
   private AppendRowsResponse createAppendResponse(long offset) {
     return AppendRowsResponse.newBuilder()
         .setAppendResult(
@@ -139,7 +129,7 @@ public class StreamWriterV2Test {
   }
 
   private ApiFuture<AppendRowsResponse> sendTestMessage(StreamWriterV2 writer, String[] messages) {
-    return writer.append(createAppendRequest(messages, -1));
+    return writer.append(createProtoRows(messages), -1);
   }
 
   private static <T extends Throwable> T assertFutureException(
@@ -201,6 +191,7 @@ public class StreamWriterV2Test {
         StreamWriterV2.newBuilder(TEST_STREAM)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .setChannelProvider(serviceHelper.createChannelProvider())
+            .setWriterSchema(createProtoSchema())
             .build();
 
     testBigQueryWrite.addResponse(createAppendResponse(0));
@@ -210,12 +201,8 @@ public class StreamWriterV2Test {
   }
 
   @Test
-  public void testAppendWithRowsSuccess() throws Exception {
-    StreamWriterV2 writer =
-        StreamWriterV2.newBuilder(TEST_STREAM, client)
-            .setWriterSchema(createProtoSchema())
-            .setTraceId(TEST_TRACE_ID)
-            .build();
+  public void testAppendSuccess() throws Exception {
+    StreamWriterV2 writer = getTestStreamWriterV2();
 
     long appendCount = 100;
     for (int i = 0; i < appendCount; i++) {
@@ -237,38 +224,14 @@ public class StreamWriterV2Test {
   }
 
   @Test
-  public void testAppendWithMessageSuccess() throws Exception {
-    StreamWriterV2 writer = getTestStreamWriterV2();
-
-    long appendCount = 1000;
-    for (int i = 0; i < appendCount; i++) {
-      testBigQueryWrite.addResponse(createAppendResponse(i));
-    }
-
-    List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
-    for (int i = 0; i < appendCount; i++) {
-      futures.add(writer.append(createAppendRequest(new String[] {String.valueOf(i)}, i)));
-    }
-
-    for (int i = 0; i < appendCount; i++) {
-      assertEquals(i, futures.get(i).get().getAppendResult().getOffset().getValue());
-    }
-
-    verifyAppendRequests(appendCount);
-
-    writer.close();
-  }
-
-  @Test
-  public void testAppendWithRowsNoSchema() throws Exception {
-    final StreamWriterV2 writer = getTestStreamWriterV2();
+  public void testNoSchema() throws Exception {
     StatusRuntimeException ex =
         assertThrows(
             StatusRuntimeException.class,
             new ThrowingRunnable() {
               @Override
               public void run() throws Throwable {
-                writer.append(createProtoRows(new String[] {"A"}), -1);
+                StreamWriterV2.newBuilder(TEST_STREAM, client).build();
               }
             });
     assertEquals(ex.getStatus().getCode(), Status.INVALID_ARGUMENT.getCode());
@@ -455,7 +418,10 @@ public class StreamWriterV2Test {
   @Test
   public void testZeroMaxInflightRequests() throws Exception {
     StreamWriterV2 writer =
-        StreamWriterV2.newBuilder(TEST_STREAM, client).setMaxInflightRequests(0).build();
+        StreamWriterV2.newBuilder(TEST_STREAM, client)
+            .setWriterSchema(createProtoSchema())
+            .setMaxInflightRequests(0)
+            .build();
     testBigQueryWrite.addResponse(createAppendResponse(0));
     verifyAppendIsBlocked(writer);
     writer.close();
@@ -464,7 +430,10 @@ public class StreamWriterV2Test {
   @Test
   public void testZeroMaxInflightBytes() throws Exception {
     StreamWriterV2 writer =
-        StreamWriterV2.newBuilder(TEST_STREAM, client).setMaxInflightBytes(0).build();
+        StreamWriterV2.newBuilder(TEST_STREAM, client)
+            .setWriterSchema(createProtoSchema())
+            .setMaxInflightBytes(0)
+            .build();
     testBigQueryWrite.addResponse(createAppendResponse(0));
     verifyAppendIsBlocked(writer);
     writer.close();
@@ -473,7 +442,10 @@ public class StreamWriterV2Test {
   @Test
   public void testOneMaxInflightRequests() throws Exception {
     StreamWriterV2 writer =
-        StreamWriterV2.newBuilder(TEST_STREAM, client).setMaxInflightRequests(1).build();
+        StreamWriterV2.newBuilder(TEST_STREAM, client)
+            .setWriterSchema(createProtoSchema())
+            .setMaxInflightRequests(1)
+            .build();
     // Server will sleep 1 second before every response.
     testBigQueryWrite.setResponseSleep(Duration.ofSeconds(1));
     testBigQueryWrite.addResponse(createAppendResponse(0));
@@ -489,7 +461,10 @@ public class StreamWriterV2Test {
   @Test
   public void testAppendsWithTinyMaxInflightBytes() throws Exception {
     StreamWriterV2 writer =
-        StreamWriterV2.newBuilder(TEST_STREAM, client).setMaxInflightBytes(1).build();
+        StreamWriterV2.newBuilder(TEST_STREAM, client)
+            .setWriterSchema(createProtoSchema())
+            .setMaxInflightBytes(1)
+            .build();
     // Server will sleep 100ms before every response.
     testBigQueryWrite.setResponseSleep(Duration.ofMillis(100));
     long appendCount = 10;
@@ -500,7 +475,7 @@ public class StreamWriterV2Test {
     List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
     long appendStartTimeMs = System.currentTimeMillis();
     for (int i = 0; i < appendCount; i++) {
-      futures.add(writer.append(createAppendRequest(new String[] {String.valueOf(i)}, i)));
+      futures.add(writer.append(createProtoRows(new String[] {String.valueOf(i)}), i));
     }
     long appendElapsedMs = System.currentTimeMillis() - appendStartTimeMs;
     assertTrue(appendElapsedMs >= 1000);

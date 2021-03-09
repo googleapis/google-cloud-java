@@ -20,7 +20,6 @@ package com.example.bigquerystorage;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
-import com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest;
 import com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse;
 import com.google.cloud.bigquery.storage.v1beta2.BQTableSchemaToProtoDescriptor;
 import com.google.cloud.bigquery.storage.v1beta2.BigQueryWriteClient;
@@ -35,7 +34,6 @@ import com.google.cloud.bigquery.storage.v1beta2.WriteStream;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Descriptors.Descriptor;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
-import com.google.protobuf.Int64Value;
 import com.google.protobuf.Message;
 import java.io.IOException;
 import java.time.Duration;
@@ -163,7 +161,11 @@ public class ParallelWriteCommittedStream {
         BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(
             writeStream.getTableSchema());
     ProtoSchema protoSchema = ProtoSchemaConverter.convert(descriptor);
-    try (StreamWriterV2 writer = StreamWriterV2.newBuilder(writeStream.getName()).build()) {
+    try (StreamWriterV2 writer =
+        StreamWriterV2.newBuilder(writeStream.getName())
+            .setWriterSchema(protoSchema)
+            .setTraceId("SAMPLE:parallel_append")
+            .build()) {
       while (System.currentTimeMillis() < deadlineMillis) {
         synchronized (this) {
           if (error != null) {
@@ -171,8 +173,7 @@ public class ParallelWriteCommittedStream {
             throw error;
           }
         }
-        ApiFuture<AppendRowsResponse> future =
-            writer.append(createAppendRequest(writeStream.getName(), descriptor, protoSchema, -1));
+        ApiFuture<AppendRowsResponse> future = writer.append(createAppendRows(descriptor), -1);
         synchronized (this) {
           inflightCount++;
         }
@@ -197,8 +198,7 @@ public class ParallelWriteCommittedStream {
     throw new RuntimeException("Timeout waiting for inflight count to reach 0");
   }
 
-  private AppendRowsRequest createAppendRequest(
-      String streamName, Descriptor descriptor, ProtoSchema protoSchema, long offset) {
+  private ProtoRows createAppendRows(Descriptor descriptor) {
     ProtoRows.Builder rowsBuilder = ProtoRows.newBuilder();
     for (int i = 0; i < BATCH_SIZE; i++) {
       byte[] payload = new byte[ROW_SIZE];
@@ -208,15 +208,7 @@ public class ParallelWriteCommittedStream {
       Message protoMessage = JsonToProtoMessage.convertJsonToProtoMessage(descriptor, record);
       rowsBuilder.addSerializedRows(protoMessage.toByteString());
     }
-    AppendRowsRequest.ProtoData.Builder data = AppendRowsRequest.ProtoData.newBuilder();
-    data.setWriterSchema(protoSchema);
-    data.setRows(rowsBuilder.build());
-    AppendRowsRequest.Builder request = AppendRowsRequest.newBuilder().setProtoRows(data.build());
-    request.setWriteStream(streamName);
-    if (offset >= 0) {
-      request.setOffset(Int64Value.of(offset));
-    }
-    return request.build();
+    return rowsBuilder.build();
   }
 
   private void sleepIgnoringInterruption(Duration duration) {
