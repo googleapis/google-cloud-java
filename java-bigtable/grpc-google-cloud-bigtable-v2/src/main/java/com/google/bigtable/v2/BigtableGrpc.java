@@ -16,14 +16,6 @@
 package com.google.bigtable.v2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -363,7 +355,7 @@ public final class BigtableGrpc {
     public void readRows(
         com.google.bigtable.v2.ReadRowsRequest request,
         io.grpc.stub.StreamObserver<com.google.bigtable.v2.ReadRowsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getReadRowsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReadRowsMethod(), responseObserver);
     }
 
     /**
@@ -380,7 +372,8 @@ public final class BigtableGrpc {
         com.google.bigtable.v2.SampleRowKeysRequest request,
         io.grpc.stub.StreamObserver<com.google.bigtable.v2.SampleRowKeysResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSampleRowKeysMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSampleRowKeysMethod(), responseObserver);
     }
 
     /**
@@ -394,7 +387,7 @@ public final class BigtableGrpc {
     public void mutateRow(
         com.google.bigtable.v2.MutateRowRequest request,
         io.grpc.stub.StreamObserver<com.google.bigtable.v2.MutateRowResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateRowMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateRowMethod(), responseObserver);
     }
 
     /**
@@ -409,7 +402,7 @@ public final class BigtableGrpc {
     public void mutateRows(
         com.google.bigtable.v2.MutateRowsRequest request,
         io.grpc.stub.StreamObserver<com.google.bigtable.v2.MutateRowsResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getMutateRowsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMutateRowsMethod(), responseObserver);
     }
 
     /**
@@ -423,7 +416,8 @@ public final class BigtableGrpc {
         com.google.bigtable.v2.CheckAndMutateRowRequest request,
         io.grpc.stub.StreamObserver<com.google.bigtable.v2.CheckAndMutateRowResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCheckAndMutateRowMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCheckAndMutateRowMethod(), responseObserver);
     }
 
     /**
@@ -441,7 +435,8 @@ public final class BigtableGrpc {
         com.google.bigtable.v2.ReadModifyWriteRowRequest request,
         io.grpc.stub.StreamObserver<com.google.bigtable.v2.ReadModifyWriteRowResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getReadModifyWriteRowMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getReadModifyWriteRowMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -449,39 +444,39 @@ public final class BigtableGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getReadRowsMethod(),
-              asyncServerStreamingCall(
+              io.grpc.stub.ServerCalls.asyncServerStreamingCall(
                   new MethodHandlers<
                       com.google.bigtable.v2.ReadRowsRequest,
                       com.google.bigtable.v2.ReadRowsResponse>(this, METHODID_READ_ROWS)))
           .addMethod(
               getSampleRowKeysMethod(),
-              asyncServerStreamingCall(
+              io.grpc.stub.ServerCalls.asyncServerStreamingCall(
                   new MethodHandlers<
                       com.google.bigtable.v2.SampleRowKeysRequest,
                       com.google.bigtable.v2.SampleRowKeysResponse>(
                       this, METHODID_SAMPLE_ROW_KEYS)))
           .addMethod(
               getMutateRowMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.bigtable.v2.MutateRowRequest,
                       com.google.bigtable.v2.MutateRowResponse>(this, METHODID_MUTATE_ROW)))
           .addMethod(
               getMutateRowsMethod(),
-              asyncServerStreamingCall(
+              io.grpc.stub.ServerCalls.asyncServerStreamingCall(
                   new MethodHandlers<
                       com.google.bigtable.v2.MutateRowsRequest,
                       com.google.bigtable.v2.MutateRowsResponse>(this, METHODID_MUTATE_ROWS)))
           .addMethod(
               getCheckAndMutateRowMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.bigtable.v2.CheckAndMutateRowRequest,
                       com.google.bigtable.v2.CheckAndMutateRowResponse>(
                       this, METHODID_CHECK_AND_MUTATE_ROW)))
           .addMethod(
               getReadModifyWriteRowMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.bigtable.v2.ReadModifyWriteRowRequest,
                       com.google.bigtable.v2.ReadModifyWriteRowResponse>(
@@ -521,7 +516,7 @@ public final class BigtableGrpc {
     public void readRows(
         com.google.bigtable.v2.ReadRowsRequest request,
         io.grpc.stub.StreamObserver<com.google.bigtable.v2.ReadRowsResponse> responseObserver) {
-      asyncServerStreamingCall(
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getReadRowsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -539,7 +534,7 @@ public final class BigtableGrpc {
         com.google.bigtable.v2.SampleRowKeysRequest request,
         io.grpc.stub.StreamObserver<com.google.bigtable.v2.SampleRowKeysResponse>
             responseObserver) {
-      asyncServerStreamingCall(
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getSampleRowKeysMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -556,7 +551,7 @@ public final class BigtableGrpc {
     public void mutateRow(
         com.google.bigtable.v2.MutateRowRequest request,
         io.grpc.stub.StreamObserver<com.google.bigtable.v2.MutateRowResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMutateRowMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -572,7 +567,7 @@ public final class BigtableGrpc {
     public void mutateRows(
         com.google.bigtable.v2.MutateRowsRequest request,
         io.grpc.stub.StreamObserver<com.google.bigtable.v2.MutateRowsResponse> responseObserver) {
-      asyncServerStreamingCall(
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getMutateRowsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -587,7 +582,7 @@ public final class BigtableGrpc {
         com.google.bigtable.v2.CheckAndMutateRowRequest request,
         io.grpc.stub.StreamObserver<com.google.bigtable.v2.CheckAndMutateRowResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCheckAndMutateRowMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -608,7 +603,7 @@ public final class BigtableGrpc {
         com.google.bigtable.v2.ReadModifyWriteRowRequest request,
         io.grpc.stub.StreamObserver<com.google.bigtable.v2.ReadModifyWriteRowResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getReadModifyWriteRowMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -646,7 +641,7 @@ public final class BigtableGrpc {
      */
     public java.util.Iterator<com.google.bigtable.v2.ReadRowsResponse> readRows(
         com.google.bigtable.v2.ReadRowsRequest request) {
-      return blockingServerStreamingCall(
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getReadRowsMethod(), getCallOptions(), request);
     }
 
@@ -662,7 +657,7 @@ public final class BigtableGrpc {
      */
     public java.util.Iterator<com.google.bigtable.v2.SampleRowKeysResponse> sampleRowKeys(
         com.google.bigtable.v2.SampleRowKeysRequest request) {
-      return blockingServerStreamingCall(
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getSampleRowKeysMethod(), getCallOptions(), request);
     }
 
@@ -676,7 +671,8 @@ public final class BigtableGrpc {
      */
     public com.google.bigtable.v2.MutateRowResponse mutateRow(
         com.google.bigtable.v2.MutateRowRequest request) {
-      return blockingUnaryCall(getChannel(), getMutateRowMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMutateRowMethod(), getCallOptions(), request);
     }
 
     /**
@@ -690,7 +686,7 @@ public final class BigtableGrpc {
      */
     public java.util.Iterator<com.google.bigtable.v2.MutateRowsResponse> mutateRows(
         com.google.bigtable.v2.MutateRowsRequest request) {
-      return blockingServerStreamingCall(
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getMutateRowsMethod(), getCallOptions(), request);
     }
 
@@ -703,7 +699,7 @@ public final class BigtableGrpc {
      */
     public com.google.bigtable.v2.CheckAndMutateRowResponse checkAndMutateRow(
         com.google.bigtable.v2.CheckAndMutateRowRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCheckAndMutateRowMethod(), getCallOptions(), request);
     }
 
@@ -720,7 +716,7 @@ public final class BigtableGrpc {
      */
     public com.google.bigtable.v2.ReadModifyWriteRowResponse readModifyWriteRow(
         com.google.bigtable.v2.ReadModifyWriteRowRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getReadModifyWriteRowMethod(), getCallOptions(), request);
     }
   }
@@ -754,7 +750,8 @@ public final class BigtableGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.bigtable.v2.MutateRowResponse>
         mutateRow(com.google.bigtable.v2.MutateRowRequest request) {
-      return futureUnaryCall(getChannel().newCall(getMutateRowMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMutateRowMethod(), getCallOptions()), request);
     }
 
     /**
@@ -767,7 +764,7 @@ public final class BigtableGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.bigtable.v2.CheckAndMutateRowResponse>
         checkAndMutateRow(com.google.bigtable.v2.CheckAndMutateRowRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCheckAndMutateRowMethod(), getCallOptions()), request);
     }
 
@@ -785,7 +782,7 @@ public final class BigtableGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.bigtable.v2.ReadModifyWriteRowResponse>
         readModifyWriteRow(com.google.bigtable.v2.ReadModifyWriteRowRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getReadModifyWriteRowMethod(), getCallOptions()), request);
     }
   }
