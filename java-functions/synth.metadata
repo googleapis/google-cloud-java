@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-functions.git",
-        "sha": "ce5ee882b5888ad1b7c930f089b7b183fc93cac1"
+        "sha": "dbfed4dd57c4b245086aaceb6c9ba0e366fb5a85"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "7cef8809d337ff0d59b1ba11d302e42952e9c3c2",
-        "internalRef": "360443299"
+        "sha": "3befd26ca55723d3e8111909331eac1249837987",
+        "internalRef": "360805639"
       }
     },
     {
