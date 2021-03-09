@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.20.1](https://www.github.com/googleapis/java-shared-dependencies/compare/0.20.0...v0.20.1) (2021-03-09)
+
+
+### Dependencies
+
+* update dependency com.fasterxml.jackson:jackson-bom to v2.12.2 ([#301](https://www.github.com/googleapis/java-shared-dependencies/issues/301)) ([7c01eba](https://www.github.com/googleapis/java-shared-dependencies/commit/7c01ebabb6fd65b7404e56651b0ba27f505bb033))
+* update dependency com.google.api-client:google-api-client-bom to v1.31.3 ([#295](https://www.github.com/googleapis/java-shared-dependencies/issues/295)) ([a0774e9](https://www.github.com/googleapis/java-shared-dependencies/commit/a0774e9d62d00614142bc4c14214a83dda66d4ad))
+* update dependency com.google.api.grpc:grpc-google-iam-v1 to v1.0.10 ([#292](https://www.github.com/googleapis/java-shared-dependencies/issues/292)) ([b629789](https://www.github.com/googleapis/java-shared-dependencies/commit/b629789e3a1cc9a7308b829c034b09b06e24fc07))
+* update dependency com.google.auth:google-auth-library-bom to v0.24.1 ([#293](https://www.github.com/googleapis/java-shared-dependencies/issues/293)) ([d85ec34](https://www.github.com/googleapis/java-shared-dependencies/commit/d85ec347ccdd14dfdab10d365d2c2f8df3035e4d))
+* update dependency com.google.protobuf:protobuf-bom to v3.15.3 ([#294](https://www.github.com/googleapis/java-shared-dependencies/issues/294)) ([58c01aa](https://www.github.com/googleapis/java-shared-dependencies/commit/58c01aa076e2c4954986185f913bac2c51a1e6fb))
+* update dependency com.google.protobuf:protobuf-bom to v3.15.5 ([#302](https://www.github.com/googleapis/java-shared-dependencies/issues/302)) ([e9d5e6e](https://www.github.com/googleapis/java-shared-dependencies/commit/e9d5e6ee6039915da186315ceada673ac37b88d3))
+* update google.core.version to v1.94.2 ([#296](https://www.github.com/googleapis/java-shared-dependencies/issues/296)) ([af83b90](https://www.github.com/googleapis/java-shared-dependencies/commit/af83b901be0c03d507189999215d35345602fad7))
+* update google.core.version to v1.94.3 ([#300](https://www.github.com/googleapis/java-shared-dependencies/issues/300)) ([3e73176](https://www.github.com/googleapis/java-shared-dependencies/commit/3e73176af0b07dfe621163b301174b5b5820dfa2))
+
 ## [0.20.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.19.0...v0.20.0) (2021-02-25)
 
 
