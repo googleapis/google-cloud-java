@@ -40,9 +40,6 @@ export VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3)
 # generate yml
 mvn clean site -B -q -P docFX
 
-# copy README to docfx-yml dir and rename index.md
-cp README.md target/docfx-yml/index.md
-
 pushd target/docfx-yml
 
 # create metadata
@@ -51,8 +48,8 @@ python3 -m docuploader create-metadata \
  --version ${VERSION} \
  --language java
 
-# upload yml to production bucket
+# upload yml
 python3 -m docuploader upload . \
  --credentials ${CREDENTIALS} \
  --staging-bucket ${STAGING_BUCKET_V2} \
- --destination-prefix docfx
+ --destination-prefix docfx-

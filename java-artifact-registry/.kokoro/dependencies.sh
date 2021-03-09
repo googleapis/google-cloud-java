@@ -31,7 +31,7 @@ export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
 
 # this should run maven enforcer
 retry_with_backoff 3 10 \
-  mvn install -B -V -ntp \
+  mvn install -B -V \
     -DskipTests=true \
     -Dclirr.skip=true
 
