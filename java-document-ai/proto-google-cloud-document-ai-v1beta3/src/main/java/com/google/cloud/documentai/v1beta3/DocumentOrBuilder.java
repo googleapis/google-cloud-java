@@ -379,64 +379,6 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * A list of translations on [Document.text][google.cloud.documentai.v1beta3.Document.text]. For document shards,
-   * translations in this list may cross shard boundaries.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.documentai.v1beta3.Document.Translation translations = 12;</code>
-   */
-  java.util.List<com.google.cloud.documentai.v1beta3.Document.Translation> getTranslationsList();
-  /**
-   *
-   *
-   * <pre>
-   * A list of translations on [Document.text][google.cloud.documentai.v1beta3.Document.text]. For document shards,
-   * translations in this list may cross shard boundaries.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.documentai.v1beta3.Document.Translation translations = 12;</code>
-   */
-  com.google.cloud.documentai.v1beta3.Document.Translation getTranslations(int index);
-  /**
-   *
-   *
-   * <pre>
-   * A list of translations on [Document.text][google.cloud.documentai.v1beta3.Document.text]. For document shards,
-   * translations in this list may cross shard boundaries.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.documentai.v1beta3.Document.Translation translations = 12;</code>
-   */
-  int getTranslationsCount();
-  /**
-   *
-   *
-   * <pre>
-   * A list of translations on [Document.text][google.cloud.documentai.v1beta3.Document.text]. For document shards,
-   * translations in this list may cross shard boundaries.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.documentai.v1beta3.Document.Translation translations = 12;</code>
-   */
-  java.util.List<? extends com.google.cloud.documentai.v1beta3.Document.TranslationOrBuilder>
-      getTranslationsOrBuilderList();
-  /**
-   *
-   *
-   * <pre>
-   * A list of translations on [Document.text][google.cloud.documentai.v1beta3.Document.text]. For document shards,
-   * translations in this list may cross shard boundaries.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.documentai.v1beta3.Document.Translation translations = 12;</code>
-   */
-  com.google.cloud.documentai.v1beta3.Document.TranslationOrBuilder getTranslationsOrBuilder(
-      int index);
-
-  /**
-   *
-   *
-   * <pre>
    * A list of text corrections made to [Document.text].  This is usually
    * used for annotating corrections to OCR mistakes.  Text changes for a given
    * revision may not overlap with each other.
