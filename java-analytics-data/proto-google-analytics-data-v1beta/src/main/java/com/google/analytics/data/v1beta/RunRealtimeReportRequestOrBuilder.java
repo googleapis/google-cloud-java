@@ -243,23 +243,21 @@ public interface RunRealtimeReportRequestOrBuilder
    *
    *
    * <pre>
-   * Page size specifies maximum number of rows to return. If unspecified, up to
-   * 10,000 rows are returned. The API returns a maximum of 100,000 rows per
-   * request, no matter how many you ask for. Page size must be positive.
-   * The API can also return fewer rows than the requested `pageSize`, if there
-   * aren't as many dimension values as the `pageSize`. For instance, there are
+   * The number of rows to return. If unspecified, 10,000 rows are returned. The
+   * API returns a maximum of 100,000 rows per request, no matter how many you
+   * ask for. `limit` must be positive.
+   * The API can also return fewer rows than the requested `limit`, if there
+   * aren't as many dimension values as the `limit`. For instance, there are
    * fewer than 300 possible values for the dimension `country`, so when
    * reporting on only `country`, you can't get more than 300 rows, even if you
-   * set `pageSize` to a higher value.
-   * To learn more about this pagination parameter, see
-   * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-basics#pagination).
+   * set `limit` to a higher value.
    * </pre>
    *
-   * <code>int32 page_size = 6;</code>
+   * <code>int64 limit = 6;</code>
    *
-   * @return The pageSize.
+   * @return The limit.
    */
-  int getPageSize();
+  long getLimit();
 
   /**
    *

@@ -42,7 +42,6 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
     dimensions_ = java.util.Collections.emptyList();
     metrics_ = java.util.Collections.emptyList();
     dateRanges_ = java.util.Collections.emptyList();
-    pageToken_ = "";
     metricAggregations_ = java.util.Collections.emptyList();
     orderBys_ = java.util.Collections.emptyList();
     currencyCode_ = "";
@@ -154,14 +153,12 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
             }
           case 56:
             {
-              pageSize_ = input.readInt32();
+              offset_ = input.readInt64();
               break;
             }
-          case 66:
+          case 64:
             {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              pageToken_ = s;
+              limit_ = input.readInt64();
               break;
             }
           case 72:
@@ -675,94 +672,55 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
     return getMetricFilter();
   }
 
-  public static final int PAGE_SIZE_FIELD_NUMBER = 7;
-  private int pageSize_;
+  public static final int OFFSET_FIELD_NUMBER = 7;
+  private long offset_;
   /**
    *
    *
    * <pre>
-   * Page size is for paging and specifies maximum number of rows to return. The
-   * API returns a maximum of 200,000 rows per request, no matter how many you
-   * ask for. Page size must be positive.
-   * The API can also return fewer rows than the requested `pageSize`, if there
-   * aren't as many dimension values as the `pageSize`. For instance, there are
-   * fewer than 300 possible values for the dimension `country`, so when
-   * reporting on only `country`, you can't get more than 300 rows, even if you
-   * set `pageSize` to a higher value.
+   * The row count of the start row. The first row is counted as row 0.
+   * When paging, the first request does not specify offset; or equivalently,
+   * sets offset to 0; the first request returns the first `limit` of rows. The
+   * second request sets offset to the `limit` of the first request; the second
+   * request returns the second `limit` of rows.
    * To learn more about this pagination parameter, see
    * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
    * </pre>
    *
-   * <code>int32 page_size = 7;</code>
+   * <code>int64 offset = 7;</code>
    *
-   * @return The pageSize.
+   * @return The offset.
    */
   @java.lang.Override
-  public int getPageSize() {
-    return pageSize_;
+  public long getOffset() {
+    return offset_;
   }
 
-  public static final int PAGE_TOKEN_FIELD_NUMBER = 8;
-  private volatile java.lang.Object pageToken_;
+  public static final int LIMIT_FIELD_NUMBER = 8;
+  private long limit_;
   /**
    *
    *
    * <pre>
-   * A continuation token to get the next page of the results. Adding this to
-   * the request will return the next page of rows after the `pageToken`. The
-   * `pageToken` should be the value returned in the `nextPageToken` parameter
-   * in the response.
-   * When paginating, all other parameters specified in `RunReportRequest` must
-   * match the call that provided the page token.
+   * The number of rows to return. If unspecified, 10,000 rows are returned. The
+   * API returns a maximum of 100,000 rows per request, no matter how many you
+   * ask for. `limit` must be positive.
+   * The API can also return fewer rows than the requested `limit`, if there
+   * aren't as many dimension values as the `limit`. For instance, there are
+   * fewer than 300 possible values for the dimension `country`, so when
+   * reporting on only `country`, you can't get more than 300 rows, even if you
+   * set `limit` to a higher value.
    * To learn more about this pagination parameter, see
    * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
    * </pre>
    *
-   * <code>string page_token = 8;</code>
+   * <code>int64 limit = 8;</code>
    *
-   * @return The pageToken.
+   * @return The limit.
    */
   @java.lang.Override
-  public java.lang.String getPageToken() {
-    java.lang.Object ref = pageToken_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      pageToken_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * A continuation token to get the next page of the results. Adding this to
-   * the request will return the next page of rows after the `pageToken`. The
-   * `pageToken` should be the value returned in the `nextPageToken` parameter
-   * in the response.
-   * When paginating, all other parameters specified in `RunReportRequest` must
-   * match the call that provided the page token.
-   * To learn more about this pagination parameter, see
-   * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
-   * </pre>
-   *
-   * <code>string page_token = 8;</code>
-   *
-   * @return The bytes for pageToken.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getPageTokenBytes() {
-    java.lang.Object ref = pageToken_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      pageToken_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getLimit() {
+    return limit_;
   }
 
   public static final int METRIC_AGGREGATIONS_FIELD_NUMBER = 9;
@@ -1113,11 +1071,11 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
     if (metricFilter_ != null) {
       output.writeMessage(6, getMetricFilter());
     }
-    if (pageSize_ != 0) {
-      output.writeInt32(7, pageSize_);
+    if (offset_ != 0L) {
+      output.writeInt64(7, offset_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, pageToken_);
+    if (limit_ != 0L) {
+      output.writeInt64(8, limit_);
     }
     if (getMetricAggregationsList().size() > 0) {
       output.writeUInt32NoTag(74);
@@ -1168,11 +1126,11 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
     if (metricFilter_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getMetricFilter());
     }
-    if (pageSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, pageSize_);
+    if (offset_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(7, offset_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, pageToken_);
+    if (limit_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(8, limit_);
     }
     {
       int dataSize = 0;
@@ -1230,8 +1188,8 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
     if (hasMetricFilter()) {
       if (!getMetricFilter().equals(other.getMetricFilter())) return false;
     }
-    if (getPageSize() != other.getPageSize()) return false;
-    if (!getPageToken().equals(other.getPageToken())) return false;
+    if (getOffset() != other.getOffset()) return false;
+    if (getLimit() != other.getLimit()) return false;
     if (!metricAggregations_.equals(other.metricAggregations_)) return false;
     if (!getOrderBysList().equals(other.getOrderBysList())) return false;
     if (!getCurrencyCode().equals(other.getCurrencyCode())) return false;
@@ -1274,10 +1232,10 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + METRIC_FILTER_FIELD_NUMBER;
       hash = (53 * hash) + getMetricFilter().hashCode();
     }
-    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getPageSize();
-    hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getOffset());
+    hash = (37 * hash) + LIMIT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getLimit());
     if (getMetricAggregationsCount() > 0) {
       hash = (37 * hash) + METRIC_AGGREGATIONS_FIELD_NUMBER;
       hash = (53 * hash) + metricAggregations_.hashCode();
@@ -1478,9 +1436,9 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
         metricFilter_ = null;
         metricFilterBuilder_ = null;
       }
-      pageSize_ = 0;
+      offset_ = 0L;
 
-      pageToken_ = "";
+      limit_ = 0L;
 
       metricAggregations_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1568,8 +1526,8 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
       } else {
         result.metricFilter_ = metricFilterBuilder_.build();
       }
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
+      result.offset_ = offset_;
+      result.limit_ = limit_;
       if (((bitField0_ & 0x00000008) != 0)) {
         metricAggregations_ = java.util.Collections.unmodifiableList(metricAggregations_);
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -1733,12 +1691,11 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
       if (other.hasMetricFilter()) {
         mergeMetricFilter(other.getMetricFilter());
       }
-      if (other.getPageSize() != 0) {
-        setPageSize(other.getPageSize());
+      if (other.getOffset() != 0L) {
+        setOffset(other.getOffset());
       }
-      if (!other.getPageToken().isEmpty()) {
-        pageToken_ = other.pageToken_;
-        onChanged();
+      if (other.getLimit() != 0L) {
+        setLimit(other.getLimit());
       }
       if (!other.metricAggregations_.isEmpty()) {
         if (metricAggregations_.isEmpty()) {
@@ -3480,169 +3437,125 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
       return metricFilterBuilder_;
     }
 
-    private int pageSize_;
+    private long offset_;
     /**
      *
      *
      * <pre>
-     * Page size is for paging and specifies maximum number of rows to return. The
-     * API returns a maximum of 200,000 rows per request, no matter how many you
-     * ask for. Page size must be positive.
-     * The API can also return fewer rows than the requested `pageSize`, if there
-     * aren't as many dimension values as the `pageSize`. For instance, there are
-     * fewer than 300 possible values for the dimension `country`, so when
-     * reporting on only `country`, you can't get more than 300 rows, even if you
-     * set `pageSize` to a higher value.
+     * The row count of the start row. The first row is counted as row 0.
+     * When paging, the first request does not specify offset; or equivalently,
+     * sets offset to 0; the first request returns the first `limit` of rows. The
+     * second request sets offset to the `limit` of the first request; the second
+     * request returns the second `limit` of rows.
      * To learn more about this pagination parameter, see
      * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
      * </pre>
      *
-     * <code>int32 page_size = 7;</code>
+     * <code>int64 offset = 7;</code>
      *
-     * @return The pageSize.
+     * @return The offset.
      */
     @java.lang.Override
-    public int getPageSize() {
-      return pageSize_;
+    public long getOffset() {
+      return offset_;
     }
     /**
      *
      *
      * <pre>
-     * Page size is for paging and specifies maximum number of rows to return. The
-     * API returns a maximum of 200,000 rows per request, no matter how many you
-     * ask for. Page size must be positive.
-     * The API can also return fewer rows than the requested `pageSize`, if there
-     * aren't as many dimension values as the `pageSize`. For instance, there are
+     * The row count of the start row. The first row is counted as row 0.
+     * When paging, the first request does not specify offset; or equivalently,
+     * sets offset to 0; the first request returns the first `limit` of rows. The
+     * second request sets offset to the `limit` of the first request; the second
+     * request returns the second `limit` of rows.
+     * To learn more about this pagination parameter, see
+     * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
+     * </pre>
+     *
+     * <code>int64 offset = 7;</code>
+     *
+     * @param value The offset to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOffset(long value) {
+
+      offset_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The row count of the start row. The first row is counted as row 0.
+     * When paging, the first request does not specify offset; or equivalently,
+     * sets offset to 0; the first request returns the first `limit` of rows. The
+     * second request sets offset to the `limit` of the first request; the second
+     * request returns the second `limit` of rows.
+     * To learn more about this pagination parameter, see
+     * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
+     * </pre>
+     *
+     * <code>int64 offset = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOffset() {
+
+      offset_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long limit_;
+    /**
+     *
+     *
+     * <pre>
+     * The number of rows to return. If unspecified, 10,000 rows are returned. The
+     * API returns a maximum of 100,000 rows per request, no matter how many you
+     * ask for. `limit` must be positive.
+     * The API can also return fewer rows than the requested `limit`, if there
+     * aren't as many dimension values as the `limit`. For instance, there are
      * fewer than 300 possible values for the dimension `country`, so when
      * reporting on only `country`, you can't get more than 300 rows, even if you
-     * set `pageSize` to a higher value.
+     * set `limit` to a higher value.
      * To learn more about this pagination parameter, see
      * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
      * </pre>
      *
-     * <code>int32 page_size = 7;</code>
+     * <code>int64 limit = 8;</code>
      *
-     * @param value The pageSize to set.
-     * @return This builder for chaining.
+     * @return The limit.
      */
-    public Builder setPageSize(int value) {
-
-      pageSize_ = value;
-      onChanged();
-      return this;
+    @java.lang.Override
+    public long getLimit() {
+      return limit_;
     }
     /**
      *
      *
      * <pre>
-     * Page size is for paging and specifies maximum number of rows to return. The
-     * API returns a maximum of 200,000 rows per request, no matter how many you
-     * ask for. Page size must be positive.
-     * The API can also return fewer rows than the requested `pageSize`, if there
-     * aren't as many dimension values as the `pageSize`. For instance, there are
+     * The number of rows to return. If unspecified, 10,000 rows are returned. The
+     * API returns a maximum of 100,000 rows per request, no matter how many you
+     * ask for. `limit` must be positive.
+     * The API can also return fewer rows than the requested `limit`, if there
+     * aren't as many dimension values as the `limit`. For instance, there are
      * fewer than 300 possible values for the dimension `country`, so when
      * reporting on only `country`, you can't get more than 300 rows, even if you
-     * set `pageSize` to a higher value.
+     * set `limit` to a higher value.
      * To learn more about this pagination parameter, see
      * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
      * </pre>
      *
-     * <code>int32 page_size = 7;</code>
+     * <code>int64 limit = 8;</code>
      *
+     * @param value The limit to set.
      * @return This builder for chaining.
      */
-    public Builder clearPageSize() {
+    public Builder setLimit(long value) {
 
-      pageSize_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object pageToken_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * A continuation token to get the next page of the results. Adding this to
-     * the request will return the next page of rows after the `pageToken`. The
-     * `pageToken` should be the value returned in the `nextPageToken` parameter
-     * in the response.
-     * When paginating, all other parameters specified in `RunReportRequest` must
-     * match the call that provided the page token.
-     * To learn more about this pagination parameter, see
-     * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
-     * </pre>
-     *
-     * <code>string page_token = 8;</code>
-     *
-     * @return The pageToken.
-     */
-    public java.lang.String getPageToken() {
-      java.lang.Object ref = pageToken_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        pageToken_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A continuation token to get the next page of the results. Adding this to
-     * the request will return the next page of rows after the `pageToken`. The
-     * `pageToken` should be the value returned in the `nextPageToken` parameter
-     * in the response.
-     * When paginating, all other parameters specified in `RunReportRequest` must
-     * match the call that provided the page token.
-     * To learn more about this pagination parameter, see
-     * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
-     * </pre>
-     *
-     * <code>string page_token = 8;</code>
-     *
-     * @return The bytes for pageToken.
-     */
-    public com.google.protobuf.ByteString getPageTokenBytes() {
-      java.lang.Object ref = pageToken_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        pageToken_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A continuation token to get the next page of the results. Adding this to
-     * the request will return the next page of rows after the `pageToken`. The
-     * `pageToken` should be the value returned in the `nextPageToken` parameter
-     * in the response.
-     * When paginating, all other parameters specified in `RunReportRequest` must
-     * match the call that provided the page token.
-     * To learn more about this pagination parameter, see
-     * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
-     * </pre>
-     *
-     * <code>string page_token = 8;</code>
-     *
-     * @param value The pageToken to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPageToken(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      pageToken_ = value;
+      limit_ = value;
       onChanged();
       return this;
     }
@@ -3650,52 +3563,25 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A continuation token to get the next page of the results. Adding this to
-     * the request will return the next page of rows after the `pageToken`. The
-     * `pageToken` should be the value returned in the `nextPageToken` parameter
-     * in the response.
-     * When paginating, all other parameters specified in `RunReportRequest` must
-     * match the call that provided the page token.
+     * The number of rows to return. If unspecified, 10,000 rows are returned. The
+     * API returns a maximum of 100,000 rows per request, no matter how many you
+     * ask for. `limit` must be positive.
+     * The API can also return fewer rows than the requested `limit`, if there
+     * aren't as many dimension values as the `limit`. For instance, there are
+     * fewer than 300 possible values for the dimension `country`, so when
+     * reporting on only `country`, you can't get more than 300 rows, even if you
+     * set `limit` to a higher value.
      * To learn more about this pagination parameter, see
      * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
      * </pre>
      *
-     * <code>string page_token = 8;</code>
+     * <code>int64 limit = 8;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearPageToken() {
+    public Builder clearLimit() {
 
-      pageToken_ = getDefaultInstance().getPageToken();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A continuation token to get the next page of the results. Adding this to
-     * the request will return the next page of rows after the `pageToken`. The
-     * `pageToken` should be the value returned in the `nextPageToken` parameter
-     * in the response.
-     * When paginating, all other parameters specified in `RunReportRequest` must
-     * match the call that provided the page token.
-     * To learn more about this pagination parameter, see
-     * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
-     * </pre>
-     *
-     * <code>string page_token = 8;</code>
-     *
-     * @param value The bytes for pageToken to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      pageToken_ = value;
+      limit_ = 0L;
       onChanged();
       return this;
     }

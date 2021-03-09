@@ -347,18 +347,18 @@ public interface RunRealtimeReportResponseOrBuilder
    *
    *
    * <pre>
-   * The total number of rows in the query result. `totalSize` is independent of
-   * the number of rows returned in the response and the `pageSize` request
-   * parameter. For example if a query returns 175 rows and includes `pageSize`
-   * of 50 in the API request, the response will contain `totalSize` of 175 but
+   * The total number of rows in the query result. `rowCount` is independent of
+   * the number of rows returned in the response and the `limit` request
+   * parameter. For example if a query returns 175 rows and includes `limit`
+   * of 50 in the API request, the response will contain `rowCount` of 175 but
    * only 50 rows.
    * </pre>
    *
-   * <code>int32 total_size = 7;</code>
+   * <code>int32 row_count = 7;</code>
    *
-   * @return The totalSize.
+   * @return The rowCount.
    */
-  int getTotalSize();
+  int getRowCount();
 
   /**
    *

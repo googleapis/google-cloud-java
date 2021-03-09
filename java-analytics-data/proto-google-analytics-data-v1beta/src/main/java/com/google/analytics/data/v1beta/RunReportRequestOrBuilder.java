@@ -319,62 +319,42 @@ public interface RunReportRequestOrBuilder
    *
    *
    * <pre>
-   * Page size is for paging and specifies maximum number of rows to return. The
-   * API returns a maximum of 200,000 rows per request, no matter how many you
-   * ask for. Page size must be positive.
-   * The API can also return fewer rows than the requested `pageSize`, if there
-   * aren't as many dimension values as the `pageSize`. For instance, there are
-   * fewer than 300 possible values for the dimension `country`, so when
-   * reporting on only `country`, you can't get more than 300 rows, even if you
-   * set `pageSize` to a higher value.
+   * The row count of the start row. The first row is counted as row 0.
+   * When paging, the first request does not specify offset; or equivalently,
+   * sets offset to 0; the first request returns the first `limit` of rows. The
+   * second request sets offset to the `limit` of the first request; the second
+   * request returns the second `limit` of rows.
    * To learn more about this pagination parameter, see
    * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
    * </pre>
    *
-   * <code>int32 page_size = 7;</code>
+   * <code>int64 offset = 7;</code>
    *
-   * @return The pageSize.
+   * @return The offset.
    */
-  int getPageSize();
+  long getOffset();
 
   /**
    *
    *
    * <pre>
-   * A continuation token to get the next page of the results. Adding this to
-   * the request will return the next page of rows after the `pageToken`. The
-   * `pageToken` should be the value returned in the `nextPageToken` parameter
-   * in the response.
-   * When paginating, all other parameters specified in `RunReportRequest` must
-   * match the call that provided the page token.
+   * The number of rows to return. If unspecified, 10,000 rows are returned. The
+   * API returns a maximum of 100,000 rows per request, no matter how many you
+   * ask for. `limit` must be positive.
+   * The API can also return fewer rows than the requested `limit`, if there
+   * aren't as many dimension values as the `limit`. For instance, there are
+   * fewer than 300 possible values for the dimension `country`, so when
+   * reporting on only `country`, you can't get more than 300 rows, even if you
+   * set `limit` to a higher value.
    * To learn more about this pagination parameter, see
    * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
    * </pre>
    *
-   * <code>string page_token = 8;</code>
+   * <code>int64 limit = 8;</code>
    *
-   * @return The pageToken.
+   * @return The limit.
    */
-  java.lang.String getPageToken();
-  /**
-   *
-   *
-   * <pre>
-   * A continuation token to get the next page of the results. Adding this to
-   * the request will return the next page of rows after the `pageToken`. The
-   * `pageToken` should be the value returned in the `nextPageToken` parameter
-   * in the response.
-   * When paginating, all other parameters specified in `RunReportRequest` must
-   * match the call that provided the page token.
-   * To learn more about this pagination parameter, see
-   * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
-   * </pre>
-   *
-   * <code>string page_token = 8;</code>
-   *
-   * @return The bytes for pageToken.
-   */
-  com.google.protobuf.ByteString getPageTokenBytes();
+  long getLimit();
 
   /**
    *

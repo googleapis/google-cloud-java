@@ -18,19 +18,10 @@ package com.google.analytics.data.v1beta;
 
 import com.google.analytics.data.v1beta.stub.BetaAnalyticsDataStub;
 import com.google.analytics.data.v1beta.stub.BetaAnalyticsDataStubSettings;
-import com.google.api.core.ApiFunction;
-import com.google.api.core.ApiFuture;
-import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.paging.AbstractFixedSizeCollection;
-import com.google.api.gax.paging.AbstractPage;
-import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -43,21 +34,24 @@ import javax.annotation.Generated;
  *
  * <pre>{@code
  * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
- *   RunPivotReportRequest request =
- *       RunPivotReportRequest.newBuilder()
+ *   RunReportRequest request =
+ *       RunReportRequest.newBuilder()
  *           .setProperty("property-993141291")
  *           .addAllDimensions(new ArrayList<Dimension>())
  *           .addAllMetrics(new ArrayList<Metric>())
  *           .addAllDateRanges(new ArrayList<DateRange>())
- *           .addAllPivots(new ArrayList<Pivot>())
  *           .setDimensionFilter(FilterExpression.newBuilder().build())
  *           .setMetricFilter(FilterExpression.newBuilder().build())
+ *           .setOffset(-1019779949)
+ *           .setLimit(102976443)
+ *           .addAllMetricAggregations(new ArrayList<MetricAggregation>())
+ *           .addAllOrderBys(new ArrayList<OrderBy>())
  *           .setCurrencyCode("currencyCode1004773790")
  *           .setCohortSpec(CohortSpec.newBuilder().build())
  *           .setKeepEmptyRows(true)
  *           .setReturnPropertyQuota(true)
  *           .build();
- *   RunPivotReportResponse response = betaAnalyticsDataClient.runPivotReport(request);
+ *   RunReportResponse response = betaAnalyticsDataClient.runReport(request);
  * }
  * }</pre>
  *
@@ -184,8 +178,8 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    *           .addAllDateRanges(new ArrayList<DateRange>())
    *           .setDimensionFilter(FilterExpression.newBuilder().build())
    *           .setMetricFilter(FilterExpression.newBuilder().build())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
+   *           .setOffset(-1019779949)
+   *           .setLimit(102976443)
    *           .addAllMetricAggregations(new ArrayList<MetricAggregation>())
    *           .addAllOrderBys(new ArrayList<OrderBy>())
    *           .setCurrencyCode("currencyCode1004773790")
@@ -193,17 +187,15 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    *           .setKeepEmptyRows(true)
    *           .setReturnPropertyQuota(true)
    *           .build();
-   *   for (DimensionHeader element : betaAnalyticsDataClient.runReport(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
+   *   RunReportResponse response = betaAnalyticsDataClient.runReport(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RunReportPagedResponse runReport(RunReportRequest request) {
-    return runReportPagedCallable().call(request);
+  public final RunReportResponse runReport(RunReportRequest request) {
+    return runReportCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -226,8 +218,8 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    *           .addAllDateRanges(new ArrayList<DateRange>())
    *           .setDimensionFilter(FilterExpression.newBuilder().build())
    *           .setMetricFilter(FilterExpression.newBuilder().build())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
+   *           .setOffset(-1019779949)
+   *           .setLimit(102976443)
    *           .addAllMetricAggregations(new ArrayList<MetricAggregation>())
    *           .addAllOrderBys(new ArrayList<OrderBy>())
    *           .setCurrencyCode("currencyCode1004773790")
@@ -235,43 +227,10 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    *           .setKeepEmptyRows(true)
    *           .setReturnPropertyQuota(true)
    *           .build();
-   *   ApiFuture<DimensionHeader> future =
-   *       betaAnalyticsDataClient.runReportPagedCallable().futureCall(request);
+   *   ApiFuture<RunReportResponse> future =
+   *       betaAnalyticsDataClient.runReportCallable().futureCall(request);
    *   // Do something.
-   *   for (DimensionHeader element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<RunReportRequest, RunReportPagedResponse> runReportPagedCallable() {
-    return stub.runReportPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns a customized report of your Google Analytics event data. Reports contain statistics
-   * derived from data collected by the Google Analytics tracking code. The data returned from the
-   * API is as a table with columns for the requested dimensions and metrics. Metrics are individual
-   * measurements of user activity on your property, such as active users or event count. Dimensions
-   * break down metrics across some common criteria, such as country or event name.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
-   *   while (true) {
-   *     RunReportResponse response = betaAnalyticsDataClient.runReportCallable().call(request);
-   *     for (DimensionHeader element : response.getResponsesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
+   *   RunReportResponse response = future.get();
    * }
    * }</pre>
    */
@@ -592,7 +551,7 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    *           .addAllMetrics(new ArrayList<Metric>())
    *           .setDimensionFilter(FilterExpression.newBuilder().build())
    *           .setMetricFilter(FilterExpression.newBuilder().build())
-   *           .setPageSize(883849137)
+   *           .setLimit(102976443)
    *           .addAllMetricAggregations(new ArrayList<MetricAggregation>())
    *           .addAllOrderBys(new ArrayList<OrderBy>())
    *           .setReturnPropertyQuota(true)
@@ -624,7 +583,7 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    *           .addAllMetrics(new ArrayList<Metric>())
    *           .setDimensionFilter(FilterExpression.newBuilder().build())
    *           .setMetricFilter(FilterExpression.newBuilder().build())
-   *           .setPageSize(883849137)
+   *           .setLimit(102976443)
    *           .addAllMetricAggregations(new ArrayList<MetricAggregation>())
    *           .addAllOrderBys(new ArrayList<OrderBy>())
    *           .setReturnPropertyQuota(true)
@@ -669,85 +628,5 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
-  }
-
-  public static class RunReportPagedResponse
-      extends AbstractPagedListResponse<
-          RunReportRequest,
-          RunReportResponse,
-          DimensionHeader,
-          RunReportPage,
-          RunReportFixedSizeCollection> {
-
-    public static ApiFuture<RunReportPagedResponse> createAsync(
-        PageContext<RunReportRequest, RunReportResponse, DimensionHeader> context,
-        ApiFuture<RunReportResponse> futureResponse) {
-      ApiFuture<RunReportPage> futurePage =
-          RunReportPage.createEmptyPage().createPageAsync(context, futureResponse);
-      return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<RunReportPage, RunReportPagedResponse>() {
-            @Override
-            public RunReportPagedResponse apply(RunReportPage input) {
-              return new RunReportPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
-    }
-
-    private RunReportPagedResponse(RunReportPage page) {
-      super(page, RunReportFixedSizeCollection.createEmptyCollection());
-    }
-  }
-
-  public static class RunReportPage
-      extends AbstractPage<RunReportRequest, RunReportResponse, DimensionHeader, RunReportPage> {
-
-    private RunReportPage(
-        PageContext<RunReportRequest, RunReportResponse, DimensionHeader> context,
-        RunReportResponse response) {
-      super(context, response);
-    }
-
-    private static RunReportPage createEmptyPage() {
-      return new RunReportPage(null, null);
-    }
-
-    @Override
-    protected RunReportPage createPage(
-        PageContext<RunReportRequest, RunReportResponse, DimensionHeader> context,
-        RunReportResponse response) {
-      return new RunReportPage(context, response);
-    }
-
-    @Override
-    public ApiFuture<RunReportPage> createPageAsync(
-        PageContext<RunReportRequest, RunReportResponse, DimensionHeader> context,
-        ApiFuture<RunReportResponse> futureResponse) {
-      return super.createPageAsync(context, futureResponse);
-    }
-  }
-
-  public static class RunReportFixedSizeCollection
-      extends AbstractFixedSizeCollection<
-          RunReportRequest,
-          RunReportResponse,
-          DimensionHeader,
-          RunReportPage,
-          RunReportFixedSizeCollection> {
-
-    private RunReportFixedSizeCollection(List<RunReportPage> pages, int collectionSize) {
-      super(pages, collectionSize);
-    }
-
-    private static RunReportFixedSizeCollection createEmptyCollection() {
-      return new RunReportFixedSizeCollection(null, 0);
-    }
-
-    @Override
-    protected RunReportFixedSizeCollection createCollection(
-        List<RunReportPage> pages, int collectionSize) {
-      return new RunReportFixedSizeCollection(pages, collectionSize);
-    }
   }
 }

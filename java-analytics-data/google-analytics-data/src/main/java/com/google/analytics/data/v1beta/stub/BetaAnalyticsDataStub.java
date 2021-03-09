@@ -16,8 +16,6 @@
 
 package com.google.analytics.data.v1beta.stub;
 
-import static com.google.analytics.data.v1beta.BetaAnalyticsDataClient.RunReportPagedResponse;
-
 import com.google.analytics.data.v1beta.BatchRunPivotReportsRequest;
 import com.google.analytics.data.v1beta.BatchRunPivotReportsResponse;
 import com.google.analytics.data.v1beta.BatchRunReportsRequest;
@@ -44,10 +42,6 @@ import javax.annotation.Generated;
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class BetaAnalyticsDataStub implements BackgroundResource {
-
-  public UnaryCallable<RunReportRequest, RunReportPagedResponse> runReportPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: runReportPagedCallable()");
-  }
 
   public UnaryCallable<RunReportRequest, RunReportResponse> runReportCallable() {
     throw new UnsupportedOperationException("Not implemented: runReportCallable()");

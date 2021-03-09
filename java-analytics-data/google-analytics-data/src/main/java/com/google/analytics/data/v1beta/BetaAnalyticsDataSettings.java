@@ -16,8 +16,6 @@
 
 package com.google.analytics.data.v1beta;
 
-import static com.google.analytics.data.v1beta.BetaAnalyticsDataClient.RunReportPagedResponse;
-
 import com.google.analytics.data.v1beta.stub.BetaAnalyticsDataStubSettings;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -27,7 +25,6 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
-import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import java.io.IOException;
@@ -49,16 +46,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of runPivotReport to 30 seconds:
+ * <p>For example, to set the total timeout of runReport to 30 seconds:
  *
  * <pre>{@code
  * BetaAnalyticsDataSettings.Builder betaAnalyticsDataSettingsBuilder =
  *     BetaAnalyticsDataSettings.newBuilder();
  * betaAnalyticsDataSettingsBuilder
- *     .runPivotReportSettings()
+ *     .runReportSettings()
  *     .setRetrySettings(
  *         betaAnalyticsDataSettingsBuilder
- *             .runPivotReportSettings()
+ *             .runReportSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -71,8 +68,7 @@ import javax.annotation.Generated;
 public class BetaAnalyticsDataSettings extends ClientSettings<BetaAnalyticsDataSettings> {
 
   /** Returns the object with the settings used for calls to runReport. */
-  public PagedCallSettings<RunReportRequest, RunReportResponse, RunReportPagedResponse>
-      runReportSettings() {
+  public UnaryCallSettings<RunReportRequest, RunReportResponse> runReportSettings() {
     return ((BetaAnalyticsDataStubSettings) getStubSettings()).runReportSettings();
   }
 
@@ -203,8 +199,7 @@ public class BetaAnalyticsDataSettings extends ClientSettings<BetaAnalyticsDataS
     }
 
     /** Returns the builder for the settings used for calls to runReport. */
-    public PagedCallSettings.Builder<RunReportRequest, RunReportResponse, RunReportPagedResponse>
-        runReportSettings() {
+    public UnaryCallSettings.Builder<RunReportRequest, RunReportResponse> runReportSettings() {
       return getStubSettingsBuilder().runReportSettings();
     }
 

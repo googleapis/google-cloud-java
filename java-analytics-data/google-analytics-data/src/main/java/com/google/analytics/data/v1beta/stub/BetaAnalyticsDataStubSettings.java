@@ -16,13 +16,10 @@
 
 package com.google.analytics.data.v1beta.stub;
 
-import static com.google.analytics.data.v1beta.BetaAnalyticsDataClient.RunReportPagedResponse;
-
 import com.google.analytics.data.v1beta.BatchRunPivotReportsRequest;
 import com.google.analytics.data.v1beta.BatchRunPivotReportsResponse;
 import com.google.analytics.data.v1beta.BatchRunReportsRequest;
 import com.google.analytics.data.v1beta.BatchRunReportsResponse;
-import com.google.analytics.data.v1beta.DimensionHeader;
 import com.google.analytics.data.v1beta.GetMetadataRequest;
 import com.google.analytics.data.v1beta.Metadata;
 import com.google.analytics.data.v1beta.RunPivotReportRequest;
@@ -32,7 +29,6 @@ import com.google.analytics.data.v1beta.RunRealtimeReportResponse;
 import com.google.analytics.data.v1beta.RunReportRequest;
 import com.google.analytics.data.v1beta.RunReportResponse;
 import com.google.api.core.ApiFunction;
-import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -41,18 +37,12 @@ import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.PageContext;
-import com.google.api.gax.rpc.PagedCallSettings;
-import com.google.api.gax.rpc.PagedListDescriptor;
-import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -77,16 +67,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of runPivotReport to 30 seconds:
+ * <p>For example, to set the total timeout of runReport to 30 seconds:
  *
  * <pre>{@code
  * BetaAnalyticsDataStubSettings.Builder betaAnalyticsDataSettingsBuilder =
  *     BetaAnalyticsDataStubSettings.newBuilder();
  * betaAnalyticsDataSettingsBuilder
- *     .runPivotReportSettings()
+ *     .runReportSettings()
  *     .setRetrySettings(
  *         betaAnalyticsDataSettingsBuilder
- *             .runPivotReportSettings()
+ *             .runReportSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -105,8 +95,7 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
           .add("https://www.googleapis.com/auth/analytics.readonly")
           .build();
 
-  private final PagedCallSettings<RunReportRequest, RunReportResponse, RunReportPagedResponse>
-      runReportSettings;
+  private final UnaryCallSettings<RunReportRequest, RunReportResponse> runReportSettings;
   private final UnaryCallSettings<RunPivotReportRequest, RunPivotReportResponse>
       runPivotReportSettings;
   private final UnaryCallSettings<BatchRunReportsRequest, BatchRunReportsResponse>
@@ -117,62 +106,8 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
   private final UnaryCallSettings<RunRealtimeReportRequest, RunRealtimeReportResponse>
       runRealtimeReportSettings;
 
-  private static final PagedListDescriptor<RunReportRequest, RunReportResponse, DimensionHeader>
-      RUN_REPORT_PAGE_STR_DESC =
-          new PagedListDescriptor<RunReportRequest, RunReportResponse, DimensionHeader>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public RunReportRequest injectToken(RunReportRequest payload, String token) {
-              return RunReportRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public RunReportRequest injectPageSize(RunReportRequest payload, int pageSize) {
-              return RunReportRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(RunReportRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(RunReportResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<DimensionHeader> extractResources(RunReportResponse payload) {
-              return payload.getDimensionHeadersList() == null
-                  ? ImmutableList.<DimensionHeader>of()
-                  : payload.getDimensionHeadersList();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          RunReportRequest, RunReportResponse, RunReportPagedResponse>
-      RUN_REPORT_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              RunReportRequest, RunReportResponse, RunReportPagedResponse>() {
-            @Override
-            public ApiFuture<RunReportPagedResponse> getFuturePagedResponse(
-                UnaryCallable<RunReportRequest, RunReportResponse> callable,
-                RunReportRequest request,
-                ApiCallContext context,
-                ApiFuture<RunReportResponse> futureResponse) {
-              PageContext<RunReportRequest, RunReportResponse, DimensionHeader> pageContext =
-                  PageContext.create(callable, RUN_REPORT_PAGE_STR_DESC, request, context);
-              return RunReportPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Returns the object with the settings used for calls to runReport. */
-  public PagedCallSettings<RunReportRequest, RunReportResponse, RunReportPagedResponse>
-      runReportSettings() {
+  public UnaryCallSettings<RunReportRequest, RunReportResponse> runReportSettings() {
     return runReportSettings;
   }
 
@@ -284,9 +219,7 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
   /** Builder for BetaAnalyticsDataStubSettings. */
   public static class Builder extends StubSettings.Builder<BetaAnalyticsDataStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-    private final PagedCallSettings.Builder<
-            RunReportRequest, RunReportResponse, RunReportPagedResponse>
-        runReportSettings;
+    private final UnaryCallSettings.Builder<RunReportRequest, RunReportResponse> runReportSettings;
     private final UnaryCallSettings.Builder<RunPivotReportRequest, RunPivotReportResponse>
         runPivotReportSettings;
     private final UnaryCallSettings.Builder<BatchRunReportsRequest, BatchRunReportsResponse>
@@ -345,7 +278,7 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      runReportSettings = PagedCallSettings.newBuilder(RUN_REPORT_PAGE_STR_FACT);
+      runReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       runPivotReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchRunReportsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchRunPivotReportsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -445,8 +378,7 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
     }
 
     /** Returns the builder for the settings used for calls to runReport. */
-    public PagedCallSettings.Builder<RunReportRequest, RunReportResponse, RunReportPagedResponse>
-        runReportSettings() {
+    public UnaryCallSettings.Builder<RunReportRequest, RunReportResponse> runReportSettings() {
       return runReportSettings;
     }
 

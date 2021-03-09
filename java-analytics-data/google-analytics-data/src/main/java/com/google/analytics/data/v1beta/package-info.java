@@ -25,21 +25,24 @@
  *
  * <pre>{@code
  * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
- *   RunPivotReportRequest request =
- *       RunPivotReportRequest.newBuilder()
+ *   RunReportRequest request =
+ *       RunReportRequest.newBuilder()
  *           .setProperty("property-993141291")
  *           .addAllDimensions(new ArrayList<Dimension>())
  *           .addAllMetrics(new ArrayList<Metric>())
  *           .addAllDateRanges(new ArrayList<DateRange>())
- *           .addAllPivots(new ArrayList<Pivot>())
  *           .setDimensionFilter(FilterExpression.newBuilder().build())
  *           .setMetricFilter(FilterExpression.newBuilder().build())
+ *           .setOffset(-1019779949)
+ *           .setLimit(102976443)
+ *           .addAllMetricAggregations(new ArrayList<MetricAggregation>())
+ *           .addAllOrderBys(new ArrayList<OrderBy>())
  *           .setCurrencyCode("currencyCode1004773790")
  *           .setCohortSpec(CohortSpec.newBuilder().build())
  *           .setKeepEmptyRows(true)
  *           .setReturnPropertyQuota(true)
  *           .build();
- *   RunPivotReportResponse response = betaAnalyticsDataClient.runPivotReport(request);
+ *   RunReportResponse response = betaAnalyticsDataClient.runReport(request);
  * }
  * }</pre>
  */

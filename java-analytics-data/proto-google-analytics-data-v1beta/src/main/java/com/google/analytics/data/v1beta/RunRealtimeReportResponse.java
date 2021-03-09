@@ -147,7 +147,7 @@ public final class RunRealtimeReportResponse extends com.google.protobuf.Generat
             }
           case 56:
             {
-              totalSize_ = input.readInt32();
+              rowCount_ = input.readInt32();
               break;
             }
           case 66:
@@ -645,26 +645,26 @@ public final class RunRealtimeReportResponse extends com.google.protobuf.Generat
     return minimums_.get(index);
   }
 
-  public static final int TOTAL_SIZE_FIELD_NUMBER = 7;
-  private int totalSize_;
+  public static final int ROW_COUNT_FIELD_NUMBER = 7;
+  private int rowCount_;
   /**
    *
    *
    * <pre>
-   * The total number of rows in the query result. `totalSize` is independent of
-   * the number of rows returned in the response and the `pageSize` request
-   * parameter. For example if a query returns 175 rows and includes `pageSize`
-   * of 50 in the API request, the response will contain `totalSize` of 175 but
+   * The total number of rows in the query result. `rowCount` is independent of
+   * the number of rows returned in the response and the `limit` request
+   * parameter. For example if a query returns 175 rows and includes `limit`
+   * of 50 in the API request, the response will contain `rowCount` of 175 but
    * only 50 rows.
    * </pre>
    *
-   * <code>int32 total_size = 7;</code>
+   * <code>int32 row_count = 7;</code>
    *
-   * @return The totalSize.
+   * @return The rowCount.
    */
   @java.lang.Override
-  public int getTotalSize() {
-    return totalSize_;
+  public int getRowCount() {
+    return rowCount_;
   }
 
   public static final int PROPERTY_QUOTA_FIELD_NUMBER = 8;
@@ -747,8 +747,8 @@ public final class RunRealtimeReportResponse extends com.google.protobuf.Generat
     for (int i = 0; i < minimums_.size(); i++) {
       output.writeMessage(6, minimums_.get(i));
     }
-    if (totalSize_ != 0) {
-      output.writeInt32(7, totalSize_);
+    if (rowCount_ != 0) {
+      output.writeInt32(7, rowCount_);
     }
     if (propertyQuota_ != null) {
       output.writeMessage(8, getPropertyQuota());
@@ -780,8 +780,8 @@ public final class RunRealtimeReportResponse extends com.google.protobuf.Generat
     for (int i = 0; i < minimums_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, minimums_.get(i));
     }
-    if (totalSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, totalSize_);
+    if (rowCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, rowCount_);
     }
     if (propertyQuota_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getPropertyQuota());
@@ -808,7 +808,7 @@ public final class RunRealtimeReportResponse extends com.google.protobuf.Generat
     if (!getTotalsList().equals(other.getTotalsList())) return false;
     if (!getMaximumsList().equals(other.getMaximumsList())) return false;
     if (!getMinimumsList().equals(other.getMinimumsList())) return false;
-    if (getTotalSize() != other.getTotalSize()) return false;
+    if (getRowCount() != other.getRowCount()) return false;
     if (hasPropertyQuota() != other.hasPropertyQuota()) return false;
     if (hasPropertyQuota()) {
       if (!getPropertyQuota().equals(other.getPropertyQuota())) return false;
@@ -848,8 +848,8 @@ public final class RunRealtimeReportResponse extends com.google.protobuf.Generat
       hash = (37 * hash) + MINIMUMS_FIELD_NUMBER;
       hash = (53 * hash) + getMinimumsList().hashCode();
     }
-    hash = (37 * hash) + TOTAL_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getTotalSize();
+    hash = (37 * hash) + ROW_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getRowCount();
     if (hasPropertyQuota()) {
       hash = (37 * hash) + PROPERTY_QUOTA_FIELD_NUMBER;
       hash = (53 * hash) + getPropertyQuota().hashCode();
@@ -1043,7 +1043,7 @@ public final class RunRealtimeReportResponse extends com.google.protobuf.Generat
       } else {
         minimumsBuilder_.clear();
       }
-      totalSize_ = 0;
+      rowCount_ = 0;
 
       if (propertyQuotaBuilder_ == null) {
         propertyQuota_ = null;
@@ -1133,7 +1133,7 @@ public final class RunRealtimeReportResponse extends com.google.protobuf.Generat
       } else {
         result.minimums_ = minimumsBuilder_.build();
       }
-      result.totalSize_ = totalSize_;
+      result.rowCount_ = rowCount_;
       if (propertyQuotaBuilder_ == null) {
         result.propertyQuota_ = propertyQuota_;
       } else {
@@ -1351,8 +1351,8 @@ public final class RunRealtimeReportResponse extends com.google.protobuf.Generat
           }
         }
       }
-      if (other.getTotalSize() != 0) {
-        setTotalSize(other.getTotalSize());
+      if (other.getRowCount() != 0) {
+        setRowCount(other.getRowCount());
       }
       if (other.hasPropertyQuota()) {
         mergePropertyQuota(other.getPropertyQuota());
@@ -3537,45 +3537,45 @@ public final class RunRealtimeReportResponse extends com.google.protobuf.Generat
       return minimumsBuilder_;
     }
 
-    private int totalSize_;
+    private int rowCount_;
     /**
      *
      *
      * <pre>
-     * The total number of rows in the query result. `totalSize` is independent of
-     * the number of rows returned in the response and the `pageSize` request
-     * parameter. For example if a query returns 175 rows and includes `pageSize`
-     * of 50 in the API request, the response will contain `totalSize` of 175 but
+     * The total number of rows in the query result. `rowCount` is independent of
+     * the number of rows returned in the response and the `limit` request
+     * parameter. For example if a query returns 175 rows and includes `limit`
+     * of 50 in the API request, the response will contain `rowCount` of 175 but
      * only 50 rows.
      * </pre>
      *
-     * <code>int32 total_size = 7;</code>
+     * <code>int32 row_count = 7;</code>
      *
-     * @return The totalSize.
+     * @return The rowCount.
      */
     @java.lang.Override
-    public int getTotalSize() {
-      return totalSize_;
+    public int getRowCount() {
+      return rowCount_;
     }
     /**
      *
      *
      * <pre>
-     * The total number of rows in the query result. `totalSize` is independent of
-     * the number of rows returned in the response and the `pageSize` request
-     * parameter. For example if a query returns 175 rows and includes `pageSize`
-     * of 50 in the API request, the response will contain `totalSize` of 175 but
+     * The total number of rows in the query result. `rowCount` is independent of
+     * the number of rows returned in the response and the `limit` request
+     * parameter. For example if a query returns 175 rows and includes `limit`
+     * of 50 in the API request, the response will contain `rowCount` of 175 but
      * only 50 rows.
      * </pre>
      *
-     * <code>int32 total_size = 7;</code>
+     * <code>int32 row_count = 7;</code>
      *
-     * @param value The totalSize to set.
+     * @param value The rowCount to set.
      * @return This builder for chaining.
      */
-    public Builder setTotalSize(int value) {
+    public Builder setRowCount(int value) {
 
-      totalSize_ = value;
+      rowCount_ = value;
       onChanged();
       return this;
     }
@@ -3583,20 +3583,20 @@ public final class RunRealtimeReportResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The total number of rows in the query result. `totalSize` is independent of
-     * the number of rows returned in the response and the `pageSize` request
-     * parameter. For example if a query returns 175 rows and includes `pageSize`
-     * of 50 in the API request, the response will contain `totalSize` of 175 but
+     * The total number of rows in the query result. `rowCount` is independent of
+     * the number of rows returned in the response and the `limit` request
+     * parameter. For example if a query returns 175 rows and includes `limit`
+     * of 50 in the API request, the response will contain `rowCount` of 175 but
      * only 50 rows.
      * </pre>
      *
-     * <code>int32 total_size = 7;</code>
+     * <code>int32 row_count = 7;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearTotalSize() {
+    public Builder clearRowCount() {
 
-      totalSize_ = 0;
+      rowCount_ = 0;
       onChanged();
       return this;
     }

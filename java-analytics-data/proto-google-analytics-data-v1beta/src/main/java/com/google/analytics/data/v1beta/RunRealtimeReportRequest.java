@@ -140,7 +140,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
             }
           case 48:
             {
-              pageSize_ = input.readInt32();
+              limit_ = input.readInt64();
               break;
             }
           case 56:
@@ -530,31 +530,29 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     return getMetricFilter();
   }
 
-  public static final int PAGE_SIZE_FIELD_NUMBER = 6;
-  private int pageSize_;
+  public static final int LIMIT_FIELD_NUMBER = 6;
+  private long limit_;
   /**
    *
    *
    * <pre>
-   * Page size specifies maximum number of rows to return. If unspecified, up to
-   * 10,000 rows are returned. The API returns a maximum of 100,000 rows per
-   * request, no matter how many you ask for. Page size must be positive.
-   * The API can also return fewer rows than the requested `pageSize`, if there
-   * aren't as many dimension values as the `pageSize`. For instance, there are
+   * The number of rows to return. If unspecified, 10,000 rows are returned. The
+   * API returns a maximum of 100,000 rows per request, no matter how many you
+   * ask for. `limit` must be positive.
+   * The API can also return fewer rows than the requested `limit`, if there
+   * aren't as many dimension values as the `limit`. For instance, there are
    * fewer than 300 possible values for the dimension `country`, so when
    * reporting on only `country`, you can't get more than 300 rows, even if you
-   * set `pageSize` to a higher value.
-   * To learn more about this pagination parameter, see
-   * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-basics#pagination).
+   * set `limit` to a higher value.
    * </pre>
    *
-   * <code>int32 page_size = 6;</code>
+   * <code>int64 limit = 6;</code>
    *
-   * @return The pageSize.
+   * @return The limit.
    */
   @java.lang.Override
-  public int getPageSize() {
-    return pageSize_;
+  public long getLimit() {
+    return limit_;
   }
 
   public static final int METRIC_AGGREGATIONS_FIELD_NUMBER = 7;
@@ -780,8 +778,8 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     if (metricFilter_ != null) {
       output.writeMessage(5, getMetricFilter());
     }
-    if (pageSize_ != 0) {
-      output.writeInt32(6, pageSize_);
+    if (limit_ != 0L) {
+      output.writeInt64(6, limit_);
     }
     if (getMetricAggregationsList().size() > 0) {
       output.writeUInt32NoTag(58);
@@ -820,8 +818,8 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     if (metricFilter_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getMetricFilter());
     }
-    if (pageSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, pageSize_);
+    if (limit_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, limit_);
     }
     {
       int dataSize = 0;
@@ -869,7 +867,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     if (hasMetricFilter()) {
       if (!getMetricFilter().equals(other.getMetricFilter())) return false;
     }
-    if (getPageSize() != other.getPageSize()) return false;
+    if (getLimit() != other.getLimit()) return false;
     if (!metricAggregations_.equals(other.metricAggregations_)) return false;
     if (!getOrderBysList().equals(other.getOrderBysList())) return false;
     if (getReturnPropertyQuota() != other.getReturnPropertyQuota()) return false;
@@ -902,8 +900,8 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       hash = (37 * hash) + METRIC_FILTER_FIELD_NUMBER;
       hash = (53 * hash) + getMetricFilter().hashCode();
     }
-    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getPageSize();
+    hash = (37 * hash) + LIMIT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getLimit());
     if (getMetricAggregationsCount() > 0) {
       hash = (37 * hash) + METRIC_AGGREGATIONS_FIELD_NUMBER;
       hash = (53 * hash) + metricAggregations_.hashCode();
@@ -1090,7 +1088,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         metricFilter_ = null;
         metricFilterBuilder_ = null;
       }
-      pageSize_ = 0;
+      limit_ = 0L;
 
       metricAggregations_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1159,7 +1157,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       } else {
         result.metricFilter_ = metricFilterBuilder_.build();
       }
-      result.pageSize_ = pageSize_;
+      result.limit_ = limit_;
       if (((bitField0_ & 0x00000004) != 0)) {
         metricAggregations_ = java.util.Collections.unmodifiableList(metricAggregations_);
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -1289,8 +1287,8 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       if (other.hasMetricFilter()) {
         mergeMetricFilter(other.getMetricFilter());
       }
-      if (other.getPageSize() != 0) {
-        setPageSize(other.getPageSize());
+      if (other.getLimit() != 0L) {
+        setLimit(other.getLimit());
       }
       if (!other.metricAggregations_.isEmpty()) {
         if (metricAggregations_.isEmpty()) {
@@ -2589,55 +2587,51 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       return metricFilterBuilder_;
     }
 
-    private int pageSize_;
+    private long limit_;
     /**
      *
      *
      * <pre>
-     * Page size specifies maximum number of rows to return. If unspecified, up to
-     * 10,000 rows are returned. The API returns a maximum of 100,000 rows per
-     * request, no matter how many you ask for. Page size must be positive.
-     * The API can also return fewer rows than the requested `pageSize`, if there
-     * aren't as many dimension values as the `pageSize`. For instance, there are
+     * The number of rows to return. If unspecified, 10,000 rows are returned. The
+     * API returns a maximum of 100,000 rows per request, no matter how many you
+     * ask for. `limit` must be positive.
+     * The API can also return fewer rows than the requested `limit`, if there
+     * aren't as many dimension values as the `limit`. For instance, there are
      * fewer than 300 possible values for the dimension `country`, so when
      * reporting on only `country`, you can't get more than 300 rows, even if you
-     * set `pageSize` to a higher value.
-     * To learn more about this pagination parameter, see
-     * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-basics#pagination).
+     * set `limit` to a higher value.
      * </pre>
      *
-     * <code>int32 page_size = 6;</code>
+     * <code>int64 limit = 6;</code>
      *
-     * @return The pageSize.
+     * @return The limit.
      */
     @java.lang.Override
-    public int getPageSize() {
-      return pageSize_;
+    public long getLimit() {
+      return limit_;
     }
     /**
      *
      *
      * <pre>
-     * Page size specifies maximum number of rows to return. If unspecified, up to
-     * 10,000 rows are returned. The API returns a maximum of 100,000 rows per
-     * request, no matter how many you ask for. Page size must be positive.
-     * The API can also return fewer rows than the requested `pageSize`, if there
-     * aren't as many dimension values as the `pageSize`. For instance, there are
+     * The number of rows to return. If unspecified, 10,000 rows are returned. The
+     * API returns a maximum of 100,000 rows per request, no matter how many you
+     * ask for. `limit` must be positive.
+     * The API can also return fewer rows than the requested `limit`, if there
+     * aren't as many dimension values as the `limit`. For instance, there are
      * fewer than 300 possible values for the dimension `country`, so when
      * reporting on only `country`, you can't get more than 300 rows, even if you
-     * set `pageSize` to a higher value.
-     * To learn more about this pagination parameter, see
-     * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-basics#pagination).
+     * set `limit` to a higher value.
      * </pre>
      *
-     * <code>int32 page_size = 6;</code>
+     * <code>int64 limit = 6;</code>
      *
-     * @param value The pageSize to set.
+     * @param value The limit to set.
      * @return This builder for chaining.
      */
-    public Builder setPageSize(int value) {
+    public Builder setLimit(long value) {
 
-      pageSize_ = value;
+      limit_ = value;
       onChanged();
       return this;
     }
@@ -2645,25 +2639,23 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Page size specifies maximum number of rows to return. If unspecified, up to
-     * 10,000 rows are returned. The API returns a maximum of 100,000 rows per
-     * request, no matter how many you ask for. Page size must be positive.
-     * The API can also return fewer rows than the requested `pageSize`, if there
-     * aren't as many dimension values as the `pageSize`. For instance, there are
+     * The number of rows to return. If unspecified, 10,000 rows are returned. The
+     * API returns a maximum of 100,000 rows per request, no matter how many you
+     * ask for. `limit` must be positive.
+     * The API can also return fewer rows than the requested `limit`, if there
+     * aren't as many dimension values as the `limit`. For instance, there are
      * fewer than 300 possible values for the dimension `country`, so when
      * reporting on only `country`, you can't get more than 300 rows, even if you
-     * set `pageSize` to a higher value.
-     * To learn more about this pagination parameter, see
-     * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-basics#pagination).
+     * set `limit` to a higher value.
      * </pre>
      *
-     * <code>int32 page_size = 6;</code>
+     * <code>int64 limit = 6;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearPageSize() {
+    public Builder clearLimit() {
 
-      pageSize_ = 0;
+      limit_ = 0L;
       onChanged();
       return this;
     }

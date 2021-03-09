@@ -16,8 +16,6 @@
 
 package com.google.analytics.data.v1beta;
 
-import static com.google.analytics.data.v1beta.BetaAnalyticsDataClient.RunReportPagedResponse;
-
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -25,7 +23,6 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
-import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -81,11 +78,17 @@ public class BetaAnalyticsDataClientTest {
 
   @Test
   public void runReportTest() throws Exception {
-    DimensionHeader responsesElement = DimensionHeader.newBuilder().build();
     RunReportResponse expectedResponse =
         RunReportResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllDimensionHeaders(Arrays.asList(responsesElement))
+            .addAllDimensionHeaders(new ArrayList<DimensionHeader>())
+            .addAllMetricHeaders(new ArrayList<MetricHeader>())
+            .addAllRows(new ArrayList<Row>())
+            .addAllTotals(new ArrayList<Row>())
+            .addAllMaximums(new ArrayList<Row>())
+            .addAllMinimums(new ArrayList<Row>())
+            .setRowCount(1340416618)
+            .setMetadata(ResponseMetaData.newBuilder().build())
+            .setPropertyQuota(PropertyQuota.newBuilder().build())
             .build();
     mockBetaAnalyticsData.addResponse(expectedResponse);
 
@@ -97,8 +100,8 @@ public class BetaAnalyticsDataClientTest {
             .addAllDateRanges(new ArrayList<DateRange>())
             .setDimensionFilter(FilterExpression.newBuilder().build())
             .setMetricFilter(FilterExpression.newBuilder().build())
-            .setPageSize(883849137)
-            .setPageToken("pageToken873572522")
+            .setOffset(-1019779949)
+            .setLimit(102976443)
             .addAllMetricAggregations(new ArrayList<MetricAggregation>())
             .addAllOrderBys(new ArrayList<OrderBy>())
             .setCurrencyCode("currencyCode1004773790")
@@ -107,12 +110,8 @@ public class BetaAnalyticsDataClientTest {
             .setReturnPropertyQuota(true)
             .build();
 
-    RunReportPagedResponse pagedListResponse = client.runReport(request);
-
-    List<DimensionHeader> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getDimensionHeadersList().get(0), resources.get(0));
+    RunReportResponse actualResponse = client.runReport(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockBetaAnalyticsData.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -124,8 +123,8 @@ public class BetaAnalyticsDataClientTest {
     Assert.assertEquals(request.getDateRangesList(), actualRequest.getDateRangesList());
     Assert.assertEquals(request.getDimensionFilter(), actualRequest.getDimensionFilter());
     Assert.assertEquals(request.getMetricFilter(), actualRequest.getMetricFilter());
-    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
-    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertEquals(request.getOffset(), actualRequest.getOffset());
+    Assert.assertEquals(request.getLimit(), actualRequest.getLimit());
     Assert.assertEquals(
         request.getMetricAggregationsList(), actualRequest.getMetricAggregationsList());
     Assert.assertEquals(request.getOrderBysList(), actualRequest.getOrderBysList());
@@ -153,8 +152,8 @@ public class BetaAnalyticsDataClientTest {
               .addAllDateRanges(new ArrayList<DateRange>())
               .setDimensionFilter(FilterExpression.newBuilder().build())
               .setMetricFilter(FilterExpression.newBuilder().build())
-              .setPageSize(883849137)
-              .setPageToken("pageToken873572522")
+              .setOffset(-1019779949)
+              .setLimit(102976443)
               .addAllMetricAggregations(new ArrayList<MetricAggregation>())
               .addAllOrderBys(new ArrayList<OrderBy>())
               .setCurrencyCode("currencyCode1004773790")
@@ -434,7 +433,7 @@ public class BetaAnalyticsDataClientTest {
             .addAllTotals(new ArrayList<Row>())
             .addAllMaximums(new ArrayList<Row>())
             .addAllMinimums(new ArrayList<Row>())
-            .setTotalSize(-705419236)
+            .setRowCount(1340416618)
             .setPropertyQuota(PropertyQuota.newBuilder().build())
             .build();
     mockBetaAnalyticsData.addResponse(expectedResponse);
@@ -446,7 +445,7 @@ public class BetaAnalyticsDataClientTest {
             .addAllMetrics(new ArrayList<Metric>())
             .setDimensionFilter(FilterExpression.newBuilder().build())
             .setMetricFilter(FilterExpression.newBuilder().build())
-            .setPageSize(883849137)
+            .setLimit(102976443)
             .addAllMetricAggregations(new ArrayList<MetricAggregation>())
             .addAllOrderBys(new ArrayList<OrderBy>())
             .setReturnPropertyQuota(true)
@@ -464,7 +463,7 @@ public class BetaAnalyticsDataClientTest {
     Assert.assertEquals(request.getMetricsList(), actualRequest.getMetricsList());
     Assert.assertEquals(request.getDimensionFilter(), actualRequest.getDimensionFilter());
     Assert.assertEquals(request.getMetricFilter(), actualRequest.getMetricFilter());
-    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getLimit(), actualRequest.getLimit());
     Assert.assertEquals(
         request.getMetricAggregationsList(), actualRequest.getMetricAggregationsList());
     Assert.assertEquals(request.getOrderBysList(), actualRequest.getOrderBysList());
@@ -488,7 +487,7 @@ public class BetaAnalyticsDataClientTest {
               .addAllMetrics(new ArrayList<Metric>())
               .setDimensionFilter(FilterExpression.newBuilder().build())
               .setMetricFilter(FilterExpression.newBuilder().build())
-              .setPageSize(883849137)
+              .setLimit(102976443)
               .addAllMetricAggregations(new ArrayList<MetricAggregation>())
               .addAllOrderBys(new ArrayList<OrderBy>())
               .setReturnPropertyQuota(true)
