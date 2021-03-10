@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.15.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.14.0...v1.15.0) (2021-03-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove deprecated append method in StreamWriterV2 (#924)
+
+### Features
+
+* remove deprecated append method in StreamWriterV2 ([#924](https://www.github.com/googleapis/java-bigquerystorage/issues/924)) ([f278775](https://www.github.com/googleapis/java-bigquerystorage/commit/f2787751bf03d91d1575ee6e007f407f91d97157))
+
+
+### Bug Fixes
+
+* Revive schema update e2e test and adjust some test names ([#921](https://www.github.com/googleapis/java-bigquerystorage/issues/921)) ([dd392e5](https://www.github.com/googleapis/java-bigquerystorage/commit/dd392e54953e0b75e780532a4dab2d143b8d8665))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#931](https://www.github.com/googleapis/java-bigquerystorage/issues/931)) ([8c716c5](https://www.github.com/googleapis/java-bigquerystorage/commit/8c716c5d26420ef03f76a302c76892894045d4ad))
+
 ## [1.14.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.13.0...v1.14.0) (2021-03-04)
 
 
