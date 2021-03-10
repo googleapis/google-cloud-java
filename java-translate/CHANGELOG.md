@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.96.0](https://www.github.com/googleapis/java-translate/compare/v1.95.10...v1.96.0) (2021-03-10)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#449](https://www.github.com/googleapis/java-translate/issues/449)) ([7b95029](https://www.github.com/googleapis/java-translate/commit/7b95029509466bdcbae67d66aeb6bf9cea06ca07))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.94.2 ([#454](https://www.github.com/googleapis/java-translate/issues/454)) ([8948248](https://www.github.com/googleapis/java-translate/commit/89482487ae5f2e343973f85f5519db542c7db394))
+* update dependency com.google.cloud:google-cloud-core to v1.94.3 ([#457](https://www.github.com/googleapis/java-translate/issues/457)) ([7ab9afb](https://www.github.com/googleapis/java-translate/commit/7ab9afb757b5d4c8aabe9eff7d216b4c90172045))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#465](https://www.github.com/googleapis/java-translate/issues/465)) ([69714c6](https://www.github.com/googleapis/java-translate/commit/69714c6a5d4532d0413c6c8457c5ab4487e571c6))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.13 ([#453](https://www.github.com/googleapis/java-translate/issues/453)) ([04c8be7](https://www.github.com/googleapis/java-translate/commit/04c8be731f49dd40da6c0c06ea676bf3ee9432aa))
+
 ### [1.95.10](https://www.github.com/googleapis/java-translate/compare/v1.95.9...v1.95.10) (2021-02-25)
 
 
