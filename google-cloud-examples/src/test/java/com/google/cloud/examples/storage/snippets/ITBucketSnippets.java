@@ -309,65 +309,106 @@ public class ITBucketSnippets {
 
   @Test
   public void testGetPublicAccessPrevention() {
-    storage
-        .get(BUCKET)
-        .toBuilder()
-        .setIamConfiguration(
-            BucketInfo.IamConfiguration.newBuilder()
-                .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.ENFORCED)
-                .build())
-        .build()
-        .update();
-    PrintStream standardOut = System.out;
-    final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(snippetOutputCapture));
-    GetPublicAccessPrevention.getPublicAccessPrevention(PROJECT_ID, BUCKET);
-    String snippetOutput = snippetOutputCapture.toString();
-    System.setOut(standardOut);
-    assertTrue(snippetOutput.contains("enforced"));
-    storage
-        .get(BUCKET)
-        .toBuilder()
-        .setIamConfiguration(
-            BucketInfo.IamConfiguration.newBuilder()
-                .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.UNSPECIFIED)
-                .build())
-        .build()
-        .update();
+    try {
+      // By default a bucket PAP state is UNSPECIFIED and we are changing the state to validate
+      // non-default state.
+      storage
+          .get(BUCKET)
+          .toBuilder()
+          .setIamConfiguration(
+              BucketInfo.IamConfiguration.newBuilder()
+                  .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.ENFORCED)
+                  .build())
+          .build()
+          .update();
+      PrintStream standardOut = System.out;
+      final ByteArrayOutputStream snippetOutputCapture = new ByteArrayOutputStream();
+      System.setOut(new PrintStream(snippetOutputCapture));
+      GetPublicAccessPrevention.getPublicAccessPrevention(PROJECT_ID, BUCKET);
+      String snippetOutput = snippetOutputCapture.toString();
+      System.setOut(standardOut);
+      assertTrue(snippetOutput.contains("enforced"));
+      storage
+          .get(BUCKET)
+          .toBuilder()
+          .setIamConfiguration(
+              BucketInfo.IamConfiguration.newBuilder()
+                  .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.UNSPECIFIED)
+                  .build())
+          .build()
+          .update();
+    } finally {
+      // No matter what happens make sure test set bucket back to UNSPECIFIED
+      storage
+          .get(BUCKET)
+          .toBuilder()
+          .setIamConfiguration(
+              BucketInfo.IamConfiguration.newBuilder()
+                  .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.UNSPECIFIED)
+                  .build())
+          .build()
+          .update();
+    }
   }
 
   @Test
   public void testSetPublicAccessPreventionEnforced() {
-    SetPublicAccessPreventionEnforced.setPublicAccessPreventionEnforced(PROJECT_ID, BUCKET);
-    assertEquals(
-        storage.get(BUCKET).getIamConfiguration().getPublicAccessPrevention(),
-        BucketInfo.PublicAccessPrevention.ENFORCED);
-    storage
-        .get(BUCKET)
-        .toBuilder()
-        .setIamConfiguration(
-            BucketInfo.IamConfiguration.newBuilder()
-                .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.UNSPECIFIED)
-                .build())
-        .build()
-        .update();
+    try {
+      SetPublicAccessPreventionEnforced.setPublicAccessPreventionEnforced(PROJECT_ID, BUCKET);
+      assertEquals(
+          storage.get(BUCKET).getIamConfiguration().getPublicAccessPrevention(),
+          BucketInfo.PublicAccessPrevention.ENFORCED);
+      storage
+          .get(BUCKET)
+          .toBuilder()
+          .setIamConfiguration(
+              BucketInfo.IamConfiguration.newBuilder()
+                  .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.UNSPECIFIED)
+                  .build())
+          .build()
+          .update();
+    } finally {
+      // No matter what happens make sure test set bucket back to UNSPECIFIED
+      storage
+          .get(BUCKET)
+          .toBuilder()
+          .setIamConfiguration(
+              BucketInfo.IamConfiguration.newBuilder()
+                  .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.UNSPECIFIED)
+                  .build())
+          .build()
+          .update();
+    }
   }
 
   @Test
   public void testSetPublicAccessPreventionUnspecified() {
-    storage
-        .get(BUCKET)
-        .toBuilder()
-        .setIamConfiguration(
-            BucketInfo.IamConfiguration.newBuilder()
-                .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.ENFORCED)
-                .build())
-        .build()
-        .update();
-    SetPublicAccessPreventionUnspecified.setPublicAccessPreventionUnspecified(PROJECT_ID, BUCKET);
-    assertEquals(
-        storage.get(BUCKET).getIamConfiguration().getPublicAccessPrevention(),
-        BucketInfo.PublicAccessPrevention.UNSPECIFIED);
+    try {
+      storage
+          .get(BUCKET)
+          .toBuilder()
+          .setIamConfiguration(
+              BucketInfo.IamConfiguration.newBuilder()
+                  .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.ENFORCED)
+                  .build())
+          .build()
+          .update();
+      SetPublicAccessPreventionUnspecified.setPublicAccessPreventionUnspecified(PROJECT_ID, BUCKET);
+      assertEquals(
+          storage.get(BUCKET).getIamConfiguration().getPublicAccessPrevention(),
+          BucketInfo.PublicAccessPrevention.UNSPECIFIED);
+    } finally {
+      // No matter what happens make sure test set bucket back to UNSPECIFIED
+      storage
+          .get(BUCKET)
+          .toBuilder()
+          .setIamConfiguration(
+              BucketInfo.IamConfiguration.newBuilder()
+                  .setPublicAccessPrevention(BucketInfo.PublicAccessPrevention.UNSPECIFIED)
+                  .build())
+          .build()
+          .update();
+    }
   }
 
   @Test
