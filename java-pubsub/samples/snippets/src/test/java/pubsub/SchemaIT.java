@@ -23,6 +23,7 @@ import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.pubsub.v1.SchemaServiceClient;
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
+import com.google.cloud.testing.junit4.MultipleAttemptsRule;
 import com.google.pubsub.v1.Encoding;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.SchemaName;
@@ -33,7 +34,6 @@ import java.io.PrintStream;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -73,12 +73,8 @@ public class SchemaIT {
         System.getenv(varName));
   }
 
-  @Rule public Timeout globalTimeout = Timeout.seconds(300); // 5 minute timeout
-
-  @BeforeClass
-  public static void checkRequirements() {
-    requireEnvVar("GOOGLE_CLOUD_PROJECT");
-  }
+  @Rule public Timeout globalTimeout = Timeout.seconds(600); // 10 minute timeout
+  @Rule public MultipleAttemptsRule retryRule = new MultipleAttemptsRule(/*maxAttemptCount=*/ 3);
 
   @Before
   public void setUp() {

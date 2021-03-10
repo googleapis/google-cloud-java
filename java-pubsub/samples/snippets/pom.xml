@@ -87,6 +87,12 @@
       <version>1.1.2</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-core</artifactId>
+      <version>1.94.1</version>
+      <classifier>tests</classifier>
+    </dependency>
     <!-- [END_EXCLUDE] -->
   </dependencies>
   <!-- [END pubsub_install_with_bom] -->

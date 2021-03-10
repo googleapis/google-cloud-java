@@ -20,14 +20,13 @@
 /**
  * This file is created using protoc.
  *
- * To download, visit https://developers.google.com/protocol-buffers/docs/downloads
+ * <p>To download, visit https://developers.google.com/protocol-buffers/docs/downloads
  *
- * Run the following command from the `samples/snippets` directory to
- * generate this class:
+ * <p>Run the following command from the `samples/snippets` directory to generate this class:
  *
- *`protoc --proto_path=src/main/resources/ --java_out=src/main/java/ src/main/resources/us-states.proto`
+ * <p>`protoc --proto_path=src/main/resources/ --java_out=src/main/java/
+ * src/main/resources/us-states.proto`
  */
-
 package utilities;
 
 public final class StateProto {
