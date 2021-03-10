@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.1.2...v1.2.0) (2021-03-09)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#671](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/671)) ([4b3d127](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/4b3d12750473402c892710f3139c0c7bba05c3fa))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.127.6 ([#675](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/675)) ([ba8c3f3](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/ba8c3f34f63642a9dcc9a56610c2e72f0a77ead4))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#683](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/683)) ([0297d16](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/0297d160283ff90821573f7490d1fbff3800c7c3))
+* update dependency com.google.protobuf:protobuf-java-util to v3.15.5 ([#677](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/677)) ([d8bdf71](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/d8bdf7142a63cc910b6c81eb8ad9f7fdc323325a))
+
 ### [1.1.2](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.1.1...v1.1.2) (2021-02-26)
 
 
