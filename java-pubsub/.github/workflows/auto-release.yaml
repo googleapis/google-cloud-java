@@ -16,8 +16,8 @@ jobs:
             return;
           }
 
-          // only approve PRs like "chore(master): release <release version>"
-          if ( !context.payload.pull_request.title.startsWith("chore(master): release") ) {
+          // only approve PRs like "chore: release <release version>"
+          if ( !context.payload.pull_request.title.startsWith("chore: release") ) {
             return;
           }
 
