@@ -90,7 +90,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>1.94.1</version>
+      <version>1.94.3</version>
       <classifier>tests</classifier>
     </dependency>
     <!-- [END_EXCLUDE] -->
