@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.120.18](https://www.github.com/googleapis/java-errorreporting/compare/v0.120.17...v0.120.18) (2021-03-11)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.94.3 ([#458](https://www.github.com/googleapis/java-errorreporting/issues/458)) ([3dc7ed7](https://www.github.com/googleapis/java-errorreporting/commit/3dc7ed79de354e24715a41cf57ea949a350dec22))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#464](https://www.github.com/googleapis/java-errorreporting/issues/464)) ([56dd0d8](https://www.github.com/googleapis/java-errorreporting/commit/56dd0d8937c01c96b3fd0bd3827365f6607043fa))
+
 ### [0.120.17](https://www.github.com/googleapis/java-errorreporting/compare/v0.120.16...v0.120.17) (2021-03-02)
 
 
