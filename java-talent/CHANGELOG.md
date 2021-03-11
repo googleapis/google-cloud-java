@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-talent/compare/v1.0.8...v1.1.0) (2021-03-11)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#431](https://www.github.com/googleapis/java-talent/issues/431)) ([7185c41](https://www.github.com/googleapis/java-talent/commit/7185c411214ff5b9c590bac67c974212c4aab937))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#441](https://www.github.com/googleapis/java-talent/issues/441)) ([fb2388d](https://www.github.com/googleapis/java-talent/commit/fb2388d86b9fdd20e66e40672c7efd9253ab3d3a))
+
 ### [1.0.8](https://www.github.com/googleapis/java-talent/compare/v1.0.7...v1.0.8) (2021-02-25)
 
 
