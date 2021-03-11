@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.106.0](https://www.github.com/googleapis/java-datastore/compare/v1.105.9...v1.106.0) (2021-03-11)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#354](https://www.github.com/googleapis/java-datastore/issues/354)) ([3b1f67a](https://www.github.com/googleapis/java-datastore/commit/3b1f67af118b188e57a7dda77d2c265672765a6a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#365](https://www.github.com/googleapis/java-datastore/issues/365)) ([ccc4a01](https://www.github.com/googleapis/java-datastore/commit/ccc4a015bc30b5b7bf43eb6af697a44b7be2e041))
+
 ### [1.105.9](https://www.github.com/googleapis/java-datastore/compare/v1.105.8...v1.105.9) (2021-02-25)
 
 
