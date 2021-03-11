@@ -956,6 +956,35 @@ public class PublisherImplTest {
   }
 
   @Test
+  public void testPartialBatchingSettings() throws Exception {
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setBatchingSettings(
+                Publisher.Builder.getDefaultBatchingSettings()
+                    .toBuilder()
+                    .setRequestByteThreshold(5000L)
+                    .build())
+            .build();
+    assertEquals((long) publisher.getBatchingSettings().getRequestByteThreshold(), 5000);
+    assertEquals(
+        publisher.getBatchingSettings().getElementCountThreshold(),
+        Publisher.Builder.DEFAULT_BATCHING_SETTINGS.getElementCountThreshold());
+
+    publisher =
+        getTestPublisherBuilder()
+            .setBatchingSettings(
+                Publisher.Builder.getDefaultBatchingSettings()
+                    .toBuilder()
+                    .setElementCountThreshold(500L)
+                    .build())
+            .build();
+    assertEquals((long) publisher.getBatchingSettings().getElementCountThreshold(), 500);
+    assertEquals(
+        publisher.getBatchingSettings().getRequestByteThreshold(),
+        Publisher.Builder.DEFAULT_BATCHING_SETTINGS.getRequestByteThreshold());
+  }
+
+  @Test
   public void testAwaitTermination() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()

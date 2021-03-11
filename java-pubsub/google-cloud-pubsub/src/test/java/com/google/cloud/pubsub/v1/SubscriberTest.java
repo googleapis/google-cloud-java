@@ -289,6 +289,36 @@ public class SubscriberTest {
     subscriber.stopAsync().awaitTerminated();
   }
 
+  @Test
+  public void testPartialFlowControlSettings() throws Exception {
+    Subscriber subscriber =
+        getTestSubscriberBuilder(testReceiver)
+            .setFlowControlSettings(
+                Subscriber.Builder.DEFAULT_FLOW_CONTROL_SETTINGS
+                    .toBuilder()
+                    .setMaxOutstandingElementCount(500L)
+                    .build())
+            .build();
+    assertEquals((long) subscriber.getFlowControlSettings().getMaxOutstandingElementCount(), 500);
+    assertEquals(
+        subscriber.getFlowControlSettings().getMaxOutstandingRequestBytes(),
+        Subscriber.Builder.DEFAULT_FLOW_CONTROL_SETTINGS.getMaxOutstandingRequestBytes());
+
+    subscriber =
+        getTestSubscriberBuilder(testReceiver)
+            .setFlowControlSettings(
+                Subscriber.Builder.DEFAULT_FLOW_CONTROL_SETTINGS
+                    .toBuilder()
+                    .setMaxOutstandingRequestBytes(5_000_000_000L)
+                    .build())
+            .build();
+    assertEquals(
+        (long) subscriber.getFlowControlSettings().getMaxOutstandingRequestBytes(), 5_000_000_000L);
+    assertEquals(
+        subscriber.getFlowControlSettings().getMaxOutstandingElementCount(),
+        Subscriber.Builder.DEFAULT_FLOW_CONTROL_SETTINGS.getMaxOutstandingElementCount());
+  }
+
   private Subscriber startSubscriber(Builder testSubscriberBuilder) {
     Subscriber subscriber = testSubscriberBuilder.build();
     subscriber.startAsync().awaitRunning();

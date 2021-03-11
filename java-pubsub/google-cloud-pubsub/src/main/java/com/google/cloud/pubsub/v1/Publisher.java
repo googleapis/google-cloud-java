@@ -820,6 +820,11 @@ public class Publisher implements PublisherInterface {
       return this;
     }
 
+    /** Returns the default BatchingSettings used by the client if settings are not provided. */
+    public static BatchingSettings getDefaultBatchingSettings() {
+      return DEFAULT_BATCHING_SETTINGS;
+    }
+
     public Publisher build() throws IOException {
       return new Publisher(this);
     }
