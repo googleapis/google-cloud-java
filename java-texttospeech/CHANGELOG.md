@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/googleapis/java-texttospeech/compare/v1.2.10...v1.3.0) (2021-03-11)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#387](https://www.github.com/googleapis/java-texttospeech/issues/387)) ([8187b8d](https://www.github.com/googleapis/java-texttospeech/commit/8187b8dee7a643ee7eb884f4562acbf541a51bc4))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#400](https://www.github.com/googleapis/java-texttospeech/issues/400)) ([92c53cf](https://www.github.com/googleapis/java-texttospeech/commit/92c53cf56a02361cbfab7b57c88fd3d9a787e1b6))
+
 ### [1.2.10](https://www.github.com/googleapis/java-texttospeech/compare/v1.2.9...v1.2.10) (2021-02-25)
 
 
