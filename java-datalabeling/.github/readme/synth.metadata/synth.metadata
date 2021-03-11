@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-datalabeling.git",
-        "sha": "88d60ff2690c06394c411bb6d9a25cfc9978e7d6"
+        "sha": "749f92bd81467822731b92f453ccbc9ce5049ed4"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "2e7bd5cc66a3f0b90ce1c150eb35c89eeb9872d6"
+        "sha": "ac8f20f12e7a4c0b0ae1c6fa415f684a25ea82b7"
       }
     }
   ]
