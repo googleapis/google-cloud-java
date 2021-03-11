@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.94.4](https://www.github.com/googleapis/java-core/compare/v1.94.3...v1.94.4) (2021-03-11)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-iam-v1 to v1.0.11 ([#402](https://www.github.com/googleapis/java-core/issues/402)) ([73d893c](https://www.github.com/googleapis/java-core/commit/73d893c76ab1bef3b69bd55040d9f6c5942b36c5))
+* update dependency com.google.protobuf:protobuf-bom to v3.15.5 ([#399](https://www.github.com/googleapis/java-core/issues/399)) ([a9c2e43](https://www.github.com/googleapis/java-core/commit/a9c2e43e06fcf2f15918359db765fb44d5e28a55))
+
 ### [1.94.3](https://www.github.com/googleapis/java-core/compare/v1.94.2...v1.94.3) (2021-03-02)
 
 
