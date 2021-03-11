@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-datacatalog/compare/v1.1.1...v1.2.0) (2021-03-11)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#445](https://www.github.com/googleapis/java-datacatalog/issues/445)) ([7069951](https://www.github.com/googleapis/java-datacatalog/commit/70699514e2f0aacc65cc226f641354b0991df899))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#457](https://www.github.com/googleapis/java-datacatalog/issues/457)) ([ccd0c83](https://www.github.com/googleapis/java-datacatalog/commit/ccd0c8354b4039dc4fe53508eae63dfd916ad8d2))
+
 ### [1.1.1](https://www.github.com/googleapis/java-datacatalog/compare/v1.1.0...v1.1.1) (2021-02-25)
 
 
