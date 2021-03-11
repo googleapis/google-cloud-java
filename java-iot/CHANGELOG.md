@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-iot/compare/v1.1.14...v1.2.0) (2021-03-11)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#389](https://www.github.com/googleapis/java-iot/issues/389)) ([7c7af19](https://www.github.com/googleapis/java-iot/commit/7c7af19f806ae6a13461b38af811d0e56f627089))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#400](https://www.github.com/googleapis/java-iot/issues/400)) ([6981d80](https://www.github.com/googleapis/java-iot/commit/6981d802f101912c1ae7e8f671e9179ab4561c7c))
+
 ### [1.1.14](https://www.github.com/googleapis/java-iot/compare/v1.1.13...v1.1.14) (2021-02-25)
 
 
