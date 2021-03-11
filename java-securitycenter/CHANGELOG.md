@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.4.0](https://www.github.com/googleapis/java-securitycenter/compare/v1.3.8...v1.4.0) (2021-03-11)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#406](https://www.github.com/googleapis/java-securitycenter/issues/406)) ([f0da610](https://www.github.com/googleapis/java-securitycenter/commit/f0da61032a9bb91f20f6fb6f5594e89f2f39e646))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub to v1.111.3 ([#401](https://www.github.com/googleapis/java-securitycenter/issues/401)) ([d292fe4](https://www.github.com/googleapis/java-securitycenter/commit/d292fe47b30d1595cc587f18ae41968c3dd9c5ab))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.111.4 ([#405](https://www.github.com/googleapis/java-securitycenter/issues/405)) ([5725930](https://www.github.com/googleapis/java-securitycenter/commit/57259303c5d3646e513351ac8344d2d866ab3f28))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#417](https://www.github.com/googleapis/java-securitycenter/issues/417)) ([cdb6263](https://www.github.com/googleapis/java-securitycenter/commit/cdb626306bbb62b4e54718b7fc644e25c2efe8ca))
+
 ### [1.3.8](https://www.github.com/googleapis/java-securitycenter/compare/v1.3.7...v1.3.8) (2021-02-25)
 
 
