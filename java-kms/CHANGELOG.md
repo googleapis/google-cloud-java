@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.41.0](https://www.github.com/googleapis/java-kms/compare/v1.40.8...v1.41.0) (2021-03-11)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#420](https://www.github.com/googleapis/java-kms/issues/420)) ([3904700](https://www.github.com/googleapis/java-kms/commit/390470026aff97e48311f50a5f06ce14e010a336))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#429](https://www.github.com/googleapis/java-kms/issues/429)) ([dd4c095](https://www.github.com/googleapis/java-kms/commit/dd4c095e7d4f15ddf5730b8d6b4064fdcb897216))
+* update dependency com.google.protobuf:protobuf-java-util to v3.15.5 ([#418](https://www.github.com/googleapis/java-kms/issues/418)) ([828a35b](https://www.github.com/googleapis/java-kms/commit/828a35bcd1d4cef250525ba86f63f56af0242768))
+
 ### [1.40.8](https://www.github.com/googleapis/java-kms/compare/v1.40.7...v1.40.8) (2021-02-25)
 
 
