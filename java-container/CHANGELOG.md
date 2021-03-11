@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/googleapis/java-container/compare/v1.2.6...v1.3.0) (2021-03-11)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#386](https://www.github.com/googleapis/java-container/issues/386)) ([9a884db](https://www.github.com/googleapis/java-container/commit/9a884db179c01550d5cb532aced08e099e49544b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#397](https://www.github.com/googleapis/java-container/issues/397)) ([90b8980](https://www.github.com/googleapis/java-container/commit/90b898021df6f3659e99875fc4e4f3ef71d3cd2f))
+
 ### [1.2.6](https://www.github.com/googleapis/java-container/compare/v1.2.5...v1.2.6) (2021-02-25)
 
 
