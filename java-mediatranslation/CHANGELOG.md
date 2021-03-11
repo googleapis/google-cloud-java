@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-mediatranslation/compare/v0.2.12...v0.3.0) (2021-03-11)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#235](https://www.github.com/googleapis/java-mediatranslation/issues/235)) ([e67e0f8](https://www.github.com/googleapis/java-mediatranslation/commit/e67e0f84933cfee3bf4ae74b8784ae2982fcb2a9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#243](https://www.github.com/googleapis/java-mediatranslation/issues/243)) ([a68358e](https://www.github.com/googleapis/java-mediatranslation/commit/a68358e2a88df4d7bc08336a6df638c533dc9a19))
+
 ### [0.2.12](https://www.github.com/googleapis/java-mediatranslation/compare/v0.2.11...v0.2.12) (2021-02-25)
 
 
