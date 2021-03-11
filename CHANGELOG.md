@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-logging/compare/v2.1.5...v2.2.0) (2021-03-11)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#454](https://www.github.com/googleapis/java-logging/issues/454)) ([1e61adb](https://www.github.com/googleapis/java-logging/commit/1e61adb4b817ff099e17ccc9a4433fc5061a4826))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#465](https://www.github.com/googleapis/java-logging/issues/465)) ([676d0ba](https://www.github.com/googleapis/java-logging/commit/676d0baea2c591f477c0036191874c3d40288251))
+
 ### [2.1.5](https://www.github.com/googleapis/java-logging/compare/v2.1.4...v2.1.5) (2021-02-25)
 
 
