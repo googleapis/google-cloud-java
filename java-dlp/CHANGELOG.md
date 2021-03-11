@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://www.github.com/googleapis/java-dlp/compare/v2.2.9...v2.3.0) (2021-03-11)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#448](https://www.github.com/googleapis/java-dlp/issues/448)) ([a1364b3](https://www.github.com/googleapis/java-dlp/commit/a1364b34da45d59212fd00c6c8fc17ba0f17ee8d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#461](https://www.github.com/googleapis/java-dlp/issues/461)) ([91384fd](https://www.github.com/googleapis/java-dlp/commit/91384fd97a4dc7d40839d5580e8f7dc1ae3f371b))
+
 ### [2.2.9](https://www.github.com/googleapis/java-dlp/compare/v2.2.8...v2.2.9) (2021-02-26)
 
 
