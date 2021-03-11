@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.4.0](https://www.github.com/googleapis/java-automl/compare/v1.3.6...v1.4.0) (2021-03-11)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#483](https://www.github.com/googleapis/java-automl/issues/483)) ([3535079](https://www.github.com/googleapis/java-automl/commit/3535079013ab182c1c899112d16f9cadb7735351))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#498](https://www.github.com/googleapis/java-automl/issues/498)) ([f4e08e9](https://www.github.com/googleapis/java-automl/commit/f4e08e900cf979dd3655d6cbc27eb2fa194baff9))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.13 ([#484](https://www.github.com/googleapis/java-automl/issues/484)) ([5f99acb](https://www.github.com/googleapis/java-automl/commit/5f99acb8ad1bd9c2aa56755ec0cdba645c15e429))
+
 ### [1.3.6](https://www.github.com/googleapis/java-automl/compare/v1.3.5...v1.3.6) (2021-02-26)
 
 
