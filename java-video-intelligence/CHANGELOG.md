@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.6.0](https://www.github.com/googleapis/java-video-intelligence/compare/v1.5.11...v1.6.0) (2021-03-11)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#421](https://www.github.com/googleapis/java-video-intelligence/issues/421)) ([65f483c](https://www.github.com/googleapis/java-video-intelligence/commit/65f483c9f872a5e294b2ef1182a6279b086f808e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#435](https://www.github.com/googleapis/java-video-intelligence/issues/435)) ([601802f](https://www.github.com/googleapis/java-video-intelligence/commit/601802f773ab0127fd5261251f1f5eda2b86adfa))
+
 ### [1.5.11](https://www.github.com/googleapis/java-video-intelligence/compare/v1.5.10...v1.5.11) (2021-02-26)
 
 
