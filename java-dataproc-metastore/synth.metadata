@@ -1,0 +1,33 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "sso://devrel/cloud/libraries/java/repo-splitter",
+        "sha": "eaae008ee436aceeb8591348247a767828b30178"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis-gen",
+        "remote": "https://github.com/googleapis/googleapis-gen.git",
+        "sha": "a20b5124fe5bae9b6bbebb8c84450282229f7456",
+        "internalRef": "362294447"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "ac8f20f12e7a4c0b0ae1c6fa415f684a25ea82b7"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "ac8f20f12e7a4c0b0ae1c6fa415f684a25ea82b7"
+      }
+    }
+  ]
+}
