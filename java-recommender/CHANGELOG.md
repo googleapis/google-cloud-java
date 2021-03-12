@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.5.0](https://www.github.com/googleapis/java-recommender/compare/v1.4.1...v1.5.0) (2021-03-11)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#435](https://www.github.com/googleapis/java-recommender/issues/435)) ([b1110bb](https://www.github.com/googleapis/java-recommender/commit/b1110bb1b705d2960e638dd77fceb93d8d7024db))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#446](https://www.github.com/googleapis/java-recommender/issues/446)) ([5685ae5](https://www.github.com/googleapis/java-recommender/commit/5685ae5b96496bbeb735c2382b31a207e83eccd9))
+
 ### [1.4.1](https://www.github.com/googleapis/java-recommender/compare/v1.4.0...v1.4.1) (2021-02-25)
 
 
