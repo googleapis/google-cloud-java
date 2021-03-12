@@ -23,10 +23,8 @@ import com.google.cloud.automl.v1beta1.LocationName;
 import com.google.cloud.automl.v1beta1.Model;
 import com.google.cloud.automl.v1beta1.ModelName;
 import com.google.longrunning.Operation;
-import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.concurrent.ExecutionException;
 import net.sourceforge.argparse4j.ArgumentParsers;
 import net.sourceforge.argparse4j.inf.ArgumentParser;
 import net.sourceforge.argparse4j.inf.ArgumentParserException;
@@ -83,65 +81,6 @@ public class ModelApi {
   }
   // [END automl_translate_list_models]
 
-  // [START automl_translate_get_model]
-  /**
-   * Demonstrates using the AutoML client to get model details.
-   *
-   * @param projectId the Id of the project.
-   * @param computeRegion the Region name.
-   * @param modelId the Id of the model.
-   * @throws IOException on Input/Output errors.
-   */
-  public static void getModel(String projectId, String computeRegion, String modelId)
-      throws IOException {
-    // Instantiates a client
-    try (AutoMlClient client = AutoMlClient.create()) {
-
-      // Get the full path of the model.
-      ModelName modelFullId = ModelName.of(projectId, computeRegion, modelId);
-
-      // Get complete detail of the model.
-      Model model = client.getModel(modelFullId);
-
-      // Display the model information.
-      System.out.println(String.format("Model name: %s", model.getName()));
-      System.out.println(
-          String.format(
-              "Model id: %s", model.getName().split("/")[model.getName().split("/").length - 1]));
-      System.out.println(String.format("Model display name: %s", model.getDisplayName()));
-      System.out.println("Model create time:");
-      System.out.println(String.format("\tseconds: %s", model.getCreateTime().getSeconds()));
-      System.out.println(String.format("\tnanos: %s", model.getCreateTime().getNanos()));
-      System.out.println(String.format("Model deployment state: %s", model.getDeploymentState()));
-    }
-  }
-  // [END automl_translate_get_model]
-
-  // [START automl_translate_delete_model]
-  /**
-   * Demonstrates using the AutoML client to delete a model.
-   *
-   * @param projectId the Id of the project.
-   * @param computeRegion the Region name.
-   * @param modelId the Id of the model.
-   * @throws Exception on AutoML Client errors
-   */
-  public static void deleteModel(String projectId, String computeRegion, String modelId)
-      throws InterruptedException, ExecutionException, IOException {
-    // Instantiates a client
-    try (AutoMlClient client = AutoMlClient.create()) {
-
-      // Get the full path of the model.
-      ModelName modelFullId = ModelName.of(projectId, computeRegion, modelId);
-
-      // Delete a model.
-      Empty response = client.deleteModelAsync(modelFullId).get();
-
-      System.out.println("Model deletion started...");
-    }
-  }
-  // [END automl_translate_delete_model]
-
   // [START automl_translate_get_operation_status]
   /**
    * Demonstrates using the AutoML client to get operation status.
@@ -179,12 +118,6 @@ public class ModelApi {
     Subparser listModelParser = subparsers.addParser("list_models");
     listModelParser.addArgument("filter").nargs("?").setDefault("");
 
-    Subparser getModelParser = subparsers.addParser("get_model");
-    getModelParser.addArgument("modelId");
-
-    Subparser deleteModelParser = subparsers.addParser("delete_model");
-    deleteModelParser.addArgument("modelId");
-
     Subparser getOperationStatusParser = subparsers.addParser("get_operation_status");
     getOperationStatusParser.addArgument("operationFullId");
 
@@ -196,12 +129,6 @@ public class ModelApi {
       ns = parser.parseArgs(args);
       if (ns.get("command").equals("list_models")) {
         listModels(projectId, computeRegion, ns.getString("filter"));
-      }
-      if (ns.get("command").equals("get_model")) {
-        getModel(projectId, computeRegion, ns.getString("modelId"));
-      }
-      if (ns.get("command").equals("delete_model")) {
-        deleteModel(projectId, computeRegion, ns.getString("modelId"));
       }
       if (ns.get("command").equals("get_operation_status")) {
         getOperationStatus(ns.getString("operationFullId"));

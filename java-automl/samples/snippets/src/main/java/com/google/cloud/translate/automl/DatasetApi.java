@@ -75,30 +75,6 @@ public class DatasetApi {
   }
   // [END automl_translate_import_data]
 
-  // [START automl_translate_delete_dataset]
-  /**
-   * Delete a dataset.
-   *
-   * @param projectId the Google Cloud Project ID.
-   * @param computeRegion the Region name. (e.g., "us-central1").
-   * @param datasetId the Id of the dataset.
-   */
-  public static void deleteDataset(String projectId, String computeRegion, String datasetId)
-      throws IOException, InterruptedException, ExecutionException {
-    // Instantiates a client
-    try (AutoMlClient client = AutoMlClient.create()) {
-
-      // Get the full path of the dataset.
-      DatasetName datasetFullId = DatasetName.of(projectId, computeRegion, datasetId);
-
-      // Delete a dataset.
-      Empty response = client.deleteDatasetAsync(datasetFullId).get();
-
-      System.out.println(String.format("Dataset deleted. %s", response));
-    }
-  }
-  // [END automl_translate_delete_dataset]
-
   public static void main(String[] args) throws Exception {
     DatasetApi datasetApi = new DatasetApi();
     datasetApi.argsHelper(args, System.out);
@@ -112,8 +88,6 @@ public class DatasetApi {
     importDataParser.addArgument("datasetId");
     importDataParser.addArgument("path");
 
-    Subparser deleteDatasetParser = subparsers.addParser("delete_dataset");
-    deleteDatasetParser.addArgument("datasetId");
 
     String projectId = System.getenv("PROJECT_ID");
     String computeRegion = System.getenv("REGION_NAME");
@@ -123,9 +97,6 @@ public class DatasetApi {
       ns = parser.parseArgs(args);
       if (ns.get("command").equals("import_data")) {
         importData(projectId, computeRegion, ns.getString("datasetId"), ns.getString("path"));
-      }
-      if (ns.get("command").equals("delete_dataset")) {
-        deleteDataset(projectId, computeRegion, ns.getString("datasetId"));
       }
     } catch (ArgumentParserException e) {
       parser.handleError(e);

@@ -62,12 +62,5 @@ public class ModelApiIT {
     String got = bout.toString();
     modelId = got.split("\n")[1].split("/")[got.split("\n")[1].split("/").length - 1];
     assertThat(got).contains("Model id:");
-
-    // Act
-    ModelApi.getModel(PROJECT_ID, COMPUTE_REGION, modelId);
-
-    // Assert
-    got = bout.toString();
-    assertThat(got).contains("Model name:");
   }
 }
