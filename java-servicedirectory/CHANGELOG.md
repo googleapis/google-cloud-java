@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-servicedirectory/compare/v1.1.1...v1.2.0) (2021-03-11)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#322](https://www.github.com/googleapis/java-servicedirectory/issues/322)) ([c3a76ad](https://www.github.com/googleapis/java-servicedirectory/commit/c3a76add1d31c5f3e33b24d5a22eb69c38e795d6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#333](https://www.github.com/googleapis/java-servicedirectory/issues/333)) ([2287170](https://www.github.com/googleapis/java-servicedirectory/commit/22871704416f272ee0476c8bb47f92b5fff64edf))
+
 ### [1.1.1](https://www.github.com/googleapis/java-servicedirectory/compare/v1.1.0...v1.1.1) (2021-02-25)
 
 
