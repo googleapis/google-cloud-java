@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-game-servers/compare/v1.0.9...v1.1.0) (2021-03-11)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#370](https://www.github.com/googleapis/java-game-servers/issues/370)) ([e8a47a9](https://www.github.com/googleapis/java-game-servers/commit/e8a47a97563e750be3b4808487c9d3b2f8751ee9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#379](https://www.github.com/googleapis/java-game-servers/issues/379)) ([edff170](https://www.github.com/googleapis/java-game-servers/commit/edff170d971da73cdee8f9dbc931fb7ec25e58f7))
+
 ### [1.0.9](https://www.github.com/googleapis/java-game-servers/compare/v1.0.8...v1.0.9) (2021-02-25)
 
 
