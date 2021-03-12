@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v1.0.10...v1.1.0) (2021-03-11)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#318](https://www.github.com/googleapis/java-monitoring-dashboards/issues/318)) ([bb0d72b](https://www.github.com/googleapis/java-monitoring-dashboards/commit/bb0d72b0c35cefdffc16df7f8f1b166560333527))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#326](https://www.github.com/googleapis/java-monitoring-dashboards/issues/326)) ([4aa9a13](https://www.github.com/googleapis/java-monitoring-dashboards/commit/4aa9a130a6008ff9b5ca3b9bd8321c2d4a821edb))
+
 ### [1.0.10](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v1.0.9...v1.0.10) (2021-02-25)
 
 
