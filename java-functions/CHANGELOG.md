@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-functions/compare/v1.0.8...v1.1.0) (2021-03-11)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#155](https://www.github.com/googleapis/java-functions/issues/155)) ([2e45918](https://www.github.com/googleapis/java-functions/commit/2e4591826a259a93df4f0f069326c107d0ed65ef))
+
+
+### Bug Fixes
+
+* Fix service namespace in grpc_service_config ([#157](https://www.github.com/googleapis/java-functions/issues/157)) ([dbfed4d](https://www.github.com/googleapis/java-functions/commit/dbfed4dd57c4b245086aaceb6c9ba0e366fb5a85))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#162](https://www.github.com/googleapis/java-functions/issues/162)) ([6c4280f](https://www.github.com/googleapis/java-functions/commit/6c4280fc4ca080c2992be1401df151560fc6c593))
+
 ### [1.0.8](https://www.github.com/googleapis/java-functions/compare/v1.0.7...v1.0.8) (2021-02-25)
 
 
