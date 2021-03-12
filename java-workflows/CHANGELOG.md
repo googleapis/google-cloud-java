@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-workflows/compare/v0.2.1...v0.3.0) (2021-03-11)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#203](https://www.github.com/googleapis/java-workflows/issues/203)) ([607f990](https://www.github.com/googleapis/java-workflows/commit/607f9904330c68f624c37d040e2ffc5ab735ef50))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#211](https://www.github.com/googleapis/java-workflows/issues/211)) ([47a3bf4](https://www.github.com/googleapis/java-workflows/commit/47a3bf4d8f12110af1fe4571e661dc08656644cb))
+
 ### [0.2.1](https://www.github.com/googleapis/java-workflows/compare/v0.2.0...v0.2.1) (2021-02-25)
 
 
