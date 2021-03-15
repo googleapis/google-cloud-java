@@ -1293,6 +1293,13 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
+   *   ListDetectorsRequest request =
+   *       ListDetectorsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListDetectorsResponse response =
    *         securityCenterSettingsServiceClient.listDetectorsCallable().call(request);
@@ -1435,6 +1442,12 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
+   *   ListComponentsRequest request =
+   *       ListComponentsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListComponentsResponse response =
    *         securityCenterSettingsServiceClient.listComponentsCallable().call(request);

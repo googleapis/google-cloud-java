@@ -62,7 +62,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
   @Override
   public void getServiceAccount(
       GetServiceAccountRequest request, StreamObserver<ServiceAccount> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ServiceAccount) {
       requests.add(request);
       responseObserver.onNext(((ServiceAccount) response));
@@ -74,7 +74,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetServiceAccount, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ServiceAccount.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
 
   @Override
   public void getSettings(GetSettingsRequest request, StreamObserver<Settings> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Settings) {
       requests.add(request);
       responseObserver.onNext(((Settings) response));
@@ -94,7 +94,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetSettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Settings.class.getName(),
                   Exception.class.getName())));
     }
@@ -103,7 +103,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
   @Override
   public void updateSettings(
       UpdateSettingsRequest request, StreamObserver<Settings> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Settings) {
       requests.add(request);
       responseObserver.onNext(((Settings) response));
@@ -115,7 +115,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateSettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Settings.class.getName(),
                   Exception.class.getName())));
     }
@@ -123,7 +123,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
 
   @Override
   public void resetSettings(ResetSettingsRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -135,7 +135,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ResetSettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -144,7 +144,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
   @Override
   public void batchGetSettings(
       BatchGetSettingsRequest request, StreamObserver<BatchGetSettingsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BatchGetSettingsResponse) {
       requests.add(request);
       responseObserver.onNext(((BatchGetSettingsResponse) response));
@@ -156,7 +156,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchGetSettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BatchGetSettingsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -165,7 +165,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
   @Override
   public void calculateEffectiveSettings(
       CalculateEffectiveSettingsRequest request, StreamObserver<Settings> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Settings) {
       requests.add(request);
       responseObserver.onNext(((Settings) response));
@@ -177,7 +177,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CalculateEffectiveSettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Settings.class.getName(),
                   Exception.class.getName())));
     }
@@ -187,7 +187,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
   public void batchCalculateEffectiveSettings(
       BatchCalculateEffectiveSettingsRequest request,
       StreamObserver<BatchCalculateEffectiveSettingsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BatchCalculateEffectiveSettingsResponse) {
       requests.add(request);
       responseObserver.onNext(((BatchCalculateEffectiveSettingsResponse) response));
@@ -199,7 +199,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchCalculateEffectiveSettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BatchCalculateEffectiveSettingsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -208,7 +208,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
   @Override
   public void getComponentSettings(
       GetComponentSettingsRequest request, StreamObserver<ComponentSettings> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ComponentSettings) {
       requests.add(request);
       responseObserver.onNext(((ComponentSettings) response));
@@ -220,7 +220,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetComponentSettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ComponentSettings.class.getName(),
                   Exception.class.getName())));
     }
@@ -229,7 +229,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
   @Override
   public void updateComponentSettings(
       UpdateComponentSettingsRequest request, StreamObserver<ComponentSettings> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ComponentSettings) {
       requests.add(request);
       responseObserver.onNext(((ComponentSettings) response));
@@ -241,7 +241,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateComponentSettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ComponentSettings.class.getName(),
                   Exception.class.getName())));
     }
@@ -250,7 +250,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
   @Override
   public void resetComponentSettings(
       ResetComponentSettingsRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -262,7 +262,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ResetComponentSettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -272,7 +272,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
   public void calculateEffectiveComponentSettings(
       CalculateEffectiveComponentSettingsRequest request,
       StreamObserver<ComponentSettings> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ComponentSettings) {
       requests.add(request);
       responseObserver.onNext(((ComponentSettings) response));
@@ -284,7 +284,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CalculateEffectiveComponentSettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ComponentSettings.class.getName(),
                   Exception.class.getName())));
     }
@@ -293,7 +293,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
   @Override
   public void listDetectors(
       ListDetectorsRequest request, StreamObserver<ListDetectorsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListDetectorsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListDetectorsResponse) response));
@@ -305,7 +305,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListDetectors, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListDetectorsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -314,7 +314,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
   @Override
   public void listComponents(
       ListComponentsRequest request, StreamObserver<ListComponentsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListComponentsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListComponentsResponse) response));
@@ -326,7 +326,7 @@ public class MockSecurityCenterSettingsServiceImpl extends SecurityCenterSetting
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListComponents, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListComponentsResponse.class.getName(),
                   Exception.class.getName())));
     }
