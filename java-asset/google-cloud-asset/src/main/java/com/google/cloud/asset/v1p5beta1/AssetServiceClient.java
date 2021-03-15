@@ -224,6 +224,15 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   ListAssetsRequest request =
+   *       ListAssetsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setReadTime(Timestamp.newBuilder().build())
+   *           .addAllAssetTypes(new ArrayList<String>())
+   *           .setContentType(ContentType.forNumber(0))
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListAssetsResponse response = assetServiceClient.listAssetsCallable().call(request);
    *     for (Asset element : response.getResponsesList()) {

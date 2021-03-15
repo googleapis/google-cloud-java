@@ -282,6 +282,15 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   SearchAllResourcesRequest request =
+   *       SearchAllResourcesRequest.newBuilder()
+   *           .setScope("scope109264468")
+   *           .setQuery("query107944136")
+   *           .addAllAssetTypes(new ArrayList<String>())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     SearchAllResourcesResponse response =
    *         assetServiceClient.searchAllResourcesCallable().call(request);
@@ -426,6 +435,13 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   SearchAllIamPoliciesRequest request =
+   *       SearchAllIamPoliciesRequest.newBuilder()
+   *           .setScope("scope109264468")
+   *           .setQuery("query107944136")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     SearchAllIamPoliciesResponse response =
    *         assetServiceClient.searchAllIamPoliciesCallable().call(request);

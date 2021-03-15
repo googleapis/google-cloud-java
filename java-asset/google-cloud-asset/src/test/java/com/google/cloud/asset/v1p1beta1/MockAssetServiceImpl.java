@@ -62,7 +62,7 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
   public void searchAllResources(
       SearchAllResourcesRequest request,
       StreamObserver<SearchAllResourcesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SearchAllResourcesResponse) {
       requests.add(request);
       responseObserver.onNext(((SearchAllResourcesResponse) response));
@@ -74,7 +74,7 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SearchAllResources, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SearchAllResourcesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
   public void searchAllIamPolicies(
       SearchAllIamPoliciesRequest request,
       StreamObserver<SearchAllIamPoliciesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SearchAllIamPoliciesResponse) {
       requests.add(request);
       responseObserver.onNext(((SearchAllIamPoliciesResponse) response));
@@ -96,7 +96,7 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SearchAllIamPolicies, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SearchAllIamPoliciesResponse.class.getName(),
                   Exception.class.getName())));
     }

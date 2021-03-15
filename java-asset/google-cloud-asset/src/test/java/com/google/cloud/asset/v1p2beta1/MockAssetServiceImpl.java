@@ -61,7 +61,7 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
 
   @Override
   public void createFeed(CreateFeedRequest request, StreamObserver<Feed> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Feed) {
       requests.add(request);
       responseObserver.onNext(((Feed) response));
@@ -73,13 +73,15 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateFeed, expected %s or %s",
-                  response.getClass().getName(), Feed.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Feed.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void getFeed(GetFeedRequest request, StreamObserver<Feed> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Feed) {
       requests.add(request);
       responseObserver.onNext(((Feed) response));
@@ -91,14 +93,16 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetFeed, expected %s or %s",
-                  response.getClass().getName(), Feed.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Feed.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void listFeeds(
       ListFeedsRequest request, StreamObserver<ListFeedsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListFeedsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListFeedsResponse) response));
@@ -110,7 +114,7 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListFeeds, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListFeedsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -118,7 +122,7 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
 
   @Override
   public void updateFeed(UpdateFeedRequest request, StreamObserver<Feed> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Feed) {
       requests.add(request);
       responseObserver.onNext(((Feed) response));
@@ -130,13 +134,15 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateFeed, expected %s or %s",
-                  response.getClass().getName(), Feed.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Feed.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void deleteFeed(DeleteFeedRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -148,7 +154,7 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteFeed, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

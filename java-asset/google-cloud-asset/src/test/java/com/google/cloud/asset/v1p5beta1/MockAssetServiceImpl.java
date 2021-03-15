@@ -61,7 +61,7 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
   @Override
   public void listAssets(
       ListAssetsRequest request, StreamObserver<ListAssetsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListAssetsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListAssetsResponse) response));
@@ -73,7 +73,7 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListAssets, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListAssetsResponse.class.getName(),
                   Exception.class.getName())));
     }
