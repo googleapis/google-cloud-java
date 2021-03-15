@@ -76,7 +76,7 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
   public void listMonitoredResourceDescriptors(
       ListMonitoredResourceDescriptorsRequest request,
       StreamObserver<ListMonitoredResourceDescriptorsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListMonitoredResourceDescriptorsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListMonitoredResourceDescriptorsResponse) response));
@@ -88,7 +88,7 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListMonitoredResourceDescriptors, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListMonitoredResourceDescriptorsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -98,7 +98,7 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
   public void getMonitoredResourceDescriptor(
       GetMonitoredResourceDescriptorRequest request,
       StreamObserver<MonitoredResourceDescriptor> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MonitoredResourceDescriptor) {
       requests.add(request);
       responseObserver.onNext(((MonitoredResourceDescriptor) response));
@@ -110,7 +110,7 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetMonitoredResourceDescriptor, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MonitoredResourceDescriptor.class.getName(),
                   Exception.class.getName())));
     }
@@ -120,7 +120,7 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
   public void listMetricDescriptors(
       ListMetricDescriptorsRequest request,
       StreamObserver<ListMetricDescriptorsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListMetricDescriptorsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListMetricDescriptorsResponse) response));
@@ -132,7 +132,7 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListMetricDescriptors, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListMetricDescriptorsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -141,7 +141,7 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
   @Override
   public void getMetricDescriptor(
       GetMetricDescriptorRequest request, StreamObserver<MetricDescriptor> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MetricDescriptor) {
       requests.add(request);
       responseObserver.onNext(((MetricDescriptor) response));
@@ -153,7 +153,7 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetMetricDescriptor, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MetricDescriptor.class.getName(),
                   Exception.class.getName())));
     }
@@ -162,7 +162,7 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
   @Override
   public void createMetricDescriptor(
       CreateMetricDescriptorRequest request, StreamObserver<MetricDescriptor> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MetricDescriptor) {
       requests.add(request);
       responseObserver.onNext(((MetricDescriptor) response));
@@ -174,7 +174,7 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateMetricDescriptor, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MetricDescriptor.class.getName(),
                   Exception.class.getName())));
     }
@@ -183,7 +183,7 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
   @Override
   public void deleteMetricDescriptor(
       DeleteMetricDescriptorRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -195,7 +195,7 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteMetricDescriptor, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -204,7 +204,7 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
   @Override
   public void listTimeSeries(
       ListTimeSeriesRequest request, StreamObserver<ListTimeSeriesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListTimeSeriesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListTimeSeriesResponse) response));
@@ -216,7 +216,7 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListTimeSeries, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListTimeSeriesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -225,7 +225,7 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
   @Override
   public void createTimeSeries(
       CreateTimeSeriesRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -237,7 +237,7 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateTimeSeries, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

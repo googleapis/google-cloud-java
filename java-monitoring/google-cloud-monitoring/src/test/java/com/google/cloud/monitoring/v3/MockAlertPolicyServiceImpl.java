@@ -70,7 +70,7 @@ public class MockAlertPolicyServiceImpl extends AlertPolicyServiceImplBase {
   public void listAlertPolicies(
       ListAlertPoliciesRequest request,
       StreamObserver<ListAlertPoliciesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListAlertPoliciesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListAlertPoliciesResponse) response));
@@ -82,7 +82,7 @@ public class MockAlertPolicyServiceImpl extends AlertPolicyServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListAlertPolicies, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListAlertPoliciesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -91,7 +91,7 @@ public class MockAlertPolicyServiceImpl extends AlertPolicyServiceImplBase {
   @Override
   public void getAlertPolicy(
       GetAlertPolicyRequest request, StreamObserver<AlertPolicy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AlertPolicy) {
       requests.add(request);
       responseObserver.onNext(((AlertPolicy) response));
@@ -103,7 +103,7 @@ public class MockAlertPolicyServiceImpl extends AlertPolicyServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAlertPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AlertPolicy.class.getName(),
                   Exception.class.getName())));
     }
@@ -112,7 +112,7 @@ public class MockAlertPolicyServiceImpl extends AlertPolicyServiceImplBase {
   @Override
   public void createAlertPolicy(
       CreateAlertPolicyRequest request, StreamObserver<AlertPolicy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AlertPolicy) {
       requests.add(request);
       responseObserver.onNext(((AlertPolicy) response));
@@ -124,7 +124,7 @@ public class MockAlertPolicyServiceImpl extends AlertPolicyServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateAlertPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AlertPolicy.class.getName(),
                   Exception.class.getName())));
     }
@@ -133,7 +133,7 @@ public class MockAlertPolicyServiceImpl extends AlertPolicyServiceImplBase {
   @Override
   public void deleteAlertPolicy(
       DeleteAlertPolicyRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -145,7 +145,7 @@ public class MockAlertPolicyServiceImpl extends AlertPolicyServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteAlertPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -154,7 +154,7 @@ public class MockAlertPolicyServiceImpl extends AlertPolicyServiceImplBase {
   @Override
   public void updateAlertPolicy(
       UpdateAlertPolicyRequest request, StreamObserver<AlertPolicy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AlertPolicy) {
       requests.add(request);
       responseObserver.onNext(((AlertPolicy) response));
@@ -166,7 +166,7 @@ public class MockAlertPolicyServiceImpl extends AlertPolicyServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateAlertPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AlertPolicy.class.getName(),
                   Exception.class.getName())));
     }

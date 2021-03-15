@@ -370,6 +370,16 @@ public class MetricServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ListMonitoredResourceDescriptorsRequest request =
+   *       ListMonitoredResourceDescriptorsRequest.newBuilder()
+   *           .setName(
+   *               MonitoredResourceDescriptorName.ofProjectMonitoredResourceDescriptorName(
+   *                       "[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListMonitoredResourceDescriptorsResponse response =
    *         metricServiceClient.listMonitoredResourceDescriptorsCallable().call(request);
@@ -690,6 +700,16 @@ public class MetricServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ListMetricDescriptorsRequest request =
+   *       ListMetricDescriptorsRequest.newBuilder()
+   *           .setName(
+   *               MetricDescriptorName.ofProjectMetricDescriptorName(
+   *                       "[PROJECT]", "[METRIC_DESCRIPTOR]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListMetricDescriptorsResponse response =
    *         metricServiceClient.listMetricDescriptorsCallable().call(request);
@@ -1281,6 +1301,16 @@ public class MetricServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ListTimeSeriesRequest request =
+   *       ListTimeSeriesRequest.newBuilder()
+   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setInterval(TimeInterval.newBuilder().build())
+   *           .setAggregation(Aggregation.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListTimeSeriesResponse response =
    *         metricServiceClient.listTimeSeriesCallable().call(request);

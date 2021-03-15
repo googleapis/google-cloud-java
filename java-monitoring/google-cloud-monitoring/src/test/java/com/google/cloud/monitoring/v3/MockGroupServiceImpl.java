@@ -71,7 +71,7 @@ public class MockGroupServiceImpl extends GroupServiceImplBase {
   @Override
   public void listGroups(
       ListGroupsRequest request, StreamObserver<ListGroupsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListGroupsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListGroupsResponse) response));
@@ -83,7 +83,7 @@ public class MockGroupServiceImpl extends GroupServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListGroups, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListGroupsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -91,7 +91,7 @@ public class MockGroupServiceImpl extends GroupServiceImplBase {
 
   @Override
   public void getGroup(GetGroupRequest request, StreamObserver<Group> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Group) {
       requests.add(request);
       responseObserver.onNext(((Group) response));
@@ -103,7 +103,7 @@ public class MockGroupServiceImpl extends GroupServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetGroup, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Group.class.getName(),
                   Exception.class.getName())));
     }
@@ -111,7 +111,7 @@ public class MockGroupServiceImpl extends GroupServiceImplBase {
 
   @Override
   public void createGroup(CreateGroupRequest request, StreamObserver<Group> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Group) {
       requests.add(request);
       responseObserver.onNext(((Group) response));
@@ -123,7 +123,7 @@ public class MockGroupServiceImpl extends GroupServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateGroup, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Group.class.getName(),
                   Exception.class.getName())));
     }
@@ -131,7 +131,7 @@ public class MockGroupServiceImpl extends GroupServiceImplBase {
 
   @Override
   public void updateGroup(UpdateGroupRequest request, StreamObserver<Group> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Group) {
       requests.add(request);
       responseObserver.onNext(((Group) response));
@@ -143,7 +143,7 @@ public class MockGroupServiceImpl extends GroupServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateGroup, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Group.class.getName(),
                   Exception.class.getName())));
     }
@@ -151,7 +151,7 @@ public class MockGroupServiceImpl extends GroupServiceImplBase {
 
   @Override
   public void deleteGroup(DeleteGroupRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -163,7 +163,7 @@ public class MockGroupServiceImpl extends GroupServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteGroup, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -172,7 +172,7 @@ public class MockGroupServiceImpl extends GroupServiceImplBase {
   @Override
   public void listGroupMembers(
       ListGroupMembersRequest request, StreamObserver<ListGroupMembersResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListGroupMembersResponse) {
       requests.add(request);
       responseObserver.onNext(((ListGroupMembersResponse) response));
@@ -184,7 +184,7 @@ public class MockGroupServiceImpl extends GroupServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListGroupMembers, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListGroupMembersResponse.class.getName(),
                   Exception.class.getName())));
     }

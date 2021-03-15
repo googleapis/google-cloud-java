@@ -362,6 +362,16 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
+   *   ListAlertPoliciesRequest request =
+   *       ListAlertPoliciesRequest.newBuilder()
+   *           .setName(
+   *               AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListAlertPoliciesResponse response =
    *         alertPolicyServiceClient.listAlertPoliciesCallable().call(request);

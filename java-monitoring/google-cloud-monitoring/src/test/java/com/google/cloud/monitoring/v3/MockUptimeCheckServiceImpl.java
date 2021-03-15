@@ -72,7 +72,7 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
   public void listUptimeCheckConfigs(
       ListUptimeCheckConfigsRequest request,
       StreamObserver<ListUptimeCheckConfigsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListUptimeCheckConfigsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListUptimeCheckConfigsResponse) response));
@@ -84,7 +84,7 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListUptimeCheckConfigs, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListUptimeCheckConfigsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -93,7 +93,7 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
   @Override
   public void getUptimeCheckConfig(
       GetUptimeCheckConfigRequest request, StreamObserver<UptimeCheckConfig> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof UptimeCheckConfig) {
       requests.add(request);
       responseObserver.onNext(((UptimeCheckConfig) response));
@@ -105,7 +105,7 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetUptimeCheckConfig, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   UptimeCheckConfig.class.getName(),
                   Exception.class.getName())));
     }
@@ -114,7 +114,7 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
   @Override
   public void createUptimeCheckConfig(
       CreateUptimeCheckConfigRequest request, StreamObserver<UptimeCheckConfig> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof UptimeCheckConfig) {
       requests.add(request);
       responseObserver.onNext(((UptimeCheckConfig) response));
@@ -126,7 +126,7 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateUptimeCheckConfig, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   UptimeCheckConfig.class.getName(),
                   Exception.class.getName())));
     }
@@ -135,7 +135,7 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
   @Override
   public void updateUptimeCheckConfig(
       UpdateUptimeCheckConfigRequest request, StreamObserver<UptimeCheckConfig> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof UptimeCheckConfig) {
       requests.add(request);
       responseObserver.onNext(((UptimeCheckConfig) response));
@@ -147,7 +147,7 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateUptimeCheckConfig, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   UptimeCheckConfig.class.getName(),
                   Exception.class.getName())));
     }
@@ -156,7 +156,7 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
   @Override
   public void deleteUptimeCheckConfig(
       DeleteUptimeCheckConfigRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -168,7 +168,7 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteUptimeCheckConfig, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -178,7 +178,7 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
   public void listUptimeCheckIps(
       ListUptimeCheckIpsRequest request,
       StreamObserver<ListUptimeCheckIpsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListUptimeCheckIpsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListUptimeCheckIpsResponse) response));
@@ -190,7 +190,7 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListUptimeCheckIps, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListUptimeCheckIpsResponse.class.getName(),
                   Exception.class.getName())));
     }

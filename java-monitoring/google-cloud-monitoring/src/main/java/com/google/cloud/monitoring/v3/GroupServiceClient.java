@@ -329,6 +329,12 @@ public class GroupServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   ListGroupsRequest request =
+   *       ListGroupsRequest.newBuilder()
+   *           .setName(GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListGroupsResponse response = groupServiceClient.listGroupsCallable().call(request);
    *     for (Group element : response.getResponsesList()) {
@@ -877,6 +883,14 @@ public class GroupServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   ListGroupMembersRequest request =
+   *       ListGroupMembersRequest.newBuilder()
+   *           .setName(GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setInterval(TimeInterval.newBuilder().build())
+   *           .build();
    *   while (true) {
    *     ListGroupMembersResponse response =
    *         groupServiceClient.listGroupMembersCallable().call(request);

@@ -617,6 +617,13 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
+   *   ListServicesRequest request =
+   *       ListServicesRequest.newBuilder()
+   *           .setParent(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListServicesResponse response =
    *         serviceMonitoringServiceClient.listServicesCallable().call(request);
@@ -1172,6 +1179,13 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
+   *   ListServiceLevelObjectivesRequest request =
+   *       ListServiceLevelObjectivesRequest.newBuilder()
+   *           .setParent(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListServiceLevelObjectivesResponse response =
    *         serviceMonitoringServiceClient.listServiceLevelObjectivesCallable().call(request);

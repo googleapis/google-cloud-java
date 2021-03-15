@@ -407,6 +407,15 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
+   *   ListNotificationChannelDescriptorsRequest request =
+   *       ListNotificationChannelDescriptorsRequest.newBuilder()
+   *           .setName(
+   *               NotificationChannelDescriptorName.ofProjectChannelDescriptorName(
+   *                       "[PROJECT]", "[CHANNEL_DESCRIPTOR]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListNotificationChannelDescriptorsResponse response =
    *         notificationChannelServiceClient
@@ -766,6 +775,17 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
+   *   ListNotificationChannelsRequest request =
+   *       ListNotificationChannelsRequest.newBuilder()
+   *           .setName(
+   *               NotificationChannelName.ofProjectNotificationChannelName(
+   *                       "[PROJECT]", "[NOTIFICATION_CHANNEL]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListNotificationChannelsResponse response =
    *         notificationChannelServiceClient.listNotificationChannelsCallable().call(request);

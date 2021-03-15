@@ -76,7 +76,7 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
   @Override
   public void createService(
       CreateServiceRequest request, StreamObserver<Service> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Service) {
       requests.add(request);
       responseObserver.onNext(((Service) response));
@@ -88,7 +88,7 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateService, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Service.class.getName(),
                   Exception.class.getName())));
     }
@@ -96,7 +96,7 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
 
   @Override
   public void getService(GetServiceRequest request, StreamObserver<Service> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Service) {
       requests.add(request);
       responseObserver.onNext(((Service) response));
@@ -108,7 +108,7 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetService, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Service.class.getName(),
                   Exception.class.getName())));
     }
@@ -117,7 +117,7 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
   @Override
   public void listServices(
       ListServicesRequest request, StreamObserver<ListServicesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListServicesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListServicesResponse) response));
@@ -129,7 +129,7 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListServices, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListServicesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -138,7 +138,7 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
   @Override
   public void updateService(
       UpdateServiceRequest request, StreamObserver<Service> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Service) {
       requests.add(request);
       responseObserver.onNext(((Service) response));
@@ -150,7 +150,7 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateService, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Service.class.getName(),
                   Exception.class.getName())));
     }
@@ -158,7 +158,7 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
 
   @Override
   public void deleteService(DeleteServiceRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -170,7 +170,7 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteService, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -180,7 +180,7 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
   public void createServiceLevelObjective(
       CreateServiceLevelObjectiveRequest request,
       StreamObserver<ServiceLevelObjective> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ServiceLevelObjective) {
       requests.add(request);
       responseObserver.onNext(((ServiceLevelObjective) response));
@@ -192,7 +192,7 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateServiceLevelObjective, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ServiceLevelObjective.class.getName(),
                   Exception.class.getName())));
     }
@@ -202,7 +202,7 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
   public void getServiceLevelObjective(
       GetServiceLevelObjectiveRequest request,
       StreamObserver<ServiceLevelObjective> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ServiceLevelObjective) {
       requests.add(request);
       responseObserver.onNext(((ServiceLevelObjective) response));
@@ -214,7 +214,7 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetServiceLevelObjective, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ServiceLevelObjective.class.getName(),
                   Exception.class.getName())));
     }
@@ -224,7 +224,7 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
   public void listServiceLevelObjectives(
       ListServiceLevelObjectivesRequest request,
       StreamObserver<ListServiceLevelObjectivesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListServiceLevelObjectivesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListServiceLevelObjectivesResponse) response));
@@ -236,7 +236,7 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListServiceLevelObjectives, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListServiceLevelObjectivesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -246,7 +246,7 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
   public void updateServiceLevelObjective(
       UpdateServiceLevelObjectiveRequest request,
       StreamObserver<ServiceLevelObjective> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ServiceLevelObjective) {
       requests.add(request);
       responseObserver.onNext(((ServiceLevelObjective) response));
@@ -258,7 +258,7 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateServiceLevelObjective, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ServiceLevelObjective.class.getName(),
                   Exception.class.getName())));
     }
@@ -267,7 +267,7 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
   @Override
   public void deleteServiceLevelObjective(
       DeleteServiceLevelObjectiveRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -279,7 +279,7 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteServiceLevelObjective, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

@@ -366,6 +366,15 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
+   *   ListUptimeCheckConfigsRequest request =
+   *       ListUptimeCheckConfigsRequest.newBuilder()
+   *           .setParent(
+   *               UptimeCheckConfigName.ofProjectUptimeCheckConfigName(
+   *                       "[PROJECT]", "[UPTIME_CHECK_CONFIG]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListUptimeCheckConfigsResponse response =
    *         uptimeCheckServiceClient.listUptimeCheckConfigsCallable().call(request);
@@ -930,6 +939,11 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
+   *   ListUptimeCheckIpsRequest request =
+   *       ListUptimeCheckIpsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListUptimeCheckIpsResponse response =
    *         uptimeCheckServiceClient.listUptimeCheckIpsCallable().call(request);
