@@ -28,7 +28,7 @@ public interface GkeClusterOrBuilder
    *
    * <pre>
    * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-   *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
+   * &gt; container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
    * Zonal clusters are also supported.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface GkeClusterOrBuilder
    *
    * <pre>
    * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-   *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
+   * &gt; container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
    * Zonal clusters are also supported.
    * </pre>
    *
