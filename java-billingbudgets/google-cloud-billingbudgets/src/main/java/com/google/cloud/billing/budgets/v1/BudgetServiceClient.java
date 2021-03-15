@@ -579,6 +579,12 @@ public class BudgetServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
+   *   ListBudgetsRequest request =
+   *       ListBudgetsRequest.newBuilder()
+   *           .setParent(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListBudgetsResponse response = budgetServiceClient.listBudgetsCallable().call(request);
    *     for (Budget element : response.getResponsesList()) {

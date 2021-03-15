@@ -61,7 +61,7 @@ public class MockBudgetServiceImpl extends BudgetServiceImplBase {
 
   @Override
   public void createBudget(CreateBudgetRequest request, StreamObserver<Budget> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Budget) {
       requests.add(request);
       responseObserver.onNext(((Budget) response));
@@ -73,7 +73,7 @@ public class MockBudgetServiceImpl extends BudgetServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateBudget, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Budget.class.getName(),
                   Exception.class.getName())));
     }
@@ -81,7 +81,7 @@ public class MockBudgetServiceImpl extends BudgetServiceImplBase {
 
   @Override
   public void updateBudget(UpdateBudgetRequest request, StreamObserver<Budget> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Budget) {
       requests.add(request);
       responseObserver.onNext(((Budget) response));
@@ -93,7 +93,7 @@ public class MockBudgetServiceImpl extends BudgetServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateBudget, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Budget.class.getName(),
                   Exception.class.getName())));
     }
@@ -101,7 +101,7 @@ public class MockBudgetServiceImpl extends BudgetServiceImplBase {
 
   @Override
   public void getBudget(GetBudgetRequest request, StreamObserver<Budget> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Budget) {
       requests.add(request);
       responseObserver.onNext(((Budget) response));
@@ -113,7 +113,7 @@ public class MockBudgetServiceImpl extends BudgetServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetBudget, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Budget.class.getName(),
                   Exception.class.getName())));
     }
@@ -122,7 +122,7 @@ public class MockBudgetServiceImpl extends BudgetServiceImplBase {
   @Override
   public void listBudgets(
       ListBudgetsRequest request, StreamObserver<ListBudgetsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListBudgetsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListBudgetsResponse) response));
@@ -134,7 +134,7 @@ public class MockBudgetServiceImpl extends BudgetServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListBudgets, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListBudgetsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -142,7 +142,7 @@ public class MockBudgetServiceImpl extends BudgetServiceImplBase {
 
   @Override
   public void deleteBudget(DeleteBudgetRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -154,7 +154,7 @@ public class MockBudgetServiceImpl extends BudgetServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteBudget, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
