@@ -62,7 +62,7 @@ public class MockDocumentProcessorServiceImpl extends DocumentProcessorServiceIm
   @Override
   public void processDocument(
       ProcessRequest request, StreamObserver<ProcessResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ProcessResponse) {
       requests.add(request);
       responseObserver.onNext(((ProcessResponse) response));
@@ -74,7 +74,7 @@ public class MockDocumentProcessorServiceImpl extends DocumentProcessorServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ProcessDocument, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ProcessResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockDocumentProcessorServiceImpl extends DocumentProcessorServiceIm
   @Override
   public void batchProcessDocuments(
       BatchProcessRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -95,7 +95,7 @@ public class MockDocumentProcessorServiceImpl extends DocumentProcessorServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchProcessDocuments, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockDocumentProcessorServiceImpl extends DocumentProcessorServiceIm
   @Override
   public void reviewDocument(
       ReviewDocumentRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -116,7 +116,7 @@ public class MockDocumentProcessorServiceImpl extends DocumentProcessorServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ReviewDocument, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }

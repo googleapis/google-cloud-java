@@ -62,7 +62,7 @@ public class MockDocumentUnderstandingServiceImpl extends DocumentUnderstandingS
   @Override
   public void batchProcessDocuments(
       BatchProcessDocumentsRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -74,7 +74,7 @@ public class MockDocumentUnderstandingServiceImpl extends DocumentUnderstandingS
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchProcessDocuments, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
