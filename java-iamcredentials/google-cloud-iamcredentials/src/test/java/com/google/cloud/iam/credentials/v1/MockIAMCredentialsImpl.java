@@ -62,7 +62,7 @@ public class MockIAMCredentialsImpl extends IAMCredentialsImplBase {
   public void generateAccessToken(
       GenerateAccessTokenRequest request,
       StreamObserver<GenerateAccessTokenResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof GenerateAccessTokenResponse) {
       requests.add(request);
       responseObserver.onNext(((GenerateAccessTokenResponse) response));
@@ -74,7 +74,7 @@ public class MockIAMCredentialsImpl extends IAMCredentialsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GenerateAccessToken, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GenerateAccessTokenResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockIAMCredentialsImpl extends IAMCredentialsImplBase {
   @Override
   public void generateIdToken(
       GenerateIdTokenRequest request, StreamObserver<GenerateIdTokenResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof GenerateIdTokenResponse) {
       requests.add(request);
       responseObserver.onNext(((GenerateIdTokenResponse) response));
@@ -95,7 +95,7 @@ public class MockIAMCredentialsImpl extends IAMCredentialsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GenerateIdToken, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GenerateIdTokenResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -103,7 +103,7 @@ public class MockIAMCredentialsImpl extends IAMCredentialsImplBase {
 
   @Override
   public void signBlob(SignBlobRequest request, StreamObserver<SignBlobResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SignBlobResponse) {
       requests.add(request);
       responseObserver.onNext(((SignBlobResponse) response));
@@ -115,7 +115,7 @@ public class MockIAMCredentialsImpl extends IAMCredentialsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SignBlob, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SignBlobResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -123,7 +123,7 @@ public class MockIAMCredentialsImpl extends IAMCredentialsImplBase {
 
   @Override
   public void signJwt(SignJwtRequest request, StreamObserver<SignJwtResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SignJwtResponse) {
       requests.add(request);
       responseObserver.onNext(((SignJwtResponse) response));
@@ -135,7 +135,7 @@ public class MockIAMCredentialsImpl extends IAMCredentialsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SignJwt, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SignJwtResponse.class.getName(),
                   Exception.class.getName())));
     }
