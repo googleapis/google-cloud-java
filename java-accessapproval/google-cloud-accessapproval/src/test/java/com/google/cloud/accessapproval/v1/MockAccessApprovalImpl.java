@@ -63,7 +63,7 @@ public class MockAccessApprovalImpl extends AccessApprovalImplBase {
   public void listApprovalRequests(
       ListApprovalRequestsMessage request,
       StreamObserver<ListApprovalRequestsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListApprovalRequestsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListApprovalRequestsResponse) response));
@@ -75,7 +75,7 @@ public class MockAccessApprovalImpl extends AccessApprovalImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListApprovalRequests, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListApprovalRequestsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockAccessApprovalImpl extends AccessApprovalImplBase {
   @Override
   public void getApprovalRequest(
       GetApprovalRequestMessage request, StreamObserver<ApprovalRequest> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ApprovalRequest) {
       requests.add(request);
       responseObserver.onNext(((ApprovalRequest) response));
@@ -96,7 +96,7 @@ public class MockAccessApprovalImpl extends AccessApprovalImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetApprovalRequest, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ApprovalRequest.class.getName(),
                   Exception.class.getName())));
     }
@@ -105,7 +105,7 @@ public class MockAccessApprovalImpl extends AccessApprovalImplBase {
   @Override
   public void approveApprovalRequest(
       ApproveApprovalRequestMessage request, StreamObserver<ApprovalRequest> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ApprovalRequest) {
       requests.add(request);
       responseObserver.onNext(((ApprovalRequest) response));
@@ -117,7 +117,7 @@ public class MockAccessApprovalImpl extends AccessApprovalImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ApproveApprovalRequest, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ApprovalRequest.class.getName(),
                   Exception.class.getName())));
     }
@@ -126,7 +126,7 @@ public class MockAccessApprovalImpl extends AccessApprovalImplBase {
   @Override
   public void dismissApprovalRequest(
       DismissApprovalRequestMessage request, StreamObserver<ApprovalRequest> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ApprovalRequest) {
       requests.add(request);
       responseObserver.onNext(((ApprovalRequest) response));
@@ -138,7 +138,7 @@ public class MockAccessApprovalImpl extends AccessApprovalImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DismissApprovalRequest, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ApprovalRequest.class.getName(),
                   Exception.class.getName())));
     }
@@ -148,7 +148,7 @@ public class MockAccessApprovalImpl extends AccessApprovalImplBase {
   public void getAccessApprovalSettings(
       GetAccessApprovalSettingsMessage request,
       StreamObserver<AccessApprovalSettings> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AccessApprovalSettings) {
       requests.add(request);
       responseObserver.onNext(((AccessApprovalSettings) response));
@@ -160,7 +160,7 @@ public class MockAccessApprovalImpl extends AccessApprovalImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAccessApprovalSettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AccessApprovalSettings.class.getName(),
                   Exception.class.getName())));
     }
@@ -170,7 +170,7 @@ public class MockAccessApprovalImpl extends AccessApprovalImplBase {
   public void updateAccessApprovalSettings(
       UpdateAccessApprovalSettingsMessage request,
       StreamObserver<AccessApprovalSettings> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AccessApprovalSettings) {
       requests.add(request);
       responseObserver.onNext(((AccessApprovalSettings) response));
@@ -182,7 +182,7 @@ public class MockAccessApprovalImpl extends AccessApprovalImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateAccessApprovalSettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AccessApprovalSettings.class.getName(),
                   Exception.class.getName())));
     }
@@ -191,7 +191,7 @@ public class MockAccessApprovalImpl extends AccessApprovalImplBase {
   @Override
   public void deleteAccessApprovalSettings(
       DeleteAccessApprovalSettingsMessage request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -203,7 +203,7 @@ public class MockAccessApprovalImpl extends AccessApprovalImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteAccessApprovalSettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

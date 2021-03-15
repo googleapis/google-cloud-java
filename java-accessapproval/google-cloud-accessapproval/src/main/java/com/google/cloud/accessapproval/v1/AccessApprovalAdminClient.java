@@ -276,6 +276,13 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
+   *   ListApprovalRequestsMessage request =
+   *       ListApprovalRequestsMessage.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListApprovalRequestsResponse response =
    *         accessApprovalAdminClient.listApprovalRequestsCallable().call(request);
