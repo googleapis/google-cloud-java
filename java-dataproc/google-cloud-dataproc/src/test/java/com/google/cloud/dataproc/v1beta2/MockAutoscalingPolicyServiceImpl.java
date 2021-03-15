@@ -62,7 +62,7 @@ public class MockAutoscalingPolicyServiceImpl extends AutoscalingPolicyServiceIm
   @Override
   public void createAutoscalingPolicy(
       CreateAutoscalingPolicyRequest request, StreamObserver<AutoscalingPolicy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AutoscalingPolicy) {
       requests.add(request);
       responseObserver.onNext(((AutoscalingPolicy) response));
@@ -74,7 +74,7 @@ public class MockAutoscalingPolicyServiceImpl extends AutoscalingPolicyServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateAutoscalingPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AutoscalingPolicy.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockAutoscalingPolicyServiceImpl extends AutoscalingPolicyServiceIm
   @Override
   public void updateAutoscalingPolicy(
       UpdateAutoscalingPolicyRequest request, StreamObserver<AutoscalingPolicy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AutoscalingPolicy) {
       requests.add(request);
       responseObserver.onNext(((AutoscalingPolicy) response));
@@ -95,7 +95,7 @@ public class MockAutoscalingPolicyServiceImpl extends AutoscalingPolicyServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateAutoscalingPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AutoscalingPolicy.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockAutoscalingPolicyServiceImpl extends AutoscalingPolicyServiceIm
   @Override
   public void getAutoscalingPolicy(
       GetAutoscalingPolicyRequest request, StreamObserver<AutoscalingPolicy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AutoscalingPolicy) {
       requests.add(request);
       responseObserver.onNext(((AutoscalingPolicy) response));
@@ -116,7 +116,7 @@ public class MockAutoscalingPolicyServiceImpl extends AutoscalingPolicyServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAutoscalingPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AutoscalingPolicy.class.getName(),
                   Exception.class.getName())));
     }
@@ -126,7 +126,7 @@ public class MockAutoscalingPolicyServiceImpl extends AutoscalingPolicyServiceIm
   public void listAutoscalingPolicies(
       ListAutoscalingPoliciesRequest request,
       StreamObserver<ListAutoscalingPoliciesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListAutoscalingPoliciesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListAutoscalingPoliciesResponse) response));
@@ -138,7 +138,7 @@ public class MockAutoscalingPolicyServiceImpl extends AutoscalingPolicyServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListAutoscalingPolicies, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListAutoscalingPoliciesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -147,7 +147,7 @@ public class MockAutoscalingPolicyServiceImpl extends AutoscalingPolicyServiceIm
   @Override
   public void deleteAutoscalingPolicy(
       DeleteAutoscalingPolicyRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -159,7 +159,7 @@ public class MockAutoscalingPolicyServiceImpl extends AutoscalingPolicyServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteAutoscalingPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

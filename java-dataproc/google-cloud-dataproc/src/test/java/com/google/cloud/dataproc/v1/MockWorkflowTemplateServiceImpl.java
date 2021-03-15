@@ -63,7 +63,7 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
   @Override
   public void createWorkflowTemplate(
       CreateWorkflowTemplateRequest request, StreamObserver<WorkflowTemplate> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof WorkflowTemplate) {
       requests.add(request);
       responseObserver.onNext(((WorkflowTemplate) response));
@@ -75,7 +75,7 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateWorkflowTemplate, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   WorkflowTemplate.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
   @Override
   public void getWorkflowTemplate(
       GetWorkflowTemplateRequest request, StreamObserver<WorkflowTemplate> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof WorkflowTemplate) {
       requests.add(request);
       responseObserver.onNext(((WorkflowTemplate) response));
@@ -96,7 +96,7 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetWorkflowTemplate, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   WorkflowTemplate.class.getName(),
                   Exception.class.getName())));
     }
@@ -105,7 +105,7 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
   @Override
   public void instantiateWorkflowTemplate(
       InstantiateWorkflowTemplateRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -117,7 +117,7 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method InstantiateWorkflowTemplate, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -127,7 +127,7 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
   public void instantiateInlineWorkflowTemplate(
       InstantiateInlineWorkflowTemplateRequest request,
       StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -139,7 +139,7 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method InstantiateInlineWorkflowTemplate, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -148,7 +148,7 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
   @Override
   public void updateWorkflowTemplate(
       UpdateWorkflowTemplateRequest request, StreamObserver<WorkflowTemplate> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof WorkflowTemplate) {
       requests.add(request);
       responseObserver.onNext(((WorkflowTemplate) response));
@@ -160,7 +160,7 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateWorkflowTemplate, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   WorkflowTemplate.class.getName(),
                   Exception.class.getName())));
     }
@@ -170,7 +170,7 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
   public void listWorkflowTemplates(
       ListWorkflowTemplatesRequest request,
       StreamObserver<ListWorkflowTemplatesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListWorkflowTemplatesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListWorkflowTemplatesResponse) response));
@@ -182,7 +182,7 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListWorkflowTemplates, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListWorkflowTemplatesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -191,7 +191,7 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
   @Override
   public void deleteWorkflowTemplate(
       DeleteWorkflowTemplateRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -203,7 +203,7 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteWorkflowTemplate, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

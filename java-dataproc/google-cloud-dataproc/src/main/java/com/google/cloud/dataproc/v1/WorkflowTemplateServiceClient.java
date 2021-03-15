@@ -1469,6 +1469,15 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
+   *   ListWorkflowTemplatesRequest request =
+   *       ListWorkflowTemplatesRequest.newBuilder()
+   *           .setParent(
+   *               WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
+   *                       "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListWorkflowTemplatesResponse response =
    *         workflowTemplateServiceClient.listWorkflowTemplatesCallable().call(request);

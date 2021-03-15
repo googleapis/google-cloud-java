@@ -799,6 +799,14 @@ public class ClusterControllerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   ListClustersRequest request =
+   *       ListClustersRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListClustersResponse response =
    *         clusterControllerClient.listClustersCallable().call(request);

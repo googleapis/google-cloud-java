@@ -62,7 +62,7 @@ public class MockClusterControllerImpl extends ClusterControllerImplBase {
   @Override
   public void createCluster(
       CreateClusterRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -74,7 +74,7 @@ public class MockClusterControllerImpl extends ClusterControllerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateCluster, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockClusterControllerImpl extends ClusterControllerImplBase {
   @Override
   public void updateCluster(
       UpdateClusterRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -95,7 +95,7 @@ public class MockClusterControllerImpl extends ClusterControllerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateCluster, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockClusterControllerImpl extends ClusterControllerImplBase {
   @Override
   public void deleteCluster(
       DeleteClusterRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -116,7 +116,7 @@ public class MockClusterControllerImpl extends ClusterControllerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteCluster, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -124,7 +124,7 @@ public class MockClusterControllerImpl extends ClusterControllerImplBase {
 
   @Override
   public void getCluster(GetClusterRequest request, StreamObserver<Cluster> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Cluster) {
       requests.add(request);
       responseObserver.onNext(((Cluster) response));
@@ -136,7 +136,7 @@ public class MockClusterControllerImpl extends ClusterControllerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCluster, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Cluster.class.getName(),
                   Exception.class.getName())));
     }
@@ -145,7 +145,7 @@ public class MockClusterControllerImpl extends ClusterControllerImplBase {
   @Override
   public void listClusters(
       ListClustersRequest request, StreamObserver<ListClustersResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListClustersResponse) {
       requests.add(request);
       responseObserver.onNext(((ListClustersResponse) response));
@@ -157,7 +157,7 @@ public class MockClusterControllerImpl extends ClusterControllerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListClusters, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListClustersResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -166,7 +166,7 @@ public class MockClusterControllerImpl extends ClusterControllerImplBase {
   @Override
   public void diagnoseCluster(
       DiagnoseClusterRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -178,7 +178,7 @@ public class MockClusterControllerImpl extends ClusterControllerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DiagnoseCluster, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }

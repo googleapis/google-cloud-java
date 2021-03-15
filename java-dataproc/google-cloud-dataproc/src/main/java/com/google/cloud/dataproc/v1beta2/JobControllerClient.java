@@ -562,6 +562,15 @@ public class JobControllerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   ListJobsRequest request =
+   *       ListJobsRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setClusterName("clusterName-1141738587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     ListJobsResponse response = jobControllerClient.listJobsCallable().call(request);
    *     for (Job element : response.getResponsesList()) {

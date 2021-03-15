@@ -731,6 +731,15 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
+   *   ListAutoscalingPoliciesRequest request =
+   *       ListAutoscalingPoliciesRequest.newBuilder()
+   *           .setParent(
+   *               AutoscalingPolicyName.ofProjectLocationAutoscalingPolicyName(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListAutoscalingPoliciesResponse response =
    *         autoscalingPolicyServiceClient.listAutoscalingPoliciesCallable().call(request);
