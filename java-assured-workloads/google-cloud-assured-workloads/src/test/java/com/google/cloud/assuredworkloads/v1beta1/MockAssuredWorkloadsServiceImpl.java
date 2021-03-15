@@ -63,7 +63,7 @@ public class MockAssuredWorkloadsServiceImpl extends AssuredWorkloadsServiceImpl
   @Override
   public void createWorkload(
       CreateWorkloadRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -75,7 +75,7 @@ public class MockAssuredWorkloadsServiceImpl extends AssuredWorkloadsServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateWorkload, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockAssuredWorkloadsServiceImpl extends AssuredWorkloadsServiceImpl
   @Override
   public void updateWorkload(
       UpdateWorkloadRequest request, StreamObserver<Workload> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Workload) {
       requests.add(request);
       responseObserver.onNext(((Workload) response));
@@ -96,7 +96,7 @@ public class MockAssuredWorkloadsServiceImpl extends AssuredWorkloadsServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateWorkload, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Workload.class.getName(),
                   Exception.class.getName())));
     }
@@ -105,7 +105,7 @@ public class MockAssuredWorkloadsServiceImpl extends AssuredWorkloadsServiceImpl
   @Override
   public void deleteWorkload(
       DeleteWorkloadRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -117,7 +117,7 @@ public class MockAssuredWorkloadsServiceImpl extends AssuredWorkloadsServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteWorkload, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -125,7 +125,7 @@ public class MockAssuredWorkloadsServiceImpl extends AssuredWorkloadsServiceImpl
 
   @Override
   public void getWorkload(GetWorkloadRequest request, StreamObserver<Workload> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Workload) {
       requests.add(request);
       responseObserver.onNext(((Workload) response));
@@ -137,7 +137,7 @@ public class MockAssuredWorkloadsServiceImpl extends AssuredWorkloadsServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetWorkload, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Workload.class.getName(),
                   Exception.class.getName())));
     }
@@ -146,7 +146,7 @@ public class MockAssuredWorkloadsServiceImpl extends AssuredWorkloadsServiceImpl
   @Override
   public void listWorkloads(
       ListWorkloadsRequest request, StreamObserver<ListWorkloadsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListWorkloadsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListWorkloadsResponse) response));
@@ -158,7 +158,7 @@ public class MockAssuredWorkloadsServiceImpl extends AssuredWorkloadsServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListWorkloads, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListWorkloadsResponse.class.getName(),
                   Exception.class.getName())));
     }

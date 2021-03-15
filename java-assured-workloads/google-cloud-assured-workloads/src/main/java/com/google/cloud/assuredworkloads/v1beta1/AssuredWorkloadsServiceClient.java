@@ -712,6 +712,13 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
+   *   ListWorkloadsRequest request =
+   *       ListWorkloadsRequest.newBuilder()
+   *           .setParent(WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     ListWorkloadsResponse response =
    *         assuredWorkloadsServiceClient.listWorkloadsCallable().call(request);
