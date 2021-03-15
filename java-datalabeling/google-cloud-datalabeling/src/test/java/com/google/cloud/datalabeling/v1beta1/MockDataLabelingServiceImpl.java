@@ -63,7 +63,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   @Override
   public void createDataset(
       CreateDatasetRequest request, StreamObserver<Dataset> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Dataset) {
       requests.add(request);
       responseObserver.onNext(((Dataset) response));
@@ -75,7 +75,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateDataset, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Dataset.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
 
   @Override
   public void getDataset(GetDatasetRequest request, StreamObserver<Dataset> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Dataset) {
       requests.add(request);
       responseObserver.onNext(((Dataset) response));
@@ -95,7 +95,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetDataset, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Dataset.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   @Override
   public void listDatasets(
       ListDatasetsRequest request, StreamObserver<ListDatasetsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListDatasetsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListDatasetsResponse) response));
@@ -116,7 +116,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListDatasets, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListDatasetsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -124,7 +124,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
 
   @Override
   public void deleteDataset(DeleteDatasetRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -136,7 +136,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteDataset, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -144,7 +144,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
 
   @Override
   public void importData(ImportDataRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -156,7 +156,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ImportData, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -164,7 +164,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
 
   @Override
   public void exportData(ExportDataRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -176,7 +176,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ExportData, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -184,7 +184,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
 
   @Override
   public void getDataItem(GetDataItemRequest request, StreamObserver<DataItem> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof DataItem) {
       requests.add(request);
       responseObserver.onNext(((DataItem) response));
@@ -196,7 +196,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetDataItem, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   DataItem.class.getName(),
                   Exception.class.getName())));
     }
@@ -205,7 +205,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   @Override
   public void listDataItems(
       ListDataItemsRequest request, StreamObserver<ListDataItemsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListDataItemsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListDataItemsResponse) response));
@@ -217,7 +217,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListDataItems, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListDataItemsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -226,7 +226,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   @Override
   public void getAnnotatedDataset(
       GetAnnotatedDatasetRequest request, StreamObserver<AnnotatedDataset> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AnnotatedDataset) {
       requests.add(request);
       responseObserver.onNext(((AnnotatedDataset) response));
@@ -238,7 +238,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAnnotatedDataset, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AnnotatedDataset.class.getName(),
                   Exception.class.getName())));
     }
@@ -248,7 +248,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   public void listAnnotatedDatasets(
       ListAnnotatedDatasetsRequest request,
       StreamObserver<ListAnnotatedDatasetsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListAnnotatedDatasetsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListAnnotatedDatasetsResponse) response));
@@ -260,7 +260,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListAnnotatedDatasets, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListAnnotatedDatasetsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -269,7 +269,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   @Override
   public void deleteAnnotatedDataset(
       DeleteAnnotatedDatasetRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -281,7 +281,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteAnnotatedDataset, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -289,7 +289,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
 
   @Override
   public void labelImage(LabelImageRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -301,7 +301,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method LabelImage, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -309,7 +309,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
 
   @Override
   public void labelVideo(LabelVideoRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -321,7 +321,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method LabelVideo, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -329,7 +329,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
 
   @Override
   public void labelText(LabelTextRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -341,7 +341,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method LabelText, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -349,7 +349,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
 
   @Override
   public void getExample(GetExampleRequest request, StreamObserver<Example> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Example) {
       requests.add(request);
       responseObserver.onNext(((Example) response));
@@ -361,7 +361,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetExample, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Example.class.getName(),
                   Exception.class.getName())));
     }
@@ -370,7 +370,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   @Override
   public void listExamples(
       ListExamplesRequest request, StreamObserver<ListExamplesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListExamplesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListExamplesResponse) response));
@@ -382,7 +382,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListExamples, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListExamplesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -391,7 +391,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   @Override
   public void createAnnotationSpecSet(
       CreateAnnotationSpecSetRequest request, StreamObserver<AnnotationSpecSet> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AnnotationSpecSet) {
       requests.add(request);
       responseObserver.onNext(((AnnotationSpecSet) response));
@@ -403,7 +403,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateAnnotationSpecSet, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AnnotationSpecSet.class.getName(),
                   Exception.class.getName())));
     }
@@ -412,7 +412,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   @Override
   public void getAnnotationSpecSet(
       GetAnnotationSpecSetRequest request, StreamObserver<AnnotationSpecSet> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AnnotationSpecSet) {
       requests.add(request);
       responseObserver.onNext(((AnnotationSpecSet) response));
@@ -424,7 +424,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAnnotationSpecSet, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AnnotationSpecSet.class.getName(),
                   Exception.class.getName())));
     }
@@ -434,7 +434,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   public void listAnnotationSpecSets(
       ListAnnotationSpecSetsRequest request,
       StreamObserver<ListAnnotationSpecSetsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListAnnotationSpecSetsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListAnnotationSpecSetsResponse) response));
@@ -446,7 +446,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListAnnotationSpecSets, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListAnnotationSpecSetsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -455,7 +455,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   @Override
   public void deleteAnnotationSpecSet(
       DeleteAnnotationSpecSetRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -467,7 +467,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteAnnotationSpecSet, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -476,7 +476,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   @Override
   public void createInstruction(
       CreateInstructionRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -488,7 +488,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateInstruction, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -497,7 +497,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   @Override
   public void getInstruction(
       GetInstructionRequest request, StreamObserver<Instruction> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Instruction) {
       requests.add(request);
       responseObserver.onNext(((Instruction) response));
@@ -509,7 +509,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetInstruction, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Instruction.class.getName(),
                   Exception.class.getName())));
     }
@@ -518,7 +518,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   @Override
   public void listInstructions(
       ListInstructionsRequest request, StreamObserver<ListInstructionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListInstructionsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListInstructionsResponse) response));
@@ -530,7 +530,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListInstructions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListInstructionsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -539,7 +539,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   @Override
   public void deleteInstruction(
       DeleteInstructionRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -551,7 +551,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteInstruction, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -560,7 +560,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   @Override
   public void getEvaluation(
       GetEvaluationRequest request, StreamObserver<Evaluation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Evaluation) {
       requests.add(request);
       responseObserver.onNext(((Evaluation) response));
@@ -572,7 +572,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetEvaluation, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Evaluation.class.getName(),
                   Exception.class.getName())));
     }
@@ -582,7 +582,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   public void searchEvaluations(
       SearchEvaluationsRequest request,
       StreamObserver<SearchEvaluationsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SearchEvaluationsResponse) {
       requests.add(request);
       responseObserver.onNext(((SearchEvaluationsResponse) response));
@@ -594,7 +594,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SearchEvaluations, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SearchEvaluationsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -604,7 +604,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   public void searchExampleComparisons(
       SearchExampleComparisonsRequest request,
       StreamObserver<SearchExampleComparisonsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SearchExampleComparisonsResponse) {
       requests.add(request);
       responseObserver.onNext(((SearchExampleComparisonsResponse) response));
@@ -616,7 +616,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SearchExampleComparisons, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SearchExampleComparisonsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -625,7 +625,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   @Override
   public void createEvaluationJob(
       CreateEvaluationJobRequest request, StreamObserver<EvaluationJob> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof EvaluationJob) {
       requests.add(request);
       responseObserver.onNext(((EvaluationJob) response));
@@ -637,7 +637,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateEvaluationJob, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   EvaluationJob.class.getName(),
                   Exception.class.getName())));
     }
@@ -646,7 +646,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   @Override
   public void updateEvaluationJob(
       UpdateEvaluationJobRequest request, StreamObserver<EvaluationJob> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof EvaluationJob) {
       requests.add(request);
       responseObserver.onNext(((EvaluationJob) response));
@@ -658,7 +658,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateEvaluationJob, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   EvaluationJob.class.getName(),
                   Exception.class.getName())));
     }
@@ -667,7 +667,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   @Override
   public void getEvaluationJob(
       GetEvaluationJobRequest request, StreamObserver<EvaluationJob> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof EvaluationJob) {
       requests.add(request);
       responseObserver.onNext(((EvaluationJob) response));
@@ -679,7 +679,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetEvaluationJob, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   EvaluationJob.class.getName(),
                   Exception.class.getName())));
     }
@@ -688,7 +688,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   @Override
   public void pauseEvaluationJob(
       PauseEvaluationJobRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -700,7 +700,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method PauseEvaluationJob, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -709,7 +709,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   @Override
   public void resumeEvaluationJob(
       ResumeEvaluationJobRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -721,7 +721,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ResumeEvaluationJob, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -730,7 +730,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   @Override
   public void deleteEvaluationJob(
       DeleteEvaluationJobRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -742,7 +742,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteEvaluationJob, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -752,7 +752,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
   public void listEvaluationJobs(
       ListEvaluationJobsRequest request,
       StreamObserver<ListEvaluationJobsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListEvaluationJobsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListEvaluationJobsResponse) response));
@@ -764,7 +764,7 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListEvaluationJobs, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListEvaluationJobsResponse.class.getName(),
                   Exception.class.getName())));
     }

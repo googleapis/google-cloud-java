@@ -479,6 +479,13 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   ListDatasetsRequest request =
+   *       ListDatasetsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListDatasetsResponse response =
    *         dataLabelingServiceClient.listDatasetsCallable().call(request);
@@ -1230,6 +1237,13 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   ListDataItemsRequest request =
+   *       ListDataItemsRequest.newBuilder()
+   *           .setParent(DatasetName.of("[PROJECT]", "[DATASET]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListDataItemsResponse response =
    *         dataLabelingServiceClient.listDataItemsCallable().call(request);
@@ -1479,6 +1493,13 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   ListAnnotatedDatasetsRequest request =
+   *       ListAnnotatedDatasetsRequest.newBuilder()
+   *           .setParent(DatasetName.of("[PROJECT]", "[DATASET]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListAnnotatedDatasetsResponse response =
    *         dataLabelingServiceClient.listAnnotatedDatasetsCallable().call(request);
@@ -2229,6 +2250,15 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   ListExamplesRequest request =
+   *       ListExamplesRequest.newBuilder()
+   *           .setParent(
+   *               AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListExamplesResponse response =
    *         dataLabelingServiceClient.listExamplesCallable().call(request);
@@ -2581,6 +2611,13 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   ListAnnotationSpecSetsRequest request =
+   *       ListAnnotationSpecSetsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListAnnotationSpecSetsResponse response =
    *         dataLabelingServiceClient.listAnnotationSpecSetsCallable().call(request);
@@ -3039,6 +3076,13 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   ListInstructionsRequest request =
+   *       ListInstructionsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListInstructionsResponse response =
    *         dataLabelingServiceClient.listInstructionsCallable().call(request);
@@ -3435,6 +3479,13 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   SearchEvaluationsRequest request =
+   *       SearchEvaluationsRequest.newBuilder()
+   *           .setParent(EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     SearchEvaluationsResponse response =
    *         dataLabelingServiceClient.searchEvaluationsCallable().call(request);
@@ -3588,6 +3639,12 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   SearchExampleComparisonsRequest request =
+   *       SearchExampleComparisonsRequest.newBuilder()
+   *           .setParent(EvaluationName.of("[PROJECT]", "[DATASET]", "[EVALUATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     SearchExampleComparisonsResponse response =
    *         dataLabelingServiceClient.searchExampleComparisonsCallable().call(request);
@@ -4336,6 +4393,13 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   ListEvaluationJobsRequest request =
+   *       ListEvaluationJobsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListEvaluationJobsResponse response =
    *         dataLabelingServiceClient.listEvaluationJobsCallable().call(request);
