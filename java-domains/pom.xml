@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-domains-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-domains:current} -->
+  <version>0.1.0</version><!-- {x-version-update:google-cloud-domains:current} -->
   <name>Google Cloud Domains Parent</name>
   <url>https://github.com/googleapis/java-domains</url>
   <description>
@@ -70,17 +70,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-domains</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-domains:current} -->
+        <version>0.1.0</version><!-- {x-version-update:google-cloud-domains:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-domains-v1beta1</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-domains-v1beta1:current} -->
+        <version>0.1.0</version><!-- {x-version-update:proto-google-cloud-domains-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-domains-v1beta1</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-domains-v1beta1:current} -->
+        <version>0.1.0</version><!-- {x-version-update:grpc-google-cloud-domains-v1beta1:current} -->
       </dependency>
 
       <dependency>
