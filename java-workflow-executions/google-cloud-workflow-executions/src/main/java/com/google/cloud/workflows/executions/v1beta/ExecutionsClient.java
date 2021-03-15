@@ -274,6 +274,13 @@ public class ExecutionsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   ListExecutionsRequest request =
+   *       ListExecutionsRequest.newBuilder()
+   *           .setParent(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setView(ExecutionView.forNumber(0))
+   *           .build();
    *   while (true) {
    *     ListExecutionsResponse response = executionsClient.listExecutionsCallable().call(request);
    *     for (Execution element : response.getResponsesList()) {

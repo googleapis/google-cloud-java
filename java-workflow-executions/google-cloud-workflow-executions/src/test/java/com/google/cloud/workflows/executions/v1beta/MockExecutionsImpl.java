@@ -61,7 +61,7 @@ public class MockExecutionsImpl extends ExecutionsImplBase {
   @Override
   public void listExecutions(
       ListExecutionsRequest request, StreamObserver<ListExecutionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListExecutionsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListExecutionsResponse) response));
@@ -73,7 +73,7 @@ public class MockExecutionsImpl extends ExecutionsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListExecutions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListExecutionsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockExecutionsImpl extends ExecutionsImplBase {
   @Override
   public void createExecution(
       CreateExecutionRequest request, StreamObserver<Execution> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Execution) {
       requests.add(request);
       responseObserver.onNext(((Execution) response));
@@ -94,7 +94,7 @@ public class MockExecutionsImpl extends ExecutionsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateExecution, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Execution.class.getName(),
                   Exception.class.getName())));
     }
@@ -103,7 +103,7 @@ public class MockExecutionsImpl extends ExecutionsImplBase {
   @Override
   public void getExecution(
       GetExecutionRequest request, StreamObserver<Execution> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Execution) {
       requests.add(request);
       responseObserver.onNext(((Execution) response));
@@ -115,7 +115,7 @@ public class MockExecutionsImpl extends ExecutionsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetExecution, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Execution.class.getName(),
                   Exception.class.getName())));
     }
@@ -124,7 +124,7 @@ public class MockExecutionsImpl extends ExecutionsImplBase {
   @Override
   public void cancelExecution(
       CancelExecutionRequest request, StreamObserver<Execution> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Execution) {
       requests.add(request);
       responseObserver.onNext(((Execution) response));
@@ -136,7 +136,7 @@ public class MockExecutionsImpl extends ExecutionsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CancelExecution, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Execution.class.getName(),
                   Exception.class.getName())));
     }
