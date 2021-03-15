@@ -67,7 +67,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
   @Override
   public void createNamespace(
       CreateNamespaceRequest request, StreamObserver<Namespace> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Namespace) {
       requests.add(request);
       responseObserver.onNext(((Namespace) response));
@@ -79,7 +79,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateNamespace, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Namespace.class.getName(),
                   Exception.class.getName())));
     }
@@ -88,7 +88,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
   @Override
   public void listNamespaces(
       ListNamespacesRequest request, StreamObserver<ListNamespacesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListNamespacesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListNamespacesResponse) response));
@@ -100,7 +100,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListNamespaces, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListNamespacesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -109,7 +109,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
   @Override
   public void getNamespace(
       GetNamespaceRequest request, StreamObserver<Namespace> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Namespace) {
       requests.add(request);
       responseObserver.onNext(((Namespace) response));
@@ -121,7 +121,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetNamespace, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Namespace.class.getName(),
                   Exception.class.getName())));
     }
@@ -130,7 +130,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
   @Override
   public void updateNamespace(
       UpdateNamespaceRequest request, StreamObserver<Namespace> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Namespace) {
       requests.add(request);
       responseObserver.onNext(((Namespace) response));
@@ -142,7 +142,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateNamespace, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Namespace.class.getName(),
                   Exception.class.getName())));
     }
@@ -151,7 +151,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
   @Override
   public void deleteNamespace(
       DeleteNamespaceRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -163,7 +163,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteNamespace, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -172,7 +172,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
   @Override
   public void createService(
       CreateServiceRequest request, StreamObserver<Service> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Service) {
       requests.add(request);
       responseObserver.onNext(((Service) response));
@@ -184,7 +184,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateService, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Service.class.getName(),
                   Exception.class.getName())));
     }
@@ -193,7 +193,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
   @Override
   public void listServices(
       ListServicesRequest request, StreamObserver<ListServicesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListServicesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListServicesResponse) response));
@@ -205,7 +205,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListServices, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListServicesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -213,7 +213,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
 
   @Override
   public void getService(GetServiceRequest request, StreamObserver<Service> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Service) {
       requests.add(request);
       responseObserver.onNext(((Service) response));
@@ -225,7 +225,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetService, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Service.class.getName(),
                   Exception.class.getName())));
     }
@@ -234,7 +234,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
   @Override
   public void updateService(
       UpdateServiceRequest request, StreamObserver<Service> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Service) {
       requests.add(request);
       responseObserver.onNext(((Service) response));
@@ -246,7 +246,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateService, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Service.class.getName(),
                   Exception.class.getName())));
     }
@@ -254,7 +254,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
 
   @Override
   public void deleteService(DeleteServiceRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -266,7 +266,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteService, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -275,7 +275,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
   @Override
   public void createEndpoint(
       CreateEndpointRequest request, StreamObserver<Endpoint> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Endpoint) {
       requests.add(request);
       responseObserver.onNext(((Endpoint) response));
@@ -287,7 +287,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateEndpoint, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Endpoint.class.getName(),
                   Exception.class.getName())));
     }
@@ -296,7 +296,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
   @Override
   public void listEndpoints(
       ListEndpointsRequest request, StreamObserver<ListEndpointsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListEndpointsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListEndpointsResponse) response));
@@ -308,7 +308,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListEndpoints, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListEndpointsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -316,7 +316,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
 
   @Override
   public void getEndpoint(GetEndpointRequest request, StreamObserver<Endpoint> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Endpoint) {
       requests.add(request);
       responseObserver.onNext(((Endpoint) response));
@@ -328,7 +328,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetEndpoint, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Endpoint.class.getName(),
                   Exception.class.getName())));
     }
@@ -337,7 +337,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
   @Override
   public void updateEndpoint(
       UpdateEndpointRequest request, StreamObserver<Endpoint> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Endpoint) {
       requests.add(request);
       responseObserver.onNext(((Endpoint) response));
@@ -349,7 +349,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateEndpoint, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Endpoint.class.getName(),
                   Exception.class.getName())));
     }
@@ -358,7 +358,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
   @Override
   public void deleteEndpoint(
       DeleteEndpointRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -370,7 +370,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteEndpoint, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -378,7 +378,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
 
   @Override
   public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -390,7 +390,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -398,7 +398,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
 
   @Override
   public void setIamPolicy(SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -410,7 +410,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -420,7 +420,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
   public void testIamPermissions(
       TestIamPermissionsRequest request,
       StreamObserver<TestIamPermissionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
       responseObserver.onNext(((TestIamPermissionsResponse) response));
@@ -432,7 +432,7 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TestIamPermissionsResponse.class.getName(),
                   Exception.class.getName())));
     }

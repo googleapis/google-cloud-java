@@ -61,7 +61,7 @@ public class MockLookupServiceImpl extends LookupServiceImplBase {
   @Override
   public void resolveService(
       ResolveServiceRequest request, StreamObserver<ResolveServiceResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ResolveServiceResponse) {
       requests.add(request);
       responseObserver.onNext(((ResolveServiceResponse) response));
@@ -73,7 +73,7 @@ public class MockLookupServiceImpl extends LookupServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ResolveService, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ResolveServiceResponse.class.getName(),
                   Exception.class.getName())));
     }

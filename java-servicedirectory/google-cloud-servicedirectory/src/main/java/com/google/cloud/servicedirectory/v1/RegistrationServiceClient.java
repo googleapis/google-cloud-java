@@ -414,6 +414,14 @@ public class RegistrationServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
+   *   ListNamespacesRequest request =
+   *       ListNamespacesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListNamespacesResponse response =
    *         registrationServiceClient.listNamespacesCallable().call(request);
@@ -924,6 +932,14 @@ public class RegistrationServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
+   *   ListServicesRequest request =
+   *       ListServicesRequest.newBuilder()
+   *           .setParent(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListServicesResponse response =
    *         registrationServiceClient.listServicesCallable().call(request);
@@ -1442,6 +1458,15 @@ public class RegistrationServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
+   *   ListEndpointsRequest request =
+   *       ListEndpointsRequest.newBuilder()
+   *           .setParent(
+   *               ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListEndpointsResponse response =
    *         registrationServiceClient.listEndpointsCallable().call(request);
