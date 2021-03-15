@@ -280,6 +280,12 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListCustomersRequest request =
+   *       ListCustomersRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListCustomersResponse response =
    *         cloudChannelServiceClient.listCustomersCallable().call(request);
@@ -1049,6 +1055,12 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListEntitlementsRequest request =
+   *       ListEntitlementsRequest.newBuilder()
+   *           .setParent(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListEntitlementsResponse response =
    *         cloudChannelServiceClient.listEntitlementsCallable().call(request);
@@ -1187,6 +1199,14 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListTransferableSkusRequest request =
+   *       ListTransferableSkusRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setAuthToken("authToken1450587441")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
    *   while (true) {
    *     ListTransferableSkusResponse response =
    *         cloudChannelServiceClient.listTransferableSkusCallable().call(request);
@@ -1328,6 +1348,14 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListTransferableOffersRequest request =
+   *       ListTransferableOffersRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setSku("sku113949")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
    *   while (true) {
    *     ListTransferableOffersResponse response =
    *         cloudChannelServiceClient.listTransferableOffersCallable().call(request);
@@ -3035,6 +3063,13 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListChannelPartnerLinksRequest request =
+   *       ListChannelPartnerLinksRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setView(ChannelPartnerLinkView.forNumber(0))
+   *           .build();
    *   while (true) {
    *     ListChannelPartnerLinksResponse response =
    *         cloudChannelServiceClient.listChannelPartnerLinksCallable().call(request);
@@ -3398,6 +3433,13 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListProductsRequest request =
+   *       ListProductsRequest.newBuilder()
+   *           .setAccount("account-1177318867")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
    *   while (true) {
    *     ListProductsResponse response =
    *         cloudChannelServiceClient.listProductsCallable().call(request);
@@ -3501,6 +3543,14 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListSkusRequest request =
+   *       ListSkusRequest.newBuilder()
+   *           .setParent(ProductName.of("[PRODUCT]").toString())
+   *           .setAccount("account-1177318867")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
    *   while (true) {
    *     ListSkusResponse response = cloudChannelServiceClient.listSkusCallable().call(request);
    *     for (Sku element : response.getResponsesList()) {
@@ -3604,6 +3654,14 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListOffersRequest request =
+   *       ListOffersRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
    *   while (true) {
    *     ListOffersResponse response = cloudChannelServiceClient.listOffersCallable().call(request);
    *     for (Offer element : response.getResponsesList()) {
@@ -3726,6 +3784,13 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListPurchasableSkusRequest request =
+   *       ListPurchasableSkusRequest.newBuilder()
+   *           .setCustomer(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
    *   while (true) {
    *     ListPurchasableSkusResponse response =
    *         cloudChannelServiceClient.listPurchasableSkusCallable().call(request);
@@ -3850,6 +3915,13 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListPurchasableOffersRequest request =
+   *       ListPurchasableOffersRequest.newBuilder()
+   *           .setCustomer(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
    *   while (true) {
    *     ListPurchasableOffersResponse response =
    *         cloudChannelServiceClient.listPurchasableOffersCallable().call(request);
@@ -4154,6 +4226,12 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListSubscribersRequest request =
+   *       ListSubscribersRequest.newBuilder()
+   *           .setAccount("account-1177318867")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListSubscribersResponse response =
    *         cloudChannelServiceClient.listSubscribersCallable().call(request);
