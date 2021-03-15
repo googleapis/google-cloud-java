@@ -652,6 +652,12 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   ListDeviceRegistriesRequest request =
+   *       ListDeviceRegistriesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListDeviceRegistriesResponse response =
    *         deviceManagerClient.listDeviceRegistriesCallable().call(request);
@@ -1162,6 +1168,16 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   ListDevicesRequest request =
+   *       ListDevicesRequest.newBuilder()
+   *           .setParent(RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]").toString())
+   *           .addAllDeviceNumIds(new ArrayList<Long>())
+   *           .addAllDeviceIds(new ArrayList<String>())
+   *           .setFieldMask(FieldMask.newBuilder().build())
+   *           .setGatewayListOptions(GatewayListOptions.newBuilder().build())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListDevicesResponse response = deviceManagerClient.listDevicesCallable().call(request);
    *     for (Device element : response.getResponsesList()) {
