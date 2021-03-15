@@ -62,7 +62,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
   @Override
   public void translateText(
       TranslateTextRequest request, StreamObserver<TranslateTextResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TranslateTextResponse) {
       requests.add(request);
       responseObserver.onNext(((TranslateTextResponse) response));
@@ -74,7 +74,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method TranslateText, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TranslateTextResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
   @Override
   public void detectLanguage(
       DetectLanguageRequest request, StreamObserver<DetectLanguageResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof DetectLanguageResponse) {
       requests.add(request);
       responseObserver.onNext(((DetectLanguageResponse) response));
@@ -95,7 +95,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DetectLanguage, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   DetectLanguageResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
   @Override
   public void getSupportedLanguages(
       GetSupportedLanguagesRequest request, StreamObserver<SupportedLanguages> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SupportedLanguages) {
       requests.add(request);
       responseObserver.onNext(((SupportedLanguages) response));
@@ -116,7 +116,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetSupportedLanguages, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SupportedLanguages.class.getName(),
                   Exception.class.getName())));
     }
@@ -125,7 +125,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
   @Override
   public void batchTranslateText(
       BatchTranslateTextRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -137,7 +137,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchTranslateText, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -146,7 +146,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
   @Override
   public void createGlossary(
       CreateGlossaryRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -158,7 +158,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateGlossary, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -167,7 +167,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
   @Override
   public void listGlossaries(
       ListGlossariesRequest request, StreamObserver<ListGlossariesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListGlossariesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListGlossariesResponse) response));
@@ -179,7 +179,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListGlossaries, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListGlossariesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -187,7 +187,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
 
   @Override
   public void getGlossary(GetGlossaryRequest request, StreamObserver<Glossary> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Glossary) {
       requests.add(request);
       responseObserver.onNext(((Glossary) response));
@@ -199,7 +199,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetGlossary, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Glossary.class.getName(),
                   Exception.class.getName())));
     }
@@ -208,7 +208,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
   @Override
   public void deleteGlossary(
       DeleteGlossaryRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -220,7 +220,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteGlossary, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }

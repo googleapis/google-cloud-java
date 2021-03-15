@@ -1099,6 +1099,13 @@ public class TranslationServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   ListGlossariesRequest request =
+   *       ListGlossariesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     ListGlossariesResponse response =
    *         translationServiceClient.listGlossariesCallable().call(request);
