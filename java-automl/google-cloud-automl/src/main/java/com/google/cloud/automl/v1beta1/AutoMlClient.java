@@ -473,6 +473,13 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ListDatasetsRequest request =
+   *       ListDatasetsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListDatasetsResponse response = autoMlClient.listDatasetsCallable().call(request);
    *     for (Dataset element : response.getResponsesList()) {
@@ -1292,6 +1299,14 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ListTableSpecsRequest request =
+   *       ListTableSpecsRequest.newBuilder()
+   *           .setParent(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setFieldMask(FieldMask.newBuilder().build())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListTableSpecsResponse response = autoMlClient.listTableSpecsCallable().call(request);
    *     for (TableSpec element : response.getResponsesList()) {
@@ -1603,6 +1618,16 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ListColumnSpecsRequest request =
+   *       ListColumnSpecsRequest.newBuilder()
+   *           .setParent(
+   *               TableSpecName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]")
+   *                   .toString())
+   *           .setFieldMask(FieldMask.newBuilder().build())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListColumnSpecsResponse response = autoMlClient.listColumnSpecsCallable().call(request);
    *     for (ColumnSpec element : response.getResponsesList()) {
@@ -2026,6 +2051,13 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ListModelsRequest request =
+   *       ListModelsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListModelsResponse response = autoMlClient.listModelsCallable().call(request);
    *     for (Model element : response.getResponsesList()) {
@@ -3035,6 +3067,13 @@ public class AutoMlClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+   *   ListModelEvaluationsRequest request =
+   *       ListModelEvaluationsRequest.newBuilder()
+   *           .setParent(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListModelEvaluationsResponse response =
    *         autoMlClient.listModelEvaluationsCallable().call(request);

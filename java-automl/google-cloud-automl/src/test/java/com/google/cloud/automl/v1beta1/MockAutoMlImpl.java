@@ -62,7 +62,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
   @Override
   public void createDataset(
       CreateDatasetRequest request, StreamObserver<Dataset> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Dataset) {
       requests.add(request);
       responseObserver.onNext(((Dataset) response));
@@ -74,7 +74,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateDataset, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Dataset.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
 
   @Override
   public void getDataset(GetDatasetRequest request, StreamObserver<Dataset> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Dataset) {
       requests.add(request);
       responseObserver.onNext(((Dataset) response));
@@ -94,7 +94,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetDataset, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Dataset.class.getName(),
                   Exception.class.getName())));
     }
@@ -103,7 +103,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
   @Override
   public void listDatasets(
       ListDatasetsRequest request, StreamObserver<ListDatasetsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListDatasetsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListDatasetsResponse) response));
@@ -115,7 +115,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListDatasets, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListDatasetsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -124,7 +124,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
   @Override
   public void updateDataset(
       UpdateDatasetRequest request, StreamObserver<Dataset> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Dataset) {
       requests.add(request);
       responseObserver.onNext(((Dataset) response));
@@ -136,7 +136,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateDataset, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Dataset.class.getName(),
                   Exception.class.getName())));
     }
@@ -145,7 +145,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
   @Override
   public void deleteDataset(
       DeleteDatasetRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -157,7 +157,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteDataset, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -165,7 +165,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
 
   @Override
   public void importData(ImportDataRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -177,7 +177,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ImportData, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -185,7 +185,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
 
   @Override
   public void exportData(ExportDataRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -197,7 +197,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ExportData, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -206,7 +206,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
   @Override
   public void getAnnotationSpec(
       GetAnnotationSpecRequest request, StreamObserver<AnnotationSpec> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AnnotationSpec) {
       requests.add(request);
       responseObserver.onNext(((AnnotationSpec) response));
@@ -218,7 +218,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAnnotationSpec, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AnnotationSpec.class.getName(),
                   Exception.class.getName())));
     }
@@ -227,7 +227,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
   @Override
   public void getTableSpec(
       GetTableSpecRequest request, StreamObserver<TableSpec> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TableSpec) {
       requests.add(request);
       responseObserver.onNext(((TableSpec) response));
@@ -239,7 +239,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetTableSpec, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TableSpec.class.getName(),
                   Exception.class.getName())));
     }
@@ -248,7 +248,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
   @Override
   public void listTableSpecs(
       ListTableSpecsRequest request, StreamObserver<ListTableSpecsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListTableSpecsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListTableSpecsResponse) response));
@@ -260,7 +260,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListTableSpecs, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListTableSpecsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -269,7 +269,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
   @Override
   public void updateTableSpec(
       UpdateTableSpecRequest request, StreamObserver<TableSpec> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TableSpec) {
       requests.add(request);
       responseObserver.onNext(((TableSpec) response));
@@ -281,7 +281,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateTableSpec, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TableSpec.class.getName(),
                   Exception.class.getName())));
     }
@@ -290,7 +290,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
   @Override
   public void getColumnSpec(
       GetColumnSpecRequest request, StreamObserver<ColumnSpec> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ColumnSpec) {
       requests.add(request);
       responseObserver.onNext(((ColumnSpec) response));
@@ -302,7 +302,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetColumnSpec, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ColumnSpec.class.getName(),
                   Exception.class.getName())));
     }
@@ -311,7 +311,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
   @Override
   public void listColumnSpecs(
       ListColumnSpecsRequest request, StreamObserver<ListColumnSpecsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListColumnSpecsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListColumnSpecsResponse) response));
@@ -323,7 +323,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListColumnSpecs, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListColumnSpecsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -332,7 +332,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
   @Override
   public void updateColumnSpec(
       UpdateColumnSpecRequest request, StreamObserver<ColumnSpec> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ColumnSpec) {
       requests.add(request);
       responseObserver.onNext(((ColumnSpec) response));
@@ -344,7 +344,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateColumnSpec, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ColumnSpec.class.getName(),
                   Exception.class.getName())));
     }
@@ -352,7 +352,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
 
   @Override
   public void createModel(CreateModelRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -364,7 +364,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateModel, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -372,7 +372,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
 
   @Override
   public void getModel(GetModelRequest request, StreamObserver<Model> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Model) {
       requests.add(request);
       responseObserver.onNext(((Model) response));
@@ -384,7 +384,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetModel, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Model.class.getName(),
                   Exception.class.getName())));
     }
@@ -393,7 +393,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
   @Override
   public void listModels(
       ListModelsRequest request, StreamObserver<ListModelsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListModelsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListModelsResponse) response));
@@ -405,7 +405,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListModels, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListModelsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -413,7 +413,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
 
   @Override
   public void deleteModel(DeleteModelRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -425,7 +425,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteModel, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -433,7 +433,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
 
   @Override
   public void deployModel(DeployModelRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -445,7 +445,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeployModel, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -454,7 +454,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
   @Override
   public void undeployModel(
       UndeployModelRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -466,7 +466,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UndeployModel, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -474,7 +474,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
 
   @Override
   public void exportModel(ExportModelRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -486,7 +486,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ExportModel, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -495,7 +495,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
   @Override
   public void exportEvaluatedExamples(
       ExportEvaluatedExamplesRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -507,7 +507,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ExportEvaluatedExamples, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -516,7 +516,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
   @Override
   public void getModelEvaluation(
       GetModelEvaluationRequest request, StreamObserver<ModelEvaluation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ModelEvaluation) {
       requests.add(request);
       responseObserver.onNext(((ModelEvaluation) response));
@@ -528,7 +528,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetModelEvaluation, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ModelEvaluation.class.getName(),
                   Exception.class.getName())));
     }
@@ -538,7 +538,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
   public void listModelEvaluations(
       ListModelEvaluationsRequest request,
       StreamObserver<ListModelEvaluationsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListModelEvaluationsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListModelEvaluationsResponse) response));
@@ -550,7 +550,7 @@ public class MockAutoMlImpl extends AutoMlImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListModelEvaluations, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListModelEvaluationsResponse.class.getName(),
                   Exception.class.getName())));
     }

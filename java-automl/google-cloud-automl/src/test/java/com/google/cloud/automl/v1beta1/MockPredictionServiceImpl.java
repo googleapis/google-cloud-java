@@ -61,7 +61,7 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
 
   @Override
   public void predict(PredictRequest request, StreamObserver<PredictResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PredictResponse) {
       requests.add(request);
       responseObserver.onNext(((PredictResponse) response));
@@ -73,7 +73,7 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method Predict, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   PredictResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
   @Override
   public void batchPredict(
       BatchPredictRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -94,7 +94,7 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchPredict, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
