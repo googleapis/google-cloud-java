@@ -67,7 +67,7 @@ public class MockTraceServiceImpl extends TraceServiceImplBase {
   @Override
   public void listTraces(
       ListTracesRequest request, StreamObserver<ListTracesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListTracesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListTracesResponse) response));
@@ -79,7 +79,7 @@ public class MockTraceServiceImpl extends TraceServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListTraces, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListTracesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -87,7 +87,7 @@ public class MockTraceServiceImpl extends TraceServiceImplBase {
 
   @Override
   public void getTrace(GetTraceRequest request, StreamObserver<Trace> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Trace) {
       requests.add(request);
       responseObserver.onNext(((Trace) response));
@@ -99,7 +99,7 @@ public class MockTraceServiceImpl extends TraceServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetTrace, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Trace.class.getName(),
                   Exception.class.getName())));
     }
@@ -107,7 +107,7 @@ public class MockTraceServiceImpl extends TraceServiceImplBase {
 
   @Override
   public void patchTraces(PatchTracesRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -119,7 +119,7 @@ public class MockTraceServiceImpl extends TraceServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method PatchTraces, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

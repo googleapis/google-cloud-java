@@ -64,7 +64,7 @@ public class MockTraceServiceImpl extends TraceServiceImplBase {
   @Override
   public void batchWriteSpans(
       BatchWriteSpansRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -76,7 +76,7 @@ public class MockTraceServiceImpl extends TraceServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchWriteSpans, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockTraceServiceImpl extends TraceServiceImplBase {
 
   @Override
   public void createSpan(Span request, StreamObserver<Span> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Span) {
       requests.add(request);
       responseObserver.onNext(((Span) response));
@@ -96,7 +96,9 @@ public class MockTraceServiceImpl extends TraceServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateSpan, expected %s or %s",
-                  response.getClass().getName(), Span.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Span.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

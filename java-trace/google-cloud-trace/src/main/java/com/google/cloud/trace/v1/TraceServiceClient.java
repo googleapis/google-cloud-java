@@ -249,6 +249,16 @@ public class TraceServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   *   ListTracesRequest request =
+   *       ListTracesRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setStartTime(Timestamp.newBuilder().build())
+   *           .setEndTime(Timestamp.newBuilder().build())
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListTracesResponse response = traceServiceClient.listTracesCallable().call(request);
    *     for (Trace element : response.getResponsesList()) {
