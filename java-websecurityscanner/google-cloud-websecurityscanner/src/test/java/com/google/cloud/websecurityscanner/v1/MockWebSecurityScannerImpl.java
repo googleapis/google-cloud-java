@@ -62,7 +62,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
   @Override
   public void createScanConfig(
       CreateScanConfigRequest request, StreamObserver<ScanConfig> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ScanConfig) {
       requests.add(request);
       responseObserver.onNext(((ScanConfig) response));
@@ -74,7 +74,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateScanConfig, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ScanConfig.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
   @Override
   public void deleteScanConfig(
       DeleteScanConfigRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -95,7 +95,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteScanConfig, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
   @Override
   public void getScanConfig(
       GetScanConfigRequest request, StreamObserver<ScanConfig> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ScanConfig) {
       requests.add(request);
       responseObserver.onNext(((ScanConfig) response));
@@ -116,7 +116,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetScanConfig, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ScanConfig.class.getName(),
                   Exception.class.getName())));
     }
@@ -125,7 +125,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
   @Override
   public void listScanConfigs(
       ListScanConfigsRequest request, StreamObserver<ListScanConfigsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListScanConfigsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListScanConfigsResponse) response));
@@ -137,7 +137,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListScanConfigs, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListScanConfigsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -146,7 +146,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
   @Override
   public void updateScanConfig(
       UpdateScanConfigRequest request, StreamObserver<ScanConfig> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ScanConfig) {
       requests.add(request);
       responseObserver.onNext(((ScanConfig) response));
@@ -158,7 +158,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateScanConfig, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ScanConfig.class.getName(),
                   Exception.class.getName())));
     }
@@ -166,7 +166,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
 
   @Override
   public void startScanRun(StartScanRunRequest request, StreamObserver<ScanRun> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ScanRun) {
       requests.add(request);
       responseObserver.onNext(((ScanRun) response));
@@ -178,7 +178,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method StartScanRun, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ScanRun.class.getName(),
                   Exception.class.getName())));
     }
@@ -186,7 +186,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
 
   @Override
   public void getScanRun(GetScanRunRequest request, StreamObserver<ScanRun> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ScanRun) {
       requests.add(request);
       responseObserver.onNext(((ScanRun) response));
@@ -198,7 +198,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetScanRun, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ScanRun.class.getName(),
                   Exception.class.getName())));
     }
@@ -207,7 +207,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
   @Override
   public void listScanRuns(
       ListScanRunsRequest request, StreamObserver<ListScanRunsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListScanRunsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListScanRunsResponse) response));
@@ -219,7 +219,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListScanRuns, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListScanRunsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -227,7 +227,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
 
   @Override
   public void stopScanRun(StopScanRunRequest request, StreamObserver<ScanRun> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ScanRun) {
       requests.add(request);
       responseObserver.onNext(((ScanRun) response));
@@ -239,7 +239,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method StopScanRun, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ScanRun.class.getName(),
                   Exception.class.getName())));
     }
@@ -248,7 +248,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
   @Override
   public void listCrawledUrls(
       ListCrawledUrlsRequest request, StreamObserver<ListCrawledUrlsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListCrawledUrlsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListCrawledUrlsResponse) response));
@@ -260,7 +260,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListCrawledUrls, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListCrawledUrlsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -268,7 +268,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
 
   @Override
   public void getFinding(GetFindingRequest request, StreamObserver<Finding> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Finding) {
       requests.add(request);
       responseObserver.onNext(((Finding) response));
@@ -280,7 +280,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetFinding, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Finding.class.getName(),
                   Exception.class.getName())));
     }
@@ -289,7 +289,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
   @Override
   public void listFindings(
       ListFindingsRequest request, StreamObserver<ListFindingsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListFindingsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListFindingsResponse) response));
@@ -301,7 +301,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListFindings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListFindingsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -311,7 +311,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
   public void listFindingTypeStats(
       ListFindingTypeStatsRequest request,
       StreamObserver<ListFindingTypeStatsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListFindingTypeStatsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListFindingTypeStatsResponse) response));
@@ -323,7 +323,7 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListFindingTypeStats, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListFindingTypeStatsResponse.class.getName(),
                   Exception.class.getName())));
     }

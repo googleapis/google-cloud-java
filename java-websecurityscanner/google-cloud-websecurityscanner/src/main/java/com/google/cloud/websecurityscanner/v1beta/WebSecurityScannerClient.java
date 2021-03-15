@@ -553,6 +553,12 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+   *   ListScanConfigsRequest request =
+   *       ListScanConfigsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListScanConfigsResponse response =
    *         webSecurityScannerClient.listScanConfigsCallable().call(request);
@@ -948,6 +954,12 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+   *   ListScanRunsRequest request =
+   *       ListScanRunsRequest.newBuilder()
+   *           .setParent(ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListScanRunsResponse response =
    *         webSecurityScannerClient.listScanRunsCallable().call(request);
@@ -1173,6 +1185,12 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+   *   ListCrawledUrlsRequest request =
+   *       ListCrawledUrlsRequest.newBuilder()
+   *           .setParent(ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListCrawledUrlsResponse response =
    *         webSecurityScannerClient.listCrawledUrlsCallable().call(request);
@@ -1417,6 +1435,13 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+   *   ListFindingsRequest request =
+   *       ListFindingsRequest.newBuilder()
+   *           .setParent(ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListFindingsResponse response =
    *         webSecurityScannerClient.listFindingsCallable().call(request);
