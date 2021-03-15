@@ -289,6 +289,12 @@ public class DashboardsServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
+   *   ListDashboardsRequest request =
+   *       ListDashboardsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListDashboardsResponse response =
    *         dashboardsServiceClient.listDashboardsCallable().call(request);

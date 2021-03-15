@@ -69,7 +69,7 @@ public class MockDashboardsServiceImpl extends DashboardsServiceImplBase {
   @Override
   public void createDashboard(
       CreateDashboardRequest request, StreamObserver<Dashboard> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Dashboard) {
       requests.add(request);
       responseObserver.onNext(((Dashboard) response));
@@ -81,7 +81,7 @@ public class MockDashboardsServiceImpl extends DashboardsServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateDashboard, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Dashboard.class.getName(),
                   Exception.class.getName())));
     }
@@ -90,7 +90,7 @@ public class MockDashboardsServiceImpl extends DashboardsServiceImplBase {
   @Override
   public void listDashboards(
       ListDashboardsRequest request, StreamObserver<ListDashboardsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListDashboardsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListDashboardsResponse) response));
@@ -102,7 +102,7 @@ public class MockDashboardsServiceImpl extends DashboardsServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListDashboards, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListDashboardsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -111,7 +111,7 @@ public class MockDashboardsServiceImpl extends DashboardsServiceImplBase {
   @Override
   public void getDashboard(
       GetDashboardRequest request, StreamObserver<Dashboard> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Dashboard) {
       requests.add(request);
       responseObserver.onNext(((Dashboard) response));
@@ -123,7 +123,7 @@ public class MockDashboardsServiceImpl extends DashboardsServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetDashboard, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Dashboard.class.getName(),
                   Exception.class.getName())));
     }
@@ -132,7 +132,7 @@ public class MockDashboardsServiceImpl extends DashboardsServiceImplBase {
   @Override
   public void deleteDashboard(
       DeleteDashboardRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -144,7 +144,7 @@ public class MockDashboardsServiceImpl extends DashboardsServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteDashboard, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -153,7 +153,7 @@ public class MockDashboardsServiceImpl extends DashboardsServiceImplBase {
   @Override
   public void updateDashboard(
       UpdateDashboardRequest request, StreamObserver<Dashboard> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Dashboard) {
       requests.add(request);
       responseObserver.onNext(((Dashboard) response));
@@ -165,7 +165,7 @@ public class MockDashboardsServiceImpl extends DashboardsServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateDashboard, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Dashboard.class.getName(),
                   Exception.class.getName())));
     }
