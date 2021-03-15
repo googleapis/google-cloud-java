@@ -1656,6 +1656,12 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <pre>{@code
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
+   *   ListAppProfilesRequest request =
+   *       ListAppProfilesRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListAppProfilesResponse response =
    *         baseBigtableInstanceAdminClient.listAppProfilesCallable().call(request);

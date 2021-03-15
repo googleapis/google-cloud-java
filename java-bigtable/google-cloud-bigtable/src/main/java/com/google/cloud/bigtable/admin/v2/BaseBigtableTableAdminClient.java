@@ -682,6 +682,12 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * <pre>{@code
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
    *     BaseBigtableTableAdminClient.create()) {
+   *   ListTablesRequest request =
+   *       ListTablesRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListTablesResponse response =
    *         baseBigtableTableAdminClient.listTablesCallable().call(request);
@@ -1853,6 +1859,12 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * <pre>{@code
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
    *     BaseBigtableTableAdminClient.create()) {
+   *   ListSnapshotsRequest request =
+   *       ListSnapshotsRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListSnapshotsResponse response =
    *         baseBigtableTableAdminClient.listSnapshotsCallable().call(request);
@@ -2578,6 +2590,14 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * <pre>{@code
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
    *     BaseBigtableTableAdminClient.create()) {
+   *   ListBackupsRequest request =
+   *       ListBackupsRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListBackupsResponse response =
    *         baseBigtableTableAdminClient.listBackupsCallable().call(request);

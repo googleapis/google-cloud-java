@@ -88,7 +88,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
   @Override
   public void createInstance(
       CreateInstanceRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -100,7 +100,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateInstance, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -108,7 +108,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
 
   @Override
   public void getInstance(GetInstanceRequest request, StreamObserver<Instance> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Instance) {
       requests.add(request);
       responseObserver.onNext(((Instance) response));
@@ -120,7 +120,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetInstance, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Instance.class.getName(),
                   Exception.class.getName())));
     }
@@ -129,7 +129,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
   @Override
   public void listInstances(
       ListInstancesRequest request, StreamObserver<ListInstancesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListInstancesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListInstancesResponse) response));
@@ -141,7 +141,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListInstances, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListInstancesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -149,7 +149,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
 
   @Override
   public void updateInstance(Instance request, StreamObserver<Instance> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Instance) {
       requests.add(request);
       responseObserver.onNext(((Instance) response));
@@ -161,7 +161,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateInstance, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Instance.class.getName(),
                   Exception.class.getName())));
     }
@@ -170,7 +170,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
   @Override
   public void partialUpdateInstance(
       PartialUpdateInstanceRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -182,7 +182,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method PartialUpdateInstance, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -191,7 +191,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
   @Override
   public void deleteInstance(
       DeleteInstanceRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -203,7 +203,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteInstance, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -212,7 +212,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
   @Override
   public void createCluster(
       CreateClusterRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -224,7 +224,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateCluster, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -232,7 +232,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
 
   @Override
   public void getCluster(GetClusterRequest request, StreamObserver<Cluster> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Cluster) {
       requests.add(request);
       responseObserver.onNext(((Cluster) response));
@@ -244,7 +244,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCluster, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Cluster.class.getName(),
                   Exception.class.getName())));
     }
@@ -253,7 +253,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
   @Override
   public void listClusters(
       ListClustersRequest request, StreamObserver<ListClustersResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListClustersResponse) {
       requests.add(request);
       responseObserver.onNext(((ListClustersResponse) response));
@@ -265,7 +265,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListClusters, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListClustersResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -273,7 +273,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
 
   @Override
   public void updateCluster(Cluster request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -285,7 +285,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateCluster, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -293,7 +293,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
 
   @Override
   public void deleteCluster(DeleteClusterRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -305,7 +305,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteCluster, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -314,7 +314,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
   @Override
   public void createAppProfile(
       CreateAppProfileRequest request, StreamObserver<AppProfile> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AppProfile) {
       requests.add(request);
       responseObserver.onNext(((AppProfile) response));
@@ -326,7 +326,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateAppProfile, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AppProfile.class.getName(),
                   Exception.class.getName())));
     }
@@ -335,7 +335,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
   @Override
   public void getAppProfile(
       GetAppProfileRequest request, StreamObserver<AppProfile> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AppProfile) {
       requests.add(request);
       responseObserver.onNext(((AppProfile) response));
@@ -347,7 +347,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAppProfile, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AppProfile.class.getName(),
                   Exception.class.getName())));
     }
@@ -356,7 +356,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
   @Override
   public void listAppProfiles(
       ListAppProfilesRequest request, StreamObserver<ListAppProfilesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListAppProfilesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListAppProfilesResponse) response));
@@ -368,7 +368,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListAppProfiles, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListAppProfilesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -377,7 +377,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
   @Override
   public void updateAppProfile(
       UpdateAppProfileRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -389,7 +389,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateAppProfile, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -398,7 +398,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
   @Override
   public void deleteAppProfile(
       DeleteAppProfileRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -410,7 +410,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteAppProfile, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -418,7 +418,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
 
   @Override
   public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -430,7 +430,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -438,7 +438,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
 
   @Override
   public void setIamPolicy(SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -450,7 +450,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -460,7 +460,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
   public void testIamPermissions(
       TestIamPermissionsRequest request,
       StreamObserver<TestIamPermissionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
       responseObserver.onNext(((TestIamPermissionsResponse) response));
@@ -472,7 +472,7 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TestIamPermissionsResponse.class.getName(),
                   Exception.class.getName())));
     }
