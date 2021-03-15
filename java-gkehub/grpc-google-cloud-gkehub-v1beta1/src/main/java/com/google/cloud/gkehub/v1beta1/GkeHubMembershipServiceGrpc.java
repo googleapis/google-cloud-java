@@ -16,11 +16,6 @@
 package com.google.cloud.gkehub.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -492,7 +487,8 @@ public final class GkeHubMembershipServiceGrpc {
         com.google.cloud.gkehub.v1beta1.ListMembershipsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1beta1.ListMembershipsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListMembershipsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListMembershipsMethod(), responseObserver);
     }
 
     /**
@@ -505,7 +501,8 @@ public final class GkeHubMembershipServiceGrpc {
     public void getMembership(
         com.google.cloud.gkehub.v1beta1.GetMembershipRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1beta1.Membership> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetMembershipMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetMembershipMethod(), responseObserver);
     }
 
     /**
@@ -518,7 +515,8 @@ public final class GkeHubMembershipServiceGrpc {
     public void createMembership(
         com.google.cloud.gkehub.v1beta1.CreateMembershipRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateMembershipMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateMembershipMethod(), responseObserver);
     }
 
     /**
@@ -531,7 +529,8 @@ public final class GkeHubMembershipServiceGrpc {
     public void deleteMembership(
         com.google.cloud.gkehub.v1beta1.DeleteMembershipRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteMembershipMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteMembershipMethod(), responseObserver);
     }
 
     /**
@@ -544,7 +543,8 @@ public final class GkeHubMembershipServiceGrpc {
     public void updateMembership(
         com.google.cloud.gkehub.v1beta1.UpdateMembershipRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateMembershipMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateMembershipMethod(), responseObserver);
     }
 
     /**
@@ -558,7 +558,8 @@ public final class GkeHubMembershipServiceGrpc {
         com.google.cloud.gkehub.v1beta1.GenerateConnectManifestRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1beta1.GenerateConnectManifestResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGenerateConnectManifestMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGenerateConnectManifestMethod(), responseObserver);
     }
 
     /**
@@ -573,7 +574,8 @@ public final class GkeHubMembershipServiceGrpc {
         com.google.cloud.gkehub.v1beta1.ValidateExclusivityRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1beta1.ValidateExclusivityResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getValidateExclusivityMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getValidateExclusivityMethod(), responseObserver);
     }
 
     /**
@@ -597,7 +599,8 @@ public final class GkeHubMembershipServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.gkehub.v1beta1.GenerateExclusivityManifestResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGenerateExclusivityManifestMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGenerateExclusivityManifestMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -605,52 +608,52 @@ public final class GkeHubMembershipServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListMembershipsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gkehub.v1beta1.ListMembershipsRequest,
                       com.google.cloud.gkehub.v1beta1.ListMembershipsResponse>(
                       this, METHODID_LIST_MEMBERSHIPS)))
           .addMethod(
               getGetMembershipMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gkehub.v1beta1.GetMembershipRequest,
                       com.google.cloud.gkehub.v1beta1.Membership>(this, METHODID_GET_MEMBERSHIP)))
           .addMethod(
               getCreateMembershipMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gkehub.v1beta1.CreateMembershipRequest,
                       com.google.longrunning.Operation>(this, METHODID_CREATE_MEMBERSHIP)))
           .addMethod(
               getDeleteMembershipMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gkehub.v1beta1.DeleteMembershipRequest,
                       com.google.longrunning.Operation>(this, METHODID_DELETE_MEMBERSHIP)))
           .addMethod(
               getUpdateMembershipMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gkehub.v1beta1.UpdateMembershipRequest,
                       com.google.longrunning.Operation>(this, METHODID_UPDATE_MEMBERSHIP)))
           .addMethod(
               getGenerateConnectManifestMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gkehub.v1beta1.GenerateConnectManifestRequest,
                       com.google.cloud.gkehub.v1beta1.GenerateConnectManifestResponse>(
                       this, METHODID_GENERATE_CONNECT_MANIFEST)))
           .addMethod(
               getValidateExclusivityMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gkehub.v1beta1.ValidateExclusivityRequest,
                       com.google.cloud.gkehub.v1beta1.ValidateExclusivityResponse>(
                       this, METHODID_VALIDATE_EXCLUSIVITY)))
           .addMethod(
               getGenerateExclusivityManifestMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.gkehub.v1beta1.GenerateExclusivityManifestRequest,
                       com.google.cloud.gkehub.v1beta1.GenerateExclusivityManifestResponse>(
@@ -690,7 +693,7 @@ public final class GkeHubMembershipServiceGrpc {
         com.google.cloud.gkehub.v1beta1.ListMembershipsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1beta1.ListMembershipsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListMembershipsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -706,7 +709,7 @@ public final class GkeHubMembershipServiceGrpc {
     public void getMembership(
         com.google.cloud.gkehub.v1beta1.GetMembershipRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1beta1.Membership> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetMembershipMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -722,7 +725,7 @@ public final class GkeHubMembershipServiceGrpc {
     public void createMembership(
         com.google.cloud.gkehub.v1beta1.CreateMembershipRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateMembershipMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -738,7 +741,7 @@ public final class GkeHubMembershipServiceGrpc {
     public void deleteMembership(
         com.google.cloud.gkehub.v1beta1.DeleteMembershipRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteMembershipMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -754,7 +757,7 @@ public final class GkeHubMembershipServiceGrpc {
     public void updateMembership(
         com.google.cloud.gkehub.v1beta1.UpdateMembershipRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateMembershipMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -771,7 +774,7 @@ public final class GkeHubMembershipServiceGrpc {
         com.google.cloud.gkehub.v1beta1.GenerateConnectManifestRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1beta1.GenerateConnectManifestResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGenerateConnectManifestMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -789,7 +792,7 @@ public final class GkeHubMembershipServiceGrpc {
         com.google.cloud.gkehub.v1beta1.ValidateExclusivityRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1beta1.ValidateExclusivityResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getValidateExclusivityMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -816,7 +819,7 @@ public final class GkeHubMembershipServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.gkehub.v1beta1.GenerateExclusivityManifestResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGenerateExclusivityManifestMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -853,7 +856,8 @@ public final class GkeHubMembershipServiceGrpc {
      */
     public com.google.cloud.gkehub.v1beta1.ListMembershipsResponse listMemberships(
         com.google.cloud.gkehub.v1beta1.ListMembershipsRequest request) {
-      return blockingUnaryCall(getChannel(), getListMembershipsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMembershipsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -865,7 +869,8 @@ public final class GkeHubMembershipServiceGrpc {
      */
     public com.google.cloud.gkehub.v1beta1.Membership getMembership(
         com.google.cloud.gkehub.v1beta1.GetMembershipRequest request) {
-      return blockingUnaryCall(getChannel(), getGetMembershipMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMembershipMethod(), getCallOptions(), request);
     }
 
     /**
@@ -877,7 +882,7 @@ public final class GkeHubMembershipServiceGrpc {
      */
     public com.google.longrunning.Operation createMembership(
         com.google.cloud.gkehub.v1beta1.CreateMembershipRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateMembershipMethod(), getCallOptions(), request);
     }
 
@@ -890,7 +895,7 @@ public final class GkeHubMembershipServiceGrpc {
      */
     public com.google.longrunning.Operation deleteMembership(
         com.google.cloud.gkehub.v1beta1.DeleteMembershipRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteMembershipMethod(), getCallOptions(), request);
     }
 
@@ -903,7 +908,7 @@ public final class GkeHubMembershipServiceGrpc {
      */
     public com.google.longrunning.Operation updateMembership(
         com.google.cloud.gkehub.v1beta1.UpdateMembershipRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateMembershipMethod(), getCallOptions(), request);
     }
 
@@ -916,7 +921,7 @@ public final class GkeHubMembershipServiceGrpc {
      */
     public com.google.cloud.gkehub.v1beta1.GenerateConnectManifestResponse generateConnectManifest(
         com.google.cloud.gkehub.v1beta1.GenerateConnectManifestRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGenerateConnectManifestMethod(), getCallOptions(), request);
     }
 
@@ -930,7 +935,7 @@ public final class GkeHubMembershipServiceGrpc {
      */
     public com.google.cloud.gkehub.v1beta1.ValidateExclusivityResponse validateExclusivity(
         com.google.cloud.gkehub.v1beta1.ValidateExclusivityRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getValidateExclusivityMethod(), getCallOptions(), request);
     }
 
@@ -953,7 +958,7 @@ public final class GkeHubMembershipServiceGrpc {
     public com.google.cloud.gkehub.v1beta1.GenerateExclusivityManifestResponse
         generateExclusivityManifest(
             com.google.cloud.gkehub.v1beta1.GenerateExclusivityManifestRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGenerateExclusivityManifestMethod(), getCallOptions(), request);
     }
   }
@@ -989,7 +994,7 @@ public final class GkeHubMembershipServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkehub.v1beta1.ListMembershipsResponse>
         listMemberships(com.google.cloud.gkehub.v1beta1.ListMembershipsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListMembershipsMethod(), getCallOptions()), request);
     }
 
@@ -1003,7 +1008,7 @@ public final class GkeHubMembershipServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkehub.v1beta1.Membership>
         getMembership(com.google.cloud.gkehub.v1beta1.GetMembershipRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetMembershipMethod(), getCallOptions()), request);
     }
 
@@ -1016,7 +1021,7 @@ public final class GkeHubMembershipServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createMembership(com.google.cloud.gkehub.v1beta1.CreateMembershipRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateMembershipMethod(), getCallOptions()), request);
     }
 
@@ -1029,7 +1034,7 @@ public final class GkeHubMembershipServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteMembership(com.google.cloud.gkehub.v1beta1.DeleteMembershipRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteMembershipMethod(), getCallOptions()), request);
     }
 
@@ -1042,7 +1047,7 @@ public final class GkeHubMembershipServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateMembership(com.google.cloud.gkehub.v1beta1.UpdateMembershipRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateMembershipMethod(), getCallOptions()), request);
     }
 
@@ -1057,7 +1062,7 @@ public final class GkeHubMembershipServiceGrpc {
             com.google.cloud.gkehub.v1beta1.GenerateConnectManifestResponse>
         generateConnectManifest(
             com.google.cloud.gkehub.v1beta1.GenerateConnectManifestRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGenerateConnectManifestMethod(), getCallOptions()), request);
     }
 
@@ -1072,7 +1077,7 @@ public final class GkeHubMembershipServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkehub.v1beta1.ValidateExclusivityResponse>
         validateExclusivity(com.google.cloud.gkehub.v1beta1.ValidateExclusivityRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getValidateExclusivityMethod(), getCallOptions()), request);
     }
 
@@ -1096,7 +1101,7 @@ public final class GkeHubMembershipServiceGrpc {
             com.google.cloud.gkehub.v1beta1.GenerateExclusivityManifestResponse>
         generateExclusivityManifest(
             com.google.cloud.gkehub.v1beta1.GenerateExclusivityManifestRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGenerateExclusivityManifestMethod(), getCallOptions()), request);
     }
   }
