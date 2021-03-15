@@ -94,7 +94,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
   @Override
   public void listBuckets(
       ListBucketsRequest request, StreamObserver<ListBucketsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListBucketsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListBucketsResponse) response));
@@ -106,7 +106,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListBuckets, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListBucketsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -114,7 +114,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
 
   @Override
   public void getBucket(GetBucketRequest request, StreamObserver<LogBucket> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LogBucket) {
       requests.add(request);
       responseObserver.onNext(((LogBucket) response));
@@ -126,7 +126,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetBucket, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LogBucket.class.getName(),
                   Exception.class.getName())));
     }
@@ -135,7 +135,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
   @Override
   public void createBucket(
       CreateBucketRequest request, StreamObserver<LogBucket> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LogBucket) {
       requests.add(request);
       responseObserver.onNext(((LogBucket) response));
@@ -147,7 +147,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateBucket, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LogBucket.class.getName(),
                   Exception.class.getName())));
     }
@@ -156,7 +156,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
   @Override
   public void updateBucket(
       UpdateBucketRequest request, StreamObserver<LogBucket> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LogBucket) {
       requests.add(request);
       responseObserver.onNext(((LogBucket) response));
@@ -168,7 +168,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateBucket, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LogBucket.class.getName(),
                   Exception.class.getName())));
     }
@@ -176,7 +176,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
 
   @Override
   public void deleteBucket(DeleteBucketRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -188,7 +188,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteBucket, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -197,7 +197,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
   @Override
   public void undeleteBucket(
       UndeleteBucketRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -209,7 +209,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UndeleteBucket, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -218,7 +218,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
   @Override
   public void listViews(
       ListViewsRequest request, StreamObserver<ListViewsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListViewsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListViewsResponse) response));
@@ -230,7 +230,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListViews, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListViewsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -238,7 +238,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
 
   @Override
   public void getView(GetViewRequest request, StreamObserver<LogView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LogView) {
       requests.add(request);
       responseObserver.onNext(((LogView) response));
@@ -250,7 +250,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LogView.class.getName(),
                   Exception.class.getName())));
     }
@@ -258,7 +258,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
 
   @Override
   public void createView(CreateViewRequest request, StreamObserver<LogView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LogView) {
       requests.add(request);
       responseObserver.onNext(((LogView) response));
@@ -270,7 +270,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LogView.class.getName(),
                   Exception.class.getName())));
     }
@@ -278,7 +278,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
 
   @Override
   public void updateView(UpdateViewRequest request, StreamObserver<LogView> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LogView) {
       requests.add(request);
       responseObserver.onNext(((LogView) response));
@@ -290,7 +290,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LogView.class.getName(),
                   Exception.class.getName())));
     }
@@ -298,7 +298,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
 
   @Override
   public void deleteView(DeleteViewRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -310,7 +310,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteView, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -319,7 +319,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
   @Override
   public void listSinks(
       ListSinksRequest request, StreamObserver<ListSinksResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListSinksResponse) {
       requests.add(request);
       responseObserver.onNext(((ListSinksResponse) response));
@@ -331,7 +331,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListSinks, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListSinksResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -339,7 +339,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
 
   @Override
   public void getSink(GetSinkRequest request, StreamObserver<LogSink> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LogSink) {
       requests.add(request);
       responseObserver.onNext(((LogSink) response));
@@ -351,7 +351,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetSink, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LogSink.class.getName(),
                   Exception.class.getName())));
     }
@@ -359,7 +359,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
 
   @Override
   public void createSink(CreateSinkRequest request, StreamObserver<LogSink> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LogSink) {
       requests.add(request);
       responseObserver.onNext(((LogSink) response));
@@ -371,7 +371,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateSink, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LogSink.class.getName(),
                   Exception.class.getName())));
     }
@@ -379,7 +379,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
 
   @Override
   public void updateSink(UpdateSinkRequest request, StreamObserver<LogSink> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LogSink) {
       requests.add(request);
       responseObserver.onNext(((LogSink) response));
@@ -391,7 +391,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateSink, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LogSink.class.getName(),
                   Exception.class.getName())));
     }
@@ -399,7 +399,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
 
   @Override
   public void deleteSink(DeleteSinkRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -411,7 +411,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteSink, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -420,7 +420,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
   @Override
   public void listExclusions(
       ListExclusionsRequest request, StreamObserver<ListExclusionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListExclusionsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListExclusionsResponse) response));
@@ -432,7 +432,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListExclusions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListExclusionsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -441,7 +441,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
   @Override
   public void getExclusion(
       GetExclusionRequest request, StreamObserver<LogExclusion> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LogExclusion) {
       requests.add(request);
       responseObserver.onNext(((LogExclusion) response));
@@ -453,7 +453,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetExclusion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LogExclusion.class.getName(),
                   Exception.class.getName())));
     }
@@ -462,7 +462,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
   @Override
   public void createExclusion(
       CreateExclusionRequest request, StreamObserver<LogExclusion> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LogExclusion) {
       requests.add(request);
       responseObserver.onNext(((LogExclusion) response));
@@ -474,7 +474,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateExclusion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LogExclusion.class.getName(),
                   Exception.class.getName())));
     }
@@ -483,7 +483,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
   @Override
   public void updateExclusion(
       UpdateExclusionRequest request, StreamObserver<LogExclusion> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LogExclusion) {
       requests.add(request);
       responseObserver.onNext(((LogExclusion) response));
@@ -495,7 +495,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateExclusion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LogExclusion.class.getName(),
                   Exception.class.getName())));
     }
@@ -504,7 +504,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
   @Override
   public void deleteExclusion(
       DeleteExclusionRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -516,7 +516,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteExclusion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -525,7 +525,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
   @Override
   public void getCmekSettings(
       GetCmekSettingsRequest request, StreamObserver<CmekSettings> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CmekSettings) {
       requests.add(request);
       responseObserver.onNext(((CmekSettings) response));
@@ -537,7 +537,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCmekSettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CmekSettings.class.getName(),
                   Exception.class.getName())));
     }
@@ -546,7 +546,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
   @Override
   public void updateCmekSettings(
       UpdateCmekSettingsRequest request, StreamObserver<CmekSettings> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CmekSettings) {
       requests.add(request);
       responseObserver.onNext(((CmekSettings) response));
@@ -558,7 +558,7 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateCmekSettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CmekSettings.class.getName(),
                   Exception.class.getName())));
     }

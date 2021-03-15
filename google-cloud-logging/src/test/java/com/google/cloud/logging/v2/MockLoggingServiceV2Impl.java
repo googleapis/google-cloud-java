@@ -72,7 +72,7 @@ public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
 
   @Override
   public void deleteLog(DeleteLogRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -84,7 +84,7 @@ public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteLog, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -93,7 +93,7 @@ public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
   @Override
   public void writeLogEntries(
       WriteLogEntriesRequest request, StreamObserver<WriteLogEntriesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof WriteLogEntriesResponse) {
       requests.add(request);
       responseObserver.onNext(((WriteLogEntriesResponse) response));
@@ -105,7 +105,7 @@ public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method WriteLogEntries, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   WriteLogEntriesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -114,7 +114,7 @@ public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
   @Override
   public void listLogEntries(
       ListLogEntriesRequest request, StreamObserver<ListLogEntriesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListLogEntriesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListLogEntriesResponse) response));
@@ -126,7 +126,7 @@ public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListLogEntries, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListLogEntriesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -136,7 +136,7 @@ public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
   public void listMonitoredResourceDescriptors(
       ListMonitoredResourceDescriptorsRequest request,
       StreamObserver<ListMonitoredResourceDescriptorsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListMonitoredResourceDescriptorsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListMonitoredResourceDescriptorsResponse) response));
@@ -148,7 +148,7 @@ public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListMonitoredResourceDescriptors, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListMonitoredResourceDescriptorsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -156,7 +156,7 @@ public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
 
   @Override
   public void listLogs(ListLogsRequest request, StreamObserver<ListLogsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListLogsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListLogsResponse) response));
@@ -168,7 +168,7 @@ public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListLogs, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListLogsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -192,7 +192,7 @@ public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
                   new IllegalArgumentException(
                       String.format(
                           "Unrecognized response type %s for method TailLogEntries, expected %s or %s",
-                          response.getClass().getName(),
+                          response == null ? "null" : response.getClass().getName(),
                           TailLogEntriesResponse.class.getName(),
                           Exception.class.getName())));
             }

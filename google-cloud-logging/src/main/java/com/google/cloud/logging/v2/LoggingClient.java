@@ -613,6 +613,14 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (LoggingClient loggingClient = LoggingClient.create()) {
+   *   ListLogEntriesRequest request =
+   *       ListLogEntriesRequest.newBuilder()
+   *           .addAllResourceNames(new ArrayList<String>())
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListLogEntriesResponse response = loggingClient.listLogEntriesCallable().call(request);
    *     for (LogEntry element : response.getResponsesList()) {
@@ -697,6 +705,11 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (LoggingClient loggingClient = LoggingClient.create()) {
+   *   ListMonitoredResourceDescriptorsRequest request =
+   *       ListMonitoredResourceDescriptorsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListMonitoredResourceDescriptorsResponse response =
    *         loggingClient.listMonitoredResourceDescriptorsCallable().call(request);
@@ -919,6 +932,13 @@ public class LoggingClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (LoggingClient loggingClient = LoggingClient.create()) {
+   *   ListLogsRequest request =
+   *       ListLogsRequest.newBuilder()
+   *           .setParent(LogName.ofProjectLogName("[PROJECT]", "[LOG]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .addAllResourceNames(new ArrayList<String>())
+   *           .build();
    *   while (true) {
    *     ListLogsResponse response = loggingClient.listLogsCallable().call(request);
    *     for (String element : response.getResponsesList()) {

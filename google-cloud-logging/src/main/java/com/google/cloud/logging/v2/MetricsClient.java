@@ -267,6 +267,12 @@ public class MetricsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (MetricsClient metricsClient = MetricsClient.create()) {
+   *   ListLogMetricsRequest request =
+   *       ListLogMetricsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListLogMetricsResponse response = metricsClient.listLogMetricsCallable().call(request);
    *     for (LogMetric element : response.getResponsesList()) {

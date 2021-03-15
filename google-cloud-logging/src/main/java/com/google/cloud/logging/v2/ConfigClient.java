@@ -419,6 +419,14 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListBucketsRequest request =
+   *       ListBucketsRequest.newBuilder()
+   *           .setParent(
+   *               LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]")
+   *                   .toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListBucketsResponse response = configClient.listBucketsCallable().call(request);
    *     for (LogBucket element : response.getResponsesList()) {
@@ -800,6 +808,12 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListViewsRequest request =
+   *       ListViewsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListViewsResponse response = configClient.listViewsCallable().call(request);
    *     for (LogView element : response.getResponsesList()) {
@@ -1211,6 +1225,12 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListSinksRequest request =
+   *       ListSinksRequest.newBuilder()
+   *           .setParent(LogSinkName.ofProjectSinkName("[PROJECT]", "[SINK]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListSinksResponse response = configClient.listSinksCallable().call(request);
    *     for (LogSink element : response.getResponsesList()) {
@@ -2091,6 +2111,13 @@ public class ConfigClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListExclusionsRequest request =
+   *       ListExclusionsRequest.newBuilder()
+   *           .setParent(
+   *               LogExclusionName.ofProjectExclusionName("[PROJECT]", "[EXCLUSION]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListExclusionsResponse response = configClient.listExclusionsCallable().call(request);
    *     for (LogExclusion element : response.getResponsesList()) {

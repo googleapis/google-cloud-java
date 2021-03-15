@@ -69,7 +69,7 @@ public class MockMetricsServiceV2Impl extends MetricsServiceV2ImplBase {
   @Override
   public void listLogMetrics(
       ListLogMetricsRequest request, StreamObserver<ListLogMetricsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListLogMetricsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListLogMetricsResponse) response));
@@ -81,7 +81,7 @@ public class MockMetricsServiceV2Impl extends MetricsServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListLogMetrics, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListLogMetricsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -90,7 +90,7 @@ public class MockMetricsServiceV2Impl extends MetricsServiceV2ImplBase {
   @Override
   public void getLogMetric(
       GetLogMetricRequest request, StreamObserver<LogMetric> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LogMetric) {
       requests.add(request);
       responseObserver.onNext(((LogMetric) response));
@@ -102,7 +102,7 @@ public class MockMetricsServiceV2Impl extends MetricsServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetLogMetric, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LogMetric.class.getName(),
                   Exception.class.getName())));
     }
@@ -111,7 +111,7 @@ public class MockMetricsServiceV2Impl extends MetricsServiceV2ImplBase {
   @Override
   public void createLogMetric(
       CreateLogMetricRequest request, StreamObserver<LogMetric> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LogMetric) {
       requests.add(request);
       responseObserver.onNext(((LogMetric) response));
@@ -123,7 +123,7 @@ public class MockMetricsServiceV2Impl extends MetricsServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateLogMetric, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LogMetric.class.getName(),
                   Exception.class.getName())));
     }
@@ -132,7 +132,7 @@ public class MockMetricsServiceV2Impl extends MetricsServiceV2ImplBase {
   @Override
   public void updateLogMetric(
       UpdateLogMetricRequest request, StreamObserver<LogMetric> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LogMetric) {
       requests.add(request);
       responseObserver.onNext(((LogMetric) response));
@@ -144,7 +144,7 @@ public class MockMetricsServiceV2Impl extends MetricsServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateLogMetric, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LogMetric.class.getName(),
                   Exception.class.getName())));
     }
@@ -153,7 +153,7 @@ public class MockMetricsServiceV2Impl extends MetricsServiceV2ImplBase {
   @Override
   public void deleteLogMetric(
       DeleteLogMetricRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -165,7 +165,7 @@ public class MockMetricsServiceV2Impl extends MetricsServiceV2ImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteLogMetric, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
