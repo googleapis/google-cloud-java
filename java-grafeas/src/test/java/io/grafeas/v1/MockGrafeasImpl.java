@@ -62,7 +62,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
   @Override
   public void getOccurrence(
       GetOccurrenceRequest request, StreamObserver<Occurrence> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Occurrence) {
       requests.add(request);
       responseObserver.onNext(((Occurrence) response));
@@ -74,7 +74,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetOccurrence, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Occurrence.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
   @Override
   public void listOccurrences(
       ListOccurrencesRequest request, StreamObserver<ListOccurrencesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListOccurrencesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListOccurrencesResponse) response));
@@ -95,7 +95,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListOccurrences, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListOccurrencesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
   @Override
   public void deleteOccurrence(
       DeleteOccurrenceRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -116,7 +116,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteOccurrence, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -125,7 +125,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
   @Override
   public void createOccurrence(
       CreateOccurrenceRequest request, StreamObserver<Occurrence> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Occurrence) {
       requests.add(request);
       responseObserver.onNext(((Occurrence) response));
@@ -137,7 +137,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateOccurrence, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Occurrence.class.getName(),
                   Exception.class.getName())));
     }
@@ -147,7 +147,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
   public void batchCreateOccurrences(
       BatchCreateOccurrencesRequest request,
       StreamObserver<BatchCreateOccurrencesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BatchCreateOccurrencesResponse) {
       requests.add(request);
       responseObserver.onNext(((BatchCreateOccurrencesResponse) response));
@@ -159,7 +159,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchCreateOccurrences, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BatchCreateOccurrencesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -168,7 +168,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
   @Override
   public void updateOccurrence(
       UpdateOccurrenceRequest request, StreamObserver<Occurrence> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Occurrence) {
       requests.add(request);
       responseObserver.onNext(((Occurrence) response));
@@ -180,7 +180,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateOccurrence, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Occurrence.class.getName(),
                   Exception.class.getName())));
     }
@@ -189,7 +189,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
   @Override
   public void getOccurrenceNote(
       GetOccurrenceNoteRequest request, StreamObserver<Note> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Note) {
       requests.add(request);
       responseObserver.onNext(((Note) response));
@@ -201,13 +201,15 @@ public class MockGrafeasImpl extends GrafeasImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetOccurrenceNote, expected %s or %s",
-                  response.getClass().getName(), Note.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Note.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void getNote(GetNoteRequest request, StreamObserver<Note> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Note) {
       requests.add(request);
       responseObserver.onNext(((Note) response));
@@ -219,14 +221,16 @@ public class MockGrafeasImpl extends GrafeasImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetNote, expected %s or %s",
-                  response.getClass().getName(), Note.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Note.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void listNotes(
       ListNotesRequest request, StreamObserver<ListNotesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListNotesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListNotesResponse) response));
@@ -238,7 +242,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListNotes, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListNotesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -246,7 +250,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
 
   @Override
   public void deleteNote(DeleteNoteRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -258,7 +262,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteNote, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -266,7 +270,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
 
   @Override
   public void createNote(CreateNoteRequest request, StreamObserver<Note> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Note) {
       requests.add(request);
       responseObserver.onNext(((Note) response));
@@ -278,14 +282,16 @@ public class MockGrafeasImpl extends GrafeasImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateNote, expected %s or %s",
-                  response.getClass().getName(), Note.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Note.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void batchCreateNotes(
       BatchCreateNotesRequest request, StreamObserver<BatchCreateNotesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BatchCreateNotesResponse) {
       requests.add(request);
       responseObserver.onNext(((BatchCreateNotesResponse) response));
@@ -297,7 +303,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchCreateNotes, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BatchCreateNotesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -305,7 +311,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
 
   @Override
   public void updateNote(UpdateNoteRequest request, StreamObserver<Note> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Note) {
       requests.add(request);
       responseObserver.onNext(((Note) response));
@@ -317,7 +323,9 @@ public class MockGrafeasImpl extends GrafeasImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateNote, expected %s or %s",
-                  response.getClass().getName(), Note.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Note.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -325,7 +333,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
   public void listNoteOccurrences(
       ListNoteOccurrencesRequest request,
       StreamObserver<ListNoteOccurrencesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListNoteOccurrencesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListNoteOccurrencesResponse) response));
@@ -337,7 +345,7 @@ public class MockGrafeasImpl extends GrafeasImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListNoteOccurrences, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListNoteOccurrencesResponse.class.getName(),
                   Exception.class.getName())));
     }
