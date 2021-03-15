@@ -61,7 +61,7 @@ public class MockTextToSpeechImpl extends TextToSpeechImplBase {
   @Override
   public void listVoices(
       ListVoicesRequest request, StreamObserver<ListVoicesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListVoicesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListVoicesResponse) response));
@@ -73,7 +73,7 @@ public class MockTextToSpeechImpl extends TextToSpeechImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListVoices, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListVoicesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockTextToSpeechImpl extends TextToSpeechImplBase {
   @Override
   public void synthesizeSpeech(
       SynthesizeSpeechRequest request, StreamObserver<SynthesizeSpeechResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SynthesizeSpeechResponse) {
       requests.add(request);
       responseObserver.onNext(((SynthesizeSpeechResponse) response));
@@ -94,7 +94,7 @@ public class MockTextToSpeechImpl extends TextToSpeechImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SynthesizeSpeech, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SynthesizeSpeechResponse.class.getName(),
                   Exception.class.getName())));
     }
