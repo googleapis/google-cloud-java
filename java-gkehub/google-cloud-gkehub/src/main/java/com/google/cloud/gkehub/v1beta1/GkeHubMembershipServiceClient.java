@@ -268,6 +268,14 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
+   *   ListMembershipsRequest request =
+   *       ListMembershipsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListMembershipsResponse response =
    *         gkeHubMembershipServiceClient.listMembershipsCallable().call(request);
