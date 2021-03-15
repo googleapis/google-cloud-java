@@ -74,7 +74,7 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
   @Override
   public void createConnection(
       CreateConnectionRequest request, StreamObserver<Connection> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Connection) {
       requests.add(request);
       responseObserver.onNext(((Connection) response));
@@ -86,7 +86,7 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateConnection, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Connection.class.getName(),
                   Exception.class.getName())));
     }
@@ -95,7 +95,7 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
   @Override
   public void getConnection(
       GetConnectionRequest request, StreamObserver<Connection> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Connection) {
       requests.add(request);
       responseObserver.onNext(((Connection) response));
@@ -107,7 +107,7 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetConnection, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Connection.class.getName(),
                   Exception.class.getName())));
     }
@@ -116,7 +116,7 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
   @Override
   public void listConnections(
       ListConnectionsRequest request, StreamObserver<ListConnectionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListConnectionsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListConnectionsResponse) response));
@@ -128,7 +128,7 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListConnections, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListConnectionsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -137,7 +137,7 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
   @Override
   public void updateConnection(
       UpdateConnectionRequest request, StreamObserver<Connection> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Connection) {
       requests.add(request);
       responseObserver.onNext(((Connection) response));
@@ -149,7 +149,7 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateConnection, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Connection.class.getName(),
                   Exception.class.getName())));
     }
@@ -158,7 +158,7 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
   @Override
   public void deleteConnection(
       DeleteConnectionRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -170,7 +170,7 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteConnection, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -178,7 +178,7 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
 
   @Override
   public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -190,7 +190,7 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -198,7 +198,7 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
 
   @Override
   public void setIamPolicy(SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -210,7 +210,7 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -220,7 +220,7 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
   public void testIamPermissions(
       TestIamPermissionsRequest request,
       StreamObserver<TestIamPermissionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
       responseObserver.onNext(((TestIamPermissionsResponse) response));
@@ -232,7 +232,7 @@ public class MockConnectionServiceImpl extends ConnectionServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TestIamPermissionsResponse.class.getName(),
                   Exception.class.getName())));
     }

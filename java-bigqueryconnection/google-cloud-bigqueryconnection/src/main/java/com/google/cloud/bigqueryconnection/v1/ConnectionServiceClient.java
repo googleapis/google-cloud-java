@@ -492,6 +492,12 @@ public class ConnectionServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   ListConnectionsRequest request =
+   *       ListConnectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListConnectionsResponse response =
    *         connectionServiceClient.listConnectionsCallable().call(request);
