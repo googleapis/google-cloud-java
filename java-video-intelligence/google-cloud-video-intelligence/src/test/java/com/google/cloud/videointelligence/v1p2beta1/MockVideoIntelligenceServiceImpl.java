@@ -62,7 +62,7 @@ public class MockVideoIntelligenceServiceImpl extends VideoIntelligenceServiceIm
   @Override
   public void annotateVideo(
       AnnotateVideoRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -74,7 +74,7 @@ public class MockVideoIntelligenceServiceImpl extends VideoIntelligenceServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method AnnotateVideo, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
