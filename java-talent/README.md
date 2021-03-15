@@ -51,12 +51,12 @@ compile 'com.google.cloud:google-cloud-talent'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-talent:1.0.8'
+compile 'com.google.cloud:google-cloud-talent:1.1.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-talent" % "1.0.8"
+libraryDependencies += "com.google.cloud" % "google-cloud-talent" % "1.1.0"
 ```
 
 ## Authentication
