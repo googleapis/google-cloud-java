@@ -261,6 +261,12 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   ListJobsRequest request =
+   *       ListJobsRequest.newBuilder()
+   *           .setParent(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListJobsResponse response = cloudSchedulerClient.listJobsCallable().call(request);
    *     for (Job element : response.getResponsesList()) {
