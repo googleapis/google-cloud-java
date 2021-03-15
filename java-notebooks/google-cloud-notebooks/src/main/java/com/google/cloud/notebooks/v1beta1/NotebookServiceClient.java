@@ -230,6 +230,12 @@ public class NotebookServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   ListInstancesRequest request =
+   *       ListInstancesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListInstancesResponse response =
    *         notebookServiceClient.listInstancesCallable().call(request);
@@ -1264,6 +1270,12 @@ public class NotebookServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   ListEnvironmentsRequest request =
+   *       ListEnvironmentsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListEnvironmentsResponse response =
    *         notebookServiceClient.listEnvironmentsCallable().call(request);

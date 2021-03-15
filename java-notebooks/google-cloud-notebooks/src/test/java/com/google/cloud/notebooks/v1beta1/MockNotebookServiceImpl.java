@@ -62,7 +62,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
   @Override
   public void listInstances(
       ListInstancesRequest request, StreamObserver<ListInstancesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListInstancesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListInstancesResponse) response));
@@ -74,7 +74,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListInstances, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListInstancesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
 
   @Override
   public void getInstance(GetInstanceRequest request, StreamObserver<Instance> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Instance) {
       requests.add(request);
       responseObserver.onNext(((Instance) response));
@@ -94,7 +94,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetInstance, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Instance.class.getName(),
                   Exception.class.getName())));
     }
@@ -103,7 +103,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
   @Override
   public void createInstance(
       CreateInstanceRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -115,7 +115,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateInstance, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -124,7 +124,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
   @Override
   public void registerInstance(
       RegisterInstanceRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -136,7 +136,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method RegisterInstance, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -145,7 +145,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
   @Override
   public void setInstanceAccelerator(
       SetInstanceAcceleratorRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -157,7 +157,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SetInstanceAccelerator, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -166,7 +166,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
   @Override
   public void setInstanceMachineType(
       SetInstanceMachineTypeRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -178,7 +178,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SetInstanceMachineType, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -187,7 +187,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
   @Override
   public void setInstanceLabels(
       SetInstanceLabelsRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -199,7 +199,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SetInstanceLabels, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -208,7 +208,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
   @Override
   public void deleteInstance(
       DeleteInstanceRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -220,7 +220,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteInstance, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -229,7 +229,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
   @Override
   public void startInstance(
       StartInstanceRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -241,7 +241,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method StartInstance, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -250,7 +250,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
   @Override
   public void stopInstance(
       StopInstanceRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -262,7 +262,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method StopInstance, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -271,7 +271,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
   @Override
   public void resetInstance(
       ResetInstanceRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -283,7 +283,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ResetInstance, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -292,7 +292,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
   @Override
   public void reportInstanceInfo(
       ReportInstanceInfoRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -304,7 +304,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ReportInstanceInfo, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -314,7 +314,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
   public void isInstanceUpgradeable(
       IsInstanceUpgradeableRequest request,
       StreamObserver<IsInstanceUpgradeableResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof IsInstanceUpgradeableResponse) {
       requests.add(request);
       responseObserver.onNext(((IsInstanceUpgradeableResponse) response));
@@ -326,7 +326,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method IsInstanceUpgradeable, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   IsInstanceUpgradeableResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -335,7 +335,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
   @Override
   public void upgradeInstance(
       UpgradeInstanceRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -347,7 +347,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpgradeInstance, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -356,7 +356,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
   @Override
   public void upgradeInstanceInternal(
       UpgradeInstanceInternalRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -368,7 +368,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpgradeInstanceInternal, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -377,7 +377,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
   @Override
   public void listEnvironments(
       ListEnvironmentsRequest request, StreamObserver<ListEnvironmentsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListEnvironmentsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListEnvironmentsResponse) response));
@@ -389,7 +389,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListEnvironments, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListEnvironmentsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -398,7 +398,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
   @Override
   public void getEnvironment(
       GetEnvironmentRequest request, StreamObserver<Environment> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Environment) {
       requests.add(request);
       responseObserver.onNext(((Environment) response));
@@ -410,7 +410,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetEnvironment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Environment.class.getName(),
                   Exception.class.getName())));
     }
@@ -419,7 +419,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
   @Override
   public void createEnvironment(
       CreateEnvironmentRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -431,7 +431,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateEnvironment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -440,7 +440,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
   @Override
   public void deleteEnvironment(
       DeleteEnvironmentRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -452,7 +452,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteEnvironment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
