@@ -426,6 +426,14 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * <pre>{@code
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient =
    *     PredictionApiKeyRegistryClient.create()) {
+   *   ListPredictionApiKeyRegistrationsRequest request =
+   *       ListPredictionApiKeyRegistrationsRequest.newBuilder()
+   *           .setParent(
+   *               EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListPredictionApiKeyRegistrationsResponse response =
    *         predictionApiKeyRegistryClient

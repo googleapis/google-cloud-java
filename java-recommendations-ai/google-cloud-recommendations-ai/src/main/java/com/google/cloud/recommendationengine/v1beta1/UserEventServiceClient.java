@@ -593,6 +593,15 @@ public class UserEventServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   ListUserEventsRequest request =
+   *       ListUserEventsRequest.newBuilder()
+   *           .setParent(
+   *               EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     ListUserEventsResponse response =
    *         userEventServiceClient.listUserEventsCallable().call(request);

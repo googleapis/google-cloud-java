@@ -370,6 +370,20 @@ public class PredictionServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   PredictRequest request =
+   *       PredictRequest.newBuilder()
+   *           .setName(
+   *               PlacementName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]")
+   *                   .toString())
+   *           .setUserEvent(UserEvent.newBuilder().build())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setDryRun(true)
+   *           .putAllParams(new HashMap<String, Value>())
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
    *   while (true) {
    *     PredictResponse response = predictionServiceClient.predictCallable().call(request);
    *     for (PredictResponse.PredictionResult element : response.getResponsesList()) {

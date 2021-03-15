@@ -491,6 +491,13 @@ public class CatalogServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   ListCatalogItemsRequest request =
+   *       ListCatalogItemsRequest.newBuilder()
+   *           .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     ListCatalogItemsResponse response =
    *         catalogServiceClient.listCatalogItemsCallable().call(request);
