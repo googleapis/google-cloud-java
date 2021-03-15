@@ -64,7 +64,7 @@ public class MockPhishingProtectionServiceV1Beta1Impl
   @Override
   public void reportPhishing(
       ReportPhishingRequest request, StreamObserver<ReportPhishingResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ReportPhishingResponse) {
       requests.add(request);
       responseObserver.onNext(((ReportPhishingResponse) response));
@@ -76,7 +76,7 @@ public class MockPhishingProtectionServiceV1Beta1Impl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ReportPhishing, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ReportPhishingResponse.class.getName(),
                   Exception.class.getName())));
     }
