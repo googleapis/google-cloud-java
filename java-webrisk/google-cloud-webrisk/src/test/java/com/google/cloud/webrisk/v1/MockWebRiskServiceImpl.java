@@ -70,7 +70,7 @@ public class MockWebRiskServiceImpl extends WebRiskServiceImplBase {
   public void computeThreatListDiff(
       ComputeThreatListDiffRequest request,
       StreamObserver<ComputeThreatListDiffResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ComputeThreatListDiffResponse) {
       requests.add(request);
       responseObserver.onNext(((ComputeThreatListDiffResponse) response));
@@ -82,7 +82,7 @@ public class MockWebRiskServiceImpl extends WebRiskServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ComputeThreatListDiff, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ComputeThreatListDiffResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -91,7 +91,7 @@ public class MockWebRiskServiceImpl extends WebRiskServiceImplBase {
   @Override
   public void searchUris(
       SearchUrisRequest request, StreamObserver<SearchUrisResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SearchUrisResponse) {
       requests.add(request);
       responseObserver.onNext(((SearchUrisResponse) response));
@@ -103,7 +103,7 @@ public class MockWebRiskServiceImpl extends WebRiskServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SearchUris, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SearchUrisResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -112,7 +112,7 @@ public class MockWebRiskServiceImpl extends WebRiskServiceImplBase {
   @Override
   public void searchHashes(
       SearchHashesRequest request, StreamObserver<SearchHashesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SearchHashesResponse) {
       requests.add(request);
       responseObserver.onNext(((SearchHashesResponse) response));
@@ -124,7 +124,7 @@ public class MockWebRiskServiceImpl extends WebRiskServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SearchHashes, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SearchHashesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -133,7 +133,7 @@ public class MockWebRiskServiceImpl extends WebRiskServiceImplBase {
   @Override
   public void createSubmission(
       CreateSubmissionRequest request, StreamObserver<Submission> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Submission) {
       requests.add(request);
       responseObserver.onNext(((Submission) response));
@@ -145,7 +145,7 @@ public class MockWebRiskServiceImpl extends WebRiskServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateSubmission, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Submission.class.getName(),
                   Exception.class.getName())));
     }
