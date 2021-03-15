@@ -1374,6 +1374,17 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListInspectTemplatesRequest request =
+   *       ListInspectTemplatesRequest.newBuilder()
+   *           .setParent(
+   *               InspectTemplateName.ofOrganizationInspectTemplateName(
+   *                       "[ORGANIZATION]", "[INSPECT_TEMPLATE]")
+   *                   .toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setLocationId("locationId1541836720")
+   *           .build();
    *   while (true) {
    *     ListInspectTemplatesResponse response =
    *         dlpServiceClient.listInspectTemplatesCallable().call(request);
@@ -2336,6 +2347,17 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListDeidentifyTemplatesRequest request =
+   *       ListDeidentifyTemplatesRequest.newBuilder()
+   *           .setParent(
+   *               DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName(
+   *                       "[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]")
+   *                   .toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setLocationId("locationId1541836720")
+   *           .build();
    *   while (true) {
    *     ListDeidentifyTemplatesResponse response =
    *         dlpServiceClient.listDeidentifyTemplatesCallable().call(request);
@@ -3132,6 +3154,16 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListJobTriggersRequest request =
+   *       ListJobTriggersRequest.newBuilder()
+   *           .setParent(
+   *               JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .setLocationId("locationId1541836720")
+   *           .build();
    *   while (true) {
    *     ListJobTriggersResponse response = dlpServiceClient.listJobTriggersCallable().call(request);
    *     for (JobTrigger element : response.getResponsesList()) {
@@ -3788,6 +3820,16 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListDlpJobsRequest request =
+   *       ListDlpJobsRequest.newBuilder()
+   *           .setParent(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setType(DlpJobType.forNumber(0))
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setLocationId("locationId1541836720")
+   *           .build();
    *   while (true) {
    *     ListDlpJobsResponse response = dlpServiceClient.listDlpJobsCallable().call(request);
    *     for (DlpJob element : response.getResponsesList()) {
@@ -4861,6 +4903,17 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListStoredInfoTypesRequest request =
+   *       ListStoredInfoTypesRequest.newBuilder()
+   *           .setParent(
+   *               StoredInfoTypeName.ofOrganizationStoredInfoTypeName(
+   *                       "[ORGANIZATION]", "[STORED_INFO_TYPE]")
+   *                   .toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setLocationId("locationId1541836720")
+   *           .build();
    *   while (true) {
    *     ListStoredInfoTypesResponse response =
    *         dlpServiceClient.listStoredInfoTypesCallable().call(request);
