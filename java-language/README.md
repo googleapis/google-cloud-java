@@ -51,12 +51,12 @@ compile 'com.google.cloud:google-cloud-language'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-language:1.101.12'
+compile 'com.google.cloud:google-cloud-language:1.102.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-language" % "1.101.12"
+libraryDependencies += "com.google.cloud" % "google-cloud-language" % "1.102.0"
 ```
 
 ## Authentication
