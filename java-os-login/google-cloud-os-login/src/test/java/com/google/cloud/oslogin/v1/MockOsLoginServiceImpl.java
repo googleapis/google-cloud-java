@@ -63,7 +63,7 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
   @Override
   public void deletePosixAccount(
       DeletePosixAccountRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -75,7 +75,7 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeletePosixAccount, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
   @Override
   public void deleteSshPublicKey(
       DeleteSshPublicKeyRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -96,7 +96,7 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteSshPublicKey, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -105,7 +105,7 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
   @Override
   public void getLoginProfile(
       GetLoginProfileRequest request, StreamObserver<LoginProfile> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LoginProfile) {
       requests.add(request);
       responseObserver.onNext(((LoginProfile) response));
@@ -117,7 +117,7 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetLoginProfile, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LoginProfile.class.getName(),
                   Exception.class.getName())));
     }
@@ -126,7 +126,7 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
   @Override
   public void getSshPublicKey(
       GetSshPublicKeyRequest request, StreamObserver<OsLoginProto.SshPublicKey> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof OsLoginProto.SshPublicKey) {
       requests.add(request);
       responseObserver.onNext(((OsLoginProto.SshPublicKey) response));
@@ -138,7 +138,7 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetSshPublicKey, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   OsLoginProto.SshPublicKey.class.getName(),
                   Exception.class.getName())));
     }
@@ -148,7 +148,7 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
   public void importSshPublicKey(
       ImportSshPublicKeyRequest request,
       StreamObserver<ImportSshPublicKeyResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ImportSshPublicKeyResponse) {
       requests.add(request);
       responseObserver.onNext(((ImportSshPublicKeyResponse) response));
@@ -160,7 +160,7 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ImportSshPublicKey, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ImportSshPublicKeyResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -170,7 +170,7 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
   public void updateSshPublicKey(
       UpdateSshPublicKeyRequest request,
       StreamObserver<OsLoginProto.SshPublicKey> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof OsLoginProto.SshPublicKey) {
       requests.add(request);
       responseObserver.onNext(((OsLoginProto.SshPublicKey) response));
@@ -182,7 +182,7 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateSshPublicKey, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   OsLoginProto.SshPublicKey.class.getName(),
                   Exception.class.getName())));
     }
