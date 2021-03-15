@@ -73,7 +73,7 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
   @Override
   public void createAssessment(
       CreateAssessmentRequest request, StreamObserver<Assessment> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Assessment) {
       requests.add(request);
       responseObserver.onNext(((Assessment) response));
@@ -85,7 +85,7 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateAssessment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Assessment.class.getName(),
                   Exception.class.getName())));
     }
@@ -95,7 +95,7 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
   public void annotateAssessment(
       AnnotateAssessmentRequest request,
       StreamObserver<AnnotateAssessmentResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AnnotateAssessmentResponse) {
       requests.add(request);
       responseObserver.onNext(((AnnotateAssessmentResponse) response));
@@ -107,7 +107,7 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method AnnotateAssessment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AnnotateAssessmentResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -115,7 +115,7 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
 
   @Override
   public void createKey(CreateKeyRequest request, StreamObserver<Key> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Key) {
       requests.add(request);
       responseObserver.onNext(((Key) response));
@@ -127,13 +127,15 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateKey, expected %s or %s",
-                  response.getClass().getName(), Key.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Key.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void listKeys(ListKeysRequest request, StreamObserver<ListKeysResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListKeysResponse) {
       requests.add(request);
       responseObserver.onNext(((ListKeysResponse) response));
@@ -145,7 +147,7 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListKeys, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListKeysResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -153,7 +155,7 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
 
   @Override
   public void getKey(GetKeyRequest request, StreamObserver<Key> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Key) {
       requests.add(request);
       responseObserver.onNext(((Key) response));
@@ -165,13 +167,15 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetKey, expected %s or %s",
-                  response.getClass().getName(), Key.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Key.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void updateKey(UpdateKeyRequest request, StreamObserver<Key> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Key) {
       requests.add(request);
       responseObserver.onNext(((Key) response));
@@ -183,13 +187,15 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateKey, expected %s or %s",
-                  response.getClass().getName(), Key.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Key.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void deleteKey(DeleteKeyRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -201,7 +207,7 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteKey, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

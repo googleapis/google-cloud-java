@@ -510,6 +510,12 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    * <pre>{@code
    * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client =
    *     RecaptchaEnterpriseServiceV1Beta1Client.create()) {
+   *   ListKeysRequest request =
+   *       ListKeysRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListKeysResponse response =
    *         recaptchaEnterpriseServiceV1Beta1Client.listKeysCallable().call(request);

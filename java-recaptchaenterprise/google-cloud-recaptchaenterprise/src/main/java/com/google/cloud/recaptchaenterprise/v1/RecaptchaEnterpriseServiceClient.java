@@ -503,6 +503,12 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ListKeysRequest request =
+   *       ListKeysRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListKeysResponse response =
    *         recaptchaEnterpriseServiceClient.listKeysCallable().call(request);
