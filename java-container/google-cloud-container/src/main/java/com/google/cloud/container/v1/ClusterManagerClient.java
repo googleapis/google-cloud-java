@@ -3500,6 +3500,13 @@ public class ClusterManagerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   ListUsableSubnetworksRequest request =
+   *       ListUsableSubnetworksRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListUsableSubnetworksResponse response =
    *         clusterManagerClient.listUsableSubnetworksCallable().call(request);
