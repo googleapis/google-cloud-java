@@ -21,7 +21,7 @@
  *
  * <p>=================== SchemaServiceClient ===================
  *
- * <p>Service Description:
+ * <p>Service Description: Service for doing schema-related operations.
  *
  * <p>Sample for SchemaServiceClient:
  *

@@ -192,7 +192,6 @@ public interface TopicOrBuilder
    *
    * <pre>
    * Settings for validating messages published against a schema.
-   * EXPERIMENTAL: Schema support is in development and may not work yet.
    * </pre>
    *
    * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
@@ -205,7 +204,6 @@ public interface TopicOrBuilder
    *
    * <pre>
    * Settings for validating messages published against a schema.
-   * EXPERIMENTAL: Schema support is in development and may not work yet.
    * </pre>
    *
    * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
@@ -218,7 +216,6 @@ public interface TopicOrBuilder
    *
    * <pre>
    * Settings for validating messages published against a schema.
-   * EXPERIMENTAL: Schema support is in development and may not work yet.
    * </pre>
    *
    * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
