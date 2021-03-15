@@ -61,7 +61,7 @@ public class MockPolicyTagManagerSerializationImpl extends PolicyTagManagerSeria
   @Override
   public void importTaxonomies(
       ImportTaxonomiesRequest request, StreamObserver<ImportTaxonomiesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ImportTaxonomiesResponse) {
       requests.add(request);
       responseObserver.onNext(((ImportTaxonomiesResponse) response));
@@ -73,7 +73,7 @@ public class MockPolicyTagManagerSerializationImpl extends PolicyTagManagerSeria
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ImportTaxonomies, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ImportTaxonomiesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockPolicyTagManagerSerializationImpl extends PolicyTagManagerSeria
   @Override
   public void exportTaxonomies(
       ExportTaxonomiesRequest request, StreamObserver<ExportTaxonomiesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ExportTaxonomiesResponse) {
       requests.add(request);
       responseObserver.onNext(((ExportTaxonomiesResponse) response));
@@ -94,7 +94,7 @@ public class MockPolicyTagManagerSerializationImpl extends PolicyTagManagerSeria
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ExportTaxonomies, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ExportTaxonomiesResponse.class.getName(),
                   Exception.class.getName())));
     }

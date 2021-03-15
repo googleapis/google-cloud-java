@@ -67,7 +67,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
   @Override
   public void createTaxonomy(
       CreateTaxonomyRequest request, StreamObserver<Taxonomy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Taxonomy) {
       requests.add(request);
       responseObserver.onNext(((Taxonomy) response));
@@ -79,7 +79,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateTaxonomy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Taxonomy.class.getName(),
                   Exception.class.getName())));
     }
@@ -88,7 +88,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
   @Override
   public void deleteTaxonomy(
       DeleteTaxonomyRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -100,7 +100,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteTaxonomy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -109,7 +109,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
   @Override
   public void updateTaxonomy(
       UpdateTaxonomyRequest request, StreamObserver<Taxonomy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Taxonomy) {
       requests.add(request);
       responseObserver.onNext(((Taxonomy) response));
@@ -121,7 +121,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateTaxonomy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Taxonomy.class.getName(),
                   Exception.class.getName())));
     }
@@ -130,7 +130,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
   @Override
   public void listTaxonomies(
       ListTaxonomiesRequest request, StreamObserver<ListTaxonomiesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListTaxonomiesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListTaxonomiesResponse) response));
@@ -142,7 +142,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListTaxonomies, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListTaxonomiesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -150,7 +150,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
 
   @Override
   public void getTaxonomy(GetTaxonomyRequest request, StreamObserver<Taxonomy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Taxonomy) {
       requests.add(request);
       responseObserver.onNext(((Taxonomy) response));
@@ -162,7 +162,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetTaxonomy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Taxonomy.class.getName(),
                   Exception.class.getName())));
     }
@@ -171,7 +171,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
   @Override
   public void createPolicyTag(
       CreatePolicyTagRequest request, StreamObserver<PolicyTag> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PolicyTag) {
       requests.add(request);
       responseObserver.onNext(((PolicyTag) response));
@@ -183,7 +183,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreatePolicyTag, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   PolicyTag.class.getName(),
                   Exception.class.getName())));
     }
@@ -192,7 +192,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
   @Override
   public void deletePolicyTag(
       DeletePolicyTagRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -204,7 +204,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeletePolicyTag, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -213,7 +213,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
   @Override
   public void updatePolicyTag(
       UpdatePolicyTagRequest request, StreamObserver<PolicyTag> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PolicyTag) {
       requests.add(request);
       responseObserver.onNext(((PolicyTag) response));
@@ -225,7 +225,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdatePolicyTag, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   PolicyTag.class.getName(),
                   Exception.class.getName())));
     }
@@ -234,7 +234,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
   @Override
   public void listPolicyTags(
       ListPolicyTagsRequest request, StreamObserver<ListPolicyTagsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListPolicyTagsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListPolicyTagsResponse) response));
@@ -246,7 +246,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListPolicyTags, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListPolicyTagsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -255,7 +255,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
   @Override
   public void getPolicyTag(
       GetPolicyTagRequest request, StreamObserver<PolicyTag> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PolicyTag) {
       requests.add(request);
       responseObserver.onNext(((PolicyTag) response));
@@ -267,7 +267,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetPolicyTag, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   PolicyTag.class.getName(),
                   Exception.class.getName())));
     }
@@ -275,7 +275,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
 
   @Override
   public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -287,7 +287,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -295,7 +295,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
 
   @Override
   public void setIamPolicy(SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -307,7 +307,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -317,7 +317,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
   public void testIamPermissions(
       TestIamPermissionsRequest request,
       StreamObserver<TestIamPermissionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
       responseObserver.onNext(((TestIamPermissionsResponse) response));
@@ -329,7 +329,7 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TestIamPermissionsResponse.class.getName(),
                   Exception.class.getName())));
     }

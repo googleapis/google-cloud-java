@@ -312,6 +312,14 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   SearchCatalogRequest request =
+   *       SearchCatalogRequest.newBuilder()
+   *           .setScope(SearchCatalogRequest.Scope.newBuilder().build())
+   *           .setQuery("query107944136")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     SearchCatalogResponse response = dataCatalogClient.searchCatalogCallable().call(request);
    *     for (SearchCatalogResult element : response.getResponsesList()) {
@@ -994,6 +1002,12 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ListEntryGroupsRequest request =
+   *       ListEntryGroupsRequest.newBuilder()
+   *           .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListEntryGroupsResponse response =
    *         dataCatalogClient.listEntryGroupsCallable().call(request);
@@ -1645,6 +1659,13 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ListEntriesRequest request =
+   *       ListEntriesRequest.newBuilder()
+   *           .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
    *   while (true) {
    *     ListEntriesResponse response = dataCatalogClient.listEntriesCallable().call(request);
    *     for (Entry element : response.getResponsesList()) {
@@ -3228,6 +3249,14 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ListTagsRequest request =
+   *       ListTagsRequest.newBuilder()
+   *           .setParent(
+   *               TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListTagsResponse response = dataCatalogClient.listTagsCallable().call(request);
    *     for (Tag element : response.getResponsesList()) {

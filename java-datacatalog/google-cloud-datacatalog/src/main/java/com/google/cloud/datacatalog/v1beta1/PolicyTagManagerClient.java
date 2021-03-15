@@ -540,6 +540,12 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   ListTaxonomiesRequest request =
+   *       ListTaxonomiesRequest.newBuilder()
+   *           .setParent(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListTaxonomiesResponse response =
    *         policyTagManagerClient.listTaxonomiesCallable().call(request);
@@ -1038,6 +1044,14 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   ListPolicyTagsRequest request =
+   *       ListPolicyTagsRequest.newBuilder()
+   *           .setParent(
+   *               PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListPolicyTagsResponse response =
    *         policyTagManagerClient.listPolicyTagsCallable().call(request);
