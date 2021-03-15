@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -572,99 +572,120 @@ public class GrpcDomainsStub extends DomainsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<SearchDomainsRequest, SearchDomainsResponse> searchDomainsCallable() {
     return searchDomainsCallable;
   }
 
+  @Override
   public UnaryCallable<RetrieveRegisterParametersRequest, RetrieveRegisterParametersResponse>
       retrieveRegisterParametersCallable() {
     return retrieveRegisterParametersCallable;
   }
 
+  @Override
   public UnaryCallable<RegisterDomainRequest, Operation> registerDomainCallable() {
     return registerDomainCallable;
   }
 
+  @Override
   public OperationCallable<RegisterDomainRequest, Registration, OperationMetadata>
       registerDomainOperationCallable() {
     return registerDomainOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ListRegistrationsRequest, ListRegistrationsResponse>
       listRegistrationsCallable() {
     return listRegistrationsCallable;
   }
 
+  @Override
   public UnaryCallable<ListRegistrationsRequest, ListRegistrationsPagedResponse>
       listRegistrationsPagedCallable() {
     return listRegistrationsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetRegistrationRequest, Registration> getRegistrationCallable() {
     return getRegistrationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateRegistrationRequest, Operation> updateRegistrationCallable() {
     return updateRegistrationCallable;
   }
 
+  @Override
   public OperationCallable<UpdateRegistrationRequest, Registration, OperationMetadata>
       updateRegistrationOperationCallable() {
     return updateRegistrationOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ConfigureManagementSettingsRequest, Operation>
       configureManagementSettingsCallable() {
     return configureManagementSettingsCallable;
   }
 
+  @Override
   public OperationCallable<ConfigureManagementSettingsRequest, Registration, OperationMetadata>
       configureManagementSettingsOperationCallable() {
     return configureManagementSettingsOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ConfigureDnsSettingsRequest, Operation> configureDnsSettingsCallable() {
     return configureDnsSettingsCallable;
   }
 
+  @Override
   public OperationCallable<ConfigureDnsSettingsRequest, Registration, OperationMetadata>
       configureDnsSettingsOperationCallable() {
     return configureDnsSettingsOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ConfigureContactSettingsRequest, Operation>
       configureContactSettingsCallable() {
     return configureContactSettingsCallable;
   }
 
+  @Override
   public OperationCallable<ConfigureContactSettingsRequest, Registration, OperationMetadata>
       configureContactSettingsOperationCallable() {
     return configureContactSettingsOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ExportRegistrationRequest, Operation> exportRegistrationCallable() {
     return exportRegistrationCallable;
   }
 
+  @Override
   public OperationCallable<ExportRegistrationRequest, Registration, OperationMetadata>
       exportRegistrationOperationCallable() {
     return exportRegistrationOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteRegistrationRequest, Operation> deleteRegistrationCallable() {
     return deleteRegistrationCallable;
   }
 
+  @Override
   public OperationCallable<DeleteRegistrationRequest, Empty, OperationMetadata>
       deleteRegistrationOperationCallable() {
     return deleteRegistrationOperationCallable;
   }
 
+  @Override
   public UnaryCallable<RetrieveAuthorizationCodeRequest, AuthorizationCode>
       retrieveAuthorizationCodeCallable() {
     return retrieveAuthorizationCodeCallable;
   }
 
+  @Override
   public UnaryCallable<ResetAuthorizationCodeRequest, AuthorizationCode>
       resetAuthorizationCodeCallable() {
     return resetAuthorizationCodeCallable;
