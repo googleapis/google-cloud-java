@@ -61,7 +61,7 @@ public class MockBigQueryReadImpl extends BigQueryReadImplBase {
   @Override
   public void createReadSession(
       CreateReadSessionRequest request, StreamObserver<ReadSession> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ReadSession) {
       requests.add(request);
       responseObserver.onNext(((ReadSession) response));
@@ -73,7 +73,7 @@ public class MockBigQueryReadImpl extends BigQueryReadImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateReadSession, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ReadSession.class.getName(),
                   Exception.class.getName())));
     }
@@ -81,7 +81,7 @@ public class MockBigQueryReadImpl extends BigQueryReadImplBase {
 
   @Override
   public void readRows(ReadRowsRequest request, StreamObserver<ReadRowsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ReadRowsResponse) {
       requests.add(request);
       responseObserver.onNext(((ReadRowsResponse) response));
@@ -93,7 +93,7 @@ public class MockBigQueryReadImpl extends BigQueryReadImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ReadRows, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ReadRowsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -102,7 +102,7 @@ public class MockBigQueryReadImpl extends BigQueryReadImplBase {
   @Override
   public void splitReadStream(
       SplitReadStreamRequest request, StreamObserver<SplitReadStreamResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SplitReadStreamResponse) {
       requests.add(request);
       responseObserver.onNext(((SplitReadStreamResponse) response));
@@ -114,7 +114,7 @@ public class MockBigQueryReadImpl extends BigQueryReadImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SplitReadStream, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SplitReadStreamResponse.class.getName(),
                   Exception.class.getName())));
     }

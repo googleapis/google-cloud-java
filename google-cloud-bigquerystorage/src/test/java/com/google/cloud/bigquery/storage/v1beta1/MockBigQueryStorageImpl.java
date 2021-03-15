@@ -63,7 +63,7 @@ public class MockBigQueryStorageImpl extends BigQueryStorageImplBase {
   public void createReadSession(
       Storage.CreateReadSessionRequest request,
       StreamObserver<Storage.ReadSession> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Storage.ReadSession) {
       requests.add(request);
       responseObserver.onNext(((Storage.ReadSession) response));
@@ -75,7 +75,7 @@ public class MockBigQueryStorageImpl extends BigQueryStorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateReadSession, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Storage.ReadSession.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockBigQueryStorageImpl extends BigQueryStorageImplBase {
   @Override
   public void readRows(
       Storage.ReadRowsRequest request, StreamObserver<Storage.ReadRowsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Storage.ReadRowsResponse) {
       requests.add(request);
       responseObserver.onNext(((Storage.ReadRowsResponse) response));
@@ -96,7 +96,7 @@ public class MockBigQueryStorageImpl extends BigQueryStorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ReadRows, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Storage.ReadRowsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -106,7 +106,7 @@ public class MockBigQueryStorageImpl extends BigQueryStorageImplBase {
   public void batchCreateReadSessionStreams(
       Storage.BatchCreateReadSessionStreamsRequest request,
       StreamObserver<Storage.BatchCreateReadSessionStreamsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Storage.BatchCreateReadSessionStreamsResponse) {
       requests.add(request);
       responseObserver.onNext(((Storage.BatchCreateReadSessionStreamsResponse) response));
@@ -118,7 +118,7 @@ public class MockBigQueryStorageImpl extends BigQueryStorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchCreateReadSessionStreams, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Storage.BatchCreateReadSessionStreamsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -127,7 +127,7 @@ public class MockBigQueryStorageImpl extends BigQueryStorageImplBase {
   @Override
   public void finalizeStream(
       Storage.FinalizeStreamRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -139,7 +139,7 @@ public class MockBigQueryStorageImpl extends BigQueryStorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method FinalizeStream, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -149,7 +149,7 @@ public class MockBigQueryStorageImpl extends BigQueryStorageImplBase {
   public void splitReadStream(
       Storage.SplitReadStreamRequest request,
       StreamObserver<Storage.SplitReadStreamResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Storage.SplitReadStreamResponse) {
       requests.add(request);
       responseObserver.onNext(((Storage.SplitReadStreamResponse) response));
@@ -161,7 +161,7 @@ public class MockBigQueryStorageImpl extends BigQueryStorageImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SplitReadStream, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Storage.SplitReadStreamResponse.class.getName(),
                   Exception.class.getName())));
     }
