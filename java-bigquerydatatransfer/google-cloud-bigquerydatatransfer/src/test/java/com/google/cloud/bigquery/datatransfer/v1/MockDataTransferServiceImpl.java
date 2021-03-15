@@ -62,7 +62,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
   @Override
   public void getDataSource(
       GetDataSourceRequest request, StreamObserver<DataSource> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof DataSource) {
       requests.add(request);
       responseObserver.onNext(((DataSource) response));
@@ -74,7 +74,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetDataSource, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   DataSource.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
   @Override
   public void listDataSources(
       ListDataSourcesRequest request, StreamObserver<ListDataSourcesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListDataSourcesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListDataSourcesResponse) response));
@@ -95,7 +95,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListDataSources, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListDataSourcesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
   @Override
   public void createTransferConfig(
       CreateTransferConfigRequest request, StreamObserver<TransferConfig> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TransferConfig) {
       requests.add(request);
       responseObserver.onNext(((TransferConfig) response));
@@ -116,7 +116,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateTransferConfig, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TransferConfig.class.getName(),
                   Exception.class.getName())));
     }
@@ -125,7 +125,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
   @Override
   public void updateTransferConfig(
       UpdateTransferConfigRequest request, StreamObserver<TransferConfig> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TransferConfig) {
       requests.add(request);
       responseObserver.onNext(((TransferConfig) response));
@@ -137,7 +137,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateTransferConfig, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TransferConfig.class.getName(),
                   Exception.class.getName())));
     }
@@ -146,7 +146,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
   @Override
   public void deleteTransferConfig(
       DeleteTransferConfigRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -158,7 +158,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteTransferConfig, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -167,7 +167,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
   @Override
   public void getTransferConfig(
       GetTransferConfigRequest request, StreamObserver<TransferConfig> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TransferConfig) {
       requests.add(request);
       responseObserver.onNext(((TransferConfig) response));
@@ -179,7 +179,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetTransferConfig, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TransferConfig.class.getName(),
                   Exception.class.getName())));
     }
@@ -189,7 +189,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
   public void listTransferConfigs(
       ListTransferConfigsRequest request,
       StreamObserver<ListTransferConfigsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListTransferConfigsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListTransferConfigsResponse) response));
@@ -201,7 +201,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListTransferConfigs, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListTransferConfigsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -211,7 +211,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
   public void scheduleTransferRuns(
       ScheduleTransferRunsRequest request,
       StreamObserver<ScheduleTransferRunsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ScheduleTransferRunsResponse) {
       requests.add(request);
       responseObserver.onNext(((ScheduleTransferRunsResponse) response));
@@ -223,7 +223,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ScheduleTransferRuns, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ScheduleTransferRunsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -233,7 +233,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
   public void startManualTransferRuns(
       StartManualTransferRunsRequest request,
       StreamObserver<StartManualTransferRunsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof StartManualTransferRunsResponse) {
       requests.add(request);
       responseObserver.onNext(((StartManualTransferRunsResponse) response));
@@ -245,7 +245,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method StartManualTransferRuns, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   StartManualTransferRunsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -254,7 +254,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
   @Override
   public void getTransferRun(
       GetTransferRunRequest request, StreamObserver<TransferRun> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TransferRun) {
       requests.add(request);
       responseObserver.onNext(((TransferRun) response));
@@ -266,7 +266,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetTransferRun, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TransferRun.class.getName(),
                   Exception.class.getName())));
     }
@@ -275,7 +275,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
   @Override
   public void deleteTransferRun(
       DeleteTransferRunRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -287,7 +287,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteTransferRun, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -296,7 +296,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
   @Override
   public void listTransferRuns(
       ListTransferRunsRequest request, StreamObserver<ListTransferRunsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListTransferRunsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListTransferRunsResponse) response));
@@ -308,7 +308,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListTransferRuns, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListTransferRunsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -317,7 +317,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
   @Override
   public void listTransferLogs(
       ListTransferLogsRequest request, StreamObserver<ListTransferLogsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListTransferLogsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListTransferLogsResponse) response));
@@ -329,7 +329,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListTransferLogs, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListTransferLogsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -338,7 +338,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
   @Override
   public void checkValidCreds(
       CheckValidCredsRequest request, StreamObserver<CheckValidCredsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CheckValidCredsResponse) {
       requests.add(request);
       responseObserver.onNext(((CheckValidCredsResponse) response));
@@ -350,7 +350,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CheckValidCreds, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CheckValidCredsResponse.class.getName(),
                   Exception.class.getName())));
     }

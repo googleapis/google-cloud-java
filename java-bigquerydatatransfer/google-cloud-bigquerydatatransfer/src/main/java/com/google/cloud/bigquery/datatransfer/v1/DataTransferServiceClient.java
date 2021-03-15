@@ -394,6 +394,13 @@ public class DataTransferServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
+   *   ListDataSourcesRequest request =
+   *       ListDataSourcesRequest.newBuilder()
+   *           .setParent(
+   *               DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListDataSourcesResponse response =
    *         dataTransferServiceClient.listDataSourcesCallable().call(request);
@@ -1015,6 +1022,15 @@ public class DataTransferServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
+   *   ListTransferConfigsRequest request =
+   *       ListTransferConfigsRequest.newBuilder()
+   *           .setParent(
+   *               TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
+   *                   .toString())
+   *           .addAllDataSourceIds(new ArrayList<String>())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListTransferConfigsResponse response =
    *         dataTransferServiceClient.listTransferConfigsCallable().call(request);
@@ -1567,6 +1583,15 @@ public class DataTransferServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
+   *   ListTransferRunsRequest request =
+   *       ListTransferRunsRequest.newBuilder()
+   *           .setParent(
+   *               RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
+   *                   .toString())
+   *           .addAllStates(new ArrayList<TransferState>())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListTransferRunsResponse response =
    *         dataTransferServiceClient.listTransferRunsCallable().call(request);
@@ -1717,6 +1742,15 @@ public class DataTransferServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
+   *   ListTransferLogsRequest request =
+   *       ListTransferLogsRequest.newBuilder()
+   *           .setParent(
+   *               RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
+   *                   .toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .addAllMessageTypes(new ArrayList<TransferMessage.MessageSeverity>())
+   *           .build();
    *   while (true) {
    *     ListTransferLogsResponse response =
    *         dataTransferServiceClient.listTransferLogsCallable().call(request);
