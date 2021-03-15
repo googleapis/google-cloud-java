@@ -61,7 +61,7 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
 
   @Override
   public void createJob(CreateJobRequest request, StreamObserver<Job> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Job) {
       requests.add(request);
       responseObserver.onNext(((Job) response));
@@ -73,13 +73,15 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateJob, expected %s or %s",
-                  response.getClass().getName(), Job.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Job.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void listJobs(ListJobsRequest request, StreamObserver<ListJobsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListJobsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListJobsResponse) response));
@@ -91,7 +93,7 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListJobs, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListJobsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -99,7 +101,7 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
 
   @Override
   public void getJob(GetJobRequest request, StreamObserver<Job> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Job) {
       requests.add(request);
       responseObserver.onNext(((Job) response));
@@ -111,13 +113,15 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetJob, expected %s or %s",
-                  response.getClass().getName(), Job.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Job.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void deleteJob(DeleteJobRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -129,7 +133,7 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteJob, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -138,7 +142,7 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
   @Override
   public void createJobTemplate(
       CreateJobTemplateRequest request, StreamObserver<JobTemplate> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof JobTemplate) {
       requests.add(request);
       responseObserver.onNext(((JobTemplate) response));
@@ -150,7 +154,7 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateJobTemplate, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   JobTemplate.class.getName(),
                   Exception.class.getName())));
     }
@@ -159,7 +163,7 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
   @Override
   public void listJobTemplates(
       ListJobTemplatesRequest request, StreamObserver<ListJobTemplatesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListJobTemplatesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListJobTemplatesResponse) response));
@@ -171,7 +175,7 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListJobTemplates, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListJobTemplatesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -180,7 +184,7 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
   @Override
   public void getJobTemplate(
       GetJobTemplateRequest request, StreamObserver<JobTemplate> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof JobTemplate) {
       requests.add(request);
       responseObserver.onNext(((JobTemplate) response));
@@ -192,7 +196,7 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetJobTemplate, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   JobTemplate.class.getName(),
                   Exception.class.getName())));
     }
@@ -201,7 +205,7 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
   @Override
   public void deleteJobTemplate(
       DeleteJobTemplateRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -213,7 +217,7 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteJobTemplate, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

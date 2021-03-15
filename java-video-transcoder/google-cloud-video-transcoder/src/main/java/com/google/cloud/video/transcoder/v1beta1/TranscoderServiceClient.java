@@ -364,6 +364,12 @@ public class TranscoderServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
+   *   ListJobsRequest request =
+   *       ListJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListJobsResponse response = transcoderServiceClient.listJobsCallable().call(request);
    *     for (Job element : response.getResponsesList()) {
@@ -800,6 +806,12 @@ public class TranscoderServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
+   *   ListJobTemplatesRequest request =
+   *       ListJobTemplatesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListJobTemplatesResponse response =
    *         transcoderServiceClient.listJobTemplatesCallable().call(request);
