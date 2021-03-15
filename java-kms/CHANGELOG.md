@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.41.1](https://www.github.com/googleapis/java-kms/compare/v1.41.0...v1.41.1) (2021-03-15)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java-util to v3.15.6 ([#433](https://www.github.com/googleapis/java-kms/issues/433)) ([a410752](https://www.github.com/googleapis/java-kms/commit/a410752398468bde9f0981ab8b066cd6375db7a8))
+
 ## [1.41.0](https://www.github.com/googleapis/java-kms/compare/v1.40.8...v1.41.0) (2021-03-11)
 
 
