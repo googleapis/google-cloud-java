@@ -63,7 +63,7 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
   public void listGameServerClusters(
       ListGameServerClustersRequest request,
       StreamObserver<ListGameServerClustersResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListGameServerClustersResponse) {
       requests.add(request);
       responseObserver.onNext(((ListGameServerClustersResponse) response));
@@ -75,7 +75,7 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListGameServerClusters, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListGameServerClustersResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
   @Override
   public void getGameServerCluster(
       GetGameServerClusterRequest request, StreamObserver<GameServerCluster> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof GameServerCluster) {
       requests.add(request);
       responseObserver.onNext(((GameServerCluster) response));
@@ -96,7 +96,7 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetGameServerCluster, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GameServerCluster.class.getName(),
                   Exception.class.getName())));
     }
@@ -105,7 +105,7 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
   @Override
   public void createGameServerCluster(
       CreateGameServerClusterRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -117,7 +117,7 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateGameServerCluster, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -127,7 +127,7 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
   public void previewCreateGameServerCluster(
       PreviewCreateGameServerClusterRequest request,
       StreamObserver<PreviewCreateGameServerClusterResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PreviewCreateGameServerClusterResponse) {
       requests.add(request);
       responseObserver.onNext(((PreviewCreateGameServerClusterResponse) response));
@@ -139,7 +139,7 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method PreviewCreateGameServerCluster, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   PreviewCreateGameServerClusterResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -148,7 +148,7 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
   @Override
   public void deleteGameServerCluster(
       DeleteGameServerClusterRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -160,7 +160,7 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteGameServerCluster, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -170,7 +170,7 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
   public void previewDeleteGameServerCluster(
       PreviewDeleteGameServerClusterRequest request,
       StreamObserver<PreviewDeleteGameServerClusterResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PreviewDeleteGameServerClusterResponse) {
       requests.add(request);
       responseObserver.onNext(((PreviewDeleteGameServerClusterResponse) response));
@@ -182,7 +182,7 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method PreviewDeleteGameServerCluster, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   PreviewDeleteGameServerClusterResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -191,7 +191,7 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
   @Override
   public void updateGameServerCluster(
       UpdateGameServerClusterRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -203,7 +203,7 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateGameServerCluster, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -213,7 +213,7 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
   public void previewUpdateGameServerCluster(
       PreviewUpdateGameServerClusterRequest request,
       StreamObserver<PreviewUpdateGameServerClusterResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PreviewUpdateGameServerClusterResponse) {
       requests.add(request);
       responseObserver.onNext(((PreviewUpdateGameServerClusterResponse) response));
@@ -225,7 +225,7 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method PreviewUpdateGameServerCluster, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   PreviewUpdateGameServerClusterResponse.class.getName(),
                   Exception.class.getName())));
     }

@@ -279,6 +279,14 @@ public class RealmsServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
+   *   ListRealmsRequest request =
+   *       ListRealmsRequest.newBuilder()
+   *           .setParent(RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListRealmsResponse response = realmsServiceClient.listRealmsCallable().call(request);
    *     for (Realm element : response.getResponsesList()) {

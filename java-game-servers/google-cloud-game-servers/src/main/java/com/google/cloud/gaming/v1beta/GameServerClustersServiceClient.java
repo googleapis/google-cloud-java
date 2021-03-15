@@ -306,6 +306,16 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (GameServerClustersServiceClient gameServerClustersServiceClient =
    *     GameServerClustersServiceClient.create()) {
+   *   ListGameServerClustersRequest request =
+   *       ListGameServerClustersRequest.newBuilder()
+   *           .setParent(
+   *               GameServerClusterName.of("[PROJECT]", "[LOCATION]", "[REALM]", "[CLUSTER]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListGameServerClustersResponse response =
    *         gameServerClustersServiceClient.listGameServerClustersCallable().call(request);

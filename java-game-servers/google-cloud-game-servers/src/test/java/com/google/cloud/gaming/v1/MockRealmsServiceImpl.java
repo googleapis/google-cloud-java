@@ -62,7 +62,7 @@ public class MockRealmsServiceImpl extends RealmsServiceImplBase {
   @Override
   public void listRealms(
       ListRealmsRequest request, StreamObserver<ListRealmsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListRealmsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListRealmsResponse) response));
@@ -74,7 +74,7 @@ public class MockRealmsServiceImpl extends RealmsServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListRealms, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListRealmsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockRealmsServiceImpl extends RealmsServiceImplBase {
 
   @Override
   public void getRealm(GetRealmRequest request, StreamObserver<Realm> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Realm) {
       requests.add(request);
       responseObserver.onNext(((Realm) response));
@@ -94,7 +94,7 @@ public class MockRealmsServiceImpl extends RealmsServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetRealm, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Realm.class.getName(),
                   Exception.class.getName())));
     }
@@ -102,7 +102,7 @@ public class MockRealmsServiceImpl extends RealmsServiceImplBase {
 
   @Override
   public void createRealm(CreateRealmRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -114,7 +114,7 @@ public class MockRealmsServiceImpl extends RealmsServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateRealm, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -122,7 +122,7 @@ public class MockRealmsServiceImpl extends RealmsServiceImplBase {
 
   @Override
   public void deleteRealm(DeleteRealmRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -134,7 +134,7 @@ public class MockRealmsServiceImpl extends RealmsServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteRealm, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -142,7 +142,7 @@ public class MockRealmsServiceImpl extends RealmsServiceImplBase {
 
   @Override
   public void updateRealm(UpdateRealmRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -154,7 +154,7 @@ public class MockRealmsServiceImpl extends RealmsServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateRealm, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -164,7 +164,7 @@ public class MockRealmsServiceImpl extends RealmsServiceImplBase {
   public void previewRealmUpdate(
       PreviewRealmUpdateRequest request,
       StreamObserver<PreviewRealmUpdateResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PreviewRealmUpdateResponse) {
       requests.add(request);
       responseObserver.onNext(((PreviewRealmUpdateResponse) response));
@@ -176,7 +176,7 @@ public class MockRealmsServiceImpl extends RealmsServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method PreviewRealmUpdate, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   PreviewRealmUpdateResponse.class.getName(),
                   Exception.class.getName())));
     }

@@ -63,7 +63,7 @@ public class MockGameServerConfigsServiceImpl extends GameServerConfigsServiceIm
   public void listGameServerConfigs(
       ListGameServerConfigsRequest request,
       StreamObserver<ListGameServerConfigsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListGameServerConfigsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListGameServerConfigsResponse) response));
@@ -75,7 +75,7 @@ public class MockGameServerConfigsServiceImpl extends GameServerConfigsServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListGameServerConfigs, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListGameServerConfigsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockGameServerConfigsServiceImpl extends GameServerConfigsServiceIm
   @Override
   public void getGameServerConfig(
       GetGameServerConfigRequest request, StreamObserver<GameServerConfig> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof GameServerConfig) {
       requests.add(request);
       responseObserver.onNext(((GameServerConfig) response));
@@ -96,7 +96,7 @@ public class MockGameServerConfigsServiceImpl extends GameServerConfigsServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetGameServerConfig, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GameServerConfig.class.getName(),
                   Exception.class.getName())));
     }
@@ -105,7 +105,7 @@ public class MockGameServerConfigsServiceImpl extends GameServerConfigsServiceIm
   @Override
   public void createGameServerConfig(
       CreateGameServerConfigRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -117,7 +117,7 @@ public class MockGameServerConfigsServiceImpl extends GameServerConfigsServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateGameServerConfig, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -126,7 +126,7 @@ public class MockGameServerConfigsServiceImpl extends GameServerConfigsServiceIm
   @Override
   public void deleteGameServerConfig(
       DeleteGameServerConfigRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -138,7 +138,7 @@ public class MockGameServerConfigsServiceImpl extends GameServerConfigsServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteGameServerConfig, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }

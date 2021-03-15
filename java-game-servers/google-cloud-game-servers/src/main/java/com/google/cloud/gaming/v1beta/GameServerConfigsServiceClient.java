@@ -306,6 +306,16 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (GameServerConfigsServiceClient gameServerConfigsServiceClient =
    *     GameServerConfigsServiceClient.create()) {
+   *   ListGameServerConfigsRequest request =
+   *       ListGameServerConfigsRequest.newBuilder()
+   *           .setParent(
+   *               GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListGameServerConfigsResponse response =
    *         gameServerConfigsServiceClient.listGameServerConfigsCallable().call(request);
