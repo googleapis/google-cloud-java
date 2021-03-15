@@ -62,7 +62,7 @@ public class MockImageAnnotatorImpl extends ImageAnnotatorImplBase {
   public void batchAnnotateImages(
       BatchAnnotateImagesRequest request,
       StreamObserver<BatchAnnotateImagesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BatchAnnotateImagesResponse) {
       requests.add(request);
       responseObserver.onNext(((BatchAnnotateImagesResponse) response));
@@ -74,7 +74,7 @@ public class MockImageAnnotatorImpl extends ImageAnnotatorImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchAnnotateImages, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BatchAnnotateImagesResponse.class.getName(),
                   Exception.class.getName())));
     }

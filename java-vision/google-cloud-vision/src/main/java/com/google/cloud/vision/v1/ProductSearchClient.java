@@ -664,6 +664,12 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ListProductSetsRequest request =
+   *       ListProductSetsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListProductSetsResponse response =
    *         productSearchClient.listProductSetsCallable().call(request);
@@ -1296,6 +1302,12 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ListProductsRequest request =
+   *       ListProductsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListProductsResponse response = productSearchClient.listProductsCallable().call(request);
    *     for (Product element : response.getResponsesList()) {
@@ -2125,6 +2137,12 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ListReferenceImagesRequest request =
+   *       ListReferenceImagesRequest.newBuilder()
+   *           .setParent(ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListReferenceImagesResponse response =
    *         productSearchClient.listReferenceImagesCallable().call(request);
@@ -2801,6 +2819,12 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ListProductsInProductSetRequest request =
+   *       ListProductsInProductSetRequest.newBuilder()
+   *           .setName(ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListProductsInProductSetResponse response =
    *         productSearchClient.listProductsInProductSetCallable().call(request);
