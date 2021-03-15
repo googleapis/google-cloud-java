@@ -61,7 +61,7 @@ public class MockCloudCatalogImpl extends CloudCatalogImplBase {
   @Override
   public void listServices(
       ListServicesRequest request, StreamObserver<ListServicesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListServicesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListServicesResponse) response));
@@ -73,7 +73,7 @@ public class MockCloudCatalogImpl extends CloudCatalogImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListServices, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListServicesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -81,7 +81,7 @@ public class MockCloudCatalogImpl extends CloudCatalogImplBase {
 
   @Override
   public void listSkus(ListSkusRequest request, StreamObserver<ListSkusResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListSkusResponse) {
       requests.add(request);
       responseObserver.onNext(((ListSkusResponse) response));
@@ -93,7 +93,7 @@ public class MockCloudCatalogImpl extends CloudCatalogImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListSkus, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListSkusResponse.class.getName(),
                   Exception.class.getName())));
     }

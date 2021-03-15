@@ -66,7 +66,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
   @Override
   public void getBillingAccount(
       GetBillingAccountRequest request, StreamObserver<BillingAccount> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BillingAccount) {
       requests.add(request);
       responseObserver.onNext(((BillingAccount) response));
@@ -78,7 +78,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetBillingAccount, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BillingAccount.class.getName(),
                   Exception.class.getName())));
     }
@@ -88,7 +88,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
   public void listBillingAccounts(
       ListBillingAccountsRequest request,
       StreamObserver<ListBillingAccountsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListBillingAccountsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListBillingAccountsResponse) response));
@@ -100,7 +100,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListBillingAccounts, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListBillingAccountsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -109,7 +109,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
   @Override
   public void updateBillingAccount(
       UpdateBillingAccountRequest request, StreamObserver<BillingAccount> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BillingAccount) {
       requests.add(request);
       responseObserver.onNext(((BillingAccount) response));
@@ -121,7 +121,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateBillingAccount, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BillingAccount.class.getName(),
                   Exception.class.getName())));
     }
@@ -130,7 +130,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
   @Override
   public void createBillingAccount(
       CreateBillingAccountRequest request, StreamObserver<BillingAccount> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BillingAccount) {
       requests.add(request);
       responseObserver.onNext(((BillingAccount) response));
@@ -142,7 +142,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateBillingAccount, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BillingAccount.class.getName(),
                   Exception.class.getName())));
     }
@@ -152,7 +152,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
   public void listProjectBillingInfo(
       ListProjectBillingInfoRequest request,
       StreamObserver<ListProjectBillingInfoResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListProjectBillingInfoResponse) {
       requests.add(request);
       responseObserver.onNext(((ListProjectBillingInfoResponse) response));
@@ -164,7 +164,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListProjectBillingInfo, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListProjectBillingInfoResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -173,7 +173,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
   @Override
   public void getProjectBillingInfo(
       GetProjectBillingInfoRequest request, StreamObserver<ProjectBillingInfo> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ProjectBillingInfo) {
       requests.add(request);
       responseObserver.onNext(((ProjectBillingInfo) response));
@@ -185,7 +185,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetProjectBillingInfo, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ProjectBillingInfo.class.getName(),
                   Exception.class.getName())));
     }
@@ -195,7 +195,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
   public void updateProjectBillingInfo(
       UpdateProjectBillingInfoRequest request,
       StreamObserver<ProjectBillingInfo> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ProjectBillingInfo) {
       requests.add(request);
       responseObserver.onNext(((ProjectBillingInfo) response));
@@ -207,7 +207,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateProjectBillingInfo, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ProjectBillingInfo.class.getName(),
                   Exception.class.getName())));
     }
@@ -215,7 +215,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
 
   @Override
   public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -227,7 +227,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -235,7 +235,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
 
   @Override
   public void setIamPolicy(SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -247,7 +247,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -257,7 +257,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
   public void testIamPermissions(
       TestIamPermissionsRequest request,
       StreamObserver<TestIamPermissionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
       responseObserver.onNext(((TestIamPermissionsResponse) response));
@@ -269,7 +269,7 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TestIamPermissionsResponse.class.getName(),
                   Exception.class.getName())));
     }

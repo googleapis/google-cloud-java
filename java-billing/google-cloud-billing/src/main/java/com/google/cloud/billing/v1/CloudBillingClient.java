@@ -339,6 +339,12 @@ public class CloudBillingClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   ListBillingAccountsRequest request =
+   *       ListBillingAccountsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     ListBillingAccountsResponse response =
    *         cloudBillingClient.listBillingAccountsCallable().call(request);
@@ -694,6 +700,12 @@ public class CloudBillingClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   ListProjectBillingInfoRequest request =
+   *       ListProjectBillingInfoRequest.newBuilder()
+   *           .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListProjectBillingInfoResponse response =
    *         cloudBillingClient.listProjectBillingInfoCallable().call(request);

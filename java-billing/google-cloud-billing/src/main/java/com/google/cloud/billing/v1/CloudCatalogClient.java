@@ -231,6 +231,11 @@ public class CloudCatalogClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
+   *   ListServicesRequest request =
+   *       ListServicesRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListServicesResponse response = cloudCatalogClient.listServicesCallable().call(request);
    *     for (Service element : response.getResponsesList()) {
@@ -364,6 +369,15 @@ public class CloudCatalogClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
+   *   ListSkusRequest request =
+   *       ListSkusRequest.newBuilder()
+   *           .setParent(ServiceName.of("[SERVICE]").toString())
+   *           .setStartTime(Timestamp.newBuilder().build())
+   *           .setEndTime(Timestamp.newBuilder().build())
+   *           .setCurrencyCode("currencyCode1004773790")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListSkusResponse response = cloudCatalogClient.listSkusCallable().call(request);
    *     for (Sku element : response.getResponsesList()) {
