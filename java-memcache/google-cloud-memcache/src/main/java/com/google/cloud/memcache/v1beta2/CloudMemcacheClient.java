@@ -301,6 +301,14 @@ public class CloudMemcacheClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   ListInstancesRequest request =
+   *       ListInstancesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListInstancesResponse response = cloudMemcacheClient.listInstancesCallable().call(request);
    *     for (Instance element : response.getResponsesList()) {
