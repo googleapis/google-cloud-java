@@ -61,7 +61,7 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
   @Override
   public void analyzeSentiment(
       AnalyzeSentimentRequest request, StreamObserver<AnalyzeSentimentResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AnalyzeSentimentResponse) {
       requests.add(request);
       responseObserver.onNext(((AnalyzeSentimentResponse) response));
@@ -73,7 +73,7 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method AnalyzeSentiment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AnalyzeSentimentResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
   @Override
   public void analyzeEntities(
       AnalyzeEntitiesRequest request, StreamObserver<AnalyzeEntitiesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AnalyzeEntitiesResponse) {
       requests.add(request);
       responseObserver.onNext(((AnalyzeEntitiesResponse) response));
@@ -94,7 +94,7 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method AnalyzeEntities, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AnalyzeEntitiesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
   public void analyzeEntitySentiment(
       AnalyzeEntitySentimentRequest request,
       StreamObserver<AnalyzeEntitySentimentResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AnalyzeEntitySentimentResponse) {
       requests.add(request);
       responseObserver.onNext(((AnalyzeEntitySentimentResponse) response));
@@ -116,7 +116,7 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method AnalyzeEntitySentiment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AnalyzeEntitySentimentResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -125,7 +125,7 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
   @Override
   public void analyzeSyntax(
       AnalyzeSyntaxRequest request, StreamObserver<AnalyzeSyntaxResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AnalyzeSyntaxResponse) {
       requests.add(request);
       responseObserver.onNext(((AnalyzeSyntaxResponse) response));
@@ -137,7 +137,7 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method AnalyzeSyntax, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AnalyzeSyntaxResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -146,7 +146,7 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
   @Override
   public void classifyText(
       ClassifyTextRequest request, StreamObserver<ClassifyTextResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ClassifyTextResponse) {
       requests.add(request);
       responseObserver.onNext(((ClassifyTextResponse) response));
@@ -158,7 +158,7 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ClassifyText, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ClassifyTextResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -167,7 +167,7 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
   @Override
   public void annotateText(
       AnnotateTextRequest request, StreamObserver<AnnotateTextResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AnnotateTextResponse) {
       requests.add(request);
       responseObserver.onNext(((AnnotateTextResponse) response));
@@ -179,7 +179,7 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method AnnotateText, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AnnotateTextResponse.class.getName(),
                   Exception.class.getName())));
     }
