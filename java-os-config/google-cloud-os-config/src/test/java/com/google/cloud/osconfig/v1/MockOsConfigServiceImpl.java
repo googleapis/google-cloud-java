@@ -63,7 +63,7 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
   public void executePatchJob(
       PatchJobs.ExecutePatchJobRequest request,
       StreamObserver<PatchJobs.PatchJob> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PatchJobs.PatchJob) {
       requests.add(request);
       responseObserver.onNext(((PatchJobs.PatchJob) response));
@@ -75,7 +75,7 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ExecutePatchJob, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   PatchJobs.PatchJob.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
   @Override
   public void getPatchJob(
       PatchJobs.GetPatchJobRequest request, StreamObserver<PatchJobs.PatchJob> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PatchJobs.PatchJob) {
       requests.add(request);
       responseObserver.onNext(((PatchJobs.PatchJob) response));
@@ -96,7 +96,7 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetPatchJob, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   PatchJobs.PatchJob.class.getName(),
                   Exception.class.getName())));
     }
@@ -106,7 +106,7 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
   public void cancelPatchJob(
       PatchJobs.CancelPatchJobRequest request,
       StreamObserver<PatchJobs.PatchJob> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PatchJobs.PatchJob) {
       requests.add(request);
       responseObserver.onNext(((PatchJobs.PatchJob) response));
@@ -118,7 +118,7 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CancelPatchJob, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   PatchJobs.PatchJob.class.getName(),
                   Exception.class.getName())));
     }
@@ -128,7 +128,7 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
   public void listPatchJobs(
       PatchJobs.ListPatchJobsRequest request,
       StreamObserver<PatchJobs.ListPatchJobsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PatchJobs.ListPatchJobsResponse) {
       requests.add(request);
       responseObserver.onNext(((PatchJobs.ListPatchJobsResponse) response));
@@ -140,7 +140,7 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListPatchJobs, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   PatchJobs.ListPatchJobsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -150,7 +150,7 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
   public void listPatchJobInstanceDetails(
       PatchJobs.ListPatchJobInstanceDetailsRequest request,
       StreamObserver<PatchJobs.ListPatchJobInstanceDetailsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PatchJobs.ListPatchJobInstanceDetailsResponse) {
       requests.add(request);
       responseObserver.onNext(((PatchJobs.ListPatchJobInstanceDetailsResponse) response));
@@ -162,7 +162,7 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListPatchJobInstanceDetails, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   PatchJobs.ListPatchJobInstanceDetailsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -172,7 +172,7 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
   public void createPatchDeployment(
       PatchDeployments.CreatePatchDeploymentRequest request,
       StreamObserver<PatchDeployments.PatchDeployment> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PatchDeployments.PatchDeployment) {
       requests.add(request);
       responseObserver.onNext(((PatchDeployments.PatchDeployment) response));
@@ -184,7 +184,7 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreatePatchDeployment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   PatchDeployments.PatchDeployment.class.getName(),
                   Exception.class.getName())));
     }
@@ -194,7 +194,7 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
   public void getPatchDeployment(
       PatchDeployments.GetPatchDeploymentRequest request,
       StreamObserver<PatchDeployments.PatchDeployment> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PatchDeployments.PatchDeployment) {
       requests.add(request);
       responseObserver.onNext(((PatchDeployments.PatchDeployment) response));
@@ -206,7 +206,7 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetPatchDeployment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   PatchDeployments.PatchDeployment.class.getName(),
                   Exception.class.getName())));
     }
@@ -216,7 +216,7 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
   public void listPatchDeployments(
       PatchDeployments.ListPatchDeploymentsRequest request,
       StreamObserver<PatchDeployments.ListPatchDeploymentsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PatchDeployments.ListPatchDeploymentsResponse) {
       requests.add(request);
       responseObserver.onNext(((PatchDeployments.ListPatchDeploymentsResponse) response));
@@ -228,7 +228,7 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListPatchDeployments, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   PatchDeployments.ListPatchDeploymentsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -238,7 +238,7 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
   public void deletePatchDeployment(
       PatchDeployments.DeletePatchDeploymentRequest request,
       StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -250,7 +250,7 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeletePatchDeployment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

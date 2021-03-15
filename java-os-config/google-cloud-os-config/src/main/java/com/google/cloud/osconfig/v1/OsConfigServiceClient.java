@@ -475,6 +475,13 @@ public class OsConfigServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.ListPatchJobsRequest request =
+   *       PatchJobs.ListPatchJobsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     PatchJobs.ListPatchJobsResponse response =
    *         osConfigServiceClient.listPatchJobsCallable().call(request);
@@ -619,6 +626,13 @@ public class OsConfigServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.ListPatchJobInstanceDetailsRequest request =
+   *       PatchJobs.ListPatchJobInstanceDetailsRequest.newBuilder()
+   *           .setParent(PatchJobName.of("[PROJECT]", "[PATCH_JOB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     PatchJobs.ListPatchJobInstanceDetailsResponse response =
    *         osConfigServiceClient.listPatchJobInstanceDetailsCallable().call(request);
@@ -997,6 +1011,12 @@ public class OsConfigServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.ListPatchDeploymentsRequest request =
+   *       PatchDeployments.ListPatchDeploymentsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     PatchDeployments.ListPatchDeploymentsResponse response =
    *         osConfigServiceClient.listPatchDeploymentsCallable().call(request);
