@@ -292,6 +292,16 @@ public class RecommenderClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   ListInsightsRequest request =
+   *       ListInsightsRequest.newBuilder()
+   *           .setParent(
+   *               InsightTypeName.ofProjectLocationInsightTypeName(
+   *                       "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     ListInsightsResponse response = recommenderClient.listInsightsCallable().call(request);
    *     for (Insight element : response.getResponsesList()) {
@@ -711,6 +721,16 @@ public class RecommenderClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   ListRecommendationsRequest request =
+   *       ListRecommendationsRequest.newBuilder()
+   *           .setParent(
+   *               RecommenderName.ofProjectLocationRecommenderName(
+   *                       "[PROJECT]", "[LOCATION]", "[RECOMMENDER]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     ListRecommendationsResponse response =
    *         recommenderClient.listRecommendationsCallable().call(request);

@@ -61,7 +61,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
   @Override
   public void listInsights(
       ListInsightsRequest request, StreamObserver<ListInsightsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListInsightsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListInsightsResponse) response));
@@ -73,7 +73,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListInsights, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListInsightsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -81,7 +81,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
 
   @Override
   public void getInsight(GetInsightRequest request, StreamObserver<Insight> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Insight) {
       requests.add(request);
       responseObserver.onNext(((Insight) response));
@@ -93,7 +93,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetInsight, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Insight.class.getName(),
                   Exception.class.getName())));
     }
@@ -102,7 +102,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
   @Override
   public void markInsightAccepted(
       MarkInsightAcceptedRequest request, StreamObserver<Insight> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Insight) {
       requests.add(request);
       responseObserver.onNext(((Insight) response));
@@ -114,7 +114,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MarkInsightAccepted, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Insight.class.getName(),
                   Exception.class.getName())));
     }
@@ -124,7 +124,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
   public void listRecommendations(
       ListRecommendationsRequest request,
       StreamObserver<ListRecommendationsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListRecommendationsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListRecommendationsResponse) response));
@@ -136,7 +136,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListRecommendations, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListRecommendationsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -145,7 +145,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
   @Override
   public void getRecommendation(
       GetRecommendationRequest request, StreamObserver<Recommendation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Recommendation) {
       requests.add(request);
       responseObserver.onNext(((Recommendation) response));
@@ -157,7 +157,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetRecommendation, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Recommendation.class.getName(),
                   Exception.class.getName())));
     }
@@ -166,7 +166,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
   @Override
   public void markRecommendationClaimed(
       MarkRecommendationClaimedRequest request, StreamObserver<Recommendation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Recommendation) {
       requests.add(request);
       responseObserver.onNext(((Recommendation) response));
@@ -178,7 +178,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MarkRecommendationClaimed, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Recommendation.class.getName(),
                   Exception.class.getName())));
     }
@@ -187,7 +187,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
   @Override
   public void markRecommendationSucceeded(
       MarkRecommendationSucceededRequest request, StreamObserver<Recommendation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Recommendation) {
       requests.add(request);
       responseObserver.onNext(((Recommendation) response));
@@ -199,7 +199,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MarkRecommendationSucceeded, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Recommendation.class.getName(),
                   Exception.class.getName())));
     }
@@ -208,7 +208,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
   @Override
   public void markRecommendationFailed(
       MarkRecommendationFailedRequest request, StreamObserver<Recommendation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Recommendation) {
       requests.add(request);
       responseObserver.onNext(((Recommendation) response));
@@ -220,7 +220,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MarkRecommendationFailed, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Recommendation.class.getName(),
                   Exception.class.getName())));
     }
