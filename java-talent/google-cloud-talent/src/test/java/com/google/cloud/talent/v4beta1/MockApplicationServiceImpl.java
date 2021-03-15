@@ -62,7 +62,7 @@ public class MockApplicationServiceImpl extends ApplicationServiceImplBase {
   @Override
   public void createApplication(
       CreateApplicationRequest request, StreamObserver<Application> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Application) {
       requests.add(request);
       responseObserver.onNext(((Application) response));
@@ -74,7 +74,7 @@ public class MockApplicationServiceImpl extends ApplicationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateApplication, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Application.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockApplicationServiceImpl extends ApplicationServiceImplBase {
   @Override
   public void getApplication(
       GetApplicationRequest request, StreamObserver<Application> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Application) {
       requests.add(request);
       responseObserver.onNext(((Application) response));
@@ -95,7 +95,7 @@ public class MockApplicationServiceImpl extends ApplicationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetApplication, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Application.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockApplicationServiceImpl extends ApplicationServiceImplBase {
   @Override
   public void updateApplication(
       UpdateApplicationRequest request, StreamObserver<Application> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Application) {
       requests.add(request);
       responseObserver.onNext(((Application) response));
@@ -116,7 +116,7 @@ public class MockApplicationServiceImpl extends ApplicationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateApplication, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Application.class.getName(),
                   Exception.class.getName())));
     }
@@ -125,7 +125,7 @@ public class MockApplicationServiceImpl extends ApplicationServiceImplBase {
   @Override
   public void deleteApplication(
       DeleteApplicationRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -137,7 +137,7 @@ public class MockApplicationServiceImpl extends ApplicationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteApplication, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -146,7 +146,7 @@ public class MockApplicationServiceImpl extends ApplicationServiceImplBase {
   @Override
   public void listApplications(
       ListApplicationsRequest request, StreamObserver<ListApplicationsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListApplicationsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListApplicationsResponse) response));
@@ -158,7 +158,7 @@ public class MockApplicationServiceImpl extends ApplicationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListApplications, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListApplicationsResponse.class.getName(),
                   Exception.class.getName())));
     }

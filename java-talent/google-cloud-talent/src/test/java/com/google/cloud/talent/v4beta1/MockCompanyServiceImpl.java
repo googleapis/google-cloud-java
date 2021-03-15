@@ -62,7 +62,7 @@ public class MockCompanyServiceImpl extends CompanyServiceImplBase {
   @Override
   public void createCompany(
       CreateCompanyRequest request, StreamObserver<Company> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Company) {
       requests.add(request);
       responseObserver.onNext(((Company) response));
@@ -74,7 +74,7 @@ public class MockCompanyServiceImpl extends CompanyServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateCompany, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Company.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockCompanyServiceImpl extends CompanyServiceImplBase {
 
   @Override
   public void getCompany(GetCompanyRequest request, StreamObserver<Company> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Company) {
       requests.add(request);
       responseObserver.onNext(((Company) response));
@@ -94,7 +94,7 @@ public class MockCompanyServiceImpl extends CompanyServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCompany, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Company.class.getName(),
                   Exception.class.getName())));
     }
@@ -103,7 +103,7 @@ public class MockCompanyServiceImpl extends CompanyServiceImplBase {
   @Override
   public void updateCompany(
       UpdateCompanyRequest request, StreamObserver<Company> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Company) {
       requests.add(request);
       responseObserver.onNext(((Company) response));
@@ -115,7 +115,7 @@ public class MockCompanyServiceImpl extends CompanyServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateCompany, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Company.class.getName(),
                   Exception.class.getName())));
     }
@@ -123,7 +123,7 @@ public class MockCompanyServiceImpl extends CompanyServiceImplBase {
 
   @Override
   public void deleteCompany(DeleteCompanyRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -135,7 +135,7 @@ public class MockCompanyServiceImpl extends CompanyServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteCompany, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -144,7 +144,7 @@ public class MockCompanyServiceImpl extends CompanyServiceImplBase {
   @Override
   public void listCompanies(
       ListCompaniesRequest request, StreamObserver<ListCompaniesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListCompaniesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListCompaniesResponse) response));
@@ -156,7 +156,7 @@ public class MockCompanyServiceImpl extends CompanyServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListCompanies, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListCompaniesResponse.class.getName(),
                   Exception.class.getName())));
     }

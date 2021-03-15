@@ -61,7 +61,7 @@ public class MockEventServiceImpl extends EventServiceImplBase {
   @Override
   public void createClientEvent(
       CreateClientEventRequest request, StreamObserver<ClientEvent> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ClientEvent) {
       requests.add(request);
       responseObserver.onNext(((ClientEvent) response));
@@ -73,7 +73,7 @@ public class MockEventServiceImpl extends EventServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateClientEvent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ClientEvent.class.getName(),
                   Exception.class.getName())));
     }

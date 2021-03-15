@@ -1283,6 +1283,15 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ListJobsRequest request =
+   *       ListJobsRequest.newBuilder()
+   *           .setParent(
+   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setJobView(JobView.forNumber(0))
+   *           .build();
    *   while (true) {
    *     ListJobsResponse response = jobServiceClient.listJobsCallable().call(request);
    *     for (Job element : response.getResponsesList()) {
@@ -1402,6 +1411,23 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   SearchJobsRequest request =
+   *       SearchJobsRequest.newBuilder()
+   *           .setParent(
+   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setRequestMetadata(RequestMetadata.newBuilder().build())
+   *           .setJobQuery(JobQuery.newBuilder().build())
+   *           .setEnableBroadening(true)
+   *           .setRequirePreciseResultSize(true)
+   *           .addAllHistogramQueries(new ArrayList<HistogramQuery>())
+   *           .setJobView(JobView.forNumber(0))
+   *           .setOffset(-1019779949)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setCustomRankingInfo(SearchJobsRequest.CustomRankingInfo.newBuilder().build())
+   *           .setDisableKeywordMatch(true)
+   *           .build();
    *   while (true) {
    *     SearchJobsResponse response = jobServiceClient.searchJobsCallable().call(request);
    *     for (SearchJobsResponse.MatchingJob element : response.getResponsesList()) {
@@ -1531,6 +1557,23 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   SearchJobsRequest request =
+   *       SearchJobsRequest.newBuilder()
+   *           .setParent(
+   *               JobName.ofProjectTenantJobName("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setRequestMetadata(RequestMetadata.newBuilder().build())
+   *           .setJobQuery(JobQuery.newBuilder().build())
+   *           .setEnableBroadening(true)
+   *           .setRequirePreciseResultSize(true)
+   *           .addAllHistogramQueries(new ArrayList<HistogramQuery>())
+   *           .setJobView(JobView.forNumber(0))
+   *           .setOffset(-1019779949)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setCustomRankingInfo(SearchJobsRequest.CustomRankingInfo.newBuilder().build())
+   *           .setDisableKeywordMatch(true)
+   *           .build();
    *   while (true) {
    *     SearchJobsResponse response = jobServiceClient.searchJobsForAlertCallable().call(request);
    *     for (SearchJobsResponse.MatchingJob element : response.getResponsesList()) {

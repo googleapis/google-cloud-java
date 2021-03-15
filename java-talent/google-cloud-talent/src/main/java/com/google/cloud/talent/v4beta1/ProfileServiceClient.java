@@ -271,6 +271,14 @@ public class ProfileServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
+   *   ListProfilesRequest request =
+   *       ListProfilesRequest.newBuilder()
+   *           .setParent(ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
    *   while (true) {
    *     ListProfilesResponse response = profileServiceClient.listProfilesCallable().call(request);
    *     for (Profile element : response.getResponsesList()) {
@@ -748,6 +756,21 @@ public class ProfileServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
+   *   SearchProfilesRequest request =
+   *       SearchProfilesRequest.newBuilder()
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
+   *           .setRequestMetadata(RequestMetadata.newBuilder().build())
+   *           .setProfileQuery(ProfileQuery.newBuilder().build())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOffset(-1019779949)
+   *           .setDisableSpellCheck(true)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setCaseSensitiveSort(true)
+   *           .addAllHistogramQueries(new ArrayList<HistogramQuery>())
+   *           .setResultSetId("resultSetId-548600064")
+   *           .setStrictKeywordsSearch(true)
+   *           .build();
    *   while (true) {
    *     SearchProfilesResponse response =
    *         profileServiceClient.searchProfilesCallable().call(request);

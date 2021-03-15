@@ -615,6 +615,12 @@ public class TenantServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
+   *   ListTenantsRequest request =
+   *       ListTenantsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListTenantsResponse response = tenantServiceClient.listTenantsCallable().call(request);
    *     for (Tenant element : response.getResponsesList()) {

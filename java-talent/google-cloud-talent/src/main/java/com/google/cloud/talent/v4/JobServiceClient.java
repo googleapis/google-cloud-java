@@ -1108,6 +1108,14 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ListJobsRequest request =
+   *       ListJobsRequest.newBuilder()
+   *           .setParent(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setJobView(JobView.forNumber(0))
+   *           .build();
    *   while (true) {
    *     ListJobsResponse response = jobServiceClient.listJobsCallable().call(request);
    *     for (Job element : response.getResponsesList()) {

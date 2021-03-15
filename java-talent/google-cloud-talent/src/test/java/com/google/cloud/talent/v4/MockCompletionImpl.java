@@ -61,7 +61,7 @@ public class MockCompletionImpl extends CompletionImplBase {
   @Override
   public void completeQuery(
       CompleteQueryRequest request, StreamObserver<CompleteQueryResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CompleteQueryResponse) {
       requests.add(request);
       responseObserver.onNext(((CompleteQueryResponse) response));
@@ -73,7 +73,7 @@ public class MockCompletionImpl extends CompletionImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CompleteQuery, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CompleteQueryResponse.class.getName(),
                   Exception.class.getName())));
     }

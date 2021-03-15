@@ -649,6 +649,12 @@ public class ApplicationServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   ListApplicationsRequest request =
+   *       ListApplicationsRequest.newBuilder()
+   *           .setParent(ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListApplicationsResponse response =
    *         applicationServiceClient.listApplicationsCallable().call(request);

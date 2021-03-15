@@ -62,7 +62,7 @@ public class MockProfileServiceImpl extends ProfileServiceImplBase {
   @Override
   public void listProfiles(
       ListProfilesRequest request, StreamObserver<ListProfilesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListProfilesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListProfilesResponse) response));
@@ -74,7 +74,7 @@ public class MockProfileServiceImpl extends ProfileServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListProfiles, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListProfilesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockProfileServiceImpl extends ProfileServiceImplBase {
   @Override
   public void createProfile(
       CreateProfileRequest request, StreamObserver<Profile> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Profile) {
       requests.add(request);
       responseObserver.onNext(((Profile) response));
@@ -95,7 +95,7 @@ public class MockProfileServiceImpl extends ProfileServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateProfile, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Profile.class.getName(),
                   Exception.class.getName())));
     }
@@ -103,7 +103,7 @@ public class MockProfileServiceImpl extends ProfileServiceImplBase {
 
   @Override
   public void getProfile(GetProfileRequest request, StreamObserver<Profile> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Profile) {
       requests.add(request);
       responseObserver.onNext(((Profile) response));
@@ -115,7 +115,7 @@ public class MockProfileServiceImpl extends ProfileServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetProfile, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Profile.class.getName(),
                   Exception.class.getName())));
     }
@@ -124,7 +124,7 @@ public class MockProfileServiceImpl extends ProfileServiceImplBase {
   @Override
   public void updateProfile(
       UpdateProfileRequest request, StreamObserver<Profile> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Profile) {
       requests.add(request);
       responseObserver.onNext(((Profile) response));
@@ -136,7 +136,7 @@ public class MockProfileServiceImpl extends ProfileServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateProfile, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Profile.class.getName(),
                   Exception.class.getName())));
     }
@@ -144,7 +144,7 @@ public class MockProfileServiceImpl extends ProfileServiceImplBase {
 
   @Override
   public void deleteProfile(DeleteProfileRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -156,7 +156,7 @@ public class MockProfileServiceImpl extends ProfileServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteProfile, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -165,7 +165,7 @@ public class MockProfileServiceImpl extends ProfileServiceImplBase {
   @Override
   public void searchProfiles(
       SearchProfilesRequest request, StreamObserver<SearchProfilesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SearchProfilesResponse) {
       requests.add(request);
       responseObserver.onNext(((SearchProfilesResponse) response));
@@ -177,7 +177,7 @@ public class MockProfileServiceImpl extends ProfileServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SearchProfiles, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SearchProfilesResponse.class.getName(),
                   Exception.class.getName())));
     }

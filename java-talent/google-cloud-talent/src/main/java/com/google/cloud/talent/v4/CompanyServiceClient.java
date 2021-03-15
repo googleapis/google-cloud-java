@@ -630,6 +630,13 @@ public class CompanyServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   ListCompaniesRequest request =
+   *       ListCompaniesRequest.newBuilder()
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setRequireOpenJobs(true)
+   *           .build();
    *   while (true) {
    *     ListCompaniesResponse response = companyServiceClient.listCompaniesCallable().call(request);
    *     for (Company element : response.getResponsesList()) {

@@ -62,7 +62,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
 
   @Override
   public void createJob(CreateJobRequest request, StreamObserver<Job> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Job) {
       requests.add(request);
       responseObserver.onNext(((Job) response));
@@ -74,14 +74,16 @@ public class MockJobServiceImpl extends JobServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateJob, expected %s or %s",
-                  response.getClass().getName(), Job.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Job.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void batchCreateJobs(
       BatchCreateJobsRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -93,7 +95,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchCreateJobs, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -101,7 +103,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
 
   @Override
   public void getJob(GetJobRequest request, StreamObserver<Job> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Job) {
       requests.add(request);
       responseObserver.onNext(((Job) response));
@@ -113,13 +115,15 @@ public class MockJobServiceImpl extends JobServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetJob, expected %s or %s",
-                  response.getClass().getName(), Job.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Job.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void updateJob(UpdateJobRequest request, StreamObserver<Job> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Job) {
       requests.add(request);
       responseObserver.onNext(((Job) response));
@@ -131,14 +135,16 @@ public class MockJobServiceImpl extends JobServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateJob, expected %s or %s",
-                  response.getClass().getName(), Job.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Job.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void batchUpdateJobs(
       BatchUpdateJobsRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -150,7 +156,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchUpdateJobs, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -158,7 +164,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
 
   @Override
   public void deleteJob(DeleteJobRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -170,7 +176,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteJob, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -179,7 +185,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
   @Override
   public void batchDeleteJobs(
       BatchDeleteJobsRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -191,7 +197,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchDeleteJobs, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -199,7 +205,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
 
   @Override
   public void listJobs(ListJobsRequest request, StreamObserver<ListJobsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListJobsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListJobsResponse) response));
@@ -211,7 +217,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListJobs, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListJobsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -220,7 +226,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
   @Override
   public void searchJobs(
       SearchJobsRequest request, StreamObserver<SearchJobsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SearchJobsResponse) {
       requests.add(request);
       responseObserver.onNext(((SearchJobsResponse) response));
@@ -232,7 +238,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SearchJobs, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SearchJobsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -241,7 +247,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
   @Override
   public void searchJobsForAlert(
       SearchJobsRequest request, StreamObserver<SearchJobsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SearchJobsResponse) {
       requests.add(request);
       responseObserver.onNext(((SearchJobsResponse) response));
@@ -253,7 +259,7 @@ public class MockJobServiceImpl extends JobServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SearchJobsForAlert, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SearchJobsResponse.class.getName(),
                   Exception.class.getName())));
     }

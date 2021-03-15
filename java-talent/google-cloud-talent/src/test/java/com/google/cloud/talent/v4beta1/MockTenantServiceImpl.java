@@ -61,7 +61,7 @@ public class MockTenantServiceImpl extends TenantServiceImplBase {
 
   @Override
   public void createTenant(CreateTenantRequest request, StreamObserver<Tenant> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Tenant) {
       requests.add(request);
       responseObserver.onNext(((Tenant) response));
@@ -73,7 +73,7 @@ public class MockTenantServiceImpl extends TenantServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateTenant, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Tenant.class.getName(),
                   Exception.class.getName())));
     }
@@ -81,7 +81,7 @@ public class MockTenantServiceImpl extends TenantServiceImplBase {
 
   @Override
   public void getTenant(GetTenantRequest request, StreamObserver<Tenant> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Tenant) {
       requests.add(request);
       responseObserver.onNext(((Tenant) response));
@@ -93,7 +93,7 @@ public class MockTenantServiceImpl extends TenantServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetTenant, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Tenant.class.getName(),
                   Exception.class.getName())));
     }
@@ -101,7 +101,7 @@ public class MockTenantServiceImpl extends TenantServiceImplBase {
 
   @Override
   public void updateTenant(UpdateTenantRequest request, StreamObserver<Tenant> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Tenant) {
       requests.add(request);
       responseObserver.onNext(((Tenant) response));
@@ -113,7 +113,7 @@ public class MockTenantServiceImpl extends TenantServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateTenant, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Tenant.class.getName(),
                   Exception.class.getName())));
     }
@@ -121,7 +121,7 @@ public class MockTenantServiceImpl extends TenantServiceImplBase {
 
   @Override
   public void deleteTenant(DeleteTenantRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -133,7 +133,7 @@ public class MockTenantServiceImpl extends TenantServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteTenant, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -142,7 +142,7 @@ public class MockTenantServiceImpl extends TenantServiceImplBase {
   @Override
   public void listTenants(
       ListTenantsRequest request, StreamObserver<ListTenantsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListTenantsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListTenantsResponse) response));
@@ -154,7 +154,7 @@ public class MockTenantServiceImpl extends TenantServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListTenants, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListTenantsResponse.class.getName(),
                   Exception.class.getName())));
     }
