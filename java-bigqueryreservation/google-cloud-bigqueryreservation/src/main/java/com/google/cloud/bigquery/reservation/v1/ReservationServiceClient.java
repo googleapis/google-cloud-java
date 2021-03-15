@@ -398,6 +398,12 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   ListReservationsRequest request =
+   *       ListReservationsRequest.newBuilder()
+   *           .setParent(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListReservationsResponse response =
    *         reservationServiceClient.listReservationsCallable().call(request);
@@ -923,6 +929,14 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   ListCapacityCommitmentsRequest request =
+   *       ListCapacityCommitmentsRequest.newBuilder()
+   *           .setParent(
+   *               CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListCapacityCommitmentsResponse response =
    *         reservationServiceClient.listCapacityCommitmentsCallable().call(request);
@@ -1958,6 +1972,14 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   ListAssignmentsRequest request =
+   *       ListAssignmentsRequest.newBuilder()
+   *           .setParent(
+   *               AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListAssignmentsResponse response =
    *         reservationServiceClient.listAssignmentsCallable().call(request);
@@ -2361,6 +2383,13 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   SearchAssignmentsRequest request =
+   *       SearchAssignmentsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setQuery("query107944136")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     SearchAssignmentsResponse response =
    *         reservationServiceClient.searchAssignmentsCallable().call(request);
