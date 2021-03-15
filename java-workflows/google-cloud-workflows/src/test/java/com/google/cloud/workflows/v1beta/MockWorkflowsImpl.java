@@ -62,7 +62,7 @@ public class MockWorkflowsImpl extends WorkflowsImplBase {
   @Override
   public void listWorkflows(
       ListWorkflowsRequest request, StreamObserver<ListWorkflowsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListWorkflowsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListWorkflowsResponse) response));
@@ -74,7 +74,7 @@ public class MockWorkflowsImpl extends WorkflowsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListWorkflows, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListWorkflowsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockWorkflowsImpl extends WorkflowsImplBase {
 
   @Override
   public void getWorkflow(GetWorkflowRequest request, StreamObserver<Workflow> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Workflow) {
       requests.add(request);
       responseObserver.onNext(((Workflow) response));
@@ -94,7 +94,7 @@ public class MockWorkflowsImpl extends WorkflowsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetWorkflow, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Workflow.class.getName(),
                   Exception.class.getName())));
     }
@@ -103,7 +103,7 @@ public class MockWorkflowsImpl extends WorkflowsImplBase {
   @Override
   public void createWorkflow(
       CreateWorkflowRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -115,7 +115,7 @@ public class MockWorkflowsImpl extends WorkflowsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateWorkflow, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -124,7 +124,7 @@ public class MockWorkflowsImpl extends WorkflowsImplBase {
   @Override
   public void deleteWorkflow(
       DeleteWorkflowRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -136,7 +136,7 @@ public class MockWorkflowsImpl extends WorkflowsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteWorkflow, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -145,7 +145,7 @@ public class MockWorkflowsImpl extends WorkflowsImplBase {
   @Override
   public void updateWorkflow(
       UpdateWorkflowRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -157,7 +157,7 @@ public class MockWorkflowsImpl extends WorkflowsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateWorkflow, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }

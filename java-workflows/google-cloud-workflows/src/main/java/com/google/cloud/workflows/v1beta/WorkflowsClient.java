@@ -281,6 +281,14 @@ public class WorkflowsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   ListWorkflowsRequest request =
+   *       ListWorkflowsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListWorkflowsResponse response = workflowsClient.listWorkflowsCallable().call(request);
    *     for (Workflow element : response.getResponsesList()) {
