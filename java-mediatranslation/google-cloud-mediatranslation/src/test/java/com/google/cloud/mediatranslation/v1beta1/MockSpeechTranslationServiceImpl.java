@@ -76,7 +76,7 @@ public class MockSpeechTranslationServiceImpl extends SpeechTranslationServiceIm
                   new IllegalArgumentException(
                       String.format(
                           "Unrecognized response type %s for method StreamingTranslateSpeech, expected %s or %s",
-                          response.getClass().getName(),
+                          response == null ? "null" : response.getClass().getName(),
                           StreamingTranslateSpeechResponse.class.getName(),
                           Exception.class.getName())));
             }
