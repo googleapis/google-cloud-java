@@ -52,12 +52,12 @@ compile 'com.google.cloud:google-cloud-dlp'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-dlp:2.2.9'
+compile 'com.google.cloud:google-cloud-dlp:2.3.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dlp" % "2.2.9"
+libraryDependencies += "com.google.cloud" % "google-cloud-dlp" % "2.3.0"
 ```
 
 ## Authentication
