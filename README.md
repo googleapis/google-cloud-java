@@ -52,12 +52,12 @@ compile 'com.google.cloud:google-cloud-logging'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-logging:2.1.5'
+compile 'com.google.cloud:google-cloud-logging:2.2.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "2.1.5"
+libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "2.2.0"
 ```
 
 ## Authentication
