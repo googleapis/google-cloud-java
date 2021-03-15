@@ -279,6 +279,14 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   ListQueuesRequest request =
+   *       ListQueuesRequest.newBuilder()
+   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
    *   while (true) {
    *     ListQueuesResponse response = cloudTasksClient.listQueuesCallable().call(request);
    *     for (Queue element : response.getResponsesList()) {
@@ -1674,6 +1682,12 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   ListTasksRequest request =
+   *       ListTasksRequest.newBuilder()
+   *           .setParent(TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListTasksResponse response = cloudTasksClient.listTasksCallable().call(request);
    *     for (Task element : response.getResponsesList()) {
