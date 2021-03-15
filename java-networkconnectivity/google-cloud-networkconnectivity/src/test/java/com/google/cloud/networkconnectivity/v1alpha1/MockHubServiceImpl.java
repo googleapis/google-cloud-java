@@ -61,7 +61,7 @@ public class MockHubServiceImpl extends HubServiceImplBase {
 
   @Override
   public void listHubs(ListHubsRequest request, StreamObserver<ListHubsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListHubsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListHubsResponse) response));
@@ -73,7 +73,7 @@ public class MockHubServiceImpl extends HubServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListHubs, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListHubsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -81,7 +81,7 @@ public class MockHubServiceImpl extends HubServiceImplBase {
 
   @Override
   public void getHub(GetHubRequest request, StreamObserver<Hub> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Hub) {
       requests.add(request);
       responseObserver.onNext(((Hub) response));
@@ -93,13 +93,15 @@ public class MockHubServiceImpl extends HubServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetHub, expected %s or %s",
-                  response.getClass().getName(), Hub.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Hub.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void createHub(CreateHubRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -111,7 +113,7 @@ public class MockHubServiceImpl extends HubServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateHub, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -119,7 +121,7 @@ public class MockHubServiceImpl extends HubServiceImplBase {
 
   @Override
   public void updateHub(UpdateHubRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -131,7 +133,7 @@ public class MockHubServiceImpl extends HubServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateHub, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -139,7 +141,7 @@ public class MockHubServiceImpl extends HubServiceImplBase {
 
   @Override
   public void deleteHub(DeleteHubRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -151,7 +153,7 @@ public class MockHubServiceImpl extends HubServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteHub, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -160,7 +162,7 @@ public class MockHubServiceImpl extends HubServiceImplBase {
   @Override
   public void listSpokes(
       ListSpokesRequest request, StreamObserver<ListSpokesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListSpokesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListSpokesResponse) response));
@@ -172,7 +174,7 @@ public class MockHubServiceImpl extends HubServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListSpokes, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListSpokesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -180,7 +182,7 @@ public class MockHubServiceImpl extends HubServiceImplBase {
 
   @Override
   public void getSpoke(GetSpokeRequest request, StreamObserver<Spoke> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Spoke) {
       requests.add(request);
       responseObserver.onNext(((Spoke) response));
@@ -192,7 +194,7 @@ public class MockHubServiceImpl extends HubServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetSpoke, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Spoke.class.getName(),
                   Exception.class.getName())));
     }
@@ -200,7 +202,7 @@ public class MockHubServiceImpl extends HubServiceImplBase {
 
   @Override
   public void createSpoke(CreateSpokeRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -212,7 +214,7 @@ public class MockHubServiceImpl extends HubServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateSpoke, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -220,7 +222,7 @@ public class MockHubServiceImpl extends HubServiceImplBase {
 
   @Override
   public void updateSpoke(UpdateSpokeRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -232,7 +234,7 @@ public class MockHubServiceImpl extends HubServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateSpoke, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -240,7 +242,7 @@ public class MockHubServiceImpl extends HubServiceImplBase {
 
   @Override
   public void deleteSpoke(DeleteSpokeRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -252,7 +254,7 @@ public class MockHubServiceImpl extends HubServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteSpoke, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }

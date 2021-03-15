@@ -277,6 +277,14 @@ public class HubServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListHubsRequest request =
+   *       ListHubsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListHubsResponse response = hubServiceClient.listHubsCallable().call(request);
    *     for (Hub element : response.getResponsesList()) {
@@ -846,6 +854,14 @@ public class HubServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListSpokesRequest request =
+   *       ListSpokesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListSpokesResponse response = hubServiceClient.listSpokesCallable().call(request);
    *     for (Spoke element : response.getResponsesList()) {
