@@ -52,12 +52,12 @@ compile 'com.google.cloud:google-cloud-vision'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-vision:1.101.1'
+compile 'com.google.cloud:google-cloud-vision:1.102.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-vision" % "1.101.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-vision" % "1.102.0"
 ```
 
 ## Authentication
