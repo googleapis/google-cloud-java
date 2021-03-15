@@ -287,6 +287,12 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
+   *   ListSecretsRequest request =
+   *       ListSecretsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListSecretsResponse response =
    *         secretManagerServiceClient.listSecretsCallable().call(request);
@@ -944,6 +950,12 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
+   *   ListSecretVersionsRequest request =
+   *       ListSecretVersionsRequest.newBuilder()
+   *           .setParent(SecretName.of("[PROJECT]", "[SECRET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListSecretVersionsResponse response =
    *         secretManagerServiceClient.listSecretVersionsCallable().call(request);

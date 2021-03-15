@@ -67,7 +67,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
   @Override
   public void listSecrets(
       ListSecretsRequest request, StreamObserver<ListSecretsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListSecretsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListSecretsResponse) response));
@@ -79,7 +79,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListSecrets, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListSecretsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -87,7 +87,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
 
   @Override
   public void createSecret(CreateSecretRequest request, StreamObserver<Secret> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Secret) {
       requests.add(request);
       responseObserver.onNext(((Secret) response));
@@ -99,7 +99,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateSecret, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Secret.class.getName(),
                   Exception.class.getName())));
     }
@@ -108,7 +108,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
   @Override
   public void addSecretVersion(
       AddSecretVersionRequest request, StreamObserver<SecretVersion> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SecretVersion) {
       requests.add(request);
       responseObserver.onNext(((SecretVersion) response));
@@ -120,7 +120,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method AddSecretVersion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SecretVersion.class.getName(),
                   Exception.class.getName())));
     }
@@ -128,7 +128,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
 
   @Override
   public void getSecret(GetSecretRequest request, StreamObserver<Secret> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Secret) {
       requests.add(request);
       responseObserver.onNext(((Secret) response));
@@ -140,7 +140,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetSecret, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Secret.class.getName(),
                   Exception.class.getName())));
     }
@@ -148,7 +148,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
 
   @Override
   public void updateSecret(UpdateSecretRequest request, StreamObserver<Secret> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Secret) {
       requests.add(request);
       responseObserver.onNext(((Secret) response));
@@ -160,7 +160,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateSecret, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Secret.class.getName(),
                   Exception.class.getName())));
     }
@@ -168,7 +168,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
 
   @Override
   public void deleteSecret(DeleteSecretRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -180,7 +180,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteSecret, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -190,7 +190,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
   public void listSecretVersions(
       ListSecretVersionsRequest request,
       StreamObserver<ListSecretVersionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListSecretVersionsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListSecretVersionsResponse) response));
@@ -202,7 +202,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListSecretVersions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListSecretVersionsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -211,7 +211,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
   @Override
   public void getSecretVersion(
       GetSecretVersionRequest request, StreamObserver<SecretVersion> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SecretVersion) {
       requests.add(request);
       responseObserver.onNext(((SecretVersion) response));
@@ -223,7 +223,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetSecretVersion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SecretVersion.class.getName(),
                   Exception.class.getName())));
     }
@@ -233,7 +233,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
   public void accessSecretVersion(
       AccessSecretVersionRequest request,
       StreamObserver<AccessSecretVersionResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AccessSecretVersionResponse) {
       requests.add(request);
       responseObserver.onNext(((AccessSecretVersionResponse) response));
@@ -245,7 +245,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method AccessSecretVersion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AccessSecretVersionResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -254,7 +254,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
   @Override
   public void disableSecretVersion(
       DisableSecretVersionRequest request, StreamObserver<SecretVersion> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SecretVersion) {
       requests.add(request);
       responseObserver.onNext(((SecretVersion) response));
@@ -266,7 +266,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DisableSecretVersion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SecretVersion.class.getName(),
                   Exception.class.getName())));
     }
@@ -275,7 +275,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
   @Override
   public void enableSecretVersion(
       EnableSecretVersionRequest request, StreamObserver<SecretVersion> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SecretVersion) {
       requests.add(request);
       responseObserver.onNext(((SecretVersion) response));
@@ -287,7 +287,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method EnableSecretVersion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SecretVersion.class.getName(),
                   Exception.class.getName())));
     }
@@ -296,7 +296,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
   @Override
   public void destroySecretVersion(
       DestroySecretVersionRequest request, StreamObserver<SecretVersion> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SecretVersion) {
       requests.add(request);
       responseObserver.onNext(((SecretVersion) response));
@@ -308,7 +308,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DestroySecretVersion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SecretVersion.class.getName(),
                   Exception.class.getName())));
     }
@@ -316,7 +316,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
 
   @Override
   public void setIamPolicy(SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -328,7 +328,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -336,7 +336,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
 
   @Override
   public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -348,7 +348,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -358,7 +358,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
   public void testIamPermissions(
       TestIamPermissionsRequest request,
       StreamObserver<TestIamPermissionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
       responseObserver.onNext(((TestIamPermissionsResponse) response));
@@ -370,7 +370,7 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TestIamPermissionsResponse.class.getName(),
                   Exception.class.getName())));
     }
