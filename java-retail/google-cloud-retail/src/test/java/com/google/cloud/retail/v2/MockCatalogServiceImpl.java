@@ -61,7 +61,7 @@ public class MockCatalogServiceImpl extends CatalogServiceImplBase {
   @Override
   public void listCatalogs(
       ListCatalogsRequest request, StreamObserver<ListCatalogsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListCatalogsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListCatalogsResponse) response));
@@ -73,7 +73,7 @@ public class MockCatalogServiceImpl extends CatalogServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListCatalogs, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListCatalogsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockCatalogServiceImpl extends CatalogServiceImplBase {
   @Override
   public void updateCatalog(
       UpdateCatalogRequest request, StreamObserver<Catalog> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Catalog) {
       requests.add(request);
       responseObserver.onNext(((Catalog) response));
@@ -94,7 +94,7 @@ public class MockCatalogServiceImpl extends CatalogServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateCatalog, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Catalog.class.getName(),
                   Exception.class.getName())));
     }

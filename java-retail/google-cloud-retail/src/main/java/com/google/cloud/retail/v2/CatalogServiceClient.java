@@ -267,6 +267,12 @@ public class CatalogServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   ListCatalogsRequest request =
+   *       ListCatalogsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListCatalogsResponse response = catalogServiceClient.listCatalogsCallable().call(request);
    *     for (Catalog element : response.getResponsesList()) {

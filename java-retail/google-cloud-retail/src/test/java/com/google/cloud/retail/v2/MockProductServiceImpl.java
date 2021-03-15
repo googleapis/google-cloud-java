@@ -63,7 +63,7 @@ public class MockProductServiceImpl extends ProductServiceImplBase {
   @Override
   public void createProduct(
       CreateProductRequest request, StreamObserver<Product> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Product) {
       requests.add(request);
       responseObserver.onNext(((Product) response));
@@ -75,7 +75,7 @@ public class MockProductServiceImpl extends ProductServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateProduct, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Product.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockProductServiceImpl extends ProductServiceImplBase {
 
   @Override
   public void getProduct(GetProductRequest request, StreamObserver<Product> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Product) {
       requests.add(request);
       responseObserver.onNext(((Product) response));
@@ -95,7 +95,7 @@ public class MockProductServiceImpl extends ProductServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetProduct, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Product.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockProductServiceImpl extends ProductServiceImplBase {
   @Override
   public void updateProduct(
       UpdateProductRequest request, StreamObserver<Product> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Product) {
       requests.add(request);
       responseObserver.onNext(((Product) response));
@@ -116,7 +116,7 @@ public class MockProductServiceImpl extends ProductServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateProduct, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Product.class.getName(),
                   Exception.class.getName())));
     }
@@ -124,7 +124,7 @@ public class MockProductServiceImpl extends ProductServiceImplBase {
 
   @Override
   public void deleteProduct(DeleteProductRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -136,7 +136,7 @@ public class MockProductServiceImpl extends ProductServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteProduct, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -145,7 +145,7 @@ public class MockProductServiceImpl extends ProductServiceImplBase {
   @Override
   public void importProducts(
       ImportProductsRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -157,7 +157,7 @@ public class MockProductServiceImpl extends ProductServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ImportProducts, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }

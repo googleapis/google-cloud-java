@@ -63,7 +63,7 @@ public class MockUserEventServiceImpl extends UserEventServiceImplBase {
   @Override
   public void writeUserEvent(
       WriteUserEventRequest request, StreamObserver<UserEvent> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof UserEvent) {
       requests.add(request);
       responseObserver.onNext(((UserEvent) response));
@@ -75,7 +75,7 @@ public class MockUserEventServiceImpl extends UserEventServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method WriteUserEvent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   UserEvent.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockUserEventServiceImpl extends UserEventServiceImplBase {
   @Override
   public void collectUserEvent(
       CollectUserEventRequest request, StreamObserver<HttpBody> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof HttpBody) {
       requests.add(request);
       responseObserver.onNext(((HttpBody) response));
@@ -96,7 +96,7 @@ public class MockUserEventServiceImpl extends UserEventServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CollectUserEvent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   HttpBody.class.getName(),
                   Exception.class.getName())));
     }
@@ -105,7 +105,7 @@ public class MockUserEventServiceImpl extends UserEventServiceImplBase {
   @Override
   public void purgeUserEvents(
       PurgeUserEventsRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -117,7 +117,7 @@ public class MockUserEventServiceImpl extends UserEventServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method PurgeUserEvents, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -126,7 +126,7 @@ public class MockUserEventServiceImpl extends UserEventServiceImplBase {
   @Override
   public void importUserEvents(
       ImportUserEventsRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -138,7 +138,7 @@ public class MockUserEventServiceImpl extends UserEventServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ImportUserEvents, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -147,7 +147,7 @@ public class MockUserEventServiceImpl extends UserEventServiceImplBase {
   @Override
   public void rejoinUserEvents(
       RejoinUserEventsRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -159,7 +159,7 @@ public class MockUserEventServiceImpl extends UserEventServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method RejoinUserEvents, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
