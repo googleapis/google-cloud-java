@@ -572,6 +572,16 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient =
    *     CertificateAuthorityServiceClient.create()) {
+   *   ListCertificatesRequest request =
+   *       ListCertificatesRequest.newBuilder()
+   *           .setParent(
+   *               CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CERTIFICATE_AUTHORITY]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListCertificatesResponse response =
    *         certificateAuthorityServiceClient.listCertificatesCallable().call(request);
@@ -1865,6 +1875,14 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient =
    *     CertificateAuthorityServiceClient.create()) {
+   *   ListCertificateAuthoritiesRequest request =
+   *       ListCertificateAuthoritiesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListCertificateAuthoritiesResponse response =
    *         certificateAuthorityServiceClient.listCertificateAuthoritiesCallable().call(request);
@@ -2600,6 +2618,16 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient =
    *     CertificateAuthorityServiceClient.create()) {
+   *   ListCertificateRevocationListsRequest request =
+   *       ListCertificateRevocationListsRequest.newBuilder()
+   *           .setParent(
+   *               CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CERTIFICATE_AUTHORITY]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListCertificateRevocationListsResponse response =
    *         certificateAuthorityServiceClient
@@ -2980,6 +3008,14 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient =
    *     CertificateAuthorityServiceClient.create()) {
+   *   ListReusableConfigsRequest request =
+   *       ListReusableConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListReusableConfigsResponse response =
    *         certificateAuthorityServiceClient.listReusableConfigsCallable().call(request);

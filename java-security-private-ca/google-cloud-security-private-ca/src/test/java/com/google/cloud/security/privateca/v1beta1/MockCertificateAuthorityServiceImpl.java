@@ -62,7 +62,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   @Override
   public void createCertificate(
       CreateCertificateRequest request, StreamObserver<Certificate> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Certificate) {
       requests.add(request);
       responseObserver.onNext(((Certificate) response));
@@ -74,7 +74,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateCertificate, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Certificate.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   @Override
   public void getCertificate(
       GetCertificateRequest request, StreamObserver<Certificate> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Certificate) {
       requests.add(request);
       responseObserver.onNext(((Certificate) response));
@@ -95,7 +95,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCertificate, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Certificate.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   @Override
   public void listCertificates(
       ListCertificatesRequest request, StreamObserver<ListCertificatesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListCertificatesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListCertificatesResponse) response));
@@ -116,7 +116,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListCertificates, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListCertificatesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -125,7 +125,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   @Override
   public void revokeCertificate(
       RevokeCertificateRequest request, StreamObserver<Certificate> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Certificate) {
       requests.add(request);
       responseObserver.onNext(((Certificate) response));
@@ -137,7 +137,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method RevokeCertificate, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Certificate.class.getName(),
                   Exception.class.getName())));
     }
@@ -146,7 +146,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   @Override
   public void updateCertificate(
       UpdateCertificateRequest request, StreamObserver<Certificate> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Certificate) {
       requests.add(request);
       responseObserver.onNext(((Certificate) response));
@@ -158,7 +158,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateCertificate, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Certificate.class.getName(),
                   Exception.class.getName())));
     }
@@ -167,7 +167,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   @Override
   public void activateCertificateAuthority(
       ActivateCertificateAuthorityRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -179,7 +179,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ActivateCertificateAuthority, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -188,7 +188,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   @Override
   public void createCertificateAuthority(
       CreateCertificateAuthorityRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -200,7 +200,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateCertificateAuthority, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -209,7 +209,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   @Override
   public void disableCertificateAuthority(
       DisableCertificateAuthorityRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -221,7 +221,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DisableCertificateAuthority, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -230,7 +230,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   @Override
   public void enableCertificateAuthority(
       EnableCertificateAuthorityRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -242,7 +242,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method EnableCertificateAuthority, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -252,7 +252,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   public void fetchCertificateAuthorityCsr(
       FetchCertificateAuthorityCsrRequest request,
       StreamObserver<FetchCertificateAuthorityCsrResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof FetchCertificateAuthorityCsrResponse) {
       requests.add(request);
       responseObserver.onNext(((FetchCertificateAuthorityCsrResponse) response));
@@ -264,7 +264,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method FetchCertificateAuthorityCsr, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   FetchCertificateAuthorityCsrResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -274,7 +274,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   public void getCertificateAuthority(
       GetCertificateAuthorityRequest request,
       StreamObserver<CertificateAuthority> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CertificateAuthority) {
       requests.add(request);
       responseObserver.onNext(((CertificateAuthority) response));
@@ -286,7 +286,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCertificateAuthority, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CertificateAuthority.class.getName(),
                   Exception.class.getName())));
     }
@@ -296,7 +296,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   public void listCertificateAuthorities(
       ListCertificateAuthoritiesRequest request,
       StreamObserver<ListCertificateAuthoritiesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListCertificateAuthoritiesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListCertificateAuthoritiesResponse) response));
@@ -308,7 +308,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListCertificateAuthorities, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListCertificateAuthoritiesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -317,7 +317,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   @Override
   public void restoreCertificateAuthority(
       RestoreCertificateAuthorityRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -329,7 +329,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method RestoreCertificateAuthority, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -339,7 +339,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   public void scheduleDeleteCertificateAuthority(
       ScheduleDeleteCertificateAuthorityRequest request,
       StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -351,7 +351,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ScheduleDeleteCertificateAuthority, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -360,7 +360,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   @Override
   public void updateCertificateAuthority(
       UpdateCertificateAuthorityRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -372,7 +372,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateCertificateAuthority, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -382,7 +382,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   public void getCertificateRevocationList(
       GetCertificateRevocationListRequest request,
       StreamObserver<CertificateRevocationList> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CertificateRevocationList) {
       requests.add(request);
       responseObserver.onNext(((CertificateRevocationList) response));
@@ -394,7 +394,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCertificateRevocationList, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CertificateRevocationList.class.getName(),
                   Exception.class.getName())));
     }
@@ -404,7 +404,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   public void listCertificateRevocationLists(
       ListCertificateRevocationListsRequest request,
       StreamObserver<ListCertificateRevocationListsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListCertificateRevocationListsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListCertificateRevocationListsResponse) response));
@@ -416,7 +416,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListCertificateRevocationLists, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListCertificateRevocationListsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -425,7 +425,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   @Override
   public void updateCertificateRevocationList(
       UpdateCertificateRevocationListRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -437,7 +437,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateCertificateRevocationList, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -446,7 +446,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   @Override
   public void getReusableConfig(
       GetReusableConfigRequest request, StreamObserver<ReusableConfig> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ReusableConfig) {
       requests.add(request);
       responseObserver.onNext(((ReusableConfig) response));
@@ -458,7 +458,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetReusableConfig, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ReusableConfig.class.getName(),
                   Exception.class.getName())));
     }
@@ -468,7 +468,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
   public void listReusableConfigs(
       ListReusableConfigsRequest request,
       StreamObserver<ListReusableConfigsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListReusableConfigsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListReusableConfigsResponse) response));
@@ -480,7 +480,7 @@ public class MockCertificateAuthorityServiceImpl extends CertificateAuthoritySer
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListReusableConfigs, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListReusableConfigsResponse.class.getName(),
                   Exception.class.getName())));
     }
