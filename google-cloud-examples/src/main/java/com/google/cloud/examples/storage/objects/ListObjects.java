@@ -18,7 +18,6 @@ package com.google.cloud.examples.storage.objects;
 // [START storage_list_files]
 import com.google.api.gax.paging.Page;
 import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 

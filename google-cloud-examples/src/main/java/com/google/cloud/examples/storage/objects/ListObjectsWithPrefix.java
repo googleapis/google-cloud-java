@@ -18,7 +18,6 @@ package com.google.cloud.examples.storage.objects;
 // [START storage_list_files_with_prefix]
 import com.google.api.gax.paging.Page;
 import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
@@ -56,7 +55,8 @@ public class ListObjectsWithPrefix {
      * /a/ directory.
      */
     Page<Blob> blobs =
-        storage.list(bucketName,
+        storage.list(
+            bucketName,
             Storage.BlobListOption.prefix(directoryPrefix),
             Storage.BlobListOption.currentDirectory());
 
