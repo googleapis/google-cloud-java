@@ -16,11 +16,6 @@
 package com.google.devtools.cloudprofiler.v2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -259,7 +254,8 @@ public final class ProfilerServiceGrpc {
         com.google.devtools.cloudprofiler.v2.CreateProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.cloudprofiler.v2.Profile>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateProfileMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateProfileMethod(), responseObserver);
     }
 
     /**
@@ -275,7 +271,8 @@ public final class ProfilerServiceGrpc {
         com.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.cloudprofiler.v2.Profile>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateOfflineProfileMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateOfflineProfileMethod(), responseObserver);
     }
 
     /**
@@ -292,7 +289,8 @@ public final class ProfilerServiceGrpc {
         com.google.devtools.cloudprofiler.v2.UpdateProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.cloudprofiler.v2.Profile>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateProfileMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateProfileMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -300,20 +298,20 @@ public final class ProfilerServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreateProfileMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.devtools.cloudprofiler.v2.CreateProfileRequest,
                       com.google.devtools.cloudprofiler.v2.Profile>(this, METHODID_CREATE_PROFILE)))
           .addMethod(
               getCreateOfflineProfileMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest,
                       com.google.devtools.cloudprofiler.v2.Profile>(
                       this, METHODID_CREATE_OFFLINE_PROFILE)))
           .addMethod(
               getUpdateProfileMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.devtools.cloudprofiler.v2.UpdateProfileRequest,
                       com.google.devtools.cloudprofiler.v2.Profile>(this, METHODID_UPDATE_PROFILE)))
@@ -364,7 +362,7 @@ public final class ProfilerServiceGrpc {
         com.google.devtools.cloudprofiler.v2.CreateProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.cloudprofiler.v2.Profile>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateProfileMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -383,7 +381,7 @@ public final class ProfilerServiceGrpc {
         com.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.cloudprofiler.v2.Profile>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateOfflineProfileMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -403,7 +401,7 @@ public final class ProfilerServiceGrpc {
         com.google.devtools.cloudprofiler.v2.UpdateProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.cloudprofiler.v2.Profile>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateProfileMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -452,7 +450,8 @@ public final class ProfilerServiceGrpc {
      */
     public com.google.devtools.cloudprofiler.v2.Profile createProfile(
         com.google.devtools.cloudprofiler.v2.CreateProfileRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateProfileMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateProfileMethod(), getCallOptions(), request);
     }
 
     /**
@@ -466,7 +465,7 @@ public final class ProfilerServiceGrpc {
      */
     public com.google.devtools.cloudprofiler.v2.Profile createOfflineProfile(
         com.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateOfflineProfileMethod(), getCallOptions(), request);
     }
 
@@ -482,7 +481,8 @@ public final class ProfilerServiceGrpc {
      */
     public com.google.devtools.cloudprofiler.v2.Profile updateProfile(
         com.google.devtools.cloudprofiler.v2.UpdateProfileRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateProfileMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateProfileMethod(), getCallOptions(), request);
     }
   }
 
@@ -529,7 +529,7 @@ public final class ProfilerServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.devtools.cloudprofiler.v2.Profile>
         createProfile(com.google.devtools.cloudprofiler.v2.CreateProfileRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateProfileMethod(), getCallOptions()), request);
     }
 
@@ -546,7 +546,7 @@ public final class ProfilerServiceGrpc {
             com.google.devtools.cloudprofiler.v2.Profile>
         createOfflineProfile(
             com.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateOfflineProfileMethod(), getCallOptions()), request);
     }
 
@@ -563,7 +563,7 @@ public final class ProfilerServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.devtools.cloudprofiler.v2.Profile>
         updateProfile(com.google.devtools.cloudprofiler.v2.UpdateProfileRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateProfileMethod(), getCallOptions()), request);
     }
   }
