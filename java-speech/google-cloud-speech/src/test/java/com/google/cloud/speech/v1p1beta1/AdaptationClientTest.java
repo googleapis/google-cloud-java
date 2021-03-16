@@ -352,21 +352,18 @@ public class AdaptationClientTest {
             .build();
     mockAdaptation.addResponse(expectedResponse);
 
-    UpdatePhraseSetRequest request =
-        UpdatePhraseSetRequest.newBuilder()
-            .setPhraseSet(PhraseSet.newBuilder().build())
-            .setUpdateMask(FieldMask.newBuilder().build())
-            .build();
+    PhraseSet phraseSet = PhraseSet.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
 
-    PhraseSet actualResponse = client.updatePhraseSet(request);
+    PhraseSet actualResponse = client.updatePhraseSet(phraseSet, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockAdaptation.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdatePhraseSetRequest actualRequest = ((UpdatePhraseSetRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getPhraseSet(), actualRequest.getPhraseSet());
-    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
+    Assert.assertEquals(phraseSet, actualRequest.getPhraseSet());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -379,12 +376,9 @@ public class AdaptationClientTest {
     mockAdaptation.addException(exception);
 
     try {
-      UpdatePhraseSetRequest request =
-          UpdatePhraseSetRequest.newBuilder()
-              .setPhraseSet(PhraseSet.newBuilder().build())
-              .setUpdateMask(FieldMask.newBuilder().build())
-              .build();
-      client.updatePhraseSet(request);
+      PhraseSet phraseSet = PhraseSet.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updatePhraseSet(phraseSet, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -729,21 +723,18 @@ public class AdaptationClientTest {
             .build();
     mockAdaptation.addResponse(expectedResponse);
 
-    UpdateCustomClassRequest request =
-        UpdateCustomClassRequest.newBuilder()
-            .setCustomClass(CustomClass.newBuilder().build())
-            .setUpdateMask(FieldMask.newBuilder().build())
-            .build();
+    CustomClass customClass = CustomClass.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
 
-    CustomClass actualResponse = client.updateCustomClass(request);
+    CustomClass actualResponse = client.updateCustomClass(customClass, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockAdaptation.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateCustomClassRequest actualRequest = ((UpdateCustomClassRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getCustomClass(), actualRequest.getCustomClass());
-    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
+    Assert.assertEquals(customClass, actualRequest.getCustomClass());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -756,12 +747,9 @@ public class AdaptationClientTest {
     mockAdaptation.addException(exception);
 
     try {
-      UpdateCustomClassRequest request =
-          UpdateCustomClassRequest.newBuilder()
-              .setCustomClass(CustomClass.newBuilder().build())
-              .setUpdateMask(FieldMask.newBuilder().build())
-              .build();
-      client.updateCustomClass(request);
+      CustomClass customClass = CustomClass.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateCustomClass(customClass, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

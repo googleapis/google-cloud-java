@@ -107,4 +107,45 @@ public interface LongRunningRecognizeRequestOrBuilder
    * </code>
    */
   com.google.cloud.speech.v1p1beta1.RecognitionAudioOrBuilder getAudioOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies an optional destination for the recognition results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the outputConfig field is set.
+   */
+  boolean hasOutputConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies an optional destination for the recognition results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The outputConfig.
+   */
+  com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig getOutputConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies an optional destination for the recognition results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.speech.v1p1beta1.TranscriptOutputConfigOrBuilder getOutputConfigOrBuilder();
 }

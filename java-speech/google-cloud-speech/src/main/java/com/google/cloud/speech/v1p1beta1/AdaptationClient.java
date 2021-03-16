@@ -30,6 +30,7 @@ import com.google.cloud.speech.v1p1beta1.stub.AdaptationStub;
 import com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -494,6 +495,35 @@ public class AdaptationClient implements BackgroundResource {
    */
   public final UnaryCallable<ListPhraseSetRequest, ListPhraseSetResponse> listPhraseSetCallable() {
     return stub.listPhraseSetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a phrase set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   *   PhraseSet phraseSet = PhraseSet.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   PhraseSet response = adaptationClient.updatePhraseSet(phraseSet, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param phraseSet Required. The phrase set to update.
+   *     <p>The phrase set's `name` field is used to identify the set to be updated. Format:
+   *     {api_version}/projects/{project}/locations/{location}/phraseSets/{phrase_set}
+   * @param updateMask The list of fields to be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PhraseSet updatePhraseSet(PhraseSet phraseSet, FieldMask updateMask) {
+    UpdatePhraseSetRequest request =
+        UpdatePhraseSetRequest.newBuilder()
+            .setPhraseSet(phraseSet)
+            .setUpdateMask(updateMask)
+            .build();
+    return updatePhraseSet(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -975,6 +1005,35 @@ public class AdaptationClient implements BackgroundResource {
   public final UnaryCallable<ListCustomClassesRequest, ListCustomClassesResponse>
       listCustomClassesCallable() {
     return stub.listCustomClassesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a custom class.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   *   CustomClass customClass = CustomClass.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   CustomClass response = adaptationClient.updateCustomClass(customClass, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param customClass Required. The custom class to update.
+   *     <p>The custom class's `name` field is used to identify the custom class to be updated.
+   *     Format: {api_version}/projects/{project}/locations/{location}/customClasses/{custom_class}
+   * @param updateMask The list of fields to be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomClass updateCustomClass(CustomClass customClass, FieldMask updateMask) {
+    UpdateCustomClassRequest request =
+        UpdateCustomClassRequest.newBuilder()
+            .setCustomClass(customClass)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateCustomClass(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

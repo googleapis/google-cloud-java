@@ -53,10 +53,10 @@
               "methods": ["listPhraseSet", "listPhraseSet", "listPhraseSet", "listPhraseSetPagedCallable", "listPhraseSetCallable"]
             },
             "UpdateCustomClass": {
-              "methods": ["updateCustomClass", "updateCustomClassCallable"]
+              "methods": ["updateCustomClass", "updateCustomClass", "updateCustomClassCallable"]
             },
             "UpdatePhraseSet": {
-              "methods": ["updatePhraseSet", "updatePhraseSetCallable"]
+              "methods": ["updatePhraseSet", "updatePhraseSet", "updatePhraseSetCallable"]
             }
           }
         }
