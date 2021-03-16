@@ -16,11 +16,6 @@
 package com.google.cloud.securitycenter.v1p1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -1188,7 +1183,8 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.CreateSourceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.Source>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateSourceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateSourceMethod(), responseObserver);
     }
 
     /**
@@ -1203,7 +1199,8 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.CreateFindingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.Finding>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateFindingMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateFindingMethod(), responseObserver);
     }
 
     /**
@@ -1217,7 +1214,8 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.CreateNotificationConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateNotificationConfigMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateNotificationConfigMethod(), responseObserver);
     }
 
     /**
@@ -1230,7 +1228,8 @@ public final class SecurityCenterGrpc {
     public void deleteNotificationConfig(
         com.google.cloud.securitycenter.v1p1beta1.DeleteNotificationConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteNotificationConfigMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteNotificationConfigMethod(), responseObserver);
     }
 
     /**
@@ -1243,7 +1242,8 @@ public final class SecurityCenterGrpc {
     public void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetIamPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -1257,7 +1257,8 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.GetNotificationConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetNotificationConfigMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetNotificationConfigMethod(), responseObserver);
     }
 
     /**
@@ -1271,7 +1272,8 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.GetOrganizationSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.OrganizationSettings>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetOrganizationSettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetOrganizationSettingsMethod(), responseObserver);
     }
 
     /**
@@ -1285,7 +1287,7 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.GetSourceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.Source>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetSourceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSourceMethod(), responseObserver);
     }
 
     /**
@@ -1300,7 +1302,8 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.GroupAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.GroupAssetsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGroupAssetsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGroupAssetsMethod(), responseObserver);
     }
 
     /**
@@ -1317,7 +1320,8 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.GroupFindingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.GroupFindingsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGroupFindingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGroupFindingsMethod(), responseObserver);
     }
 
     /**
@@ -1331,7 +1335,7 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.ListAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.ListAssetsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListAssetsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAssetsMethod(), responseObserver);
     }
 
     /**
@@ -1347,7 +1351,8 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.ListFindingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListFindingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListFindingsMethod(), responseObserver);
     }
 
     /**
@@ -1362,7 +1367,8 @@ public final class SecurityCenterGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.securitycenter.v1p1beta1.ListNotificationConfigsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListNotificationConfigsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListNotificationConfigsMethod(), responseObserver);
     }
 
     /**
@@ -1376,7 +1382,8 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.ListSourcesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.ListSourcesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListSourcesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSourcesMethod(), responseObserver);
     }
 
     /**
@@ -1393,7 +1400,8 @@ public final class SecurityCenterGrpc {
     public void runAssetDiscovery(
         com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getRunAssetDiscoveryMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRunAssetDiscoveryMethod(), responseObserver);
     }
 
     /**
@@ -1407,7 +1415,8 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.SetFindingStateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.Finding>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSetFindingStateMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetFindingStateMethod(), responseObserver);
     }
 
     /**
@@ -1420,7 +1429,8 @@ public final class SecurityCenterGrpc {
     public void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetIamPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetIamPolicyMethod(), responseObserver);
     }
 
     /**
@@ -1434,7 +1444,8 @@ public final class SecurityCenterGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getTestIamPermissionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getTestIamPermissionsMethod(), responseObserver);
     }
 
     /**
@@ -1449,7 +1460,8 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.UpdateFindingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.Finding>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateFindingMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateFindingMethod(), responseObserver);
     }
 
     /**
@@ -1464,7 +1476,8 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.UpdateNotificationConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateNotificationConfigMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateNotificationConfigMethod(), responseObserver);
     }
 
     /**
@@ -1478,7 +1491,8 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.UpdateOrganizationSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.OrganizationSettings>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateOrganizationSettingsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateOrganizationSettingsMethod(), responseObserver);
     }
 
     /**
@@ -1492,7 +1506,8 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.UpdateSourceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.Source>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateSourceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSourceMethod(), responseObserver);
     }
 
     /**
@@ -1506,7 +1521,8 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.UpdateSecurityMarksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.SecurityMarks>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateSecurityMarksMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSecurityMarksMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -1514,156 +1530,156 @@ public final class SecurityCenterGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreateSourceMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1p1beta1.CreateSourceRequest,
                       com.google.cloud.securitycenter.v1p1beta1.Source>(
                       this, METHODID_CREATE_SOURCE)))
           .addMethod(
               getCreateFindingMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1p1beta1.CreateFindingRequest,
                       com.google.cloud.securitycenter.v1p1beta1.Finding>(
                       this, METHODID_CREATE_FINDING)))
           .addMethod(
               getCreateNotificationConfigMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1p1beta1.CreateNotificationConfigRequest,
                       com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>(
                       this, METHODID_CREATE_NOTIFICATION_CONFIG)))
           .addMethod(
               getDeleteNotificationConfigMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1p1beta1.DeleteNotificationConfigRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_NOTIFICATION_CONFIG)))
           .addMethod(
               getGetIamPolicyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
                       this, METHODID_GET_IAM_POLICY)))
           .addMethod(
               getGetNotificationConfigMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1p1beta1.GetNotificationConfigRequest,
                       com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>(
                       this, METHODID_GET_NOTIFICATION_CONFIG)))
           .addMethod(
               getGetOrganizationSettingsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1p1beta1.GetOrganizationSettingsRequest,
                       com.google.cloud.securitycenter.v1p1beta1.OrganizationSettings>(
                       this, METHODID_GET_ORGANIZATION_SETTINGS)))
           .addMethod(
               getGetSourceMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1p1beta1.GetSourceRequest,
                       com.google.cloud.securitycenter.v1p1beta1.Source>(this, METHODID_GET_SOURCE)))
           .addMethod(
               getGroupAssetsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1p1beta1.GroupAssetsRequest,
                       com.google.cloud.securitycenter.v1p1beta1.GroupAssetsResponse>(
                       this, METHODID_GROUP_ASSETS)))
           .addMethod(
               getGroupFindingsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1p1beta1.GroupFindingsRequest,
                       com.google.cloud.securitycenter.v1p1beta1.GroupFindingsResponse>(
                       this, METHODID_GROUP_FINDINGS)))
           .addMethod(
               getListAssetsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1p1beta1.ListAssetsRequest,
                       com.google.cloud.securitycenter.v1p1beta1.ListAssetsResponse>(
                       this, METHODID_LIST_ASSETS)))
           .addMethod(
               getListFindingsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1p1beta1.ListFindingsRequest,
                       com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse>(
                       this, METHODID_LIST_FINDINGS)))
           .addMethod(
               getListNotificationConfigsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1p1beta1.ListNotificationConfigsRequest,
                       com.google.cloud.securitycenter.v1p1beta1.ListNotificationConfigsResponse>(
                       this, METHODID_LIST_NOTIFICATION_CONFIGS)))
           .addMethod(
               getListSourcesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1p1beta1.ListSourcesRequest,
                       com.google.cloud.securitycenter.v1p1beta1.ListSourcesResponse>(
                       this, METHODID_LIST_SOURCES)))
           .addMethod(
               getRunAssetDiscoveryMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryRequest,
                       com.google.longrunning.Operation>(this, METHODID_RUN_ASSET_DISCOVERY)))
           .addMethod(
               getSetFindingStateMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1p1beta1.SetFindingStateRequest,
                       com.google.cloud.securitycenter.v1p1beta1.Finding>(
                       this, METHODID_SET_FINDING_STATE)))
           .addMethod(
               getSetIamPolicyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
                       this, METHODID_SET_IAM_POLICY)))
           .addMethod(
               getTestIamPermissionsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.TestIamPermissionsRequest,
                       com.google.iam.v1.TestIamPermissionsResponse>(
                       this, METHODID_TEST_IAM_PERMISSIONS)))
           .addMethod(
               getUpdateFindingMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1p1beta1.UpdateFindingRequest,
                       com.google.cloud.securitycenter.v1p1beta1.Finding>(
                       this, METHODID_UPDATE_FINDING)))
           .addMethod(
               getUpdateNotificationConfigMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1p1beta1.UpdateNotificationConfigRequest,
                       com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>(
                       this, METHODID_UPDATE_NOTIFICATION_CONFIG)))
           .addMethod(
               getUpdateOrganizationSettingsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1p1beta1.UpdateOrganizationSettingsRequest,
                       com.google.cloud.securitycenter.v1p1beta1.OrganizationSettings>(
                       this, METHODID_UPDATE_ORGANIZATION_SETTINGS)))
           .addMethod(
               getUpdateSourceMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1p1beta1.UpdateSourceRequest,
                       com.google.cloud.securitycenter.v1p1beta1.Source>(
                       this, METHODID_UPDATE_SOURCE)))
           .addMethod(
               getUpdateSecurityMarksMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.securitycenter.v1p1beta1.UpdateSecurityMarksRequest,
                       com.google.cloud.securitycenter.v1p1beta1.SecurityMarks>(
@@ -1701,7 +1717,7 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.CreateSourceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.Source>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateSourceMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1719,7 +1735,7 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.CreateFindingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.Finding>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateFindingMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1736,7 +1752,7 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.CreateNotificationConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateNotificationConfigMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1752,7 +1768,7 @@ public final class SecurityCenterGrpc {
     public void deleteNotificationConfig(
         com.google.cloud.securitycenter.v1p1beta1.DeleteNotificationConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteNotificationConfigMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1768,7 +1784,7 @@ public final class SecurityCenterGrpc {
     public void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1785,7 +1801,7 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.GetNotificationConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetNotificationConfigMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1802,7 +1818,7 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.GetOrganizationSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.OrganizationSettings>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetOrganizationSettingsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1819,7 +1835,7 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.GetSourceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.Source>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetSourceMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1835,7 +1851,7 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.GroupAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.GroupAssetsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGroupAssetsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1855,7 +1871,7 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.GroupFindingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.GroupFindingsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGroupFindingsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1872,7 +1888,7 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.ListAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.ListAssetsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListAssetsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -1889,7 +1905,7 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.ListFindingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListFindingsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1907,7 +1923,7 @@ public final class SecurityCenterGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.securitycenter.v1p1beta1.ListNotificationConfigsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListNotificationConfigsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1924,7 +1940,7 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.ListSourcesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.ListSourcesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListSourcesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1944,7 +1960,7 @@ public final class SecurityCenterGrpc {
     public void runAssetDiscovery(
         com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRunAssetDiscoveryMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1961,7 +1977,7 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.SetFindingStateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.Finding>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetFindingStateMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1977,7 +1993,7 @@ public final class SecurityCenterGrpc {
     public void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1994,7 +2010,7 @@ public final class SecurityCenterGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2012,7 +2028,7 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.UpdateFindingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.Finding>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateFindingMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2030,7 +2046,7 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.UpdateNotificationConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateNotificationConfigMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2047,7 +2063,7 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.UpdateOrganizationSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.OrganizationSettings>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateOrganizationSettingsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2064,7 +2080,7 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.UpdateSourceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.Source>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateSourceMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2081,7 +2097,7 @@ public final class SecurityCenterGrpc {
         com.google.cloud.securitycenter.v1p1beta1.UpdateSecurityMarksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.SecurityMarks>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateSecurityMarksMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -2116,7 +2132,8 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1p1beta1.Source createSource(
         com.google.cloud.securitycenter.v1p1beta1.CreateSourceRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateSourceMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSourceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2129,7 +2146,8 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1p1beta1.Finding createFinding(
         com.google.cloud.securitycenter.v1p1beta1.CreateFindingRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateFindingMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateFindingMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2141,7 +2159,7 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1p1beta1.NotificationConfig createNotificationConfig(
         com.google.cloud.securitycenter.v1p1beta1.CreateNotificationConfigRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateNotificationConfigMethod(), getCallOptions(), request);
     }
 
@@ -2154,7 +2172,7 @@ public final class SecurityCenterGrpc {
      */
     public com.google.protobuf.Empty deleteNotificationConfig(
         com.google.cloud.securitycenter.v1p1beta1.DeleteNotificationConfigRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteNotificationConfigMethod(), getCallOptions(), request);
     }
 
@@ -2166,7 +2184,8 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return blockingUnaryCall(getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2178,7 +2197,7 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1p1beta1.NotificationConfig getNotificationConfig(
         com.google.cloud.securitycenter.v1p1beta1.GetNotificationConfigRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetNotificationConfigMethod(), getCallOptions(), request);
     }
 
@@ -2191,7 +2210,7 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1p1beta1.OrganizationSettings getOrganizationSettings(
         com.google.cloud.securitycenter.v1p1beta1.GetOrganizationSettingsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetOrganizationSettingsMethod(), getCallOptions(), request);
     }
 
@@ -2204,7 +2223,8 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1p1beta1.Source getSource(
         com.google.cloud.securitycenter.v1p1beta1.GetSourceRequest request) {
-      return blockingUnaryCall(getChannel(), getGetSourceMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSourceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2217,7 +2237,8 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1p1beta1.GroupAssetsResponse groupAssets(
         com.google.cloud.securitycenter.v1p1beta1.GroupAssetsRequest request) {
-      return blockingUnaryCall(getChannel(), getGroupAssetsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGroupAssetsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2232,7 +2253,8 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1p1beta1.GroupFindingsResponse groupFindings(
         com.google.cloud.securitycenter.v1p1beta1.GroupFindingsRequest request) {
-      return blockingUnaryCall(getChannel(), getGroupFindingsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGroupFindingsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2244,7 +2266,8 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1p1beta1.ListAssetsResponse listAssets(
         com.google.cloud.securitycenter.v1p1beta1.ListAssetsRequest request) {
-      return blockingUnaryCall(getChannel(), getListAssetsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAssetsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2258,7 +2281,8 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse listFindings(
         com.google.cloud.securitycenter.v1p1beta1.ListFindingsRequest request) {
-      return blockingUnaryCall(getChannel(), getListFindingsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFindingsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2271,7 +2295,7 @@ public final class SecurityCenterGrpc {
     public com.google.cloud.securitycenter.v1p1beta1.ListNotificationConfigsResponse
         listNotificationConfigs(
             com.google.cloud.securitycenter.v1p1beta1.ListNotificationConfigsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListNotificationConfigsMethod(), getCallOptions(), request);
     }
 
@@ -2284,7 +2308,8 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1p1beta1.ListSourcesResponse listSources(
         com.google.cloud.securitycenter.v1p1beta1.ListSourcesRequest request) {
-      return blockingUnaryCall(getChannel(), getListSourcesMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSourcesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2300,7 +2325,7 @@ public final class SecurityCenterGrpc {
      */
     public com.google.longrunning.Operation runAssetDiscovery(
         com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRunAssetDiscoveryMethod(), getCallOptions(), request);
     }
 
@@ -2313,7 +2338,8 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1p1beta1.Finding setFindingState(
         com.google.cloud.securitycenter.v1p1beta1.SetFindingStateRequest request) {
-      return blockingUnaryCall(getChannel(), getSetFindingStateMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetFindingStateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2324,7 +2350,8 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return blockingUnaryCall(getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2336,7 +2363,7 @@ public final class SecurityCenterGrpc {
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
 
@@ -2350,7 +2377,8 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1p1beta1.Finding updateFinding(
         com.google.cloud.securitycenter.v1p1beta1.UpdateFindingRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateFindingMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateFindingMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2363,7 +2391,7 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1p1beta1.NotificationConfig updateNotificationConfig(
         com.google.cloud.securitycenter.v1p1beta1.UpdateNotificationConfigRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateNotificationConfigMethod(), getCallOptions(), request);
     }
 
@@ -2377,7 +2405,7 @@ public final class SecurityCenterGrpc {
     public com.google.cloud.securitycenter.v1p1beta1.OrganizationSettings
         updateOrganizationSettings(
             com.google.cloud.securitycenter.v1p1beta1.UpdateOrganizationSettingsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateOrganizationSettingsMethod(), getCallOptions(), request);
     }
 
@@ -2390,7 +2418,8 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1p1beta1.Source updateSource(
         com.google.cloud.securitycenter.v1p1beta1.UpdateSourceRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateSourceMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSourceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2402,7 +2431,7 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1p1beta1.SecurityMarks updateSecurityMarks(
         com.google.cloud.securitycenter.v1p1beta1.UpdateSecurityMarksRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateSecurityMarksMethod(), getCallOptions(), request);
     }
   }
@@ -2436,7 +2465,7 @@ public final class SecurityCenterGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.securitycenter.v1p1beta1.Source>
         createSource(com.google.cloud.securitycenter.v1p1beta1.CreateSourceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateSourceMethod(), getCallOptions()), request);
     }
 
@@ -2451,7 +2480,7 @@ public final class SecurityCenterGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.securitycenter.v1p1beta1.Finding>
         createFinding(com.google.cloud.securitycenter.v1p1beta1.CreateFindingRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateFindingMethod(), getCallOptions()), request);
     }
 
@@ -2466,7 +2495,7 @@ public final class SecurityCenterGrpc {
             com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>
         createNotificationConfig(
             com.google.cloud.securitycenter.v1p1beta1.CreateNotificationConfigRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateNotificationConfigMethod(), getCallOptions()), request);
     }
 
@@ -2480,7 +2509,7 @@ public final class SecurityCenterGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteNotificationConfig(
             com.google.cloud.securitycenter.v1p1beta1.DeleteNotificationConfigRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteNotificationConfigMethod(), getCallOptions()), request);
     }
 
@@ -2493,7 +2522,7 @@ public final class SecurityCenterGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()), request);
     }
 
@@ -2508,7 +2537,7 @@ public final class SecurityCenterGrpc {
             com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>
         getNotificationConfig(
             com.google.cloud.securitycenter.v1p1beta1.GetNotificationConfigRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetNotificationConfigMethod(), getCallOptions()), request);
     }
 
@@ -2523,7 +2552,7 @@ public final class SecurityCenterGrpc {
             com.google.cloud.securitycenter.v1p1beta1.OrganizationSettings>
         getOrganizationSettings(
             com.google.cloud.securitycenter.v1p1beta1.GetOrganizationSettingsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetOrganizationSettingsMethod(), getCallOptions()), request);
     }
 
@@ -2537,7 +2566,8 @@ public final class SecurityCenterGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.securitycenter.v1p1beta1.Source>
         getSource(com.google.cloud.securitycenter.v1p1beta1.GetSourceRequest request) {
-      return futureUnaryCall(getChannel().newCall(getGetSourceMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSourceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2551,7 +2581,7 @@ public final class SecurityCenterGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.securitycenter.v1p1beta1.GroupAssetsResponse>
         groupAssets(com.google.cloud.securitycenter.v1p1beta1.GroupAssetsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGroupAssetsMethod(), getCallOptions()), request);
     }
 
@@ -2568,7 +2598,7 @@ public final class SecurityCenterGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.securitycenter.v1p1beta1.GroupFindingsResponse>
         groupFindings(com.google.cloud.securitycenter.v1p1beta1.GroupFindingsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGroupFindingsMethod(), getCallOptions()), request);
     }
 
@@ -2582,7 +2612,7 @@ public final class SecurityCenterGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.securitycenter.v1p1beta1.ListAssetsResponse>
         listAssets(com.google.cloud.securitycenter.v1p1beta1.ListAssetsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListAssetsMethod(), getCallOptions()), request);
     }
 
@@ -2598,7 +2628,7 @@ public final class SecurityCenterGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse>
         listFindings(com.google.cloud.securitycenter.v1p1beta1.ListFindingsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListFindingsMethod(), getCallOptions()), request);
     }
 
@@ -2613,7 +2643,7 @@ public final class SecurityCenterGrpc {
             com.google.cloud.securitycenter.v1p1beta1.ListNotificationConfigsResponse>
         listNotificationConfigs(
             com.google.cloud.securitycenter.v1p1beta1.ListNotificationConfigsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListNotificationConfigsMethod(), getCallOptions()), request);
     }
 
@@ -2627,7 +2657,7 @@ public final class SecurityCenterGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.securitycenter.v1p1beta1.ListSourcesResponse>
         listSources(com.google.cloud.securitycenter.v1p1beta1.ListSourcesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListSourcesMethod(), getCallOptions()), request);
     }
 
@@ -2645,7 +2675,7 @@ public final class SecurityCenterGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         runAssetDiscovery(
             com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRunAssetDiscoveryMethod(), getCallOptions()), request);
     }
 
@@ -2659,7 +2689,7 @@ public final class SecurityCenterGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.securitycenter.v1p1beta1.Finding>
         setFindingState(com.google.cloud.securitycenter.v1p1beta1.SetFindingStateRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetFindingStateMethod(), getCallOptions()), request);
     }
 
@@ -2672,7 +2702,7 @@ public final class SecurityCenterGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()), request);
     }
 
@@ -2686,7 +2716,7 @@ public final class SecurityCenterGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.iam.v1.TestIamPermissionsResponse>
         testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
     }
 
@@ -2701,7 +2731,7 @@ public final class SecurityCenterGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.securitycenter.v1p1beta1.Finding>
         updateFinding(com.google.cloud.securitycenter.v1p1beta1.UpdateFindingRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateFindingMethod(), getCallOptions()), request);
     }
 
@@ -2717,7 +2747,7 @@ public final class SecurityCenterGrpc {
             com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>
         updateNotificationConfig(
             com.google.cloud.securitycenter.v1p1beta1.UpdateNotificationConfigRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateNotificationConfigMethod(), getCallOptions()), request);
     }
 
@@ -2732,7 +2762,7 @@ public final class SecurityCenterGrpc {
             com.google.cloud.securitycenter.v1p1beta1.OrganizationSettings>
         updateOrganizationSettings(
             com.google.cloud.securitycenter.v1p1beta1.UpdateOrganizationSettingsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateOrganizationSettingsMethod(), getCallOptions()), request);
     }
 
@@ -2746,7 +2776,7 @@ public final class SecurityCenterGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.securitycenter.v1p1beta1.Source>
         updateSource(com.google.cloud.securitycenter.v1p1beta1.UpdateSourceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateSourceMethod(), getCallOptions()), request);
     }
 
@@ -2761,7 +2791,7 @@ public final class SecurityCenterGrpc {
             com.google.cloud.securitycenter.v1p1beta1.SecurityMarks>
         updateSecurityMarks(
             com.google.cloud.securitycenter.v1p1beta1.UpdateSecurityMarksRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateSecurityMarksMethod(), getCallOptions()), request);
     }
   }
