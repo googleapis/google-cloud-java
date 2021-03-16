@@ -361,6 +361,13 @@ public class OrgPolicyClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   ListConstraintsRequest request =
+   *       ListConstraintsRequest.newBuilder()
+   *           .setParent(
+   *               ConstraintName.ofProjectConstraintName("[PROJECT]", "[CONSTRAINT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListConstraintsResponse response = orgPolicyClient.listConstraintsCallable().call(request);
    *     for (Constraint element : response.getResponsesList()) {
@@ -576,6 +583,12 @@ public class OrgPolicyClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   ListPoliciesRequest request =
+   *       ListPoliciesRequest.newBuilder()
+   *           .setParent(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListPoliciesResponse response = orgPolicyClient.listPoliciesCallable().call(request);
    *     for (Policy element : response.getResponsesList()) {
