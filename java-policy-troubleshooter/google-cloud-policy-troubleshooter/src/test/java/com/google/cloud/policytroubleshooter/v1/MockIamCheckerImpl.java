@@ -62,7 +62,7 @@ public class MockIamCheckerImpl extends IamCheckerImplBase {
   public void troubleshootIamPolicy(
       TroubleshootIamPolicyRequest request,
       StreamObserver<TroubleshootIamPolicyResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TroubleshootIamPolicyResponse) {
       requests.add(request);
       responseObserver.onNext(((TroubleshootIamPolicyResponse) response));
@@ -74,7 +74,7 @@ public class MockIamCheckerImpl extends IamCheckerImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method TroubleshootIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TroubleshootIamPolicyResponse.class.getName(),
                   Exception.class.getName())));
     }

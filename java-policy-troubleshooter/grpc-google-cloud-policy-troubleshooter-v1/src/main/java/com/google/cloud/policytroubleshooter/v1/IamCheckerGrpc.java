@@ -16,11 +16,6 @@
 package com.google.cloud.policytroubleshooter.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -152,7 +147,8 @@ public final class IamCheckerGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getTroubleshootIamPolicyMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getTroubleshootIamPolicyMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -160,7 +156,7 @@ public final class IamCheckerGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getTroubleshootIamPolicyMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyRequest,
                       com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyResponse>(
@@ -200,7 +196,7 @@ public final class IamCheckerGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTroubleshootIamPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -238,7 +234,7 @@ public final class IamCheckerGrpc {
     public com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyResponse
         troubleshootIamPolicy(
             com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTroubleshootIamPolicyMethod(), getCallOptions(), request);
     }
   }
@@ -274,7 +270,7 @@ public final class IamCheckerGrpc {
             com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyResponse>
         troubleshootIamPolicy(
             com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTroubleshootIamPolicyMethod(), getCallOptions()), request);
     }
   }
