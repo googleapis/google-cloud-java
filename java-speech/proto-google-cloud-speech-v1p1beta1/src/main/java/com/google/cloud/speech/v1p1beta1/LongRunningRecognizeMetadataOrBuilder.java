@@ -133,4 +133,45 @@ public interface LongRunningRecognizeMetadataOrBuilder
    * @return The bytes for uri.
    */
   com.google.protobuf.ByteString getUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A copy of the TranscriptOutputConfig if it was set in the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the outputConfig field is set.
+   */
+  boolean hasOutputConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A copy of the TranscriptOutputConfig if it was set in the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The outputConfig.
+   */
+  com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig getOutputConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A copy of the TranscriptOutputConfig if it was set in the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.speech.v1p1beta1.TranscriptOutputConfigOrBuilder getOutputConfigOrBuilder();
 }

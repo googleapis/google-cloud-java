@@ -89,6 +89,37 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
                       extensionRegistry));
               break;
             }
+          case 50:
+            {
+              com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.Builder subBuilder = null;
+              if (outputConfig_ != null) {
+                subBuilder = outputConfig_.toBuilder();
+              }
+              outputConfig_ =
+                  input.readMessage(
+                      com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(outputConfig_);
+                outputConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 58:
+            {
+              com.google.rpc.Status.Builder subBuilder = null;
+              if (outputError_ != null) {
+                subBuilder = outputError_.toBuilder();
+              }
+              outputError_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(outputError_);
+                outputError_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -203,6 +234,101 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
     return results_.get(index);
   }
 
+  public static final int OUTPUT_CONFIG_FIELD_NUMBER = 6;
+  private com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig outputConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Original output config if present in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 6;</code>
+   *
+   * @return Whether the outputConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasOutputConfig() {
+    return outputConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Original output config if present in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 6;</code>
+   *
+   * @return The outputConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig getOutputConfig() {
+    return outputConfig_ == null
+        ? com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.getDefaultInstance()
+        : outputConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Original output config if present in the request.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v1p1beta1.TranscriptOutputConfigOrBuilder
+      getOutputConfigOrBuilder() {
+    return getOutputConfig();
+  }
+
+  public static final int OUTPUT_ERROR_FIELD_NUMBER = 7;
+  private com.google.rpc.Status outputError_;
+  /**
+   *
+   *
+   * <pre>
+   * If the transcript output fails this field contains the relevant error.
+   * </pre>
+   *
+   * <code>.google.rpc.Status output_error = 7;</code>
+   *
+   * @return Whether the outputError field is set.
+   */
+  @java.lang.Override
+  public boolean hasOutputError() {
+    return outputError_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If the transcript output fails this field contains the relevant error.
+   * </pre>
+   *
+   * <code>.google.rpc.Status output_error = 7;</code>
+   *
+   * @return The outputError.
+   */
+  @java.lang.Override
+  public com.google.rpc.Status getOutputError() {
+    return outputError_ == null ? com.google.rpc.Status.getDefaultInstance() : outputError_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If the transcript output fails this field contains the relevant error.
+   * </pre>
+   *
+   * <code>.google.rpc.Status output_error = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.rpc.StatusOrBuilder getOutputErrorOrBuilder() {
+    return getOutputError();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -220,6 +346,12 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
     for (int i = 0; i < results_.size(); i++) {
       output.writeMessage(2, results_.get(i));
     }
+    if (outputConfig_ != null) {
+      output.writeMessage(6, getOutputConfig());
+    }
+    if (outputError_ != null) {
+      output.writeMessage(7, getOutputError());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -231,6 +363,12 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
     size = 0;
     for (int i = 0; i < results_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, results_.get(i));
+    }
+    if (outputConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getOutputConfig());
+    }
+    if (outputError_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getOutputError());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -249,6 +387,14 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
         (com.google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse) obj;
 
     if (!getResultsList().equals(other.getResultsList())) return false;
+    if (hasOutputConfig() != other.hasOutputConfig()) return false;
+    if (hasOutputConfig()) {
+      if (!getOutputConfig().equals(other.getOutputConfig())) return false;
+    }
+    if (hasOutputError() != other.hasOutputError()) return false;
+    if (hasOutputError()) {
+      if (!getOutputError().equals(other.getOutputError())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -263,6 +409,14 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
     if (getResultsCount() > 0) {
       hash = (37 * hash) + RESULTS_FIELD_NUMBER;
       hash = (53 * hash) + getResultsList().hashCode();
+    }
+    if (hasOutputConfig()) {
+      hash = (37 * hash) + OUTPUT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputConfig().hashCode();
+    }
+    if (hasOutputError()) {
+      hash = (37 * hash) + OUTPUT_ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputError().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -422,6 +576,18 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
       } else {
         resultsBuilder_.clear();
       }
+      if (outputConfigBuilder_ == null) {
+        outputConfig_ = null;
+      } else {
+        outputConfig_ = null;
+        outputConfigBuilder_ = null;
+      }
+      if (outputErrorBuilder_ == null) {
+        outputError_ = null;
+      } else {
+        outputError_ = null;
+        outputErrorBuilder_ = null;
+      }
       return this;
     }
 
@@ -459,6 +625,16 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
         result.results_ = results_;
       } else {
         result.results_ = resultsBuilder_.build();
+      }
+      if (outputConfigBuilder_ == null) {
+        result.outputConfig_ = outputConfig_;
+      } else {
+        result.outputConfig_ = outputConfigBuilder_.build();
+      }
+      if (outputErrorBuilder_ == null) {
+        result.outputError_ = outputError_;
+      } else {
+        result.outputError_ = outputErrorBuilder_.build();
       }
       onBuilt();
       return result;
@@ -537,6 +713,12 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
             resultsBuilder_.addAllMessages(other.results_);
           }
         }
+      }
+      if (other.hasOutputConfig()) {
+        mergeOutputConfig(other.getOutputConfig());
+      }
+      if (other.hasOutputError()) {
+        mergeOutputError(other.getOutputError());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -952,6 +1134,370 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
         results_ = null;
       }
       return resultsBuilder_;
+    }
+
+    private com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig outputConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig,
+            com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.Builder,
+            com.google.cloud.speech.v1p1beta1.TranscriptOutputConfigOrBuilder>
+        outputConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Original output config if present in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 6;</code>
+     *
+     * @return Whether the outputConfig field is set.
+     */
+    public boolean hasOutputConfig() {
+      return outputConfigBuilder_ != null || outputConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Original output config if present in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 6;</code>
+     *
+     * @return The outputConfig.
+     */
+    public com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig getOutputConfig() {
+      if (outputConfigBuilder_ == null) {
+        return outputConfig_ == null
+            ? com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.getDefaultInstance()
+            : outputConfig_;
+      } else {
+        return outputConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Original output config if present in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 6;</code>
+     */
+    public Builder setOutputConfig(com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig value) {
+      if (outputConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputConfig_ = value;
+        onChanged();
+      } else {
+        outputConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Original output config if present in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 6;</code>
+     */
+    public Builder setOutputConfig(
+        com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.Builder builderForValue) {
+      if (outputConfigBuilder_ == null) {
+        outputConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        outputConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Original output config if present in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 6;</code>
+     */
+    public Builder mergeOutputConfig(
+        com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig value) {
+      if (outputConfigBuilder_ == null) {
+        if (outputConfig_ != null) {
+          outputConfig_ =
+              com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.newBuilder(outputConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          outputConfig_ = value;
+        }
+        onChanged();
+      } else {
+        outputConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Original output config if present in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 6;</code>
+     */
+    public Builder clearOutputConfig() {
+      if (outputConfigBuilder_ == null) {
+        outputConfig_ = null;
+        onChanged();
+      } else {
+        outputConfig_ = null;
+        outputConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Original output config if present in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 6;</code>
+     */
+    public com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.Builder
+        getOutputConfigBuilder() {
+
+      onChanged();
+      return getOutputConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Original output config if present in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 6;</code>
+     */
+    public com.google.cloud.speech.v1p1beta1.TranscriptOutputConfigOrBuilder
+        getOutputConfigOrBuilder() {
+      if (outputConfigBuilder_ != null) {
+        return outputConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return outputConfig_ == null
+            ? com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.getDefaultInstance()
+            : outputConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Original output config if present in the request.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig,
+            com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.Builder,
+            com.google.cloud.speech.v1p1beta1.TranscriptOutputConfigOrBuilder>
+        getOutputConfigFieldBuilder() {
+      if (outputConfigBuilder_ == null) {
+        outputConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig,
+                com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.Builder,
+                com.google.cloud.speech.v1p1beta1.TranscriptOutputConfigOrBuilder>(
+                getOutputConfig(), getParentForChildren(), isClean());
+        outputConfig_ = null;
+      }
+      return outputConfigBuilder_;
+    }
+
+    private com.google.rpc.Status outputError_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        outputErrorBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * If the transcript output fails this field contains the relevant error.
+     * </pre>
+     *
+     * <code>.google.rpc.Status output_error = 7;</code>
+     *
+     * @return Whether the outputError field is set.
+     */
+    public boolean hasOutputError() {
+      return outputErrorBuilder_ != null || outputError_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the transcript output fails this field contains the relevant error.
+     * </pre>
+     *
+     * <code>.google.rpc.Status output_error = 7;</code>
+     *
+     * @return The outputError.
+     */
+    public com.google.rpc.Status getOutputError() {
+      if (outputErrorBuilder_ == null) {
+        return outputError_ == null ? com.google.rpc.Status.getDefaultInstance() : outputError_;
+      } else {
+        return outputErrorBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the transcript output fails this field contains the relevant error.
+     * </pre>
+     *
+     * <code>.google.rpc.Status output_error = 7;</code>
+     */
+    public Builder setOutputError(com.google.rpc.Status value) {
+      if (outputErrorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputError_ = value;
+        onChanged();
+      } else {
+        outputErrorBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the transcript output fails this field contains the relevant error.
+     * </pre>
+     *
+     * <code>.google.rpc.Status output_error = 7;</code>
+     */
+    public Builder setOutputError(com.google.rpc.Status.Builder builderForValue) {
+      if (outputErrorBuilder_ == null) {
+        outputError_ = builderForValue.build();
+        onChanged();
+      } else {
+        outputErrorBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the transcript output fails this field contains the relevant error.
+     * </pre>
+     *
+     * <code>.google.rpc.Status output_error = 7;</code>
+     */
+    public Builder mergeOutputError(com.google.rpc.Status value) {
+      if (outputErrorBuilder_ == null) {
+        if (outputError_ != null) {
+          outputError_ =
+              com.google.rpc.Status.newBuilder(outputError_).mergeFrom(value).buildPartial();
+        } else {
+          outputError_ = value;
+        }
+        onChanged();
+      } else {
+        outputErrorBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the transcript output fails this field contains the relevant error.
+     * </pre>
+     *
+     * <code>.google.rpc.Status output_error = 7;</code>
+     */
+    public Builder clearOutputError() {
+      if (outputErrorBuilder_ == null) {
+        outputError_ = null;
+        onChanged();
+      } else {
+        outputError_ = null;
+        outputErrorBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the transcript output fails this field contains the relevant error.
+     * </pre>
+     *
+     * <code>.google.rpc.Status output_error = 7;</code>
+     */
+    public com.google.rpc.Status.Builder getOutputErrorBuilder() {
+
+      onChanged();
+      return getOutputErrorFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the transcript output fails this field contains the relevant error.
+     * </pre>
+     *
+     * <code>.google.rpc.Status output_error = 7;</code>
+     */
+    public com.google.rpc.StatusOrBuilder getOutputErrorOrBuilder() {
+      if (outputErrorBuilder_ != null) {
+        return outputErrorBuilder_.getMessageOrBuilder();
+      } else {
+        return outputError_ == null ? com.google.rpc.Status.getDefaultInstance() : outputError_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the transcript output fails this field contains the relevant error.
+     * </pre>
+     *
+     * <code>.google.rpc.Status output_error = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        getOutputErrorFieldBuilder() {
+      if (outputErrorBuilder_ == null) {
+        outputErrorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(
+                getOutputError(), getParentForChildren(), isClean());
+        outputError_ = null;
+      }
+      return outputErrorBuilder_;
     }
 
     @java.lang.Override

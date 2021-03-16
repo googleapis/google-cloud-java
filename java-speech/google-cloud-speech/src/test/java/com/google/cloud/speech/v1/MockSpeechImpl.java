@@ -62,7 +62,7 @@ public class MockSpeechImpl extends SpeechImplBase {
   @Override
   public void recognize(
       RecognizeRequest request, StreamObserver<RecognizeResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof RecognizeResponse) {
       requests.add(request);
       responseObserver.onNext(((RecognizeResponse) response));
@@ -74,7 +74,7 @@ public class MockSpeechImpl extends SpeechImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method Recognize, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   RecognizeResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockSpeechImpl extends SpeechImplBase {
   @Override
   public void longRunningRecognize(
       LongRunningRecognizeRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -95,7 +95,7 @@ public class MockSpeechImpl extends SpeechImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method LongRunningRecognize, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -119,7 +119,7 @@ public class MockSpeechImpl extends SpeechImplBase {
                   new IllegalArgumentException(
                       String.format(
                           "Unrecognized response type %s for method StreamingRecognize, expected %s or %s",
-                          response.getClass().getName(),
+                          response == null ? "null" : response.getClass().getName(),
                           StreamingRecognizeResponse.class.getName(),
                           Exception.class.getName())));
             }

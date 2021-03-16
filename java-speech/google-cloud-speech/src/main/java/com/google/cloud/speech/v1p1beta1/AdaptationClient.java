@@ -478,6 +478,12 @@ public class AdaptationClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   *   ListPhraseSetRequest request =
+   *       ListPhraseSetRequest.newBuilder()
+   *           .setParent(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListPhraseSetResponse response = adaptationClient.listPhraseSetCallable().call(request);
    *     for (PhraseSet element : response.getResponsesList()) {
@@ -986,6 +992,12 @@ public class AdaptationClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   *   ListCustomClassesRequest request =
+   *       ListCustomClassesRequest.newBuilder()
+   *           .setParent(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListCustomClassesResponse response =
    *         adaptationClient.listCustomClassesCallable().call(request);

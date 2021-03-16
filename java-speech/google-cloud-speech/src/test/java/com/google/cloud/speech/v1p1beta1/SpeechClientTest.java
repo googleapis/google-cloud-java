@@ -130,6 +130,8 @@ public class SpeechClientTest {
     LongRunningRecognizeResponse expectedResponse =
         LongRunningRecognizeResponse.newBuilder()
             .addAllResults(new ArrayList<SpeechRecognitionResult>())
+            .setOutputConfig(TranscriptOutputConfig.newBuilder().build())
+            .setOutputError(Status.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

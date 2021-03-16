@@ -62,7 +62,7 @@ public class MockAdaptationImpl extends AdaptationImplBase {
   @Override
   public void createPhraseSet(
       CreatePhraseSetRequest request, StreamObserver<PhraseSet> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PhraseSet) {
       requests.add(request);
       responseObserver.onNext(((PhraseSet) response));
@@ -74,7 +74,7 @@ public class MockAdaptationImpl extends AdaptationImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreatePhraseSet, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   PhraseSet.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockAdaptationImpl extends AdaptationImplBase {
   @Override
   public void getPhraseSet(
       GetPhraseSetRequest request, StreamObserver<PhraseSet> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PhraseSet) {
       requests.add(request);
       responseObserver.onNext(((PhraseSet) response));
@@ -95,7 +95,7 @@ public class MockAdaptationImpl extends AdaptationImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetPhraseSet, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   PhraseSet.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockAdaptationImpl extends AdaptationImplBase {
   @Override
   public void listPhraseSet(
       ListPhraseSetRequest request, StreamObserver<ListPhraseSetResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListPhraseSetResponse) {
       requests.add(request);
       responseObserver.onNext(((ListPhraseSetResponse) response));
@@ -116,7 +116,7 @@ public class MockAdaptationImpl extends AdaptationImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListPhraseSet, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListPhraseSetResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -125,7 +125,7 @@ public class MockAdaptationImpl extends AdaptationImplBase {
   @Override
   public void updatePhraseSet(
       UpdatePhraseSetRequest request, StreamObserver<PhraseSet> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof PhraseSet) {
       requests.add(request);
       responseObserver.onNext(((PhraseSet) response));
@@ -137,7 +137,7 @@ public class MockAdaptationImpl extends AdaptationImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdatePhraseSet, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   PhraseSet.class.getName(),
                   Exception.class.getName())));
     }
@@ -146,7 +146,7 @@ public class MockAdaptationImpl extends AdaptationImplBase {
   @Override
   public void deletePhraseSet(
       DeletePhraseSetRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -158,7 +158,7 @@ public class MockAdaptationImpl extends AdaptationImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeletePhraseSet, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -167,7 +167,7 @@ public class MockAdaptationImpl extends AdaptationImplBase {
   @Override
   public void createCustomClass(
       CreateCustomClassRequest request, StreamObserver<CustomClass> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CustomClass) {
       requests.add(request);
       responseObserver.onNext(((CustomClass) response));
@@ -179,7 +179,7 @@ public class MockAdaptationImpl extends AdaptationImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateCustomClass, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CustomClass.class.getName(),
                   Exception.class.getName())));
     }
@@ -188,7 +188,7 @@ public class MockAdaptationImpl extends AdaptationImplBase {
   @Override
   public void getCustomClass(
       GetCustomClassRequest request, StreamObserver<CustomClass> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CustomClass) {
       requests.add(request);
       responseObserver.onNext(((CustomClass) response));
@@ -200,7 +200,7 @@ public class MockAdaptationImpl extends AdaptationImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetCustomClass, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CustomClass.class.getName(),
                   Exception.class.getName())));
     }
@@ -210,7 +210,7 @@ public class MockAdaptationImpl extends AdaptationImplBase {
   public void listCustomClasses(
       ListCustomClassesRequest request,
       StreamObserver<ListCustomClassesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListCustomClassesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListCustomClassesResponse) response));
@@ -222,7 +222,7 @@ public class MockAdaptationImpl extends AdaptationImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListCustomClasses, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListCustomClassesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -231,7 +231,7 @@ public class MockAdaptationImpl extends AdaptationImplBase {
   @Override
   public void updateCustomClass(
       UpdateCustomClassRequest request, StreamObserver<CustomClass> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CustomClass) {
       requests.add(request);
       responseObserver.onNext(((CustomClass) response));
@@ -243,7 +243,7 @@ public class MockAdaptationImpl extends AdaptationImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateCustomClass, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CustomClass.class.getName(),
                   Exception.class.getName())));
     }
@@ -252,7 +252,7 @@ public class MockAdaptationImpl extends AdaptationImplBase {
   @Override
   public void deleteCustomClass(
       DeleteCustomClassRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -264,7 +264,7 @@ public class MockAdaptationImpl extends AdaptationImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteCustomClass, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
