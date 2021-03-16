@@ -42,7 +42,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: ## API Overview
+ * Service Description: API Overview
  *
  * <p>The `managedidentites.googleapis.com` service implements the Google Cloud Managed Identites
  * API for identity services (e.g. Microsoft Active Directory).
@@ -51,7 +51,7 @@ import javax.annotation.Generated;
  * reset managed identities admin password, add/remove domain controllers in GCP regions and
  * add/remove VPC peering.
  *
- * <p>## Data Model
+ * <p>Data Model
  *
  * <p>The Managed Identities service exposes the following resources:
  *
@@ -588,6 +588,14 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
+   *   ListDomainsRequest request =
+   *       ListDomainsRequest.newBuilder()
+   *           .setParent(DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListDomainsResponse response =
    *         managedIdentitiesServiceClient.listDomainsCallable().call(request);

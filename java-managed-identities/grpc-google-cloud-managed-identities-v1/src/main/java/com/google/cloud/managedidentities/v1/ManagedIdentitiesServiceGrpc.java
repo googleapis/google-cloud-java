@@ -21,14 +21,14 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * ## API Overview
+ * API Overview
  * The `managedidentites.googleapis.com` service implements the Google Cloud
  * Managed Identites API for identity services
  * (e.g. Microsoft Active Directory).
  * The Managed Identities service provides methods to manage
  * (create/read/update/delete) domains, reset managed identities admin password,
  * add/remove domain controllers in GCP regions and add/remove VPC peering.
- * ## Data Model
+ * Data Model
  * The Managed Identities service exposes the following resources:
  * * Locations as global, named as follows:
  *   `projects/{project_id}/locations/global`.
@@ -577,14 +577,14 @@ public final class ManagedIdentitiesServiceGrpc {
    *
    *
    * <pre>
-   * ## API Overview
+   * API Overview
    * The `managedidentites.googleapis.com` service implements the Google Cloud
    * Managed Identites API for identity services
    * (e.g. Microsoft Active Directory).
    * The Managed Identities service provides methods to manage
    * (create/read/update/delete) domains, reset managed identities admin password,
    * add/remove domain controllers in GCP regions and add/remove VPC peering.
-   * ## Data Model
+   * Data Model
    * The Managed Identities service exposes the following resources:
    * * Locations as global, named as follows:
    *   `projects/{project_id}/locations/global`.
@@ -822,14 +822,14 @@ public final class ManagedIdentitiesServiceGrpc {
    *
    *
    * <pre>
-   * ## API Overview
+   * API Overview
    * The `managedidentites.googleapis.com` service implements the Google Cloud
    * Managed Identites API for identity services
    * (e.g. Microsoft Active Directory).
    * The Managed Identities service provides methods to manage
    * (create/read/update/delete) domains, reset managed identities admin password,
    * add/remove domain controllers in GCP regions and add/remove VPC peering.
-   * ## Data Model
+   * Data Model
    * The Managed Identities service exposes the following resources:
    * * Locations as global, named as follows:
    *   `projects/{project_id}/locations/global`.
@@ -1028,14 +1028,14 @@ public final class ManagedIdentitiesServiceGrpc {
    *
    *
    * <pre>
-   * ## API Overview
+   * API Overview
    * The `managedidentites.googleapis.com` service implements the Google Cloud
    * Managed Identites API for identity services
    * (e.g. Microsoft Active Directory).
    * The Managed Identities service provides methods to manage
    * (create/read/update/delete) domains, reset managed identities admin password,
    * add/remove domain controllers in GCP regions and add/remove VPC peering.
-   * ## Data Model
+   * Data Model
    * The Managed Identities service exposes the following resources:
    * * Locations as global, named as follows:
    *   `projects/{project_id}/locations/global`.
@@ -1203,14 +1203,14 @@ public final class ManagedIdentitiesServiceGrpc {
    *
    *
    * <pre>
-   * ## API Overview
+   * API Overview
    * The `managedidentites.googleapis.com` service implements the Google Cloud
    * Managed Identites API for identity services
    * (e.g. Microsoft Active Directory).
    * The Managed Identities service provides methods to manage
    * (create/read/update/delete) domains, reset managed identities admin password,
    * add/remove domain controllers in GCP regions and add/remove VPC peering.
-   * ## Data Model
+   * Data Model
    * The Managed Identities service exposes the following resources:
    * * Locations as global, named as follows:
    *   `projects/{project_id}/locations/global`.

@@ -19,7 +19,7 @@
  *
  * <p>======================= ManagedIdentitiesServiceClient =======================
  *
- * <p>Service Description: ## API Overview
+ * <p>Service Description: API Overview
  *
  * <p>The `managedidentites.googleapis.com` service implements the Google Cloud Managed Identites
  * API for identity services (e.g. Microsoft Active Directory).
@@ -28,7 +28,7 @@
  * reset managed identities admin password, add/remove domain controllers in GCP regions and
  * add/remove VPC peering.
  *
- * <p>## Data Model
+ * <p>Data Model
  *
  * <p>The Managed Identities service exposes the following resources:
  *

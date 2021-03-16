@@ -62,7 +62,7 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
   @Override
   public void createMicrosoftAdDomain(
       CreateMicrosoftAdDomainRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -74,7 +74,7 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateMicrosoftAdDomain, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
   public void resetAdminPassword(
       ResetAdminPasswordRequest request,
       StreamObserver<ResetAdminPasswordResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ResetAdminPasswordResponse) {
       requests.add(request);
       responseObserver.onNext(((ResetAdminPasswordResponse) response));
@@ -96,7 +96,7 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ResetAdminPassword, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ResetAdminPasswordResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -105,7 +105,7 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
   @Override
   public void listDomains(
       ListDomainsRequest request, StreamObserver<ListDomainsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListDomainsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListDomainsResponse) response));
@@ -117,7 +117,7 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListDomains, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListDomainsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -125,7 +125,7 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
 
   @Override
   public void getDomain(GetDomainRequest request, StreamObserver<Domain> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Domain) {
       requests.add(request);
       responseObserver.onNext(((Domain) response));
@@ -137,7 +137,7 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetDomain, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Domain.class.getName(),
                   Exception.class.getName())));
     }
@@ -146,7 +146,7 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
   @Override
   public void updateDomain(
       UpdateDomainRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -158,7 +158,7 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateDomain, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -167,7 +167,7 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
   @Override
   public void deleteDomain(
       DeleteDomainRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -179,7 +179,7 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteDomain, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -187,7 +187,7 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
 
   @Override
   public void attachTrust(AttachTrustRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -199,7 +199,7 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method AttachTrust, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -208,7 +208,7 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
   @Override
   public void reconfigureTrust(
       ReconfigureTrustRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -220,7 +220,7 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ReconfigureTrust, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -228,7 +228,7 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
 
   @Override
   public void detachTrust(DetachTrustRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -240,7 +240,7 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DetachTrust, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -249,7 +249,7 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
   @Override
   public void validateTrust(
       ValidateTrustRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -261,7 +261,7 @@ public class MockManagedIdentitiesServiceImpl extends ManagedIdentitiesServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ValidateTrust, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
