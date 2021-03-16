@@ -184,9 +184,9 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numPullers);
 
     // We regularly look up the distribution for a good subscription deadline.
-    // So we seed the distribution with something reasonable to start with.
+    // So we seed the distribution with the minimum value to start with.
     // Distribution is percentile-based, so this value will eventually lose importance.
-    ackLatencyDistribution.record(60);
+    ackLatencyDistribution.record(MIN_ACK_DEADLINE_SECONDS);
   }
 
   /**

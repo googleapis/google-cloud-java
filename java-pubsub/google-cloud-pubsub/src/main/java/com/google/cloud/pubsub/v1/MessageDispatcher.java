@@ -82,9 +82,10 @@ class MessageDispatcher {
   private final LinkedBlockingQueue<String> pendingNacks = new LinkedBlockingQueue<>();
   private final LinkedBlockingQueue<String> pendingReceipts = new LinkedBlockingQueue<>();
 
-  // The deadline should be set before use. Here, set it to something unreasonable,
-  // so we fail loudly if we mess up.
-  private final AtomicInteger messageDeadlineSeconds = new AtomicInteger(60);
+  // Start the deadline at the minimum ack deadline so messages which arrive before this is
+  // updated will not have a long ack deadline.
+  private final AtomicInteger messageDeadlineSeconds =
+      new AtomicInteger(Subscriber.MIN_ACK_DEADLINE_SECONDS);
   private final AtomicBoolean extendDeadline = new AtomicBoolean(true);
   private final Lock jobLock;
   private ScheduledFuture<?> backgroundJob;
