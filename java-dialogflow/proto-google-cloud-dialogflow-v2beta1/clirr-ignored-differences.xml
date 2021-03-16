@@ -16,4 +16,25 @@
     <className>com/google/cloud/dialogflow/v2beta1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/ResponseMessage*</className>
+    <method>* *MixedAudio*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/ResponseMessage$MixedAudio*</className>
+  </difference>
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/ResponseMessage*</className>
+    <field>MIXED_AUDIO</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/ResponseMessage*</className>
+    <field>MIXED_AUDIO_FIELD_NUMBER</field>
+  </difference>
+
 </differences>

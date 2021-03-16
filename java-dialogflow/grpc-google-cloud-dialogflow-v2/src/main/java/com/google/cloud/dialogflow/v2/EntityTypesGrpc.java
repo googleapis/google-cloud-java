@@ -16,11 +16,6 @@
 package com.google.cloud.dialogflow.v2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -565,7 +560,8 @@ public final class EntityTypesGrpc {
         com.google.cloud.dialogflow.v2.ListEntityTypesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.ListEntityTypesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListEntityTypesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListEntityTypesMethod(), responseObserver);
     }
 
     /**
@@ -578,7 +574,8 @@ public final class EntityTypesGrpc {
     public void getEntityType(
         com.google.cloud.dialogflow.v2.GetEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.EntityType> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetEntityTypeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetEntityTypeMethod(), responseObserver);
     }
 
     /**
@@ -591,7 +588,8 @@ public final class EntityTypesGrpc {
     public void createEntityType(
         com.google.cloud.dialogflow.v2.CreateEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.EntityType> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateEntityTypeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateEntityTypeMethod(), responseObserver);
     }
 
     /**
@@ -604,7 +602,8 @@ public final class EntityTypesGrpc {
     public void updateEntityType(
         com.google.cloud.dialogflow.v2.UpdateEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.EntityType> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateEntityTypeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateEntityTypeMethod(), responseObserver);
     }
 
     /**
@@ -617,7 +616,8 @@ public final class EntityTypesGrpc {
     public void deleteEntityType(
         com.google.cloud.dialogflow.v2.DeleteEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteEntityTypeMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteEntityTypeMethod(), responseObserver);
     }
 
     /**
@@ -631,7 +631,8 @@ public final class EntityTypesGrpc {
     public void batchUpdateEntityTypes(
         com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchUpdateEntityTypesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchUpdateEntityTypesMethod(), responseObserver);
     }
 
     /**
@@ -645,7 +646,8 @@ public final class EntityTypesGrpc {
     public void batchDeleteEntityTypes(
         com.google.cloud.dialogflow.v2.BatchDeleteEntityTypesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchDeleteEntityTypesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchDeleteEntityTypesMethod(), responseObserver);
     }
 
     /**
@@ -659,7 +661,8 @@ public final class EntityTypesGrpc {
     public void batchCreateEntities(
         com.google.cloud.dialogflow.v2.BatchCreateEntitiesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchCreateEntitiesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchCreateEntitiesMethod(), responseObserver);
     }
 
     /**
@@ -675,7 +678,8 @@ public final class EntityTypesGrpc {
     public void batchUpdateEntities(
         com.google.cloud.dialogflow.v2.BatchUpdateEntitiesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchUpdateEntitiesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchUpdateEntitiesMethod(), responseObserver);
     }
 
     /**
@@ -689,7 +693,8 @@ public final class EntityTypesGrpc {
     public void batchDeleteEntities(
         com.google.cloud.dialogflow.v2.BatchDeleteEntitiesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getBatchDeleteEntitiesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchDeleteEntitiesMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -697,64 +702,64 @@ public final class EntityTypesGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListEntityTypesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2.ListEntityTypesRequest,
                       com.google.cloud.dialogflow.v2.ListEntityTypesResponse>(
                       this, METHODID_LIST_ENTITY_TYPES)))
           .addMethod(
               getGetEntityTypeMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2.GetEntityTypeRequest,
                       com.google.cloud.dialogflow.v2.EntityType>(this, METHODID_GET_ENTITY_TYPE)))
           .addMethod(
               getCreateEntityTypeMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2.CreateEntityTypeRequest,
                       com.google.cloud.dialogflow.v2.EntityType>(
                       this, METHODID_CREATE_ENTITY_TYPE)))
           .addMethod(
               getUpdateEntityTypeMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2.UpdateEntityTypeRequest,
                       com.google.cloud.dialogflow.v2.EntityType>(
                       this, METHODID_UPDATE_ENTITY_TYPE)))
           .addMethod(
               getDeleteEntityTypeMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2.DeleteEntityTypeRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_ENTITY_TYPE)))
           .addMethod(
               getBatchUpdateEntityTypesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest,
                       com.google.longrunning.Operation>(this, METHODID_BATCH_UPDATE_ENTITY_TYPES)))
           .addMethod(
               getBatchDeleteEntityTypesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2.BatchDeleteEntityTypesRequest,
                       com.google.longrunning.Operation>(this, METHODID_BATCH_DELETE_ENTITY_TYPES)))
           .addMethod(
               getBatchCreateEntitiesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2.BatchCreateEntitiesRequest,
                       com.google.longrunning.Operation>(this, METHODID_BATCH_CREATE_ENTITIES)))
           .addMethod(
               getBatchUpdateEntitiesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2.BatchUpdateEntitiesRequest,
                       com.google.longrunning.Operation>(this, METHODID_BATCH_UPDATE_ENTITIES)))
           .addMethod(
               getBatchDeleteEntitiesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2.BatchDeleteEntitiesRequest,
                       com.google.longrunning.Operation>(this, METHODID_BATCH_DELETE_ENTITIES)))
@@ -791,7 +796,7 @@ public final class EntityTypesGrpc {
         com.google.cloud.dialogflow.v2.ListEntityTypesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.ListEntityTypesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListEntityTypesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -807,7 +812,7 @@ public final class EntityTypesGrpc {
     public void getEntityType(
         com.google.cloud.dialogflow.v2.GetEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.EntityType> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetEntityTypeMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -823,7 +828,7 @@ public final class EntityTypesGrpc {
     public void createEntityType(
         com.google.cloud.dialogflow.v2.CreateEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.EntityType> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateEntityTypeMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -839,7 +844,7 @@ public final class EntityTypesGrpc {
     public void updateEntityType(
         com.google.cloud.dialogflow.v2.UpdateEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.EntityType> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateEntityTypeMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -855,7 +860,7 @@ public final class EntityTypesGrpc {
     public void deleteEntityType(
         com.google.cloud.dialogflow.v2.DeleteEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteEntityTypeMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -872,7 +877,7 @@ public final class EntityTypesGrpc {
     public void batchUpdateEntityTypes(
         com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchUpdateEntityTypesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -889,7 +894,7 @@ public final class EntityTypesGrpc {
     public void batchDeleteEntityTypes(
         com.google.cloud.dialogflow.v2.BatchDeleteEntityTypesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchDeleteEntityTypesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -906,7 +911,7 @@ public final class EntityTypesGrpc {
     public void batchCreateEntities(
         com.google.cloud.dialogflow.v2.BatchCreateEntitiesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchCreateEntitiesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -925,7 +930,7 @@ public final class EntityTypesGrpc {
     public void batchUpdateEntities(
         com.google.cloud.dialogflow.v2.BatchUpdateEntitiesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchUpdateEntitiesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -942,7 +947,7 @@ public final class EntityTypesGrpc {
     public void batchDeleteEntities(
         com.google.cloud.dialogflow.v2.BatchDeleteEntitiesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchDeleteEntitiesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -977,7 +982,8 @@ public final class EntityTypesGrpc {
      */
     public com.google.cloud.dialogflow.v2.ListEntityTypesResponse listEntityTypes(
         com.google.cloud.dialogflow.v2.ListEntityTypesRequest request) {
-      return blockingUnaryCall(getChannel(), getListEntityTypesMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEntityTypesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -989,7 +995,8 @@ public final class EntityTypesGrpc {
      */
     public com.google.cloud.dialogflow.v2.EntityType getEntityType(
         com.google.cloud.dialogflow.v2.GetEntityTypeRequest request) {
-      return blockingUnaryCall(getChannel(), getGetEntityTypeMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEntityTypeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1001,7 +1008,7 @@ public final class EntityTypesGrpc {
      */
     public com.google.cloud.dialogflow.v2.EntityType createEntityType(
         com.google.cloud.dialogflow.v2.CreateEntityTypeRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateEntityTypeMethod(), getCallOptions(), request);
     }
 
@@ -1014,7 +1021,7 @@ public final class EntityTypesGrpc {
      */
     public com.google.cloud.dialogflow.v2.EntityType updateEntityType(
         com.google.cloud.dialogflow.v2.UpdateEntityTypeRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateEntityTypeMethod(), getCallOptions(), request);
     }
 
@@ -1027,7 +1034,7 @@ public final class EntityTypesGrpc {
      */
     public com.google.protobuf.Empty deleteEntityType(
         com.google.cloud.dialogflow.v2.DeleteEntityTypeRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteEntityTypeMethod(), getCallOptions(), request);
     }
 
@@ -1041,7 +1048,7 @@ public final class EntityTypesGrpc {
      */
     public com.google.longrunning.Operation batchUpdateEntityTypes(
         com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchUpdateEntityTypesMethod(), getCallOptions(), request);
     }
 
@@ -1055,7 +1062,7 @@ public final class EntityTypesGrpc {
      */
     public com.google.longrunning.Operation batchDeleteEntityTypes(
         com.google.cloud.dialogflow.v2.BatchDeleteEntityTypesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchDeleteEntityTypesMethod(), getCallOptions(), request);
     }
 
@@ -1069,7 +1076,7 @@ public final class EntityTypesGrpc {
      */
     public com.google.longrunning.Operation batchCreateEntities(
         com.google.cloud.dialogflow.v2.BatchCreateEntitiesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchCreateEntitiesMethod(), getCallOptions(), request);
     }
 
@@ -1085,7 +1092,7 @@ public final class EntityTypesGrpc {
      */
     public com.google.longrunning.Operation batchUpdateEntities(
         com.google.cloud.dialogflow.v2.BatchUpdateEntitiesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchUpdateEntitiesMethod(), getCallOptions(), request);
     }
 
@@ -1099,7 +1106,7 @@ public final class EntityTypesGrpc {
      */
     public com.google.longrunning.Operation batchDeleteEntities(
         com.google.cloud.dialogflow.v2.BatchDeleteEntitiesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchDeleteEntitiesMethod(), getCallOptions(), request);
     }
   }
@@ -1133,7 +1140,7 @@ public final class EntityTypesGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2.ListEntityTypesResponse>
         listEntityTypes(com.google.cloud.dialogflow.v2.ListEntityTypesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListEntityTypesMethod(), getCallOptions()), request);
     }
 
@@ -1147,7 +1154,7 @@ public final class EntityTypesGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2.EntityType>
         getEntityType(com.google.cloud.dialogflow.v2.GetEntityTypeRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetEntityTypeMethod(), getCallOptions()), request);
     }
 
@@ -1161,7 +1168,7 @@ public final class EntityTypesGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2.EntityType>
         createEntityType(com.google.cloud.dialogflow.v2.CreateEntityTypeRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateEntityTypeMethod(), getCallOptions()), request);
     }
 
@@ -1175,7 +1182,7 @@ public final class EntityTypesGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2.EntityType>
         updateEntityType(com.google.cloud.dialogflow.v2.UpdateEntityTypeRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateEntityTypeMethod(), getCallOptions()), request);
     }
 
@@ -1188,7 +1195,7 @@ public final class EntityTypesGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteEntityType(com.google.cloud.dialogflow.v2.DeleteEntityTypeRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteEntityTypeMethod(), getCallOptions()), request);
     }
 
@@ -1203,7 +1210,7 @@ public final class EntityTypesGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         batchUpdateEntityTypes(
             com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchUpdateEntityTypesMethod(), getCallOptions()), request);
     }
 
@@ -1218,7 +1225,7 @@ public final class EntityTypesGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         batchDeleteEntityTypes(
             com.google.cloud.dialogflow.v2.BatchDeleteEntityTypesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchDeleteEntityTypesMethod(), getCallOptions()), request);
     }
 
@@ -1232,7 +1239,7 @@ public final class EntityTypesGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         batchCreateEntities(com.google.cloud.dialogflow.v2.BatchCreateEntitiesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchCreateEntitiesMethod(), getCallOptions()), request);
     }
 
@@ -1248,7 +1255,7 @@ public final class EntityTypesGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         batchUpdateEntities(com.google.cloud.dialogflow.v2.BatchUpdateEntitiesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchUpdateEntitiesMethod(), getCallOptions()), request);
     }
 
@@ -1262,7 +1269,7 @@ public final class EntityTypesGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         batchDeleteEntities(com.google.cloud.dialogflow.v2.BatchDeleteEntitiesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchDeleteEntitiesMethod(), getCallOptions()), request);
     }
   }

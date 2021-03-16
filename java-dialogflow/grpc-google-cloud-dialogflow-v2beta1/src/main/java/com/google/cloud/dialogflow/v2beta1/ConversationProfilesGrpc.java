@@ -16,11 +16,6 @@
 package com.google.cloud.dialogflow.v2beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -364,7 +359,8 @@ public final class ConversationProfilesGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.dialogflow.v2beta1.ListConversationProfilesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListConversationProfilesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListConversationProfilesMethod(), responseObserver);
     }
 
     /**
@@ -378,7 +374,8 @@ public final class ConversationProfilesGrpc {
         com.google.cloud.dialogflow.v2beta1.GetConversationProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ConversationProfile>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetConversationProfileMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetConversationProfileMethod(), responseObserver);
     }
 
     /**
@@ -395,7 +392,8 @@ public final class ConversationProfilesGrpc {
         com.google.cloud.dialogflow.v2beta1.CreateConversationProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ConversationProfile>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateConversationProfileMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateConversationProfileMethod(), responseObserver);
     }
 
     /**
@@ -412,7 +410,8 @@ public final class ConversationProfilesGrpc {
         com.google.cloud.dialogflow.v2beta1.UpdateConversationProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ConversationProfile>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateConversationProfileMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateConversationProfileMethod(), responseObserver);
     }
 
     /**
@@ -425,7 +424,8 @@ public final class ConversationProfilesGrpc {
     public void deleteConversationProfile(
         com.google.cloud.dialogflow.v2beta1.DeleteConversationProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteConversationProfileMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteConversationProfileMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -433,35 +433,35 @@ public final class ConversationProfilesGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListConversationProfilesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.ListConversationProfilesRequest,
                       com.google.cloud.dialogflow.v2beta1.ListConversationProfilesResponse>(
                       this, METHODID_LIST_CONVERSATION_PROFILES)))
           .addMethod(
               getGetConversationProfileMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.GetConversationProfileRequest,
                       com.google.cloud.dialogflow.v2beta1.ConversationProfile>(
                       this, METHODID_GET_CONVERSATION_PROFILE)))
           .addMethod(
               getCreateConversationProfileMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.CreateConversationProfileRequest,
                       com.google.cloud.dialogflow.v2beta1.ConversationProfile>(
                       this, METHODID_CREATE_CONVERSATION_PROFILE)))
           .addMethod(
               getUpdateConversationProfileMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.UpdateConversationProfileRequest,
                       com.google.cloud.dialogflow.v2beta1.ConversationProfile>(
                       this, METHODID_UPDATE_CONVERSATION_PROFILE)))
           .addMethod(
               getDeleteConversationProfileMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.DeleteConversationProfileRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_CONVERSATION_PROFILE)))
@@ -500,7 +500,7 @@ public final class ConversationProfilesGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.dialogflow.v2beta1.ListConversationProfilesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListConversationProfilesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -517,7 +517,7 @@ public final class ConversationProfilesGrpc {
         com.google.cloud.dialogflow.v2beta1.GetConversationProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ConversationProfile>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetConversationProfileMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -537,7 +537,7 @@ public final class ConversationProfilesGrpc {
         com.google.cloud.dialogflow.v2beta1.CreateConversationProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ConversationProfile>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateConversationProfileMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -557,7 +557,7 @@ public final class ConversationProfilesGrpc {
         com.google.cloud.dialogflow.v2beta1.UpdateConversationProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ConversationProfile>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateConversationProfileMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -573,7 +573,7 @@ public final class ConversationProfilesGrpc {
     public void deleteConversationProfile(
         com.google.cloud.dialogflow.v2beta1.DeleteConversationProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteConversationProfileMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -610,7 +610,7 @@ public final class ConversationProfilesGrpc {
     public com.google.cloud.dialogflow.v2beta1.ListConversationProfilesResponse
         listConversationProfiles(
             com.google.cloud.dialogflow.v2beta1.ListConversationProfilesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListConversationProfilesMethod(), getCallOptions(), request);
     }
 
@@ -623,7 +623,7 @@ public final class ConversationProfilesGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.ConversationProfile getConversationProfile(
         com.google.cloud.dialogflow.v2beta1.GetConversationProfileRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetConversationProfileMethod(), getCallOptions(), request);
     }
 
@@ -639,7 +639,7 @@ public final class ConversationProfilesGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.ConversationProfile createConversationProfile(
         com.google.cloud.dialogflow.v2beta1.CreateConversationProfileRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateConversationProfileMethod(), getCallOptions(), request);
     }
 
@@ -655,7 +655,7 @@ public final class ConversationProfilesGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.ConversationProfile updateConversationProfile(
         com.google.cloud.dialogflow.v2beta1.UpdateConversationProfileRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateConversationProfileMethod(), getCallOptions(), request);
     }
 
@@ -668,7 +668,7 @@ public final class ConversationProfilesGrpc {
      */
     public com.google.protobuf.Empty deleteConversationProfile(
         com.google.cloud.dialogflow.v2beta1.DeleteConversationProfileRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteConversationProfileMethod(), getCallOptions(), request);
     }
   }
@@ -704,7 +704,7 @@ public final class ConversationProfilesGrpc {
             com.google.cloud.dialogflow.v2beta1.ListConversationProfilesResponse>
         listConversationProfiles(
             com.google.cloud.dialogflow.v2beta1.ListConversationProfilesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListConversationProfilesMethod(), getCallOptions()), request);
     }
 
@@ -719,7 +719,7 @@ public final class ConversationProfilesGrpc {
             com.google.cloud.dialogflow.v2beta1.ConversationProfile>
         getConversationProfile(
             com.google.cloud.dialogflow.v2beta1.GetConversationProfileRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetConversationProfileMethod(), getCallOptions()), request);
     }
 
@@ -737,7 +737,7 @@ public final class ConversationProfilesGrpc {
             com.google.cloud.dialogflow.v2beta1.ConversationProfile>
         createConversationProfile(
             com.google.cloud.dialogflow.v2beta1.CreateConversationProfileRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateConversationProfileMethod(), getCallOptions()), request);
     }
 
@@ -755,7 +755,7 @@ public final class ConversationProfilesGrpc {
             com.google.cloud.dialogflow.v2beta1.ConversationProfile>
         updateConversationProfile(
             com.google.cloud.dialogflow.v2beta1.UpdateConversationProfileRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateConversationProfileMethod(), getCallOptions()), request);
     }
 
@@ -769,7 +769,7 @@ public final class ConversationProfilesGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteConversationProfile(
             com.google.cloud.dialogflow.v2beta1.DeleteConversationProfileRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteConversationProfileMethod(), getCallOptions()), request);
     }
   }

@@ -16,11 +16,6 @@
 package com.google.cloud.dialogflow.v2beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -147,7 +142,8 @@ public final class EnvironmentsGrpc {
         com.google.cloud.dialogflow.v2beta1.ListEnvironmentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListEnvironmentsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListEnvironmentsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListEnvironmentsMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -155,7 +151,7 @@ public final class EnvironmentsGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListEnvironmentsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.ListEnvironmentsRequest,
                       com.google.cloud.dialogflow.v2beta1.ListEnvironmentsResponse>(
@@ -193,7 +189,7 @@ public final class EnvironmentsGrpc {
         com.google.cloud.dialogflow.v2beta1.ListEnvironmentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListEnvironmentsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListEnvironmentsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -228,7 +224,7 @@ public final class EnvironmentsGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.ListEnvironmentsResponse listEnvironments(
         com.google.cloud.dialogflow.v2beta1.ListEnvironmentsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListEnvironmentsMethod(), getCallOptions(), request);
     }
   }
@@ -262,7 +258,7 @@ public final class EnvironmentsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2beta1.ListEnvironmentsResponse>
         listEnvironments(com.google.cloud.dialogflow.v2beta1.ListEnvironmentsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListEnvironmentsMethod(), getCallOptions()), request);
     }
   }

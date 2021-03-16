@@ -16,11 +16,6 @@
 package com.google.cloud.dialogflow.v2;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -194,7 +189,8 @@ public final class AnswerRecordsGrpc {
         com.google.cloud.dialogflow.v2.ListAnswerRecordsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.ListAnswerRecordsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListAnswerRecordsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAnswerRecordsMethod(), responseObserver);
     }
 
     /**
@@ -207,7 +203,8 @@ public final class AnswerRecordsGrpc {
     public void updateAnswerRecord(
         com.google.cloud.dialogflow.v2.UpdateAnswerRecordRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.AnswerRecord> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateAnswerRecordMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAnswerRecordMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -215,14 +212,14 @@ public final class AnswerRecordsGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getListAnswerRecordsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2.ListAnswerRecordsRequest,
                       com.google.cloud.dialogflow.v2.ListAnswerRecordsResponse>(
                       this, METHODID_LIST_ANSWER_RECORDS)))
           .addMethod(
               getUpdateAnswerRecordMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2.UpdateAnswerRecordRequest,
                       com.google.cloud.dialogflow.v2.AnswerRecord>(
@@ -261,7 +258,7 @@ public final class AnswerRecordsGrpc {
         com.google.cloud.dialogflow.v2.ListAnswerRecordsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.ListAnswerRecordsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListAnswerRecordsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -277,7 +274,7 @@ public final class AnswerRecordsGrpc {
     public void updateAnswerRecord(
         com.google.cloud.dialogflow.v2.UpdateAnswerRecordRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.AnswerRecord> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateAnswerRecordMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -313,7 +310,7 @@ public final class AnswerRecordsGrpc {
      */
     public com.google.cloud.dialogflow.v2.ListAnswerRecordsResponse listAnswerRecords(
         com.google.cloud.dialogflow.v2.ListAnswerRecordsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListAnswerRecordsMethod(), getCallOptions(), request);
     }
 
@@ -326,7 +323,7 @@ public final class AnswerRecordsGrpc {
      */
     public com.google.cloud.dialogflow.v2.AnswerRecord updateAnswerRecord(
         com.google.cloud.dialogflow.v2.UpdateAnswerRecordRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateAnswerRecordMethod(), getCallOptions(), request);
     }
   }
@@ -361,7 +358,7 @@ public final class AnswerRecordsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2.ListAnswerRecordsResponse>
         listAnswerRecords(com.google.cloud.dialogflow.v2.ListAnswerRecordsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListAnswerRecordsMethod(), getCallOptions()), request);
     }
 
@@ -375,7 +372,7 @@ public final class AnswerRecordsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2.AnswerRecord>
         updateAnswerRecord(com.google.cloud.dialogflow.v2.UpdateAnswerRecordRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateAnswerRecordMethod(), getCallOptions()), request);
     }
   }

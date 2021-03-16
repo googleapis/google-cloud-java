@@ -16,14 +16,6 @@
 package com.google.cloud.dialogflow.v2beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -622,7 +614,8 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.CreateParticipantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Participant>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateParticipantMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateParticipantMethod(), responseObserver);
     }
 
     /**
@@ -636,7 +629,8 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.GetParticipantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Participant>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetParticipantMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetParticipantMethod(), responseObserver);
     }
 
     /**
@@ -650,7 +644,8 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.ListParticipantsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListParticipantsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListParticipantsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListParticipantsMethod(), responseObserver);
     }
 
     /**
@@ -664,7 +659,8 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.UpdateParticipantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Participant>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateParticipantMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateParticipantMethod(), responseObserver);
     }
 
     /**
@@ -682,7 +678,8 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.AnalyzeContentResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getAnalyzeContentMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAnalyzeContentMethod(), responseObserver);
     }
 
     /**
@@ -710,7 +707,8 @@ public final class ParticipantsGrpc {
             io.grpc.stub.StreamObserver<
                     com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse>
                 responseObserver) {
-      return asyncUnimplementedStreamingCall(getStreamingAnalyzeContentMethod(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
+          getStreamingAnalyzeContentMethod(), responseObserver);
     }
 
     /**
@@ -728,7 +726,8 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSuggestArticlesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSuggestArticlesMethod(), responseObserver);
     }
 
     /**
@@ -743,7 +742,8 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSuggestFaqAnswersMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSuggestFaqAnswersMethod(), responseObserver);
     }
 
     /**
@@ -758,7 +758,8 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getSuggestSmartRepliesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSuggestSmartRepliesMethod(), responseObserver);
     }
 
     /**
@@ -789,7 +790,8 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.ListSuggestionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListSuggestionsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListSuggestionsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSuggestionsMethod(), responseObserver);
     }
 
     /**
@@ -809,7 +811,8 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.CompileSuggestionResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getCompileSuggestionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCompileSuggestionMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -817,77 +820,77 @@ public final class ParticipantsGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreateParticipantMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.CreateParticipantRequest,
                       com.google.cloud.dialogflow.v2beta1.Participant>(
                       this, METHODID_CREATE_PARTICIPANT)))
           .addMethod(
               getGetParticipantMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.GetParticipantRequest,
                       com.google.cloud.dialogflow.v2beta1.Participant>(
                       this, METHODID_GET_PARTICIPANT)))
           .addMethod(
               getListParticipantsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.ListParticipantsRequest,
                       com.google.cloud.dialogflow.v2beta1.ListParticipantsResponse>(
                       this, METHODID_LIST_PARTICIPANTS)))
           .addMethod(
               getUpdateParticipantMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.UpdateParticipantRequest,
                       com.google.cloud.dialogflow.v2beta1.Participant>(
                       this, METHODID_UPDATE_PARTICIPANT)))
           .addMethod(
               getAnalyzeContentMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest,
                       com.google.cloud.dialogflow.v2beta1.AnalyzeContentResponse>(
                       this, METHODID_ANALYZE_CONTENT)))
           .addMethod(
               getStreamingAnalyzeContentMethod(),
-              asyncBidiStreamingCall(
+              io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest,
                       com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse>(
                       this, METHODID_STREAMING_ANALYZE_CONTENT)))
           .addMethod(
               getSuggestArticlesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest,
                       com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse>(
                       this, METHODID_SUGGEST_ARTICLES)))
           .addMethod(
               getSuggestFaqAnswersMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest,
                       com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse>(
                       this, METHODID_SUGGEST_FAQ_ANSWERS)))
           .addMethod(
               getSuggestSmartRepliesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest,
                       com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse>(
                       this, METHODID_SUGGEST_SMART_REPLIES)))
           .addMethod(
               getListSuggestionsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.ListSuggestionsRequest,
                       com.google.cloud.dialogflow.v2beta1.ListSuggestionsResponse>(
                       this, METHODID_LIST_SUGGESTIONS)))
           .addMethod(
               getCompileSuggestionMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest,
                       com.google.cloud.dialogflow.v2beta1.CompileSuggestionResponse>(
@@ -925,7 +928,7 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.CreateParticipantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Participant>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateParticipantMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -942,7 +945,7 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.GetParticipantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Participant>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetParticipantMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -959,7 +962,7 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.ListParticipantsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListParticipantsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListParticipantsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -976,7 +979,7 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.UpdateParticipantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Participant>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateParticipantMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -997,7 +1000,7 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.AnalyzeContentResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAnalyzeContentMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1028,7 +1031,7 @@ public final class ParticipantsGrpc {
             io.grpc.stub.StreamObserver<
                     com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse>
                 responseObserver) {
-      return asyncBidiStreamingCall(
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
           getChannel().newCall(getStreamingAnalyzeContentMethod(), getCallOptions()),
           responseObserver);
     }
@@ -1048,7 +1051,7 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSuggestArticlesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1066,7 +1069,7 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSuggestFaqAnswersMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1084,7 +1087,7 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSuggestSmartRepliesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1118,7 +1121,7 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.ListSuggestionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListSuggestionsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListSuggestionsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1141,7 +1144,7 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.CompileSuggestionResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCompileSuggestionMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -1176,7 +1179,7 @@ public final class ParticipantsGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.Participant createParticipant(
         com.google.cloud.dialogflow.v2beta1.CreateParticipantRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateParticipantMethod(), getCallOptions(), request);
     }
 
@@ -1189,7 +1192,8 @@ public final class ParticipantsGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.Participant getParticipant(
         com.google.cloud.dialogflow.v2beta1.GetParticipantRequest request) {
-      return blockingUnaryCall(getChannel(), getGetParticipantMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetParticipantMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1201,7 +1205,7 @@ public final class ParticipantsGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.ListParticipantsResponse listParticipants(
         com.google.cloud.dialogflow.v2beta1.ListParticipantsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListParticipantsMethod(), getCallOptions(), request);
     }
 
@@ -1214,7 +1218,7 @@ public final class ParticipantsGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.Participant updateParticipant(
         com.google.cloud.dialogflow.v2beta1.UpdateParticipantRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateParticipantMethod(), getCallOptions(), request);
     }
 
@@ -1231,7 +1235,8 @@ public final class ParticipantsGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.AnalyzeContentResponse analyzeContent(
         com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest request) {
-      return blockingUnaryCall(getChannel(), getAnalyzeContentMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalyzeContentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1247,7 +1252,8 @@ public final class ParticipantsGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse suggestArticles(
         com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest request) {
-      return blockingUnaryCall(getChannel(), getSuggestArticlesMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSuggestArticlesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1260,7 +1266,7 @@ public final class ParticipantsGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse suggestFaqAnswers(
         com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSuggestFaqAnswersMethod(), getCallOptions(), request);
     }
 
@@ -1274,7 +1280,7 @@ public final class ParticipantsGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse suggestSmartReplies(
         com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSuggestSmartRepliesMethod(), getCallOptions(), request);
     }
 
@@ -1304,7 +1310,8 @@ public final class ParticipantsGrpc {
     @java.lang.Deprecated
     public com.google.cloud.dialogflow.v2beta1.ListSuggestionsResponse listSuggestions(
         com.google.cloud.dialogflow.v2beta1.ListSuggestionsRequest request) {
-      return blockingUnaryCall(getChannel(), getListSuggestionsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSuggestionsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1322,7 +1329,7 @@ public final class ParticipantsGrpc {
     @java.lang.Deprecated
     public com.google.cloud.dialogflow.v2beta1.CompileSuggestionResponse compileSuggestion(
         com.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCompileSuggestionMethod(), getCallOptions(), request);
     }
   }
@@ -1356,7 +1363,7 @@ public final class ParticipantsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2beta1.Participant>
         createParticipant(com.google.cloud.dialogflow.v2beta1.CreateParticipantRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateParticipantMethod(), getCallOptions()), request);
     }
 
@@ -1370,7 +1377,7 @@ public final class ParticipantsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2beta1.Participant>
         getParticipant(com.google.cloud.dialogflow.v2beta1.GetParticipantRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetParticipantMethod(), getCallOptions()), request);
     }
 
@@ -1384,7 +1391,7 @@ public final class ParticipantsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2beta1.ListParticipantsResponse>
         listParticipants(com.google.cloud.dialogflow.v2beta1.ListParticipantsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListParticipantsMethod(), getCallOptions()), request);
     }
 
@@ -1398,7 +1405,7 @@ public final class ParticipantsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2beta1.Participant>
         updateParticipant(com.google.cloud.dialogflow.v2beta1.UpdateParticipantRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateParticipantMethod(), getCallOptions()), request);
     }
 
@@ -1416,7 +1423,7 @@ public final class ParticipantsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2beta1.AnalyzeContentResponse>
         analyzeContent(com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAnalyzeContentMethod(), getCallOptions()), request);
     }
 
@@ -1434,7 +1441,7 @@ public final class ParticipantsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse>
         suggestArticles(com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSuggestArticlesMethod(), getCallOptions()), request);
     }
 
@@ -1449,7 +1456,7 @@ public final class ParticipantsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse>
         suggestFaqAnswers(com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSuggestFaqAnswersMethod(), getCallOptions()), request);
     }
 
@@ -1465,7 +1472,7 @@ public final class ParticipantsGrpc {
             com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse>
         suggestSmartReplies(
             com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSuggestSmartRepliesMethod(), getCallOptions()), request);
     }
 
@@ -1496,7 +1503,7 @@ public final class ParticipantsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2beta1.ListSuggestionsResponse>
         listSuggestions(com.google.cloud.dialogflow.v2beta1.ListSuggestionsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListSuggestionsMethod(), getCallOptions()), request);
     }
 
@@ -1516,7 +1523,7 @@ public final class ParticipantsGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.v2beta1.CompileSuggestionResponse>
         compileSuggestion(com.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCompileSuggestionMethod(), getCallOptions()), request);
     }
   }
