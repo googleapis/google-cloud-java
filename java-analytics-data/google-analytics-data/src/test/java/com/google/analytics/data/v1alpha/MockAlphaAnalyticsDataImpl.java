@@ -61,7 +61,7 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
   @Override
   public void runReport(
       RunReportRequest request, StreamObserver<RunReportResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof RunReportResponse) {
       requests.add(request);
       responseObserver.onNext(((RunReportResponse) response));
@@ -73,7 +73,7 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method RunReport, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   RunReportResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
   @Override
   public void runPivotReport(
       RunPivotReportRequest request, StreamObserver<RunPivotReportResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof RunPivotReportResponse) {
       requests.add(request);
       responseObserver.onNext(((RunPivotReportResponse) response));
@@ -94,7 +94,7 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method RunPivotReport, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   RunPivotReportResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -103,7 +103,7 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
   @Override
   public void batchRunReports(
       BatchRunReportsRequest request, StreamObserver<BatchRunReportsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BatchRunReportsResponse) {
       requests.add(request);
       responseObserver.onNext(((BatchRunReportsResponse) response));
@@ -115,7 +115,7 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchRunReports, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BatchRunReportsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -125,7 +125,7 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
   public void batchRunPivotReports(
       BatchRunPivotReportsRequest request,
       StreamObserver<BatchRunPivotReportsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BatchRunPivotReportsResponse) {
       requests.add(request);
       responseObserver.onNext(((BatchRunPivotReportsResponse) response));
@@ -137,7 +137,7 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchRunPivotReports, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BatchRunPivotReportsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -145,7 +145,7 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
 
   @Override
   public void getMetadata(GetMetadataRequest request, StreamObserver<Metadata> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Metadata) {
       requests.add(request);
       responseObserver.onNext(((Metadata) response));
@@ -157,7 +157,7 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetMetadata, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Metadata.class.getName(),
                   Exception.class.getName())));
     }
@@ -167,7 +167,7 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
   public void runRealtimeReport(
       RunRealtimeReportRequest request,
       StreamObserver<RunRealtimeReportResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof RunRealtimeReportResponse) {
       requests.add(request);
       responseObserver.onNext(((RunRealtimeReportResponse) response));
@@ -179,7 +179,7 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method RunRealtimeReport, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   RunRealtimeReportResponse.class.getName(),
                   Exception.class.getName())));
     }
