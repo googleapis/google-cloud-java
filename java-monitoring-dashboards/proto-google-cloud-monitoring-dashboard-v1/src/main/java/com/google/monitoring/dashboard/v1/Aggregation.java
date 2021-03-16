@@ -1367,6 +1367,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * `ALIGN_NONE` is specified, this field is required or an error is returned.
    * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
    * specified, then this field is ignored.
+   * The maximum value of the `alignment_period` is 2 years, or 104 weeks.
    * </pre>
    *
    * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -1390,6 +1391,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * `ALIGN_NONE` is specified, this field is required or an error is returned.
    * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
    * specified, then this field is ignored.
+   * The maximum value of the `alignment_period` is 2 years, or 104 weeks.
    * </pre>
    *
    * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -1415,6 +1417,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * `ALIGN_NONE` is specified, this field is required or an error is returned.
    * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
    * specified, then this field is ignored.
+   * The maximum value of the `alignment_period` is 2 years, or 104 weeks.
    * </pre>
    *
    * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -2100,6 +2103,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * `ALIGN_NONE` is specified, this field is required or an error is returned.
      * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
      * specified, then this field is ignored.
+     * The maximum value of the `alignment_period` is 2 years, or 104 weeks.
      * </pre>
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -2122,6 +2126,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * `ALIGN_NONE` is specified, this field is required or an error is returned.
      * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
      * specified, then this field is ignored.
+     * The maximum value of the `alignment_period` is 2 years, or 104 weeks.
      * </pre>
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -2150,6 +2155,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * `ALIGN_NONE` is specified, this field is required or an error is returned.
      * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
      * specified, then this field is ignored.
+     * The maximum value of the `alignment_period` is 2 years, or 104 weeks.
      * </pre>
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -2180,6 +2186,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * `ALIGN_NONE` is specified, this field is required or an error is returned.
      * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
      * specified, then this field is ignored.
+     * The maximum value of the `alignment_period` is 2 years, or 104 weeks.
      * </pre>
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -2207,6 +2214,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * `ALIGN_NONE` is specified, this field is required or an error is returned.
      * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
      * specified, then this field is ignored.
+     * The maximum value of the `alignment_period` is 2 years, or 104 weeks.
      * </pre>
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -2241,6 +2249,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * `ALIGN_NONE` is specified, this field is required or an error is returned.
      * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
      * specified, then this field is ignored.
+     * The maximum value of the `alignment_period` is 2 years, or 104 weeks.
      * </pre>
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -2269,6 +2278,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * `ALIGN_NONE` is specified, this field is required or an error is returned.
      * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
      * specified, then this field is ignored.
+     * The maximum value of the `alignment_period` is 2 years, or 104 weeks.
      * </pre>
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -2291,6 +2301,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * `ALIGN_NONE` is specified, this field is required or an error is returned.
      * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
      * specified, then this field is ignored.
+     * The maximum value of the `alignment_period` is 2 years, or 104 weeks.
      * </pre>
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
@@ -2317,6 +2328,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * `ALIGN_NONE` is specified, this field is required or an error is returned.
      * If no per-series aligner is specified, or the aligner `ALIGN_NONE` is
      * specified, then this field is ignored.
+     * The maximum value of the `alignment_period` is 2 years, or 104 weeks.
      * </pre>
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>

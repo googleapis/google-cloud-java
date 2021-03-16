@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-monitoring-dashboards.git",
-        "sha": "9e8541f018fa2218ffcab9acc7846fa19bc7360b"
+        "sha": "ab5ca45434d640518eeaa5c3735c74e7c4dcd343"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1305ca41d554eb0725237561e34129373bb8cbc1",
-        "internalRef": "362856902"
+        "sha": "0dafa3963ef6fcb8a7f5daaa4bec12adb04de518",
+        "internalRef": "362979558"
       }
     },
     {
@@ -142,6 +142,8 @@
     "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ListDashboardsResponse.java",
     "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ListDashboardsResponseOrBuilder.java",
     "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/MetricsProto.java",
+    "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/MosaicLayout.java",
+    "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/MosaicLayoutOrBuilder.java",
     "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/PickTimeSeriesFilter.java",
     "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/PickTimeSeriesFilterOrBuilder.java",
     "proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ProjectName.java",

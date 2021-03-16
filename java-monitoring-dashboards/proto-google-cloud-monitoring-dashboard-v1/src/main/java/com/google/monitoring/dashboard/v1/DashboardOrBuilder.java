@@ -152,6 +152,44 @@ public interface DashboardOrBuilder
    *
    *
    * <pre>
+   * The content is arranged as a grid of tiles, with each content widget
+   * occupying one or more grid blocks.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.MosaicLayout mosaic_layout = 6;</code>
+   *
+   * @return Whether the mosaicLayout field is set.
+   */
+  boolean hasMosaicLayout();
+  /**
+   *
+   *
+   * <pre>
+   * The content is arranged as a grid of tiles, with each content widget
+   * occupying one or more grid blocks.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.MosaicLayout mosaic_layout = 6;</code>
+   *
+   * @return The mosaicLayout.
+   */
+  com.google.monitoring.dashboard.v1.MosaicLayout getMosaicLayout();
+  /**
+   *
+   *
+   * <pre>
+   * The content is arranged as a grid of tiles, with each content widget
+   * occupying one or more grid blocks.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.MosaicLayout mosaic_layout = 6;</code>
+   */
+  com.google.monitoring.dashboard.v1.MosaicLayoutOrBuilder getMosaicLayoutOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The content is divided into equally spaced rows and the widgets are
    * arranged horizontally.
    * </pre>

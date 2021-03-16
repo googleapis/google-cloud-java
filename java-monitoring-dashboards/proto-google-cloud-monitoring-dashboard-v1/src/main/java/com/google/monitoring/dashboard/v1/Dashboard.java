@@ -110,6 +110,23 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
               layoutCase_ = 5;
               break;
             }
+          case 50:
+            {
+              com.google.monitoring.dashboard.v1.MosaicLayout.Builder subBuilder = null;
+              if (layoutCase_ == 6) {
+                subBuilder =
+                    ((com.google.monitoring.dashboard.v1.MosaicLayout) layout_).toBuilder();
+              }
+              layout_ =
+                  input.readMessage(
+                      com.google.monitoring.dashboard.v1.MosaicLayout.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.monitoring.dashboard.v1.MosaicLayout) layout_);
+                layout_ = subBuilder.buildPartial();
+              }
+              layoutCase_ = 6;
+              break;
+            }
           case 66:
             {
               com.google.monitoring.dashboard.v1.RowLayout.Builder subBuilder = null;
@@ -185,6 +202,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GRID_LAYOUT(5),
+    MOSAIC_LAYOUT(6),
     ROW_LAYOUT(8),
     COLUMN_LAYOUT(9),
     LAYOUT_NOT_SET(0);
@@ -207,6 +225,8 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 5:
           return GRID_LAYOUT;
+        case 6:
+          return MOSAIC_LAYOUT;
         case 8:
           return ROW_LAYOUT;
         case 9:
@@ -440,6 +460,60 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
     return com.google.monitoring.dashboard.v1.GridLayout.getDefaultInstance();
   }
 
+  public static final int MOSAIC_LAYOUT_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * The content is arranged as a grid of tiles, with each content widget
+   * occupying one or more grid blocks.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.MosaicLayout mosaic_layout = 6;</code>
+   *
+   * @return Whether the mosaicLayout field is set.
+   */
+  @java.lang.Override
+  public boolean hasMosaicLayout() {
+    return layoutCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The content is arranged as a grid of tiles, with each content widget
+   * occupying one or more grid blocks.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.MosaicLayout mosaic_layout = 6;</code>
+   *
+   * @return The mosaicLayout.
+   */
+  @java.lang.Override
+  public com.google.monitoring.dashboard.v1.MosaicLayout getMosaicLayout() {
+    if (layoutCase_ == 6) {
+      return (com.google.monitoring.dashboard.v1.MosaicLayout) layout_;
+    }
+    return com.google.monitoring.dashboard.v1.MosaicLayout.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The content is arranged as a grid of tiles, with each content widget
+   * occupying one or more grid blocks.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.MosaicLayout mosaic_layout = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.dashboard.v1.MosaicLayoutOrBuilder getMosaicLayoutOrBuilder() {
+    if (layoutCase_ == 6) {
+      return (com.google.monitoring.dashboard.v1.MosaicLayout) layout_;
+    }
+    return com.google.monitoring.dashboard.v1.MosaicLayout.getDefaultInstance();
+  }
+
   public static final int ROW_LAYOUT_FIELD_NUMBER = 8;
   /**
    *
@@ -574,6 +648,9 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
     if (layoutCase_ == 5) {
       output.writeMessage(5, (com.google.monitoring.dashboard.v1.GridLayout) layout_);
     }
+    if (layoutCase_ == 6) {
+      output.writeMessage(6, (com.google.monitoring.dashboard.v1.MosaicLayout) layout_);
+    }
     if (layoutCase_ == 8) {
       output.writeMessage(8, (com.google.monitoring.dashboard.v1.RowLayout) layout_);
     }
@@ -602,6 +679,11 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.monitoring.dashboard.v1.GridLayout) layout_);
+    }
+    if (layoutCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.monitoring.dashboard.v1.MosaicLayout) layout_);
     }
     if (layoutCase_ == 8) {
       size +=
@@ -637,6 +719,9 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
       case 5:
         if (!getGridLayout().equals(other.getGridLayout())) return false;
         break;
+      case 6:
+        if (!getMosaicLayout().equals(other.getMosaicLayout())) return false;
+        break;
       case 8:
         if (!getRowLayout().equals(other.getRowLayout())) return false;
         break;
@@ -667,6 +752,10 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
       case 5:
         hash = (37 * hash) + GRID_LAYOUT_FIELD_NUMBER;
         hash = (53 * hash) + getGridLayout().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + MOSAIC_LAYOUT_FIELD_NUMBER;
+        hash = (53 * hash) + getMosaicLayout().hashCode();
         break;
       case 8:
         hash = (37 * hash) + ROW_LAYOUT_FIELD_NUMBER;
@@ -870,6 +959,13 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
           result.layout_ = gridLayoutBuilder_.build();
         }
       }
+      if (layoutCase_ == 6) {
+        if (mosaicLayoutBuilder_ == null) {
+          result.layout_ = layout_;
+        } else {
+          result.layout_ = mosaicLayoutBuilder_.build();
+        }
+      }
       if (layoutCase_ == 8) {
         if (rowLayoutBuilder_ == null) {
           result.layout_ = layout_;
@@ -950,6 +1046,11 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
         case GRID_LAYOUT:
           {
             mergeGridLayout(other.getGridLayout());
+            break;
+          }
+        case MOSAIC_LAYOUT:
+          {
+            mergeMosaicLayout(other.getMosaicLayout());
             break;
           }
         case ROW_LAYOUT:
@@ -1574,6 +1675,224 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return gridLayoutBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.dashboard.v1.MosaicLayout,
+            com.google.monitoring.dashboard.v1.MosaicLayout.Builder,
+            com.google.monitoring.dashboard.v1.MosaicLayoutOrBuilder>
+        mosaicLayoutBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The content is arranged as a grid of tiles, with each content widget
+     * occupying one or more grid blocks.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.MosaicLayout mosaic_layout = 6;</code>
+     *
+     * @return Whether the mosaicLayout field is set.
+     */
+    @java.lang.Override
+    public boolean hasMosaicLayout() {
+      return layoutCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The content is arranged as a grid of tiles, with each content widget
+     * occupying one or more grid blocks.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.MosaicLayout mosaic_layout = 6;</code>
+     *
+     * @return The mosaicLayout.
+     */
+    @java.lang.Override
+    public com.google.monitoring.dashboard.v1.MosaicLayout getMosaicLayout() {
+      if (mosaicLayoutBuilder_ == null) {
+        if (layoutCase_ == 6) {
+          return (com.google.monitoring.dashboard.v1.MosaicLayout) layout_;
+        }
+        return com.google.monitoring.dashboard.v1.MosaicLayout.getDefaultInstance();
+      } else {
+        if (layoutCase_ == 6) {
+          return mosaicLayoutBuilder_.getMessage();
+        }
+        return com.google.monitoring.dashboard.v1.MosaicLayout.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The content is arranged as a grid of tiles, with each content widget
+     * occupying one or more grid blocks.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.MosaicLayout mosaic_layout = 6;</code>
+     */
+    public Builder setMosaicLayout(com.google.monitoring.dashboard.v1.MosaicLayout value) {
+      if (mosaicLayoutBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        layout_ = value;
+        onChanged();
+      } else {
+        mosaicLayoutBuilder_.setMessage(value);
+      }
+      layoutCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The content is arranged as a grid of tiles, with each content widget
+     * occupying one or more grid blocks.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.MosaicLayout mosaic_layout = 6;</code>
+     */
+    public Builder setMosaicLayout(
+        com.google.monitoring.dashboard.v1.MosaicLayout.Builder builderForValue) {
+      if (mosaicLayoutBuilder_ == null) {
+        layout_ = builderForValue.build();
+        onChanged();
+      } else {
+        mosaicLayoutBuilder_.setMessage(builderForValue.build());
+      }
+      layoutCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The content is arranged as a grid of tiles, with each content widget
+     * occupying one or more grid blocks.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.MosaicLayout mosaic_layout = 6;</code>
+     */
+    public Builder mergeMosaicLayout(com.google.monitoring.dashboard.v1.MosaicLayout value) {
+      if (mosaicLayoutBuilder_ == null) {
+        if (layoutCase_ == 6
+            && layout_ != com.google.monitoring.dashboard.v1.MosaicLayout.getDefaultInstance()) {
+          layout_ =
+              com.google.monitoring.dashboard.v1.MosaicLayout.newBuilder(
+                      (com.google.monitoring.dashboard.v1.MosaicLayout) layout_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          layout_ = value;
+        }
+        onChanged();
+      } else {
+        if (layoutCase_ == 6) {
+          mosaicLayoutBuilder_.mergeFrom(value);
+        }
+        mosaicLayoutBuilder_.setMessage(value);
+      }
+      layoutCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The content is arranged as a grid of tiles, with each content widget
+     * occupying one or more grid blocks.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.MosaicLayout mosaic_layout = 6;</code>
+     */
+    public Builder clearMosaicLayout() {
+      if (mosaicLayoutBuilder_ == null) {
+        if (layoutCase_ == 6) {
+          layoutCase_ = 0;
+          layout_ = null;
+          onChanged();
+        }
+      } else {
+        if (layoutCase_ == 6) {
+          layoutCase_ = 0;
+          layout_ = null;
+        }
+        mosaicLayoutBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The content is arranged as a grid of tiles, with each content widget
+     * occupying one or more grid blocks.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.MosaicLayout mosaic_layout = 6;</code>
+     */
+    public com.google.monitoring.dashboard.v1.MosaicLayout.Builder getMosaicLayoutBuilder() {
+      return getMosaicLayoutFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The content is arranged as a grid of tiles, with each content widget
+     * occupying one or more grid blocks.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.MosaicLayout mosaic_layout = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.dashboard.v1.MosaicLayoutOrBuilder getMosaicLayoutOrBuilder() {
+      if ((layoutCase_ == 6) && (mosaicLayoutBuilder_ != null)) {
+        return mosaicLayoutBuilder_.getMessageOrBuilder();
+      } else {
+        if (layoutCase_ == 6) {
+          return (com.google.monitoring.dashboard.v1.MosaicLayout) layout_;
+        }
+        return com.google.monitoring.dashboard.v1.MosaicLayout.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The content is arranged as a grid of tiles, with each content widget
+     * occupying one or more grid blocks.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.MosaicLayout mosaic_layout = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.dashboard.v1.MosaicLayout,
+            com.google.monitoring.dashboard.v1.MosaicLayout.Builder,
+            com.google.monitoring.dashboard.v1.MosaicLayoutOrBuilder>
+        getMosaicLayoutFieldBuilder() {
+      if (mosaicLayoutBuilder_ == null) {
+        if (!(layoutCase_ == 6)) {
+          layout_ = com.google.monitoring.dashboard.v1.MosaicLayout.getDefaultInstance();
+        }
+        mosaicLayoutBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.dashboard.v1.MosaicLayout,
+                com.google.monitoring.dashboard.v1.MosaicLayout.Builder,
+                com.google.monitoring.dashboard.v1.MosaicLayoutOrBuilder>(
+                (com.google.monitoring.dashboard.v1.MosaicLayout) layout_,
+                getParentForChildren(),
+                isClean());
+        layout_ = null;
+      }
+      layoutCase_ = 6;
+      onChanged();
+      ;
+      return mosaicLayoutBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

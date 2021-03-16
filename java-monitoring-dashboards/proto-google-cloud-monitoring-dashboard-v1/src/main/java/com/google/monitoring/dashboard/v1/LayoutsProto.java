@@ -32,6 +32,14 @@ public final class LayoutsProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_monitoring_dashboard_v1_GridLayout_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_dashboard_v1_MosaicLayout_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_dashboard_v1_MosaicLayout_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_monitoring_dashboard_v1_MosaicLayout_Tile_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_dashboard_v1_MosaicLayout_Tile_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_monitoring_dashboard_v1_RowLayout_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_monitoring_dashboard_v1_RowLayout_fieldAccessorTable;
@@ -61,19 +69,25 @@ public final class LayoutsProto {
           + "google/monitoring/dashboard/v1/widget.pr"
           + "oto\"V\n\nGridLayout\022\017\n\007columns\030\001 \001(\003\0227\n\007wi"
           + "dgets\030\002 \003(\0132&.google.monitoring.dashboar"
-          + "d.v1.Widget\"\230\001\n\tRowLayout\022;\n\004rows\030\001 \003(\0132"
-          + "-.google.monitoring.dashboard.v1.RowLayo"
-          + "ut.Row\032N\n\003Row\022\016\n\006weight\030\001 \001(\003\0227\n\007widgets"
-          + "\030\002 \003(\0132&.google.monitoring.dashboard.v1."
-          + "Widget\"\247\001\n\014ColumnLayout\022D\n\007columns\030\001 \003(\013"
-          + "23.google.monitoring.dashboard.v1.Column"
-          + "Layout.Column\032Q\n\006Column\022\016\n\006weight\030\001 \001(\003\022"
-          + "7\n\007widgets\030\002 \003(\0132&.google.monitoring.das"
-          + "hboard.v1.WidgetB\250\001\n\"com.google.monitori"
-          + "ng.dashboard.v1B\014LayoutsProtoP\001ZGgoogle."
-          + "golang.org/genproto/googleapis/monitorin"
-          + "g/dashboard/v1;dashboard\352\002(Google::Cloud"
-          + "::Monitoring::Dashboard::V1b\006proto3"
+          + "d.v1.Widget\"\336\001\n\014MosaicLayout\022\017\n\007columns\030"
+          + "\001 \001(\005\022@\n\005tiles\030\003 \003(\01321.google.monitoring"
+          + ".dashboard.v1.MosaicLayout.Tile\032{\n\004Tile\022"
+          + "\r\n\005x_pos\030\001 \001(\005\022\r\n\005y_pos\030\002 \001(\005\022\r\n\005width\030\003"
+          + " \001(\005\022\016\n\006height\030\004 \001(\005\0226\n\006widget\030\005 \001(\0132&.g"
+          + "oogle.monitoring.dashboard.v1.Widget\"\230\001\n"
+          + "\tRowLayout\022;\n\004rows\030\001 \003(\0132-.google.monito"
+          + "ring.dashboard.v1.RowLayout.Row\032N\n\003Row\022\016"
+          + "\n\006weight\030\001 \001(\003\0227\n\007widgets\030\002 \003(\0132&.google"
+          + ".monitoring.dashboard.v1.Widget\"\247\001\n\014Colu"
+          + "mnLayout\022D\n\007columns\030\001 \003(\01323.google.monit"
+          + "oring.dashboard.v1.ColumnLayout.Column\032Q"
+          + "\n\006Column\022\016\n\006weight\030\001 \001(\003\0227\n\007widgets\030\002 \003("
+          + "\0132&.google.monitoring.dashboard.v1.Widge"
+          + "tB\250\001\n\"com.google.monitoring.dashboard.v1"
+          + "B\014LayoutsProtoP\001ZGgoogle.golang.org/genp"
+          + "roto/googleapis/monitoring/dashboard/v1;"
+          + "dashboard\352\002(Google::Cloud::Monitoring::D"
+          + "ashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -89,8 +103,26 @@ public final class LayoutsProto {
             new java.lang.String[] {
               "Columns", "Widgets",
             });
-    internal_static_google_monitoring_dashboard_v1_RowLayout_descriptor =
+    internal_static_google_monitoring_dashboard_v1_MosaicLayout_descriptor =
         getDescriptor().getMessageTypes().get(1);
+    internal_static_google_monitoring_dashboard_v1_MosaicLayout_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_dashboard_v1_MosaicLayout_descriptor,
+            new java.lang.String[] {
+              "Columns", "Tiles",
+            });
+    internal_static_google_monitoring_dashboard_v1_MosaicLayout_Tile_descriptor =
+        internal_static_google_monitoring_dashboard_v1_MosaicLayout_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_monitoring_dashboard_v1_MosaicLayout_Tile_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_dashboard_v1_MosaicLayout_Tile_descriptor,
+            new java.lang.String[] {
+              "XPos", "YPos", "Width", "Height", "Widget",
+            });
+    internal_static_google_monitoring_dashboard_v1_RowLayout_descriptor =
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_monitoring_dashboard_v1_RowLayout_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_monitoring_dashboard_v1_RowLayout_descriptor,
@@ -106,7 +138,7 @@ public final class LayoutsProto {
               "Weight", "Widgets",
             });
     internal_static_google_monitoring_dashboard_v1_ColumnLayout_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_monitoring_dashboard_v1_ColumnLayout_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_monitoring_dashboard_v1_ColumnLayout_descriptor,

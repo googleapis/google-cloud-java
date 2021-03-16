@@ -318,10 +318,8 @@ public final class DashboardsServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new custom dashboard.
-     * This method requires the `monitoring.dashboards.create` permission
-     * on the specified project. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * Creates a new custom dashboard. For examples on how you can use this API to create dashboards, see [Managing dashboards by API](/monitoring/dashboards/api-dashboard).
+     * This method requires the `monitoring.dashboards.create` permission on the specified project. For more information about permissions, see [Cloud Identity and Access Management](/iam).
      * </pre>
      */
     public void createDashboard(
@@ -339,7 +337,7 @@ public final class DashboardsServiceGrpc {
      * Lists the existing dashboards.
      * This method requires the `monitoring.dashboards.list` permission
      * on the specified project. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
     public void listDashboards(
@@ -357,7 +355,7 @@ public final class DashboardsServiceGrpc {
      * Fetches a specific dashboard.
      * This method requires the `monitoring.dashboards.get` permission
      * on the specified dashboard. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
     public void getDashboard(
@@ -375,7 +373,7 @@ public final class DashboardsServiceGrpc {
      * Deletes an existing custom dashboard.
      * This method requires the `monitoring.dashboards.delete` permission
      * on the specified dashboard. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
     public void deleteDashboard(
@@ -392,7 +390,7 @@ public final class DashboardsServiceGrpc {
      * Replaces an existing custom dashboard with a new definition.
      * This method requires the `monitoring.dashboards.update` permission
      * on the specified dashboard. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
     public void updateDashboard(
@@ -467,10 +465,8 @@ public final class DashboardsServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new custom dashboard.
-     * This method requires the `monitoring.dashboards.create` permission
-     * on the specified project. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * Creates a new custom dashboard. For examples on how you can use this API to create dashboards, see [Managing dashboards by API](/monitoring/dashboards/api-dashboard).
+     * This method requires the `monitoring.dashboards.create` permission on the specified project. For more information about permissions, see [Cloud Identity and Access Management](/iam).
      * </pre>
      */
     public void createDashboard(
@@ -490,7 +486,7 @@ public final class DashboardsServiceGrpc {
      * Lists the existing dashboards.
      * This method requires the `monitoring.dashboards.list` permission
      * on the specified project. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
     public void listDashboards(
@@ -510,7 +506,7 @@ public final class DashboardsServiceGrpc {
      * Fetches a specific dashboard.
      * This method requires the `monitoring.dashboards.get` permission
      * on the specified dashboard. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
     public void getDashboard(
@@ -530,7 +526,7 @@ public final class DashboardsServiceGrpc {
      * Deletes an existing custom dashboard.
      * This method requires the `monitoring.dashboards.delete` permission
      * on the specified dashboard. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
     public void deleteDashboard(
@@ -549,7 +545,7 @@ public final class DashboardsServiceGrpc {
      * Replaces an existing custom dashboard with a new definition.
      * This method requires the `monitoring.dashboards.update` permission
      * on the specified dashboard. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
     public void updateDashboard(
@@ -588,10 +584,8 @@ public final class DashboardsServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new custom dashboard.
-     * This method requires the `monitoring.dashboards.create` permission
-     * on the specified project. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * Creates a new custom dashboard. For examples on how you can use this API to create dashboards, see [Managing dashboards by API](/monitoring/dashboards/api-dashboard).
+     * This method requires the `monitoring.dashboards.create` permission on the specified project. For more information about permissions, see [Cloud Identity and Access Management](/iam).
      * </pre>
      */
     public com.google.monitoring.dashboard.v1.Dashboard createDashboard(
@@ -607,7 +601,7 @@ public final class DashboardsServiceGrpc {
      * Lists the existing dashboards.
      * This method requires the `monitoring.dashboards.list` permission
      * on the specified project. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
     public com.google.monitoring.dashboard.v1.ListDashboardsResponse listDashboards(
@@ -623,7 +617,7 @@ public final class DashboardsServiceGrpc {
      * Fetches a specific dashboard.
      * This method requires the `monitoring.dashboards.get` permission
      * on the specified dashboard. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
     public com.google.monitoring.dashboard.v1.Dashboard getDashboard(
@@ -639,7 +633,7 @@ public final class DashboardsServiceGrpc {
      * Deletes an existing custom dashboard.
      * This method requires the `monitoring.dashboards.delete` permission
      * on the specified dashboard. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
     public com.google.protobuf.Empty deleteDashboard(
@@ -655,7 +649,7 @@ public final class DashboardsServiceGrpc {
      * Replaces an existing custom dashboard with a new definition.
      * This method requires the `monitoring.dashboards.update` permission
      * on the specified dashboard. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
     public com.google.monitoring.dashboard.v1.Dashboard updateDashboard(
@@ -689,10 +683,8 @@ public final class DashboardsServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new custom dashboard.
-     * This method requires the `monitoring.dashboards.create` permission
-     * on the specified project. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * Creates a new custom dashboard. For examples on how you can use this API to create dashboards, see [Managing dashboards by API](/monitoring/dashboards/api-dashboard).
+     * This method requires the `monitoring.dashboards.create` permission on the specified project. For more information about permissions, see [Cloud Identity and Access Management](/iam).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -709,7 +701,7 @@ public final class DashboardsServiceGrpc {
      * Lists the existing dashboards.
      * This method requires the `monitoring.dashboards.list` permission
      * on the specified project. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -726,7 +718,7 @@ public final class DashboardsServiceGrpc {
      * Fetches a specific dashboard.
      * This method requires the `monitoring.dashboards.get` permission
      * on the specified dashboard. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -743,7 +735,7 @@ public final class DashboardsServiceGrpc {
      * Deletes an existing custom dashboard.
      * This method requires the `monitoring.dashboards.delete` permission
      * on the specified dashboard. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -759,7 +751,7 @@ public final class DashboardsServiceGrpc {
      * Replaces an existing custom dashboard with a new definition.
      * This method requires the `monitoring.dashboards.update` permission
      * on the specified dashboard. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
