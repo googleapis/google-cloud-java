@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.21.1](https://www.github.com/googleapis/java-bigtable/compare/v1.21.0...v1.21.1) (2021-03-15)
+
+
+### Bug Fixes
+
+* **retry:** restore grpc_service_config for CreateBackup and {Restore,Snapshot}Table ([#667](https://www.github.com/googleapis/java-bigtable/issues/667)) ([121f071](https://www.github.com/googleapis/java-bigtable/commit/121f07159c2715368cb53753ba39d70d1d25efb8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#671](https://www.github.com/googleapis/java-bigtable/issues/671)) ([6ba3bf3](https://www.github.com/googleapis/java-bigtable/commit/6ba3bf3a642bd5b7ecf2a86a821ede0f2bae084f))
+
 ## [1.21.0](https://www.github.com/googleapis/java-bigtable/compare/v1.20.1...v1.21.0) (2021-03-02)
 
 
