@@ -18,7 +18,6 @@ package com.google.cloud.examples.storage.objects;
 // [START storage_list_files]
 import com.google.api.gax.paging.Page;
 import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
@@ -31,8 +30,7 @@ public class ListObjects {
     // String bucketName = "your-unique-bucket-name";
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-    Bucket bucket = storage.get(bucketName);
-    Page<Blob> blobs = bucket.list();
+    Page<Blob> blobs = storage.list(bucketName);
 
     for (Blob blob : blobs.iterateAll()) {
       System.out.println(blob.getName());
