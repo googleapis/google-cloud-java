@@ -35,7 +35,6 @@ public class ListObjectsWithPrefix {
     // String directoryPrefix = "myDirectory/"
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-    Bucket bucket = storage.get(bucketName);
     /**
      * Using the Storage.BlobListOption.currentDirectory() option here causes the results to display
      * in a "directory-like" mode, showing what objects are in the directory you've specified, as
@@ -57,7 +56,7 @@ public class ListObjectsWithPrefix {
      * /a/ directory.
      */
     Page<Blob> blobs =
-        bucket.list(
+        storage.list(bucketName,
             Storage.BlobListOption.prefix(directoryPrefix),
             Storage.BlobListOption.currentDirectory());
 
