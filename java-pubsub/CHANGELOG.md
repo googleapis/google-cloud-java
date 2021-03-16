@@ -1,5 +1,32 @@
 # Changelog
 
+## [1.112.0](https://www.github.com/googleapis/java-pubsub/compare/v1.111.4...v1.112.0) (2021-03-16)
+
+
+### Features
+
+* expose default client configs ([#541](https://www.github.com/googleapis/java-pubsub/issues/541)) ([01e6daf](https://www.github.com/googleapis/java-pubsub/commit/01e6dafb569a37c661463b79f5afbfba4f6d188d))
+
+
+### Bug Fixes
+
+* properly shutdown subscriber stub on permanent streaming pull failure ([#539](https://www.github.com/googleapis/java-pubsub/issues/539)) ([adbcc0c](https://www.github.com/googleapis/java-pubsub/commit/adbcc0c6777e35eae24b538e6c48f9ef7485a786))
+* update MessageDispatcher to not extend deadlines of messages which arrive early to 60s ([#570](https://www.github.com/googleapis/java-pubsub/issues/570)) ([e174e20](https://www.github.com/googleapis/java-pubsub/commit/e174e2043f64563f4d2868537aeb90d948233166))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.94.3 ([#566](https://www.github.com/googleapis/java-pubsub/issues/566)) ([3f23ac6](https://www.github.com/googleapis/java-pubsub/commit/3f23ac6cda00814f74f2c435dd8a05b70ac69d27))
+* update dependency com.google.cloud:google-cloud-core to v1.94.4 ([#568](https://www.github.com/googleapis/java-pubsub/issues/568)) ([21886d3](https://www.github.com/googleapis/java-pubsub/commit/21886d39cdc2a33275c2061578c877b0fa6aee98))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#564](https://www.github.com/googleapis/java-pubsub/issues/564)) ([0aa4521](https://www.github.com/googleapis/java-pubsub/commit/0aa452121b2fa769221b41c8c1323f3b31b599d1))
+* update dependency com.google.protobuf:protobuf-java-util to v3.15.5 ([#559](https://www.github.com/googleapis/java-pubsub/issues/559)) ([74e6a92](https://www.github.com/googleapis/java-pubsub/commit/74e6a92ca88f006e0fe1a68144ba0cb30a1d140c))
+* update dependency com.google.protobuf:protobuf-java-util to v3.15.6 ([#569](https://www.github.com/googleapis/java-pubsub/issues/569)) ([b6e299f](https://www.github.com/googleapis/java-pubsub/commit/b6e299f6d13dab7d5b2e8c575021371485878bb2))
+
+
+### Documentation
+
+* Remove experimental note for schema APIs ([#560](https://www.github.com/googleapis/java-pubsub/issues/560)) ([4b98556](https://www.github.com/googleapis/java-pubsub/commit/4b98556e550802135cfb87d8984f0deec57e8c2e))
+
 ### [1.111.4](https://www.github.com/googleapis/java-pubsub/compare/v1.111.3...v1.111.4) (2021-02-26)
 
 
