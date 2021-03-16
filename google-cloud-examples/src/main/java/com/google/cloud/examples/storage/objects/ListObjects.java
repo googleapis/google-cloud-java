@@ -31,8 +31,7 @@ public class ListObjects {
     // String bucketName = "your-unique-bucket-name";
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
-    Bucket bucket = storage.get(bucketName);
-    Page<Blob> blobs = bucket.list();
+    Page<Blob> blobs = storage.list(bucketName);
 
     for (Blob blob : blobs.iterateAll()) {
       System.out.println(blob.getName());
