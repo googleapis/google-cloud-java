@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.5.0](https://www.github.com/googleapis/java-document-ai/compare/v0.4.1...v0.5.0) (2021-03-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove the translation fields in document.proto
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#372](https://www.github.com/googleapis/java-document-ai/issues/372)) ([e98fa5a](https://www.github.com/googleapis/java-document-ai/commit/e98fa5a945dfbe41fc9ba52723986dcb2fe66b3e))
+* remove the translation fields in document.proto ([#382](https://www.github.com/googleapis/java-document-ai/issues/382)) ([06270f7](https://www.github.com/googleapis/java-document-ai/commit/06270f7b6a8e5e25f776236ee680a096bb842451))
+* Update documentai/v1beta3 protos: add support for boolean normalized value ([#358](https://www.github.com/googleapis/java-document-ai/issues/358)) ([2f341a1](https://www.github.com/googleapis/java-document-ai/commit/2f341a10d41f10a35f19eed20c7c6aa891f0569f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#383](https://www.github.com/googleapis/java-document-ai/issues/383)) ([b074e0b](https://www.github.com/googleapis/java-document-ai/commit/b074e0b4bf48b6b140cfe30158fde6a5a2ab1dfc))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.14 ([#369](https://www.github.com/googleapis/java-document-ai/issues/369)) ([136d117](https://www.github.com/googleapis/java-document-ai/commit/136d1178d13f3a2bd3f93be6106a97f04aa7bcae))
+
 ### [0.4.1](https://www.github.com/googleapis/java-document-ai/compare/v0.4.0...v0.4.1) (2021-02-26)
 
 
