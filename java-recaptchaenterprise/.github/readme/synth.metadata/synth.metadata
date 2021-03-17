@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-recaptchaenterprise.git",
-        "sha": "8272a736fad85bc6a03fc65e31e0632e105481d6"
+        "sha": "0903be1fe342fcf0897d8177da9770fd7d128eaf"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "2c54c473779ea731128cea61a3a6c975a08a5378"
+        "sha": "78437c732a60c64895778697b078497b0988346c"
       }
     }
   ]
