@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-gkehub.git",
-        "sha": "26b03d5f577087d6709930b5b28079565fe0173c"
+        "sha": "eb44a9c359ed224f0f7075933302bef37c9027ef"
       }
     },
     {
