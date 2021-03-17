@@ -50,7 +50,6 @@ public class FindingSnippets {
    * @param sourceName The source for the finding.
    */
   // [START securitycenter_create_finding]
-  // [START create_finding]
   static Finding createFinding(SourceName sourceName, String findingId) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
@@ -87,7 +86,6 @@ public class FindingSnippets {
       throw new RuntimeException("Couldn't create client.", e);
     }
   }
-  // [END create_finding]
   // [END securitycenter_create_finding]
 
   /**
@@ -96,7 +94,6 @@ public class FindingSnippets {
    * @param sourceName The source for the finding.
    */
   // [START securitycenter_create_finding_with_source_properties]
-  // [START create_finding_with_source_properties]
   static Finding createFindingWithSourceProperties(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
@@ -141,7 +138,6 @@ public class FindingSnippets {
       throw new RuntimeException("Couldn't create client.", e);
     }
   }
-  // [END create_finding_with_source_properties]
   // [END securitycenter_create_finding_with_source_properties]
 
   /**
@@ -150,7 +146,6 @@ public class FindingSnippets {
    * @param findingName The finding to update.
    */
   // [START securitycenter_update_finding_source_properties]
-  // [START update_finding]
   static Finding updateFinding(FindingName findingName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // FindingName findingName = FindingName.of(/*organization=*/"123234324",
@@ -190,7 +185,6 @@ public class FindingSnippets {
       throw new RuntimeException("Couldn't create client.", e);
     }
   }
-  // [END update_finding]
   // [END securitycenter_update_finding_source_properties]
 
   /**
@@ -199,7 +193,6 @@ public class FindingSnippets {
    * @param findingName The finding to update.
    */
   // [START securitycenter_update_finding_state]
-  // [START update_finding_state]
   static Finding setFindingState(FindingName findingName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // FindingName findingName = FindingName.of(/*organization=*/"123234324",
@@ -223,7 +216,6 @@ public class FindingSnippets {
       throw new RuntimeException("Couldn't create client.", e);
     }
   }
-  // [END update_finding_state]
   // [END securitycenter_update_finding_state]
 
   /**
@@ -232,7 +224,6 @@ public class FindingSnippets {
    * @param organizationName The source to list all findings for.
    */
   // [START securitycenter_list_all_findings]
-  // [START list_all_findings]
   static ImmutableList<ListFindingsResult> listAllFindings(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // OrganizationName organizationName = OrganizationName.of(/*organizationId=*/"123234324");
@@ -256,7 +247,6 @@ public class FindingSnippets {
       throw new RuntimeException("Couldn't create client.", e);
     }
   }
-  // [END list_all_findings]
   // [END securitycenter_list_all_findings]
 
   /**
@@ -265,7 +255,6 @@ public class FindingSnippets {
    * @param sourceName The source to list filtered findings for.
    */
   // [START securitycenter_list_filtered_findings]
-  // [START list_filtered_findings]
   static ImmutableList<ListFindingsResult> listFilteredFindings(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // SourceName sourceName = SourceName.of(/*organizationId=*/"123234324",
@@ -291,7 +280,6 @@ public class FindingSnippets {
       throw new RuntimeException("Couldn't create client.", e);
     }
   }
-  // [END list_filtered_findings]
   // [END securitycenter_list_filtered_findings]
 
   /**
@@ -300,7 +288,6 @@ public class FindingSnippets {
    * @param sourceName The source to list findings at a specific time for.
    */
   // [START securitycenter_list_findings_at_time]
-  // [START list_findings_at_time]
   static ImmutableList<ListFindingsResult> listFindingsAtTime(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // SourceName sourceName = SourceName.of(/*organizationId=*/"123234324",
@@ -331,7 +318,6 @@ public class FindingSnippets {
       throw new RuntimeException("Couldn't create client.", e);
     }
   }
-  // [END list_findings_at_time]
   // [END securitycenter_list_findings_at_time]
 
   /**
@@ -341,7 +327,6 @@ public class FindingSnippets {
    * @param sourceName The source to create a finding for.
    */
   // [START securitycenter_test_iam]
-  // [START test_iam_permissions]
   static TestIamPermissionsResponse testIamPermissions(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // SourceName sourceName = SourceName.of(/*organizationId=*/"123234324",
@@ -362,7 +347,6 @@ public class FindingSnippets {
       throw new RuntimeException("Couldn't create client.", e);
     }
   }
-  // [END test_iam_permissions]
   // [END securitycenter_test_iam]
 
   /**
@@ -372,7 +356,6 @@ public class FindingSnippets {
    * @param organizationName The organizatoin to group all findings for.
    */
   // [START securitycenter_group_all_findings]
-  // [START group_all_findings]
   static ImmutableList<GroupResult> groupFindings(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // OrganizationName organizationName = OrganizationName.of("123234324");
@@ -396,7 +379,6 @@ public class FindingSnippets {
       throw new RuntimeException("Couldn't create client.", e);
     }
   }
-  // [END group_all_findings]
   // [END securitycenter_group_all_findings]
 
   /**
@@ -406,7 +388,6 @@ public class FindingSnippets {
    * @param sourceName The source to limit the findings to.
    */
   // [START securitycenter_group_findings_with_source]
-  // [START group_findings_with_source]
   static ImmutableList<GroupResult> groupFindingsWithSource(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
@@ -430,7 +411,6 @@ public class FindingSnippets {
       throw new RuntimeException("Couldn't create client.", e);
     }
   }
-  // [END group_findings_with_source]
   // [END securitycenter_group_findings_with_source]
 
   /**
@@ -440,7 +420,6 @@ public class FindingSnippets {
    * @param sourceName The source to limit the findings to.
    */
   // [START securitycenter_group_active_findings_with_source]
-  // [START group_active_findings_with_source]
   static ImmutableList<GroupResult> groupActiveFindingsWithSource(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
@@ -467,7 +446,6 @@ public class FindingSnippets {
       throw new RuntimeException("Couldn't create client.", e);
     }
   }
-  // [END group_active_findings_with_source]
   // [END securitycenter_group_active_findings_with_source]
 
   /**
@@ -477,7 +455,6 @@ public class FindingSnippets {
    * @param sourceName The source to limit the findings to.
    */
   // [START securitycenter_group_active_findings_with_source_at_time]
-  // [START group_active_findings_with_source_at_time]
   static ImmutableList<GroupResult> groupActiveFindingsWithSourceAtTime(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // SourceName sourceName = SourceName.of(/*organization=*/"123234324",/*source=*/
@@ -511,7 +488,6 @@ public class FindingSnippets {
       throw new RuntimeException("Couldn't create client.", e);
     }
   }
-  // [END group_active_findings_with_source_at_time]
   // [END securitycenter_group_active_findings_with_source_at_time]
 
   /**
@@ -521,7 +497,6 @@ public class FindingSnippets {
    * @param sourceName The source to limit the findings to.
    */
   // [START securitycenter_group_active_findings_with_source_and_compare_duration]
-  // [START group_active_findings_with_source_and_compare_duration]
   static ImmutableList<GroupResult> groupActiveFindingsWithSourceAndCompareDuration(
       SourceName sourceName, Duration duration) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -553,6 +528,5 @@ public class FindingSnippets {
       throw new RuntimeException("Couldn't create client.", e);
     }
   }
-  // [END group_active_findings_with_source_and_compare_duration]
   // [END securitycenter_group_active_findings_with_source_and_compare_duration]
 }
