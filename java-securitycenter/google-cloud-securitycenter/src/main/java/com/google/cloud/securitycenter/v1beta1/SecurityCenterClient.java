@@ -742,6 +742,16 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   GroupAssetsRequest request =
+   *       GroupAssetsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setGroupBy("groupBy293428022")
+   *           .setCompareDuration(Duration.newBuilder().build())
+   *           .setReadTime(Timestamp.newBuilder().build())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     GroupAssetsResponse response = securityCenterClient.groupAssetsCallable().call(request);
    *     for (GroupResult element : response.getResponsesList()) {
@@ -924,6 +934,15 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   GroupFindingsRequest request =
+   *       GroupFindingsRequest.newBuilder()
+   *           .setParent(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setGroupBy("groupBy293428022")
+   *           .setReadTime(Timestamp.newBuilder().build())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     GroupFindingsResponse response = securityCenterClient.groupFindingsCallable().call(request);
    *     for (GroupResult element : response.getResponsesList()) {
@@ -1016,6 +1035,17 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ListAssetsRequest request =
+   *       ListAssetsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setReadTime(Timestamp.newBuilder().build())
+   *           .setCompareDuration(Duration.newBuilder().build())
+   *           .setFieldMask(FieldMask.newBuilder().build())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListAssetsResponse response = securityCenterClient.listAssetsCallable().call(request);
    *     for (ListAssetsResponse.ListAssetsResult element : response.getResponsesList()) {
@@ -1115,6 +1145,16 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ListFindingsRequest request =
+   *       ListFindingsRequest.newBuilder()
+   *           .setParent(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setReadTime(Timestamp.newBuilder().build())
+   *           .setFieldMask(FieldMask.newBuilder().build())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListFindingsResponse response = securityCenterClient.listFindingsCallable().call(request);
    *     for (Finding element : response.getResponsesList()) {
@@ -1248,6 +1288,12 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ListSourcesRequest request =
+   *       ListSourcesRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListSourcesResponse response = securityCenterClient.listSourcesCallable().call(request);
    *     for (Source element : response.getResponsesList()) {
