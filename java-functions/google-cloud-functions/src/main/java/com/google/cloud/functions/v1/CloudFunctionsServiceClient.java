@@ -239,6 +239,12 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
+   *   ListFunctionsRequest request =
+   *       ListFunctionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListFunctionsResponse response =
    *         cloudFunctionsServiceClient.listFunctionsCallable().call(request);

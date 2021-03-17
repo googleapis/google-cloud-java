@@ -67,7 +67,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
   @Override
   public void listFunctions(
       ListFunctionsRequest request, StreamObserver<ListFunctionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListFunctionsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListFunctionsResponse) response));
@@ -79,7 +79,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListFunctions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListFunctionsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -88,7 +88,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
   @Override
   public void getFunction(
       GetFunctionRequest request, StreamObserver<CloudFunction> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CloudFunction) {
       requests.add(request);
       responseObserver.onNext(((CloudFunction) response));
@@ -100,7 +100,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetFunction, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CloudFunction.class.getName(),
                   Exception.class.getName())));
     }
@@ -109,7 +109,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
   @Override
   public void createFunction(
       CreateFunctionRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -121,7 +121,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateFunction, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -130,7 +130,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
   @Override
   public void updateFunction(
       UpdateFunctionRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -142,7 +142,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateFunction, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -151,7 +151,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
   @Override
   public void deleteFunction(
       DeleteFunctionRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -163,7 +163,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteFunction, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -172,7 +172,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
   @Override
   public void callFunction(
       CallFunctionRequest request, StreamObserver<CallFunctionResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CallFunctionResponse) {
       requests.add(request);
       responseObserver.onNext(((CallFunctionResponse) response));
@@ -184,7 +184,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CallFunction, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CallFunctionResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -194,7 +194,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
   public void generateUploadUrl(
       GenerateUploadUrlRequest request,
       StreamObserver<GenerateUploadUrlResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof GenerateUploadUrlResponse) {
       requests.add(request);
       responseObserver.onNext(((GenerateUploadUrlResponse) response));
@@ -206,7 +206,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GenerateUploadUrl, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GenerateUploadUrlResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -216,7 +216,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
   public void generateDownloadUrl(
       GenerateDownloadUrlRequest request,
       StreamObserver<GenerateDownloadUrlResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof GenerateDownloadUrlResponse) {
       requests.add(request);
       responseObserver.onNext(((GenerateDownloadUrlResponse) response));
@@ -228,7 +228,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GenerateDownloadUrl, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   GenerateDownloadUrlResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -236,7 +236,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
 
   @Override
   public void setIamPolicy(SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -248,7 +248,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -256,7 +256,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
 
   @Override
   public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -268,7 +268,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -278,7 +278,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
   public void testIamPermissions(
       TestIamPermissionsRequest request,
       StreamObserver<TestIamPermissionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
       responseObserver.onNext(((TestIamPermissionsResponse) response));
@@ -290,7 +290,7 @@ public class MockCloudFunctionsServiceImpl extends CloudFunctionsServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TestIamPermissionsResponse.class.getName(),
                   Exception.class.getName())));
     }
