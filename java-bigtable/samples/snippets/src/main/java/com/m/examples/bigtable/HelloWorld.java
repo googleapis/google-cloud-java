@@ -16,7 +16,7 @@
 
 package com.m.examples.bigtable;
 
-// [START bigtable_hw_imports_veneer]
+// [START bigtable_hw_imports]
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
@@ -32,7 +32,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-// [END bigtable_hw_imports_veneer]
+// [END bigtable_hw_imports]
 
 /**
  * An example of using Google Cloud Bigtable.
@@ -73,7 +73,7 @@ public class HelloWorld {
   public HelloWorld(String projectId, String instanceId, String tableId) throws IOException {
     this.tableId = tableId;
 
-    // [START bigtable_hw_connect_veneer]
+    // [START bigtable_hw_connect]
     // Creates the settings to configure a bigtable data client.
     BigtableDataSettings settings =
         BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId).build();
@@ -90,7 +90,7 @@ public class HelloWorld {
 
     // Creates a bigtable table admin client.
     adminClient = BigtableTableAdminClient.create(adminSettings);
-    // [END bigtable_hw_connect_veneer]
+    // [END bigtable_hw_connect]
   }
 
   public void run() throws Exception {
@@ -110,7 +110,7 @@ public class HelloWorld {
 
   /** Demonstrates how to create a table. */
   public void createTable() {
-    // [START bigtable_hw_create_table_veneer]
+    // [START bigtable_hw_create_table]
     // Checks if table exists, creates table if does not exist.
     if (!adminClient.exists(tableId)) {
       System.out.println("Creating table: " + tableId);
@@ -119,12 +119,12 @@ public class HelloWorld {
       adminClient.createTable(createTableRequest);
       System.out.printf("Table %s created successfully%n", tableId);
     }
-    // [END bigtable_hw_create_table_veneer]
+    // [END bigtable_hw_create_table]
   }
 
   /** Demonstrates how to write some rows to a table. */
   public void writeToTable() {
-    // [START bigtable_hw_write_rows_veneer]
+    // [START bigtable_hw_write_rows]
     try {
       System.out.println("\nWriting some greetings to the table");
       String[] names = {"World", "Bigtable", "Java"};
@@ -140,12 +140,12 @@ public class HelloWorld {
     } catch (NotFoundException e) {
       System.err.println("Failed to write to non-existent table: " + e.getMessage());
     }
-    // [END bigtable_hw_write_rows_veneer]
+    // [END bigtable_hw_write_rows]
   }
 
   /** Demonstrates how to read a single row from a table. */
   public Row readSingleRow() {
-    // [START bigtable_hw_get_by_key_veneer]
+    // [START bigtable_hw_get_by_key]
     try {
       System.out.println("\nReading a single row by row key");
       Row row = dataClient.readRow(tableId, ROW_KEY_PREFIX + 0);
@@ -160,12 +160,12 @@ public class HelloWorld {
       System.err.println("Failed to read from a non-existent table: " + e.getMessage());
       return null;
     }
-    // [END bigtable_hw_get_by_key_veneer]
+    // [END bigtable_hw_get_by_key]
   }
 
   /** Demonstrates how to access specific cells by family and qualifier. */
   public List<RowCell> readSpecificCells() {
-    // [START bigtable_hw_get_by_key_veneer]
+    // [START bigtable_hw_get_by_key]
     try {
       System.out.println("\nReading specific cells by family and qualifier");
       Row row = dataClient.readRow(tableId, ROW_KEY_PREFIX + 0);
@@ -181,12 +181,12 @@ public class HelloWorld {
       System.err.println("Failed to read from a non-existent table: " + e.getMessage());
       return null;
     }
-    // [END bigtable_hw_get_by_key_veneer]
+    // [END bigtable_hw_get_by_key]
   }
 
   /** Demonstrates how to read an entire table. */
   public List<Row> readTable() {
-    // [START bigtable_hw_scan_all_veneer]
+    // [START bigtable_hw_scan_all]
     try {
       System.out.println("\nReading the entire table");
       Query query = Query.create(tableId);
@@ -206,12 +206,12 @@ public class HelloWorld {
       System.err.println("Failed to read a non-existent table: " + e.getMessage());
       return null;
     }
-    // [END bigtable_hw_scan_all_veneer]
+    // [END bigtable_hw_scan_all]
   }
 
   /** Demonstrates how to delete a table. */
   public void deleteTable() {
-    // [START bigtable_hw_delete_table_veneer]
+    // [START bigtable_hw_delete_table]
     System.out.println("\nDeleting table: " + tableId);
     try {
       adminClient.deleteTable(tableId);
@@ -219,6 +219,6 @@ public class HelloWorld {
     } catch (NotFoundException e) {
       System.err.println("Failed to delete a non-existent table: " + e.getMessage());
     }
-    // [END bigtable_hw_delete_table_veneer]
+    // [END bigtable_hw_delete_table]
   }
 }
