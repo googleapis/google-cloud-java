@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.15.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.15.0...v1.15.1) (2021-03-17)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.127.8 ([#934](https://www.github.com/googleapis/java-bigquerystorage/issues/934)) ([626ae23](https://www.github.com/googleapis/java-bigquerystorage/commit/626ae2338a08aa9933badcd32d926cd51515e1e5))
+* update dependency org.apache.avro:avro to v1.10.2 ([#942](https://www.github.com/googleapis/java-bigquerystorage/issues/942)) ([1554247](https://www.github.com/googleapis/java-bigquerystorage/commit/1554247cf55aa56281a530c721ab1650699a3efc))
+
 ## [1.15.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.14.0...v1.15.0) (2021-03-09)
 
 
