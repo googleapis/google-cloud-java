@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.7.0](https://www.github.com/googleapis/java-analytics-data/compare/v0.6.0...v0.7.0) (2021-03-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename the 'page_size', 'page_token', 'total_size' fields to 'limit', 'offset' and 'row_count' respectively (#170)
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#163](https://www.github.com/googleapis/java-analytics-data/issues/163)) ([b1852d4](https://www.github.com/googleapis/java-analytics-data/commit/b1852d4c78b4d9aa49d0b8c5bd3b9a5d2cc5fdb6))
+
+
+### Bug Fixes
+
+* rename the 'page_size', 'page_token', 'total_size' fields to 'limit', 'offset' and 'row_count' respectively ([#170](https://www.github.com/googleapis/java-analytics-data/issues/170)) ([cfd43f0](https://www.github.com/googleapis/java-analytics-data/commit/cfd43f0a854379ad2161c1af8a709ebfb96196bd))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#171](https://www.github.com/googleapis/java-analytics-data/issues/171)) ([6d06098](https://www.github.com/googleapis/java-analytics-data/commit/6d0609886aca2ae74b3e5d6f840110e93fe95adc))
+
 ## [0.6.0](https://www.github.com/googleapis/java-analytics-data/compare/v0.5.5...v0.6.0) (2021-02-26)
 
 
