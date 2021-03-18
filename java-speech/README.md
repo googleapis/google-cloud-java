@@ -46,7 +46,7 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:19.0.0')
+implementation platform('com.google.cloud:libraries-bom:19.2.0')
 
 compile 'com.google.cloud:google-cloud-speech'
 ```
@@ -158,6 +158,7 @@ has instructions for running the samples.
 | Recognize | [source code](https://github.com/googleapis/java-speech/blob/master/samples/snippets/src/main/java/com/example/speech/Recognize.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/Recognize.java) |
 | Recognize Beta | [source code](https://github.com/googleapis/java-speech/blob/master/samples/snippets/src/main/java/com/example/speech/RecognizeBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/RecognizeBeta.java) |
 | Speech Adaptation | [source code](https://github.com/googleapis/java-speech/blob/master/samples/snippets/src/main/java/com/example/speech/SpeechAdaptation.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/SpeechAdaptation.java) |
+| Speech Model Adaptation Beta | [source code](https://github.com/googleapis/java-speech/blob/master/samples/snippets/src/main/java/com/example/speech/SpeechModelAdaptationBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/SpeechModelAdaptationBeta.java) |
 | Speech Profanity Filter | [source code](https://github.com/googleapis/java-speech/blob/master/samples/snippets/src/main/java/com/example/speech/SpeechProfanityFilter.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/SpeechProfanityFilter.java) |
 | Speech Transcribe Multi Region | [source code](https://github.com/googleapis/java-speech/blob/master/samples/snippets/src/main/java/com/example/speech/SpeechTranscribeMultiRegion.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/SpeechTranscribeMultiRegion.java) |
 | Transcribe Context Classes | [source code](https://github.com/googleapis/java-speech/blob/master/samples/snippets/src/main/java/com/example/speech/TranscribeContextClasses.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-speech&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/speech/TranscribeContextClasses.java) |
