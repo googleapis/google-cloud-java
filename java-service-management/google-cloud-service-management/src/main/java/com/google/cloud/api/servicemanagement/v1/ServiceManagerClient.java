@@ -317,6 +317,13 @@ public class ServiceManagerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   ListServicesRequest request =
+   *       ListServicesRequest.newBuilder()
+   *           .setProducerProjectId("producerProjectId-1297373534")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setConsumerId("consumerId-166238287")
+   *           .build();
    *   while (true) {
    *     ListServicesResponse response = serviceManagerClient.listServicesCallable().call(request);
    *     for (ManagedService element : response.getResponsesList()) {
@@ -809,6 +816,12 @@ public class ServiceManagerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   ListServiceConfigsRequest request =
+   *       ListServiceConfigsRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
    *   while (true) {
    *     ListServiceConfigsResponse response =
    *         serviceManagerClient.listServiceConfigsCallable().call(request);
@@ -1266,6 +1279,13 @@ public class ServiceManagerClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
+   *   ListServiceRolloutsRequest request =
+   *       ListServiceRolloutsRequest.newBuilder()
+   *           .setServiceName("serviceName-1928572192")
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     ListServiceRolloutsResponse response =
    *         serviceManagerClient.listServiceRolloutsCallable().call(request);
