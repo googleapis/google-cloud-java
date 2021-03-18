@@ -27,6 +27,3 @@ for version in versions:
   )
 
 java.common_templates()
-
-# TODO: Remove this before publishing to the staging repository
-java.custom_templates(["java_library/README.md"])
