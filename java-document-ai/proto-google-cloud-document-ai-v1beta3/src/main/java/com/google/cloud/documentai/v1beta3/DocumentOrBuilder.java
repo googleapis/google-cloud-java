@@ -27,14 +27,14 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Currently supports Google Cloud Storage URI of the form
+   * Optional. Currently supports Google Cloud Storage URI of the form
    *    `gs://bucket_name/object_name`. Object versioning is not supported.
    *    See [Google Cloud Storage Request
    *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
    *    info.
    * </pre>
    *
-   * <code>string uri = 1;</code>
+   * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the uri field is set.
    */
@@ -43,14 +43,14 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Currently supports Google Cloud Storage URI of the form
+   * Optional. Currently supports Google Cloud Storage URI of the form
    *    `gs://bucket_name/object_name`. Object versioning is not supported.
    *    See [Google Cloud Storage Request
    *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
    *    info.
    * </pre>
    *
-   * <code>string uri = 1;</code>
+   * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The uri.
    */
@@ -59,14 +59,14 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Currently supports Google Cloud Storage URI of the form
+   * Optional. Currently supports Google Cloud Storage URI of the form
    *    `gs://bucket_name/object_name`. Object versioning is not supported.
    *    See [Google Cloud Storage Request
    *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
    *    info.
    * </pre>
    *
-   * <code>string uri = 1;</code>
+   * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for uri.
    */
@@ -76,12 +76,12 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Inline document content, represented as a stream of bytes.
+   * Optional. Inline document content, represented as a stream of bytes.
    * Note: As with all `bytes` fields, protobuffers use a pure binary
    * representation, whereas JSON representations use base64.
    * </pre>
    *
-   * <code>bytes content = 2;</code>
+   * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the content field is set.
    */
@@ -90,12 +90,12 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Inline document content, represented as a stream of bytes.
+   * Optional. Inline document content, represented as a stream of bytes.
    * Note: As with all `bytes` fields, protobuffers use a pure binary
    * representation, whereas JSON representations use base64.
    * </pre>
    *
-   * <code>bytes content = 2;</code>
+   * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The content.
    */
@@ -134,10 +134,10 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * UTF-8 encoded text in reading order from the document.
+   * Optional. UTF-8 encoded text in reading order from the document.
    * </pre>
    *
-   * <code>string text = 4;</code>
+   * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The text.
    */
@@ -146,10 +146,10 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * UTF-8 encoded text in reading order from the document.
+   * Optional. UTF-8 encoded text in reading order from the document.
    * </pre>
    *
-   * <code>string text = 4;</code>
+   * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for text.
    */

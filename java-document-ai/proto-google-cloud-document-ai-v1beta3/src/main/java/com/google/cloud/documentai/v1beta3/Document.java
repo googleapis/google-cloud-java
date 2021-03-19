@@ -34101,11 +34101,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provenance of the entity.
+     * Optional. Provenance of the entity.
      * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the textAnchor field is set.
      */
@@ -34114,11 +34116,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provenance of the entity.
+     * Optional. Provenance of the entity.
      * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The textAnchor.
      */
@@ -34127,11 +34131,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provenance of the entity.
+     * Optional. Provenance of the entity.
      * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     com.google.cloud.documentai.v1beta3.Document.TextAnchorOrBuilder getTextAnchorOrBuilder();
 
@@ -34164,10 +34170,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+     * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
      * </pre>
      *
-     * <code>string mention_text = 3;</code>
+     * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The mentionText.
      */
@@ -34176,10 +34182,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+     * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
      * </pre>
      *
-     * <code>string mention_text = 3;</code>
+     * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for mentionText.
      */
@@ -34189,10 +34195,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated.  Use `id` field instead.
+     * Optional. Deprecated.  Use `id` field instead.
      * </pre>
      *
-     * <code>string mention_id = 4;</code>
+     * <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The mentionId.
      */
@@ -34201,10 +34207,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated.  Use `id` field instead.
+     * Optional. Deprecated.  Use `id` field instead.
      * </pre>
      *
-     * <code>string mention_id = 4;</code>
+     * <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for mentionId.
      */
@@ -34693,8 +34699,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Money value. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
        * </pre>
        *
        * <code>.google.type.Money money_value = 2;</code>
@@ -34707,8 +34712,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Money value. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
        * </pre>
        *
        * <code>.google.type.Money money_value = 2;</code>
@@ -34721,8 +34725,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Money value. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
        * </pre>
        *
        * <code>.google.type.Money money_value = 2;</code>
@@ -34734,8 +34737,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Date value. Includes year, month, day. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
        * </pre>
        *
        * <code>.google.type.Date date_value = 3;</code>
@@ -34748,8 +34750,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Date value. Includes year, month, day. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
        * </pre>
        *
        * <code>.google.type.Date date_value = 3;</code>
@@ -34762,8 +34763,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Date value. Includes year, month, day. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
        * </pre>
        *
        * <code>.google.type.Date date_value = 3;</code>
@@ -34775,8 +34775,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * DateTime value. Includes date, time, and timezone. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
        * </pre>
        *
        * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -34789,8 +34788,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * DateTime value. Includes date, time, and timezone. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
        * </pre>
        *
        * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -34803,8 +34801,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * DateTime value. Includes date, time, and timezone. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
        * </pre>
        *
        * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -34816,8 +34813,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Postal address. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
        * </pre>
        *
        * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -34830,8 +34826,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Postal address. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
        * </pre>
        *
        * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -34844,8 +34839,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Postal address. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
        * </pre>
        *
        * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -35139,8 +35133,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Money value. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
        * </pre>
        *
        * <code>.google.type.Money money_value = 2;</code>
@@ -35156,8 +35149,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Money value. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
        * </pre>
        *
        * <code>.google.type.Money money_value = 2;</code>
@@ -35176,8 +35168,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Money value. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
        * </pre>
        *
        * <code>.google.type.Money money_value = 2;</code>
@@ -35196,8 +35187,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Date value. Includes year, month, day. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
        * </pre>
        *
        * <code>.google.type.Date date_value = 3;</code>
@@ -35213,8 +35203,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Date value. Includes year, month, day. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
        * </pre>
        *
        * <code>.google.type.Date date_value = 3;</code>
@@ -35233,8 +35222,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Date value. Includes year, month, day. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
        * </pre>
        *
        * <code>.google.type.Date date_value = 3;</code>
@@ -35253,8 +35241,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * DateTime value. Includes date, time, and timezone. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
        * </pre>
        *
        * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -35270,8 +35257,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * DateTime value. Includes date, time, and timezone. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
        * </pre>
        *
        * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -35290,8 +35276,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * DateTime value. Includes date, time, and timezone. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
        * </pre>
        *
        * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -35310,8 +35295,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Postal address. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
        * </pre>
        *
        * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -35327,8 +35311,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Postal address. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
        * </pre>
        *
        * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -35347,8 +35330,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Postal address. See also:
-       * https:
-       * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+       * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
        * </pre>
        *
        * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -35965,8 +35947,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Money value. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
          * </pre>
          *
          * <code>.google.type.Money money_value = 2;</code>
@@ -35982,8 +35963,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Money value. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
          * </pre>
          *
          * <code>.google.type.Money money_value = 2;</code>
@@ -36009,8 +35989,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Money value. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
          * </pre>
          *
          * <code>.google.type.Money money_value = 2;</code>
@@ -36033,8 +36012,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Money value. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
          * </pre>
          *
          * <code>.google.type.Money money_value = 2;</code>
@@ -36054,8 +36032,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Money value. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
          * </pre>
          *
          * <code>.google.type.Money money_value = 2;</code>
@@ -36086,8 +36063,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Money value. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
          * </pre>
          *
          * <code>.google.type.Money money_value = 2;</code>
@@ -36113,8 +36089,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Money value. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
          * </pre>
          *
          * <code>.google.type.Money money_value = 2;</code>
@@ -36127,8 +36102,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Money value. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
          * </pre>
          *
          * <code>.google.type.Money money_value = 2;</code>
@@ -36149,8 +36123,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Money value. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/money.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
          * </pre>
          *
          * <code>.google.type.Money money_value = 2;</code>
@@ -36186,8 +36159,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Date value. Includes year, month, day. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
          * </pre>
          *
          * <code>.google.type.Date date_value = 3;</code>
@@ -36203,8 +36175,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Date value. Includes year, month, day. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
          * </pre>
          *
          * <code>.google.type.Date date_value = 3;</code>
@@ -36230,8 +36201,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Date value. Includes year, month, day. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
          * </pre>
          *
          * <code>.google.type.Date date_value = 3;</code>
@@ -36254,8 +36224,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Date value. Includes year, month, day. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
          * </pre>
          *
          * <code>.google.type.Date date_value = 3;</code>
@@ -36275,8 +36244,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Date value. Includes year, month, day. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
          * </pre>
          *
          * <code>.google.type.Date date_value = 3;</code>
@@ -36307,8 +36275,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Date value. Includes year, month, day. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
          * </pre>
          *
          * <code>.google.type.Date date_value = 3;</code>
@@ -36334,8 +36301,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Date value. Includes year, month, day. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
          * </pre>
          *
          * <code>.google.type.Date date_value = 3;</code>
@@ -36348,8 +36314,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Date value. Includes year, month, day. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
          * </pre>
          *
          * <code>.google.type.Date date_value = 3;</code>
@@ -36370,8 +36335,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Date value. Includes year, month, day. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/date.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
          * </pre>
          *
          * <code>.google.type.Date date_value = 3;</code>
@@ -36407,8 +36371,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * DateTime value. Includes date, time, and timezone. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
          * </pre>
          *
          * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -36424,8 +36387,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * DateTime value. Includes date, time, and timezone. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
          * </pre>
          *
          * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -36451,8 +36413,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * DateTime value. Includes date, time, and timezone. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
          * </pre>
          *
          * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -36475,8 +36436,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * DateTime value. Includes date, time, and timezone. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
          * </pre>
          *
          * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -36496,8 +36456,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * DateTime value. Includes date, time, and timezone. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
          * </pre>
          *
          * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -36528,8 +36487,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * DateTime value. Includes date, time, and timezone. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
          * </pre>
          *
          * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -36555,8 +36513,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * DateTime value. Includes date, time, and timezone. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
          * </pre>
          *
          * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -36569,8 +36526,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * DateTime value. Includes date, time, and timezone. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
          * </pre>
          *
          * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -36591,8 +36547,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * DateTime value. Includes date, time, and timezone. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/datetime.proto
          * </pre>
          *
          * <code>.google.type.DateTime datetime_value = 4;</code>
@@ -36630,8 +36585,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Postal address. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
          * </pre>
          *
          * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -36647,8 +36601,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Postal address. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
          * </pre>
          *
          * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -36674,8 +36627,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Postal address. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
          * </pre>
          *
          * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -36698,8 +36650,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Postal address. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
          * </pre>
          *
          * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -36719,8 +36670,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Postal address. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
          * </pre>
          *
          * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -36752,8 +36702,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Postal address. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
          * </pre>
          *
          * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -36779,8 +36728,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Postal address. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
          * </pre>
          *
          * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -36793,8 +36741,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Postal address. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
          * </pre>
          *
          * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -36815,8 +36762,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Postal address. See also:
-         * https:
-         * github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
+         * https://github.com/googleapis/googleapis/blob/master/google/type/postal_address.proto
          * </pre>
          *
          * <code>.google.type.PostalAddress address_value = 5;</code>
@@ -37112,11 +37058,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provenance of the entity.
+     * Optional. Provenance of the entity.
      * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the textAnchor field is set.
      */
@@ -37128,11 +37076,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provenance of the entity.
+     * Optional. Provenance of the entity.
      * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The textAnchor.
      */
@@ -37146,11 +37096,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provenance of the entity.
+     * Optional. Provenance of the entity.
      * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.documentai.v1beta3.Document.TextAnchorOrBuilder
@@ -37213,10 +37165,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+     * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
      * </pre>
      *
-     * <code>string mention_text = 3;</code>
+     * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The mentionText.
      */
@@ -37236,10 +37188,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+     * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
      * </pre>
      *
-     * <code>string mention_text = 3;</code>
+     * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for mentionText.
      */
@@ -37262,10 +37214,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated.  Use `id` field instead.
+     * Optional. Deprecated.  Use `id` field instead.
      * </pre>
      *
-     * <code>string mention_id = 4;</code>
+     * <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The mentionId.
      */
@@ -37285,10 +37237,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated.  Use `id` field instead.
+     * Optional. Deprecated.  Use `id` field instead.
      * </pre>
      *
-     * <code>string mention_id = 4;</code>
+     * <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for mentionId.
      */
@@ -38238,11 +38190,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Provenance of the entity.
+       * Optional. Provenance of the entity.
        * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return Whether the textAnchor field is set.
        */
@@ -38253,11 +38207,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Provenance of the entity.
+       * Optional. Provenance of the entity.
        * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The textAnchor.
        */
@@ -38274,11 +38230,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Provenance of the entity.
+       * Optional. Provenance of the entity.
        * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setTextAnchor(com.google.cloud.documentai.v1beta3.Document.TextAnchor value) {
         if (textAnchorBuilder_ == null) {
@@ -38297,11 +38255,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Provenance of the entity.
+       * Optional. Provenance of the entity.
        * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setTextAnchor(
           com.google.cloud.documentai.v1beta3.Document.TextAnchor.Builder builderForValue) {
@@ -38318,11 +38278,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Provenance of the entity.
+       * Optional. Provenance of the entity.
        * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder mergeTextAnchor(
           com.google.cloud.documentai.v1beta3.Document.TextAnchor value) {
@@ -38346,11 +38308,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Provenance of the entity.
+       * Optional. Provenance of the entity.
        * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder clearTextAnchor() {
         if (textAnchorBuilder_ == null) {
@@ -38367,11 +38331,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Provenance of the entity.
+       * Optional. Provenance of the entity.
        * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.documentai.v1beta3.Document.TextAnchor.Builder
           getTextAnchorBuilder() {
@@ -38383,11 +38349,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Provenance of the entity.
+       * Optional. Provenance of the entity.
        * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.documentai.v1beta3.Document.TextAnchorOrBuilder
           getTextAnchorOrBuilder() {
@@ -38403,11 +38371,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Provenance of the entity.
+       * Optional. Provenance of the entity.
        * Text anchor indexing into the [Document.text][google.cloud.documentai.v1beta3.Document.text].
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.TextAnchor text_anchor = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.documentai.v1beta3.Document.TextAnchor,
@@ -38537,10 +38507,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+       * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
        * </pre>
        *
-       * <code>string mention_text = 3;</code>
+       * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The mentionText.
        */
@@ -38559,10 +38529,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+       * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
        * </pre>
        *
-       * <code>string mention_text = 3;</code>
+       * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for mentionText.
        */
@@ -38581,10 +38551,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+       * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
        * </pre>
        *
-       * <code>string mention_text = 3;</code>
+       * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The mentionText to set.
        * @return This builder for chaining.
@@ -38602,10 +38572,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+       * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
        * </pre>
        *
-       * <code>string mention_text = 3;</code>
+       * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -38619,10 +38589,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text value in the document e.g. `1600 Amphitheatre Pkwy`.
+       * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`.
        * </pre>
        *
-       * <code>string mention_text = 3;</code>
+       * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for mentionText to set.
        * @return This builder for chaining.
@@ -38643,10 +38613,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated.  Use `id` field instead.
+       * Optional. Deprecated.  Use `id` field instead.
        * </pre>
        *
-       * <code>string mention_id = 4;</code>
+       * <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The mentionId.
        */
@@ -38665,10 +38635,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated.  Use `id` field instead.
+       * Optional. Deprecated.  Use `id` field instead.
        * </pre>
        *
-       * <code>string mention_id = 4;</code>
+       * <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for mentionId.
        */
@@ -38687,10 +38657,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated.  Use `id` field instead.
+       * Optional. Deprecated.  Use `id` field instead.
        * </pre>
        *
-       * <code>string mention_id = 4;</code>
+       * <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The mentionId to set.
        * @return This builder for chaining.
@@ -38708,10 +38678,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated.  Use `id` field instead.
+       * Optional. Deprecated.  Use `id` field instead.
        * </pre>
        *
-       * <code>string mention_id = 4;</code>
+       * <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -38725,10 +38695,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated.  Use `id` field instead.
+       * Optional. Deprecated.  Use `id` field instead.
        * </pre>
        *
-       * <code>string mention_id = 4;</code>
+       * <code>string mention_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for mentionId to set.
        * @return This builder for chaining.
@@ -46116,13 +46086,23 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Element is review and approved at human review, confidence will be set
-       * to 1.0
+       * Element is reviewed and approved at human review, confidence will be
+       * set to 1.0.
        * </pre>
        *
        * <code>EVAL_APPROVED = 5;</code>
        */
       EVAL_APPROVED(5),
+      /**
+       *
+       *
+       * <pre>
+       * Element is skipped in the validation process.
+       * </pre>
+       *
+       * <code>EVAL_SKIPPED = 6;</code>
+       */
+      EVAL_SKIPPED(6),
       UNRECOGNIZED(-1),
       ;
 
@@ -46180,13 +46160,23 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Element is review and approved at human review, confidence will be set
-       * to 1.0
+       * Element is reviewed and approved at human review, confidence will be
+       * set to 1.0.
        * </pre>
        *
        * <code>EVAL_APPROVED = 5;</code>
        */
       public static final int EVAL_APPROVED_VALUE = 5;
+      /**
+       *
+       *
+       * <pre>
+       * Element is skipped in the validation process.
+       * </pre>
+       *
+       * <code>EVAL_SKIPPED = 6;</code>
+       */
+      public static final int EVAL_SKIPPED_VALUE = 6;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -46224,6 +46214,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             return EVAL_REQUESTED;
           case 5:
             return EVAL_APPROVED;
+          case 6:
+            return EVAL_SKIPPED;
           default:
             return null;
         }
@@ -52948,14 +52940,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Currently supports Google Cloud Storage URI of the form
+   * Optional. Currently supports Google Cloud Storage URI of the form
    *    `gs://bucket_name/object_name`. Object versioning is not supported.
    *    See [Google Cloud Storage Request
    *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
    *    info.
    * </pre>
    *
-   * <code>string uri = 1;</code>
+   * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the uri field is set.
    */
@@ -52966,14 +52958,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Currently supports Google Cloud Storage URI of the form
+   * Optional. Currently supports Google Cloud Storage URI of the form
    *    `gs://bucket_name/object_name`. Object versioning is not supported.
    *    See [Google Cloud Storage Request
    *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
    *    info.
    * </pre>
    *
-   * <code>string uri = 1;</code>
+   * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The uri.
    */
@@ -52997,14 +52989,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Currently supports Google Cloud Storage URI of the form
+   * Optional. Currently supports Google Cloud Storage URI of the form
    *    `gs://bucket_name/object_name`. Object versioning is not supported.
    *    See [Google Cloud Storage Request
    *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
    *    info.
    * </pre>
    *
-   * <code>string uri = 1;</code>
+   * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for uri.
    */
@@ -53030,12 +53022,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Inline document content, represented as a stream of bytes.
+   * Optional. Inline document content, represented as a stream of bytes.
    * Note: As with all `bytes` fields, protobuffers use a pure binary
    * representation, whereas JSON representations use base64.
    * </pre>
    *
-   * <code>bytes content = 2;</code>
+   * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the content field is set.
    */
@@ -53047,12 +53039,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Inline document content, represented as a stream of bytes.
+   * Optional. Inline document content, represented as a stream of bytes.
    * Note: As with all `bytes` fields, protobuffers use a pure binary
    * representation, whereas JSON representations use base64.
    * </pre>
    *
-   * <code>bytes content = 2;</code>
+   * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The content.
    */
@@ -53123,10 +53115,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * UTF-8 encoded text in reading order from the document.
+   * Optional. UTF-8 encoded text in reading order from the document.
    * </pre>
    *
-   * <code>string text = 4;</code>
+   * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The text.
    */
@@ -53146,10 +53138,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * UTF-8 encoded text in reading order from the document.
+   * Optional. UTF-8 encoded text in reading order from the document.
    * </pre>
    *
-   * <code>string text = 4;</code>
+   * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for text.
    */
@@ -54508,14 +54500,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Currently supports Google Cloud Storage URI of the form
+     * Optional. Currently supports Google Cloud Storage URI of the form
      *    `gs://bucket_name/object_name`. Object versioning is not supported.
      *    See [Google Cloud Storage Request
      *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
      *    info.
      * </pre>
      *
-     * <code>string uri = 1;</code>
+     * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the uri field is set.
      */
@@ -54527,14 +54519,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Currently supports Google Cloud Storage URI of the form
+     * Optional. Currently supports Google Cloud Storage URI of the form
      *    `gs://bucket_name/object_name`. Object versioning is not supported.
      *    See [Google Cloud Storage Request
      *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
      *    info.
      * </pre>
      *
-     * <code>string uri = 1;</code>
+     * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The uri.
      */
@@ -54559,14 +54551,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Currently supports Google Cloud Storage URI of the form
+     * Optional. Currently supports Google Cloud Storage URI of the form
      *    `gs://bucket_name/object_name`. Object versioning is not supported.
      *    See [Google Cloud Storage Request
      *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
      *    info.
      * </pre>
      *
-     * <code>string uri = 1;</code>
+     * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for uri.
      */
@@ -54591,14 +54583,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Currently supports Google Cloud Storage URI of the form
+     * Optional. Currently supports Google Cloud Storage URI of the form
      *    `gs://bucket_name/object_name`. Object versioning is not supported.
      *    See [Google Cloud Storage Request
      *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
      *    info.
      * </pre>
      *
-     * <code>string uri = 1;</code>
+     * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The uri to set.
      * @return This builder for chaining.
@@ -54616,14 +54608,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Currently supports Google Cloud Storage URI of the form
+     * Optional. Currently supports Google Cloud Storage URI of the form
      *    `gs://bucket_name/object_name`. Object versioning is not supported.
      *    See [Google Cloud Storage Request
      *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
      *    info.
      * </pre>
      *
-     * <code>string uri = 1;</code>
+     * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -54639,14 +54631,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Currently supports Google Cloud Storage URI of the form
+     * Optional. Currently supports Google Cloud Storage URI of the form
      *    `gs://bucket_name/object_name`. Object versioning is not supported.
      *    See [Google Cloud Storage Request
      *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
      *    info.
      * </pre>
      *
-     * <code>string uri = 1;</code>
+     * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for uri to set.
      * @return This builder for chaining.
@@ -54666,12 +54658,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Inline document content, represented as a stream of bytes.
+     * Optional. Inline document content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
      * </pre>
      *
-     * <code>bytes content = 2;</code>
+     * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the content field is set.
      */
@@ -54682,12 +54674,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Inline document content, represented as a stream of bytes.
+     * Optional. Inline document content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
      * </pre>
      *
-     * <code>bytes content = 2;</code>
+     * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The content.
      */
@@ -54701,12 +54693,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Inline document content, represented as a stream of bytes.
+     * Optional. Inline document content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
      * </pre>
      *
-     * <code>bytes content = 2;</code>
+     * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The content to set.
      * @return This builder for chaining.
@@ -54724,12 +54716,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Inline document content, represented as a stream of bytes.
+     * Optional. Inline document content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
      * </pre>
      *
-     * <code>bytes content = 2;</code>
+     * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -54863,10 +54855,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * UTF-8 encoded text in reading order from the document.
+     * Optional. UTF-8 encoded text in reading order from the document.
      * </pre>
      *
-     * <code>string text = 4;</code>
+     * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The text.
      */
@@ -54885,10 +54877,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * UTF-8 encoded text in reading order from the document.
+     * Optional. UTF-8 encoded text in reading order from the document.
      * </pre>
      *
-     * <code>string text = 4;</code>
+     * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for text.
      */
@@ -54907,10 +54899,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * UTF-8 encoded text in reading order from the document.
+     * Optional. UTF-8 encoded text in reading order from the document.
      * </pre>
      *
-     * <code>string text = 4;</code>
+     * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The text to set.
      * @return This builder for chaining.
@@ -54928,10 +54920,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * UTF-8 encoded text in reading order from the document.
+     * Optional. UTF-8 encoded text in reading order from the document.
      * </pre>
      *
-     * <code>string text = 4;</code>
+     * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -54945,10 +54937,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * UTF-8 encoded text in reading order from the document.
+     * Optional. UTF-8 encoded text in reading order from the document.
      * </pre>
      *
-     * <code>string text = 4;</code>
+     * <code>string text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for text to set.
      * @return This builder for chaining.
