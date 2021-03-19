@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-vision.git",
-        "sha": "0fe9c12e63b53e03f37a9d2d9da196b4e077bacb"
+        "sha": "a97b81db438a2f6b61526db660aeaa06c3967378"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "78437c732a60c64895778697b078497b0988346c"
+        "sha": "8b13da943497f75c5303700bff5aabdd85d939e0"
       }
     }
   ]
