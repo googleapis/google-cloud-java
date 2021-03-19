@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.127.10](https://www.github.com/googleapis/java-bigquery/compare/v1.127.9...v1.127.10) (2021-03-19)
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20210313-1.31.0 ([#1187](https://www.github.com/googleapis/java-bigquery/issues/1187)) ([bba71f2](https://www.github.com/googleapis/java-bigquery/commit/bba71f2f475f6dd8bf2a9d567aaed26377543abe))
+
 ### [1.127.9](https://www.github.com/googleapis/java-bigquery/compare/v1.127.8...v1.127.9) (2021-03-17)
 
 
