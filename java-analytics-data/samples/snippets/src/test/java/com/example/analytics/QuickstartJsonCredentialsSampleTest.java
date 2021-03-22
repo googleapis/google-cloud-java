@@ -28,10 +28,13 @@ import org.junit.runners.JUnit4;
  * Tests for quickstart sample.
  */
 @RunWith(JUnit4.class)
-public class QuickstartSampleTest {
+public class QuickstartJsonCredentialsSampleTest {
 
   private String ga4PropertyId =
       System.getProperty("analyticsdata.quickstart.ga4PropertyId", "222596558");
+
+  private String credentialsJsonPath = System.getenv("GOOGLE_APPLICATION_CREDENTIALS");
+
 
   private String runSample(String ga4PropertyId) throws Exception {
     PrintStream stdOut = System.out;
@@ -40,7 +43,7 @@ public class QuickstartSampleTest {
     System.setOut(out);
 
     // Run the test using default system credentials.
-    QuickstartSample.sampleRunReport(ga4PropertyId);
+    QuickstartJsonCredentialsSample.sampleRunReport(ga4PropertyId, credentialsJsonPath);
 
     System.setOut(stdOut);
     return bout.toString();
