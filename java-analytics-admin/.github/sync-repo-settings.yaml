@@ -47,3 +47,5 @@ permissionRules:
   permission: admin
 - team: yoshi-java
   permission: push
+- team: analytics-dpe
+  permission: push
