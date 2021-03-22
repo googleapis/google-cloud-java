@@ -20,18 +20,18 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.analytics</groupId>
   <artifactId>google-analytics-data</artifactId>
-  <version>0.6.0</version>
+  <version>0.7.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.analytics:google-analytics-data:0.6.0'
+compile 'com.google.analytics:google-analytics-data:0.7.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.analytics" % "google-analytics-data" % "0.6.0"
+libraryDependencies += "com.google.analytics" % "google-analytics-data" % "0.7.0"
 ```
 
 ## Authentication
@@ -72,6 +72,7 @@ has instructions for running the samples.
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
+| Quickstart Json Credentials Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/master/samples/snippets/src/main/java/com/example/analytics/QuickstartJsonCredentialsSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/QuickstartJsonCredentialsSample.java) |
 | Quickstart Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/master/samples/snippets/src/main/java/com/example/analytics/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/QuickstartSample.java) |
 
 
