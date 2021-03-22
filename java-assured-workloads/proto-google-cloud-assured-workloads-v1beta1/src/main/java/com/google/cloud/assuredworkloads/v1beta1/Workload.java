@@ -46,6 +46,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     billingAccount_ = "";
     etag_ = "";
     provisionedResourcesParent_ = "";
+    resourceSettings_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -274,6 +275,20 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 122:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                resourceSettings_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              resourceSettings_.add(
+                  input.readMessage(
+                      com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings.parser(),
+                      extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -290,6 +305,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         resources_ = java.util.Collections.unmodifiableList(resources_);
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        resourceSettings_ = java.util.Collections.unmodifiableList(resourceSettings_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -5931,6 +5949,916 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface ResourceSettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Resource identifier.
+     * For a project this represents project_id. If the project is already
+     * taken, the workload creation will fail.
+     * </pre>
+     *
+     * <code>string resource_id = 1;</code>
+     *
+     * @return The resourceId.
+     */
+    java.lang.String getResourceId();
+    /**
+     *
+     *
+     * <pre>
+     * Resource identifier.
+     * For a project this represents project_id. If the project is already
+     * taken, the workload creation will fail.
+     * </pre>
+     *
+     * <code>string resource_id = 1;</code>
+     *
+     * @return The bytes for resourceId.
+     */
+    com.google.protobuf.ByteString getResourceIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the type of resource. This field should be specified to
+     * correspond the id to the right project type (CONSUMER_PROJECT or
+     * ENCRYPTION_KEYS_PROJECT)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType resource_type = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for resourceType.
+     */
+    int getResourceTypeValue();
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the type of resource. This field should be specified to
+     * correspond the id to the right project type (CONSUMER_PROJECT or
+     * ENCRYPTION_KEYS_PROJECT)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType resource_type = 2;
+     * </code>
+     *
+     * @return The resourceType.
+     */
+    com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType getResourceType();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represent the custom settings for the resources to be created.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings}
+   */
+  public static final class ResourceSettings extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings)
+      ResourceSettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ResourceSettings.newBuilder() to construct.
+    private ResourceSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ResourceSettings() {
+      resourceId_ = "";
+      resourceType_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ResourceSettings();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private ResourceSettings(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                resourceId_ = s;
+                break;
+              }
+            case 16:
+              {
+                int rawValue = input.readEnum();
+
+                resourceType_ = rawValue;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.assuredworkloads.v1beta1.AssuredworkloadsProto
+          .internal_static_google_cloud_assuredworkloads_v1beta1_Workload_ResourceSettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.assuredworkloads.v1beta1.AssuredworkloadsProto
+          .internal_static_google_cloud_assuredworkloads_v1beta1_Workload_ResourceSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings.class,
+              com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings.Builder.class);
+    }
+
+    public static final int RESOURCE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object resourceId_;
+    /**
+     *
+     *
+     * <pre>
+     * Resource identifier.
+     * For a project this represents project_id. If the project is already
+     * taken, the workload creation will fail.
+     * </pre>
+     *
+     * <code>string resource_id = 1;</code>
+     *
+     * @return The resourceId.
+     */
+    @java.lang.Override
+    public java.lang.String getResourceId() {
+      java.lang.Object ref = resourceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resourceId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource identifier.
+     * For a project this represents project_id. If the project is already
+     * taken, the workload creation will fail.
+     * </pre>
+     *
+     * <code>string resource_id = 1;</code>
+     *
+     * @return The bytes for resourceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getResourceIdBytes() {
+      java.lang.Object ref = resourceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        resourceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESOURCE_TYPE_FIELD_NUMBER = 2;
+    private int resourceType_;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the type of resource. This field should be specified to
+     * correspond the id to the right project type (CONSUMER_PROJECT or
+     * ENCRYPTION_KEYS_PROJECT)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType resource_type = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for resourceType.
+     */
+    @java.lang.Override
+    public int getResourceTypeValue() {
+      return resourceType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the type of resource. This field should be specified to
+     * correspond the id to the right project type (CONSUMER_PROJECT or
+     * ENCRYPTION_KEYS_PROJECT)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType resource_type = 2;
+     * </code>
+     *
+     * @return The resourceType.
+     */
+    @java.lang.Override
+    public com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType
+        getResourceType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType result =
+          com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType.valueOf(
+              resourceType_);
+      return result == null
+          ? com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!getResourceIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceId_);
+      }
+      if (resourceType_
+          != com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType
+              .RESOURCE_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, resourceType_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getResourceIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resourceId_);
+      }
+      if (resourceType_
+          != com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType
+              .RESOURCE_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, resourceType_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings other =
+          (com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings) obj;
+
+      if (!getResourceId().equals(other.getResourceId())) return false;
+      if (resourceType_ != other.resourceType_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RESOURCE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceId().hashCode();
+      hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + resourceType_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represent the custom settings for the resources to be created.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings)
+        com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.assuredworkloads.v1beta1.AssuredworkloadsProto
+            .internal_static_google_cloud_assuredworkloads_v1beta1_Workload_ResourceSettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.assuredworkloads.v1beta1.AssuredworkloadsProto
+            .internal_static_google_cloud_assuredworkloads_v1beta1_Workload_ResourceSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings.class,
+                com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        resourceId_ = "";
+
+        resourceType_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.assuredworkloads.v1beta1.AssuredworkloadsProto
+            .internal_static_google_cloud_assuredworkloads_v1beta1_Workload_ResourceSettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings
+          getDefaultInstanceForType() {
+        return com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings build() {
+        com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings buildPartial() {
+        com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings result =
+            new com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings(this);
+        result.resourceId_ = resourceId_;
+        result.resourceType_ = resourceType_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings) {
+          return mergeFrom(
+              (com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings other) {
+        if (other
+            == com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings
+                .getDefaultInstance()) return this;
+        if (!other.getResourceId().isEmpty()) {
+          resourceId_ = other.resourceId_;
+          onChanged();
+        }
+        if (other.resourceType_ != 0) {
+          setResourceTypeValue(other.getResourceTypeValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object resourceId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Resource identifier.
+       * For a project this represents project_id. If the project is already
+       * taken, the workload creation will fail.
+       * </pre>
+       *
+       * <code>string resource_id = 1;</code>
+       *
+       * @return The resourceId.
+       */
+      public java.lang.String getResourceId() {
+        java.lang.Object ref = resourceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          resourceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Resource identifier.
+       * For a project this represents project_id. If the project is already
+       * taken, the workload creation will fail.
+       * </pre>
+       *
+       * <code>string resource_id = 1;</code>
+       *
+       * @return The bytes for resourceId.
+       */
+      public com.google.protobuf.ByteString getResourceIdBytes() {
+        java.lang.Object ref = resourceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          resourceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Resource identifier.
+       * For a project this represents project_id. If the project is already
+       * taken, the workload creation will fail.
+       * </pre>
+       *
+       * <code>string resource_id = 1;</code>
+       *
+       * @param value The resourceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        resourceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Resource identifier.
+       * For a project this represents project_id. If the project is already
+       * taken, the workload creation will fail.
+       * </pre>
+       *
+       * <code>string resource_id = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearResourceId() {
+
+        resourceId_ = getDefaultInstance().getResourceId();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Resource identifier.
+       * For a project this represents project_id. If the project is already
+       * taken, the workload creation will fail.
+       * </pre>
+       *
+       * <code>string resource_id = 1;</code>
+       *
+       * @param value The bytes for resourceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        resourceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int resourceType_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Indicates the type of resource. This field should be specified to
+       * correspond the id to the right project type (CONSUMER_PROJECT or
+       * ENCRYPTION_KEYS_PROJECT)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType resource_type = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for resourceType.
+       */
+      @java.lang.Override
+      public int getResourceTypeValue() {
+        return resourceType_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates the type of resource. This field should be specified to
+       * correspond the id to the right project type (CONSUMER_PROJECT or
+       * ENCRYPTION_KEYS_PROJECT)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType resource_type = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for resourceType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceTypeValue(int value) {
+
+        resourceType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates the type of resource. This field should be specified to
+       * correspond the id to the right project type (CONSUMER_PROJECT or
+       * ENCRYPTION_KEYS_PROJECT)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType resource_type = 2;
+       * </code>
+       *
+       * @return The resourceType.
+       */
+      @java.lang.Override
+      public com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType
+          getResourceType() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType result =
+            com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType.valueOf(
+                resourceType_);
+        return result == null
+            ? com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates the type of resource. This field should be specified to
+       * correspond the id to the right project type (CONSUMER_PROJECT or
+       * ENCRYPTION_KEYS_PROJECT)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType resource_type = 2;
+       * </code>
+       *
+       * @param value The resourceType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceType(
+          com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        resourceType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates the type of resource. This field should be specified to
+       * correspond the id to the right project type (CONSUMER_PROJECT or
+       * ENCRYPTION_KEYS_PROJECT)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType resource_type = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearResourceType() {
+
+        resourceType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings)
+    private static final com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings();
+    }
+
+    public static com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ResourceSettings> PARSER =
+        new com.google.protobuf.AbstractParser<ResourceSettings>() {
+          @java.lang.Override
+          public ResourceSettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ResourceSettings(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<ResourceSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResourceSettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int complianceRegimeSettingsCase_ = 0;
   private java.lang.Object complianceRegimeSettings_;
 
@@ -6891,6 +7819,100 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     return getKmsSettings();
   }
 
+  public static final int RESOURCE_SETTINGS_FIELD_NUMBER = 15;
+  private java.util.List<com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings>
+      resourceSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings>
+      getResourceSettingsList() {
+    return resourceSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettingsOrBuilder>
+      getResourceSettingsOrBuilderList() {
+    return resourceSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getResourceSettingsCount() {
+    return resourceSettings_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings getResourceSettings(
+      int index) {
+    return resourceSettings_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettingsOrBuilder
+      getResourceSettingsOrBuilder(int index) {
+    return resourceSettings_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6960,6 +7982,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
     if (kmsSettings_ != null) {
       output.writeMessage(14, getKmsSettings());
+    }
+    for (int i = 0; i < resourceSettings_.size(); i++) {
+      output.writeMessage(15, resourceSettings_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -7039,6 +8064,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     if (kmsSettings_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getKmsSettings());
     }
+    for (int i = 0; i < resourceSettings_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(15, resourceSettings_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -7072,6 +8101,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     if (hasKmsSettings()) {
       if (!getKmsSettings().equals(other.getKmsSettings())) return false;
     }
+    if (!getResourceSettingsList().equals(other.getResourceSettingsList())) return false;
     if (!getComplianceRegimeSettingsCase().equals(other.getComplianceRegimeSettingsCase()))
       return false;
     switch (complianceRegimeSettingsCase_) {
@@ -7128,6 +8158,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     if (hasKmsSettings()) {
       hash = (37 * hash) + KMS_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getKmsSettings().hashCode();
+    }
+    if (getResourceSettingsCount() > 0) {
+      hash = (37 * hash) + RESOURCE_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceSettingsList().hashCode();
     }
     switch (complianceRegimeSettingsCase_) {
       case 7:
@@ -7311,6 +8345,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getResourcesFieldBuilder();
+        getResourceSettingsFieldBuilder();
       }
     }
 
@@ -7347,6 +8382,12 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       } else {
         kmsSettings_ = null;
         kmsSettingsBuilder_ = null;
+      }
+      if (resourceSettingsBuilder_ == null) {
+        resourceSettings_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      } else {
+        resourceSettingsBuilder_.clear();
       }
       complianceRegimeSettingsCase_ = 0;
       complianceRegimeSettings_ = null;
@@ -7432,6 +8473,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         result.kmsSettings_ = kmsSettings_;
       } else {
         result.kmsSettings_ = kmsSettingsBuilder_.build();
+      }
+      if (resourceSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          resourceSettings_ = java.util.Collections.unmodifiableList(resourceSettings_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.resourceSettings_ = resourceSettings_;
+      } else {
+        result.resourceSettings_ = resourceSettingsBuilder_.build();
       }
       result.complianceRegimeSettingsCase_ = complianceRegimeSettingsCase_;
       onBuilt();
@@ -7540,6 +8590,33 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasKmsSettings()) {
         mergeKmsSettings(other.getKmsSettings());
+      }
+      if (resourceSettingsBuilder_ == null) {
+        if (!other.resourceSettings_.isEmpty()) {
+          if (resourceSettings_.isEmpty()) {
+            resourceSettings_ = other.resourceSettings_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureResourceSettingsIsMutable();
+            resourceSettings_.addAll(other.resourceSettings_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.resourceSettings_.isEmpty()) {
+          if (resourceSettingsBuilder_.isEmpty()) {
+            resourceSettingsBuilder_.dispose();
+            resourceSettingsBuilder_ = null;
+            resourceSettings_ = other.resourceSettings_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            resourceSettingsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getResourceSettingsFieldBuilder()
+                    : null;
+          } else {
+            resourceSettingsBuilder_.addAllMessages(other.resourceSettings_);
+          }
+        }
       }
       switch (other.getComplianceRegimeSettingsCase()) {
         case IL4_SETTINGS:
@@ -10407,6 +11484,457 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         kmsSettings_ = null;
       }
       return kmsSettingsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings>
+        resourceSettings_ = java.util.Collections.emptyList();
+
+    private void ensureResourceSettingsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        resourceSettings_ =
+            new java.util.ArrayList<
+                com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings>(
+                resourceSettings_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings,
+            com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings.Builder,
+            com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettingsOrBuilder>
+        resourceSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings>
+        getResourceSettingsList() {
+      if (resourceSettingsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(resourceSettings_);
+      } else {
+        return resourceSettingsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public int getResourceSettingsCount() {
+      if (resourceSettingsBuilder_ == null) {
+        return resourceSettings_.size();
+      } else {
+        return resourceSettingsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings getResourceSettings(
+        int index) {
+      if (resourceSettingsBuilder_ == null) {
+        return resourceSettings_.get(index);
+      } else {
+        return resourceSettingsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setResourceSettings(
+        int index, com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings value) {
+      if (resourceSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureResourceSettingsIsMutable();
+        resourceSettings_.set(index, value);
+        onChanged();
+      } else {
+        resourceSettingsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setResourceSettings(
+        int index,
+        com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings.Builder
+            builderForValue) {
+      if (resourceSettingsBuilder_ == null) {
+        ensureResourceSettingsIsMutable();
+        resourceSettings_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        resourceSettingsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder addResourceSettings(
+        com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings value) {
+      if (resourceSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureResourceSettingsIsMutable();
+        resourceSettings_.add(value);
+        onChanged();
+      } else {
+        resourceSettingsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder addResourceSettings(
+        int index, com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings value) {
+      if (resourceSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureResourceSettingsIsMutable();
+        resourceSettings_.add(index, value);
+        onChanged();
+      } else {
+        resourceSettingsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder addResourceSettings(
+        com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings.Builder
+            builderForValue) {
+      if (resourceSettingsBuilder_ == null) {
+        ensureResourceSettingsIsMutable();
+        resourceSettings_.add(builderForValue.build());
+        onChanged();
+      } else {
+        resourceSettingsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder addResourceSettings(
+        int index,
+        com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings.Builder
+            builderForValue) {
+      if (resourceSettingsBuilder_ == null) {
+        ensureResourceSettingsIsMutable();
+        resourceSettings_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        resourceSettingsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllResourceSettings(
+        java.lang.Iterable<
+                ? extends com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings>
+            values) {
+      if (resourceSettingsBuilder_ == null) {
+        ensureResourceSettingsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourceSettings_);
+        onChanged();
+      } else {
+        resourceSettingsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder clearResourceSettings() {
+      if (resourceSettingsBuilder_ == null) {
+        resourceSettings_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        resourceSettingsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder removeResourceSettings(int index) {
+      if (resourceSettingsBuilder_ == null) {
+        ensureResourceSettingsIsMutable();
+        resourceSettings_.remove(index);
+        onChanged();
+      } else {
+        resourceSettingsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings.Builder
+        getResourceSettingsBuilder(int index) {
+      return getResourceSettingsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettingsOrBuilder
+        getResourceSettingsOrBuilder(int index) {
+      if (resourceSettingsBuilder_ == null) {
+        return resourceSettings_.get(index);
+      } else {
+        return resourceSettingsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettingsOrBuilder>
+        getResourceSettingsOrBuilderList() {
+      if (resourceSettingsBuilder_ != null) {
+        return resourceSettingsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(resourceSettings_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings.Builder
+        addResourceSettingsBuilder() {
+      return getResourceSettingsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings.Builder
+        addResourceSettingsBuilder(int index) {
+      return getResourceSettingsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings.Builder>
+        getResourceSettingsBuilderList() {
+      return getResourceSettingsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings,
+            com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings.Builder,
+            com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettingsOrBuilder>
+        getResourceSettingsFieldBuilder() {
+      if (resourceSettingsBuilder_ == null) {
+        resourceSettingsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings,
+                com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings.Builder,
+                com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettingsOrBuilder>(
+                resourceSettings_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        resourceSettings_ = null;
+      }
+      return resourceSettingsBuilder_;
     }
 
     @java.lang.Override

@@ -101,6 +101,7 @@ public class AssuredWorkloadsServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setProvisionedResourcesParent("provisionedResourcesParent1733249115")
             .setKmsSettings(Workload.KMSSettings.newBuilder().build())
+            .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -158,6 +159,7 @@ public class AssuredWorkloadsServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setProvisionedResourcesParent("provisionedResourcesParent1733249115")
             .setKmsSettings(Workload.KMSSettings.newBuilder().build())
+            .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -215,6 +217,7 @@ public class AssuredWorkloadsServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setProvisionedResourcesParent("provisionedResourcesParent1733249115")
             .setKmsSettings(Workload.KMSSettings.newBuilder().build())
+            .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
 
@@ -332,6 +335,7 @@ public class AssuredWorkloadsServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setProvisionedResourcesParent("provisionedResourcesParent1733249115")
             .setKmsSettings(Workload.KMSSettings.newBuilder().build())
+            .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
 
@@ -378,6 +382,7 @@ public class AssuredWorkloadsServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setProvisionedResourcesParent("provisionedResourcesParent1733249115")
             .setKmsSettings(Workload.KMSSettings.newBuilder().build())
+            .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
 

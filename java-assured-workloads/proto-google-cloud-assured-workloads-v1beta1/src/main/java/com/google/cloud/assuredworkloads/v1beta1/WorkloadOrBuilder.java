@@ -626,6 +626,82 @@ public interface WorkloadOrBuilder
    */
   com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder getKmsSettingsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings>
+      getResourceSettingsList();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings getResourceSettings(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  int getResourceSettingsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettingsOrBuilder>
+      getResourceSettingsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettingsOrBuilder
+      getResourceSettingsOrBuilder(int index);
+
   public com.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegimeSettingsCase
       getComplianceRegimeSettingsCase();
 }
