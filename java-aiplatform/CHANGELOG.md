@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-aiplatform/compare/v0.3.0...v0.4.0) (2021-03-12)
+
+
+### Features
+
+* add encryption_spec to aiplatform v1beta1 ([#176](https://www.github.com/googleapis/java-aiplatform/issues/176)) ([faff19b](https://www.github.com/googleapis/java-aiplatform/commit/faff19b2820146d6cf49525f49ae187449171641))
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-aiplatform-v1beta1 to v0.3.0 ([#189](https://www.github.com/googleapis/java-aiplatform/issues/189)) ([5bdf3d0](https://www.github.com/googleapis/java-aiplatform/commit/5bdf3d04f365cb27446456e6df2a691ce1441434))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#203](https://www.github.com/googleapis/java-aiplatform/issues/203)) ([761e878](https://www.github.com/googleapis/java-aiplatform/commit/761e878b02eb0268b16d1325749d399e66a487df))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.12 ([#186](https://www.github.com/googleapis/java-aiplatform/issues/186)) ([3fae117](https://www.github.com/googleapis/java-aiplatform/commit/3fae117a6c9d73d292b879c05ba849f0846af73d))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.14 ([#202](https://www.github.com/googleapis/java-aiplatform/issues/202)) ([767cf1d](https://www.github.com/googleapis/java-aiplatform/commit/767cf1d9624e65970f30094484bbc571bd8c858b))
+
 ## [0.3.0](https://www.github.com/googleapis/java-aiplatform/compare/v0.2.0...v0.3.0) (2021-02-26)
 
 
