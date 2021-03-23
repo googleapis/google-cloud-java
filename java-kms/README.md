@@ -39,25 +39,25 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-kms</artifactId>
-  <version>1.40.8</version>
+  <version>1.41.1</version>
 </dependency>
 
 ```
 
 If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:19.0.0')
+implementation platform('com.google.cloud:libraries-bom:19.2.1')
 
 compile 'com.google.cloud:google-cloud-kms'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-kms:1.41.0'
+compile 'com.google.cloud:google-cloud-kms:1.41.1'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-kms" % "1.41.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-kms" % "1.41.1"
 ```
 
 ## Authentication
