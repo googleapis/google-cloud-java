@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-redis.git",
-        "sha": "0c31d5e1f9d9616b4cbd269b5b930fa2911e349d"
+        "sha": "bcf25470d309d40a442b77af7ef48b705ea16a82"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "78437c732a60c64895778697b078497b0988346c"
+        "sha": "79c8dd7ee768292f933012d3a69a5b4676404cda"
       }
     }
   ]
