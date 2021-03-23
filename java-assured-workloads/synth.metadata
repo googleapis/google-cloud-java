@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-assured-workloads.git",
-        "sha": "655ad2cf74b150c595b997b2e721d9352b8d56c3"
+        "sha": "dfe737e5dc82e0d01c7ed8d19ea4c60092ed60e0"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "dd7c51a272f05456784067c0e8b6520a50503254",
-        "internalRef": "363600693"
+        "sha": "15b444a98762c31e863087eb688635f2c24feec5",
+        "internalRef": "363621553"
       }
     },
     {

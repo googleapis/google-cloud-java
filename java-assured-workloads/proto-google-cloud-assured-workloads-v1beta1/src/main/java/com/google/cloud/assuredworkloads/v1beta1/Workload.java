@@ -410,6 +410,26 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>US_REGIONAL_ACCESS = 5;</code>
      */
     US_REGIONAL_ACCESS(5),
+    /**
+     *
+     *
+     * <pre>
+     * Health Insurance Portability and Accountability Act controls
+     * </pre>
+     *
+     * <code>HIPAA = 6;</code>
+     */
+    HIPAA(6),
+    /**
+     *
+     *
+     * <pre>
+     * Health Information Trust Alliance controls
+     * </pre>
+     *
+     * <code>HITRUST = 7;</code>
+     */
+    HITRUST(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -473,6 +493,26 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>US_REGIONAL_ACCESS = 5;</code>
      */
     public static final int US_REGIONAL_ACCESS_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Health Insurance Portability and Accountability Act controls
+     * </pre>
+     *
+     * <code>HIPAA = 6;</code>
+     */
+    public static final int HIPAA_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Health Information Trust Alliance controls
+     * </pre>
+     *
+     * <code>HITRUST = 7;</code>
+     */
+    public static final int HITRUST_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -510,6 +550,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           return FEDRAMP_MODERATE;
         case 5:
           return US_REGIONAL_ACCESS;
+        case 6:
+          return HIPAA;
+        case 7:
+          return HITRUST;
         default:
           return null;
       }
