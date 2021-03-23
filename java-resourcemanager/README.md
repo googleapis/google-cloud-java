@@ -41,14 +41,14 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-resourcemanager</artifactId>
-  <version>0.118.10-alpha</version>
+  <version>0.118.12-alpha</version>
 </dependency>
 
 ```
 
 If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:19.1.0')
+implementation platform('com.google.cloud:libraries-bom:19.2.1')
 
 compile 'com.google.cloud:google-cloud-resourcemanager'
 ```
