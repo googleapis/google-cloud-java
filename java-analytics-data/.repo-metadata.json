@@ -11,5 +11,6 @@
   "repo_short": "java-analytics-data",
   "distribution_name": "com.google.analytics:google-analytics-data",
   "api_id": "analytics-data.googleapis.com",
-  "requires_billing": true
+  "requires_billing": true,
+  "codeowner_team": "@googleapis/analytics-dpe"
 }
