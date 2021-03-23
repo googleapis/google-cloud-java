@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-mediatranslation.git",
-        "sha": "081f9f58d790b82157c9810f0f89c7b19b0b1405"
+        "sha": "1733e6ab7ded6769aa9e682542c7b89fcc5f8b2e"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "ac8f20f12e7a4c0b0ae1c6fa415f684a25ea82b7"
+        "sha": "c84c8f156e09702e1c8946bfb9746e6f5892cf27"
       }
     }
   ]
