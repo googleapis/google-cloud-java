@@ -77,7 +77,6 @@ public final class SpannerBenchmark {
               + "--thread=100\n "
               + "--gcp=true\n"
               + "--payload_bytes=4096000\n"
-              + "--gcp=true\n"
               + "--rpc=100");
       System.exit(1);
     }

@@ -118,8 +118,6 @@ public class BigtableIntegrationTest {
     } catch (Exception e) {
       return null;
     }
-    ImmutableList<String> requiredScopes = ImmutableList.of(OAUTH_SCOPE);
-    creds = creds.createScoped(requiredScopes);
     return creds;
   }
 

@@ -72,7 +72,7 @@ final class SpannerTestCases {
   private static final String DEFAULT_INSTANCE = "test-instance";
   private static final String DEFAULT_DATABASE = "test-db";
   private static final String LARGE_TABLE = "large_table";
-  private static final String TABLE = "jenny";
+  private static final String TABLE = "small_table";
 
   private static final String API_FILE = "spannertest.json";
   private static final int MAX_SIZE_PER_COLUMN = 2621440;
@@ -347,7 +347,7 @@ final class SpannerTestCases {
     ReadRequest request =
         ReadRequest.newBuilder()
             .setSession(session.getName())
-            .setTable("jenny")
+            .setTable("small_table")
             .setKeySet(KeySet.newBuilder().setAll(true).build())
             .addColumns("users")
             .addColumns("firstname")
@@ -371,7 +371,7 @@ final class SpannerTestCases {
     ReadRequest request =
         ReadRequest.newBuilder()
             .setSession(sessionObs.get().getName())
-            .setTable("jenny")
+            .setTable("small_table")
             .setKeySet(KeySet.newBuilder().setAll(true).build())
             .addColumns("users")
             .addColumns("firstname")

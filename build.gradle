@@ -7,10 +7,10 @@ plugins {
 }
 
 repositories {
-    mavenLocal()
     maven { // The google mirror is less flaky than mavenCentral()
-        url "https://maven-central.storage-download.googleapis.com/repos/central/data/"
-    }
+        url "https://maven-central.storage-download.googleapis.com/maven2/" }
+    mavenCentral()
+    mavenLocal()
 }
 
 group = 'com.google.cloud'
@@ -18,28 +18,31 @@ version = '0.0.1-SNAPSHOT'
 description = 'GRPC-GCP-Extension Java'
 sourceCompatibility = '1.8'
 
-def grpcVersion = '1.21.1'
-def protobufVersion = '3.8.0'
-def protocVersion = '3.5.1-1'
-def spannerVersion = '1.35.0'
+def grpcVersion = '1.36.0'
+def protobufVersion = '3.12.0'
+def protocVersion = '3.12.0'
+def spannerVersion = '5.1.0'
 
 dependencies {
-    compile "io.grpc:grpc-api:${grpcVersion}"
-    compile "io.grpc:grpc-netty-shaded:${grpcVersion}"
-    compile "com.google.protobuf:protobuf-java:${protobufVersion}"
-    compile "com.google.protobuf:protobuf-java-util:${protobufVersion}"
-    compile "com.google.cloud:google-cloud-spanner:${spannerVersion}"
+    implementation "io.grpc:grpc-netty-shaded:${grpcVersion}"
+    implementation "io.grpc:grpc-protobuf:${grpcVersion}"
+    implementation "io.grpc:grpc-stub:${grpcVersion}"
+    implementation "com.google.protobuf:protobuf-java:${protobufVersion}"
+    implementation "com.google.protobuf:protobuf-java-util:${protobufVersion}"
+    implementation "com.google.cloud:google-cloud-spanner:${spannerVersion}"
 
-    testCompile "com.google.auth:google-auth-library-credentials:0.13.0"
-    testCompile "com.google.cloud:google-cloud-spanner:1.33.0"
-    testCompile "com.google.cloud:google-cloud-bigtable:0.107.0"
-    testCompile "com.google.api.grpc:proto-google-cloud-bigtable-v2:0.39.0"
-    testCompile "com.google.api.grpc:grpc-google-cloud-bigtable-v2:0.39.0"
-    testCompile "com.google.auth:google-auth-library-oauth2-http:0.9.0"
-    testCompile "io.grpc:grpc-auth:${grpcVersion}"
-    testCompile "io.grpc:grpc-stub:${grpcVersion}"
-    testCompile "com.google.truth:truth:0.42"
-    testCompile "junit:junit:4.12"
+    compileOnly "org.apache.tomcat:annotations-api:6.0.53" // necessary for Java 9+
+
+    testImplementation "com.google.auth:google-auth-library-credentials:0.13.0"
+    testImplementation "com.google.cloud:google-cloud-spanner:${spannerVersion}"
+    testImplementation "com.google.cloud:google-cloud-bigtable:0.107.0"
+    testImplementation "com.google.api.grpc:proto-google-cloud-bigtable-v2:0.39.0"
+    testImplementation "com.google.api.grpc:grpc-google-cloud-bigtable-v2:0.39.0"
+    testImplementation "com.google.auth:google-auth-library-oauth2-http:0.9.0"
+    testImplementation "io.grpc:grpc-auth:${grpcVersion}"
+    testImplementation "io.grpc:grpc-stub:${grpcVersion}"
+    testImplementation "com.google.truth:truth:0.42"
+    testImplementation "junit:junit:4.12"
 }
 
 protobuf {

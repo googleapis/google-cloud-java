@@ -41,7 +41,7 @@ final class SpannerClientTestCases {
 
   private static final Logger logger = Logger.getLogger(SpannerTestCases.class.getName());
 
-  // project: grpc-prober-testing, use default credentials.
+  // project: cloudprober-test, use default credentials.
   private static final String INSTANCE_ID = "test-instance";
   private static final String DATABASE_ID = "test-db";
   private static final String LARGE_TABLE = "large_table";
