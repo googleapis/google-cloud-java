@@ -61,11 +61,9 @@ import javax.annotation.concurrent.GuardedBy;
 import org.threeten.bp.Duration;
 
 /**
- * A BigQuery Stream Writer that can be used to write data into BigQuery Table.
- *
- * <p>This is to be used to managed streaming write when you are working with PENDING streams or
- * want to explicitly manage offset. In that most common cases when writing with COMMITTED stream
- * without offset, please use a simpler writer {@code DirectWriter}.
+ * This is to be used to managed streaming write when you are working with PENDING streams or want
+ * to explicitly manage offset. In that most common cases when writing with COMMITTED stream without
+ * offset, please use a simpler writer {@code DirectWriter}.
  *
  * <p>A {@link StreamWrier} provides built-in capabilities to: handle batching of messages;
  * controlling memory utilization (through flow control) and request cleanup (only keeps write
@@ -80,7 +78,10 @@ import org.threeten.bp.Duration;
  *
  * <p>{@link StreamWriter} will use the credentials set on the channel, which uses application
  * default credentials through {@link GoogleCredentials#getApplicationDefault} by default.
+ *
+ * @deprecated use {@link #StreamWriterV2()} instead.
  */
+@Deprecated
 public class StreamWriter implements AutoCloseable {
   private static final Logger LOG = Logger.getLogger(StreamWriter.class.getName());
 
