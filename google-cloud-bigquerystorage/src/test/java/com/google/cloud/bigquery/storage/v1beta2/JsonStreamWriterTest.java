@@ -48,6 +48,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.threeten.bp.Instant;
+import org.threeten.bp.LocalTime;
 
 @RunWith(JUnit4.class)
 public class JsonStreamWriterTest {
@@ -410,7 +411,7 @@ public class JsonStreamWriterTest {
             .setTestNumeric("1.23456")
             .setTestGeo("POINT(1,1)")
             .setTestTimestamp(12345678)
-            .setTestTime("01:00:01")
+            .setTestTime(CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(1, 0, 1)))
             .build();
     JSONObject complex_lvl2 = new JSONObject();
     complex_lvl2.put("test_int", 3);
@@ -431,7 +432,7 @@ public class JsonStreamWriterTest {
     json.put("test_numeric", "1.23456");
     json.put("test_geo", "POINT(1,1)");
     json.put("test_timestamp", 12345678);
-    json.put("test_time", "01:00:01");
+    json.put("test_time", CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(1, 0, 1)));
     JSONArray jsonArr = new JSONArray();
     jsonArr.put(json);
 

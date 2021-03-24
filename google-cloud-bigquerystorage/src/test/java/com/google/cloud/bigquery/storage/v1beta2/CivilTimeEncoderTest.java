@@ -151,7 +151,7 @@ public class CivilTimeEncoderTest {
     }
   }
 
-  // Date Time
+  // Date Time Tests
   @Test
   public void encodeAndDecodePacked64DatetimeMicros_validDateTime() {
     // 0001/01/01 00:00:00

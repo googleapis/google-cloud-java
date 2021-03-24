@@ -41,6 +41,7 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.threeten.bp.Duration;
+import org.threeten.bp.LocalDateTime;
 
 /** Integration tests for BigQuery Write API. */
 public class ITBigQueryWriteManualClientTest {
@@ -240,7 +241,9 @@ public class ITBigQueryWriteManualClientTest {
       JSONObject row1 = new JSONObject();
       row1.put("test_str", "aaa");
       row1.put("test_numerics", new JSONArray(new String[] {"123.4", "-9000000"}));
-      row1.put("test_datetime", "2020-10-1 12:00:00");
+      row1.put(
+          "test_datetime",
+          CivilTimeEncoder.encodePacked64DatetimeMicros(LocalDateTime.of(2020, 10, 1, 12, 0)));
       JSONArray jsonArr1 = new JSONArray(new JSONObject[] {row1});
 
       ApiFuture<AppendRowsResponse> response1 = jsonStreamWriter.append(jsonArr1, -1);
@@ -313,7 +316,9 @@ public class ITBigQueryWriteManualClientTest {
       JSONObject row1 = new JSONObject();
       row1.put("test_str", "aaa");
       row1.put("test_numerics", new JSONArray(new String[] {"123.4", "-9000000"}));
-      row1.put("test_datetime", "2020-10-1 12:00:00");
+      row1.put(
+          "test_datetime",
+          CivilTimeEncoder.encodePacked64DatetimeMicros(LocalDateTime.of(2020, 10, 1, 12, 0)));
       JSONArray jsonArr1 = new JSONArray(new JSONObject[] {row1});
 
       ApiFuture<AppendRowsResponse> response1 = jsonStreamWriter.append(jsonArr1, -1);

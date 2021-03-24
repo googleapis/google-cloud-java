@@ -201,7 +201,7 @@ public class BQTableSchemaToProtoDescriptorTest {
             .build();
     final Table.TableFieldSchema TEST_TIME =
         Table.TableFieldSchema.newBuilder()
-            .setType(Table.TableFieldSchema.Type.TIME)
+            .setType(Table.TableFieldSchema.Type.INT64)
             .setMode(Table.TableFieldSchema.Mode.NULLABLE)
             .setName("test_time")
             .build();
