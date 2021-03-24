@@ -67,7 +67,7 @@ public class MockContainerAnalysisImpl extends ContainerAnalysisImplBase {
 
   @Override
   public void setIamPolicy(SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -79,7 +79,7 @@ public class MockContainerAnalysisImpl extends ContainerAnalysisImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -87,7 +87,7 @@ public class MockContainerAnalysisImpl extends ContainerAnalysisImplBase {
 
   @Override
   public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -99,7 +99,7 @@ public class MockContainerAnalysisImpl extends ContainerAnalysisImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -109,7 +109,7 @@ public class MockContainerAnalysisImpl extends ContainerAnalysisImplBase {
   public void testIamPermissions(
       TestIamPermissionsRequest request,
       StreamObserver<TestIamPermissionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
       responseObserver.onNext(((TestIamPermissionsResponse) response));
@@ -121,7 +121,7 @@ public class MockContainerAnalysisImpl extends ContainerAnalysisImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TestIamPermissionsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -131,7 +131,7 @@ public class MockContainerAnalysisImpl extends ContainerAnalysisImplBase {
   public void getVulnerabilityOccurrencesSummary(
       GetVulnerabilityOccurrencesSummaryRequest request,
       StreamObserver<VulnerabilityOccurrencesSummary> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof VulnerabilityOccurrencesSummary) {
       requests.add(request);
       responseObserver.onNext(((VulnerabilityOccurrencesSummary) response));
@@ -143,7 +143,7 @@ public class MockContainerAnalysisImpl extends ContainerAnalysisImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetVulnerabilityOccurrencesSummary, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   VulnerabilityOccurrencesSummary.class.getName(),
                   Exception.class.getName())));
     }
