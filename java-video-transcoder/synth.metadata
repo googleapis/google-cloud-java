@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-video-transcoder.git",
-        "sha": "08a5c56dd9ead9985c547d80f881695db63a98f9"
+        "sha": "459e38f1807cfc913a67454b4fedb3290a818e46"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "0b064d767537e0675fc053e53fca473c5c701fb8"
+        "sha": "bb854b6c048619e3be4e8b8ce8ed10aa74ea78ef"
       }
     }
   ],
