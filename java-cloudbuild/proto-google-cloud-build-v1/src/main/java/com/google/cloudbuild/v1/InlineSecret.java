@@ -22,33 +22,30 @@ package com.google.cloudbuild.v1;
  *
  *
  * <pre>
- * Pairs a set of secret environment variables containing encrypted
+ * Pairs a set of secret environment variables mapped to encrypted
  * values with the Cloud KMS key to use to decrypt the value.
- * Note: Use `kmsKeyName` with  `available_secrets` instead of using
- * `kmsKeyName` with `secret`. For instructions see:
- * https://cloud.google.com/cloud-build/docs/securing-builds/use-encrypted-credentials.
  * </pre>
  *
- * Protobuf type {@code google.devtools.cloudbuild.v1.Secret}
+ * Protobuf type {@code google.devtools.cloudbuild.v1.InlineSecret}
  */
-public final class Secret extends com.google.protobuf.GeneratedMessageV3
+public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.Secret)
-    SecretOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.InlineSecret)
+    InlineSecretOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use Secret.newBuilder() to construct.
-  private Secret(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use InlineSecret.newBuilder() to construct.
+  private InlineSecret(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private Secret() {
+  private InlineSecret() {
     kmsKeyName_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new Secret();
+    return new InlineSecret();
   }
 
   @java.lang.Override
@@ -56,7 +53,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Secret(
+  private InlineSecret(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -82,20 +79,19 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
               kmsKeyName_ = s;
               break;
             }
-          case 26:
+          case 18:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                secretEnv_ =
-                    com.google.protobuf.MapField.newMapField(
-                        SecretEnvDefaultEntryHolder.defaultEntry);
+                envMap_ =
+                    com.google.protobuf.MapField.newMapField(EnvMapDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
-                  secretEnv__ =
+                  envMap__ =
                       input.readMessage(
-                          SecretEnvDefaultEntryHolder.defaultEntry.getParserForType(),
+                          EnvMapDefaultEntryHolder.defaultEntry.getParserForType(),
                           extensionRegistry);
-              secretEnv_.getMutableMap().put(secretEnv__.getKey(), secretEnv__.getValue());
+              envMap_.getMutableMap().put(envMap__.getKey(), envMap__.getValue());
               break;
             }
           default:
@@ -119,15 +115,15 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v1.Cloudbuild
-        .internal_static_google_devtools_cloudbuild_v1_Secret_descriptor;
+        .internal_static_google_devtools_cloudbuild_v1_InlineSecret_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
   protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
-      case 3:
-        return internalGetSecretEnv();
+      case 2:
+        return internalGetEnvMap();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -137,9 +133,10 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloudbuild.v1.Cloudbuild
-        .internal_static_google_devtools_cloudbuild_v1_Secret_fieldAccessorTable
+        .internal_static_google_devtools_cloudbuild_v1_InlineSecret_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloudbuild.v1.Secret.class, com.google.cloudbuild.v1.Secret.Builder.class);
+            com.google.cloudbuild.v1.InlineSecret.class,
+            com.google.cloudbuild.v1.InlineSecret.Builder.class);
   }
 
   public static final int KMS_KEY_NAME_FIELD_NUMBER = 1;
@@ -148,10 +145,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud KMS key name to use to decrypt these envs.
+   * Resource name of Cloud KMS crypto key to decrypt the encrypted value.
+   * In format: projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;
    * </pre>
    *
-   * <code>string kms_key_name = 1;</code>
+   * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The kmsKeyName.
    */
@@ -171,10 +169,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud KMS key name to use to decrypt these envs.
+   * Resource name of Cloud KMS crypto key to decrypt the encrypted value.
+   * In format: projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;
    * </pre>
    *
-   * <code>string kms_key_name = 1;</code>
+   * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for kmsKeyName.
    */
@@ -191,33 +190,33 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SECRET_ENV_FIELD_NUMBER = 3;
+  public static final int ENV_MAP_FIELD_NUMBER = 2;
 
-  private static final class SecretEnvDefaultEntryHolder {
+  private static final class EnvMapDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
         defaultEntry =
             com.google.protobuf.MapEntry
                 .<java.lang.String, com.google.protobuf.ByteString>newDefaultInstance(
                     com.google.cloudbuild.v1.Cloudbuild
-                        .internal_static_google_devtools_cloudbuild_v1_Secret_SecretEnvEntry_descriptor,
+                        .internal_static_google_devtools_cloudbuild_v1_InlineSecret_EnvMapEntry_descriptor,
                     com.google.protobuf.WireFormat.FieldType.STRING,
                     "",
                     com.google.protobuf.WireFormat.FieldType.BYTES,
                     com.google.protobuf.ByteString.EMPTY);
   }
 
-  private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString> secretEnv_;
+  private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString> envMap_;
 
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
-      internalGetSecretEnv() {
-    if (secretEnv_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(SecretEnvDefaultEntryHolder.defaultEntry);
+      internalGetEnvMap() {
+    if (envMap_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(EnvMapDefaultEntryHolder.defaultEntry);
     }
-    return secretEnv_;
+    return envMap_;
   }
 
-  public int getSecretEnvCount() {
-    return internalGetSecretEnv().getMap().size();
+  public int getEnvMapCount() {
+    return internalGetEnvMap().getMap().size();
   }
   /**
    *
@@ -230,20 +229,20 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    * build's secrets.
    * </pre>
    *
-   * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
+   * <code>map&lt;string, bytes&gt; env_map = 2;</code>
    */
   @java.lang.Override
-  public boolean containsSecretEnv(java.lang.String key) {
+  public boolean containsEnvMap(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
     }
-    return internalGetSecretEnv().getMap().containsKey(key);
+    return internalGetEnvMap().getMap().containsKey(key);
   }
-  /** Use {@link #getSecretEnvMap()} instead. */
+  /** Use {@link #getEnvMapMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
-  public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getSecretEnv() {
-    return getSecretEnvMap();
+  public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getEnvMap() {
+    return getEnvMapMap();
   }
   /**
    *
@@ -256,11 +255,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    * build's secrets.
    * </pre>
    *
-   * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
+   * <code>map&lt;string, bytes&gt; env_map = 2;</code>
    */
   @java.lang.Override
-  public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getSecretEnvMap() {
-    return internalGetSecretEnv().getMap();
+  public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getEnvMapMap() {
+    return internalGetEnvMap().getMap();
   }
   /**
    *
@@ -273,16 +272,16 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    * build's secrets.
    * </pre>
    *
-   * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
+   * <code>map&lt;string, bytes&gt; env_map = 2;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getSecretEnvOrDefault(
+  public com.google.protobuf.ByteString getEnvMapOrDefault(
       java.lang.String key, com.google.protobuf.ByteString defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
     }
     java.util.Map<java.lang.String, com.google.protobuf.ByteString> map =
-        internalGetSecretEnv().getMap();
+        internalGetEnvMap().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
@@ -296,15 +295,15 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    * build's secrets.
    * </pre>
    *
-   * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
+   * <code>map&lt;string, bytes&gt; env_map = 2;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getSecretEnvOrThrow(java.lang.String key) {
+  public com.google.protobuf.ByteString getEnvMapOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
     }
     java.util.Map<java.lang.String, com.google.protobuf.ByteString> map =
-        internalGetSecretEnv().getMap();
+        internalGetEnvMap().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -329,7 +328,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kmsKeyName_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
-        output, internalGetSecretEnv(), SecretEnvDefaultEntryHolder.defaultEntry, 3);
+        output, internalGetEnvMap(), EnvMapDefaultEntryHolder.defaultEntry, 2);
     unknownFields.writeTo(output);
   }
 
@@ -343,14 +342,14 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kmsKeyName_);
     }
     for (java.util.Map.Entry<java.lang.String, com.google.protobuf.ByteString> entry :
-        internalGetSecretEnv().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString> secretEnv__ =
-          SecretEnvDefaultEntryHolder.defaultEntry
+        internalGetEnvMap().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString> envMap__ =
+          EnvMapDefaultEntryHolder.defaultEntry
               .newBuilderForType()
               .setKey(entry.getKey())
               .setValue(entry.getValue())
               .build();
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, secretEnv__);
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, envMap__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -362,13 +361,13 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloudbuild.v1.Secret)) {
+    if (!(obj instanceof com.google.cloudbuild.v1.InlineSecret)) {
       return super.equals(obj);
     }
-    com.google.cloudbuild.v1.Secret other = (com.google.cloudbuild.v1.Secret) obj;
+    com.google.cloudbuild.v1.InlineSecret other = (com.google.cloudbuild.v1.InlineSecret) obj;
 
     if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
-    if (!internalGetSecretEnv().equals(other.internalGetSecretEnv())) return false;
+    if (!internalGetEnvMap().equals(other.internalGetEnvMap())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -382,79 +381,79 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getKmsKeyName().hashCode();
-    if (!internalGetSecretEnv().getMap().isEmpty()) {
-      hash = (37 * hash) + SECRET_ENV_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetSecretEnv().hashCode();
+    if (!internalGetEnvMap().getMap().isEmpty()) {
+      hash = (37 * hash) + ENV_MAP_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetEnvMap().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloudbuild.v1.Secret parseFrom(java.nio.ByteBuffer data)
+  public static com.google.cloudbuild.v1.InlineSecret parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloudbuild.v1.Secret parseFrom(
+  public static com.google.cloudbuild.v1.InlineSecret parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloudbuild.v1.Secret parseFrom(com.google.protobuf.ByteString data)
+  public static com.google.cloudbuild.v1.InlineSecret parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloudbuild.v1.Secret parseFrom(
+  public static com.google.cloudbuild.v1.InlineSecret parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloudbuild.v1.Secret parseFrom(byte[] data)
+  public static com.google.cloudbuild.v1.InlineSecret parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloudbuild.v1.Secret parseFrom(
+  public static com.google.cloudbuild.v1.InlineSecret parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloudbuild.v1.Secret parseFrom(java.io.InputStream input)
+  public static com.google.cloudbuild.v1.InlineSecret parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloudbuild.v1.Secret parseFrom(
+  public static com.google.cloudbuild.v1.InlineSecret parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloudbuild.v1.Secret parseDelimitedFrom(java.io.InputStream input)
+  public static com.google.cloudbuild.v1.InlineSecret parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloudbuild.v1.Secret parseDelimitedFrom(
+  public static com.google.cloudbuild.v1.InlineSecret parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloudbuild.v1.Secret parseFrom(
+  public static com.google.cloudbuild.v1.InlineSecret parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloudbuild.v1.Secret parseFrom(
+  public static com.google.cloudbuild.v1.InlineSecret parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -471,7 +470,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloudbuild.v1.Secret prototype) {
+  public static Builder newBuilder(com.google.cloudbuild.v1.InlineSecret prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -489,29 +488,26 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Pairs a set of secret environment variables containing encrypted
+   * Pairs a set of secret environment variables mapped to encrypted
    * values with the Cloud KMS key to use to decrypt the value.
-   * Note: Use `kmsKeyName` with  `available_secrets` instead of using
-   * `kmsKeyName` with `secret`. For instructions see:
-   * https://cloud.google.com/cloud-build/docs/securing-builds/use-encrypted-credentials.
    * </pre>
    *
-   * Protobuf type {@code google.devtools.cloudbuild.v1.Secret}
+   * Protobuf type {@code google.devtools.cloudbuild.v1.InlineSecret}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.devtools.cloudbuild.v1.Secret)
-      com.google.cloudbuild.v1.SecretOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.devtools.cloudbuild.v1.InlineSecret)
+      com.google.cloudbuild.v1.InlineSecretOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloudbuild.v1.Cloudbuild
-          .internal_static_google_devtools_cloudbuild_v1_Secret_descriptor;
+          .internal_static_google_devtools_cloudbuild_v1_InlineSecret_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
-        case 3:
-          return internalGetSecretEnv();
+        case 2:
+          return internalGetEnvMap();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -520,8 +516,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
-        case 3:
-          return internalGetMutableSecretEnv();
+        case 2:
+          return internalGetMutableEnvMap();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -531,12 +527,13 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloudbuild.v1.Cloudbuild
-          .internal_static_google_devtools_cloudbuild_v1_Secret_fieldAccessorTable
+          .internal_static_google_devtools_cloudbuild_v1_InlineSecret_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloudbuild.v1.Secret.class, com.google.cloudbuild.v1.Secret.Builder.class);
+              com.google.cloudbuild.v1.InlineSecret.class,
+              com.google.cloudbuild.v1.InlineSecret.Builder.class);
     }
 
-    // Construct using com.google.cloudbuild.v1.Secret.newBuilder()
+    // Construct using com.google.cloudbuild.v1.InlineSecret.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -555,24 +552,24 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       kmsKeyName_ = "";
 
-      internalGetMutableSecretEnv().clear();
+      internalGetMutableEnvMap().clear();
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloudbuild.v1.Cloudbuild
-          .internal_static_google_devtools_cloudbuild_v1_Secret_descriptor;
+          .internal_static_google_devtools_cloudbuild_v1_InlineSecret_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloudbuild.v1.Secret getDefaultInstanceForType() {
-      return com.google.cloudbuild.v1.Secret.getDefaultInstance();
+    public com.google.cloudbuild.v1.InlineSecret getDefaultInstanceForType() {
+      return com.google.cloudbuild.v1.InlineSecret.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloudbuild.v1.Secret build() {
-      com.google.cloudbuild.v1.Secret result = buildPartial();
+    public com.google.cloudbuild.v1.InlineSecret build() {
+      com.google.cloudbuild.v1.InlineSecret result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -580,12 +577,13 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.cloudbuild.v1.Secret buildPartial() {
-      com.google.cloudbuild.v1.Secret result = new com.google.cloudbuild.v1.Secret(this);
+    public com.google.cloudbuild.v1.InlineSecret buildPartial() {
+      com.google.cloudbuild.v1.InlineSecret result =
+          new com.google.cloudbuild.v1.InlineSecret(this);
       int from_bitField0_ = bitField0_;
       result.kmsKeyName_ = kmsKeyName_;
-      result.secretEnv_ = internalGetSecretEnv();
-      result.secretEnv_.makeImmutable();
+      result.envMap_ = internalGetEnvMap();
+      result.envMap_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -625,21 +623,21 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloudbuild.v1.Secret) {
-        return mergeFrom((com.google.cloudbuild.v1.Secret) other);
+      if (other instanceof com.google.cloudbuild.v1.InlineSecret) {
+        return mergeFrom((com.google.cloudbuild.v1.InlineSecret) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloudbuild.v1.Secret other) {
-      if (other == com.google.cloudbuild.v1.Secret.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.cloudbuild.v1.InlineSecret other) {
+      if (other == com.google.cloudbuild.v1.InlineSecret.getDefaultInstance()) return this;
       if (!other.getKmsKeyName().isEmpty()) {
         kmsKeyName_ = other.kmsKeyName_;
         onChanged();
       }
-      internalGetMutableSecretEnv().mergeFrom(other.internalGetSecretEnv());
+      internalGetMutableEnvMap().mergeFrom(other.internalGetEnvMap());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -655,11 +653,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloudbuild.v1.Secret parsedMessage = null;
+      com.google.cloudbuild.v1.InlineSecret parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloudbuild.v1.Secret) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloudbuild.v1.InlineSecret) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -676,10 +674,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud KMS key name to use to decrypt these envs.
+     * Resource name of Cloud KMS crypto key to decrypt the encrypted value.
+     * In format: projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;
      * </pre>
      *
-     * <code>string kms_key_name = 1;</code>
+     * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The kmsKeyName.
      */
@@ -698,10 +697,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud KMS key name to use to decrypt these envs.
+     * Resource name of Cloud KMS crypto key to decrypt the encrypted value.
+     * In format: projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;
      * </pre>
      *
-     * <code>string kms_key_name = 1;</code>
+     * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for kmsKeyName.
      */
@@ -720,10 +720,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud KMS key name to use to decrypt these envs.
+     * Resource name of Cloud KMS crypto key to decrypt the encrypted value.
+     * In format: projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;
      * </pre>
      *
-     * <code>string kms_key_name = 1;</code>
+     * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The kmsKeyName to set.
      * @return This builder for chaining.
@@ -741,10 +742,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud KMS key name to use to decrypt these envs.
+     * Resource name of Cloud KMS crypto key to decrypt the encrypted value.
+     * In format: projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;
      * </pre>
      *
-     * <code>string kms_key_name = 1;</code>
+     * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -758,10 +760,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud KMS key name to use to decrypt these envs.
+     * Resource name of Cloud KMS crypto key to decrypt the encrypted value.
+     * In format: projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;
      * </pre>
      *
-     * <code>string kms_key_name = 1;</code>
+     * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for kmsKeyName to set.
      * @return This builder for chaining.
@@ -777,33 +780,31 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
-        secretEnv_;
+    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString> envMap_;
 
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
-        internalGetSecretEnv() {
-      if (secretEnv_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(SecretEnvDefaultEntryHolder.defaultEntry);
+        internalGetEnvMap() {
+      if (envMap_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(EnvMapDefaultEntryHolder.defaultEntry);
       }
-      return secretEnv_;
+      return envMap_;
     }
 
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
-        internalGetMutableSecretEnv() {
+        internalGetMutableEnvMap() {
       onChanged();
       ;
-      if (secretEnv_ == null) {
-        secretEnv_ =
-            com.google.protobuf.MapField.newMapField(SecretEnvDefaultEntryHolder.defaultEntry);
+      if (envMap_ == null) {
+        envMap_ = com.google.protobuf.MapField.newMapField(EnvMapDefaultEntryHolder.defaultEntry);
       }
-      if (!secretEnv_.isMutable()) {
-        secretEnv_ = secretEnv_.copy();
+      if (!envMap_.isMutable()) {
+        envMap_ = envMap_.copy();
       }
-      return secretEnv_;
+      return envMap_;
     }
 
-    public int getSecretEnvCount() {
-      return internalGetSecretEnv().getMap().size();
+    public int getEnvMapCount() {
+      return internalGetEnvMap().getMap().size();
     }
     /**
      *
@@ -816,20 +817,20 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * build's secrets.
      * </pre>
      *
-     * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
+     * <code>map&lt;string, bytes&gt; env_map = 2;</code>
      */
     @java.lang.Override
-    public boolean containsSecretEnv(java.lang.String key) {
+    public boolean containsEnvMap(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
       }
-      return internalGetSecretEnv().getMap().containsKey(key);
+      return internalGetEnvMap().getMap().containsKey(key);
     }
-    /** Use {@link #getSecretEnvMap()} instead. */
+    /** Use {@link #getEnvMapMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getSecretEnv() {
-      return getSecretEnvMap();
+    public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getEnvMap() {
+      return getEnvMapMap();
     }
     /**
      *
@@ -842,11 +843,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * build's secrets.
      * </pre>
      *
-     * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
+     * <code>map&lt;string, bytes&gt; env_map = 2;</code>
      */
     @java.lang.Override
-    public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getSecretEnvMap() {
-      return internalGetSecretEnv().getMap();
+    public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getEnvMapMap() {
+      return internalGetEnvMap().getMap();
     }
     /**
      *
@@ -859,16 +860,16 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * build's secrets.
      * </pre>
      *
-     * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
+     * <code>map&lt;string, bytes&gt; env_map = 2;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString getSecretEnvOrDefault(
+    public com.google.protobuf.ByteString getEnvMapOrDefault(
         java.lang.String key, com.google.protobuf.ByteString defaultValue) {
       if (key == null) {
         throw new java.lang.NullPointerException();
       }
       java.util.Map<java.lang.String, com.google.protobuf.ByteString> map =
-          internalGetSecretEnv().getMap();
+          internalGetEnvMap().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
@@ -882,23 +883,23 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * build's secrets.
      * </pre>
      *
-     * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
+     * <code>map&lt;string, bytes&gt; env_map = 2;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString getSecretEnvOrThrow(java.lang.String key) {
+    public com.google.protobuf.ByteString getEnvMapOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
       }
       java.util.Map<java.lang.String, com.google.protobuf.ByteString> map =
-          internalGetSecretEnv().getMap();
+          internalGetEnvMap().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
     }
 
-    public Builder clearSecretEnv() {
-      internalGetMutableSecretEnv().getMutableMap().clear();
+    public Builder clearEnvMap() {
+      internalGetMutableEnvMap().getMutableMap().clear();
       return this;
     }
     /**
@@ -912,19 +913,19 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * build's secrets.
      * </pre>
      *
-     * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
+     * <code>map&lt;string, bytes&gt; env_map = 2;</code>
      */
-    public Builder removeSecretEnv(java.lang.String key) {
+    public Builder removeEnvMap(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
       }
-      internalGetMutableSecretEnv().getMutableMap().remove(key);
+      internalGetMutableEnvMap().getMutableMap().remove(key);
       return this;
     }
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getMutableSecretEnv() {
-      return internalGetMutableSecretEnv().getMutableMap();
+    public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getMutableEnvMap() {
+      return internalGetMutableEnvMap().getMutableMap();
     }
     /**
      *
@@ -937,16 +938,16 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * build's secrets.
      * </pre>
      *
-     * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
+     * <code>map&lt;string, bytes&gt; env_map = 2;</code>
      */
-    public Builder putSecretEnv(java.lang.String key, com.google.protobuf.ByteString value) {
+    public Builder putEnvMap(java.lang.String key, com.google.protobuf.ByteString value) {
       if (key == null) {
         throw new java.lang.NullPointerException();
       }
       if (value == null) {
         throw new java.lang.NullPointerException();
       }
-      internalGetMutableSecretEnv().getMutableMap().put(key, value);
+      internalGetMutableEnvMap().getMutableMap().put(key, value);
       return this;
     }
     /**
@@ -960,11 +961,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * build's secrets.
      * </pre>
      *
-     * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
+     * <code>map&lt;string, bytes&gt; env_map = 2;</code>
      */
-    public Builder putAllSecretEnv(
+    public Builder putAllEnvMap(
         java.util.Map<java.lang.String, com.google.protobuf.ByteString> values) {
-      internalGetMutableSecretEnv().getMutableMap().putAll(values);
+      internalGetMutableEnvMap().getMutableMap().putAll(values);
       return this;
     }
 
@@ -979,42 +980,42 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.devtools.cloudbuild.v1.Secret)
+    // @@protoc_insertion_point(builder_scope:google.devtools.cloudbuild.v1.InlineSecret)
   }
 
-  // @@protoc_insertion_point(class_scope:google.devtools.cloudbuild.v1.Secret)
-  private static final com.google.cloudbuild.v1.Secret DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.devtools.cloudbuild.v1.InlineSecret)
+  private static final com.google.cloudbuild.v1.InlineSecret DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloudbuild.v1.Secret();
+    DEFAULT_INSTANCE = new com.google.cloudbuild.v1.InlineSecret();
   }
 
-  public static com.google.cloudbuild.v1.Secret getDefaultInstance() {
+  public static com.google.cloudbuild.v1.InlineSecret getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Secret> PARSER =
-      new com.google.protobuf.AbstractParser<Secret>() {
+  private static final com.google.protobuf.Parser<InlineSecret> PARSER =
+      new com.google.protobuf.AbstractParser<InlineSecret>() {
         @java.lang.Override
-        public Secret parsePartialFrom(
+        public InlineSecret parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Secret(input, extensionRegistry);
+          return new InlineSecret(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<Secret> parser() {
+  public static com.google.protobuf.Parser<InlineSecret> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<Secret> getParserForType() {
+  public com.google.protobuf.Parser<InlineSecret> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloudbuild.v1.Secret getDefaultInstanceForType() {
+  public com.google.cloudbuild.v1.InlineSecret getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

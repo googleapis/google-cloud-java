@@ -239,12 +239,10 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. Source to build against this trigger.
+   * Source to build against this trigger.
    * </pre>
    *
-   * <code>
-   * .google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
    *
    * @return Whether the source field is set.
    */
@@ -256,12 +254,10 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. Source to build against this trigger.
+   * Source to build against this trigger.
    * </pre>
    *
-   * <code>
-   * .google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
    *
    * @return The source.
    */
@@ -273,12 +269,10 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. Source to build against this trigger.
+   * Source to build against this trigger.
    * </pre>
    *
-   * <code>
-   * .google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.RepoSourceOrBuilder getSourceOrBuilder() {
@@ -868,12 +862,10 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Source to build against this trigger.
+     * Source to build against this trigger.
      * </pre>
      *
-     * <code>
-     * .google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
      *
      * @return Whether the source field is set.
      */
@@ -884,12 +876,10 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Source to build against this trigger.
+     * Source to build against this trigger.
      * </pre>
      *
-     * <code>
-     * .google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
      *
      * @return The source.
      */
@@ -904,12 +894,10 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Source to build against this trigger.
+     * Source to build against this trigger.
      * </pre>
      *
-     * <code>
-     * .google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
      */
     public Builder setSource(com.google.cloudbuild.v1.RepoSource value) {
       if (sourceBuilder_ == null) {
@@ -928,12 +916,10 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Source to build against this trigger.
+     * Source to build against this trigger.
      * </pre>
      *
-     * <code>
-     * .google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
      */
     public Builder setSource(com.google.cloudbuild.v1.RepoSource.Builder builderForValue) {
       if (sourceBuilder_ == null) {
@@ -949,12 +935,10 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Source to build against this trigger.
+     * Source to build against this trigger.
      * </pre>
      *
-     * <code>
-     * .google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
      */
     public Builder mergeSource(com.google.cloudbuild.v1.RepoSource value) {
       if (sourceBuilder_ == null) {
@@ -977,12 +961,10 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Source to build against this trigger.
+     * Source to build against this trigger.
      * </pre>
      *
-     * <code>
-     * .google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
      */
     public Builder clearSource() {
       if (sourceBuilder_ == null) {
@@ -999,12 +981,10 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Source to build against this trigger.
+     * Source to build against this trigger.
      * </pre>
      *
-     * <code>
-     * .google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
      */
     public com.google.cloudbuild.v1.RepoSource.Builder getSourceBuilder() {
 
@@ -1015,12 +995,10 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Source to build against this trigger.
+     * Source to build against this trigger.
      * </pre>
      *
-     * <code>
-     * .google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
      */
     public com.google.cloudbuild.v1.RepoSourceOrBuilder getSourceOrBuilder() {
       if (sourceBuilder_ != null) {
@@ -1033,12 +1011,10 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Source to build against this trigger.
+     * Source to build against this trigger.
      * </pre>
      *
-     * <code>
-     * .google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloudbuild.v1.RepoSource,

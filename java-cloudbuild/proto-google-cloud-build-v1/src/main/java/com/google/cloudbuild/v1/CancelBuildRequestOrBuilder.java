@@ -27,7 +27,7 @@ public interface CancelBuildRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the `Build` to retrieve.
+   * The name of the `Build` to cancel.
    * Format: `projects/{project}/locations/{location}/builds/{build}`
    * </pre>
    *
@@ -40,7 +40,7 @@ public interface CancelBuildRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the `Build` to retrieve.
+   * The name of the `Build` to cancel.
    * Format: `projects/{project}/locations/{location}/builds/{build}`
    * </pre>
    *

@@ -63,6 +63,8 @@ import com.google.cloudbuild.v1.ListBuildsRequest;
 import com.google.cloudbuild.v1.ListBuildsResponse;
 import com.google.cloudbuild.v1.ListWorkerPoolsRequest;
 import com.google.cloudbuild.v1.ListWorkerPoolsResponse;
+import com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest;
+import com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse;
 import com.google.cloudbuild.v1.RetryBuildRequest;
 import com.google.cloudbuild.v1.RunBuildTriggerRequest;
 import com.google.cloudbuild.v1.UpdateBuildTriggerRequest;
@@ -138,6 +140,8 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
   private final UnaryCallSettings<RunBuildTriggerRequest, Operation> runBuildTriggerSettings;
   private final OperationCallSettings<RunBuildTriggerRequest, Build, BuildOperationMetadata>
       runBuildTriggerOperationSettings;
+  private final UnaryCallSettings<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
+      receiveTriggerWebhookSettings;
   private final UnaryCallSettings<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolSettings;
   private final UnaryCallSettings<GetWorkerPoolRequest, WorkerPool> getWorkerPoolSettings;
   private final UnaryCallSettings<DeleteWorkerPoolRequest, Empty> deleteWorkerPoolSettings;
@@ -335,6 +339,12 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     return runBuildTriggerOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to receiveTriggerWebhook. */
+  public UnaryCallSettings<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
+      receiveTriggerWebhookSettings() {
+    return receiveTriggerWebhookSettings;
+  }
+
   /** Returns the object with the settings used for calls to createWorkerPool. */
   public UnaryCallSettings<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolSettings() {
     return createWorkerPoolSettings;
@@ -444,6 +454,7 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     updateBuildTriggerSettings = settingsBuilder.updateBuildTriggerSettings().build();
     runBuildTriggerSettings = settingsBuilder.runBuildTriggerSettings().build();
     runBuildTriggerOperationSettings = settingsBuilder.runBuildTriggerOperationSettings().build();
+    receiveTriggerWebhookSettings = settingsBuilder.receiveTriggerWebhookSettings().build();
     createWorkerPoolSettings = settingsBuilder.createWorkerPoolSettings().build();
     getWorkerPoolSettings = settingsBuilder.getWorkerPoolSettings().build();
     deleteWorkerPoolSettings = settingsBuilder.deleteWorkerPoolSettings().build();
@@ -481,6 +492,9 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     private final OperationCallSettings.Builder<
             RunBuildTriggerRequest, Build, BuildOperationMetadata>
         runBuildTriggerOperationSettings;
+    private final UnaryCallSettings.Builder<
+            ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
+        receiveTriggerWebhookSettings;
     private final UnaryCallSettings.Builder<CreateWorkerPoolRequest, WorkerPool>
         createWorkerPoolSettings;
     private final UnaryCallSettings.Builder<GetWorkerPoolRequest, WorkerPool> getWorkerPoolSettings;
@@ -503,6 +517,7 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -530,6 +545,8 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -554,6 +571,7 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
       updateBuildTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       runBuildTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       runBuildTriggerOperationSettings = OperationCallSettings.newBuilder();
+      receiveTriggerWebhookSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createWorkerPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getWorkerPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteWorkerPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -573,6 +591,7 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
               deleteBuildTriggerSettings,
               updateBuildTriggerSettings,
               runBuildTriggerSettings,
+              receiveTriggerWebhookSettings,
               createWorkerPoolSettings,
               getWorkerPoolSettings,
               deleteWorkerPoolSettings,
@@ -598,6 +617,7 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
       updateBuildTriggerSettings = settings.updateBuildTriggerSettings.toBuilder();
       runBuildTriggerSettings = settings.runBuildTriggerSettings.toBuilder();
       runBuildTriggerOperationSettings = settings.runBuildTriggerOperationSettings.toBuilder();
+      receiveTriggerWebhookSettings = settings.receiveTriggerWebhookSettings.toBuilder();
       createWorkerPoolSettings = settings.createWorkerPoolSettings.toBuilder();
       getWorkerPoolSettings = settings.getWorkerPoolSettings.toBuilder();
       deleteWorkerPoolSettings = settings.deleteWorkerPoolSettings.toBuilder();
@@ -617,6 +637,7 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
               deleteBuildTriggerSettings,
               updateBuildTriggerSettings,
               runBuildTriggerSettings,
+              receiveTriggerWebhookSettings,
               createWorkerPoolSettings,
               getWorkerPoolSettings,
               deleteWorkerPoolSettings,
@@ -690,6 +711,11 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
           .runBuildTriggerSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .receiveTriggerWebhookSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createWorkerPoolSettings()
@@ -889,6 +915,12 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     public OperationCallSettings.Builder<RunBuildTriggerRequest, Build, BuildOperationMetadata>
         runBuildTriggerOperationSettings() {
       return runBuildTriggerOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to receiveTriggerWebhook. */
+    public UnaryCallSettings.Builder<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
+        receiveTriggerWebhookSettings() {
+      return receiveTriggerWebhookSettings;
     }
 
     /** Returns the builder for the settings used for calls to createWorkerPool. */

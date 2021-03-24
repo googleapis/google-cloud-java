@@ -54,7 +54,7 @@ public interface RepoSourceOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the Cloud Source Repository.
+   * Name of the Cloud Source Repository.
    * </pre>
    *
    * <code>string repo_name = 2;</code>
@@ -66,7 +66,7 @@ public interface RepoSourceOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the Cloud Source Repository.
+   * Name of the Cloud Source Repository.
    * </pre>
    *
    * <code>string repo_name = 2;</code>

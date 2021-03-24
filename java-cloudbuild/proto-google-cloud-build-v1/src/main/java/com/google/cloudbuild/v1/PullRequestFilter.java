@@ -155,6 +155,17 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      * <code>COMMENTS_ENABLED = 1;</code>
      */
     COMMENTS_ENABLED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Enforce that repository owners or collaborators must comment on external
+     * contributors' Pull Requests before builds are triggered.
+     * </pre>
+     *
+     * <code>COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY = 2;</code>
+     */
+    COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -179,6 +190,17 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      * <code>COMMENTS_ENABLED = 1;</code>
      */
     public static final int COMMENTS_ENABLED_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Enforce that repository owners or collaborators must comment on external
+     * contributors' Pull Requests before builds are triggered.
+     * </pre>
+     *
+     * <code>COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY = 2;</code>
+     */
+    public static final int COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -208,6 +230,8 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
           return COMMENTS_DISABLED;
         case 1:
           return COMMENTS_ENABLED;
+        case 2:
+          return COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY;
         default:
           return null;
       }

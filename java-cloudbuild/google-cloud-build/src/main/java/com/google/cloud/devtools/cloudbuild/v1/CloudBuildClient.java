@@ -48,6 +48,8 @@ import com.google.cloudbuild.v1.ListBuildsRequest;
 import com.google.cloudbuild.v1.ListBuildsResponse;
 import com.google.cloudbuild.v1.ListWorkerPoolsRequest;
 import com.google.cloudbuild.v1.ListWorkerPoolsResponse;
+import com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest;
+import com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse;
 import com.google.cloudbuild.v1.RepoSource;
 import com.google.cloudbuild.v1.RetryBuildRequest;
 import com.google.cloudbuild.v1.RunBuildTriggerRequest;
@@ -490,6 +492,14 @@ public class CloudBuildClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   ListBuildsRequest request =
+   *       ListBuildsRequest.newBuilder()
+   *           .setParent(BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString())
+   *           .setProjectId("projectId-894832108")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     ListBuildsResponse response = cloudBuildClient.listBuildsCallable().call(request);
    *     for (Build element : response.getResponsesList()) {
@@ -1054,6 +1064,12 @@ public class CloudBuildClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   ListBuildTriggersRequest request =
+   *       ListBuildTriggersRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListBuildTriggersResponse response =
    *         cloudBuildClient.listBuildTriggersCallable().call(request);
@@ -1259,7 +1275,7 @@ public class CloudBuildClient implements BackgroundResource {
    *
    * @param projectId Required. ID of the project.
    * @param triggerId Required. ID of the trigger.
-   * @param source Required. Source to build against this trigger.
+   * @param source Source to build against this trigger.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Build, BuildOperationMetadata> runBuildTriggerAsync(
@@ -1347,6 +1363,62 @@ public class CloudBuildClient implements BackgroundResource {
    */
   public final UnaryCallable<RunBuildTriggerRequest, Operation> runBuildTriggerCallable() {
     return stub.runBuildTriggerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ReceiveTriggerWebhook [Experimental] is called when the API receives a webhook request targeted
+   * at a specific trigger.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   ReceiveTriggerWebhookRequest request =
+   *       ReceiveTriggerWebhookRequest.newBuilder()
+   *           .setBody(HttpBody.newBuilder().build())
+   *           .setProjectId("projectId-894832108")
+   *           .setTrigger("trigger-1059891784")
+   *           .setSecret("secret-906277200")
+   *           .build();
+   *   ReceiveTriggerWebhookResponse response = cloudBuildClient.receiveTriggerWebhook(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReceiveTriggerWebhookResponse receiveTriggerWebhook(
+      ReceiveTriggerWebhookRequest request) {
+    return receiveTriggerWebhookCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ReceiveTriggerWebhook [Experimental] is called when the API receives a webhook request targeted
+   * at a specific trigger.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   ReceiveTriggerWebhookRequest request =
+   *       ReceiveTriggerWebhookRequest.newBuilder()
+   *           .setBody(HttpBody.newBuilder().build())
+   *           .setProjectId("projectId-894832108")
+   *           .setTrigger("trigger-1059891784")
+   *           .setSecret("secret-906277200")
+   *           .build();
+   *   ApiFuture<ReceiveTriggerWebhookResponse> future =
+   *       cloudBuildClient.receiveTriggerWebhookCallable().futureCall(request);
+   *   // Do something.
+   *   ReceiveTriggerWebhookResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
+      receiveTriggerWebhookCallable() {
+    return stub.receiveTriggerWebhookCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

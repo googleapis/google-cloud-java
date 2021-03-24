@@ -410,6 +410,26 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>N1_HIGHCPU_32 = 2;</code>
      */
     N1_HIGHCPU_32(2),
+    /**
+     *
+     *
+     * <pre>
+     * Highcpu e2 machine with 8 CPUs.
+     * </pre>
+     *
+     * <code>E2_HIGHCPU_8 = 5;</code>
+     */
+    E2_HIGHCPU_8(5),
+    /**
+     *
+     *
+     * <pre>
+     * Highcpu e2 machine with 32 CPUs.
+     * </pre>
+     *
+     * <code>E2_HIGHCPU_32 = 6;</code>
+     */
+    E2_HIGHCPU_32(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -443,6 +463,26 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>N1_HIGHCPU_32 = 2;</code>
      */
     public static final int N1_HIGHCPU_32_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Highcpu e2 machine with 8 CPUs.
+     * </pre>
+     *
+     * <code>E2_HIGHCPU_8 = 5;</code>
+     */
+    public static final int E2_HIGHCPU_8_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Highcpu e2 machine with 32 CPUs.
+     * </pre>
+     *
+     * <code>E2_HIGHCPU_32 = 6;</code>
+     */
+    public static final int E2_HIGHCPU_32_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -474,6 +514,10 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
           return N1_HIGHCPU_8;
         case 2:
           return N1_HIGHCPU_32;
+        case 5:
+          return E2_HIGHCPU_8;
+        case 6:
+          return E2_HIGHCPU_32;
         default:
           return null;
       }
@@ -898,7 +942,6 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Turn off all logging. No build logs will be captured.
-     * Next ID: 6
      * </pre>
      *
      * <code>NONE = 4;</code>
@@ -965,7 +1008,6 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Turn off all logging. No build logs will be captured.
-     * Next ID: 6
      * </pre>
      *
      * <code>NONE = 4;</code>

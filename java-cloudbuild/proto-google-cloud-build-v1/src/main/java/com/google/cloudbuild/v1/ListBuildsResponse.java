@@ -202,6 +202,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Token to receive the next page of results.
+   * This will be absent if the end of the response list has been reached.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -225,6 +226,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Token to receive the next page of results.
+   * This will be absent if the end of the response list has been reached.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -970,6 +972,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Token to receive the next page of results.
+     * This will be absent if the end of the response list has been reached.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -992,6 +995,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Token to receive the next page of results.
+     * This will be absent if the end of the response list has been reached.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1014,6 +1018,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Token to receive the next page of results.
+     * This will be absent if the end of the response list has been reached.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1035,6 +1040,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Token to receive the next page of results.
+     * This will be absent if the end of the response list has been reached.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1052,6 +1058,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Token to receive the next page of results.
+     * This will be absent if the end of the response list has been reached.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

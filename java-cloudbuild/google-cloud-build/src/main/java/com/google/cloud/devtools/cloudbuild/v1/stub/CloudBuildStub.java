@@ -40,6 +40,8 @@ import com.google.cloudbuild.v1.ListBuildsRequest;
 import com.google.cloudbuild.v1.ListBuildsResponse;
 import com.google.cloudbuild.v1.ListWorkerPoolsRequest;
 import com.google.cloudbuild.v1.ListWorkerPoolsResponse;
+import com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest;
+import com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse;
 import com.google.cloudbuild.v1.RetryBuildRequest;
 import com.google.cloudbuild.v1.RunBuildTriggerRequest;
 import com.google.cloudbuild.v1.UpdateBuildTriggerRequest;
@@ -130,6 +132,11 @@ public abstract class CloudBuildStub implements BackgroundResource {
 
   public UnaryCallable<RunBuildTriggerRequest, Operation> runBuildTriggerCallable() {
     throw new UnsupportedOperationException("Not implemented: runBuildTriggerCallable()");
+  }
+
+  public UnaryCallable<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
+      receiveTriggerWebhookCallable() {
+    throw new UnsupportedOperationException("Not implemented: receiveTriggerWebhookCallable()");
   }
 
   public UnaryCallable<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolCallable() {

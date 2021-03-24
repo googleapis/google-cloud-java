@@ -19,6 +19,7 @@ package com.google.cloud.devtools.cloudbuild.v1;
 import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersPagedResponse;
 import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildsPagedResponse;
 
+import com.google.api.HttpBody;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -50,11 +51,14 @@ import com.google.cloudbuild.v1.ListBuildsRequest;
 import com.google.cloudbuild.v1.ListBuildsResponse;
 import com.google.cloudbuild.v1.ListWorkerPoolsRequest;
 import com.google.cloudbuild.v1.ListWorkerPoolsResponse;
+import com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest;
+import com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse;
 import com.google.cloudbuild.v1.RepoSource;
 import com.google.cloudbuild.v1.Results;
 import com.google.cloudbuild.v1.RetryBuildRequest;
 import com.google.cloudbuild.v1.RunBuildTriggerRequest;
 import com.google.cloudbuild.v1.Secret;
+import com.google.cloudbuild.v1.Secrets;
 import com.google.cloudbuild.v1.ServiceAccountName;
 import com.google.cloudbuild.v1.Source;
 import com.google.cloudbuild.v1.SourceProvenance;
@@ -152,6 +156,7 @@ public class CloudBuildClientTest {
             .addAllSecrets(new ArrayList<Secret>())
             .putAllTiming(new HashMap<String, TimeSpan>())
             .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setAvailableSecrets(Secrets.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -224,6 +229,7 @@ public class CloudBuildClientTest {
             .addAllSecrets(new ArrayList<Secret>())
             .putAllTiming(new HashMap<String, TimeSpan>())
             .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setAvailableSecrets(Secrets.newBuilder().build())
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
@@ -335,6 +341,7 @@ public class CloudBuildClientTest {
             .addAllSecrets(new ArrayList<Secret>())
             .putAllTiming(new HashMap<String, TimeSpan>())
             .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setAvailableSecrets(Secrets.newBuilder().build())
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
@@ -399,6 +406,7 @@ public class CloudBuildClientTest {
             .addAllSecrets(new ArrayList<Secret>())
             .putAllTiming(new HashMap<String, TimeSpan>())
             .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setAvailableSecrets(Secrets.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -708,6 +716,7 @@ public class CloudBuildClientTest {
             .addAllSecrets(new ArrayList<Secret>())
             .putAllTiming(new HashMap<String, TimeSpan>())
             .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setAvailableSecrets(Secrets.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -752,6 +761,58 @@ public class CloudBuildClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void receiveTriggerWebhookTest() throws Exception {
+    ReceiveTriggerWebhookResponse expectedResponse =
+        ReceiveTriggerWebhookResponse.newBuilder().build();
+    mockCloudBuild.addResponse(expectedResponse);
+
+    ReceiveTriggerWebhookRequest request =
+        ReceiveTriggerWebhookRequest.newBuilder()
+            .setBody(HttpBody.newBuilder().build())
+            .setProjectId("projectId-894832108")
+            .setTrigger("trigger-1059891784")
+            .setSecret("secret-906277200")
+            .build();
+
+    ReceiveTriggerWebhookResponse actualResponse = client.receiveTriggerWebhook(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudBuild.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ReceiveTriggerWebhookRequest actualRequest =
+        ((ReceiveTriggerWebhookRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getBody(), actualRequest.getBody());
+    Assert.assertEquals(request.getProjectId(), actualRequest.getProjectId());
+    Assert.assertEquals(request.getTrigger(), actualRequest.getTrigger());
+    Assert.assertEquals(request.getSecret(), actualRequest.getSecret());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void receiveTriggerWebhookExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudBuild.addException(exception);
+
+    try {
+      ReceiveTriggerWebhookRequest request =
+          ReceiveTriggerWebhookRequest.newBuilder()
+              .setBody(HttpBody.newBuilder().build())
+              .setProjectId("projectId-894832108")
+              .setTrigger("trigger-1059891784")
+              .setSecret("secret-906277200")
+              .build();
+      client.receiveTriggerWebhook(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

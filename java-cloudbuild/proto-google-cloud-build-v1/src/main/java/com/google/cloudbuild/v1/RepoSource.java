@@ -289,7 +289,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Name of the Cloud Source Repository.
+   * Name of the Cloud Source Repository.
    * </pre>
    *
    * <code>string repo_name = 2;</code>
@@ -312,7 +312,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Name of the Cloud Source Repository.
+   * Name of the Cloud Source Repository.
    * </pre>
    *
    * <code>string repo_name = 2;</code>
@@ -1352,7 +1352,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the Cloud Source Repository.
+     * Name of the Cloud Source Repository.
      * </pre>
      *
      * <code>string repo_name = 2;</code>
@@ -1374,7 +1374,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the Cloud Source Repository.
+     * Name of the Cloud Source Repository.
      * </pre>
      *
      * <code>string repo_name = 2;</code>
@@ -1396,7 +1396,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the Cloud Source Repository.
+     * Name of the Cloud Source Repository.
      * </pre>
      *
      * <code>string repo_name = 2;</code>
@@ -1417,7 +1417,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the Cloud Source Repository.
+     * Name of the Cloud Source Repository.
      * </pre>
      *
      * <code>string repo_name = 2;</code>
@@ -1434,7 +1434,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the Cloud Source Repository.
+     * Name of the Cloud Source Repository.
      * </pre>
      *
      * <code>string repo_name = 2;</code>

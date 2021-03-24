@@ -50,6 +50,8 @@ import com.google.cloudbuild.v1.ListBuildsRequest;
 import com.google.cloudbuild.v1.ListBuildsResponse;
 import com.google.cloudbuild.v1.ListWorkerPoolsRequest;
 import com.google.cloudbuild.v1.ListWorkerPoolsResponse;
+import com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest;
+import com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse;
 import com.google.cloudbuild.v1.RetryBuildRequest;
 import com.google.cloudbuild.v1.RunBuildTriggerRequest;
 import com.google.cloudbuild.v1.UpdateBuildTriggerRequest;
@@ -169,6 +171,12 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
   public OperationCallSettings<RunBuildTriggerRequest, Build, BuildOperationMetadata>
       runBuildTriggerOperationSettings() {
     return ((CloudBuildStubSettings) getStubSettings()).runBuildTriggerOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to receiveTriggerWebhook. */
+  public UnaryCallSettings<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
+      receiveTriggerWebhookSettings() {
+    return ((CloudBuildStubSettings) getStubSettings()).receiveTriggerWebhookSettings();
   }
 
   /** Returns the object with the settings used for calls to createWorkerPool. */
@@ -372,6 +380,12 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
     public OperationCallSettings.Builder<RunBuildTriggerRequest, Build, BuildOperationMetadata>
         runBuildTriggerOperationSettings() {
       return getStubSettingsBuilder().runBuildTriggerOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to receiveTriggerWebhook. */
+    public UnaryCallSettings.Builder<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
+        receiveTriggerWebhookSettings() {
+      return getStubSettingsBuilder().receiveTriggerWebhookSettings();
     }
 
     /** Returns the builder for the settings used for calls to createWorkerPool. */

@@ -284,8 +284,8 @@ public interface BuildTriggerOrBuilder
    *
    *
    * <pre>
-   * Path, from the source root, to a file whose contents is used for the
-   * template.
+   * Path, from the source root, to the build configuration file
+   * (i.e. cloudbuild.yaml).
    * </pre>
    *
    * <code>string filename = 8;</code>
@@ -297,8 +297,8 @@ public interface BuildTriggerOrBuilder
    *
    *
    * <pre>
-   * Path, from the source root, to a file whose contents is used for the
-   * template.
+   * Path, from the source root, to the build configuration file
+   * (i.e. cloudbuild.yaml).
    * </pre>
    *
    * <code>string filename = 8;</code>
@@ -310,8 +310,8 @@ public interface BuildTriggerOrBuilder
    *
    *
    * <pre>
-   * Path, from the source root, to a file whose contents is used for the
-   * template.
+   * Path, from the source root, to the build configuration file
+   * (i.e. cloudbuild.yaml).
    * </pre>
    *
    * <code>string filename = 8;</code>

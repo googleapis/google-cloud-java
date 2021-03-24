@@ -22,32 +22,32 @@ package com.google.cloudbuild.v1;
  *
  *
  * <pre>
- * Request to list builds.
+ * ReceiveTriggerWebhookRequest [Experimental] is the request object accepted by
+ * the ReceiveTriggerWebhook method.
  * </pre>
  *
- * Protobuf type {@code google.devtools.cloudbuild.v1.ListBuildsRequest}
+ * Protobuf type {@code google.devtools.cloudbuild.v1.ReceiveTriggerWebhookRequest}
  */
-public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessageV3
+public final class ReceiveTriggerWebhookRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.ListBuildsRequest)
-    ListBuildsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.ReceiveTriggerWebhookRequest)
+    ReceiveTriggerWebhookRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use ListBuildsRequest.newBuilder() to construct.
-  private ListBuildsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ReceiveTriggerWebhookRequest.newBuilder() to construct.
+  private ReceiveTriggerWebhookRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private ListBuildsRequest() {
-    parent_ = "";
+  private ReceiveTriggerWebhookRequest() {
     projectId_ = "";
-    pageToken_ = "";
-    filter_ = "";
+    trigger_ = "";
+    secret_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new ListBuildsRequest();
+    return new ReceiveTriggerWebhookRequest();
   }
 
   @java.lang.Override
@@ -55,7 +55,7 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
     return this.unknownFields;
   }
 
-  private ListBuildsRequest(
+  private ReceiveTriggerWebhookRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -75,35 +75,37 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
             break;
           case 10:
             {
+              com.google.api.HttpBody.Builder subBuilder = null;
+              if (body_ != null) {
+                subBuilder = body_.toBuilder();
+              }
+              body_ = input.readMessage(com.google.api.HttpBody.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(body_);
+                body_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 18:
+            {
               java.lang.String s = input.readStringRequireUtf8();
 
               projectId_ = s;
-              break;
-            }
-          case 16:
-            {
-              pageSize_ = input.readInt32();
               break;
             }
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              pageToken_ = s;
+              trigger_ = s;
               break;
             }
-          case 66:
+          case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              filter_ = s;
-              break;
-            }
-          case 74:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              parent_ = s;
+              secret_ = s;
               break;
             }
           default:
@@ -127,80 +129,75 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v1.Cloudbuild
-        .internal_static_google_devtools_cloudbuild_v1_ListBuildsRequest_descriptor;
+        .internal_static_google_devtools_cloudbuild_v1_ReceiveTriggerWebhookRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloudbuild.v1.Cloudbuild
-        .internal_static_google_devtools_cloudbuild_v1_ListBuildsRequest_fieldAccessorTable
+        .internal_static_google_devtools_cloudbuild_v1_ReceiveTriggerWebhookRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloudbuild.v1.ListBuildsRequest.class,
-            com.google.cloudbuild.v1.ListBuildsRequest.Builder.class);
+            com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest.class,
+            com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest.Builder.class);
   }
 
-  public static final int PARENT_FIELD_NUMBER = 9;
-  private volatile java.lang.Object parent_;
+  public static final int BODY_FIELD_NUMBER = 1;
+  private com.google.api.HttpBody body_;
   /**
    *
    *
    * <pre>
-   * The parent of the collection of `Builds`.
-   * Format: `projects/{project}/locations/location`
+   * HTTP request body.
    * </pre>
    *
-   * <code>string parent = 9 [(.google.api.resource_reference) = { ... }</code>
+   * <code>.google.api.HttpBody body = 1;</code>
    *
-   * @return The parent.
+   * @return Whether the body field is set.
    */
   @java.lang.Override
-  public java.lang.String getParent() {
-    java.lang.Object ref = parent_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      parent_ = s;
-      return s;
-    }
+  public boolean hasBody() {
+    return body_ != null;
   }
   /**
    *
    *
    * <pre>
-   * The parent of the collection of `Builds`.
-   * Format: `projects/{project}/locations/location`
+   * HTTP request body.
    * </pre>
    *
-   * <code>string parent = 9 [(.google.api.resource_reference) = { ... }</code>
+   * <code>.google.api.HttpBody body = 1;</code>
    *
-   * @return The bytes for parent.
+   * @return The body.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getParentBytes() {
-    java.lang.Object ref = parent_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      parent_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.google.api.HttpBody getBody() {
+    return body_ == null ? com.google.api.HttpBody.getDefaultInstance() : body_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request body.
+   * </pre>
+   *
+   * <code>.google.api.HttpBody body = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.api.HttpBodyOrBuilder getBodyOrBuilder() {
+    return getBody();
   }
 
-  public static final int PROJECT_ID_FIELD_NUMBER = 1;
+  public static final int PROJECT_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object projectId_;
   /**
    *
    *
    * <pre>
-   * Required. ID of the project.
+   * Project in which the specified trigger lives
    * </pre>
    *
-   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string project_id = 2;</code>
    *
    * @return The projectId.
    */
@@ -220,10 +217,10 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. ID of the project.
+   * Project in which the specified trigger lives
    * </pre>
    *
-   * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string project_id = 2;</code>
    *
    * @return The bytes for projectId.
    */
@@ -240,51 +237,28 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
     }
   }
 
-  public static final int PAGE_SIZE_FIELD_NUMBER = 2;
-  private int pageSize_;
+  public static final int TRIGGER_FIELD_NUMBER = 3;
+  private volatile java.lang.Object trigger_;
   /**
    *
    *
    * <pre>
-   * Number of results to return in the list.
+   * Name of the trigger to run the payload against
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>string trigger = 3;</code>
    *
-   * @return The pageSize.
+   * @return The trigger.
    */
   @java.lang.Override
-  public int getPageSize() {
-    return pageSize_;
-  }
-
-  public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object pageToken_;
-  /**
-   *
-   *
-   * <pre>
-   * The page token for the next page of Builds.
-   * If unspecified, the first page of results is returned.
-   * If the token is rejected for any reason, INVALID_ARGUMENT will be thrown.
-   * In this case, the token should be discarded, and pagination should be
-   * restarted from the first page of results.
-   * See https://google.aip.dev/158 for more.
-   * </pre>
-   *
-   * <code>string page_token = 3;</code>
-   *
-   * @return The pageToken.
-   */
-  @java.lang.Override
-  public java.lang.String getPageToken() {
-    java.lang.Object ref = pageToken_;
+  public java.lang.String getTrigger() {
+    java.lang.Object ref = trigger_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      pageToken_ = s;
+      trigger_ = s;
       return s;
     }
   }
@@ -292,53 +266,48 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The page token for the next page of Builds.
-   * If unspecified, the first page of results is returned.
-   * If the token is rejected for any reason, INVALID_ARGUMENT will be thrown.
-   * In this case, the token should be discarded, and pagination should be
-   * restarted from the first page of results.
-   * See https://google.aip.dev/158 for more.
+   * Name of the trigger to run the payload against
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string trigger = 3;</code>
    *
-   * @return The bytes for pageToken.
+   * @return The bytes for trigger.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getPageTokenBytes() {
-    java.lang.Object ref = pageToken_;
+  public com.google.protobuf.ByteString getTriggerBytes() {
+    java.lang.Object ref = trigger_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      pageToken_ = b;
+      trigger_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int FILTER_FIELD_NUMBER = 8;
-  private volatile java.lang.Object filter_;
+  public static final int SECRET_FIELD_NUMBER = 4;
+  private volatile java.lang.Object secret_;
   /**
    *
    *
    * <pre>
-   * The raw filter text to constrain the results.
+   * Secret token used for authorization if an OAuth token isn't provided.
    * </pre>
    *
-   * <code>string filter = 8;</code>
+   * <code>string secret = 4;</code>
    *
-   * @return The filter.
+   * @return The secret.
    */
   @java.lang.Override
-  public java.lang.String getFilter() {
-    java.lang.Object ref = filter_;
+  public java.lang.String getSecret() {
+    java.lang.Object ref = secret_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      filter_ = s;
+      secret_ = s;
       return s;
     }
   }
@@ -346,20 +315,20 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The raw filter text to constrain the results.
+   * Secret token used for authorization if an OAuth token isn't provided.
    * </pre>
    *
-   * <code>string filter = 8;</code>
+   * <code>string secret = 4;</code>
    *
-   * @return The bytes for filter.
+   * @return The bytes for secret.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getFilterBytes() {
-    java.lang.Object ref = filter_;
+  public com.google.protobuf.ByteString getSecretBytes() {
+    java.lang.Object ref = secret_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      filter_ = b;
+      secret_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -380,20 +349,17 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (body_ != null) {
+      output.writeMessage(1, getBody());
+    }
     if (!getProjectIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
     }
-    if (pageSize_ != 0) {
-      output.writeInt32(2, pageSize_);
+    if (!getTriggerBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, trigger_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
-    }
-    if (!getFilterBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, filter_);
-    }
-    if (!getParentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, parent_);
+    if (!getSecretBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, secret_);
     }
     unknownFields.writeTo(output);
   }
@@ -404,20 +370,17 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
+    if (body_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getBody());
+    }
     if (!getProjectIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
     }
-    if (pageSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, pageSize_);
+    if (!getTriggerBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, trigger_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
-    }
-    if (!getFilterBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, filter_);
-    }
-    if (!getParentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, parent_);
+    if (!getSecretBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, secret_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -429,17 +392,19 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloudbuild.v1.ListBuildsRequest)) {
+    if (!(obj instanceof com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest)) {
       return super.equals(obj);
     }
-    com.google.cloudbuild.v1.ListBuildsRequest other =
-        (com.google.cloudbuild.v1.ListBuildsRequest) obj;
+    com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest other =
+        (com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest) obj;
 
-    if (!getParent().equals(other.getParent())) return false;
+    if (hasBody() != other.hasBody()) return false;
+    if (hasBody()) {
+      if (!getBody().equals(other.getBody())) return false;
+    }
     if (!getProjectId().equals(other.getProjectId())) return false;
-    if (getPageSize() != other.getPageSize()) return false;
-    if (!getPageToken().equals(other.getPageToken())) return false;
-    if (!getFilter().equals(other.getFilter())) return false;
+    if (!getTrigger().equals(other.getTrigger())) return false;
+    if (!getSecret().equals(other.getSecret())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -451,86 +416,86 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PARENT_FIELD_NUMBER;
-    hash = (53 * hash) + getParent().hashCode();
+    if (hasBody()) {
+      hash = (37 * hash) + BODY_FIELD_NUMBER;
+      hash = (53 * hash) + getBody().hashCode();
+    }
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProjectId().hashCode();
-    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getPageSize();
-    hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getPageToken().hashCode();
-    hash = (37 * hash) + FILTER_FIELD_NUMBER;
-    hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + TRIGGER_FIELD_NUMBER;
+    hash = (53 * hash) + getTrigger().hashCode();
+    hash = (37 * hash) + SECRET_FIELD_NUMBER;
+    hash = (53 * hash) + getSecret().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloudbuild.v1.ListBuildsRequest parseFrom(java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest parseFrom(
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloudbuild.v1.ListBuildsRequest parseFrom(
+  public static com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloudbuild.v1.ListBuildsRequest parseFrom(
+  public static com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloudbuild.v1.ListBuildsRequest parseFrom(
+  public static com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloudbuild.v1.ListBuildsRequest parseFrom(byte[] data)
+  public static com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloudbuild.v1.ListBuildsRequest parseFrom(
+  public static com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloudbuild.v1.ListBuildsRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
+  public static com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest parseFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloudbuild.v1.ListBuildsRequest parseFrom(
+  public static com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloudbuild.v1.ListBuildsRequest parseDelimitedFrom(
+  public static com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloudbuild.v1.ListBuildsRequest parseDelimitedFrom(
+  public static com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloudbuild.v1.ListBuildsRequest parseFrom(
+  public static com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloudbuild.v1.ListBuildsRequest parseFrom(
+  public static com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -547,7 +512,8 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloudbuild.v1.ListBuildsRequest prototype) {
+  public static Builder newBuilder(
+      com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -565,31 +531,32 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request to list builds.
+   * ReceiveTriggerWebhookRequest [Experimental] is the request object accepted by
+   * the ReceiveTriggerWebhook method.
    * </pre>
    *
-   * Protobuf type {@code google.devtools.cloudbuild.v1.ListBuildsRequest}
+   * Protobuf type {@code google.devtools.cloudbuild.v1.ReceiveTriggerWebhookRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.devtools.cloudbuild.v1.ListBuildsRequest)
-      com.google.cloudbuild.v1.ListBuildsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.devtools.cloudbuild.v1.ReceiveTriggerWebhookRequest)
+      com.google.cloudbuild.v1.ReceiveTriggerWebhookRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloudbuild.v1.Cloudbuild
-          .internal_static_google_devtools_cloudbuild_v1_ListBuildsRequest_descriptor;
+          .internal_static_google_devtools_cloudbuild_v1_ReceiveTriggerWebhookRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloudbuild.v1.Cloudbuild
-          .internal_static_google_devtools_cloudbuild_v1_ListBuildsRequest_fieldAccessorTable
+          .internal_static_google_devtools_cloudbuild_v1_ReceiveTriggerWebhookRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloudbuild.v1.ListBuildsRequest.class,
-              com.google.cloudbuild.v1.ListBuildsRequest.Builder.class);
+              com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest.class,
+              com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest.Builder.class);
     }
 
-    // Construct using com.google.cloudbuild.v1.ListBuildsRequest.newBuilder()
+    // Construct using com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -606,15 +573,17 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      parent_ = "";
-
+      if (bodyBuilder_ == null) {
+        body_ = null;
+      } else {
+        body_ = null;
+        bodyBuilder_ = null;
+      }
       projectId_ = "";
 
-      pageSize_ = 0;
+      trigger_ = "";
 
-      pageToken_ = "";
-
-      filter_ = "";
+      secret_ = "";
 
       return this;
     }
@@ -622,17 +591,17 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloudbuild.v1.Cloudbuild
-          .internal_static_google_devtools_cloudbuild_v1_ListBuildsRequest_descriptor;
+          .internal_static_google_devtools_cloudbuild_v1_ReceiveTriggerWebhookRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloudbuild.v1.ListBuildsRequest getDefaultInstanceForType() {
-      return com.google.cloudbuild.v1.ListBuildsRequest.getDefaultInstance();
+    public com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest getDefaultInstanceForType() {
+      return com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloudbuild.v1.ListBuildsRequest build() {
-      com.google.cloudbuild.v1.ListBuildsRequest result = buildPartial();
+    public com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest build() {
+      com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -640,14 +609,17 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     @java.lang.Override
-    public com.google.cloudbuild.v1.ListBuildsRequest buildPartial() {
-      com.google.cloudbuild.v1.ListBuildsRequest result =
-          new com.google.cloudbuild.v1.ListBuildsRequest(this);
-      result.parent_ = parent_;
+    public com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest buildPartial() {
+      com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest result =
+          new com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest(this);
+      if (bodyBuilder_ == null) {
+        result.body_ = body_;
+      } else {
+        result.body_ = bodyBuilder_.build();
+      }
       result.projectId_ = projectId_;
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
-      result.filter_ = filter_;
+      result.trigger_ = trigger_;
+      result.secret_ = secret_;
       onBuilt();
       return result;
     }
@@ -687,33 +659,30 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloudbuild.v1.ListBuildsRequest) {
-        return mergeFrom((com.google.cloudbuild.v1.ListBuildsRequest) other);
+      if (other instanceof com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest) {
+        return mergeFrom((com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloudbuild.v1.ListBuildsRequest other) {
-      if (other == com.google.cloudbuild.v1.ListBuildsRequest.getDefaultInstance()) return this;
-      if (!other.getParent().isEmpty()) {
-        parent_ = other.parent_;
-        onChanged();
+    public Builder mergeFrom(com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest other) {
+      if (other == com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest.getDefaultInstance())
+        return this;
+      if (other.hasBody()) {
+        mergeBody(other.getBody());
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
         onChanged();
       }
-      if (other.getPageSize() != 0) {
-        setPageSize(other.getPageSize());
-      }
-      if (!other.getPageToken().isEmpty()) {
-        pageToken_ = other.pageToken_;
+      if (!other.getTrigger().isEmpty()) {
+        trigger_ = other.trigger_;
         onChanged();
       }
-      if (!other.getFilter().isEmpty()) {
-        filter_ = other.filter_;
+      if (!other.getSecret().isEmpty()) {
+        secret_ = other.secret_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -731,11 +700,12 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloudbuild.v1.ListBuildsRequest parsedMessage = null;
+      com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloudbuild.v1.ListBuildsRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -745,115 +715,181 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private java.lang.Object parent_ = "";
+    private com.google.api.HttpBody body_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.api.HttpBody,
+            com.google.api.HttpBody.Builder,
+            com.google.api.HttpBodyOrBuilder>
+        bodyBuilder_;
     /**
      *
      *
      * <pre>
-     * The parent of the collection of `Builds`.
-     * Format: `projects/{project}/locations/location`
+     * HTTP request body.
      * </pre>
      *
-     * <code>string parent = 9 [(.google.api.resource_reference) = { ... }</code>
+     * <code>.google.api.HttpBody body = 1;</code>
      *
-     * @return The parent.
+     * @return Whether the body field is set.
      */
-    public java.lang.String getParent() {
-      java.lang.Object ref = parent_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        parent_ = s;
-        return s;
+    public boolean hasBody() {
+      return bodyBuilder_ != null || body_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request body.
+     * </pre>
+     *
+     * <code>.google.api.HttpBody body = 1;</code>
+     *
+     * @return The body.
+     */
+    public com.google.api.HttpBody getBody() {
+      if (bodyBuilder_ == null) {
+        return body_ == null ? com.google.api.HttpBody.getDefaultInstance() : body_;
       } else {
-        return (java.lang.String) ref;
+        return bodyBuilder_.getMessage();
       }
     }
     /**
      *
      *
      * <pre>
-     * The parent of the collection of `Builds`.
-     * Format: `projects/{project}/locations/location`
+     * HTTP request body.
      * </pre>
      *
-     * <code>string parent = 9 [(.google.api.resource_reference) = { ... }</code>
-     *
-     * @return The bytes for parent.
+     * <code>.google.api.HttpBody body = 1;</code>
      */
-    public com.google.protobuf.ByteString getParentBytes() {
-      java.lang.Object ref = parent_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        parent_ = b;
-        return b;
+    public Builder setBody(com.google.api.HttpBody value) {
+      if (bodyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        body_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The parent of the collection of `Builds`.
-     * Format: `projects/{project}/locations/location`
-     * </pre>
-     *
-     * <code>string parent = 9 [(.google.api.resource_reference) = { ... }</code>
-     *
-     * @param value The parent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setParent(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
+        bodyBuilder_.setMessage(value);
       }
 
-      parent_ = value;
-      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The parent of the collection of `Builds`.
-     * Format: `projects/{project}/locations/location`
+     * HTTP request body.
      * </pre>
      *
-     * <code>string parent = 9 [(.google.api.resource_reference) = { ... }</code>
-     *
-     * @return This builder for chaining.
+     * <code>.google.api.HttpBody body = 1;</code>
      */
-    public Builder clearParent() {
+    public Builder setBody(com.google.api.HttpBody.Builder builderForValue) {
+      if (bodyBuilder_ == null) {
+        body_ = builderForValue.build();
+        onChanged();
+      } else {
+        bodyBuilder_.setMessage(builderForValue.build());
+      }
 
-      parent_ = getDefaultInstance().getParent();
-      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The parent of the collection of `Builds`.
-     * Format: `projects/{project}/locations/location`
+     * HTTP request body.
      * </pre>
      *
-     * <code>string parent = 9 [(.google.api.resource_reference) = { ... }</code>
-     *
-     * @param value The bytes for parent to set.
-     * @return This builder for chaining.
+     * <code>.google.api.HttpBody body = 1;</code>
      */
-    public Builder setParentBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
+    public Builder mergeBody(com.google.api.HttpBody value) {
+      if (bodyBuilder_ == null) {
+        if (body_ != null) {
+          body_ = com.google.api.HttpBody.newBuilder(body_).mergeFrom(value).buildPartial();
+        } else {
+          body_ = value;
+        }
+        onChanged();
+      } else {
+        bodyBuilder_.mergeFrom(value);
       }
-      checkByteStringIsUtf8(value);
 
-      parent_ = value;
-      onChanged();
       return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request body.
+     * </pre>
+     *
+     * <code>.google.api.HttpBody body = 1;</code>
+     */
+    public Builder clearBody() {
+      if (bodyBuilder_ == null) {
+        body_ = null;
+        onChanged();
+      } else {
+        body_ = null;
+        bodyBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request body.
+     * </pre>
+     *
+     * <code>.google.api.HttpBody body = 1;</code>
+     */
+    public com.google.api.HttpBody.Builder getBodyBuilder() {
+
+      onChanged();
+      return getBodyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request body.
+     * </pre>
+     *
+     * <code>.google.api.HttpBody body = 1;</code>
+     */
+    public com.google.api.HttpBodyOrBuilder getBodyOrBuilder() {
+      if (bodyBuilder_ != null) {
+        return bodyBuilder_.getMessageOrBuilder();
+      } else {
+        return body_ == null ? com.google.api.HttpBody.getDefaultInstance() : body_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request body.
+     * </pre>
+     *
+     * <code>.google.api.HttpBody body = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.api.HttpBody,
+            com.google.api.HttpBody.Builder,
+            com.google.api.HttpBodyOrBuilder>
+        getBodyFieldBuilder() {
+      if (bodyBuilder_ == null) {
+        bodyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.api.HttpBody,
+                com.google.api.HttpBody.Builder,
+                com.google.api.HttpBodyOrBuilder>(getBody(), getParentForChildren(), isClean());
+        body_ = null;
+      }
+      return bodyBuilder_;
     }
 
     private java.lang.Object projectId_ = "";
@@ -861,10 +897,10 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. ID of the project.
+     * Project in which the specified trigger lives
      * </pre>
      *
-     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string project_id = 2;</code>
      *
      * @return The projectId.
      */
@@ -883,10 +919,10 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. ID of the project.
+     * Project in which the specified trigger lives
      * </pre>
      *
-     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string project_id = 2;</code>
      *
      * @return The bytes for projectId.
      */
@@ -905,10 +941,10 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. ID of the project.
+     * Project in which the specified trigger lives
      * </pre>
      *
-     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string project_id = 2;</code>
      *
      * @param value The projectId to set.
      * @return This builder for chaining.
@@ -926,10 +962,10 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. ID of the project.
+     * Project in which the specified trigger lives
      * </pre>
      *
-     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string project_id = 2;</code>
      *
      * @return This builder for chaining.
      */
@@ -943,10 +979,10 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. ID of the project.
+     * Project in which the specified trigger lives
      * </pre>
      *
-     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string project_id = 2;</code>
      *
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
@@ -962,81 +998,24 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private int pageSize_;
+    private java.lang.Object trigger_ = "";
     /**
      *
      *
      * <pre>
-     * Number of results to return in the list.
+     * Name of the trigger to run the payload against
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>string trigger = 3;</code>
      *
-     * @return The pageSize.
+     * @return The trigger.
      */
-    @java.lang.Override
-    public int getPageSize() {
-      return pageSize_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Number of results to return in the list.
-     * </pre>
-     *
-     * <code>int32 page_size = 2;</code>
-     *
-     * @param value The pageSize to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPageSize(int value) {
-
-      pageSize_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Number of results to return in the list.
-     * </pre>
-     *
-     * <code>int32 page_size = 2;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearPageSize() {
-
-      pageSize_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object pageToken_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * The page token for the next page of Builds.
-     * If unspecified, the first page of results is returned.
-     * If the token is rejected for any reason, INVALID_ARGUMENT will be thrown.
-     * In this case, the token should be discarded, and pagination should be
-     * restarted from the first page of results.
-     * See https://google.aip.dev/158 for more.
-     * </pre>
-     *
-     * <code>string page_token = 3;</code>
-     *
-     * @return The pageToken.
-     */
-    public java.lang.String getPageToken() {
-      java.lang.Object ref = pageToken_;
+    public java.lang.String getTrigger() {
+      java.lang.Object ref = trigger_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        pageToken_ = s;
+        trigger_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1046,24 +1025,19 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The page token for the next page of Builds.
-     * If unspecified, the first page of results is returned.
-     * If the token is rejected for any reason, INVALID_ARGUMENT will be thrown.
-     * In this case, the token should be discarded, and pagination should be
-     * restarted from the first page of results.
-     * See https://google.aip.dev/158 for more.
+     * Name of the trigger to run the payload against
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string trigger = 3;</code>
      *
-     * @return The bytes for pageToken.
+     * @return The bytes for trigger.
      */
-    public com.google.protobuf.ByteString getPageTokenBytes() {
-      java.lang.Object ref = pageToken_;
+    public com.google.protobuf.ByteString getTriggerBytes() {
+      java.lang.Object ref = trigger_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        pageToken_ = b;
+        trigger_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1073,25 +1047,20 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The page token for the next page of Builds.
-     * If unspecified, the first page of results is returned.
-     * If the token is rejected for any reason, INVALID_ARGUMENT will be thrown.
-     * In this case, the token should be discarded, and pagination should be
-     * restarted from the first page of results.
-     * See https://google.aip.dev/158 for more.
+     * Name of the trigger to run the payload against
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string trigger = 3;</code>
      *
-     * @param value The pageToken to set.
+     * @param value The trigger to set.
      * @return This builder for chaining.
      */
-    public Builder setPageToken(java.lang.String value) {
+    public Builder setTrigger(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      pageToken_ = value;
+      trigger_ = value;
       onChanged();
       return this;
     }
@@ -1099,21 +1068,16 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The page token for the next page of Builds.
-     * If unspecified, the first page of results is returned.
-     * If the token is rejected for any reason, INVALID_ARGUMENT will be thrown.
-     * In this case, the token should be discarded, and pagination should be
-     * restarted from the first page of results.
-     * See https://google.aip.dev/158 for more.
+     * Name of the trigger to run the payload against
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string trigger = 3;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearPageToken() {
+    public Builder clearTrigger() {
 
-      pageToken_ = getDefaultInstance().getPageToken();
+      trigger_ = getDefaultInstance().getTrigger();
       onChanged();
       return this;
     }
@@ -1121,48 +1085,43 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The page token for the next page of Builds.
-     * If unspecified, the first page of results is returned.
-     * If the token is rejected for any reason, INVALID_ARGUMENT will be thrown.
-     * In this case, the token should be discarded, and pagination should be
-     * restarted from the first page of results.
-     * See https://google.aip.dev/158 for more.
+     * Name of the trigger to run the payload against
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string trigger = 3;</code>
      *
-     * @param value The bytes for pageToken to set.
+     * @param value The bytes for trigger to set.
      * @return This builder for chaining.
      */
-    public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
+    public Builder setTriggerBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      pageToken_ = value;
+      trigger_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object filter_ = "";
+    private java.lang.Object secret_ = "";
     /**
      *
      *
      * <pre>
-     * The raw filter text to constrain the results.
+     * Secret token used for authorization if an OAuth token isn't provided.
      * </pre>
      *
-     * <code>string filter = 8;</code>
+     * <code>string secret = 4;</code>
      *
-     * @return The filter.
+     * @return The secret.
      */
-    public java.lang.String getFilter() {
-      java.lang.Object ref = filter_;
+    public java.lang.String getSecret() {
+      java.lang.Object ref = secret_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        filter_ = s;
+        secret_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1172,19 +1131,19 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The raw filter text to constrain the results.
+     * Secret token used for authorization if an OAuth token isn't provided.
      * </pre>
      *
-     * <code>string filter = 8;</code>
+     * <code>string secret = 4;</code>
      *
-     * @return The bytes for filter.
+     * @return The bytes for secret.
      */
-    public com.google.protobuf.ByteString getFilterBytes() {
-      java.lang.Object ref = filter_;
+    public com.google.protobuf.ByteString getSecretBytes() {
+      java.lang.Object ref = secret_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        filter_ = b;
+        secret_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1194,20 +1153,20 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The raw filter text to constrain the results.
+     * Secret token used for authorization if an OAuth token isn't provided.
      * </pre>
      *
-     * <code>string filter = 8;</code>
+     * <code>string secret = 4;</code>
      *
-     * @param value The filter to set.
+     * @param value The secret to set.
      * @return This builder for chaining.
      */
-    public Builder setFilter(java.lang.String value) {
+    public Builder setSecret(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      filter_ = value;
+      secret_ = value;
       onChanged();
       return this;
     }
@@ -1215,16 +1174,16 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The raw filter text to constrain the results.
+     * Secret token used for authorization if an OAuth token isn't provided.
      * </pre>
      *
-     * <code>string filter = 8;</code>
+     * <code>string secret = 4;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearFilter() {
+    public Builder clearSecret() {
 
-      filter_ = getDefaultInstance().getFilter();
+      secret_ = getDefaultInstance().getSecret();
       onChanged();
       return this;
     }
@@ -1232,21 +1191,21 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The raw filter text to constrain the results.
+     * Secret token used for authorization if an OAuth token isn't provided.
      * </pre>
      *
-     * <code>string filter = 8;</code>
+     * <code>string secret = 4;</code>
      *
-     * @param value The bytes for filter to set.
+     * @param value The bytes for secret to set.
      * @return This builder for chaining.
      */
-    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+    public Builder setSecretBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      filter_ = value;
+      secret_ = value;
       onChanged();
       return this;
     }
@@ -1262,42 +1221,42 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.devtools.cloudbuild.v1.ListBuildsRequest)
+    // @@protoc_insertion_point(builder_scope:google.devtools.cloudbuild.v1.ReceiveTriggerWebhookRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.devtools.cloudbuild.v1.ListBuildsRequest)
-  private static final com.google.cloudbuild.v1.ListBuildsRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.devtools.cloudbuild.v1.ReceiveTriggerWebhookRequest)
+  private static final com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloudbuild.v1.ListBuildsRequest();
+    DEFAULT_INSTANCE = new com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest();
   }
 
-  public static com.google.cloudbuild.v1.ListBuildsRequest getDefaultInstance() {
+  public static com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListBuildsRequest> PARSER =
-      new com.google.protobuf.AbstractParser<ListBuildsRequest>() {
+  private static final com.google.protobuf.Parser<ReceiveTriggerWebhookRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ReceiveTriggerWebhookRequest>() {
         @java.lang.Override
-        public ListBuildsRequest parsePartialFrom(
+        public ReceiveTriggerWebhookRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ListBuildsRequest(input, extensionRegistry);
+          return new ReceiveTriggerWebhookRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<ListBuildsRequest> parser() {
+  public static com.google.protobuf.Parser<ReceiveTriggerWebhookRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListBuildsRequest> getParserForType() {
+  public com.google.protobuf.Parser<ReceiveTriggerWebhookRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloudbuild.v1.ListBuildsRequest getDefaultInstanceForType() {
+  public com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

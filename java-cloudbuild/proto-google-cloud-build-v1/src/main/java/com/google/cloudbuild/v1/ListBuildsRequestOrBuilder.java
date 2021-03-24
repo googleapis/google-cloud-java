@@ -92,7 +92,12 @@ public interface ListBuildsRequestOrBuilder
    *
    *
    * <pre>
-   * Token to provide to skip to a particular spot in the list.
+   * The page token for the next page of Builds.
+   * If unspecified, the first page of results is returned.
+   * If the token is rejected for any reason, INVALID_ARGUMENT will be thrown.
+   * In this case, the token should be discarded, and pagination should be
+   * restarted from the first page of results.
+   * See https://google.aip.dev/158 for more.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -104,7 +109,12 @@ public interface ListBuildsRequestOrBuilder
    *
    *
    * <pre>
-   * Token to provide to skip to a particular spot in the list.
+   * The page token for the next page of Builds.
+   * If unspecified, the first page of results is returned.
+   * If the token is rejected for any reason, INVALID_ARGUMENT will be thrown.
+   * In this case, the token should be discarded, and pagination should be
+   * restarted from the first page of results.
+   * See https://google.aip.dev/158 for more.
    * </pre>
    *
    * <code>string page_token = 3;</code>

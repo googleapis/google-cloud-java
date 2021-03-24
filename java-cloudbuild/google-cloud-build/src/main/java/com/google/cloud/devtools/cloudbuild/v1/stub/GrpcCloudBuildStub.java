@@ -45,6 +45,8 @@ import com.google.cloudbuild.v1.ListBuildsRequest;
 import com.google.cloudbuild.v1.ListBuildsResponse;
 import com.google.cloudbuild.v1.ListWorkerPoolsRequest;
 import com.google.cloudbuild.v1.ListWorkerPoolsResponse;
+import com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest;
+import com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse;
 import com.google.cloudbuild.v1.RetryBuildRequest;
 import com.google.cloudbuild.v1.RunBuildTriggerRequest;
 import com.google.cloudbuild.v1.UpdateBuildTriggerRequest;
@@ -171,6 +173,17 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
+      receiveTriggerWebhookMethodDescriptor =
+          MethodDescriptor.<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/ReceiveTriggerWebhook")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ReceiveTriggerWebhookRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ReceiveTriggerWebhookResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<CreateWorkerPoolRequest, WorkerPool>
       createWorkerPoolMethodDescriptor =
           MethodDescriptor.<CreateWorkerPoolRequest, WorkerPool>newBuilder()
@@ -243,6 +256,8 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
   private final UnaryCallable<RunBuildTriggerRequest, Operation> runBuildTriggerCallable;
   private final OperationCallable<RunBuildTriggerRequest, Build, BuildOperationMetadata>
       runBuildTriggerOperationCallable;
+  private final UnaryCallable<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
+      receiveTriggerWebhookCallable;
   private final UnaryCallable<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolCallable;
   private final UnaryCallable<GetWorkerPoolRequest, WorkerPool> getWorkerPoolCallable;
   private final UnaryCallable<DeleteWorkerPoolRequest, Empty> deleteWorkerPoolCallable;
@@ -448,6 +463,22 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   }
                 })
             .build();
+    GrpcCallSettings<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
+        receiveTriggerWebhookTransportSettings =
+            GrpcCallSettings
+                .<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>newBuilder()
+                .setMethodDescriptor(receiveTriggerWebhookMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ReceiveTriggerWebhookRequest>() {
+                      @Override
+                      public Map<String, String> extract(ReceiveTriggerWebhookRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("project_id", String.valueOf(request.getProjectId()));
+                        params.put("trigger", String.valueOf(request.getTrigger()));
+                        return params.build();
+                      }
+                    })
+                .build();
     GrpcCallSettings<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolTransportSettings =
         GrpcCallSettings.<CreateWorkerPoolRequest, WorkerPool>newBuilder()
             .setMethodDescriptor(createWorkerPoolMethodDescriptor)
@@ -537,6 +568,11 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             settings.runBuildTriggerOperationSettings(),
             clientContext,
             operationsStub);
+    this.receiveTriggerWebhookCallable =
+        callableFactory.createUnaryCallable(
+            receiveTriggerWebhookTransportSettings,
+            settings.receiveTriggerWebhookSettings(),
+            clientContext);
     this.createWorkerPoolCallable =
         callableFactory.createUnaryCallable(
             createWorkerPoolTransportSettings, settings.createWorkerPoolSettings(), clientContext);
@@ -644,6 +680,12 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
   public OperationCallable<RunBuildTriggerRequest, Build, BuildOperationMetadata>
       runBuildTriggerOperationCallable() {
     return runBuildTriggerOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ReceiveTriggerWebhookRequest, ReceiveTriggerWebhookResponse>
+      receiveTriggerWebhookCallable() {
+    return receiveTriggerWebhookCallable;
   }
 
   @Override

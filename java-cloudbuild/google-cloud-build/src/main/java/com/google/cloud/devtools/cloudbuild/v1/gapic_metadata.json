@@ -46,6 +46,9 @@
             "ListWorkerPools": {
               "methods": ["listWorkerPools", "listWorkerPoolsCallable"]
             },
+            "ReceiveTriggerWebhook": {
+              "methods": ["receiveTriggerWebhook", "receiveTriggerWebhookCallable"]
+            },
             "RetryBuild": {
               "methods": ["retryBuildAsync", "retryBuildAsync", "retryBuildOperationCallable", "retryBuildCallable"]
             },
