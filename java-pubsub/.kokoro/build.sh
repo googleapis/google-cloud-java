@@ -79,6 +79,11 @@ samples)
 
     if [[ -f ${SAMPLES_DIR}/pom.xml ]]
     then
+        for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
+          [[ -f "$FILE" ]] || continue
+          source "$FILE"
+        done
+
         pushd ${SAMPLES_DIR}
         mvn -B \
           -Penable-samples \
