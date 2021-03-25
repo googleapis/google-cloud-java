@@ -19,6 +19,7 @@ package com.example.automl;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.cloud.testing.junit4.MultipleAttemptsRule;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -27,6 +28,7 @@ import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -39,7 +41,7 @@ public class TranslateCreateDatasetTest {
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
-  private String datasetId;
+  private String got;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -63,10 +65,14 @@ public class TranslateCreateDatasetTest {
 
   @After
   public void tearDown() throws InterruptedException, ExecutionException, IOException {
+    String datasetId = got.split("Dataset id: ")[1].split("\n")[0];
+
     // Delete the created dataset
     DeleteDataset.deleteDataset(PROJECT_ID, datasetId);
     System.setOut(originalPrintStream);
   }
+
+  @Rule public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
 
   @Test
   public void testCreateDataset() throws IOException, ExecutionException, InterruptedException {
@@ -77,8 +83,7 @@ public class TranslateCreateDatasetTest {
         String.format("test_%s", UUID.randomUUID().toString().replace("-", "_").substring(0, 26));
     TranslateCreateDataset.createDataset(PROJECT_ID, datasetName);
 
-    String got = bout.toString();
+    got = bout.toString();
     assertThat(got).contains("Dataset id:");
-    datasetId = got.split("Dataset id: ")[1].split("\n")[0];
   }
 }
