@@ -25,6 +25,7 @@ import com.google.cloud.bigquery.storage.v1beta2.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1beta2.CreateWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamResponse;
 import com.google.cloud.bigquery.storage.v1beta2.JsonStreamWriter;
+import com.google.cloud.bigquery.storage.v1beta2.StorageError;
 import com.google.cloud.bigquery.storage.v1beta2.TableName;
 import com.google.cloud.bigquery.storage.v1beta2.WriteStream;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
@@ -90,6 +91,13 @@ public class WritePendingStream {
               .build();
       BatchCommitWriteStreamsResponse commitResponse =
           client.batchCommitWriteStreams(commitRequest);
+      // If the response does not have a commit time, it means the commit operation failed.
+      if (commitResponse.hasCommitTime() == false) {
+        for (StorageError err : commitResponse.getStreamErrorsList()) {
+          System.out.println(err.getErrorMessage());
+        }
+        throw new RuntimeException("Error committing the streams");
+      }
       System.out.println("Appended and committed records successfully.");
     } catch (ExecutionException e) {
       // If the wrapped exception is a StatusRuntimeException, check the state of the operation.
