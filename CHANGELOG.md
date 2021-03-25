@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.16.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.15.1...v1.16.0) (2021-03-25)
+
+
+### Features
+
+* Add CivilTimeEncoder to encode and decode DateTime/Time as numerics ([#937](https://www.github.com/googleapis/java-bigquerystorage/issues/937)) ([969b429](https://www.github.com/googleapis/java-bigquerystorage/commit/969b4290b9934b94b1a0113e04e37ff44b2a536e))
+
+
+### Bug Fixes
+
+* add a deprecation message on StreamWriter ([#922](https://www.github.com/googleapis/java-bigquerystorage/issues/922)) ([fce5289](https://www.github.com/googleapis/java-bigquerystorage/commit/fce52890c6948a9b78a62d2fe0e4f9768d10d401))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.127.10 ([#955](https://www.github.com/googleapis/java-bigquerystorage/issues/955)) ([c810c72](https://www.github.com/googleapis/java-bigquerystorage/commit/c810c7279bfbad31cb0f94f5ad5d4a74342d4481))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.127.9 ([#947](https://www.github.com/googleapis/java-bigquerystorage/issues/947)) ([d781dc5](https://www.github.com/googleapis/java-bigquerystorage/commit/d781dc5479602fee01eb971033978317e5669694))
+
+
+### Documentation
+
+* **samples:** Check for error from BatchCommitWriteStreams ([#940](https://www.github.com/googleapis/java-bigquerystorage/issues/940)) ([ab3c145](https://www.github.com/googleapis/java-bigquerystorage/commit/ab3c1453d3c1fb627e773d0e7ca4ec991f8d38b7))
+
 ### [1.15.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.15.0...v1.15.1) (2021-03-17)
 
 
