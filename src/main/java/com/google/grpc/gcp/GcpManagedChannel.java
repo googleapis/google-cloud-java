@@ -96,7 +96,6 @@ public class GcpManagedChannel extends ManagedChannel {
   protected ChannelRef getChannelRef(@Nullable String key) {
 
     if (key != null && key != "") {
-      // System.out.println("affinity");
       synchronized (bindLock) {
         return affinityKeyToChannelRef.get(key);
       }

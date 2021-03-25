@@ -66,6 +66,19 @@ public class GcpManagedChannelBuilder extends ForwardingChannelBuilder<GcpManage
     return this;
   }
 
+  public GcpManagedChannelBuilder withApiConfigJsonString(String jsonString) {
+    JsonFormat.Parser parser = JsonFormat.parser();
+    ApiConfig.Builder apiConfig = ApiConfig.newBuilder();
+    try {
+      parser.merge(jsonString, apiConfig);
+    } catch (IOException e) {
+      logger.severe(e.getMessage());
+      return null;
+    }
+    this.apiConfig = apiConfig.build();
+    return this;
+  }
+
   /** Returns the delegated {@code ManagedChannelBuilder}. */
   @Override
   protected ManagedChannelBuilder<?> delegate() {
