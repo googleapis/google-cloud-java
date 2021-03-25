@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.metastore.v1beta;
+package com.google.cloud.metastore.v1alpha;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -28,8 +28,8 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.metastore.v1beta.stub.DataprocMetastoreStub;
-import com.google.cloud.metastore.v1beta.stub.DataprocMetastoreStubSettings;
+import com.google.cloud.metastore.v1alpha.stub.DataprocMetastoreStub;
+import com.google.cloud.metastore.v1alpha.stub.DataprocMetastoreStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;

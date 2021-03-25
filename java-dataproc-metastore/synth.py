@@ -17,7 +17,7 @@
 import synthtool.languages.java as java
 
 service = 'metastore'
-versions = ['v1beta']
+versions = ['v1alpha', 'v1beta']
 
 for version in versions:
   java.pregenerated_library(
@@ -28,6 +28,3 @@ for version in versions:
   )
 
 java.common_templates()
-
-# TODO: Remove this before publishing to the staging repository
-java.custom_templates(["java_library/README.md"])

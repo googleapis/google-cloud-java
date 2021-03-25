@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.cloud.metastore.v1beta;
+package com.google.cloud.metastore.v1alpha;
 
 import com.google.api.core.BetaApi;
-import com.google.cloud.metastore.v1beta.DataprocMetastoreGrpc.DataprocMetastoreImplBase;
+import com.google.cloud.metastore.v1alpha.DataprocMetastoreGrpc.DataprocMetastoreImplBase;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.stub.StreamObserver;
