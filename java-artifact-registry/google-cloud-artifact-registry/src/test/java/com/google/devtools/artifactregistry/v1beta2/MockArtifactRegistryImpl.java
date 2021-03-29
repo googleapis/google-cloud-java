@@ -68,7 +68,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
   @Override
   public void listRepositories(
       ListRepositoriesRequest request, StreamObserver<ListRepositoriesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListRepositoriesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListRepositoriesResponse) response));
@@ -80,7 +80,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListRepositories, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListRepositoriesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -89,7 +89,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
   @Override
   public void getRepository(
       GetRepositoryRequest request, StreamObserver<Repository> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Repository) {
       requests.add(request);
       responseObserver.onNext(((Repository) response));
@@ -101,7 +101,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetRepository, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Repository.class.getName(),
                   Exception.class.getName())));
     }
@@ -110,7 +110,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
   @Override
   public void createRepository(
       CreateRepositoryRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -122,7 +122,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateRepository, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -131,7 +131,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
   @Override
   public void updateRepository(
       UpdateRepositoryRequest request, StreamObserver<Repository> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Repository) {
       requests.add(request);
       responseObserver.onNext(((Repository) response));
@@ -143,7 +143,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateRepository, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Repository.class.getName(),
                   Exception.class.getName())));
     }
@@ -152,7 +152,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
   @Override
   public void deleteRepository(
       DeleteRepositoryRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -164,7 +164,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteRepository, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -173,7 +173,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
   @Override
   public void listPackages(
       ListPackagesRequest request, StreamObserver<ListPackagesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListPackagesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListPackagesResponse) response));
@@ -185,7 +185,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListPackages, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListPackagesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -193,7 +193,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
 
   @Override
   public void getPackage(GetPackageRequest request, StreamObserver<Package> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Package) {
       requests.add(request);
       responseObserver.onNext(((Package) response));
@@ -205,7 +205,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetPackage, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Package.class.getName(),
                   Exception.class.getName())));
     }
@@ -214,7 +214,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
   @Override
   public void deletePackage(
       DeletePackageRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -226,7 +226,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeletePackage, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -235,7 +235,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
   @Override
   public void listVersions(
       ListVersionsRequest request, StreamObserver<ListVersionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListVersionsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListVersionsResponse) response));
@@ -247,7 +247,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListVersions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListVersionsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -255,7 +255,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
 
   @Override
   public void getVersion(GetVersionRequest request, StreamObserver<Version> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Version) {
       requests.add(request);
       responseObserver.onNext(((Version) response));
@@ -267,7 +267,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetVersion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Version.class.getName(),
                   Exception.class.getName())));
     }
@@ -276,7 +276,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
   @Override
   public void deleteVersion(
       DeleteVersionRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -288,7 +288,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteVersion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -297,7 +297,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
   @Override
   public void listFiles(
       ListFilesRequest request, StreamObserver<ListFilesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListFilesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListFilesResponse) response));
@@ -309,7 +309,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListFiles, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListFilesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -317,7 +317,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
 
   @Override
   public void getFile(GetFileRequest request, StreamObserver<File> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof File) {
       requests.add(request);
       responseObserver.onNext(((File) response));
@@ -329,13 +329,15 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetFile, expected %s or %s",
-                  response.getClass().getName(), File.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  File.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void listTags(ListTagsRequest request, StreamObserver<ListTagsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListTagsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListTagsResponse) response));
@@ -347,7 +349,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListTags, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListTagsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -355,7 +357,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
 
   @Override
   public void getTag(GetTagRequest request, StreamObserver<Tag> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Tag) {
       requests.add(request);
       responseObserver.onNext(((Tag) response));
@@ -367,13 +369,15 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetTag, expected %s or %s",
-                  response.getClass().getName(), Tag.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Tag.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void createTag(CreateTagRequest request, StreamObserver<Tag> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Tag) {
       requests.add(request);
       responseObserver.onNext(((Tag) response));
@@ -385,13 +389,15 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateTag, expected %s or %s",
-                  response.getClass().getName(), Tag.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Tag.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void updateTag(UpdateTagRequest request, StreamObserver<Tag> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Tag) {
       requests.add(request);
       responseObserver.onNext(((Tag) response));
@@ -403,13 +409,15 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateTag, expected %s or %s",
-                  response.getClass().getName(), Tag.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Tag.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void deleteTag(DeleteTagRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -421,7 +429,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteTag, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -429,7 +437,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
 
   @Override
   public void setIamPolicy(SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -441,7 +449,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -449,7 +457,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
 
   @Override
   public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -461,7 +469,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Policy.class.getName(),
                   Exception.class.getName())));
     }
@@ -471,7 +479,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
   public void testIamPermissions(
       TestIamPermissionsRequest request,
       StreamObserver<TestIamPermissionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
       responseObserver.onNext(((TestIamPermissionsResponse) response));
@@ -483,7 +491,7 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TestIamPermissionsResponse.class.getName(),
                   Exception.class.getName())));
     }

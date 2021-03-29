@@ -273,6 +273,12 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListRepositoriesRequest request =
+   *       ListRepositoriesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListRepositoriesResponse response =
    *         artifactRegistryClient.listRepositoriesCallable().call(request);
@@ -726,6 +732,12 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListPackagesRequest request =
+   *       ListPackagesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListPackagesResponse response = artifactRegistryClient.listPackagesCallable().call(request);
    *     for (Package element : response.getResponsesList()) {
@@ -983,6 +995,13 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListVersionsRequest request =
+   *       ListVersionsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setView(VersionView.forNumber(0))
+   *           .build();
    *   while (true) {
    *     ListVersionsResponse response = artifactRegistryClient.listVersionsCallable().call(request);
    *     for (Version element : response.getResponsesList()) {
@@ -1246,6 +1265,13 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListFilesRequest request =
+   *       ListFilesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListFilesResponse response = artifactRegistryClient.listFilesCallable().call(request);
    *     for (File element : response.getResponsesList()) {
@@ -1411,6 +1437,13 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListTagsRequest request =
+   *       ListTagsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListTagsResponse response = artifactRegistryClient.listTagsCallable().call(request);
    *     for (Tag element : response.getResponsesList()) {
