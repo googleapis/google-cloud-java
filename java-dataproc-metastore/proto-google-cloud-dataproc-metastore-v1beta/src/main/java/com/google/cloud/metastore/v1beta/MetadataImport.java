@@ -475,7 +475,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+     * Optional. The type of the database dump. If unspecified, defaults to
+     * `MYSQL`.
      * </pre>
      *
      * <code>
@@ -489,7 +490,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+     * Optional. The type of the database dump. If unspecified, defaults to
+     * `MYSQL`.
      * </pre>
      *
      * <code>
@@ -909,7 +911,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+     * Optional. The type of the database dump. If unspecified, defaults to
+     * `MYSQL`.
      * </pre>
      *
      * <code>
@@ -926,7 +929,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+     * Optional. The type of the database dump. If unspecified, defaults to
+     * `MYSQL`.
      * </pre>
      *
      * <code>
@@ -1666,7 +1670,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+       * Optional. The type of the database dump. If unspecified, defaults to
+       * `MYSQL`.
        * </pre>
        *
        * <code>
@@ -1683,7 +1688,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+       * Optional. The type of the database dump. If unspecified, defaults to
+       * `MYSQL`.
        * </pre>
        *
        * <code>
@@ -1703,7 +1709,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+       * Optional. The type of the database dump. If unspecified, defaults to
+       * `MYSQL`.
        * </pre>
        *
        * <code>
@@ -1725,7 +1732,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+       * Optional. The type of the database dump. If unspecified, defaults to
+       * `MYSQL`.
        * </pre>
        *
        * <code>
@@ -1748,7 +1756,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The type of the database dump. If unspecified, defaults to `MYSQL`.
+       * Optional. The type of the database dump. If unspecified, defaults to
+       * `MYSQL`.
        * </pre>
        *
        * <code>

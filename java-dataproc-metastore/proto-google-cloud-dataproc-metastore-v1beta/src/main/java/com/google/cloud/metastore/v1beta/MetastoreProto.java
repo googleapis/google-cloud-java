@@ -475,12 +475,13 @@ public final class MetastoreProto {
           + "e\312A*\n\025google.protobuf.Empty\022\021OperationMe"
           + "tadata\032L\312A\030metastore.googleapis.com\322A.ht"
           + "tps://www.googleapis.com/auth/cloud-plat"
-          + "formB\316\001\n!com.google.cloud.metastore.v1be"
+          + "formB\356\001\n!com.google.cloud.metastore.v1be"
           + "taB\016MetastoreProtoP\001ZFgoogle.golang.org/"
           + "genproto/googleapis/cloud/metastore/v1be"
-          + "ta;metastore\352AN\n\036compute.googleapis.com/"
-          + "Network\022,projects/{project}/global/netwo"
-          + "rks/{network}b\006proto3"
+          + "ta;metastore\312\002\035Google\\Cloud\\Metastore\\V1"
+          + "beta\352AN\n\036compute.googleapis.com/Network\022"
+          + ",projects/{project}/global/networks/{net"
+          + "work}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

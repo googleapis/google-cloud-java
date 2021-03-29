@@ -22,7 +22,8 @@ package com.google.cloud.metastore.v1beta;
  *
  *
  * <pre>
- * Request message for [DataprocMetastore.CreateBackup][google.cloud.metastore.v1beta.DataprocMetastore.CreateBackup].
+ * Request message for
+ * [DataprocMetastore.CreateBackup][google.cloud.metastore.v1beta.DataprocMetastore.CreateBackup].
  * </pre>
  *
  * Protobuf type {@code google.cloud.metastore.v1beta.CreateBackupRequest}
@@ -149,8 +150,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The relative resource name of the service in which to create a backup
-   * of the following form:
+   * Required. The relative resource name of the service in which to create a
+   * backup of the following form:
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`
    * </pre>
    *
@@ -176,8 +177,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The relative resource name of the service in which to create a backup
-   * of the following form:
+   * Required. The relative resource name of the service in which to create a
+   * backup of the following form:
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`
    * </pre>
    *
@@ -263,8 +264,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The backup to create. The `name` field is ignored. The ID of the created
-   * backup must be provided in the request's `backup_id` field.
+   * Required. The backup to create. The `name` field is ignored. The ID of the
+   * created backup must be provided in the request's `backup_id` field.
    * </pre>
    *
    * <code>
@@ -281,8 +282,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The backup to create. The `name` field is ignored. The ID of the created
-   * backup must be provided in the request's `backup_id` field.
+   * Required. The backup to create. The `name` field is ignored. The ID of the
+   * created backup must be provided in the request's `backup_id` field.
    * </pre>
    *
    * <code>
@@ -301,8 +302,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The backup to create. The `name` field is ignored. The ID of the created
-   * backup must be provided in the request's `backup_id` field.
+   * Required. The backup to create. The `name` field is ignored. The ID of the
+   * created backup must be provided in the request's `backup_id` field.
    * </pre>
    *
    * <code>
@@ -320,10 +321,10 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-   * request if it has completed. The server will ignore subsequent requests
-   * that provide a duplicate request ID for at least 60 minutes after the first
-   * request.
+   * Optional. A request ID. Specify a unique request ID to allow the server to
+   * ignore the request if it has completed. The server will ignore subsequent
+   * requests that provide a duplicate request ID for at least 60 minutes after
+   * the first request.
    * For example, if an initial request times out, followed by another request
    * with the same request ID, the server ignores the second request to prevent
    * the creation of duplicate commitments.
@@ -352,10 +353,10 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-   * request if it has completed. The server will ignore subsequent requests
-   * that provide a duplicate request ID for at least 60 minutes after the first
-   * request.
+   * Optional. A request ID. Specify a unique request ID to allow the server to
+   * ignore the request if it has completed. The server will ignore subsequent
+   * requests that provide a duplicate request ID for at least 60 minutes after
+   * the first request.
    * For example, if an initial request times out, followed by another request
    * with the same request ID, the server ignores the second request to prevent
    * the creation of duplicate commitments.
@@ -577,7 +578,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for [DataprocMetastore.CreateBackup][google.cloud.metastore.v1beta.DataprocMetastore.CreateBackup].
+   * Request message for
+   * [DataprocMetastore.CreateBackup][google.cloud.metastore.v1beta.DataprocMetastore.CreateBackup].
    * </pre>
    *
    * Protobuf type {@code google.cloud.metastore.v1beta.CreateBackupRequest}
@@ -765,8 +767,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The relative resource name of the service in which to create a backup
-     * of the following form:
+     * Required. The relative resource name of the service in which to create a
+     * backup of the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`
      * </pre>
      *
@@ -791,8 +793,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The relative resource name of the service in which to create a backup
-     * of the following form:
+     * Required. The relative resource name of the service in which to create a
+     * backup of the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`
      * </pre>
      *
@@ -817,8 +819,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The relative resource name of the service in which to create a backup
-     * of the following form:
+     * Required. The relative resource name of the service in which to create a
+     * backup of the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`
      * </pre>
      *
@@ -842,8 +844,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The relative resource name of the service in which to create a backup
-     * of the following form:
+     * Required. The relative resource name of the service in which to create a
+     * backup of the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`
      * </pre>
      *
@@ -863,8 +865,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The relative resource name of the service in which to create a backup
-     * of the following form:
+     * Required. The relative resource name of the service in which to create a
+     * backup of the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`
      * </pre>
      *
@@ -1022,8 +1024,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The backup to create. The `name` field is ignored. The ID of the created
-     * backup must be provided in the request's `backup_id` field.
+     * Required. The backup to create. The `name` field is ignored. The ID of the
+     * created backup must be provided in the request's `backup_id` field.
      * </pre>
      *
      * <code>
@@ -1039,8 +1041,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The backup to create. The `name` field is ignored. The ID of the created
-     * backup must be provided in the request's `backup_id` field.
+     * Required. The backup to create. The `name` field is ignored. The ID of the
+     * created backup must be provided in the request's `backup_id` field.
      * </pre>
      *
      * <code>
@@ -1062,8 +1064,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The backup to create. The `name` field is ignored. The ID of the created
-     * backup must be provided in the request's `backup_id` field.
+     * Required. The backup to create. The `name` field is ignored. The ID of the
+     * created backup must be provided in the request's `backup_id` field.
      * </pre>
      *
      * <code>
@@ -1087,8 +1089,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The backup to create. The `name` field is ignored. The ID of the created
-     * backup must be provided in the request's `backup_id` field.
+     * Required. The backup to create. The `name` field is ignored. The ID of the
+     * created backup must be provided in the request's `backup_id` field.
      * </pre>
      *
      * <code>
@@ -1109,8 +1111,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The backup to create. The `name` field is ignored. The ID of the created
-     * backup must be provided in the request's `backup_id` field.
+     * Required. The backup to create. The `name` field is ignored. The ID of the
+     * created backup must be provided in the request's `backup_id` field.
      * </pre>
      *
      * <code>
@@ -1138,8 +1140,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The backup to create. The `name` field is ignored. The ID of the created
-     * backup must be provided in the request's `backup_id` field.
+     * Required. The backup to create. The `name` field is ignored. The ID of the
+     * created backup must be provided in the request's `backup_id` field.
      * </pre>
      *
      * <code>
@@ -1161,8 +1163,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The backup to create. The `name` field is ignored. The ID of the created
-     * backup must be provided in the request's `backup_id` field.
+     * Required. The backup to create. The `name` field is ignored. The ID of the
+     * created backup must be provided in the request's `backup_id` field.
      * </pre>
      *
      * <code>
@@ -1178,8 +1180,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The backup to create. The `name` field is ignored. The ID of the created
-     * backup must be provided in the request's `backup_id` field.
+     * Required. The backup to create. The `name` field is ignored. The ID of the
+     * created backup must be provided in the request's `backup_id` field.
      * </pre>
      *
      * <code>
@@ -1199,8 +1201,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The backup to create. The `name` field is ignored. The ID of the created
-     * backup must be provided in the request's `backup_id` field.
+     * Required. The backup to create. The `name` field is ignored. The ID of the
+     * created backup must be provided in the request's `backup_id` field.
      * </pre>
      *
      * <code>
@@ -1229,10 +1231,10 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-     * request if it has completed. The server will ignore subsequent requests
-     * that provide a duplicate request ID for at least 60 minutes after the first
-     * request.
+     * Optional. A request ID. Specify a unique request ID to allow the server to
+     * ignore the request if it has completed. The server will ignore subsequent
+     * requests that provide a duplicate request ID for at least 60 minutes after
+     * the first request.
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
@@ -1260,10 +1262,10 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-     * request if it has completed. The server will ignore subsequent requests
-     * that provide a duplicate request ID for at least 60 minutes after the first
-     * request.
+     * Optional. A request ID. Specify a unique request ID to allow the server to
+     * ignore the request if it has completed. The server will ignore subsequent
+     * requests that provide a duplicate request ID for at least 60 minutes after
+     * the first request.
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
@@ -1291,10 +1293,10 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-     * request if it has completed. The server will ignore subsequent requests
-     * that provide a duplicate request ID for at least 60 minutes after the first
-     * request.
+     * Optional. A request ID. Specify a unique request ID to allow the server to
+     * ignore the request if it has completed. The server will ignore subsequent
+     * requests that provide a duplicate request ID for at least 60 minutes after
+     * the first request.
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
@@ -1321,10 +1323,10 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-     * request if it has completed. The server will ignore subsequent requests
-     * that provide a duplicate request ID for at least 60 minutes after the first
-     * request.
+     * Optional. A request ID. Specify a unique request ID to allow the server to
+     * ignore the request if it has completed. The server will ignore subsequent
+     * requests that provide a duplicate request ID for at least 60 minutes after
+     * the first request.
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
@@ -1347,10 +1349,10 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-     * request if it has completed. The server will ignore subsequent requests
-     * that provide a duplicate request ID for at least 60 minutes after the first
-     * request.
+     * Optional. A request ID. Specify a unique request ID to allow the server to
+     * ignore the request if it has completed. The server will ignore subsequent
+     * requests that provide a duplicate request ID for at least 60 minutes after
+     * the first request.
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.

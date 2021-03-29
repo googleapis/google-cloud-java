@@ -22,7 +22,8 @@ package com.google.cloud.metastore.v1beta;
  *
  *
  * <pre>
- * Response message for [DataprocMetastore.ListServices][google.cloud.metastore.v1beta.DataprocMetastore.ListServices].
+ * Response message for
+ * [DataprocMetastore.ListServices][google.cloud.metastore.v1beta.DataprocMetastore.ListServices].
  * </pre>
  *
  * Protobuf type {@code google.cloud.metastore.v1beta.ListServicesResponse}
@@ -513,7 +514,8 @@ public final class ListServicesResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Response message for [DataprocMetastore.ListServices][google.cloud.metastore.v1beta.DataprocMetastore.ListServices].
+   * Response message for
+   * [DataprocMetastore.ListServices][google.cloud.metastore.v1beta.DataprocMetastore.ListServices].
    * </pre>
    *
    * Protobuf type {@code google.cloud.metastore.v1beta.ListServicesResponse}
