@@ -260,10 +260,10 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
    * Required. Use `filter` to return subset of rollouts.
    * The following filters are supported:
    *   -- To limit the results to only those in
-   *      [status](google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
+   *      status (google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
    *      use filter='status=SUCCESS'
    *   -- To limit the results to those in
-   *      [status](google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
+   *      status (google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
    *      or 'FAILED', use filter='status=CANCELLED OR status=FAILED'
    * </pre>
    *
@@ -290,10 +290,10 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
    * Required. Use `filter` to return subset of rollouts.
    * The following filters are supported:
    *   -- To limit the results to only those in
-   *      [status](google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
+   *      status (google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
    *      use filter='status=SUCCESS'
    *   -- To limit the results to those in
-   *      [status](google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
+   *      status (google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
    *      or 'FAILED', use filter='status=CANCELLED OR status=FAILED'
    * </pre>
    *
@@ -963,10 +963,10 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
      * Required. Use `filter` to return subset of rollouts.
      * The following filters are supported:
      *   -- To limit the results to only those in
-     *      [status](google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
+     *      status (google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
      *      use filter='status=SUCCESS'
      *   -- To limit the results to those in
-     *      [status](google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
+     *      status (google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
      *      or 'FAILED', use filter='status=CANCELLED OR status=FAILED'
      * </pre>
      *
@@ -992,10 +992,10 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
      * Required. Use `filter` to return subset of rollouts.
      * The following filters are supported:
      *   -- To limit the results to only those in
-     *      [status](google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
+     *      status (google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
      *      use filter='status=SUCCESS'
      *   -- To limit the results to those in
-     *      [status](google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
+     *      status (google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
      *      or 'FAILED', use filter='status=CANCELLED OR status=FAILED'
      * </pre>
      *
@@ -1021,10 +1021,10 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
      * Required. Use `filter` to return subset of rollouts.
      * The following filters are supported:
      *   -- To limit the results to only those in
-     *      [status](google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
+     *      status (google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
      *      use filter='status=SUCCESS'
      *   -- To limit the results to those in
-     *      [status](google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
+     *      status (google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
      *      or 'FAILED', use filter='status=CANCELLED OR status=FAILED'
      * </pre>
      *
@@ -1049,10 +1049,10 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
      * Required. Use `filter` to return subset of rollouts.
      * The following filters are supported:
      *   -- To limit the results to only those in
-     *      [status](google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
+     *      status (google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
      *      use filter='status=SUCCESS'
      *   -- To limit the results to those in
-     *      [status](google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
+     *      status (google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
      *      or 'FAILED', use filter='status=CANCELLED OR status=FAILED'
      * </pre>
      *
@@ -1073,10 +1073,10 @@ public final class ListServiceRolloutsRequest extends com.google.protobuf.Genera
      * Required. Use `filter` to return subset of rollouts.
      * The following filters are supported:
      *   -- To limit the results to only those in
-     *      [status](google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
+     *      status (google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS',
      *      use filter='status=SUCCESS'
      *   -- To limit the results to those in
-     *      [status](google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
+     *      status (google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED'
      *      or 'FAILED', use filter='status=CANCELLED OR status=FAILED'
      * </pre>
      *
