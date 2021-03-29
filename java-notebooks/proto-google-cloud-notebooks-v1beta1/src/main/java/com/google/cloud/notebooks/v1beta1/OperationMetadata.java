@@ -426,7 +426,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * Identifies whether the user has requested cancellation
    * of the operation. Operations that have successfully been cancelled
    * have [Operation.error][] value with a
-   * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to `Code.CANCELLED`.
+   * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+   * `Code.CANCELLED`.
    * </pre>
    *
    * <code>bool requested_cancellation = 6;</code>
@@ -1677,7 +1678,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Identifies whether the user has requested cancellation
      * of the operation. Operations that have successfully been cancelled
      * have [Operation.error][] value with a
-     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to `Code.CANCELLED`.
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+     * `Code.CANCELLED`.
      * </pre>
      *
      * <code>bool requested_cancellation = 6;</code>
@@ -1695,7 +1697,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Identifies whether the user has requested cancellation
      * of the operation. Operations that have successfully been cancelled
      * have [Operation.error][] value with a
-     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to `Code.CANCELLED`.
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+     * `Code.CANCELLED`.
      * </pre>
      *
      * <code>bool requested_cancellation = 6;</code>
@@ -1716,7 +1719,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Identifies whether the user has requested cancellation
      * of the operation. Operations that have successfully been cancelled
      * have [Operation.error][] value with a
-     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to `Code.CANCELLED`.
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+     * `Code.CANCELLED`.
      * </pre>
      *
      * <code>bool requested_cancellation = 6;</code>

@@ -153,7 +153,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. The proxy endpoint that is used to access the Jupyter notebook.
+   * Output only. The proxy endpoint that is used to access the Jupyter
+   * notebook.
    * </pre>
    *
    * <code>string proxy_uri = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -165,7 +166,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. The proxy endpoint that is used to access the Jupyter notebook.
+   * Output only. The proxy endpoint that is used to access the Jupyter
+   * notebook.
    * </pre>
    *
    * <code>string proxy_uri = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -178,7 +180,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+   * Input only. The owner of this instance after creation. Format:
+   * `alias&#64;example.com`
    * Currently supports one owner only. If not specified, all of the service
    * account users of your VM instance's service account can use
    * the instance.
@@ -193,7 +196,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+   * Input only. The owner of this instance after creation. Format:
+   * `alias&#64;example.com`
    * Currently supports one owner only. If not specified, all of the service
    * account users of your VM instance's service account can use
    * the instance.
@@ -208,7 +212,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+   * Input only. The owner of this instance after creation. Format:
+   * `alias&#64;example.com`
    * Currently supports one owner only. If not specified, all of the service
    * account users of your VM instance's service account can use
    * the instance.
@@ -224,7 +229,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
+   * Input only. The owner of this instance after creation. Format:
+   * `alias&#64;example.com`
    * Currently supports one owner only. If not specified, all of the service
    * account users of your VM instance's service account can use
    * the instance.
@@ -278,7 +284,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Required. The [Compute Engine machine type](https://cloud.google.com/compute/docs/machine-types) of this
+   * Required. The [Compute Engine machine
+   * type](https://cloud.google.com/compute/docs/machine-types) of this
    * instance.
    * </pre>
    *
@@ -291,7 +298,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Required. The [Compute Engine machine type](https://cloud.google.com/compute/docs/machine-types) of this
+   * Required. The [Compute Engine machine
+   * type](https://cloud.google.com/compute/docs/machine-types) of this
    * instance.
    * </pre>
    *
@@ -422,8 +430,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Input only. The type of the boot disk attached to this instance, defaults to
-   * standard persistent disk (`PD_STANDARD`).
+   * Input only. The type of the boot disk attached to this instance, defaults
+   * to standard persistent disk (`PD_STANDARD`).
    * </pre>
    *
    * <code>
@@ -437,8 +445,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Input only. The type of the boot disk attached to this instance, defaults to
-   * standard persistent disk (`PD_STANDARD`).
+   * Input only. The type of the boot disk attached to this instance, defaults
+   * to standard persistent disk (`PD_STANDARD`).
    * </pre>
    *
    * <code>
@@ -453,9 +461,9 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Input only. The size of the boot disk in GB attached to this instance, up to a maximum
-   * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). The minimum recommended value is
-   * 100&amp;nbsp;GB. If not specified, this defaults to 100.
+   * Input only. The size of the boot disk in GB attached to this instance, up
+   * to a maximum of 64000&amp;nbsp;GB (64&amp;nbsp;TB). The minimum recommended value
+   * is 100&amp;nbsp;GB. If not specified, this defaults to 100.
    * </pre>
    *
    * <code>int64 boot_disk_size_gb = 14 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -468,8 +476,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Input only. The type of the data disk attached to this instance, defaults to
-   * standard persistent disk (`PD_STANDARD`).
+   * Input only. The type of the data disk attached to this instance, defaults
+   * to standard persistent disk (`PD_STANDARD`).
    * </pre>
    *
    * <code>
@@ -483,8 +491,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Input only. The type of the data disk attached to this instance, defaults to
-   * standard persistent disk (`PD_STANDARD`).
+   * Input only. The type of the data disk attached to this instance, defaults
+   * to standard persistent disk (`PD_STANDARD`).
    * </pre>
    *
    * <code>
@@ -499,10 +507,10 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Input only. The size of the data disk in GB attached to this instance, up to a maximum
-   * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). You can choose the size of the data disk
-   * based on how big your notebooks and data are. If not specified, this
-   * defaults to 100.
+   * Input only. The size of the data disk in GB attached to this instance, up
+   * to a maximum of 64000&amp;nbsp;GB (64&amp;nbsp;TB). You can choose the size of the
+   * data disk based on how big your notebooks and data are. If not specified,
+   * this defaults to 100.
    * </pre>
    *
    * <code>int64 data_disk_size_gb = 26 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -515,7 +523,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Input only. If true, the data disk will not be auto deleted when deleting the instance.
+   * Input only. If true, the data disk will not be auto deleted when deleting
+   * the instance.
    * </pre>
    *
    * <code>bool no_remove_data_disk = 27 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -528,7 +537,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Input only. Disk encryption method used on the boot and data disks, defaults to GMEK.
+   * Input only. Disk encryption method used on the boot and data disks,
+   * defaults to GMEK.
    * </pre>
    *
    * <code>
@@ -542,7 +552,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Input only. Disk encryption method used on the boot and data disks, defaults to GMEK.
+   * Input only. Disk encryption method used on the boot and data disks,
+   * defaults to GMEK.
    * </pre>
    *
    * <code>
@@ -557,11 +568,11 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Input only. The KMS key used to encrypt the disks, only applicable if disk_encryption
-   * is CMEK.
-   * Format:
+   * Input only. The KMS key used to encrypt the disks, only applicable if
+   * disk_encryption is CMEK. Format:
    * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-   * Learn more about [using your own encryption keys]( https://cloud.google.com/kms/docs/quickstart).
+   * Learn more about [using your own encryption keys](
+   * https://cloud.google.com/kms/docs/quickstart).
    * </pre>
    *
    * <code>string kms_key = 16 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -573,11 +584,11 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Input only. The KMS key used to encrypt the disks, only applicable if disk_encryption
-   * is CMEK.
-   * Format:
+   * Input only. The KMS key used to encrypt the disks, only applicable if
+   * disk_encryption is CMEK. Format:
    * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-   * Learn more about [using your own encryption keys]( https://cloud.google.com/kms/docs/quickstart).
+   * Learn more about [using your own encryption keys](
+   * https://cloud.google.com/kms/docs/quickstart).
    * </pre>
    *
    * <code>string kms_key = 16 [(.google.api.field_behavior) = INPUT_ONLY];</code>

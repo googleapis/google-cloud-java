@@ -71,7 +71,7 @@ public final class EnvironmentProto {
           + "ntProtoP\001ZGgoogle.golang.org/genproto/go"
           + "ogleapis/cloud/notebooks/v1beta1;noteboo"
           + "ks\252\002\036Google.Cloud.Notebooks.V1Beta1\312\002\036Go"
-          + "ogle\\Cloud\\Notebooks\\V1Beta1\352\002!Google::C"
+          + "ogle\\Cloud\\Notebooks\\V1beta1\352\002!Google::C"
           + "loud::Notebooks::V1beta1b\006proto3"
     };
     descriptor =
