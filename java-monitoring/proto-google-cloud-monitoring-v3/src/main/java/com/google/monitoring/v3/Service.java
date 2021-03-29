@@ -171,6 +171,26 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
               identifierCase_ = 10;
               break;
             }
+          case 90:
+            {
+              com.google.monitoring.v3.Service.IstioCanonicalService.Builder subBuilder = null;
+              if (identifierCase_ == 11) {
+                subBuilder =
+                    ((com.google.monitoring.v3.Service.IstioCanonicalService) identifier_)
+                        .toBuilder();
+              }
+              identifier_ =
+                  input.readMessage(
+                      com.google.monitoring.v3.Service.IstioCanonicalService.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.monitoring.v3.Service.IstioCanonicalService) identifier_);
+                identifier_ = subBuilder.buildPartial();
+              }
+              identifierCase_ = 11;
+              break;
+            }
           case 106:
             {
               com.google.monitoring.v3.Service.Telemetry.Builder subBuilder = null;
@@ -2003,7 +2023,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  @java.lang.Deprecated
   public interface ClusterIstioOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.monitoring.v3.Service.ClusterIstio)
@@ -2126,12 +2145,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Istio service scoped to a single Kubernetes cluster. Learn more at
-   * http://istio.io.
+   * https://istio.io. Clusters running OSS Istio will have their services
+   * ingested as this type.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.Service.ClusterIstio}
    */
-  @java.lang.Deprecated
   public static final class ClusterIstio extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.monitoring.v3.Service.ClusterIstio)
@@ -2640,7 +2659,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Istio service scoped to a single Kubernetes cluster. Learn more at
-     * http://istio.io.
+     * https://istio.io. Clusters running OSS Istio will have their services
+     * ingested as this type.
      * </pre>
      *
      * Protobuf type {@code google.monitoring.v3.Service.ClusterIstio}
@@ -3414,7 +3434,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Istio service scoped to an Istio mesh
+   * Istio service scoped to an Istio mesh. Anthos clusters running ASM &lt; 1.6.8
+   * will have their services ingested as this type.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.Service.MeshIstio}
@@ -3854,7 +3875,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Istio service scoped to an Istio mesh
+     * Istio service scoped to an Istio mesh. Anthos clusters running ASM &lt; 1.6.8
+     * will have their services ingested as this type.
      * </pre>
      *
      * Protobuf type {@code google.monitoring.v3.Service.MeshIstio}
@@ -4405,6 +4427,1143 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.monitoring.v3.Service.MeshIstio getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface IstioCanonicalServiceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.monitoring.v3.Service.IstioCanonicalService)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Identifier for the Istio mesh in which this canonical service is defined.
+     * Corresponds to the `mesh_uid` metric label in
+     * [Istio metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+     * </pre>
+     *
+     * <code>string mesh_uid = 1;</code>
+     *
+     * @return The meshUid.
+     */
+    java.lang.String getMeshUid();
+    /**
+     *
+     *
+     * <pre>
+     * Identifier for the Istio mesh in which this canonical service is defined.
+     * Corresponds to the `mesh_uid` metric label in
+     * [Istio metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+     * </pre>
+     *
+     * <code>string mesh_uid = 1;</code>
+     *
+     * @return The bytes for meshUid.
+     */
+    com.google.protobuf.ByteString getMeshUidBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The namespace of the canonical service underlying this service.
+     * Corresponds to the `destination_canonical_service_namespace` metric
+     * label in [Istio
+     * metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+     * </pre>
+     *
+     * <code>string canonical_service_namespace = 3;</code>
+     *
+     * @return The canonicalServiceNamespace.
+     */
+    java.lang.String getCanonicalServiceNamespace();
+    /**
+     *
+     *
+     * <pre>
+     * The namespace of the canonical service underlying this service.
+     * Corresponds to the `destination_canonical_service_namespace` metric
+     * label in [Istio
+     * metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+     * </pre>
+     *
+     * <code>string canonical_service_namespace = 3;</code>
+     *
+     * @return The bytes for canonicalServiceNamespace.
+     */
+    com.google.protobuf.ByteString getCanonicalServiceNamespaceBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the canonical service underlying this service.
+     * Corresponds to the `destination_canonical_service_name` metric label in
+     * label in [Istio
+     * metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+     * </pre>
+     *
+     * <code>string canonical_service = 4;</code>
+     *
+     * @return The canonicalService.
+     */
+    java.lang.String getCanonicalService();
+    /**
+     *
+     *
+     * <pre>
+     * The name of the canonical service underlying this service.
+     * Corresponds to the `destination_canonical_service_name` metric label in
+     * label in [Istio
+     * metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+     * </pre>
+     *
+     * <code>string canonical_service = 4;</code>
+     *
+     * @return The bytes for canonicalService.
+     */
+    com.google.protobuf.ByteString getCanonicalServiceBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Canonical service scoped to an Istio mesh. Anthos clusters running ASM &gt;=
+   * 1.6.8 will have their services ingested as this type.
+   * </pre>
+   *
+   * Protobuf type {@code google.monitoring.v3.Service.IstioCanonicalService}
+   */
+  public static final class IstioCanonicalService extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.monitoring.v3.Service.IstioCanonicalService)
+      IstioCanonicalServiceOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use IstioCanonicalService.newBuilder() to construct.
+    private IstioCanonicalService(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private IstioCanonicalService() {
+      meshUid_ = "";
+      canonicalServiceNamespace_ = "";
+      canonicalService_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new IstioCanonicalService();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private IstioCanonicalService(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                meshUid_ = s;
+                break;
+              }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                canonicalServiceNamespace_ = s;
+                break;
+              }
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                canonicalService_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.ServiceMonitoringProto
+          .internal_static_google_monitoring_v3_Service_IstioCanonicalService_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.monitoring.v3.ServiceMonitoringProto
+          .internal_static_google_monitoring_v3_Service_IstioCanonicalService_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.monitoring.v3.Service.IstioCanonicalService.class,
+              com.google.monitoring.v3.Service.IstioCanonicalService.Builder.class);
+    }
+
+    public static final int MESH_UID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object meshUid_;
+    /**
+     *
+     *
+     * <pre>
+     * Identifier for the Istio mesh in which this canonical service is defined.
+     * Corresponds to the `mesh_uid` metric label in
+     * [Istio metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+     * </pre>
+     *
+     * <code>string mesh_uid = 1;</code>
+     *
+     * @return The meshUid.
+     */
+    @java.lang.Override
+    public java.lang.String getMeshUid() {
+      java.lang.Object ref = meshUid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        meshUid_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identifier for the Istio mesh in which this canonical service is defined.
+     * Corresponds to the `mesh_uid` metric label in
+     * [Istio metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+     * </pre>
+     *
+     * <code>string mesh_uid = 1;</code>
+     *
+     * @return The bytes for meshUid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getMeshUidBytes() {
+      java.lang.Object ref = meshUid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        meshUid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CANONICAL_SERVICE_NAMESPACE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object canonicalServiceNamespace_;
+    /**
+     *
+     *
+     * <pre>
+     * The namespace of the canonical service underlying this service.
+     * Corresponds to the `destination_canonical_service_namespace` metric
+     * label in [Istio
+     * metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+     * </pre>
+     *
+     * <code>string canonical_service_namespace = 3;</code>
+     *
+     * @return The canonicalServiceNamespace.
+     */
+    @java.lang.Override
+    public java.lang.String getCanonicalServiceNamespace() {
+      java.lang.Object ref = canonicalServiceNamespace_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        canonicalServiceNamespace_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The namespace of the canonical service underlying this service.
+     * Corresponds to the `destination_canonical_service_namespace` metric
+     * label in [Istio
+     * metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+     * </pre>
+     *
+     * <code>string canonical_service_namespace = 3;</code>
+     *
+     * @return The bytes for canonicalServiceNamespace.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCanonicalServiceNamespaceBytes() {
+      java.lang.Object ref = canonicalServiceNamespace_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        canonicalServiceNamespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CANONICAL_SERVICE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object canonicalService_;
+    /**
+     *
+     *
+     * <pre>
+     * The name of the canonical service underlying this service.
+     * Corresponds to the `destination_canonical_service_name` metric label in
+     * label in [Istio
+     * metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+     * </pre>
+     *
+     * <code>string canonical_service = 4;</code>
+     *
+     * @return The canonicalService.
+     */
+    @java.lang.Override
+    public java.lang.String getCanonicalService() {
+      java.lang.Object ref = canonicalService_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        canonicalService_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the canonical service underlying this service.
+     * Corresponds to the `destination_canonical_service_name` metric label in
+     * label in [Istio
+     * metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+     * </pre>
+     *
+     * <code>string canonical_service = 4;</code>
+     *
+     * @return The bytes for canonicalService.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCanonicalServiceBytes() {
+      java.lang.Object ref = canonicalService_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        canonicalService_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!getMeshUidBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, meshUid_);
+      }
+      if (!getCanonicalServiceNamespaceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, canonicalServiceNamespace_);
+      }
+      if (!getCanonicalServiceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, canonicalService_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMeshUidBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, meshUid_);
+      }
+      if (!getCanonicalServiceNamespaceBytes().isEmpty()) {
+        size +=
+            com.google.protobuf.GeneratedMessageV3.computeStringSize(3, canonicalServiceNamespace_);
+      }
+      if (!getCanonicalServiceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, canonicalService_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.monitoring.v3.Service.IstioCanonicalService)) {
+        return super.equals(obj);
+      }
+      com.google.monitoring.v3.Service.IstioCanonicalService other =
+          (com.google.monitoring.v3.Service.IstioCanonicalService) obj;
+
+      if (!getMeshUid().equals(other.getMeshUid())) return false;
+      if (!getCanonicalServiceNamespace().equals(other.getCanonicalServiceNamespace()))
+        return false;
+      if (!getCanonicalService().equals(other.getCanonicalService())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MESH_UID_FIELD_NUMBER;
+      hash = (53 * hash) + getMeshUid().hashCode();
+      hash = (37 * hash) + CANONICAL_SERVICE_NAMESPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getCanonicalServiceNamespace().hashCode();
+      hash = (37 * hash) + CANONICAL_SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getCanonicalService().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.monitoring.v3.Service.IstioCanonicalService parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.Service.IstioCanonicalService parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.IstioCanonicalService parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.Service.IstioCanonicalService parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.IstioCanonicalService parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.v3.Service.IstioCanonicalService parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.IstioCanonicalService parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.Service.IstioCanonicalService parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.IstioCanonicalService parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.Service.IstioCanonicalService parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.monitoring.v3.Service.IstioCanonicalService parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.v3.Service.IstioCanonicalService parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.monitoring.v3.Service.IstioCanonicalService prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Canonical service scoped to an Istio mesh. Anthos clusters running ASM &gt;=
+     * 1.6.8 will have their services ingested as this type.
+     * </pre>
+     *
+     * Protobuf type {@code google.monitoring.v3.Service.IstioCanonicalService}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.monitoring.v3.Service.IstioCanonicalService)
+        com.google.monitoring.v3.Service.IstioCanonicalServiceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.ServiceMonitoringProto
+            .internal_static_google_monitoring_v3_Service_IstioCanonicalService_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.monitoring.v3.ServiceMonitoringProto
+            .internal_static_google_monitoring_v3_Service_IstioCanonicalService_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.monitoring.v3.Service.IstioCanonicalService.class,
+                com.google.monitoring.v3.Service.IstioCanonicalService.Builder.class);
+      }
+
+      // Construct using com.google.monitoring.v3.Service.IstioCanonicalService.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        meshUid_ = "";
+
+        canonicalServiceNamespace_ = "";
+
+        canonicalService_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.monitoring.v3.ServiceMonitoringProto
+            .internal_static_google_monitoring_v3_Service_IstioCanonicalService_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.Service.IstioCanonicalService getDefaultInstanceForType() {
+        return com.google.monitoring.v3.Service.IstioCanonicalService.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.Service.IstioCanonicalService build() {
+        com.google.monitoring.v3.Service.IstioCanonicalService result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.Service.IstioCanonicalService buildPartial() {
+        com.google.monitoring.v3.Service.IstioCanonicalService result =
+            new com.google.monitoring.v3.Service.IstioCanonicalService(this);
+        result.meshUid_ = meshUid_;
+        result.canonicalServiceNamespace_ = canonicalServiceNamespace_;
+        result.canonicalService_ = canonicalService_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.monitoring.v3.Service.IstioCanonicalService) {
+          return mergeFrom((com.google.monitoring.v3.Service.IstioCanonicalService) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.monitoring.v3.Service.IstioCanonicalService other) {
+        if (other == com.google.monitoring.v3.Service.IstioCanonicalService.getDefaultInstance())
+          return this;
+        if (!other.getMeshUid().isEmpty()) {
+          meshUid_ = other.meshUid_;
+          onChanged();
+        }
+        if (!other.getCanonicalServiceNamespace().isEmpty()) {
+          canonicalServiceNamespace_ = other.canonicalServiceNamespace_;
+          onChanged();
+        }
+        if (!other.getCanonicalService().isEmpty()) {
+          canonicalService_ = other.canonicalService_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.monitoring.v3.Service.IstioCanonicalService parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.monitoring.v3.Service.IstioCanonicalService) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object meshUid_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Identifier for the Istio mesh in which this canonical service is defined.
+       * Corresponds to the `mesh_uid` metric label in
+       * [Istio metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+       * </pre>
+       *
+       * <code>string mesh_uid = 1;</code>
+       *
+       * @return The meshUid.
+       */
+      public java.lang.String getMeshUid() {
+        java.lang.Object ref = meshUid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          meshUid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Identifier for the Istio mesh in which this canonical service is defined.
+       * Corresponds to the `mesh_uid` metric label in
+       * [Istio metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+       * </pre>
+       *
+       * <code>string mesh_uid = 1;</code>
+       *
+       * @return The bytes for meshUid.
+       */
+      public com.google.protobuf.ByteString getMeshUidBytes() {
+        java.lang.Object ref = meshUid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          meshUid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Identifier for the Istio mesh in which this canonical service is defined.
+       * Corresponds to the `mesh_uid` metric label in
+       * [Istio metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+       * </pre>
+       *
+       * <code>string mesh_uid = 1;</code>
+       *
+       * @param value The meshUid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMeshUid(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        meshUid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Identifier for the Istio mesh in which this canonical service is defined.
+       * Corresponds to the `mesh_uid` metric label in
+       * [Istio metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+       * </pre>
+       *
+       * <code>string mesh_uid = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMeshUid() {
+
+        meshUid_ = getDefaultInstance().getMeshUid();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Identifier for the Istio mesh in which this canonical service is defined.
+       * Corresponds to the `mesh_uid` metric label in
+       * [Istio metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+       * </pre>
+       *
+       * <code>string mesh_uid = 1;</code>
+       *
+       * @param value The bytes for meshUid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMeshUidBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        meshUid_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object canonicalServiceNamespace_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The namespace of the canonical service underlying this service.
+       * Corresponds to the `destination_canonical_service_namespace` metric
+       * label in [Istio
+       * metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+       * </pre>
+       *
+       * <code>string canonical_service_namespace = 3;</code>
+       *
+       * @return The canonicalServiceNamespace.
+       */
+      public java.lang.String getCanonicalServiceNamespace() {
+        java.lang.Object ref = canonicalServiceNamespace_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          canonicalServiceNamespace_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The namespace of the canonical service underlying this service.
+       * Corresponds to the `destination_canonical_service_namespace` metric
+       * label in [Istio
+       * metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+       * </pre>
+       *
+       * <code>string canonical_service_namespace = 3;</code>
+       *
+       * @return The bytes for canonicalServiceNamespace.
+       */
+      public com.google.protobuf.ByteString getCanonicalServiceNamespaceBytes() {
+        java.lang.Object ref = canonicalServiceNamespace_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          canonicalServiceNamespace_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The namespace of the canonical service underlying this service.
+       * Corresponds to the `destination_canonical_service_namespace` metric
+       * label in [Istio
+       * metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+       * </pre>
+       *
+       * <code>string canonical_service_namespace = 3;</code>
+       *
+       * @param value The canonicalServiceNamespace to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCanonicalServiceNamespace(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        canonicalServiceNamespace_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The namespace of the canonical service underlying this service.
+       * Corresponds to the `destination_canonical_service_namespace` metric
+       * label in [Istio
+       * metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+       * </pre>
+       *
+       * <code>string canonical_service_namespace = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCanonicalServiceNamespace() {
+
+        canonicalServiceNamespace_ = getDefaultInstance().getCanonicalServiceNamespace();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The namespace of the canonical service underlying this service.
+       * Corresponds to the `destination_canonical_service_namespace` metric
+       * label in [Istio
+       * metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+       * </pre>
+       *
+       * <code>string canonical_service_namespace = 3;</code>
+       *
+       * @param value The bytes for canonicalServiceNamespace to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCanonicalServiceNamespaceBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        canonicalServiceNamespace_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object canonicalService_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The name of the canonical service underlying this service.
+       * Corresponds to the `destination_canonical_service_name` metric label in
+       * label in [Istio
+       * metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+       * </pre>
+       *
+       * <code>string canonical_service = 4;</code>
+       *
+       * @return The canonicalService.
+       */
+      public java.lang.String getCanonicalService() {
+        java.lang.Object ref = canonicalService_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          canonicalService_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the canonical service underlying this service.
+       * Corresponds to the `destination_canonical_service_name` metric label in
+       * label in [Istio
+       * metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+       * </pre>
+       *
+       * <code>string canonical_service = 4;</code>
+       *
+       * @return The bytes for canonicalService.
+       */
+      public com.google.protobuf.ByteString getCanonicalServiceBytes() {
+        java.lang.Object ref = canonicalService_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          canonicalService_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the canonical service underlying this service.
+       * Corresponds to the `destination_canonical_service_name` metric label in
+       * label in [Istio
+       * metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+       * </pre>
+       *
+       * <code>string canonical_service = 4;</code>
+       *
+       * @param value The canonicalService to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCanonicalService(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        canonicalService_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the canonical service underlying this service.
+       * Corresponds to the `destination_canonical_service_name` metric label in
+       * label in [Istio
+       * metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+       * </pre>
+       *
+       * <code>string canonical_service = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCanonicalService() {
+
+        canonicalService_ = getDefaultInstance().getCanonicalService();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the canonical service underlying this service.
+       * Corresponds to the `destination_canonical_service_name` metric label in
+       * label in [Istio
+       * metrics](https://cloud.google.com/monitoring/api/metrics_istio).
+       * </pre>
+       *
+       * <code>string canonical_service = 4;</code>
+       *
+       * @param value The bytes for canonicalService to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCanonicalServiceBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        canonicalService_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.monitoring.v3.Service.IstioCanonicalService)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.monitoring.v3.Service.IstioCanonicalService)
+    private static final com.google.monitoring.v3.Service.IstioCanonicalService DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.monitoring.v3.Service.IstioCanonicalService();
+    }
+
+    public static com.google.monitoring.v3.Service.IstioCanonicalService getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<IstioCanonicalService> PARSER =
+        new com.google.protobuf.AbstractParser<IstioCanonicalService>() {
+          @java.lang.Override
+          public IstioCanonicalService parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new IstioCanonicalService(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<IstioCanonicalService> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IstioCanonicalService> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.monitoring.v3.Service.IstioCanonicalService getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -5078,9 +6237,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     CUSTOM(6),
     APP_ENGINE(7),
     CLOUD_ENDPOINTS(8),
-    @java.lang.Deprecated
     CLUSTER_ISTIO(9),
     MESH_ISTIO(10),
+    ISTIO_CANONICAL_SERVICE(11),
     IDENTIFIER_NOT_SET(0);
     private final int value;
 
@@ -5109,6 +6268,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           return CLUSTER_ISTIO;
         case 10:
           return MESH_ISTIO;
+        case 11:
+          return ISTIO_CANONICAL_SERVICE;
         case 0:
           return IDENTIFIER_NOT_SET;
         default:
@@ -5386,12 +6547,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * Type used for Istio services that live in a Kubernetes cluster.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9 [deprecated = true];</code>
+   * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
    *
    * @return Whether the clusterIstio field is set.
    */
   @java.lang.Override
-  @java.lang.Deprecated
   public boolean hasClusterIstio() {
     return identifierCase_ == 9;
   }
@@ -5402,12 +6562,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * Type used for Istio services that live in a Kubernetes cluster.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9 [deprecated = true];</code>
+   * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
    *
    * @return The clusterIstio.
    */
   @java.lang.Override
-  @java.lang.Deprecated
   public com.google.monitoring.v3.Service.ClusterIstio getClusterIstio() {
     if (identifierCase_ == 9) {
       return (com.google.monitoring.v3.Service.ClusterIstio) identifier_;
@@ -5421,10 +6580,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * Type used for Istio services that live in a Kubernetes cluster.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9 [deprecated = true];</code>
+   * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
    */
   @java.lang.Override
-  @java.lang.Deprecated
   public com.google.monitoring.v3.Service.ClusterIstioOrBuilder getClusterIstioOrBuilder() {
     if (identifierCase_ == 9) {
       return (com.google.monitoring.v3.Service.ClusterIstio) identifier_;
@@ -5481,6 +6639,64 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       return (com.google.monitoring.v3.Service.MeshIstio) identifier_;
     }
     return com.google.monitoring.v3.Service.MeshIstio.getDefaultInstance();
+  }
+
+  public static final int ISTIO_CANONICAL_SERVICE_FIELD_NUMBER = 11;
+  /**
+   *
+   *
+   * <pre>
+   * Type used for canonical services scoped to an Istio mesh.
+   * Metrics for Istio are
+   * [documented here](https://istio.io/latest/docs/reference/config/metrics/)
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.IstioCanonicalService istio_canonical_service = 11;</code>
+   *
+   * @return Whether the istioCanonicalService field is set.
+   */
+  @java.lang.Override
+  public boolean hasIstioCanonicalService() {
+    return identifierCase_ == 11;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Type used for canonical services scoped to an Istio mesh.
+   * Metrics for Istio are
+   * [documented here](https://istio.io/latest/docs/reference/config/metrics/)
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.IstioCanonicalService istio_canonical_service = 11;</code>
+   *
+   * @return The istioCanonicalService.
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.Service.IstioCanonicalService getIstioCanonicalService() {
+    if (identifierCase_ == 11) {
+      return (com.google.monitoring.v3.Service.IstioCanonicalService) identifier_;
+    }
+    return com.google.monitoring.v3.Service.IstioCanonicalService.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Type used for canonical services scoped to an Istio mesh.
+   * Metrics for Istio are
+   * [documented here](https://istio.io/latest/docs/reference/config/metrics/)
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.IstioCanonicalService istio_canonical_service = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.Service.IstioCanonicalServiceOrBuilder
+      getIstioCanonicalServiceOrBuilder() {
+    if (identifierCase_ == 11) {
+      return (com.google.monitoring.v3.Service.IstioCanonicalService) identifier_;
+    }
+    return com.google.monitoring.v3.Service.IstioCanonicalService.getDefaultInstance();
   }
 
   public static final int TELEMETRY_FIELD_NUMBER = 13;
@@ -5566,6 +6782,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (identifierCase_ == 10) {
       output.writeMessage(10, (com.google.monitoring.v3.Service.MeshIstio) identifier_);
     }
+    if (identifierCase_ == 11) {
+      output.writeMessage(11, (com.google.monitoring.v3.Service.IstioCanonicalService) identifier_);
+    }
     if (telemetry_ != null) {
       output.writeMessage(13, getTelemetry());
     }
@@ -5609,6 +6828,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, (com.google.monitoring.v3.Service.MeshIstio) identifier_);
     }
+    if (identifierCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, (com.google.monitoring.v3.Service.IstioCanonicalService) identifier_);
+    }
     if (telemetry_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getTelemetry());
     }
@@ -5649,6 +6873,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         break;
       case 10:
         if (!getMeshIstio().equals(other.getMeshIstio())) return false;
+        break;
+      case 11:
+        if (!getIstioCanonicalService().equals(other.getIstioCanonicalService())) return false;
         break;
       case 0:
       default:
@@ -5692,6 +6919,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       case 10:
         hash = (37 * hash) + MESH_ISTIO_FIELD_NUMBER;
         hash = (53 * hash) + getMeshIstio().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + ISTIO_CANONICAL_SERVICE_FIELD_NUMBER;
+        hash = (53 * hash) + getIstioCanonicalService().hashCode();
         break;
       case 0:
       default:
@@ -5919,6 +7150,13 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           result.identifier_ = meshIstioBuilder_.build();
         }
       }
+      if (identifierCase_ == 11) {
+        if (istioCanonicalServiceBuilder_ == null) {
+          result.identifier_ = identifier_;
+        } else {
+          result.identifier_ = istioCanonicalServiceBuilder_.build();
+        }
+      }
       if (telemetryBuilder_ == null) {
         result.telemetry_ = telemetry_;
       } else {
@@ -6009,6 +7247,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         case MESH_ISTIO:
           {
             mergeMeshIstio(other.getMeshIstio());
+            break;
+          }
+        case ISTIO_CANONICAL_SERVICE:
+          {
+            mergeIstioCanonicalService(other.getIstioCanonicalService());
             break;
           }
         case IDENTIFIER_NOT_SET:
@@ -6915,13 +8158,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Type used for Istio services that live in a Kubernetes cluster.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9 [deprecated = true];
-     * </code>
+     * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
      *
      * @return Whether the clusterIstio field is set.
      */
     @java.lang.Override
-    @java.lang.Deprecated
     public boolean hasClusterIstio() {
       return identifierCase_ == 9;
     }
@@ -6932,13 +8173,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Type used for Istio services that live in a Kubernetes cluster.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9 [deprecated = true];
-     * </code>
+     * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
      *
      * @return The clusterIstio.
      */
     @java.lang.Override
-    @java.lang.Deprecated
     public com.google.monitoring.v3.Service.ClusterIstio getClusterIstio() {
       if (clusterIstioBuilder_ == null) {
         if (identifierCase_ == 9) {
@@ -6959,10 +8198,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Type used for Istio services that live in a Kubernetes cluster.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9 [deprecated = true];
-     * </code>
+     * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
      */
-    @java.lang.Deprecated
     public Builder setClusterIstio(com.google.monitoring.v3.Service.ClusterIstio value) {
       if (clusterIstioBuilder_ == null) {
         if (value == null) {
@@ -6983,10 +8220,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Type used for Istio services that live in a Kubernetes cluster.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9 [deprecated = true];
-     * </code>
+     * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
      */
-    @java.lang.Deprecated
     public Builder setClusterIstio(
         com.google.monitoring.v3.Service.ClusterIstio.Builder builderForValue) {
       if (clusterIstioBuilder_ == null) {
@@ -7005,10 +8240,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Type used for Istio services that live in a Kubernetes cluster.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9 [deprecated = true];
-     * </code>
+     * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
      */
-    @java.lang.Deprecated
     public Builder mergeClusterIstio(com.google.monitoring.v3.Service.ClusterIstio value) {
       if (clusterIstioBuilder_ == null) {
         if (identifierCase_ == 9
@@ -7038,10 +8271,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Type used for Istio services that live in a Kubernetes cluster.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9 [deprecated = true];
-     * </code>
+     * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
      */
-    @java.lang.Deprecated
     public Builder clearClusterIstio() {
       if (clusterIstioBuilder_ == null) {
         if (identifierCase_ == 9) {
@@ -7065,10 +8296,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Type used for Istio services that live in a Kubernetes cluster.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9 [deprecated = true];
-     * </code>
+     * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
      */
-    @java.lang.Deprecated
     public com.google.monitoring.v3.Service.ClusterIstio.Builder getClusterIstioBuilder() {
       return getClusterIstioFieldBuilder().getBuilder();
     }
@@ -7079,11 +8308,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Type used for Istio services that live in a Kubernetes cluster.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9 [deprecated = true];
-     * </code>
+     * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
      */
     @java.lang.Override
-    @java.lang.Deprecated
     public com.google.monitoring.v3.Service.ClusterIstioOrBuilder getClusterIstioOrBuilder() {
       if ((identifierCase_ == 9) && (clusterIstioBuilder_ != null)) {
         return clusterIstioBuilder_.getMessageOrBuilder();
@@ -7101,8 +8328,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Type used for Istio services that live in a Kubernetes cluster.
      * </pre>
      *
-     * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9 [deprecated = true];
-     * </code>
+     * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.v3.Service.ClusterIstio,
@@ -7336,6 +8562,247 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return meshIstioBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.v3.Service.IstioCanonicalService,
+            com.google.monitoring.v3.Service.IstioCanonicalService.Builder,
+            com.google.monitoring.v3.Service.IstioCanonicalServiceOrBuilder>
+        istioCanonicalServiceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Type used for canonical services scoped to an Istio mesh.
+     * Metrics for Istio are
+     * [documented here](https://istio.io/latest/docs/reference/config/metrics/)
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.IstioCanonicalService istio_canonical_service = 11;
+     * </code>
+     *
+     * @return Whether the istioCanonicalService field is set.
+     */
+    @java.lang.Override
+    public boolean hasIstioCanonicalService() {
+      return identifierCase_ == 11;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for canonical services scoped to an Istio mesh.
+     * Metrics for Istio are
+     * [documented here](https://istio.io/latest/docs/reference/config/metrics/)
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.IstioCanonicalService istio_canonical_service = 11;
+     * </code>
+     *
+     * @return The istioCanonicalService.
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.Service.IstioCanonicalService getIstioCanonicalService() {
+      if (istioCanonicalServiceBuilder_ == null) {
+        if (identifierCase_ == 11) {
+          return (com.google.monitoring.v3.Service.IstioCanonicalService) identifier_;
+        }
+        return com.google.monitoring.v3.Service.IstioCanonicalService.getDefaultInstance();
+      } else {
+        if (identifierCase_ == 11) {
+          return istioCanonicalServiceBuilder_.getMessage();
+        }
+        return com.google.monitoring.v3.Service.IstioCanonicalService.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for canonical services scoped to an Istio mesh.
+     * Metrics for Istio are
+     * [documented here](https://istio.io/latest/docs/reference/config/metrics/)
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.IstioCanonicalService istio_canonical_service = 11;
+     * </code>
+     */
+    public Builder setIstioCanonicalService(
+        com.google.monitoring.v3.Service.IstioCanonicalService value) {
+      if (istioCanonicalServiceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        identifier_ = value;
+        onChanged();
+      } else {
+        istioCanonicalServiceBuilder_.setMessage(value);
+      }
+      identifierCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for canonical services scoped to an Istio mesh.
+     * Metrics for Istio are
+     * [documented here](https://istio.io/latest/docs/reference/config/metrics/)
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.IstioCanonicalService istio_canonical_service = 11;
+     * </code>
+     */
+    public Builder setIstioCanonicalService(
+        com.google.monitoring.v3.Service.IstioCanonicalService.Builder builderForValue) {
+      if (istioCanonicalServiceBuilder_ == null) {
+        identifier_ = builderForValue.build();
+        onChanged();
+      } else {
+        istioCanonicalServiceBuilder_.setMessage(builderForValue.build());
+      }
+      identifierCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for canonical services scoped to an Istio mesh.
+     * Metrics for Istio are
+     * [documented here](https://istio.io/latest/docs/reference/config/metrics/)
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.IstioCanonicalService istio_canonical_service = 11;
+     * </code>
+     */
+    public Builder mergeIstioCanonicalService(
+        com.google.monitoring.v3.Service.IstioCanonicalService value) {
+      if (istioCanonicalServiceBuilder_ == null) {
+        if (identifierCase_ == 11
+            && identifier_
+                != com.google.monitoring.v3.Service.IstioCanonicalService.getDefaultInstance()) {
+          identifier_ =
+              com.google.monitoring.v3.Service.IstioCanonicalService.newBuilder(
+                      (com.google.monitoring.v3.Service.IstioCanonicalService) identifier_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          identifier_ = value;
+        }
+        onChanged();
+      } else {
+        if (identifierCase_ == 11) {
+          istioCanonicalServiceBuilder_.mergeFrom(value);
+        }
+        istioCanonicalServiceBuilder_.setMessage(value);
+      }
+      identifierCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for canonical services scoped to an Istio mesh.
+     * Metrics for Istio are
+     * [documented here](https://istio.io/latest/docs/reference/config/metrics/)
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.IstioCanonicalService istio_canonical_service = 11;
+     * </code>
+     */
+    public Builder clearIstioCanonicalService() {
+      if (istioCanonicalServiceBuilder_ == null) {
+        if (identifierCase_ == 11) {
+          identifierCase_ = 0;
+          identifier_ = null;
+          onChanged();
+        }
+      } else {
+        if (identifierCase_ == 11) {
+          identifierCase_ = 0;
+          identifier_ = null;
+        }
+        istioCanonicalServiceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for canonical services scoped to an Istio mesh.
+     * Metrics for Istio are
+     * [documented here](https://istio.io/latest/docs/reference/config/metrics/)
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.IstioCanonicalService istio_canonical_service = 11;
+     * </code>
+     */
+    public com.google.monitoring.v3.Service.IstioCanonicalService.Builder
+        getIstioCanonicalServiceBuilder() {
+      return getIstioCanonicalServiceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for canonical services scoped to an Istio mesh.
+     * Metrics for Istio are
+     * [documented here](https://istio.io/latest/docs/reference/config/metrics/)
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.IstioCanonicalService istio_canonical_service = 11;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.Service.IstioCanonicalServiceOrBuilder
+        getIstioCanonicalServiceOrBuilder() {
+      if ((identifierCase_ == 11) && (istioCanonicalServiceBuilder_ != null)) {
+        return istioCanonicalServiceBuilder_.getMessageOrBuilder();
+      } else {
+        if (identifierCase_ == 11) {
+          return (com.google.monitoring.v3.Service.IstioCanonicalService) identifier_;
+        }
+        return com.google.monitoring.v3.Service.IstioCanonicalService.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type used for canonical services scoped to an Istio mesh.
+     * Metrics for Istio are
+     * [documented here](https://istio.io/latest/docs/reference/config/metrics/)
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Service.IstioCanonicalService istio_canonical_service = 11;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.v3.Service.IstioCanonicalService,
+            com.google.monitoring.v3.Service.IstioCanonicalService.Builder,
+            com.google.monitoring.v3.Service.IstioCanonicalServiceOrBuilder>
+        getIstioCanonicalServiceFieldBuilder() {
+      if (istioCanonicalServiceBuilder_ == null) {
+        if (!(identifierCase_ == 11)) {
+          identifier_ = com.google.monitoring.v3.Service.IstioCanonicalService.getDefaultInstance();
+        }
+        istioCanonicalServiceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.Service.IstioCanonicalService,
+                com.google.monitoring.v3.Service.IstioCanonicalService.Builder,
+                com.google.monitoring.v3.Service.IstioCanonicalServiceOrBuilder>(
+                (com.google.monitoring.v3.Service.IstioCanonicalService) identifier_,
+                getParentForChildren(),
+                isClean());
+        identifier_ = null;
+      }
+      identifierCase_ = 11;
+      onChanged();
+      ;
+      return istioCanonicalServiceBuilder_;
     }
 
     private com.google.monitoring.v3.Service.Telemetry telemetry_;

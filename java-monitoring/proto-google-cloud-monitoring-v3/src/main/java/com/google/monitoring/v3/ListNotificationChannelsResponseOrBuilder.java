@@ -105,4 +105,18 @@ public interface ListNotificationChannelsResponseOrBuilder
    * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString getNextPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The total number of notification channels in all pages. This number is only
+   * an estimate, and may change in subsequent pages. https://aip.dev/158
+   * </pre>
+   *
+   * <code>int32 total_size = 4;</code>
+   *
+   * @return The totalSize.
+   */
+  int getTotalSize();
 }

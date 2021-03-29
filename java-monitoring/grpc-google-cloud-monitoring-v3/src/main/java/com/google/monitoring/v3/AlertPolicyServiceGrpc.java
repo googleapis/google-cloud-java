@@ -326,7 +326,7 @@ public final class AlertPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Lists the existing alerting policies for the project.
+     * Lists the existing alerting policies for the workspace.
      * </pre>
      */
     public void listAlertPolicies(
@@ -465,7 +465,7 @@ public final class AlertPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Lists the existing alerting policies for the project.
+     * Lists the existing alerting policies for the workspace.
      * </pre>
      */
     public void listAlertPolicies(
@@ -578,7 +578,7 @@ public final class AlertPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Lists the existing alerting policies for the project.
+     * Lists the existing alerting policies for the workspace.
      * </pre>
      */
     public com.google.monitoring.v3.ListAlertPoliciesResponse listAlertPolicies(
@@ -674,7 +674,7 @@ public final class AlertPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Lists the existing alerting policies for the project.
+     * Lists the existing alerting policies for the workspace.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

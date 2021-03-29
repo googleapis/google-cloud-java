@@ -66,15 +66,19 @@ public interface ListServicesRequestOrBuilder
    * supports the following fields:
    *     - `identifier_case`
    *     - `app_engine.module_id`
-   *     - `cloud_endpoints.service`
-   *     - `cluster_istio.location`
-   *     - `cluster_istio.cluster_name`
-   *     - `cluster_istio.service_namespace`
-   *     - `cluster_istio.service_name`
+   *     - `cloud_endpoints.service` (reserved for future use)
+   *     - `mesh_istio.mesh_uid`
+   *     - `mesh_istio.service_namespace`
+   *     - `mesh_istio.service_name`
+   *     - `cluster_istio.location` (deprecated)
+   *     - `cluster_istio.cluster_name` (deprecated)
+   *     - `cluster_istio.service_namespace` (deprecated)
+   *     - `cluster_istio.service_name` (deprecated)
    * `identifier_case` refers to which option in the identifier oneof is
    * populated. For example, the filter `identifier_case = "CUSTOM"` would match
    * all services with a value for the `custom` field. Valid options are
-   * "CUSTOM", "APP_ENGINE", "CLOUD_ENDPOINTS", and "CLUSTER_ISTIO".
+   * "CUSTOM", "APP_ENGINE", "MESH_ISTIO", plus "CLUSTER_ISTIO" (deprecated)
+   * and "CLOUD_ENDPOINTS" (reserved for future use).
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -90,15 +94,19 @@ public interface ListServicesRequestOrBuilder
    * supports the following fields:
    *     - `identifier_case`
    *     - `app_engine.module_id`
-   *     - `cloud_endpoints.service`
-   *     - `cluster_istio.location`
-   *     - `cluster_istio.cluster_name`
-   *     - `cluster_istio.service_namespace`
-   *     - `cluster_istio.service_name`
+   *     - `cloud_endpoints.service` (reserved for future use)
+   *     - `mesh_istio.mesh_uid`
+   *     - `mesh_istio.service_namespace`
+   *     - `mesh_istio.service_name`
+   *     - `cluster_istio.location` (deprecated)
+   *     - `cluster_istio.cluster_name` (deprecated)
+   *     - `cluster_istio.service_namespace` (deprecated)
+   *     - `cluster_istio.service_name` (deprecated)
    * `identifier_case` refers to which option in the identifier oneof is
    * populated. For example, the filter `identifier_case = "CUSTOM"` would match
    * all services with a value for the `custom` field. Valid options are
-   * "CUSTOM", "APP_ENGINE", "CLOUD_ENDPOINTS", and "CLUSTER_ISTIO".
+   * "CUSTOM", "APP_ENGINE", "MESH_ISTIO", plus "CLUSTER_ISTIO" (deprecated)
+   * and "CLOUD_ENDPOINTS" (reserved for future use).
    * </pre>
    *
    * <code>string filter = 2;</code>

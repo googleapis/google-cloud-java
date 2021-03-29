@@ -940,7 +940,7 @@ public class MetricServiceClientTest {
             .build();
     mockMetricService.addResponse(expectedResponse);
 
-    ProjectName name = ProjectName.of("[PROJECT]");
+    FolderName name = FolderName.of("[FOLDER]");
     String filter = "filter-1274492040";
     TimeInterval interval = TimeInterval.newBuilder().build();
     ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.forNumber(0);
@@ -973,7 +973,7 @@ public class MetricServiceClientTest {
     mockMetricService.addException(exception);
 
     try {
-      ProjectName name = ProjectName.of("[PROJECT]");
+      FolderName name = FolderName.of("[FOLDER]");
       String filter = "filter-1274492040";
       TimeInterval interval = TimeInterval.newBuilder().build();
       ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.forNumber(0);
@@ -986,6 +986,114 @@ public class MetricServiceClientTest {
 
   @Test
   public void listTimeSeriesTest2() throws Exception {
+    TimeSeries responsesElement = TimeSeries.newBuilder().build();
+    ListTimeSeriesResponse expectedResponse =
+        ListTimeSeriesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTimeSeries(Arrays.asList(responsesElement))
+            .build();
+    mockMetricService.addResponse(expectedResponse);
+
+    OrganizationName name = OrganizationName.of("[ORGANIZATION]");
+    String filter = "filter-1274492040";
+    TimeInterval interval = TimeInterval.newBuilder().build();
+    ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.forNumber(0);
+
+    ListTimeSeriesPagedResponse pagedListResponse =
+        client.listTimeSeries(name, filter, interval, view);
+
+    List<TimeSeries> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTimeSeriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockMetricService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListTimeSeriesRequest actualRequest = ((ListTimeSeriesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertEquals(interval, actualRequest.getInterval());
+    Assert.assertEquals(view, actualRequest.getView());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listTimeSeriesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetricService.addException(exception);
+
+    try {
+      OrganizationName name = OrganizationName.of("[ORGANIZATION]");
+      String filter = "filter-1274492040";
+      TimeInterval interval = TimeInterval.newBuilder().build();
+      ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.forNumber(0);
+      client.listTimeSeries(name, filter, interval, view);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listTimeSeriesTest3() throws Exception {
+    TimeSeries responsesElement = TimeSeries.newBuilder().build();
+    ListTimeSeriesResponse expectedResponse =
+        ListTimeSeriesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTimeSeries(Arrays.asList(responsesElement))
+            .build();
+    mockMetricService.addResponse(expectedResponse);
+
+    ProjectName name = ProjectName.of("[PROJECT]");
+    String filter = "filter-1274492040";
+    TimeInterval interval = TimeInterval.newBuilder().build();
+    ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.forNumber(0);
+
+    ListTimeSeriesPagedResponse pagedListResponse =
+        client.listTimeSeries(name, filter, interval, view);
+
+    List<TimeSeries> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTimeSeriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockMetricService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListTimeSeriesRequest actualRequest = ((ListTimeSeriesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertEquals(interval, actualRequest.getInterval());
+    Assert.assertEquals(view, actualRequest.getView());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listTimeSeriesExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetricService.addException(exception);
+
+    try {
+      ProjectName name = ProjectName.of("[PROJECT]");
+      String filter = "filter-1274492040";
+      TimeInterval interval = TimeInterval.newBuilder().build();
+      ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.forNumber(0);
+      client.listTimeSeries(name, filter, interval, view);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listTimeSeriesTest4() throws Exception {
     TimeSeries responsesElement = TimeSeries.newBuilder().build();
     ListTimeSeriesResponse expectedResponse =
         ListTimeSeriesResponse.newBuilder()
@@ -1022,7 +1130,7 @@ public class MetricServiceClientTest {
   }
 
   @Test
-  public void listTimeSeriesExceptionTest2() throws Exception {
+  public void listTimeSeriesExceptionTest4() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockMetricService.addException(exception);
 

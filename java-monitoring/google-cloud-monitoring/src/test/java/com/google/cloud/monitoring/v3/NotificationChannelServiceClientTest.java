@@ -40,6 +40,7 @@ import com.google.monitoring.v3.ListNotificationChannelDescriptorsRequest;
 import com.google.monitoring.v3.ListNotificationChannelDescriptorsResponse;
 import com.google.monitoring.v3.ListNotificationChannelsRequest;
 import com.google.monitoring.v3.ListNotificationChannelsResponse;
+import com.google.monitoring.v3.MutationRecord;
 import com.google.monitoring.v3.NotificationChannel;
 import com.google.monitoring.v3.NotificationChannelDescriptor;
 import com.google.monitoring.v3.NotificationChannelDescriptorName;
@@ -595,6 +596,8 @@ public class NotificationChannelServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .putAllUserLabels(new HashMap<String, String>())
             .setEnabled(BoolValue.newBuilder().build())
+            .setCreationRecord(MutationRecord.newBuilder().build())
+            .addAllMutationRecords(new ArrayList<MutationRecord>())
             .build();
     mockNotificationChannelService.addResponse(expectedResponse);
 
@@ -647,6 +650,8 @@ public class NotificationChannelServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .putAllUserLabels(new HashMap<String, String>())
             .setEnabled(BoolValue.newBuilder().build())
+            .setCreationRecord(MutationRecord.newBuilder().build())
+            .addAllMutationRecords(new ArrayList<MutationRecord>())
             .build();
     mockNotificationChannelService.addResponse(expectedResponse);
 
@@ -695,6 +700,8 @@ public class NotificationChannelServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .putAllUserLabels(new HashMap<String, String>())
             .setEnabled(BoolValue.newBuilder().build())
+            .setCreationRecord(MutationRecord.newBuilder().build())
+            .addAllMutationRecords(new ArrayList<MutationRecord>())
             .build();
     mockNotificationChannelService.addResponse(expectedResponse);
 
@@ -747,6 +754,8 @@ public class NotificationChannelServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .putAllUserLabels(new HashMap<String, String>())
             .setEnabled(BoolValue.newBuilder().build())
+            .setCreationRecord(MutationRecord.newBuilder().build())
+            .addAllMutationRecords(new ArrayList<MutationRecord>())
             .build();
     mockNotificationChannelService.addResponse(expectedResponse);
 
@@ -799,6 +808,8 @@ public class NotificationChannelServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .putAllUserLabels(new HashMap<String, String>())
             .setEnabled(BoolValue.newBuilder().build())
+            .setCreationRecord(MutationRecord.newBuilder().build())
+            .addAllMutationRecords(new ArrayList<MutationRecord>())
             .build();
     mockNotificationChannelService.addResponse(expectedResponse);
 
@@ -851,6 +862,8 @@ public class NotificationChannelServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .putAllUserLabels(new HashMap<String, String>())
             .setEnabled(BoolValue.newBuilder().build())
+            .setCreationRecord(MutationRecord.newBuilder().build())
+            .addAllMutationRecords(new ArrayList<MutationRecord>())
             .build();
     mockNotificationChannelService.addResponse(expectedResponse);
 
@@ -903,6 +916,8 @@ public class NotificationChannelServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .putAllUserLabels(new HashMap<String, String>())
             .setEnabled(BoolValue.newBuilder().build())
+            .setCreationRecord(MutationRecord.newBuilder().build())
+            .addAllMutationRecords(new ArrayList<MutationRecord>())
             .build();
     mockNotificationChannelService.addResponse(expectedResponse);
 
@@ -1195,6 +1210,8 @@ public class NotificationChannelServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .putAllUserLabels(new HashMap<String, String>())
             .setEnabled(BoolValue.newBuilder().build())
+            .setCreationRecord(MutationRecord.newBuilder().build())
+            .addAllMutationRecords(new ArrayList<MutationRecord>())
             .build();
     mockNotificationChannelService.addResponse(expectedResponse);
 
@@ -1250,6 +1267,8 @@ public class NotificationChannelServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .putAllUserLabels(new HashMap<String, String>())
             .setEnabled(BoolValue.newBuilder().build())
+            .setCreationRecord(MutationRecord.newBuilder().build())
+            .addAllMutationRecords(new ArrayList<MutationRecord>())
             .build();
     mockNotificationChannelService.addResponse(expectedResponse);
 

@@ -159,4 +159,39 @@ public interface ListTimeSeriesResponseOrBuilder
    * <code>repeated .google.rpc.Status execution_errors = 3;</code>
    */
   com.google.rpc.StatusOrBuilder getExecutionErrorsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The unit in which all `time_series` point values are reported. `unit`
+   * follows the UCUM format for units as seen in
+   * https://unitsofmeasure.org/ucum.html.
+   * If different `time_series` have different units (for example, because they
+   * come from different metric types, or a unit is absent), then `unit` will be
+   * "{not_a_unit}".
+   * </pre>
+   *
+   * <code>string unit = 5;</code>
+   *
+   * @return The unit.
+   */
+  java.lang.String getUnit();
+  /**
+   *
+   *
+   * <pre>
+   * The unit in which all `time_series` point values are reported. `unit`
+   * follows the UCUM format for units as seen in
+   * https://unitsofmeasure.org/ucum.html.
+   * If different `time_series` have different units (for example, because they
+   * come from different metric types, or a unit is absent), then `unit` will be
+   * "{not_a_unit}".
+   * </pre>
+   *
+   * <code>string unit = 5;</code>
+   *
+   * @return The bytes for unit.
+   */
+  com.google.protobuf.ByteString getUnitBytes();
 }

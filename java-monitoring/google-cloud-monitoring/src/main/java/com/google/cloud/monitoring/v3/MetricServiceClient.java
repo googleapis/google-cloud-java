@@ -1144,6 +1144,102 @@ public class MetricServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ResourceName name = ResourceName.of("[FOLDER]");
+   *   String filter = "filter-1274492040";
+   *   TimeInterval interval = TimeInterval.newBuilder().build();
+   *   ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.forNumber(0);
+   *   for (TimeSeries element :
+   *       metricServiceClient.listTimeSeries(name, filter, interval, view).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The project, organization or folder on which to execute the request. The
+   *     format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER] organizations/[ORGANIZATION_ID] folders/[FOLDER_ID]
+   * @param filter Required. A [monitoring
+   *     filter](https://cloud.google.com/monitoring/api/v3/filters) that specifies which time
+   *     series should be returned. The filter must specify a single metric type, and can
+   *     additionally specify metric labels and other information. For example:
+   *     <p>metric.type = "compute.googleapis.com/instance/cpu/usage_time" AND
+   *     metric.labels.instance_name = "my-instance-name"
+   * @param interval Required. The time interval for which results should be returned. Only time
+   *     series that contain data points in the specified interval are included in the response.
+   * @param view Required. Specifies which information is returned about the time series.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTimeSeriesPagedResponse listTimeSeries(
+      ResourceName name,
+      String filter,
+      TimeInterval interval,
+      ListTimeSeriesRequest.TimeSeriesView view) {
+    ListTimeSeriesRequest request =
+        ListTimeSeriesRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setFilter(filter)
+            .setInterval(interval)
+            .setView(view)
+            .build();
+    return listTimeSeries(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists time series that match a filter. This method does not require a Workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   OrganizationName name = OrganizationName.of("[ORGANIZATION]");
+   *   String filter = "filter-1274492040";
+   *   TimeInterval interval = TimeInterval.newBuilder().build();
+   *   ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.forNumber(0);
+   *   for (TimeSeries element :
+   *       metricServiceClient.listTimeSeries(name, filter, interval, view).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The project, organization or folder on which to execute the request. The
+   *     format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER] organizations/[ORGANIZATION_ID] folders/[FOLDER_ID]
+   * @param filter Required. A [monitoring
+   *     filter](https://cloud.google.com/monitoring/api/v3/filters) that specifies which time
+   *     series should be returned. The filter must specify a single metric type, and can
+   *     additionally specify metric labels and other information. For example:
+   *     <p>metric.type = "compute.googleapis.com/instance/cpu/usage_time" AND
+   *     metric.labels.instance_name = "my-instance-name"
+   * @param interval Required. The time interval for which results should be returned. Only time
+   *     series that contain data points in the specified interval are included in the response.
+   * @param view Required. Specifies which information is returned about the time series.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTimeSeriesPagedResponse listTimeSeries(
+      OrganizationName name,
+      String filter,
+      TimeInterval interval,
+      ListTimeSeriesRequest.TimeSeriesView view) {
+    ListTimeSeriesRequest request =
+        ListTimeSeriesRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setFilter(filter)
+            .setInterval(interval)
+            .setView(view)
+            .build();
+    return listTimeSeries(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists time series that match a filter. This method does not require a Workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   String filter = "filter-1274492040";
    *   TimeInterval interval = TimeInterval.newBuilder().build();
@@ -1155,8 +1251,9 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]
+   * @param name Required. The project, organization or folder on which to execute the request. The
+   *     format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER] organizations/[ORGANIZATION_ID] folders/[FOLDER_ID]
    * @param filter Required. A [monitoring
    *     filter](https://cloud.google.com/monitoring/api/v3/filters) that specifies which time
    *     series should be returned. The filter must specify a single metric type, and can
@@ -1191,7 +1288,7 @@ public class MetricServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String name = ProjectName.of("[PROJECT]").toString();
+   *   String name = TimeSeriesName.ofProjectTimeSeriesName("[PROJECT]", "[TIME_SERIES]").toString();
    *   String filter = "filter-1274492040";
    *   TimeInterval interval = TimeInterval.newBuilder().build();
    *   ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.forNumber(0);
@@ -1202,8 +1299,9 @@ public class MetricServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The project on which to execute the request. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]
+   * @param name Required. The project, organization or folder on which to execute the request. The
+   *     format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER] organizations/[ORGANIZATION_ID] folders/[FOLDER_ID]
    * @param filter Required. A [monitoring
    *     filter](https://cloud.google.com/monitoring/api/v3/filters) that specifies which time
    *     series should be returned. The filter must specify a single metric type, and can
@@ -1240,10 +1338,12 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ListTimeSeriesRequest request =
    *       ListTimeSeriesRequest.newBuilder()
-   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .setName(
+   *               TimeSeriesName.ofProjectTimeSeriesName("[PROJECT]", "[TIME_SERIES]").toString())
    *           .setFilter("filter-1274492040")
    *           .setInterval(TimeInterval.newBuilder().build())
    *           .setAggregation(Aggregation.newBuilder().build())
+   *           .setSecondaryAggregation(Aggregation.newBuilder().build())
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1271,10 +1371,12 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ListTimeSeriesRequest request =
    *       ListTimeSeriesRequest.newBuilder()
-   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .setName(
+   *               TimeSeriesName.ofProjectTimeSeriesName("[PROJECT]", "[TIME_SERIES]").toString())
    *           .setFilter("filter-1274492040")
    *           .setInterval(TimeInterval.newBuilder().build())
    *           .setAggregation(Aggregation.newBuilder().build())
+   *           .setSecondaryAggregation(Aggregation.newBuilder().build())
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1303,10 +1405,12 @@ public class MetricServiceClient implements BackgroundResource {
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
    *   ListTimeSeriesRequest request =
    *       ListTimeSeriesRequest.newBuilder()
-   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .setName(
+   *               TimeSeriesName.ofProjectTimeSeriesName("[PROJECT]", "[TIME_SERIES]").toString())
    *           .setFilter("filter-1274492040")
    *           .setInterval(TimeInterval.newBuilder().build())
    *           .setAggregation(Aggregation.newBuilder().build())
+   *           .setSecondaryAggregation(Aggregation.newBuilder().build())
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")

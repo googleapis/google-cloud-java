@@ -22,7 +22,7 @@ package com.google.monitoring.v3;
  *
  *
  * <pre>
- * A descriptor for the labels and points in a timeseries.
+ * A descriptor for the labels and points in a time series.
  * </pre>
  *
  * Protobuf type {@code google.monitoring.v3.TimeSeriesDescriptor}
@@ -215,6 +215,37 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
      * @return The metricKind.
      */
     com.google.api.MetricDescriptor.MetricKind getMetricKind();
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit in which `time_series` point values are reported. `unit`
+     * follows the UCUM format for units as seen in
+     * https://unitsofmeasure.org/ucum.html.
+     * `unit` is only valid if `value_type` is INTEGER, DOUBLE, DISTRIBUTION.
+     * </pre>
+     *
+     * <code>string unit = 4;</code>
+     *
+     * @return The unit.
+     */
+    java.lang.String getUnit();
+    /**
+     *
+     *
+     * <pre>
+     * The unit in which `time_series` point values are reported. `unit`
+     * follows the UCUM format for units as seen in
+     * https://unitsofmeasure.org/ucum.html.
+     * `unit` is only valid if `value_type` is INTEGER, DOUBLE, DISTRIBUTION.
+     * </pre>
+     *
+     * <code>string unit = 4;</code>
+     *
+     * @return The bytes for unit.
+     */
+    com.google.protobuf.ByteString getUnitBytes();
   }
   /**
    *
@@ -239,6 +270,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       key_ = "";
       valueType_ = 0;
       metricKind_ = 0;
+      unit_ = "";
     }
 
     @java.lang.Override
@@ -289,6 +321,13 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
                 int rawValue = input.readEnum();
 
                 metricKind_ = rawValue;
+                break;
+              }
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                unit_ = s;
                 break;
               }
             default:
@@ -446,6 +485,61 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       return result == null ? com.google.api.MetricDescriptor.MetricKind.UNRECOGNIZED : result;
     }
 
+    public static final int UNIT_FIELD_NUMBER = 4;
+    private volatile java.lang.Object unit_;
+    /**
+     *
+     *
+     * <pre>
+     * The unit in which `time_series` point values are reported. `unit`
+     * follows the UCUM format for units as seen in
+     * https://unitsofmeasure.org/ucum.html.
+     * `unit` is only valid if `value_type` is INTEGER, DOUBLE, DISTRIBUTION.
+     * </pre>
+     *
+     * <code>string unit = 4;</code>
+     *
+     * @return The unit.
+     */
+    @java.lang.Override
+    public java.lang.String getUnit() {
+      java.lang.Object ref = unit_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        unit_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unit in which `time_series` point values are reported. `unit`
+     * follows the UCUM format for units as seen in
+     * https://unitsofmeasure.org/ucum.html.
+     * `unit` is only valid if `value_type` is INTEGER, DOUBLE, DISTRIBUTION.
+     * </pre>
+     *
+     * <code>string unit = 4;</code>
+     *
+     * @return The bytes for unit.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getUnitBytes() {
+      java.lang.Object ref = unit_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        unit_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -471,6 +565,9 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
           != com.google.api.MetricDescriptor.MetricKind.METRIC_KIND_UNSPECIFIED.getNumber()) {
         output.writeEnum(3, metricKind_);
       }
+      if (!getUnitBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, unit_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -491,6 +588,9 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
           != com.google.api.MetricDescriptor.MetricKind.METRIC_KIND_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, metricKind_);
       }
+      if (!getUnitBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, unit_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -510,6 +610,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       if (!getKey().equals(other.getKey())) return false;
       if (valueType_ != other.valueType_) return false;
       if (metricKind_ != other.metricKind_) return false;
+      if (!getUnit().equals(other.getUnit())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -527,6 +628,8 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       hash = (53 * hash) + valueType_;
       hash = (37 * hash) + METRIC_KIND_FIELD_NUMBER;
       hash = (53 * hash) + metricKind_;
+      hash = (37 * hash) + UNIT_FIELD_NUMBER;
+      hash = (53 * hash) + getUnit().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -681,6 +784,8 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
 
         metricKind_ = 0;
 
+        unit_ = "";
+
         return this;
       }
 
@@ -712,6 +817,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         result.key_ = key_;
         result.valueType_ = valueType_;
         result.metricKind_ = metricKind_;
+        result.unit_ = unit_;
         onBuilt();
         return result;
       }
@@ -775,6 +881,10 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         }
         if (other.metricKind_ != 0) {
           setMetricKindValue(other.getMetricKindValue());
+        }
+        if (!other.getUnit().isEmpty()) {
+          unit_ = other.unit_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1091,6 +1201,127 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       public Builder clearMetricKind() {
 
         metricKind_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object unit_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The unit in which `time_series` point values are reported. `unit`
+       * follows the UCUM format for units as seen in
+       * https://unitsofmeasure.org/ucum.html.
+       * `unit` is only valid if `value_type` is INTEGER, DOUBLE, DISTRIBUTION.
+       * </pre>
+       *
+       * <code>string unit = 4;</code>
+       *
+       * @return The unit.
+       */
+      public java.lang.String getUnit() {
+        java.lang.Object ref = unit_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          unit_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The unit in which `time_series` point values are reported. `unit`
+       * follows the UCUM format for units as seen in
+       * https://unitsofmeasure.org/ucum.html.
+       * `unit` is only valid if `value_type` is INTEGER, DOUBLE, DISTRIBUTION.
+       * </pre>
+       *
+       * <code>string unit = 4;</code>
+       *
+       * @return The bytes for unit.
+       */
+      public com.google.protobuf.ByteString getUnitBytes() {
+        java.lang.Object ref = unit_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          unit_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The unit in which `time_series` point values are reported. `unit`
+       * follows the UCUM format for units as seen in
+       * https://unitsofmeasure.org/ucum.html.
+       * `unit` is only valid if `value_type` is INTEGER, DOUBLE, DISTRIBUTION.
+       * </pre>
+       *
+       * <code>string unit = 4;</code>
+       *
+       * @param value The unit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnit(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        unit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The unit in which `time_series` point values are reported. `unit`
+       * follows the UCUM format for units as seen in
+       * https://unitsofmeasure.org/ucum.html.
+       * `unit` is only valid if `value_type` is INTEGER, DOUBLE, DISTRIBUTION.
+       * </pre>
+       *
+       * <code>string unit = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUnit() {
+
+        unit_ = getDefaultInstance().getUnit();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The unit in which `time_series` point values are reported. `unit`
+       * follows the UCUM format for units as seen in
+       * https://unitsofmeasure.org/ucum.html.
+       * `unit` is only valid if `value_type` is INTEGER, DOUBLE, DISTRIBUTION.
+       * </pre>
+       *
+       * <code>string unit = 4;</code>
+       *
+       * @param value The bytes for unit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnitBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        unit_ = value;
         onChanged();
         return this;
       }
@@ -1479,7 +1710,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A descriptor for the labels and points in a timeseries.
+   * A descriptor for the labels and points in a time series.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.TimeSeriesDescriptor}

@@ -171,7 +171,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the existing alerting policies for the project.
+   * Lists the existing alerting policies for the workspace.
    *
    * <p>Sample code:
    *
@@ -202,7 +202,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the existing alerting policies for the project.
+   * Lists the existing alerting policies for the workspace.
    *
    * <p>Sample code:
    *
@@ -233,7 +233,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the existing alerting policies for the project.
+   * Lists the existing alerting policies for the workspace.
    *
    * <p>Sample code:
    *
@@ -264,7 +264,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the existing alerting policies for the project.
+   * Lists the existing alerting policies for the workspace.
    *
    * <p>Sample code:
    *
@@ -293,7 +293,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the existing alerting policies for the project.
+   * Lists the existing alerting policies for the workspace.
    *
    * <p>Sample code:
    *
@@ -324,7 +324,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the existing alerting policies for the project.
+   * Lists the existing alerting policies for the workspace.
    *
    * <p>Sample code:
    *
@@ -356,7 +356,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the existing alerting policies for the project.
+   * Lists the existing alerting policies for the workspace.
    *
    * <p>Sample code:
    *
@@ -507,9 +507,11 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * @param name Required. The project in which to create the alerting policy. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    *     <p>Note that this field names the parent container in which the alerting policy will be
-   *     written, not the name of the created policy. The alerting policy that is returned will have
-   *     a name that contains a normalized representation of this name as a prefix but adds a suffix
-   *     of the form `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the container.
+   *     written, not the name of the created policy. |name| must be a host project of a workspace,
+   *     otherwise INVALID_ARGUMENT error will return. The alerting policy that is returned will
+   *     have a name that contains a normalized representation of this name as a prefix but adds a
+   *     suffix of the form `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the
+   *     container.
    * @param alertPolicy Required. The requested alerting policy. You should omit the `name` field in
    *     this policy. The name will be returned in the new policy, including a new
    *     `[ALERT_POLICY_ID]` value.
@@ -541,9 +543,11 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * @param name Required. The project in which to create the alerting policy. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    *     <p>Note that this field names the parent container in which the alerting policy will be
-   *     written, not the name of the created policy. The alerting policy that is returned will have
-   *     a name that contains a normalized representation of this name as a prefix but adds a suffix
-   *     of the form `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the container.
+   *     written, not the name of the created policy. |name| must be a host project of a workspace,
+   *     otherwise INVALID_ARGUMENT error will return. The alerting policy that is returned will
+   *     have a name that contains a normalized representation of this name as a prefix but adds a
+   *     suffix of the form `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the
+   *     container.
    * @param alertPolicy Required. The requested alerting policy. You should omit the `name` field in
    *     this policy. The name will be returned in the new policy, including a new
    *     `[ALERT_POLICY_ID]` value.
@@ -575,9 +579,11 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * @param name Required. The project in which to create the alerting policy. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    *     <p>Note that this field names the parent container in which the alerting policy will be
-   *     written, not the name of the created policy. The alerting policy that is returned will have
-   *     a name that contains a normalized representation of this name as a prefix but adds a suffix
-   *     of the form `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the container.
+   *     written, not the name of the created policy. |name| must be a host project of a workspace,
+   *     otherwise INVALID_ARGUMENT error will return. The alerting policy that is returned will
+   *     have a name that contains a normalized representation of this name as a prefix but adds a
+   *     suffix of the form `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the
+   *     container.
    * @param alertPolicy Required. The requested alerting policy. You should omit the `name` field in
    *     this policy. The name will be returned in the new policy, including a new
    *     `[ALERT_POLICY_ID]` value.
@@ -610,9 +616,11 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * @param name Required. The project in which to create the alerting policy. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    *     <p>Note that this field names the parent container in which the alerting policy will be
-   *     written, not the name of the created policy. The alerting policy that is returned will have
-   *     a name that contains a normalized representation of this name as a prefix but adds a suffix
-   *     of the form `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the container.
+   *     written, not the name of the created policy. |name| must be a host project of a workspace,
+   *     otherwise INVALID_ARGUMENT error will return. The alerting policy that is returned will
+   *     have a name that contains a normalized representation of this name as a prefix but adds a
+   *     suffix of the form `/alertPolicies/[ALERT_POLICY_ID]`, identifying the policy in the
+   *     container.
    * @param alertPolicy Required. The requested alerting policy. You should omit the `name` field in
    *     this policy. The name will be returned in the new policy, including a new
    *     `[ALERT_POLICY_ID]` value.

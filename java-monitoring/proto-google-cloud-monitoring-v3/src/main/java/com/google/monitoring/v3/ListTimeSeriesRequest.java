@@ -146,6 +146,22 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
               name_ = s;
               break;
             }
+          case 90:
+            {
+              com.google.monitoring.v3.Aggregation.Builder subBuilder = null;
+              if (secondaryAggregation_ != null) {
+                subBuilder = secondaryAggregation_.toBuilder();
+              }
+              secondaryAggregation_ =
+                  input.readMessage(
+                      com.google.monitoring.v3.Aggregation.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(secondaryAggregation_);
+                secondaryAggregation_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -325,8 +341,11 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The project on which to execute the request. The format is:
+   * Required. The project, organization or folder on which to execute the request. The
+   * format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
+   *     organizations/[ORGANIZATION_ID]
+   *     folders/[FOLDER_ID]
    * </pre>
    *
    * <code>
@@ -351,8 +370,11 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The project on which to execute the request. The format is:
+   * Required. The project, organization or folder on which to execute the request. The
+   * format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
+   *     organizations/[ORGANIZATION_ID]
+   *     folders/[FOLDER_ID]
    * </pre>
    *
    * <code>
@@ -548,6 +570,57 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.monitoring.v3.AggregationOrBuilder getAggregationOrBuilder() {
     return getAggregation();
+  }
+
+  public static final int SECONDARY_AGGREGATION_FIELD_NUMBER = 11;
+  private com.google.monitoring.v3.Aggregation secondaryAggregation_;
+  /**
+   *
+   *
+   * <pre>
+   * Apply a second aggregation after `aggregation` is applied. May only be
+   * specified if `aggregation` is specified.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Aggregation secondary_aggregation = 11;</code>
+   *
+   * @return Whether the secondaryAggregation field is set.
+   */
+  @java.lang.Override
+  public boolean hasSecondaryAggregation() {
+    return secondaryAggregation_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Apply a second aggregation after `aggregation` is applied. May only be
+   * specified if `aggregation` is specified.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Aggregation secondary_aggregation = 11;</code>
+   *
+   * @return The secondaryAggregation.
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.Aggregation getSecondaryAggregation() {
+    return secondaryAggregation_ == null
+        ? com.google.monitoring.v3.Aggregation.getDefaultInstance()
+        : secondaryAggregation_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Apply a second aggregation after `aggregation` is applied. May only be
+   * specified if `aggregation` is specified.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Aggregation secondary_aggregation = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.AggregationOrBuilder getSecondaryAggregationOrBuilder() {
+    return getSecondaryAggregation();
   }
 
   public static final int ORDER_BY_FIELD_NUMBER = 6;
@@ -756,6 +829,9 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, name_);
     }
+    if (secondaryAggregation_ != null) {
+      output.writeMessage(11, getSecondaryAggregation());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -789,6 +865,10 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, name_);
     }
+    if (secondaryAggregation_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(11, getSecondaryAggregation());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -814,6 +894,10 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
     if (hasAggregation() != other.hasAggregation()) return false;
     if (hasAggregation()) {
       if (!getAggregation().equals(other.getAggregation())) return false;
+    }
+    if (hasSecondaryAggregation() != other.hasSecondaryAggregation()) return false;
+    if (hasSecondaryAggregation()) {
+      if (!getSecondaryAggregation().equals(other.getSecondaryAggregation())) return false;
     }
     if (!getOrderBy().equals(other.getOrderBy())) return false;
     if (view_ != other.view_) return false;
@@ -841,6 +925,10 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
     if (hasAggregation()) {
       hash = (37 * hash) + AGGREGATION_FIELD_NUMBER;
       hash = (53 * hash) + getAggregation().hashCode();
+    }
+    if (hasSecondaryAggregation()) {
+      hash = (37 * hash) + SECONDARY_AGGREGATION_FIELD_NUMBER;
+      hash = (53 * hash) + getSecondaryAggregation().hashCode();
     }
     hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
     hash = (53 * hash) + getOrderBy().hashCode();
@@ -1011,6 +1099,12 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
         aggregation_ = null;
         aggregationBuilder_ = null;
       }
+      if (secondaryAggregationBuilder_ == null) {
+        secondaryAggregation_ = null;
+      } else {
+        secondaryAggregation_ = null;
+        secondaryAggregationBuilder_ = null;
+      }
       orderBy_ = "";
 
       view_ = 0;
@@ -1057,6 +1151,11 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
         result.aggregation_ = aggregation_;
       } else {
         result.aggregation_ = aggregationBuilder_.build();
+      }
+      if (secondaryAggregationBuilder_ == null) {
+        result.secondaryAggregation_ = secondaryAggregation_;
+      } else {
+        result.secondaryAggregation_ = secondaryAggregationBuilder_.build();
       }
       result.orderBy_ = orderBy_;
       result.view_ = view_;
@@ -1125,6 +1224,9 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
       if (other.hasAggregation()) {
         mergeAggregation(other.getAggregation());
       }
+      if (other.hasSecondaryAggregation()) {
+        mergeSecondaryAggregation(other.getSecondaryAggregation());
+      }
       if (!other.getOrderBy().isEmpty()) {
         orderBy_ = other.orderBy_;
         onChanged();
@@ -1173,8 +1275,11 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is:
+     * Required. The project, organization or folder on which to execute the request. The
+     * format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *     organizations/[ORGANIZATION_ID]
+     *     folders/[FOLDER_ID]
      * </pre>
      *
      * <code>
@@ -1198,8 +1303,11 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is:
+     * Required. The project, organization or folder on which to execute the request. The
+     * format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *     organizations/[ORGANIZATION_ID]
+     *     folders/[FOLDER_ID]
      * </pre>
      *
      * <code>
@@ -1223,8 +1331,11 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is:
+     * Required. The project, organization or folder on which to execute the request. The
+     * format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *     organizations/[ORGANIZATION_ID]
+     *     folders/[FOLDER_ID]
      * </pre>
      *
      * <code>
@@ -1247,8 +1358,11 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is:
+     * Required. The project, organization or folder on which to execute the request. The
+     * format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *     organizations/[ORGANIZATION_ID]
+     *     folders/[FOLDER_ID]
      * </pre>
      *
      * <code>
@@ -1267,8 +1381,11 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The project on which to execute the request. The format is:
+     * Required. The project, organization or folder on which to execute the request. The
+     * format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *     organizations/[ORGANIZATION_ID]
+     *     folders/[FOLDER_ID]
      * </pre>
      *
      * <code>
@@ -1851,6 +1968,201 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
         aggregation_ = null;
       }
       return aggregationBuilder_;
+    }
+
+    private com.google.monitoring.v3.Aggregation secondaryAggregation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.v3.Aggregation,
+            com.google.monitoring.v3.Aggregation.Builder,
+            com.google.monitoring.v3.AggregationOrBuilder>
+        secondaryAggregationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Apply a second aggregation after `aggregation` is applied. May only be
+     * specified if `aggregation` is specified.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Aggregation secondary_aggregation = 11;</code>
+     *
+     * @return Whether the secondaryAggregation field is set.
+     */
+    public boolean hasSecondaryAggregation() {
+      return secondaryAggregationBuilder_ != null || secondaryAggregation_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apply a second aggregation after `aggregation` is applied. May only be
+     * specified if `aggregation` is specified.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Aggregation secondary_aggregation = 11;</code>
+     *
+     * @return The secondaryAggregation.
+     */
+    public com.google.monitoring.v3.Aggregation getSecondaryAggregation() {
+      if (secondaryAggregationBuilder_ == null) {
+        return secondaryAggregation_ == null
+            ? com.google.monitoring.v3.Aggregation.getDefaultInstance()
+            : secondaryAggregation_;
+      } else {
+        return secondaryAggregationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apply a second aggregation after `aggregation` is applied. May only be
+     * specified if `aggregation` is specified.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Aggregation secondary_aggregation = 11;</code>
+     */
+    public Builder setSecondaryAggregation(com.google.monitoring.v3.Aggregation value) {
+      if (secondaryAggregationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        secondaryAggregation_ = value;
+        onChanged();
+      } else {
+        secondaryAggregationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apply a second aggregation after `aggregation` is applied. May only be
+     * specified if `aggregation` is specified.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Aggregation secondary_aggregation = 11;</code>
+     */
+    public Builder setSecondaryAggregation(
+        com.google.monitoring.v3.Aggregation.Builder builderForValue) {
+      if (secondaryAggregationBuilder_ == null) {
+        secondaryAggregation_ = builderForValue.build();
+        onChanged();
+      } else {
+        secondaryAggregationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apply a second aggregation after `aggregation` is applied. May only be
+     * specified if `aggregation` is specified.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Aggregation secondary_aggregation = 11;</code>
+     */
+    public Builder mergeSecondaryAggregation(com.google.monitoring.v3.Aggregation value) {
+      if (secondaryAggregationBuilder_ == null) {
+        if (secondaryAggregation_ != null) {
+          secondaryAggregation_ =
+              com.google.monitoring.v3.Aggregation.newBuilder(secondaryAggregation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          secondaryAggregation_ = value;
+        }
+        onChanged();
+      } else {
+        secondaryAggregationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apply a second aggregation after `aggregation` is applied. May only be
+     * specified if `aggregation` is specified.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Aggregation secondary_aggregation = 11;</code>
+     */
+    public Builder clearSecondaryAggregation() {
+      if (secondaryAggregationBuilder_ == null) {
+        secondaryAggregation_ = null;
+        onChanged();
+      } else {
+        secondaryAggregation_ = null;
+        secondaryAggregationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apply a second aggregation after `aggregation` is applied. May only be
+     * specified if `aggregation` is specified.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Aggregation secondary_aggregation = 11;</code>
+     */
+    public com.google.monitoring.v3.Aggregation.Builder getSecondaryAggregationBuilder() {
+
+      onChanged();
+      return getSecondaryAggregationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apply a second aggregation after `aggregation` is applied. May only be
+     * specified if `aggregation` is specified.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Aggregation secondary_aggregation = 11;</code>
+     */
+    public com.google.monitoring.v3.AggregationOrBuilder getSecondaryAggregationOrBuilder() {
+      if (secondaryAggregationBuilder_ != null) {
+        return secondaryAggregationBuilder_.getMessageOrBuilder();
+      } else {
+        return secondaryAggregation_ == null
+            ? com.google.monitoring.v3.Aggregation.getDefaultInstance()
+            : secondaryAggregation_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apply a second aggregation after `aggregation` is applied. May only be
+     * specified if `aggregation` is specified.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.Aggregation secondary_aggregation = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.v3.Aggregation,
+            com.google.monitoring.v3.Aggregation.Builder,
+            com.google.monitoring.v3.AggregationOrBuilder>
+        getSecondaryAggregationFieldBuilder() {
+      if (secondaryAggregationBuilder_ == null) {
+        secondaryAggregationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.Aggregation,
+                com.google.monitoring.v3.Aggregation.Builder,
+                com.google.monitoring.v3.AggregationOrBuilder>(
+                getSecondaryAggregation(), getParentForChildren(), isClean());
+        secondaryAggregation_ = null;
+      }
+      return secondaryAggregationBuilder_;
     }
 
     private java.lang.Object orderBy_ = "";

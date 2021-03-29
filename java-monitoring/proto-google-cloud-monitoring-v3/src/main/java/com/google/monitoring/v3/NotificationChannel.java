@@ -47,6 +47,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     displayName_ = "";
     description_ = "";
     verificationStatus_ = 0;
+    mutationRecords_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -157,6 +158,34 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
 
               break;
             }
+          case 98:
+            {
+              com.google.monitoring.v3.MutationRecord.Builder subBuilder = null;
+              if (creationRecord_ != null) {
+                subBuilder = creationRecord_.toBuilder();
+              }
+              creationRecord_ =
+                  input.readMessage(
+                      com.google.monitoring.v3.MutationRecord.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(creationRecord_);
+                creationRecord_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 106:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                mutationRecords_ =
+                    new java.util.ArrayList<com.google.monitoring.v3.MutationRecord>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              mutationRecords_.add(
+                  input.readMessage(
+                      com.google.monitoring.v3.MutationRecord.parser(), extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -171,6 +200,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        mutationRecords_ = java.util.Collections.unmodifiableList(mutationRecords_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -964,6 +996,123 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     return getEnabled();
   }
 
+  public static final int CREATION_RECORD_FIELD_NUMBER = 12;
+  private com.google.monitoring.v3.MutationRecord creationRecord_;
+  /**
+   *
+   *
+   * <pre>
+   * Record of the creation of this channel.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.MutationRecord creation_record = 12;</code>
+   *
+   * @return Whether the creationRecord field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationRecord() {
+    return creationRecord_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Record of the creation of this channel.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.MutationRecord creation_record = 12;</code>
+   *
+   * @return The creationRecord.
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.MutationRecord getCreationRecord() {
+    return creationRecord_ == null
+        ? com.google.monitoring.v3.MutationRecord.getDefaultInstance()
+        : creationRecord_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Record of the creation of this channel.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.MutationRecord creation_record = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.MutationRecordOrBuilder getCreationRecordOrBuilder() {
+    return getCreationRecord();
+  }
+
+  public static final int MUTATION_RECORDS_FIELD_NUMBER = 13;
+  private java.util.List<com.google.monitoring.v3.MutationRecord> mutationRecords_;
+  /**
+   *
+   *
+   * <pre>
+   * Records of the modification of this channel.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.monitoring.v3.MutationRecord> getMutationRecordsList() {
+    return mutationRecords_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Records of the modification of this channel.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.monitoring.v3.MutationRecordOrBuilder>
+      getMutationRecordsOrBuilderList() {
+    return mutationRecords_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Records of the modification of this channel.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+   */
+  @java.lang.Override
+  public int getMutationRecordsCount() {
+    return mutationRecords_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Records of the modification of this channel.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.MutationRecord getMutationRecords(int index) {
+    return mutationRecords_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Records of the modification of this channel.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.MutationRecordOrBuilder getMutationRecordsOrBuilder(int index) {
+    return mutationRecords_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1002,6 +1151,12 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     }
     if (enabled_ != null) {
       output.writeMessage(11, getEnabled());
+    }
+    if (creationRecord_ != null) {
+      output.writeMessage(12, getCreationRecord());
+    }
+    for (int i = 0; i < mutationRecords_.size(); i++) {
+      output.writeMessage(13, mutationRecords_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -1053,6 +1208,12 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     if (enabled_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getEnabled());
     }
+    if (creationRecord_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getCreationRecord());
+    }
+    for (int i = 0; i < mutationRecords_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, mutationRecords_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1080,6 +1241,11 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     if (hasEnabled()) {
       if (!getEnabled().equals(other.getEnabled())) return false;
     }
+    if (hasCreationRecord() != other.hasCreationRecord()) return false;
+    if (hasCreationRecord()) {
+      if (!getCreationRecord().equals(other.getCreationRecord())) return false;
+    }
+    if (!getMutationRecordsList().equals(other.getMutationRecordsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1112,6 +1278,14 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     if (hasEnabled()) {
       hash = (37 * hash) + ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + getEnabled().hashCode();
+    }
+    if (hasCreationRecord()) {
+      hash = (37 * hash) + CREATION_RECORD_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationRecord().hashCode();
+    }
+    if (getMutationRecordsCount() > 0) {
+      hash = (37 * hash) + MUTATION_RECORDS_FIELD_NUMBER;
+      hash = (53 * hash) + getMutationRecordsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1280,7 +1454,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getMutationRecordsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1303,6 +1479,18 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
       } else {
         enabled_ = null;
         enabledBuilder_ = null;
+      }
+      if (creationRecordBuilder_ == null) {
+        creationRecord_ = null;
+      } else {
+        creationRecord_ = null;
+        creationRecordBuilder_ = null;
+      }
+      if (mutationRecordsBuilder_ == null) {
+        mutationRecords_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      } else {
+        mutationRecordsBuilder_.clear();
       }
       return this;
     }
@@ -1345,6 +1533,20 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
         result.enabled_ = enabled_;
       } else {
         result.enabled_ = enabledBuilder_.build();
+      }
+      if (creationRecordBuilder_ == null) {
+        result.creationRecord_ = creationRecord_;
+      } else {
+        result.creationRecord_ = creationRecordBuilder_.build();
+      }
+      if (mutationRecordsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          mutationRecords_ = java.util.Collections.unmodifiableList(mutationRecords_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.mutationRecords_ = mutationRecords_;
+      } else {
+        result.mutationRecords_ = mutationRecordsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1418,6 +1620,36 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
       }
       if (other.hasEnabled()) {
         mergeEnabled(other.getEnabled());
+      }
+      if (other.hasCreationRecord()) {
+        mergeCreationRecord(other.getCreationRecord());
+      }
+      if (mutationRecordsBuilder_ == null) {
+        if (!other.mutationRecords_.isEmpty()) {
+          if (mutationRecords_.isEmpty()) {
+            mutationRecords_ = other.mutationRecords_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureMutationRecordsIsMutable();
+            mutationRecords_.addAll(other.mutationRecords_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.mutationRecords_.isEmpty()) {
+          if (mutationRecordsBuilder_.isEmpty()) {
+            mutationRecordsBuilder_.dispose();
+            mutationRecordsBuilder_ = null;
+            mutationRecords_ = other.mutationRecords_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            mutationRecordsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getMutationRecordsFieldBuilder()
+                    : null;
+          } else {
+            mutationRecordsBuilder_.addAllMessages(other.mutationRecords_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2698,6 +2930,546 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
         enabled_ = null;
       }
       return enabledBuilder_;
+    }
+
+    private com.google.monitoring.v3.MutationRecord creationRecord_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.v3.MutationRecord,
+            com.google.monitoring.v3.MutationRecord.Builder,
+            com.google.monitoring.v3.MutationRecordOrBuilder>
+        creationRecordBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Record of the creation of this channel.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.MutationRecord creation_record = 12;</code>
+     *
+     * @return Whether the creationRecord field is set.
+     */
+    public boolean hasCreationRecord() {
+      return creationRecordBuilder_ != null || creationRecord_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Record of the creation of this channel.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.MutationRecord creation_record = 12;</code>
+     *
+     * @return The creationRecord.
+     */
+    public com.google.monitoring.v3.MutationRecord getCreationRecord() {
+      if (creationRecordBuilder_ == null) {
+        return creationRecord_ == null
+            ? com.google.monitoring.v3.MutationRecord.getDefaultInstance()
+            : creationRecord_;
+      } else {
+        return creationRecordBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Record of the creation of this channel.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.MutationRecord creation_record = 12;</code>
+     */
+    public Builder setCreationRecord(com.google.monitoring.v3.MutationRecord value) {
+      if (creationRecordBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        creationRecord_ = value;
+        onChanged();
+      } else {
+        creationRecordBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Record of the creation of this channel.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.MutationRecord creation_record = 12;</code>
+     */
+    public Builder setCreationRecord(
+        com.google.monitoring.v3.MutationRecord.Builder builderForValue) {
+      if (creationRecordBuilder_ == null) {
+        creationRecord_ = builderForValue.build();
+        onChanged();
+      } else {
+        creationRecordBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Record of the creation of this channel.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.MutationRecord creation_record = 12;</code>
+     */
+    public Builder mergeCreationRecord(com.google.monitoring.v3.MutationRecord value) {
+      if (creationRecordBuilder_ == null) {
+        if (creationRecord_ != null) {
+          creationRecord_ =
+              com.google.monitoring.v3.MutationRecord.newBuilder(creationRecord_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          creationRecord_ = value;
+        }
+        onChanged();
+      } else {
+        creationRecordBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Record of the creation of this channel.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.MutationRecord creation_record = 12;</code>
+     */
+    public Builder clearCreationRecord() {
+      if (creationRecordBuilder_ == null) {
+        creationRecord_ = null;
+        onChanged();
+      } else {
+        creationRecord_ = null;
+        creationRecordBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Record of the creation of this channel.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.MutationRecord creation_record = 12;</code>
+     */
+    public com.google.monitoring.v3.MutationRecord.Builder getCreationRecordBuilder() {
+
+      onChanged();
+      return getCreationRecordFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Record of the creation of this channel.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.MutationRecord creation_record = 12;</code>
+     */
+    public com.google.monitoring.v3.MutationRecordOrBuilder getCreationRecordOrBuilder() {
+      if (creationRecordBuilder_ != null) {
+        return creationRecordBuilder_.getMessageOrBuilder();
+      } else {
+        return creationRecord_ == null
+            ? com.google.monitoring.v3.MutationRecord.getDefaultInstance()
+            : creationRecord_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Record of the creation of this channel.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.MutationRecord creation_record = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.v3.MutationRecord,
+            com.google.monitoring.v3.MutationRecord.Builder,
+            com.google.monitoring.v3.MutationRecordOrBuilder>
+        getCreationRecordFieldBuilder() {
+      if (creationRecordBuilder_ == null) {
+        creationRecordBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.MutationRecord,
+                com.google.monitoring.v3.MutationRecord.Builder,
+                com.google.monitoring.v3.MutationRecordOrBuilder>(
+                getCreationRecord(), getParentForChildren(), isClean());
+        creationRecord_ = null;
+      }
+      return creationRecordBuilder_;
+    }
+
+    private java.util.List<com.google.monitoring.v3.MutationRecord> mutationRecords_ =
+        java.util.Collections.emptyList();
+
+    private void ensureMutationRecordsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        mutationRecords_ =
+            new java.util.ArrayList<com.google.monitoring.v3.MutationRecord>(mutationRecords_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.monitoring.v3.MutationRecord,
+            com.google.monitoring.v3.MutationRecord.Builder,
+            com.google.monitoring.v3.MutationRecordOrBuilder>
+        mutationRecordsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Records of the modification of this channel.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+     */
+    public java.util.List<com.google.monitoring.v3.MutationRecord> getMutationRecordsList() {
+      if (mutationRecordsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(mutationRecords_);
+      } else {
+        return mutationRecordsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Records of the modification of this channel.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+     */
+    public int getMutationRecordsCount() {
+      if (mutationRecordsBuilder_ == null) {
+        return mutationRecords_.size();
+      } else {
+        return mutationRecordsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Records of the modification of this channel.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+     */
+    public com.google.monitoring.v3.MutationRecord getMutationRecords(int index) {
+      if (mutationRecordsBuilder_ == null) {
+        return mutationRecords_.get(index);
+      } else {
+        return mutationRecordsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Records of the modification of this channel.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+     */
+    public Builder setMutationRecords(int index, com.google.monitoring.v3.MutationRecord value) {
+      if (mutationRecordsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMutationRecordsIsMutable();
+        mutationRecords_.set(index, value);
+        onChanged();
+      } else {
+        mutationRecordsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Records of the modification of this channel.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+     */
+    public Builder setMutationRecords(
+        int index, com.google.monitoring.v3.MutationRecord.Builder builderForValue) {
+      if (mutationRecordsBuilder_ == null) {
+        ensureMutationRecordsIsMutable();
+        mutationRecords_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        mutationRecordsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Records of the modification of this channel.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+     */
+    public Builder addMutationRecords(com.google.monitoring.v3.MutationRecord value) {
+      if (mutationRecordsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMutationRecordsIsMutable();
+        mutationRecords_.add(value);
+        onChanged();
+      } else {
+        mutationRecordsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Records of the modification of this channel.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+     */
+    public Builder addMutationRecords(int index, com.google.monitoring.v3.MutationRecord value) {
+      if (mutationRecordsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMutationRecordsIsMutable();
+        mutationRecords_.add(index, value);
+        onChanged();
+      } else {
+        mutationRecordsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Records of the modification of this channel.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+     */
+    public Builder addMutationRecords(
+        com.google.monitoring.v3.MutationRecord.Builder builderForValue) {
+      if (mutationRecordsBuilder_ == null) {
+        ensureMutationRecordsIsMutable();
+        mutationRecords_.add(builderForValue.build());
+        onChanged();
+      } else {
+        mutationRecordsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Records of the modification of this channel.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+     */
+    public Builder addMutationRecords(
+        int index, com.google.monitoring.v3.MutationRecord.Builder builderForValue) {
+      if (mutationRecordsBuilder_ == null) {
+        ensureMutationRecordsIsMutable();
+        mutationRecords_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        mutationRecordsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Records of the modification of this channel.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+     */
+    public Builder addAllMutationRecords(
+        java.lang.Iterable<? extends com.google.monitoring.v3.MutationRecord> values) {
+      if (mutationRecordsBuilder_ == null) {
+        ensureMutationRecordsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, mutationRecords_);
+        onChanged();
+      } else {
+        mutationRecordsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Records of the modification of this channel.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+     */
+    public Builder clearMutationRecords() {
+      if (mutationRecordsBuilder_ == null) {
+        mutationRecords_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        mutationRecordsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Records of the modification of this channel.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+     */
+    public Builder removeMutationRecords(int index) {
+      if (mutationRecordsBuilder_ == null) {
+        ensureMutationRecordsIsMutable();
+        mutationRecords_.remove(index);
+        onChanged();
+      } else {
+        mutationRecordsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Records of the modification of this channel.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+     */
+    public com.google.monitoring.v3.MutationRecord.Builder getMutationRecordsBuilder(int index) {
+      return getMutationRecordsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Records of the modification of this channel.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+     */
+    public com.google.monitoring.v3.MutationRecordOrBuilder getMutationRecordsOrBuilder(int index) {
+      if (mutationRecordsBuilder_ == null) {
+        return mutationRecords_.get(index);
+      } else {
+        return mutationRecordsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Records of the modification of this channel.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+     */
+    public java.util.List<? extends com.google.monitoring.v3.MutationRecordOrBuilder>
+        getMutationRecordsOrBuilderList() {
+      if (mutationRecordsBuilder_ != null) {
+        return mutationRecordsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(mutationRecords_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Records of the modification of this channel.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+     */
+    public com.google.monitoring.v3.MutationRecord.Builder addMutationRecordsBuilder() {
+      return getMutationRecordsFieldBuilder()
+          .addBuilder(com.google.monitoring.v3.MutationRecord.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Records of the modification of this channel.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+     */
+    public com.google.monitoring.v3.MutationRecord.Builder addMutationRecordsBuilder(int index) {
+      return getMutationRecordsFieldBuilder()
+          .addBuilder(index, com.google.monitoring.v3.MutationRecord.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Records of the modification of this channel.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+     */
+    public java.util.List<com.google.monitoring.v3.MutationRecord.Builder>
+        getMutationRecordsBuilderList() {
+      return getMutationRecordsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.monitoring.v3.MutationRecord,
+            com.google.monitoring.v3.MutationRecord.Builder,
+            com.google.monitoring.v3.MutationRecordOrBuilder>
+        getMutationRecordsFieldBuilder() {
+      if (mutationRecordsBuilder_ == null) {
+        mutationRecordsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.monitoring.v3.MutationRecord,
+                com.google.monitoring.v3.MutationRecord.Builder,
+                com.google.monitoring.v3.MutationRecordOrBuilder>(
+                mutationRecords_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        mutationRecords_ = null;
+      }
+      return mutationRecordsBuilder_;
     }
 
     @java.lang.Override

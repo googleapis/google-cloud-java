@@ -104,8 +104,8 @@ public interface TimeSeriesOrBuilder
    *
    * <pre>
    * Output only. The associated monitored resource metadata. When reading a
-   * a timeseries, this field will include metadata labels that are explicitly
-   * named in the reduction. When creating a timeseries, this field is ignored.
+   * time series, this field will include metadata labels that are explicitly
+   * named in the reduction. When creating a time series, this field is ignored.
    * </pre>
    *
    * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
@@ -118,8 +118,8 @@ public interface TimeSeriesOrBuilder
    *
    * <pre>
    * Output only. The associated monitored resource metadata. When reading a
-   * a timeseries, this field will include metadata labels that are explicitly
-   * named in the reduction. When creating a timeseries, this field is ignored.
+   * time series, this field will include metadata labels that are explicitly
+   * named in the reduction. When creating a time series, this field is ignored.
    * </pre>
    *
    * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
@@ -132,8 +132,8 @@ public interface TimeSeriesOrBuilder
    *
    * <pre>
    * Output only. The associated monitored resource metadata. When reading a
-   * a timeseries, this field will include metadata labels that are explicitly
-   * named in the reduction. When creating a timeseries, this field is ignored.
+   * time series, this field will include metadata labels that are explicitly
+   * named in the reduction. When creating a time series, this field is ignored.
    * </pre>
    *
    * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
@@ -292,4 +292,33 @@ public interface TimeSeriesOrBuilder
    * <code>repeated .google.monitoring.v3.Point points = 5;</code>
    */
   com.google.monitoring.v3.PointOrBuilder getPointsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The units in which the metric value is reported. It is only applicable
+   * if the `value_type` is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The `unit`
+   * defines the representation of the stored metric values.
+   * </pre>
+   *
+   * <code>string unit = 8;</code>
+   *
+   * @return The unit.
+   */
+  java.lang.String getUnit();
+  /**
+   *
+   *
+   * <pre>
+   * The units in which the metric value is reported. It is only applicable
+   * if the `value_type` is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The `unit`
+   * defines the representation of the stored metric values.
+   * </pre>
+   *
+   * <code>string unit = 8;</code>
+   *
+   * @return The bytes for unit.
+   */
+  com.google.protobuf.ByteString getUnitBytes();
 }

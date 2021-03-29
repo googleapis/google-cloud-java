@@ -189,8 +189,9 @@ public final class QueryTimeSeriesRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The query in the monitoring query language format. The default
-   * time zone is in UTC.
+   * Required. The query in the [Monitoring Query
+   * Language](https://cloud.google.com/monitoring/mql/reference) format.
+   * The default time zone is in UTC.
    * </pre>
    *
    * <code>string query = 7;</code>
@@ -213,8 +214,9 @@ public final class QueryTimeSeriesRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The query in the monitoring query language format. The default
-   * time zone is in UTC.
+   * Required. The query in the [Monitoring Query
+   * Language](https://cloud.google.com/monitoring/mql/reference) format.
+   * The default time zone is in UTC.
    * </pre>
    *
    * <code>string query = 7;</code>
@@ -785,8 +787,9 @@ public final class QueryTimeSeriesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The query in the monitoring query language format. The default
-     * time zone is in UTC.
+     * Required. The query in the [Monitoring Query
+     * Language](https://cloud.google.com/monitoring/mql/reference) format.
+     * The default time zone is in UTC.
      * </pre>
      *
      * <code>string query = 7;</code>
@@ -808,8 +811,9 @@ public final class QueryTimeSeriesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The query in the monitoring query language format. The default
-     * time zone is in UTC.
+     * Required. The query in the [Monitoring Query
+     * Language](https://cloud.google.com/monitoring/mql/reference) format.
+     * The default time zone is in UTC.
      * </pre>
      *
      * <code>string query = 7;</code>
@@ -831,8 +835,9 @@ public final class QueryTimeSeriesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The query in the monitoring query language format. The default
-     * time zone is in UTC.
+     * Required. The query in the [Monitoring Query
+     * Language](https://cloud.google.com/monitoring/mql/reference) format.
+     * The default time zone is in UTC.
      * </pre>
      *
      * <code>string query = 7;</code>
@@ -853,8 +858,9 @@ public final class QueryTimeSeriesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The query in the monitoring query language format. The default
-     * time zone is in UTC.
+     * Required. The query in the [Monitoring Query
+     * Language](https://cloud.google.com/monitoring/mql/reference) format.
+     * The default time zone is in UTC.
      * </pre>
      *
      * <code>string query = 7;</code>
@@ -871,8 +877,9 @@ public final class QueryTimeSeriesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The query in the monitoring query language format. The default
-     * time zone is in UTC.
+     * Required. The query in the [Monitoring Query
+     * Language](https://cloud.google.com/monitoring/mql/reference) format.
+     * The default time zone is in UTC.
      * </pre>
      *
      * <code>string query = 7;</code>

@@ -83,7 +83,7 @@
               "methods": ["listMonitoredResourceDescriptors", "listMonitoredResourceDescriptors", "listMonitoredResourceDescriptors", "listMonitoredResourceDescriptors", "listMonitoredResourceDescriptors", "listMonitoredResourceDescriptorsPagedCallable", "listMonitoredResourceDescriptorsCallable"]
             },
             "ListTimeSeries": {
-              "methods": ["listTimeSeries", "listTimeSeries", "listTimeSeries", "listTimeSeriesPagedCallable", "listTimeSeriesCallable"]
+              "methods": ["listTimeSeries", "listTimeSeries", "listTimeSeries", "listTimeSeries", "listTimeSeries", "listTimeSeriesPagedCallable", "listTimeSeriesCallable"]
             }
           }
         }
@@ -123,6 +123,18 @@
             },
             "VerifyNotificationChannel": {
               "methods": ["verifyNotificationChannel", "verifyNotificationChannel", "verifyNotificationChannel", "verifyNotificationChannelCallable"]
+            }
+          }
+        }
+      }
+    },
+    "QueryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "QueryServiceClient",
+          "rpcs": {
+            "QueryTimeSeries": {
+              "methods": ["queryTimeSeries", "queryTimeSeriesPagedCallable", "queryTimeSeriesCallable"]
             }
           }
         }

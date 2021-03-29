@@ -56,7 +56,10 @@ public interface NotificationChannelDescriptorOrBuilder
    *
    *
    * <pre>
-   * The type of notification channel, such as "email", "sms", etc.
+   * The type of notification channel, such as "email" and "sms". To view the
+   * full list of channels, see
+   * [Channel
+   * descriptors](https://cloud.google.com/monitoring/alerts/using-channels-api#ncd).
    * Notification channel types are globally unique.
    * </pre>
    *
@@ -69,7 +72,10 @@ public interface NotificationChannelDescriptorOrBuilder
    *
    *
    * <pre>
-   * The type of notification channel, such as "email", "sms", etc.
+   * The type of notification channel, such as "email" and "sms". To view the
+   * full list of channels, see
+   * [Channel
+   * descriptors](https://cloud.google.com/monitoring/alerts/using-channels-api#ncd).
    * Notification channel types are globally unique.
    * </pre>
    *

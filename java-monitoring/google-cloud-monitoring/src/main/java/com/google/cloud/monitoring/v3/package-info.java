@@ -92,6 +92,29 @@
  * }
  * }</pre>
  *
+ * <p>======================= QueryServiceClient =======================
+ *
+ * <p>Service Description: The QueryService API is used to manage time series data in Stackdriver
+ * Monitoring. Time series data is a collection of data points that describes the time-varying
+ * values of a metric.
+ *
+ * <p>Sample for QueryServiceClient:
+ *
+ * <pre>{@code
+ * try (QueryServiceClient queryServiceClient = QueryServiceClient.create()) {
+ *   QueryTimeSeriesRequest request =
+ *       QueryTimeSeriesRequest.newBuilder()
+ *           .setName("name3373707")
+ *           .setQuery("query107944136")
+ *           .setPageSize(883849137)
+ *           .setPageToken("pageToken873572522")
+ *           .build();
+ *   for (TimeSeriesData element : queryServiceClient.queryTimeSeries(request).iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
+ * }
+ * }</pre>
+ *
  * <p>======================= ServiceMonitoringServiceClient =======================
  *
  * <p>Service Description: The Cloud Monitoring Service-Oriented Monitoring API has endpoints for

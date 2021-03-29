@@ -1537,6 +1537,52 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsenceOrBuilder
         getConditionAbsentOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * A condition that uses the Monitoring Query Language to define
+     * alerts.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition condition_monitoring_query_language = 19;
+     * </code>
+     *
+     * @return Whether the conditionMonitoringQueryLanguage field is set.
+     */
+    boolean hasConditionMonitoringQueryLanguage();
+    /**
+     *
+     *
+     * <pre>
+     * A condition that uses the Monitoring Query Language to define
+     * alerts.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition condition_monitoring_query_language = 19;
+     * </code>
+     *
+     * @return The conditionMonitoringQueryLanguage.
+     */
+    com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+        getConditionMonitoringQueryLanguage();
+    /**
+     *
+     *
+     * <pre>
+     * A condition that uses the Monitoring Query Language to define
+     * alerts.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition condition_monitoring_query_language = 19;
+     * </code>
+     */
+    com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageConditionOrBuilder
+        getConditionMonitoringQueryLanguageOrBuilder();
+
     public com.google.monitoring.v3.AlertPolicy.Condition.ConditionCase getConditionCase();
   }
   /**
@@ -1648,6 +1694,33 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 java.lang.String s = input.readStringRequireUtf8();
 
                 name_ = s;
+                break;
+              }
+            case 154:
+              {
+                com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+                        .Builder
+                    subBuilder = null;
+                if (conditionCase_ == 19) {
+                  subBuilder =
+                      ((com.google.monitoring.v3.AlertPolicy.Condition
+                                  .MonitoringQueryLanguageCondition)
+                              condition_)
+                          .toBuilder();
+                }
+                condition_ =
+                    input.readMessage(
+                        com.google.monitoring.v3.AlertPolicy.Condition
+                            .MonitoringQueryLanguageCondition.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.monitoring.v3.AlertPolicy.Condition
+                              .MonitoringQueryLanguageCondition)
+                          condition_);
+                  condition_ = subBuilder.buildPartial();
+                }
+                conditionCase_ = 19;
                 break;
               }
             default:
@@ -2561,18 +2634,18 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+       * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
        * (that call is useful to verify the time series that will be retrieved /
-       * processed) and must specify the metric type and optionally may contain
-       * restrictions on resource type, resource labels, and metric labels.
-       * This field may not exceed 2048 Unicode characters in length.
+       * processed). The filter must specify the metric type and the resource
+       * type. Optionally, it can specify resource labels and metric labels.
+       * This field must not exceed 2048 Unicode characters in length.
        * </pre>
        *
-       * <code>string filter = 2;</code>
+       * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The filter.
        */
@@ -2581,18 +2654,18 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+       * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
        * (that call is useful to verify the time series that will be retrieved /
-       * processed) and must specify the metric type and optionally may contain
-       * restrictions on resource type, resource labels, and metric labels.
-       * This field may not exceed 2048 Unicode characters in length.
+       * processed). The filter must specify the metric type and the resource
+       * type. Optionally, it can specify resource labels and metric labels.
+       * This field must not exceed 2048 Unicode characters in length.
        * </pre>
        *
-       * <code>string filter = 2;</code>
+       * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The bytes for filter.
        */
@@ -3171,18 +3244,18 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+       * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
        * (that call is useful to verify the time series that will be retrieved /
-       * processed) and must specify the metric type and optionally may contain
-       * restrictions on resource type, resource labels, and metric labels.
-       * This field may not exceed 2048 Unicode characters in length.
+       * processed). The filter must specify the metric type and the resource
+       * type. Optionally, it can specify resource labels and metric labels.
+       * This field must not exceed 2048 Unicode characters in length.
        * </pre>
        *
-       * <code>string filter = 2;</code>
+       * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The filter.
        */
@@ -3202,18 +3275,18 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+       * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
        * (that call is useful to verify the time series that will be retrieved /
-       * processed) and must specify the metric type and optionally may contain
-       * restrictions on resource type, resource labels, and metric labels.
-       * This field may not exceed 2048 Unicode characters in length.
+       * processed). The filter must specify the metric type and the resource
+       * type. Optionally, it can specify resource labels and metric labels.
+       * This field must not exceed 2048 Unicode characters in length.
        * </pre>
        *
-       * <code>string filter = 2;</code>
+       * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The bytes for filter.
        */
@@ -4277,18 +4350,18 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+         * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
          * (that call is useful to verify the time series that will be retrieved /
-         * processed) and must specify the metric type and optionally may contain
-         * restrictions on resource type, resource labels, and metric labels.
-         * This field may not exceed 2048 Unicode characters in length.
+         * processed). The filter must specify the metric type and the resource
+         * type. Optionally, it can specify resource labels and metric labels.
+         * This field must not exceed 2048 Unicode characters in length.
          * </pre>
          *
-         * <code>string filter = 2;</code>
+         * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          *
          * @return The filter.
          */
@@ -4307,18 +4380,18 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+         * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
          * (that call is useful to verify the time series that will be retrieved /
-         * processed) and must specify the metric type and optionally may contain
-         * restrictions on resource type, resource labels, and metric labels.
-         * This field may not exceed 2048 Unicode characters in length.
+         * processed). The filter must specify the metric type and the resource
+         * type. Optionally, it can specify resource labels and metric labels.
+         * This field must not exceed 2048 Unicode characters in length.
          * </pre>
          *
-         * <code>string filter = 2;</code>
+         * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          *
          * @return The bytes for filter.
          */
@@ -4337,18 +4410,18 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+         * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
          * (that call is useful to verify the time series that will be retrieved /
-         * processed) and must specify the metric type and optionally may contain
-         * restrictions on resource type, resource labels, and metric labels.
-         * This field may not exceed 2048 Unicode characters in length.
+         * processed). The filter must specify the metric type and the resource
+         * type. Optionally, it can specify resource labels and metric labels.
+         * This field must not exceed 2048 Unicode characters in length.
          * </pre>
          *
-         * <code>string filter = 2;</code>
+         * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          *
          * @param value The filter to set.
          * @return This builder for chaining.
@@ -4366,18 +4439,18 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+         * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
          * (that call is useful to verify the time series that will be retrieved /
-         * processed) and must specify the metric type and optionally may contain
-         * restrictions on resource type, resource labels, and metric labels.
-         * This field may not exceed 2048 Unicode characters in length.
+         * processed). The filter must specify the metric type and the resource
+         * type. Optionally, it can specify resource labels and metric labels.
+         * This field must not exceed 2048 Unicode characters in length.
          * </pre>
          *
-         * <code>string filter = 2;</code>
+         * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          *
          * @return This builder for chaining.
          */
@@ -4391,18 +4464,18 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+         * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
          * (that call is useful to verify the time series that will be retrieved /
-         * processed) and must specify the metric type and optionally may contain
-         * restrictions on resource type, resource labels, and metric labels.
-         * This field may not exceed 2048 Unicode characters in length.
+         * processed). The filter must specify the metric type and the resource
+         * type. Optionally, it can specify resource labels and metric labels.
+         * This field must not exceed 2048 Unicode characters in length.
          * </pre>
          *
-         * <code>string filter = 2;</code>
+         * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
          *
          * @param value The bytes for filter to set.
          * @return This builder for chaining.
@@ -6306,18 +6379,18 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+       * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
        * (that call is useful to verify the time series that will be retrieved /
-       * processed) and must specify the metric type and optionally may contain
-       * restrictions on resource type, resource labels, and metric labels.
-       * This field may not exceed 2048 Unicode characters in length.
+       * processed). The filter must specify the metric type and the resource
+       * type. Optionally, it can specify resource labels and metric labels.
+       * This field must not exceed 2048 Unicode characters in length.
        * </pre>
        *
-       * <code>string filter = 1;</code>
+       * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The filter.
        */
@@ -6326,18 +6399,18 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+       * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
        * (that call is useful to verify the time series that will be retrieved /
-       * processed) and must specify the metric type and optionally may contain
-       * restrictions on resource type, resource labels, and metric labels.
-       * This field may not exceed 2048 Unicode characters in length.
+       * processed). The filter must specify the metric type and the resource
+       * type. Optionally, it can specify resource labels and metric labels.
+       * This field must not exceed 2048 Unicode characters in length.
        * </pre>
        *
-       * <code>string filter = 1;</code>
+       * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The bytes for filter.
        */
@@ -6445,9 +6518,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The amount of time that a time series must fail to report new
-       * data to be considered failing. Currently, only values that
-       * are a multiple of a minute--e.g.  60, 120, or 300
-       * seconds--are supported. If an invalid value is given, an
+       * data to be considered failing. The minimum value of this field
+       * is 120 seconds. Larger values that are a multiple of a
+       * minute--for example, 240 or 300 seconds--are supported.
+       * If an invalid value is given, an
        * error will be returned. The `Duration.nanos` field is
        * ignored.
        * </pre>
@@ -6462,9 +6536,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The amount of time that a time series must fail to report new
-       * data to be considered failing. Currently, only values that
-       * are a multiple of a minute--e.g.  60, 120, or 300
-       * seconds--are supported. If an invalid value is given, an
+       * data to be considered failing. The minimum value of this field
+       * is 120 seconds. Larger values that are a multiple of a
+       * minute--for example, 240 or 300 seconds--are supported.
+       * If an invalid value is given, an
        * error will be returned. The `Duration.nanos` field is
        * ignored.
        * </pre>
@@ -6479,9 +6554,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The amount of time that a time series must fail to report new
-       * data to be considered failing. Currently, only values that
-       * are a multiple of a minute--e.g.  60, 120, or 300
-       * seconds--are supported. If an invalid value is given, an
+       * data to be considered failing. The minimum value of this field
+       * is 120 seconds. Larger values that are a multiple of a
+       * minute--for example, 240 or 300 seconds--are supported.
+       * If an invalid value is given, an
        * error will be returned. The `Duration.nanos` field is
        * ignored.
        * </pre>
@@ -6686,18 +6762,18 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+       * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
        * (that call is useful to verify the time series that will be retrieved /
-       * processed) and must specify the metric type and optionally may contain
-       * restrictions on resource type, resource labels, and metric labels.
-       * This field may not exceed 2048 Unicode characters in length.
+       * processed). The filter must specify the metric type and the resource
+       * type. Optionally, it can specify resource labels and metric labels.
+       * This field must not exceed 2048 Unicode characters in length.
        * </pre>
        *
-       * <code>string filter = 1;</code>
+       * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The filter.
        */
@@ -6717,18 +6793,18 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+       * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
        * identifies which time series should be compared with the threshold.
        * The filter is similar to the one that is specified in the
        * [`ListTimeSeries`
        * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
        * (that call is useful to verify the time series that will be retrieved /
-       * processed) and must specify the metric type and optionally may contain
-       * restrictions on resource type, resource labels, and metric labels.
-       * This field may not exceed 2048 Unicode characters in length.
+       * processed). The filter must specify the metric type and the resource
+       * type. Optionally, it can specify resource labels and metric labels.
+       * This field must not exceed 2048 Unicode characters in length.
        * </pre>
        *
-       * <code>string filter = 1;</code>
+       * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The bytes for filter.
        */
@@ -6866,9 +6942,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The amount of time that a time series must fail to report new
-       * data to be considered failing. Currently, only values that
-       * are a multiple of a minute--e.g.  60, 120, or 300
-       * seconds--are supported. If an invalid value is given, an
+       * data to be considered failing. The minimum value of this field
+       * is 120 seconds. Larger values that are a multiple of a
+       * minute--for example, 240 or 300 seconds--are supported.
+       * If an invalid value is given, an
        * error will be returned. The `Duration.nanos` field is
        * ignored.
        * </pre>
@@ -6886,9 +6963,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The amount of time that a time series must fail to report new
-       * data to be considered failing. Currently, only values that
-       * are a multiple of a minute--e.g.  60, 120, or 300
-       * seconds--are supported. If an invalid value is given, an
+       * data to be considered failing. The minimum value of this field
+       * is 120 seconds. Larger values that are a multiple of a
+       * minute--for example, 240 or 300 seconds--are supported.
+       * If an invalid value is given, an
        * error will be returned. The `Duration.nanos` field is
        * ignored.
        * </pre>
@@ -6906,9 +6984,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The amount of time that a time series must fail to report new
-       * data to be considered failing. Currently, only values that
-       * are a multiple of a minute--e.g.  60, 120, or 300
-       * seconds--are supported. If an invalid value is given, an
+       * data to be considered failing. The minimum value of this field
+       * is 120 seconds. Larger values that are a multiple of a
+       * minute--for example, 240 or 300 seconds--are supported.
+       * If an invalid value is given, an
        * error will be returned. The `Duration.nanos` field is
        * ignored.
        * </pre>
@@ -7427,18 +7506,18 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+         * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
          * (that call is useful to verify the time series that will be retrieved /
-         * processed) and must specify the metric type and optionally may contain
-         * restrictions on resource type, resource labels, and metric labels.
-         * This field may not exceed 2048 Unicode characters in length.
+         * processed). The filter must specify the metric type and the resource
+         * type. Optionally, it can specify resource labels and metric labels.
+         * This field must not exceed 2048 Unicode characters in length.
          * </pre>
          *
-         * <code>string filter = 1;</code>
+         * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          *
          * @return The filter.
          */
@@ -7457,18 +7536,18 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+         * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
          * (that call is useful to verify the time series that will be retrieved /
-         * processed) and must specify the metric type and optionally may contain
-         * restrictions on resource type, resource labels, and metric labels.
-         * This field may not exceed 2048 Unicode characters in length.
+         * processed). The filter must specify the metric type and the resource
+         * type. Optionally, it can specify resource labels and metric labels.
+         * This field must not exceed 2048 Unicode characters in length.
          * </pre>
          *
-         * <code>string filter = 1;</code>
+         * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          *
          * @return The bytes for filter.
          */
@@ -7487,18 +7566,18 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+         * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
          * (that call is useful to verify the time series that will be retrieved /
-         * processed) and must specify the metric type and optionally may contain
-         * restrictions on resource type, resource labels, and metric labels.
-         * This field may not exceed 2048 Unicode characters in length.
+         * processed). The filter must specify the metric type and the resource
+         * type. Optionally, it can specify resource labels and metric labels.
+         * This field must not exceed 2048 Unicode characters in length.
          * </pre>
          *
-         * <code>string filter = 1;</code>
+         * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          *
          * @param value The filter to set.
          * @return This builder for chaining.
@@ -7516,18 +7595,18 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+         * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
          * (that call is useful to verify the time series that will be retrieved /
-         * processed) and must specify the metric type and optionally may contain
-         * restrictions on resource type, resource labels, and metric labels.
-         * This field may not exceed 2048 Unicode characters in length.
+         * processed). The filter must specify the metric type and the resource
+         * type. Optionally, it can specify resource labels and metric labels.
+         * This field must not exceed 2048 Unicode characters in length.
          * </pre>
          *
-         * <code>string filter = 1;</code>
+         * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          *
          * @return This builder for chaining.
          */
@@ -7541,18 +7620,18 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
+         * Required. A [filter](https://cloud.google.com/monitoring/api/v3/filters) that
          * identifies which time series should be compared with the threshold.
          * The filter is similar to the one that is specified in the
          * [`ListTimeSeries`
          * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
          * (that call is useful to verify the time series that will be retrieved /
-         * processed) and must specify the metric type and optionally may contain
-         * restrictions on resource type, resource labels, and metric labels.
-         * This field may not exceed 2048 Unicode characters in length.
+         * processed). The filter must specify the metric type and the resource
+         * type. Optionally, it can specify resource labels and metric labels.
+         * This field must not exceed 2048 Unicode characters in length.
          * </pre>
          *
-         * <code>string filter = 1;</code>
+         * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
          *
          * @param value The bytes for filter to set.
          * @return This builder for chaining.
@@ -8095,9 +8174,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The amount of time that a time series must fail to report new
-         * data to be considered failing. Currently, only values that
-         * are a multiple of a minute--e.g.  60, 120, or 300
-         * seconds--are supported. If an invalid value is given, an
+         * data to be considered failing. The minimum value of this field
+         * is 120 seconds. Larger values that are a multiple of a
+         * minute--for example, 240 or 300 seconds--are supported.
+         * If an invalid value is given, an
          * error will be returned. The `Duration.nanos` field is
          * ignored.
          * </pre>
@@ -8114,9 +8194,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The amount of time that a time series must fail to report new
-         * data to be considered failing. Currently, only values that
-         * are a multiple of a minute--e.g.  60, 120, or 300
-         * seconds--are supported. If an invalid value is given, an
+         * data to be considered failing. The minimum value of this field
+         * is 120 seconds. Larger values that are a multiple of a
+         * minute--for example, 240 or 300 seconds--are supported.
+         * If an invalid value is given, an
          * error will be returned. The `Duration.nanos` field is
          * ignored.
          * </pre>
@@ -8139,9 +8220,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The amount of time that a time series must fail to report new
-         * data to be considered failing. Currently, only values that
-         * are a multiple of a minute--e.g.  60, 120, or 300
-         * seconds--are supported. If an invalid value is given, an
+         * data to be considered failing. The minimum value of this field
+         * is 120 seconds. Larger values that are a multiple of a
+         * minute--for example, 240 or 300 seconds--are supported.
+         * If an invalid value is given, an
          * error will be returned. The `Duration.nanos` field is
          * ignored.
          * </pre>
@@ -8166,9 +8248,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The amount of time that a time series must fail to report new
-         * data to be considered failing. Currently, only values that
-         * are a multiple of a minute--e.g.  60, 120, or 300
-         * seconds--are supported. If an invalid value is given, an
+         * data to be considered failing. The minimum value of this field
+         * is 120 seconds. Larger values that are a multiple of a
+         * minute--for example, 240 or 300 seconds--are supported.
+         * If an invalid value is given, an
          * error will be returned. The `Duration.nanos` field is
          * ignored.
          * </pre>
@@ -8190,9 +8273,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The amount of time that a time series must fail to report new
-         * data to be considered failing. Currently, only values that
-         * are a multiple of a minute--e.g.  60, 120, or 300
-         * seconds--are supported. If an invalid value is given, an
+         * data to be considered failing. The minimum value of this field
+         * is 120 seconds. Larger values that are a multiple of a
+         * minute--for example, 240 or 300 seconds--are supported.
+         * If an invalid value is given, an
          * error will be returned. The `Duration.nanos` field is
          * ignored.
          * </pre>
@@ -8221,9 +8305,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The amount of time that a time series must fail to report new
-         * data to be considered failing. Currently, only values that
-         * are a multiple of a minute--e.g.  60, 120, or 300
-         * seconds--are supported. If an invalid value is given, an
+         * data to be considered failing. The minimum value of this field
+         * is 120 seconds. Larger values that are a multiple of a
+         * minute--for example, 240 or 300 seconds--are supported.
+         * If an invalid value is given, an
          * error will be returned. The `Duration.nanos` field is
          * ignored.
          * </pre>
@@ -8246,9 +8331,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The amount of time that a time series must fail to report new
-         * data to be considered failing. Currently, only values that
-         * are a multiple of a minute--e.g.  60, 120, or 300
-         * seconds--are supported. If an invalid value is given, an
+         * data to be considered failing. The minimum value of this field
+         * is 120 seconds. Larger values that are a multiple of a
+         * minute--for example, 240 or 300 seconds--are supported.
+         * If an invalid value is given, an
          * error will be returned. The `Duration.nanos` field is
          * ignored.
          * </pre>
@@ -8265,9 +8351,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The amount of time that a time series must fail to report new
-         * data to be considered failing. Currently, only values that
-         * are a multiple of a minute--e.g.  60, 120, or 300
-         * seconds--are supported. If an invalid value is given, an
+         * data to be considered failing. The minimum value of this field
+         * is 120 seconds. Larger values that are a multiple of a
+         * minute--for example, 240 or 300 seconds--are supported.
+         * If an invalid value is given, an
          * error will be returned. The `Duration.nanos` field is
          * ignored.
          * </pre>
@@ -8288,9 +8375,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The amount of time that a time series must fail to report new
-         * data to be considered failing. Currently, only values that
-         * are a multiple of a minute--e.g.  60, 120, or 300
-         * seconds--are supported. If an invalid value is given, an
+         * data to be considered failing. The minimum value of this field
+         * is 120 seconds. Larger values that are a multiple of a
+         * minute--for example, 240 or 300 seconds--are supported.
+         * If an invalid value is given, an
          * error will be returned. The `Duration.nanos` field is
          * ignored.
          * </pre>
@@ -8583,6 +8671,1544 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface MonitoringQueryLanguageConditionOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * [Monitoring Query Language](https://cloud.google.com/monitoring/mql)
+       * query that outputs a boolean stream.
+       * </pre>
+       *
+       * <code>string query = 1;</code>
+       *
+       * @return The query.
+       */
+      java.lang.String getQuery();
+      /**
+       *
+       *
+       * <pre>
+       * [Monitoring Query Language](https://cloud.google.com/monitoring/mql)
+       * query that outputs a boolean stream.
+       * </pre>
+       *
+       * <code>string query = 1;</code>
+       *
+       * @return The bytes for query.
+       */
+      com.google.protobuf.ByteString getQueryBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The amount of time that a time series must violate the
+       * threshold to be considered failing. Currently, only values
+       * that are a multiple of a minute--e.g., 0, 60, 120, or 300
+       * seconds--are supported. If an invalid value is given, an
+       * error will be returned. When choosing a duration, it is useful to
+       * keep in mind the frequency of the underlying time series data
+       * (which may also be affected by any alignments specified in the
+       * `aggregations` field); a good duration is long enough so that a single
+       * outlier does not generate spurious alerts, but short enough that
+       * unhealthy states are detected and alerted on quickly.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 2;</code>
+       *
+       * @return Whether the duration field is set.
+       */
+      boolean hasDuration();
+      /**
+       *
+       *
+       * <pre>
+       * The amount of time that a time series must violate the
+       * threshold to be considered failing. Currently, only values
+       * that are a multiple of a minute--e.g., 0, 60, 120, or 300
+       * seconds--are supported. If an invalid value is given, an
+       * error will be returned. When choosing a duration, it is useful to
+       * keep in mind the frequency of the underlying time series data
+       * (which may also be affected by any alignments specified in the
+       * `aggregations` field); a good duration is long enough so that a single
+       * outlier does not generate spurious alerts, but short enough that
+       * unhealthy states are detected and alerted on quickly.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 2;</code>
+       *
+       * @return The duration.
+       */
+      com.google.protobuf.Duration getDuration();
+      /**
+       *
+       *
+       * <pre>
+       * The amount of time that a time series must violate the
+       * threshold to be considered failing. Currently, only values
+       * that are a multiple of a minute--e.g., 0, 60, 120, or 300
+       * seconds--are supported. If an invalid value is given, an
+       * error will be returned. When choosing a duration, it is useful to
+       * keep in mind the frequency of the underlying time series data
+       * (which may also be affected by any alignments specified in the
+       * `aggregations` field); a good duration is long enough so that a single
+       * outlier does not generate spurious alerts, but short enough that
+       * unhealthy states are detected and alerted on quickly.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 2;</code>
+       */
+      com.google.protobuf.DurationOrBuilder getDurationOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * The number/percent of time series for which the comparison must hold
+       * in order for the condition to trigger. If unspecified, then the
+       * condition will trigger if the comparison is true for any of the
+       * time series that have been identified by `filter` and `aggregations`,
+       * or by the ratio, if `denominator_filter` and `denominator_aggregations`
+       * are specified.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+       *
+       * @return Whether the trigger field is set.
+       */
+      boolean hasTrigger();
+      /**
+       *
+       *
+       * <pre>
+       * The number/percent of time series for which the comparison must hold
+       * in order for the condition to trigger. If unspecified, then the
+       * condition will trigger if the comparison is true for any of the
+       * time series that have been identified by `filter` and `aggregations`,
+       * or by the ratio, if `denominator_filter` and `denominator_aggregations`
+       * are specified.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+       *
+       * @return The trigger.
+       */
+      com.google.monitoring.v3.AlertPolicy.Condition.Trigger getTrigger();
+      /**
+       *
+       *
+       * <pre>
+       * The number/percent of time series for which the comparison must hold
+       * in order for the condition to trigger. If unspecified, then the
+       * condition will trigger if the comparison is true for any of the
+       * time series that have been identified by `filter` and `aggregations`,
+       * or by the ratio, if `denominator_filter` and `denominator_aggregations`
+       * are specified.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+       */
+      com.google.monitoring.v3.AlertPolicy.Condition.TriggerOrBuilder getTriggerOrBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A condition type that allows alert policies to be defined using
+     * [Monitoring Query Language](https://cloud.google.com/monitoring/mql).
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition}
+     */
+    public static final class MonitoringQueryLanguageCondition
+        extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition)
+        MonitoringQueryLanguageConditionOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use MonitoringQueryLanguageCondition.newBuilder() to construct.
+      private MonitoringQueryLanguageCondition(
+          com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private MonitoringQueryLanguageCondition() {
+        query_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new MonitoringQueryLanguageCondition();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      private MonitoringQueryLanguageCondition(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  query_ = s;
+                  break;
+                }
+              case 18:
+                {
+                  com.google.protobuf.Duration.Builder subBuilder = null;
+                  if (duration_ != null) {
+                    subBuilder = duration_.toBuilder();
+                  }
+                  duration_ =
+                      input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(duration_);
+                    duration_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+              case 26:
+                {
+                  com.google.monitoring.v3.AlertPolicy.Condition.Trigger.Builder subBuilder = null;
+                  if (trigger_ != null) {
+                    subBuilder = trigger_.toBuilder();
+                  }
+                  trigger_ =
+                      input.readMessage(
+                          com.google.monitoring.v3.AlertPolicy.Condition.Trigger.parser(),
+                          extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(trigger_);
+                    trigger_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.AlertProto
+            .internal_static_google_monitoring_v3_AlertPolicy_Condition_MonitoringQueryLanguageCondition_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.monitoring.v3.AlertProto
+            .internal_static_google_monitoring_v3_AlertPolicy_Condition_MonitoringQueryLanguageCondition_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+                    .class,
+                com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+                    .Builder.class);
+      }
+
+      public static final int QUERY_FIELD_NUMBER = 1;
+      private volatile java.lang.Object query_;
+      /**
+       *
+       *
+       * <pre>
+       * [Monitoring Query Language](https://cloud.google.com/monitoring/mql)
+       * query that outputs a boolean stream.
+       * </pre>
+       *
+       * <code>string query = 1;</code>
+       *
+       * @return The query.
+       */
+      @java.lang.Override
+      public java.lang.String getQuery() {
+        java.lang.Object ref = query_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          query_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * [Monitoring Query Language](https://cloud.google.com/monitoring/mql)
+       * query that outputs a boolean stream.
+       * </pre>
+       *
+       * <code>string query = 1;</code>
+       *
+       * @return The bytes for query.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getQueryBytes() {
+        java.lang.Object ref = query_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          query_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int DURATION_FIELD_NUMBER = 2;
+      private com.google.protobuf.Duration duration_;
+      /**
+       *
+       *
+       * <pre>
+       * The amount of time that a time series must violate the
+       * threshold to be considered failing. Currently, only values
+       * that are a multiple of a minute--e.g., 0, 60, 120, or 300
+       * seconds--are supported. If an invalid value is given, an
+       * error will be returned. When choosing a duration, it is useful to
+       * keep in mind the frequency of the underlying time series data
+       * (which may also be affected by any alignments specified in the
+       * `aggregations` field); a good duration is long enough so that a single
+       * outlier does not generate spurious alerts, but short enough that
+       * unhealthy states are detected and alerted on quickly.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 2;</code>
+       *
+       * @return Whether the duration field is set.
+       */
+      @java.lang.Override
+      public boolean hasDuration() {
+        return duration_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The amount of time that a time series must violate the
+       * threshold to be considered failing. Currently, only values
+       * that are a multiple of a minute--e.g., 0, 60, 120, or 300
+       * seconds--are supported. If an invalid value is given, an
+       * error will be returned. When choosing a duration, it is useful to
+       * keep in mind the frequency of the underlying time series data
+       * (which may also be affected by any alignments specified in the
+       * `aggregations` field); a good duration is long enough so that a single
+       * outlier does not generate spurious alerts, but short enough that
+       * unhealthy states are detected and alerted on quickly.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 2;</code>
+       *
+       * @return The duration.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Duration getDuration() {
+        return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The amount of time that a time series must violate the
+       * threshold to be considered failing. Currently, only values
+       * that are a multiple of a minute--e.g., 0, 60, 120, or 300
+       * seconds--are supported. If an invalid value is given, an
+       * error will be returned. When choosing a duration, it is useful to
+       * keep in mind the frequency of the underlying time series data
+       * (which may also be affected by any alignments specified in the
+       * `aggregations` field); a good duration is long enough so that a single
+       * outlier does not generate spurious alerts, but short enough that
+       * unhealthy states are detected and alerted on quickly.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 2;</code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
+        return getDuration();
+      }
+
+      public static final int TRIGGER_FIELD_NUMBER = 3;
+      private com.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger_;
+      /**
+       *
+       *
+       * <pre>
+       * The number/percent of time series for which the comparison must hold
+       * in order for the condition to trigger. If unspecified, then the
+       * condition will trigger if the comparison is true for any of the
+       * time series that have been identified by `filter` and `aggregations`,
+       * or by the ratio, if `denominator_filter` and `denominator_aggregations`
+       * are specified.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+       *
+       * @return Whether the trigger field is set.
+       */
+      @java.lang.Override
+      public boolean hasTrigger() {
+        return trigger_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number/percent of time series for which the comparison must hold
+       * in order for the condition to trigger. If unspecified, then the
+       * condition will trigger if the comparison is true for any of the
+       * time series that have been identified by `filter` and `aggregations`,
+       * or by the ratio, if `denominator_filter` and `denominator_aggregations`
+       * are specified.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+       *
+       * @return The trigger.
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.Trigger getTrigger() {
+        return trigger_ == null
+            ? com.google.monitoring.v3.AlertPolicy.Condition.Trigger.getDefaultInstance()
+            : trigger_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number/percent of time series for which the comparison must hold
+       * in order for the condition to trigger. If unspecified, then the
+       * condition will trigger if the comparison is true for any of the
+       * time series that have been identified by `filter` and `aggregations`,
+       * or by the ratio, if `denominator_filter` and `denominator_aggregations`
+       * are specified.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.TriggerOrBuilder getTriggerOrBuilder() {
+        return getTrigger();
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!getQueryBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, query_);
+        }
+        if (duration_ != null) {
+          output.writeMessage(2, getDuration());
+        }
+        if (trigger_ != null) {
+          output.writeMessage(3, getTrigger());
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getQueryBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, query_);
+        }
+        if (duration_ != null) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDuration());
+        }
+        if (trigger_ != null) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getTrigger());
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition)) {
+          return super.equals(obj);
+        }
+        com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition other =
+            (com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition) obj;
+
+        if (!getQuery().equals(other.getQuery())) return false;
+        if (hasDuration() != other.hasDuration()) return false;
+        if (hasDuration()) {
+          if (!getDuration().equals(other.getDuration())) return false;
+        }
+        if (hasTrigger() != other.hasTrigger()) return false;
+        if (hasTrigger()) {
+          if (!getTrigger().equals(other.getTrigger())) return false;
+        }
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + QUERY_FIELD_NUMBER;
+        hash = (53 * hash) + getQuery().hashCode();
+        if (hasDuration()) {
+          hash = (37 * hash) + DURATION_FIELD_NUMBER;
+          hash = (53 * hash) + getDuration().hashCode();
+        }
+        if (hasTrigger()) {
+          hash = (37 * hash) + TRIGGER_FIELD_NUMBER;
+          hash = (53 * hash) + getTrigger().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition type that allows alert policies to be defined using
+       * [Monitoring Query Language](https://cloud.google.com/monitoring/mql).
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition)
+          com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageConditionOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_MonitoringQueryLanguageCondition_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_MonitoringQueryLanguageCondition_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+                      .class,
+                  com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          query_ = "";
+
+          if (durationBuilder_ == null) {
+            duration_ = null;
+          } else {
+            duration_ = null;
+            durationBuilder_ = null;
+          }
+          if (triggerBuilder_ == null) {
+            trigger_ = null;
+          } else {
+            trigger_ = null;
+            triggerBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_MonitoringQueryLanguageCondition_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+            getDefaultInstanceForType() {
+          return com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+            build() {
+          com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+            buildPartial() {
+          com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition result =
+              new com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition(
+                  this);
+          result.query_ = query_;
+          if (durationBuilder_ == null) {
+            result.duration_ = duration_;
+          } else {
+            result.duration_ = durationBuilder_.build();
+          }
+          if (triggerBuilder_ == null) {
+            result.trigger_ = trigger_;
+          } else {
+            result.trigger_ = triggerBuilder_.build();
+          }
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition) {
+            return mergeFrom(
+                (com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition other) {
+          if (other
+              == com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+                  .getDefaultInstance()) return this;
+          if (!other.getQuery().isEmpty()) {
+            query_ = other.query_;
+            onChanged();
+          }
+          if (other.hasDuration()) {
+            mergeDuration(other.getDuration());
+          }
+          if (other.hasTrigger()) {
+            mergeTrigger(other.getTrigger());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+              parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage =
+                (com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition)
+                    e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object query_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * [Monitoring Query Language](https://cloud.google.com/monitoring/mql)
+         * query that outputs a boolean stream.
+         * </pre>
+         *
+         * <code>string query = 1;</code>
+         *
+         * @return The query.
+         */
+        public java.lang.String getQuery() {
+          java.lang.Object ref = query_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            query_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * [Monitoring Query Language](https://cloud.google.com/monitoring/mql)
+         * query that outputs a boolean stream.
+         * </pre>
+         *
+         * <code>string query = 1;</code>
+         *
+         * @return The bytes for query.
+         */
+        public com.google.protobuf.ByteString getQueryBytes() {
+          java.lang.Object ref = query_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            query_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * [Monitoring Query Language](https://cloud.google.com/monitoring/mql)
+         * query that outputs a boolean stream.
+         * </pre>
+         *
+         * <code>string query = 1;</code>
+         *
+         * @param value The query to set.
+         * @return This builder for chaining.
+         */
+        public Builder setQuery(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          query_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * [Monitoring Query Language](https://cloud.google.com/monitoring/mql)
+         * query that outputs a boolean stream.
+         * </pre>
+         *
+         * <code>string query = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearQuery() {
+
+          query_ = getDefaultInstance().getQuery();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * [Monitoring Query Language](https://cloud.google.com/monitoring/mql)
+         * query that outputs a boolean stream.
+         * </pre>
+         *
+         * <code>string query = 1;</code>
+         *
+         * @param value The bytes for query to set.
+         * @return This builder for chaining.
+         */
+        public Builder setQueryBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
+          query_ = value;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.Duration duration_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>
+            durationBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * The amount of time that a time series must violate the
+         * threshold to be considered failing. Currently, only values
+         * that are a multiple of a minute--e.g., 0, 60, 120, or 300
+         * seconds--are supported. If an invalid value is given, an
+         * error will be returned. When choosing a duration, it is useful to
+         * keep in mind the frequency of the underlying time series data
+         * (which may also be affected by any alignments specified in the
+         * `aggregations` field); a good duration is long enough so that a single
+         * outlier does not generate spurious alerts, but short enough that
+         * unhealthy states are detected and alerted on quickly.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration duration = 2;</code>
+         *
+         * @return Whether the duration field is set.
+         */
+        public boolean hasDuration() {
+          return durationBuilder_ != null || duration_ != null;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The amount of time that a time series must violate the
+         * threshold to be considered failing. Currently, only values
+         * that are a multiple of a minute--e.g., 0, 60, 120, or 300
+         * seconds--are supported. If an invalid value is given, an
+         * error will be returned. When choosing a duration, it is useful to
+         * keep in mind the frequency of the underlying time series data
+         * (which may also be affected by any alignments specified in the
+         * `aggregations` field); a good duration is long enough so that a single
+         * outlier does not generate spurious alerts, but short enough that
+         * unhealthy states are detected and alerted on quickly.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration duration = 2;</code>
+         *
+         * @return The duration.
+         */
+        public com.google.protobuf.Duration getDuration() {
+          if (durationBuilder_ == null) {
+            return duration_ == null
+                ? com.google.protobuf.Duration.getDefaultInstance()
+                : duration_;
+          } else {
+            return durationBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The amount of time that a time series must violate the
+         * threshold to be considered failing. Currently, only values
+         * that are a multiple of a minute--e.g., 0, 60, 120, or 300
+         * seconds--are supported. If an invalid value is given, an
+         * error will be returned. When choosing a duration, it is useful to
+         * keep in mind the frequency of the underlying time series data
+         * (which may also be affected by any alignments specified in the
+         * `aggregations` field); a good duration is long enough so that a single
+         * outlier does not generate spurious alerts, but short enough that
+         * unhealthy states are detected and alerted on quickly.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration duration = 2;</code>
+         */
+        public Builder setDuration(com.google.protobuf.Duration value) {
+          if (durationBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            duration_ = value;
+            onChanged();
+          } else {
+            durationBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The amount of time that a time series must violate the
+         * threshold to be considered failing. Currently, only values
+         * that are a multiple of a minute--e.g., 0, 60, 120, or 300
+         * seconds--are supported. If an invalid value is given, an
+         * error will be returned. When choosing a duration, it is useful to
+         * keep in mind the frequency of the underlying time series data
+         * (which may also be affected by any alignments specified in the
+         * `aggregations` field); a good duration is long enough so that a single
+         * outlier does not generate spurious alerts, but short enough that
+         * unhealthy states are detected and alerted on quickly.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration duration = 2;</code>
+         */
+        public Builder setDuration(com.google.protobuf.Duration.Builder builderForValue) {
+          if (durationBuilder_ == null) {
+            duration_ = builderForValue.build();
+            onChanged();
+          } else {
+            durationBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The amount of time that a time series must violate the
+         * threshold to be considered failing. Currently, only values
+         * that are a multiple of a minute--e.g., 0, 60, 120, or 300
+         * seconds--are supported. If an invalid value is given, an
+         * error will be returned. When choosing a duration, it is useful to
+         * keep in mind the frequency of the underlying time series data
+         * (which may also be affected by any alignments specified in the
+         * `aggregations` field); a good duration is long enough so that a single
+         * outlier does not generate spurious alerts, but short enough that
+         * unhealthy states are detected and alerted on quickly.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration duration = 2;</code>
+         */
+        public Builder mergeDuration(com.google.protobuf.Duration value) {
+          if (durationBuilder_ == null) {
+            if (duration_ != null) {
+              duration_ =
+                  com.google.protobuf.Duration.newBuilder(duration_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              duration_ = value;
+            }
+            onChanged();
+          } else {
+            durationBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The amount of time that a time series must violate the
+         * threshold to be considered failing. Currently, only values
+         * that are a multiple of a minute--e.g., 0, 60, 120, or 300
+         * seconds--are supported. If an invalid value is given, an
+         * error will be returned. When choosing a duration, it is useful to
+         * keep in mind the frequency of the underlying time series data
+         * (which may also be affected by any alignments specified in the
+         * `aggregations` field); a good duration is long enough so that a single
+         * outlier does not generate spurious alerts, but short enough that
+         * unhealthy states are detected and alerted on quickly.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration duration = 2;</code>
+         */
+        public Builder clearDuration() {
+          if (durationBuilder_ == null) {
+            duration_ = null;
+            onChanged();
+          } else {
+            duration_ = null;
+            durationBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The amount of time that a time series must violate the
+         * threshold to be considered failing. Currently, only values
+         * that are a multiple of a minute--e.g., 0, 60, 120, or 300
+         * seconds--are supported. If an invalid value is given, an
+         * error will be returned. When choosing a duration, it is useful to
+         * keep in mind the frequency of the underlying time series data
+         * (which may also be affected by any alignments specified in the
+         * `aggregations` field); a good duration is long enough so that a single
+         * outlier does not generate spurious alerts, but short enough that
+         * unhealthy states are detected and alerted on quickly.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration duration = 2;</code>
+         */
+        public com.google.protobuf.Duration.Builder getDurationBuilder() {
+
+          onChanged();
+          return getDurationFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The amount of time that a time series must violate the
+         * threshold to be considered failing. Currently, only values
+         * that are a multiple of a minute--e.g., 0, 60, 120, or 300
+         * seconds--are supported. If an invalid value is given, an
+         * error will be returned. When choosing a duration, it is useful to
+         * keep in mind the frequency of the underlying time series data
+         * (which may also be affected by any alignments specified in the
+         * `aggregations` field); a good duration is long enough so that a single
+         * outlier does not generate spurious alerts, but short enough that
+         * unhealthy states are detected and alerted on quickly.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration duration = 2;</code>
+         */
+        public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
+          if (durationBuilder_ != null) {
+            return durationBuilder_.getMessageOrBuilder();
+          } else {
+            return duration_ == null
+                ? com.google.protobuf.Duration.getDefaultInstance()
+                : duration_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The amount of time that a time series must violate the
+         * threshold to be considered failing. Currently, only values
+         * that are a multiple of a minute--e.g., 0, 60, 120, or 300
+         * seconds--are supported. If an invalid value is given, an
+         * error will be returned. When choosing a duration, it is useful to
+         * keep in mind the frequency of the underlying time series data
+         * (which may also be affected by any alignments specified in the
+         * `aggregations` field); a good duration is long enough so that a single
+         * outlier does not generate spurious alerts, but short enough that
+         * unhealthy states are detected and alerted on quickly.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration duration = 2;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>
+            getDurationFieldBuilder() {
+          if (durationBuilder_ == null) {
+            durationBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.Duration,
+                    com.google.protobuf.Duration.Builder,
+                    com.google.protobuf.DurationOrBuilder>(
+                    getDuration(), getParentForChildren(), isClean());
+            duration_ = null;
+          }
+          return durationBuilder_;
+        }
+
+        private com.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.AlertPolicy.Condition.Trigger,
+                com.google.monitoring.v3.AlertPolicy.Condition.Trigger.Builder,
+                com.google.monitoring.v3.AlertPolicy.Condition.TriggerOrBuilder>
+            triggerBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * The number/percent of time series for which the comparison must hold
+         * in order for the condition to trigger. If unspecified, then the
+         * condition will trigger if the comparison is true for any of the
+         * time series that have been identified by `filter` and `aggregations`,
+         * or by the ratio, if `denominator_filter` and `denominator_aggregations`
+         * are specified.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+         *
+         * @return Whether the trigger field is set.
+         */
+        public boolean hasTrigger() {
+          return triggerBuilder_ != null || trigger_ != null;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number/percent of time series for which the comparison must hold
+         * in order for the condition to trigger. If unspecified, then the
+         * condition will trigger if the comparison is true for any of the
+         * time series that have been identified by `filter` and `aggregations`,
+         * or by the ratio, if `denominator_filter` and `denominator_aggregations`
+         * are specified.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+         *
+         * @return The trigger.
+         */
+        public com.google.monitoring.v3.AlertPolicy.Condition.Trigger getTrigger() {
+          if (triggerBuilder_ == null) {
+            return trigger_ == null
+                ? com.google.monitoring.v3.AlertPolicy.Condition.Trigger.getDefaultInstance()
+                : trigger_;
+          } else {
+            return triggerBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number/percent of time series for which the comparison must hold
+         * in order for the condition to trigger. If unspecified, then the
+         * condition will trigger if the comparison is true for any of the
+         * time series that have been identified by `filter` and `aggregations`,
+         * or by the ratio, if `denominator_filter` and `denominator_aggregations`
+         * are specified.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+         */
+        public Builder setTrigger(com.google.monitoring.v3.AlertPolicy.Condition.Trigger value) {
+          if (triggerBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            trigger_ = value;
+            onChanged();
+          } else {
+            triggerBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number/percent of time series for which the comparison must hold
+         * in order for the condition to trigger. If unspecified, then the
+         * condition will trigger if the comparison is true for any of the
+         * time series that have been identified by `filter` and `aggregations`,
+         * or by the ratio, if `denominator_filter` and `denominator_aggregations`
+         * are specified.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+         */
+        public Builder setTrigger(
+            com.google.monitoring.v3.AlertPolicy.Condition.Trigger.Builder builderForValue) {
+          if (triggerBuilder_ == null) {
+            trigger_ = builderForValue.build();
+            onChanged();
+          } else {
+            triggerBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number/percent of time series for which the comparison must hold
+         * in order for the condition to trigger. If unspecified, then the
+         * condition will trigger if the comparison is true for any of the
+         * time series that have been identified by `filter` and `aggregations`,
+         * or by the ratio, if `denominator_filter` and `denominator_aggregations`
+         * are specified.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+         */
+        public Builder mergeTrigger(com.google.monitoring.v3.AlertPolicy.Condition.Trigger value) {
+          if (triggerBuilder_ == null) {
+            if (trigger_ != null) {
+              trigger_ =
+                  com.google.monitoring.v3.AlertPolicy.Condition.Trigger.newBuilder(trigger_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              trigger_ = value;
+            }
+            onChanged();
+          } else {
+            triggerBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number/percent of time series for which the comparison must hold
+         * in order for the condition to trigger. If unspecified, then the
+         * condition will trigger if the comparison is true for any of the
+         * time series that have been identified by `filter` and `aggregations`,
+         * or by the ratio, if `denominator_filter` and `denominator_aggregations`
+         * are specified.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+         */
+        public Builder clearTrigger() {
+          if (triggerBuilder_ == null) {
+            trigger_ = null;
+            onChanged();
+          } else {
+            trigger_ = null;
+            triggerBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number/percent of time series for which the comparison must hold
+         * in order for the condition to trigger. If unspecified, then the
+         * condition will trigger if the comparison is true for any of the
+         * time series that have been identified by `filter` and `aggregations`,
+         * or by the ratio, if `denominator_filter` and `denominator_aggregations`
+         * are specified.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+         */
+        public com.google.monitoring.v3.AlertPolicy.Condition.Trigger.Builder getTriggerBuilder() {
+
+          onChanged();
+          return getTriggerFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number/percent of time series for which the comparison must hold
+         * in order for the condition to trigger. If unspecified, then the
+         * condition will trigger if the comparison is true for any of the
+         * time series that have been identified by `filter` and `aggregations`,
+         * or by the ratio, if `denominator_filter` and `denominator_aggregations`
+         * are specified.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+         */
+        public com.google.monitoring.v3.AlertPolicy.Condition.TriggerOrBuilder
+            getTriggerOrBuilder() {
+          if (triggerBuilder_ != null) {
+            return triggerBuilder_.getMessageOrBuilder();
+          } else {
+            return trigger_ == null
+                ? com.google.monitoring.v3.AlertPolicy.Condition.Trigger.getDefaultInstance()
+                : trigger_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number/percent of time series for which the comparison must hold
+         * in order for the condition to trigger. If unspecified, then the
+         * condition will trigger if the comparison is true for any of the
+         * time series that have been identified by `filter` and `aggregations`,
+         * or by the ratio, if `denominator_filter` and `denominator_aggregations`
+         * are specified.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.AlertPolicy.Condition.Trigger,
+                com.google.monitoring.v3.AlertPolicy.Condition.Trigger.Builder,
+                com.google.monitoring.v3.AlertPolicy.Condition.TriggerOrBuilder>
+            getTriggerFieldBuilder() {
+          if (triggerBuilder_ == null) {
+            triggerBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.monitoring.v3.AlertPolicy.Condition.Trigger,
+                    com.google.monitoring.v3.AlertPolicy.Condition.Trigger.Builder,
+                    com.google.monitoring.v3.AlertPolicy.Condition.TriggerOrBuilder>(
+                    getTrigger(), getParentForChildren(), isClean());
+            trigger_ = null;
+          }
+          return triggerBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition)
+      private static final com.google.monitoring.v3.AlertPolicy.Condition
+              .MonitoringQueryLanguageCondition
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition();
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<MonitoringQueryLanguageCondition> PARSER =
+          new com.google.protobuf.AbstractParser<MonitoringQueryLanguageCondition>() {
+            @java.lang.Override
+            public MonitoringQueryLanguageCondition parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new MonitoringQueryLanguageCondition(input, extensionRegistry);
+            }
+          };
+
+      public static com.google.protobuf.Parser<MonitoringQueryLanguageCondition> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<MonitoringQueryLanguageCondition> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int conditionCase_ = 0;
     private java.lang.Object condition_;
 
@@ -8592,6 +10218,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       CONDITION_THRESHOLD(1),
       CONDITION_ABSENT(2),
+      CONDITION_MONITORING_QUERY_LANGUAGE(19),
       CONDITION_NOT_SET(0);
       private final int value;
 
@@ -8614,6 +10241,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             return CONDITION_THRESHOLD;
           case 2:
             return CONDITION_ABSENT;
+          case 19:
+            return CONDITION_MONITORING_QUERY_LANGUAGE;
           case 0:
             return CONDITION_NOT_SET;
           default:
@@ -8880,6 +10509,72 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       return com.google.monitoring.v3.AlertPolicy.Condition.MetricAbsence.getDefaultInstance();
     }
 
+    public static final int CONDITION_MONITORING_QUERY_LANGUAGE_FIELD_NUMBER = 19;
+    /**
+     *
+     *
+     * <pre>
+     * A condition that uses the Monitoring Query Language to define
+     * alerts.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition condition_monitoring_query_language = 19;
+     * </code>
+     *
+     * @return Whether the conditionMonitoringQueryLanguage field is set.
+     */
+    @java.lang.Override
+    public boolean hasConditionMonitoringQueryLanguage() {
+      return conditionCase_ == 19;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A condition that uses the Monitoring Query Language to define
+     * alerts.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition condition_monitoring_query_language = 19;
+     * </code>
+     *
+     * @return The conditionMonitoringQueryLanguage.
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+        getConditionMonitoringQueryLanguage() {
+      if (conditionCase_ == 19) {
+        return (com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition)
+            condition_;
+      }
+      return com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A condition that uses the Monitoring Query Language to define
+     * alerts.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition condition_monitoring_query_language = 19;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageConditionOrBuilder
+        getConditionMonitoringQueryLanguageOrBuilder() {
+      if (conditionCase_ == 19) {
+        return (com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition)
+            condition_;
+      }
+      return com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+          .getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -8908,6 +10603,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, name_);
       }
+      if (conditionCase_ == 19) {
+        output.writeMessage(
+            19,
+            (com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition)
+                condition_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -8932,6 +10633,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, name_);
+      }
+      if (conditionCase_ == 19) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                19,
+                (com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition)
+                    condition_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8959,6 +10667,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         case 2:
           if (!getConditionAbsent().equals(other.getConditionAbsent())) return false;
           break;
+        case 19:
+          if (!getConditionMonitoringQueryLanguage()
+              .equals(other.getConditionMonitoringQueryLanguage())) return false;
+          break;
         case 0:
         default:
       }
@@ -8985,6 +10697,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         case 2:
           hash = (37 * hash) + CONDITION_ABSENT_FIELD_NUMBER;
           hash = (53 * hash) + getConditionAbsent().hashCode();
+          break;
+        case 19:
+          hash = (37 * hash) + CONDITION_MONITORING_QUERY_LANGUAGE_FIELD_NUMBER;
+          hash = (53 * hash) + getConditionMonitoringQueryLanguage().hashCode();
           break;
         case 0:
         default:
@@ -9187,6 +10903,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             result.condition_ = conditionAbsentBuilder_.build();
           }
         }
+        if (conditionCase_ == 19) {
+          if (conditionMonitoringQueryLanguageBuilder_ == null) {
+            result.condition_ = condition_;
+          } else {
+            result.condition_ = conditionMonitoringQueryLanguageBuilder_.build();
+          }
+        }
         result.conditionCase_ = conditionCase_;
         onBuilt();
         return result;
@@ -9257,6 +10980,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           case CONDITION_ABSENT:
             {
               mergeConditionAbsent(other.getConditionAbsent());
+              break;
+            }
+          case CONDITION_MONITORING_QUERY_LANGUAGE:
+            {
+              mergeConditionMonitoringQueryLanguage(other.getConditionMonitoringQueryLanguage());
               break;
             }
           case CONDITION_NOT_SET:
@@ -10085,6 +11813,268 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         ;
         return conditionAbsentBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition,
+              com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+                  .Builder,
+              com.google.monitoring.v3.AlertPolicy.Condition
+                  .MonitoringQueryLanguageConditionOrBuilder>
+          conditionMonitoringQueryLanguageBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A condition that uses the Monitoring Query Language to define
+       * alerts.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition condition_monitoring_query_language = 19;
+       * </code>
+       *
+       * @return Whether the conditionMonitoringQueryLanguage field is set.
+       */
+      @java.lang.Override
+      public boolean hasConditionMonitoringQueryLanguage() {
+        return conditionCase_ == 19;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that uses the Monitoring Query Language to define
+       * alerts.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition condition_monitoring_query_language = 19;
+       * </code>
+       *
+       * @return The conditionMonitoringQueryLanguage.
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+          getConditionMonitoringQueryLanguage() {
+        if (conditionMonitoringQueryLanguageBuilder_ == null) {
+          if (conditionCase_ == 19) {
+            return (com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition)
+                condition_;
+          }
+          return com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+              .getDefaultInstance();
+        } else {
+          if (conditionCase_ == 19) {
+            return conditionMonitoringQueryLanguageBuilder_.getMessage();
+          }
+          return com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that uses the Monitoring Query Language to define
+       * alerts.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition condition_monitoring_query_language = 19;
+       * </code>
+       */
+      public Builder setConditionMonitoringQueryLanguage(
+          com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition value) {
+        if (conditionMonitoringQueryLanguageBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          condition_ = value;
+          onChanged();
+        } else {
+          conditionMonitoringQueryLanguageBuilder_.setMessage(value);
+        }
+        conditionCase_ = 19;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that uses the Monitoring Query Language to define
+       * alerts.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition condition_monitoring_query_language = 19;
+       * </code>
+       */
+      public Builder setConditionMonitoringQueryLanguage(
+          com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition.Builder
+              builderForValue) {
+        if (conditionMonitoringQueryLanguageBuilder_ == null) {
+          condition_ = builderForValue.build();
+          onChanged();
+        } else {
+          conditionMonitoringQueryLanguageBuilder_.setMessage(builderForValue.build());
+        }
+        conditionCase_ = 19;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that uses the Monitoring Query Language to define
+       * alerts.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition condition_monitoring_query_language = 19;
+       * </code>
+       */
+      public Builder mergeConditionMonitoringQueryLanguage(
+          com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition value) {
+        if (conditionMonitoringQueryLanguageBuilder_ == null) {
+          if (conditionCase_ == 19
+              && condition_
+                  != com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+                      .getDefaultInstance()) {
+            condition_ =
+                com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+                    .newBuilder(
+                        (com.google.monitoring.v3.AlertPolicy.Condition
+                                .MonitoringQueryLanguageCondition)
+                            condition_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            condition_ = value;
+          }
+          onChanged();
+        } else {
+          if (conditionCase_ == 19) {
+            conditionMonitoringQueryLanguageBuilder_.mergeFrom(value);
+          }
+          conditionMonitoringQueryLanguageBuilder_.setMessage(value);
+        }
+        conditionCase_ = 19;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that uses the Monitoring Query Language to define
+       * alerts.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition condition_monitoring_query_language = 19;
+       * </code>
+       */
+      public Builder clearConditionMonitoringQueryLanguage() {
+        if (conditionMonitoringQueryLanguageBuilder_ == null) {
+          if (conditionCase_ == 19) {
+            conditionCase_ = 0;
+            condition_ = null;
+            onChanged();
+          }
+        } else {
+          if (conditionCase_ == 19) {
+            conditionCase_ = 0;
+            condition_ = null;
+          }
+          conditionMonitoringQueryLanguageBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that uses the Monitoring Query Language to define
+       * alerts.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition condition_monitoring_query_language = 19;
+       * </code>
+       */
+      public com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition.Builder
+          getConditionMonitoringQueryLanguageBuilder() {
+        return getConditionMonitoringQueryLanguageFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that uses the Monitoring Query Language to define
+       * alerts.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition condition_monitoring_query_language = 19;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition
+              .MonitoringQueryLanguageConditionOrBuilder
+          getConditionMonitoringQueryLanguageOrBuilder() {
+        if ((conditionCase_ == 19) && (conditionMonitoringQueryLanguageBuilder_ != null)) {
+          return conditionMonitoringQueryLanguageBuilder_.getMessageOrBuilder();
+        } else {
+          if (conditionCase_ == 19) {
+            return (com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition)
+                condition_;
+          }
+          return com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that uses the Monitoring Query Language to define
+       * alerts.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition condition_monitoring_query_language = 19;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition,
+              com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+                  .Builder,
+              com.google.monitoring.v3.AlertPolicy.Condition
+                  .MonitoringQueryLanguageConditionOrBuilder>
+          getConditionMonitoringQueryLanguageFieldBuilder() {
+        if (conditionMonitoringQueryLanguageBuilder_ == null) {
+          if (!(conditionCase_ == 19)) {
+            condition_ =
+                com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+                    .getDefaultInstance();
+          }
+          conditionMonitoringQueryLanguageBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition,
+                  com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition
+                      .Builder,
+                  com.google.monitoring.v3.AlertPolicy.Condition
+                      .MonitoringQueryLanguageConditionOrBuilder>(
+                  (com.google.monitoring.v3.AlertPolicy.Condition.MonitoringQueryLanguageCondition)
+                      condition_,
+                  getParentForChildren(),
+                  isClean());
+          condition_ = null;
+        }
+        conditionCase_ = 19;
+        onChanged();
+        ;
+        return conditionMonitoringQueryLanguageBuilder_;
       }
 
       @java.lang.Override

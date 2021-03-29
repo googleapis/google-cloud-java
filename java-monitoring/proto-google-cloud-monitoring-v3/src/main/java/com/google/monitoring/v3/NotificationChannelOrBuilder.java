@@ -403,4 +403,91 @@ public interface NotificationChannelOrBuilder
    * <code>.google.protobuf.BoolValue enabled = 11;</code>
    */
   com.google.protobuf.BoolValueOrBuilder getEnabledOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Record of the creation of this channel.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.MutationRecord creation_record = 12;</code>
+   *
+   * @return Whether the creationRecord field is set.
+   */
+  boolean hasCreationRecord();
+  /**
+   *
+   *
+   * <pre>
+   * Record of the creation of this channel.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.MutationRecord creation_record = 12;</code>
+   *
+   * @return The creationRecord.
+   */
+  com.google.monitoring.v3.MutationRecord getCreationRecord();
+  /**
+   *
+   *
+   * <pre>
+   * Record of the creation of this channel.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.MutationRecord creation_record = 12;</code>
+   */
+  com.google.monitoring.v3.MutationRecordOrBuilder getCreationRecordOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Records of the modification of this channel.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+   */
+  java.util.List<com.google.monitoring.v3.MutationRecord> getMutationRecordsList();
+  /**
+   *
+   *
+   * <pre>
+   * Records of the modification of this channel.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+   */
+  com.google.monitoring.v3.MutationRecord getMutationRecords(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Records of the modification of this channel.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+   */
+  int getMutationRecordsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Records of the modification of this channel.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+   */
+  java.util.List<? extends com.google.monitoring.v3.MutationRecordOrBuilder>
+      getMutationRecordsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Records of the modification of this channel.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.v3.MutationRecord mutation_records = 13;</code>
+   */
+  com.google.monitoring.v3.MutationRecordOrBuilder getMutationRecordsOrBuilder(int index);
 }

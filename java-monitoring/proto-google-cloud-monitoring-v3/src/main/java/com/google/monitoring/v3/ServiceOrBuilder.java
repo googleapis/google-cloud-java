@@ -187,11 +187,10 @@ public interface ServiceOrBuilder
    * Type used for Istio services that live in a Kubernetes cluster.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9 [deprecated = true];</code>
+   * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
    *
    * @return Whether the clusterIstio field is set.
    */
-  @java.lang.Deprecated
   boolean hasClusterIstio();
   /**
    *
@@ -200,11 +199,10 @@ public interface ServiceOrBuilder
    * Type used for Istio services that live in a Kubernetes cluster.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9 [deprecated = true];</code>
+   * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
    *
    * @return The clusterIstio.
    */
-  @java.lang.Deprecated
   com.google.monitoring.v3.Service.ClusterIstio getClusterIstio();
   /**
    *
@@ -213,9 +211,8 @@ public interface ServiceOrBuilder
    * Type used for Istio services that live in a Kubernetes cluster.
    * </pre>
    *
-   * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9 [deprecated = true];</code>
+   * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9;</code>
    */
-  @java.lang.Deprecated
   com.google.monitoring.v3.Service.ClusterIstioOrBuilder getClusterIstioOrBuilder();
 
   /**
@@ -252,6 +249,48 @@ public interface ServiceOrBuilder
    * <code>.google.monitoring.v3.Service.MeshIstio mesh_istio = 10;</code>
    */
   com.google.monitoring.v3.Service.MeshIstioOrBuilder getMeshIstioOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Type used for canonical services scoped to an Istio mesh.
+   * Metrics for Istio are
+   * [documented here](https://istio.io/latest/docs/reference/config/metrics/)
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.IstioCanonicalService istio_canonical_service = 11;</code>
+   *
+   * @return Whether the istioCanonicalService field is set.
+   */
+  boolean hasIstioCanonicalService();
+  /**
+   *
+   *
+   * <pre>
+   * Type used for canonical services scoped to an Istio mesh.
+   * Metrics for Istio are
+   * [documented here](https://istio.io/latest/docs/reference/config/metrics/)
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.IstioCanonicalService istio_canonical_service = 11;</code>
+   *
+   * @return The istioCanonicalService.
+   */
+  com.google.monitoring.v3.Service.IstioCanonicalService getIstioCanonicalService();
+  /**
+   *
+   *
+   * <pre>
+   * Type used for canonical services scoped to an Istio mesh.
+   * Metrics for Istio are
+   * [documented here](https://istio.io/latest/docs/reference/config/metrics/)
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.Service.IstioCanonicalService istio_canonical_service = 11;</code>
+   */
+  com.google.monitoring.v3.Service.IstioCanonicalServiceOrBuilder
+      getIstioCanonicalServiceOrBuilder();
 
   /**
    *
