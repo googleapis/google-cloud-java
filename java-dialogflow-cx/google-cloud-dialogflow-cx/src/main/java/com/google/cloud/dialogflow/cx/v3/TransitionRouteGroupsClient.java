@@ -302,6 +302,20 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    * <pre>{@code
    * try (TransitionRouteGroupsClient transitionRouteGroupsClient =
    *     TransitionRouteGroupsClient.create()) {
+   *   ListTransitionRouteGroupsRequest request =
+   *       ListTransitionRouteGroupsRequest.newBuilder()
+   *           .setParent(
+   *               TransitionRouteGroupName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[AGENT]",
+   *                       "[FLOW]",
+   *                       "[TRANSITION_ROUTE_GROUP]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
    *   while (true) {
    *     ListTransitionRouteGroupsResponse response =
    *         transitionRouteGroupsClient.listTransitionRouteGroupsCallable().call(request);

@@ -63,7 +63,7 @@ public class MockSessionEntityTypesImpl extends SessionEntityTypesImplBase {
   public void listSessionEntityTypes(
       ListSessionEntityTypesRequest request,
       StreamObserver<ListSessionEntityTypesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListSessionEntityTypesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListSessionEntityTypesResponse) response));
@@ -75,7 +75,7 @@ public class MockSessionEntityTypesImpl extends SessionEntityTypesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListSessionEntityTypes, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListSessionEntityTypesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockSessionEntityTypesImpl extends SessionEntityTypesImplBase {
   @Override
   public void getSessionEntityType(
       GetSessionEntityTypeRequest request, StreamObserver<SessionEntityType> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SessionEntityType) {
       requests.add(request);
       responseObserver.onNext(((SessionEntityType) response));
@@ -96,7 +96,7 @@ public class MockSessionEntityTypesImpl extends SessionEntityTypesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetSessionEntityType, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SessionEntityType.class.getName(),
                   Exception.class.getName())));
     }
@@ -105,7 +105,7 @@ public class MockSessionEntityTypesImpl extends SessionEntityTypesImplBase {
   @Override
   public void createSessionEntityType(
       CreateSessionEntityTypeRequest request, StreamObserver<SessionEntityType> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SessionEntityType) {
       requests.add(request);
       responseObserver.onNext(((SessionEntityType) response));
@@ -117,7 +117,7 @@ public class MockSessionEntityTypesImpl extends SessionEntityTypesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateSessionEntityType, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SessionEntityType.class.getName(),
                   Exception.class.getName())));
     }
@@ -126,7 +126,7 @@ public class MockSessionEntityTypesImpl extends SessionEntityTypesImplBase {
   @Override
   public void updateSessionEntityType(
       UpdateSessionEntityTypeRequest request, StreamObserver<SessionEntityType> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SessionEntityType) {
       requests.add(request);
       responseObserver.onNext(((SessionEntityType) response));
@@ -138,7 +138,7 @@ public class MockSessionEntityTypesImpl extends SessionEntityTypesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateSessionEntityType, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SessionEntityType.class.getName(),
                   Exception.class.getName())));
     }
@@ -147,7 +147,7 @@ public class MockSessionEntityTypesImpl extends SessionEntityTypesImplBase {
   @Override
   public void deleteSessionEntityType(
       DeleteSessionEntityTypeRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -159,7 +159,7 @@ public class MockSessionEntityTypesImpl extends SessionEntityTypesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteSessionEntityType, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

@@ -602,6 +602,14 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
+   *   ListSecuritySettingsRequest request =
+   *       ListSecuritySettingsRequest.newBuilder()
+   *           .setParent(
+   *               SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListSecuritySettingsResponse response =
    *         securitySettingsServiceClient.listSecuritySettingsCallable().call(request);

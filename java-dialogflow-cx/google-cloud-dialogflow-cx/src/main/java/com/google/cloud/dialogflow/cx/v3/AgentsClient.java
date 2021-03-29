@@ -272,6 +272,12 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   ListAgentsRequest request =
+   *       ListAgentsRequest.newBuilder()
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListAgentsResponse response = agentsClient.listAgentsCallable().call(request);
    *     for (Agent element : response.getResponsesList()) {

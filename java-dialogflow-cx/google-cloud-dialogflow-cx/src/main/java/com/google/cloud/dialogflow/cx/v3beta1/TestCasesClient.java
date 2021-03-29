@@ -281,6 +281,13 @@ public class TestCasesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
+   *   ListTestCasesRequest request =
+   *       ListTestCasesRequest.newBuilder()
+   *           .setParent(
+   *               TestCaseName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListTestCasesResponse response = testCasesClient.listTestCasesCallable().call(request);
    *     for (TestCase element : response.getResponsesList()) {
@@ -1174,6 +1181,16 @@ public class TestCasesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
+   *   ListTestCaseResultsRequest request =
+   *       ListTestCaseResultsRequest.newBuilder()
+   *           .setParent(
+   *               TestCaseResultName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]", "[RESULT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     ListTestCaseResultsResponse response =
    *         testCasesClient.listTestCaseResultsCallable().call(request);

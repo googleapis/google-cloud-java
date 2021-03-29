@@ -62,7 +62,7 @@ public class MockPagesImpl extends PagesImplBase {
   @Override
   public void listPages(
       ListPagesRequest request, StreamObserver<ListPagesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListPagesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListPagesResponse) response));
@@ -74,7 +74,7 @@ public class MockPagesImpl extends PagesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListPages, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListPagesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockPagesImpl extends PagesImplBase {
 
   @Override
   public void getPage(GetPageRequest request, StreamObserver<Page> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Page) {
       requests.add(request);
       responseObserver.onNext(((Page) response));
@@ -94,13 +94,15 @@ public class MockPagesImpl extends PagesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetPage, expected %s or %s",
-                  response.getClass().getName(), Page.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Page.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void createPage(CreatePageRequest request, StreamObserver<Page> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Page) {
       requests.add(request);
       responseObserver.onNext(((Page) response));
@@ -112,13 +114,15 @@ public class MockPagesImpl extends PagesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreatePage, expected %s or %s",
-                  response.getClass().getName(), Page.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Page.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void updatePage(UpdatePageRequest request, StreamObserver<Page> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Page) {
       requests.add(request);
       responseObserver.onNext(((Page) response));
@@ -130,13 +134,15 @@ public class MockPagesImpl extends PagesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdatePage, expected %s or %s",
-                  response.getClass().getName(), Page.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Page.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void deletePage(DeletePageRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -148,7 +154,7 @@ public class MockPagesImpl extends PagesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeletePage, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

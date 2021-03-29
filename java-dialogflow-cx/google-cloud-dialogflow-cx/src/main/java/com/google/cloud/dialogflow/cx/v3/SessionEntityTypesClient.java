@@ -291,6 +291,15 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
+   *   ListSessionEntityTypesRequest request =
+   *       ListSessionEntityTypesRequest.newBuilder()
+   *           .setParent(
+   *               SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListSessionEntityTypesResponse response =
    *         sessionEntityTypesClient.listSessionEntityTypesCallable().call(request);

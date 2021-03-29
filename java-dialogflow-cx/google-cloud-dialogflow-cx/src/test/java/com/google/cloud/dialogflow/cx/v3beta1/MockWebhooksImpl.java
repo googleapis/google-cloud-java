@@ -62,7 +62,7 @@ public class MockWebhooksImpl extends WebhooksImplBase {
   @Override
   public void listWebhooks(
       ListWebhooksRequest request, StreamObserver<ListWebhooksResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListWebhooksResponse) {
       requests.add(request);
       responseObserver.onNext(((ListWebhooksResponse) response));
@@ -74,7 +74,7 @@ public class MockWebhooksImpl extends WebhooksImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListWebhooks, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListWebhooksResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockWebhooksImpl extends WebhooksImplBase {
 
   @Override
   public void getWebhook(GetWebhookRequest request, StreamObserver<Webhook> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Webhook) {
       requests.add(request);
       responseObserver.onNext(((Webhook) response));
@@ -94,7 +94,7 @@ public class MockWebhooksImpl extends WebhooksImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetWebhook, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Webhook.class.getName(),
                   Exception.class.getName())));
     }
@@ -103,7 +103,7 @@ public class MockWebhooksImpl extends WebhooksImplBase {
   @Override
   public void createWebhook(
       CreateWebhookRequest request, StreamObserver<Webhook> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Webhook) {
       requests.add(request);
       responseObserver.onNext(((Webhook) response));
@@ -115,7 +115,7 @@ public class MockWebhooksImpl extends WebhooksImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateWebhook, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Webhook.class.getName(),
                   Exception.class.getName())));
     }
@@ -124,7 +124,7 @@ public class MockWebhooksImpl extends WebhooksImplBase {
   @Override
   public void updateWebhook(
       UpdateWebhookRequest request, StreamObserver<Webhook> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Webhook) {
       requests.add(request);
       responseObserver.onNext(((Webhook) response));
@@ -136,7 +136,7 @@ public class MockWebhooksImpl extends WebhooksImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateWebhook, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Webhook.class.getName(),
                   Exception.class.getName())));
     }
@@ -144,7 +144,7 @@ public class MockWebhooksImpl extends WebhooksImplBase {
 
   @Override
   public void deleteWebhook(DeleteWebhookRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -156,7 +156,7 @@ public class MockWebhooksImpl extends WebhooksImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteWebhook, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

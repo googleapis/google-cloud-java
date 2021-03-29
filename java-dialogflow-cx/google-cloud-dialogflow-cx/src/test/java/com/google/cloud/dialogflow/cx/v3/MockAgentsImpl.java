@@ -63,7 +63,7 @@ public class MockAgentsImpl extends AgentsImplBase {
   @Override
   public void listAgents(
       ListAgentsRequest request, StreamObserver<ListAgentsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListAgentsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListAgentsResponse) response));
@@ -75,7 +75,7 @@ public class MockAgentsImpl extends AgentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListAgents, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListAgentsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockAgentsImpl extends AgentsImplBase {
 
   @Override
   public void getAgent(GetAgentRequest request, StreamObserver<Agent> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Agent) {
       requests.add(request);
       responseObserver.onNext(((Agent) response));
@@ -95,7 +95,7 @@ public class MockAgentsImpl extends AgentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAgent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Agent.class.getName(),
                   Exception.class.getName())));
     }
@@ -103,7 +103,7 @@ public class MockAgentsImpl extends AgentsImplBase {
 
   @Override
   public void createAgent(CreateAgentRequest request, StreamObserver<Agent> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Agent) {
       requests.add(request);
       responseObserver.onNext(((Agent) response));
@@ -115,7 +115,7 @@ public class MockAgentsImpl extends AgentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateAgent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Agent.class.getName(),
                   Exception.class.getName())));
     }
@@ -123,7 +123,7 @@ public class MockAgentsImpl extends AgentsImplBase {
 
   @Override
   public void updateAgent(UpdateAgentRequest request, StreamObserver<Agent> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Agent) {
       requests.add(request);
       responseObserver.onNext(((Agent) response));
@@ -135,7 +135,7 @@ public class MockAgentsImpl extends AgentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateAgent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Agent.class.getName(),
                   Exception.class.getName())));
     }
@@ -143,7 +143,7 @@ public class MockAgentsImpl extends AgentsImplBase {
 
   @Override
   public void deleteAgent(DeleteAgentRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -155,7 +155,7 @@ public class MockAgentsImpl extends AgentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteAgent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -163,7 +163,7 @@ public class MockAgentsImpl extends AgentsImplBase {
 
   @Override
   public void exportAgent(ExportAgentRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -175,7 +175,7 @@ public class MockAgentsImpl extends AgentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ExportAgent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -184,7 +184,7 @@ public class MockAgentsImpl extends AgentsImplBase {
   @Override
   public void restoreAgent(
       RestoreAgentRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -196,7 +196,7 @@ public class MockAgentsImpl extends AgentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method RestoreAgent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -205,7 +205,7 @@ public class MockAgentsImpl extends AgentsImplBase {
   @Override
   public void validateAgent(
       ValidateAgentRequest request, StreamObserver<AgentValidationResult> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AgentValidationResult) {
       requests.add(request);
       responseObserver.onNext(((AgentValidationResult) response));
@@ -217,7 +217,7 @@ public class MockAgentsImpl extends AgentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ValidateAgent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AgentValidationResult.class.getName(),
                   Exception.class.getName())));
     }
@@ -227,7 +227,7 @@ public class MockAgentsImpl extends AgentsImplBase {
   public void getAgentValidationResult(
       GetAgentValidationResultRequest request,
       StreamObserver<AgentValidationResult> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AgentValidationResult) {
       requests.add(request);
       responseObserver.onNext(((AgentValidationResult) response));
@@ -239,7 +239,7 @@ public class MockAgentsImpl extends AgentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetAgentValidationResult, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AgentValidationResult.class.getName(),
                   Exception.class.getName())));
     }

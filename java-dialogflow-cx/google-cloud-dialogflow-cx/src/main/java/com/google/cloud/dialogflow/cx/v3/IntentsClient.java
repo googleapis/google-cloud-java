@@ -263,6 +263,14 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   ListIntentsRequest request =
+   *       ListIntentsRequest.newBuilder()
+   *           .setParent(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setIntentView(IntentView.forNumber(0))
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListIntentsResponse response = intentsClient.listIntentsCallable().call(request);
    *     for (Intent element : response.getResponsesList()) {

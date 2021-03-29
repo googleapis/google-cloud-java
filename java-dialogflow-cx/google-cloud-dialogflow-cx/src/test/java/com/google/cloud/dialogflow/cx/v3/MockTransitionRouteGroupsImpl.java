@@ -63,7 +63,7 @@ public class MockTransitionRouteGroupsImpl extends TransitionRouteGroupsImplBase
   public void listTransitionRouteGroups(
       ListTransitionRouteGroupsRequest request,
       StreamObserver<ListTransitionRouteGroupsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListTransitionRouteGroupsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListTransitionRouteGroupsResponse) response));
@@ -75,7 +75,7 @@ public class MockTransitionRouteGroupsImpl extends TransitionRouteGroupsImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListTransitionRouteGroups, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListTransitionRouteGroupsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -85,7 +85,7 @@ public class MockTransitionRouteGroupsImpl extends TransitionRouteGroupsImplBase
   public void getTransitionRouteGroup(
       GetTransitionRouteGroupRequest request,
       StreamObserver<TransitionRouteGroup> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TransitionRouteGroup) {
       requests.add(request);
       responseObserver.onNext(((TransitionRouteGroup) response));
@@ -97,7 +97,7 @@ public class MockTransitionRouteGroupsImpl extends TransitionRouteGroupsImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetTransitionRouteGroup, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TransitionRouteGroup.class.getName(),
                   Exception.class.getName())));
     }
@@ -107,7 +107,7 @@ public class MockTransitionRouteGroupsImpl extends TransitionRouteGroupsImplBase
   public void createTransitionRouteGroup(
       CreateTransitionRouteGroupRequest request,
       StreamObserver<TransitionRouteGroup> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TransitionRouteGroup) {
       requests.add(request);
       responseObserver.onNext(((TransitionRouteGroup) response));
@@ -119,7 +119,7 @@ public class MockTransitionRouteGroupsImpl extends TransitionRouteGroupsImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateTransitionRouteGroup, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TransitionRouteGroup.class.getName(),
                   Exception.class.getName())));
     }
@@ -129,7 +129,7 @@ public class MockTransitionRouteGroupsImpl extends TransitionRouteGroupsImplBase
   public void updateTransitionRouteGroup(
       UpdateTransitionRouteGroupRequest request,
       StreamObserver<TransitionRouteGroup> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TransitionRouteGroup) {
       requests.add(request);
       responseObserver.onNext(((TransitionRouteGroup) response));
@@ -141,7 +141,7 @@ public class MockTransitionRouteGroupsImpl extends TransitionRouteGroupsImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateTransitionRouteGroup, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TransitionRouteGroup.class.getName(),
                   Exception.class.getName())));
     }
@@ -150,7 +150,7 @@ public class MockTransitionRouteGroupsImpl extends TransitionRouteGroupsImplBase
   @Override
   public void deleteTransitionRouteGroup(
       DeleteTransitionRouteGroupRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -162,7 +162,7 @@ public class MockTransitionRouteGroupsImpl extends TransitionRouteGroupsImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteTransitionRouteGroup, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

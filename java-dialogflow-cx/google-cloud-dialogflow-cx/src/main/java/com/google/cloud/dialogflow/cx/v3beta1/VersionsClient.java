@@ -290,6 +290,14 @@ public class VersionsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   ListVersionsRequest request =
+   *       ListVersionsRequest.newBuilder()
+   *           .setParent(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListVersionsResponse response = versionsClient.listVersionsCallable().call(request);
    *     for (Version element : response.getResponsesList()) {

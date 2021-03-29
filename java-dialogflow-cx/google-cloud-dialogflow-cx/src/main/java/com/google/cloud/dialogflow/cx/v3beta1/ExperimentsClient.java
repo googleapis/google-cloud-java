@@ -281,6 +281,15 @@ public class ExperimentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   ListExperimentsRequest request =
+   *       ListExperimentsRequest.newBuilder()
+   *           .setParent(
+   *               ExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListExperimentsResponse response =
    *         experimentsClient.listExperimentsCallable().call(request);

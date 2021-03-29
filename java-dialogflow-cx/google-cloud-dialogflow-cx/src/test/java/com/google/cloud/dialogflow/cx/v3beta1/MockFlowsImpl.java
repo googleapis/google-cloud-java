@@ -62,7 +62,7 @@ public class MockFlowsImpl extends FlowsImplBase {
 
   @Override
   public void createFlow(CreateFlowRequest request, StreamObserver<Flow> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Flow) {
       requests.add(request);
       responseObserver.onNext(((Flow) response));
@@ -74,13 +74,15 @@ public class MockFlowsImpl extends FlowsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateFlow, expected %s or %s",
-                  response.getClass().getName(), Flow.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Flow.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void deleteFlow(DeleteFlowRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -92,7 +94,7 @@ public class MockFlowsImpl extends FlowsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteFlow, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -101,7 +103,7 @@ public class MockFlowsImpl extends FlowsImplBase {
   @Override
   public void listFlows(
       ListFlowsRequest request, StreamObserver<ListFlowsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListFlowsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListFlowsResponse) response));
@@ -113,7 +115,7 @@ public class MockFlowsImpl extends FlowsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListFlows, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListFlowsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -121,7 +123,7 @@ public class MockFlowsImpl extends FlowsImplBase {
 
   @Override
   public void getFlow(GetFlowRequest request, StreamObserver<Flow> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Flow) {
       requests.add(request);
       responseObserver.onNext(((Flow) response));
@@ -133,13 +135,15 @@ public class MockFlowsImpl extends FlowsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetFlow, expected %s or %s",
-                  response.getClass().getName(), Flow.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Flow.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void updateFlow(UpdateFlowRequest request, StreamObserver<Flow> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Flow) {
       requests.add(request);
       responseObserver.onNext(((Flow) response));
@@ -151,13 +155,15 @@ public class MockFlowsImpl extends FlowsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateFlow, expected %s or %s",
-                  response.getClass().getName(), Flow.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Flow.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void trainFlow(TrainFlowRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -169,7 +175,7 @@ public class MockFlowsImpl extends FlowsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method TrainFlow, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -178,7 +184,7 @@ public class MockFlowsImpl extends FlowsImplBase {
   @Override
   public void validateFlow(
       ValidateFlowRequest request, StreamObserver<FlowValidationResult> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof FlowValidationResult) {
       requests.add(request);
       responseObserver.onNext(((FlowValidationResult) response));
@@ -190,7 +196,7 @@ public class MockFlowsImpl extends FlowsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ValidateFlow, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   FlowValidationResult.class.getName(),
                   Exception.class.getName())));
     }
@@ -200,7 +206,7 @@ public class MockFlowsImpl extends FlowsImplBase {
   public void getFlowValidationResult(
       GetFlowValidationResultRequest request,
       StreamObserver<FlowValidationResult> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof FlowValidationResult) {
       requests.add(request);
       responseObserver.onNext(((FlowValidationResult) response));
@@ -212,7 +218,7 @@ public class MockFlowsImpl extends FlowsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetFlowValidationResult, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   FlowValidationResult.class.getName(),
                   Exception.class.getName())));
     }

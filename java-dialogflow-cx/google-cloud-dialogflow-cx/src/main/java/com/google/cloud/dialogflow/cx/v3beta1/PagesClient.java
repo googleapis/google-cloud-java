@@ -262,6 +262,14 @@ public class PagesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (PagesClient pagesClient = PagesClient.create()) {
+   *   ListPagesRequest request =
+   *       ListPagesRequest.newBuilder()
+   *           .setParent(
+   *               PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]").toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListPagesResponse response = pagesClient.listPagesCallable().call(request);
    *     for (Page element : response.getResponsesList()) {

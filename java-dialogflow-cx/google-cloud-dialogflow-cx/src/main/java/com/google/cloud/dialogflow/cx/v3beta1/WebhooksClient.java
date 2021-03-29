@@ -263,6 +263,13 @@ public class WebhooksClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   ListWebhooksRequest request =
+   *       ListWebhooksRequest.newBuilder()
+   *           .setParent(
+   *               WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListWebhooksResponse response = webhooksClient.listWebhooksCallable().call(request);
    *     for (Webhook element : response.getResponsesList()) {

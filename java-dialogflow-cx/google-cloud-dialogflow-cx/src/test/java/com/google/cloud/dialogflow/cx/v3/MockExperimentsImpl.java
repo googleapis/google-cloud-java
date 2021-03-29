@@ -62,7 +62,7 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
   @Override
   public void listExperiments(
       ListExperimentsRequest request, StreamObserver<ListExperimentsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListExperimentsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListExperimentsResponse) response));
@@ -74,7 +74,7 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListExperiments, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListExperimentsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
   @Override
   public void getExperiment(
       GetExperimentRequest request, StreamObserver<Experiment> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Experiment) {
       requests.add(request);
       responseObserver.onNext(((Experiment) response));
@@ -95,7 +95,7 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetExperiment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Experiment.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
   @Override
   public void createExperiment(
       CreateExperimentRequest request, StreamObserver<Experiment> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Experiment) {
       requests.add(request);
       responseObserver.onNext(((Experiment) response));
@@ -116,7 +116,7 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateExperiment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Experiment.class.getName(),
                   Exception.class.getName())));
     }
@@ -125,7 +125,7 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
   @Override
   public void updateExperiment(
       UpdateExperimentRequest request, StreamObserver<Experiment> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Experiment) {
       requests.add(request);
       responseObserver.onNext(((Experiment) response));
@@ -137,7 +137,7 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateExperiment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Experiment.class.getName(),
                   Exception.class.getName())));
     }
@@ -146,7 +146,7 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
   @Override
   public void deleteExperiment(
       DeleteExperimentRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -158,7 +158,7 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteExperiment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -167,7 +167,7 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
   @Override
   public void startExperiment(
       StartExperimentRequest request, StreamObserver<Experiment> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Experiment) {
       requests.add(request);
       responseObserver.onNext(((Experiment) response));
@@ -179,7 +179,7 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method StartExperiment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Experiment.class.getName(),
                   Exception.class.getName())));
     }
@@ -188,7 +188,7 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
   @Override
   public void stopExperiment(
       StopExperimentRequest request, StreamObserver<Experiment> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Experiment) {
       requests.add(request);
       responseObserver.onNext(((Experiment) response));
@@ -200,7 +200,7 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method StopExperiment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Experiment.class.getName(),
                   Exception.class.getName())));
     }

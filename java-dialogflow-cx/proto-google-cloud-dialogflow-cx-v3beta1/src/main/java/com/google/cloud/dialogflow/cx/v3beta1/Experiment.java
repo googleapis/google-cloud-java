@@ -7887,7 +7887,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Maximum number of days to run the experiment.
+   * Maximum number of days to run the experiment. If auto-rollout is
+   * not enabled, default value and maximum will be 30 days. If auto-rollout is
+   * enabled, default value and maximum will be 6 days.
    * </pre>
    *
    * <code>.google.protobuf.Duration experiment_length = 11;</code>
@@ -7902,7 +7904,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Maximum number of days to run the experiment.
+   * Maximum number of days to run the experiment. If auto-rollout is
+   * not enabled, default value and maximum will be 30 days. If auto-rollout is
+   * enabled, default value and maximum will be 6 days.
    * </pre>
    *
    * <code>.google.protobuf.Duration experiment_length = 11;</code>
@@ -7919,7 +7923,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Maximum number of days to run the experiment.
+   * Maximum number of days to run the experiment. If auto-rollout is
+   * not enabled, default value and maximum will be 30 days. If auto-rollout is
+   * enabled, default value and maximum will be 6 days.
    * </pre>
    *
    * <code>.google.protobuf.Duration experiment_length = 11;</code>
@@ -10179,7 +10185,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum number of days to run the experiment.
+     * Maximum number of days to run the experiment. If auto-rollout is
+     * not enabled, default value and maximum will be 30 days. If auto-rollout is
+     * enabled, default value and maximum will be 6 days.
      * </pre>
      *
      * <code>.google.protobuf.Duration experiment_length = 11;</code>
@@ -10193,7 +10201,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum number of days to run the experiment.
+     * Maximum number of days to run the experiment. If auto-rollout is
+     * not enabled, default value and maximum will be 30 days. If auto-rollout is
+     * enabled, default value and maximum will be 6 days.
      * </pre>
      *
      * <code>.google.protobuf.Duration experiment_length = 11;</code>
@@ -10213,7 +10223,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum number of days to run the experiment.
+     * Maximum number of days to run the experiment. If auto-rollout is
+     * not enabled, default value and maximum will be 30 days. If auto-rollout is
+     * enabled, default value and maximum will be 6 days.
      * </pre>
      *
      * <code>.google.protobuf.Duration experiment_length = 11;</code>
@@ -10235,7 +10247,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum number of days to run the experiment.
+     * Maximum number of days to run the experiment. If auto-rollout is
+     * not enabled, default value and maximum will be 30 days. If auto-rollout is
+     * enabled, default value and maximum will be 6 days.
      * </pre>
      *
      * <code>.google.protobuf.Duration experiment_length = 11;</code>
@@ -10254,7 +10268,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum number of days to run the experiment.
+     * Maximum number of days to run the experiment. If auto-rollout is
+     * not enabled, default value and maximum will be 30 days. If auto-rollout is
+     * enabled, default value and maximum will be 6 days.
      * </pre>
      *
      * <code>.google.protobuf.Duration experiment_length = 11;</code>
@@ -10280,7 +10296,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum number of days to run the experiment.
+     * Maximum number of days to run the experiment. If auto-rollout is
+     * not enabled, default value and maximum will be 30 days. If auto-rollout is
+     * enabled, default value and maximum will be 6 days.
      * </pre>
      *
      * <code>.google.protobuf.Duration experiment_length = 11;</code>
@@ -10300,7 +10318,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum number of days to run the experiment.
+     * Maximum number of days to run the experiment. If auto-rollout is
+     * not enabled, default value and maximum will be 30 days. If auto-rollout is
+     * enabled, default value and maximum will be 6 days.
      * </pre>
      *
      * <code>.google.protobuf.Duration experiment_length = 11;</code>
@@ -10314,7 +10334,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum number of days to run the experiment.
+     * Maximum number of days to run the experiment. If auto-rollout is
+     * not enabled, default value and maximum will be 30 days. If auto-rollout is
+     * enabled, default value and maximum will be 6 days.
      * </pre>
      *
      * <code>.google.protobuf.Duration experiment_length = 11;</code>
@@ -10332,7 +10354,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum number of days to run the experiment.
+     * Maximum number of days to run the experiment. If auto-rollout is
+     * not enabled, default value and maximum will be 30 days. If auto-rollout is
+     * enabled, default value and maximum will be 6 days.
      * </pre>
      *
      * <code>.google.protobuf.Duration experiment_length = 11;</code>

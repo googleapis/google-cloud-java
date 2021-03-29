@@ -62,7 +62,7 @@ public class MockSecuritySettingsServiceImpl extends SecuritySettingsServiceImpl
   @Override
   public void createSecuritySettings(
       CreateSecuritySettingsRequest request, StreamObserver<SecuritySettings> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SecuritySettings) {
       requests.add(request);
       responseObserver.onNext(((SecuritySettings) response));
@@ -74,7 +74,7 @@ public class MockSecuritySettingsServiceImpl extends SecuritySettingsServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateSecuritySettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SecuritySettings.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockSecuritySettingsServiceImpl extends SecuritySettingsServiceImpl
   @Override
   public void getSecuritySettings(
       GetSecuritySettingsRequest request, StreamObserver<SecuritySettings> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SecuritySettings) {
       requests.add(request);
       responseObserver.onNext(((SecuritySettings) response));
@@ -95,7 +95,7 @@ public class MockSecuritySettingsServiceImpl extends SecuritySettingsServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetSecuritySettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SecuritySettings.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockSecuritySettingsServiceImpl extends SecuritySettingsServiceImpl
   @Override
   public void updateSecuritySettings(
       UpdateSecuritySettingsRequest request, StreamObserver<SecuritySettings> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SecuritySettings) {
       requests.add(request);
       responseObserver.onNext(((SecuritySettings) response));
@@ -116,7 +116,7 @@ public class MockSecuritySettingsServiceImpl extends SecuritySettingsServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateSecuritySettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SecuritySettings.class.getName(),
                   Exception.class.getName())));
     }
@@ -126,7 +126,7 @@ public class MockSecuritySettingsServiceImpl extends SecuritySettingsServiceImpl
   public void listSecuritySettings(
       ListSecuritySettingsRequest request,
       StreamObserver<ListSecuritySettingsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListSecuritySettingsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListSecuritySettingsResponse) response));
@@ -138,7 +138,7 @@ public class MockSecuritySettingsServiceImpl extends SecuritySettingsServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListSecuritySettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListSecuritySettingsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -147,7 +147,7 @@ public class MockSecuritySettingsServiceImpl extends SecuritySettingsServiceImpl
   @Override
   public void deleteSecuritySettings(
       DeleteSecuritySettingsRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -159,7 +159,7 @@ public class MockSecuritySettingsServiceImpl extends SecuritySettingsServiceImpl
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteSecuritySettings, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

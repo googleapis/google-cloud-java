@@ -62,7 +62,7 @@ public class MockIntentsImpl extends IntentsImplBase {
   @Override
   public void listIntents(
       ListIntentsRequest request, StreamObserver<ListIntentsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListIntentsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListIntentsResponse) response));
@@ -74,7 +74,7 @@ public class MockIntentsImpl extends IntentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListIntents, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListIntentsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockIntentsImpl extends IntentsImplBase {
 
   @Override
   public void getIntent(GetIntentRequest request, StreamObserver<Intent> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Intent) {
       requests.add(request);
       responseObserver.onNext(((Intent) response));
@@ -94,7 +94,7 @@ public class MockIntentsImpl extends IntentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetIntent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Intent.class.getName(),
                   Exception.class.getName())));
     }
@@ -102,7 +102,7 @@ public class MockIntentsImpl extends IntentsImplBase {
 
   @Override
   public void createIntent(CreateIntentRequest request, StreamObserver<Intent> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Intent) {
       requests.add(request);
       responseObserver.onNext(((Intent) response));
@@ -114,7 +114,7 @@ public class MockIntentsImpl extends IntentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateIntent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Intent.class.getName(),
                   Exception.class.getName())));
     }
@@ -122,7 +122,7 @@ public class MockIntentsImpl extends IntentsImplBase {
 
   @Override
   public void updateIntent(UpdateIntentRequest request, StreamObserver<Intent> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Intent) {
       requests.add(request);
       responseObserver.onNext(((Intent) response));
@@ -134,7 +134,7 @@ public class MockIntentsImpl extends IntentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateIntent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Intent.class.getName(),
                   Exception.class.getName())));
     }
@@ -142,7 +142,7 @@ public class MockIntentsImpl extends IntentsImplBase {
 
   @Override
   public void deleteIntent(DeleteIntentRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -154,7 +154,7 @@ public class MockIntentsImpl extends IntentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteIntent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

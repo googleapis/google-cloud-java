@@ -62,7 +62,7 @@ public class MockEntityTypesImpl extends EntityTypesImplBase {
   @Override
   public void listEntityTypes(
       ListEntityTypesRequest request, StreamObserver<ListEntityTypesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListEntityTypesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListEntityTypesResponse) response));
@@ -74,7 +74,7 @@ public class MockEntityTypesImpl extends EntityTypesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListEntityTypes, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListEntityTypesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockEntityTypesImpl extends EntityTypesImplBase {
   @Override
   public void getEntityType(
       GetEntityTypeRequest request, StreamObserver<EntityType> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof EntityType) {
       requests.add(request);
       responseObserver.onNext(((EntityType) response));
@@ -95,7 +95,7 @@ public class MockEntityTypesImpl extends EntityTypesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetEntityType, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   EntityType.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockEntityTypesImpl extends EntityTypesImplBase {
   @Override
   public void createEntityType(
       CreateEntityTypeRequest request, StreamObserver<EntityType> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof EntityType) {
       requests.add(request);
       responseObserver.onNext(((EntityType) response));
@@ -116,7 +116,7 @@ public class MockEntityTypesImpl extends EntityTypesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateEntityType, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   EntityType.class.getName(),
                   Exception.class.getName())));
     }
@@ -125,7 +125,7 @@ public class MockEntityTypesImpl extends EntityTypesImplBase {
   @Override
   public void updateEntityType(
       UpdateEntityTypeRequest request, StreamObserver<EntityType> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof EntityType) {
       requests.add(request);
       responseObserver.onNext(((EntityType) response));
@@ -137,7 +137,7 @@ public class MockEntityTypesImpl extends EntityTypesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateEntityType, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   EntityType.class.getName(),
                   Exception.class.getName())));
     }
@@ -146,7 +146,7 @@ public class MockEntityTypesImpl extends EntityTypesImplBase {
   @Override
   public void deleteEntityType(
       DeleteEntityTypeRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -158,7 +158,7 @@ public class MockEntityTypesImpl extends EntityTypesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteEntityType, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

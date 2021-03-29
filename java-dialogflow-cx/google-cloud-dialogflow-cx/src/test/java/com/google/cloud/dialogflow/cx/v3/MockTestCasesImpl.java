@@ -63,7 +63,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
   @Override
   public void listTestCases(
       ListTestCasesRequest request, StreamObserver<ListTestCasesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListTestCasesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListTestCasesResponse) response));
@@ -75,7 +75,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListTestCases, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListTestCasesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
   @Override
   public void batchDeleteTestCases(
       BatchDeleteTestCasesRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -96,7 +96,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchDeleteTestCases, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
 
   @Override
   public void getTestCase(GetTestCaseRequest request, StreamObserver<TestCase> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TestCase) {
       requests.add(request);
       responseObserver.onNext(((TestCase) response));
@@ -116,7 +116,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetTestCase, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TestCase.class.getName(),
                   Exception.class.getName())));
     }
@@ -125,7 +125,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
   @Override
   public void createTestCase(
       CreateTestCaseRequest request, StreamObserver<TestCase> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TestCase) {
       requests.add(request);
       responseObserver.onNext(((TestCase) response));
@@ -137,7 +137,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateTestCase, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TestCase.class.getName(),
                   Exception.class.getName())));
     }
@@ -146,7 +146,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
   @Override
   public void updateTestCase(
       UpdateTestCaseRequest request, StreamObserver<TestCase> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof TestCase) {
       requests.add(request);
       responseObserver.onNext(((TestCase) response));
@@ -158,7 +158,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateTestCase, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   TestCase.class.getName(),
                   Exception.class.getName())));
     }
@@ -166,7 +166,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
 
   @Override
   public void runTestCase(RunTestCaseRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -178,7 +178,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method RunTestCase, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -187,7 +187,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
   @Override
   public void batchRunTestCases(
       BatchRunTestCasesRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -199,7 +199,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchRunTestCases, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -209,7 +209,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
   public void calculateCoverage(
       CalculateCoverageRequest request,
       StreamObserver<CalculateCoverageResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CalculateCoverageResponse) {
       requests.add(request);
       responseObserver.onNext(((CalculateCoverageResponse) response));
@@ -221,7 +221,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CalculateCoverage, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CalculateCoverageResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -230,7 +230,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
   @Override
   public void importTestCases(
       ImportTestCasesRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -242,7 +242,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ImportTestCases, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -251,7 +251,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
   @Override
   public void exportTestCases(
       ExportTestCasesRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -263,7 +263,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ExportTestCases, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -273,7 +273,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
   public void listTestCaseResults(
       ListTestCaseResultsRequest request,
       StreamObserver<ListTestCaseResultsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListTestCaseResultsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListTestCaseResultsResponse) response));
@@ -285,7 +285,7 @@ public class MockTestCasesImpl extends TestCasesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListTestCaseResults, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListTestCaseResultsResponse.class.getName(),
                   Exception.class.getName())));
     }

@@ -63,7 +63,7 @@ public class MockVersionsImpl extends VersionsImplBase {
   @Override
   public void listVersions(
       ListVersionsRequest request, StreamObserver<ListVersionsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListVersionsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListVersionsResponse) response));
@@ -75,7 +75,7 @@ public class MockVersionsImpl extends VersionsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListVersions, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListVersionsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockVersionsImpl extends VersionsImplBase {
 
   @Override
   public void getVersion(GetVersionRequest request, StreamObserver<Version> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Version) {
       requests.add(request);
       responseObserver.onNext(((Version) response));
@@ -95,7 +95,7 @@ public class MockVersionsImpl extends VersionsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetVersion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Version.class.getName(),
                   Exception.class.getName())));
     }
@@ -104,7 +104,7 @@ public class MockVersionsImpl extends VersionsImplBase {
   @Override
   public void createVersion(
       CreateVersionRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -116,7 +116,7 @@ public class MockVersionsImpl extends VersionsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateVersion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -125,7 +125,7 @@ public class MockVersionsImpl extends VersionsImplBase {
   @Override
   public void updateVersion(
       UpdateVersionRequest request, StreamObserver<Version> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Version) {
       requests.add(request);
       responseObserver.onNext(((Version) response));
@@ -137,7 +137,7 @@ public class MockVersionsImpl extends VersionsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateVersion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Version.class.getName(),
                   Exception.class.getName())));
     }
@@ -145,7 +145,7 @@ public class MockVersionsImpl extends VersionsImplBase {
 
   @Override
   public void deleteVersion(DeleteVersionRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -157,7 +157,7 @@ public class MockVersionsImpl extends VersionsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteVersion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -165,7 +165,7 @@ public class MockVersionsImpl extends VersionsImplBase {
 
   @Override
   public void loadVersion(LoadVersionRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -177,7 +177,7 @@ public class MockVersionsImpl extends VersionsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method LoadVersion, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }

@@ -61,7 +61,7 @@ public class MockSessionsImpl extends SessionsImplBase {
   @Override
   public void detectIntent(
       DetectIntentRequest request, StreamObserver<DetectIntentResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof DetectIntentResponse) {
       requests.add(request);
       responseObserver.onNext(((DetectIntentResponse) response));
@@ -73,7 +73,7 @@ public class MockSessionsImpl extends SessionsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DetectIntent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   DetectIntentResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -97,7 +97,7 @@ public class MockSessionsImpl extends SessionsImplBase {
                   new IllegalArgumentException(
                       String.format(
                           "Unrecognized response type %s for method StreamingDetectIntent, expected %s or %s",
-                          response.getClass().getName(),
+                          response == null ? "null" : response.getClass().getName(),
                           StreamingDetectIntentResponse.class.getName(),
                           Exception.class.getName())));
             }
@@ -119,7 +119,7 @@ public class MockSessionsImpl extends SessionsImplBase {
   @Override
   public void matchIntent(
       MatchIntentRequest request, StreamObserver<MatchIntentResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof MatchIntentResponse) {
       requests.add(request);
       responseObserver.onNext(((MatchIntentResponse) response));
@@ -131,7 +131,7 @@ public class MockSessionsImpl extends SessionsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method MatchIntent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   MatchIntentResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -140,7 +140,7 @@ public class MockSessionsImpl extends SessionsImplBase {
   @Override
   public void fulfillIntent(
       FulfillIntentRequest request, StreamObserver<FulfillIntentResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof FulfillIntentResponse) {
       requests.add(request);
       responseObserver.onNext(((FulfillIntentResponse) response));
@@ -152,7 +152,7 @@ public class MockSessionsImpl extends SessionsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method FulfillIntent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   FulfillIntentResponse.class.getName(),
                   Exception.class.getName())));
     }

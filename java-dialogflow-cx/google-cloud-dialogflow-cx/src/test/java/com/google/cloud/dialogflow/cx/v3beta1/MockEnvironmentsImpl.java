@@ -63,7 +63,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
   @Override
   public void listEnvironments(
       ListEnvironmentsRequest request, StreamObserver<ListEnvironmentsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListEnvironmentsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListEnvironmentsResponse) response));
@@ -75,7 +75,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListEnvironments, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListEnvironmentsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
   @Override
   public void getEnvironment(
       GetEnvironmentRequest request, StreamObserver<Environment> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Environment) {
       requests.add(request);
       responseObserver.onNext(((Environment) response));
@@ -96,7 +96,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetEnvironment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Environment.class.getName(),
                   Exception.class.getName())));
     }
@@ -105,7 +105,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
   @Override
   public void createEnvironment(
       CreateEnvironmentRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -117,7 +117,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateEnvironment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -126,7 +126,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
   @Override
   public void updateEnvironment(
       UpdateEnvironmentRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -138,7 +138,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateEnvironment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -147,7 +147,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
   @Override
   public void deleteEnvironment(
       DeleteEnvironmentRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -159,7 +159,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteEnvironment, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -169,7 +169,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
   public void lookupEnvironmentHistory(
       LookupEnvironmentHistoryRequest request,
       StreamObserver<LookupEnvironmentHistoryResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof LookupEnvironmentHistoryResponse) {
       requests.add(request);
       responseObserver.onNext(((LookupEnvironmentHistoryResponse) response));
@@ -181,7 +181,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method LookupEnvironmentHistory, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   LookupEnvironmentHistoryResponse.class.getName(),
                   Exception.class.getName())));
     }

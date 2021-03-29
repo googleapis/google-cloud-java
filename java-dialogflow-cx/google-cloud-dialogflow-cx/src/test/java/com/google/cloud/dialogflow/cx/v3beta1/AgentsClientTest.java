@@ -577,6 +577,7 @@ public class AgentsClientTest {
     Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertEquals(request.getAgentUri(), actualRequest.getAgentUri());
     Assert.assertEquals(request.getAgentContent(), actualRequest.getAgentContent());
+    Assert.assertEquals(request.getRestoreOption(), actualRequest.getRestoreOption());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),

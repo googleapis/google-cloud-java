@@ -470,6 +470,13 @@ public class FlowsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FlowsClient flowsClient = FlowsClient.create()) {
+   *   ListFlowsRequest request =
+   *       ListFlowsRequest.newBuilder()
+   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
    *   while (true) {
    *     ListFlowsResponse response = flowsClient.listFlowsCallable().call(request);
    *     for (Flow element : response.getResponsesList()) {

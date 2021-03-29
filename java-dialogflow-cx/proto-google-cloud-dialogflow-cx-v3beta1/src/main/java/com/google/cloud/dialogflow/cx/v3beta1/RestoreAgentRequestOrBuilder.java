@@ -122,5 +122,32 @@ public interface RestoreAgentRequestOrBuilder
    */
   com.google.protobuf.ByteString getAgentContent();
 
+  /**
+   *
+   *
+   * <pre>
+   * Agent restore mode. If not specified, `KEEP` is assumed.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption restore_option = 5;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for restoreOption.
+   */
+  int getRestoreOptionValue();
+  /**
+   *
+   *
+   * <pre>
+   * Agent restore mode. If not specified, `KEEP` is assumed.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption restore_option = 5;
+   * </code>
+   *
+   * @return The restoreOption.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.RestoreOption getRestoreOption();
+
   public com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest.AgentCase getAgentCase();
 }
