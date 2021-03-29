@@ -299,6 +299,15 @@ public class AnswerRecordsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AnswerRecordsClient answerRecordsClient = AnswerRecordsClient.create()) {
+   *   ListAnswerRecordsRequest request =
+   *       ListAnswerRecordsRequest.newBuilder()
+   *           .setParent(
+   *               AnswerRecordName.ofProjectAnswerRecordName("[PROJECT]", "[ANSWER_RECORD]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListAnswerRecordsResponse response =
    *         answerRecordsClient.listAnswerRecordsCallable().call(request);

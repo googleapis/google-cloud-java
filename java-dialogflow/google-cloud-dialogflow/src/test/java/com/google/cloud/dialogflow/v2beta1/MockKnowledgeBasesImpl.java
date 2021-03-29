@@ -63,7 +63,7 @@ public class MockKnowledgeBasesImpl extends KnowledgeBasesImplBase {
   public void listKnowledgeBases(
       ListKnowledgeBasesRequest request,
       StreamObserver<ListKnowledgeBasesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListKnowledgeBasesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListKnowledgeBasesResponse) response));
@@ -75,7 +75,7 @@ public class MockKnowledgeBasesImpl extends KnowledgeBasesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListKnowledgeBases, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListKnowledgeBasesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockKnowledgeBasesImpl extends KnowledgeBasesImplBase {
   @Override
   public void getKnowledgeBase(
       GetKnowledgeBaseRequest request, StreamObserver<KnowledgeBase> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof KnowledgeBase) {
       requests.add(request);
       responseObserver.onNext(((KnowledgeBase) response));
@@ -96,7 +96,7 @@ public class MockKnowledgeBasesImpl extends KnowledgeBasesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetKnowledgeBase, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   KnowledgeBase.class.getName(),
                   Exception.class.getName())));
     }
@@ -105,7 +105,7 @@ public class MockKnowledgeBasesImpl extends KnowledgeBasesImplBase {
   @Override
   public void createKnowledgeBase(
       CreateKnowledgeBaseRequest request, StreamObserver<KnowledgeBase> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof KnowledgeBase) {
       requests.add(request);
       responseObserver.onNext(((KnowledgeBase) response));
@@ -117,7 +117,7 @@ public class MockKnowledgeBasesImpl extends KnowledgeBasesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateKnowledgeBase, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   KnowledgeBase.class.getName(),
                   Exception.class.getName())));
     }
@@ -126,7 +126,7 @@ public class MockKnowledgeBasesImpl extends KnowledgeBasesImplBase {
   @Override
   public void deleteKnowledgeBase(
       DeleteKnowledgeBaseRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -138,7 +138,7 @@ public class MockKnowledgeBasesImpl extends KnowledgeBasesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteKnowledgeBase, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -147,7 +147,7 @@ public class MockKnowledgeBasesImpl extends KnowledgeBasesImplBase {
   @Override
   public void updateKnowledgeBase(
       UpdateKnowledgeBaseRequest request, StreamObserver<KnowledgeBase> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof KnowledgeBase) {
       requests.add(request);
       responseObserver.onNext(((KnowledgeBase) response));
@@ -159,7 +159,7 @@ public class MockKnowledgeBasesImpl extends KnowledgeBasesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateKnowledgeBase, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   KnowledgeBase.class.getName(),
                   Exception.class.getName())));
     }

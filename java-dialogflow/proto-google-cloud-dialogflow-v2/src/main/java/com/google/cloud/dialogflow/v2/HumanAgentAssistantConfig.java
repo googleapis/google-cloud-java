@@ -10331,9 +10331,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * ID&gt;/conversationModels/&lt;Model ID&gt;`.
      * </pre>
      *
-     * <code>
-     * string model = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The model.
      */
@@ -10346,9 +10344,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * ID&gt;/conversationModels/&lt;Model ID&gt;`.
      * </pre>
      *
-     * <code>
-     * string model = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for model.
      */
@@ -10461,9 +10457,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * ID&gt;/conversationModels/&lt;Model ID&gt;`.
      * </pre>
      *
-     * <code>
-     * string model = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The model.
      */
@@ -10487,9 +10481,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * ID&gt;/conversationModels/&lt;Model ID&gt;`.
      * </pre>
      *
-     * <code>
-     * string model = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for model.
      */
@@ -10866,9 +10858,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * ID&gt;/conversationModels/&lt;Model ID&gt;`.
        * </pre>
        *
-       * <code>
-       * string model = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-       * </code>
+       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The model.
        */
@@ -10891,9 +10881,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * ID&gt;/conversationModels/&lt;Model ID&gt;`.
        * </pre>
        *
-       * <code>
-       * string model = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-       * </code>
+       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The bytes for model.
        */
@@ -10916,9 +10904,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * ID&gt;/conversationModels/&lt;Model ID&gt;`.
        * </pre>
        *
-       * <code>
-       * string model = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-       * </code>
+       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @param value The model to set.
        * @return This builder for chaining.
@@ -10940,9 +10926,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * ID&gt;/conversationModels/&lt;Model ID&gt;`.
        * </pre>
        *
-       * <code>
-       * string model = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-       * </code>
+       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return This builder for chaining.
        */
@@ -10960,9 +10944,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * ID&gt;/conversationModels/&lt;Model ID&gt;`.
        * </pre>
        *
-       * <code>
-       * string model = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-       * </code>
+       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @param value The bytes for model to set.
        * @return This builder for chaining.

@@ -62,7 +62,7 @@ public class MockAnswerRecordsImpl extends AnswerRecordsImplBase {
   public void listAnswerRecords(
       ListAnswerRecordsRequest request,
       StreamObserver<ListAnswerRecordsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListAnswerRecordsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListAnswerRecordsResponse) response));
@@ -74,7 +74,7 @@ public class MockAnswerRecordsImpl extends AnswerRecordsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListAnswerRecords, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListAnswerRecordsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -83,7 +83,7 @@ public class MockAnswerRecordsImpl extends AnswerRecordsImplBase {
   @Override
   public void updateAnswerRecord(
       UpdateAnswerRecordRequest request, StreamObserver<AnswerRecord> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AnswerRecord) {
       requests.add(request);
       responseObserver.onNext(((AnswerRecord) response));
@@ -95,7 +95,7 @@ public class MockAnswerRecordsImpl extends AnswerRecordsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateAnswerRecord, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AnswerRecord.class.getName(),
                   Exception.class.getName())));
     }

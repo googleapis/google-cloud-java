@@ -494,6 +494,15 @@ public class ParticipantsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   ListParticipantsRequest request =
+   *       ListParticipantsRequest.newBuilder()
+   *           .setParent(
+   *               ParticipantName.ofProjectConversationParticipantName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListParticipantsResponse response =
    *         participantsClient.listParticipantsCallable().call(request);

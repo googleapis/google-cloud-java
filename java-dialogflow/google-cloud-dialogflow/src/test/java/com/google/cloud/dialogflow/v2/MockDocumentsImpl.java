@@ -62,7 +62,7 @@ public class MockDocumentsImpl extends DocumentsImplBase {
   @Override
   public void listDocuments(
       ListDocumentsRequest request, StreamObserver<ListDocumentsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListDocumentsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListDocumentsResponse) response));
@@ -74,7 +74,7 @@ public class MockDocumentsImpl extends DocumentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListDocuments, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListDocumentsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockDocumentsImpl extends DocumentsImplBase {
 
   @Override
   public void getDocument(GetDocumentRequest request, StreamObserver<Document> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Document) {
       requests.add(request);
       responseObserver.onNext(((Document) response));
@@ -94,7 +94,7 @@ public class MockDocumentsImpl extends DocumentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetDocument, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Document.class.getName(),
                   Exception.class.getName())));
     }
@@ -103,7 +103,7 @@ public class MockDocumentsImpl extends DocumentsImplBase {
   @Override
   public void createDocument(
       CreateDocumentRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -115,7 +115,7 @@ public class MockDocumentsImpl extends DocumentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateDocument, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -124,7 +124,7 @@ public class MockDocumentsImpl extends DocumentsImplBase {
   @Override
   public void deleteDocument(
       DeleteDocumentRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -136,7 +136,7 @@ public class MockDocumentsImpl extends DocumentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteDocument, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -145,7 +145,7 @@ public class MockDocumentsImpl extends DocumentsImplBase {
   @Override
   public void updateDocument(
       UpdateDocumentRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -157,7 +157,7 @@ public class MockDocumentsImpl extends DocumentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateDocument, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -166,7 +166,7 @@ public class MockDocumentsImpl extends DocumentsImplBase {
   @Override
   public void reloadDocument(
       ReloadDocumentRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -178,7 +178,7 @@ public class MockDocumentsImpl extends DocumentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ReloadDocument, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }

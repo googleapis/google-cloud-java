@@ -62,7 +62,7 @@ public class MockContextsImpl extends ContextsImplBase {
   @Override
   public void listContexts(
       ListContextsRequest request, StreamObserver<ListContextsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListContextsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListContextsResponse) response));
@@ -74,7 +74,7 @@ public class MockContextsImpl extends ContextsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListContexts, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListContextsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockContextsImpl extends ContextsImplBase {
 
   @Override
   public void getContext(GetContextRequest request, StreamObserver<Context> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Context) {
       requests.add(request);
       responseObserver.onNext(((Context) response));
@@ -94,7 +94,7 @@ public class MockContextsImpl extends ContextsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetContext, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Context.class.getName(),
                   Exception.class.getName())));
     }
@@ -103,7 +103,7 @@ public class MockContextsImpl extends ContextsImplBase {
   @Override
   public void createContext(
       CreateContextRequest request, StreamObserver<Context> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Context) {
       requests.add(request);
       responseObserver.onNext(((Context) response));
@@ -115,7 +115,7 @@ public class MockContextsImpl extends ContextsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateContext, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Context.class.getName(),
                   Exception.class.getName())));
     }
@@ -124,7 +124,7 @@ public class MockContextsImpl extends ContextsImplBase {
   @Override
   public void updateContext(
       UpdateContextRequest request, StreamObserver<Context> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Context) {
       requests.add(request);
       responseObserver.onNext(((Context) response));
@@ -136,7 +136,7 @@ public class MockContextsImpl extends ContextsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateContext, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Context.class.getName(),
                   Exception.class.getName())));
     }
@@ -144,7 +144,7 @@ public class MockContextsImpl extends ContextsImplBase {
 
   @Override
   public void deleteContext(DeleteContextRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -156,7 +156,7 @@ public class MockContextsImpl extends ContextsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteContext, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -165,7 +165,7 @@ public class MockContextsImpl extends ContextsImplBase {
   @Override
   public void deleteAllContexts(
       DeleteAllContextsRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -177,7 +177,7 @@ public class MockContextsImpl extends ContextsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteAllContexts, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

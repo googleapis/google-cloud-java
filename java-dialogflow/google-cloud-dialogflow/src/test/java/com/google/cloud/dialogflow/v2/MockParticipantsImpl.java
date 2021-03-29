@@ -61,7 +61,7 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
   @Override
   public void createParticipant(
       CreateParticipantRequest request, StreamObserver<Participant> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Participant) {
       requests.add(request);
       responseObserver.onNext(((Participant) response));
@@ -73,7 +73,7 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateParticipant, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Participant.class.getName(),
                   Exception.class.getName())));
     }
@@ -82,7 +82,7 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
   @Override
   public void getParticipant(
       GetParticipantRequest request, StreamObserver<Participant> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Participant) {
       requests.add(request);
       responseObserver.onNext(((Participant) response));
@@ -94,7 +94,7 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetParticipant, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Participant.class.getName(),
                   Exception.class.getName())));
     }
@@ -103,7 +103,7 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
   @Override
   public void listParticipants(
       ListParticipantsRequest request, StreamObserver<ListParticipantsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListParticipantsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListParticipantsResponse) response));
@@ -115,7 +115,7 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListParticipants, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListParticipantsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -124,7 +124,7 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
   @Override
   public void updateParticipant(
       UpdateParticipantRequest request, StreamObserver<Participant> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Participant) {
       requests.add(request);
       responseObserver.onNext(((Participant) response));
@@ -136,7 +136,7 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateParticipant, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Participant.class.getName(),
                   Exception.class.getName())));
     }
@@ -145,7 +145,7 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
   @Override
   public void analyzeContent(
       AnalyzeContentRequest request, StreamObserver<AnalyzeContentResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof AnalyzeContentResponse) {
       requests.add(request);
       responseObserver.onNext(((AnalyzeContentResponse) response));
@@ -157,7 +157,7 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method AnalyzeContent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   AnalyzeContentResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -181,7 +181,7 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
                   new IllegalArgumentException(
                       String.format(
                           "Unrecognized response type %s for method StreamingAnalyzeContent, expected %s or %s",
-                          response.getClass().getName(),
+                          response == null ? "null" : response.getClass().getName(),
                           StreamingAnalyzeContentResponse.class.getName(),
                           Exception.class.getName())));
             }
@@ -203,7 +203,7 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
   @Override
   public void suggestArticles(
       SuggestArticlesRequest request, StreamObserver<SuggestArticlesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SuggestArticlesResponse) {
       requests.add(request);
       responseObserver.onNext(((SuggestArticlesResponse) response));
@@ -215,7 +215,7 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SuggestArticles, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SuggestArticlesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -225,7 +225,7 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
   public void suggestFaqAnswers(
       SuggestFaqAnswersRequest request,
       StreamObserver<SuggestFaqAnswersResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof SuggestFaqAnswersResponse) {
       requests.add(request);
       responseObserver.onNext(((SuggestFaqAnswersResponse) response));
@@ -237,7 +237,7 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method SuggestFaqAnswers, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   SuggestFaqAnswersResponse.class.getName(),
                   Exception.class.getName())));
     }

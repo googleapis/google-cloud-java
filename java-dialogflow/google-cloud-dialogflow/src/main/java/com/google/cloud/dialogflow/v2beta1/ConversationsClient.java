@@ -519,6 +519,15 @@ public class ConversationsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   ListConversationsRequest request =
+   *       ListConversationsRequest.newBuilder()
+   *           .setParent(
+   *               ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     ListConversationsResponse response =
    *         conversationsClient.listConversationsCallable().call(request);
@@ -988,6 +997,15 @@ public class ConversationsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   ListCallMatchersRequest request =
+   *       ListCallMatchersRequest.newBuilder()
+   *           .setParent(
+   *               CallMatcherName.ofProjectConversationCallMatcherName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[CALL_MATCHER]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListCallMatchersResponse response =
    *         conversationsClient.listCallMatchersCallable().call(request);
@@ -1367,6 +1385,16 @@ public class ConversationsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   ListMessagesRequest request =
+   *       ListMessagesRequest.newBuilder()
+   *           .setParent(
+   *               MessageName.ofProjectConversationMessageName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListMessagesResponse response = conversationsClient.listMessagesCallable().call(request);
    *     for (Message element : response.getResponsesList()) {

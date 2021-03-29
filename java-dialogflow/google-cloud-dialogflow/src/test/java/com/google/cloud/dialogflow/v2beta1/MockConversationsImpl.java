@@ -62,7 +62,7 @@ public class MockConversationsImpl extends ConversationsImplBase {
   @Override
   public void createConversation(
       CreateConversationRequest request, StreamObserver<Conversation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Conversation) {
       requests.add(request);
       responseObserver.onNext(((Conversation) response));
@@ -74,7 +74,7 @@ public class MockConversationsImpl extends ConversationsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateConversation, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Conversation.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockConversationsImpl extends ConversationsImplBase {
   public void listConversations(
       ListConversationsRequest request,
       StreamObserver<ListConversationsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListConversationsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListConversationsResponse) response));
@@ -96,7 +96,7 @@ public class MockConversationsImpl extends ConversationsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListConversations, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListConversationsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -105,7 +105,7 @@ public class MockConversationsImpl extends ConversationsImplBase {
   @Override
   public void getConversation(
       GetConversationRequest request, StreamObserver<Conversation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Conversation) {
       requests.add(request);
       responseObserver.onNext(((Conversation) response));
@@ -117,7 +117,7 @@ public class MockConversationsImpl extends ConversationsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetConversation, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Conversation.class.getName(),
                   Exception.class.getName())));
     }
@@ -126,7 +126,7 @@ public class MockConversationsImpl extends ConversationsImplBase {
   @Override
   public void completeConversation(
       CompleteConversationRequest request, StreamObserver<Conversation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Conversation) {
       requests.add(request);
       responseObserver.onNext(((Conversation) response));
@@ -138,7 +138,7 @@ public class MockConversationsImpl extends ConversationsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CompleteConversation, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Conversation.class.getName(),
                   Exception.class.getName())));
     }
@@ -147,7 +147,7 @@ public class MockConversationsImpl extends ConversationsImplBase {
   @Override
   public void createCallMatcher(
       CreateCallMatcherRequest request, StreamObserver<CallMatcher> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof CallMatcher) {
       requests.add(request);
       responseObserver.onNext(((CallMatcher) response));
@@ -159,7 +159,7 @@ public class MockConversationsImpl extends ConversationsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateCallMatcher, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   CallMatcher.class.getName(),
                   Exception.class.getName())));
     }
@@ -168,7 +168,7 @@ public class MockConversationsImpl extends ConversationsImplBase {
   @Override
   public void listCallMatchers(
       ListCallMatchersRequest request, StreamObserver<ListCallMatchersResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListCallMatchersResponse) {
       requests.add(request);
       responseObserver.onNext(((ListCallMatchersResponse) response));
@@ -180,7 +180,7 @@ public class MockConversationsImpl extends ConversationsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListCallMatchers, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListCallMatchersResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -189,7 +189,7 @@ public class MockConversationsImpl extends ConversationsImplBase {
   @Override
   public void deleteCallMatcher(
       DeleteCallMatcherRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -201,7 +201,7 @@ public class MockConversationsImpl extends ConversationsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteCallMatcher, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -211,7 +211,7 @@ public class MockConversationsImpl extends ConversationsImplBase {
   public void batchCreateMessages(
       BatchCreateMessagesRequest request,
       StreamObserver<BatchCreateMessagesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BatchCreateMessagesResponse) {
       requests.add(request);
       responseObserver.onNext(((BatchCreateMessagesResponse) response));
@@ -223,7 +223,7 @@ public class MockConversationsImpl extends ConversationsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchCreateMessages, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BatchCreateMessagesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -232,7 +232,7 @@ public class MockConversationsImpl extends ConversationsImplBase {
   @Override
   public void listMessages(
       ListMessagesRequest request, StreamObserver<ListMessagesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListMessagesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListMessagesResponse) response));
@@ -244,7 +244,7 @@ public class MockConversationsImpl extends ConversationsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListMessages, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListMessagesResponse.class.getName(),
                   Exception.class.getName())));
     }

@@ -61,7 +61,7 @@ public class MockSessionsImpl extends SessionsImplBase {
   @Override
   public void detectIntent(
       DetectIntentRequest request, StreamObserver<DetectIntentResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof DetectIntentResponse) {
       requests.add(request);
       responseObserver.onNext(((DetectIntentResponse) response));
@@ -73,7 +73,7 @@ public class MockSessionsImpl extends SessionsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DetectIntent, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   DetectIntentResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -97,7 +97,7 @@ public class MockSessionsImpl extends SessionsImplBase {
                   new IllegalArgumentException(
                       String.format(
                           "Unrecognized response type %s for method StreamingDetectIntent, expected %s or %s",
-                          response.getClass().getName(),
+                          response == null ? "null" : response.getClass().getName(),
                           StreamingDetectIntentResponse.class.getName(),
                           Exception.class.getName())));
             }

@@ -63,7 +63,7 @@ public class MockConversationProfilesImpl extends ConversationProfilesImplBase {
   public void listConversationProfiles(
       ListConversationProfilesRequest request,
       StreamObserver<ListConversationProfilesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListConversationProfilesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListConversationProfilesResponse) response));
@@ -75,7 +75,7 @@ public class MockConversationProfilesImpl extends ConversationProfilesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListConversationProfiles, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListConversationProfilesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -84,7 +84,7 @@ public class MockConversationProfilesImpl extends ConversationProfilesImplBase {
   @Override
   public void getConversationProfile(
       GetConversationProfileRequest request, StreamObserver<ConversationProfile> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ConversationProfile) {
       requests.add(request);
       responseObserver.onNext(((ConversationProfile) response));
@@ -96,7 +96,7 @@ public class MockConversationProfilesImpl extends ConversationProfilesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetConversationProfile, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ConversationProfile.class.getName(),
                   Exception.class.getName())));
     }
@@ -106,7 +106,7 @@ public class MockConversationProfilesImpl extends ConversationProfilesImplBase {
   public void createConversationProfile(
       CreateConversationProfileRequest request,
       StreamObserver<ConversationProfile> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ConversationProfile) {
       requests.add(request);
       responseObserver.onNext(((ConversationProfile) response));
@@ -118,7 +118,7 @@ public class MockConversationProfilesImpl extends ConversationProfilesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateConversationProfile, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ConversationProfile.class.getName(),
                   Exception.class.getName())));
     }
@@ -128,7 +128,7 @@ public class MockConversationProfilesImpl extends ConversationProfilesImplBase {
   public void updateConversationProfile(
       UpdateConversationProfileRequest request,
       StreamObserver<ConversationProfile> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ConversationProfile) {
       requests.add(request);
       responseObserver.onNext(((ConversationProfile) response));
@@ -140,7 +140,7 @@ public class MockConversationProfilesImpl extends ConversationProfilesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateConversationProfile, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ConversationProfile.class.getName(),
                   Exception.class.getName())));
     }
@@ -149,7 +149,7 @@ public class MockConversationProfilesImpl extends ConversationProfilesImplBase {
   @Override
   public void deleteConversationProfile(
       DeleteConversationProfileRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -161,7 +161,7 @@ public class MockConversationProfilesImpl extends ConversationProfilesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteConversationProfile, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

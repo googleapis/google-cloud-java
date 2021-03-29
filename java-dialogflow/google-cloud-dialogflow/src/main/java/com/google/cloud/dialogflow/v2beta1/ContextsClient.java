@@ -283,6 +283,14 @@ public class ContextsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ContextsClient contextsClient = ContextsClient.create()) {
+   *   ListContextsRequest request =
+   *       ListContextsRequest.newBuilder()
+   *           .setParent(
+   *               ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListContextsResponse response = contextsClient.listContextsCallable().call(request);
    *     for (Context element : response.getResponsesList()) {

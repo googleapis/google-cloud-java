@@ -270,6 +270,13 @@ public class EnvironmentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   ListEnvironmentsRequest request =
+   *       ListEnvironmentsRequest.newBuilder()
+   *           .setParent(
+   *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListEnvironmentsResponse response =
    *         environmentsClient.listEnvironmentsCallable().call(request);

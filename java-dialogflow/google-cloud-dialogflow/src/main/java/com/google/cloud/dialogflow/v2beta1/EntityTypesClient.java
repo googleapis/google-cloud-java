@@ -355,6 +355,14 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   ListEntityTypesRequest request =
+   *       ListEntityTypesRequest.newBuilder()
+   *           .setParent(
+   *               EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]").toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListEntityTypesResponse response =
    *         entityTypesClient.listEntityTypesCallable().call(request);

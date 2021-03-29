@@ -61,7 +61,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
   @Override
   public void listEnvironments(
       ListEnvironmentsRequest request, StreamObserver<ListEnvironmentsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListEnvironmentsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListEnvironmentsResponse) response));
@@ -73,7 +73,7 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListEnvironments, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListEnvironmentsResponse.class.getName(),
                   Exception.class.getName())));
     }

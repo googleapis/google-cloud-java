@@ -299,6 +299,14 @@ public class KnowledgeBasesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
+   *   ListKnowledgeBasesRequest request =
+   *       ListKnowledgeBasesRequest.newBuilder()
+   *           .setParent(
+   *               KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListKnowledgeBasesResponse response =
    *         knowledgeBasesClient.listKnowledgeBasesCallable().call(request);

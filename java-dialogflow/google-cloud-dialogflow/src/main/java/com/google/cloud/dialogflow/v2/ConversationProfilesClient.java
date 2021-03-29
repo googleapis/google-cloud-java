@@ -318,6 +318,15 @@ public class ConversationProfilesClient implements BackgroundResource {
    * <pre>{@code
    * try (ConversationProfilesClient conversationProfilesClient =
    *     ConversationProfilesClient.create()) {
+   *   ListConversationProfilesRequest request =
+   *       ListConversationProfilesRequest.newBuilder()
+   *           .setParent(
+   *               ConversationProfileName.ofProjectConversationProfileName(
+   *                       "[PROJECT]", "[CONVERSATION_PROFILE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListConversationProfilesResponse response =
    *         conversationProfilesClient.listConversationProfilesCallable().call(request);

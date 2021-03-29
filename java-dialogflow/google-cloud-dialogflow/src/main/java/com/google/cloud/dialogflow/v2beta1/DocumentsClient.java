@@ -308,6 +308,16 @@ public class DocumentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DocumentsClient documentsClient = DocumentsClient.create()) {
+   *   ListDocumentsRequest request =
+   *       ListDocumentsRequest.newBuilder()
+   *           .setParent(
+   *               DocumentName.ofProjectKnowledgeBaseDocumentName(
+   *                       "[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     ListDocumentsResponse response = documentsClient.listDocumentsCallable().call(request);
    *     for (Document element : response.getResponsesList()) {
