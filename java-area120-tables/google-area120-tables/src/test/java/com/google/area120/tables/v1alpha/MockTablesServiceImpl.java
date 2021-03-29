@@ -81,7 +81,7 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
 
   @Override
   public void getTable(GetTableRequest request, StreamObserver<Table> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Table) {
       requests.add(request);
       responseObserver.onNext(((Table) response));
@@ -93,7 +93,7 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetTable, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Table.class.getName(),
                   Exception.class.getName())));
     }
@@ -102,7 +102,7 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
   @Override
   public void listTables(
       ListTablesRequest request, StreamObserver<ListTablesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListTablesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListTablesResponse) response));
@@ -114,7 +114,7 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListTables, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListTablesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -123,7 +123,7 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
   @Override
   public void getWorkspace(
       GetWorkspaceRequest request, StreamObserver<Workspace> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Workspace) {
       requests.add(request);
       responseObserver.onNext(((Workspace) response));
@@ -135,7 +135,7 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetWorkspace, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Workspace.class.getName(),
                   Exception.class.getName())));
     }
@@ -144,7 +144,7 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
   @Override
   public void listWorkspaces(
       ListWorkspacesRequest request, StreamObserver<ListWorkspacesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListWorkspacesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListWorkspacesResponse) response));
@@ -156,7 +156,7 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListWorkspaces, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListWorkspacesResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -164,7 +164,7 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
 
   @Override
   public void getRow(GetRowRequest request, StreamObserver<Row> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Row) {
       requests.add(request);
       responseObserver.onNext(((Row) response));
@@ -176,13 +176,15 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetRow, expected %s or %s",
-                  response.getClass().getName(), Row.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Row.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void listRows(ListRowsRequest request, StreamObserver<ListRowsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListRowsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListRowsResponse) response));
@@ -194,7 +196,7 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListRows, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListRowsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -202,7 +204,7 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
 
   @Override
   public void createRow(CreateRowRequest request, StreamObserver<Row> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Row) {
       requests.add(request);
       responseObserver.onNext(((Row) response));
@@ -214,14 +216,16 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateRow, expected %s or %s",
-                  response.getClass().getName(), Row.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Row.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void batchCreateRows(
       BatchCreateRowsRequest request, StreamObserver<BatchCreateRowsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BatchCreateRowsResponse) {
       requests.add(request);
       responseObserver.onNext(((BatchCreateRowsResponse) response));
@@ -233,7 +237,7 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchCreateRows, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BatchCreateRowsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -241,7 +245,7 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
 
   @Override
   public void updateRow(UpdateRowRequest request, StreamObserver<Row> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Row) {
       requests.add(request);
       responseObserver.onNext(((Row) response));
@@ -253,14 +257,16 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateRow, expected %s or %s",
-                  response.getClass().getName(), Row.class.getName(), Exception.class.getName())));
+                  response == null ? "null" : response.getClass().getName(),
+                  Row.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
   @Override
   public void batchUpdateRows(
       BatchUpdateRowsRequest request, StreamObserver<BatchUpdateRowsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof BatchUpdateRowsResponse) {
       requests.add(request);
       responseObserver.onNext(((BatchUpdateRowsResponse) response));
@@ -272,7 +278,7 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchUpdateRows, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   BatchUpdateRowsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -280,7 +286,7 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
 
   @Override
   public void deleteRow(DeleteRowRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -292,7 +298,7 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteRow, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }
@@ -301,7 +307,7 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
   @Override
   public void batchDeleteRows(
       BatchDeleteRowsRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -313,7 +319,7 @@ public class MockTablesServiceImpl extends TablesServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchDeleteRows, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
     }

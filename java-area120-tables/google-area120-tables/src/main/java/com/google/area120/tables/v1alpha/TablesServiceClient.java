@@ -326,6 +326,11 @@ public class TablesServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
+   *   ListTablesRequest request =
+   *       ListTablesRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListTablesResponse response = tablesServiceClient.listTablesCallable().call(request);
    *     for (Table element : response.getResponsesList()) {
@@ -494,6 +499,11 @@ public class TablesServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
+   *   ListWorkspacesRequest request =
+   *       ListWorkspacesRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListWorkspacesResponse response =
    *         tablesServiceClient.listWorkspacesCallable().call(request);
@@ -693,6 +703,14 @@ public class TablesServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
+   *   ListRowsRequest request =
+   *       ListRowsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setView(View.forNumber(0))
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     ListRowsResponse response = tablesServiceClient.listRowsCallable().call(request);
    *     for (Row element : response.getResponsesList()) {
