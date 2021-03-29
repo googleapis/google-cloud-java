@@ -138,12 +138,12 @@ public class CreateClusterWithAutoscaling {
       // Configure the settings for our cluster.
       InstanceGroupConfig masterConfig =
           InstanceGroupConfig.newBuilder()
-              .setMachineTypeUri("n1-standard-1")
+              .setMachineTypeUri("n1-standard-2")
               .setNumInstances(1)
               .build();
       InstanceGroupConfig workerConfig =
           InstanceGroupConfig.newBuilder()
-              .setMachineTypeUri("n1-standard-1")
+              .setMachineTypeUri("n1-standard-2")
               .setNumInstances(2)
               .build();
       ClusterConfig clusterConfig =
