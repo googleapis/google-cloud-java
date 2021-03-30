@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/googleapis/java-datacatalog/compare/v1.2.0...v1.3.0) (2021-03-30)
+
+
+### Features
+
+* added DATAPROC_METASTORE integrated system along with new entry types: DATABASE and SERVICE ([fcf9213](https://www.github.com/googleapis/java-datacatalog/commit/fcf9213bc23ce5b82dd520a1828cecdcfe36c920))
+* adding fully_qualified_name in lookup and search ([fcf9213](https://www.github.com/googleapis/java-datacatalog/commit/fcf9213bc23ce5b82dd520a1828cecdcfe36c920))
+* new RenameTagTemplateFieldEnumValue API ([fcf9213](https://www.github.com/googleapis/java-datacatalog/commit/fcf9213bc23ce5b82dd520a1828cecdcfe36c920))
+* Policy Tag Manager v1 API service ([#469](https://www.github.com/googleapis/java-datacatalog/issues/469)) ([fcf9213](https://www.github.com/googleapis/java-datacatalog/commit/fcf9213bc23ce5b82dd520a1828cecdcfe36c920))
+
+
+### Documentation
+
+* Docum ([fcf9213](https://www.github.com/googleapis/java-datacatalog/commit/fcf9213bc23ce5b82dd520a1828cecdcfe36c920))
+
 ## [1.2.0](https://www.github.com/googleapis/java-datacatalog/compare/v1.1.1...v1.2.0) (2021-03-11)
 
 
