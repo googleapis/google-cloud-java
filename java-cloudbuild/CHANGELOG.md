@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.3.0](https://www.github.com/googleapis/java-cloudbuild/compare/v2.2.2...v2.3.0) (2021-03-30)
+
+
+### Features
+
+* Add `COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY` for corresponding comment control behavior with triggered builds. ([be35172](https://www.github.com/googleapis/java-cloudbuild/commit/be35172f0fea6a48a863278eb741722c03f7946e))
+* Add `E2_HIGHCPU_8` and `E2_HIGHCPU_32` machine types. ([be35172](https://www.github.com/googleapis/java-cloudbuild/commit/be35172f0fea6a48a863278eb741722c03f7946e))
+* Add `ReceiveTriggerWebhook` for webhooks activating specific triggers. ([be35172](https://www.github.com/googleapis/java-cloudbuild/commit/be35172f0fea6a48a863278eb741722c03f7946e))
+* Add `SecretManager`-related resources and messages for corresponding integration. ([be35172](https://www.github.com/googleapis/java-cloudbuild/commit/be35172f0fea6a48a863278eb741722c03f7946e))
+
+
+### Documentation
+
+* Add `$PROJECT_NUMBER` as a substitution variable. ([be35172](https://www.github.com/googleapis/java-cloudbuild/commit/be35172f0fea6a48a863278eb741722c03f7946e))
+* Clarify lifetime/expiration behavior around `ListBuilds` page tokens. ([be35172](https://www.github.com/googleapis/java-cloudbuild/commit/be35172f0fea6a48a863278eb741722c03f7946e))
+* Update field docs on required-ness behavior and fix typos. ([be35172](https://www.github.com/googleapis/java-cloudbuild/commit/be35172f0fea6a48a863278eb741722c03f7946e))
+
 ### [2.2.2](https://www.github.com/googleapis/java-cloudbuild/compare/v2.2.1...v2.2.2) (2021-03-11)
 
 
