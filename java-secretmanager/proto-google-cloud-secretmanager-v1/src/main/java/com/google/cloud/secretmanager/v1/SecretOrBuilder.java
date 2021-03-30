@@ -362,5 +362,49 @@ public interface SecretOrBuilder
    */
   com.google.protobuf.DurationOrBuilder getTtlOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
+   * rotation policy.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.secretmanager.v1.Rotation rotation = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the rotation field is set.
+   */
+  boolean hasRotation();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
+   * rotation policy.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.secretmanager.v1.Rotation rotation = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The rotation.
+   */
+  com.google.cloud.secretmanager.v1.Rotation getRotation();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
+   * rotation policy.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.secretmanager.v1.Rotation rotation = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.secretmanager.v1.RotationOrBuilder getRotationOrBuilder();
+
   public com.google.cloud.secretmanager.v1.Secret.ExpirationCase getExpirationCase();
 }

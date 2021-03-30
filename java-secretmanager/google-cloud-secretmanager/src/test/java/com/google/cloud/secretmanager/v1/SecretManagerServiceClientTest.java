@@ -189,6 +189,7 @@ public class SecretManagerServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllTopics(new ArrayList<Topic>())
+            .setRotation(Rotation.newBuilder().build())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -237,6 +238,7 @@ public class SecretManagerServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllTopics(new ArrayList<Topic>())
+            .setRotation(Rotation.newBuilder().build())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -373,6 +375,7 @@ public class SecretManagerServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllTopics(new ArrayList<Topic>())
+            .setRotation(Rotation.newBuilder().build())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -415,6 +418,7 @@ public class SecretManagerServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllTopics(new ArrayList<Topic>())
+            .setRotation(Rotation.newBuilder().build())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -457,6 +461,7 @@ public class SecretManagerServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllTopics(new ArrayList<Topic>())
+            .setRotation(Rotation.newBuilder().build())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
