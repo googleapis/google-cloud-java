@@ -24,11 +24,6 @@ if [[ -z "${STAGING_BUCKET}" ]]; then
   exit 1
 fi
 
-if [[ -z "${STAGING_BUCKET_V2}" ]]; then
-  echo "Need to set STAGING_BUCKET_V2 environment variable"
-  exit 1
-fi
-
 # work from the git root directory
 pushd $(dirname "$0")/../../
 
