@@ -1,0 +1,31 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": "."
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis-gen",
+        "remote": "https://github.com/googleapis/googleapis-gen.git",
+        "sha": "e0ea8b51f30e2ff6104abd1e4c8d1eb67078c86a",
+        "internalRef": "365759522"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "572ef8f70edd9041f5bcfa71511aed6aecfc2098"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "572ef8f70edd9041f5bcfa71511aed6aecfc2098"
+      }
+    }
+  ]
+}
