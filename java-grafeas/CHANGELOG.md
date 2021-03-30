@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-grafeas/compare/v1.0.9...v1.1.0) (2021-03-29)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#259](https://www.github.com/googleapis/java-grafeas/issues/259)) ([31d7df3](https://www.github.com/googleapis/java-grafeas/commit/31d7df360d392c2ed04f73862477be2c2613b504))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.0 ([#255](https://www.github.com/googleapis/java-grafeas/issues/255)) ([8a654ec](https://www.github.com/googleapis/java-grafeas/commit/8a654ecf0426a0ede20a6e8dc902ed2a2165e626))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#264](https://www.github.com/googleapis/java-grafeas/issues/264)) ([8519594](https://www.github.com/googleapis/java-grafeas/commit/851959496548670d65e95b028b416af1ebfe8de0))
+
 ### [1.0.9](https://www.github.com/googleapis/java-grafeas/compare/v1.0.8...v1.0.9) (2021-02-23)
 
 
