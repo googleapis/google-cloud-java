@@ -127,8 +127,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Google Cloud Storage URIs to input files. URI can be up to
    * 2000 characters long. URIs can match the full object path (for example,
-   * gs://bucket/directory/object.json) or a pattern matching one or more
-   * files, such as gs://bucket/directory/&#42;.json. A request can
+   * `gs://bucket/directory/object.json`) or a pattern matching one or more
+   * files, such as `gs://bucket/directory/&#42;.json`. A request can
    * contain at most 100 files, and each file can be up to 2 GB. See
    * [Importing catalog information](/recommendations-ai/docs/upload-catalog)
    * for the expected file format and setup instructions.
@@ -147,8 +147,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Google Cloud Storage URIs to input files. URI can be up to
    * 2000 characters long. URIs can match the full object path (for example,
-   * gs://bucket/directory/object.json) or a pattern matching one or more
-   * files, such as gs://bucket/directory/&#42;.json. A request can
+   * `gs://bucket/directory/object.json`) or a pattern matching one or more
+   * files, such as `gs://bucket/directory/&#42;.json`. A request can
    * contain at most 100 files, and each file can be up to 2 GB. See
    * [Importing catalog information](/recommendations-ai/docs/upload-catalog)
    * for the expected file format and setup instructions.
@@ -167,8 +167,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Google Cloud Storage URIs to input files. URI can be up to
    * 2000 characters long. URIs can match the full object path (for example,
-   * gs://bucket/directory/object.json) or a pattern matching one or more
-   * files, such as gs://bucket/directory/&#42;.json. A request can
+   * `gs://bucket/directory/object.json`) or a pattern matching one or more
+   * files, such as `gs://bucket/directory/&#42;.json`. A request can
    * contain at most 100 files, and each file can be up to 2 GB. See
    * [Importing catalog information](/recommendations-ai/docs/upload-catalog)
    * for the expected file format and setup instructions.
@@ -188,8 +188,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Google Cloud Storage URIs to input files. URI can be up to
    * 2000 characters long. URIs can match the full object path (for example,
-   * gs://bucket/directory/object.json) or a pattern matching one or more
-   * files, such as gs://bucket/directory/&#42;.json. A request can
+   * `gs://bucket/directory/object.json`) or a pattern matching one or more
+   * files, such as `gs://bucket/directory/&#42;.json`. A request can
    * contain at most 100 files, and each file can be up to 2 GB. See
    * [Importing catalog information](/recommendations-ai/docs/upload-catalog)
    * for the expected file format and setup instructions.
@@ -559,8 +559,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files. URI can be up to
      * 2000 characters long. URIs can match the full object path (for example,
-     * gs://bucket/directory/object.json) or a pattern matching one or more
-     * files, such as gs://bucket/directory/&#42;.json. A request can
+     * `gs://bucket/directory/object.json`) or a pattern matching one or more
+     * files, such as `gs://bucket/directory/&#42;.json`. A request can
      * contain at most 100 files, and each file can be up to 2 GB. See
      * [Importing catalog information](/recommendations-ai/docs/upload-catalog)
      * for the expected file format and setup instructions.
@@ -579,8 +579,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files. URI can be up to
      * 2000 characters long. URIs can match the full object path (for example,
-     * gs://bucket/directory/object.json) or a pattern matching one or more
-     * files, such as gs://bucket/directory/&#42;.json. A request can
+     * `gs://bucket/directory/object.json`) or a pattern matching one or more
+     * files, such as `gs://bucket/directory/&#42;.json`. A request can
      * contain at most 100 files, and each file can be up to 2 GB. See
      * [Importing catalog information](/recommendations-ai/docs/upload-catalog)
      * for the expected file format and setup instructions.
@@ -599,8 +599,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files. URI can be up to
      * 2000 characters long. URIs can match the full object path (for example,
-     * gs://bucket/directory/object.json) or a pattern matching one or more
-     * files, such as gs://bucket/directory/&#42;.json. A request can
+     * `gs://bucket/directory/object.json`) or a pattern matching one or more
+     * files, such as `gs://bucket/directory/&#42;.json`. A request can
      * contain at most 100 files, and each file can be up to 2 GB. See
      * [Importing catalog information](/recommendations-ai/docs/upload-catalog)
      * for the expected file format and setup instructions.
@@ -620,8 +620,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files. URI can be up to
      * 2000 characters long. URIs can match the full object path (for example,
-     * gs://bucket/directory/object.json) or a pattern matching one or more
-     * files, such as gs://bucket/directory/&#42;.json. A request can
+     * `gs://bucket/directory/object.json`) or a pattern matching one or more
+     * files, such as `gs://bucket/directory/&#42;.json`. A request can
      * contain at most 100 files, and each file can be up to 2 GB. See
      * [Importing catalog information](/recommendations-ai/docs/upload-catalog)
      * for the expected file format and setup instructions.
@@ -641,8 +641,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files. URI can be up to
      * 2000 characters long. URIs can match the full object path (for example,
-     * gs://bucket/directory/object.json) or a pattern matching one or more
-     * files, such as gs://bucket/directory/&#42;.json. A request can
+     * `gs://bucket/directory/object.json`) or a pattern matching one or more
+     * files, such as `gs://bucket/directory/&#42;.json`. A request can
      * contain at most 100 files, and each file can be up to 2 GB. See
      * [Importing catalog information](/recommendations-ai/docs/upload-catalog)
      * for the expected file format and setup instructions.
@@ -669,8 +669,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files. URI can be up to
      * 2000 characters long. URIs can match the full object path (for example,
-     * gs://bucket/directory/object.json) or a pattern matching one or more
-     * files, such as gs://bucket/directory/&#42;.json. A request can
+     * `gs://bucket/directory/object.json`) or a pattern matching one or more
+     * files, such as `gs://bucket/directory/&#42;.json`. A request can
      * contain at most 100 files, and each file can be up to 2 GB. See
      * [Importing catalog information](/recommendations-ai/docs/upload-catalog)
      * for the expected file format and setup instructions.
@@ -696,8 +696,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files. URI can be up to
      * 2000 characters long. URIs can match the full object path (for example,
-     * gs://bucket/directory/object.json) or a pattern matching one or more
-     * files, such as gs://bucket/directory/&#42;.json. A request can
+     * `gs://bucket/directory/object.json`) or a pattern matching one or more
+     * files, such as `gs://bucket/directory/&#42;.json`. A request can
      * contain at most 100 files, and each file can be up to 2 GB. See
      * [Importing catalog information](/recommendations-ai/docs/upload-catalog)
      * for the expected file format and setup instructions.
@@ -720,8 +720,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files. URI can be up to
      * 2000 characters long. URIs can match the full object path (for example,
-     * gs://bucket/directory/object.json) or a pattern matching one or more
-     * files, such as gs://bucket/directory/&#42;.json. A request can
+     * `gs://bucket/directory/object.json`) or a pattern matching one or more
+     * files, such as `gs://bucket/directory/&#42;.json`. A request can
      * contain at most 100 files, and each file can be up to 2 GB. See
      * [Importing catalog information](/recommendations-ai/docs/upload-catalog)
      * for the expected file format and setup instructions.
@@ -743,8 +743,8 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files. URI can be up to
      * 2000 characters long. URIs can match the full object path (for example,
-     * gs://bucket/directory/object.json) or a pattern matching one or more
-     * files, such as gs://bucket/directory/&#42;.json. A request can
+     * `gs://bucket/directory/object.json`) or a pattern matching one or more
+     * files, such as `gs://bucket/directory/&#42;.json`. A request can
      * contain at most 100 files, and each file can be up to 2 GB. See
      * [Importing catalog information](/recommendations-ai/docs/upload-catalog)
      * for the expected file format and setup instructions.

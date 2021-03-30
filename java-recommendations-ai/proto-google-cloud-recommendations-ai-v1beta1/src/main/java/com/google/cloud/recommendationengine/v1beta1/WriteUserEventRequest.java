@@ -135,7 +135,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The parent eventStore resource name, such as
-   * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+   * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
    * </pre>
    *
    * <code>
@@ -161,7 +161,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The parent eventStore resource name, such as
-   * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+   * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
    * </pre>
    *
    * <code>
@@ -598,7 +598,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent eventStore resource name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      * </pre>
      *
      * <code>
@@ -623,7 +623,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent eventStore resource name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      * </pre>
      *
      * <code>
@@ -648,7 +648,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent eventStore resource name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      * </pre>
      *
      * <code>
@@ -672,7 +672,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent eventStore resource name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      * </pre>
      *
      * <code>
@@ -692,7 +692,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent eventStore resource name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      * </pre>
      *
      * <code>

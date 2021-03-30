@@ -139,7 +139,7 @@ public final class ListCatalogItemsRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The parent catalog resource name, such as
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
    * </pre>
    *
    * <code>
@@ -165,7 +165,7 @@ public final class ListCatalogItemsRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The parent catalog resource name, such as
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
    * </pre>
    *
    * <code>
@@ -684,7 +684,7 @@ public final class ListCatalogItemsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The parent catalog resource name, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
      * </pre>
      *
      * <code>
@@ -709,7 +709,7 @@ public final class ListCatalogItemsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The parent catalog resource name, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
      * </pre>
      *
      * <code>
@@ -734,7 +734,7 @@ public final class ListCatalogItemsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The parent catalog resource name, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
      * </pre>
      *
      * <code>
@@ -758,7 +758,7 @@ public final class ListCatalogItemsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The parent catalog resource name, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
      * </pre>
      *
      * <code>
@@ -778,7 +778,7 @@ public final class ListCatalogItemsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The parent catalog resource name, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
      * </pre>
      *
      * <code>

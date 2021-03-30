@@ -142,7 +142,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
    *
    * <pre>
    * Required. The parent resource path.
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store`.
    * </pre>
    *
    * <code>
@@ -168,7 +168,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
    *
    * <pre>
    * Required. The parent resource path.
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store`.
    * </pre>
    *
    * <code>
@@ -649,7 +649,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
      *
      * <pre>
      * Required. The parent resource path.
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      * </pre>
      *
      * <code>
@@ -674,7 +674,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
      *
      * <pre>
      * Required. The parent resource path.
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      * </pre>
      *
      * <code>
@@ -699,7 +699,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
      *
      * <pre>
      * Required. The parent resource path.
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      * </pre>
      *
      * <code>
@@ -723,7 +723,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
      *
      * <pre>
      * Required. The parent resource path.
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      * </pre>
      *
      * <code>
@@ -743,7 +743,7 @@ public final class CreatePredictionApiKeyRegistrationRequest
      *
      * <pre>
      * Required. The parent resource path.
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      * </pre>
      *
      * <code>

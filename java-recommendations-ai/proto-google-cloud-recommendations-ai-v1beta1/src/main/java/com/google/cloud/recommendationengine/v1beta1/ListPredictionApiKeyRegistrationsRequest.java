@@ -136,7 +136,7 @@ public final class ListPredictionApiKeyRegistrationsRequest
    *
    * <pre>
    * Required. The parent placement resource name such as
-   * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+   * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
    * </pre>
    *
    * <code>
@@ -162,7 +162,7 @@ public final class ListPredictionApiKeyRegistrationsRequest
    *
    * <pre>
    * Required. The parent placement resource name such as
-   * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+   * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
    * </pre>
    *
    * <code>
@@ -651,7 +651,7 @@ public final class ListPredictionApiKeyRegistrationsRequest
      *
      * <pre>
      * Required. The parent placement resource name such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
      * </pre>
      *
      * <code>
@@ -676,7 +676,7 @@ public final class ListPredictionApiKeyRegistrationsRequest
      *
      * <pre>
      * Required. The parent placement resource name such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
      * </pre>
      *
      * <code>
@@ -701,7 +701,7 @@ public final class ListPredictionApiKeyRegistrationsRequest
      *
      * <pre>
      * Required. The parent placement resource name such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
      * </pre>
      *
      * <code>
@@ -725,7 +725,7 @@ public final class ListPredictionApiKeyRegistrationsRequest
      *
      * <pre>
      * Required. The parent placement resource name such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
      * </pre>
      *
      * <code>
@@ -745,7 +745,7 @@ public final class ListPredictionApiKeyRegistrationsRequest
      *
      * <pre>
      * Required. The parent placement resource name such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
      * </pre>
      *
      * <code>

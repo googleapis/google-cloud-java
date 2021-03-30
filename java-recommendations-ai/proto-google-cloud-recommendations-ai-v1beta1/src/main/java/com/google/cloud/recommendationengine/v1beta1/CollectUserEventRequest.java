@@ -139,7 +139,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The parent eventStore name, such as
-   * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+   * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
    * </pre>
    *
    * <code>
@@ -165,7 +165,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The parent eventStore name, such as
-   * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+   * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
    * </pre>
    *
    * <code>
@@ -691,7 +691,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The parent eventStore name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      * </pre>
      *
      * <code>
@@ -716,7 +716,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The parent eventStore name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      * </pre>
      *
      * <code>
@@ -741,7 +741,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The parent eventStore name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      * </pre>
      *
      * <code>
@@ -765,7 +765,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The parent eventStore name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      * </pre>
      *
      * <code>
@@ -785,7 +785,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The parent eventStore name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
      * </pre>
      *
      * <code>

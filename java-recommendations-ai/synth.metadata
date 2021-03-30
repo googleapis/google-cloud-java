@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-recommendations-ai.git",
-        "sha": "7a382cc1d27b1f8647d274f0cf8c7fc8e1fddb6a"
+        "sha": "45da3f0422f75af2cce80aa6f9a1dd0b57701e8c"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1305ca41d554eb0725237561e34129373bb8cbc1",
-        "internalRef": "362856902"
+        "sha": "7c8d16188e68347aac0053a40ab1dc2056a44899",
+        "internalRef": "365829960"
       }
     },
     {

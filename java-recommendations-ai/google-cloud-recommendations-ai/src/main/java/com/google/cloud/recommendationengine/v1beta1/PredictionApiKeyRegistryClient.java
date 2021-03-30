@@ -183,7 +183,7 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource path.
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
    * @param predictionApiKeyRegistration Required. The prediction API key registration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -217,7 +217,7 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource path.
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
    * @param predictionApiKeyRegistration Required. The prediction API key registration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -310,7 +310,7 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent placement resource name such as
-   *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+   *     `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPredictionApiKeyRegistrationsPagedResponse listPredictionApiKeyRegistrations(
@@ -341,7 +341,7 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent placement resource name such as
-   *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+   *     `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPredictionApiKeyRegistrationsPagedResponse listPredictionApiKeyRegistrations(
@@ -479,7 +479,7 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The API key to unregister including full resource path.
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/&lt;YOUR_API_KEY&gt;"
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/&lt;YOUR_API_KEY&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deletePredictionApiKeyRegistration(PredictionApiKeyRegistrationName name) {
@@ -512,7 +512,7 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The API key to unregister including full resource path.
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/&lt;YOUR_API_KEY&gt;"
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/&lt;YOUR_API_KEY&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deletePredictionApiKeyRegistration(String name) {

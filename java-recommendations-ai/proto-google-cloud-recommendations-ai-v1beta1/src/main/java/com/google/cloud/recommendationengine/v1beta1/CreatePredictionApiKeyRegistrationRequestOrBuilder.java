@@ -28,7 +28,7 @@ public interface CreatePredictionApiKeyRegistrationRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource path.
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store`.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface CreatePredictionApiKeyRegistrationRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource path.
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/eventStores/default_event_store`.
    * </pre>
    *
    * <code>

@@ -178,7 +178,7 @@ public class PredictionServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full resource name of the format:
-   *     {name=projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/placements/&#42;}
+   *     `{name=projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/placements/&#42;}`
    *     The id of the recommendation engine placement. This id is used to identify the set of
    *     models that will be used to make the prediction.
    *     <p>We currently support three placements with the following IDs by default:
@@ -243,7 +243,7 @@ public class PredictionServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full resource name of the format:
-   *     {name=projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/placements/&#42;}
+   *     `{name=projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/placements/&#42;}`
    *     The id of the recommendation engine placement. This id is used to identify the set of
    *     models that will be used to make the prediction.
    *     <p>We currently support three placements with the following IDs by default:

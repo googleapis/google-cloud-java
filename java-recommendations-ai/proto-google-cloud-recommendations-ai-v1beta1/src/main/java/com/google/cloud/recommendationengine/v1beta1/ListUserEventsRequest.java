@@ -139,7 +139,7 @@ public final class ListUserEventsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The parent eventStore resource name, such as
-   * "projects/&#42;&#47;locations/&#42;&#47;catalogs/default_catalog/eventStores/default_event_store".
+   * `projects/&#42;&#47;locations/&#42;&#47;catalogs/default_catalog/eventStores/default_event_store`.
    * </pre>
    *
    * <code>
@@ -165,7 +165,7 @@ public final class ListUserEventsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The parent eventStore resource name, such as
-   * "projects/&#42;&#47;locations/&#42;&#47;catalogs/default_catalog/eventStores/default_event_store".
+   * `projects/&#42;&#47;locations/&#42;&#47;catalogs/default_catalog/eventStores/default_event_store`.
    * </pre>
    *
    * <code>
@@ -734,7 +734,7 @@ public final class ListUserEventsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent eventStore resource name, such as
-     * "projects/&#42;&#47;locations/&#42;&#47;catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/default_catalog/eventStores/default_event_store`.
      * </pre>
      *
      * <code>
@@ -759,7 +759,7 @@ public final class ListUserEventsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent eventStore resource name, such as
-     * "projects/&#42;&#47;locations/&#42;&#47;catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/default_catalog/eventStores/default_event_store`.
      * </pre>
      *
      * <code>
@@ -784,7 +784,7 @@ public final class ListUserEventsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent eventStore resource name, such as
-     * "projects/&#42;&#47;locations/&#42;&#47;catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/default_catalog/eventStores/default_event_store`.
      * </pre>
      *
      * <code>
@@ -808,7 +808,7 @@ public final class ListUserEventsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent eventStore resource name, such as
-     * "projects/&#42;&#47;locations/&#42;&#47;catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/default_catalog/eventStores/default_event_store`.
      * </pre>
      *
      * <code>
@@ -828,7 +828,7 @@ public final class ListUserEventsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent eventStore resource name, such as
-     * "projects/&#42;&#47;locations/&#42;&#47;catalogs/default_catalog/eventStores/default_event_store".
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/default_catalog/eventStores/default_event_store`.
      * </pre>
      *
      * <code>

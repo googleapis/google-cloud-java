@@ -28,7 +28,7 @@ public interface ImportUserEventsRequestOrBuilder
    *
    * <pre>
    * Required.
-   * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+   * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface ImportUserEventsRequestOrBuilder
    *
    * <pre>
    * Required.
-   * "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+   * `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
    * </pre>
    *
    * <code>

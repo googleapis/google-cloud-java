@@ -185,7 +185,7 @@ public class UserEventServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent eventStore resource name, such as
-   *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+   *     `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
    * @param userEvent Required. User event to write.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -214,7 +214,7 @@ public class UserEventServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent eventStore resource name, such as
-   *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+   *     `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
    * @param userEvent Required. User event to write.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -298,7 +298,7 @@ public class UserEventServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent eventStore name, such as
-   *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+   *     `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
    * @param userEvent Required. URL encoded UserEvent proto.
    * @param uri Optional. The url including cgi-parameters but excluding the hash fragment. The URL
    *     must be truncated to 1.5K bytes to conservatively be under the 2K bytes. This is often more
@@ -342,7 +342,7 @@ public class UserEventServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent eventStore name, such as
-   *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
+   *     `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
    * @param userEvent Required. URL encoded UserEvent proto.
    * @param uri Optional. The url including cgi-parameters but excluding the hash fragment. The URL
    *     must be truncated to 1.5K bytes to conservatively be under the 2K bytes. This is often more
@@ -445,7 +445,7 @@ public class UserEventServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent eventStore resource name, such as
-   *     "projects/&#42;/locations/&#42;/catalogs/default_catalog/eventStores/default_event_store".
+   *     `projects/&#42;/locations/&#42;/catalogs/default_catalog/eventStores/default_event_store`.
    * @param filter Optional. Filtering expression to specify restrictions over returned events. This
    *     is a sequence of terms, where each term applies some kind of a restriction to the returned
    *     user events. Use this expression to restrict results to a specific time range, or filter
@@ -495,7 +495,7 @@ public class UserEventServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent eventStore resource name, such as
-   *     "projects/&#42;/locations/&#42;/catalogs/default_catalog/eventStores/default_event_store".
+   *     `projects/&#42;/locations/&#42;/catalogs/default_catalog/eventStores/default_event_store`.
    * @param filter Optional. Filtering expression to specify restrictions over returned events. This
    *     is a sequence of terms, where each term applies some kind of a restriction to the returned
    *     user events. Use this expression to restrict results to a specific time range, or filter
@@ -644,7 +644,7 @@ public class UserEventServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the event_store under which the events are
    *     created. The format is
-   *     "projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}"
+   *     `projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}`
    * @param filter Required. The filter string to specify the events to be deleted. Empty string
    *     filter is not allowed. This filter can also be used with ListUserEvents API to list events
    *     that will be deleted. The eligible fields for filtering are:
@@ -698,7 +698,7 @@ public class UserEventServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the event_store under which the events are
    *     created. The format is
-   *     "projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}"
+   *     `projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}`
    * @param filter Required. The filter string to specify the events to be deleted. Empty string
    *     filter is not allowed. This filter can also be used with ListUserEvents API to list events
    *     that will be deleted. The eligible fields for filtering are:
@@ -846,7 +846,7 @@ public class UserEventServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required.
-   *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+   *     `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
    * @param requestId Optional. Unique identifier provided by client, within the ancestor dataset
    *     scope. Ensures idempotency for expensive long running operations. Server-generated if
    *     unspecified. Up to 128 characters long. This is returned as
@@ -896,7 +896,7 @@ public class UserEventServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required.
-   *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
+   *     `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`
    * @param requestId Optional. Unique identifier provided by client, within the ancestor dataset
    *     scope. Ensures idempotency for expensive long running operations. Server-generated if
    *     unspecified. Up to 128 characters long. This is returned as

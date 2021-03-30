@@ -27,7 +27,7 @@ public interface ImportCatalogItemsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. "projects/1234/locations/global/catalogs/default_catalog"
+   * Required. `projects/1234/locations/global/catalogs/default_catalog`
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface ImportCatalogItemsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. "projects/1234/locations/global/catalogs/default_catalog"
+   * Required. `projects/1234/locations/global/catalogs/default_catalog`
    * </pre>
    *
    * <code>

@@ -118,7 +118,7 @@ public final class GetCatalogItemRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. Full resource name of catalog item, such as
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id`.
    * </pre>
    *
    * <code>
@@ -144,7 +144,7 @@ public final class GetCatalogItemRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. Full resource name of catalog item, such as
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id`.
    * </pre>
    *
    * <code>
@@ -499,7 +499,7 @@ public final class GetCatalogItemRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Full resource name of catalog item, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id`.
      * </pre>
      *
      * <code>
@@ -524,7 +524,7 @@ public final class GetCatalogItemRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Full resource name of catalog item, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id`.
      * </pre>
      *
      * <code>
@@ -549,7 +549,7 @@ public final class GetCatalogItemRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Full resource name of catalog item, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id`.
      * </pre>
      *
      * <code>
@@ -573,7 +573,7 @@ public final class GetCatalogItemRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Full resource name of catalog item, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id`.
      * </pre>
      *
      * <code>
@@ -593,7 +593,7 @@ public final class GetCatalogItemRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Full resource name of catalog item, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id`.
      * </pre>
      *
      * <code>

@@ -160,7 +160,7 @@ public final class ImportCatalogItemsRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. "projects/1234/locations/global/catalogs/default_catalog"
+   * Required. `projects/1234/locations/global/catalogs/default_catalog`
    * </pre>
    *
    * <code>
@@ -185,7 +185,7 @@ public final class ImportCatalogItemsRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. "projects/1234/locations/global/catalogs/default_catalog"
+   * Required. `projects/1234/locations/global/catalogs/default_catalog`
    * </pre>
    *
    * <code>
@@ -779,7 +779,7 @@ public final class ImportCatalogItemsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. "projects/1234/locations/global/catalogs/default_catalog"
+     * Required. `projects/1234/locations/global/catalogs/default_catalog`
      * </pre>
      *
      * <code>
@@ -803,7 +803,7 @@ public final class ImportCatalogItemsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. "projects/1234/locations/global/catalogs/default_catalog"
+     * Required. `projects/1234/locations/global/catalogs/default_catalog`
      * </pre>
      *
      * <code>
@@ -827,7 +827,7 @@ public final class ImportCatalogItemsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. "projects/1234/locations/global/catalogs/default_catalog"
+     * Required. `projects/1234/locations/global/catalogs/default_catalog`
      * </pre>
      *
      * <code>
@@ -850,7 +850,7 @@ public final class ImportCatalogItemsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. "projects/1234/locations/global/catalogs/default_catalog"
+     * Required. `projects/1234/locations/global/catalogs/default_catalog`
      * </pre>
      *
      * <code>
@@ -869,7 +869,7 @@ public final class ImportCatalogItemsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. "projects/1234/locations/global/catalogs/default_catalog"
+     * Required. `projects/1234/locations/global/catalogs/default_catalog`
      * </pre>
      *
      * <code>

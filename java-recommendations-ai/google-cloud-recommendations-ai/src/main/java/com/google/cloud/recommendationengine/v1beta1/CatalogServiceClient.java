@@ -181,7 +181,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent catalog resource name, such as
-   *     "projects/&#42;/locations/global/catalogs/default_catalog".
+   *     `projects/&#42;/locations/global/catalogs/default_catalog`.
    * @param catalogItem Required. The catalog item to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -209,7 +209,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent catalog resource name, such as
-   *     "projects/&#42;/locations/global/catalogs/default_catalog".
+   *     `projects/&#42;/locations/global/catalogs/default_catalog`.
    * @param catalogItem Required. The catalog item to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -282,7 +282,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full resource name of catalog item, such as
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id".
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CatalogItem getCatalogItem(CatalogItemPathName name) {
@@ -307,7 +307,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full resource name of catalog item, such as
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id".
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CatalogItem getCatalogItem(String name) {
@@ -385,7 +385,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent catalog resource name, such as
-   *     "projects/&#42;/locations/global/catalogs/default_catalog".
+   *     `projects/&#42;/locations/global/catalogs/default_catalog`.
    * @param filter Optional. A filter to apply on the list results.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -416,7 +416,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent catalog resource name, such as
-   *     "projects/&#42;/locations/global/catalogs/default_catalog".
+   *     `projects/&#42;/locations/global/catalogs/default_catalog`.
    * @param filter Optional. A filter to apply on the list results.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -661,7 +661,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full resource name of catalog item, such as
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteCatalogItem(CatalogItemPathName name) {
@@ -688,7 +688,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full resource name of catalog item, such as
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteCatalogItem(String name) {
@@ -771,7 +771,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. "projects/1234/locations/global/catalogs/default_catalog"
+   * @param parent Required. `projects/1234/locations/global/catalogs/default_catalog`
    * @param requestId Optional. Unique identifier provided by client, within the ancestor dataset
    *     scope. Ensures idempotency and used for request deduplication. Server-generated if
    *     unspecified. Up to 128 characters long. This is returned as
@@ -818,7 +818,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. "projects/1234/locations/global/catalogs/default_catalog"
+   * @param parent Required. `projects/1234/locations/global/catalogs/default_catalog`
    * @param requestId Optional. Unique identifier provided by client, within the ancestor dataset
    *     scope. Ensures idempotency and used for request deduplication. Server-generated if
    *     unspecified. Up to 128 characters long. This is returned as
