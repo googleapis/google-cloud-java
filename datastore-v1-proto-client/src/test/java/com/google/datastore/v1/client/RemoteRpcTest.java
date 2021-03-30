@@ -16,13 +16,19 @@
 package com.google.datastore.v1.client;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
+import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.LowLevelHttpRequest;
 import com.google.api.client.http.LowLevelHttpResponse;
+import com.google.api.client.http.protobuf.ProtoHttpContent;
 import com.google.api.client.util.Charsets;
 import com.google.datastore.v1.BeginTransactionResponse;
+import com.google.datastore.v1.RollbackRequest;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.MessageLite;
 import com.google.rpc.Code;
 import com.google.rpc.Status;
 import java.io.ByteArrayInputStream;
@@ -130,6 +136,45 @@ public class RemoteRpcTest {
     assertEquals(response, parsedResponse);
     // Check that the underlying stream is exhausted.
     assertEquals(-1, injectedTestValues.inputStream.read());
+  }
+
+  @Test
+  public void testHttpHeaders_expectE2eChecksumHeader() throws IOException {
+    // Enable E2E-Checksum system env variable
+    RemoteRpc.setSystemEnvE2EChecksum(true);
+    MessageLite request = RollbackRequest.newBuilder()
+        .setTransaction(ByteString.copyFromUtf8("project-id"))
+        .build();
+    RemoteRpc rpc = newRemoteRpc(new InjectedTestValues(gzip(newBeginTransactionResponse()),
+        new byte[1], true));
+    HttpRequest httpRequest = rpc.getClient().buildPostRequest(rpc.resolveURL("blah"),
+        new ProtoHttpContent(request));
+    rpc.setHeaders(request, httpRequest);
+    assertNotNull(httpRequest.getHeaders()
+        .getFirstHeaderStringValue(RemoteRpc.API_FORMAT_VERSION_HEADER));
+    // Expect to find e2e-checksum header
+    String header = httpRequest.getHeaders().getFirstHeaderStringValue(
+        EndToEndChecksumHandler.HTTP_REQUEST_CHECKSUM_HEADER);
+    assertEquals(32, header.length());
+  }
+
+  @Test
+  public void testHttpHeaders_doNotExpectE2eChecksumHeader() throws IOException {
+    // disable E2E-Checksum system env variable
+    RemoteRpc.setSystemEnvE2EChecksum(false);
+    MessageLite request = RollbackRequest.newBuilder()
+        .setTransaction(ByteString.copyFromUtf8("project-id"))
+        .build();
+    RemoteRpc rpc = newRemoteRpc(new InjectedTestValues(gzip(newBeginTransactionResponse()),
+        new byte[1], true));
+    HttpRequest httpRequest = rpc.getClient().buildPostRequest(rpc.resolveURL("blah"),
+        new ProtoHttpContent(request));
+    rpc.setHeaders(request, httpRequest);
+    assertNotNull(httpRequest.getHeaders()
+        .getFirstHeaderStringValue(RemoteRpc.API_FORMAT_VERSION_HEADER));
+    // Do not expect to find e2e-checksum header
+    assertNull(httpRequest.getHeaders().getFirstHeaderStringValue(
+        EndToEndChecksumHandler.HTTP_REQUEST_CHECKSUM_HEADER));
   }
 
   private static BeginTransactionResponse newBeginTransactionResponse() {

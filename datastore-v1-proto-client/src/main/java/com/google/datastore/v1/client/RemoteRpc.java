@@ -23,6 +23,7 @@ import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpStatusCodes;
 import com.google.api.client.http.protobuf.ProtoHttpContent;
 import com.google.api.client.util.IOUtils;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.protobuf.MessageLite;
 import com.google.rpc.Code;
 import com.google.rpc.Status;
@@ -42,13 +43,17 @@ import java.util.logging.Logger;
 class RemoteRpc {
   private static final Logger logger = Logger.getLogger(RemoteRpc.class.getName());
 
-  private static final String API_FORMAT_VERSION_HEADER = "X-Goog-Api-Format-Version";
+  @VisibleForTesting
+  static final String API_FORMAT_VERSION_HEADER = "X-Goog-Api-Format-Version";
   private static final String API_FORMAT_VERSION = "2";
 
   private final HttpRequestFactory client;
   private final HttpRequestInitializer initializer;
   private final String url;
   private final AtomicInteger rpcCount = new AtomicInteger(0);
+  // Not final - so it can be set/reset in Unittests
+  private static boolean enableE2EChecksum = Boolean.parseBoolean(
+      System.getenv("GOOGLE_CLOUD_DATASTORE_HTTP_ENABLE_E2E_CHECKSUM"));
 
   RemoteRpc(HttpRequestFactory client, HttpRequestInitializer initializer, String url) {
     this.client = client;
@@ -80,7 +85,7 @@ class RemoteRpc {
         rpcCount.incrementAndGet();
         ProtoHttpContent payload = new ProtoHttpContent(request);
         HttpRequest httpRequest = client.buildPostRequest(resolveURL(methodName), payload);
-        httpRequest.getHeaders().put(API_FORMAT_VERSION_HEADER, API_FORMAT_VERSION);
+        setHeaders(request, httpRequest);
         // Don't throw an HTTPResponseException on error. It converts the response to a String and
         // throws away the original, whereas we need the raw bytes to parse it as a proto.
         httpRequest.setThrowExceptionOnExecuteError(false);
@@ -98,7 +103,12 @@ class RemoteRpc {
                 httpResponse.getStatusCode());
           }
         }
-        return httpResponse.getContent();
+        InputStream inputStream = httpResponse.getContent();
+        return enableE2EChecksum && EndToEndChecksumHandler.hasChecksumHeader(httpResponse)
+            ? new ChecksumEnforcingInputStream(inputStream,
+                                               httpResponse,
+                                               EndToEndChecksumHandler.getMessageDigestInstance())
+            : inputStream;
       } catch (SocketTimeoutException e) {
         throw makeException(url, methodName, Code.DEADLINE_EXCEEDED, "Deadline exceeded", e);
       } catch (IOException e) {
@@ -108,6 +118,28 @@ class RemoteRpc {
       long elapsedTime = System.currentTimeMillis() - startTime;
       logger.fine("remote datastore call " + methodName + " took " + elapsedTime + " ms");
     }
+  }
+
+  @VisibleForTesting
+  void setHeaders(MessageLite request, HttpRequest httpRequest) {
+    httpRequest.getHeaders().put(API_FORMAT_VERSION_HEADER, API_FORMAT_VERSION);
+    if (enableE2EChecksum && request != null) {
+      String checksum = EndToEndChecksumHandler.computeChecksum(request.toByteArray());
+      if (checksum != null) {
+        httpRequest.getHeaders().put(EndToEndChecksumHandler.HTTP_REQUEST_CHECKSUM_HEADER,
+            checksum);
+      }
+    }
+  }
+
+  @VisibleForTesting
+  HttpRequestFactory getClient() {
+    return client;
+  }
+
+  @VisibleForTesting
+  static void setSystemEnvE2EChecksum(boolean enableE2EChecksum) {
+    RemoteRpc.enableE2EChecksum = enableE2EChecksum;
   }
 
   void resetRpcCount() {
