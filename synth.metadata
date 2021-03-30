@@ -18,32 +18,32 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1305ca41d554eb0725237561e34129373bb8cbc1",
-        "internalRef": "362856902"
+        "sha": "c539b9b08b3366ee00c0ec1950f4df711552a269",
+        "internalRef": "365759522"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1305ca41d554eb0725237561e34129373bb8cbc1",
-        "internalRef": "362856902"
+        "sha": "c539b9b08b3366ee00c0ec1950f4df711552a269",
+        "internalRef": "365759522"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1305ca41d554eb0725237561e34129373bb8cbc1",
-        "internalRef": "362856902"
+        "sha": "c539b9b08b3366ee00c0ec1950f4df711552a269",
+        "internalRef": "365759522"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1305ca41d554eb0725237561e34129373bb8cbc1",
-        "internalRef": "362856902"
+        "sha": "c539b9b08b3366ee00c0ec1950f4df711552a269",
+        "internalRef": "365759522"
       }
     },
     {
@@ -221,6 +221,8 @@
     "proto-google-cloud-bigquerystorage-v1/src/main/java/com/google/cloud/bigquery/storage/v1/ArrowRecordBatchOrBuilder.java",
     "proto-google-cloud-bigquerystorage-v1/src/main/java/com/google/cloud/bigquery/storage/v1/ArrowSchema.java",
     "proto-google-cloud-bigquerystorage-v1/src/main/java/com/google/cloud/bigquery/storage/v1/ArrowSchemaOrBuilder.java",
+    "proto-google-cloud-bigquerystorage-v1/src/main/java/com/google/cloud/bigquery/storage/v1/ArrowSerializationOptions.java",
+    "proto-google-cloud-bigquerystorage-v1/src/main/java/com/google/cloud/bigquery/storage/v1/ArrowSerializationOptionsOrBuilder.java",
     "proto-google-cloud-bigquerystorage-v1/src/main/java/com/google/cloud/bigquery/storage/v1/AvroProto.java",
     "proto-google-cloud-bigquerystorage-v1/src/main/java/com/google/cloud/bigquery/storage/v1/AvroRows.java",
     "proto-google-cloud-bigquerystorage-v1/src/main/java/com/google/cloud/bigquery/storage/v1/AvroRowsOrBuilder.java",

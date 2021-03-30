@@ -88,7 +88,7 @@ public final class StorageProto {
           + "\001(\005\"\227\001\n\013StreamStats\022H\n\010progress\030\002 \001(\01326."
           + "google.cloud.bigquery.storage.v1.StreamS"
           + "tats.Progress\032>\n\010Progress\022\031\n\021at_response"
-          + "_start\030\001 \001(\001\022\027\n\017at_response_end\030\002 \001(\001\"\307\002"
+          + "_start\030\001 \001(\001\022\027\n\017at_response_end\030\002 \001(\001\"\347\003"
           + "\n\020ReadRowsResponse\022?\n\tavro_rows\030\003 \001(\0132*."
           + "google.cloud.bigquery.storage.v1.AvroRow"
           + "sH\000\022P\n\022arrow_record_batch\030\004 \001(\01322.google"
@@ -96,8 +96,12 @@ public final class StorageProto {
           + "tchH\000\022\021\n\trow_count\030\006 \001(\003\022<\n\005stats\030\002 \001(\0132"
           + "-.google.cloud.bigquery.storage.v1.Strea"
           + "mStats\022G\n\016throttle_state\030\005 \001(\0132/.google."
-          + "cloud.bigquery.storage.v1.ThrottleStateB"
-          + "\006\n\004rows\"k\n\026SplitReadStreamRequest\022?\n\004nam"
+          + "cloud.bigquery.storage.v1.ThrottleState\022"
+          + "H\n\013avro_schema\030\007 \001(\0132,.google.cloud.bigq"
+          + "uery.storage.v1.AvroSchemaB\003\340A\003H\001\022J\n\014arr"
+          + "ow_schema\030\010 \001(\0132-.google.cloud.bigquery."
+          + "storage.v1.ArrowSchemaB\003\340A\003H\001B\006\n\004rowsB\010\n"
+          + "\006schema\"k\n\026SplitReadStreamRequest\022?\n\004nam"
           + "e\030\001 \001(\tB1\340A\002\372A+\n)bigquerystorage.googlea"
           + "pis.com/ReadStream\022\020\n\010fraction\030\002 \001(\001\"\247\001\n"
           + "\027SplitReadStreamResponse\022D\n\016primary_stre"
@@ -194,7 +198,15 @@ public final class StorageProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1_ReadRowsResponse_descriptor,
             new java.lang.String[] {
-              "AvroRows", "ArrowRecordBatch", "RowCount", "Stats", "ThrottleState", "Rows",
+              "AvroRows",
+              "ArrowRecordBatch",
+              "RowCount",
+              "Stats",
+              "ThrottleState",
+              "AvroSchema",
+              "ArrowSchema",
+              "Rows",
+              "Schema",
             });
     internal_static_google_cloud_bigquery_storage_v1_SplitReadStreamRequest_descriptor =
         getDescriptor().getMessageTypes().get(5);

@@ -54,9 +54,10 @@ public interface ReadSessionOrBuilder
    *
    *
    * <pre>
-   * Output only. Time at which the session becomes invalid. After this time, subsequent
-   * requests to read this Session will return errors. The expire_time is
-   * automatically assigned and currently cannot be specified or updated.
+   * Output only. Time at which the session becomes invalid. After this time,
+   * subsequent requests to read this Session will return errors. The
+   * expire_time is automatically assigned and currently cannot be specified or
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -69,9 +70,10 @@ public interface ReadSessionOrBuilder
    *
    *
    * <pre>
-   * Output only. Time at which the session becomes invalid. After this time, subsequent
-   * requests to read this Session will return errors. The expire_time is
-   * automatically assigned and currently cannot be specified or updated.
+   * Output only. Time at which the session becomes invalid. After this time,
+   * subsequent requests to read this Session will return errors. The
+   * expire_time is automatically assigned and currently cannot be specified or
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -84,9 +86,10 @@ public interface ReadSessionOrBuilder
    *
    *
    * <pre>
-   * Output only. Time at which the session becomes invalid. After this time, subsequent
-   * requests to read this Session will return errors. The expire_time is
-   * automatically assigned and currently cannot be specified or updated.
+   * Output only. Time at which the session becomes invalid. After this time,
+   * subsequent requests to read this Session will return errors. The
+   * expire_time is automatically assigned and currently cannot be specified or
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -240,7 +243,8 @@ public interface ReadSessionOrBuilder
    *
    *
    * <pre>
-   * Optional. Any modifiers which are applied when reading from the specified table.
+   * Optional. Any modifiers which are applied when reading from the specified
+   * table.
    * </pre>
    *
    * <code>
@@ -254,7 +258,8 @@ public interface ReadSessionOrBuilder
    *
    *
    * <pre>
-   * Optional. Any modifiers which are applied when reading from the specified table.
+   * Optional. Any modifiers which are applied when reading from the specified
+   * table.
    * </pre>
    *
    * <code>
@@ -268,7 +273,8 @@ public interface ReadSessionOrBuilder
    *
    *
    * <pre>
-   * Optional. Any modifiers which are applied when reading from the specified table.
+   * Optional. Any modifiers which are applied when reading from the specified
+   * table.
    * </pre>
    *
    * <code>

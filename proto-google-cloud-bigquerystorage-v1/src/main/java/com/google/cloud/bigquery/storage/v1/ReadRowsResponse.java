@@ -141,6 +141,40 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
               rowCount_ = input.readInt64();
               break;
             }
+          case 58:
+            {
+              com.google.cloud.bigquery.storage.v1.AvroSchema.Builder subBuilder = null;
+              if (schemaCase_ == 7) {
+                subBuilder =
+                    ((com.google.cloud.bigquery.storage.v1.AvroSchema) schema_).toBuilder();
+              }
+              schema_ =
+                  input.readMessage(
+                      com.google.cloud.bigquery.storage.v1.AvroSchema.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.bigquery.storage.v1.AvroSchema) schema_);
+                schema_ = subBuilder.buildPartial();
+              }
+              schemaCase_ = 7;
+              break;
+            }
+          case 66:
+            {
+              com.google.cloud.bigquery.storage.v1.ArrowSchema.Builder subBuilder = null;
+              if (schemaCase_ == 8) {
+                subBuilder =
+                    ((com.google.cloud.bigquery.storage.v1.ArrowSchema) schema_).toBuilder();
+              }
+              schema_ =
+                  input.readMessage(
+                      com.google.cloud.bigquery.storage.v1.ArrowSchema.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.bigquery.storage.v1.ArrowSchema) schema_);
+                schema_ = subBuilder.buildPartial();
+              }
+              schemaCase_ = 8;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -220,6 +254,53 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
 
   public RowsCase getRowsCase() {
     return RowsCase.forNumber(rowsCase_);
+  }
+
+  private int schemaCase_ = 0;
+  private java.lang.Object schema_;
+
+  public enum SchemaCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    AVRO_SCHEMA(7),
+    ARROW_SCHEMA(8),
+    SCHEMA_NOT_SET(0);
+    private final int value;
+
+    private SchemaCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SchemaCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SchemaCase forNumber(int value) {
+      switch (value) {
+        case 7:
+          return AVRO_SCHEMA;
+        case 8:
+          return ARROW_SCHEMA;
+        case 0:
+          return SCHEMA_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SchemaCase getSchemaCase() {
+    return SchemaCase.forNumber(schemaCase_);
   }
 
   public static final int AVRO_ROWS_FIELD_NUMBER = 3;
@@ -442,6 +523,120 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     return getThrottleState();
   }
 
+  public static final int AVRO_SCHEMA_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Avro schema.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the avroSchema field is set.
+   */
+  @java.lang.Override
+  public boolean hasAvroSchema() {
+    return schemaCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Avro schema.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The avroSchema.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.storage.v1.AvroSchema getAvroSchema() {
+    if (schemaCase_ == 7) {
+      return (com.google.cloud.bigquery.storage.v1.AvroSchema) schema_;
+    }
+    return com.google.cloud.bigquery.storage.v1.AvroSchema.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Avro schema.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.storage.v1.AvroSchemaOrBuilder getAvroSchemaOrBuilder() {
+    if (schemaCase_ == 7) {
+      return (com.google.cloud.bigquery.storage.v1.AvroSchema) schema_;
+    }
+    return com.google.cloud.bigquery.storage.v1.AvroSchema.getDefaultInstance();
+  }
+
+  public static final int ARROW_SCHEMA_FIELD_NUMBER = 8;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arrow schema.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the arrowSchema field is set.
+   */
+  @java.lang.Override
+  public boolean hasArrowSchema() {
+    return schemaCase_ == 8;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arrow schema.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The arrowSchema.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.storage.v1.ArrowSchema getArrowSchema() {
+    if (schemaCase_ == 8) {
+      return (com.google.cloud.bigquery.storage.v1.ArrowSchema) schema_;
+    }
+    return com.google.cloud.bigquery.storage.v1.ArrowSchema.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arrow schema.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.storage.v1.ArrowSchemaOrBuilder getArrowSchemaOrBuilder() {
+    if (schemaCase_ == 8) {
+      return (com.google.cloud.bigquery.storage.v1.ArrowSchema) schema_;
+    }
+    return com.google.cloud.bigquery.storage.v1.ArrowSchema.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -471,6 +666,12 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     if (rowCount_ != 0L) {
       output.writeInt64(6, rowCount_);
     }
+    if (schemaCase_ == 7) {
+      output.writeMessage(7, (com.google.cloud.bigquery.storage.v1.AvroSchema) schema_);
+    }
+    if (schemaCase_ == 8) {
+      output.writeMessage(8, (com.google.cloud.bigquery.storage.v1.ArrowSchema) schema_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -498,6 +699,16 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     }
     if (rowCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, rowCount_);
+    }
+    if (schemaCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloud.bigquery.storage.v1.AvroSchema) schema_);
+    }
+    if (schemaCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.cloud.bigquery.storage.v1.ArrowSchema) schema_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -535,6 +746,17 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       case 0:
       default:
     }
+    if (!getSchemaCase().equals(other.getSchemaCase())) return false;
+    switch (schemaCase_) {
+      case 7:
+        if (!getAvroSchema().equals(other.getAvroSchema())) return false;
+        break;
+      case 8:
+        if (!getArrowSchema().equals(other.getArrowSchema())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -564,6 +786,18 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       case 4:
         hash = (37 * hash) + ARROW_RECORD_BATCH_FIELD_NUMBER;
         hash = (53 * hash) + getArrowRecordBatch().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (schemaCase_) {
+      case 7:
+        hash = (37 * hash) + AVRO_SCHEMA_FIELD_NUMBER;
+        hash = (53 * hash) + getAvroSchema().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + ARROW_SCHEMA_FIELD_NUMBER;
+        hash = (53 * hash) + getArrowSchema().hashCode();
         break;
       case 0:
       default:
@@ -731,6 +965,8 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       }
       rowsCase_ = 0;
       rows_ = null;
+      schemaCase_ = 0;
+      schema_ = null;
       return this;
     }
 
@@ -783,7 +1019,22 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       } else {
         result.throttleState_ = throttleStateBuilder_.build();
       }
+      if (schemaCase_ == 7) {
+        if (avroSchemaBuilder_ == null) {
+          result.schema_ = schema_;
+        } else {
+          result.schema_ = avroSchemaBuilder_.build();
+        }
+      }
+      if (schemaCase_ == 8) {
+        if (arrowSchemaBuilder_ == null) {
+          result.schema_ = schema_;
+        } else {
+          result.schema_ = arrowSchemaBuilder_.build();
+        }
+      }
       result.rowsCase_ = rowsCase_;
+      result.schemaCase_ = schemaCase_;
       onBuilt();
       return result;
     }
@@ -859,6 +1110,22 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
             break;
           }
       }
+      switch (other.getSchemaCase()) {
+        case AVRO_SCHEMA:
+          {
+            mergeAvroSchema(other.getAvroSchema());
+            break;
+          }
+        case ARROW_SCHEMA:
+          {
+            mergeArrowSchema(other.getArrowSchema());
+            break;
+          }
+        case SCHEMA_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -899,6 +1166,20 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     public Builder clearRows() {
       rowsCase_ = 0;
       rows_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int schemaCase_ = 0;
+    private java.lang.Object schema_;
+
+    public SchemaCase getSchemaCase() {
+      return SchemaCase.forNumber(schemaCase_);
+    }
+
+    public Builder clearSchema() {
+      schemaCase_ = 0;
+      schema_ = null;
       onChanged();
       return this;
     }
@@ -1757,6 +2038,460 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         throttleState_ = null;
       }
       return throttleStateBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.storage.v1.AvroSchema,
+            com.google.cloud.bigquery.storage.v1.AvroSchema.Builder,
+            com.google.cloud.bigquery.storage.v1.AvroSchemaOrBuilder>
+        avroSchemaBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Avro schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the avroSchema field is set.
+     */
+    @java.lang.Override
+    public boolean hasAvroSchema() {
+      return schemaCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Avro schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The avroSchema.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1.AvroSchema getAvroSchema() {
+      if (avroSchemaBuilder_ == null) {
+        if (schemaCase_ == 7) {
+          return (com.google.cloud.bigquery.storage.v1.AvroSchema) schema_;
+        }
+        return com.google.cloud.bigquery.storage.v1.AvroSchema.getDefaultInstance();
+      } else {
+        if (schemaCase_ == 7) {
+          return avroSchemaBuilder_.getMessage();
+        }
+        return com.google.cloud.bigquery.storage.v1.AvroSchema.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Avro schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAvroSchema(com.google.cloud.bigquery.storage.v1.AvroSchema value) {
+      if (avroSchemaBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        schema_ = value;
+        onChanged();
+      } else {
+        avroSchemaBuilder_.setMessage(value);
+      }
+      schemaCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Avro schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAvroSchema(
+        com.google.cloud.bigquery.storage.v1.AvroSchema.Builder builderForValue) {
+      if (avroSchemaBuilder_ == null) {
+        schema_ = builderForValue.build();
+        onChanged();
+      } else {
+        avroSchemaBuilder_.setMessage(builderForValue.build());
+      }
+      schemaCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Avro schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeAvroSchema(com.google.cloud.bigquery.storage.v1.AvroSchema value) {
+      if (avroSchemaBuilder_ == null) {
+        if (schemaCase_ == 7
+            && schema_ != com.google.cloud.bigquery.storage.v1.AvroSchema.getDefaultInstance()) {
+          schema_ =
+              com.google.cloud.bigquery.storage.v1.AvroSchema.newBuilder(
+                      (com.google.cloud.bigquery.storage.v1.AvroSchema) schema_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          schema_ = value;
+        }
+        onChanged();
+      } else {
+        if (schemaCase_ == 7) {
+          avroSchemaBuilder_.mergeFrom(value);
+        }
+        avroSchemaBuilder_.setMessage(value);
+      }
+      schemaCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Avro schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearAvroSchema() {
+      if (avroSchemaBuilder_ == null) {
+        if (schemaCase_ == 7) {
+          schemaCase_ = 0;
+          schema_ = null;
+          onChanged();
+        }
+      } else {
+        if (schemaCase_ == 7) {
+          schemaCase_ = 0;
+          schema_ = null;
+        }
+        avroSchemaBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Avro schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.bigquery.storage.v1.AvroSchema.Builder getAvroSchemaBuilder() {
+      return getAvroSchemaFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Avro schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1.AvroSchemaOrBuilder getAvroSchemaOrBuilder() {
+      if ((schemaCase_ == 7) && (avroSchemaBuilder_ != null)) {
+        return avroSchemaBuilder_.getMessageOrBuilder();
+      } else {
+        if (schemaCase_ == 7) {
+          return (com.google.cloud.bigquery.storage.v1.AvroSchema) schema_;
+        }
+        return com.google.cloud.bigquery.storage.v1.AvroSchema.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Avro schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.storage.v1.AvroSchema,
+            com.google.cloud.bigquery.storage.v1.AvroSchema.Builder,
+            com.google.cloud.bigquery.storage.v1.AvroSchemaOrBuilder>
+        getAvroSchemaFieldBuilder() {
+      if (avroSchemaBuilder_ == null) {
+        if (!(schemaCase_ == 7)) {
+          schema_ = com.google.cloud.bigquery.storage.v1.AvroSchema.getDefaultInstance();
+        }
+        avroSchemaBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.storage.v1.AvroSchema,
+                com.google.cloud.bigquery.storage.v1.AvroSchema.Builder,
+                com.google.cloud.bigquery.storage.v1.AvroSchemaOrBuilder>(
+                (com.google.cloud.bigquery.storage.v1.AvroSchema) schema_,
+                getParentForChildren(),
+                isClean());
+        schema_ = null;
+      }
+      schemaCase_ = 7;
+      onChanged();
+      ;
+      return avroSchemaBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.storage.v1.ArrowSchema,
+            com.google.cloud.bigquery.storage.v1.ArrowSchema.Builder,
+            com.google.cloud.bigquery.storage.v1.ArrowSchemaOrBuilder>
+        arrowSchemaBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arrow schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the arrowSchema field is set.
+     */
+    @java.lang.Override
+    public boolean hasArrowSchema() {
+      return schemaCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arrow schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The arrowSchema.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1.ArrowSchema getArrowSchema() {
+      if (arrowSchemaBuilder_ == null) {
+        if (schemaCase_ == 8) {
+          return (com.google.cloud.bigquery.storage.v1.ArrowSchema) schema_;
+        }
+        return com.google.cloud.bigquery.storage.v1.ArrowSchema.getDefaultInstance();
+      } else {
+        if (schemaCase_ == 8) {
+          return arrowSchemaBuilder_.getMessage();
+        }
+        return com.google.cloud.bigquery.storage.v1.ArrowSchema.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arrow schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setArrowSchema(com.google.cloud.bigquery.storage.v1.ArrowSchema value) {
+      if (arrowSchemaBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        schema_ = value;
+        onChanged();
+      } else {
+        arrowSchemaBuilder_.setMessage(value);
+      }
+      schemaCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arrow schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setArrowSchema(
+        com.google.cloud.bigquery.storage.v1.ArrowSchema.Builder builderForValue) {
+      if (arrowSchemaBuilder_ == null) {
+        schema_ = builderForValue.build();
+        onChanged();
+      } else {
+        arrowSchemaBuilder_.setMessage(builderForValue.build());
+      }
+      schemaCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arrow schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeArrowSchema(com.google.cloud.bigquery.storage.v1.ArrowSchema value) {
+      if (arrowSchemaBuilder_ == null) {
+        if (schemaCase_ == 8
+            && schema_ != com.google.cloud.bigquery.storage.v1.ArrowSchema.getDefaultInstance()) {
+          schema_ =
+              com.google.cloud.bigquery.storage.v1.ArrowSchema.newBuilder(
+                      (com.google.cloud.bigquery.storage.v1.ArrowSchema) schema_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          schema_ = value;
+        }
+        onChanged();
+      } else {
+        if (schemaCase_ == 8) {
+          arrowSchemaBuilder_.mergeFrom(value);
+        }
+        arrowSchemaBuilder_.setMessage(value);
+      }
+      schemaCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arrow schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearArrowSchema() {
+      if (arrowSchemaBuilder_ == null) {
+        if (schemaCase_ == 8) {
+          schemaCase_ = 0;
+          schema_ = null;
+          onChanged();
+        }
+      } else {
+        if (schemaCase_ == 8) {
+          schemaCase_ = 0;
+          schema_ = null;
+        }
+        arrowSchemaBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arrow schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.bigquery.storage.v1.ArrowSchema.Builder getArrowSchemaBuilder() {
+      return getArrowSchemaFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arrow schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1.ArrowSchemaOrBuilder getArrowSchemaOrBuilder() {
+      if ((schemaCase_ == 8) && (arrowSchemaBuilder_ != null)) {
+        return arrowSchemaBuilder_.getMessageOrBuilder();
+      } else {
+        if (schemaCase_ == 8) {
+          return (com.google.cloud.bigquery.storage.v1.ArrowSchema) schema_;
+        }
+        return com.google.cloud.bigquery.storage.v1.ArrowSchema.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arrow schema.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.storage.v1.ArrowSchema,
+            com.google.cloud.bigquery.storage.v1.ArrowSchema.Builder,
+            com.google.cloud.bigquery.storage.v1.ArrowSchemaOrBuilder>
+        getArrowSchemaFieldBuilder() {
+      if (arrowSchemaBuilder_ == null) {
+        if (!(schemaCase_ == 8)) {
+          schema_ = com.google.cloud.bigquery.storage.v1.ArrowSchema.getDefaultInstance();
+        }
+        arrowSchemaBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.storage.v1.ArrowSchema,
+                com.google.cloud.bigquery.storage.v1.ArrowSchema.Builder,
+                com.google.cloud.bigquery.storage.v1.ArrowSchemaOrBuilder>(
+                (com.google.cloud.bigquery.storage.v1.ArrowSchema) schema_,
+                getParentForChildren(),
+                isClean());
+        schema_ = null;
+      }
+      schemaCase_ = 8;
+      onChanged();
+      ;
+      return arrowSchemaBuilder_;
     }
 
     @java.lang.Override

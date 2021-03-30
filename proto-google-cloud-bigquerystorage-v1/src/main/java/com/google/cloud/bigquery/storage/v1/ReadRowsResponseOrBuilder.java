@@ -179,5 +179,89 @@ public interface ReadRowsResponseOrBuilder
    */
   com.google.cloud.bigquery.storage.v1.ThrottleStateOrBuilder getThrottleStateOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Avro schema.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the avroSchema field is set.
+   */
+  boolean hasAvroSchema();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Avro schema.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The avroSchema.
+   */
+  com.google.cloud.bigquery.storage.v1.AvroSchema getAvroSchema();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Avro schema.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.AvroSchema avro_schema = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.bigquery.storage.v1.AvroSchemaOrBuilder getAvroSchemaOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arrow schema.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the arrowSchema field is set.
+   */
+  boolean hasArrowSchema();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arrow schema.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The arrowSchema.
+   */
+  com.google.cloud.bigquery.storage.v1.ArrowSchema getArrowSchema();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arrow schema.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.ArrowSchema arrow_schema = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.bigquery.storage.v1.ArrowSchemaOrBuilder getArrowSchemaOrBuilder();
+
   public com.google.cloud.bigquery.storage.v1.ReadRowsResponse.RowsCase getRowsCase();
+
+  public com.google.cloud.bigquery.storage.v1.ReadRowsResponse.SchemaCase getSchemaCase();
 }
