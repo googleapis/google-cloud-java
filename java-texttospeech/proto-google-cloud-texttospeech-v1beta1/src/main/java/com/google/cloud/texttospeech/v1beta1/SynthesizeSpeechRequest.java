@@ -508,7 +508,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Whether and what timepoints should be returned in the response.
+   * Whether and what timepoints are returned in the response.
    * </pre>
    *
    * <code>
@@ -529,7 +529,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Whether and what timepoints should be returned in the response.
+   * Whether and what timepoints are returned in the response.
    * </pre>
    *
    * <code>
@@ -546,7 +546,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Whether and what timepoints should be returned in the response.
+   * Whether and what timepoints are returned in the response.
    * </pre>
    *
    * <code>
@@ -565,7 +565,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Whether and what timepoints should be returned in the response.
+   * Whether and what timepoints are returned in the response.
    * </pre>
    *
    * <code>
@@ -582,7 +582,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Whether and what timepoints should be returned in the response.
+   * Whether and what timepoints are returned in the response.
    * </pre>
    *
    * <code>
@@ -1660,7 +1660,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>
@@ -1681,7 +1681,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>
@@ -1697,7 +1697,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>
@@ -1715,7 +1715,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>
@@ -1741,7 +1741,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>
@@ -1765,7 +1765,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>
@@ -1792,7 +1792,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>
@@ -1811,7 +1811,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>
@@ -1827,7 +1827,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>
@@ -1844,7 +1844,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>
@@ -1865,7 +1865,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>
@@ -1885,7 +1885,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Whether and what timepoints should be returned in the response.
+     * Whether and what timepoints are returned in the response.
      * </pre>
      *
      * <code>

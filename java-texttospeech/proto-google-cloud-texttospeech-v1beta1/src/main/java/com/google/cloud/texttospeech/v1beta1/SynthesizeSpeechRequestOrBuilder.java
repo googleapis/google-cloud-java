@@ -150,7 +150,7 @@ public interface SynthesizeSpeechRequestOrBuilder
    *
    *
    * <pre>
-   * Whether and what timepoints should be returned in the response.
+   * Whether and what timepoints are returned in the response.
    * </pre>
    *
    * <code>
@@ -165,7 +165,7 @@ public interface SynthesizeSpeechRequestOrBuilder
    *
    *
    * <pre>
-   * Whether and what timepoints should be returned in the response.
+   * Whether and what timepoints are returned in the response.
    * </pre>
    *
    * <code>
@@ -179,7 +179,7 @@ public interface SynthesizeSpeechRequestOrBuilder
    *
    *
    * <pre>
-   * Whether and what timepoints should be returned in the response.
+   * Whether and what timepoints are returned in the response.
    * </pre>
    *
    * <code>
@@ -195,7 +195,7 @@ public interface SynthesizeSpeechRequestOrBuilder
    *
    *
    * <pre>
-   * Whether and what timepoints should be returned in the response.
+   * Whether and what timepoints are returned in the response.
    * </pre>
    *
    * <code>
@@ -209,7 +209,7 @@ public interface SynthesizeSpeechRequestOrBuilder
    *
    *
    * <pre>
-   * Whether and what timepoints should be returned in the response.
+   * Whether and what timepoints are returned in the response.
    * </pre>
    *
    * <code>
