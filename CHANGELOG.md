@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.17.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.16.1...v1.17.0) (2021-03-30)
+
+
+### Features
+
+* add a Arrow compression options (Only LZ4 for now) ([#972](https://www.github.com/googleapis/java-bigquerystorage/issues/972)) ([de0c0d2](https://www.github.com/googleapis/java-bigquerystorage/commit/de0c0d2c0a5e8b85a0f2aa5679a22fb8846a5fd0))
+* BigDecimal and ByteString encoding ([#971](https://www.github.com/googleapis/java-bigquerystorage/issues/971)) ([82b556e](https://www.github.com/googleapis/java-bigquerystorage/commit/82b556e08d19a4dd969bda53409276c6408a4126))
+
 ### [1.16.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.16.0...v1.16.1) (2021-03-26)
 
 
