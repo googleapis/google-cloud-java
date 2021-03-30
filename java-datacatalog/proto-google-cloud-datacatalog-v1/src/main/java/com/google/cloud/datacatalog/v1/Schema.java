@@ -125,13 +125,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-   * specified.
+   * The unified GoogleSQL-like schema of columns.
+   * The overall maximum number of columns and nested columns is 10,000.
+   * The maximum nested depth is 15 levels.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.datacatalog.v1.ColumnSchema> getColumnsList() {
@@ -141,13 +140,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-   * specified.
+   * The unified GoogleSQL-like schema of columns.
+   * The overall maximum number of columns and nested columns is 10,000.
+   * The maximum nested depth is 15 levels.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.datacatalog.v1.ColumnSchemaOrBuilder>
@@ -158,13 +156,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-   * specified.
+   * The unified GoogleSQL-like schema of columns.
+   * The overall maximum number of columns and nested columns is 10,000.
+   * The maximum nested depth is 15 levels.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
    */
   @java.lang.Override
   public int getColumnsCount() {
@@ -174,13 +171,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-   * specified.
+   * The unified GoogleSQL-like schema of columns.
+   * The overall maximum number of columns and nested columns is 10,000.
+   * The maximum nested depth is 15 levels.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.ColumnSchema getColumns(int index) {
@@ -190,13 +186,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-   * specified.
+   * The unified GoogleSQL-like schema of columns.
+   * The overall maximum number of columns and nested columns is 10,000.
+   * The maximum nested depth is 15 levels.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.ColumnSchemaOrBuilder getColumnsOrBuilder(int index) {
@@ -580,13 +575,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public java.util.List<com.google.cloud.datacatalog.v1.ColumnSchema> getColumnsList() {
       if (columnsBuilder_ == null) {
@@ -599,13 +593,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public int getColumnsCount() {
       if (columnsBuilder_ == null) {
@@ -618,13 +611,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public com.google.cloud.datacatalog.v1.ColumnSchema getColumns(int index) {
       if (columnsBuilder_ == null) {
@@ -637,13 +629,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public Builder setColumns(int index, com.google.cloud.datacatalog.v1.ColumnSchema value) {
       if (columnsBuilder_ == null) {
@@ -662,13 +653,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public Builder setColumns(
         int index, com.google.cloud.datacatalog.v1.ColumnSchema.Builder builderForValue) {
@@ -685,13 +675,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public Builder addColumns(com.google.cloud.datacatalog.v1.ColumnSchema value) {
       if (columnsBuilder_ == null) {
@@ -710,13 +699,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public Builder addColumns(int index, com.google.cloud.datacatalog.v1.ColumnSchema value) {
       if (columnsBuilder_ == null) {
@@ -735,13 +723,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public Builder addColumns(
         com.google.cloud.datacatalog.v1.ColumnSchema.Builder builderForValue) {
@@ -758,13 +745,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public Builder addColumns(
         int index, com.google.cloud.datacatalog.v1.ColumnSchema.Builder builderForValue) {
@@ -781,13 +767,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public Builder addAllColumns(
         java.lang.Iterable<? extends com.google.cloud.datacatalog.v1.ColumnSchema> values) {
@@ -804,13 +789,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public Builder clearColumns() {
       if (columnsBuilder_ == null) {
@@ -826,13 +810,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public Builder removeColumns(int index) {
       if (columnsBuilder_ == null) {
@@ -848,13 +831,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public com.google.cloud.datacatalog.v1.ColumnSchema.Builder getColumnsBuilder(int index) {
       return getColumnsFieldBuilder().getBuilder(index);
@@ -863,13 +845,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public com.google.cloud.datacatalog.v1.ColumnSchemaOrBuilder getColumnsOrBuilder(int index) {
       if (columnsBuilder_ == null) {
@@ -882,13 +863,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public java.util.List<? extends com.google.cloud.datacatalog.v1.ColumnSchemaOrBuilder>
         getColumnsOrBuilderList() {
@@ -902,13 +882,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public com.google.cloud.datacatalog.v1.ColumnSchema.Builder addColumnsBuilder() {
       return getColumnsFieldBuilder()
@@ -918,13 +897,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public com.google.cloud.datacatalog.v1.ColumnSchema.Builder addColumnsBuilder(int index) {
       return getColumnsFieldBuilder()
@@ -934,13 +912,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Schema of columns. A maximum of 10,000 columns and sub-columns can be
-     * specified.
+     * The unified GoogleSQL-like schema of columns.
+     * The overall maximum number of columns and nested columns is 10,000.
+     * The maximum nested depth is 15 levels.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2;</code>
      */
     public java.util.List<com.google.cloud.datacatalog.v1.ColumnSchema.Builder>
         getColumnsBuilderList() {

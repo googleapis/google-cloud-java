@@ -62,7 +62,10 @@ public interface CreateTagTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The id of the tag template to create.
+   * Required. The ID of the tag template to create.
+   * The ID must contain only lowercase letters (a-z), numbers (0-9),
+   * or underscores (_), and must start with a letter or underscore.
+   * The maximum size is 64 bytes when encoded in UTF-8.
    * </pre>
    *
    * <code>string tag_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -74,7 +77,10 @@ public interface CreateTagTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The id of the tag template to create.
+   * Required. The ID of the tag template to create.
+   * The ID must contain only lowercase letters (a-z), numbers (0-9),
+   * or underscores (_), and must start with a letter or underscore.
+   * The maximum size is 64 bytes when encoded in UTF-8.
    * </pre>
    *
    * <code>string tag_template_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

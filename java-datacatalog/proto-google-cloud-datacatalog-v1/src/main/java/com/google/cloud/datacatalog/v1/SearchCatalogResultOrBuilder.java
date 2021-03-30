@@ -147,6 +147,41 @@ public interface SearchCatalogResultOrBuilder
    *
    *
    * <pre>
+   * Last-modified timestamp of the entry from the managing system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+   *
+   * @return Whether the modifyTime field is set.
+   */
+  boolean hasModifyTime();
+  /**
+   *
+   *
+   * <pre>
+   * Last-modified timestamp of the entry from the managing system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+   *
+   * @return The modifyTime.
+   */
+  com.google.protobuf.Timestamp getModifyTime();
+  /**
+   *
+   *
+   * <pre>
+   * Last-modified timestamp of the entry from the managing system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getModifyTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. This field indicates the entry's source system that Data Catalog
    * integrates with, such as BigQuery or Cloud Pub/Sub.
    * </pre>
@@ -228,6 +263,47 @@ public interface SearchCatalogResultOrBuilder
    * @return The bytes for userSpecifiedSystem.
    */
   com.google.protobuf.ByteString getUserSpecifiedSystemBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Fully Qualified Name of the resource.
+   * There are two main forms of FQNs:
+   * {system}:{project}.{dot-separated path to resource}
+   *     for non-regionalized resources
+   * {system}:{project}.{location id}.{dot-separated path to resource}
+   *     for regionalized resources
+   * Examples:
+   * * dataproc_metastore:projectId.locationId.instanceId.databaseId.tableId
+   * * bigquery:table.project_id.dataset_id.table_id
+   * </pre>
+   *
+   * <code>string fully_qualified_name = 10;</code>
+   *
+   * @return The fullyQualifiedName.
+   */
+  java.lang.String getFullyQualifiedName();
+  /**
+   *
+   *
+   * <pre>
+   * Fully Qualified Name of the resource.
+   * There are two main forms of FQNs:
+   * {system}:{project}.{dot-separated path to resource}
+   *     for non-regionalized resources
+   * {system}:{project}.{location id}.{dot-separated path to resource}
+   *     for regionalized resources
+   * Examples:
+   * * dataproc_metastore:projectId.locationId.instanceId.databaseId.tableId
+   * * bigquery:table.project_id.dataset_id.table_id
+   * </pre>
+   *
+   * <code>string fully_qualified_name = 10;</code>
+   *
+   * @return The bytes for fullyQualifiedName.
+   */
+  com.google.protobuf.ByteString getFullyQualifiedNameBytes();
 
   public com.google.cloud.datacatalog.v1.SearchCatalogResult.SystemCase getSystemCase();
 }

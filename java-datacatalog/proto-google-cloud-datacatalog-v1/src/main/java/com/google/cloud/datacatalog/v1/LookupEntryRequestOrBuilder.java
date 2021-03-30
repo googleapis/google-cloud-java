@@ -89,7 +89,7 @@ public interface LookupEntryRequestOrBuilder
    *   * `bigquery.table.project_id.dataset_id.table_id`
    *   * `bigquery.dataset.project_id.dataset_id`
    *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
-   * `*_id`s shoud satisfy the standard SQL rules for identifiers.
+   * `*_id`s should satisfy the standard SQL rules for identifiers.
    * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
    * </pre>
    *
@@ -109,7 +109,7 @@ public interface LookupEntryRequestOrBuilder
    *   * `bigquery.table.project_id.dataset_id.table_id`
    *   * `bigquery.dataset.project_id.dataset_id`
    *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
-   * `*_id`s shoud satisfy the standard SQL rules for identifiers.
+   * `*_id`s should satisfy the standard SQL rules for identifiers.
    * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
    * </pre>
    *
@@ -129,7 +129,7 @@ public interface LookupEntryRequestOrBuilder
    *   * `bigquery.table.project_id.dataset_id.table_id`
    *   * `bigquery.dataset.project_id.dataset_id`
    *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
-   * `*_id`s shoud satisfy the standard SQL rules for identifiers.
+   * `*_id`s should satisfy the standard SQL rules for identifiers.
    * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
    * </pre>
    *
@@ -138,6 +138,64 @@ public interface LookupEntryRequestOrBuilder
    * @return The bytes for sqlResource.
    */
   com.google.protobuf.ByteString getSqlResourceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Fully qualified name (FQN) of the resource.
+   * FQNs take two forms:
+   * * For non-regionalized resources:
+   *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   * * For regionalized resources:
+   *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   * Example for a DPMS table:
+   * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+   * </pre>
+   *
+   * <code>string fully_qualified_name = 5;</code>
+   *
+   * @return Whether the fullyQualifiedName field is set.
+   */
+  boolean hasFullyQualifiedName();
+  /**
+   *
+   *
+   * <pre>
+   * Fully qualified name (FQN) of the resource.
+   * FQNs take two forms:
+   * * For non-regionalized resources:
+   *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   * * For regionalized resources:
+   *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   * Example for a DPMS table:
+   * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+   * </pre>
+   *
+   * <code>string fully_qualified_name = 5;</code>
+   *
+   * @return The fullyQualifiedName.
+   */
+  java.lang.String getFullyQualifiedName();
+  /**
+   *
+   *
+   * <pre>
+   * Fully qualified name (FQN) of the resource.
+   * FQNs take two forms:
+   * * For non-regionalized resources:
+   *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   * * For regionalized resources:
+   *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   * Example for a DPMS table:
+   * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+   * </pre>
+   *
+   * <code>string fully_qualified_name = 5;</code>
+   *
+   * @return The bytes for fullyQualifiedName.
+   */
+  com.google.protobuf.ByteString getFullyQualifiedNameBytes();
 
   public com.google.cloud.datacatalog.v1.LookupEntryRequest.TargetNameCase getTargetNameCase();
 }

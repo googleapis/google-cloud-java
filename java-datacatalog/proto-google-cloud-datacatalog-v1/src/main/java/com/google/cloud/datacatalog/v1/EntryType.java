@@ -66,7 +66,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Output only. An entry type which is used for streaming entries. Example:
+   * An entry type which is used for streaming entries. Example:
    * Pub/Sub topic.
    * </pre>
    *
@@ -84,6 +84,26 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FILESET = 4;</code>
    */
   FILESET(4),
+  /**
+   *
+   *
+   * <pre>
+   * A database.
+   * </pre>
+   *
+   * <code>DATABASE = 7;</code>
+   */
+  DATABASE(7),
+  /**
+   *
+   *
+   * <pre>
+   * A service, for example, a Dataproc Metastore service.
+   * </pre>
+   *
+   * <code>SERVICE = 14;</code>
+   */
+  SERVICE(14),
   UNRECOGNIZED(-1),
   ;
 
@@ -123,7 +143,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Output only. An entry type which is used for streaming entries. Example:
+   * An entry type which is used for streaming entries. Example:
    * Pub/Sub topic.
    * </pre>
    *
@@ -141,6 +161,26 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FILESET = 4;</code>
    */
   public static final int FILESET_VALUE = 4;
+  /**
+   *
+   *
+   * <pre>
+   * A database.
+   * </pre>
+   *
+   * <code>DATABASE = 7;</code>
+   */
+  public static final int DATABASE_VALUE = 7;
+  /**
+   *
+   *
+   * <pre>
+   * A service, for example, a Dataproc Metastore service.
+   * </pre>
+   *
+   * <code>SERVICE = 14;</code>
+   */
+  public static final int SERVICE_VALUE = 14;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -176,6 +216,10 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
         return DATA_STREAM;
       case 4:
         return FILESET;
+      case 7:
+        return DATABASE;
+      case 14:
+        return SERVICE;
       default:
         return null;
     }

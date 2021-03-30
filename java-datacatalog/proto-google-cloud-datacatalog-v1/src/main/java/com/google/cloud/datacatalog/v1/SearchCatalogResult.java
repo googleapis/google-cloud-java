@@ -43,6 +43,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     searchResultSubtype_ = "";
     relativeResourceName_ = "";
     linkedResource_ = "";
+    fullyQualifiedName_ = "";
   }
 
   @java.lang.Override
@@ -102,6 +103,21 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
               linkedResource_ = s;
               break;
             }
+          case 58:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (modifyTime_ != null) {
+                subBuilder = modifyTime_.toBuilder();
+              }
+              modifyTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(modifyTime_);
+                modifyTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 64:
             {
               int rawValue = input.readEnum();
@@ -114,6 +130,13 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
               java.lang.String s = input.readStringRequireUtf8();
               systemCase_ = 9;
               system_ = s;
+              break;
+            }
+          case 82:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              fullyQualifiedName_ = s;
               break;
             }
           default:
@@ -400,6 +423,52 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int MODIFY_TIME_FIELD_NUMBER = 7;
+  private com.google.protobuf.Timestamp modifyTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Last-modified timestamp of the entry from the managing system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+   *
+   * @return Whether the modifyTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasModifyTime() {
+    return modifyTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Last-modified timestamp of the entry from the managing system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+   *
+   * @return The modifyTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getModifyTime() {
+    return modifyTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifyTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Last-modified timestamp of the entry from the managing system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getModifyTimeOrBuilder() {
+    return getModifyTime();
+  }
+
   public static final int INTEGRATED_SYSTEM_FIELD_NUMBER = 8;
   /**
    *
@@ -537,6 +606,71 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int FULLY_QUALIFIED_NAME_FIELD_NUMBER = 10;
+  private volatile java.lang.Object fullyQualifiedName_;
+  /**
+   *
+   *
+   * <pre>
+   * Fully Qualified Name of the resource.
+   * There are two main forms of FQNs:
+   * {system}:{project}.{dot-separated path to resource}
+   *     for non-regionalized resources
+   * {system}:{project}.{location id}.{dot-separated path to resource}
+   *     for regionalized resources
+   * Examples:
+   * * dataproc_metastore:projectId.locationId.instanceId.databaseId.tableId
+   * * bigquery:table.project_id.dataset_id.table_id
+   * </pre>
+   *
+   * <code>string fully_qualified_name = 10;</code>
+   *
+   * @return The fullyQualifiedName.
+   */
+  @java.lang.Override
+  public java.lang.String getFullyQualifiedName() {
+    java.lang.Object ref = fullyQualifiedName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      fullyQualifiedName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fully Qualified Name of the resource.
+   * There are two main forms of FQNs:
+   * {system}:{project}.{dot-separated path to resource}
+   *     for non-regionalized resources
+   * {system}:{project}.{location id}.{dot-separated path to resource}
+   *     for regionalized resources
+   * Examples:
+   * * dataproc_metastore:projectId.locationId.instanceId.databaseId.tableId
+   * * bigquery:table.project_id.dataset_id.table_id
+   * </pre>
+   *
+   * <code>string fully_qualified_name = 10;</code>
+   *
+   * @return The bytes for fullyQualifiedName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFullyQualifiedNameBytes() {
+    java.lang.Object ref = fullyQualifiedName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      fullyQualifiedName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -565,11 +699,17 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     if (!getLinkedResourceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, linkedResource_);
     }
+    if (modifyTime_ != null) {
+      output.writeMessage(7, getModifyTime());
+    }
     if (systemCase_ == 8) {
       output.writeEnum(8, ((java.lang.Integer) system_));
     }
     if (systemCase_ == 9) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, system_);
+    }
+    if (!getFullyQualifiedNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, fullyQualifiedName_);
     }
     unknownFields.writeTo(output);
   }
@@ -594,12 +734,18 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     if (!getLinkedResourceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, linkedResource_);
     }
+    if (modifyTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getModifyTime());
+    }
     if (systemCase_ == 8) {
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(8, ((java.lang.Integer) system_));
     }
     if (systemCase_ == 9) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, system_);
+    }
+    if (!getFullyQualifiedNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, fullyQualifiedName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -621,6 +767,11 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     if (!getSearchResultSubtype().equals(other.getSearchResultSubtype())) return false;
     if (!getRelativeResourceName().equals(other.getRelativeResourceName())) return false;
     if (!getLinkedResource().equals(other.getLinkedResource())) return false;
+    if (hasModifyTime() != other.hasModifyTime()) return false;
+    if (hasModifyTime()) {
+      if (!getModifyTime().equals(other.getModifyTime())) return false;
+    }
+    if (!getFullyQualifiedName().equals(other.getFullyQualifiedName())) return false;
     if (!getSystemCase().equals(other.getSystemCase())) return false;
     switch (systemCase_) {
       case 8:
@@ -651,6 +802,12 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + getRelativeResourceName().hashCode();
     hash = (37 * hash) + LINKED_RESOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getLinkedResource().hashCode();
+    if (hasModifyTime()) {
+      hash = (37 * hash) + MODIFY_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getModifyTime().hashCode();
+    }
+    hash = (37 * hash) + FULLY_QUALIFIED_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getFullyQualifiedName().hashCode();
     switch (systemCase_) {
       case 8:
         hash = (37 * hash) + INTEGRATED_SYSTEM_FIELD_NUMBER;
@@ -817,6 +974,14 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
 
       linkedResource_ = "";
 
+      if (modifyTimeBuilder_ == null) {
+        modifyTime_ = null;
+      } else {
+        modifyTime_ = null;
+        modifyTimeBuilder_ = null;
+      }
+      fullyQualifiedName_ = "";
+
       systemCase_ = 0;
       system_ = null;
       return this;
@@ -850,12 +1015,18 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       result.searchResultSubtype_ = searchResultSubtype_;
       result.relativeResourceName_ = relativeResourceName_;
       result.linkedResource_ = linkedResource_;
+      if (modifyTimeBuilder_ == null) {
+        result.modifyTime_ = modifyTime_;
+      } else {
+        result.modifyTime_ = modifyTimeBuilder_.build();
+      }
       if (systemCase_ == 8) {
         result.system_ = system_;
       }
       if (systemCase_ == 9) {
         result.system_ = system_;
       }
+      result.fullyQualifiedName_ = fullyQualifiedName_;
       result.systemCase_ = systemCase_;
       onBuilt();
       return result;
@@ -920,6 +1091,13 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       }
       if (!other.getLinkedResource().isEmpty()) {
         linkedResource_ = other.linkedResource_;
+        onChanged();
+      }
+      if (other.hasModifyTime()) {
+        mergeModifyTime(other.getModifyTime());
+      }
+      if (!other.getFullyQualifiedName().isEmpty()) {
+        fullyQualifiedName_ = other.fullyQualifiedName_;
         onChanged();
       }
       switch (other.getSystemCase()) {
@@ -1445,6 +1623,189 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private com.google.protobuf.Timestamp modifyTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        modifyTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Last-modified timestamp of the entry from the managing system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+     *
+     * @return Whether the modifyTime field is set.
+     */
+    public boolean hasModifyTime() {
+      return modifyTimeBuilder_ != null || modifyTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last-modified timestamp of the entry from the managing system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+     *
+     * @return The modifyTime.
+     */
+    public com.google.protobuf.Timestamp getModifyTime() {
+      if (modifyTimeBuilder_ == null) {
+        return modifyTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : modifyTime_;
+      } else {
+        return modifyTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last-modified timestamp of the entry from the managing system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+     */
+    public Builder setModifyTime(com.google.protobuf.Timestamp value) {
+      if (modifyTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modifyTime_ = value;
+        onChanged();
+      } else {
+        modifyTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last-modified timestamp of the entry from the managing system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+     */
+    public Builder setModifyTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (modifyTimeBuilder_ == null) {
+        modifyTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        modifyTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last-modified timestamp of the entry from the managing system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+     */
+    public Builder mergeModifyTime(com.google.protobuf.Timestamp value) {
+      if (modifyTimeBuilder_ == null) {
+        if (modifyTime_ != null) {
+          modifyTime_ =
+              com.google.protobuf.Timestamp.newBuilder(modifyTime_).mergeFrom(value).buildPartial();
+        } else {
+          modifyTime_ = value;
+        }
+        onChanged();
+      } else {
+        modifyTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last-modified timestamp of the entry from the managing system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+     */
+    public Builder clearModifyTime() {
+      if (modifyTimeBuilder_ == null) {
+        modifyTime_ = null;
+        onChanged();
+      } else {
+        modifyTime_ = null;
+        modifyTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last-modified timestamp of the entry from the managing system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getModifyTimeBuilder() {
+
+      onChanged();
+      return getModifyTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last-modified timestamp of the entry from the managing system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getModifyTimeOrBuilder() {
+      if (modifyTimeBuilder_ != null) {
+        return modifyTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return modifyTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : modifyTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Last-modified timestamp of the entry from the managing system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modify_time = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getModifyTimeFieldBuilder() {
+      if (modifyTimeBuilder_ == null) {
+        modifyTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getModifyTime(), getParentForChildren(), isClean());
+        modifyTime_ = null;
+      }
+      return modifyTimeBuilder_;
+    }
+
     /**
      *
      *
@@ -1714,6 +2075,152 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       systemCase_ = 9;
       system_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object fullyQualifiedName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Name of the resource.
+     * There are two main forms of FQNs:
+     * {system}:{project}.{dot-separated path to resource}
+     *     for non-regionalized resources
+     * {system}:{project}.{location id}.{dot-separated path to resource}
+     *     for regionalized resources
+     * Examples:
+     * * dataproc_metastore:projectId.locationId.instanceId.databaseId.tableId
+     * * bigquery:table.project_id.dataset_id.table_id
+     * </pre>
+     *
+     * <code>string fully_qualified_name = 10;</code>
+     *
+     * @return The fullyQualifiedName.
+     */
+    public java.lang.String getFullyQualifiedName() {
+      java.lang.Object ref = fullyQualifiedName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fullyQualifiedName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Name of the resource.
+     * There are two main forms of FQNs:
+     * {system}:{project}.{dot-separated path to resource}
+     *     for non-regionalized resources
+     * {system}:{project}.{location id}.{dot-separated path to resource}
+     *     for regionalized resources
+     * Examples:
+     * * dataproc_metastore:projectId.locationId.instanceId.databaseId.tableId
+     * * bigquery:table.project_id.dataset_id.table_id
+     * </pre>
+     *
+     * <code>string fully_qualified_name = 10;</code>
+     *
+     * @return The bytes for fullyQualifiedName.
+     */
+    public com.google.protobuf.ByteString getFullyQualifiedNameBytes() {
+      java.lang.Object ref = fullyQualifiedName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        fullyQualifiedName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Name of the resource.
+     * There are two main forms of FQNs:
+     * {system}:{project}.{dot-separated path to resource}
+     *     for non-regionalized resources
+     * {system}:{project}.{location id}.{dot-separated path to resource}
+     *     for regionalized resources
+     * Examples:
+     * * dataproc_metastore:projectId.locationId.instanceId.databaseId.tableId
+     * * bigquery:table.project_id.dataset_id.table_id
+     * </pre>
+     *
+     * <code>string fully_qualified_name = 10;</code>
+     *
+     * @param value The fullyQualifiedName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFullyQualifiedName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      fullyQualifiedName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Name of the resource.
+     * There are two main forms of FQNs:
+     * {system}:{project}.{dot-separated path to resource}
+     *     for non-regionalized resources
+     * {system}:{project}.{location id}.{dot-separated path to resource}
+     *     for regionalized resources
+     * Examples:
+     * * dataproc_metastore:projectId.locationId.instanceId.databaseId.tableId
+     * * bigquery:table.project_id.dataset_id.table_id
+     * </pre>
+     *
+     * <code>string fully_qualified_name = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFullyQualifiedName() {
+
+      fullyQualifiedName_ = getDefaultInstance().getFullyQualifiedName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully Qualified Name of the resource.
+     * There are two main forms of FQNs:
+     * {system}:{project}.{dot-separated path to resource}
+     *     for non-regionalized resources
+     * {system}:{project}.{location id}.{dot-separated path to resource}
+     *     for regionalized resources
+     * Examples:
+     * * dataproc_metastore:projectId.locationId.instanceId.databaseId.tableId
+     * * bigquery:table.project_id.dataset_id.table_id
+     * </pre>
+     *
+     * <code>string fully_qualified_name = 10;</code>
+     *
+     * @param value The bytes for fullyQualifiedName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFullyQualifiedNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      fullyQualifiedName_ = value;
       onChanged();
       return this;
     }

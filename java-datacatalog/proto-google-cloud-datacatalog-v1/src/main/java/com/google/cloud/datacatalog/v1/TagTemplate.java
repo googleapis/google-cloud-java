@@ -161,9 +161,9 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the tag template in URL format. Example:
-   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
-   * Note that this TagTemplate and its child resources may not actually be
-   * stored in the location in this name.
+   * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+   * Note: The tag template itself and its child resources might not be
+   * stored in the location specified in its name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -187,9 +187,9 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the tag template in URL format. Example:
-   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
-   * Note that this TagTemplate and its child resources may not actually be
-   * stored in the location in this name.
+   * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+   * Note: The tag template itself and its child resources might not be
+   * stored in the location specified in its name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -215,7 +215,10 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The display name for this template. Defaults to an empty string.
+   * Display name for this template. Defaults to an empty string.
+   * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+   * dashes (-), spaces ( ), and can't start or end with spaces.
+   * The maximum length is 200 characters.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -238,7 +241,10 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The display name for this template. Defaults to an empty string.
+   * Display name for this template. Defaults to an empty string.
+   * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+   * dashes (-), spaces ( ), and can't start or end with spaces.
+   * The maximum length is 200 characters.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -792,9 +798,9 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the tag template in URL format. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
-     * Note that this TagTemplate and its child resources may not actually be
-     * stored in the location in this name.
+     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+     * Note: The tag template itself and its child resources might not be
+     * stored in the location specified in its name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -817,9 +823,9 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the tag template in URL format. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
-     * Note that this TagTemplate and its child resources may not actually be
-     * stored in the location in this name.
+     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+     * Note: The tag template itself and its child resources might not be
+     * stored in the location specified in its name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -842,9 +848,9 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the tag template in URL format. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
-     * Note that this TagTemplate and its child resources may not actually be
-     * stored in the location in this name.
+     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+     * Note: The tag template itself and its child resources might not be
+     * stored in the location specified in its name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -866,9 +872,9 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the tag template in URL format. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
-     * Note that this TagTemplate and its child resources may not actually be
-     * stored in the location in this name.
+     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+     * Note: The tag template itself and its child resources might not be
+     * stored in the location specified in its name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -886,9 +892,9 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the tag template in URL format. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
-     * Note that this TagTemplate and its child resources may not actually be
-     * stored in the location in this name.
+     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+     * Note: The tag template itself and its child resources might not be
+     * stored in the location specified in its name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -912,7 +918,10 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The display name for this template. Defaults to an empty string.
+     * Display name for this template. Defaults to an empty string.
+     * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+     * dashes (-), spaces ( ), and can't start or end with spaces.
+     * The maximum length is 200 characters.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -934,7 +943,10 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The display name for this template. Defaults to an empty string.
+     * Display name for this template. Defaults to an empty string.
+     * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+     * dashes (-), spaces ( ), and can't start or end with spaces.
+     * The maximum length is 200 characters.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -956,7 +968,10 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The display name for this template. Defaults to an empty string.
+     * Display name for this template. Defaults to an empty string.
+     * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+     * dashes (-), spaces ( ), and can't start or end with spaces.
+     * The maximum length is 200 characters.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -977,7 +992,10 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The display name for this template. Defaults to an empty string.
+     * Display name for this template. Defaults to an empty string.
+     * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+     * dashes (-), spaces ( ), and can't start or end with spaces.
+     * The maximum length is 200 characters.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -994,7 +1012,10 @@ public final class TagTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The display name for this template. Defaults to an empty string.
+     * Display name for this template. Defaults to an empty string.
+     * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+     * dashes (-), spaces ( ), and can't start or end with spaces.
+     * The maximum length is 200 characters.
      * </pre>
      *
      * <code>string display_name = 2;</code>

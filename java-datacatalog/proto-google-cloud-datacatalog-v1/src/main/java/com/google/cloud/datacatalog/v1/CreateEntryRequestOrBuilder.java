@@ -27,10 +27,10 @@ public interface CreateEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the entry group this entry is in. Example:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-   * Note that this Entry and its child resources may not actually be stored in
-   * the location in this name.
+   * Required. The name of the entry group this entry belongs to. Example:
+   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+   * Note: The entry itself and its child resources might not be stored in
+   * the location specified in its name.
    * </pre>
    *
    * <code>
@@ -44,10 +44,10 @@ public interface CreateEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the entry group this entry is in. Example:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-   * Note that this Entry and its child resources may not actually be stored in
-   * the location in this name.
+   * Required. The name of the entry group this entry belongs to. Example:
+   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+   * Note: The entry itself and its child resources might not be stored in
+   * the location specified in its name.
    * </pre>
    *
    * <code>
@@ -62,7 +62,10 @@ public interface CreateEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The id of the entry to create.
+   * Required. The ID of the entry to create.
+   * The ID must contain only letters (a-z, A-Z), numbers (0-9),
+   * and underscores (_).
+   * The maximum size is 64 bytes when encoded in UTF-8.
    * </pre>
    *
    * <code>string entry_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -74,7 +77,10 @@ public interface CreateEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The id of the entry to create.
+   * Required. The ID of the entry to create.
+   * The ID must contain only letters (a-z, A-Z), numbers (0-9),
+   * and underscores (_).
+   * The maximum size is 64 bytes when encoded in UTF-8.
    * </pre>
    *
    * <code>string entry_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -27,11 +27,11 @@ public interface CreateTagRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the resource to attach this tag to. Tags can be
-   * attached to Entries. Example:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-   * Note that this Tag and its child resources may not actually be stored in
-   * the location in this name.
+   * Required. The name of the resource to attach this tag to. Tags can be attached to
+   * entries. An entry can have up to 1000 attached tags. Example:
+   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
+   * Note: The tag and its child resources might not be stored in
+   * the location specified in its name.
    * </pre>
    *
    * <code>
@@ -45,11 +45,11 @@ public interface CreateTagRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the resource to attach this tag to. Tags can be
-   * attached to Entries. Example:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-   * Note that this Tag and its child resources may not actually be stored in
-   * the location in this name.
+   * Required. The name of the resource to attach this tag to. Tags can be attached to
+   * entries. An entry can have up to 1000 attached tags. Example:
+   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
+   * Note: The tag and its child resources might not be stored in
+   * the location specified in its name.
    * </pre>
    *
    * <code>

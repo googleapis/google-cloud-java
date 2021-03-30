@@ -40,6 +40,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
   private TagTemplateField() {
     name_ = "";
     displayName_ = "";
+    description_ = "";
   }
 
   @java.lang.Override
@@ -99,6 +100,13 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
               isRequired_ = input.readBool();
               break;
             }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
           case 40:
             {
               order_ = input.readInt32();
@@ -152,9 +160,12 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The resource name of the tag template field in URL format. Example:
-   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
-   * Note that this TagTemplateField may not actually be stored in the location
-   * in this name.
+   * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}`
+   * Note: The `TagTemplateField` itself might not be stored in the location
+   * specified in its name.
+   * The name must contain only letters (a-z, A-Z), numbers (0-9),
+   * or underscores (_), and must start with a letter or underscore.
+   * The maximum length is 64 characters.
    * </pre>
    *
    * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -178,9 +189,12 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The resource name of the tag template field in URL format. Example:
-   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
-   * Note that this TagTemplateField may not actually be stored in the location
-   * in this name.
+   * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}`
+   * Note: The `TagTemplateField` itself might not be stored in the location
+   * specified in its name.
+   * The name must contain only letters (a-z, A-Z), numbers (0-9),
+   * or underscores (_), and must start with a letter or underscore.
+   * The maximum length is 64 characters.
    * </pre>
    *
    * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -207,6 +221,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The display name for this field. Defaults to an empty string.
+   * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+   * dashes (-), spaces ( ), and can't start or end with spaces.
+   * The maximum length is 200 characters.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -230,6 +247,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The display name for this field. Defaults to an empty string.
+   * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+   * dashes (-), spaces ( ), and can't start or end with spaces.
+   * The maximum length is 200 characters.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -319,6 +339,55 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     return isRequired_;
   }
 
+  public static final int DESCRIPTION_FIELD_NUMBER = 4;
+  private volatile java.lang.Object description_;
+  /**
+   *
+   *
+   * <pre>
+   * The description for this field. Defaults to an empty string.
+   * </pre>
+   *
+   * <code>string description = 4;</code>
+   *
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The description for this field. Defaults to an empty string.
+   * </pre>
+   *
+   * <code>string description = 4;</code>
+   *
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ORDER_FIELD_NUMBER = 5;
   private int order_;
   /**
@@ -363,6 +432,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     if (isRequired_ != false) {
       output.writeBool(3, isRequired_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
+    }
     if (order_ != 0) {
       output.writeInt32(5, order_);
     }
@@ -386,6 +458,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     }
     if (isRequired_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, isRequired_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
     }
     if (order_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, order_);
@@ -416,6 +491,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       if (!getType().equals(other.getType())) return false;
     }
     if (getIsRequired() != other.getIsRequired()) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
     if (getOrder() != other.getOrder()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -438,6 +514,8 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + IS_REQUIRED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsRequired());
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + ORDER_FIELD_NUMBER;
     hash = (53 * hash) + getOrder();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -597,6 +675,8 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       }
       isRequired_ = false;
 
+      description_ = "";
+
       order_ = 0;
 
       return this;
@@ -634,6 +714,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
         result.type_ = typeBuilder_.build();
       }
       result.isRequired_ = isRequired_;
+      result.description_ = description_;
       result.order_ = order_;
       onBuilt();
       return result;
@@ -699,6 +780,10 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       if (other.getIsRequired() != false) {
         setIsRequired(other.getIsRequired());
       }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        onChanged();
+      }
       if (other.getOrder() != 0) {
         setOrder(other.getOrder());
       }
@@ -737,9 +822,12 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The resource name of the tag template field in URL format. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
-     * Note that this TagTemplateField may not actually be stored in the location
-     * in this name.
+     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}`
+     * Note: The `TagTemplateField` itself might not be stored in the location
+     * specified in its name.
+     * The name must contain only letters (a-z, A-Z), numbers (0-9),
+     * or underscores (_), and must start with a letter or underscore.
+     * The maximum length is 64 characters.
      * </pre>
      *
      * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -762,9 +850,12 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The resource name of the tag template field in URL format. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
-     * Note that this TagTemplateField may not actually be stored in the location
-     * in this name.
+     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}`
+     * Note: The `TagTemplateField` itself might not be stored in the location
+     * specified in its name.
+     * The name must contain only letters (a-z, A-Z), numbers (0-9),
+     * or underscores (_), and must start with a letter or underscore.
+     * The maximum length is 64 characters.
      * </pre>
      *
      * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -787,9 +878,12 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The resource name of the tag template field in URL format. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
-     * Note that this TagTemplateField may not actually be stored in the location
-     * in this name.
+     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}`
+     * Note: The `TagTemplateField` itself might not be stored in the location
+     * specified in its name.
+     * The name must contain only letters (a-z, A-Z), numbers (0-9),
+     * or underscores (_), and must start with a letter or underscore.
+     * The maximum length is 64 characters.
      * </pre>
      *
      * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -811,9 +905,12 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The resource name of the tag template field in URL format. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
-     * Note that this TagTemplateField may not actually be stored in the location
-     * in this name.
+     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}`
+     * Note: The `TagTemplateField` itself might not be stored in the location
+     * specified in its name.
+     * The name must contain only letters (a-z, A-Z), numbers (0-9),
+     * or underscores (_), and must start with a letter or underscore.
+     * The maximum length is 64 characters.
      * </pre>
      *
      * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -831,9 +928,12 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The resource name of the tag template field in URL format. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
-     * Note that this TagTemplateField may not actually be stored in the location
-     * in this name.
+     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}`
+     * Note: The `TagTemplateField` itself might not be stored in the location
+     * specified in its name.
+     * The name must contain only letters (a-z, A-Z), numbers (0-9),
+     * or underscores (_), and must start with a letter or underscore.
+     * The maximum length is 64 characters.
      * </pre>
      *
      * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -858,6 +958,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The display name for this field. Defaults to an empty string.
+     * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+     * dashes (-), spaces ( ), and can't start or end with spaces.
+     * The maximum length is 200 characters.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -880,6 +983,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The display name for this field. Defaults to an empty string.
+     * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+     * dashes (-), spaces ( ), and can't start or end with spaces.
+     * The maximum length is 200 characters.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -902,6 +1008,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The display name for this field. Defaults to an empty string.
+     * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+     * dashes (-), spaces ( ), and can't start or end with spaces.
+     * The maximum length is 200 characters.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -923,6 +1032,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The display name for this field. Defaults to an empty string.
+     * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+     * dashes (-), spaces ( ), and can't start or end with spaces.
+     * The maximum length is 200 characters.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -940,6 +1052,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The display name for this field. Defaults to an empty string.
+     * The name must contain only Unicode letters, numbers (0-9), underscores (_),
+     * dashes (-), spaces ( ), and can't start or end with spaces.
+     * The maximum length is 200 characters.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -1209,6 +1324,112 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     public Builder clearIsRequired() {
 
       isRequired_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The description for this field. Defaults to an empty string.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     *
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description for this field. Defaults to an empty string.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     *
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description for this field. Defaults to an empty string.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description for this field. Defaults to an empty string.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description for this field. Defaults to an empty string.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      description_ = value;
       onChanged();
       return this;
     }

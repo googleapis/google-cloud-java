@@ -295,38 +295,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The list of locations to search within.
      * 1. If empty, search will be performed in all locations;
-     * 2. If any of the locations are NOT in the valid locations list, error
-     * will be returned;
+     * 2. If any of the locations are NOT [supported
+     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
+     * error will be returned;
      * 3. Otherwise, search only the given locations for matching results.
      * Typical usage is to leave this field empty. When a location is
      * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
      * users can repeat the search request with this parameter set to get
      * additional information on the error.
-     * Valid locations:
-     *  * asia-east1
-     *  * asia-east2
-     *  * asia-northeast1
-     *  * asia-northeast2
-     *  * asia-northeast3
-     *  * asia-south1
-     *  * asia-southeast1
-     *  * australia-southeast1
-     *  * eu
-     *  * europe-north1
-     *  * europe-west1
-     *  * europe-west2
-     *  * europe-west3
-     *  * europe-west4
-     *  * europe-west6
-     *  * global
-     *  * northamerica-northeast1
-     *  * southamerica-east1
-     *  * us
-     *  * us-central1
-     *  * us-east1
-     *  * us-east4
-     *  * us-west1
-     *  * us-west2
      * </pre>
      *
      * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -341,38 +317,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The list of locations to search within.
      * 1. If empty, search will be performed in all locations;
-     * 2. If any of the locations are NOT in the valid locations list, error
-     * will be returned;
+     * 2. If any of the locations are NOT [supported
+     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
+     * error will be returned;
      * 3. Otherwise, search only the given locations for matching results.
      * Typical usage is to leave this field empty. When a location is
      * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
      * users can repeat the search request with this parameter set to get
      * additional information on the error.
-     * Valid locations:
-     *  * asia-east1
-     *  * asia-east2
-     *  * asia-northeast1
-     *  * asia-northeast2
-     *  * asia-northeast3
-     *  * asia-south1
-     *  * asia-southeast1
-     *  * australia-southeast1
-     *  * eu
-     *  * europe-north1
-     *  * europe-west1
-     *  * europe-west2
-     *  * europe-west3
-     *  * europe-west4
-     *  * europe-west6
-     *  * global
-     *  * northamerica-northeast1
-     *  * southamerica-east1
-     *  * us
-     *  * us-central1
-     *  * us-east1
-     *  * us-east4
-     *  * us-west1
-     *  * us-west2
      * </pre>
      *
      * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -387,38 +339,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The list of locations to search within.
      * 1. If empty, search will be performed in all locations;
-     * 2. If any of the locations are NOT in the valid locations list, error
-     * will be returned;
+     * 2. If any of the locations are NOT [supported
+     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
+     * error will be returned;
      * 3. Otherwise, search only the given locations for matching results.
      * Typical usage is to leave this field empty. When a location is
      * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
      * users can repeat the search request with this parameter set to get
      * additional information on the error.
-     * Valid locations:
-     *  * asia-east1
-     *  * asia-east2
-     *  * asia-northeast1
-     *  * asia-northeast2
-     *  * asia-northeast3
-     *  * asia-south1
-     *  * asia-southeast1
-     *  * australia-southeast1
-     *  * eu
-     *  * europe-north1
-     *  * europe-west1
-     *  * europe-west2
-     *  * europe-west3
-     *  * europe-west4
-     *  * europe-west6
-     *  * global
-     *  * northamerica-northeast1
-     *  * southamerica-east1
-     *  * us
-     *  * us-central1
-     *  * us-east1
-     *  * us-east4
-     *  * us-west1
-     *  * us-west2
      * </pre>
      *
      * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -434,38 +362,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The list of locations to search within.
      * 1. If empty, search will be performed in all locations;
-     * 2. If any of the locations are NOT in the valid locations list, error
-     * will be returned;
+     * 2. If any of the locations are NOT [supported
+     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
+     * error will be returned;
      * 3. Otherwise, search only the given locations for matching results.
      * Typical usage is to leave this field empty. When a location is
      * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
      * users can repeat the search request with this parameter set to get
      * additional information on the error.
-     * Valid locations:
-     *  * asia-east1
-     *  * asia-east2
-     *  * asia-northeast1
-     *  * asia-northeast2
-     *  * asia-northeast3
-     *  * asia-south1
-     *  * asia-southeast1
-     *  * australia-southeast1
-     *  * eu
-     *  * europe-north1
-     *  * europe-west1
-     *  * europe-west2
-     *  * europe-west3
-     *  * europe-west4
-     *  * europe-west6
-     *  * global
-     *  * northamerica-northeast1
-     *  * southamerica-east1
-     *  * us
-     *  * us-central1
-     *  * us-east1
-     *  * us-east4
-     *  * us-west1
-     *  * us-west2
      * </pre>
      *
      * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -776,38 +680,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The list of locations to search within.
      * 1. If empty, search will be performed in all locations;
-     * 2. If any of the locations are NOT in the valid locations list, error
-     * will be returned;
+     * 2. If any of the locations are NOT [supported
+     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
+     * error will be returned;
      * 3. Otherwise, search only the given locations for matching results.
      * Typical usage is to leave this field empty. When a location is
      * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
      * users can repeat the search request with this parameter set to get
      * additional information on the error.
-     * Valid locations:
-     *  * asia-east1
-     *  * asia-east2
-     *  * asia-northeast1
-     *  * asia-northeast2
-     *  * asia-northeast3
-     *  * asia-south1
-     *  * asia-southeast1
-     *  * australia-southeast1
-     *  * eu
-     *  * europe-north1
-     *  * europe-west1
-     *  * europe-west2
-     *  * europe-west3
-     *  * europe-west4
-     *  * europe-west6
-     *  * global
-     *  * northamerica-northeast1
-     *  * southamerica-east1
-     *  * us
-     *  * us-central1
-     *  * us-east1
-     *  * us-east4
-     *  * us-west1
-     *  * us-west2
      * </pre>
      *
      * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -824,38 +704,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The list of locations to search within.
      * 1. If empty, search will be performed in all locations;
-     * 2. If any of the locations are NOT in the valid locations list, error
-     * will be returned;
+     * 2. If any of the locations are NOT [supported
+     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
+     * error will be returned;
      * 3. Otherwise, search only the given locations for matching results.
      * Typical usage is to leave this field empty. When a location is
      * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
      * users can repeat the search request with this parameter set to get
      * additional information on the error.
-     * Valid locations:
-     *  * asia-east1
-     *  * asia-east2
-     *  * asia-northeast1
-     *  * asia-northeast2
-     *  * asia-northeast3
-     *  * asia-south1
-     *  * asia-southeast1
-     *  * australia-southeast1
-     *  * eu
-     *  * europe-north1
-     *  * europe-west1
-     *  * europe-west2
-     *  * europe-west3
-     *  * europe-west4
-     *  * europe-west6
-     *  * global
-     *  * northamerica-northeast1
-     *  * southamerica-east1
-     *  * us
-     *  * us-central1
-     *  * us-east1
-     *  * us-east4
-     *  * us-west1
-     *  * us-west2
      * </pre>
      *
      * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -872,38 +728,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The list of locations to search within.
      * 1. If empty, search will be performed in all locations;
-     * 2. If any of the locations are NOT in the valid locations list, error
-     * will be returned;
+     * 2. If any of the locations are NOT [supported
+     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
+     * error will be returned;
      * 3. Otherwise, search only the given locations for matching results.
      * Typical usage is to leave this field empty. When a location is
      * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
      * users can repeat the search request with this parameter set to get
      * additional information on the error.
-     * Valid locations:
-     *  * asia-east1
-     *  * asia-east2
-     *  * asia-northeast1
-     *  * asia-northeast2
-     *  * asia-northeast3
-     *  * asia-south1
-     *  * asia-southeast1
-     *  * australia-southeast1
-     *  * eu
-     *  * europe-north1
-     *  * europe-west1
-     *  * europe-west2
-     *  * europe-west3
-     *  * europe-west4
-     *  * europe-west6
-     *  * global
-     *  * northamerica-northeast1
-     *  * southamerica-east1
-     *  * us
-     *  * us-central1
-     *  * us-east1
-     *  * us-east4
-     *  * us-west1
-     *  * us-west2
      * </pre>
      *
      * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -921,38 +753,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. The list of locations to search within.
      * 1. If empty, search will be performed in all locations;
-     * 2. If any of the locations are NOT in the valid locations list, error
-     * will be returned;
+     * 2. If any of the locations are NOT [supported
+     * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
+     * error will be returned;
      * 3. Otherwise, search only the given locations for matching results.
      * Typical usage is to leave this field empty. When a location is
      * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
      * users can repeat the search request with this parameter set to get
      * additional information on the error.
-     * Valid locations:
-     *  * asia-east1
-     *  * asia-east2
-     *  * asia-northeast1
-     *  * asia-northeast2
-     *  * asia-northeast3
-     *  * asia-south1
-     *  * asia-southeast1
-     *  * australia-southeast1
-     *  * eu
-     *  * europe-north1
-     *  * europe-west1
-     *  * europe-west2
-     *  * europe-west3
-     *  * europe-west4
-     *  * europe-west6
-     *  * global
-     *  * northamerica-northeast1
-     *  * southamerica-east1
-     *  * us
-     *  * us-central1
-     *  * us-east1
-     *  * us-east4
-     *  * us-west1
-     *  * us-west2
      * </pre>
      *
      * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -1840,38 +1648,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Optional. The list of locations to search within.
        * 1. If empty, search will be performed in all locations;
-       * 2. If any of the locations are NOT in the valid locations list, error
-       * will be returned;
+       * 2. If any of the locations are NOT [supported
+       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
+       * error will be returned;
        * 3. Otherwise, search only the given locations for matching results.
        * Typical usage is to leave this field empty. When a location is
        * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
        * users can repeat the search request with this parameter set to get
        * additional information on the error.
-       * Valid locations:
-       *  * asia-east1
-       *  * asia-east2
-       *  * asia-northeast1
-       *  * asia-northeast2
-       *  * asia-northeast3
-       *  * asia-south1
-       *  * asia-southeast1
-       *  * australia-southeast1
-       *  * eu
-       *  * europe-north1
-       *  * europe-west1
-       *  * europe-west2
-       *  * europe-west3
-       *  * europe-west4
-       *  * europe-west6
-       *  * global
-       *  * northamerica-northeast1
-       *  * southamerica-east1
-       *  * us
-       *  * us-central1
-       *  * us-east1
-       *  * us-east4
-       *  * us-west1
-       *  * us-west2
        * </pre>
        *
        * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -1888,38 +1672,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Optional. The list of locations to search within.
        * 1. If empty, search will be performed in all locations;
-       * 2. If any of the locations are NOT in the valid locations list, error
-       * will be returned;
+       * 2. If any of the locations are NOT [supported
+       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
+       * error will be returned;
        * 3. Otherwise, search only the given locations for matching results.
        * Typical usage is to leave this field empty. When a location is
        * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
        * users can repeat the search request with this parameter set to get
        * additional information on the error.
-       * Valid locations:
-       *  * asia-east1
-       *  * asia-east2
-       *  * asia-northeast1
-       *  * asia-northeast2
-       *  * asia-northeast3
-       *  * asia-south1
-       *  * asia-southeast1
-       *  * australia-southeast1
-       *  * eu
-       *  * europe-north1
-       *  * europe-west1
-       *  * europe-west2
-       *  * europe-west3
-       *  * europe-west4
-       *  * europe-west6
-       *  * global
-       *  * northamerica-northeast1
-       *  * southamerica-east1
-       *  * us
-       *  * us-central1
-       *  * us-east1
-       *  * us-east4
-       *  * us-west1
-       *  * us-west2
        * </pre>
        *
        * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -1936,38 +1696,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Optional. The list of locations to search within.
        * 1. If empty, search will be performed in all locations;
-       * 2. If any of the locations are NOT in the valid locations list, error
-       * will be returned;
+       * 2. If any of the locations are NOT [supported
+       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
+       * error will be returned;
        * 3. Otherwise, search only the given locations for matching results.
        * Typical usage is to leave this field empty. When a location is
        * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
        * users can repeat the search request with this parameter set to get
        * additional information on the error.
-       * Valid locations:
-       *  * asia-east1
-       *  * asia-east2
-       *  * asia-northeast1
-       *  * asia-northeast2
-       *  * asia-northeast3
-       *  * asia-south1
-       *  * asia-southeast1
-       *  * australia-southeast1
-       *  * eu
-       *  * europe-north1
-       *  * europe-west1
-       *  * europe-west2
-       *  * europe-west3
-       *  * europe-west4
-       *  * europe-west6
-       *  * global
-       *  * northamerica-northeast1
-       *  * southamerica-east1
-       *  * us
-       *  * us-central1
-       *  * us-east1
-       *  * us-east4
-       *  * us-west1
-       *  * us-west2
        * </pre>
        *
        * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -1985,38 +1721,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Optional. The list of locations to search within.
        * 1. If empty, search will be performed in all locations;
-       * 2. If any of the locations are NOT in the valid locations list, error
-       * will be returned;
+       * 2. If any of the locations are NOT [supported
+       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
+       * error will be returned;
        * 3. Otherwise, search only the given locations for matching results.
        * Typical usage is to leave this field empty. When a location is
        * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
        * users can repeat the search request with this parameter set to get
        * additional information on the error.
-       * Valid locations:
-       *  * asia-east1
-       *  * asia-east2
-       *  * asia-northeast1
-       *  * asia-northeast2
-       *  * asia-northeast3
-       *  * asia-south1
-       *  * asia-southeast1
-       *  * australia-southeast1
-       *  * eu
-       *  * europe-north1
-       *  * europe-west1
-       *  * europe-west2
-       *  * europe-west3
-       *  * europe-west4
-       *  * europe-west6
-       *  * global
-       *  * northamerica-northeast1
-       *  * southamerica-east1
-       *  * us
-       *  * us-central1
-       *  * us-east1
-       *  * us-east4
-       *  * us-west1
-       *  * us-west2
        * </pre>
        *
        * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -2034,38 +1746,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Optional. The list of locations to search within.
        * 1. If empty, search will be performed in all locations;
-       * 2. If any of the locations are NOT in the valid locations list, error
-       * will be returned;
+       * 2. If any of the locations are NOT [supported
+       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
+       * error will be returned;
        * 3. Otherwise, search only the given locations for matching results.
        * Typical usage is to leave this field empty. When a location is
        * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
        * users can repeat the search request with this parameter set to get
        * additional information on the error.
-       * Valid locations:
-       *  * asia-east1
-       *  * asia-east2
-       *  * asia-northeast1
-       *  * asia-northeast2
-       *  * asia-northeast3
-       *  * asia-south1
-       *  * asia-southeast1
-       *  * australia-southeast1
-       *  * eu
-       *  * europe-north1
-       *  * europe-west1
-       *  * europe-west2
-       *  * europe-west3
-       *  * europe-west4
-       *  * europe-west6
-       *  * global
-       *  * northamerica-northeast1
-       *  * southamerica-east1
-       *  * us
-       *  * us-central1
-       *  * us-east1
-       *  * us-east4
-       *  * us-west1
-       *  * us-west2
        * </pre>
        *
        * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -2090,38 +1778,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Optional. The list of locations to search within.
        * 1. If empty, search will be performed in all locations;
-       * 2. If any of the locations are NOT in the valid locations list, error
-       * will be returned;
+       * 2. If any of the locations are NOT [supported
+       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
+       * error will be returned;
        * 3. Otherwise, search only the given locations for matching results.
        * Typical usage is to leave this field empty. When a location is
        * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
        * users can repeat the search request with this parameter set to get
        * additional information on the error.
-       * Valid locations:
-       *  * asia-east1
-       *  * asia-east2
-       *  * asia-northeast1
-       *  * asia-northeast2
-       *  * asia-northeast3
-       *  * asia-south1
-       *  * asia-southeast1
-       *  * australia-southeast1
-       *  * eu
-       *  * europe-north1
-       *  * europe-west1
-       *  * europe-west2
-       *  * europe-west3
-       *  * europe-west4
-       *  * europe-west6
-       *  * global
-       *  * northamerica-northeast1
-       *  * southamerica-east1
-       *  * us
-       *  * us-central1
-       *  * us-east1
-       *  * us-east4
-       *  * us-west1
-       *  * us-west2
        * </pre>
        *
        * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -2145,38 +1809,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Optional. The list of locations to search within.
        * 1. If empty, search will be performed in all locations;
-       * 2. If any of the locations are NOT in the valid locations list, error
-       * will be returned;
+       * 2. If any of the locations are NOT [supported
+       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
+       * error will be returned;
        * 3. Otherwise, search only the given locations for matching results.
        * Typical usage is to leave this field empty. When a location is
        * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
        * users can repeat the search request with this parameter set to get
        * additional information on the error.
-       * Valid locations:
-       *  * asia-east1
-       *  * asia-east2
-       *  * asia-northeast1
-       *  * asia-northeast2
-       *  * asia-northeast3
-       *  * asia-south1
-       *  * asia-southeast1
-       *  * australia-southeast1
-       *  * eu
-       *  * europe-north1
-       *  * europe-west1
-       *  * europe-west2
-       *  * europe-west3
-       *  * europe-west4
-       *  * europe-west6
-       *  * global
-       *  * northamerica-northeast1
-       *  * southamerica-east1
-       *  * us
-       *  * us-central1
-       *  * us-east1
-       *  * us-east4
-       *  * us-west1
-       *  * us-west2
        * </pre>
        *
        * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -2197,38 +1837,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Optional. The list of locations to search within.
        * 1. If empty, search will be performed in all locations;
-       * 2. If any of the locations are NOT in the valid locations list, error
-       * will be returned;
+       * 2. If any of the locations are NOT [supported
+       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
+       * error will be returned;
        * 3. Otherwise, search only the given locations for matching results.
        * Typical usage is to leave this field empty. When a location is
        * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
        * users can repeat the search request with this parameter set to get
        * additional information on the error.
-       * Valid locations:
-       *  * asia-east1
-       *  * asia-east2
-       *  * asia-northeast1
-       *  * asia-northeast2
-       *  * asia-northeast3
-       *  * asia-south1
-       *  * asia-southeast1
-       *  * australia-southeast1
-       *  * eu
-       *  * europe-north1
-       *  * europe-west1
-       *  * europe-west2
-       *  * europe-west3
-       *  * europe-west4
-       *  * europe-west6
-       *  * global
-       *  * northamerica-northeast1
-       *  * southamerica-east1
-       *  * us
-       *  * us-central1
-       *  * us-east1
-       *  * us-east4
-       *  * us-west1
-       *  * us-west2
        * </pre>
        *
        * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -2248,38 +1864,14 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * <pre>
        * Optional. The list of locations to search within.
        * 1. If empty, search will be performed in all locations;
-       * 2. If any of the locations are NOT in the valid locations list, error
-       * will be returned;
+       * 2. If any of the locations are NOT [supported
+       * regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions),
+       * error will be returned;
        * 3. Otherwise, search only the given locations for matching results.
        * Typical usage is to leave this field empty. When a location is
        * unreachable as returned in the `SearchCatalogResponse.unreachable` field,
        * users can repeat the search request with this parameter set to get
        * additional information on the error.
-       * Valid locations:
-       *  * asia-east1
-       *  * asia-east2
-       *  * asia-northeast1
-       *  * asia-northeast2
-       *  * asia-northeast3
-       *  * asia-south1
-       *  * asia-southeast1
-       *  * australia-southeast1
-       *  * eu
-       *  * europe-north1
-       *  * europe-west1
-       *  * europe-west2
-       *  * europe-west3
-       *  * europe-west4
-       *  * europe-west6
-       *  * global
-       *  * northamerica-northeast1
-       *  * southamerica-east1
-       *  * us
-       *  * us-central1
-       *  * us-east1
-       *  * us-east4
-       *  * us-west1
-       *  * us-west2
        * </pre>
        *
        * <code>repeated string restricted_locations = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -2421,8 +2013,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The query string in search query syntax. The query must be
-   * non-empty.
+   * Optional. The query string in search query syntax. An empty query string will result
+   * in all data assets (in the specified scope) that the user has access to.
    * Query strings can be simple as "x" or more qualified as:
    * * name:x
    * * column:x
@@ -2433,7 +2025,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * for more information.
    * </pre>
    *
-   * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The query.
    */
@@ -2453,8 +2045,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The query string in search query syntax. The query must be
-   * non-empty.
+   * Optional. The query string in search query syntax. An empty query string will result
+   * in all data assets (in the specified scope) that the user has access to.
    * Query strings can be simple as "x" or more qualified as:
    * * name:x
    * * column:x
@@ -2465,7 +2057,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * for more information.
    * </pre>
    *
-   * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for query.
    */
@@ -2508,8 +2100,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. Pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token],
-   * which indicates that this is a continuation of a prior
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
+   * indicates that this is a continuation of a prior
    * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
    * call, and that the system should return the next page of data. If empty,
    * the first page is returned.
@@ -2536,8 +2128,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. Pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token],
-   * which indicates that this is a continuation of a prior
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
+   * indicates that this is a continuation of a prior
    * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
    * call, and that the system should return the next page of data. If empty,
    * the first page is returned.
@@ -3249,8 +2841,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The query string in search query syntax. The query must be
-     * non-empty.
+     * Optional. The query string in search query syntax. An empty query string will result
+     * in all data assets (in the specified scope) that the user has access to.
      * Query strings can be simple as "x" or more qualified as:
      * * name:x
      * * column:x
@@ -3261,7 +2853,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * for more information.
      * </pre>
      *
-     * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The query.
      */
@@ -3280,8 +2872,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The query string in search query syntax. The query must be
-     * non-empty.
+     * Optional. The query string in search query syntax. An empty query string will result
+     * in all data assets (in the specified scope) that the user has access to.
      * Query strings can be simple as "x" or more qualified as:
      * * name:x
      * * column:x
@@ -3292,7 +2884,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * for more information.
      * </pre>
      *
-     * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for query.
      */
@@ -3311,8 +2903,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The query string in search query syntax. The query must be
-     * non-empty.
+     * Optional. The query string in search query syntax. An empty query string will result
+     * in all data assets (in the specified scope) that the user has access to.
      * Query strings can be simple as "x" or more qualified as:
      * * name:x
      * * column:x
@@ -3323,7 +2915,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * for more information.
      * </pre>
      *
-     * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The query to set.
      * @return This builder for chaining.
@@ -3341,8 +2933,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The query string in search query syntax. The query must be
-     * non-empty.
+     * Optional. The query string in search query syntax. An empty query string will result
+     * in all data assets (in the specified scope) that the user has access to.
      * Query strings can be simple as "x" or more qualified as:
      * * name:x
      * * column:x
@@ -3353,7 +2945,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * for more information.
      * </pre>
      *
-     * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -3367,8 +2959,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The query string in search query syntax. The query must be
-     * non-empty.
+     * Optional. The query string in search query syntax. An empty query string will result
+     * in all data assets (in the specified scope) that the user has access to.
      * Query strings can be simple as "x" or more qualified as:
      * * name:x
      * * column:x
@@ -3379,7 +2971,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * for more information.
      * </pre>
      *
-     * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for query to set.
      * @return This builder for chaining.
@@ -3456,8 +3048,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token],
-     * which indicates that this is a continuation of a prior
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
+     * indicates that this is a continuation of a prior
      * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
      * call, and that the system should return the next page of data. If empty,
      * the first page is returned.
@@ -3483,8 +3075,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token],
-     * which indicates that this is a continuation of a prior
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
+     * indicates that this is a continuation of a prior
      * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
      * call, and that the system should return the next page of data. If empty,
      * the first page is returned.
@@ -3510,8 +3102,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token],
-     * which indicates that this is a continuation of a prior
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
+     * indicates that this is a continuation of a prior
      * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
      * call, and that the system should return the next page of data. If empty,
      * the first page is returned.
@@ -3536,8 +3128,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token],
-     * which indicates that this is a continuation of a prior
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
+     * indicates that this is a continuation of a prior
      * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
      * call, and that the system should return the next page of data. If empty,
      * the first page is returned.
@@ -3558,8 +3150,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token],
-     * which indicates that this is a continuation of a prior
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
+     * indicates that this is a continuation of a prior
      * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
      * call, and that the system should return the next page of data. If empty,
      * the first page is returned.

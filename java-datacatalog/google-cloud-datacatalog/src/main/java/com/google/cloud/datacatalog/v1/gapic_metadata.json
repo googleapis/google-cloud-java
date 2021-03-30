@@ -67,6 +67,9 @@
             "RenameTagTemplateField": {
               "methods": ["renameTagTemplateField", "renameTagTemplateField", "renameTagTemplateField", "renameTagTemplateFieldCallable"]
             },
+            "RenameTagTemplateFieldEnumValue": {
+              "methods": ["renameTagTemplateFieldEnumValue", "renameTagTemplateFieldEnumValue", "renameTagTemplateFieldEnumValue", "renameTagTemplateFieldEnumValueCallable"]
+            },
             "SearchCatalog": {
               "methods": ["searchCatalog", "searchCatalog", "searchCatalogPagedCallable", "searchCatalogCallable"]
             },
@@ -90,6 +93,69 @@
             },
             "UpdateTagTemplateField": {
               "methods": ["updateTagTemplateField", "updateTagTemplateField", "updateTagTemplateField", "updateTagTemplateField", "updateTagTemplateField", "updateTagTemplateFieldCallable"]
+            }
+          }
+        }
+      }
+    },
+    "PolicyTagManager": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PolicyTagManagerClient",
+          "rpcs": {
+            "CreatePolicyTag": {
+              "methods": ["createPolicyTag", "createPolicyTag", "createPolicyTag", "createPolicyTagCallable"]
+            },
+            "CreateTaxonomy": {
+              "methods": ["createTaxonomy", "createTaxonomy", "createTaxonomy", "createTaxonomyCallable"]
+            },
+            "DeletePolicyTag": {
+              "methods": ["deletePolicyTag", "deletePolicyTag", "deletePolicyTag", "deletePolicyTagCallable"]
+            },
+            "DeleteTaxonomy": {
+              "methods": ["deleteTaxonomy", "deleteTaxonomy", "deleteTaxonomy", "deleteTaxonomyCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetPolicyTag": {
+              "methods": ["getPolicyTag", "getPolicyTag", "getPolicyTag", "getPolicyTagCallable"]
+            },
+            "GetTaxonomy": {
+              "methods": ["getTaxonomy", "getTaxonomy", "getTaxonomy", "getTaxonomyCallable"]
+            },
+            "ListPolicyTags": {
+              "methods": ["listPolicyTags", "listPolicyTags", "listPolicyTags", "listPolicyTagsPagedCallable", "listPolicyTagsCallable"]
+            },
+            "ListTaxonomies": {
+              "methods": ["listTaxonomies", "listTaxonomies", "listTaxonomies", "listTaxonomiesPagedCallable", "listTaxonomiesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdatePolicyTag": {
+              "methods": ["updatePolicyTag", "updatePolicyTag", "updatePolicyTagCallable"]
+            },
+            "UpdateTaxonomy": {
+              "methods": ["updateTaxonomy", "updateTaxonomy", "updateTaxonomyCallable"]
+            }
+          }
+        }
+      }
+    },
+    "PolicyTagManagerSerialization": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PolicyTagManagerSerializationClient",
+          "rpcs": {
+            "ExportTaxonomies": {
+              "methods": ["exportTaxonomies", "exportTaxonomiesCallable"]
+            },
+            "ImportTaxonomies": {
+              "methods": ["importTaxonomies", "importTaxonomiesCallable"]
             }
           }
         }

@@ -179,6 +179,12 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
     return ((DataCatalogStubSettings) getStubSettings()).renameTagTemplateFieldSettings();
   }
 
+  /** Returns the object with the settings used for calls to renameTagTemplateFieldEnumValue. */
+  public UnaryCallSettings<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
+      renameTagTemplateFieldEnumValueSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).renameTagTemplateFieldEnumValueSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteTagTemplateField. */
   public UnaryCallSettings<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldSettings() {
     return ((DataCatalogStubSettings) getStubSettings()).deleteTagTemplateFieldSettings();
@@ -424,6 +430,12 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
     public UnaryCallSettings.Builder<RenameTagTemplateFieldRequest, TagTemplateField>
         renameTagTemplateFieldSettings() {
       return getStubSettingsBuilder().renameTagTemplateFieldSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to renameTagTemplateFieldEnumValue. */
+    public UnaryCallSettings.Builder<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
+        renameTagTemplateFieldEnumValueSettings() {
+      return getStubSettingsBuilder().renameTagTemplateFieldEnumValueSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteTagTemplateField. */

@@ -78,6 +78,7 @@ public interface TagFieldOrBuilder
    *
    * <pre>
    * Holds the value for a tag field with string type.
+   * The maximum length is 2000 UTF-8 characters.
    * </pre>
    *
    * <code>string string_value = 3;</code>
@@ -90,6 +91,7 @@ public interface TagFieldOrBuilder
    *
    * <pre>
    * Holds the value for a tag field with string type.
+   * The maximum length is 2000 UTF-8 characters.
    * </pre>
    *
    * <code>string string_value = 3;</code>
@@ -102,6 +104,7 @@ public interface TagFieldOrBuilder
    *
    * <pre>
    * Holds the value for a tag field with string type.
+   * The maximum length is 2000 UTF-8 characters.
    * </pre>
    *
    * <code>string string_value = 3;</code>

@@ -105,30 +105,31 @@ public final class Tags {
           + "datacatalog.v1.TagTemplateField:\0028\001:p\352Am"
           + "\n&datacatalog.googleapis.com/TagTemplate"
           + "\022Cprojects/{project}/locations/{location"
-          + "}/tagTemplates/{tag_template}\"\242\002\n\020TagTem"
+          + "}/tagTemplates/{tag_template}\"\267\002\n\020TagTem"
           + "plateField\022\021\n\004name\030\006 \001(\tB\003\340A\003\022\024\n\014display"
           + "_name\030\001 \001(\t\0229\n\004type\030\002 \001(\0132&.google.cloud"
           + ".datacatalog.v1.FieldTypeB\003\340A\002\022\023\n\013is_req"
-          + "uired\030\003 \001(\010\022\r\n\005order\030\005 \001(\005:\205\001\352A\201\001\n+datac"
-          + "atalog.googleapis.com/TagTemplateField\022R"
-          + "projects/{project}/locations/{location}/"
-          + "tagTemplates/{tag_template}/fields/{fiel"
-          + "d}\"\230\003\n\tFieldType\022N\n\016primitive_type\030\001 \001(\016"
-          + "24.google.cloud.datacatalog.v1.FieldType"
-          + ".PrimitiveTypeH\000\022D\n\tenum_type\030\002 \001(\0132/.go"
-          + "ogle.cloud.datacatalog.v1.FieldType.Enum"
-          + "TypeH\000\032\205\001\n\010EnumType\022Q\n\016allowed_values\030\001 "
-          + "\003(\01329.google.cloud.datacatalog.v1.FieldT"
-          + "ype.EnumType.EnumValue\032&\n\tEnumValue\022\031\n\014d"
-          + "isplay_name\030\001 \001(\tB\003\340A\002\"`\n\rPrimitiveType\022"
-          + "\036\n\032PRIMITIVE_TYPE_UNSPECIFIED\020\000\022\n\n\006DOUBL"
-          + "E\020\001\022\n\n\006STRING\020\002\022\010\n\004BOOL\020\003\022\r\n\tTIMESTAMP\020\004"
-          + "B\013\n\ttype_declB\313\001\n\037com.google.cloud.datac"
-          + "atalog.v1P\001ZFgoogle.golang.org/genproto/"
-          + "googleapis/cloud/datacatalog/v1;datacata"
-          + "log\370\001\001\252\002\033Google.Cloud.DataCatalog.V1\312\002\033G"
-          + "oogle\\Cloud\\DataCatalog\\V1\352\002\036Google::Clo"
-          + "ud::DataCatalog::V1b\006proto3"
+          + "uired\030\003 \001(\010\022\023\n\013description\030\004 \001(\t\022\r\n\005orde"
+          + "r\030\005 \001(\005:\205\001\352A\201\001\n+datacatalog.googleapis.c"
+          + "om/TagTemplateField\022Rprojects/{project}/"
+          + "locations/{location}/tagTemplates/{tag_t"
+          + "emplate}/fields/{field}\"\230\003\n\tFieldType\022N\n"
+          + "\016primitive_type\030\001 \001(\01624.google.cloud.dat"
+          + "acatalog.v1.FieldType.PrimitiveTypeH\000\022D\n"
+          + "\tenum_type\030\002 \001(\0132/.google.cloud.datacata"
+          + "log.v1.FieldType.EnumTypeH\000\032\205\001\n\010EnumType"
+          + "\022Q\n\016allowed_values\030\001 \003(\01329.google.cloud."
+          + "datacatalog.v1.FieldType.EnumType.EnumVa"
+          + "lue\032&\n\tEnumValue\022\031\n\014display_name\030\001 \001(\tB\003"
+          + "\340A\002\"`\n\rPrimitiveType\022\036\n\032PRIMITIVE_TYPE_U"
+          + "NSPECIFIED\020\000\022\n\n\006DOUBLE\020\001\022\n\n\006STRING\020\002\022\010\n\004"
+          + "BOOL\020\003\022\r\n\tTIMESTAMP\020\004B\013\n\ttype_declB\313\001\n\037c"
+          + "om.google.cloud.datacatalog.v1P\001ZFgoogle"
+          + ".golang.org/genproto/googleapis/cloud/da"
+          + "tacatalog/v1;datacatalog\370\001\001\252\002\033Google.Clo"
+          + "ud.DataCatalog.V1\312\002\033Google\\Cloud\\DataCat"
+          + "alog\\V1\352\002\036Google::Cloud::DataCatalog::V1"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -199,7 +200,7 @@ public final class Tags {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_TagTemplateField_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName", "Type", "IsRequired", "Order",
+              "Name", "DisplayName", "Type", "IsRequired", "Description", "Order",
             });
     internal_static_google_cloud_datacatalog_v1_FieldType_descriptor =
         getDescriptor().getMessageTypes().get(4);

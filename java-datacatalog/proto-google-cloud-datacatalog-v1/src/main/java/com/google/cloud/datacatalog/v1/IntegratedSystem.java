@@ -59,6 +59,16 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>CLOUD_PUBSUB = 2;</code>
    */
   CLOUD_PUBSUB(2),
+  /**
+   *
+   *
+   * <pre>
+   * Dataproc Metastore.
+   * </pre>
+   *
+   * <code>DATAPROC_METASTORE = 3;</code>
+   */
+  DATAPROC_METASTORE(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -92,6 +102,16 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>CLOUD_PUBSUB = 2;</code>
    */
   public static final int CLOUD_PUBSUB_VALUE = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Dataproc Metastore.
+   * </pre>
+   *
+   * <code>DATAPROC_METASTORE = 3;</code>
+   */
+  public static final int DATAPROC_METASTORE_VALUE = 3;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -123,6 +143,8 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
         return BIGQUERY;
       case 2:
         return CLOUD_PUBSUB;
+      case 3:
+        return DATAPROC_METASTORE;
       default:
         return null;
     }

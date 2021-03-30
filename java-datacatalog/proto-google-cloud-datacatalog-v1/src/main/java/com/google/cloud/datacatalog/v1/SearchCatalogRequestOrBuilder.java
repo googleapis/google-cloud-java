@@ -77,8 +77,8 @@ public interface SearchCatalogRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The query string in search query syntax. The query must be
-   * non-empty.
+   * Optional. The query string in search query syntax. An empty query string will result
+   * in all data assets (in the specified scope) that the user has access to.
    * Query strings can be simple as "x" or more qualified as:
    * * name:x
    * * column:x
@@ -89,7 +89,7 @@ public interface SearchCatalogRequestOrBuilder
    * for more information.
    * </pre>
    *
-   * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The query.
    */
@@ -98,8 +98,8 @@ public interface SearchCatalogRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The query string in search query syntax. The query must be
-   * non-empty.
+   * Optional. The query string in search query syntax. An empty query string will result
+   * in all data assets (in the specified scope) that the user has access to.
    * Query strings can be simple as "x" or more qualified as:
    * * name:x
    * * column:x
@@ -110,7 +110,7 @@ public interface SearchCatalogRequestOrBuilder
    * for more information.
    * </pre>
    *
-   * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for query.
    */
@@ -135,8 +135,8 @@ public interface SearchCatalogRequestOrBuilder
    *
    * <pre>
    * Optional. Pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token],
-   * which indicates that this is a continuation of a prior
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
+   * indicates that this is a continuation of a prior
    * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
    * call, and that the system should return the next page of data. If empty,
    * the first page is returned.
@@ -152,8 +152,8 @@ public interface SearchCatalogRequestOrBuilder
    *
    * <pre>
    * Optional. Pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token],
-   * which indicates that this is a continuation of a prior
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
+   * indicates that this is a continuation of a prior
    * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
    * call, and that the system should return the next page of data. If empty,
    * the first page is returned.

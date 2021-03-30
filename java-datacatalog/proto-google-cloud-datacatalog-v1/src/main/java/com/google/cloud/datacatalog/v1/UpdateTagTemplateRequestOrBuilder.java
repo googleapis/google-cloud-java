@@ -68,10 +68,11 @@ public interface UpdateTagTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * The field mask specifies the parts of the template to overwrite.
-   * Allowed fields:
-   *   * `display_name`
-   * If absent or empty, all of the allowed fields above will be updated.
+   * Names of fields whose values to overwrite on a tag template. Currently,
+   * only `display_name` can be overwritten.
+   * In general, if this parameter is absent or empty, all modifiable fields
+   * are overwritten. If such fields are non-required and omitted in the
+   * request body, their values are emptied.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -83,10 +84,11 @@ public interface UpdateTagTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * The field mask specifies the parts of the template to overwrite.
-   * Allowed fields:
-   *   * `display_name`
-   * If absent or empty, all of the allowed fields above will be updated.
+   * Names of fields whose values to overwrite on a tag template. Currently,
+   * only `display_name` can be overwritten.
+   * In general, if this parameter is absent or empty, all modifiable fields
+   * are overwritten. If such fields are non-required and omitted in the
+   * request body, their values are emptied.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -98,10 +100,11 @@ public interface UpdateTagTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * The field mask specifies the parts of the template to overwrite.
-   * Allowed fields:
-   *   * `display_name`
-   * If absent or empty, all of the allowed fields above will be updated.
+   * Names of fields whose values to overwrite on a tag template. Currently,
+   * only `display_name` can be overwritten.
+   * In general, if this parameter is absent or empty, all modifiable fields
+   * are overwritten. If such fields are non-required and omitted in the
+   * request body, their values are emptied.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

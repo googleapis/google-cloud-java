@@ -65,6 +65,7 @@ import com.google.cloud.datacatalog.v1.ListEntryGroupsResponse;
 import com.google.cloud.datacatalog.v1.ListTagsRequest;
 import com.google.cloud.datacatalog.v1.ListTagsResponse;
 import com.google.cloud.datacatalog.v1.LookupEntryRequest;
+import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest;
 import com.google.cloud.datacatalog.v1.SearchCatalogRequest;
 import com.google.cloud.datacatalog.v1.SearchCatalogResponse;
@@ -157,6 +158,8 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       updateTagTemplateFieldSettings;
   private final UnaryCallSettings<RenameTagTemplateFieldRequest, TagTemplateField>
       renameTagTemplateFieldSettings;
+  private final UnaryCallSettings<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
+      renameTagTemplateFieldEnumValueSettings;
   private final UnaryCallSettings<DeleteTagTemplateFieldRequest, Empty>
       deleteTagTemplateFieldSettings;
   private final UnaryCallSettings<CreateTagRequest, Tag> createTagSettings;
@@ -488,6 +491,12 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     return renameTagTemplateFieldSettings;
   }
 
+  /** Returns the object with the settings used for calls to renameTagTemplateFieldEnumValue. */
+  public UnaryCallSettings<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
+      renameTagTemplateFieldEnumValueSettings() {
+    return renameTagTemplateFieldEnumValueSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteTagTemplateField. */
   public UnaryCallSettings<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldSettings() {
     return deleteTagTemplateFieldSettings;
@@ -618,6 +627,8 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     createTagTemplateFieldSettings = settingsBuilder.createTagTemplateFieldSettings().build();
     updateTagTemplateFieldSettings = settingsBuilder.updateTagTemplateFieldSettings().build();
     renameTagTemplateFieldSettings = settingsBuilder.renameTagTemplateFieldSettings().build();
+    renameTagTemplateFieldEnumValueSettings =
+        settingsBuilder.renameTagTemplateFieldEnumValueSettings().build();
     deleteTagTemplateFieldSettings = settingsBuilder.deleteTagTemplateFieldSettings().build();
     createTagSettings = settingsBuilder.createTagSettings().build();
     updateTagSettings = settingsBuilder.updateTagSettings().build();
@@ -666,6 +677,9 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
         updateTagTemplateFieldSettings;
     private final UnaryCallSettings.Builder<RenameTagTemplateFieldRequest, TagTemplateField>
         renameTagTemplateFieldSettings;
+    private final UnaryCallSettings.Builder<
+            RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
+        renameTagTemplateFieldEnumValueSettings;
     private final UnaryCallSettings.Builder<DeleteTagTemplateFieldRequest, Empty>
         deleteTagTemplateFieldSettings;
     private final UnaryCallSettings.Builder<CreateTagRequest, Tag> createTagSettings;
@@ -685,7 +699,7 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_3_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
@@ -707,7 +721,7 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
+      definitions.put("retry_policy_3_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
@@ -745,6 +759,7 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       createTagTemplateFieldSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateTagTemplateFieldSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       renameTagTemplateFieldSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      renameTagTemplateFieldEnumValueSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteTagTemplateFieldSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -775,6 +790,7 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
               createTagTemplateFieldSettings,
               updateTagTemplateFieldSettings,
               renameTagTemplateFieldSettings,
+              renameTagTemplateFieldEnumValueSettings,
               deleteTagTemplateFieldSettings,
               createTagSettings,
               updateTagSettings,
@@ -808,6 +824,8 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       createTagTemplateFieldSettings = settings.createTagTemplateFieldSettings.toBuilder();
       updateTagTemplateFieldSettings = settings.updateTagTemplateFieldSettings.toBuilder();
       renameTagTemplateFieldSettings = settings.renameTagTemplateFieldSettings.toBuilder();
+      renameTagTemplateFieldEnumValueSettings =
+          settings.renameTagTemplateFieldEnumValueSettings.toBuilder();
       deleteTagTemplateFieldSettings = settings.deleteTagTemplateFieldSettings.toBuilder();
       createTagSettings = settings.createTagSettings.toBuilder();
       updateTagSettings = settings.updateTagSettings.toBuilder();
@@ -838,6 +856,7 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
               createTagTemplateFieldSettings,
               updateTagTemplateFieldSettings,
               renameTagTemplateFieldSettings,
+              renameTagTemplateFieldEnumValueSettings,
               deleteTagTemplateFieldSettings,
               createTagSettings,
               updateTagSettings,
@@ -862,8 +881,8 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     private static Builder initDefaults(Builder builder) {
       builder
           .searchCatalogSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
           .createEntryGroupSettings()
@@ -872,8 +891,8 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
 
       builder
           .getEntryGroupSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
           .updateEntryGroupSettings()
@@ -887,8 +906,8 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
 
       builder
           .listEntryGroupsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
           .createEntrySettings()
@@ -907,18 +926,18 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
 
       builder
           .getEntrySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
           .lookupEntrySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
           .listEntriesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
           .createTagTemplateSettings()
@@ -956,6 +975,11 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
+          .renameTagTemplateFieldEnumValueSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
           .deleteTagTemplateFieldSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
@@ -977,8 +1001,8 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
 
       builder
           .listTagsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
           .setIamPolicySettings()
@@ -987,8 +1011,8 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
 
       builder
           .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
           .testIamPermissionsSettings()
@@ -1120,6 +1144,12 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     public UnaryCallSettings.Builder<RenameTagTemplateFieldRequest, TagTemplateField>
         renameTagTemplateFieldSettings() {
       return renameTagTemplateFieldSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to renameTagTemplateFieldEnumValue. */
+    public UnaryCallSettings.Builder<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
+        renameTagTemplateFieldEnumValueSettings() {
+      return renameTagTemplateFieldEnumValueSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteTagTemplateField. */
