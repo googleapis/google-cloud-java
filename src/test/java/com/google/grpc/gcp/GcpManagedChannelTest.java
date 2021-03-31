@@ -28,6 +28,7 @@ import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import java.io.File;
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.After;
@@ -69,7 +70,7 @@ public final class GcpManagedChannelTest {
   }
 
   @Test
-  public void testLoadApiConfig() throws Exception {
+  public void testLoadApiConfigFile() throws Exception {
     resetGcpChannel();
     File configFile =
         new File(GcpManagedChannelTest.class.getClassLoader().getResource(API_FILE).getFile());
@@ -77,6 +78,27 @@ public final class GcpManagedChannelTest {
         (GcpManagedChannel)
             GcpManagedChannelBuilder.forDelegateBuilder(builder)
                 .withApiConfigJsonFile(configFile)
+                .build();
+    assertEquals(1, gcpChannel.channelRefs.size());
+    assertEquals(3, gcpChannel.getMaxSize());
+    assertEquals(2, gcpChannel.getStreamsLowWatermark());
+    assertEquals(3, gcpChannel.methodToAffinity.size());
+  }
+
+  @Test
+  public void testLoadApiConfigString() throws Exception {
+    resetGcpChannel();
+    InputStream inputStream =
+        GcpManagedChannelTest.class.getClassLoader().getResourceAsStream(API_FILE);
+    StringBuilder sb = new StringBuilder();
+
+    for (int ch; (ch = inputStream.read()) != -1; ) {
+      sb.append((char) ch);
+    }
+    gcpChannel =
+        (GcpManagedChannel)
+            GcpManagedChannelBuilder.forDelegateBuilder(builder)
+                .withApiConfigJsonString(sb.toString())
                 .build();
     assertEquals(1, gcpChannel.channelRefs.size());
     assertEquals(3, gcpChannel.getMaxSize());

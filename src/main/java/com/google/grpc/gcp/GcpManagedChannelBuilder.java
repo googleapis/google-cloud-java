@@ -32,6 +32,7 @@ public class GcpManagedChannelBuilder extends ForwardingChannelBuilder<GcpManage
   private static final Logger logger = Logger.getLogger(GcpManagedChannelBuilder.class.getName());
 
   private final ManagedChannelBuilder delegate;
+  private int poolSize = 0;
 
   @VisibleForTesting ApiConfig apiConfig;
 
@@ -54,6 +55,12 @@ public class GcpManagedChannelBuilder extends ForwardingChannelBuilder<GcpManage
 
   public static final GcpManagedChannelBuilder forDelegateBuilder(ManagedChannelBuilder delegate) {
     return new GcpManagedChannelBuilder(delegate);
+  }
+
+  /** Sets the channel pool size. This will override the pool size configuration in ApiConfig. */
+  public GcpManagedChannelBuilder setPoolSize(int poolSize) {
+    this.poolSize = poolSize;
+    return this;
   }
 
   public GcpManagedChannelBuilder withApiConfig(ApiConfig apiConfig) {
@@ -91,6 +98,6 @@ public class GcpManagedChannelBuilder extends ForwardingChannelBuilder<GcpManage
    */
   @Override
   public ManagedChannel build() {
-    return new GcpManagedChannel(delegate, apiConfig);
+    return new GcpManagedChannel(delegate, apiConfig, poolSize);
   }
 }

@@ -68,8 +68,12 @@ public class GcpManagedChannel extends ManagedChannel {
    * @param delegateChannelBuilder the underlying delegate ManagedChannelBuilder.
    * @param apiConfig the ApiConfig object for configuring GcpManagedChannel.
    */
-  public GcpManagedChannel(ManagedChannelBuilder delegateChannelBuilder, ApiConfig apiConfig) {
+  public GcpManagedChannel(
+      ManagedChannelBuilder delegateChannelBuilder, ApiConfig apiConfig, int poolSize) {
     loadApiConfig(apiConfig);
+    if (poolSize != 0) {
+      this.maxSize = poolSize;
+    }
     this.delegateChannelBuilder = delegateChannelBuilder;
     // Initialize the first delegate channel.
     getChannelRef(null);
