@@ -59,15 +59,23 @@ public class QueryPagination {
 
       // First Page
       results
-          .iterateAll()
-          .forEach(row -> row.forEach(val -> System.out.printf("%s,", val.toString())));
+          .getValues()
+          .forEach(row -> row.forEach(val -> System.out.printf("%s,\n", val.toString())));
 
       if (results.hasNextPage()) {
         // Next Page
         results
             .getNextPage()
+            .getValues()
+            .forEach(row -> row.forEach(val -> System.out.printf("%s,\n", val.toString())));
+      }
+
+      if (results.hasNextPage()) {
+        // Remaining Pages
+        results
+            .getNextPage()
             .iterateAll()
-            .forEach(row -> row.forEach(val -> System.out.printf("%s,", val.toString())));
+            .forEach(row -> row.forEach(val -> System.out.printf("%s,\n", val.toString())));
       }
 
       System.out.println("Query pagination performed successfully.");
