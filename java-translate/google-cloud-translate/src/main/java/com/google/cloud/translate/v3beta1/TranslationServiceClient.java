@@ -253,16 +253,17 @@ public class TranslationServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Project or location to make a call. Must refer to a caller's project.
-   *     <p>Format: `projects/{project-id}/locations/{location-id}` or `projects/{project-id}`.
-   *     <p>For global calls, use `projects/{project-id}/locations/global` or
-   *     `projects/{project-id}`.
-   *     <p>Only models within the same region (has same location-id) can be used. Otherwise an
-   *     INVALID_ARGUMENT (400) error is returned.
+   *     <p>Format: `projects/{project-number-or-id}/locations/{location-id}` or
+   *     `projects/{project-number-or-id}`.
+   *     <p>For global calls, use `projects/{project-number-or-id}/locations/global` or
+   *     `projects/{project-number-or-id}`.
+   *     <p>Only models within the same region, which have the same location-id, can be used.
+   *     Otherwise an INVALID_ARGUMENT (400) error is returned.
    * @param model Optional. The language detection model to be used.
    *     <p>Format:
-   *     `projects/{project-id}/locations/{location-id}/models/language-detection/{model-id}`
+   *     `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/{model-id}`
    *     <p>Only one language detection model is currently supported:
-   *     `projects/{project-id}/locations/{location-id}/models/language-detection/default`.
+   *     `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/default`.
    *     <p>If not specified, the default model is used.
    * @param mimeType Optional. The format of the source text, for example, "text/html",
    *     "text/plain". If left blank, the MIME type defaults to "text/html".
@@ -296,16 +297,17 @@ public class TranslationServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Project or location to make a call. Must refer to a caller's project.
-   *     <p>Format: `projects/{project-id}/locations/{location-id}` or `projects/{project-id}`.
-   *     <p>For global calls, use `projects/{project-id}/locations/global` or
-   *     `projects/{project-id}`.
-   *     <p>Only models within the same region (has same location-id) can be used. Otherwise an
-   *     INVALID_ARGUMENT (400) error is returned.
+   *     <p>Format: `projects/{project-number-or-id}/locations/{location-id}` or
+   *     `projects/{project-number-or-id}`.
+   *     <p>For global calls, use `projects/{project-number-or-id}/locations/global` or
+   *     `projects/{project-number-or-id}`.
+   *     <p>Only models within the same region, which have the same location-id, can be used.
+   *     Otherwise an INVALID_ARGUMENT (400) error is returned.
    * @param model Optional. The language detection model to be used.
    *     <p>Format:
-   *     `projects/{project-id}/locations/{location-id}/models/language-detection/{model-id}`
+   *     `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/{model-id}`
    *     <p>Only one language detection model is currently supported:
-   *     `projects/{project-id}/locations/{location-id}/models/language-detection/default`.
+   *     `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/default`.
    *     <p>If not specified, the default model is used.
    * @param mimeType Optional. The format of the source text, for example, "text/html",
    *     "text/plain". If left blank, the MIME type defaults to "text/html".
@@ -391,9 +393,10 @@ public class TranslationServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Project or location to make a call. Must refer to a caller's project.
-   *     <p>Format: `projects/{project-id}` or `projects/{project-id}/locations/{location-id}`.
-   *     <p>For global calls, use `projects/{project-id}/locations/global` or
-   *     `projects/{project-id}`.
+   *     <p>Format: `projects/{project-number-or-id}` or
+   *     `projects/{project-number-or-id}/locations/{location-id}`.
+   *     <p>For global calls, use `projects/{project-number-or-id}/locations/global` or
+   *     `projects/{project-number-or-id}`.
    *     <p>Non-global location is required for AutoML models.
    *     <p>Only models within the same region (have same location-id) can be used, otherwise an
    *     INVALID_ARGUMENT (400) error is returned.
@@ -403,10 +406,10 @@ public class TranslationServiceClient implements BackgroundResource {
    * @param model Optional. Get supported languages of this model.
    *     <p>The format depends on model type:
    *     <p>- AutoML Translation models:
-   *     `projects/{project-id}/locations/{location-id}/models/{model-id}`
+   *     `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    *     <p>- General (built-in) models:
-   *     `projects/{project-id}/locations/{location-id}/models/general/nmt`,
-   *     `projects/{project-id}/locations/{location-id}/models/general/base`
+   *     `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *     `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    *     <p>Returns languages supported by the specified model. If missing, we get supported
    *     languages of Google general base (PBMT) model.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -439,9 +442,10 @@ public class TranslationServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Project or location to make a call. Must refer to a caller's project.
-   *     <p>Format: `projects/{project-id}` or `projects/{project-id}/locations/{location-id}`.
-   *     <p>For global calls, use `projects/{project-id}/locations/global` or
-   *     `projects/{project-id}`.
+   *     <p>Format: `projects/{project-number-or-id}` or
+   *     `projects/{project-number-or-id}/locations/{location-id}`.
+   *     <p>For global calls, use `projects/{project-number-or-id}/locations/global` or
+   *     `projects/{project-number-or-id}`.
    *     <p>Non-global location is required for AutoML models.
    *     <p>Only models within the same region (have same location-id) can be used, otherwise an
    *     INVALID_ARGUMENT (400) error is returned.
@@ -451,10 +455,10 @@ public class TranslationServiceClient implements BackgroundResource {
    * @param model Optional. Get supported languages of this model.
    *     <p>The format depends on model type:
    *     <p>- AutoML Translation models:
-   *     `projects/{project-id}/locations/{location-id}/models/{model-id}`
+   *     `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    *     <p>- General (built-in) models:
-   *     `projects/{project-id}/locations/{location-id}/models/general/nmt`,
-   *     `projects/{project-id}/locations/{location-id}/models/general/base`
+   *     `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
+   *     `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    *     <p>Returns languages supported by the specified model. If missing, we get supported
    *     languages of Google general base (PBMT) model.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -519,6 +523,67 @@ public class TranslationServiceClient implements BackgroundResource {
   public final UnaryCallable<GetSupportedLanguagesRequest, SupportedLanguages>
       getSupportedLanguagesCallable() {
     return stub.getSupportedLanguagesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Translates documents in synchronous mode.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   TranslateDocumentRequest request =
+   *       TranslateDocumentRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setSourceLanguageCode("sourceLanguageCode1645917472")
+   *           .setTargetLanguageCode("targetLanguageCode-106414698")
+   *           .setDocumentInputConfig(DocumentInputConfig.newBuilder().build())
+   *           .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
+   *           .setModel("model104069929")
+   *           .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   TranslateDocumentResponse response = translationServiceClient.translateDocument(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TranslateDocumentResponse translateDocument(TranslateDocumentRequest request) {
+    return translateDocumentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Translates documents in synchronous mode.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   TranslateDocumentRequest request =
+   *       TranslateDocumentRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setSourceLanguageCode("sourceLanguageCode1645917472")
+   *           .setTargetLanguageCode("targetLanguageCode-106414698")
+   *           .setDocumentInputConfig(DocumentInputConfig.newBuilder().build())
+   *           .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
+   *           .setModel("model104069929")
+   *           .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   ApiFuture<TranslateDocumentResponse> future =
+   *       translationServiceClient.translateDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   TranslateDocumentResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TranslateDocumentRequest, TranslateDocumentResponse>
+      translateDocumentCallable() {
+    return stub.translateDocumentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -628,6 +693,118 @@ public class TranslationServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<BatchTranslateTextRequest, Operation> batchTranslateTextCallable() {
     return stub.batchTranslateTextCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Translates a large volume of documents in asynchronous batch mode. This function provides
+   * real-time output as the inputs are being processed. If caller cancels a request, the partial
+   * results (for an input file, it's all or nothing) may still be available on the specified output
+   * location.
+   *
+   * <p>This call returns immediately and you can use google.longrunning.Operation.name to poll the
+   * status of the call.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   BatchTranslateDocumentRequest request =
+   *       BatchTranslateDocumentRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setSourceLanguageCode("sourceLanguageCode1645917472")
+   *           .addAllTargetLanguageCodes(new ArrayList<String>())
+   *           .addAllInputConfigs(new ArrayList<BatchDocumentInputConfig>())
+   *           .setOutputConfig(BatchDocumentOutputConfig.newBuilder().build())
+   *           .putAllModels(new HashMap<String, String>())
+   *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
+   *           .build();
+   *   BatchTranslateDocumentResponse response =
+   *       translationServiceClient.batchTranslateDocumentAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata>
+      batchTranslateDocumentAsync(BatchTranslateDocumentRequest request) {
+    return batchTranslateDocumentOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Translates a large volume of documents in asynchronous batch mode. This function provides
+   * real-time output as the inputs are being processed. If caller cancels a request, the partial
+   * results (for an input file, it's all or nothing) may still be available on the specified output
+   * location.
+   *
+   * <p>This call returns immediately and you can use google.longrunning.Operation.name to poll the
+   * status of the call.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   BatchTranslateDocumentRequest request =
+   *       BatchTranslateDocumentRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setSourceLanguageCode("sourceLanguageCode1645917472")
+   *           .addAllTargetLanguageCodes(new ArrayList<String>())
+   *           .addAllInputConfigs(new ArrayList<BatchDocumentInputConfig>())
+   *           .setOutputConfig(BatchDocumentOutputConfig.newBuilder().build())
+   *           .putAllModels(new HashMap<String, String>())
+   *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
+   *           .build();
+   *   OperationFuture<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata> future =
+   *       translationServiceClient.batchTranslateDocumentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   BatchTranslateDocumentResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          BatchTranslateDocumentRequest,
+          BatchTranslateDocumentResponse,
+          BatchTranslateDocumentMetadata>
+      batchTranslateDocumentOperationCallable() {
+    return stub.batchTranslateDocumentOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Translates a large volume of documents in asynchronous batch mode. This function provides
+   * real-time output as the inputs are being processed. If caller cancels a request, the partial
+   * results (for an input file, it's all or nothing) may still be available on the specified output
+   * location.
+   *
+   * <p>This call returns immediately and you can use google.longrunning.Operation.name to poll the
+   * status of the call.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   BatchTranslateDocumentRequest request =
+   *       BatchTranslateDocumentRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setSourceLanguageCode("sourceLanguageCode1645917472")
+   *           .addAllTargetLanguageCodes(new ArrayList<String>())
+   *           .addAllInputConfigs(new ArrayList<BatchDocumentInputConfig>())
+   *           .setOutputConfig(BatchDocumentOutputConfig.newBuilder().build())
+   *           .putAllModels(new HashMap<String, String>())
+   *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       translationServiceClient.batchTranslateDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchTranslateDocumentRequest, Operation>
+      batchTranslateDocumentCallable() {
+    return stub.batchTranslateDocumentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -771,55 +948,6 @@ public class TranslationServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (Glossary element : translationServiceClient.listGlossaries(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The name of the project from which to list all of the glossaries.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListGlossariesPagedResponse listGlossaries(LocationName parent) {
-    ListGlossariesRequest request =
-        ListGlossariesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return listGlossaries(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists glossaries in a project. Returns NOT_FOUND, if the project doesn't exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
-   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
-   *   for (Glossary element : translationServiceClient.listGlossaries(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The name of the project from which to list all of the glossaries.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListGlossariesPagedResponse listGlossaries(String parent) {
-    ListGlossariesRequest request = ListGlossariesRequest.newBuilder().setParent(parent).build();
-    return listGlossaries(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists glossaries in a project. Returns NOT_FOUND, if the project doesn't exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   String filter = "filter-1274492040";
    *   for (Glossary element :
    *       translationServiceClient.listGlossaries(parent, filter).iterateAll()) {
@@ -829,9 +957,18 @@ public class TranslationServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the project from which to list all of the glossaries.
-   * @param filter Optional. Filter specifying constraints of a list operation. Filtering is not
-   *     supported yet, and the parameter currently has no effect. If missing, no filtering is
-   *     performed.
+   * @param filter Optional. Filter specifying constraints of a list operation. Specify the
+   *     constraint by the format of "key=value", where key must be "src" or "tgt", and the value
+   *     must be a valid language code. For multiple restrictions, concatenate them by "AND"
+   *     (uppercase only), such as: "src=en-US AND tgt=zh-CN". Notice that the exact match is used
+   *     here, which means using 'en-US' and 'en' can lead to different results, which depends on
+   *     the language code you used when you create the glossary. For the unidirectional glossaries,
+   *     the "src" and "tgt" add restrictions on the source and target language code separately. For
+   *     the equivalent term set glossaries, the "src" and/or "tgt" add restrictions on the term
+   *     set. For example: "src=en-US AND tgt=zh-CN" will only pick the unidirectional glossaries
+   *     which exactly match the source language code as "en-US" and the target language code
+   *     "zh-CN", but all equivalent term set glossaries which contain "en-US" and "zh-CN" in their
+   *     language set will be picked. If missing, no filtering is performed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGlossariesPagedResponse listGlossaries(LocationName parent, String filter) {
@@ -861,9 +998,18 @@ public class TranslationServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the project from which to list all of the glossaries.
-   * @param filter Optional. Filter specifying constraints of a list operation. Filtering is not
-   *     supported yet, and the parameter currently has no effect. If missing, no filtering is
-   *     performed.
+   * @param filter Optional. Filter specifying constraints of a list operation. Specify the
+   *     constraint by the format of "key=value", where key must be "src" or "tgt", and the value
+   *     must be a valid language code. For multiple restrictions, concatenate them by "AND"
+   *     (uppercase only), such as: "src=en-US AND tgt=zh-CN". Notice that the exact match is used
+   *     here, which means using 'en-US' and 'en' can lead to different results, which depends on
+   *     the language code you used when you create the glossary. For the unidirectional glossaries,
+   *     the "src" and "tgt" add restrictions on the source and target language code separately. For
+   *     the equivalent term set glossaries, the "src" and/or "tgt" add restrictions on the term
+   *     set. For example: "src=en-US AND tgt=zh-CN" will only pick the unidirectional glossaries
+   *     which exactly match the source language code as "en-US" and the target language code
+   *     "zh-CN", but all equivalent term set glossaries which contain "en-US" and "zh-CN" in their
+   *     language set will be picked. If missing, no filtering is performed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGlossariesPagedResponse listGlossaries(String parent, String filter) {

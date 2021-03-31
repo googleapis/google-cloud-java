@@ -22,8 +22,9 @@ package com.google.cloud.translate.v3beta1;
  *
  *
  * <pre>
- * Stored in the [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata] field returned by
- * DeleteGlossary.
+ * Stored in the
+ * [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata]
+ * field returned by DeleteGlossary.
  * </pre>
  *
  * Protobuf type {@code google.cloud.translation.v3beta1.DeleteGlossaryMetadata}
@@ -686,8 +687,9 @@ public final class DeleteGlossaryMetadata extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Stored in the [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata] field returned by
-   * DeleteGlossary.
+   * Stored in the
+   * [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata]
+   * field returned by DeleteGlossary.
    * </pre>
    *
    * Protobuf type {@code google.cloud.translation.v3beta1.DeleteGlossaryMetadata}

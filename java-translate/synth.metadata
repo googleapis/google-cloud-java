@@ -11,16 +11,16 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1305ca41d554eb0725237561e34129373bb8cbc1",
-        "internalRef": "362856902"
+        "sha": "d6b4fb337caf6eccb606728ef727ac76364a4f14",
+        "internalRef": "364358156"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1305ca41d554eb0725237561e34129373bb8cbc1",
-        "internalRef": "362856902"
+        "sha": "d6b4fb337caf6eccb606728ef727ac76364a4f14",
+        "internalRef": "364358156"
       }
     },
     {
@@ -202,6 +202,16 @@
     "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/TranslationOrBuilder.java",
     "proto-google-cloud-translate-v3/src/main/java/com/google/cloud/translate/v3/TranslationServiceProto.java",
     "proto-google-cloud-translate-v3/src/main/proto/google/cloud/translate/v3/translation_service.proto",
+    "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/BatchDocumentInputConfig.java",
+    "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/BatchDocumentInputConfigOrBuilder.java",
+    "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/BatchDocumentOutputConfig.java",
+    "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/BatchDocumentOutputConfigOrBuilder.java",
+    "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/BatchTranslateDocumentMetadata.java",
+    "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/BatchTranslateDocumentMetadataOrBuilder.java",
+    "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/BatchTranslateDocumentRequest.java",
+    "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/BatchTranslateDocumentRequestOrBuilder.java",
+    "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/BatchTranslateDocumentResponse.java",
+    "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/BatchTranslateDocumentResponseOrBuilder.java",
     "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/BatchTranslateMetadata.java",
     "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/BatchTranslateMetadataOrBuilder.java",
     "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/BatchTranslateResponse.java",
@@ -224,6 +234,12 @@
     "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DetectLanguageResponseOrBuilder.java",
     "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DetectedLanguage.java",
     "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DetectedLanguageOrBuilder.java",
+    "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DocumentInputConfig.java",
+    "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DocumentInputConfigOrBuilder.java",
+    "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DocumentOutputConfig.java",
+    "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DocumentOutputConfigOrBuilder.java",
+    "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DocumentTranslation.java",
+    "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/DocumentTranslationOrBuilder.java",
     "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/GcsDestination.java",
     "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/GcsDestinationOrBuilder.java",
     "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/GcsSource.java",
@@ -250,6 +266,10 @@
     "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/SupportedLanguageOrBuilder.java",
     "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/SupportedLanguages.java",
     "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/SupportedLanguagesOrBuilder.java",
+    "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/TranslateDocumentRequest.java",
+    "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/TranslateDocumentRequestOrBuilder.java",
+    "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/TranslateDocumentResponse.java",
+    "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/TranslateDocumentResponseOrBuilder.java",
     "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/TranslateTextGlossaryConfig.java",
     "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/TranslateTextGlossaryConfigOrBuilder.java",
     "proto-google-cloud-translate-v3beta1/src/main/java/com/google/cloud/translate/v3beta1/TranslateTextRequest.java",

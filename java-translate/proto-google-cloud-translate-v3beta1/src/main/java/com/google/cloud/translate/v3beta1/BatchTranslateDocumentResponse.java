@@ -24,28 +24,29 @@ package com.google.cloud.translate.v3beta1;
  * <pre>
  * Stored in the
  * [google.longrunning.Operation.response][google.longrunning.Operation.response]
- * field returned by BatchTranslateText if at least one sentence is translated
- * successfully.
+ * field returned by BatchTranslateDocument if at least one document is
+ * translated successfully.
  * </pre>
  *
- * Protobuf type {@code google.cloud.translation.v3beta1.BatchTranslateResponse}
+ * Protobuf type {@code google.cloud.translation.v3beta1.BatchTranslateDocumentResponse}
  */
-public final class BatchTranslateResponse extends com.google.protobuf.GeneratedMessageV3
+public final class BatchTranslateDocumentResponse extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.translation.v3beta1.BatchTranslateResponse)
-    BatchTranslateResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.translation.v3beta1.BatchTranslateDocumentResponse)
+    BatchTranslateDocumentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use BatchTranslateResponse.newBuilder() to construct.
-  private BatchTranslateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use BatchTranslateDocumentResponse.newBuilder() to construct.
+  private BatchTranslateDocumentResponse(
+      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private BatchTranslateResponse() {}
+  private BatchTranslateDocumentResponse() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new BatchTranslateResponse();
+    return new BatchTranslateDocumentResponse();
   }
 
   @java.lang.Override
@@ -53,7 +54,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     return this.unknownFields;
   }
 
-  private BatchTranslateResponse(
+  private BatchTranslateDocumentResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -73,20 +74,45 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
             break;
           case 8:
             {
-              totalCharacters_ = input.readInt64();
+              totalPages_ = input.readInt64();
               break;
             }
           case 16:
             {
-              translatedCharacters_ = input.readInt64();
+              translatedPages_ = input.readInt64();
               break;
             }
           case 24:
             {
+              failedPages_ = input.readInt64();
+              break;
+            }
+          case 32:
+            {
+              totalBillablePages_ = input.readInt64();
+              break;
+            }
+          case 40:
+            {
+              totalCharacters_ = input.readInt64();
+              break;
+            }
+          case 48:
+            {
+              translatedCharacters_ = input.readInt64();
+              break;
+            }
+          case 56:
+            {
               failedCharacters_ = input.readInt64();
               break;
             }
-          case 34:
+          case 64:
+            {
+              totalBillableCharacters_ = input.readInt64();
+              break;
+            }
+          case 74:
             {
               com.google.protobuf.Timestamp.Builder subBuilder = null;
               if (submitTime_ != null) {
@@ -101,7 +127,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
 
               break;
             }
-          case 42:
+          case 82:
             {
               com.google.protobuf.Timestamp.Builder subBuilder = null;
               if (endTime_ != null) {
@@ -137,29 +163,105 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.translate.v3beta1.TranslationServiceProto
-        .internal_static_google_cloud_translation_v3beta1_BatchTranslateResponse_descriptor;
+        .internal_static_google_cloud_translation_v3beta1_BatchTranslateDocumentResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.translate.v3beta1.TranslationServiceProto
-        .internal_static_google_cloud_translation_v3beta1_BatchTranslateResponse_fieldAccessorTable
+        .internal_static_google_cloud_translation_v3beta1_BatchTranslateDocumentResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.translate.v3beta1.BatchTranslateResponse.class,
-            com.google.cloud.translate.v3beta1.BatchTranslateResponse.Builder.class);
+            com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse.class,
+            com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse.Builder.class);
   }
 
-  public static final int TOTAL_CHARACTERS_FIELD_NUMBER = 1;
+  public static final int TOTAL_PAGES_FIELD_NUMBER = 1;
+  private long totalPages_;
+  /**
+   *
+   *
+   * <pre>
+   * Total number of pages to translate in all documents. Documents without a
+   * clear page definition (such as XLSX) are not counted.
+   * </pre>
+   *
+   * <code>int64 total_pages = 1;</code>
+   *
+   * @return The totalPages.
+   */
+  @java.lang.Override
+  public long getTotalPages() {
+    return totalPages_;
+  }
+
+  public static final int TRANSLATED_PAGES_FIELD_NUMBER = 2;
+  private long translatedPages_;
+  /**
+   *
+   *
+   * <pre>
+   * Number of successfully translated pages in all documents. Documents without
+   * a clear page definition (such as XLSX) are not counted.
+   * </pre>
+   *
+   * <code>int64 translated_pages = 2;</code>
+   *
+   * @return The translatedPages.
+   */
+  @java.lang.Override
+  public long getTranslatedPages() {
+    return translatedPages_;
+  }
+
+  public static final int FAILED_PAGES_FIELD_NUMBER = 3;
+  private long failedPages_;
+  /**
+   *
+   *
+   * <pre>
+   * Number of pages that failed to process in all documents. Documents without
+   * a clear page definition (such as XLSX) are not counted.
+   * </pre>
+   *
+   * <code>int64 failed_pages = 3;</code>
+   *
+   * @return The failedPages.
+   */
+  @java.lang.Override
+  public long getFailedPages() {
+    return failedPages_;
+  }
+
+  public static final int TOTAL_BILLABLE_PAGES_FIELD_NUMBER = 4;
+  private long totalBillablePages_;
+  /**
+   *
+   *
+   * <pre>
+   * Number of billable pages in documents with clear page definition (such as
+   * PDF, DOCX, PPTX)
+   * </pre>
+   *
+   * <code>int64 total_billable_pages = 4;</code>
+   *
+   * @return The totalBillablePages.
+   */
+  @java.lang.Override
+  public long getTotalBillablePages() {
+    return totalBillablePages_;
+  }
+
+  public static final int TOTAL_CHARACTERS_FIELD_NUMBER = 5;
   private long totalCharacters_;
   /**
    *
    *
    * <pre>
-   * Total number of characters (Unicode codepoints).
+   * Total number of characters (Unicode codepoints) in all documents.
    * </pre>
    *
-   * <code>int64 total_characters = 1;</code>
+   * <code>int64 total_characters = 5;</code>
    *
    * @return The totalCharacters.
    */
@@ -168,16 +270,17 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     return totalCharacters_;
   }
 
-  public static final int TRANSLATED_CHARACTERS_FIELD_NUMBER = 2;
+  public static final int TRANSLATED_CHARACTERS_FIELD_NUMBER = 6;
   private long translatedCharacters_;
   /**
    *
    *
    * <pre>
-   * Number of successfully translated characters (Unicode codepoints).
+   * Number of successfully translated characters (Unicode codepoints) in all
+   * documents.
    * </pre>
    *
-   * <code>int64 translated_characters = 2;</code>
+   * <code>int64 translated_characters = 6;</code>
    *
    * @return The translatedCharacters.
    */
@@ -186,16 +289,17 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     return translatedCharacters_;
   }
 
-  public static final int FAILED_CHARACTERS_FIELD_NUMBER = 3;
+  public static final int FAILED_CHARACTERS_FIELD_NUMBER = 7;
   private long failedCharacters_;
   /**
    *
    *
    * <pre>
-   * Number of characters that have failed to process (Unicode codepoints).
+   * Number of characters that have failed to process (Unicode codepoints) in
+   * all documents.
    * </pre>
    *
-   * <code>int64 failed_characters = 3;</code>
+   * <code>int64 failed_characters = 7;</code>
    *
    * @return The failedCharacters.
    */
@@ -204,7 +308,26 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     return failedCharacters_;
   }
 
-  public static final int SUBMIT_TIME_FIELD_NUMBER = 4;
+  public static final int TOTAL_BILLABLE_CHARACTERS_FIELD_NUMBER = 8;
+  private long totalBillableCharacters_;
+  /**
+   *
+   *
+   * <pre>
+   * Number of billable characters (Unicode codepoints) in documents without
+   * clear page definition, such as XLSX.
+   * </pre>
+   *
+   * <code>int64 total_billable_characters = 8;</code>
+   *
+   * @return The totalBillableCharacters.
+   */
+  @java.lang.Override
+  public long getTotalBillableCharacters() {
+    return totalBillableCharacters_;
+  }
+
+  public static final int SUBMIT_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp submitTime_;
   /**
    *
@@ -213,7 +336,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    * Time when the operation was submitted.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp submit_time = 4;</code>
+   * <code>.google.protobuf.Timestamp submit_time = 9;</code>
    *
    * @return Whether the submitTime field is set.
    */
@@ -228,7 +351,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    * Time when the operation was submitted.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp submit_time = 4;</code>
+   * <code>.google.protobuf.Timestamp submit_time = 9;</code>
    *
    * @return The submitTime.
    */
@@ -243,14 +366,14 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    * Time when the operation was submitted.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp submit_time = 4;</code>
+   * <code>.google.protobuf.Timestamp submit_time = 9;</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getSubmitTimeOrBuilder() {
     return getSubmitTime();
   }
 
-  public static final int END_TIME_FIELD_NUMBER = 5;
+  public static final int END_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp endTime_;
   /**
    *
@@ -261,7 +384,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    * set to true.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 5;</code>
+   * <code>.google.protobuf.Timestamp end_time = 10;</code>
    *
    * @return Whether the endTime field is set.
    */
@@ -278,7 +401,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    * set to true.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 5;</code>
+   * <code>.google.protobuf.Timestamp end_time = 10;</code>
    *
    * @return The endTime.
    */
@@ -295,7 +418,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    * set to true.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 5;</code>
+   * <code>.google.protobuf.Timestamp end_time = 10;</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
@@ -316,20 +439,35 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (totalPages_ != 0L) {
+      output.writeInt64(1, totalPages_);
+    }
+    if (translatedPages_ != 0L) {
+      output.writeInt64(2, translatedPages_);
+    }
+    if (failedPages_ != 0L) {
+      output.writeInt64(3, failedPages_);
+    }
+    if (totalBillablePages_ != 0L) {
+      output.writeInt64(4, totalBillablePages_);
+    }
     if (totalCharacters_ != 0L) {
-      output.writeInt64(1, totalCharacters_);
+      output.writeInt64(5, totalCharacters_);
     }
     if (translatedCharacters_ != 0L) {
-      output.writeInt64(2, translatedCharacters_);
+      output.writeInt64(6, translatedCharacters_);
     }
     if (failedCharacters_ != 0L) {
-      output.writeInt64(3, failedCharacters_);
+      output.writeInt64(7, failedCharacters_);
+    }
+    if (totalBillableCharacters_ != 0L) {
+      output.writeInt64(8, totalBillableCharacters_);
     }
     if (submitTime_ != null) {
-      output.writeMessage(4, getSubmitTime());
+      output.writeMessage(9, getSubmitTime());
     }
     if (endTime_ != null) {
-      output.writeMessage(5, getEndTime());
+      output.writeMessage(10, getEndTime());
     }
     unknownFields.writeTo(output);
   }
@@ -340,20 +478,35 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
+    if (totalPages_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, totalPages_);
+    }
+    if (translatedPages_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, translatedPages_);
+    }
+    if (failedPages_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, failedPages_);
+    }
+    if (totalBillablePages_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, totalBillablePages_);
+    }
     if (totalCharacters_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, totalCharacters_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(5, totalCharacters_);
     }
     if (translatedCharacters_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, translatedCharacters_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, translatedCharacters_);
     }
     if (failedCharacters_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, failedCharacters_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(7, failedCharacters_);
+    }
+    if (totalBillableCharacters_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(8, totalBillableCharacters_);
     }
     if (submitTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getSubmitTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getSubmitTime());
     }
     if (endTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getEndTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getEndTime());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -365,15 +518,20 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.translate.v3beta1.BatchTranslateResponse)) {
+    if (!(obj instanceof com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse)) {
       return super.equals(obj);
     }
-    com.google.cloud.translate.v3beta1.BatchTranslateResponse other =
-        (com.google.cloud.translate.v3beta1.BatchTranslateResponse) obj;
+    com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse other =
+        (com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse) obj;
 
+    if (getTotalPages() != other.getTotalPages()) return false;
+    if (getTranslatedPages() != other.getTranslatedPages()) return false;
+    if (getFailedPages() != other.getFailedPages()) return false;
+    if (getTotalBillablePages() != other.getTotalBillablePages()) return false;
     if (getTotalCharacters() != other.getTotalCharacters()) return false;
     if (getTranslatedCharacters() != other.getTranslatedCharacters()) return false;
     if (getFailedCharacters() != other.getFailedCharacters()) return false;
+    if (getTotalBillableCharacters() != other.getTotalBillableCharacters()) return false;
     if (hasSubmitTime() != other.hasSubmitTime()) return false;
     if (hasSubmitTime()) {
       if (!getSubmitTime().equals(other.getSubmitTime())) return false;
@@ -393,12 +551,22 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + TOTAL_PAGES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalPages());
+    hash = (37 * hash) + TRANSLATED_PAGES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTranslatedPages());
+    hash = (37 * hash) + FAILED_PAGES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getFailedPages());
+    hash = (37 * hash) + TOTAL_BILLABLE_PAGES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalBillablePages());
     hash = (37 * hash) + TOTAL_CHARACTERS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalCharacters());
     hash = (37 * hash) + TRANSLATED_CHARACTERS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTranslatedCharacters());
     hash = (37 * hash) + FAILED_CHARACTERS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getFailedCharacters());
+    hash = (37 * hash) + TOTAL_BILLABLE_CHARACTERS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalBillableCharacters());
     if (hasSubmitTime()) {
       hash = (37 * hash) + SUBMIT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getSubmitTime().hashCode();
@@ -412,71 +580,72 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     return hash;
   }
 
-  public static com.google.cloud.translate.v3beta1.BatchTranslateResponse parseFrom(
+  public static com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.translate.v3beta1.BatchTranslateResponse parseFrom(
+  public static com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.translate.v3beta1.BatchTranslateResponse parseFrom(
+  public static com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.translate.v3beta1.BatchTranslateResponse parseFrom(
+  public static com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.translate.v3beta1.BatchTranslateResponse parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.translate.v3beta1.BatchTranslateResponse parseFrom(
+  public static com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.translate.v3beta1.BatchTranslateResponse parseFrom(
+  public static com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.translate.v3beta1.BatchTranslateResponse parseFrom(
+  public static com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.translate.v3beta1.BatchTranslateResponse parseDelimitedFrom(
-      java.io.InputStream input) throws java.io.IOException {
+  public static com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.translate.v3beta1.BatchTranslateResponse parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
+  public static com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.translate.v3beta1.BatchTranslateResponse parseFrom(
+  public static com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.translate.v3beta1.BatchTranslateResponse parseFrom(
+  public static com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -494,7 +663,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
   }
 
   public static Builder newBuilder(
-      com.google.cloud.translate.v3beta1.BatchTranslateResponse prototype) {
+      com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -514,32 +683,33 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    * <pre>
    * Stored in the
    * [google.longrunning.Operation.response][google.longrunning.Operation.response]
-   * field returned by BatchTranslateText if at least one sentence is translated
-   * successfully.
+   * field returned by BatchTranslateDocument if at least one document is
+   * translated successfully.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.translation.v3beta1.BatchTranslateResponse}
+   * Protobuf type {@code google.cloud.translation.v3beta1.BatchTranslateDocumentResponse}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.translation.v3beta1.BatchTranslateResponse)
-      com.google.cloud.translate.v3beta1.BatchTranslateResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.translation.v3beta1.BatchTranslateDocumentResponse)
+      com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.translate.v3beta1.TranslationServiceProto
-          .internal_static_google_cloud_translation_v3beta1_BatchTranslateResponse_descriptor;
+          .internal_static_google_cloud_translation_v3beta1_BatchTranslateDocumentResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.translate.v3beta1.TranslationServiceProto
-          .internal_static_google_cloud_translation_v3beta1_BatchTranslateResponse_fieldAccessorTable
+          .internal_static_google_cloud_translation_v3beta1_BatchTranslateDocumentResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.translate.v3beta1.BatchTranslateResponse.class,
-              com.google.cloud.translate.v3beta1.BatchTranslateResponse.Builder.class);
+              com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse.class,
+              com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse.Builder.class);
     }
 
-    // Construct using com.google.cloud.translate.v3beta1.BatchTranslateResponse.newBuilder()
+    // Construct using
+    // com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -556,11 +726,21 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      totalPages_ = 0L;
+
+      translatedPages_ = 0L;
+
+      failedPages_ = 0L;
+
+      totalBillablePages_ = 0L;
+
       totalCharacters_ = 0L;
 
       translatedCharacters_ = 0L;
 
       failedCharacters_ = 0L;
+
+      totalBillableCharacters_ = 0L;
 
       if (submitTimeBuilder_ == null) {
         submitTime_ = null;
@@ -580,17 +760,18 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.translate.v3beta1.TranslationServiceProto
-          .internal_static_google_cloud_translation_v3beta1_BatchTranslateResponse_descriptor;
+          .internal_static_google_cloud_translation_v3beta1_BatchTranslateDocumentResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.translate.v3beta1.BatchTranslateResponse getDefaultInstanceForType() {
-      return com.google.cloud.translate.v3beta1.BatchTranslateResponse.getDefaultInstance();
+    public com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse
+        getDefaultInstanceForType() {
+      return com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.translate.v3beta1.BatchTranslateResponse build() {
-      com.google.cloud.translate.v3beta1.BatchTranslateResponse result = buildPartial();
+    public com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse build() {
+      com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -598,12 +779,17 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
     }
 
     @java.lang.Override
-    public com.google.cloud.translate.v3beta1.BatchTranslateResponse buildPartial() {
-      com.google.cloud.translate.v3beta1.BatchTranslateResponse result =
-          new com.google.cloud.translate.v3beta1.BatchTranslateResponse(this);
+    public com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse buildPartial() {
+      com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse result =
+          new com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse(this);
+      result.totalPages_ = totalPages_;
+      result.translatedPages_ = translatedPages_;
+      result.failedPages_ = failedPages_;
+      result.totalBillablePages_ = totalBillablePages_;
       result.totalCharacters_ = totalCharacters_;
       result.translatedCharacters_ = translatedCharacters_;
       result.failedCharacters_ = failedCharacters_;
+      result.totalBillableCharacters_ = totalBillableCharacters_;
       if (submitTimeBuilder_ == null) {
         result.submitTime_ = submitTime_;
       } else {
@@ -653,17 +839,31 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.translate.v3beta1.BatchTranslateResponse) {
-        return mergeFrom((com.google.cloud.translate.v3beta1.BatchTranslateResponse) other);
+      if (other instanceof com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse) {
+        return mergeFrom((com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.translate.v3beta1.BatchTranslateResponse other) {
-      if (other == com.google.cloud.translate.v3beta1.BatchTranslateResponse.getDefaultInstance())
+    public Builder mergeFrom(
+        com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse other) {
+      if (other
+          == com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse.getDefaultInstance())
         return this;
+      if (other.getTotalPages() != 0L) {
+        setTotalPages(other.getTotalPages());
+      }
+      if (other.getTranslatedPages() != 0L) {
+        setTranslatedPages(other.getTranslatedPages());
+      }
+      if (other.getFailedPages() != 0L) {
+        setFailedPages(other.getFailedPages());
+      }
+      if (other.getTotalBillablePages() != 0L) {
+        setTotalBillablePages(other.getTotalBillablePages());
+      }
       if (other.getTotalCharacters() != 0L) {
         setTotalCharacters(other.getTotalCharacters());
       }
@@ -672,6 +872,9 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
       }
       if (other.getFailedCharacters() != 0L) {
         setFailedCharacters(other.getFailedCharacters());
+      }
+      if (other.getTotalBillableCharacters() != 0L) {
+        setTotalBillableCharacters(other.getTotalBillableCharacters());
       }
       if (other.hasSubmitTime()) {
         mergeSubmitTime(other.getSubmitTime());
@@ -694,12 +897,13 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.translate.v3beta1.BatchTranslateResponse parsedMessage = null;
+      com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.translate.v3beta1.BatchTranslateResponse) e.getUnfinishedMessage();
+            (com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -709,15 +913,235 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private long totalPages_;
+    /**
+     *
+     *
+     * <pre>
+     * Total number of pages to translate in all documents. Documents without a
+     * clear page definition (such as XLSX) are not counted.
+     * </pre>
+     *
+     * <code>int64 total_pages = 1;</code>
+     *
+     * @return The totalPages.
+     */
+    @java.lang.Override
+    public long getTotalPages() {
+      return totalPages_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Total number of pages to translate in all documents. Documents without a
+     * clear page definition (such as XLSX) are not counted.
+     * </pre>
+     *
+     * <code>int64 total_pages = 1;</code>
+     *
+     * @param value The totalPages to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalPages(long value) {
+
+      totalPages_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Total number of pages to translate in all documents. Documents without a
+     * clear page definition (such as XLSX) are not counted.
+     * </pre>
+     *
+     * <code>int64 total_pages = 1;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalPages() {
+
+      totalPages_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long translatedPages_;
+    /**
+     *
+     *
+     * <pre>
+     * Number of successfully translated pages in all documents. Documents without
+     * a clear page definition (such as XLSX) are not counted.
+     * </pre>
+     *
+     * <code>int64 translated_pages = 2;</code>
+     *
+     * @return The translatedPages.
+     */
+    @java.lang.Override
+    public long getTranslatedPages() {
+      return translatedPages_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of successfully translated pages in all documents. Documents without
+     * a clear page definition (such as XLSX) are not counted.
+     * </pre>
+     *
+     * <code>int64 translated_pages = 2;</code>
+     *
+     * @param value The translatedPages to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTranslatedPages(long value) {
+
+      translatedPages_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of successfully translated pages in all documents. Documents without
+     * a clear page definition (such as XLSX) are not counted.
+     * </pre>
+     *
+     * <code>int64 translated_pages = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTranslatedPages() {
+
+      translatedPages_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long failedPages_;
+    /**
+     *
+     *
+     * <pre>
+     * Number of pages that failed to process in all documents. Documents without
+     * a clear page definition (such as XLSX) are not counted.
+     * </pre>
+     *
+     * <code>int64 failed_pages = 3;</code>
+     *
+     * @return The failedPages.
+     */
+    @java.lang.Override
+    public long getFailedPages() {
+      return failedPages_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of pages that failed to process in all documents. Documents without
+     * a clear page definition (such as XLSX) are not counted.
+     * </pre>
+     *
+     * <code>int64 failed_pages = 3;</code>
+     *
+     * @param value The failedPages to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFailedPages(long value) {
+
+      failedPages_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of pages that failed to process in all documents. Documents without
+     * a clear page definition (such as XLSX) are not counted.
+     * </pre>
+     *
+     * <code>int64 failed_pages = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFailedPages() {
+
+      failedPages_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long totalBillablePages_;
+    /**
+     *
+     *
+     * <pre>
+     * Number of billable pages in documents with clear page definition (such as
+     * PDF, DOCX, PPTX)
+     * </pre>
+     *
+     * <code>int64 total_billable_pages = 4;</code>
+     *
+     * @return The totalBillablePages.
+     */
+    @java.lang.Override
+    public long getTotalBillablePages() {
+      return totalBillablePages_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of billable pages in documents with clear page definition (such as
+     * PDF, DOCX, PPTX)
+     * </pre>
+     *
+     * <code>int64 total_billable_pages = 4;</code>
+     *
+     * @param value The totalBillablePages to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalBillablePages(long value) {
+
+      totalBillablePages_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of billable pages in documents with clear page definition (such as
+     * PDF, DOCX, PPTX)
+     * </pre>
+     *
+     * <code>int64 total_billable_pages = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalBillablePages() {
+
+      totalBillablePages_ = 0L;
+      onChanged();
+      return this;
+    }
+
     private long totalCharacters_;
     /**
      *
      *
      * <pre>
-     * Total number of characters (Unicode codepoints).
+     * Total number of characters (Unicode codepoints) in all documents.
      * </pre>
      *
-     * <code>int64 total_characters = 1;</code>
+     * <code>int64 total_characters = 5;</code>
      *
      * @return The totalCharacters.
      */
@@ -729,10 +1153,10 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Total number of characters (Unicode codepoints).
+     * Total number of characters (Unicode codepoints) in all documents.
      * </pre>
      *
-     * <code>int64 total_characters = 1;</code>
+     * <code>int64 total_characters = 5;</code>
      *
      * @param value The totalCharacters to set.
      * @return This builder for chaining.
@@ -747,10 +1171,10 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Total number of characters (Unicode codepoints).
+     * Total number of characters (Unicode codepoints) in all documents.
      * </pre>
      *
-     * <code>int64 total_characters = 1;</code>
+     * <code>int64 total_characters = 5;</code>
      *
      * @return This builder for chaining.
      */
@@ -766,10 +1190,11 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Number of successfully translated characters (Unicode codepoints).
+     * Number of successfully translated characters (Unicode codepoints) in all
+     * documents.
      * </pre>
      *
-     * <code>int64 translated_characters = 2;</code>
+     * <code>int64 translated_characters = 6;</code>
      *
      * @return The translatedCharacters.
      */
@@ -781,10 +1206,11 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Number of successfully translated characters (Unicode codepoints).
+     * Number of successfully translated characters (Unicode codepoints) in all
+     * documents.
      * </pre>
      *
-     * <code>int64 translated_characters = 2;</code>
+     * <code>int64 translated_characters = 6;</code>
      *
      * @param value The translatedCharacters to set.
      * @return This builder for chaining.
@@ -799,10 +1225,11 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Number of successfully translated characters (Unicode codepoints).
+     * Number of successfully translated characters (Unicode codepoints) in all
+     * documents.
      * </pre>
      *
-     * <code>int64 translated_characters = 2;</code>
+     * <code>int64 translated_characters = 6;</code>
      *
      * @return This builder for chaining.
      */
@@ -818,10 +1245,11 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Number of characters that have failed to process (Unicode codepoints).
+     * Number of characters that have failed to process (Unicode codepoints) in
+     * all documents.
      * </pre>
      *
-     * <code>int64 failed_characters = 3;</code>
+     * <code>int64 failed_characters = 7;</code>
      *
      * @return The failedCharacters.
      */
@@ -833,10 +1261,11 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Number of characters that have failed to process (Unicode codepoints).
+     * Number of characters that have failed to process (Unicode codepoints) in
+     * all documents.
      * </pre>
      *
-     * <code>int64 failed_characters = 3;</code>
+     * <code>int64 failed_characters = 7;</code>
      *
      * @param value The failedCharacters to set.
      * @return This builder for chaining.
@@ -851,16 +1280,72 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Number of characters that have failed to process (Unicode codepoints).
+     * Number of characters that have failed to process (Unicode codepoints) in
+     * all documents.
      * </pre>
      *
-     * <code>int64 failed_characters = 3;</code>
+     * <code>int64 failed_characters = 7;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearFailedCharacters() {
 
       failedCharacters_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long totalBillableCharacters_;
+    /**
+     *
+     *
+     * <pre>
+     * Number of billable characters (Unicode codepoints) in documents without
+     * clear page definition, such as XLSX.
+     * </pre>
+     *
+     * <code>int64 total_billable_characters = 8;</code>
+     *
+     * @return The totalBillableCharacters.
+     */
+    @java.lang.Override
+    public long getTotalBillableCharacters() {
+      return totalBillableCharacters_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of billable characters (Unicode codepoints) in documents without
+     * clear page definition, such as XLSX.
+     * </pre>
+     *
+     * <code>int64 total_billable_characters = 8;</code>
+     *
+     * @param value The totalBillableCharacters to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalBillableCharacters(long value) {
+
+      totalBillableCharacters_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of billable characters (Unicode codepoints) in documents without
+     * clear page definition, such as XLSX.
+     * </pre>
+     *
+     * <code>int64 total_billable_characters = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalBillableCharacters() {
+
+      totalBillableCharacters_ = 0L;
       onChanged();
       return this;
     }
@@ -878,7 +1363,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * Time when the operation was submitted.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp submit_time = 4;</code>
+     * <code>.google.protobuf.Timestamp submit_time = 9;</code>
      *
      * @return Whether the submitTime field is set.
      */
@@ -892,7 +1377,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * Time when the operation was submitted.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp submit_time = 4;</code>
+     * <code>.google.protobuf.Timestamp submit_time = 9;</code>
      *
      * @return The submitTime.
      */
@@ -912,7 +1397,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * Time when the operation was submitted.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp submit_time = 4;</code>
+     * <code>.google.protobuf.Timestamp submit_time = 9;</code>
      */
     public Builder setSubmitTime(com.google.protobuf.Timestamp value) {
       if (submitTimeBuilder_ == null) {
@@ -934,7 +1419,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * Time when the operation was submitted.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp submit_time = 4;</code>
+     * <code>.google.protobuf.Timestamp submit_time = 9;</code>
      */
     public Builder setSubmitTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (submitTimeBuilder_ == null) {
@@ -953,7 +1438,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * Time when the operation was submitted.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp submit_time = 4;</code>
+     * <code>.google.protobuf.Timestamp submit_time = 9;</code>
      */
     public Builder mergeSubmitTime(com.google.protobuf.Timestamp value) {
       if (submitTimeBuilder_ == null) {
@@ -977,7 +1462,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * Time when the operation was submitted.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp submit_time = 4;</code>
+     * <code>.google.protobuf.Timestamp submit_time = 9;</code>
      */
     public Builder clearSubmitTime() {
       if (submitTimeBuilder_ == null) {
@@ -997,7 +1482,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * Time when the operation was submitted.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp submit_time = 4;</code>
+     * <code>.google.protobuf.Timestamp submit_time = 9;</code>
      */
     public com.google.protobuf.Timestamp.Builder getSubmitTimeBuilder() {
 
@@ -1011,7 +1496,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * Time when the operation was submitted.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp submit_time = 4;</code>
+     * <code>.google.protobuf.Timestamp submit_time = 9;</code>
      */
     public com.google.protobuf.TimestampOrBuilder getSubmitTimeOrBuilder() {
       if (submitTimeBuilder_ != null) {
@@ -1029,7 +1514,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * Time when the operation was submitted.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp submit_time = 4;</code>
+     * <code>.google.protobuf.Timestamp submit_time = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1063,7 +1548,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * set to true.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 5;</code>
+     * <code>.google.protobuf.Timestamp end_time = 10;</code>
      *
      * @return Whether the endTime field is set.
      */
@@ -1079,7 +1564,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * set to true.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 5;</code>
+     * <code>.google.protobuf.Timestamp end_time = 10;</code>
      *
      * @return The endTime.
      */
@@ -1099,7 +1584,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * set to true.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 5;</code>
+     * <code>.google.protobuf.Timestamp end_time = 10;</code>
      */
     public Builder setEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
@@ -1123,7 +1608,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * set to true.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 5;</code>
+     * <code>.google.protobuf.Timestamp end_time = 10;</code>
      */
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
@@ -1144,7 +1629,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * set to true.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 5;</code>
+     * <code>.google.protobuf.Timestamp end_time = 10;</code>
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
@@ -1170,7 +1655,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * set to true.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 5;</code>
+     * <code>.google.protobuf.Timestamp end_time = 10;</code>
      */
     public Builder clearEndTime() {
       if (endTimeBuilder_ == null) {
@@ -1192,7 +1677,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * set to true.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 5;</code>
+     * <code>.google.protobuf.Timestamp end_time = 10;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
 
@@ -1208,7 +1693,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * set to true.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 5;</code>
+     * <code>.google.protobuf.Timestamp end_time = 10;</code>
      */
     public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
       if (endTimeBuilder_ != null) {
@@ -1226,7 +1711,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      * set to true.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 5;</code>
+     * <code>.google.protobuf.Timestamp end_time = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1256,42 +1741,45 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.translation.v3beta1.BatchTranslateResponse)
+    // @@protoc_insertion_point(builder_scope:google.cloud.translation.v3beta1.BatchTranslateDocumentResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.translation.v3beta1.BatchTranslateResponse)
-  private static final com.google.cloud.translate.v3beta1.BatchTranslateResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.translation.v3beta1.BatchTranslateDocumentResponse)
+  private static final com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse
+      DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.translate.v3beta1.BatchTranslateResponse();
+    DEFAULT_INSTANCE = new com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse();
   }
 
-  public static com.google.cloud.translate.v3beta1.BatchTranslateResponse getDefaultInstance() {
+  public static com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<BatchTranslateResponse> PARSER =
-      new com.google.protobuf.AbstractParser<BatchTranslateResponse>() {
+  private static final com.google.protobuf.Parser<BatchTranslateDocumentResponse> PARSER =
+      new com.google.protobuf.AbstractParser<BatchTranslateDocumentResponse>() {
         @java.lang.Override
-        public BatchTranslateResponse parsePartialFrom(
+        public BatchTranslateDocumentResponse parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BatchTranslateResponse(input, extensionRegistry);
+          return new BatchTranslateDocumentResponse(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<BatchTranslateResponse> parser() {
+  public static com.google.protobuf.Parser<BatchTranslateDocumentResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<BatchTranslateResponse> getParserForType() {
+  public com.google.protobuf.Parser<BatchTranslateDocumentResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.translate.v3beta1.BatchTranslateResponse getDefaultInstanceForType() {
+  public com.google.cloud.translate.v3beta1.BatchTranslateDocumentResponse
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

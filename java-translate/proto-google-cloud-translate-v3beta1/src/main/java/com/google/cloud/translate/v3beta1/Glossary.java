@@ -1960,7 +1960,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the glossary. Glossary names have the form
-   * `projects/{project-id}/locations/{location-id}/glossaries/{glossary-id}`.
+   * `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1984,7 +1984,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the glossary. Glossary names have the form
-   * `projects/{project-id}/locations/{location-id}/glossaries/{glossary-id}`.
+   * `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2787,7 +2787,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the glossary. Glossary names have the form
-     * `projects/{project-id}/locations/{location-id}/glossaries/{glossary-id}`.
+     * `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2810,7 +2810,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the glossary. Glossary names have the form
-     * `projects/{project-id}/locations/{location-id}/glossaries/{glossary-id}`.
+     * `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2833,7 +2833,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the glossary. Glossary names have the form
-     * `projects/{project-id}/locations/{location-id}/glossaries/{glossary-id}`.
+     * `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2855,7 +2855,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the glossary. Glossary names have the form
-     * `projects/{project-id}/locations/{location-id}/glossaries/{glossary-id}`.
+     * `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2873,7 +2873,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the glossary. Glossary names have the form
-     * `projects/{project-id}/locations/{location-id}/glossaries/{glossary-id}`.
+     * `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -91,8 +91,8 @@ public interface TranslateTextResponseOrBuilder
    * <pre>
    * Text translation responses if a glossary is provided in the request.
    * This can be the same as
-   * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
-   * This field has the same length as
+   * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations]
+   * if no terms apply. This field has the same length as
    * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
    * </pre>
    *
@@ -105,8 +105,8 @@ public interface TranslateTextResponseOrBuilder
    * <pre>
    * Text translation responses if a glossary is provided in the request.
    * This can be the same as
-   * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
-   * This field has the same length as
+   * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations]
+   * if no terms apply. This field has the same length as
    * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
    * </pre>
    *
@@ -119,8 +119,8 @@ public interface TranslateTextResponseOrBuilder
    * <pre>
    * Text translation responses if a glossary is provided in the request.
    * This can be the same as
-   * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
-   * This field has the same length as
+   * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations]
+   * if no terms apply. This field has the same length as
    * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
    * </pre>
    *
@@ -133,8 +133,8 @@ public interface TranslateTextResponseOrBuilder
    * <pre>
    * Text translation responses if a glossary is provided in the request.
    * This can be the same as
-   * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
-   * This field has the same length as
+   * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations]
+   * if no terms apply. This field has the same length as
    * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
    * </pre>
    *
@@ -148,8 +148,8 @@ public interface TranslateTextResponseOrBuilder
    * <pre>
    * Text translation responses if a glossary is provided in the request.
    * This can be the same as
-   * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations] if no terms apply.
-   * This field has the same length as
+   * [`translations`][google.cloud.translation.v3beta1.TranslateTextResponse.translations]
+   * if no terms apply. This field has the same length as
    * [`contents`][google.cloud.translation.v3beta1.TranslateTextRequest.contents].
    * </pre>
    *

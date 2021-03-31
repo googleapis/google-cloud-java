@@ -29,11 +29,11 @@ public interface DetectLanguageRequestOrBuilder
    * <pre>
    * Required. Project or location to make a call. Must refer to a caller's
    * project.
-   * Format: `projects/{project-id}/locations/{location-id}` or
-   * `projects/{project-id}`.
-   * For global calls, use `projects/{project-id}/locations/global` or
-   * `projects/{project-id}`.
-   * Only models within the same region (has same location-id) can be used.
+   * Format: `projects/{project-number-or-id}/locations/{location-id}` or
+   * `projects/{project-number-or-id}`.
+   * For global calls, use `projects/{project-number-or-id}/locations/global` or
+   * `projects/{project-number-or-id}`.
+   * Only models within the same region, which have the same location-id, can be used.
    * Otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
@@ -50,11 +50,11 @@ public interface DetectLanguageRequestOrBuilder
    * <pre>
    * Required. Project or location to make a call. Must refer to a caller's
    * project.
-   * Format: `projects/{project-id}/locations/{location-id}` or
-   * `projects/{project-id}`.
-   * For global calls, use `projects/{project-id}/locations/global` or
-   * `projects/{project-id}`.
-   * Only models within the same region (has same location-id) can be used.
+   * Format: `projects/{project-number-or-id}/locations/{location-id}` or
+   * `projects/{project-number-or-id}`.
+   * For global calls, use `projects/{project-number-or-id}/locations/global` or
+   * `projects/{project-number-or-id}`.
+   * Only models within the same region, which have the same location-id, can be used.
    * Otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
    *
@@ -72,9 +72,9 @@ public interface DetectLanguageRequestOrBuilder
    * <pre>
    * Optional. The language detection model to be used.
    * Format:
-   * `projects/{project-id}/locations/{location-id}/models/language-detection/{model-id}`
+   * `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/{model-id}`
    * Only one language detection model is currently supported:
-   * `projects/{project-id}/locations/{location-id}/models/language-detection/default`.
+   * `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/default`.
    * If not specified, the default model is used.
    * </pre>
    *
@@ -89,9 +89,9 @@ public interface DetectLanguageRequestOrBuilder
    * <pre>
    * Optional. The language detection model to be used.
    * Format:
-   * `projects/{project-id}/locations/{location-id}/models/language-detection/{model-id}`
+   * `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/{model-id}`
    * Only one language detection model is currently supported:
-   * `projects/{project-id}/locations/{location-id}/models/language-detection/default`.
+   * `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/default`.
    * If not specified, the default model is used.
    * </pre>
    *
@@ -177,7 +177,7 @@ public interface DetectLanguageRequestOrBuilder
    * See https://cloud.google.com/translate/docs/labels for more information.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
@@ -192,7 +192,7 @@ public interface DetectLanguageRequestOrBuilder
    * See https://cloud.google.com/translate/docs/labels for more information.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -210,7 +210,7 @@ public interface DetectLanguageRequestOrBuilder
    * See https://cloud.google.com/translate/docs/labels for more information.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
@@ -225,7 +225,7 @@ public interface DetectLanguageRequestOrBuilder
    * See https://cloud.google.com/translate/docs/labels for more information.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -240,7 +240,7 @@ public interface DetectLanguageRequestOrBuilder
    * See https://cloud.google.com/translate/docs/labels for more information.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 

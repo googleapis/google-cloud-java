@@ -22,8 +22,9 @@ package com.google.cloud.translate.v3beta1;
  *
  *
  * <pre>
- * Stored in the [google.longrunning.Operation.response][google.longrunning.Operation.response] field returned by
- * DeleteGlossary.
+ * Stored in the
+ * [google.longrunning.Operation.response][google.longrunning.Operation.response]
+ * field returned by DeleteGlossary.
  * </pre>
  *
  * Protobuf type {@code google.cloud.translation.v3beta1.DeleteGlossaryResponse}
@@ -244,7 +245,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The time when the glossary deletion is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+   * set to true.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -260,7 +262,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The time when the glossary deletion is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+   * set to true.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -276,7 +279,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The time when the glossary deletion is finished and
-   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+   * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+   * set to true.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -478,8 +482,9 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Stored in the [google.longrunning.Operation.response][google.longrunning.Operation.response] field returned by
-   * DeleteGlossary.
+   * Stored in the
+   * [google.longrunning.Operation.response][google.longrunning.Operation.response]
+   * field returned by DeleteGlossary.
    * </pre>
    *
    * Protobuf type {@code google.cloud.translation.v3beta1.DeleteGlossaryResponse}
@@ -962,7 +967,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the glossary deletion is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -977,7 +983,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the glossary deletion is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -996,7 +1003,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the glossary deletion is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -1019,7 +1027,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the glossary deletion is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -1039,7 +1048,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the glossary deletion is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -1064,7 +1074,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the glossary deletion is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -1085,7 +1096,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the glossary deletion is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -1100,7 +1112,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the glossary deletion is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
@@ -1117,7 +1130,8 @@ public final class DeleteGlossaryResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The time when the glossary deletion is finished and
-     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
+     * [google.longrunning.Operation.done][google.longrunning.Operation.done] is
+     * set to true.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>

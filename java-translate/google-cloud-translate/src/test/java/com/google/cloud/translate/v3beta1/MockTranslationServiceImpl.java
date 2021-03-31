@@ -123,6 +123,28 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
   }
 
   @Override
+  public void translateDocument(
+      TranslateDocumentRequest request,
+      StreamObserver<TranslateDocumentResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof TranslateDocumentResponse) {
+      requests.add(request);
+      responseObserver.onNext(((TranslateDocumentResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TranslateDocument, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  TranslateDocumentResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void batchTranslateText(
       BatchTranslateTextRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -137,6 +159,27 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BatchTranslateText, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void batchTranslateDocument(
+      BatchTranslateDocumentRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchTranslateDocument, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

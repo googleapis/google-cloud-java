@@ -53,7 +53,12 @@ public interface TranslationOrBuilder
    *
    * <pre>
    * Only present when `model` is present in the request.
-   * This is same as `model` provided in the request.
+   * `model` here is normalized to have project number.
+   * For example:
+   * If the `model` requested in TranslationTextRequest is
+   * `projects/{project-id}/locations/{location-id}/models/general/nmt` then
+   * `model` here would be normalized to
+   * `projects/{project-number}/locations/{location-id}/models/general/nmt`.
    * </pre>
    *
    * <code>string model = 2;</code>
@@ -66,7 +71,12 @@ public interface TranslationOrBuilder
    *
    * <pre>
    * Only present when `model` is present in the request.
-   * This is same as `model` provided in the request.
+   * `model` here is normalized to have project number.
+   * For example:
+   * If the `model` requested in TranslationTextRequest is
+   * `projects/{project-id}/locations/{location-id}/models/general/nmt` then
+   * `model` here would be normalized to
+   * `projects/{project-number}/locations/{location-id}/models/general/nmt`.
    * </pre>
    *
    * <code>string model = 2;</code>
