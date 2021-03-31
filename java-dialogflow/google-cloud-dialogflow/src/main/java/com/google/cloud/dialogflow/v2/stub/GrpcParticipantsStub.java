@@ -22,7 +22,6 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
-import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -33,8 +32,6 @@ import com.google.cloud.dialogflow.v2.GetParticipantRequest;
 import com.google.cloud.dialogflow.v2.ListParticipantsRequest;
 import com.google.cloud.dialogflow.v2.ListParticipantsResponse;
 import com.google.cloud.dialogflow.v2.Participant;
-import com.google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest;
-import com.google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse;
 import com.google.cloud.dialogflow.v2.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest;
@@ -109,19 +106,6 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(AnalyzeContentResponse.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<
-          StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
-      streamingAnalyzeContentMethodDescriptor =
-          MethodDescriptor
-              .<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
-              .setFullMethodName("google.cloud.dialogflow.v2.Participants/StreamingAnalyzeContent")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(StreamingAnalyzeContentRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(StreamingAnalyzeContentResponse.getDefaultInstance()))
-              .build();
-
   private static final MethodDescriptor<SuggestArticlesRequest, SuggestArticlesResponse>
       suggestArticlesMethodDescriptor =
           MethodDescriptor.<SuggestArticlesRequest, SuggestArticlesResponse>newBuilder()
@@ -152,9 +136,6 @@ public class GrpcParticipantsStub extends ParticipantsStub {
       listParticipantsPagedCallable;
   private final UnaryCallable<UpdateParticipantRequest, Participant> updateParticipantCallable;
   private final UnaryCallable<AnalyzeContentRequest, AnalyzeContentResponse> analyzeContentCallable;
-  private final BidiStreamingCallable<
-          StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
-      streamingAnalyzeContentCallable;
   private final UnaryCallable<SuggestArticlesRequest, SuggestArticlesResponse>
       suggestArticlesCallable;
   private final UnaryCallable<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
@@ -270,12 +251,6 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                       }
                     })
                 .build();
-    GrpcCallSettings<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
-        streamingAnalyzeContentTransportSettings =
-            GrpcCallSettings
-                .<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>newBuilder()
-                .setMethodDescriptor(streamingAnalyzeContentMethodDescriptor)
-                .build();
     GrpcCallSettings<SuggestArticlesRequest, SuggestArticlesResponse>
         suggestArticlesTransportSettings =
             GrpcCallSettings.<SuggestArticlesRequest, SuggestArticlesResponse>newBuilder()
@@ -327,11 +302,6 @@ public class GrpcParticipantsStub extends ParticipantsStub {
     this.analyzeContentCallable =
         callableFactory.createUnaryCallable(
             analyzeContentTransportSettings, settings.analyzeContentSettings(), clientContext);
-    this.streamingAnalyzeContentCallable =
-        callableFactory.createBidiStreamingCallable(
-            streamingAnalyzeContentTransportSettings,
-            settings.streamingAnalyzeContentSettings(),
-            clientContext);
     this.suggestArticlesCallable =
         callableFactory.createUnaryCallable(
             suggestArticlesTransportSettings, settings.suggestArticlesSettings(), clientContext);
@@ -379,12 +349,6 @@ public class GrpcParticipantsStub extends ParticipantsStub {
   @Override
   public UnaryCallable<AnalyzeContentRequest, AnalyzeContentResponse> analyzeContentCallable() {
     return analyzeContentCallable;
-  }
-
-  @Override
-  public BidiStreamingCallable<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
-      streamingAnalyzeContentCallable() {
-    return streamingAnalyzeContentCallable;
   }
 
   @Override

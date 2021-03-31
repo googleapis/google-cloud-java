@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The response message for [Conversations.ListMessages][google.cloud.dialogflow.v2beta1.Conversations.ListMessages].
+ * The response message for
+ * [Conversations.ListMessages][google.cloud.dialogflow.v2beta1.Conversations.ListMessages].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListMessagesResponse}
@@ -432,7 +433,8 @@ public final class ListMessagesResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The response message for [Conversations.ListMessages][google.cloud.dialogflow.v2beta1.Conversations.ListMessages].
+   * The response message for
+   * [Conversations.ListMessages][google.cloud.dialogflow.v2beta1.Conversations.ListMessages].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListMessagesResponse}

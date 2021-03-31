@@ -128,5 +128,40 @@ public interface QueryInputOrBuilder
    */
   com.google.cloud.dialogflow.v2beta1.EventInputOrBuilder getEventOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The DTMF digits used to invoke intent and fill in parameter value.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf = 4;</code>
+   *
+   * @return Whether the dtmf field is set.
+   */
+  boolean hasDtmf();
+  /**
+   *
+   *
+   * <pre>
+   * The DTMF digits used to invoke intent and fill in parameter value.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf = 4;</code>
+   *
+   * @return The dtmf.
+   */
+  com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents getDtmf();
+  /**
+   *
+   *
+   * <pre>
+   * The DTMF digits used to invoke intent and fill in parameter value.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf = 4;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEventsOrBuilder getDtmfOrBuilder();
+
   public com.google.cloud.dialogflow.v2beta1.QueryInput.InputCase getInputCase();
 }

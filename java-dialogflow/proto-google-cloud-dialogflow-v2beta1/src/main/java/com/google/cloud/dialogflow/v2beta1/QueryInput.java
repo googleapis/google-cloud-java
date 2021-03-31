@@ -122,6 +122,25 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
               inputCase_ = 3;
               break;
             }
+          case 34:
+            {
+              com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.Builder subBuilder = null;
+              if (inputCase_ == 4) {
+                subBuilder =
+                    ((com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents) input_).toBuilder();
+              }
+              input_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents) input_);
+                input_ = subBuilder.buildPartial();
+              }
+              inputCase_ = 4;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -166,6 +185,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     AUDIO_CONFIG(1),
     TEXT(2),
     EVENT(3),
+    DTMF(4),
     INPUT_NOT_SET(0);
     private final int value;
 
@@ -190,6 +210,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
           return TEXT;
         case 3:
           return EVENT;
+        case 4:
+          return DTMF;
         case 0:
           return INPUT_NOT_SET;
         default:
@@ -359,6 +381,57 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dialogflow.v2beta1.EventInput.getDefaultInstance();
   }
 
+  public static final int DTMF_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * The DTMF digits used to invoke intent and fill in parameter value.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf = 4;</code>
+   *
+   * @return Whether the dtmf field is set.
+   */
+  @java.lang.Override
+  public boolean hasDtmf() {
+    return inputCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The DTMF digits used to invoke intent and fill in parameter value.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf = 4;</code>
+   *
+   * @return The dtmf.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents getDtmf() {
+    if (inputCase_ == 4) {
+      return (com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents) input_;
+    }
+    return com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The DTMF digits used to invoke intent and fill in parameter value.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEventsOrBuilder getDtmfOrBuilder() {
+    if (inputCase_ == 4) {
+      return (com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents) input_;
+    }
+    return com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -381,6 +454,9 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     }
     if (inputCase_ == 3) {
       output.writeMessage(3, (com.google.cloud.dialogflow.v2beta1.EventInput) input_);
+    }
+    if (inputCase_ == 4) {
+      output.writeMessage(4, (com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents) input_);
     }
     unknownFields.writeTo(output);
   }
@@ -405,6 +481,11 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.cloud.dialogflow.v2beta1.EventInput) input_);
+    }
+    if (inputCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents) input_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -433,6 +514,9 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       case 3:
         if (!getEvent().equals(other.getEvent())) return false;
         break;
+      case 4:
+        if (!getDtmf().equals(other.getDtmf())) return false;
+        break;
       case 0:
       default:
     }
@@ -459,6 +543,10 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       case 3:
         hash = (37 * hash) + EVENT_FIELD_NUMBER;
         hash = (53 * hash) + getEvent().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + DTMF_FIELD_NUMBER;
+        hash = (53 * hash) + getDtmf().hashCode();
         break;
       case 0:
       default:
@@ -662,6 +750,13 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
           result.input_ = eventBuilder_.build();
         }
       }
+      if (inputCase_ == 4) {
+        if (dtmfBuilder_ == null) {
+          result.input_ = input_;
+        } else {
+          result.input_ = dtmfBuilder_.build();
+        }
+      }
       result.inputCase_ = inputCase_;
       onBuilt();
       return result;
@@ -726,6 +821,11 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
         case EVENT:
           {
             mergeEvent(other.getEvent());
+            break;
+          }
+        case DTMF:
+          {
+            mergeDtmf(other.getDtmf());
             break;
           }
         case INPUT_NOT_SET:
@@ -1401,6 +1501,216 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return eventBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents,
+            com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.Builder,
+            com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEventsOrBuilder>
+        dtmfBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The DTMF digits used to invoke intent and fill in parameter value.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf = 4;</code>
+     *
+     * @return Whether the dtmf field is set.
+     */
+    @java.lang.Override
+    public boolean hasDtmf() {
+      return inputCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The DTMF digits used to invoke intent and fill in parameter value.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf = 4;</code>
+     *
+     * @return The dtmf.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents getDtmf() {
+      if (dtmfBuilder_ == null) {
+        if (inputCase_ == 4) {
+          return (com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents) input_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.getDefaultInstance();
+      } else {
+        if (inputCase_ == 4) {
+          return dtmfBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The DTMF digits used to invoke intent and fill in parameter value.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf = 4;</code>
+     */
+    public Builder setDtmf(com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents value) {
+      if (dtmfBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        input_ = value;
+        onChanged();
+      } else {
+        dtmfBuilder_.setMessage(value);
+      }
+      inputCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The DTMF digits used to invoke intent and fill in parameter value.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf = 4;</code>
+     */
+    public Builder setDtmf(
+        com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.Builder builderForValue) {
+      if (dtmfBuilder_ == null) {
+        input_ = builderForValue.build();
+        onChanged();
+      } else {
+        dtmfBuilder_.setMessage(builderForValue.build());
+      }
+      inputCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The DTMF digits used to invoke intent and fill in parameter value.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf = 4;</code>
+     */
+    public Builder mergeDtmf(com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents value) {
+      if (dtmfBuilder_ == null) {
+        if (inputCase_ == 4
+            && input_
+                != com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.getDefaultInstance()) {
+          input_ =
+              com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.newBuilder(
+                      (com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents) input_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          input_ = value;
+        }
+        onChanged();
+      } else {
+        if (inputCase_ == 4) {
+          dtmfBuilder_.mergeFrom(value);
+        }
+        dtmfBuilder_.setMessage(value);
+      }
+      inputCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The DTMF digits used to invoke intent and fill in parameter value.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf = 4;</code>
+     */
+    public Builder clearDtmf() {
+      if (dtmfBuilder_ == null) {
+        if (inputCase_ == 4) {
+          inputCase_ = 0;
+          input_ = null;
+          onChanged();
+        }
+      } else {
+        if (inputCase_ == 4) {
+          inputCase_ = 0;
+          input_ = null;
+        }
+        dtmfBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The DTMF digits used to invoke intent and fill in parameter value.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf = 4;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.Builder getDtmfBuilder() {
+      return getDtmfFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The DTMF digits used to invoke intent and fill in parameter value.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEventsOrBuilder getDtmfOrBuilder() {
+      if ((inputCase_ == 4) && (dtmfBuilder_ != null)) {
+        return dtmfBuilder_.getMessageOrBuilder();
+      } else {
+        if (inputCase_ == 4) {
+          return (com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents) input_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The DTMF digits used to invoke intent and fill in parameter value.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents,
+            com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.Builder,
+            com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEventsOrBuilder>
+        getDtmfFieldBuilder() {
+      if (dtmfBuilder_ == null) {
+        if (!(inputCase_ == 4)) {
+          input_ = com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.getDefaultInstance();
+        }
+        dtmfBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents,
+                com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.Builder,
+                com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEventsOrBuilder>(
+                (com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents) input_,
+                getParentForChildren(),
+                isClean());
+        input_ = null;
+      }
+      inputCase_ = 4;
+      onChanged();
+      ;
+      return dtmfBuilder_;
     }
 
     @java.lang.Override

@@ -16,7 +16,6 @@
     <className>com/google/cloud/dialogflow/v2beta1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
-
   <difference>
     <differenceType>7002</differenceType>
     <className>com/google/cloud/dialogflow/v2beta1/ResponseMessage*</className>
@@ -36,5 +35,55 @@
     <className>com/google/cloud/dialogflow/v2beta1/ResponseMessage*</className>
     <field>MIXED_AUDIO_FIELD_NUMBER</field>
   </difference>
-
+  <!-- TODO: remove after 3.0.0 is released -->
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/*CallMatcher*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/AudioInput*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/InputTextConfig*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/ConversationModelName*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/StreamingAnalyzeContent*</className>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/AnalyzeContentRequest*</className>
+    <method>* *Audio*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/AnalyzeContentRequest*</className>
+    <method>* *Text*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/AnalyzeContentRequest*</className>
+    <field>AUDIO*</field>
+  </difference>
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/AnalyzeContentRequest*</className>
+    <field>TEXT</field>
+  </difference>
+  <difference>
+  <differenceType>6011</differenceType>
+  <className>com/google/cloud/dialogflow/v2beta1/AnalyzeContentRequest*</className>
+  <field>AUDIO*_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/AnalyzeContentRequest*</className>
+    <field>TEXT_FIELD_NUMBER</field>
+  </difference>
 </differences>

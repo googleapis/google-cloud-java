@@ -19,7 +19,6 @@ package com.google.cloud.dialogflow.v2beta1;
 import com.google.api.core.BetaApi;
 import com.google.cloud.dialogflow.v2beta1.ConversationsGrpc.ConversationsImplBase;
 import com.google.protobuf.AbstractMessage;
-import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -140,69 +139,6 @@ public class MockConversationsImpl extends ConversationsImplBase {
                   "Unrecognized response type %s for method CompleteConversation, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Conversation.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void createCallMatcher(
-      CreateCallMatcherRequest request, StreamObserver<CallMatcher> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof CallMatcher) {
-      requests.add(request);
-      responseObserver.onNext(((CallMatcher) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method CreateCallMatcher, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  CallMatcher.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void listCallMatchers(
-      ListCallMatchersRequest request, StreamObserver<ListCallMatchersResponse> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof ListCallMatchersResponse) {
-      requests.add(request);
-      responseObserver.onNext(((ListCallMatchersResponse) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method ListCallMatchers, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  ListCallMatchersResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void deleteCallMatcher(
-      DeleteCallMatcherRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Empty) {
-      requests.add(request);
-      responseObserver.onNext(((Empty) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method DeleteCallMatcher, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }

@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-import static com.google.cloud.dialogflow.v2beta1.ConversationsClient.ListCallMatchersPagedResponse;
 import static com.google.cloud.dialogflow.v2beta1.ConversationsClient.ListConversationsPagedResponse;
 import static com.google.cloud.dialogflow.v2beta1.ConversationsClient.ListMessagesPagedResponse;
 
@@ -32,7 +31,6 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.v2beta1.stub.ConversationsStubSettings;
-import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -93,23 +91,6 @@ public class ConversationsSettings extends ClientSettings<ConversationsSettings>
   public UnaryCallSettings<CompleteConversationRequest, Conversation>
       completeConversationSettings() {
     return ((ConversationsStubSettings) getStubSettings()).completeConversationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to createCallMatcher. */
-  public UnaryCallSettings<CreateCallMatcherRequest, CallMatcher> createCallMatcherSettings() {
-    return ((ConversationsStubSettings) getStubSettings()).createCallMatcherSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listCallMatchers. */
-  public PagedCallSettings<
-          ListCallMatchersRequest, ListCallMatchersResponse, ListCallMatchersPagedResponse>
-      listCallMatchersSettings() {
-    return ((ConversationsStubSettings) getStubSettings()).listCallMatchersSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteCallMatcher. */
-  public UnaryCallSettings<DeleteCallMatcherRequest, Empty> deleteCallMatcherSettings() {
-    return ((ConversationsStubSettings) getStubSettings()).deleteCallMatcherSettings();
   }
 
   /** Returns the object with the settings used for calls to batchCreateMessages. */
@@ -245,24 +226,6 @@ public class ConversationsSettings extends ClientSettings<ConversationsSettings>
     public UnaryCallSettings.Builder<CompleteConversationRequest, Conversation>
         completeConversationSettings() {
       return getStubSettingsBuilder().completeConversationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to createCallMatcher. */
-    public UnaryCallSettings.Builder<CreateCallMatcherRequest, CallMatcher>
-        createCallMatcherSettings() {
-      return getStubSettingsBuilder().createCallMatcherSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listCallMatchers. */
-    public PagedCallSettings.Builder<
-            ListCallMatchersRequest, ListCallMatchersResponse, ListCallMatchersPagedResponse>
-        listCallMatchersSettings() {
-      return getStubSettingsBuilder().listCallMatchersSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteCallMatcher. */
-    public UnaryCallSettings.Builder<DeleteCallMatcherRequest, Empty> deleteCallMatcherSettings() {
-      return getStubSettingsBuilder().deleteCallMatcherSettings();
     }
 
     /** Returns the builder for the settings used for calls to batchCreateMessages. */

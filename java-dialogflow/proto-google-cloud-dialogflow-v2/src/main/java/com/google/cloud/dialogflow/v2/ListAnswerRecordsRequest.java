@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * Request message for [AnswerRecords.ListAnswerRecords][google.cloud.dialogflow.v2.AnswerRecords.ListAnswerRecords].
+ * Request message for
+ * [AnswerRecords.ListAnswerRecords][google.cloud.dialogflow.v2.AnswerRecords.ListAnswerRecords].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.ListAnswerRecordsRequest}
@@ -512,7 +513,8 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Request message for [AnswerRecords.ListAnswerRecords][google.cloud.dialogflow.v2.AnswerRecords.ListAnswerRecords].
+   * Request message for
+   * [AnswerRecords.ListAnswerRecords][google.cloud.dialogflow.v2.AnswerRecords.ListAnswerRecords].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.ListAnswerRecordsRequest}

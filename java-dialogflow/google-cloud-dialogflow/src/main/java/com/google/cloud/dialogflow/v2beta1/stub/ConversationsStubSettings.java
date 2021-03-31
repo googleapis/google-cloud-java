@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2beta1.stub;
 
-import static com.google.cloud.dialogflow.v2beta1.ConversationsClient.ListCallMatchersPagedResponse;
 import static com.google.cloud.dialogflow.v2beta1.ConversationsClient.ListConversationsPagedResponse;
 import static com.google.cloud.dialogflow.v2beta1.ConversationsClient.ListMessagesPagedResponse;
 
@@ -44,15 +43,10 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesRequest;
 import com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesResponse;
-import com.google.cloud.dialogflow.v2beta1.CallMatcher;
 import com.google.cloud.dialogflow.v2beta1.CompleteConversationRequest;
 import com.google.cloud.dialogflow.v2beta1.Conversation;
-import com.google.cloud.dialogflow.v2beta1.CreateCallMatcherRequest;
 import com.google.cloud.dialogflow.v2beta1.CreateConversationRequest;
-import com.google.cloud.dialogflow.v2beta1.DeleteCallMatcherRequest;
 import com.google.cloud.dialogflow.v2beta1.GetConversationRequest;
-import com.google.cloud.dialogflow.v2beta1.ListCallMatchersRequest;
-import com.google.cloud.dialogflow.v2beta1.ListCallMatchersResponse;
 import com.google.cloud.dialogflow.v2beta1.ListConversationsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListConversationsResponse;
 import com.google.cloud.dialogflow.v2beta1.ListMessagesRequest;
@@ -62,7 +56,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -118,11 +111,6 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
   private final UnaryCallSettings<GetConversationRequest, Conversation> getConversationSettings;
   private final UnaryCallSettings<CompleteConversationRequest, Conversation>
       completeConversationSettings;
-  private final UnaryCallSettings<CreateCallMatcherRequest, CallMatcher> createCallMatcherSettings;
-  private final PagedCallSettings<
-          ListCallMatchersRequest, ListCallMatchersResponse, ListCallMatchersPagedResponse>
-      listCallMatchersSettings;
-  private final UnaryCallSettings<DeleteCallMatcherRequest, Empty> deleteCallMatcherSettings;
   private final UnaryCallSettings<BatchCreateMessagesRequest, BatchCreateMessagesResponse>
       batchCreateMessagesSettings;
   private final PagedCallSettings<
@@ -166,46 +154,6 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
               return payload.getConversationsList() == null
                   ? ImmutableList.<Conversation>of()
                   : payload.getConversationsList();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListCallMatchersRequest, ListCallMatchersResponse, CallMatcher>
-      LIST_CALL_MATCHERS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListCallMatchersRequest, ListCallMatchersResponse, CallMatcher>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListCallMatchersRequest injectToken(
-                ListCallMatchersRequest payload, String token) {
-              return ListCallMatchersRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListCallMatchersRequest injectPageSize(
-                ListCallMatchersRequest payload, int pageSize) {
-              return ListCallMatchersRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListCallMatchersRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListCallMatchersResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<CallMatcher> extractResources(ListCallMatchersResponse payload) {
-              return payload.getCallMatchersList() == null
-                  ? ImmutableList.<CallMatcher>of()
-                  : payload.getCallMatchersList();
             }
           };
 
@@ -267,25 +215,6 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
           };
 
   private static final PagedListResponseFactory<
-          ListCallMatchersRequest, ListCallMatchersResponse, ListCallMatchersPagedResponse>
-      LIST_CALL_MATCHERS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListCallMatchersRequest, ListCallMatchersResponse, ListCallMatchersPagedResponse>() {
-            @Override
-            public ApiFuture<ListCallMatchersPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListCallMatchersRequest, ListCallMatchersResponse> callable,
-                ListCallMatchersRequest request,
-                ApiCallContext context,
-                ApiFuture<ListCallMatchersResponse> futureResponse) {
-              PageContext<ListCallMatchersRequest, ListCallMatchersResponse, CallMatcher>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_CALL_MATCHERS_PAGE_STR_DESC, request, context);
-              return ListCallMatchersPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
           ListMessagesRequest, ListMessagesResponse, ListMessagesPagedResponse>
       LIST_MESSAGES_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -323,23 +252,6 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
   public UnaryCallSettings<CompleteConversationRequest, Conversation>
       completeConversationSettings() {
     return completeConversationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to createCallMatcher. */
-  public UnaryCallSettings<CreateCallMatcherRequest, CallMatcher> createCallMatcherSettings() {
-    return createCallMatcherSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listCallMatchers. */
-  public PagedCallSettings<
-          ListCallMatchersRequest, ListCallMatchersResponse, ListCallMatchersPagedResponse>
-      listCallMatchersSettings() {
-    return listCallMatchersSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteCallMatcher. */
-  public UnaryCallSettings<DeleteCallMatcherRequest, Empty> deleteCallMatcherSettings() {
-    return deleteCallMatcherSettings;
   }
 
   /** Returns the object with the settings used for calls to batchCreateMessages. */
@@ -427,9 +339,6 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     listConversationsSettings = settingsBuilder.listConversationsSettings().build();
     getConversationSettings = settingsBuilder.getConversationSettings().build();
     completeConversationSettings = settingsBuilder.completeConversationSettings().build();
-    createCallMatcherSettings = settingsBuilder.createCallMatcherSettings().build();
-    listCallMatchersSettings = settingsBuilder.listCallMatchersSettings().build();
-    deleteCallMatcherSettings = settingsBuilder.deleteCallMatcherSettings().build();
     batchCreateMessagesSettings = settingsBuilder.batchCreateMessagesSettings().build();
     listMessagesSettings = settingsBuilder.listMessagesSettings().build();
   }
@@ -446,13 +355,6 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
         getConversationSettings;
     private final UnaryCallSettings.Builder<CompleteConversationRequest, Conversation>
         completeConversationSettings;
-    private final UnaryCallSettings.Builder<CreateCallMatcherRequest, CallMatcher>
-        createCallMatcherSettings;
-    private final PagedCallSettings.Builder<
-            ListCallMatchersRequest, ListCallMatchersResponse, ListCallMatchersPagedResponse>
-        listCallMatchersSettings;
-    private final UnaryCallSettings.Builder<DeleteCallMatcherRequest, Empty>
-        deleteCallMatcherSettings;
     private final UnaryCallSettings.Builder<BatchCreateMessagesRequest, BatchCreateMessagesResponse>
         batchCreateMessagesSettings;
     private final PagedCallSettings.Builder<
@@ -500,9 +402,6 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       listConversationsSettings = PagedCallSettings.newBuilder(LIST_CONVERSATIONS_PAGE_STR_FACT);
       getConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       completeConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      createCallMatcherSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      listCallMatchersSettings = PagedCallSettings.newBuilder(LIST_CALL_MATCHERS_PAGE_STR_FACT);
-      deleteCallMatcherSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchCreateMessagesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listMessagesSettings = PagedCallSettings.newBuilder(LIST_MESSAGES_PAGE_STR_FACT);
 
@@ -512,9 +411,6 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
               listConversationsSettings,
               getConversationSettings,
               completeConversationSettings,
-              createCallMatcherSettings,
-              listCallMatchersSettings,
-              deleteCallMatcherSettings,
               batchCreateMessagesSettings,
               listMessagesSettings);
       initDefaults(this);
@@ -527,9 +423,6 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       listConversationsSettings = settings.listConversationsSettings.toBuilder();
       getConversationSettings = settings.getConversationSettings.toBuilder();
       completeConversationSettings = settings.completeConversationSettings.toBuilder();
-      createCallMatcherSettings = settings.createCallMatcherSettings.toBuilder();
-      listCallMatchersSettings = settings.listCallMatchersSettings.toBuilder();
-      deleteCallMatcherSettings = settings.deleteCallMatcherSettings.toBuilder();
       batchCreateMessagesSettings = settings.batchCreateMessagesSettings.toBuilder();
       listMessagesSettings = settings.listMessagesSettings.toBuilder();
 
@@ -539,9 +432,6 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
               listConversationsSettings,
               getConversationSettings,
               completeConversationSettings,
-              createCallMatcherSettings,
-              listCallMatchersSettings,
-              deleteCallMatcherSettings,
               batchCreateMessagesSettings,
               listMessagesSettings);
     }
@@ -575,21 +465,6 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
 
       builder
           .completeConversationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
-
-      builder
-          .createCallMatcherSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
-
-      builder
-          .listCallMatchersSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
-
-      builder
-          .deleteCallMatcherSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -645,24 +520,6 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     public UnaryCallSettings.Builder<CompleteConversationRequest, Conversation>
         completeConversationSettings() {
       return completeConversationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to createCallMatcher. */
-    public UnaryCallSettings.Builder<CreateCallMatcherRequest, CallMatcher>
-        createCallMatcherSettings() {
-      return createCallMatcherSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listCallMatchers. */
-    public PagedCallSettings.Builder<
-            ListCallMatchersRequest, ListCallMatchersResponse, ListCallMatchersPagedResponse>
-        listCallMatchersSettings() {
-      return listCallMatchersSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteCallMatcher. */
-    public UnaryCallSettings.Builder<DeleteCallMatcherRequest, Empty> deleteCallMatcherSettings() {
-      return deleteCallMatcherSettings;
     }
 
     /** Returns the builder for the settings used for calls to batchCreateMessages. */

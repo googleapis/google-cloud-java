@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Conversations.GetConversation][google.cloud.dialogflow.v2beta1.Conversations.GetConversation].
+ * The request message for
+ * [Conversations.GetConversation][google.cloud.dialogflow.v2beta1.Conversations.GetConversation].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.GetConversationRequest}
@@ -332,7 +333,8 @@ public final class GetConversationRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The request message for [Conversations.GetConversation][google.cloud.dialogflow.v2beta1.Conversations.GetConversation].
+   * The request message for
+   * [Conversations.GetConversation][google.cloud.dialogflow.v2beta1.Conversations.GetConversation].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.GetConversationRequest}

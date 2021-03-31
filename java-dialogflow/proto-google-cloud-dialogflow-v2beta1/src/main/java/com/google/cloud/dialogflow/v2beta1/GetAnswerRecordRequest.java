@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * Request message for [AnswerRecords.GetAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.GetAnswerRecord].
+ * Request message for
+ * [AnswerRecords.GetAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.GetAnswerRecord].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.GetAnswerRecordRequest}
@@ -328,7 +329,8 @@ public final class GetAnswerRecordRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Request message for [AnswerRecords.GetAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.GetAnswerRecord].
+   * Request message for
+   * [AnswerRecords.GetAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.GetAnswerRecord].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.GetAnswerRecordRequest}

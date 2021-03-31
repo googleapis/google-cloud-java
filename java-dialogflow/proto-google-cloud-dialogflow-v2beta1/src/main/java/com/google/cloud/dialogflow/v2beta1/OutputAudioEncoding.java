@@ -63,6 +63,16 @@ public enum OutputAudioEncoding implements com.google.protobuf.ProtocolMessageEn
    *
    *
    * <pre>
+   * MP3 audio at 64kbps.
+   * </pre>
+   *
+   * <code>OUTPUT_AUDIO_ENCODING_MP3_64_KBPS = 4;</code>
+   */
+  OUTPUT_AUDIO_ENCODING_MP3_64_KBPS(4),
+  /**
+   *
+   *
+   * <pre>
    * Opus encoded audio wrapped in an ogg container. The result will be a
    * file which can be played natively on Android, and in browsers (at least
    * Chrome and Firefox). The quality of the encoding is considerably higher
@@ -72,6 +82,16 @@ public enum OutputAudioEncoding implements com.google.protobuf.ProtocolMessageEn
    * <code>OUTPUT_AUDIO_ENCODING_OGG_OPUS = 3;</code>
    */
   OUTPUT_AUDIO_ENCODING_OGG_OPUS(3),
+  /**
+   *
+   *
+   * <pre>
+   * 8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+   * </pre>
+   *
+   * <code>OUTPUT_AUDIO_ENCODING_MULAW = 5;</code>
+   */
+  OUTPUT_AUDIO_ENCODING_MULAW(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -110,6 +130,16 @@ public enum OutputAudioEncoding implements com.google.protobuf.ProtocolMessageEn
    *
    *
    * <pre>
+   * MP3 audio at 64kbps.
+   * </pre>
+   *
+   * <code>OUTPUT_AUDIO_ENCODING_MP3_64_KBPS = 4;</code>
+   */
+  public static final int OUTPUT_AUDIO_ENCODING_MP3_64_KBPS_VALUE = 4;
+  /**
+   *
+   *
+   * <pre>
    * Opus encoded audio wrapped in an ogg container. The result will be a
    * file which can be played natively on Android, and in browsers (at least
    * Chrome and Firefox). The quality of the encoding is considerably higher
@@ -119,6 +149,16 @@ public enum OutputAudioEncoding implements com.google.protobuf.ProtocolMessageEn
    * <code>OUTPUT_AUDIO_ENCODING_OGG_OPUS = 3;</code>
    */
   public static final int OUTPUT_AUDIO_ENCODING_OGG_OPUS_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * 8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+   * </pre>
+   *
+   * <code>OUTPUT_AUDIO_ENCODING_MULAW = 5;</code>
+   */
+  public static final int OUTPUT_AUDIO_ENCODING_MULAW_VALUE = 5;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -150,8 +190,12 @@ public enum OutputAudioEncoding implements com.google.protobuf.ProtocolMessageEn
         return OUTPUT_AUDIO_ENCODING_LINEAR_16;
       case 2:
         return OUTPUT_AUDIO_ENCODING_MP3;
+      case 4:
+        return OUTPUT_AUDIO_ENCODING_MP3_64_KBPS;
       case 3:
         return OUTPUT_AUDIO_ENCODING_OGG_OPUS;
+      case 5:
+        return OUTPUT_AUDIO_ENCODING_MULAW;
       default:
         return null;
     }

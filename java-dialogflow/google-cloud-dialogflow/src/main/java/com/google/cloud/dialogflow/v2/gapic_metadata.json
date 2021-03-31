@@ -91,20 +91,11 @@
             "CompleteConversation": {
               "methods": ["completeConversation", "completeConversation", "completeConversation", "completeConversationCallable"]
             },
-            "CreateCallMatcher": {
-              "methods": ["createCallMatcher", "createCallMatcher", "createCallMatcher", "createCallMatcherCallable"]
-            },
             "CreateConversation": {
               "methods": ["createConversation", "createConversation", "createConversation", "createConversation", "createConversationCallable"]
             },
-            "DeleteCallMatcher": {
-              "methods": ["deleteCallMatcher", "deleteCallMatcher", "deleteCallMatcher", "deleteCallMatcherCallable"]
-            },
             "GetConversation": {
               "methods": ["getConversation", "getConversation", "getConversation", "getConversationCallable"]
-            },
-            "ListCallMatchers": {
-              "methods": ["listCallMatchers", "listCallMatchers", "listCallMatchers", "listCallMatchersPagedCallable", "listCallMatchersCallable"]
             },
             "ListConversations": {
               "methods": ["listConversations", "listConversations", "listConversations", "listConversations", "listConversationsPagedCallable", "listConversationsCallable"]
@@ -278,7 +269,7 @@
           "libraryClient": "ParticipantsClient",
           "rpcs": {
             "AnalyzeContent": {
-              "methods": ["analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContentCallable"]
+              "methods": ["analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContentCallable"]
             },
             "CreateParticipant": {
               "methods": ["createParticipant", "createParticipant", "createParticipant", "createParticipantCallable"]
@@ -288,9 +279,6 @@
             },
             "ListParticipants": {
               "methods": ["listParticipants", "listParticipants", "listParticipants", "listParticipantsPagedCallable", "listParticipantsCallable"]
-            },
-            "StreamingAnalyzeContent": {
-              "methods": ["streamingAnalyzeContentCallable"]
             },
             "SuggestArticles": {
               "methods": ["suggestArticles", "suggestArticles", "suggestArticles", "suggestArticlesCallable"]

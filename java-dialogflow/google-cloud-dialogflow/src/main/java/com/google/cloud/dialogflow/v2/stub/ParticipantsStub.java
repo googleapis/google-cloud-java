@@ -19,7 +19,6 @@ package com.google.cloud.dialogflow.v2.stub;
 import static com.google.cloud.dialogflow.v2.ParticipantsClient.ListParticipantsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.AnalyzeContentRequest;
 import com.google.cloud.dialogflow.v2.AnalyzeContentResponse;
@@ -28,8 +27,6 @@ import com.google.cloud.dialogflow.v2.GetParticipantRequest;
 import com.google.cloud.dialogflow.v2.ListParticipantsRequest;
 import com.google.cloud.dialogflow.v2.ListParticipantsResponse;
 import com.google.cloud.dialogflow.v2.Participant;
-import com.google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest;
-import com.google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse;
 import com.google.cloud.dialogflow.v2.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest;
@@ -70,11 +67,6 @@ public abstract class ParticipantsStub implements BackgroundResource {
 
   public UnaryCallable<AnalyzeContentRequest, AnalyzeContentResponse> analyzeContentCallable() {
     throw new UnsupportedOperationException("Not implemented: analyzeContentCallable()");
-  }
-
-  public BidiStreamingCallable<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
-      streamingAnalyzeContentCallable() {
-    throw new UnsupportedOperationException("Not implemented: streamingAnalyzeContentCallable()");
   }
 
   public UnaryCallable<SuggestArticlesRequest, SuggestArticlesResponse> suggestArticlesCallable() {

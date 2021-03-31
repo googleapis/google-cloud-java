@@ -267,56 +267,6 @@ public final class ParticipantsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest,
-          com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse>
-      getStreamingAnalyzeContentMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "StreamingAnalyzeContent",
-      requestType = com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.class,
-      responseType = com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest,
-          com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse>
-      getStreamingAnalyzeContentMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest,
-            com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse>
-        getStreamingAnalyzeContentMethod;
-    if ((getStreamingAnalyzeContentMethod = ParticipantsGrpc.getStreamingAnalyzeContentMethod)
-        == null) {
-      synchronized (ParticipantsGrpc.class) {
-        if ((getStreamingAnalyzeContentMethod = ParticipantsGrpc.getStreamingAnalyzeContentMethod)
-            == null) {
-          ParticipantsGrpc.getStreamingAnalyzeContentMethod =
-              getStreamingAnalyzeContentMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest,
-                          com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "StreamingAnalyzeContent"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new ParticipantsMethodDescriptorSupplier("StreamingAnalyzeContent"))
-                      .build();
-        }
-      }
-    }
-    return getStreamingAnalyzeContentMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest,
           com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse>
       getSuggestArticlesMethod;
@@ -686,35 +636,6 @@ public final class ParticipantsGrpc {
      *
      *
      * <pre>
-     * Adds a text (e.g., chat) or audio (e.g., phone recording) message from a
-     * participant into the conversation.
-     * Note: This method is only available through the gRPC API (not REST).
-     * The top-level message sent to the client by the server is
-     * `StreamingAnalyzeContentResponse`. Multiple response messages can be
-     * returned in order. The first one or more messages contain the
-     * `recognition_result` field. Each result represents a more complete
-     * transcript of what the user said. The next message contains the
-     * `reply_text` field, and potentially the `reply_audio` and/or the
-     * `automated_agent_reply` fields.
-     * Note: Always use agent versions for production traffic
-     * sent to virtual agents. See [Versions and
-     * environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
-     * </pre>
-     */
-    public io.grpc.stub.StreamObserver<
-            com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest>
-        streamingAnalyzeContent(
-            io.grpc.stub.StreamObserver<
-                    com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse>
-                responseObserver) {
-      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
-          getStreamingAnalyzeContentMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Gets suggested articles for a participant based on specific historical
      * messages.
      * Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
@@ -853,13 +774,6 @@ public final class ParticipantsGrpc {
                       com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest,
                       com.google.cloud.dialogflow.v2beta1.AnalyzeContentResponse>(
                       this, METHODID_ANALYZE_CONTENT)))
-          .addMethod(
-              getStreamingAnalyzeContentMethod(),
-              io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest,
-                      com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse>(
-                      this, METHODID_STREAMING_ANALYZE_CONTENT)))
           .addMethod(
               getSuggestArticlesMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1003,36 +917,6 @@ public final class ParticipantsGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAnalyzeContentMethod(), getCallOptions()),
           request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Adds a text (e.g., chat) or audio (e.g., phone recording) message from a
-     * participant into the conversation.
-     * Note: This method is only available through the gRPC API (not REST).
-     * The top-level message sent to the client by the server is
-     * `StreamingAnalyzeContentResponse`. Multiple response messages can be
-     * returned in order. The first one or more messages contain the
-     * `recognition_result` field. Each result represents a more complete
-     * transcript of what the user said. The next message contains the
-     * `reply_text` field, and potentially the `reply_audio` and/or the
-     * `automated_agent_reply` fields.
-     * Note: Always use agent versions for production traffic
-     * sent to virtual agents. See [Versions and
-     * environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
-     * </pre>
-     */
-    public io.grpc.stub.StreamObserver<
-            com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest>
-        streamingAnalyzeContent(
-            io.grpc.stub.StreamObserver<
-                    com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse>
-                responseObserver) {
-      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
-          getChannel().newCall(getStreamingAnalyzeContentMethod(), getCallOptions()),
           responseObserver);
     }
 
@@ -1538,7 +1422,6 @@ public final class ParticipantsGrpc {
   private static final int METHODID_SUGGEST_SMART_REPLIES = 7;
   private static final int METHODID_LIST_SUGGESTIONS = 8;
   private static final int METHODID_COMPILE_SUGGESTION = 9;
-  private static final int METHODID_STREAMING_ANALYZE_CONTENT = 10;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1634,12 +1517,6 @@ public final class ParticipantsGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_STREAMING_ANALYZE_CONTENT:
-          return (io.grpc.stub.StreamObserver<Req>)
-              serviceImpl.streamingAnalyzeContent(
-                  (io.grpc.stub.StreamObserver<
-                          com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse>)
-                      responseObserver);
         default:
           throw new AssertionError();
       }
@@ -1699,7 +1576,6 @@ public final class ParticipantsGrpc {
                       .addMethod(getListParticipantsMethod())
                       .addMethod(getUpdateParticipantMethod())
                       .addMethod(getAnalyzeContentMethod())
-                      .addMethod(getStreamingAnalyzeContentMethod())
                       .addMethod(getSuggestArticlesMethod())
                       .addMethod(getSuggestFaqAnswersMethod())
                       .addMethod(getSuggestSmartRepliesMethod())

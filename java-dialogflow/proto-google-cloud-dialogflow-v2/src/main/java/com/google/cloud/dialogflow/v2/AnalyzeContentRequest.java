@@ -110,22 +110,6 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
               inputCase_ = 6;
               break;
             }
-          case 58:
-            {
-              com.google.cloud.dialogflow.v2.AudioInput.Builder subBuilder = null;
-              if (inputCase_ == 7) {
-                subBuilder = ((com.google.cloud.dialogflow.v2.AudioInput) input_).toBuilder();
-              }
-              input_ =
-                  input.readMessage(
-                      com.google.cloud.dialogflow.v2.AudioInput.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.dialogflow.v2.AudioInput) input_);
-                input_ = subBuilder.buildPartial();
-              }
-              inputCase_ = 7;
-              break;
-            }
           case 66:
             {
               com.google.cloud.dialogflow.v2.EventInput.Builder subBuilder = null;
@@ -207,7 +191,6 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TEXT_INPUT(6),
-    AUDIO_INPUT(7),
     EVENT_INPUT(8),
     INPUT_NOT_SET(0);
     private final int value;
@@ -229,8 +212,6 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       switch (value) {
         case 6:
           return TEXT_INPUT;
-        case 7:
-          return AUDIO_INPUT;
         case 8:
           return EVENT_INPUT;
         case 0:
@@ -355,57 +336,6 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       return (com.google.cloud.dialogflow.v2.TextInput) input_;
     }
     return com.google.cloud.dialogflow.v2.TextInput.getDefaultInstance();
-  }
-
-  public static final int AUDIO_INPUT_FIELD_NUMBER = 7;
-  /**
-   *
-   *
-   * <pre>
-   * The natural language speech audio to be processed.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
-   *
-   * @return Whether the audioInput field is set.
-   */
-  @java.lang.Override
-  public boolean hasAudioInput() {
-    return inputCase_ == 7;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The natural language speech audio to be processed.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
-   *
-   * @return The audioInput.
-   */
-  @java.lang.Override
-  public com.google.cloud.dialogflow.v2.AudioInput getAudioInput() {
-    if (inputCase_ == 7) {
-      return (com.google.cloud.dialogflow.v2.AudioInput) input_;
-    }
-    return com.google.cloud.dialogflow.v2.AudioInput.getDefaultInstance();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The natural language speech audio to be processed.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.dialogflow.v2.AudioInputOrBuilder getAudioInputOrBuilder() {
-    if (inputCase_ == 7) {
-      return (com.google.cloud.dialogflow.v2.AudioInput) input_;
-    }
-    return com.google.cloud.dialogflow.v2.AudioInput.getDefaultInstance();
   }
 
   public static final int EVENT_INPUT_FIELD_NUMBER = 8;
@@ -643,9 +573,6 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     if (inputCase_ == 6) {
       output.writeMessage(6, (com.google.cloud.dialogflow.v2.TextInput) input_);
     }
-    if (inputCase_ == 7) {
-      output.writeMessage(7, (com.google.cloud.dialogflow.v2.AudioInput) input_);
-    }
     if (inputCase_ == 8) {
       output.writeMessage(8, (com.google.cloud.dialogflow.v2.EventInput) input_);
     }
@@ -674,11 +601,6 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.cloud.dialogflow.v2.TextInput) input_);
-    }
-    if (inputCase_ == 7) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              7, (com.google.cloud.dialogflow.v2.AudioInput) input_);
     }
     if (inputCase_ == 8) {
       size +=
@@ -722,9 +644,6 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       case 6:
         if (!getTextInput().equals(other.getTextInput())) return false;
         break;
-      case 7:
-        if (!getAudioInput().equals(other.getAudioInput())) return false;
-        break;
       case 8:
         if (!getEventInput().equals(other.getEventInput())) return false;
         break;
@@ -758,10 +677,6 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       case 6:
         hash = (37 * hash) + TEXT_INPUT_FIELD_NUMBER;
         hash = (53 * hash) + getTextInput().hashCode();
-        break;
-      case 7:
-        hash = (37 * hash) + AUDIO_INPUT_FIELD_NUMBER;
-        hash = (53 * hash) + getAudioInput().hashCode();
         break;
       case 8:
         hash = (37 * hash) + EVENT_INPUT_FIELD_NUMBER;
@@ -968,13 +883,6 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
           result.input_ = textInputBuilder_.build();
         }
       }
-      if (inputCase_ == 7) {
-        if (audioInputBuilder_ == null) {
-          result.input_ = input_;
-        } else {
-          result.input_ = audioInputBuilder_.build();
-        }
-      }
       if (inputCase_ == 8) {
         if (eventInputBuilder_ == null) {
           result.input_ = input_;
@@ -1062,11 +970,6 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         case TEXT_INPUT:
           {
             mergeTextInput(other.getTextInput());
-            break;
-          }
-        case AUDIO_INPUT:
-          {
-            mergeAudioInput(other.getAudioInput());
             break;
           }
         case EVENT_INPUT:
@@ -1455,215 +1358,6 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       ;
       return textInputBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.v2.AudioInput,
-            com.google.cloud.dialogflow.v2.AudioInput.Builder,
-            com.google.cloud.dialogflow.v2.AudioInputOrBuilder>
-        audioInputBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
-     *
-     * @return Whether the audioInput field is set.
-     */
-    @java.lang.Override
-    public boolean hasAudioInput() {
-      return inputCase_ == 7;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
-     *
-     * @return The audioInput.
-     */
-    @java.lang.Override
-    public com.google.cloud.dialogflow.v2.AudioInput getAudioInput() {
-      if (audioInputBuilder_ == null) {
-        if (inputCase_ == 7) {
-          return (com.google.cloud.dialogflow.v2.AudioInput) input_;
-        }
-        return com.google.cloud.dialogflow.v2.AudioInput.getDefaultInstance();
-      } else {
-        if (inputCase_ == 7) {
-          return audioInputBuilder_.getMessage();
-        }
-        return com.google.cloud.dialogflow.v2.AudioInput.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
-     */
-    public Builder setAudioInput(com.google.cloud.dialogflow.v2.AudioInput value) {
-      if (audioInputBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        input_ = value;
-        onChanged();
-      } else {
-        audioInputBuilder_.setMessage(value);
-      }
-      inputCase_ = 7;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
-     */
-    public Builder setAudioInput(
-        com.google.cloud.dialogflow.v2.AudioInput.Builder builderForValue) {
-      if (audioInputBuilder_ == null) {
-        input_ = builderForValue.build();
-        onChanged();
-      } else {
-        audioInputBuilder_.setMessage(builderForValue.build());
-      }
-      inputCase_ = 7;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
-     */
-    public Builder mergeAudioInput(com.google.cloud.dialogflow.v2.AudioInput value) {
-      if (audioInputBuilder_ == null) {
-        if (inputCase_ == 7
-            && input_ != com.google.cloud.dialogflow.v2.AudioInput.getDefaultInstance()) {
-          input_ =
-              com.google.cloud.dialogflow.v2.AudioInput.newBuilder(
-                      (com.google.cloud.dialogflow.v2.AudioInput) input_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          input_ = value;
-        }
-        onChanged();
-      } else {
-        if (inputCase_ == 7) {
-          audioInputBuilder_.mergeFrom(value);
-        }
-        audioInputBuilder_.setMessage(value);
-      }
-      inputCase_ = 7;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
-     */
-    public Builder clearAudioInput() {
-      if (audioInputBuilder_ == null) {
-        if (inputCase_ == 7) {
-          inputCase_ = 0;
-          input_ = null;
-          onChanged();
-        }
-      } else {
-        if (inputCase_ == 7) {
-          inputCase_ = 0;
-          input_ = null;
-        }
-        audioInputBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
-     */
-    public com.google.cloud.dialogflow.v2.AudioInput.Builder getAudioInputBuilder() {
-      return getAudioInputFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
-     */
-    @java.lang.Override
-    public com.google.cloud.dialogflow.v2.AudioInputOrBuilder getAudioInputOrBuilder() {
-      if ((inputCase_ == 7) && (audioInputBuilder_ != null)) {
-        return audioInputBuilder_.getMessageOrBuilder();
-      } else {
-        if (inputCase_ == 7) {
-          return (com.google.cloud.dialogflow.v2.AudioInput) input_;
-        }
-        return com.google.cloud.dialogflow.v2.AudioInput.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The natural language speech audio to be processed.
-     * </pre>
-     *
-     * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.v2.AudioInput,
-            com.google.cloud.dialogflow.v2.AudioInput.Builder,
-            com.google.cloud.dialogflow.v2.AudioInputOrBuilder>
-        getAudioInputFieldBuilder() {
-      if (audioInputBuilder_ == null) {
-        if (!(inputCase_ == 7)) {
-          input_ = com.google.cloud.dialogflow.v2.AudioInput.getDefaultInstance();
-        }
-        audioInputBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.dialogflow.v2.AudioInput,
-                com.google.cloud.dialogflow.v2.AudioInput.Builder,
-                com.google.cloud.dialogflow.v2.AudioInputOrBuilder>(
-                (com.google.cloud.dialogflow.v2.AudioInput) input_,
-                getParentForChildren(),
-                isClean());
-        input_ = null;
-      }
-      inputCase_ = 7;
-      onChanged();
-      ;
-      return audioInputBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

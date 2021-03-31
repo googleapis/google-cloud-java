@@ -21,7 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Service for managing [AnswerRecords][google.cloud.dialogflow.v2.AnswerRecord].
+ * Service for managing
+ * [AnswerRecords][google.cloud.dialogflow.v2.AnswerRecord].
  * </pre>
  */
 @javax.annotation.Generated(
@@ -172,7 +173,8 @@ public final class AnswerRecordsGrpc {
    *
    *
    * <pre>
-   * Service for managing [AnswerRecords][google.cloud.dialogflow.v2.AnswerRecord].
+   * Service for managing
+   * [AnswerRecords][google.cloud.dialogflow.v2.AnswerRecord].
    * </pre>
    */
   public abstract static class AnswerRecordsImplBase implements io.grpc.BindableService {
@@ -232,7 +234,8 @@ public final class AnswerRecordsGrpc {
    *
    *
    * <pre>
-   * Service for managing [AnswerRecords][google.cloud.dialogflow.v2.AnswerRecord].
+   * Service for managing
+   * [AnswerRecords][google.cloud.dialogflow.v2.AnswerRecord].
    * </pre>
    */
   public static final class AnswerRecordsStub
@@ -285,7 +288,8 @@ public final class AnswerRecordsGrpc {
    *
    *
    * <pre>
-   * Service for managing [AnswerRecords][google.cloud.dialogflow.v2.AnswerRecord].
+   * Service for managing
+   * [AnswerRecords][google.cloud.dialogflow.v2.AnswerRecord].
    * </pre>
    */
   public static final class AnswerRecordsBlockingStub
@@ -332,7 +336,8 @@ public final class AnswerRecordsGrpc {
    *
    *
    * <pre>
-   * Service for managing [AnswerRecords][google.cloud.dialogflow.v2.AnswerRecord].
+   * Service for managing
+   * [AnswerRecords][google.cloud.dialogflow.v2.AnswerRecord].
    * </pre>
    */
   public static final class AnswerRecordsFutureStub

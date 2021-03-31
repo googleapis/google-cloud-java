@@ -31,7 +31,7 @@ public interface UpdateAnswerRecordRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2beta1.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.dialogflow.v2beta1.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the answerRecord field is set.
@@ -45,7 +45,7 @@ public interface UpdateAnswerRecordRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2beta1.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.dialogflow.v2beta1.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The answerRecord.
@@ -59,7 +59,7 @@ public interface UpdateAnswerRecordRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2beta1.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.dialogflow.v2beta1.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.dialogflow.v2beta1.AnswerRecordOrBuilder getAnswerRecordOrBuilder();

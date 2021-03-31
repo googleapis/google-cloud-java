@@ -32,4 +32,44 @@
     <className>com/google/cloud/dialogflow/v2/AgentName</className>
     <method>com.google.cloud.dialogflow.v2.AgentName of(java.lang.String, java.lang.String)</method>
   </difference>
+  <!-- TODO: remove after 3.0.0 is released -->
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/dialogflow/v2/*CallMatcher*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/dialogflow/v2/InputTextConfig*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/dialogflow/v2/StreamingAnalyzeContent*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/dialogflow/v2/TelephonyDtmf*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/dialogflow/v2/AudioInput*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/dialogflow/v2/ConversationModelName*</className>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dialogflow/v2/AnalyzeContentRequest*</className>
+    <method>* *AudioInput*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/dialogflow/v2/AnalyzeContentRequest*</className>
+    <field>AUDIO_INPUT</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/dialogflow/v2/AnalyzeContentRequest*</className>
+    <field>AUDIO_INPUT_FIELD_NUMBER</field>
+  </difference>
 </differences>

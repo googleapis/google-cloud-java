@@ -16,26 +16,19 @@
 
 package com.google.cloud.dialogflow.v2.stub;
 
-import static com.google.cloud.dialogflow.v2.ConversationsClient.ListCallMatchersPagedResponse;
 import static com.google.cloud.dialogflow.v2.ConversationsClient.ListConversationsPagedResponse;
 import static com.google.cloud.dialogflow.v2.ConversationsClient.ListMessagesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.dialogflow.v2.CallMatcher;
 import com.google.cloud.dialogflow.v2.CompleteConversationRequest;
 import com.google.cloud.dialogflow.v2.Conversation;
-import com.google.cloud.dialogflow.v2.CreateCallMatcherRequest;
 import com.google.cloud.dialogflow.v2.CreateConversationRequest;
-import com.google.cloud.dialogflow.v2.DeleteCallMatcherRequest;
 import com.google.cloud.dialogflow.v2.GetConversationRequest;
-import com.google.cloud.dialogflow.v2.ListCallMatchersRequest;
-import com.google.cloud.dialogflow.v2.ListCallMatchersResponse;
 import com.google.cloud.dialogflow.v2.ListConversationsRequest;
 import com.google.cloud.dialogflow.v2.ListConversationsResponse;
 import com.google.cloud.dialogflow.v2.ListMessagesRequest;
 import com.google.cloud.dialogflow.v2.ListMessagesResponse;
-import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -67,24 +60,6 @@ public abstract class ConversationsStub implements BackgroundResource {
 
   public UnaryCallable<CompleteConversationRequest, Conversation> completeConversationCallable() {
     throw new UnsupportedOperationException("Not implemented: completeConversationCallable()");
-  }
-
-  public UnaryCallable<CreateCallMatcherRequest, CallMatcher> createCallMatcherCallable() {
-    throw new UnsupportedOperationException("Not implemented: createCallMatcherCallable()");
-  }
-
-  public UnaryCallable<ListCallMatchersRequest, ListCallMatchersPagedResponse>
-      listCallMatchersPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listCallMatchersPagedCallable()");
-  }
-
-  public UnaryCallable<ListCallMatchersRequest, ListCallMatchersResponse>
-      listCallMatchersCallable() {
-    throw new UnsupportedOperationException("Not implemented: listCallMatchersCallable()");
-  }
-
-  public UnaryCallable<DeleteCallMatcherRequest, Empty> deleteCallMatcherCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteCallMatcherCallable()");
   }
 
   public UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse> listMessagesPagedCallable() {

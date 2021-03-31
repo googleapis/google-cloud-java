@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <!-- TODO: remove after 3.0.0 is released -->
+  <difference>
+    <className>com/google/cloud/dialogflow/v2/ConversationsGrpc*</className>
+    <differenceType>7002</differenceType>
+    <method>* *CallMatcher*(*)</method>
+  </difference>
+  <difference>
+    <className>com/google/cloud/dialogflow/v2/ParticipantsGrpc*</className>
+    <differenceType>7002</differenceType>
+    <method>* *treamingAnalyzeContent*(*)</method>
+  </difference>
+</differences>

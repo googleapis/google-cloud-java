@@ -37,7 +37,6 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
-import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -53,8 +52,6 @@ import com.google.cloud.dialogflow.v2beta1.ListParticipantsResponse;
 import com.google.cloud.dialogflow.v2beta1.ListSuggestionsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListSuggestionsResponse;
 import com.google.cloud.dialogflow.v2beta1.Participant;
-import com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest;
-import com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse;
 import com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest;
@@ -122,9 +119,6 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
   private final UnaryCallSettings<UpdateParticipantRequest, Participant> updateParticipantSettings;
   private final UnaryCallSettings<AnalyzeContentRequest, AnalyzeContentResponse>
       analyzeContentSettings;
-  private final StreamingCallSettings<
-          StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
-      streamingAnalyzeContentSettings;
   private final UnaryCallSettings<SuggestArticlesRequest, SuggestArticlesResponse>
       suggestArticlesSettings;
   private final UnaryCallSettings<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
@@ -279,12 +273,6 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     return analyzeContentSettings;
   }
 
-  /** Returns the object with the settings used for calls to streamingAnalyzeContent. */
-  public StreamingCallSettings<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
-      streamingAnalyzeContentSettings() {
-    return streamingAnalyzeContentSettings;
-  }
-
   /** Returns the object with the settings used for calls to suggestArticles. */
   public UnaryCallSettings<SuggestArticlesRequest, SuggestArticlesResponse>
       suggestArticlesSettings() {
@@ -390,7 +378,6 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     listParticipantsSettings = settingsBuilder.listParticipantsSettings().build();
     updateParticipantSettings = settingsBuilder.updateParticipantSettings().build();
     analyzeContentSettings = settingsBuilder.analyzeContentSettings().build();
-    streamingAnalyzeContentSettings = settingsBuilder.streamingAnalyzeContentSettings().build();
     suggestArticlesSettings = settingsBuilder.suggestArticlesSettings().build();
     suggestFaqAnswersSettings = settingsBuilder.suggestFaqAnswersSettings().build();
     suggestSmartRepliesSettings = settingsBuilder.suggestSmartRepliesSettings().build();
@@ -412,9 +399,6 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
         updateParticipantSettings;
     private final UnaryCallSettings.Builder<AnalyzeContentRequest, AnalyzeContentResponse>
         analyzeContentSettings;
-    private final StreamingCallSettings.Builder<
-            StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
-        streamingAnalyzeContentSettings;
     private final UnaryCallSettings.Builder<SuggestArticlesRequest, SuggestArticlesResponse>
         suggestArticlesSettings;
     private final UnaryCallSettings.Builder<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
@@ -438,8 +422,6 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       definitions.put(
           "retry_policy_2_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -470,14 +452,6 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
               .setTotalTimeout(Duration.ofMillis(220000L))
               .build();
       definitions.put("retry_policy_2_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("no_retry_3_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -493,7 +467,6 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       listParticipantsSettings = PagedCallSettings.newBuilder(LIST_PARTICIPANTS_PAGE_STR_FACT);
       updateParticipantSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       analyzeContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      streamingAnalyzeContentSettings = StreamingCallSettings.newBuilder();
       suggestArticlesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       suggestFaqAnswersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       suggestSmartRepliesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -523,7 +496,6 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       listParticipantsSettings = settings.listParticipantsSettings.toBuilder();
       updateParticipantSettings = settings.updateParticipantSettings.toBuilder();
       analyzeContentSettings = settings.analyzeContentSettings.toBuilder();
-      streamingAnalyzeContentSettings = settings.streamingAnalyzeContentSettings.toBuilder();
       suggestArticlesSettings = settings.suggestArticlesSettings.toBuilder();
       suggestFaqAnswersSettings = settings.suggestFaqAnswersSettings.toBuilder();
       suggestSmartRepliesSettings = settings.suggestSmartRepliesSettings.toBuilder();
@@ -653,13 +625,6 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     public UnaryCallSettings.Builder<AnalyzeContentRequest, AnalyzeContentResponse>
         analyzeContentSettings() {
       return analyzeContentSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to streamingAnalyzeContent. */
-    public StreamingCallSettings.Builder<
-            StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
-        streamingAnalyzeContentSettings() {
-      return streamingAnalyzeContentSettings;
     }
 
     /** Returns the builder for the settings used for calls to suggestArticles. */

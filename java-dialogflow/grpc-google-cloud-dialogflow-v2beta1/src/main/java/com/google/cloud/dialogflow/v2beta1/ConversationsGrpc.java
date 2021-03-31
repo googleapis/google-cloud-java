@@ -21,7 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Service for managing [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
+ * Service for managing
+ * [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
  * </pre>
  */
 @javax.annotation.Generated(
@@ -225,142 +226,6 @@ public final class ConversationsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.CreateCallMatcherRequest,
-          com.google.cloud.dialogflow.v2beta1.CallMatcher>
-      getCreateCallMatcherMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreateCallMatcher",
-      requestType = com.google.cloud.dialogflow.v2beta1.CreateCallMatcherRequest.class,
-      responseType = com.google.cloud.dialogflow.v2beta1.CallMatcher.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.CreateCallMatcherRequest,
-          com.google.cloud.dialogflow.v2beta1.CallMatcher>
-      getCreateCallMatcherMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.dialogflow.v2beta1.CreateCallMatcherRequest,
-            com.google.cloud.dialogflow.v2beta1.CallMatcher>
-        getCreateCallMatcherMethod;
-    if ((getCreateCallMatcherMethod = ConversationsGrpc.getCreateCallMatcherMethod) == null) {
-      synchronized (ConversationsGrpc.class) {
-        if ((getCreateCallMatcherMethod = ConversationsGrpc.getCreateCallMatcherMethod) == null) {
-          ConversationsGrpc.getCreateCallMatcherMethod =
-              getCreateCallMatcherMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.dialogflow.v2beta1.CreateCallMatcherRequest,
-                          com.google.cloud.dialogflow.v2beta1.CallMatcher>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateCallMatcher"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.dialogflow.v2beta1.CreateCallMatcherRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.dialogflow.v2beta1.CallMatcher.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new ConversationsMethodDescriptorSupplier("CreateCallMatcher"))
-                      .build();
-        }
-      }
-    }
-    return getCreateCallMatcherMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.ListCallMatchersRequest,
-          com.google.cloud.dialogflow.v2beta1.ListCallMatchersResponse>
-      getListCallMatchersMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListCallMatchers",
-      requestType = com.google.cloud.dialogflow.v2beta1.ListCallMatchersRequest.class,
-      responseType = com.google.cloud.dialogflow.v2beta1.ListCallMatchersResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.ListCallMatchersRequest,
-          com.google.cloud.dialogflow.v2beta1.ListCallMatchersResponse>
-      getListCallMatchersMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.dialogflow.v2beta1.ListCallMatchersRequest,
-            com.google.cloud.dialogflow.v2beta1.ListCallMatchersResponse>
-        getListCallMatchersMethod;
-    if ((getListCallMatchersMethod = ConversationsGrpc.getListCallMatchersMethod) == null) {
-      synchronized (ConversationsGrpc.class) {
-        if ((getListCallMatchersMethod = ConversationsGrpc.getListCallMatchersMethod) == null) {
-          ConversationsGrpc.getListCallMatchersMethod =
-              getListCallMatchersMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.dialogflow.v2beta1.ListCallMatchersRequest,
-                          com.google.cloud.dialogflow.v2beta1.ListCallMatchersResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListCallMatchers"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.dialogflow.v2beta1.ListCallMatchersRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.dialogflow.v2beta1.ListCallMatchersResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new ConversationsMethodDescriptorSupplier("ListCallMatchers"))
-                      .build();
-        }
-      }
-    }
-    return getListCallMatchersMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.DeleteCallMatcherRequest, com.google.protobuf.Empty>
-      getDeleteCallMatcherMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteCallMatcher",
-      requestType = com.google.cloud.dialogflow.v2beta1.DeleteCallMatcherRequest.class,
-      responseType = com.google.protobuf.Empty.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.v2beta1.DeleteCallMatcherRequest, com.google.protobuf.Empty>
-      getDeleteCallMatcherMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.dialogflow.v2beta1.DeleteCallMatcherRequest, com.google.protobuf.Empty>
-        getDeleteCallMatcherMethod;
-    if ((getDeleteCallMatcherMethod = ConversationsGrpc.getDeleteCallMatcherMethod) == null) {
-      synchronized (ConversationsGrpc.class) {
-        if ((getDeleteCallMatcherMethod = ConversationsGrpc.getDeleteCallMatcherMethod) == null) {
-          ConversationsGrpc.getDeleteCallMatcherMethod =
-              getDeleteCallMatcherMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.dialogflow.v2beta1.DeleteCallMatcherRequest,
-                          com.google.protobuf.Empty>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteCallMatcher"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.dialogflow.v2beta1.DeleteCallMatcherRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.protobuf.Empty.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new ConversationsMethodDescriptorSupplier("DeleteCallMatcher"))
-                      .build();
-        }
-      }
-    }
-    return getDeleteCallMatcherMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesRequest,
           com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesResponse>
       getBatchCreateMessagesMethod;
@@ -501,7 +366,8 @@ public final class ConversationsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
+   * Service for managing
+   * [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
    * </pre>
    */
   public abstract static class ConversationsImplBase implements io.grpc.BindableService {
@@ -519,11 +385,14 @@ public final class ConversationsGrpc {
      * user queries.
      * For Assist Stage, there's no dialogflow agent responding to user queries.
      * But we will provide suggestions which are generated from conversation.
-     * If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
-     * agent, conversation will start from `Automated Agent Stage`, otherwise, it
-     * will start from `Assist Stage`. And during `Automated Agent Stage`, once an
-     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
-     * will transfer to Assist Stage.
+     * If
+     * [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
+     * is configured for a dialogflow agent, conversation will start from
+     * `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
+     * during `Automated Agent Stage`, once an
+     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with
+     * [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
+     * is triggered, conversation will transfer to Assist Stage.
      * </pre>
      */
     public void createConversation(
@@ -578,51 +447,6 @@ public final class ConversationsGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCompleteConversationMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a call matcher that links incoming SIP calls to the specified
-     * conversation if they fulfill specified criteria.
-     * </pre>
-     */
-    public void createCallMatcher(
-        com.google.cloud.dialogflow.v2beta1.CreateCallMatcherRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.CallMatcher>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getCreateCallMatcherMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all call matchers in the specified conversation.
-     * </pre>
-     */
-    public void listCallMatchers(
-        com.google.cloud.dialogflow.v2beta1.ListCallMatchersRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListCallMatchersResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getListCallMatchersMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Requests deletion of a call matcher.
-     * </pre>
-     */
-    public void deleteCallMatcher(
-        com.google.cloud.dialogflow.v2beta1.DeleteCallMatcherRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getDeleteCallMatcherMethod(), responseObserver);
     }
 
     /**
@@ -692,26 +516,6 @@ public final class ConversationsGrpc {
                       com.google.cloud.dialogflow.v2beta1.Conversation>(
                       this, METHODID_COMPLETE_CONVERSATION)))
           .addMethod(
-              getCreateCallMatcherMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.CreateCallMatcherRequest,
-                      com.google.cloud.dialogflow.v2beta1.CallMatcher>(
-                      this, METHODID_CREATE_CALL_MATCHER)))
-          .addMethod(
-              getListCallMatchersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.ListCallMatchersRequest,
-                      com.google.cloud.dialogflow.v2beta1.ListCallMatchersResponse>(
-                      this, METHODID_LIST_CALL_MATCHERS)))
-          .addMethod(
-              getDeleteCallMatcherMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.DeleteCallMatcherRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_CALL_MATCHER)))
-          .addMethod(
               getBatchCreateMessagesMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -733,7 +537,8 @@ public final class ConversationsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
+   * Service for managing
+   * [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
    * </pre>
    */
   public static final class ConversationsStub
@@ -760,11 +565,14 @@ public final class ConversationsGrpc {
      * user queries.
      * For Assist Stage, there's no dialogflow agent responding to user queries.
      * But we will provide suggestions which are generated from conversation.
-     * If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
-     * agent, conversation will start from `Automated Agent Stage`, otherwise, it
-     * will start from `Assist Stage`. And during `Automated Agent Stage`, once an
-     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
-     * will transfer to Assist Stage.
+     * If
+     * [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
+     * is configured for a dialogflow agent, conversation will start from
+     * `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
+     * during `Automated Agent Stage`, once an
+     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with
+     * [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
+     * is triggered, conversation will transfer to Assist Stage.
      * </pre>
      */
     public void createConversation(
@@ -833,57 +641,6 @@ public final class ConversationsGrpc {
      *
      *
      * <pre>
-     * Creates a call matcher that links incoming SIP calls to the specified
-     * conversation if they fulfill specified criteria.
-     * </pre>
-     */
-    public void createCallMatcher(
-        com.google.cloud.dialogflow.v2beta1.CreateCallMatcherRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.CallMatcher>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateCallMatcherMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all call matchers in the specified conversation.
-     * </pre>
-     */
-    public void listCallMatchers(
-        com.google.cloud.dialogflow.v2beta1.ListCallMatchersRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListCallMatchersResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListCallMatchersMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Requests deletion of a call matcher.
-     * </pre>
-     */
-    public void deleteCallMatcher(
-        com.google.cloud.dialogflow.v2beta1.DeleteCallMatcherRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteCallMatcherMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Batch ingests messages to conversation. Customers can use this RPC to
      * ingest historical messages to conversation.
      * </pre>
@@ -924,7 +681,8 @@ public final class ConversationsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
+   * Service for managing
+   * [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
    * </pre>
    */
   public static final class ConversationsBlockingStub
@@ -952,11 +710,14 @@ public final class ConversationsGrpc {
      * user queries.
      * For Assist Stage, there's no dialogflow agent responding to user queries.
      * But we will provide suggestions which are generated from conversation.
-     * If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
-     * agent, conversation will start from `Automated Agent Stage`, otherwise, it
-     * will start from `Assist Stage`. And during `Automated Agent Stage`, once an
-     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
-     * will transfer to Assist Stage.
+     * If
+     * [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
+     * is configured for a dialogflow agent, conversation will start from
+     * `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
+     * during `Automated Agent Stage`, once an
+     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with
+     * [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
+     * is triggered, conversation will transfer to Assist Stage.
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.Conversation createConversation(
@@ -1009,46 +770,6 @@ public final class ConversationsGrpc {
      *
      *
      * <pre>
-     * Creates a call matcher that links incoming SIP calls to the specified
-     * conversation if they fulfill specified criteria.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.v2beta1.CallMatcher createCallMatcher(
-        com.google.cloud.dialogflow.v2beta1.CreateCallMatcherRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateCallMatcherMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all call matchers in the specified conversation.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.v2beta1.ListCallMatchersResponse listCallMatchers(
-        com.google.cloud.dialogflow.v2beta1.ListCallMatchersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListCallMatchersMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Requests deletion of a call matcher.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteCallMatcher(
-        com.google.cloud.dialogflow.v2beta1.DeleteCallMatcherRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteCallMatcherMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Batch ingests messages to conversation. Customers can use this RPC to
      * ingest historical messages to conversation.
      * </pre>
@@ -1081,7 +802,8 @@ public final class ConversationsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
+   * Service for managing
+   * [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
    * </pre>
    */
   public static final class ConversationsFutureStub
@@ -1109,11 +831,14 @@ public final class ConversationsGrpc {
      * user queries.
      * For Assist Stage, there's no dialogflow agent responding to user queries.
      * But we will provide suggestions which are generated from conversation.
-     * If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
-     * agent, conversation will start from `Automated Agent Stage`, otherwise, it
-     * will start from `Assist Stage`. And during `Automated Agent Stage`, once an
-     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
-     * will transfer to Assist Stage.
+     * If
+     * [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
+     * is configured for a dialogflow agent, conversation will start from
+     * `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
+     * during `Automated Agent Stage`, once an
+     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with
+     * [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
+     * is triggered, conversation will transfer to Assist Stage.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1171,48 +896,6 @@ public final class ConversationsGrpc {
      *
      *
      * <pre>
-     * Creates a call matcher that links incoming SIP calls to the specified
-     * conversation if they fulfill specified criteria.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.dialogflow.v2beta1.CallMatcher>
-        createCallMatcher(com.google.cloud.dialogflow.v2beta1.CreateCallMatcherRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateCallMatcherMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all call matchers in the specified conversation.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.dialogflow.v2beta1.ListCallMatchersResponse>
-        listCallMatchers(com.google.cloud.dialogflow.v2beta1.ListCallMatchersRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListCallMatchersMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Requests deletion of a call matcher.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
-        deleteCallMatcher(com.google.cloud.dialogflow.v2beta1.DeleteCallMatcherRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteCallMatcherMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Batch ingests messages to conversation. Customers can use this RPC to
      * ingest historical messages to conversation.
      * </pre>
@@ -1248,11 +931,8 @@ public final class ConversationsGrpc {
   private static final int METHODID_LIST_CONVERSATIONS = 1;
   private static final int METHODID_GET_CONVERSATION = 2;
   private static final int METHODID_COMPLETE_CONVERSATION = 3;
-  private static final int METHODID_CREATE_CALL_MATCHER = 4;
-  private static final int METHODID_LIST_CALL_MATCHERS = 5;
-  private static final int METHODID_DELETE_CALL_MATCHER = 6;
-  private static final int METHODID_BATCH_CREATE_MESSAGES = 7;
-  private static final int METHODID_LIST_MESSAGES = 8;
+  private static final int METHODID_BATCH_CREATE_MESSAGES = 4;
+  private static final int METHODID_LIST_MESSAGES = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1295,24 +975,6 @@ public final class ConversationsGrpc {
               (com.google.cloud.dialogflow.v2beta1.CompleteConversationRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Conversation>)
                   responseObserver);
-          break;
-        case METHODID_CREATE_CALL_MATCHER:
-          serviceImpl.createCallMatcher(
-              (com.google.cloud.dialogflow.v2beta1.CreateCallMatcherRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.CallMatcher>)
-                  responseObserver);
-          break;
-        case METHODID_LIST_CALL_MATCHERS:
-          serviceImpl.listCallMatchers(
-              (com.google.cloud.dialogflow.v2beta1.ListCallMatchersRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.cloud.dialogflow.v2beta1.ListCallMatchersResponse>)
-                  responseObserver);
-          break;
-        case METHODID_DELETE_CALL_MATCHER:
-          serviceImpl.deleteCallMatcher(
-              (com.google.cloud.dialogflow.v2beta1.DeleteCallMatcherRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_BATCH_CREATE_MESSAGES:
           serviceImpl.batchCreateMessages(
@@ -1396,9 +1058,6 @@ public final class ConversationsGrpc {
                       .addMethod(getListConversationsMethod())
                       .addMethod(getGetConversationMethod())
                       .addMethod(getCompleteConversationMethod())
-                      .addMethod(getCreateCallMatcherMethod())
-                      .addMethod(getListCallMatchersMethod())
-                      .addMethod(getDeleteCallMatcherMethod())
                       .addMethod(getBatchCreateMessagesMethod())
                       .addMethod(getListMessagesMethod())
                       .build();

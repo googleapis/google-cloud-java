@@ -63,82 +63,6 @@ public interface AnalyzeContentRequestOrBuilder
    * The natural language text to be processed.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.InputText text = 3 [deprecated = true];</code>
-   *
-   * @return Whether the text field is set.
-   */
-  @java.lang.Deprecated
-  boolean hasText();
-  /**
-   *
-   *
-   * <pre>
-   * The natural language text to be processed.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2beta1.InputText text = 3 [deprecated = true];</code>
-   *
-   * @return The text.
-   */
-  @java.lang.Deprecated
-  com.google.cloud.dialogflow.v2beta1.InputText getText();
-  /**
-   *
-   *
-   * <pre>
-   * The natural language text to be processed.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2beta1.InputText text = 3 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated
-  com.google.cloud.dialogflow.v2beta1.InputTextOrBuilder getTextOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * The natural language speech audio to be processed.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2beta1.InputAudio audio = 4 [deprecated = true];</code>
-   *
-   * @return Whether the audio field is set.
-   */
-  @java.lang.Deprecated
-  boolean hasAudio();
-  /**
-   *
-   *
-   * <pre>
-   * The natural language speech audio to be processed.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2beta1.InputAudio audio = 4 [deprecated = true];</code>
-   *
-   * @return The audio.
-   */
-  @java.lang.Deprecated
-  com.google.cloud.dialogflow.v2beta1.InputAudio getAudio();
-  /**
-   *
-   *
-   * <pre>
-   * The natural language speech audio to be processed.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2beta1.InputAudio audio = 4 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated
-  com.google.cloud.dialogflow.v2beta1.InputAudioOrBuilder getAudioOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * The natural language text to be processed.
-   * </pre>
-   *
    * <code>.google.cloud.dialogflow.v2beta1.TextInput text_input = 6;</code>
    *
    * @return Whether the textInput field is set.
@@ -166,41 +90,6 @@ public interface AnalyzeContentRequestOrBuilder
    * <code>.google.cloud.dialogflow.v2beta1.TextInput text_input = 6;</code>
    */
   com.google.cloud.dialogflow.v2beta1.TextInputOrBuilder getTextInputOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * The natural language speech audio to be processed.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
-   *
-   * @return Whether the audioInput field is set.
-   */
-  boolean hasAudioInput();
-  /**
-   *
-   *
-   * <pre>
-   * The natural language speech audio to be processed.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
-   *
-   * @return The audioInput.
-   */
-  com.google.cloud.dialogflow.v2beta1.AudioInput getAudioInput();
-  /**
-   *
-   *
-   * <pre>
-   * The natural language speech audio to be processed.
-   * </pre>
-   *
-   * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
-   */
-  com.google.cloud.dialogflow.v2beta1.AudioInputOrBuilder getAudioInputOrBuilder();
 
   /**
    *

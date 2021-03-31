@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * Request message for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord].
+ * Request message for
+ * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.UpdateAnswerRecordRequest}
@@ -143,7 +144,7 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the answerRecord field is set.
@@ -160,7 +161,7 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The answerRecord.
@@ -179,7 +180,7 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -419,7 +420,8 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Request message for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord].
+   * Request message for
+   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.UpdateAnswerRecordRequest}
@@ -609,7 +611,7 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the answerRecord field is set.
@@ -625,7 +627,7 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The answerRecord.
@@ -647,7 +649,7 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setAnswerRecord(com.google.cloud.dialogflow.v2.AnswerRecord value) {
@@ -671,7 +673,7 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setAnswerRecord(
@@ -693,7 +695,7 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeAnswerRecord(com.google.cloud.dialogflow.v2.AnswerRecord value) {
@@ -721,7 +723,7 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearAnswerRecord() {
@@ -743,7 +745,7 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.dialogflow.v2.AnswerRecord.Builder getAnswerRecordBuilder() {
@@ -759,7 +761,7 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.dialogflow.v2.AnswerRecordOrBuilder getAnswerRecordOrBuilder() {
@@ -779,7 +781,7 @@ public final class UpdateAnswerRecordRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * .google.cloud.dialogflow.v2.AnswerRecord answer_record = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

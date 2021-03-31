@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <!-- TODO: remove after 3.0.0 is released -->
+  <difference>
+    <className>com/google/cloud/dialogflow/*/ConversationsClient*</className>
+    <differenceType>8001</differenceType>
+  </difference>
+  <difference>
+    <className>com/google/cloud/dialogflow/*/*Participants*</className>
+    <differenceType>7002</differenceType>
+    <method>* streamingAnalyzeContent*(*)</method>
+  </difference>
+  <difference>
+    <className>com/google/cloud/dialogflow/*/*Participants*</className>
+    <differenceType>7002</differenceType>
+    <method>* analyzeContent*(*)</method>
+  </difference>
+  <difference>
+    <className>com/google/cloud/dialogflow/*/*Participants*</className>
+    <differenceType>7002</differenceType>
+    <method>* *CallMatcher*(*)</method>
+  </difference>
+  <difference>
+    <className>com/google/cloud/dialogflow/*/stub/*Participants*</className>
+    <differenceType>7002</differenceType>
+    <method>* streamingAnalyzeContent*(*)</method>
+  </difference>
+  <difference>
+    <className>com/google/cloud/dialogflow/*/stub/*Participants*</className>
+    <differenceType>7002</differenceType>
+    <method>* *CallMatcher*(*)</method>
+  </difference>
+  <difference>
+    <className>com/google/cloud/dialogflow/*/*Conversations*</className>
+    <differenceType>7002</differenceType>
+    <method>* streamingAnalyzeContent*(*)</method>
+  </difference>
+  <difference>
+    <className>com/google/cloud/dialogflow/*/*Conversations*</className>
+    <differenceType>7002</differenceType>
+    <method>* *CallMatcher*(*)</method>
+  </difference>
+  <difference>
+    <className>com/google/cloud/dialogflow/*/stub/*Conversations*</className>
+    <differenceType>7002</differenceType>
+    <method>* streamingAnalyzeContent*(*)</method>
+  </difference>
+  <difference>
+    <className>com/google/cloud/dialogflow/*/stub/*Conversations*</className>
+    <differenceType>7002</differenceType>
+    <method>* *CallMatcher*(*)</method>
+  </difference>
+</differences>

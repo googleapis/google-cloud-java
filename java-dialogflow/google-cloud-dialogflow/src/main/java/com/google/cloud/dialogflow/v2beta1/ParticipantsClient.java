@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.stub.ParticipantsStub;
@@ -616,42 +615,6 @@ public class ParticipantsClient implements BackgroundResource {
    *   ParticipantName participant =
    *       ParticipantName.ofProjectConversationParticipantName(
    *           "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
-   *   AudioInput audioInput = AudioInput.newBuilder().build();
-   *   AnalyzeContentResponse response = participantsClient.analyzeContent(participant, audioInput);
-   * }
-   * }</pre>
-   *
-   * @param participant Required. The name of the participant this text comes from. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation
-   *     ID&gt;/participants/&lt;Participant ID&gt;`.
-   * @param audioInput The natural language speech audio to be processed.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final AnalyzeContentResponse analyzeContent(
-      ParticipantName participant, AudioInput audioInput) {
-    AnalyzeContentRequest request =
-        AnalyzeContentRequest.newBuilder()
-            .setParticipant(participant == null ? null : participant.toString())
-            .setAudioInput(audioInput)
-            .build();
-    return analyzeContent(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Adds a text (chat, for example), or audio (phone recording, for example) message from a
-   * participant into the conversation.
-   *
-   * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
-   * and environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
-   *   ParticipantName participant =
-   *       ParticipantName.ofProjectConversationParticipantName(
-   *           "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
    *   EventInput eventInput = EventInput.newBuilder().build();
    *   AnalyzeContentResponse response = participantsClient.analyzeContent(participant, eventInput);
    * }
@@ -705,42 +668,6 @@ public class ParticipantsClient implements BackgroundResource {
         AnalyzeContentRequest.newBuilder()
             .setParticipant(participant == null ? null : participant.toString())
             .setTextInput(textInput)
-            .build();
-    return analyzeContent(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Adds a text (chat, for example), or audio (phone recording, for example) message from a
-   * participant into the conversation.
-   *
-   * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
-   * and environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
-   *   String participant =
-   *       ParticipantName.ofProjectConversationParticipantName(
-   *               "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
-   *           .toString();
-   *   AudioInput audioInput = AudioInput.newBuilder().build();
-   *   AnalyzeContentResponse response = participantsClient.analyzeContent(participant, audioInput);
-   * }
-   * }</pre>
-   *
-   * @param participant Required. The name of the participant this text comes from. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation
-   *     ID&gt;/participants/&lt;Participant ID&gt;`.
-   * @param audioInput The natural language speech audio to be processed.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final AnalyzeContentResponse analyzeContent(String participant, AudioInput audioInput) {
-    AnalyzeContentRequest request =
-        AnalyzeContentRequest.newBuilder()
-            .setParticipant(participant)
-            .setAudioInput(audioInput)
             .build();
     return analyzeContent(request);
   }
@@ -884,49 +811,6 @@ public class ParticipantsClient implements BackgroundResource {
   public final UnaryCallable<AnalyzeContentRequest, AnalyzeContentResponse>
       analyzeContentCallable() {
     return stub.analyzeContentCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Adds a text (e.g., chat) or audio (e.g., phone recording) message from a participant into the
-   * conversation. Note: This method is only available through the gRPC API (not REST).
-   *
-   * <p>The top-level message sent to the client by the server is `StreamingAnalyzeContentResponse`.
-   * Multiple response messages can be returned in order. The first one or more messages contain the
-   * `recognition_result` field. Each result represents a more complete transcript of what the user
-   * said. The next message contains the `reply_text` field, and potentially the `reply_audio`
-   * and/or the `automated_agent_reply` fields.
-   *
-   * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
-   * and environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
-   *   BidiStream<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse> bidiStream =
-   *       participantsClient.streamingAnalyzeContentCallable().call();
-   *   StreamingAnalyzeContentRequest request =
-   *       StreamingAnalyzeContentRequest.newBuilder()
-   *           .setParticipant(
-   *               ParticipantName.ofProjectConversationParticipantName(
-   *                       "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
-   *                   .toString())
-   *           .setReplyAudioConfig(OutputAudioConfig.newBuilder().build())
-   *           .setQueryParams(QueryParameters.newBuilder().build())
-   *           .setEnableExtendedStreaming(true)
-   *           .build();
-   *   bidiStream.send(request);
-   *   for (StreamingAnalyzeContentResponse response : bidiStream) {
-   *     // Do something when a response is received.
-   *   }
-   * }
-   * }</pre>
-   */
-  public final BidiStreamingCallable<
-          StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
-      streamingAnalyzeContentCallable() {
-    return stub.streamingAnalyzeContentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

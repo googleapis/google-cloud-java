@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Conversations.CompleteConversation][google.cloud.dialogflow.v2beta1.Conversations.CompleteConversation].
+ * The request message for
+ * [Conversations.CompleteConversation][google.cloud.dialogflow.v2beta1.Conversations.CompleteConversation].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.CompleteConversationRequest}
@@ -332,7 +333,8 @@ public final class CompleteConversationRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The request message for [Conversations.CompleteConversation][google.cloud.dialogflow.v2beta1.Conversations.CompleteConversation].
+   * The request message for
+   * [Conversations.CompleteConversation][google.cloud.dialogflow.v2beta1.Conversations.CompleteConversation].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.CompleteConversationRequest}

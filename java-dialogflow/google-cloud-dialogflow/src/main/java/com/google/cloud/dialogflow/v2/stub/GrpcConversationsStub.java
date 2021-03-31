@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2.stub;
 
-import static com.google.cloud.dialogflow.v2.ConversationsClient.ListCallMatchersPagedResponse;
 import static com.google.cloud.dialogflow.v2.ConversationsClient.ListConversationsPagedResponse;
 import static com.google.cloud.dialogflow.v2.ConversationsClient.ListMessagesPagedResponse;
 
@@ -27,22 +26,16 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.dialogflow.v2.CallMatcher;
 import com.google.cloud.dialogflow.v2.CompleteConversationRequest;
 import com.google.cloud.dialogflow.v2.Conversation;
-import com.google.cloud.dialogflow.v2.CreateCallMatcherRequest;
 import com.google.cloud.dialogflow.v2.CreateConversationRequest;
-import com.google.cloud.dialogflow.v2.DeleteCallMatcherRequest;
 import com.google.cloud.dialogflow.v2.GetConversationRequest;
-import com.google.cloud.dialogflow.v2.ListCallMatchersRequest;
-import com.google.cloud.dialogflow.v2.ListCallMatchersResponse;
 import com.google.cloud.dialogflow.v2.ListConversationsRequest;
 import com.google.cloud.dialogflow.v2.ListConversationsResponse;
 import com.google.cloud.dialogflow.v2.ListMessagesRequest;
 import com.google.cloud.dialogflow.v2.ListMessagesResponse;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
-import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -99,37 +92,6 @@ public class GrpcConversationsStub extends ConversationsStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Conversation.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<CreateCallMatcherRequest, CallMatcher>
-      createCallMatcherMethodDescriptor =
-          MethodDescriptor.<CreateCallMatcherRequest, CallMatcher>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.dialogflow.v2.Conversations/CreateCallMatcher")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateCallMatcherRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(CallMatcher.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<ListCallMatchersRequest, ListCallMatchersResponse>
-      listCallMatchersMethodDescriptor =
-          MethodDescriptor.<ListCallMatchersRequest, ListCallMatchersResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.dialogflow.v2.Conversations/ListCallMatchers")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListCallMatchersRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListCallMatchersResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<DeleteCallMatcherRequest, Empty>
-      deleteCallMatcherMethodDescriptor =
-          MethodDescriptor.<DeleteCallMatcherRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.dialogflow.v2.Conversations/DeleteCallMatcher")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteCallMatcherRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
-
   private static final MethodDescriptor<ListMessagesRequest, ListMessagesResponse>
       listMessagesMethodDescriptor =
           MethodDescriptor.<ListMessagesRequest, ListMessagesResponse>newBuilder()
@@ -148,12 +110,6 @@ public class GrpcConversationsStub extends ConversationsStub {
   private final UnaryCallable<GetConversationRequest, Conversation> getConversationCallable;
   private final UnaryCallable<CompleteConversationRequest, Conversation>
       completeConversationCallable;
-  private final UnaryCallable<CreateCallMatcherRequest, CallMatcher> createCallMatcherCallable;
-  private final UnaryCallable<ListCallMatchersRequest, ListCallMatchersResponse>
-      listCallMatchersCallable;
-  private final UnaryCallable<ListCallMatchersRequest, ListCallMatchersPagedResponse>
-      listCallMatchersPagedCallable;
-  private final UnaryCallable<DeleteCallMatcherRequest, Empty> deleteCallMatcherCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse>
       listMessagesPagedCallable;
@@ -254,46 +210,6 @@ public class GrpcConversationsStub extends ConversationsStub {
                       }
                     })
                 .build();
-    GrpcCallSettings<CreateCallMatcherRequest, CallMatcher> createCallMatcherTransportSettings =
-        GrpcCallSettings.<CreateCallMatcherRequest, CallMatcher>newBuilder()
-            .setMethodDescriptor(createCallMatcherMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<CreateCallMatcherRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateCallMatcherRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<ListCallMatchersRequest, ListCallMatchersResponse>
-        listCallMatchersTransportSettings =
-            GrpcCallSettings.<ListCallMatchersRequest, ListCallMatchersResponse>newBuilder()
-                .setMethodDescriptor(listCallMatchersMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<ListCallMatchersRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListCallMatchersRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
-                    })
-                .build();
-    GrpcCallSettings<DeleteCallMatcherRequest, Empty> deleteCallMatcherTransportSettings =
-        GrpcCallSettings.<DeleteCallMatcherRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteCallMatcherMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteCallMatcherRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteCallMatcherRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<ListMessagesRequest, ListMessagesResponse> listMessagesTransportSettings =
         GrpcCallSettings.<ListMessagesRequest, ListMessagesResponse>newBuilder()
             .setMethodDescriptor(listMessagesMethodDescriptor)
@@ -330,22 +246,6 @@ public class GrpcConversationsStub extends ConversationsStub {
         callableFactory.createUnaryCallable(
             completeConversationTransportSettings,
             settings.completeConversationSettings(),
-            clientContext);
-    this.createCallMatcherCallable =
-        callableFactory.createUnaryCallable(
-            createCallMatcherTransportSettings,
-            settings.createCallMatcherSettings(),
-            clientContext);
-    this.listCallMatchersCallable =
-        callableFactory.createUnaryCallable(
-            listCallMatchersTransportSettings, settings.listCallMatchersSettings(), clientContext);
-    this.listCallMatchersPagedCallable =
-        callableFactory.createPagedCallable(
-            listCallMatchersTransportSettings, settings.listCallMatchersSettings(), clientContext);
-    this.deleteCallMatcherCallable =
-        callableFactory.createUnaryCallable(
-            deleteCallMatcherTransportSettings,
-            settings.deleteCallMatcherSettings(),
             clientContext);
     this.listMessagesCallable =
         callableFactory.createUnaryCallable(
@@ -387,28 +287,6 @@ public class GrpcConversationsStub extends ConversationsStub {
   @Override
   public UnaryCallable<CompleteConversationRequest, Conversation> completeConversationCallable() {
     return completeConversationCallable;
-  }
-
-  @Override
-  public UnaryCallable<CreateCallMatcherRequest, CallMatcher> createCallMatcherCallable() {
-    return createCallMatcherCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListCallMatchersRequest, ListCallMatchersResponse>
-      listCallMatchersCallable() {
-    return listCallMatchersCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListCallMatchersRequest, ListCallMatchersPagedResponse>
-      listCallMatchersPagedCallable() {
-    return listCallMatchersPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeleteCallMatcherRequest, Empty> deleteCallMatcherCallable() {
-    return deleteCallMatcherCallable;
   }
 
   @Override

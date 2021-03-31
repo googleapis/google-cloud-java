@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Conversations.ListConversations][google.cloud.dialogflow.v2beta1.Conversations.ListConversations].
+ * The request message for
+ * [Conversations.ListConversations][google.cloud.dialogflow.v2beta1.Conversations.ListConversations].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListConversationsRequest}
@@ -523,7 +524,8 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The request message for [Conversations.ListConversations][google.cloud.dialogflow.v2beta1.Conversations.ListConversations].
+   * The request message for
+   * [Conversations.ListConversations][google.cloud.dialogflow.v2beta1.Conversations.ListConversations].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListConversationsRequest}
