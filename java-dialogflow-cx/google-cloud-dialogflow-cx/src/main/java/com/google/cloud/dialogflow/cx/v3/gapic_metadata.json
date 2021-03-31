@@ -295,6 +295,9 @@
             "GetTestCase": {
               "methods": ["getTestCase", "getTestCase", "getTestCase", "getTestCaseCallable"]
             },
+            "GetTestCaseResult": {
+              "methods": ["getTestCaseResult", "getTestCaseResult", "getTestCaseResult", "getTestCaseResultCallable"]
+            },
             "ImportTestCases": {
               "methods": ["importTestCasesAsync", "importTestCasesOperationCallable", "importTestCasesCallable"]
             },

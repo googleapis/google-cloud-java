@@ -56,6 +56,7 @@ import com.google.cloud.dialogflow.cx.v3.ExportTestCasesMetadata;
 import com.google.cloud.dialogflow.cx.v3.ExportTestCasesRequest;
 import com.google.cloud.dialogflow.cx.v3.ExportTestCasesResponse;
 import com.google.cloud.dialogflow.cx.v3.GetTestCaseRequest;
+import com.google.cloud.dialogflow.cx.v3.GetTestCaseResultRequest;
 import com.google.cloud.dialogflow.cx.v3.ImportTestCasesMetadata;
 import com.google.cloud.dialogflow.cx.v3.ImportTestCasesRequest;
 import com.google.cloud.dialogflow.cx.v3.ImportTestCasesResponse;
@@ -147,6 +148,8 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
   private final PagedCallSettings<
           ListTestCaseResultsRequest, ListTestCaseResultsResponse, ListTestCaseResultsPagedResponse>
       listTestCaseResultsSettings;
+  private final UnaryCallSettings<GetTestCaseResultRequest, TestCaseResult>
+      getTestCaseResultSettings;
 
   private static final PagedListDescriptor<ListTestCasesRequest, ListTestCasesResponse, TestCase>
       LIST_TEST_CASES_PAGE_STR_DESC =
@@ -348,6 +351,11 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
     return listTestCaseResultsSettings;
   }
 
+  /** Returns the object with the settings used for calls to getTestCaseResult. */
+  public UnaryCallSettings<GetTestCaseResultRequest, TestCaseResult> getTestCaseResultSettings() {
+    return getTestCaseResultSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TestCasesStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -432,6 +440,7 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
     exportTestCasesSettings = settingsBuilder.exportTestCasesSettings().build();
     exportTestCasesOperationSettings = settingsBuilder.exportTestCasesOperationSettings().build();
     listTestCaseResultsSettings = settingsBuilder.listTestCaseResultsSettings().build();
+    getTestCaseResultSettings = settingsBuilder.getTestCaseResultSettings().build();
   }
 
   /** Builder for TestCasesStubSettings. */
@@ -471,6 +480,8 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
             ListTestCaseResultsResponse,
             ListTestCaseResultsPagedResponse>
         listTestCaseResultsSettings;
+    private final UnaryCallSettings.Builder<GetTestCaseResultRequest, TestCaseResult>
+        getTestCaseResultSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -525,6 +536,7 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
       exportTestCasesOperationSettings = OperationCallSettings.newBuilder();
       listTestCaseResultsSettings =
           PagedCallSettings.newBuilder(LIST_TEST_CASE_RESULTS_PAGE_STR_FACT);
+      getTestCaseResultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -538,7 +550,8 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
               calculateCoverageSettings,
               importTestCasesSettings,
               exportTestCasesSettings,
-              listTestCaseResultsSettings);
+              listTestCaseResultsSettings,
+              getTestCaseResultSettings);
       initDefaults(this);
     }
 
@@ -560,6 +573,7 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
       exportTestCasesSettings = settings.exportTestCasesSettings.toBuilder();
       exportTestCasesOperationSettings = settings.exportTestCasesOperationSettings.toBuilder();
       listTestCaseResultsSettings = settings.listTestCaseResultsSettings.toBuilder();
+      getTestCaseResultSettings = settings.getTestCaseResultSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -573,7 +587,8 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
               calculateCoverageSettings,
               importTestCasesSettings,
               exportTestCasesSettings,
-              listTestCaseResultsSettings);
+              listTestCaseResultsSettings,
+              getTestCaseResultSettings);
     }
 
     private static Builder createDefault() {
@@ -640,6 +655,11 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
 
       builder
           .listTestCaseResultsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getTestCaseResultSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -857,6 +877,12 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
             ListTestCaseResultsPagedResponse>
         listTestCaseResultsSettings() {
       return listTestCaseResultsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getTestCaseResult. */
+    public UnaryCallSettings.Builder<GetTestCaseResultRequest, TestCaseResult>
+        getTestCaseResultSettings() {
+      return getTestCaseResultSettings;
     }
 
     @Override

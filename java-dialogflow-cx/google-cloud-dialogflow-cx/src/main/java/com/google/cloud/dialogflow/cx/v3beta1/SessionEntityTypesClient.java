@@ -440,8 +440,6 @@ public class SessionEntityTypesClient implements BackgroundResource {
   /**
    * Creates a session entity type.
    *
-   * <p>If the specified session entity type already exists, overrides the session entity type.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -476,8 +474,6 @@ public class SessionEntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a session entity type.
-   *
-   * <p>If the specified session entity type already exists, overrides the session entity type.
    *
    * <p>Sample code:
    *
@@ -515,8 +511,6 @@ public class SessionEntityTypesClient implements BackgroundResource {
   /**
    * Creates a session entity type.
    *
-   * <p>If the specified session entity type already exists, overrides the session entity type.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -543,8 +537,6 @@ public class SessionEntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a session entity type.
-   *
-   * <p>If the specified session entity type already exists, overrides the session entity type.
    *
    * <p>Sample code:
    *

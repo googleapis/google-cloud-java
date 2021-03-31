@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for a webhook call.
+ * The request message for a webhook call. The request is sent as a JSON object
+ * and the field names will be presented in camel cases.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.WebhookRequest}
@@ -194,6 +195,34 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
                 sentimentAnalysisResult_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 82:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              queryCase_ = 10;
+              query_ = s;
+              break;
+            }
+          case 90:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              queryCase_ = 11;
+              query_ = s;
+              break;
+            }
+          case 98:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              queryCase_ = 12;
+              query_ = s;
+              break;
+            }
+          case 114:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              queryCase_ = 14;
+              query_ = s;
               break;
             }
           default:
@@ -920,8 +949,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Always present. The unique identifier of the last matched
-     * [intent][google.cloud.dialogflow.cx.v3beta1.Intent]. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>string last_matched_intent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -934,8 +964,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Always present. The unique identifier of the last matched
-     * [intent][google.cloud.dialogflow.cx.v3beta1.Intent]. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>string last_matched_intent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2258,8 +2289,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Always present. The unique identifier of the last matched
-     * [intent][google.cloud.dialogflow.cx.v3beta1.Intent]. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>string last_matched_intent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2283,8 +2315,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Always present. The unique identifier of the last matched
-     * [intent][google.cloud.dialogflow.cx.v3beta1.Intent]. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
      * <code>string last_matched_intent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2941,8 +2974,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Always present. The unique identifier of the last matched
-       * [intent][google.cloud.dialogflow.cx.v3beta1.Intent]. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-       * ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+       * [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+       * ID&gt;/intents/&lt;Intent ID&gt;`.
        * </pre>
        *
        * <code>string last_matched_intent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2965,8 +2999,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Always present. The unique identifier of the last matched
-       * [intent][google.cloud.dialogflow.cx.v3beta1.Intent]. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-       * ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+       * [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+       * ID&gt;/intents/&lt;Intent ID&gt;`.
        * </pre>
        *
        * <code>string last_matched_intent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2989,8 +3024,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Always present. The unique identifier of the last matched
-       * [intent][google.cloud.dialogflow.cx.v3beta1.Intent]. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-       * ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+       * [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+       * ID&gt;/intents/&lt;Intent ID&gt;`.
        * </pre>
        *
        * <code>string last_matched_intent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -3012,8 +3048,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Always present. The unique identifier of the last matched
-       * [intent][google.cloud.dialogflow.cx.v3beta1.Intent]. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-       * ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+       * [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+       * ID&gt;/intents/&lt;Intent ID&gt;`.
        * </pre>
        *
        * <code>string last_matched_intent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -3031,8 +3068,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Always present. The unique identifier of the last matched
-       * [intent][google.cloud.dialogflow.cx.v3beta1.Intent]. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-       * ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+       * [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+       * ID&gt;/intents/&lt;Intent ID&gt;`.
        * </pre>
        *
        * <code>string last_matched_intent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -4198,6 +4236,59 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  private int queryCase_ = 0;
+  private java.lang.Object query_;
+
+  public enum QueryCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    TEXT(10),
+    TRIGGER_INTENT(11),
+    TRANSCRIPT(12),
+    TRIGGER_EVENT(14),
+    QUERY_NOT_SET(0);
+    private final int value;
+
+    private QueryCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static QueryCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static QueryCase forNumber(int value) {
+      switch (value) {
+        case 10:
+          return TEXT;
+        case 11:
+          return TRIGGER_INTENT;
+        case 12:
+          return TRANSCRIPT;
+        case 14:
+          return TRIGGER_EVENT;
+        case 0:
+          return QUERY_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public QueryCase getQueryCase() {
+    return QueryCase.forNumber(queryCase_);
+  }
+
   public static final int DETECT_INTENT_RESPONSE_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object detectIntentResponseId_;
   /**
@@ -4243,6 +4334,304 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       detectIntentResponseId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TEXT_FIELD_NUMBER = 10;
+  /**
+   *
+   *
+   * <pre>
+   * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+   * will contain a copy of the text.
+   * </pre>
+   *
+   * <code>string text = 10;</code>
+   *
+   * @return Whether the text field is set.
+   */
+  public boolean hasText() {
+    return queryCase_ == 10;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+   * will contain a copy of the text.
+   * </pre>
+   *
+   * <code>string text = 10;</code>
+   *
+   * @return The text.
+   */
+  public java.lang.String getText() {
+    java.lang.Object ref = "";
+    if (queryCase_ == 10) {
+      ref = query_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (queryCase_ == 10) {
+        query_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+   * will contain a copy of the text.
+   * </pre>
+   *
+   * <code>string text = 10;</code>
+   *
+   * @return The bytes for text.
+   */
+  public com.google.protobuf.ByteString getTextBytes() {
+    java.lang.Object ref = "";
+    if (queryCase_ == 10) {
+      ref = query_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (queryCase_ == 10) {
+        query_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TRIGGER_INTENT_FIELD_NUMBER = 11;
+  /**
+   *
+   *
+   * <pre>
+   * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+   * contain a copy of the intent identifier.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/intents/&lt;Intent ID&gt;`.
+   * </pre>
+   *
+   * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the triggerIntent field is set.
+   */
+  public boolean hasTriggerIntent() {
+    return queryCase_ == 11;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+   * contain a copy of the intent identifier.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/intents/&lt;Intent ID&gt;`.
+   * </pre>
+   *
+   * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The triggerIntent.
+   */
+  public java.lang.String getTriggerIntent() {
+    java.lang.Object ref = "";
+    if (queryCase_ == 11) {
+      ref = query_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (queryCase_ == 11) {
+        query_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+   * contain a copy of the intent identifier.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/intents/&lt;Intent ID&gt;`.
+   * </pre>
+   *
+   * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for triggerIntent.
+   */
+  public com.google.protobuf.ByteString getTriggerIntentBytes() {
+    java.lang.Object ref = "";
+    if (queryCase_ == 11) {
+      ref = query_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (queryCase_ == 11) {
+        query_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TRANSCRIPT_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+   * this field will contain the transcript for the audio.
+   * </pre>
+   *
+   * <code>string transcript = 12;</code>
+   *
+   * @return Whether the transcript field is set.
+   */
+  public boolean hasTranscript() {
+    return queryCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+   * this field will contain the transcript for the audio.
+   * </pre>
+   *
+   * <code>string transcript = 12;</code>
+   *
+   * @return The transcript.
+   */
+  public java.lang.String getTranscript() {
+    java.lang.Object ref = "";
+    if (queryCase_ == 12) {
+      ref = query_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (queryCase_ == 12) {
+        query_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+   * this field will contain the transcript for the audio.
+   * </pre>
+   *
+   * <code>string transcript = 12;</code>
+   *
+   * @return The bytes for transcript.
+   */
+  public com.google.protobuf.ByteString getTranscriptBytes() {
+    java.lang.Object ref = "";
+    if (queryCase_ == 12) {
+      ref = query_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (queryCase_ == 12) {
+        query_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TRIGGER_EVENT_FIELD_NUMBER = 14;
+  /**
+   *
+   *
+   * <pre>
+   * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+   * the name of the event.
+   * </pre>
+   *
+   * <code>string trigger_event = 14;</code>
+   *
+   * @return Whether the triggerEvent field is set.
+   */
+  public boolean hasTriggerEvent() {
+    return queryCase_ == 14;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+   * the name of the event.
+   * </pre>
+   *
+   * <code>string trigger_event = 14;</code>
+   *
+   * @return The triggerEvent.
+   */
+  public java.lang.String getTriggerEvent() {
+    java.lang.Object ref = "";
+    if (queryCase_ == 14) {
+      ref = query_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (queryCase_ == 14) {
+        query_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+   * the name of the event.
+   * </pre>
+   *
+   * <code>string trigger_event = 14;</code>
+   *
+   * @return The bytes for triggerEvent.
+   */
+  public com.google.protobuf.ByteString getTriggerEventBytes() {
+    java.lang.Object ref = "";
+    if (queryCase_ == 14) {
+      ref = query_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (queryCase_ == 14) {
+        query_ = b;
+      }
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -4675,6 +5064,18 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     if (sentimentAnalysisResult_ != null) {
       output.writeMessage(9, getSentimentAnalysisResult());
     }
+    if (queryCase_ == 10) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, query_);
+    }
+    if (queryCase_ == 11) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, query_);
+    }
+    if (queryCase_ == 12) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, query_);
+    }
+    if (queryCase_ == 14) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, query_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -4708,6 +5109,18 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     if (sentimentAnalysisResult_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(9, getSentimentAnalysisResult());
+    }
+    if (queryCase_ == 10) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, query_);
+    }
+    if (queryCase_ == 11) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, query_);
+    }
+    if (queryCase_ == 12) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, query_);
+    }
+    if (queryCase_ == 14) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, query_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -4751,6 +5164,23 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasSentimentAnalysisResult()) {
       if (!getSentimentAnalysisResult().equals(other.getSentimentAnalysisResult())) return false;
     }
+    if (!getQueryCase().equals(other.getQueryCase())) return false;
+    switch (queryCase_) {
+      case 10:
+        if (!getText().equals(other.getText())) return false;
+        break;
+      case 11:
+        if (!getTriggerIntent().equals(other.getTriggerIntent())) return false;
+        break;
+      case 12:
+        if (!getTranscript().equals(other.getTranscript())) return false;
+        break;
+      case 14:
+        if (!getTriggerEvent().equals(other.getTriggerEvent())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -4791,6 +5221,26 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasSentimentAnalysisResult()) {
       hash = (37 * hash) + SENTIMENT_ANALYSIS_RESULT_FIELD_NUMBER;
       hash = (53 * hash) + getSentimentAnalysisResult().hashCode();
+    }
+    switch (queryCase_) {
+      case 10:
+        hash = (37 * hash) + TEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getText().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + TRIGGER_INTENT_FIELD_NUMBER;
+        hash = (53 * hash) + getTriggerIntent().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + TRANSCRIPT_FIELD_NUMBER;
+        hash = (53 * hash) + getTranscript().hashCode();
+        break;
+      case 14:
+        hash = (37 * hash) + TRIGGER_EVENT_FIELD_NUMBER;
+        hash = (53 * hash) + getTriggerEvent().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -4897,7 +5347,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The request message for a webhook call.
+   * The request message for a webhook call. The request is sent as a JSON object
+   * and the field names will be presented in camel cases.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.WebhookRequest}
@@ -4984,6 +5435,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         sentimentAnalysisResult_ = null;
         sentimentAnalysisResultBuilder_ = null;
       }
+      queryCase_ = 0;
+      query_ = null;
       return this;
     }
 
@@ -5013,6 +5466,18 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           new com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest(this);
       int from_bitField0_ = bitField0_;
       result.detectIntentResponseId_ = detectIntentResponseId_;
+      if (queryCase_ == 10) {
+        result.query_ = query_;
+      }
+      if (queryCase_ == 11) {
+        result.query_ = query_;
+      }
+      if (queryCase_ == 12) {
+        result.query_ = query_;
+      }
+      if (queryCase_ == 14) {
+        result.query_ = query_;
+      }
       if (fulfillmentInfoBuilder_ == null) {
         result.fulfillmentInfo_ = fulfillmentInfo_;
       } else {
@@ -5052,6 +5517,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.sentimentAnalysisResult_ = sentimentAnalysisResultBuilder_.build();
       }
+      result.queryCase_ = queryCase_;
       onBuilt();
       return result;
     }
@@ -5151,6 +5617,40 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSentimentAnalysisResult()) {
         mergeSentimentAnalysisResult(other.getSentimentAnalysisResult());
       }
+      switch (other.getQueryCase()) {
+        case TEXT:
+          {
+            queryCase_ = 10;
+            query_ = other.query_;
+            onChanged();
+            break;
+          }
+        case TRIGGER_INTENT:
+          {
+            queryCase_ = 11;
+            query_ = other.query_;
+            onChanged();
+            break;
+          }
+        case TRANSCRIPT:
+          {
+            queryCase_ = 12;
+            query_ = other.query_;
+            onChanged();
+            break;
+          }
+        case TRIGGER_EVENT:
+          {
+            queryCase_ = 14;
+            query_ = other.query_;
+            onChanged();
+            break;
+          }
+        case QUERY_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -5178,6 +5678,20 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private int queryCase_ = 0;
+    private java.lang.Object query_;
+
+    public QueryCase getQueryCase() {
+      return QueryCase.forNumber(queryCase_);
+    }
+
+    public Builder clearQuery() {
+      queryCase_ = 0;
+      query_ = null;
+      onChanged();
       return this;
     }
 
@@ -5290,6 +5804,578 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       detectIntentResponseId_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+     * will contain a copy of the text.
+     * </pre>
+     *
+     * <code>string text = 10;</code>
+     *
+     * @return Whether the text field is set.
+     */
+    @java.lang.Override
+    public boolean hasText() {
+      return queryCase_ == 10;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+     * will contain a copy of the text.
+     * </pre>
+     *
+     * <code>string text = 10;</code>
+     *
+     * @return The text.
+     */
+    @java.lang.Override
+    public java.lang.String getText() {
+      java.lang.Object ref = "";
+      if (queryCase_ == 10) {
+        ref = query_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (queryCase_ == 10) {
+          query_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+     * will contain a copy of the text.
+     * </pre>
+     *
+     * <code>string text = 10;</code>
+     *
+     * @return The bytes for text.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTextBytes() {
+      java.lang.Object ref = "";
+      if (queryCase_ == 10) {
+        ref = query_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (queryCase_ == 10) {
+          query_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+     * will contain a copy of the text.
+     * </pre>
+     *
+     * <code>string text = 10;</code>
+     *
+     * @param value The text to set.
+     * @return This builder for chaining.
+     */
+    public Builder setText(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      queryCase_ = 10;
+      query_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+     * will contain a copy of the text.
+     * </pre>
+     *
+     * <code>string text = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearText() {
+      if (queryCase_ == 10) {
+        queryCase_ = 0;
+        query_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+     * will contain a copy of the text.
+     * </pre>
+     *
+     * <code>string text = 10;</code>
+     *
+     * @param value The bytes for text to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTextBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      queryCase_ = 10;
+      query_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+     * contain a copy of the intent identifier.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * </pre>
+     *
+     * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return Whether the triggerIntent field is set.
+     */
+    @java.lang.Override
+    public boolean hasTriggerIntent() {
+      return queryCase_ == 11;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+     * contain a copy of the intent identifier.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * </pre>
+     *
+     * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The triggerIntent.
+     */
+    @java.lang.Override
+    public java.lang.String getTriggerIntent() {
+      java.lang.Object ref = "";
+      if (queryCase_ == 11) {
+        ref = query_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (queryCase_ == 11) {
+          query_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+     * contain a copy of the intent identifier.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * </pre>
+     *
+     * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for triggerIntent.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTriggerIntentBytes() {
+      java.lang.Object ref = "";
+      if (queryCase_ == 11) {
+        ref = query_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (queryCase_ == 11) {
+          query_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+     * contain a copy of the intent identifier.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * </pre>
+     *
+     * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The triggerIntent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTriggerIntent(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      queryCase_ = 11;
+      query_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+     * contain a copy of the intent identifier.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * </pre>
+     *
+     * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTriggerIntent() {
+      if (queryCase_ == 11) {
+        queryCase_ = 0;
+        query_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+     * contain a copy of the intent identifier.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * </pre>
+     *
+     * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for triggerIntent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTriggerIntentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      queryCase_ = 11;
+      query_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+     * this field will contain the transcript for the audio.
+     * </pre>
+     *
+     * <code>string transcript = 12;</code>
+     *
+     * @return Whether the transcript field is set.
+     */
+    @java.lang.Override
+    public boolean hasTranscript() {
+      return queryCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+     * this field will contain the transcript for the audio.
+     * </pre>
+     *
+     * <code>string transcript = 12;</code>
+     *
+     * @return The transcript.
+     */
+    @java.lang.Override
+    public java.lang.String getTranscript() {
+      java.lang.Object ref = "";
+      if (queryCase_ == 12) {
+        ref = query_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (queryCase_ == 12) {
+          query_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+     * this field will contain the transcript for the audio.
+     * </pre>
+     *
+     * <code>string transcript = 12;</code>
+     *
+     * @return The bytes for transcript.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTranscriptBytes() {
+      java.lang.Object ref = "";
+      if (queryCase_ == 12) {
+        ref = query_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (queryCase_ == 12) {
+          query_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+     * this field will contain the transcript for the audio.
+     * </pre>
+     *
+     * <code>string transcript = 12;</code>
+     *
+     * @param value The transcript to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTranscript(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      queryCase_ = 12;
+      query_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+     * this field will contain the transcript for the audio.
+     * </pre>
+     *
+     * <code>string transcript = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTranscript() {
+      if (queryCase_ == 12) {
+        queryCase_ = 0;
+        query_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+     * this field will contain the transcript for the audio.
+     * </pre>
+     *
+     * <code>string transcript = 12;</code>
+     *
+     * @param value The bytes for transcript to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTranscriptBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      queryCase_ = 12;
+      query_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+     * the name of the event.
+     * </pre>
+     *
+     * <code>string trigger_event = 14;</code>
+     *
+     * @return Whether the triggerEvent field is set.
+     */
+    @java.lang.Override
+    public boolean hasTriggerEvent() {
+      return queryCase_ == 14;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+     * the name of the event.
+     * </pre>
+     *
+     * <code>string trigger_event = 14;</code>
+     *
+     * @return The triggerEvent.
+     */
+    @java.lang.Override
+    public java.lang.String getTriggerEvent() {
+      java.lang.Object ref = "";
+      if (queryCase_ == 14) {
+        ref = query_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (queryCase_ == 14) {
+          query_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+     * the name of the event.
+     * </pre>
+     *
+     * <code>string trigger_event = 14;</code>
+     *
+     * @return The bytes for triggerEvent.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTriggerEventBytes() {
+      java.lang.Object ref = "";
+      if (queryCase_ == 14) {
+        ref = query_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (queryCase_ == 14) {
+          query_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+     * the name of the event.
+     * </pre>
+     *
+     * <code>string trigger_event = 14;</code>
+     *
+     * @param value The triggerEvent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTriggerEvent(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      queryCase_ = 14;
+      query_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+     * the name of the event.
+     * </pre>
+     *
+     * <code>string trigger_event = 14;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTriggerEvent() {
+      if (queryCase_ == 14) {
+        queryCase_ = 0;
+        query_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+     * the name of the event.
+     * </pre>
+     *
+     * <code>string trigger_event = 14;</code>
+     *
+     * @param value The bytes for triggerEvent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTriggerEventBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      queryCase_ = 14;
+      query_ = value;
       onChanged();
       return this;
     }

@@ -539,6 +539,53 @@ public final class TestCasesGrpc {
     return getListTestCaseResultsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.GetTestCaseResultRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.TestCaseResult>
+      getGetTestCaseResultMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTestCaseResult",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.GetTestCaseResultRequest.class,
+      responseType = com.google.cloud.dialogflow.cx.v3beta1.TestCaseResult.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.GetTestCaseResultRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.TestCaseResult>
+      getGetTestCaseResultMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.GetTestCaseResultRequest,
+            com.google.cloud.dialogflow.cx.v3beta1.TestCaseResult>
+        getGetTestCaseResultMethod;
+    if ((getGetTestCaseResultMethod = TestCasesGrpc.getGetTestCaseResultMethod) == null) {
+      synchronized (TestCasesGrpc.class) {
+        if ((getGetTestCaseResultMethod = TestCasesGrpc.getGetTestCaseResultMethod) == null) {
+          TestCasesGrpc.getGetTestCaseResultMethod =
+              getGetTestCaseResultMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.GetTestCaseResultRequest,
+                          com.google.cloud.dialogflow.cx.v3beta1.TestCaseResult>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTestCaseResult"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.GetTestCaseResultRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.TestCaseResult
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TestCasesMethodDescriptorSupplier("GetTestCaseResult"))
+                      .build();
+        }
+      }
+    }
+    return getGetTestCaseResultMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static TestCasesStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<TestCasesStub> factory =
@@ -754,6 +801,21 @@ public final class TestCasesGrpc {
           getListTestCaseResultsMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Gets a test case result.
+     * </pre>
+     */
+    public void getTestCaseResult(
+        com.google.cloud.dialogflow.cx.v3beta1.GetTestCaseResultRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.TestCaseResult>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetTestCaseResultMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -829,6 +891,13 @@ public final class TestCasesGrpc {
                       com.google.cloud.dialogflow.cx.v3beta1.ListTestCaseResultsRequest,
                       com.google.cloud.dialogflow.cx.v3beta1.ListTestCaseResultsResponse>(
                       this, METHODID_LIST_TEST_CASE_RESULTS)))
+          .addMethod(
+              getGetTestCaseResultMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.cx.v3beta1.GetTestCaseResultRequest,
+                      com.google.cloud.dialogflow.cx.v3beta1.TestCaseResult>(
+                      this, METHODID_GET_TEST_CASE_RESULT)))
           .build();
     }
   }
@@ -1037,6 +1106,23 @@ public final class TestCasesGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a test case result.
+     * </pre>
+     */
+    public void getTestCaseResult(
+        com.google.cloud.dialogflow.cx.v3beta1.GetTestCaseResultRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.TestCaseResult>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetTestCaseResultMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1203,6 +1289,19 @@ public final class TestCasesGrpc {
         com.google.cloud.dialogflow.cx.v3beta1.ListTestCaseResultsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListTestCaseResultsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a test case result.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.TestCaseResult getTestCaseResult(
+        com.google.cloud.dialogflow.cx.v3beta1.GetTestCaseResultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTestCaseResultMethod(), getCallOptions(), request);
     }
   }
 
@@ -1378,6 +1477,20 @@ public final class TestCasesGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListTestCaseResultsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a test case result.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.cx.v3beta1.TestCaseResult>
+        getTestCaseResult(com.google.cloud.dialogflow.cx.v3beta1.GetTestCaseResultRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetTestCaseResultMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_TEST_CASES = 0;
@@ -1391,6 +1504,7 @@ public final class TestCasesGrpc {
   private static final int METHODID_IMPORT_TEST_CASES = 8;
   private static final int METHODID_EXPORT_TEST_CASES = 9;
   private static final int METHODID_LIST_TEST_CASE_RESULTS = 10;
+  private static final int METHODID_GET_TEST_CASE_RESULT = 11;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1473,6 +1587,12 @@ public final class TestCasesGrpc {
                       com.google.cloud.dialogflow.cx.v3beta1.ListTestCaseResultsResponse>)
                   responseObserver);
           break;
+        case METHODID_GET_TEST_CASE_RESULT:
+          serviceImpl.getTestCaseResult(
+              (com.google.cloud.dialogflow.cx.v3beta1.GetTestCaseResultRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.TestCaseResult>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -1548,6 +1668,7 @@ public final class TestCasesGrpc {
                       .addMethod(getImportTestCasesMethod())
                       .addMethod(getExportTestCasesMethod())
                       .addMethod(getListTestCaseResultsMethod())
+                      .addMethod(getGetTestCaseResultMethod())
                       .build();
         }
       }

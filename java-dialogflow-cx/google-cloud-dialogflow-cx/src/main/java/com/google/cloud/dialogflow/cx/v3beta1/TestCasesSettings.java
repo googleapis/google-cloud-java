@@ -159,6 +159,11 @@ public class TestCasesSettings extends ClientSettings<TestCasesSettings> {
     return ((TestCasesStubSettings) getStubSettings()).listTestCaseResultsSettings();
   }
 
+  /** Returns the object with the settings used for calls to getTestCaseResult. */
+  public UnaryCallSettings<GetTestCaseResultRequest, TestCaseResult> getTestCaseResultSettings() {
+    return ((TestCasesStubSettings) getStubSettings()).getTestCaseResultSettings();
+  }
+
   public static final TestCasesSettings create(TestCasesStubSettings stub) throws IOException {
     return new TestCasesSettings.Builder(stub.toBuilder()).build();
   }
@@ -346,6 +351,12 @@ public class TestCasesSettings extends ClientSettings<TestCasesSettings> {
             ListTestCaseResultsPagedResponse>
         listTestCaseResultsSettings() {
       return getStubSettingsBuilder().listTestCaseResultsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getTestCaseResult. */
+    public UnaryCallSettings.Builder<GetTestCaseResultRequest, TestCaseResult>
+        getTestCaseResultSettings() {
+      return getStubSettingsBuilder().getTestCaseResultSettings();
     }
 
     @Override

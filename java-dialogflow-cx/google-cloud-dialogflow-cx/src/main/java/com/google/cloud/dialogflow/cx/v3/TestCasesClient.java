@@ -1210,6 +1210,110 @@ public class TestCasesClient implements BackgroundResource {
     return stub.listTestCaseResultsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a test case result.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
+   *   TestCaseResultName name =
+   *       TestCaseResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]", "[RESULT]");
+   *   TestCaseResult response = testCasesClient.getTestCaseResult(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the testcase. Format: `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase
+   *     ID&gt;/results/&lt;TestCaseResult ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestCaseResult getTestCaseResult(TestCaseResultName name) {
+    GetTestCaseResultRequest request =
+        GetTestCaseResultRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getTestCaseResult(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a test case result.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
+   *   String name =
+   *       TestCaseResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]", "[RESULT]")
+   *           .toString();
+   *   TestCaseResult response = testCasesClient.getTestCaseResult(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the testcase. Format: `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase
+   *     ID&gt;/results/&lt;TestCaseResult ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestCaseResult getTestCaseResult(String name) {
+    GetTestCaseResultRequest request = GetTestCaseResultRequest.newBuilder().setName(name).build();
+    return getTestCaseResult(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a test case result.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
+   *   GetTestCaseResultRequest request =
+   *       GetTestCaseResultRequest.newBuilder()
+   *           .setName(
+   *               TestCaseResultName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]", "[RESULT]")
+   *                   .toString())
+   *           .build();
+   *   TestCaseResult response = testCasesClient.getTestCaseResult(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestCaseResult getTestCaseResult(GetTestCaseResultRequest request) {
+    return getTestCaseResultCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a test case result.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
+   *   GetTestCaseResultRequest request =
+   *       GetTestCaseResultRequest.newBuilder()
+   *           .setName(
+   *               TestCaseResultName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]", "[RESULT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<TestCaseResult> future =
+   *       testCasesClient.getTestCaseResultCallable().futureCall(request);
+   *   // Do something.
+   *   TestCaseResult response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetTestCaseResultRequest, TestCaseResult> getTestCaseResultCallable() {
+    return stub.getTestCaseResultCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

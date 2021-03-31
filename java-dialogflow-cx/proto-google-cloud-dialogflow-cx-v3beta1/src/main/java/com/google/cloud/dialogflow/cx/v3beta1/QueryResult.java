@@ -420,9 +420,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
    * contain a copy of the intent identifier.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string trigger_intent = 11;</code>
+   * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return Whether the triggerIntent field is set.
    */
@@ -435,9 +437,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
    * contain a copy of the intent identifier.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string trigger_intent = 11;</code>
+   * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The triggerIntent.
    */
@@ -463,9 +467,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
    * contain a copy of the intent identifier.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string trigger_intent = 11;</code>
+   * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for triggerIntent.
    */
@@ -492,7 +498,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
-   * this field will contain the trascript for the audio.
+   * this field will contain the transcript for the audio.
    * </pre>
    *
    * <code>string transcript = 12;</code>
@@ -507,7 +513,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
-   * this field will contain the trascript for the audio.
+   * this field will contain the transcript for the audio.
    * </pre>
    *
    * <code>string transcript = 12;</code>
@@ -535,7 +541,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
-   * this field will contain the trascript for the audio.
+   * this field will contain the transcript for the audio.
    * </pre>
    *
    * <code>string transcript = 12;</code>
@@ -2246,9 +2252,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
      * contain a copy of the intent identifier.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string trigger_intent = 11;</code>
+     * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return Whether the triggerIntent field is set.
      */
@@ -2262,9 +2270,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
      * contain a copy of the intent identifier.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string trigger_intent = 11;</code>
+     * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The triggerIntent.
      */
@@ -2291,9 +2301,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
      * contain a copy of the intent identifier.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string trigger_intent = 11;</code>
+     * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for triggerIntent.
      */
@@ -2320,9 +2332,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
      * contain a copy of the intent identifier.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string trigger_intent = 11;</code>
+     * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The triggerIntent to set.
      * @return This builder for chaining.
@@ -2342,9 +2356,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
      * contain a copy of the intent identifier.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string trigger_intent = 11;</code>
+     * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -2362,9 +2378,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
      * contain a copy of the intent identifier.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string trigger_intent = 11;</code>
+     * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for triggerIntent to set.
      * @return This builder for chaining.
@@ -2385,7 +2403,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
-     * this field will contain the trascript for the audio.
+     * this field will contain the transcript for the audio.
      * </pre>
      *
      * <code>string transcript = 12;</code>
@@ -2401,7 +2419,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
-     * this field will contain the trascript for the audio.
+     * this field will contain the transcript for the audio.
      * </pre>
      *
      * <code>string transcript = 12;</code>
@@ -2430,7 +2448,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
-     * this field will contain the trascript for the audio.
+     * this field will contain the transcript for the audio.
      * </pre>
      *
      * <code>string transcript = 12;</code>
@@ -2459,7 +2477,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
-     * this field will contain the trascript for the audio.
+     * this field will contain the transcript for the audio.
      * </pre>
      *
      * <code>string transcript = 12;</code>
@@ -2481,7 +2499,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
-     * this field will contain the trascript for the audio.
+     * this field will contain the transcript for the audio.
      * </pre>
      *
      * <code>string transcript = 12;</code>
@@ -2501,7 +2519,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
-     * this field will contain the trascript for the audio.
+     * this field will contain the transcript for the audio.
      * </pre>
      *
      * <code>string transcript = 12;</code>

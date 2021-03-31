@@ -849,4 +849,100 @@ public class TestCasesClientTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void getTestCaseResultTest() throws Exception {
+    TestCaseResult expectedResponse =
+        TestCaseResult.newBuilder()
+            .setName(
+                TestCaseResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]", "[RESULT]")
+                    .toString())
+            .setEnvironment(
+                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+                    .toString())
+            .addAllConversationTurns(new ArrayList<ConversationTurn>())
+            .setTestResult(TestResult.forNumber(0))
+            .setTestTime(Timestamp.newBuilder().build())
+            .build();
+    mockTestCases.addResponse(expectedResponse);
+
+    TestCaseResultName name =
+        TestCaseResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]", "[RESULT]");
+
+    TestCaseResult actualResponse = client.getTestCaseResult(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTestCases.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetTestCaseResultRequest actualRequest = ((GetTestCaseResultRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getTestCaseResultExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTestCases.addException(exception);
+
+    try {
+      TestCaseResultName name =
+          TestCaseResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]", "[RESULT]");
+      client.getTestCaseResult(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTestCaseResultTest2() throws Exception {
+    TestCaseResult expectedResponse =
+        TestCaseResult.newBuilder()
+            .setName(
+                TestCaseResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]", "[RESULT]")
+                    .toString())
+            .setEnvironment(
+                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+                    .toString())
+            .addAllConversationTurns(new ArrayList<ConversationTurn>())
+            .setTestResult(TestResult.forNumber(0))
+            .setTestTime(Timestamp.newBuilder().build())
+            .build();
+    mockTestCases.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    TestCaseResult actualResponse = client.getTestCaseResult(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTestCases.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetTestCaseResultRequest actualRequest = ((GetTestCaseResultRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getTestCaseResultExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTestCases.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getTestCaseResult(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

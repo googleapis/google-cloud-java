@@ -34,6 +34,7 @@ import com.google.cloud.dialogflow.cx.v3beta1.ExportTestCasesMetadata;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportTestCasesRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportTestCasesResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.GetTestCaseRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.GetTestCaseResultRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ImportTestCasesMetadata;
 import com.google.cloud.dialogflow.cx.v3beta1.ImportTestCasesRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ImportTestCasesResponse;
@@ -45,6 +46,7 @@ import com.google.cloud.dialogflow.cx.v3beta1.RunTestCaseMetadata;
 import com.google.cloud.dialogflow.cx.v3beta1.RunTestCaseRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.RunTestCaseResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.TestCase;
+import com.google.cloud.dialogflow.cx.v3beta1.TestCaseResult;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateTestCaseRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -141,6 +143,10 @@ public abstract class TestCasesStub implements BackgroundResource {
   public UnaryCallable<ListTestCaseResultsRequest, ListTestCaseResultsResponse>
       listTestCaseResultsCallable() {
     throw new UnsupportedOperationException("Not implemented: listTestCaseResultsCallable()");
+  }
+
+  public UnaryCallable<GetTestCaseResultRequest, TestCaseResult> getTestCaseResultCallable() {
+    throw new UnsupportedOperationException("Not implemented: getTestCaseResultCallable()");
   }
 
   @Override

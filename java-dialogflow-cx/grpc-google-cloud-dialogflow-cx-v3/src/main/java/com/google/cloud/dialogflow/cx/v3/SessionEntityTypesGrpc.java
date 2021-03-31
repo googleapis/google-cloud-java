@@ -373,8 +373,6 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Creates a session entity type.
-     * If the specified session entity type already exists, overrides the
-     * session entity type.
      * </pre>
      */
     public void createSessionEntityType(
@@ -514,8 +512,6 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Creates a session entity type.
-     * If the specified session entity type already exists, overrides the
-     * session entity type.
      * </pre>
      */
     public void createSessionEntityType(
@@ -613,8 +609,6 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Creates a session entity type.
-     * If the specified session entity type already exists, overrides the
-     * session entity type.
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.SessionEntityType createSessionEntityType(
@@ -704,8 +698,6 @@ public final class SessionEntityTypesGrpc {
      *
      * <pre>
      * Creates a session entity type.
-     * If the specified session entity type already exists, overrides the
-     * session entity type.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

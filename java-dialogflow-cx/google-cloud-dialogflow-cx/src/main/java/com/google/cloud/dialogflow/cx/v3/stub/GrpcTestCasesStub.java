@@ -38,6 +38,7 @@ import com.google.cloud.dialogflow.cx.v3.ExportTestCasesMetadata;
 import com.google.cloud.dialogflow.cx.v3.ExportTestCasesRequest;
 import com.google.cloud.dialogflow.cx.v3.ExportTestCasesResponse;
 import com.google.cloud.dialogflow.cx.v3.GetTestCaseRequest;
+import com.google.cloud.dialogflow.cx.v3.GetTestCaseResultRequest;
 import com.google.cloud.dialogflow.cx.v3.ImportTestCasesMetadata;
 import com.google.cloud.dialogflow.cx.v3.ImportTestCasesRequest;
 import com.google.cloud.dialogflow.cx.v3.ImportTestCasesResponse;
@@ -49,6 +50,7 @@ import com.google.cloud.dialogflow.cx.v3.RunTestCaseMetadata;
 import com.google.cloud.dialogflow.cx.v3.RunTestCaseRequest;
 import com.google.cloud.dialogflow.cx.v3.RunTestCaseResponse;
 import com.google.cloud.dialogflow.cx.v3.TestCase;
+import com.google.cloud.dialogflow.cx.v3.TestCaseResult;
 import com.google.cloud.dialogflow.cx.v3.UpdateTestCaseRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -178,6 +180,16 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   ProtoUtils.marshaller(ListTestCaseResultsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetTestCaseResultRequest, TestCaseResult>
+      getTestCaseResultMethodDescriptor =
+          MethodDescriptor.<GetTestCaseResultRequest, TestCaseResult>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3.TestCases/GetTestCaseResult")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetTestCaseResultRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(TestCaseResult.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListTestCasesRequest, ListTestCasesResponse> listTestCasesCallable;
   private final UnaryCallable<ListTestCasesRequest, ListTestCasesPagedResponse>
       listTestCasesPagedCallable;
@@ -206,6 +218,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
       listTestCaseResultsCallable;
   private final UnaryCallable<ListTestCaseResultsRequest, ListTestCaseResultsPagedResponse>
       listTestCaseResultsPagedCallable;
+  private final UnaryCallable<GetTestCaseResultRequest, TestCaseResult> getTestCaseResultCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -393,6 +406,19 @@ public class GrpcTestCasesStub extends TestCasesStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<GetTestCaseResultRequest, TestCaseResult> getTestCaseResultTransportSettings =
+        GrpcCallSettings.<GetTestCaseResultRequest, TestCaseResult>newBuilder()
+            .setMethodDescriptor(getTestCaseResultMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetTestCaseResultRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetTestCaseResultRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
 
     this.listTestCasesCallable =
         callableFactory.createUnaryCallable(
@@ -466,6 +492,11 @@ public class GrpcTestCasesStub extends TestCasesStub {
         callableFactory.createPagedCallable(
             listTestCaseResultsTransportSettings,
             settings.listTestCaseResultsSettings(),
+            clientContext);
+    this.getTestCaseResultCallable =
+        callableFactory.createUnaryCallable(
+            getTestCaseResultTransportSettings,
+            settings.getTestCaseResultSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -568,6 +599,11 @@ public class GrpcTestCasesStub extends TestCasesStub {
   public UnaryCallable<ListTestCaseResultsRequest, ListTestCaseResultsPagedResponse>
       listTestCaseResultsPagedCallable() {
     return listTestCaseResultsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetTestCaseResultRequest, TestCaseResult> getTestCaseResultCallable() {
+    return getTestCaseResultCallable;
   }
 
   @Override
