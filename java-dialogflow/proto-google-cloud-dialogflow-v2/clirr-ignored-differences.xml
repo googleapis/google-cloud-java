@@ -16,23 +16,7 @@
     <className>com/google/cloud/dialogflow/v2/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
-  <!-- TODO: remove after 2.0.0 is released -->
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/dialogflow/v2/AgentName*</className>
-    <method>* *Agent(*)</method>
-  </difference>
-  <difference>
-    <differenceType>7004</differenceType>
-    <className>com/google/cloud/dialogflow/v2/AgentName</className>
-    <method>java.lang.String format(java.lang.String, java.lang.String)</method>
-  </difference>
-  <difference>
-    <differenceType>7004</differenceType>
-    <className>com/google/cloud/dialogflow/v2/AgentName</className>
-    <method>com.google.cloud.dialogflow.v2.AgentName of(java.lang.String, java.lang.String)</method>
-  </difference>
-  <!-- TODO: remove after 3.0.0 is released -->
+   <!-- TODO: remove after 3.0.0 is released -->
   <difference>
     <differenceType>8001</differenceType>
     <className>com/google/cloud/dialogflow/v2/*CallMatcher*</className>
