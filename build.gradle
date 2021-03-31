@@ -22,7 +22,6 @@ def grpcVersion = '1.36.0'
 def protobufVersion = '3.12.0'
 def protocVersion = '3.12.0'
 def spannerVersion = '5.1.0'
-// def spannerVersion = '6.0.1-SNAPSHOT'
 
 dependencies {
     implementation "io.grpc:grpc-netty-shaded:${grpcVersion}"
@@ -102,10 +101,9 @@ publishing {
             from components.java
             artifact javadocJar
             artifact sourcesJar
-            // Experimental release version
             groupId = 'grpc.gcp.extension'
             artifactId = 'grpc.gcp.extension'
-            version = '0.0.1'
+            version = '1.0.0'
             pom {
                 name = "gRPC extension library for Google Cloud Library"
                 url = 'https://github.com/GoogleCloudPlatform/grpc-gcp-java/tree/master/grpc-gcp'
