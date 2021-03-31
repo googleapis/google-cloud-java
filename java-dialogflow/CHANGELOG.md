@@ -1,5 +1,39 @@
 # Changelog
 
+## [3.0.0](https://www.github.com/googleapis/java-dialogflow/compare/v2.6.2...v3.0.0) (2021-03-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove StreamingAnalyzeContent, CreateCallMatcher, ListCallMatchers, DeleteCallMatcher rpc from v2/v2beta1
+* remove `input_audio` field from AnalyzeContentRequest from v2/v2beta1
+* Remove resource_reference from UpdateAnswerRecord
+* remove proto message CreateCallMatcherRequest, CreateCallMatcherResponse, ListCallMatchersRequest, ListCallMatchersResponse, DeleteCallMatcherRequest, DeleteCallMatcherResponse, CallMatcher, StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse, AudioInput from v2/v2beta1, TelephonyDtmfEvents, TelephonyDtmf from v2
+* remove rpc or fields that are unintended to release (#491)
+* remove resource_reference for invisible resources (#483)
+
+### Features
+
+* expose MP3_64_KBPS and MULAW for output audio encodings ([67e4f30](https://www.github.com/googleapis/java-dialogflow/commit/67e4f30445e9a132d93ea3a8a55339d238cac9af))
+* **v2beta1:** remote MixedAudio from ResponseMessage ([#469](https://www.github.com/googleapis/java-dialogflow/issues/469)) ([b111739](https://www.github.com/googleapis/java-dialogflow/commit/b1117395748b501ef7c504a58a556d607f1b668a))
+
+
+### Bug Fixes
+
+* Add all missing regional HTTP bindings in DF API ([67e4f30](https://www.github.com/googleapis/java-dialogflow/commit/67e4f30445e9a132d93ea3a8a55339d238cac9af))
+* remove `input_audio` field from AnalyzeContentRequest from v2/v2beta1 ([67e4f30](https://www.github.com/googleapis/java-dialogflow/commit/67e4f30445e9a132d93ea3a8a55339d238cac9af))
+* remove proto message CreateCallMatcherRequest, CreateCallMatcherResponse, ListCallMatchersRequest, ListCallMatchersResponse, DeleteCallMatcherRequest, DeleteCallMatcherResponse, CallMatcher, StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse, AudioInput from v2/v2beta1, TelephonyDtmfEvents, TelephonyDtmf from v2 ([67e4f30](https://www.github.com/googleapis/java-dialogflow/commit/67e4f30445e9a132d93ea3a8a55339d238cac9af))
+* remove resource_reference for invisible resources ([#483](https://www.github.com/googleapis/java-dialogflow/issues/483)) ([33aa424](https://www.github.com/googleapis/java-dialogflow/commit/33aa424ef5fe5ac10785aed13e863f2382f53c66))
+* Remove resource_reference from UpdateAnswerRecord ([67e4f30](https://www.github.com/googleapis/java-dialogflow/commit/67e4f30445e9a132d93ea3a8a55339d238cac9af))
+* remove rpc or fields that are unintended to release ([#491](https://www.github.com/googleapis/java-dialogflow/issues/491)) ([67e4f30](https://www.github.com/googleapis/java-dialogflow/commit/67e4f30445e9a132d93ea3a8a55339d238cac9af))
+* remove StreamingAnalyzeContent, CreateCallMatcher, ListCallMatchers, DeleteCallMatcher rpc from v2/v2beta1 ([67e4f30](https://www.github.com/googleapis/java-dialogflow/commit/67e4f30445e9a132d93ea3a8a55339d238cac9af))
+
+
+### Documentation
+
+* fix broken link in doc string ([33aa424](https://www.github.com/googleapis/java-dialogflow/commit/33aa424ef5fe5ac10785aed13e863f2382f53c66))
+* fix link for version and environment in participant doc ([67e4f30](https://www.github.com/googleapis/java-dialogflow/commit/67e4f30445e9a132d93ea3a8a55339d238cac9af))
+
 ### [2.6.2](https://www.github.com/googleapis/java-dialogflow/compare/v2.6.1...v2.6.2) (2021-03-15)
 
 
