@@ -4,5 +4,7 @@
 google-cloud-dataproc-metastore:0.1.0:0.1.1-SNAPSHOT
 grpc-google-cloud-dataproc-metastore-v1beta:0.1.0:0.1.1-SNAPSHOT
 grpc-google-cloud-dataproc-metastore-v1alpha:0.1.0:0.1.1-SNAPSHOT
+grpc-google-cloud-dataproc-metastore-v1:0.1.0:0.1.1-SNAPSHOT
 proto-google-cloud-dataproc-metastore-v1beta:0.1.0:0.1.1-SNAPSHOT
 proto-google-cloud-dataproc-metastore-v1alpha:0.1.0:0.1.1-SNAPSHOT
+proto-google-cloud-dataproc-metastore-v1:0.1.0:0.1.1-SNAPSHOT

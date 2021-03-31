@@ -1,0 +1,48 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.metastore.v1",
+  "libraryPackage": "com.google.cloud.metastore.v1",
+  "services": {
+    "DataprocMetastore": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataprocMetastoreClient",
+          "rpcs": {
+            "CreateMetadataImport": {
+              "methods": ["createMetadataImportAsync", "createMetadataImportAsync", "createMetadataImportAsync", "createMetadataImportOperationCallable", "createMetadataImportCallable"]
+            },
+            "CreateService": {
+              "methods": ["createServiceAsync", "createServiceAsync", "createServiceAsync", "createServiceOperationCallable", "createServiceCallable"]
+            },
+            "DeleteService": {
+              "methods": ["deleteServiceAsync", "deleteServiceAsync", "deleteServiceAsync", "deleteServiceOperationCallable", "deleteServiceCallable"]
+            },
+            "ExportMetadata": {
+              "methods": ["exportMetadataAsync", "exportMetadataOperationCallable", "exportMetadataCallable"]
+            },
+            "GetMetadataImport": {
+              "methods": ["getMetadataImport", "getMetadataImport", "getMetadataImport", "getMetadataImportCallable"]
+            },
+            "GetService": {
+              "methods": ["getService", "getService", "getService", "getServiceCallable"]
+            },
+            "ListMetadataImports": {
+              "methods": ["listMetadataImports", "listMetadataImports", "listMetadataImports", "listMetadataImportsPagedCallable", "listMetadataImportsCallable"]
+            },
+            "ListServices": {
+              "methods": ["listServices", "listServices", "listServices", "listServicesPagedCallable", "listServicesCallable"]
+            },
+            "UpdateMetadataImport": {
+              "methods": ["updateMetadataImportAsync", "updateMetadataImportAsync", "updateMetadataImportOperationCallable", "updateMetadataImportCallable"]
+            },
+            "UpdateService": {
+              "methods": ["updateServiceAsync", "updateServiceAsync", "updateServiceOperationCallable", "updateServiceCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

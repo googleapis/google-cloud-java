@@ -81,6 +81,11 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-dataproc-metastore-v1</artifactId>
+        <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-metastore-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataproc-metastore-v1beta</artifactId>
         <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-metastore-v1beta:current} -->
       </dependency>
@@ -88,6 +93,11 @@
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataproc-metastore-v1alpha</artifactId>
         <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-metastore-v1alpha:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-dataproc-metastore-v1</artifactId>
+        <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-metastore-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

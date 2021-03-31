@@ -17,7 +17,7 @@
 import synthtool.languages.java as java
 
 service = 'metastore'
-versions = ['v1alpha', 'v1beta']
+versions = ['v1alpha', 'v1beta', 'v1']
 
 for version in versions:
   java.pregenerated_library(

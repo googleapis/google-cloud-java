@@ -74,8 +74,8 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-dataproc-metastore-v1alpha</artifactId>
-        <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-metastore-v1alpha:current} -->
+        <artifactId>grpc-google-cloud-dataproc-metastore-v1beta</artifactId>
+        <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-metastore-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -84,19 +84,28 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-dataproc-metastore-v1</artifactId>
+        <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-metastore-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataproc-metastore-v1beta</artifactId>
         <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-metastore-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-dataproc-metastore-v1beta</artifactId>
-        <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-metastore-v1beta:current} -->
+        <artifactId>proto-google-cloud-dataproc-metastore-v1alpha</artifactId>
+        <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-metastore-v1alpha:current} -->
       </dependency>
-
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-dataproc-metastore-v1</artifactId>
+        <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-metastore-v1:current} -->
+      </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>0.18.0</version>
+        <version>0.20.1</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -124,8 +133,10 @@
     <module>google-cloud-dataproc-metastore</module>
     <module>grpc-google-cloud-dataproc-metastore-v1beta</module>
     <module>grpc-google-cloud-dataproc-metastore-v1alpha</module>
+    <module>grpc-google-cloud-dataproc-metastore-v1</module>
     <module>proto-google-cloud-dataproc-metastore-v1beta</module>
     <module>proto-google-cloud-dataproc-metastore-v1alpha</module>
+    <module>proto-google-cloud-dataproc-metastore-v1</module>
     <module>google-cloud-dataproc-metastore-bom</module>
   </modules>
 
