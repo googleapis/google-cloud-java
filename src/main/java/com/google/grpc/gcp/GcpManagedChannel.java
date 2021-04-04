@@ -258,7 +258,10 @@ public class GcpManagedChannel extends ManagedChannel {
     }
   }
 
-  /** Unbind channel with affinity key, and delete the affinitykey if necassary */
+  /**
+   * Unbind channel with affinity key. If one ChannelRef has zero affinity key bound with it, delete
+   * all the <affinityKey, channel> maps.
+   */
   protected void unbind(List<String> affinityKeys) {
     synchronized (bindLock) {
       if (affinityKeys != null) {
@@ -326,6 +329,7 @@ public class GcpManagedChannel extends ManagedChannel {
    */
   @VisibleForTesting
   static List<String> getKeysFromMessage(MessageOrBuilder msg, String name) {
+    // System.out.println("getKeysFromMessage " + name + " " + msg.toString());
     // The field names in a nested message name are splitted by '.'.
     int currentLength = name.indexOf('.');
     String currentName = name;
@@ -358,6 +362,7 @@ public class GcpManagedChannel extends ManagedChannel {
         }
       }
     }
+    // System.out.println("return keys " + keys.toString());
     return keys;
   }
 

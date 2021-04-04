@@ -40,6 +40,13 @@
       }
     },
     {
+      "name": ["google.spanner.v1.Spanner/ExecuteBatchDml"],
+      "affinity": {
+        "command": "BOUND",
+        "affinityKey": "session"
+      }
+    },
+    {
       "name": ["google.spanner.v1.Spanner/ExecuteStreamingSql"],
       "affinity": {
         "command": "BOUND",

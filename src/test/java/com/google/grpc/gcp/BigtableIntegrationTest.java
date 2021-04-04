@@ -78,7 +78,6 @@ public class BigtableIntegrationTest {
   private static final String TABLE_NAME =
       String.format("projects/%s/instances/%s/tables/%s", GCP_PROJECT_ID, INSTANCE_ID, TABLE_ID);
   private static final String COLUMN_NAME = "col-";
-  private static final String OAUTH_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
 
   private GcpManagedChannel gcpChannel;
   private ManagedChannelBuilder builder;

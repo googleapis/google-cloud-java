@@ -55,6 +55,13 @@ protobuf {
     }
 }
 
+test {
+    testLogging {
+        outputs.upToDateWhen {false}
+        showStandardStreams = true
+    }
+}
+
 sourceSets {
     main {
         java {
