@@ -45,6 +45,7 @@ import java.util.concurrent.TimeUnit;
 public class Detect {
   /**
    * Detects labels, shots, and explicit content in a video using the Video Intelligence API
+   *
    * @param args specifies features to detect and the path to the video on Google Cloud Storage.
    */
   public static void main(String[] args) {
@@ -58,6 +59,7 @@ public class Detect {
 
   /**
    * Helper that handles the input passed to the program.
+   *
    * @param args specifies features to detect and the path to the video on Google Cloud Storage.
    *
    * @throws IOException on Input/Output errors.

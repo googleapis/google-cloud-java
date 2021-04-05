@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package beta.video;
+package video;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -23,10 +23,10 @@ import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import video.DetectFacesGcs;
 
 @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
-public class DetectFacesIT {
-
+public class DetectFacesGcsIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -47,8 +47,8 @@ public class DetectFacesIT {
   }
 
   @Test
-  public void testDetectFaces() throws Exception {
-    DetectFaces.detectFaces("resources/googlework_short.mp4");
+  public void testDetectFacesGcs() throws Exception {
+    DetectFacesGcs.detectFacesGcs("gs://cloud-samples-data/video/googlework_short.mp4");
     String got = bout.toString();
     assertThat(got).contains("Face detected:");
   }

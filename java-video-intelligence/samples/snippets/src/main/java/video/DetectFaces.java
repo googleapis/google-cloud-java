@@ -14,37 +14,45 @@
  * limitations under the License.
  */
 
-package beta.video;
+package video;
 
-// [START video_detect_faces_gcs_beta]
+// [START video_detect_faces]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoProgress;
-import com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoRequest;
-import com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoResponse;
-import com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute;
-import com.google.cloud.videointelligence.v1p3beta1.FaceDetectionAnnotation;
-import com.google.cloud.videointelligence.v1p3beta1.FaceDetectionConfig;
-import com.google.cloud.videointelligence.v1p3beta1.Feature;
-import com.google.cloud.videointelligence.v1p3beta1.TimestampedObject;
-import com.google.cloud.videointelligence.v1p3beta1.Track;
-import com.google.cloud.videointelligence.v1p3beta1.VideoAnnotationResults;
-import com.google.cloud.videointelligence.v1p3beta1.VideoContext;
-import com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceClient;
-import com.google.cloud.videointelligence.v1p3beta1.VideoSegment;
+import com.google.cloud.videointelligence.v1.AnnotateVideoProgress;
+import com.google.cloud.videointelligence.v1.AnnotateVideoRequest;
+import com.google.cloud.videointelligence.v1.AnnotateVideoResponse;
+import com.google.cloud.videointelligence.v1.DetectedAttribute;
+import com.google.cloud.videointelligence.v1.FaceDetectionAnnotation;
+import com.google.cloud.videointelligence.v1.FaceDetectionConfig;
+import com.google.cloud.videointelligence.v1.Feature;
+import com.google.cloud.videointelligence.v1.TimestampedObject;
+import com.google.cloud.videointelligence.v1.Track;
+import com.google.cloud.videointelligence.v1.VideoAnnotationResults;
+import com.google.cloud.videointelligence.v1.VideoContext;
+import com.google.cloud.videointelligence.v1.VideoIntelligenceServiceClient;
+import com.google.cloud.videointelligence.v1.VideoSegment;
+import com.google.protobuf.ByteString;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
-public class DetectFacesGcs {
+public class DetectFaces {
 
-  public static void detectFacesGcs() throws Exception {
+  public static void detectFaces() throws Exception {
     // TODO(developer): Replace these variables before running the sample.
-    String gcsUri = "gs://cloud-samples-data/video/googlework_short.mp4";
-    detectFacesGcs(gcsUri);
+    String localFilePath = "resources/googlework_short.mp4";
+    detectFaces(localFilePath);
   }
 
-  // Detects faces in a video stored in Google Cloud Storage using the Cloud Video Intelligence API.
-  public static void detectFacesGcs(String gcsUri) throws Exception {
+  // Detects faces in a video stored in a local file using the Cloud Video Intelligence API.
+  public static void detectFaces(String localFilePath) throws Exception {
     try (VideoIntelligenceServiceClient videoIntelligenceServiceClient =
         VideoIntelligenceServiceClient.create()) {
+      // Reads a local video file and converts it to base64.
+      Path path = Paths.get(localFilePath);
+      byte[] data = Files.readAllBytes(path);
+      ByteString inputContent = ByteString.copyFrom(data);
 
       FaceDetectionConfig faceDetectionConfig =
           FaceDetectionConfig.newBuilder()
@@ -57,7 +65,7 @@ public class DetectFacesGcs {
 
       AnnotateVideoRequest request =
           AnnotateVideoRequest.newBuilder()
-              .setInputUri(gcsUri)
+              .setInputContent(inputContent)
               .addFeatures(Feature.FACE_DETECTION)
               .setVideoContext(videoContext)
               .build();
@@ -72,7 +80,7 @@ public class DetectFacesGcs {
       // Gets annotations for video
       VideoAnnotationResults annotationResult = response.getAnnotationResultsList().get(0);
 
-      // Annotations for list of people detected, tracked and recognized in video.
+      // Annotations for list of faces detected, tracked and recognized in video.
       for (FaceDetectionAnnotation faceDetectionAnnotation :
           annotationResult.getFaceDetectionAnnotationsList()) {
         System.out.print("Face detected:\n");
@@ -101,4 +109,4 @@ public class DetectFacesGcs {
     }
   }
 }
-// [END video_detect_faces_gcs_beta]
+// [END video_detect_faces]
