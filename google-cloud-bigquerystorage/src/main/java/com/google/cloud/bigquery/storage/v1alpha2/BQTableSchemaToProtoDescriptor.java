@@ -32,7 +32,10 @@ import java.util.List;
  * Converts a BQ table schema to protobuf descriptor. All field names will be converted to lowercase
  * when constructing the protobuf descriptor. The mapping between field types and field modes are
  * shown in the ImmutableMaps below.
+ *
+ * @deprecated Use {@link com.google.cloud.bigquery.storage.v1beta2.BQTableSchemaToProtoDescriptor}
  */
+@Deprecated
 public class BQTableSchemaToProtoDescriptor {
   private static ImmutableMap<Table.TableFieldSchema.Mode, FieldDescriptorProto.Label>
       BQTableSchemaModeMap =

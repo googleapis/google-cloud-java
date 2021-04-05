@@ -32,7 +32,10 @@ import java.util.regex.Pattern;
  * A cache of StreamWriters that can be looked up by Table Name. The entries will expire after 5
  * minutes if not used. Code sample: WriterCache cache = WriterCache.getInstance(); StreamWriter
  * writer = cache.getWriter(); // Use... cache.returnWriter(writer);
+ *
+ * @deprecated No longer supported
  */
+@Deprecated
 public class WriterCache {
   private static final Logger LOG = Logger.getLogger(WriterCache.class.getName());
 

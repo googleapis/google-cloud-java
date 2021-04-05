@@ -44,7 +44,10 @@ import org.json.JSONObject;
  * functions, but also provides an additional feature: schema update support, where if the BigQuery
  * table schema is updated, users will be able to ingest data on the new schema after some time (in
  * order of minutes).
+ *
+ * @deprecated Use {@link com.google.cloud.bigquery.storage.v1alpha2.JsonStreamWriter}
  */
+@Deprecated
 public class JsonStreamWriter implements AutoCloseable {
   private static String streamPatternString =
       "projects/[^/]+/datasets/[^/]+/tables/[^/]+/streams/[^/]+";

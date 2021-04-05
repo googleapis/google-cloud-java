@@ -78,7 +78,10 @@ import org.threeten.bp.Duration;
  *
  * <p>{@link StreamWriter} will use the credentials set on the channel, which uses application
  * default credentials through {@link GoogleCredentials#getApplicationDefault} by default.
+ *
+ * @deprecated Use {@link com.google.cloud.bigquery.storage.v1alpha2.JsonStreamWriterV2}
  */
+@Deprecated
 public class StreamWriter implements AutoCloseable {
   private static final Logger LOG = Logger.getLogger(StreamWriter.class.getName());
 

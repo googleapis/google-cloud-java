@@ -30,6 +30,8 @@ import java.util.Set;
 // A Converter class that turns a native protobuf::DescriptorProto to a self contained
 // protobuf::DescriptorProto
 // that can be reconstructed by the backend.
+// @deprecated Use {@link com.google.cloud.bigquery.storage.v1beta2.ProtoSchemaConverter}
+@Deprecated
 public class ProtoSchemaConverter {
   private static String getNameFromFullName(String fullName) {
     return fullName.replace('.', '_');

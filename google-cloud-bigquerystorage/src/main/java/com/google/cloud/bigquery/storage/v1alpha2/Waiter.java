@@ -28,7 +28,10 @@ import java.util.logging.Logger;
 /**
  * A barrier kind of object that helps keep track of pending actions and synchronously wait until
  * all have completed.
+ *
+ * @deprecated No longer supported
  */
+@Deprecated
 class Waiter {
   private static final Logger LOG = Logger.getLogger(Waiter.class.getName());
 

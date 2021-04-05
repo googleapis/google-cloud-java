@@ -29,7 +29,10 @@ import org.json.JSONObject;
 /**
  * Converts Json data to protocol buffer messages given the protocol buffer descriptor. The protobuf
  * descriptor must have all fields lowercased.
+ *
+ * @deprecated Use {@link com.google.cloud.bigquery.storage.v1beta2.JsonToProtoMessage}
  */
+@Deprecated
 public class JsonToProtoMessage {
   private static ImmutableMap<FieldDescriptor.Type, String> FieldTypeToDebugMessage =
       new ImmutableMap.Builder<FieldDescriptor.Type, String>()

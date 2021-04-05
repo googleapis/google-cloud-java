@@ -48,7 +48,10 @@ import org.json.JSONArray;
  *
  * <p>{@link DirectWriter} will use the credentials set on the channel, which uses application
  * default credentials through {@link GoogleCredentials#getApplicationDefault} by default.
+ *
+ * @deprecated no longer supported
  */
+@Deprecated
 public class DirectWriter {
   private static final Logger LOG = Logger.getLogger(DirectWriter.class.getName());
   private static WriterCache cache = null;
