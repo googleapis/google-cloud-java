@@ -16,6 +16,7 @@
 package com.google.cloud.bigquery.storage.v1beta2;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.bigquery.storage.test.JsonTest.*;
 import com.google.cloud.bigquery.storage.test.SchemaTest.*;
@@ -24,8 +25,10 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Descriptors.Descriptor;
 import com.google.protobuf.DynamicMessage;
 import com.google.protobuf.Message;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.logging.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.Assert;
@@ -35,6 +38,7 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class JsonToProtoMessageTest {
+  private static final Logger LOG = Logger.getLogger(JsonToProtoMessageTest.class.getName());
   private static ImmutableMap<Descriptor, String> AllTypesToDebugMessageTest =
       new ImmutableMap.Builder<Descriptor, String>()
           .put(BoolType.getDescriptor(), "boolean")
@@ -97,15 +101,15 @@ public class JsonToProtoMessageTest {
               })
           .build();
 
-  private static ImmutableMap<Descriptor, String> AllRepeatedTypesToDebugMessageTest =
-      new ImmutableMap.Builder<Descriptor, String>()
-          .put(RepeatedBool.getDescriptor(), "boolean")
-          .put(RepeatedBytes.getDescriptor(), "string")
-          .put(RepeatedInt64.getDescriptor(), "int64")
-          .put(RepeatedInt32.getDescriptor(), "int32")
-          .put(RepeatedDouble.getDescriptor(), "double")
-          .put(RepeatedString.getDescriptor(), "string")
-          .put(RepeatedObject.getDescriptor(), "object")
+  private static ImmutableMap<Descriptor, String[]> AllRepeatedTypesToDebugMessageTest =
+      new ImmutableMap.Builder<Descriptor, String[]>()
+          .put(RepeatedBool.getDescriptor(), new String[] {"boolean"})
+          .put(RepeatedBytes.getDescriptor(), new String[] {"string", "bytes"})
+          .put(RepeatedInt64.getDescriptor(), new String[] {"int64"})
+          .put(RepeatedInt32.getDescriptor(), new String[] {"int32"})
+          .put(RepeatedDouble.getDescriptor(), new String[] {"double"})
+          .put(RepeatedString.getDescriptor(), new String[] {"string"})
+          .put(RepeatedObject.getDescriptor(), new String[] {"object"})
           .build();
 
   private static ImmutableMap<Descriptor, Message[]> AllRepeatedTypesToCorrectProto =
@@ -121,6 +125,13 @@ public class JsonToProtoMessageTest {
                 RepeatedBytes.newBuilder()
                     .addTestRepeated(ByteString.copyFrom("hello".getBytes()))
                     .addTestRepeated(ByteString.copyFrom("test".getBytes()))
+                    .build(),
+                RepeatedBytes.newBuilder()
+                    .addTestRepeated(
+                        BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("0")))
+                    .addTestRepeated(
+                        BigDecimalByteStringEncoder.encodeToNumericByteString(
+                            new BigDecimal("1.2")))
                     .build()
               })
           .put(
@@ -247,6 +258,18 @@ public class JsonToProtoMessageTest {
         .put(
             "test_repeated",
             new JSONArray(
+                new byte[][] {
+                  BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("0"))
+                      .toByteArray(),
+                  BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("1.2"))
+                      .toByteArray()
+                })),
+    new JSONObject().put("test_repeated", new JSONArray(new char[][] {{'a', 'b'}, {'c'}})),
+    new JSONObject().put("test_repeated", new JSONArray(new String[][] {{"hello"}, {"test"}})),
+    new JSONObject()
+        .put(
+            "test_repeated",
+            new JSONArray(
                 new JSONObject[] {
                   new JSONObject().put("test_int", 1),
                   new JSONObject().put("test_int", 2),
@@ -347,7 +370,7 @@ public class JsonToProtoMessageTest {
 
   @Test
   public void testAllRepeatedTypesWithLimits() throws Exception {
-    for (Map.Entry<Descriptor, String> entry : AllRepeatedTypesToDebugMessageTest.entrySet()) {
+    for (Map.Entry<Descriptor, String[]> entry : AllRepeatedTypesToDebugMessageTest.entrySet()) {
       int success = 0;
       for (JSONObject json : simpleJSONArrays) {
         try {
@@ -356,13 +379,19 @@ public class JsonToProtoMessageTest {
           assertEquals(protoMsg, AllRepeatedTypesToCorrectProto.get(entry.getKey())[success]);
           success += 1;
         } catch (IllegalArgumentException e) {
-          assertEquals(
-              "JSONObject does not have a " + entry.getValue() + " field at root.test_repeated[0].",
-              e.getMessage());
+          assertTrue(
+              e.getMessage()
+                      .equals(
+                          "JSONObject does not have a "
+                              + entry.getValue()[0]
+                              + " field at root.test_repeated[0].")
+                  || e.getMessage()
+                      .equals("Error: root.test_repeated[0] could not be converted to byte[]."));
         }
       }
       if (entry.getKey() == RepeatedInt64.getDescriptor()
-          || entry.getKey() == RepeatedDouble.getDescriptor()) {
+          || entry.getKey() == RepeatedDouble.getDescriptor()
+          || entry.getKey() == RepeatedBytes.getDescriptor()) {
         assertEquals(2, success);
       } else {
         assertEquals(1, success);

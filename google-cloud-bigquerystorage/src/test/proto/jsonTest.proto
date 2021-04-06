@@ -11,7 +11,7 @@ message ComplexRoot {
   required int32 test_date = 6;
   required ComplexLvl1 complex_lvl1 = 7;
   required ComplexLvl2 complex_lvl2 = 8;
-  optional string test_numeric = 9;
+  optional bytes test_numeric = 9;
   optional string test_geo = 10;
   optional int64 test_timestamp = 11;
   optional int64 test_time = 12;

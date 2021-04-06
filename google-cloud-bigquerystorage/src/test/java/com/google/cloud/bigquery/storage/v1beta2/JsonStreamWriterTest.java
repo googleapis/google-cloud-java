@@ -36,6 +36,7 @@ import com.google.protobuf.Descriptors.DescriptorValidationException;
 import com.google.protobuf.Int64Value;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
@@ -408,7 +409,8 @@ public class JsonStreamWriterTest {
                 com.google.cloud.bigquery.storage.test.JsonTest.ComplexLvl2.newBuilder()
                     .setTestInt(3)
                     .build())
-            .setTestNumeric("1.23456")
+            .setTestNumeric(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("1.23456")))
             .setTestGeo("POINT(1,1)")
             .setTestTimestamp(12345678)
             .setTestTime(CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(1, 0, 1)))
@@ -429,7 +431,9 @@ public class JsonStreamWriterTest {
     json.put("test_date", 1);
     json.put("complex_lvl1", complex_lvl1);
     json.put("complex_lvl2", complex_lvl2);
-    json.put("test_numeric", "1.23456");
+    json.put(
+        "test_numeric",
+        BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("1.23456")));
     json.put("test_geo", "POINT(1,1)");
     json.put("test_timestamp", 12345678);
     json.put("test_time", CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(1, 0, 1)));

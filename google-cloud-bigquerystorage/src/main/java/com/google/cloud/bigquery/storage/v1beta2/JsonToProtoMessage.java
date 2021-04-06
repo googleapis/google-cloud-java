@@ -17,6 +17,7 @@ package com.google.cloud.bigquery.storage.v1beta2;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Descriptors.Descriptor;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.DynamicMessage;
@@ -138,7 +139,10 @@ public class JsonToProtoMessage {
         }
         break;
       case BYTES:
-        if (val instanceof String) {
+        if (val instanceof ByteString) {
+          protoMsg.setField(fieldDescriptor, ((ByteString) val).toByteArray());
+          return;
+        } else if (val instanceof String) {
           protoMsg.setField(fieldDescriptor, ((String) val).getBytes());
           return;
         }
@@ -234,7 +238,25 @@ public class JsonToProtoMessage {
           break;
         case BYTES:
           if (val instanceof String) {
+            // TODO(jstocklass): If string, decode it and pass in the byte array. Will need to
+            // update tests to ensure that strings passed in are properly encoded as well.
             protoMsg.addRepeatedField(fieldDescriptor, ((String) val).getBytes());
+          } else if (val instanceof JSONArray) {
+            try {
+              byte[] bytes = new byte[((JSONArray) val).length()];
+              for (int j = 0; j < ((JSONArray) val).length(); j++) {
+                bytes[j] = (byte) ((byte) (((JSONArray) val).get(j)) & 0xFF);
+              }
+              protoMsg.addRepeatedField(fieldDescriptor, bytes);
+            } catch (ClassCastException e) {
+              throw new IllegalArgumentException(
+                  String.format(
+                      "Error: "
+                          + currentScope
+                          + "["
+                          + index
+                          + "] could not be converted to byte[]."));
+            }
           } else {
             fail = true;
           }

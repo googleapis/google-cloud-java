@@ -31,6 +31,7 @@ import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.Int64Value;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.logging.Logger;
@@ -240,7 +241,15 @@ public class ITBigQueryWriteManualClientTest {
       LOG.info("Sending one message");
       JSONObject row1 = new JSONObject();
       row1.put("test_str", "aaa");
-      row1.put("test_numerics", new JSONArray(new String[] {"123.4", "-9000000"}));
+      row1.put(
+          "test_numerics",
+          new JSONArray(
+              new byte[][] {
+                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("123.4"))
+                    .toByteArray(),
+                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("-9000000"))
+                    .toByteArray()
+              }));
       row1.put(
           "test_datetime",
           CivilTimeEncoder.encodePacked64DatetimeMicros(LocalDateTime.of(2020, 10, 1, 12, 0)));
@@ -315,7 +324,15 @@ public class ITBigQueryWriteManualClientTest {
       LOG.info("Sending one message");
       JSONObject row1 = new JSONObject();
       row1.put("test_str", "aaa");
-      row1.put("test_numerics", new JSONArray(new String[] {"123.4", "-9000000"}));
+      row1.put(
+          "test_numerics",
+          new JSONArray(
+              new byte[][] {
+                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("123.4"))
+                    .toByteArray(),
+                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("-9000000"))
+                    .toByteArray()
+              }));
       row1.put(
           "test_datetime",
           CivilTimeEncoder.encodePacked64DatetimeMicros(LocalDateTime.of(2020, 10, 1, 12, 0)));

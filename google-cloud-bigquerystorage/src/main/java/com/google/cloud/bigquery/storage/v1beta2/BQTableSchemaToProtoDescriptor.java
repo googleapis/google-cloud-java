@@ -51,7 +51,7 @@ public class BQTableSchemaToProtoDescriptor {
               .put(TableFieldSchema.Type.DOUBLE, FieldDescriptorProto.Type.TYPE_DOUBLE)
               .put(TableFieldSchema.Type.GEOGRAPHY, FieldDescriptorProto.Type.TYPE_STRING)
               .put(TableFieldSchema.Type.INT64, FieldDescriptorProto.Type.TYPE_INT64)
-              .put(TableFieldSchema.Type.NUMERIC, FieldDescriptorProto.Type.TYPE_STRING)
+              .put(TableFieldSchema.Type.NUMERIC, FieldDescriptorProto.Type.TYPE_BYTES)
               .put(TableFieldSchema.Type.STRING, FieldDescriptorProto.Type.TYPE_STRING)
               .put(TableFieldSchema.Type.STRUCT, FieldDescriptorProto.Type.TYPE_MESSAGE)
               .put(TableFieldSchema.Type.TIME, FieldDescriptorProto.Type.TYPE_INT64)

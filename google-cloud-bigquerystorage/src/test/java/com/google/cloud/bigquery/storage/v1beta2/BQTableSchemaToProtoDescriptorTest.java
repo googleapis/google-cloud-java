@@ -42,7 +42,7 @@ public class BQTableSchemaToProtoDescriptorTest {
               .put(TableFieldSchema.Type.DOUBLE, DoubleType.getDescriptor())
               .put(TableFieldSchema.Type.GEOGRAPHY, StringType.getDescriptor())
               .put(TableFieldSchema.Type.INT64, Int64Type.getDescriptor())
-              .put(TableFieldSchema.Type.NUMERIC, StringType.getDescriptor())
+              .put(TableFieldSchema.Type.NUMERIC, BytesType.getDescriptor())
               .put(TableFieldSchema.Type.STRING, StringType.getDescriptor())
               .put(TableFieldSchema.Type.TIME, Int64Type.getDescriptor())
               .put(TableFieldSchema.Type.TIMESTAMP, Int64Type.getDescriptor())
