@@ -28,6 +28,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/bigquery/storage/v1alpha2/storage.proto")
+@java.lang.Deprecated
 public final class BigQueryWriteGrpc {
 
   private BigQueryWriteGrpc() {}
@@ -378,6 +379,7 @@ public final class BigQueryWriteGrpc {
    * The Write API can be used to write data to BigQuery.
    * </pre>
    */
+  @java.lang.Deprecated
   public abstract static class BigQueryWriteImplBase implements io.grpc.BindableService {
 
     /**
@@ -385,6 +387,11 @@ public final class BigQueryWriteGrpc {
      *
      * <pre>
      * Creates a write stream to the given table.
+     * Additionally, every table has a special COMMITTED stream named '_default'
+     * to which data can be written. This stream doesn't need to be created using
+     * CreateWriteStream. It is a stream that can be used simultaneously by any
+     * number of clients. Data written to this stream is considered committed as
+     * soon as an acknowledgement is received.
      * </pre>
      */
     public void createWriteStream(
@@ -447,7 +454,7 @@ public final class BigQueryWriteGrpc {
      *
      * <pre>
      * Finalize a write stream so that no new data can be appended to the
-     * stream.
+     * stream. Finalize is not supported on the '_default' stream.
      * </pre>
      */
     public void finalizeWriteStream(
@@ -488,6 +495,7 @@ public final class BigQueryWriteGrpc {
      * required in order for the rows to become available for reading. A
      * Flush operation flushes up to any previously flushed offset in a BUFFERED
      * stream, to the offset specified in the request.
+     * Flush is not supported on the _default stream, since it is not BUFFERED.
      * </pre>
      */
     public void flushRows(
@@ -557,6 +565,7 @@ public final class BigQueryWriteGrpc {
    * The Write API can be used to write data to BigQuery.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class BigQueryWriteStub
       extends io.grpc.stub.AbstractAsyncStub<BigQueryWriteStub> {
     private BigQueryWriteStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -573,6 +582,11 @@ public final class BigQueryWriteGrpc {
      *
      * <pre>
      * Creates a write stream to the given table.
+     * Additionally, every table has a special COMMITTED stream named '_default'
+     * to which data can be written. This stream doesn't need to be created using
+     * CreateWriteStream. It is a stream that can be used simultaneously by any
+     * number of clients. Data written to this stream is considered committed as
+     * soon as an acknowledgement is received.
      * </pre>
      */
     public void createWriteStream(
@@ -639,7 +653,7 @@ public final class BigQueryWriteGrpc {
      *
      * <pre>
      * Finalize a write stream so that no new data can be appended to the
-     * stream.
+     * stream. Finalize is not supported on the '_default' stream.
      * </pre>
      */
     public void finalizeWriteStream(
@@ -684,6 +698,7 @@ public final class BigQueryWriteGrpc {
      * required in order for the rows to become available for reading. A
      * Flush operation flushes up to any previously flushed offset in a BUFFERED
      * stream, to the offset specified in the request.
+     * Flush is not supported on the _default stream, since it is not BUFFERED.
      * </pre>
      */
     public void flushRows(
@@ -704,6 +719,7 @@ public final class BigQueryWriteGrpc {
    * The Write API can be used to write data to BigQuery.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class BigQueryWriteBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<BigQueryWriteBlockingStub> {
     private BigQueryWriteBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -721,6 +737,11 @@ public final class BigQueryWriteGrpc {
      *
      * <pre>
      * Creates a write stream to the given table.
+     * Additionally, every table has a special COMMITTED stream named '_default'
+     * to which data can be written. This stream doesn't need to be created using
+     * CreateWriteStream. It is a stream that can be used simultaneously by any
+     * number of clients. Data written to this stream is considered committed as
+     * soon as an acknowledgement is received.
      * </pre>
      */
     public com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream createWriteStream(
@@ -747,7 +768,7 @@ public final class BigQueryWriteGrpc {
      *
      * <pre>
      * Finalize a write stream so that no new data can be appended to the
-     * stream.
+     * stream. Finalize is not supported on the '_default' stream.
      * </pre>
      */
     public com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamResponse
@@ -785,6 +806,7 @@ public final class BigQueryWriteGrpc {
      * required in order for the rows to become available for reading. A
      * Flush operation flushes up to any previously flushed offset in a BUFFERED
      * stream, to the offset specified in the request.
+     * Flush is not supported on the _default stream, since it is not BUFFERED.
      * </pre>
      */
     public com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse flushRows(
@@ -802,6 +824,7 @@ public final class BigQueryWriteGrpc {
    * The Write API can be used to write data to BigQuery.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class BigQueryWriteFutureStub
       extends io.grpc.stub.AbstractFutureStub<BigQueryWriteFutureStub> {
     private BigQueryWriteFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -819,6 +842,11 @@ public final class BigQueryWriteGrpc {
      *
      * <pre>
      * Creates a write stream to the given table.
+     * Additionally, every table has a special COMMITTED stream named '_default'
+     * to which data can be written. This stream doesn't need to be created using
+     * CreateWriteStream. It is a stream that can be used simultaneously by any
+     * number of clients. Data written to this stream is considered committed as
+     * soon as an acknowledgement is received.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -849,7 +877,7 @@ public final class BigQueryWriteGrpc {
      *
      * <pre>
      * Finalize a write stream so that no new data can be appended to the
-     * stream.
+     * stream. Finalize is not supported on the '_default' stream.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -889,6 +917,7 @@ public final class BigQueryWriteGrpc {
      * required in order for the rows to become available for reading. A
      * Flush operation flushes up to any previously flushed offset in a BUFFERED
      * stream, to the offset specified in the request.
+     * Flush is not supported on the _default stream, since it is not BUFFERED.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

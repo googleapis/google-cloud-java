@@ -286,6 +286,26 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      * <code>NUMERIC = 12;</code>
      */
     NUMERIC(12),
+    /**
+     *
+     *
+     * <pre>
+     * BigNumeric value
+     * </pre>
+     *
+     * <code>BIGNUMERIC = 13;</code>
+     */
+    BIGNUMERIC(13),
+    /**
+     *
+     *
+     * <pre>
+     * Interval
+     * </pre>
+     *
+     * <code>INTERVAL = 14;</code>
+     */
+    INTERVAL(14),
     UNRECOGNIZED(-1),
     ;
 
@@ -419,6 +439,26 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      * <code>NUMERIC = 12;</code>
      */
     public static final int NUMERIC_VALUE = 12;
+    /**
+     *
+     *
+     * <pre>
+     * BigNumeric value
+     * </pre>
+     *
+     * <code>BIGNUMERIC = 13;</code>
+     */
+    public static final int BIGNUMERIC_VALUE = 13;
+    /**
+     *
+     *
+     * <pre>
+     * Interval
+     * </pre>
+     *
+     * <code>INTERVAL = 14;</code>
+     */
+    public static final int INTERVAL_VALUE = 14;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -470,6 +510,10 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
           return GEOGRAPHY;
         case 12:
           return NUMERIC;
+        case 13:
+          return BIGNUMERIC;
+        case 14:
+          return INTERVAL;
         default:
           return null;
       }

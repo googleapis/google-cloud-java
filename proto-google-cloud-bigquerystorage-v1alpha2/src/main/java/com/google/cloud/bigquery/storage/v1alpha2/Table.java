@@ -1496,7 +1496,7 @@ public final class Table {
        *
        *
        * <pre>
-       * Geography object (go/googlesql_geography)
+       * Geography object
        * </pre>
        *
        * <code>GEOGRAPHY = 11;</code>
@@ -1506,7 +1506,7 @@ public final class Table {
        *
        *
        * <pre>
-       * Numeric value (go/googlesql_numeric)
+       * Numeric value
        * </pre>
        *
        * <code>NUMERIC = 12;</code>
@@ -1629,7 +1629,7 @@ public final class Table {
        *
        *
        * <pre>
-       * Geography object (go/googlesql_geography)
+       * Geography object
        * </pre>
        *
        * <code>GEOGRAPHY = 11;</code>
@@ -1639,7 +1639,7 @@ public final class Table {
        *
        *
        * <pre>
-       * Numeric value (go/googlesql_numeric)
+       * Numeric value
        * </pre>
        *
        * <code>NUMERIC = 12;</code>

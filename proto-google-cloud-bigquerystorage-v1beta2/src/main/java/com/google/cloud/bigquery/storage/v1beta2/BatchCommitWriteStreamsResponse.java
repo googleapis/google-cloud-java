@@ -146,7 +146,8 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
    *
    * <pre>
    * The time at which streams were committed in microseconds granularity.
-   * This field will only exist when there is no stream errors.
+   * This field will only exist when there are no stream errors.
+   * **Note** if this field is not set, it means the commit was not successful.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -162,7 +163,8 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
    *
    * <pre>
    * The time at which streams were committed in microseconds granularity.
-   * This field will only exist when there is no stream errors.
+   * This field will only exist when there are no stream errors.
+   * **Note** if this field is not set, it means the commit was not successful.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -178,7 +180,8 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
    *
    * <pre>
    * The time at which streams were committed in microseconds granularity.
-   * This field will only exist when there is no stream errors.
+   * This field will only exist when there are no stream errors.
+   * **Note** if this field is not set, it means the commit was not successful.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -196,6 +199,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
    * <pre>
    * Stream level error if commit failed. Only streams with error will be in
    * the list.
+   * If empty, there is no error and all streams are committed successfully.
+   * If non empty, certain streams have errors and ZERO stream is committed due
+   * to atomicity guarantee.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -211,6 +217,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
    * <pre>
    * Stream level error if commit failed. Only streams with error will be in
    * the list.
+   * If empty, there is no error and all streams are committed successfully.
+   * If non empty, certain streams have errors and ZERO stream is committed due
+   * to atomicity guarantee.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -226,6 +235,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
    * <pre>
    * Stream level error if commit failed. Only streams with error will be in
    * the list.
+   * If empty, there is no error and all streams are committed successfully.
+   * If non empty, certain streams have errors and ZERO stream is committed due
+   * to atomicity guarantee.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -240,6 +252,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
    * <pre>
    * Stream level error if commit failed. Only streams with error will be in
    * the list.
+   * If empty, there is no error and all streams are committed successfully.
+   * If non empty, certain streams have errors and ZERO stream is committed due
+   * to atomicity guarantee.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -254,6 +269,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
    * <pre>
    * Stream level error if commit failed. Only streams with error will be in
    * the list.
+   * If empty, there is no error and all streams are committed successfully.
+   * If non empty, certain streams have errors and ZERO stream is committed due
+   * to atomicity guarantee.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -678,7 +696,8 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      *
      * <pre>
      * The time at which streams were committed in microseconds granularity.
-     * This field will only exist when there is no stream errors.
+     * This field will only exist when there are no stream errors.
+     * **Note** if this field is not set, it means the commit was not successful.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -693,7 +712,8 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      *
      * <pre>
      * The time at which streams were committed in microseconds granularity.
-     * This field will only exist when there is no stream errors.
+     * This field will only exist when there are no stream errors.
+     * **Note** if this field is not set, it means the commit was not successful.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -714,7 +734,8 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      *
      * <pre>
      * The time at which streams were committed in microseconds granularity.
-     * This field will only exist when there is no stream errors.
+     * This field will only exist when there are no stream errors.
+     * **Note** if this field is not set, it means the commit was not successful.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -737,7 +758,8 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      *
      * <pre>
      * The time at which streams were committed in microseconds granularity.
-     * This field will only exist when there is no stream errors.
+     * This field will only exist when there are no stream errors.
+     * **Note** if this field is not set, it means the commit was not successful.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -757,7 +779,8 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      *
      * <pre>
      * The time at which streams were committed in microseconds granularity.
-     * This field will only exist when there is no stream errors.
+     * This field will only exist when there are no stream errors.
+     * **Note** if this field is not set, it means the commit was not successful.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -782,7 +805,8 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      *
      * <pre>
      * The time at which streams were committed in microseconds granularity.
-     * This field will only exist when there is no stream errors.
+     * This field will only exist when there are no stream errors.
+     * **Note** if this field is not set, it means the commit was not successful.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -803,7 +827,8 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      *
      * <pre>
      * The time at which streams were committed in microseconds granularity.
-     * This field will only exist when there is no stream errors.
+     * This field will only exist when there are no stream errors.
+     * **Note** if this field is not set, it means the commit was not successful.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -818,7 +843,8 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      *
      * <pre>
      * The time at which streams were committed in microseconds granularity.
-     * This field will only exist when there is no stream errors.
+     * This field will only exist when there are no stream errors.
+     * **Note** if this field is not set, it means the commit was not successful.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -837,7 +863,8 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      *
      * <pre>
      * The time at which streams were committed in microseconds granularity.
-     * This field will only exist when there is no stream errors.
+     * This field will only exist when there are no stream errors.
+     * **Note** if this field is not set, it means the commit was not successful.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
@@ -883,6 +910,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * <pre>
      * Stream level error if commit failed. Only streams with error will be in
      * the list.
+     * If empty, there is no error and all streams are committed successfully.
+     * If non empty, certain streams have errors and ZERO stream is committed due
+     * to atomicity guarantee.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -901,6 +931,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * <pre>
      * Stream level error if commit failed. Only streams with error will be in
      * the list.
+     * If empty, there is no error and all streams are committed successfully.
+     * If non empty, certain streams have errors and ZERO stream is committed due
+     * to atomicity guarantee.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -918,6 +951,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * <pre>
      * Stream level error if commit failed. Only streams with error will be in
      * the list.
+     * If empty, there is no error and all streams are committed successfully.
+     * If non empty, certain streams have errors and ZERO stream is committed due
+     * to atomicity guarantee.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -935,6 +971,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * <pre>
      * Stream level error if commit failed. Only streams with error will be in
      * the list.
+     * If empty, there is no error and all streams are committed successfully.
+     * If non empty, certain streams have errors and ZERO stream is committed due
+     * to atomicity guarantee.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -959,6 +998,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * <pre>
      * Stream level error if commit failed. Only streams with error will be in
      * the list.
+     * If empty, there is no error and all streams are committed successfully.
+     * If non empty, certain streams have errors and ZERO stream is committed due
+     * to atomicity guarantee.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -980,6 +1022,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * <pre>
      * Stream level error if commit failed. Only streams with error will be in
      * the list.
+     * If empty, there is no error and all streams are committed successfully.
+     * If non empty, certain streams have errors and ZERO stream is committed due
+     * to atomicity guarantee.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -1003,6 +1048,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * <pre>
      * Stream level error if commit failed. Only streams with error will be in
      * the list.
+     * If empty, there is no error and all streams are committed successfully.
+     * If non empty, certain streams have errors and ZERO stream is committed due
+     * to atomicity guarantee.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -1027,6 +1075,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * <pre>
      * Stream level error if commit failed. Only streams with error will be in
      * the list.
+     * If empty, there is no error and all streams are committed successfully.
+     * If non empty, certain streams have errors and ZERO stream is committed due
+     * to atomicity guarantee.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -1048,6 +1099,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * <pre>
      * Stream level error if commit failed. Only streams with error will be in
      * the list.
+     * If empty, there is no error and all streams are committed successfully.
+     * If non empty, certain streams have errors and ZERO stream is committed due
+     * to atomicity guarantee.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -1069,6 +1123,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * <pre>
      * Stream level error if commit failed. Only streams with error will be in
      * the list.
+     * If empty, there is no error and all streams are committed successfully.
+     * If non empty, certain streams have errors and ZERO stream is committed due
+     * to atomicity guarantee.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -1091,6 +1148,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * <pre>
      * Stream level error if commit failed. Only streams with error will be in
      * the list.
+     * If empty, there is no error and all streams are committed successfully.
+     * If non empty, certain streams have errors and ZERO stream is committed due
+     * to atomicity guarantee.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -1111,6 +1171,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * <pre>
      * Stream level error if commit failed. Only streams with error will be in
      * the list.
+     * If empty, there is no error and all streams are committed successfully.
+     * If non empty, certain streams have errors and ZERO stream is committed due
+     * to atomicity guarantee.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -1131,6 +1194,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * <pre>
      * Stream level error if commit failed. Only streams with error will be in
      * the list.
+     * If empty, there is no error and all streams are committed successfully.
+     * If non empty, certain streams have errors and ZERO stream is committed due
+     * to atomicity guarantee.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -1145,6 +1211,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * <pre>
      * Stream level error if commit failed. Only streams with error will be in
      * the list.
+     * If empty, there is no error and all streams are committed successfully.
+     * If non empty, certain streams have errors and ZERO stream is committed due
+     * to atomicity guarantee.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -1163,6 +1232,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * <pre>
      * Stream level error if commit failed. Only streams with error will be in
      * the list.
+     * If empty, there is no error and all streams are committed successfully.
+     * If non empty, certain streams have errors and ZERO stream is committed due
+     * to atomicity guarantee.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -1181,6 +1253,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * <pre>
      * Stream level error if commit failed. Only streams with error will be in
      * the list.
+     * If empty, there is no error and all streams are committed successfully.
+     * If non empty, certain streams have errors and ZERO stream is committed due
+     * to atomicity guarantee.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -1195,6 +1270,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * <pre>
      * Stream level error if commit failed. Only streams with error will be in
      * the list.
+     * If empty, there is no error and all streams are committed successfully.
+     * If non empty, certain streams have errors and ZERO stream is committed due
+     * to atomicity guarantee.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>
@@ -1211,6 +1289,9 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
      * <pre>
      * Stream level error if commit failed. Only streams with error will be in
      * the list.
+     * If empty, there is no error and all streams are committed successfully.
+     * If non empty, certain streams have errors and ZERO stream is committed due
+     * to atomicity guarantee.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta2.StorageError stream_errors = 2;</code>

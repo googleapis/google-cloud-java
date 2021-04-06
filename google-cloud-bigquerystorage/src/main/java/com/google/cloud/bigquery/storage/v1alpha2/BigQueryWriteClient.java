@@ -145,7 +145,11 @@ public class BigQueryWriteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a write stream to the given table.
+   * Creates a write stream to the given table. Additionally, every table has a special COMMITTED
+   * stream named '_default' to which data can be written. This stream doesn't need to be created
+   * using CreateWriteStream. It is a stream that can be used simultaneously by any number of
+   * clients. Data written to this stream is considered committed as soon as an acknowledgement is
+   * received.
    *
    * <p>Sample code:
    *
@@ -174,7 +178,11 @@ public class BigQueryWriteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a write stream to the given table.
+   * Creates a write stream to the given table. Additionally, every table has a special COMMITTED
+   * stream named '_default' to which data can be written. This stream doesn't need to be created
+   * using CreateWriteStream. It is a stream that can be used simultaneously by any number of
+   * clients. Data written to this stream is considered committed as soon as an acknowledgement is
+   * received.
    *
    * <p>Sample code:
    *
@@ -202,7 +210,11 @@ public class BigQueryWriteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a write stream to the given table.
+   * Creates a write stream to the given table. Additionally, every table has a special COMMITTED
+   * stream named '_default' to which data can be written. This stream doesn't need to be created
+   * using CreateWriteStream. It is a stream that can be used simultaneously by any number of
+   * clients. Data written to this stream is considered committed as soon as an acknowledgement is
+   * received.
    *
    * <p>Sample code:
    *
@@ -225,7 +237,11 @@ public class BigQueryWriteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a write stream to the given table.
+   * Creates a write stream to the given table. Additionally, every table has a special COMMITTED
+   * stream named '_default' to which data can be written. This stream doesn't need to be created
+   * using CreateWriteStream. It is a stream that can be used simultaneously by any number of
+   * clients. Data written to this stream is considered committed as soon as an acknowledgement is
+   * received.
    *
    * <p>Sample code:
    *
@@ -390,7 +406,8 @@ public class BigQueryWriteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Finalize a write stream so that no new data can be appended to the stream.
+   * Finalize a write stream so that no new data can be appended to the stream. Finalize is not
+   * supported on the '_default' stream.
    *
    * <p>Sample code:
    *
@@ -415,7 +432,8 @@ public class BigQueryWriteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Finalize a write stream so that no new data can be appended to the stream.
+   * Finalize a write stream so that no new data can be appended to the stream. Finalize is not
+   * supported on the '_default' stream.
    *
    * <p>Sample code:
    *
@@ -438,7 +456,8 @@ public class BigQueryWriteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Finalize a write stream so that no new data can be appended to the stream.
+   * Finalize a write stream so that no new data can be appended to the stream. Finalize is not
+   * supported on the '_default' stream.
    *
    * <p>Sample code:
    *
@@ -464,7 +483,8 @@ public class BigQueryWriteClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Finalize a write stream so that no new data can be appended to the stream.
+   * Finalize a write stream so that no new data can be appended to the stream. Finalize is not
+   * supported on the '_default' stream.
    *
    * <p>Sample code:
    *
@@ -603,7 +623,7 @@ public class BigQueryWriteClient implements BackgroundResource {
    * Flushes rows to a BUFFERED stream. If users are appending rows to BUFFERED stream, flush
    * operation is required in order for the rows to become available for reading. A Flush operation
    * flushes up to any previously flushed offset in a BUFFERED stream, to the offset specified in
-   * the request.
+   * the request. Flush is not supported on the _default stream, since it is not BUFFERED.
    *
    * <p>Sample code:
    *
@@ -631,7 +651,7 @@ public class BigQueryWriteClient implements BackgroundResource {
    * Flushes rows to a BUFFERED stream. If users are appending rows to BUFFERED stream, flush
    * operation is required in order for the rows to become available for reading. A Flush operation
    * flushes up to any previously flushed offset in a BUFFERED stream, to the offset specified in
-   * the request.
+   * the request. Flush is not supported on the _default stream, since it is not BUFFERED.
    *
    * <p>Sample code:
    *
@@ -657,7 +677,7 @@ public class BigQueryWriteClient implements BackgroundResource {
    * Flushes rows to a BUFFERED stream. If users are appending rows to BUFFERED stream, flush
    * operation is required in order for the rows to become available for reading. A Flush operation
    * flushes up to any previously flushed offset in a BUFFERED stream, to the offset specified in
-   * the request.
+   * the request. Flush is not supported on the _default stream, since it is not BUFFERED.
    *
    * <p>Sample code:
    *
@@ -685,7 +705,7 @@ public class BigQueryWriteClient implements BackgroundResource {
    * Flushes rows to a BUFFERED stream. If users are appending rows to BUFFERED stream, flush
    * operation is required in order for the rows to become available for reading. A Flush operation
    * flushes up to any previously flushed offset in a BUFFERED stream, to the offset specified in
-   * the request.
+   * the request. Flush is not supported on the _default stream, since it is not BUFFERED.
    *
    * <p>Sample code:
    *

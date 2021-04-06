@@ -80,7 +80,8 @@ public final class Stream {
      *
      *
      * <pre>
-     * Output only. Create time of the stream.
+     * Output only. Create time of the stream. For the _default stream, this is the
+     * creation_time of the table.
      * </pre>
      *
      * <code>
@@ -94,7 +95,8 @@ public final class Stream {
      *
      *
      * <pre>
-     * Output only. Create time of the stream.
+     * Output only. Create time of the stream. For the _default stream, this is the
+     * creation_time of the table.
      * </pre>
      *
      * <code>
@@ -108,7 +110,8 @@ public final class Stream {
      *
      *
      * <pre>
-     * Output only. Create time of the stream.
+     * Output only. Create time of the stream. For the _default stream, this is the
+     * creation_time of the table.
      * </pre>
      *
      * <code>
@@ -661,7 +664,8 @@ public final class Stream {
      *
      *
      * <pre>
-     * Output only. Create time of the stream.
+     * Output only. Create time of the stream. For the _default stream, this is the
+     * creation_time of the table.
      * </pre>
      *
      * <code>
@@ -678,7 +682,8 @@ public final class Stream {
      *
      *
      * <pre>
-     * Output only. Create time of the stream.
+     * Output only. Create time of the stream. For the _default stream, this is the
+     * creation_time of the table.
      * </pre>
      *
      * <code>
@@ -695,7 +700,8 @@ public final class Stream {
      *
      *
      * <pre>
-     * Output only. Create time of the stream.
+     * Output only. Create time of the stream. For the _default stream, this is the
+     * creation_time of the table.
      * </pre>
      *
      * <code>
@@ -1522,7 +1528,8 @@ public final class Stream {
        *
        *
        * <pre>
-       * Output only. Create time of the stream.
+       * Output only. Create time of the stream. For the _default stream, this is the
+       * creation_time of the table.
        * </pre>
        *
        * <code>
@@ -1538,7 +1545,8 @@ public final class Stream {
        *
        *
        * <pre>
-       * Output only. Create time of the stream.
+       * Output only. Create time of the stream. For the _default stream, this is the
+       * creation_time of the table.
        * </pre>
        *
        * <code>
@@ -1560,7 +1568,8 @@ public final class Stream {
        *
        *
        * <pre>
-       * Output only. Create time of the stream.
+       * Output only. Create time of the stream. For the _default stream, this is the
+       * creation_time of the table.
        * </pre>
        *
        * <code>
@@ -1584,7 +1593,8 @@ public final class Stream {
        *
        *
        * <pre>
-       * Output only. Create time of the stream.
+       * Output only. Create time of the stream. For the _default stream, this is the
+       * creation_time of the table.
        * </pre>
        *
        * <code>
@@ -1605,7 +1615,8 @@ public final class Stream {
        *
        *
        * <pre>
-       * Output only. Create time of the stream.
+       * Output only. Create time of the stream. For the _default stream, this is the
+       * creation_time of the table.
        * </pre>
        *
        * <code>
@@ -1633,7 +1644,8 @@ public final class Stream {
        *
        *
        * <pre>
-       * Output only. Create time of the stream.
+       * Output only. Create time of the stream. For the _default stream, this is the
+       * creation_time of the table.
        * </pre>
        *
        * <code>
@@ -1655,7 +1667,8 @@ public final class Stream {
        *
        *
        * <pre>
-       * Output only. Create time of the stream.
+       * Output only. Create time of the stream. For the _default stream, this is the
+       * creation_time of the table.
        * </pre>
        *
        * <code>
@@ -1671,7 +1684,8 @@ public final class Stream {
        *
        *
        * <pre>
-       * Output only. Create time of the stream.
+       * Output only. Create time of the stream. For the _default stream, this is the
+       * creation_time of the table.
        * </pre>
        *
        * <code>
@@ -1691,7 +1705,8 @@ public final class Stream {
        *
        *
        * <pre>
-       * Output only. Create time of the stream.
+       * Output only. Create time of the stream. For the _default stream, this is the
+       * creation_time of the table.
        * </pre>
        *
        * <code>

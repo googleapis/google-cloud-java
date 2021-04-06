@@ -23,8 +23,9 @@ package com.google.cloud.bigquery.storage.v1beta2;
  *
  * <pre>
  * Structured custom BigQuery Storage error message. The error can be attached
- * as error details in the returned rpc Status. User can use the info to process
- * errors in a structural way, rather than having to parse error messages.
+ * as error details in the returned rpc Status. In particular, the use of error
+ * codes allows more structured error handling, and reduces the need to evaluate
+ * unstructured error text strings.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.storage.v1beta2.StorageError}
@@ -195,13 +196,23 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Invalid Stream state.
-     * For example, you try to commit a stream that is not fianlized or is
+     * For example, you try to commit a stream that is not finalized or is
      * garbaged.
      * </pre>
      *
      * <code>INVALID_STREAM_STATE = 5;</code>
      */
     INVALID_STREAM_STATE(5),
+    /**
+     *
+     *
+     * <pre>
+     * Stream is finalized.
+     * </pre>
+     *
+     * <code>STREAM_FINALIZED = 6;</code>
+     */
+    STREAM_FINALIZED(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -261,13 +272,23 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Invalid Stream state.
-     * For example, you try to commit a stream that is not fianlized or is
+     * For example, you try to commit a stream that is not finalized or is
      * garbaged.
      * </pre>
      *
      * <code>INVALID_STREAM_STATE = 5;</code>
      */
     public static final int INVALID_STREAM_STATE_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Stream is finalized.
+     * </pre>
+     *
+     * <code>STREAM_FINALIZED = 6;</code>
+     */
+    public static final int STREAM_FINALIZED_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -305,6 +326,8 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
           return INVALID_STREAM_TYPE;
         case 5:
           return INVALID_STREAM_STATE;
+        case 6:
+          return STREAM_FINALIZED;
         default:
           return null;
       }
@@ -687,8 +710,9 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Structured custom BigQuery Storage error message. The error can be attached
-   * as error details in the returned rpc Status. User can use the info to process
-   * errors in a structural way, rather than having to parse error messages.
+   * as error details in the returned rpc Status. In particular, the use of error
+   * codes allows more structured error handling, and reduces the need to evaluate
+   * unstructured error text strings.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.storage.v1beta2.StorageError}

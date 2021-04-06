@@ -27,8 +27,8 @@ public interface BatchCommitWriteStreamsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Parent table that all the streams should belong to, in the form
-   * of `projects/{project}/datasets/{dataset}/tables/{table}`.
+   * Required. Parent table that all the streams should belong to, in the form of
+   * `projects/{project}/datasets/{dataset}/tables/{table}`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -40,8 +40,8 @@ public interface BatchCommitWriteStreamsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Parent table that all the streams should belong to, in the form
-   * of `projects/{project}/datasets/{dataset}/tables/{table}`.
+   * Required. Parent table that all the streams should belong to, in the form of
+   * `projects/{project}/datasets/{dataset}/tables/{table}`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>

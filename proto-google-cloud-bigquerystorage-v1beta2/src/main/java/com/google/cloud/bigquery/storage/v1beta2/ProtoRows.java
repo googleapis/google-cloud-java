@@ -18,15 +18,7 @@
 
 package com.google.cloud.bigquery.storage.v1beta2;
 
-/**
- *
- *
- * <pre>
- * Protobuf rows.
- * </pre>
- *
- * Protobuf type {@code google.cloud.bigquery.storage.v1beta2.ProtoRows}
- */
+/** Protobuf type {@code google.cloud.bigquery.storage.v1beta2.ProtoRows} */
 public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta2.ProtoRows)
@@ -337,15 +329,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-  /**
-   *
-   *
-   * <pre>
-   * Protobuf rows.
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.bigquery.storage.v1beta2.ProtoRows}
-   */
+  /** Protobuf type {@code google.cloud.bigquery.storage.v1beta2.ProtoRows} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.storage.v1beta2.ProtoRows)

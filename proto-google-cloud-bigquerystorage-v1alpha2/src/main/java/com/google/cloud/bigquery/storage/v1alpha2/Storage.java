@@ -1096,6 +1096,8 @@ public final class Storage {
      * Required. The stream that is the target of the append operation. This value must be
      * specified for the initial request. If subsequent requests specify the
      * stream name, it must equal to the value provided in the first request.
+     * To write to the _default stream, populate this field with a string in the
+     * format `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
      * </pre>
      *
      * <code>
@@ -1112,6 +1114,8 @@ public final class Storage {
      * Required. The stream that is the target of the append operation. This value must be
      * specified for the initial request. If subsequent requests specify the
      * stream name, it must equal to the value provided in the first request.
+     * To write to the _default stream, populate this field with a string in the
+     * format `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
      * </pre>
      *
      * <code>
@@ -1128,7 +1132,8 @@ public final class Storage {
      * <pre>
      * Optional. If present, the write is only performed if the next append offset is same
      * as the provided value. If not present, the write is performed at the
-     * current end of stream.
+     * current end of stream. Specifying a value for this field is not allowed
+     * when calling AppendRows for the '_default' stream.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1143,7 +1148,8 @@ public final class Storage {
      * <pre>
      * Optional. If present, the write is only performed if the next append offset is same
      * as the provided value. If not present, the write is performed at the
-     * current end of stream.
+     * current end of stream. Specifying a value for this field is not allowed
+     * when calling AppendRows for the '_default' stream.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1158,7 +1164,8 @@ public final class Storage {
      * <pre>
      * Optional. If present, the write is only performed if the next append offset is same
      * as the provided value. If not present, the write is performed at the
-     * current end of stream.
+     * current end of stream. Specifying a value for this field is not allowed
+     * when calling AppendRows for the '_default' stream.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -2535,6 +2542,8 @@ public final class Storage {
      * Required. The stream that is the target of the append operation. This value must be
      * specified for the initial request. If subsequent requests specify the
      * stream name, it must equal to the value provided in the first request.
+     * To write to the _default stream, populate this field with a string in the
+     * format `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
      * </pre>
      *
      * <code>
@@ -2562,6 +2571,8 @@ public final class Storage {
      * Required. The stream that is the target of the append operation. This value must be
      * specified for the initial request. If subsequent requests specify the
      * stream name, it must equal to the value provided in the first request.
+     * To write to the _default stream, populate this field with a string in the
+     * format `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
      * </pre>
      *
      * <code>
@@ -2591,7 +2602,8 @@ public final class Storage {
      * <pre>
      * Optional. If present, the write is only performed if the next append offset is same
      * as the provided value. If not present, the write is performed at the
-     * current end of stream.
+     * current end of stream. Specifying a value for this field is not allowed
+     * when calling AppendRows for the '_default' stream.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -2609,7 +2621,8 @@ public final class Storage {
      * <pre>
      * Optional. If present, the write is only performed if the next append offset is same
      * as the provided value. If not present, the write is performed at the
-     * current end of stream.
+     * current end of stream. Specifying a value for this field is not allowed
+     * when calling AppendRows for the '_default' stream.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -2627,7 +2640,8 @@ public final class Storage {
      * <pre>
      * Optional. If present, the write is only performed if the next append offset is same
      * as the provided value. If not present, the write is performed at the
-     * current end of stream.
+     * current end of stream. Specifying a value for this field is not allowed
+     * when calling AppendRows for the '_default' stream.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -3157,6 +3171,8 @@ public final class Storage {
        * Required. The stream that is the target of the append operation. This value must be
        * specified for the initial request. If subsequent requests specify the
        * stream name, it must equal to the value provided in the first request.
+       * To write to the _default stream, populate this field with a string in the
+       * format `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
        * </pre>
        *
        * <code>
@@ -3183,6 +3199,8 @@ public final class Storage {
        * Required. The stream that is the target of the append operation. This value must be
        * specified for the initial request. If subsequent requests specify the
        * stream name, it must equal to the value provided in the first request.
+       * To write to the _default stream, populate this field with a string in the
+       * format `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
        * </pre>
        *
        * <code>
@@ -3209,6 +3227,8 @@ public final class Storage {
        * Required. The stream that is the target of the append operation. This value must be
        * specified for the initial request. If subsequent requests specify the
        * stream name, it must equal to the value provided in the first request.
+       * To write to the _default stream, populate this field with a string in the
+       * format `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
        * </pre>
        *
        * <code>
@@ -3234,6 +3254,8 @@ public final class Storage {
        * Required. The stream that is the target of the append operation. This value must be
        * specified for the initial request. If subsequent requests specify the
        * stream name, it must equal to the value provided in the first request.
+       * To write to the _default stream, populate this field with a string in the
+       * format `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
        * </pre>
        *
        * <code>
@@ -3255,6 +3277,8 @@ public final class Storage {
        * Required. The stream that is the target of the append operation. This value must be
        * specified for the initial request. If subsequent requests specify the
        * stream name, it must equal to the value provided in the first request.
+       * To write to the _default stream, populate this field with a string in the
+       * format `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
        * </pre>
        *
        * <code>
@@ -3287,7 +3311,8 @@ public final class Storage {
        * <pre>
        * Optional. If present, the write is only performed if the next append offset is same
        * as the provided value. If not present, the write is performed at the
-       * current end of stream.
+       * current end of stream. Specifying a value for this field is not allowed
+       * when calling AppendRows for the '_default' stream.
        * </pre>
        *
        * <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -3304,7 +3329,8 @@ public final class Storage {
        * <pre>
        * Optional. If present, the write is only performed if the next append offset is same
        * as the provided value. If not present, the write is performed at the
-       * current end of stream.
+       * current end of stream. Specifying a value for this field is not allowed
+       * when calling AppendRows for the '_default' stream.
        * </pre>
        *
        * <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -3325,7 +3351,8 @@ public final class Storage {
        * <pre>
        * Optional. If present, the write is only performed if the next append offset is same
        * as the provided value. If not present, the write is performed at the
-       * current end of stream.
+       * current end of stream. Specifying a value for this field is not allowed
+       * when calling AppendRows for the '_default' stream.
        * </pre>
        *
        * <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -3350,7 +3377,8 @@ public final class Storage {
        * <pre>
        * Optional. If present, the write is only performed if the next append offset is same
        * as the provided value. If not present, the write is performed at the
-       * current end of stream.
+       * current end of stream. Specifying a value for this field is not allowed
+       * when calling AppendRows for the '_default' stream.
        * </pre>
        *
        * <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -3372,7 +3400,8 @@ public final class Storage {
        * <pre>
        * Optional. If present, the write is only performed if the next append offset is same
        * as the provided value. If not present, the write is performed at the
-       * current end of stream.
+       * current end of stream. Specifying a value for this field is not allowed
+       * when calling AppendRows for the '_default' stream.
        * </pre>
        *
        * <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -3399,7 +3428,8 @@ public final class Storage {
        * <pre>
        * Optional. If present, the write is only performed if the next append offset is same
        * as the provided value. If not present, the write is performed at the
-       * current end of stream.
+       * current end of stream. Specifying a value for this field is not allowed
+       * when calling AppendRows for the '_default' stream.
        * </pre>
        *
        * <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -3422,7 +3452,8 @@ public final class Storage {
        * <pre>
        * Optional. If present, the write is only performed if the next append offset is same
        * as the provided value. If not present, the write is performed at the
-       * current end of stream.
+       * current end of stream. Specifying a value for this field is not allowed
+       * when calling AppendRows for the '_default' stream.
        * </pre>
        *
        * <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -3439,7 +3470,8 @@ public final class Storage {
        * <pre>
        * Optional. If present, the write is only performed if the next append offset is same
        * as the provided value. If not present, the write is performed at the
-       * current end of stream.
+       * current end of stream. Specifying a value for this field is not allowed
+       * when calling AppendRows for the '_default' stream.
        * </pre>
        *
        * <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -3458,7 +3490,8 @@ public final class Storage {
        * <pre>
        * Optional. If present, the write is only performed if the next append offset is same
        * as the provided value. If not present, the write is performed at the
-       * current end of stream.
+       * current end of stream. Specifying a value for this field is not allowed
+       * when calling AppendRows for the '_default' stream.
        * </pre>
        *
        * <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -3818,7 +3851,18 @@ public final class Storage {
      *
      * <pre>
      * Error in case of append failure. If set, it means rows are not accepted
-     * into the system. Users can retry within the same connection.
+     * into the system. Users can retry or continue with other requests within
+     * the same connection.
+     * ALREADY_EXISTS: happens when offset is specified, it means the row is
+     *   already appended, it is safe to ignore this error.
+     * OUT_OF_RANGE: happens when offset is specified, it means the specified
+     *   offset is beyond the end of the stream.
+     * INVALID_ARGUMENT: error caused by malformed request or data.
+     * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+     *   append without offset.
+     * ABORTED: request processing is aborted because of prior failures, request
+     *   can be retried if previous failure is fixed.
+     * INTERNAL: server side errors that can be retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 2;</code>
@@ -3831,7 +3875,18 @@ public final class Storage {
      *
      * <pre>
      * Error in case of append failure. If set, it means rows are not accepted
-     * into the system. Users can retry within the same connection.
+     * into the system. Users can retry or continue with other requests within
+     * the same connection.
+     * ALREADY_EXISTS: happens when offset is specified, it means the row is
+     *   already appended, it is safe to ignore this error.
+     * OUT_OF_RANGE: happens when offset is specified, it means the specified
+     *   offset is beyond the end of the stream.
+     * INVALID_ARGUMENT: error caused by malformed request or data.
+     * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+     *   append without offset.
+     * ABORTED: request processing is aborted because of prior failures, request
+     *   can be retried if previous failure is fixed.
+     * INTERNAL: server side errors that can be retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 2;</code>
@@ -3844,7 +3899,18 @@ public final class Storage {
      *
      * <pre>
      * Error in case of append failure. If set, it means rows are not accepted
-     * into the system. Users can retry within the same connection.
+     * into the system. Users can retry or continue with other requests within
+     * the same connection.
+     * ALREADY_EXISTS: happens when offset is specified, it means the row is
+     *   already appended, it is safe to ignore this error.
+     * OUT_OF_RANGE: happens when offset is specified, it means the specified
+     *   offset is beyond the end of the stream.
+     * INVALID_ARGUMENT: error caused by malformed request or data.
+     * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+     *   append without offset.
+     * ABORTED: request processing is aborted because of prior failures, request
+     *   can be retried if previous failure is fixed.
+     * INTERNAL: server side errors that can be retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 2;</code>
@@ -4106,7 +4172,18 @@ public final class Storage {
      *
      * <pre>
      * Error in case of append failure. If set, it means rows are not accepted
-     * into the system. Users can retry within the same connection.
+     * into the system. Users can retry or continue with other requests within
+     * the same connection.
+     * ALREADY_EXISTS: happens when offset is specified, it means the row is
+     *   already appended, it is safe to ignore this error.
+     * OUT_OF_RANGE: happens when offset is specified, it means the specified
+     *   offset is beyond the end of the stream.
+     * INVALID_ARGUMENT: error caused by malformed request or data.
+     * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+     *   append without offset.
+     * ABORTED: request processing is aborted because of prior failures, request
+     *   can be retried if previous failure is fixed.
+     * INTERNAL: server side errors that can be retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 2;</code>
@@ -4122,7 +4199,18 @@ public final class Storage {
      *
      * <pre>
      * Error in case of append failure. If set, it means rows are not accepted
-     * into the system. Users can retry within the same connection.
+     * into the system. Users can retry or continue with other requests within
+     * the same connection.
+     * ALREADY_EXISTS: happens when offset is specified, it means the row is
+     *   already appended, it is safe to ignore this error.
+     * OUT_OF_RANGE: happens when offset is specified, it means the specified
+     *   offset is beyond the end of the stream.
+     * INVALID_ARGUMENT: error caused by malformed request or data.
+     * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+     *   append without offset.
+     * ABORTED: request processing is aborted because of prior failures, request
+     *   can be retried if previous failure is fixed.
+     * INTERNAL: server side errors that can be retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 2;</code>
@@ -4141,7 +4229,18 @@ public final class Storage {
      *
      * <pre>
      * Error in case of append failure. If set, it means rows are not accepted
-     * into the system. Users can retry within the same connection.
+     * into the system. Users can retry or continue with other requests within
+     * the same connection.
+     * ALREADY_EXISTS: happens when offset is specified, it means the row is
+     *   already appended, it is safe to ignore this error.
+     * OUT_OF_RANGE: happens when offset is specified, it means the specified
+     *   offset is beyond the end of the stream.
+     * INVALID_ARGUMENT: error caused by malformed request or data.
+     * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+     *   append without offset.
+     * ABORTED: request processing is aborted because of prior failures, request
+     *   can be retried if previous failure is fixed.
+     * INTERNAL: server side errors that can be retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 2;</code>
@@ -4714,7 +4813,18 @@ public final class Storage {
        *
        * <pre>
        * Error in case of append failure. If set, it means rows are not accepted
-       * into the system. Users can retry within the same connection.
+       * into the system. Users can retry or continue with other requests within
+       * the same connection.
+       * ALREADY_EXISTS: happens when offset is specified, it means the row is
+       *   already appended, it is safe to ignore this error.
+       * OUT_OF_RANGE: happens when offset is specified, it means the specified
+       *   offset is beyond the end of the stream.
+       * INVALID_ARGUMENT: error caused by malformed request or data.
+       * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+       *   append without offset.
+       * ABORTED: request processing is aborted because of prior failures, request
+       *   can be retried if previous failure is fixed.
+       * INTERNAL: server side errors that can be retried.
        * </pre>
        *
        * <code>.google.rpc.Status error = 2;</code>
@@ -4730,7 +4840,18 @@ public final class Storage {
        *
        * <pre>
        * Error in case of append failure. If set, it means rows are not accepted
-       * into the system. Users can retry within the same connection.
+       * into the system. Users can retry or continue with other requests within
+       * the same connection.
+       * ALREADY_EXISTS: happens when offset is specified, it means the row is
+       *   already appended, it is safe to ignore this error.
+       * OUT_OF_RANGE: happens when offset is specified, it means the specified
+       *   offset is beyond the end of the stream.
+       * INVALID_ARGUMENT: error caused by malformed request or data.
+       * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+       *   append without offset.
+       * ABORTED: request processing is aborted because of prior failures, request
+       *   can be retried if previous failure is fixed.
+       * INTERNAL: server side errors that can be retried.
        * </pre>
        *
        * <code>.google.rpc.Status error = 2;</code>
@@ -4756,7 +4877,18 @@ public final class Storage {
        *
        * <pre>
        * Error in case of append failure. If set, it means rows are not accepted
-       * into the system. Users can retry within the same connection.
+       * into the system. Users can retry or continue with other requests within
+       * the same connection.
+       * ALREADY_EXISTS: happens when offset is specified, it means the row is
+       *   already appended, it is safe to ignore this error.
+       * OUT_OF_RANGE: happens when offset is specified, it means the specified
+       *   offset is beyond the end of the stream.
+       * INVALID_ARGUMENT: error caused by malformed request or data.
+       * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+       *   append without offset.
+       * ABORTED: request processing is aborted because of prior failures, request
+       *   can be retried if previous failure is fixed.
+       * INTERNAL: server side errors that can be retried.
        * </pre>
        *
        * <code>.google.rpc.Status error = 2;</code>
@@ -4779,7 +4911,18 @@ public final class Storage {
        *
        * <pre>
        * Error in case of append failure. If set, it means rows are not accepted
-       * into the system. Users can retry within the same connection.
+       * into the system. Users can retry or continue with other requests within
+       * the same connection.
+       * ALREADY_EXISTS: happens when offset is specified, it means the row is
+       *   already appended, it is safe to ignore this error.
+       * OUT_OF_RANGE: happens when offset is specified, it means the specified
+       *   offset is beyond the end of the stream.
+       * INVALID_ARGUMENT: error caused by malformed request or data.
+       * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+       *   append without offset.
+       * ABORTED: request processing is aborted because of prior failures, request
+       *   can be retried if previous failure is fixed.
+       * INTERNAL: server side errors that can be retried.
        * </pre>
        *
        * <code>.google.rpc.Status error = 2;</code>
@@ -4799,7 +4942,18 @@ public final class Storage {
        *
        * <pre>
        * Error in case of append failure. If set, it means rows are not accepted
-       * into the system. Users can retry within the same connection.
+       * into the system. Users can retry or continue with other requests within
+       * the same connection.
+       * ALREADY_EXISTS: happens when offset is specified, it means the row is
+       *   already appended, it is safe to ignore this error.
+       * OUT_OF_RANGE: happens when offset is specified, it means the specified
+       *   offset is beyond the end of the stream.
+       * INVALID_ARGUMENT: error caused by malformed request or data.
+       * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+       *   append without offset.
+       * ABORTED: request processing is aborted because of prior failures, request
+       *   can be retried if previous failure is fixed.
+       * INTERNAL: server side errors that can be retried.
        * </pre>
        *
        * <code>.google.rpc.Status error = 2;</code>
@@ -4829,7 +4983,18 @@ public final class Storage {
        *
        * <pre>
        * Error in case of append failure. If set, it means rows are not accepted
-       * into the system. Users can retry within the same connection.
+       * into the system. Users can retry or continue with other requests within
+       * the same connection.
+       * ALREADY_EXISTS: happens when offset is specified, it means the row is
+       *   already appended, it is safe to ignore this error.
+       * OUT_OF_RANGE: happens when offset is specified, it means the specified
+       *   offset is beyond the end of the stream.
+       * INVALID_ARGUMENT: error caused by malformed request or data.
+       * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+       *   append without offset.
+       * ABORTED: request processing is aborted because of prior failures, request
+       *   can be retried if previous failure is fixed.
+       * INTERNAL: server side errors that can be retried.
        * </pre>
        *
        * <code>.google.rpc.Status error = 2;</code>
@@ -4855,7 +5020,18 @@ public final class Storage {
        *
        * <pre>
        * Error in case of append failure. If set, it means rows are not accepted
-       * into the system. Users can retry within the same connection.
+       * into the system. Users can retry or continue with other requests within
+       * the same connection.
+       * ALREADY_EXISTS: happens when offset is specified, it means the row is
+       *   already appended, it is safe to ignore this error.
+       * OUT_OF_RANGE: happens when offset is specified, it means the specified
+       *   offset is beyond the end of the stream.
+       * INVALID_ARGUMENT: error caused by malformed request or data.
+       * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+       *   append without offset.
+       * ABORTED: request processing is aborted because of prior failures, request
+       *   can be retried if previous failure is fixed.
+       * INTERNAL: server side errors that can be retried.
        * </pre>
        *
        * <code>.google.rpc.Status error = 2;</code>
@@ -4868,7 +5044,18 @@ public final class Storage {
        *
        * <pre>
        * Error in case of append failure. If set, it means rows are not accepted
-       * into the system. Users can retry within the same connection.
+       * into the system. Users can retry or continue with other requests within
+       * the same connection.
+       * ALREADY_EXISTS: happens when offset is specified, it means the row is
+       *   already appended, it is safe to ignore this error.
+       * OUT_OF_RANGE: happens when offset is specified, it means the specified
+       *   offset is beyond the end of the stream.
+       * INVALID_ARGUMENT: error caused by malformed request or data.
+       * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+       *   append without offset.
+       * ABORTED: request processing is aborted because of prior failures, request
+       *   can be retried if previous failure is fixed.
+       * INTERNAL: server side errors that can be retried.
        * </pre>
        *
        * <code>.google.rpc.Status error = 2;</code>
@@ -4889,7 +5076,18 @@ public final class Storage {
        *
        * <pre>
        * Error in case of append failure. If set, it means rows are not accepted
-       * into the system. Users can retry within the same connection.
+       * into the system. Users can retry or continue with other requests within
+       * the same connection.
+       * ALREADY_EXISTS: happens when offset is specified, it means the row is
+       *   already appended, it is safe to ignore this error.
+       * OUT_OF_RANGE: happens when offset is specified, it means the specified
+       *   offset is beyond the end of the stream.
+       * INVALID_ARGUMENT: error caused by malformed request or data.
+       * RESOURCE_EXHAUSTED: request rejected due to throttling. Only happens when
+       *   append without offset.
+       * ABORTED: request processing is aborted because of prior failures, request
+       *   can be retried if previous failure is fixed.
+       * INTERNAL: server side errors that can be retried.
        * </pre>
        *
        * <code>.google.rpc.Status error = 2;</code>
@@ -10468,7 +10666,7 @@ public final class Storage {
           + "st\022H\n\014write_stream\030\001 \001(\tB2\340A\002\372A,\n*bigque"
           + "rystorage.googleapis.com/WriteStream\022\016\n\006"
           + "offset\030\002 \001(\003\"#\n\021FlushRowsResponse\022\016\n\006off"
-          + "set\030\001 \001(\0032\250\014\n\rBigQueryWrite\022\351\001\n\021CreateWr"
+          + "set\030\001 \001(\0032\253\014\n\rBigQueryWrite\022\351\001\n\021CreateWr"
           + "iteStream\022@.google.cloud.bigquery.storag"
           + "e.v1alpha2.CreateWriteStreamRequest\0323.go"
           + "ogle.cloud.bigquery.storage.v1alpha2.Wri"
@@ -10503,15 +10701,15 @@ public final class Storage {
           + "y.storage.v1alpha2.FlushRowsResponse\"[\202\323"
           + "\344\223\002F\"A/v1alpha2/{write_stream=projects/*"
           + "/datasets/*/tables/*/streams/*}:\001*\332A\014wri"
-          + "te_stream\032\260\001\312A\036bigquerystorage.googleapi"
-          + "s.com\322A\213\001https://www.googleapis.com/auth"
-          + "/bigquery,https://www.googleapis.com/aut"
-          + "h/bigquery.insertdata,https://www.google"
-          + "apis.com/auth/cloud-platformB{\n*com.goog"
-          + "le.cloud.bigquery.storage.v1alpha2ZMgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "bigquery/storage/v1alpha2;storageb\006proto"
-          + "3"
+          + "te_stream\032\263\001\210\002\001\312A\036bigquerystorage.google"
+          + "apis.com\322A\213\001https://www.googleapis.com/a"
+          + "uth/bigquery,https://www.googleapis.com/"
+          + "auth/bigquery.insertdata,https://www.goo"
+          + "gleapis.com/auth/cloud-platformB{\n*com.g"
+          + "oogle.cloud.bigquery.storage.v1alpha2ZMg"
+          + "oogle.golang.org/genproto/googleapis/clo"
+          + "ud/bigquery/storage/v1alpha2;storageb\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -22,7 +22,7 @@ package com.google.cloud.bigquery.storage.v1beta2;
  *
  *
  * <pre>
- * Protobuf schema is an API presentation the proto buffer schema.
+ * ProtoSchema describes the schema of the serialized protocol buffer data rows.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.storage.v1beta2.ProtoSchema}
@@ -349,7 +349,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Protobuf schema is an API presentation the proto buffer schema.
+   * ProtoSchema describes the schema of the serialized protocol buffer data rows.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.storage.v1beta2.ProtoSchema}
