@@ -2,19 +2,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-resourcemanager-parent</artifactId>
-  <packaging>pom</packaging>
+  <artifactId>google-cloud-resourcemanager</artifactId>
+  <packaging>jar</packaging>
   <version>0.118.13-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
-  <name>Google Resource Manager API Parent</name>
+  <name>Google Cloud Resource Manager</name>
   <url>https://github.com/googleapis/java-resourcemanager</url>
   <description>
-    Java idiomatic client for Google Cloud Platform services.
+    Java idiomatic client for Google Cloud Resource Manager
   </description>
 
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-shared-config</artifactId>
-    <version>0.11.0</version>
+    <artifactId>google-cloud-resourcemanager-parent</artifactId>
+    <version>0.118.13-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
   </parent>
 
   <developers>
@@ -41,6 +41,16 @@
     <url>https://github.com/googleapis/java-resourcemanager/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
+  <distributionManagement>
+    <snapshotRepository>
+      <id>sonatype-nexus-snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>sonatype-nexus-staging</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
   <licenses>
     <license>
       <name>Apache-2.0</name>
@@ -59,19 +69,98 @@
     <dependencies>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-resourcemanager</artifactId>
-        <version>0.118.13-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
-      </dependency>
-
-      <dependency>
-        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
         <version>0.20.1</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <dependency>
+        <groupId>com.google.errorprone</groupId>
+        <artifactId>error_prone_annotations</artifactId>
+        <version>2.5.1</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>api-common</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.threeten</groupId>
+      <artifactId>threetenbp</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.apis</groupId>
+      <artifactId>google-api-services-cloudresourcemanager</artifactId>
+      <version>v1-rev20210309-1.31.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client-jackson2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.auth</groupId>
+      <artifactId>google-auth-library-oauth2-http</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-core-http</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.easymock</groupId>
+      <artifactId>easymock</artifactId>
+      <version>3.6</version>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.objenesis</groupId>
+          <artifactId>objenesis</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
+      <version>1.10.19</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.objenesis</groupId>
+      <artifactId>objenesis</artifactId>
+      <version>3.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-core</artifactId>
+      <scope>test</scope>
+      <type>test-jar</type>
+    </dependency>
+  </dependencies>
 
   <build>
     <pluginManagement>
@@ -80,20 +169,12 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
           <configuration>
-            <ignoredUnusedDeclaredDependencies>
-              <ignoredUnusedDeclaredDependency>org.objenesis:objenesis</ignoredUnusedDeclaredDependency>
-              <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
-            </ignoredUnusedDeclaredDependencies>
+            <ignoredUnusedDeclaredDependencies>org.objenesis:objenesis</ignoredUnusedDeclaredDependencies>
           </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
   </build>
-
-  <modules>
-    <module>google-cloud-resourcemanager</module>
-    <module>google-cloud-resourcemanager-bom</module>
-  </modules>
 
   <reporting>
     <plugins>
@@ -158,7 +239,7 @@
             <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
             <link>https://googleapis.dev/java/google-auth-library/latest/</link>
             <link>https://googleapis.dev/java/gax/latest/</link>
-            <link>https://googleapis.github.io/api-common-java/${google.api-common.version}/apidocs/</link>
+            <link>https://googleapis.github.io/api-common-java/</link>
           </links>
         </configuration>
       </plugin>
