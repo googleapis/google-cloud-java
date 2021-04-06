@@ -27,7 +27,7 @@ public interface GetServiceConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the service.  See the [overview](/service-management/overview)
+   * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
    * for naming requirements.  For example: `example.googleapis.com`.
    * </pre>
    *
@@ -40,7 +40,7 @@ public interface GetServiceConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the service.  See the [overview](/service-management/overview)
+   * Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
    * for naming requirements.  For example: `example.googleapis.com`.
    * </pre>
    *

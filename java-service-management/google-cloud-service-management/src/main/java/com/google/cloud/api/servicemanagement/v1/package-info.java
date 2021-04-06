@@ -19,7 +19,8 @@
  *
  * <p>======================= ServiceManagerClient =======================
  *
- * <p>Service Description: [Google Service Management API](/service-management/overview)
+ * <p>Service Description: [Google Service Management
+ * API](https://cloud.google.com/service-management/overview)
  *
  * <p>Sample for ServiceManagerClient:
  *
