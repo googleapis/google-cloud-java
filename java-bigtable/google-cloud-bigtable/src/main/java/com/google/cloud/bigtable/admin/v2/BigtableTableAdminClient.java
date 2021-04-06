@@ -30,6 +30,8 @@ import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.ListBackupsRequest;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.RestoreTableMetadata;
+import com.google.bigtable.admin.v2.Table.ClusterState;
+import com.google.bigtable.admin.v2.Table.View;
 import com.google.cloud.Policy;
 import com.google.cloud.Policy.DefaultMarshaller;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPage;
@@ -40,6 +42,7 @@ import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.admin.v2.models.Backup;
 import com.google.cloud.bigtable.admin.v2.models.CreateBackupRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
+import com.google.cloud.bigtable.admin.v2.models.EncryptionInfo;
 import com.google.cloud.bigtable.admin.v2.models.GCRules;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
 import com.google.cloud.bigtable.admin.v2.models.OptimizeRestoredTableOperationToken;
@@ -49,6 +52,8 @@ import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.admin.v2.models.UpdateBackupRequest;
 import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -60,6 +65,7 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import javax.annotation.Nonnull;
 
@@ -517,6 +523,52 @@ public final class BigtableTableAdminClient implements AutoCloseable {
         GetTableRequest.newBuilder().setName(getTableName(tableId)).setView(view).build();
 
     return transformToTableResponse(this.stub.getTableCallable().futureCall(request));
+  }
+
+  /**
+   * Gets the current encryption info for the table across all of the clusters.
+   *
+   * <p>The returned Map will be keyed by cluster id and contain a status for all of the keys in
+   * use.
+   */
+  public Map<String, List<EncryptionInfo>> getEncryptionInfo(String tableId) {
+    return ApiExceptions.callAndTranslateApiException(getEncryptionInfoAsync(tableId));
+  }
+
+  /**
+   * Asynchronously gets the current encryption info for the table across all of the clusters.
+   *
+   * <p>The returned Map will be keyed by cluster id and contain a status for all of the keys in
+   * use.
+   */
+  public ApiFuture<Map<String, List<EncryptionInfo>>> getEncryptionInfoAsync(String tableId) {
+    GetTableRequest request =
+        GetTableRequest.newBuilder()
+            .setName(getTableName(tableId))
+            .setView(View.ENCRYPTION_VIEW)
+            .build();
+    return ApiFutures.transform(
+        this.stub.getTableCallable().futureCall(request),
+        new ApiFunction<com.google.bigtable.admin.v2.Table, Map<String, List<EncryptionInfo>>>() {
+          @Override
+          public Map<String, List<EncryptionInfo>> apply(com.google.bigtable.admin.v2.Table table) {
+            ImmutableMap.Builder<String, List<EncryptionInfo>> result = ImmutableMap.builder();
+
+            for (Map.Entry<String, ClusterState> entry : table.getClusterStatesMap().entrySet()) {
+              ImmutableList.Builder<EncryptionInfo> infos = ImmutableList.builder();
+
+              for (com.google.bigtable.admin.v2.EncryptionInfo infoProto :
+                  entry.getValue().getEncryptionInfoList()) {
+                infos.add(EncryptionInfo.fromProto(infoProto));
+              }
+
+              result.put(entry.getKey(), infos.build());
+            }
+
+            return result.build();
+          }
+        },
+        MoreExecutors.directExecutor());
   }
 
   /**

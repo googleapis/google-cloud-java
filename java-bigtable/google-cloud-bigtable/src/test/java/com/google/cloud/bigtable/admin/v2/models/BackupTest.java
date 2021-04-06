@@ -17,9 +17,12 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.bigtable.admin.v2.EncryptionInfo.EncryptionType;
+import com.google.cloud.bigtable.common.Status;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Timestamp;
 import com.google.protobuf.util.Timestamps;
+import com.google.rpc.Code;
 import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -72,6 +75,34 @@ public class BackupTest {
     assertThat(result.getEndTime()).isEqualTo(Instant.ofEpochMilli(Timestamps.toMillis(endTime)));
     assertThat(result.getSizeBytes()).isEqualTo(123456);
     assertThat(result.getState()).isEqualTo(Backup.State.READY);
+  }
+
+  @Test
+  public void testFromProtoCmek() {
+    com.google.bigtable.admin.v2.Backup proto =
+        com.google.bigtable.admin.v2.Backup.newBuilder()
+            .setName("projects/my-project/instances/instance1/clusters/cluster1/backups/backup1")
+            .setSourceTable("projects/my-project/instances/instance1/tables/table1")
+            .setExpireTime(Timestamp.newBuilder().setSeconds(1234))
+            .setStartTime(Timestamp.newBuilder().setSeconds(1234))
+            .setEndTime(Timestamp.newBuilder().setSeconds(1234))
+            .setSizeBytes(123456)
+            .setState(com.google.bigtable.admin.v2.Backup.State.READY)
+            .setEncryptionInfo(
+                com.google.bigtable.admin.v2.EncryptionInfo.newBuilder()
+                    .setEncryptionType(EncryptionType.CUSTOMER_MANAGED_ENCRYPTION)
+                    .setKmsKeyVersion("some key version")
+                    .setEncryptionStatus(
+                        com.google.rpc.Status.newBuilder().setCode(Code.OK.getNumber()).build())
+                    .build())
+            .build();
+
+    Backup result = Backup.fromProto(proto);
+
+    assertThat(result.getEncryptionInfo().getType())
+        .isEqualTo(EncryptionInfo.Type.CUSTOMER_MANAGED_ENCRYPTION);
+    assertThat(result.getEncryptionInfo().getKmsKeyVersion()).isEqualTo("some key version");
+    assertThat(result.getEncryptionInfo().getStatus().getCode()).isEqualTo(Status.Code.OK);
   }
 
   @Test

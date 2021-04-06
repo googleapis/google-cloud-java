@@ -148,6 +148,35 @@ public final class CreateInstanceRequest {
   }
 
   /**
+   * Adds a CMEK protected cluster using the specified KMS key name.
+   *
+   * @param clusterId the name of the cluster.
+   * @param zone the zone where the cluster will be created.
+   * @param serveNodes the number of nodes that cluster will contain. DEVELOPMENT instance clusters
+   *     must have exactly one node.
+   * @param storageType the type of storage used by this cluster to serve its parent instance's
+   *     tables.
+   * @param kmsKeyName the full name of the KMS key name to use in the format
+   *     `projects/{key_project_id}/locations/{location}/keyRings/{ring_name}/cryptoKeys/{key_name}`
+   */
+  public CreateInstanceRequest addCmekCluster(
+      @Nonnull String clusterId,
+      @Nonnull String zone,
+      int serveNodes,
+      @Nonnull StorageType storageType,
+      @Nonnull String kmsKeyName) {
+    CreateClusterRequest clusterRequest =
+        CreateClusterRequest.of("ignored-instance-id", clusterId)
+            .setZone(zone)
+            .setServeNodes(serveNodes)
+            .setStorageType(storageType)
+            .setKmsKeyName(kmsKeyName);
+    clusterRequests.add(clusterRequest);
+
+    return this;
+  }
+
+  /**
    * Adds a DEVELOPMENT cluster to the instance request.
    *
    * <p>This instance will have exactly one node cluster.

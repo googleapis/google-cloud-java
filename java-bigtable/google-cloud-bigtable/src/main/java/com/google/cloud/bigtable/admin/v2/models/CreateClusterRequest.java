@@ -49,6 +49,7 @@ import javax.annotation.Nonnull;
  *     details</a>
  */
 public final class CreateClusterRequest {
+
   private final com.google.bigtable.admin.v2.CreateClusterRequest.Builder proto =
       com.google.bigtable.admin.v2.CreateClusterRequest.newBuilder();
   // instanceId and zone are short ids, which will be expanded to full names when the project name
@@ -101,6 +102,17 @@ public final class CreateClusterRequest {
         storageType != StorageType.UNRECOGNIZED, "StorageType can't be UNRECOGNIZED");
 
     proto.getClusterBuilder().setDefaultStorageType(storageType.toProto());
+    return this;
+  }
+
+  /**
+   * Sets the Google Cloud Key Management Service (KMS) key for a CMEK-protected Bigtable. This
+   * requires the full resource name of the Cloud KMS key, in the format
+   * `projects/{key_project_id}/locations/{location}/keyRings/{ring_name}/cryptoKeys/{key_name}`
+   */
+  public CreateClusterRequest setKmsKeyName(@Nonnull String kmsKeyName) {
+    Preconditions.checkNotNull(kmsKeyName);
+    proto.getClusterBuilder().getEncryptionConfigBuilder().setKmsKeyName(kmsKeyName);
     return this;
   }
 

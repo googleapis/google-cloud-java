@@ -42,6 +42,7 @@ import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification;
 import com.google.bigtable.admin.v2.RestoreSourceType;
 import com.google.bigtable.admin.v2.RestoreTableMetadata;
+import com.google.bigtable.admin.v2.Table.ClusterState;
 import com.google.bigtable.admin.v2.Table.View;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.Identity;
@@ -55,12 +56,14 @@ import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.admin.v2.models.Backup;
 import com.google.cloud.bigtable.admin.v2.models.CreateBackupRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
+import com.google.cloud.bigtable.admin.v2.models.EncryptionInfo;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
 import com.google.cloud.bigtable.admin.v2.models.RestoreTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.RestoredTableResult;
 import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.admin.v2.models.UpdateBackupRequest;
 import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.io.BaseEncoding;
 import com.google.longrunning.Operation;
@@ -72,6 +75,7 @@ import com.google.protobuf.util.Timestamps;
 import io.grpc.Status;
 import io.grpc.Status.Code;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.Before;
@@ -298,6 +302,45 @@ public class BigtableTableAdminClientTest {
 
     // Verify
     assertThat(actualResult).isEqualTo(Table.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testGetEncryptionInfos() {
+    // Setup
+    GetTableRequest expectedRequest =
+        GetTableRequest.newBuilder().setName(TABLE_NAME).setView(View.ENCRYPTION_VIEW).build();
+
+    com.google.bigtable.admin.v2.EncryptionInfo expectedEncryptionInfo =
+        com.google.bigtable.admin.v2.EncryptionInfo.newBuilder()
+            .setKmsKeyVersion("some key")
+            .setEncryptionType(
+                com.google.bigtable.admin.v2.EncryptionInfo.EncryptionType
+                    .CUSTOMER_MANAGED_ENCRYPTION)
+            .setEncryptionStatus(
+                com.google.rpc.Status.newBuilder()
+                    .setCode(Code.FAILED_PRECONDITION.value())
+                    .setMessage("something failed"))
+            .build();
+
+    com.google.bigtable.admin.v2.Table expectedResponse =
+        com.google.bigtable.admin.v2.Table.newBuilder()
+            .setName(TABLE_NAME)
+            .putClusterStates(
+                "cluster1",
+                ClusterState.newBuilder().addEncryptionInfo(expectedEncryptionInfo).build())
+            .build();
+
+    Mockito.when(mockGetTableCallable.futureCall(expectedRequest))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
+
+    // Execute
+    Map<String, List<com.google.cloud.bigtable.admin.v2.models.EncryptionInfo>> actualResult =
+        adminClient.getEncryptionInfo(TABLE_ID);
+
+    // Verify that the encryption info is transfered from the proto to the model.
+    assertThat(actualResult)
+        .containsExactly(
+            "cluster1", ImmutableList.of(EncryptionInfo.fromProto(expectedEncryptionInfo)));
   }
 
   @Test

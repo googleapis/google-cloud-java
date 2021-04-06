@@ -142,6 +142,18 @@ public class Backup {
     return State.fromProto(proto.getState());
   }
 
+  /**
+   * Get the encryption information for the backup.
+   *
+   * <p>If encryption_type is CUSTOMER_MANAGED_ENCRYPTION, kms_key_version will be filled in with
+   * status UNKNOWN.
+   *
+   * <p>If encryption_type is GOOGLE_DEFAULT_ENCRYPTION, all other fields will have default value.
+   */
+  public EncryptionInfo getEncryptionInfo() {
+    return EncryptionInfo.fromProto(proto.getEncryptionInfo());
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {

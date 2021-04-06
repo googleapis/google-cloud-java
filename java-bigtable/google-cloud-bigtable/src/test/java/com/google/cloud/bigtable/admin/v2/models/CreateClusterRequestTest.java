@@ -16,7 +16,10 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.extensions.proto.ProtoTruth.assertThat;
 
+import com.google.bigtable.admin.v2.Cluster;
+import com.google.bigtable.admin.v2.Cluster.EncryptionConfig;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -150,5 +153,29 @@ public class CreateClusterRequestTest {
             .build();
 
     assertThat(actual).isEqualTo(expected);
+  }
+
+  @Test
+  public void testCmek() {
+    String kmsKeyName =
+        "projects/my-project/locations/us-east1-c/keyRings/my-key-ring/cryptoKeys/my-key";
+
+    CreateInstanceRequest input =
+        CreateInstanceRequest.of("my-instance")
+            .addCmekCluster("cluster1", "us-east1-c", 1, StorageType.SSD, kmsKeyName);
+
+    com.google.bigtable.admin.v2.CreateInstanceRequest actual = input.toProto("my-project");
+
+    assertThat(actual)
+        .comparingExpectedFieldsOnly()
+        .isEqualTo(
+            com.google.bigtable.admin.v2.CreateInstanceRequest.newBuilder()
+                .putClusters(
+                    "cluster1",
+                    Cluster.newBuilder()
+                        .setEncryptionConfig(
+                            EncryptionConfig.newBuilder().setKmsKeyName(kmsKeyName).build())
+                        .build())
+                .build());
   }
 }

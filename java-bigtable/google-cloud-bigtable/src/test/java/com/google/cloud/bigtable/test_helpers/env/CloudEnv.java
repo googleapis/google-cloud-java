@@ -63,10 +63,12 @@ class CloudEnv extends AbstractTestEnv {
   private static final String PROJECT_PROPERTY_NAME = "bigtable.project";
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
   private static final String TABLE_PROPERTY_NAME = "bigtable.table";
+  private static final String CMEK_KMS_KEY_PROPERTY_NAME = "bigtable.kms_key_name";
 
   private final String projectId;
   private final String instanceId;
   private final String tableId;
+  private final String kmsKeyName;
 
   private final BigtableDataSettings.Builder dataSettings;
   private final BigtableTableAdminSettings.Builder tableAdminSettings;
@@ -80,6 +82,7 @@ class CloudEnv extends AbstractTestEnv {
     return new CloudEnv(
         getOptionalProperty(DATA_ENDPOINT_PROPERTY_NAME, ""),
         getOptionalProperty(ADMIN_ENDPOINT_PROPERTY_NAME, ""),
+        getOptionalProperty(CMEK_KMS_KEY_PROPERTY_NAME, ""),
         getRequiredProperty(PROJECT_PROPERTY_NAME),
         getRequiredProperty(INSTANCE_PROPERTY_NAME),
         getRequiredProperty(TABLE_PROPERTY_NAME));
@@ -88,12 +91,14 @@ class CloudEnv extends AbstractTestEnv {
   private CloudEnv(
       @Nullable String dataEndpoint,
       @Nullable String adminEndpoint,
+      @Nullable String kmsKeyName,
       String projectId,
       String instanceId,
       String tableId) {
     this.projectId = projectId;
     this.instanceId = instanceId;
     this.tableId = tableId;
+    this.kmsKeyName = kmsKeyName;
 
     this.dataSettings =
         BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId);
@@ -192,6 +197,25 @@ class CloudEnv extends AbstractTestEnv {
   }
 
   @Override
+  public BigtableInstanceAdminSettings getInstanceAdminClientSettings() {
+    try {
+      return instanceAdminSettings.build();
+    } catch (IOException e) {
+      throw new IllegalStateException(
+          "Caught unexpected error building instance admin settings", e);
+    }
+  }
+
+  @Override
+  public BigtableTableAdminSettings getTableAdminSettings() {
+    try {
+      return tableAdminSettings.build();
+    } catch (IOException e) {
+      throw new IllegalStateException("Caught unexpected error building table admin settings", e);
+    }
+  }
+
+  @Override
   public String getProjectId() {
     return projectId;
   }
@@ -204,6 +228,10 @@ class CloudEnv extends AbstractTestEnv {
   @Override
   public String getTableId() {
     return tableId;
+  }
+
+  public String getKmsKeyName() {
+    return kmsKeyName;
   }
 
   private static String getOptionalProperty(String prop, String defaultValue) {

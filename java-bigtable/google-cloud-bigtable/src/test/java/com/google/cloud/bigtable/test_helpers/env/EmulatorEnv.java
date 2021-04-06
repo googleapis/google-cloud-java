@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.test_helpers.env;
 
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
+import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
@@ -38,6 +39,7 @@ public class EmulatorEnv extends AbstractTestEnv {
   private BigtableDataClient dataClient;
 
   private BigtableDataSettings dataSettings;
+  private BigtableTableAdminSettings tableAdminSettings;
 
   public static EmulatorEnv createBundled() {
     return new EmulatorEnv();
@@ -63,12 +65,13 @@ public class EmulatorEnv extends AbstractTestEnv {
 
     dataClient = BigtableDataClient.create(dataSettings);
 
-    tableAdminClient =
-        BigtableTableAdminClient.create(
-            BigtableTableAdminSettings.newBuilderForEmulator(emulator.getPort())
-                .setProjectId("fake-project")
-                .setInstanceId("fake-instance")
-                .build());
+    tableAdminSettings =
+        BigtableTableAdminSettings.newBuilderForEmulator(emulator.getPort())
+            .setProjectId("fake-project")
+            .setInstanceId("fake-instance")
+            .build();
+
+    tableAdminClient = BigtableTableAdminClient.create(tableAdminSettings);
 
     tableAdminClient.createTable(CreateTableRequest.of(TABLE_ID).addFamily(getFamilyId()));
   }
@@ -83,6 +86,16 @@ public class EmulatorEnv extends AbstractTestEnv {
   @Override
   public BigtableDataSettings getDataClientSettings() {
     return dataSettings;
+  }
+
+  @Override
+  public BigtableInstanceAdminSettings getInstanceAdminClientSettings() {
+    throw new UnsupportedOperationException("instance admin is not support by the emulator");
+  }
+
+  @Override
+  public BigtableTableAdminSettings getTableAdminSettings() {
+    return tableAdminSettings;
   }
 
   @Override
@@ -124,6 +137,10 @@ public class EmulatorEnv extends AbstractTestEnv {
   @Override
   public BigtableInstanceAdminClient getInstanceAdminClient() {
     throw new UnsupportedOperationException("InstanceAdminClient is not supported with emulator");
+  }
+
+  public String getKmsKeyName() {
+    throw new UnsupportedOperationException("CMEK is not supported with emulator");
   }
 
   @Override

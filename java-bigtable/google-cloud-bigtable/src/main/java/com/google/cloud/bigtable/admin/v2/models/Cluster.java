@@ -30,6 +30,7 @@ import javax.annotation.Nonnull;
  * in the instance.
  */
 public class Cluster {
+
   public enum State {
     /** The state of the cluster could not be determined. */
     NOT_KNOWN(com.google.bigtable.admin.v2.Cluster.State.STATE_NOT_KNOWN),
@@ -154,6 +155,18 @@ public class Cluster {
   @SuppressWarnings("WeakerAccess")
   public StorageType getStorageType() {
     return StorageType.fromProto(stateProto.getDefaultStorageType());
+  }
+
+  /**
+   * Google Cloud Key Management Service (KMS) settings for a CMEK-protected Bigtable cluster. This
+   * returns the full resource name of the Cloud KMS key in the format
+   * `projects/{key_project_id}/locations/{location}/keyRings/{ring_name}/cryptoKeys/{key_name}`
+   */
+  public String getKmsKeyName() {
+    if (stateProto.hasEncryptionConfig()) {
+      return stateProto.getEncryptionConfig().getKmsKeyName();
+    }
+    return null;
   }
 
   @Override

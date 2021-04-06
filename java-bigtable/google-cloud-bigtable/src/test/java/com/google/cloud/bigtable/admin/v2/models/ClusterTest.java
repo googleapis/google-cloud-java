@@ -17,6 +17,8 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.bigtable.admin.v2.Cluster.EncryptionConfig;
+import com.google.bigtable.admin.v2.Cluster.State;
 import com.google.common.collect.Lists;
 import java.util.List;
 import org.junit.Test;
@@ -32,7 +34,7 @@ public class ClusterTest {
         com.google.bigtable.admin.v2.Cluster.newBuilder()
             .setName("projects/my-project/instances/my-instance/clusters/my-cluster")
             .setLocation("projects/my-project/locations/us-east1-c")
-            .setState(com.google.bigtable.admin.v2.Cluster.State.READY)
+            .setState(State.READY)
             .setServeNodes(30)
             .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
             .build();
@@ -45,6 +47,30 @@ public class ClusterTest {
     assertThat(result.getState()).isEqualTo(Cluster.State.READY);
     assertThat(result.getServeNodes()).isEqualTo(30);
     assertThat(result.getStorageType()).isEqualTo(StorageType.SSD);
+    assertThat(result.getKmsKeyName()).isEqualTo(null);
+  }
+
+  @Test
+  public void testFromProtoCmek() {
+    com.google.bigtable.admin.v2.Cluster proto =
+        com.google.bigtable.admin.v2.Cluster.newBuilder()
+            .setName("projects/my-project/instances/my-instance/clusters/my-cluster")
+            .setLocation("projects/my-project/locations/us-east1-c")
+            .setState(State.READY)
+            .setServeNodes(30)
+            .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
+            .setEncryptionConfig(
+                EncryptionConfig.newBuilder()
+                    .setKmsKeyName(
+                        "projects/my-project/locations/us-east1-c/keyRings/my-key-ring/cryptoKeys/my-key")
+                    .build())
+            .build();
+
+    Cluster result = Cluster.fromProto(proto);
+
+    assertThat(result.getKmsKeyName())
+        .isEqualTo(
+            "projects/my-project/locations/us-east1-c/keyRings/my-key-ring/cryptoKeys/my-key");
   }
 
   @Test

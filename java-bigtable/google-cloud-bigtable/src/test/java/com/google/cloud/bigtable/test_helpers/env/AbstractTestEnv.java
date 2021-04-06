@@ -16,7 +16,9 @@
 package com.google.cloud.bigtable.test_helpers.env;
 
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
+import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile;
 import com.google.cloud.bigtable.admin.v2.models.Cluster;
 import com.google.cloud.bigtable.admin.v2.models.Instance;
@@ -54,11 +56,17 @@ public abstract class AbstractTestEnv {
 
   public abstract BigtableDataSettings getDataClientSettings();
 
+  public abstract BigtableInstanceAdminSettings getInstanceAdminClientSettings();
+
+  public abstract BigtableTableAdminSettings getTableAdminSettings();
+
   public abstract String getProjectId();
 
   public abstract String getInstanceId();
 
   public abstract String getTableId();
+
+  public abstract String getKmsKeyName();
 
   public String getFamilyId() {
     return "cf";
@@ -88,8 +96,16 @@ public abstract class AbstractTestEnv {
     return Boolean.getBoolean("bigtable.directpath-ipv4only");
   }
 
+  public boolean shouldWaitForCmekKeyStatusUpdate() {
+    return Boolean.getBoolean("bigtable.wait-for-cmek-key-status");
+  }
+
   public String getPrimaryZone() {
     return "us-central1-b";
+  }
+
+  public String getPrimaryRegionSecondZone() {
+    return "us-central1-c";
   }
 
   public String getSecondaryZone() {
