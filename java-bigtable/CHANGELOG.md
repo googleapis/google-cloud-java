@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.22.0](https://www.github.com/googleapis/java-bigtable/compare/v1.21.3...v1.22.0) (2021-04-06)
+
+
+### Features
+
+* add CMEK Support  ([#656](https://www.github.com/googleapis/java-bigtable/issues/656)) ([2821902](https://www.github.com/googleapis/java-bigtable/commit/2821902b34ae04596771a9fc5e2b62d5c24a7253))
+
+
+### Dependencies
+
+* update autovalue.version to v1.8 ([#703](https://www.github.com/googleapis/java-bigtable/issues/703)) ([13e7796](https://www.github.com/googleapis/java-bigtable/commit/13e7796d96222fe0181771d160d12a3da7f0a7a7))
+* update dependency com.google.truth.extensions:truth-proto-extension to v1.1.2 ([#704](https://www.github.com/googleapis/java-bigtable/issues/704)) ([3fa8b00](https://www.github.com/googleapis/java-bigtable/commit/3fa8b0069d58a5705f11fac481ddcd4ad7d447f4))
+
 ### [1.21.3](https://www.github.com/googleapis/java-bigtable/compare/v1.21.2...v1.21.3) (2021-04-01)
 
 

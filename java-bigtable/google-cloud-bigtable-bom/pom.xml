@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigtable-bom</artifactId>
-    <version>1.21.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+    <version>1.22.0</version><!-- {x-version-update:google-cloud-bigtable:current} -->
     <packaging>pom</packaging>
     <parent>
         <groupId>com.google.cloud</groupId>
@@ -72,32 +72,32 @@
             <dependency>
                 <groupId>com.google.cloud</groupId>
                 <artifactId>google-cloud-bigtable</artifactId>
-                <version>1.21.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+                <version>1.22.0</version><!-- {x-version-update:google-cloud-bigtable:current} -->
             </dependency>
             <dependency>
                 <groupId>com.google.cloud</groupId>
                 <artifactId>google-cloud-bigtable-emulator</artifactId>
-                <version>0.130.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
+                <version>0.131.0</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
             </dependency>
             <dependency>
                 <groupId>com.google.api.grpc</groupId>
                 <artifactId>grpc-google-cloud-bigtable-admin-v2</artifactId>
-                <version>1.21.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigtable-admin-v2:current} -->
+                <version>1.22.0</version><!-- {x-version-update:grpc-google-cloud-bigtable-admin-v2:current} -->
             </dependency>
             <dependency>
                 <groupId>com.google.api.grpc</groupId>
                 <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
-                <version>1.21.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigtable-v2:current} -->
+                <version>1.22.0</version><!-- {x-version-update:grpc-google-cloud-bigtable-v2:current} -->
             </dependency>
             <dependency>
                 <groupId>com.google.api.grpc</groupId>
                 <artifactId>proto-google-cloud-bigtable-admin-v2</artifactId>
-                <version>1.21.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigtable-admin-v2:current} -->
+                <version>1.22.0</version><!-- {x-version-update:proto-google-cloud-bigtable-admin-v2:current} -->
             </dependency>
             <dependency>
                 <groupId>com.google.api.grpc</groupId>
                 <artifactId>proto-google-cloud-bigtable-v2</artifactId>
-                <version>1.21.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigtable-v2:current} -->
+                <version>1.22.0</version><!-- {x-version-update:proto-google-cloud-bigtable-v2:current} -->
             </dependency>
         </dependencies>
     </dependencyManagement>
