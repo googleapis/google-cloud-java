@@ -16,7 +16,7 @@
 
 package com.example.bigquerystorage;
 
-// [START bigquery_storage_quickstart]
+// [START bigquerystorage_quickstart]
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.bigquery.storage.v1.AvroRows;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
@@ -157,4 +157,4 @@ public class StorageSample {
     }
   }
 }
-// [END bigquery_storage_quickstart]
+// [END bigquerystorage_quickstart]
