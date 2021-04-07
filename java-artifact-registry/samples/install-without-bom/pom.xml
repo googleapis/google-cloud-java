@@ -28,8 +28,8 @@
     <!-- [START artifact-registry_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-artifact-registry</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <artifactId>google-cloud-artifact-registry</artifactId>
+      <version>0.1.1</version>
     </dependency>
     <!-- [END artifact-registry_install_without_bom] -->
 

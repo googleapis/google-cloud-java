@@ -23,14 +23,14 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <!-- {x-version-update-start::current} -->
   <dependencies>
+    <!-- {x-version-update-start:google-cloud-artifact-registry:current} -->
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-artifact-registry</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <artifactId>google-cloud-artifact-registry</artifactId>
+      <version>0.1.2-SNAPSHOT</version>
     </dependency>
-  <!-- {x-version-update-end} -->
+    <!-- {x-version-update-end} -->
 
     <dependency>
       <groupId>junit</groupId>
