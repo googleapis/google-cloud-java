@@ -15,6 +15,7 @@ message ComplexRoot {
   optional string test_geo = 10;
   optional int64 test_timestamp = 11;
   optional int64 test_time = 12;
+  repeated bytes test_numeric_repeated = 13;
 }
 
 message CasingComplex {

@@ -23,6 +23,7 @@ import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.DynamicMessage;
 import com.google.protobuf.Message;
 import com.google.protobuf.UninitializedMessageException;
+import java.util.logging.Logger;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,10 +33,11 @@ import org.json.JSONObject;
  * descriptor must have all fields lowercased.
  */
 public class JsonToProtoMessage {
+  private static final Logger LOG = Logger.getLogger(JsonToProtoMessage.class.getName());
   private static ImmutableMap<FieldDescriptor.Type, String> FieldTypeToDebugMessage =
       new ImmutableMap.Builder<FieldDescriptor.Type, String>()
           .put(FieldDescriptor.Type.BOOL, "boolean")
-          .put(FieldDescriptor.Type.BYTES, "string")
+          .put(FieldDescriptor.Type.BYTES, "bytes")
           .put(FieldDescriptor.Type.INT32, "int32")
           .put(FieldDescriptor.Type.DOUBLE, "double")
           .put(FieldDescriptor.Type.INT64, "int64")
@@ -142,9 +144,6 @@ public class JsonToProtoMessage {
         if (val instanceof ByteString) {
           protoMsg.setField(fieldDescriptor, ((ByteString) val).toByteArray());
           return;
-        } else if (val instanceof String) {
-          protoMsg.setField(fieldDescriptor, ((String) val).getBytes());
-          return;
         }
         break;
       case INT64:
@@ -237,18 +236,23 @@ public class JsonToProtoMessage {
           }
           break;
         case BYTES:
-          if (val instanceof String) {
-            // TODO(jstocklass): If string, decode it and pass in the byte array. Will need to
-            // update tests to ensure that strings passed in are properly encoded as well.
-            protoMsg.addRepeatedField(fieldDescriptor, ((String) val).getBytes());
-          } else if (val instanceof JSONArray) {
+          if (val instanceof JSONArray) {
             try {
               byte[] bytes = new byte[((JSONArray) val).length()];
               for (int j = 0; j < ((JSONArray) val).length(); j++) {
-                bytes[j] = (byte) ((byte) (((JSONArray) val).get(j)) & 0xFF);
+                bytes[j] = (byte) ((JSONArray) val).getInt(j);
+                if (bytes[j] != ((JSONArray) val).getInt(j)) {
+                  throw new IllegalArgumentException(
+                      String.format(
+                          "Error: "
+                              + currentScope
+                              + "["
+                              + index
+                              + "] could not be converted to byte[]."));
+                }
               }
               protoMsg.addRepeatedField(fieldDescriptor, bytes);
-            } catch (ClassCastException e) {
+            } catch (JSONException e) {
               throw new IllegalArgumentException(
                   String.format(
                       "Error: "

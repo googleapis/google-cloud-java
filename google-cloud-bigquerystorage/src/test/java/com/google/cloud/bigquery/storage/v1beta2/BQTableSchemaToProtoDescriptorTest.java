@@ -203,6 +203,12 @@ public class BQTableSchemaToProtoDescriptorTest {
             .setMode(TableFieldSchema.Mode.NULLABLE)
             .setName("test_time")
             .build();
+    final TableFieldSchema TEST_NUMERIC_REPEATED =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.NUMERIC)
+            .setMode(TableFieldSchema.Mode.REPEATED)
+            .setName("test_numeric_repeated")
+            .build();
     final TableSchema tableSchema =
         TableSchema.newBuilder()
             .addFields(0, test_int)
@@ -217,6 +223,7 @@ public class BQTableSchemaToProtoDescriptorTest {
             .addFields(9, TEST_GEO)
             .addFields(10, TEST_TIMESTAMP)
             .addFields(11, TEST_TIME)
+            .addFields(12, TEST_NUMERIC_REPEATED)
             .build();
     final Descriptor descriptor =
         BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(tableSchema);

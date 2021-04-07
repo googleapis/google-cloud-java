@@ -37,7 +37,11 @@ import com.google.protobuf.Int64Value;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
 import org.json.JSONArray;
@@ -145,6 +149,12 @@ public class JsonStreamWriterTest {
           .setMode(TableFieldSchema.Mode.NULLABLE)
           .setName("test_numeric")
           .build();
+  private final TableFieldSchema TEST_NUMERIC_REPEATED =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.NUMERIC)
+          .setMode(TableFieldSchema.Mode.REPEATED)
+          .setName("test_numeric_repeated")
+          .build();
   private final TableFieldSchema TEST_GEO =
       TableFieldSchema.newBuilder()
           .setType(TableFieldSchema.Type.GEOGRAPHY)
@@ -177,6 +187,7 @@ public class JsonStreamWriterTest {
           .addFields(9, TEST_GEO)
           .addFields(10, TEST_TIMESTAMP)
           .addFields(11, TEST_TIME)
+          .addFields(12, TEST_NUMERIC_REPEATED)
           .build();
 
   @Before
@@ -414,6 +425,14 @@ public class JsonStreamWriterTest {
             .setTestGeo("POINT(1,1)")
             .setTestTimestamp(12345678)
             .setTestTime(CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(1, 0, 1)))
+            .addTestNumericRepeated(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("0")))
+            .addTestNumericRepeated(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(
+                    new BigDecimal("99999999999999999999999999999.999999999")))
+            .addTestNumericRepeated(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(
+                    new BigDecimal("-99999999999999999999999999999.999999999")))
             .build();
     JSONObject complex_lvl2 = new JSONObject();
     complex_lvl2.put("test_int", 3);
@@ -425,7 +444,7 @@ public class JsonStreamWriterTest {
     JSONObject json = new JSONObject();
     json.put("test_int", 1);
     json.put("test_string", new JSONArray(new String[] {"a", "b", "c"}));
-    json.put("test_bytes", "hello");
+    json.put("test_bytes", ByteString.copyFrom("hello".getBytes()));
     json.put("test_bool", true);
     json.put("test_DOUBLe", new JSONArray(new Double[] {1.1, 2.2, 3.3, 4.4}));
     json.put("test_date", 1);
@@ -434,6 +453,19 @@ public class JsonStreamWriterTest {
     json.put(
         "test_numeric",
         BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("1.23456")));
+    json.put(
+        "test_numeric_repeated",
+        new JSONArray(
+            new byte[][] {
+              BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("0"))
+                  .toByteArray(),
+              BigDecimalByteStringEncoder.encodeToNumericByteString(
+                      new BigDecimal("99999999999999999999999999999.999999999"))
+                  .toByteArray(),
+              BigDecimalByteStringEncoder.encodeToNumericByteString(
+                      new BigDecimal("-99999999999999999999999999999.999999999"))
+                  .toByteArray(),
+            }));
     json.put("test_geo", "POINT(1,1)");
     json.put("test_timestamp", 12345678);
     json.put("test_time", CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(1, 0, 1)));

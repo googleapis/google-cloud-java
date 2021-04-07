@@ -44,7 +44,7 @@ public class BQTableSchemaToProtoDescriptorTest {
               .put(Table.TableFieldSchema.Type.DOUBLE, DoubleType.getDescriptor())
               .put(Table.TableFieldSchema.Type.GEOGRAPHY, StringType.getDescriptor())
               .put(Table.TableFieldSchema.Type.INT64, Int64Type.getDescriptor())
-              .put(Table.TableFieldSchema.Type.NUMERIC, StringType.getDescriptor())
+              .put(Table.TableFieldSchema.Type.NUMERIC, BytesType.getDescriptor())
               .put(Table.TableFieldSchema.Type.STRING, StringType.getDescriptor())
               .put(Table.TableFieldSchema.Type.TIME, StringType.getDescriptor())
               .put(Table.TableFieldSchema.Type.TIMESTAMP, Int64Type.getDescriptor())
@@ -206,6 +206,12 @@ public class BQTableSchemaToProtoDescriptorTest {
             .setMode(Table.TableFieldSchema.Mode.NULLABLE)
             .setName("test_time")
             .build();
+    final Table.TableFieldSchema TEST_NUMERIC_REPEATED =
+        Table.TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.NUMERIC)
+            .setMode(Table.TableFieldSchema.Mode.REPEATED)
+            .setName("test_numeric_repeated")
+            .build();
     final Table.TableSchema tableSchema =
         Table.TableSchema.newBuilder()
             .addFields(0, test_int)
@@ -220,6 +226,7 @@ public class BQTableSchemaToProtoDescriptorTest {
             .addFields(9, TEST_GEO)
             .addFields(10, TEST_TIMESTAMP)
             .addFields(11, TEST_TIME)
+            .addFields(12, TEST_NUMERIC_REPEATED)
             .build();
     final Descriptor descriptor =
         BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(tableSchema);
