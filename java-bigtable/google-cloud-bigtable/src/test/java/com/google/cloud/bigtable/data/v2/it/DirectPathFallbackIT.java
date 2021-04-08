@@ -24,8 +24,10 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.auth.oauth2.ComputeEngineCredentials;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.test_helpers.env.AbstractTestEnv.ConnectionMode;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.common.base.Stopwatch;
+import com.google.common.collect.ImmutableSet;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.alts.ComputeEngineChannelBuilder;
 import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
@@ -42,6 +44,7 @@ import java.lang.reflect.Field;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -89,9 +92,12 @@ public class DirectPathFallbackIT {
 
   @Before
   public void setup() throws IOException {
+    Set<ConnectionMode> validModes =
+        ImmutableSet.of(
+            ConnectionMode.REQUIRE_DIRECT_PATH, ConnectionMode.REQUIRE_DIRECT_PATH_IPV4);
     assume()
-        .withMessage("DirectPath integration tests can only run against DirectPathEnv")
-        .that(testEnvRule.env().isDirectPathEnabled())
+        .withMessage("DirectPathFallbackIT can only return when explicitly requested")
+        .that(validModes.contains(testEnvRule.env().getConnectionMode()))
         .isTrue();
 
     BigtableDataSettings defaultSettings = testEnvRule.env().getDataClientSettings();

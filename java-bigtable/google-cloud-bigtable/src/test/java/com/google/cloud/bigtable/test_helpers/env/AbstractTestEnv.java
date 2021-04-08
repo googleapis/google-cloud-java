@@ -24,6 +24,7 @@ import com.google.cloud.bigtable.admin.v2.models.Cluster;
 import com.google.cloud.bigtable.admin.v2.models.Instance;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.common.base.MoreObjects;
 import java.io.IOException;
 import org.threeten.bp.Instant;
 import org.threeten.bp.temporal.ChronoUnit;
@@ -38,6 +39,13 @@ public abstract class AbstractTestEnv {
   public static final String TEST_INSTANCE_PREFIX = "temp-instance-";
   public static final String TEST_CLUSTER_PREFIX = "temp-cluster-";
   public static final String TEST_APP_PREFIX = "temp-Ap-";
+
+  public enum ConnectionMode {
+    DEFAULT,
+    REQUIRE_CFE,
+    REQUIRE_DIRECT_PATH,
+    REQUIRE_DIRECT_PATH_IPV4
+  }
 
   abstract void start() throws Exception;
 
@@ -88,12 +96,12 @@ public abstract class AbstractTestEnv {
     return true;
   }
 
-  public boolean isDirectPathEnabled() {
-    return Boolean.getBoolean("bigtable.attempt-directpath");
-  }
+  public ConnectionMode getConnectionMode() {
+    String modeStr =
+        MoreObjects.firstNonNull(
+            System.getProperty("bigtable.connection-mode"), ConnectionMode.DEFAULT.name());
 
-  public boolean isDirectPathIpv4Only() {
-    return Boolean.getBoolean("bigtable.directpath-ipv4only");
+    return ConnectionMode.valueOf(modeStr);
   }
 
   public boolean shouldWaitForCmekKeyStatusUpdate() {

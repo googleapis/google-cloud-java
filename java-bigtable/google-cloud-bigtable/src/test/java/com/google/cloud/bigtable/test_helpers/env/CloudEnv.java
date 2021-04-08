@@ -17,14 +17,19 @@ package com.google.cloud.bigtable.test_helpers.env;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
-import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.api.gax.rpc.FixedHeaderProvider;
+import com.google.api.gax.rpc.StubSettings;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
+import com.google.common.base.Joiner;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Predicate;
+import com.google.common.base.Predicates;
 import com.google.common.base.Strings;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
@@ -37,9 +42,12 @@ import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import java.io.IOException;
-import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
@@ -53,9 +61,20 @@ import javax.annotation.Nullable;
  * </ul>
  */
 class CloudEnv extends AbstractTestEnv {
-  // IP address prefixes allocated for DirectPath backends.
-  public static final String DP_IPV6_PREFIX = "2001:4860:8040";
-  public static final String DP_IPV4_PREFIX = "34.126";
+  private static final Predicate<InetSocketAddress> DIRECT_PATH_IPV6_MATCHER =
+      new Predicate<InetSocketAddress>() {
+        @Override
+        public boolean apply(InetSocketAddress input) {
+          return input.toString().startsWith("2001:4860:8040");
+        }
+      };
+  private static final Predicate<InetSocketAddress> DIRECT_PATH_IPV4_MATCHER =
+      new Predicate<InetSocketAddress>() {
+        @Override
+        public boolean apply(InetSocketAddress input) {
+          return input.toString().startsWith("34.126");
+        }
+      };
 
   private static final String DATA_ENDPOINT_PROPERTY_NAME = "bigtable.data-endpoint";
   private static final String ADMIN_ENDPOINT_PROPERTY_NAME = "bigtable.admin-endpoint";
@@ -106,25 +125,8 @@ class CloudEnv extends AbstractTestEnv {
       dataSettings.stubSettings().setEndpoint(dataEndpoint);
     }
 
-    if (isDirectPathEnabled()) {
-      TransportChannelProvider channelProvider =
-          dataSettings.stubSettings().getTransportChannelProvider();
-      InstantiatingGrpcChannelProvider defaultTransportProvider =
-          (InstantiatingGrpcChannelProvider) channelProvider;
-      InstantiatingGrpcChannelProvider instrumentedTransportChannelProvider =
-          defaultTransportProvider
-              .toBuilder()
-              .setChannelConfigurator(
-                  new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
-                    @Override
-                    public ManagedChannelBuilder apply(ManagedChannelBuilder builder) {
-                      builder.intercept(directPathAddressCheckInterceptor());
-                      return builder;
-                    }
-                  })
-              .build();
-      dataSettings.stubSettings().setTransportChannelProvider(instrumentedTransportChannelProvider);
-    }
+    setupRemoteAddrInterceptor(dataSettings.stubSettings());
+    configureUserAgent(dataSettings.stubSettings());
 
     this.tableAdminSettings =
         BigtableTableAdminSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId);
@@ -136,6 +138,131 @@ class CloudEnv extends AbstractTestEnv {
     if (!Strings.isNullOrEmpty(adminEndpoint)) {
       this.instanceAdminSettings.stubSettings().setEndpoint(adminEndpoint);
     }
+  }
+
+  private void setupRemoteAddrInterceptor(StubSettings.Builder stubSettings) {
+    // Build an remote address restricting interceptor
+    final ClientInterceptor interceptor;
+
+    switch (getConnectionMode()) {
+      case DEFAULT:
+        // nothing special
+        return;
+      case REQUIRE_DIRECT_PATH:
+        interceptor =
+            buildRemoteAddrInterceptor(
+                "DirectPath IPv4 or IPv6",
+                Predicates.or(DIRECT_PATH_IPV4_MATCHER, DIRECT_PATH_IPV6_MATCHER));
+        break;
+      case REQUIRE_DIRECT_PATH_IPV4:
+        interceptor =
+            buildRemoteAddrInterceptor("DirectPath IPv4", Predicates.or(DIRECT_PATH_IPV4_MATCHER));
+        break;
+      case REQUIRE_CFE:
+        interceptor =
+            buildRemoteAddrInterceptor(
+                "a CFE ip",
+                Predicates.not(Predicates.or(DIRECT_PATH_IPV4_MATCHER, DIRECT_PATH_IPV6_MATCHER)));
+        break;
+      default:
+        throw new IllegalStateException("Unexpected ConnectionMode: " + getConnectionMode());
+    }
+
+    // Inject the interceptor into the channel provider, taking care to preserve existing channel
+    // configurator
+    InstantiatingGrpcChannelProvider.Builder channelProvider =
+        ((InstantiatingGrpcChannelProvider) stubSettings.getTransportChannelProvider()).toBuilder();
+
+    @SuppressWarnings("rawtypes")
+    final ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> oldConfigurator =
+        channelProvider.getChannelConfigurator();
+
+    @SuppressWarnings("rawtypes")
+    final ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> newConfigurator =
+        new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
+          @Override
+          @SuppressWarnings("rawtypes")
+          public ManagedChannelBuilder apply(ManagedChannelBuilder builder) {
+            if (oldConfigurator != null) {
+              builder = oldConfigurator.apply(builder);
+            }
+            return builder.intercept(interceptor);
+          }
+        };
+    channelProvider.setChannelConfigurator(newConfigurator);
+    stubSettings.setTransportChannelProvider(channelProvider.build());
+  }
+
+  private ClientInterceptor buildRemoteAddrInterceptor(
+      final String msg, final Predicate<InetSocketAddress> predicate) {
+    return new ClientInterceptor() {
+      @Override
+      public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+          MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
+        final ClientCall<ReqT, RespT> clientCall = next.newCall(method, callOptions);
+
+        return new SimpleForwardingClientCall<ReqT, RespT>(clientCall) {
+          @Override
+          public void start(Listener<RespT> responseListener, Metadata headers) {
+            super.start(
+                new SimpleForwardingClientCallListener<RespT>(responseListener) {
+                  @Override
+                  public void onHeaders(Metadata headers) {
+                    // Check peer IP after connection is established.
+                    SocketAddress remoteAddr =
+                        clientCall.getAttributes().get(Grpc.TRANSPORT_ATTR_REMOTE_ADDR);
+
+                    if (!predicate.apply((InetSocketAddress) remoteAddr)) {
+                      throw new RuntimeException(
+                          String.format(
+                              "Synthetically aborting the current request because it did not adhere"
+                                  + " to the test environment's requirement ."
+                                  + " Expected %s, but ip was: %s",
+                              msg, remoteAddr));
+                    }
+                    super.onHeaders(headers);
+                  }
+                },
+                headers);
+          }
+        };
+      }
+    };
+  }
+
+  private void configureUserAgent(EnhancedBigtableStubSettings.Builder stubSettings) {
+    List<String> parts = new ArrayList<>();
+    parts.add("java-bigtable-int-test");
+
+    switch (getConnectionMode()) {
+      case DEFAULT:
+        // nothing special
+        break;
+      case REQUIRE_CFE:
+        parts.add("bigtable-directpath-disable");
+        break;
+      case REQUIRE_DIRECT_PATH:
+      case REQUIRE_DIRECT_PATH_IPV4:
+        parts.add("bigtable-directpath-enable");
+        break;
+      default:
+        throw new IllegalStateException("Unexpected connectionMode: " + getConnectionMode());
+    }
+    String newUserAgent = Joiner.on(" ").join(parts);
+
+    // Use the existing user-agent to use as a prefix
+    Map<String, String> existingHeaders =
+        MoreObjects.firstNonNull(stubSettings.getHeaderProvider(), FixedHeaderProvider.create())
+            .getHeaders();
+    String existingUserAgent = existingHeaders.get("user-agent");
+    if (existingUserAgent != null) {
+      newUserAgent = existingUserAgent + " " + newUserAgent;
+    }
+
+    Map<String, String> newHeaders = new HashMap<>(existingHeaders);
+    newHeaders.put("user-agent", newUserAgent);
+
+    stubSettings.setHeaderProvider(FixedHeaderProvider.create(newHeaders));
   }
 
   @Override
@@ -244,60 +371,5 @@ class CloudEnv extends AbstractTestEnv {
       throw new RuntimeException("Missing system property: " + prop);
     }
     return value;
-  }
-
-  /**
-   * Captures the request attributes "Grpc.TRANSPORT_ATTR_REMOTE_ADDR" when connection is
-   * established and verifies if the remote address is a DirectPath address. This is only used for
-   * DirectPath testing. {@link ClientCall#getAttributes()}
-   */
-  private ClientInterceptor directPathAddressCheckInterceptor() {
-    return new ClientInterceptor() {
-      @Override
-      public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
-          MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
-        final ClientCall<ReqT, RespT> clientCall = next.newCall(method, callOptions);
-        return new SimpleForwardingClientCall<ReqT, RespT>(clientCall) {
-          @Override
-          public void start(Listener<RespT> responseListener, Metadata headers) {
-            super.start(
-                new SimpleForwardingClientCallListener<RespT>(responseListener) {
-                  @Override
-                  public void onHeaders(Metadata headers) {
-                    // Check peer IP after connection is established.
-                    SocketAddress remoteAddr =
-                        clientCall.getAttributes().get(Grpc.TRANSPORT_ATTR_REMOTE_ADDR);
-                    if (!verifyRemoteAddress(remoteAddr)) {
-                      throw new RuntimeException(
-                          String.format(
-                              "Synthetically aborting the current request because it did not adhere"
-                                  + " to the test environment's requirement for DirectPath."
-                                  + " Expected test to access DirectPath via %s,"
-                                  + " but RPC was destined for %s",
-                              isDirectPathIpv4Only() ? "ipv4 only" : "ipv4 or ipv6",
-                              remoteAddr.toString()));
-                    }
-                    super.onHeaders(headers);
-                  }
-                },
-                headers);
-          }
-        };
-      }
-    };
-  }
-
-  private boolean verifyRemoteAddress(SocketAddress remoteAddr) {
-    if (remoteAddr instanceof InetSocketAddress) {
-      InetAddress inetAddress = ((InetSocketAddress) remoteAddr).getAddress();
-      String addr = inetAddress.getHostAddress();
-      if (isDirectPathIpv4Only()) {
-        return addr.startsWith(DP_IPV4_PREFIX);
-      } else {
-        // For an ipv6-enabled VM, client could connect to either ipv4 or ipv6 balancer addresses.
-        return addr.startsWith(DP_IPV6_PREFIX) || addr.startsWith(DP_IPV4_PREFIX);
-      }
-    }
-    return true;
   }
 }

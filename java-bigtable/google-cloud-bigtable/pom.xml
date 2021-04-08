@@ -335,7 +335,7 @@
                     <bigtable.data-endpoint>${bigtable.directpath-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.directpath-admin-endpoint}</bigtable.admin-endpoint>
                     <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/directpath-it</bigtable.grpc-log-dir>
-                    <bigtable.attempt-directpath>true</bigtable.attempt-directpath>
+                    <bigtable.connection-mode>REQUIRE_DIRECT_PATH</bigtable.connection-mode>
                   </systemPropertyVariables>
                   <includes>
                     <!-- TODO(igorbernstein): Once the control plane is accessible via directpath, add admin tests -->
@@ -350,6 +350,43 @@
         </plugins>
       </build>
     </profile>
+
+    <profile>
+      <id>bigtable-cfe-it</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>cfe-it</id>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+                <configuration>
+                  <skip>false</skip>
+
+                  <systemPropertyVariables>
+                    <bigtable.env>cloud</bigtable.env>
+                    <bigtable.data-endpoint>${bigtable.cfe-data-endpoint}</bigtable.data-endpoint>
+                    <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/cfe-it</bigtable.grpc-log-dir>
+                    <bigtable.connection-mode>REQUIRE_CFE</bigtable.connection-mode>
+                  </systemPropertyVariables>
+                  <includes>
+                    <include>com.google.cloud.bigtable.**.it.*IT</include>
+                  </includes>
+                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-cfe-it.xml</summaryFile>
+                  <reportsDirectory>${project.build.directory}/failsafe-reports/cfe-it</reportsDirectory>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
 
     <profile>
       <id>bigtable-directpath-ipv4only-it</id>
@@ -372,8 +409,7 @@
                     <bigtable.data-endpoint>${bigtable.directpath-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.directpath-admin-endpoint}</bigtable.admin-endpoint>
                     <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/directpath-ipv4only-it</bigtable.grpc-log-dir>
-                    <bigtable.attempt-directpath>true</bigtable.attempt-directpath>
-                    <bigtable.directpath-ipv4only>true</bigtable.directpath-ipv4only>
+                    <bigtable.connection-mode>REQUIRE_DIRECT_PATH_IPV4</bigtable.connection-mode>
                   </systemPropertyVariables>
                   <includes>
                     <!-- TODO(igorbernstein): Once the control plane is accessible via directpath, add admin tests -->
