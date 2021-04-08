@@ -281,7 +281,7 @@ public interface RecognitionConfigOrBuilder
    * Speech adaptation configuration improves the accuracy of speech
    * recognition. When speech adaptation is set it supersedes the
    * `speech_contexts` field. For more information, see the [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
    * documentation.
    * </pre>
    *
@@ -297,7 +297,7 @@ public interface RecognitionConfigOrBuilder
    * Speech adaptation configuration improves the accuracy of speech
    * recognition. When speech adaptation is set it supersedes the
    * `speech_contexts` field. For more information, see the [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
    * documentation.
    * </pre>
    *
@@ -313,7 +313,7 @@ public interface RecognitionConfigOrBuilder
    * Speech adaptation configuration improves the accuracy of speech
    * recognition. When speech adaptation is set it supersedes the
    * `speech_contexts` field. For more information, see the [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength)
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
    * documentation.
    * </pre>
    *
@@ -329,7 +329,7 @@ public interface RecognitionConfigOrBuilder
    * A means to provide context to assist the speech recognition. For more
    * information, see
    * [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -343,7 +343,7 @@ public interface RecognitionConfigOrBuilder
    * A means to provide context to assist the speech recognition. For more
    * information, see
    * [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -357,7 +357,7 @@ public interface RecognitionConfigOrBuilder
    * A means to provide context to assist the speech recognition. For more
    * information, see
    * [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -371,7 +371,7 @@ public interface RecognitionConfigOrBuilder
    * A means to provide context to assist the speech recognition. For more
    * information, see
    * [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -386,7 +386,7 @@ public interface RecognitionConfigOrBuilder
    * A means to provide context to assist the speech recognition. For more
    * information, see
    * [speech
-   * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+   * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -439,6 +439,106 @@ public interface RecognitionConfigOrBuilder
    * @return The enableAutomaticPunctuation.
    */
   boolean getEnableAutomaticPunctuation();
+
+  /**
+   *
+   *
+   * <pre>
+   * The spoken punctuation behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * e.g. command_and_search will enable spoken punctuation by default
+   * If 'true', replaces spoken punctuation with the corresponding symbols in
+   * the request. For example, "how are you question mark" becomes "how are
+   * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+   * for support. If 'false', spoken punctuation is not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+   *
+   * @return Whether the enableSpokenPunctuation field is set.
+   */
+  boolean hasEnableSpokenPunctuation();
+  /**
+   *
+   *
+   * <pre>
+   * The spoken punctuation behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * e.g. command_and_search will enable spoken punctuation by default
+   * If 'true', replaces spoken punctuation with the corresponding symbols in
+   * the request. For example, "how are you question mark" becomes "how are
+   * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+   * for support. If 'false', spoken punctuation is not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+   *
+   * @return The enableSpokenPunctuation.
+   */
+  com.google.protobuf.BoolValue getEnableSpokenPunctuation();
+  /**
+   *
+   *
+   * <pre>
+   * The spoken punctuation behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * e.g. command_and_search will enable spoken punctuation by default
+   * If 'true', replaces spoken punctuation with the corresponding symbols in
+   * the request. For example, "how are you question mark" becomes "how are
+   * you?". See https://cloud.google.com/speech-to-text/docs/spoken-punctuation
+   * for support. If 'false', spoken punctuation is not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_punctuation = 22;</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getEnableSpokenPunctuationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The spoken emoji behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * If 'true', adds spoken emoji formatting for the request. This will replace
+   * spoken emojis with the corresponding Unicode symbols in the final
+   * transcript. If 'false', spoken emojis are not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+   *
+   * @return Whether the enableSpokenEmojis field is set.
+   */
+  boolean hasEnableSpokenEmojis();
+  /**
+   *
+   *
+   * <pre>
+   * The spoken emoji behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * If 'true', adds spoken emoji formatting for the request. This will replace
+   * spoken emojis with the corresponding Unicode symbols in the final
+   * transcript. If 'false', spoken emojis are not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+   *
+   * @return The enableSpokenEmojis.
+   */
+  com.google.protobuf.BoolValue getEnableSpokenEmojis();
+  /**
+   *
+   *
+   * <pre>
+   * The spoken emoji behavior for the call
+   * If not set, uses default behavior based on model of choice
+   * If 'true', adds spoken emoji formatting for the request. This will replace
+   * spoken emojis with the corresponding Unicode symbols in the final
+   * transcript. If 'false', spoken emojis are not replaced.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_spoken_emojis = 23;</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getEnableSpokenEmojisOrBuilder();
 
   /**
    *

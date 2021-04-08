@@ -27,8 +27,8 @@ package com.google.cloud.speech.v1p1beta1;
  * messages are streamed back to the client. If there is no recognizable
  * audio, and `single_utterance` is set to false, then no messages are streamed
  * back to the client.
- * Here's an example of a series of ten `StreamingRecognizeResponse`s that might
- * be returned while processing audio:
+ * Here's an example of a series of `StreamingRecognizeResponse`s that might be
+ * returned while processing audio:
  * 1. results { alternatives { transcript: "tube" } stability: 0.01 }
  * 2. results { alternatives { transcript: "to be a" } stability: 0.01 }
  * 3. results { alternatives { transcript: "to be" } stability: 0.9 }
@@ -710,8 +710,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    * messages are streamed back to the client. If there is no recognizable
    * audio, and `single_utterance` is set to false, then no messages are streamed
    * back to the client.
-   * Here's an example of a series of ten `StreamingRecognizeResponse`s that might
-   * be returned while processing audio:
+   * Here's an example of a series of `StreamingRecognizeResponse`s that might be
+   * returned while processing audio:
    * 1. results { alternatives { transcript: "tube" } stability: 0.01 }
    * 2. results { alternatives { transcript: "to be a" } stability: 0.01 }
    * 3. results { alternatives { transcript: "to be" } stability: 0.9 }
