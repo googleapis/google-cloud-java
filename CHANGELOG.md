@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.127.12](https://www.github.com/googleapis/java-bigquery/compare/v1.127.11...v1.127.12) (2021-04-07)
+
+
+### Documentation
+
+* **samples:** update querypagination sample ([#1209](https://www.github.com/googleapis/java-bigquery/issues/1209)) ([9b4f3ec](https://www.github.com/googleapis/java-bigquery/commit/9b4f3ecc248fd6fac2b9542b14d6f343bcb8463c))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20210327-1.31.0 ([#1214](https://www.github.com/googleapis/java-bigquery/issues/1214)) ([bf5d444](https://www.github.com/googleapis/java-bigquery/commit/bf5d444103f5e6dc3db1751a9e3fd382cf42cb5d))
+* update dependency com.google.cloud:google-cloud-bigtable to v1.21.3 ([#1211](https://www.github.com/googleapis/java-bigquery/issues/1211)) ([6b85ab3](https://www.github.com/googleapis/java-bigquery/commit/6b85ab3daddeb490ccb2877a0ce22d1e1c403a07))
+* update dependency com.google.cloud:google-cloud-bigtable to v1.22.0 ([#1217](https://www.github.com/googleapis/java-bigquery/issues/1217)) ([503d32b](https://www.github.com/googleapis/java-bigquery/commit/503d32bdaede96207203d79eebbf6964a199b8f8))
+
 ### [1.127.11](https://www.github.com/googleapis/java-bigquery/compare/v1.127.10...v1.127.11) (2021-03-25)
 
 
