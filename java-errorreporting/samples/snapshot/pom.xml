@@ -35,7 +35,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>1.94.4</version>
+      <version>1.94.5</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
