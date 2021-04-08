@@ -45,8 +45,13 @@ Initialize `GcpManagedChannel` based on this API config file.
 ```java
 String API_CONFIG_FILE = "api_config_file.json"
 String SPANNER_TARGET = "spanner.googleapis.com";
+...
+
 ManagedChannelBuilder delegateChannelBuilder = ManagedChannelBuilder.forAddress(SPANNER_TARGET, 443);
-GcpManagedChannel gcpChannel = new GcpManagedChannel(delegateChannelBuilder, API_CONFIG_FILE);
+GcpManagedChannelBuilder gcpBuilder = 
+  GcpManagedChannelBuilder.forDelegateBuilder(channedelegateChannelBuilderlBuilder)
+                          .withApiConfigJsonFile(jsonApiConfig);
+ManagedChannel gcpChannel = gcpBuilder.build();
 ```
 
 Create Cloud API stub using `GcpManagedChannel`.
