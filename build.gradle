@@ -14,14 +14,13 @@ repositories {
 }
 
 group = 'com.google.cloud'
-version = '0.0.1-SNAPSHOT'
 description = 'GRPC-GCP-Extension Java'
 sourceCompatibility = '1.8'
 
 def grpcVersion = '1.36.0'
 def protobufVersion = '3.12.0'
 def protocVersion = '3.12.0'
-def spannerVersion = '5.1.0'
+def spannerVersion = '6.1.0'
 
 dependencies {
     implementation "io.grpc:grpc-netty-shaded:${grpcVersion}"
@@ -29,7 +28,6 @@ dependencies {
     implementation "io.grpc:grpc-stub:${grpcVersion}"
     implementation "com.google.protobuf:protobuf-java:${protobufVersion}"
     implementation "com.google.protobuf:protobuf-java-util:${protobufVersion}"
-    implementation "com.google.cloud:google-cloud-spanner:${spannerVersion}"
 
     compileOnly "org.apache.tomcat:annotations-api:6.0.53" // necessary for Java 9+
 
@@ -60,6 +58,12 @@ test {
         outputs.upToDateWhen {false}
         showStandardStreams = true
     }
+    exclude 'com/google/grpc/gcp/SpannerIntegrationTest.class'
+    exclude 'com/google/grpc/gcp/BigtableIntegrationTest.class'
+}
+
+task allTests( type: Test ) {
+    // Execute all the tests, including integration tests.
 }
 
 sourceSets {
@@ -69,27 +73,6 @@ sourceSets {
             srcDirs 'build/generated/source/proto/main/java'
         }
     }
-    benchmarkTest {
-        java.srcDir file('src/benchmarkTest/java')
-        resources.srcDir file('src/benchmarkTest/resources')
-        compileClasspath += sourceSets.main.output + configurations.testRuntimeClasspath
-        runtimeClasspath += output + compileClasspath
-    }
-}
-
-task bigtableLoadTest(type: JavaExec) {
-    classpath = sourceSets.benchmarkTest.runtimeClasspath
-    main = 'BigtableLoadTest'
-}
-
-task spannerLoadTest(type: JavaExec) {
-    classpath = sourceSets.benchmarkTest.runtimeClasspath
-    main = 'SpannerLoadTest'
-}
-
-task spannerBenchmark(type: JavaExec) {
-    classpath = sourceSets.benchmarkTest.runtimeClasspath
-    main = 'SpannerBenchmark'
 }
 
 task javadocJar(type: Jar) {
@@ -109,7 +92,7 @@ publishing {
             artifact javadocJar
             artifact sourcesJar
             groupId = 'grpc.gcp.extension'
-            artifactId = 'grpc.gcp.extension'
+            artifactId = 'grpc-gcp-extension'
             version = '1.0.0'
             pom {
                 name = "gRPC extension library for Google Cloud Library"
