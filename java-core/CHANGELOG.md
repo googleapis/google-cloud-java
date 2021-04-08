@@ -1,5 +1,21 @@
 # Changelog
 
+### [1.94.5](https://www.github.com/googleapis/java-core/compare/v1.94.4...v1.94.5) (2021-04-08)
+
+
+### Dependencies
+
+* update dependency com.google.api:gax-bom to v1.63.0 ([#415](https://www.github.com/googleapis/java-core/issues/415)) ([31d41f3](https://www.github.com/googleapis/java-core/commit/31d41f310db803c5f84e122256850cf3f6722481))
+* update dependency com.google.auth:google-auth-library-bom to v0.25.2 ([#408](https://www.github.com/googleapis/java-core/issues/408)) ([bfb3cae](https://www.github.com/googleapis/java-core/commit/bfb3caee3d056b6fcbc54a83c1eca36cf58ef72a))
+* update dependency com.google.errorprone:error_prone_annotations to v2.6.0 ([#412](https://www.github.com/googleapis/java-core/issues/412)) ([e78e5d9](https://www.github.com/googleapis/java-core/commit/e78e5d9676ebf8bc44af7f81a282c7436878730f))
+* update dependency com.google.http-client:google-http-client-bom to v1.39.1 ([#407](https://www.github.com/googleapis/java-core/issues/407)) ([9ac757f](https://www.github.com/googleapis/java-core/commit/9ac757fa7e121b0db0f66577ed974d6dc24a803a))
+* update dependency com.google.protobuf:protobuf-bom to v3.15.6 ([#405](https://www.github.com/googleapis/java-core/issues/405)) ([a20bce4](https://www.github.com/googleapis/java-core/commit/a20bce416bfa6556bb7c3518afeca5259fdf23f4))
+* update dependency com.google.protobuf:protobuf-bom to v3.15.7 ([#413](https://www.github.com/googleapis/java-core/issues/413)) ([16d2bf5](https://www.github.com/googleapis/java-core/commit/16d2bf54340e78e8ba9765b531d9cd64089d723e))
+* update dependency com.google.protobuf:protobuf-bom to v3.15.8 ([#418](https://www.github.com/googleapis/java-core/issues/418)) ([101910c](https://www.github.com/googleapis/java-core/commit/101910c3edf25ece32fff2408ee09074c2593d18))
+* update dependency io.grpc:grpc-bom to v1.36.1 ([#410](https://www.github.com/googleapis/java-core/issues/410)) ([e31620a](https://www.github.com/googleapis/java-core/commit/e31620a2f7a15853a1acec8c09416953cc4dce09))
+* update dependency io.grpc:grpc-bom to v1.37.0 ([#416](https://www.github.com/googleapis/java-core/issues/416)) ([690fe8f](https://www.github.com/googleapis/java-core/commit/690fe8fe44b99b6b81175cef4797174ee28b7dac))
+* update guava ([#417](https://www.github.com/googleapis/java-core/issues/417)) ([acaa804](https://www.github.com/googleapis/java-core/commit/acaa804a740c1dbf95498db92e0627339f91dc6f))
+
 ### [1.94.4](https://www.github.com/googleapis/java-core/compare/v1.94.3...v1.94.4) (2021-03-11)
 
 
