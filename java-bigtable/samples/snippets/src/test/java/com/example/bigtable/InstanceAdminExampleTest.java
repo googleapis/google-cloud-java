@@ -14,7 +14,7 @@
  * limitations under the License.
 */
 
-package com.m.examples.bigtable;
+package com.example.bigtable;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -34,32 +34,22 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.AssumptionViolatedException;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 /** Integration tests for {@link InstanceAdminExample} */
-public class InstanceAdminExampleTest {
+public class InstanceAdminExampleTest extends BigtableBaseTest {
 
   private static final String ID_PREFIX = "instanceadmin";
   private static final String CLUSTER = "cluster";
-  private static String projectId;
   private static BigtableInstanceAdminClient adminClient;
   private String clusterId;
-  private String instanceId;
   private InstanceAdminExample instanceAdmin;
-
-  private static String requireEnv(String varName) {
-    assertNotNull(
-        System.getenv(varName),
-        "Environment variable '%s' is required to perform these tests.".format(varName));
-    return System.getenv(varName);
-  }
 
   @BeforeClass
   public static void beforeClass() throws IOException {
-    projectId = requireEnv("GOOGLE_CLOUD_PROJECT");
+    initializeVariables();
     BigtableInstanceAdminSettings instanceAdminSettings =
         BigtableInstanceAdminSettings.newBuilder().setProjectId(projectId).build();
     adminClient = BigtableInstanceAdminClient.create(instanceAdminSettings);

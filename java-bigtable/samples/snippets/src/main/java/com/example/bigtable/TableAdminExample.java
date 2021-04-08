@@ -14,7 +14,7 @@
  * limitations under the License.
 */
 
-package com.m.examples.bigtable;
+package com.example.bigtable;
 
 import static com.google.cloud.bigtable.admin.v2.models.GCRules.GCRULES;
 

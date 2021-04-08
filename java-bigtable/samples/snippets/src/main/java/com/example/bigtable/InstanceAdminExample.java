@@ -14,7 +14,7 @@
  * limitations under the License.
 */
 
-package com.m.examples.bigtable;
+package com.example.bigtable;
 
 import com.google.api.gax.rpc.AlreadyExistsException;
 import com.google.api.gax.rpc.NotFoundException;

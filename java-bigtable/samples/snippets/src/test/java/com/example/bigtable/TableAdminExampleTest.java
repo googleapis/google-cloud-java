@@ -12,9 +12,9 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
-*/
+ */
 
-package com.m.examples.bigtable;
+package com.example.bigtable;
 
 import static com.google.cloud.bigtable.admin.v2.models.GCRules.GCRULES;
 import static org.junit.Assert.assertFalse;
@@ -32,39 +32,28 @@ import com.google.cloud.bigtable.admin.v2.models.GCRules.UnionRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.VersionRule;
 import java.io.IOException;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.AssumptionViolatedException;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/** Integration tests for {@link TableAdminExample} */
-public class TableAdminExampleTest {
+/**
+ * Integration tests for {@link TableAdminExample}
+ */
+public class TableAdminExampleTest extends BigtableBaseTest {
 
-  private static final String INSTANCE_ENV = "BIGTABLE_TESTING_INSTANCE";
   private static final String TABLE_PREFIX = "table";
   private static BigtableTableAdminClient adminClient;
-  private static String instanceId;
-  private static String projectId;
   private String tableId;
   private TableAdminExample tableAdmin;
 
-  private static String requireEnv(String varName) {
-    assertNotNull(
-        System.getenv(varName),
-        "Environment variable '%s' is required to perform these tests.".format(varName));
-    return System.getenv(varName);
-  }
-
   @BeforeClass
   public static void beforeClass() throws IOException {
-    projectId = requireEnv("GOOGLE_CLOUD_PROJECT");
-    instanceId = requireEnv(INSTANCE_ENV);
+    initializeVariables();
     BigtableTableAdminSettings adminSettings =
         BigtableTableAdminSettings.newBuilder()
             .setInstanceId(instanceId)
@@ -81,7 +70,7 @@ public class TableAdminExampleTest {
 
   @Before
   public void setup() throws IOException {
-    tableId = generateTableId();
+    tableId = generateTableId(TABLE_PREFIX);
     tableAdmin = new TableAdminExample(projectId, instanceId, tableId);
     adminClient.createTable(CreateTableRequest.of(tableId).addFamily("cf"));
   }
@@ -96,7 +85,7 @@ public class TableAdminExampleTest {
   @Test
   public void testCreateAndDeleteTable() throws IOException {
     // Creates a table.
-    String testTable = generateTableId();
+    String testTable = generateTableId(TABLE_PREFIX);
     TableAdminExample testTableAdmin = new TableAdminExample(projectId, instanceId, testTable);
     testTableAdmin.createTable();
     assertTrue(adminClient.exists(testTable));
@@ -197,11 +186,6 @@ public class TableAdminExampleTest {
       }
     }
     return found;
-  }
-
-  private String generateTableId() {
-    return String.format(
-        "%s-%016x-%x", TABLE_PREFIX, System.currentTimeMillis(), new Random().nextLong());
   }
 
   private static void garbageCollect() {

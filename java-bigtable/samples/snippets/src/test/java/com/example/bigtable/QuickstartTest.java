@@ -14,46 +14,25 @@
  * limitations under the License.
  */
 
-package com.m.examples.bigtable;
+package com.example.bigtable;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import org.hamcrest.CoreMatchers;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
  * Integration tests for {@link Quickstart}
  */
-public class QuickstartTest {
+public class QuickstartTest extends BigtableBaseTest {
 
-  private static final String INSTANCE_ENV = "BIGTABLE_TESTING_INSTANCE";
   private static final String TABLE_ID = "quickstart-table";
-  private static String projectId;
-  private static String instanceId;
-  private ByteArrayOutputStream bout;
-
-  private static String requireEnv(String varName) {
-    assertNotNull(
-        System.getenv(varName),
-        "Environment variable '%s' is required to perform these tests.".format(varName));
-    return System.getenv(varName);
-  }
 
   @BeforeClass
   public static void beforeClass() {
-    projectId = requireEnv("GOOGLE_CLOUD_PROJECT");
-    instanceId = requireEnv(INSTANCE_ENV);
-  }
-
-  @Before
-  public void setUp() {
-    bout = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(bout));
+    initializeVariables();
   }
 
   @Test
