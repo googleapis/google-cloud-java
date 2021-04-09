@@ -8,8 +8,11 @@ Java idiomatic client for [Cloud Error Reporting][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
+
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
+
+
 
 ## Quickstart
 
@@ -73,12 +76,12 @@ compile 'com.google.cloud:google-cloud-errorreporting'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-errorreporting:0.120.36-beta'
+compile 'com.google.cloud:google-cloud-errorreporting:0.120.37-beta'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.120.36-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.120.37-beta"
 ```
 
 ## Authentication
