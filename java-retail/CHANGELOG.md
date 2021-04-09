@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-retail/compare/v0.2.1...v1.0.0) (2021-04-09)
+
+
+### Features
+
+* **generator:** update protoc to v3.15.3 ([#60](https://www.github.com/googleapis/java-retail/issues/60)) ([97118ec](https://www.github.com/googleapis/java-retail/commit/97118ec9a7f9c030191d132a80a637aea33a3fde))
+* promote to 1.0.0 ([#74](https://www.github.com/googleapis/java-retail/issues/74)) ([5603176](https://www.github.com/googleapis/java-retail/commit/5603176e8683962b1677ca5f77fd4dc5bc125d91))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#66](https://www.github.com/googleapis/java-retail/issues/66)) ([1433926](https://www.github.com/googleapis/java-retail/commit/1433926dd30e6ac2e30a98556d33ac5968bc4ec7))
+
 ### [0.2.1](https://www.github.com/googleapis/java-retail/compare/v0.2.0...v0.2.1) (2021-02-25)
 
 
