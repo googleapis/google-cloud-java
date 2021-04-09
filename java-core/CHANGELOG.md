@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.94.6](https://www.github.com/googleapis/java-core/compare/v1.94.5...v1.94.6) (2021-04-09)
+
+
+### Dependencies
+
+* update dependency com.google.http-client:google-http-client-bom to v1.39.2 ([#420](https://www.github.com/googleapis/java-core/issues/420)) ([541355d](https://www.github.com/googleapis/java-core/commit/541355db1e1652bac87ed7ab4f57c3bf2ba5d469))
+
 ### [1.94.5](https://www.github.com/googleapis/java-core/compare/v1.94.4...v1.94.5) (2021-04-08)
 
 
