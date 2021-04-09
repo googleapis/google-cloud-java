@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-notification.git",
-        "sha": "b477a3dcf59a22c0e390431371d6c9a04aad58e7"
+        "sha": "b32745b469defc14841b0e538d4e4fceaf925ce6"
       }
     },
     {
