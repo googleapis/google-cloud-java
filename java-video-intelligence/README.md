@@ -8,6 +8,9 @@ Java idiomatic client for [Cloud Video Intelligence][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
+
+
+
 ## Quickstart
 
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
@@ -47,7 +50,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage</artifactId>
-  <version>1.113.11</version>
+  <version>1.113.14</version>
 </dependency>
 
 ```
