@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.121.9](https://www.github.com/googleapis/java-notification/compare/v0.121.8...v0.121.9) (2021-04-09)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.112.0 ([#271](https://www.github.com/googleapis/java-notification/issues/271)) ([28487f3](https://www.github.com/googleapis/java-notification/commit/28487f3fb98460ee2f4f7a81a64ea2d82b9b2e8f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#280](https://www.github.com/googleapis/java-notification/issues/280)) ([438d8ad](https://www.github.com/googleapis/java-notification/commit/438d8ad68dbe8aaa1263c7ad01215513d7489a43))
+
 ### [0.121.8](https://www.github.com/googleapis/java-notification/compare/v0.121.7...v0.121.8) (2021-03-12)
 
 
