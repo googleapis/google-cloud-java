@@ -8,9 +8,6 @@ Java idiomatic client for [Cloud Auto ML][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
-
-
-
 ## Quickstart
 
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
@@ -55,7 +52,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery</artifactId>
-  <version>1.127.5</version>
+  <version>1.127.12</version>
 </dependency>
 <dependency>
   <groupId>com.google.cloud</groupId>
