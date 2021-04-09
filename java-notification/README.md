@@ -8,11 +8,8 @@ Java idiomatic client for [Google Cloud Pub/Sub Notifications for GCS][product-d
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
-
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
-
-
 
 ## Quickstart
 
