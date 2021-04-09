@@ -25,7 +25,9 @@ import com.google.cloud.bigtable.admin.v2.models.Instance;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.common.base.MoreObjects;
+import com.google.common.collect.ImmutableList;
 import java.io.IOException;
+import java.util.List;
 import org.threeten.bp.Instant;
 import org.threeten.bp.temporal.ChronoUnit;
 
@@ -35,6 +37,7 @@ import org.threeten.bp.temporal.ChronoUnit;
  * <p>This allows for integration tests to run against either production or an emulator.
  */
 public abstract class AbstractTestEnv {
+
   private static final String PREFIX = "temp-";
   public static final String TEST_INSTANCE_PREFIX = "temp-instance-";
   public static final String TEST_CLUSTER_PREFIX = "temp-cluster-";
@@ -112,12 +115,16 @@ public abstract class AbstractTestEnv {
     return "us-central1-b";
   }
 
-  public String getPrimaryRegionSecondZone() {
-    return "us-central1-c";
-  }
-
   public String getSecondaryZone() {
     return "us-east1-b";
+  }
+
+  /**
+   * Returns test zones that can be used for intra-region testing. This might overlap with primary
+   * and secondary zones
+   */
+  public List<String> getMultipleZonesInSameRegion() {
+    return ImmutableList.of("us-east1-b", "us-east1-c");
   }
 
   void cleanUpStale() {
