@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.3.16](https://www.github.com/googleapis/java-securitycenter-settings/compare/v0.3.15...v0.3.16) (2021-04-09)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#280](https://www.github.com/googleapis/java-securitycenter-settings/issues/280)) ([65ee1d8](https://www.github.com/googleapis/java-securitycenter-settings/commit/65ee1d898feef18782a82a8c8dc984e7a3afcfc3))
+
 ### [0.3.15](https://www.github.com/googleapis/java-securitycenter-settings/compare/v0.3.14...v0.3.15) (2021-03-11)
 
 
