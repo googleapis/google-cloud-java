@@ -422,10 +422,14 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Whether the domain is verified.
+   * Output only. Whether the domain is verified.
+   * This field is not returned for a Customer's cloud_identity_info resource.
+   * Partners can use the domains.get() method of the Workspace SDK's
+   * Directory API, or listen to the PRIMARY_DOMAIN_VERIFIED Pub/Sub event in
+   * to track domain verification of their resolve Workspace customers.
    * </pre>
    *
-   * <code>bool is_domain_verified = 4;</code>
+   * <code>bool is_domain_verified = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The isDomainVerified.
    */
@@ -1323,10 +1327,14 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether the domain is verified.
+     * Output only. Whether the domain is verified.
+     * This field is not returned for a Customer's cloud_identity_info resource.
+     * Partners can use the domains.get() method of the Workspace SDK's
+     * Directory API, or listen to the PRIMARY_DOMAIN_VERIFIED Pub/Sub event in
+     * to track domain verification of their resolve Workspace customers.
      * </pre>
      *
-     * <code>bool is_domain_verified = 4;</code>
+     * <code>bool is_domain_verified = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The isDomainVerified.
      */
@@ -1338,10 +1346,14 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether the domain is verified.
+     * Output only. Whether the domain is verified.
+     * This field is not returned for a Customer's cloud_identity_info resource.
+     * Partners can use the domains.get() method of the Workspace SDK's
+     * Directory API, or listen to the PRIMARY_DOMAIN_VERIFIED Pub/Sub event in
+     * to track domain verification of their resolve Workspace customers.
      * </pre>
      *
-     * <code>bool is_domain_verified = 4;</code>
+     * <code>bool is_domain_verified = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The isDomainVerified to set.
      * @return This builder for chaining.
@@ -1356,10 +1368,14 @@ public final class CloudIdentityInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether the domain is verified.
+     * Output only. Whether the domain is verified.
+     * This field is not returned for a Customer's cloud_identity_info resource.
+     * Partners can use the domains.get() method of the Workspace SDK's
+     * Directory API, or listen to the PRIMARY_DOMAIN_VERIFIED Pub/Sub event in
+     * to track domain verification of their resolve Workspace customers.
      * </pre>
      *
-     * <code>bool is_domain_verified = 4;</code>
+     * <code>bool is_domain_verified = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */

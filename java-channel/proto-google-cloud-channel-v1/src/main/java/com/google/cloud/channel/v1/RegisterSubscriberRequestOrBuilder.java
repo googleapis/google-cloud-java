@@ -52,8 +52,7 @@ public interface RegisterSubscriberRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Service account which will provide subscriber access to the
-   * registered topic.
+   * Required. Service account that provides subscriber access to the registered topic.
    * </pre>
    *
    * <code>string service_account = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -65,8 +64,7 @@ public interface RegisterSubscriberRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Service account which will provide subscriber access to the
-   * registered topic.
+   * Required. Service account that provides subscriber access to the registered topic.
    * </pre>
    *
    * <code>string service_account = 2 [(.google.api.field_behavior) = REQUIRED];</code>

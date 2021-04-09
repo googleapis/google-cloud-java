@@ -127,20 +127,21 @@ public final class EntitlementsProto {
           + "\rpayment_cycle\030\006 \001(\0132\037.google.cloud.chan"
           + "nel.v1.Period\"L\n\rTrialSettings\022\r\n\005trial\030"
           + "\001 \001(\010\022,\n\010end_time\030\002 \001(\0132\032.google.protobu"
-          + "f.Timestamp\"\210\001\n\017TransferableSku\022J\n\024trans"
+          + "f.Timestamp\"\277\001\n\017TransferableSku\022J\n\024trans"
           + "fer_eligibility\030\t \001(\0132,.google.cloud.cha"
           + "nnel.v1.TransferEligibility\022)\n\003sku\030\013 \001(\013"
-          + "2\034.google.cloud.channel.v1.Sku\"\371\001\n\023Trans"
-          + "ferEligibility\022\023\n\013is_eligible\030\001 \001(\010\022\023\n\013d"
-          + "escription\030\002 \001(\t\022Q\n\024ineligibility_reason"
-          + "\030\003 \001(\01623.google.cloud.channel.v1.Transfe"
-          + "rEligibility.Reason\"e\n\006Reason\022\026\n\022REASON_"
-          + "UNSPECIFIED\020\000\022\032\n\026PENDING_TOS_ACCEPTANCE\020"
-          + "\001\022\024\n\020SKU_NOT_ELIGIBLE\020\002\022\021\n\rSKU_SUSPENDED"
-          + "\020\003Br\n\033com.google.cloud.channel.v1B\021Entit"
-          + "lementsProtoP\001Z>google.golang.org/genpro"
-          + "to/googleapis/cloud/channel/v1;channelb\006"
-          + "proto3"
+          + "2\034.google.cloud.channel.v1.Sku\0225\n\nlegacy"
+          + "_sku\030\014 \001(\0132\034.google.cloud.channel.v1.Sku"
+          + "B\003\340A\001\"\371\001\n\023TransferEligibility\022\023\n\013is_elig"
+          + "ible\030\001 \001(\010\022\023\n\013description\030\002 \001(\t\022Q\n\024ineli"
+          + "gibility_reason\030\003 \001(\01623.google.cloud.cha"
+          + "nnel.v1.TransferEligibility.Reason\"e\n\006Re"
+          + "ason\022\026\n\022REASON_UNSPECIFIED\020\000\022\032\n\026PENDING_"
+          + "TOS_ACCEPTANCE\020\001\022\024\n\020SKU_NOT_ELIGIBLE\020\002\022\021"
+          + "\n\rSKU_SUSPENDED\020\003Br\n\033com.google.cloud.ch"
+          + "annel.v1B\021EntitlementsProtoP\001Z>google.go"
+          + "lang.org/genproto/googleapis/cloud/chann"
+          + "el/v1;channelb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -228,7 +229,7 @@ public final class EntitlementsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_TransferableSku_descriptor,
             new java.lang.String[] {
-              "TransferEligibility", "Sku",
+              "TransferEligibility", "Sku", "LegacySku",
             });
     internal_static_google_cloud_channel_v1_TransferEligibility_descriptor =
         getDescriptor().getMessageTypes().get(8);

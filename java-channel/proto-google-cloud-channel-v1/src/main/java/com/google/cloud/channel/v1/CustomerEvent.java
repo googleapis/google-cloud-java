@@ -139,6 +139,26 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Primary domain for customer was changed.
+     * </pre>
+     *
+     * <code>PRIMARY_DOMAIN_CHANGED = 1;</code>
+     */
+    PRIMARY_DOMAIN_CHANGED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Primary domain of the customer has been verified.
+     * </pre>
+     *
+     * <code>PRIMARY_DOMAIN_VERIFIED = 2;</code>
+     */
+    PRIMARY_DOMAIN_VERIFIED(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -152,6 +172,26 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Primary domain for customer was changed.
+     * </pre>
+     *
+     * <code>PRIMARY_DOMAIN_CHANGED = 1;</code>
+     */
+    public static final int PRIMARY_DOMAIN_CHANGED_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Primary domain of the customer has been verified.
+     * </pre>
+     *
+     * <code>PRIMARY_DOMAIN_VERIFIED = 2;</code>
+     */
+    public static final int PRIMARY_DOMAIN_VERIFIED_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -179,6 +219,10 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return TYPE_UNSPECIFIED;
+        case 1:
+          return PRIMARY_DOMAIN_CHANGED;
+        case 2:
+          return PRIMARY_DOMAIN_VERIFIED;
         default:
           return null;
       }

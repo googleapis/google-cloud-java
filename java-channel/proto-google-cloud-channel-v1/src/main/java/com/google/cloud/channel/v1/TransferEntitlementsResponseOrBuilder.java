@@ -27,7 +27,7 @@ public interface TransferEntitlementsResponseOrBuilder
    *
    *
    * <pre>
-   * The entitlements that have been transferred.
+   * The transferred entitlements.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -37,7 +37,7 @@ public interface TransferEntitlementsResponseOrBuilder
    *
    *
    * <pre>
-   * The entitlements that have been transferred.
+   * The transferred entitlements.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -47,7 +47,7 @@ public interface TransferEntitlementsResponseOrBuilder
    *
    *
    * <pre>
-   * The entitlements that have been transferred.
+   * The transferred entitlements.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -57,7 +57,7 @@ public interface TransferEntitlementsResponseOrBuilder
    *
    *
    * <pre>
-   * The entitlements that have been transferred.
+   * The transferred entitlements.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -68,7 +68,7 @@ public interface TransferEntitlementsResponseOrBuilder
    *
    *
    * <pre>
-   * The entitlements that have been transferred.
+   * The transferred entitlements.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>

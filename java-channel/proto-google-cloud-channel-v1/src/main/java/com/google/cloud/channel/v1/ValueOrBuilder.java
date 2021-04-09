@@ -145,5 +145,30 @@ public interface ValueOrBuilder
    */
   com.google.protobuf.AnyOrBuilder getProtoValueOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Represents a boolean value.
+   * </pre>
+   *
+   * <code>bool bool_value = 5;</code>
+   *
+   * @return Whether the boolValue field is set.
+   */
+  boolean hasBoolValue();
+  /**
+   *
+   *
+   * <pre>
+   * Represents a boolean value.
+   * </pre>
+   *
+   * <code>bool bool_value = 5;</code>
+   *
+   * @return The boolValue.
+   */
+  boolean getBoolValue();
+
   public com.google.cloud.channel.v1.Value.KindCase getKindCase();
 }

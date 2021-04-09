@@ -133,7 +133,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The entitlements belonging to the reseller's customer.
+   * The reseller customer's entitlements.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -146,7 +146,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The entitlements belonging to the reseller's customer.
+   * The reseller customer's entitlements.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -160,7 +160,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The entitlements belonging to the reseller's customer.
+   * The reseller customer's entitlements.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -173,7 +173,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The entitlements belonging to the reseller's customer.
+   * The reseller customer's entitlements.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -186,7 +186,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The entitlements belonging to the reseller's customer.
+   * The reseller customer's entitlements.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -202,7 +202,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A token to List next page of results.
+   * A token to list the next page of results.
    * Pass to [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token] to obtain that page.
    * </pre>
    *
@@ -226,7 +226,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A token to List next page of results.
+   * A token to list the next page of results.
    * Pass to [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token] to obtain that page.
    * </pre>
    *
@@ -644,7 +644,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The entitlements belonging to the reseller's customer.
+     * The reseller customer's entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -660,7 +660,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The entitlements belonging to the reseller's customer.
+     * The reseller customer's entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -676,7 +676,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The entitlements belonging to the reseller's customer.
+     * The reseller customer's entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -692,7 +692,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The entitlements belonging to the reseller's customer.
+     * The reseller customer's entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -714,7 +714,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The entitlements belonging to the reseller's customer.
+     * The reseller customer's entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -734,7 +734,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The entitlements belonging to the reseller's customer.
+     * The reseller customer's entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -756,7 +756,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The entitlements belonging to the reseller's customer.
+     * The reseller customer's entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -778,7 +778,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The entitlements belonging to the reseller's customer.
+     * The reseller customer's entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -798,7 +798,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The entitlements belonging to the reseller's customer.
+     * The reseller customer's entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -818,7 +818,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The entitlements belonging to the reseller's customer.
+     * The reseller customer's entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -838,7 +838,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The entitlements belonging to the reseller's customer.
+     * The reseller customer's entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -857,7 +857,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The entitlements belonging to the reseller's customer.
+     * The reseller customer's entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -876,7 +876,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The entitlements belonging to the reseller's customer.
+     * The reseller customer's entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -888,7 +888,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The entitlements belonging to the reseller's customer.
+     * The reseller customer's entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -904,7 +904,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The entitlements belonging to the reseller's customer.
+     * The reseller customer's entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -921,7 +921,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The entitlements belonging to the reseller's customer.
+     * The reseller customer's entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -934,7 +934,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The entitlements belonging to the reseller's customer.
+     * The reseller customer's entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -947,7 +947,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The entitlements belonging to the reseller's customer.
+     * The reseller customer's entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -979,7 +979,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A token to List next page of results.
+     * A token to list the next page of results.
      * Pass to [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token] to obtain that page.
      * </pre>
      *
@@ -1002,7 +1002,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A token to List next page of results.
+     * A token to list the next page of results.
      * Pass to [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token] to obtain that page.
      * </pre>
      *
@@ -1025,7 +1025,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A token to List next page of results.
+     * A token to list the next page of results.
      * Pass to [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token] to obtain that page.
      * </pre>
      *
@@ -1047,7 +1047,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A token to List next page of results.
+     * A token to list the next page of results.
      * Pass to [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token] to obtain that page.
      * </pre>
      *
@@ -1065,7 +1065,7 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A token to List next page of results.
+     * A token to list the next page of results.
      * Pass to [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token] to obtain that page.
      * </pre>
      *

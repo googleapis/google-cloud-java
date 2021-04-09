@@ -117,8 +117,7 @@ public final class UnregisterSubscriberResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Name of the topic from which the service account subscriber access has been
-   * removed.
+   * Name of the topic the service account subscriber access was removed from.
    * </pre>
    *
    * <code>string topic = 1;</code>
@@ -141,8 +140,7 @@ public final class UnregisterSubscriberResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Name of the topic from which the service account subscriber access has been
-   * removed.
+   * Name of the topic the service account subscriber access was removed from.
    * </pre>
    *
    * <code>string topic = 1;</code>
@@ -486,8 +484,7 @@ public final class UnregisterSubscriberResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Name of the topic from which the service account subscriber access has been
-     * removed.
+     * Name of the topic the service account subscriber access was removed from.
      * </pre>
      *
      * <code>string topic = 1;</code>
@@ -509,8 +506,7 @@ public final class UnregisterSubscriberResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Name of the topic from which the service account subscriber access has been
-     * removed.
+     * Name of the topic the service account subscriber access was removed from.
      * </pre>
      *
      * <code>string topic = 1;</code>
@@ -532,8 +528,7 @@ public final class UnregisterSubscriberResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Name of the topic from which the service account subscriber access has been
-     * removed.
+     * Name of the topic the service account subscriber access was removed from.
      * </pre>
      *
      * <code>string topic = 1;</code>
@@ -554,8 +549,7 @@ public final class UnregisterSubscriberResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Name of the topic from which the service account subscriber access has been
-     * removed.
+     * Name of the topic the service account subscriber access was removed from.
      * </pre>
      *
      * <code>string topic = 1;</code>
@@ -572,8 +566,7 @@ public final class UnregisterSubscriberResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Name of the topic from which the service account subscriber access has been
-     * removed.
+     * Name of the topic the service account subscriber access was removed from.
      * </pre>
      *
      * <code>string topic = 1;</code>

@@ -23,7 +23,7 @@ package com.google.cloud.channel.v1;
  *
  * <pre>
  * Response message for [CloudChannelService.TransferEntitlements][google.cloud.channel.v1.CloudChannelService.TransferEntitlements].
- * This will be put into the response field of google.longrunning.Operation.
+ * This is put in the response field of google.longrunning.Operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.TransferEntitlementsResponse}
@@ -126,7 +126,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The entitlements that have been transferred.
+   * The transferred entitlements.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -139,7 +139,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The entitlements that have been transferred.
+   * The transferred entitlements.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -153,7 +153,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The entitlements that have been transferred.
+   * The transferred entitlements.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -166,7 +166,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The entitlements that have been transferred.
+   * The transferred entitlements.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -179,7 +179,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The entitlements that have been transferred.
+   * The transferred entitlements.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -356,7 +356,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
    *
    * <pre>
    * Response message for [CloudChannelService.TransferEntitlements][google.cloud.channel.v1.CloudChannelService.TransferEntitlements].
-   * This will be put into the response field of google.longrunning.Operation.
+   * This is put in the response field of google.longrunning.Operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.TransferEntitlementsResponse}
@@ -572,7 +572,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The entitlements that have been transferred.
+     * The transferred entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -588,7 +588,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The entitlements that have been transferred.
+     * The transferred entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -604,7 +604,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The entitlements that have been transferred.
+     * The transferred entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -620,7 +620,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The entitlements that have been transferred.
+     * The transferred entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -642,7 +642,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The entitlements that have been transferred.
+     * The transferred entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -662,7 +662,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The entitlements that have been transferred.
+     * The transferred entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -684,7 +684,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The entitlements that have been transferred.
+     * The transferred entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -706,7 +706,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The entitlements that have been transferred.
+     * The transferred entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -726,7 +726,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The entitlements that have been transferred.
+     * The transferred entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -746,7 +746,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The entitlements that have been transferred.
+     * The transferred entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -766,7 +766,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The entitlements that have been transferred.
+     * The transferred entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -785,7 +785,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The entitlements that have been transferred.
+     * The transferred entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -804,7 +804,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The entitlements that have been transferred.
+     * The transferred entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -816,7 +816,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The entitlements that have been transferred.
+     * The transferred entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -832,7 +832,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The entitlements that have been transferred.
+     * The transferred entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -849,7 +849,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The entitlements that have been transferred.
+     * The transferred entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -862,7 +862,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The entitlements that have been transferred.
+     * The transferred entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>
@@ -875,7 +875,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The entitlements that have been transferred.
+     * The transferred entitlements.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Entitlement entitlements = 1;</code>

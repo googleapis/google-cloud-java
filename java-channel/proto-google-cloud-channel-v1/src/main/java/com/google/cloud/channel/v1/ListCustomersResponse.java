@@ -133,7 +133,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The customers belonging to the reseller or distributor.
+   * The customers belonging to a reseller or distributor.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -146,7 +146,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The customers belonging to the reseller or distributor.
+   * The customers belonging to a reseller or distributor.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -160,7 +160,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The customers belonging to the reseller or distributor.
+   * The customers belonging to a reseller or distributor.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -173,7 +173,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The customers belonging to the reseller or distributor.
+   * The customers belonging to a reseller or distributor.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -186,7 +186,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The customers belonging to the reseller or distributor.
+   * The customers belonging to a reseller or distributor.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -643,7 +643,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -659,7 +659,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -675,7 +675,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -691,7 +691,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -713,7 +713,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -733,7 +733,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -755,7 +755,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -777,7 +777,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -796,7 +796,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -816,7 +816,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -836,7 +836,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -855,7 +855,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -874,7 +874,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -886,7 +886,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -902,7 +902,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -919,7 +919,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -932,7 +932,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
@@ -945,7 +945,7 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The customers belonging to the reseller or distributor.
+     * The customers belonging to a reseller or distributor.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>

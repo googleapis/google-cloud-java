@@ -174,8 +174,7 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Service account which will be unregistered from getting subscriber access
-   * to the topic.
+   * Required. Service account to unregister from subscriber access to the topic.
    * </pre>
    *
    * <code>string service_account = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -198,8 +197,7 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Service account which will be unregistered from getting subscriber access
-   * to the topic.
+   * Required. Service account to unregister from subscriber access to the topic.
    * </pre>
    *
    * <code>string service_account = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -665,8 +663,7 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Service account which will be unregistered from getting subscriber access
-     * to the topic.
+     * Required. Service account to unregister from subscriber access to the topic.
      * </pre>
      *
      * <code>string service_account = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -688,8 +685,7 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Service account which will be unregistered from getting subscriber access
-     * to the topic.
+     * Required. Service account to unregister from subscriber access to the topic.
      * </pre>
      *
      * <code>string service_account = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -711,8 +707,7 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Service account which will be unregistered from getting subscriber access
-     * to the topic.
+     * Required. Service account to unregister from subscriber access to the topic.
      * </pre>
      *
      * <code>string service_account = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -733,8 +728,7 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Service account which will be unregistered from getting subscriber access
-     * to the topic.
+     * Required. Service account to unregister from subscriber access to the topic.
      * </pre>
      *
      * <code>string service_account = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -751,8 +745,7 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Service account which will be unregistered from getting subscriber access
-     * to the topic.
+     * Required. Service account to unregister from subscriber access to the topic.
      * </pre>
      *
      * <code>string service_account = 2 [(.google.api.field_behavior) = REQUIRED];</code>

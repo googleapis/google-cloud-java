@@ -28,8 +28,8 @@ public interface GetEntitlementRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the entitlement to retrieve.
-   * The name takes the format:
-   * accounts/{account_id}/customers/{customer_id}/entitlements/{id}
+   * Name uses the format:
+   * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
    * </pre>
    *
    * <code>
@@ -44,8 +44,8 @@ public interface GetEntitlementRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the entitlement to retrieve.
-   * The name takes the format:
-   * accounts/{account_id}/customers/{customer_id}/entitlements/{id}
+   * Name uses the format:
+   * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
    * </pre>
    *
    * <code>

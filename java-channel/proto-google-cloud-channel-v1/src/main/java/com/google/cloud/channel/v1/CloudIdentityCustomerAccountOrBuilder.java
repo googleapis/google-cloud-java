@@ -27,7 +27,7 @@ public interface CloudIdentityCustomerAccountOrBuilder
    *
    *
    * <pre>
-   * True if a Cloud Identity account exists for a specific domain.
+   * Returns true if a Cloud Identity account exists for a specific domain.
    * </pre>
    *
    * <code>bool existing = 1;</code>
@@ -40,8 +40,8 @@ public interface CloudIdentityCustomerAccountOrBuilder
    *
    *
    * <pre>
-   * True if the Cloud Identity account is associated with a customer
-   * belonging to the Channel Services partner making the API call.
+   * Returns true if the Cloud Identity account is associated with a customer
+   * of the Channel Services partner.
    * </pre>
    *
    * <code>bool owned = 2;</code>
@@ -54,9 +54,9 @@ public interface CloudIdentityCustomerAccountOrBuilder
    *
    *
    * <pre>
-   * Name of the customer that owns the Cloud Identity account. This field is
-   * populated ONLY if owned = true.
-   * The customer_name takes the format:
+   * If owned = true, the name of the customer that owns the Cloud Identity
+   * account.
+   * Customer_name uses the format:
    * accounts/{account_id}/customers/{customer_id}
    * </pre>
    *
@@ -69,9 +69,9 @@ public interface CloudIdentityCustomerAccountOrBuilder
    *
    *
    * <pre>
-   * Name of the customer that owns the Cloud Identity account. This field is
-   * populated ONLY if owned = true.
-   * The customer_name takes the format:
+   * If owned = true, the name of the customer that owns the Cloud Identity
+   * account.
+   * Customer_name uses the format:
    * accounts/{account_id}/customers/{customer_id}
    * </pre>
    *
@@ -85,8 +85,7 @@ public interface CloudIdentityCustomerAccountOrBuilder
    *
    *
    * <pre>
-   * Cloud Identity ID of the customer. This field is populated ONLY if
-   * existing = true.
+   * If existing = true, the Cloud Identity ID of the customer.
    * </pre>
    *
    * <code>string customer_cloud_identity_id = 4;</code>
@@ -98,8 +97,7 @@ public interface CloudIdentityCustomerAccountOrBuilder
    *
    *
    * <pre>
-   * Cloud Identity ID of the customer. This field is populated ONLY if
-   * existing = true.
+   * If existing = true, the Cloud Identity ID of the customer.
    * </pre>
    *
    * <code>string customer_cloud_identity_id = 4;</code>

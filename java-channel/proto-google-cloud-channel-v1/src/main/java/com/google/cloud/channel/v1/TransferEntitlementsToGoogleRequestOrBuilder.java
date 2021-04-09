@@ -27,9 +27,9 @@ public interface TransferEntitlementsToGoogleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of reseller's customer account where the entitlements
+   * Required. The resource name of the reseller's customer account where the entitlements
    * transfer from.
-   * The parent takes the format: accounts/{account_id}/customers/{customer_id}
+   * Parent uses the format: accounts/{account_id}/customers/{customer_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,9 +41,9 @@ public interface TransferEntitlementsToGoogleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of reseller's customer account where the entitlements
+   * Required. The resource name of the reseller's customer account where the entitlements
    * transfer from.
-   * The parent takes the format: accounts/{account_id}/customers/{customer_id}
+   * Parent uses the format: accounts/{account_id}/customers/{customer_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -56,7 +56,7 @@ public interface TransferEntitlementsToGoogleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The entitlements to be transferred to Google.
+   * Required. The entitlements to transfer to Google.
    * </pre>
    *
    * <code>
@@ -68,7 +68,7 @@ public interface TransferEntitlementsToGoogleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The entitlements to be transferred to Google.
+   * Required. The entitlements to transfer to Google.
    * </pre>
    *
    * <code>
@@ -80,7 +80,7 @@ public interface TransferEntitlementsToGoogleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The entitlements to be transferred to Google.
+   * Required. The entitlements to transfer to Google.
    * </pre>
    *
    * <code>
@@ -92,7 +92,7 @@ public interface TransferEntitlementsToGoogleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The entitlements to be transferred to Google.
+   * Required. The entitlements to transfer to Google.
    * </pre>
    *
    * <code>
@@ -105,7 +105,7 @@ public interface TransferEntitlementsToGoogleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The entitlements to be transferred to Google.
+   * Required. The entitlements to transfer to Google.
    * </pre>
    *
    * <code>
@@ -118,13 +118,12 @@ public interface TransferEntitlementsToGoogleRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. An optional request ID to identify requests. Specify a unique request ID so
-   * that if you must retry your request, the server will know to ignore the
-   * request if it has already been completed.
-   * For example, consider a situation where you make an initial request and
-   * the request times out. If you make the request again with the same
-   * request ID, the server can check if the original operation with the same
-   * request ID was received, and if so, will ignore the second request.
+   * Optional. You can specify an optional unique request ID, and if you need to retry
+   * your request, the server will know to ignore the request if it's complete.
+   * For example, you make an initial request and the request times out. If you
+   * make the request again with the same request ID, the server can check if
+   * it received the original operation with the same request ID. If it did, it
+   * will ignore the second request.
    * The request ID must be a valid [UUID](https://tools.ietf.org/html/rfc4122)
    * with the exception that zero UUID is not supported
    * (`00000000-0000-0000-0000-000000000000`).
@@ -139,13 +138,12 @@ public interface TransferEntitlementsToGoogleRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. An optional request ID to identify requests. Specify a unique request ID so
-   * that if you must retry your request, the server will know to ignore the
-   * request if it has already been completed.
-   * For example, consider a situation where you make an initial request and
-   * the request times out. If you make the request again with the same
-   * request ID, the server can check if the original operation with the same
-   * request ID was received, and if so, will ignore the second request.
+   * Optional. You can specify an optional unique request ID, and if you need to retry
+   * your request, the server will know to ignore the request if it's complete.
+   * For example, you make an initial request and the request times out. If you
+   * make the request again with the same request ID, the server can check if
+   * it received the original operation with the same request ID. If it did, it
+   * will ignore the second request.
    * The request ID must be a valid [UUID](https://tools.ietf.org/html/rfc4122)
    * with the exception that zero UUID is not supported
    * (`00000000-0000-0000-0000-000000000000`).

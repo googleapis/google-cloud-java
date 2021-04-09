@@ -2141,7 +2141,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The resource name of the customer for which to list SKUs.
+   * Required. The resource name of the customer to list SKUs for.
    * Format: accounts/{account_id}/customers/{customer_id}.
    * </pre>
    *
@@ -2167,7 +2167,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The resource name of the customer for which to list SKUs.
+   * Required. The resource name of the customer to list SKUs for.
    * Format: accounts/{account_id}/customers/{customer_id}.
    * </pre>
    *
@@ -2197,8 +2197,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Optional. Requested page size. Server might return fewer results than requested.
-   * If unspecified, at most 100 SKUs will be returned.
-   * The maximum value is 1000; values above 1000 will be coerced to 1000.
+   * If unspecified, returns at most 100 SKUs.
+   * The maximum value is 1000; the server will coerce values above 1000.
    * </pre>
    *
    * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2216,7 +2216,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. A token identifying a page of results, if other than the first one.
+   * Optional. A token for a page of results other than the first page.
    * </pre>
    *
    * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2239,7 +2239,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. A token identifying a page of results, if other than the first one.
+   * Optional. A token for a page of results other than the first page.
    * </pre>
    *
    * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2265,9 +2265,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. The BCP-47 language code, such as "en-US".  If specified, the
-   * response will be localized to the corresponding language code. Default is
-   * "en-US".
+   * Optional. The BCP-47 language code. For example, "en-US". The
+   * response will localize in the corresponding language code, if specified.
+   * The default value is "en-US".
    * </pre>
    *
    * <code>string language_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2290,9 +2290,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. The BCP-47 language code, such as "en-US".  If specified, the
-   * response will be localized to the corresponding language code. Default is
-   * "en-US".
+   * Optional. The BCP-47 language code. For example, "en-US". The
+   * response will localize in the corresponding language code, if specified.
+   * The default value is "en-US".
    * </pre>
    *
    * <code>string language_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3277,7 +3277,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the customer for which to list SKUs.
+     * Required. The resource name of the customer to list SKUs for.
      * Format: accounts/{account_id}/customers/{customer_id}.
      * </pre>
      *
@@ -3302,7 +3302,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the customer for which to list SKUs.
+     * Required. The resource name of the customer to list SKUs for.
      * Format: accounts/{account_id}/customers/{customer_id}.
      * </pre>
      *
@@ -3327,7 +3327,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the customer for which to list SKUs.
+     * Required. The resource name of the customer to list SKUs for.
      * Format: accounts/{account_id}/customers/{customer_id}.
      * </pre>
      *
@@ -3351,7 +3351,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the customer for which to list SKUs.
+     * Required. The resource name of the customer to list SKUs for.
      * Format: accounts/{account_id}/customers/{customer_id}.
      * </pre>
      *
@@ -3371,7 +3371,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the customer for which to list SKUs.
+     * Required. The resource name of the customer to list SKUs for.
      * Format: accounts/{account_id}/customers/{customer_id}.
      * </pre>
      *
@@ -3399,8 +3399,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Optional. Requested page size. Server might return fewer results than requested.
-     * If unspecified, at most 100 SKUs will be returned.
-     * The maximum value is 1000; values above 1000 will be coerced to 1000.
+     * If unspecified, returns at most 100 SKUs.
+     * The maximum value is 1000; the server will coerce values above 1000.
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3416,8 +3416,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Optional. Requested page size. Server might return fewer results than requested.
-     * If unspecified, at most 100 SKUs will be returned.
-     * The maximum value is 1000; values above 1000 will be coerced to 1000.
+     * If unspecified, returns at most 100 SKUs.
+     * The maximum value is 1000; the server will coerce values above 1000.
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3436,8 +3436,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Optional. Requested page size. Server might return fewer results than requested.
-     * If unspecified, at most 100 SKUs will be returned.
-     * The maximum value is 1000; values above 1000 will be coerced to 1000.
+     * If unspecified, returns at most 100 SKUs.
+     * The maximum value is 1000; the server will coerce values above 1000.
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3456,7 +3456,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. A token identifying a page of results, if other than the first one.
+     * Optional. A token for a page of results other than the first page.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3478,7 +3478,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. A token identifying a page of results, if other than the first one.
+     * Optional. A token for a page of results other than the first page.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3500,7 +3500,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. A token identifying a page of results, if other than the first one.
+     * Optional. A token for a page of results other than the first page.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3521,7 +3521,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. A token identifying a page of results, if other than the first one.
+     * Optional. A token for a page of results other than the first page.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3538,7 +3538,7 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. A token identifying a page of results, if other than the first one.
+     * Optional. A token for a page of results other than the first page.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3562,9 +3562,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The BCP-47 language code, such as "en-US".  If specified, the
-     * response will be localized to the corresponding language code. Default is
-     * "en-US".
+     * Optional. The BCP-47 language code. For example, "en-US". The
+     * response will localize in the corresponding language code, if specified.
+     * The default value is "en-US".
      * </pre>
      *
      * <code>string language_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3586,9 +3586,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The BCP-47 language code, such as "en-US".  If specified, the
-     * response will be localized to the corresponding language code. Default is
-     * "en-US".
+     * Optional. The BCP-47 language code. For example, "en-US". The
+     * response will localize in the corresponding language code, if specified.
+     * The default value is "en-US".
      * </pre>
      *
      * <code>string language_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3610,9 +3610,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The BCP-47 language code, such as "en-US".  If specified, the
-     * response will be localized to the corresponding language code. Default is
-     * "en-US".
+     * Optional. The BCP-47 language code. For example, "en-US". The
+     * response will localize in the corresponding language code, if specified.
+     * The default value is "en-US".
      * </pre>
      *
      * <code>string language_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3633,9 +3633,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The BCP-47 language code, such as "en-US".  If specified, the
-     * response will be localized to the corresponding language code. Default is
-     * "en-US".
+     * Optional. The BCP-47 language code. For example, "en-US". The
+     * response will localize in the corresponding language code, if specified.
+     * The default value is "en-US".
      * </pre>
      *
      * <code>string language_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3652,9 +3652,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The BCP-47 language code, such as "en-US".  If specified, the
-     * response will be localized to the corresponding language code. Default is
-     * "en-US".
+     * Optional. The BCP-47 language code. For example, "en-US". The
+     * response will localize in the corresponding language code, if specified.
+     * The default value is "en-US".
      * </pre>
      *
      * <code>string language_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>

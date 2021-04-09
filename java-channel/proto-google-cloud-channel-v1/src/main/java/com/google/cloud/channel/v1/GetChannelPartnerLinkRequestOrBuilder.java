@@ -28,7 +28,7 @@ public interface GetChannelPartnerLinkRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the channel partner link to retrieve.
-   * The name takes the format: accounts/{account_id}/channelPartnerLinks/{id}
+   * Name uses the format: accounts/{account_id}/channelPartnerLinks/{id}
    * where {id} is the Cloud Identity ID of the partner.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface GetChannelPartnerLinkRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the channel partner link to retrieve.
-   * The name takes the format: accounts/{account_id}/channelPartnerLinks/{id}
+   * Name uses the format: accounts/{account_id}/channelPartnerLinks/{id}
    * where {id} is the Cloud Identity ID of the partner.
    * </pre>
    *

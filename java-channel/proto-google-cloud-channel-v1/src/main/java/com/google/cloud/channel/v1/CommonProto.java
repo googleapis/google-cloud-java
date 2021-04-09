@@ -66,25 +66,25 @@ public final class CommonProto {
           + "PECIFIED\020\000\022\016\n\nSIZE_1_100\020\001\022\020\n\014SIZE_101_5"
           + "00\020\002\022\021\n\rSIZE_501_1000\020\003\022\022\n\016SIZE_1001_200"
           + "0\020\004\022\022\n\016SIZE_2001_5000\020\005\022\023\n\017SIZE_5001_100"
-          + "00\020\006\022\026\n\022SIZE_10001_OR_MORE\020\007\"\373\002\n\021CloudId"
+          + "00\020\006\022\026\n\022SIZE_10001_OR_MORE\020\007\"\200\003\n\021CloudId"
           + "entityInfo\022N\n\rcustomer_type\030\001 \001(\01627.goog"
           + "le.cloud.channel.v1.CloudIdentityInfo.Cu"
           + "stomerType\022\033\n\016primary_domain\030\t \001(\tB\003\340A\003\022"
-          + "\032\n\022is_domain_verified\030\004 \001(\010\022\027\n\017alternate"
-          + "_email\030\006 \001(\t\022\024\n\014phone_number\030\007 \001(\t\022\025\n\rla"
-          + "nguage_code\030\010 \001(\t\022\036\n\021admin_console_uri\030\n"
-          + " \001(\tB\003\340A\003\0222\n\010edu_data\030\026 \001(\0132 .google.clo"
-          + "ud.channel.v1.EduData\"C\n\014CustomerType\022\035\n"
-          + "\031CUSTOMER_TYPE_UNSPECIFIED\020\000\022\n\n\006DOMAIN\020\001"
-          + "\022\010\n\004TEAM\020\002\"\203\001\n\005Value\022\025\n\013int64_value\030\001 \001("
-          + "\003H\000\022\026\n\014string_value\030\002 \001(\tH\000\022\026\n\014double_va"
-          + "lue\030\003 \001(\001H\000\022+\n\013proto_value\030\004 \001(\0132\024.googl"
-          + "e.protobuf.AnyH\000B\006\n\004kind\"C\n\tAdminUser\022\r\n"
-          + "\005email\030\001 \001(\t\022\022\n\ngiven_name\030\002 \001(\t\022\023\n\013fami"
-          + "ly_name\030\003 \001(\tBl\n\033com.google.cloud.channe"
-          + "l.v1B\013CommonProtoP\001Z>google.golang.org/g"
-          + "enproto/googleapis/cloud/channel/v1;chan"
-          + "nelb\006proto3"
+          + "\037\n\022is_domain_verified\030\004 \001(\010B\003\340A\003\022\027\n\017alte"
+          + "rnate_email\030\006 \001(\t\022\024\n\014phone_number\030\007 \001(\t\022"
+          + "\025\n\rlanguage_code\030\010 \001(\t\022\036\n\021admin_console_"
+          + "uri\030\n \001(\tB\003\340A\003\0222\n\010edu_data\030\026 \001(\0132 .googl"
+          + "e.cloud.channel.v1.EduData\"C\n\014CustomerTy"
+          + "pe\022\035\n\031CUSTOMER_TYPE_UNSPECIFIED\020\000\022\n\n\006DOM"
+          + "AIN\020\001\022\010\n\004TEAM\020\002\"\231\001\n\005Value\022\025\n\013int64_value"
+          + "\030\001 \001(\003H\000\022\026\n\014string_value\030\002 \001(\tH\000\022\026\n\014doub"
+          + "le_value\030\003 \001(\001H\000\022+\n\013proto_value\030\004 \001(\0132\024."
+          + "google.protobuf.AnyH\000\022\024\n\nbool_value\030\005 \001("
+          + "\010H\000B\006\n\004kind\"C\n\tAdminUser\022\r\n\005email\030\001 \001(\t\022"
+          + "\022\n\ngiven_name\030\002 \001(\t\022\023\n\013family_name\030\003 \001(\t"
+          + "Bl\n\033com.google.cloud.channel.v1B\013CommonP"
+          + "rotoP\001Z>google.golang.org/genproto/googl"
+          + "eapis/cloud/channel/v1;channelb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -123,7 +123,7 @@ public final class CommonProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_Value_descriptor,
             new java.lang.String[] {
-              "Int64Value", "StringValue", "DoubleValue", "ProtoValue", "Kind",
+              "Int64Value", "StringValue", "DoubleValue", "ProtoValue", "BoolValue", "Kind",
             });
     internal_static_google_cloud_channel_v1_AdminUser_descriptor =
         getDescriptor().getMessageTypes().get(3);

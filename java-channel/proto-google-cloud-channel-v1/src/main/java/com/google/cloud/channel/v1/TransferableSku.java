@@ -100,6 +100,21 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
 
               break;
             }
+          case 98:
+            {
+              com.google.cloud.channel.v1.Sku.Builder subBuilder = null;
+              if (legacySku_ != null) {
+                subBuilder = legacySku_.toBuilder();
+              }
+              legacySku_ =
+                  input.readMessage(com.google.cloud.channel.v1.Sku.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(legacySku_);
+                legacySku_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -229,6 +244,55 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
     return getSku();
   }
 
+  public static final int LEGACY_SKU_FIELD_NUMBER = 12;
+  private com.google.cloud.channel.v1.Sku legacySku_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+   * </pre>
+   *
+   * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the legacySku field is set.
+   */
+  @java.lang.Override
+  public boolean hasLegacySku() {
+    return legacySku_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+   * </pre>
+   *
+   * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The legacySku.
+   */
+  @java.lang.Override
+  public com.google.cloud.channel.v1.Sku getLegacySku() {
+    return legacySku_ == null ? com.google.cloud.channel.v1.Sku.getDefaultInstance() : legacySku_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+   * </pre>
+   *
+   * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.channel.v1.SkuOrBuilder getLegacySkuOrBuilder() {
+    return getLegacySku();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -249,6 +313,9 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
     if (sku_ != null) {
       output.writeMessage(11, getSku());
     }
+    if (legacySku_ != null) {
+      output.writeMessage(12, getLegacySku());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -263,6 +330,9 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
     }
     if (sku_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getSku());
+    }
+    if (legacySku_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getLegacySku());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -288,6 +358,10 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
     if (hasSku()) {
       if (!getSku().equals(other.getSku())) return false;
     }
+    if (hasLegacySku() != other.hasLegacySku()) return false;
+    if (hasLegacySku()) {
+      if (!getLegacySku().equals(other.getLegacySku())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -306,6 +380,10 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
     if (hasSku()) {
       hash = (37 * hash) + SKU_FIELD_NUMBER;
       hash = (53 * hash) + getSku().hashCode();
+    }
+    if (hasLegacySku()) {
+      hash = (37 * hash) + LEGACY_SKU_FIELD_NUMBER;
+      hash = (53 * hash) + getLegacySku().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -466,6 +544,12 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
         sku_ = null;
         skuBuilder_ = null;
       }
+      if (legacySkuBuilder_ == null) {
+        legacySku_ = null;
+      } else {
+        legacySku_ = null;
+        legacySkuBuilder_ = null;
+      }
       return this;
     }
 
@@ -502,6 +586,11 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
         result.sku_ = sku_;
       } else {
         result.sku_ = skuBuilder_.build();
+      }
+      if (legacySkuBuilder_ == null) {
+        result.legacySku_ = legacySku_;
+      } else {
+        result.legacySku_ = legacySkuBuilder_.build();
       }
       onBuilt();
       return result;
@@ -557,6 +646,9 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
       }
       if (other.hasSku()) {
         mergeSku(other.getSku());
+      }
+      if (other.hasLegacySku()) {
+        mergeLegacySku(other.getLegacySku());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -950,6 +1042,200 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
         sku_ = null;
       }
       return skuBuilder_;
+    }
+
+    private com.google.cloud.channel.v1.Sku legacySku_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.channel.v1.Sku,
+            com.google.cloud.channel.v1.Sku.Builder,
+            com.google.cloud.channel.v1.SkuOrBuilder>
+        legacySkuBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+     * </pre>
+     *
+     * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the legacySku field is set.
+     */
+    public boolean hasLegacySku() {
+      return legacySkuBuilder_ != null || legacySku_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+     * </pre>
+     *
+     * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The legacySku.
+     */
+    public com.google.cloud.channel.v1.Sku getLegacySku() {
+      if (legacySkuBuilder_ == null) {
+        return legacySku_ == null
+            ? com.google.cloud.channel.v1.Sku.getDefaultInstance()
+            : legacySku_;
+      } else {
+        return legacySkuBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+     * </pre>
+     *
+     * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLegacySku(com.google.cloud.channel.v1.Sku value) {
+      if (legacySkuBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        legacySku_ = value;
+        onChanged();
+      } else {
+        legacySkuBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+     * </pre>
+     *
+     * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLegacySku(com.google.cloud.channel.v1.Sku.Builder builderForValue) {
+      if (legacySkuBuilder_ == null) {
+        legacySku_ = builderForValue.build();
+        onChanged();
+      } else {
+        legacySkuBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+     * </pre>
+     *
+     * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeLegacySku(com.google.cloud.channel.v1.Sku value) {
+      if (legacySkuBuilder_ == null) {
+        if (legacySku_ != null) {
+          legacySku_ =
+              com.google.cloud.channel.v1.Sku.newBuilder(legacySku_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          legacySku_ = value;
+        }
+        onChanged();
+      } else {
+        legacySkuBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+     * </pre>
+     *
+     * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearLegacySku() {
+      if (legacySkuBuilder_ == null) {
+        legacySku_ = null;
+        onChanged();
+      } else {
+        legacySku_ = null;
+        legacySkuBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+     * </pre>
+     *
+     * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.channel.v1.Sku.Builder getLegacySkuBuilder() {
+
+      onChanged();
+      return getLegacySkuFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+     * </pre>
+     *
+     * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.channel.v1.SkuOrBuilder getLegacySkuOrBuilder() {
+      if (legacySkuBuilder_ != null) {
+        return legacySkuBuilder_.getMessageOrBuilder();
+      } else {
+        return legacySku_ == null
+            ? com.google.cloud.channel.v1.Sku.getDefaultInstance()
+            : legacySku_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+     * </pre>
+     *
+     * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.channel.v1.Sku,
+            com.google.cloud.channel.v1.Sku.Builder,
+            com.google.cloud.channel.v1.SkuOrBuilder>
+        getLegacySkuFieldBuilder() {
+      if (legacySkuBuilder_ == null) {
+        legacySkuBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.channel.v1.Sku,
+                com.google.cloud.channel.v1.Sku.Builder,
+                com.google.cloud.channel.v1.SkuOrBuilder>(
+                getLegacySku(), getParentForChildren(), isClean());
+        legacySku_ = null;
+      }
+      return legacySkuBuilder_;
     }
 
     @java.lang.Override

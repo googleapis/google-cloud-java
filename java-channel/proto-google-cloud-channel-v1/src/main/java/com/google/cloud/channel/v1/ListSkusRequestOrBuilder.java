@@ -27,8 +27,8 @@ public interface ListSkusRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Product for which to list SKUs.
-   * The parent takes the format: products/{product_id}.
+   * Required. The resource name of the Product to list SKUs for.
+   * Parent uses the format: products/{product_id}.
    * Supports products/- to retrieve SKUs for all products.
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface ListSkusRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Product for which to list SKUs.
-   * The parent takes the format: products/{product_id}.
+   * Required. The resource name of the Product to list SKUs for.
+   * Parent uses the format: products/{product_id}.
    * Supports products/- to retrieve SKUs for all products.
    * </pre>
    *
@@ -88,8 +88,8 @@ public interface ListSkusRequestOrBuilder
    *
    * <pre>
    * Optional. Requested page size. Server might return fewer results than requested.
-   * If unspecified, at most 100 SKUs will be returned.
-   * The maximum value is 1000; values above 1000 will be coerced to 1000.
+   * If unspecified, returns at most 100 SKUs.
+   * The maximum value is 1000; the server will coerce values above 1000.
    * </pre>
    *
    * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -102,7 +102,7 @@ public interface ListSkusRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A token identifying a page of results, if other than the first one.
+   * Optional. A token for a page of results other than the first page.
    * Optional.
    * </pre>
    *
@@ -115,7 +115,7 @@ public interface ListSkusRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A token identifying a page of results, if other than the first one.
+   * Optional. A token for a page of results other than the first page.
    * Optional.
    * </pre>
    *
@@ -129,9 +129,9 @@ public interface ListSkusRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The BCP-47 language code, such as "en-US".  If specified, the
-   * response will be localized to the corresponding language code. Default is
-   * "en-US".
+   * Optional. The BCP-47 language code. For example, "en-US". The
+   * response will localize in the corresponding language code, if specified.
+   * The default value is "en-US".
    * </pre>
    *
    * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -143,9 +143,9 @@ public interface ListSkusRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The BCP-47 language code, such as "en-US".  If specified, the
-   * response will be localized to the corresponding language code. Default is
-   * "en-US".
+   * Optional. The BCP-47 language code. For example, "en-US". The
+   * response will localize in the corresponding language code, if specified.
+   * The default value is "en-US".
    * </pre>
    *
    * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

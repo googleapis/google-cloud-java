@@ -150,7 +150,7 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. The resource name of the channel partner link to cancel.
-   * The name takes the format: accounts/{account_id}/channelPartnerLinks/{id}
+   * Name uses the format: accounts/{account_id}/channelPartnerLinks/{id}
    * where {id} is the Cloud Identity ID of the partner.
    * </pre>
    *
@@ -175,7 +175,7 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. The resource name of the channel partner link to cancel.
-   * The name takes the format: accounts/{account_id}/channelPartnerLinks/{id}
+   * Name uses the format: accounts/{account_id}/channelPartnerLinks/{id}
    * where {id} is the Cloud Identity ID of the partner.
    * </pre>
    *
@@ -202,8 +202,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The channel partner link to update. Only field
-   * channel_partner_link.link_state is allowed to be updated.
+   * Required. The channel partner link to update. Only channel_partner_link.link_state
+   * is allowed for updates.
    * </pre>
    *
    * <code>
@@ -220,8 +220,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The channel partner link to update. Only field
-   * channel_partner_link.link_state is allowed to be updated.
+   * Required. The channel partner link to update. Only channel_partner_link.link_state
+   * is allowed for updates.
    * </pre>
    *
    * <code>
@@ -240,8 +240,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The channel partner link to update. Only field
-   * channel_partner_link.link_state is allowed to be updated.
+   * Required. The channel partner link to update. Only channel_partner_link.link_state
+   * is allowed for updates.
    * </pre>
    *
    * <code>
@@ -260,7 +260,7 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. The update mask that applies to the resource.
-   * The only allowable value for update mask is
+   * The only allowable value for an update mask is
    * channel_partner_link.link_state.
    * </pre>
    *
@@ -278,7 +278,7 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. The update mask that applies to the resource.
-   * The only allowable value for update mask is
+   * The only allowable value for an update mask is
    * channel_partner_link.link_state.
    * </pre>
    *
@@ -296,7 +296,7 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. The update mask that applies to the resource.
-   * The only allowable value for update mask is
+   * The only allowable value for an update mask is
    * channel_partner_link.link_state.
    * </pre>
    *
@@ -689,7 +689,7 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The resource name of the channel partner link to cancel.
-     * The name takes the format: accounts/{account_id}/channelPartnerLinks/{id}
+     * Name uses the format: accounts/{account_id}/channelPartnerLinks/{id}
      * where {id} is the Cloud Identity ID of the partner.
      * </pre>
      *
@@ -713,7 +713,7 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The resource name of the channel partner link to cancel.
-     * The name takes the format: accounts/{account_id}/channelPartnerLinks/{id}
+     * Name uses the format: accounts/{account_id}/channelPartnerLinks/{id}
      * where {id} is the Cloud Identity ID of the partner.
      * </pre>
      *
@@ -737,7 +737,7 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The resource name of the channel partner link to cancel.
-     * The name takes the format: accounts/{account_id}/channelPartnerLinks/{id}
+     * Name uses the format: accounts/{account_id}/channelPartnerLinks/{id}
      * where {id} is the Cloud Identity ID of the partner.
      * </pre>
      *
@@ -760,7 +760,7 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The resource name of the channel partner link to cancel.
-     * The name takes the format: accounts/{account_id}/channelPartnerLinks/{id}
+     * Name uses the format: accounts/{account_id}/channelPartnerLinks/{id}
      * where {id} is the Cloud Identity ID of the partner.
      * </pre>
      *
@@ -779,7 +779,7 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The resource name of the channel partner link to cancel.
-     * The name takes the format: accounts/{account_id}/channelPartnerLinks/{id}
+     * Name uses the format: accounts/{account_id}/channelPartnerLinks/{id}
      * where {id} is the Cloud Identity ID of the partner.
      * </pre>
      *
@@ -809,8 +809,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The channel partner link to update. Only field
-     * channel_partner_link.link_state is allowed to be updated.
+     * Required. The channel partner link to update. Only channel_partner_link.link_state
+     * is allowed for updates.
      * </pre>
      *
      * <code>
@@ -826,8 +826,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The channel partner link to update. Only field
-     * channel_partner_link.link_state is allowed to be updated.
+     * Required. The channel partner link to update. Only channel_partner_link.link_state
+     * is allowed for updates.
      * </pre>
      *
      * <code>
@@ -849,8 +849,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The channel partner link to update. Only field
-     * channel_partner_link.link_state is allowed to be updated.
+     * Required. The channel partner link to update. Only channel_partner_link.link_state
+     * is allowed for updates.
      * </pre>
      *
      * <code>
@@ -874,8 +874,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The channel partner link to update. Only field
-     * channel_partner_link.link_state is allowed to be updated.
+     * Required. The channel partner link to update. Only channel_partner_link.link_state
+     * is allowed for updates.
      * </pre>
      *
      * <code>
@@ -897,8 +897,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The channel partner link to update. Only field
-     * channel_partner_link.link_state is allowed to be updated.
+     * Required. The channel partner link to update. Only channel_partner_link.link_state
+     * is allowed for updates.
      * </pre>
      *
      * <code>
@@ -926,8 +926,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The channel partner link to update. Only field
-     * channel_partner_link.link_state is allowed to be updated.
+     * Required. The channel partner link to update. Only channel_partner_link.link_state
+     * is allowed for updates.
      * </pre>
      *
      * <code>
@@ -949,8 +949,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The channel partner link to update. Only field
-     * channel_partner_link.link_state is allowed to be updated.
+     * Required. The channel partner link to update. Only channel_partner_link.link_state
+     * is allowed for updates.
      * </pre>
      *
      * <code>
@@ -966,8 +966,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The channel partner link to update. Only field
-     * channel_partner_link.link_state is allowed to be updated.
+     * Required. The channel partner link to update. Only channel_partner_link.link_state
+     * is allowed for updates.
      * </pre>
      *
      * <code>
@@ -988,8 +988,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The channel partner link to update. Only field
-     * channel_partner_link.link_state is allowed to be updated.
+     * Required. The channel partner link to update. Only channel_partner_link.link_state
+     * is allowed for updates.
      * </pre>
      *
      * <code>
@@ -1024,7 +1024,7 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The update mask that applies to the resource.
-     * The only allowable value for update mask is
+     * The only allowable value for an update mask is
      * channel_partner_link.link_state.
      * </pre>
      *
@@ -1041,7 +1041,7 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The update mask that applies to the resource.
-     * The only allowable value for update mask is
+     * The only allowable value for an update mask is
      * channel_partner_link.link_state.
      * </pre>
      *
@@ -1064,7 +1064,7 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The update mask that applies to the resource.
-     * The only allowable value for update mask is
+     * The only allowable value for an update mask is
      * channel_partner_link.link_state.
      * </pre>
      *
@@ -1089,7 +1089,7 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The update mask that applies to the resource.
-     * The only allowable value for update mask is
+     * The only allowable value for an update mask is
      * channel_partner_link.link_state.
      * </pre>
      *
@@ -1111,7 +1111,7 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The update mask that applies to the resource.
-     * The only allowable value for update mask is
+     * The only allowable value for an update mask is
      * channel_partner_link.link_state.
      * </pre>
      *
@@ -1138,7 +1138,7 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The update mask that applies to the resource.
-     * The only allowable value for update mask is
+     * The only allowable value for an update mask is
      * channel_partner_link.link_state.
      * </pre>
      *
@@ -1161,7 +1161,7 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The update mask that applies to the resource.
-     * The only allowable value for update mask is
+     * The only allowable value for an update mask is
      * channel_partner_link.link_state.
      * </pre>
      *
@@ -1178,7 +1178,7 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The update mask that applies to the resource.
-     * The only allowable value for update mask is
+     * The only allowable value for an update mask is
      * channel_partner_link.link_state.
      * </pre>
      *
@@ -1199,7 +1199,7 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The update mask that applies to the resource.
-     * The only allowable value for update mask is
+     * The only allowable value for an update mask is
      * channel_partner_link.link_state.
      * </pre>
      *

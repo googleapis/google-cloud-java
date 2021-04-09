@@ -134,9 +134,9 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The resource name of reseller's account for which to create a channel
-   * partner link.
-   * The parent takes the format: accounts/{account_id}
+   * Required. Create a channel partner link for the provided reseller account's
+   * resource name.
+   * Parent uses the format: accounts/{account_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -159,9 +159,9 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The resource name of reseller's account for which to create a channel
-   * partner link.
-   * The parent takes the format: accounts/{account_id}
+   * Required. Create a channel partner link for the provided reseller account's
+   * resource name.
+   * Parent uses the format: accounts/{account_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -593,9 +593,9 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The resource name of reseller's account for which to create a channel
-     * partner link.
-     * The parent takes the format: accounts/{account_id}
+     * Required. Create a channel partner link for the provided reseller account's
+     * resource name.
+     * Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -617,9 +617,9 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The resource name of reseller's account for which to create a channel
-     * partner link.
-     * The parent takes the format: accounts/{account_id}
+     * Required. Create a channel partner link for the provided reseller account's
+     * resource name.
+     * Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -641,9 +641,9 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The resource name of reseller's account for which to create a channel
-     * partner link.
-     * The parent takes the format: accounts/{account_id}
+     * Required. Create a channel partner link for the provided reseller account's
+     * resource name.
+     * Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -664,9 +664,9 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The resource name of reseller's account for which to create a channel
-     * partner link.
-     * The parent takes the format: accounts/{account_id}
+     * Required. Create a channel partner link for the provided reseller account's
+     * resource name.
+     * Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -683,9 +683,9 @@ public final class CreateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The resource name of reseller's account for which to create a channel
-     * partner link.
-     * The parent takes the format: accounts/{account_id}
+     * Required. Create a channel partner link for the provided reseller account's
+     * resource name.
+     * Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>

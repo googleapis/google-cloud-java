@@ -303,8 +303,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * If set, validate the request and preview the review, but do not actually
-   * post it.
+   * Validate the request and preview the review, but do not post it.
    * </pre>
    *
    * <code>bool validate_only = 4;</code>
@@ -1199,8 +1198,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * If set, validate the request and preview the review, but do not actually
-     * post it.
+     * Validate the request and preview the review, but do not post it.
      * </pre>
      *
      * <code>bool validate_only = 4;</code>
@@ -1215,8 +1213,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * If set, validate the request and preview the review, but do not actually
-     * post it.
+     * Validate the request and preview the review, but do not post it.
      * </pre>
      *
      * <code>bool validate_only = 4;</code>
@@ -1234,8 +1231,7 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * If set, validate the request and preview the review, but do not actually
-     * post it.
+     * Validate the request and preview the review, but do not post it.
      * </pre>
      *
      * <code>bool validate_only = 4;</code>

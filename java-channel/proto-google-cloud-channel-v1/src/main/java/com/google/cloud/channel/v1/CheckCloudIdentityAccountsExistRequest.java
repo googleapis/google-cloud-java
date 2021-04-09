@@ -127,8 +127,8 @@ public final class CheckCloudIdentityAccountsExistRequest
    *
    *
    * <pre>
-   * Required. The resource name of the reseller account.
-   * The parent takes the format: accounts/{account_id}
+   * Required. The reseller account's resource name.
+   * Parent uses the format: accounts/{account_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -151,8 +151,8 @@ public final class CheckCloudIdentityAccountsExistRequest
    *
    *
    * <pre>
-   * Required. The resource name of the reseller account.
-   * The parent takes the format: accounts/{account_id}
+   * Required. The reseller account's resource name.
+   * Parent uses the format: accounts/{account_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -178,7 +178,7 @@ public final class CheckCloudIdentityAccountsExistRequest
    *
    *
    * <pre>
-   * Required. Domain for which the Cloud Identity account customer is fetched.
+   * Required. Domain to fetch for Cloud Identity account customer.
    * </pre>
    *
    * <code>string domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -201,7 +201,7 @@ public final class CheckCloudIdentityAccountsExistRequest
    *
    *
    * <pre>
-   * Required. Domain for which the Cloud Identity account customer is fetched.
+   * Required. Domain to fetch for Cloud Identity account customer.
    * </pre>
    *
    * <code>string domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -569,8 +569,8 @@ public final class CheckCloudIdentityAccountsExistRequest
      *
      *
      * <pre>
-     * Required. The resource name of the reseller account.
-     * The parent takes the format: accounts/{account_id}
+     * Required. The reseller account's resource name.
+     * Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -592,8 +592,8 @@ public final class CheckCloudIdentityAccountsExistRequest
      *
      *
      * <pre>
-     * Required. The resource name of the reseller account.
-     * The parent takes the format: accounts/{account_id}
+     * Required. The reseller account's resource name.
+     * Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -615,8 +615,8 @@ public final class CheckCloudIdentityAccountsExistRequest
      *
      *
      * <pre>
-     * Required. The resource name of the reseller account.
-     * The parent takes the format: accounts/{account_id}
+     * Required. The reseller account's resource name.
+     * Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -637,8 +637,8 @@ public final class CheckCloudIdentityAccountsExistRequest
      *
      *
      * <pre>
-     * Required. The resource name of the reseller account.
-     * The parent takes the format: accounts/{account_id}
+     * Required. The reseller account's resource name.
+     * Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -655,8 +655,8 @@ public final class CheckCloudIdentityAccountsExistRequest
      *
      *
      * <pre>
-     * Required. The resource name of the reseller account.
-     * The parent takes the format: accounts/{account_id}
+     * Required. The reseller account's resource name.
+     * Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -680,7 +680,7 @@ public final class CheckCloudIdentityAccountsExistRequest
      *
      *
      * <pre>
-     * Required. Domain for which the Cloud Identity account customer is fetched.
+     * Required. Domain to fetch for Cloud Identity account customer.
      * </pre>
      *
      * <code>string domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -702,7 +702,7 @@ public final class CheckCloudIdentityAccountsExistRequest
      *
      *
      * <pre>
-     * Required. Domain for which the Cloud Identity account customer is fetched.
+     * Required. Domain to fetch for Cloud Identity account customer.
      * </pre>
      *
      * <code>string domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -724,7 +724,7 @@ public final class CheckCloudIdentityAccountsExistRequest
      *
      *
      * <pre>
-     * Required. Domain for which the Cloud Identity account customer is fetched.
+     * Required. Domain to fetch for Cloud Identity account customer.
      * </pre>
      *
      * <code>string domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -745,7 +745,7 @@ public final class CheckCloudIdentityAccountsExistRequest
      *
      *
      * <pre>
-     * Required. Domain for which the Cloud Identity account customer is fetched.
+     * Required. Domain to fetch for Cloud Identity account customer.
      * </pre>
      *
      * <code>string domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -762,7 +762,7 @@ public final class CheckCloudIdentityAccountsExistRequest
      *
      *
      * <pre>
-     * Required. Domain for which the Cloud Identity account customer is fetched.
+     * Required. Domain to fetch for Cloud Identity account customer.
      * </pre>
      *
      * <code>string domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>

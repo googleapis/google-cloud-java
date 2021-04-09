@@ -19,25 +19,23 @@
  *
  * <p>======================= CloudChannelServiceClient =======================
  *
- * <p>Service Description: CloudChannelService enables Google cloud resellers and distributors to
- * manage their customers, channel partners, entitlements and reports.
+ * <p>Service Description: CloudChannelService lets Google cloud resellers and distributors manage
+ * their customers, channel partners, entitlements, and reports.
  *
- * <p>Using this service: 1. Resellers or distributors can manage a customer entity. 2. Distributors
- * can register an authorized reseller in their channel and then enable delegated admin access for
- * the reseller. 3. Resellers or distributors can manage entitlements for their customers.
+ * <p>Using this service: 1. Resellers and distributors can manage a customer entity. 2.
+ * Distributors can register an authorized reseller in their channel and provide them with delegated
+ * admin access. 3. Resellers and distributors can manage customer entitlements.
  *
- * <p>The service primarily exposes the following resources: -
- * [Customer][google.cloud.channel.v1.Customer]s: A Customer represents an entity managed by a
- * reseller or distributor. A customer typically represents an enterprise. In an n-tier resale
- * channel hierarchy, customers are generally represented as leaf nodes. Customers primarily have an
- * Entitlement sub-resource discussed below.
+ * <p>CloudChannelService exposes the following resources: -
+ * [Customer][google.cloud.channel.v1.Customer]s: An entity?usually an enterprise?managed by a
+ * reseller or distributor.
  *
- * <p>- [Entitlement][google.cloud.channel.v1.Entitlement]s: An Entitlement represents an entity
- * which provides a customer means to start using a service. Entitlements are created or updated as
- * a result of a successful fulfillment.
+ * <p>- [Entitlement][google.cloud.channel.v1.Entitlement]s: An entity that provides a customer with
+ * the means to use a service. Entitlements are created or updated as a result of a successful
+ * fulfillment.
  *
- * <p>- [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink]s: A ChannelPartnerLink is
- * an entity that identifies links between distributors and their indirect resellers in a channel.
+ * <p>- [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink]s: An entity that identifies
+ * links between distributors and their indirect resellers in a channel.
  *
  * <p>Sample for CloudChannelServiceClient:
  *

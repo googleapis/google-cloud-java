@@ -27,7 +27,7 @@ public interface RegisterSubscriberResponseOrBuilder
    *
    *
    * <pre>
-   * Name of the topic to which the subscriber will listen to.
+   * Name of the topic the subscriber will listen to.
    * </pre>
    *
    * <code>string topic = 1;</code>
@@ -39,7 +39,7 @@ public interface RegisterSubscriberResponseOrBuilder
    *
    *
    * <pre>
-   * Name of the topic to which the subscriber will listen to.
+   * Name of the topic the subscriber will listen to.
    * </pre>
    *
    * <code>string topic = 1;</code>

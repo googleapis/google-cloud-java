@@ -92,4 +92,42 @@ public interface TransferableSkuOrBuilder
    * <code>.google.cloud.channel.v1.Sku sku = 11;</code>
    */
   com.google.cloud.channel.v1.SkuOrBuilder getSkuOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+   * </pre>
+   *
+   * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the legacySku field is set.
+   */
+  boolean hasLegacySku();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+   * </pre>
+   *
+   * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The legacySku.
+   */
+  com.google.cloud.channel.v1.Sku getLegacySku();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+   * </pre>
+   *
+   * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.channel.v1.SkuOrBuilder getLegacySkuOrBuilder();
 }

@@ -134,8 +134,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Information about existing SKUs for a customer that would need to be
-   * transferred.
+   * Information about existing SKUs for a customer that needs a transfer.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -148,8 +147,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Information about existing SKUs for a customer that would need to be
-   * transferred.
+   * Information about existing SKUs for a customer that needs a transfer.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -163,8 +161,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Information about existing SKUs for a customer that would need to be
-   * transferred.
+   * Information about existing SKUs for a customer that needs a transfer.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -177,8 +174,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Information about existing SKUs for a customer that would need to be
-   * transferred.
+   * Information about existing SKUs for a customer that needs a transfer.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -191,8 +187,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Information about existing SKUs for a customer that would need to be
-   * transferred.
+   * Information about existing SKUs for a customer that needs a transfer.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -654,8 +649,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -671,8 +665,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -688,8 +681,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -705,8 +697,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -729,8 +720,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -750,8 +740,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -773,8 +762,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -797,8 +785,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -818,8 +805,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -839,8 +825,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -860,8 +845,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -880,8 +864,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -900,8 +883,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -914,8 +896,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -932,8 +913,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -950,8 +930,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -964,8 +943,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
@@ -979,8 +957,7 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Information about existing SKUs for a customer that would need to be
-     * transferred.
+     * Information about existing SKUs for a customer that needs a transfer.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.TransferableSku transferable_skus = 1;</code>
