@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.3.1](https://www.github.com/googleapis/java-trace/compare/v1.3.0...v1.3.1) (2021-04-09)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#471](https://www.github.com/googleapis/java-trace/issues/471)) ([a44edc7](https://www.github.com/googleapis/java-trace/commit/a44edc7413ad206fb88a3ef8fd0895b7543cbe92))
+
 ## [1.3.0](https://www.github.com/googleapis/java-trace/compare/v1.2.13...v1.3.0) (2021-03-11)
 
 
