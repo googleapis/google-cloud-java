@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.119.0](https://www.github.com/googleapis/java-resourcemanager/compare/v0.118.12...v0.119.0) (2021-04-09)
+
+
+### Features
+
+* add v3 client ([#423](https://www.github.com/googleapis/java-resourcemanager/issues/423)) ([159d6c5](https://www.github.com/googleapis/java-resourcemanager/commit/159d6c53bceea0d2c3ca5c3776e4d3a8983275f3))
+* introduce bom artifact and make this a multi-module project ([#419](https://www.github.com/googleapis/java-resourcemanager/issues/419)) ([ad4309e](https://www.github.com/googleapis/java-resourcemanager/commit/ad4309ec44a1dad107a6977c5e4aedac871f408f))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-cloudresourcemanager to v1-rev20210328-1.31.0 ([#411](https://www.github.com/googleapis/java-resourcemanager/issues/411)) ([aa484e0](https://www.github.com/googleapis/java-resourcemanager/commit/aa484e06ed40f40c27696c955a957fbf41b294b9))
+* update dependency com.google.errorprone:error_prone_annotations to v2.6.0 ([#417](https://www.github.com/googleapis/java-resourcemanager/issues/417)) ([3e53aa1](https://www.github.com/googleapis/java-resourcemanager/commit/3e53aa1f2dec56732d8e6515880878b37131c03f))
+
 ### [0.118.12](https://www.github.com/googleapis/java-resourcemanager/compare/v0.118.11...v0.118.12) (2021-03-15)
 
 
