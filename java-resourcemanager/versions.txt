@@ -2,3 +2,5 @@
 # module:released-version:current-version
 
 google-cloud-resourcemanager:0.118.12-alpha:0.118.13-alpha-SNAPSHOT
+grpc-google-cloud-resourcemanager-v3:0.118.12-alpha:0.118.13-alpha-SNAPSHOT
+proto-google-cloud-resourcemanager-v3:0.118.12-alpha:0.118.13-alpha-SNAPSHOT
