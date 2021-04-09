@@ -8,9 +8,6 @@ Java idiomatic client for [OS Config API][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
-
-
-
 ## Quickstart
 
 
