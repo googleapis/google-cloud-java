@@ -8,9 +8,6 @@ Java idiomatic client for [Dataproc][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
-
-
-
 ## Quickstart
 
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
@@ -55,12 +52,12 @@ compile 'com.google.cloud:google-cloud-dataproc'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-dataproc:1.3.0'
+compile 'com.google.cloud:google-cloud-dataproc:1.4.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dataproc" % "1.3.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-dataproc" % "1.4.0"
 ```
 
 ## Authentication
