@@ -36,6 +36,8 @@ public interface ClusterConfigOrBuilder
    * and manage this project-level, per-location bucket (see
    * [Dataproc staging
    * bucket](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+   * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
+   * Storage bucket.**
    * </pre>
    *
    * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -56,6 +58,8 @@ public interface ClusterConfigOrBuilder
    * and manage this project-level, per-location bucket (see
    * [Dataproc staging
    * bucket](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
+   * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
+   * Storage bucket.**
    * </pre>
    *
    * <code>string config_bucket = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -77,6 +81,8 @@ public interface ClusterConfigOrBuilder
    * and manage this project-level, per-location bucket. The default bucket has
    * a TTL of 90 days, but you can use any TTL (or none) if you specify a
    * bucket.
+   * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
+   * Storage bucket.**
    * </pre>
    *
    * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -97,6 +103,8 @@ public interface ClusterConfigOrBuilder
    * and manage this project-level, per-location bucket. The default bucket has
    * a TTL of 90 days, but you can use any TTL (or none) if you specify a
    * bucket.
+   * **This field requires a Cloud Storage bucket name, not a URI to a Cloud
+   * Storage bucket.**
    * </pre>
    *
    * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -648,4 +656,95 @@ public interface ClusterConfigOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.EndpointConfigOrBuilder getEndpointConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metastore configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.MetastoreConfig metastore_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the metastoreConfig field is set.
+   */
+  boolean hasMetastoreConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metastore configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.MetastoreConfig metastore_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The metastoreConfig.
+   */
+  com.google.cloud.dataproc.v1.MetastoreConfig getMetastoreConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metastore configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.MetastoreConfig metastore_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.MetastoreConfigOrBuilder getMetastoreConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
+   * Kubernetes. Setting this is considered mutually exclusive with Compute
+   * Engine-based options such as `gce_cluster_config`, `master_config`,
+   * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the gkeClusterConfig field is set.
+   */
+  boolean hasGkeClusterConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
+   * Kubernetes. Setting this is considered mutually exclusive with Compute
+   * Engine-based options such as `gce_cluster_config`, `master_config`,
+   * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gkeClusterConfig.
+   */
+  com.google.cloud.dataproc.v1.GkeClusterConfig getGkeClusterConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. BETA. The Kubernetes Engine config for Dataproc clusters deployed to
+   * Kubernetes. Setting this is considered mutually exclusive with Compute
+   * Engine-based options such as `gce_cluster_config`, `master_config`,
+   * `worker_config`, `secondary_worker_config`, and `autoscaling_config`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.GkeClusterConfig gke_cluster_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.GkeClusterConfigOrBuilder getGkeClusterConfigOrBuilder();
 }

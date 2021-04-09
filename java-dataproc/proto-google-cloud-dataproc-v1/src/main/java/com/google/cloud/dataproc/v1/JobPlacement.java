@@ -61,6 +61,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -85,6 +86,23 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
               clusterUuid_ = s;
               break;
             }
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                clusterLabels_ =
+                    com.google.protobuf.MapField.newMapField(
+                        ClusterLabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> clusterLabels__ =
+                  input.readMessage(
+                      ClusterLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              clusterLabels_
+                  .getMutableMap()
+                  .put(clusterLabels__.getKey(), clusterLabels__.getValue());
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -107,6 +125,17 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.JobsProto
         .internal_static_google_cloud_dataproc_v1_JobPlacement_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 3:
+        return internalGetClusterLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -219,6 +248,115 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CLUSTER_LABELS_FIELD_NUMBER = 3;
+
+  private static final class ClusterLabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dataproc.v1.JobsProto
+                .internal_static_google_cloud_dataproc_v1_JobPlacement_ClusterLabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> clusterLabels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetClusterLabels() {
+    if (clusterLabels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ClusterLabelsDefaultEntryHolder.defaultEntry);
+    }
+    return clusterLabels_;
+  }
+
+  public int getClusterLabelsCount() {
+    return internalGetClusterLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cluster labels to identify a cluster where the job will be
+   * submitted.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsClusterLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetClusterLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getClusterLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getClusterLabels() {
+    return getClusterLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cluster labels to identify a cluster where the job will be
+   * submitted.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getClusterLabelsMap() {
+    return internalGetClusterLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cluster labels to identify a cluster where the job will be
+   * submitted.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getClusterLabelsOrDefault(
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetClusterLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cluster labels to identify a cluster where the job will be
+   * submitted.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getClusterLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetClusterLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -239,6 +377,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     if (!getClusterUuidBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clusterUuid_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetClusterLabels(), ClusterLabelsDefaultEntryHolder.defaultEntry, 3);
     unknownFields.writeTo(output);
   }
 
@@ -253,6 +393,16 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getClusterUuidBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clusterUuid_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetClusterLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> clusterLabels__ =
+          ClusterLabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, clusterLabels__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -272,6 +422,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
 
     if (!getClusterName().equals(other.getClusterName())) return false;
     if (!getClusterUuid().equals(other.getClusterUuid())) return false;
+    if (!internalGetClusterLabels().equals(other.internalGetClusterLabels())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -287,6 +438,10 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getClusterName().hashCode();
     hash = (37 * hash) + CLUSTER_UUID_FIELD_NUMBER;
     hash = (53 * hash) + getClusterUuid().hashCode();
+    if (!internalGetClusterLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + CLUSTER_LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetClusterLabels().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -405,6 +560,26 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_dataproc_v1_JobPlacement_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 3:
+          return internalGetClusterLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 3:
+          return internalGetMutableClusterLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -436,6 +611,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
 
       clusterUuid_ = "";
 
+      internalGetMutableClusterLabels().clear();
       return this;
     }
 
@@ -463,8 +639,11 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.JobPlacement buildPartial() {
       com.google.cloud.dataproc.v1.JobPlacement result =
           new com.google.cloud.dataproc.v1.JobPlacement(this);
+      int from_bitField0_ = bitField0_;
       result.clusterName_ = clusterName_;
       result.clusterUuid_ = clusterUuid_;
+      result.clusterLabels_ = internalGetClusterLabels();
+      result.clusterLabels_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -522,6 +701,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
         clusterUuid_ = other.clusterUuid_;
         onChanged();
       }
+      internalGetMutableClusterLabels().mergeFrom(other.internalGetClusterLabels());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -550,6 +730,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object clusterName_ = "";
     /**
@@ -765,6 +947,180 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
 
       clusterUuid_ = value;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> clusterLabels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetClusterLabels() {
+      if (clusterLabels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ClusterLabelsDefaultEntryHolder.defaultEntry);
+      }
+      return clusterLabels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableClusterLabels() {
+      onChanged();
+      ;
+      if (clusterLabels_ == null) {
+        clusterLabels_ =
+            com.google.protobuf.MapField.newMapField(ClusterLabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!clusterLabels_.isMutable()) {
+        clusterLabels_ = clusterLabels_.copy();
+      }
+      return clusterLabels_;
+    }
+
+    public int getClusterLabelsCount() {
+      return internalGetClusterLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cluster labels to identify a cluster where the job will be
+     * submitted.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsClusterLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetClusterLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getClusterLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getClusterLabels() {
+      return getClusterLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cluster labels to identify a cluster where the job will be
+     * submitted.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getClusterLabelsMap() {
+      return internalGetClusterLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cluster labels to identify a cluster where the job will be
+     * submitted.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getClusterLabelsOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetClusterLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cluster labels to identify a cluster where the job will be
+     * submitted.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getClusterLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetClusterLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearClusterLabels() {
+      internalGetMutableClusterLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cluster labels to identify a cluster where the job will be
+     * submitted.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeClusterLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableClusterLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableClusterLabels() {
+      return internalGetMutableClusterLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cluster labels to identify a cluster where the job will be
+     * submitted.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putClusterLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableClusterLabels().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cluster labels to identify a cluster where the job will be
+     * submitted.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllClusterLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableClusterLabels().getMutableMap().putAll(values);
       return this;
     }
 

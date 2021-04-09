@@ -53,6 +53,8 @@ import com.google.cloud.dataproc.v1.DiagnoseClusterResults;
 import com.google.cloud.dataproc.v1.GetClusterRequest;
 import com.google.cloud.dataproc.v1.ListClustersRequest;
 import com.google.cloud.dataproc.v1.ListClustersResponse;
+import com.google.cloud.dataproc.v1.StartClusterRequest;
+import com.google.cloud.dataproc.v1.StopClusterRequest;
 import com.google.cloud.dataproc.v1.UpdateClusterRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -110,6 +112,12 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
   private final UnaryCallSettings<UpdateClusterRequest, Operation> updateClusterSettings;
   private final OperationCallSettings<UpdateClusterRequest, Cluster, ClusterOperationMetadata>
       updateClusterOperationSettings;
+  private final UnaryCallSettings<StopClusterRequest, Operation> stopClusterSettings;
+  private final OperationCallSettings<StopClusterRequest, Cluster, ClusterOperationMetadata>
+      stopClusterOperationSettings;
+  private final UnaryCallSettings<StartClusterRequest, Operation> startClusterSettings;
+  private final OperationCallSettings<StartClusterRequest, Cluster, ClusterOperationMetadata>
+      startClusterOperationSettings;
   private final UnaryCallSettings<DeleteClusterRequest, Operation> deleteClusterSettings;
   private final OperationCallSettings<DeleteClusterRequest, Empty, ClusterOperationMetadata>
       deleteClusterOperationSettings;
@@ -195,6 +203,28 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
   public OperationCallSettings<UpdateClusterRequest, Cluster, ClusterOperationMetadata>
       updateClusterOperationSettings() {
     return updateClusterOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to stopCluster. */
+  public UnaryCallSettings<StopClusterRequest, Operation> stopClusterSettings() {
+    return stopClusterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to stopCluster. */
+  public OperationCallSettings<StopClusterRequest, Cluster, ClusterOperationMetadata>
+      stopClusterOperationSettings() {
+    return stopClusterOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to startCluster. */
+  public UnaryCallSettings<StartClusterRequest, Operation> startClusterSettings() {
+    return startClusterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to startCluster. */
+  public OperationCallSettings<StartClusterRequest, Cluster, ClusterOperationMetadata>
+      startClusterOperationSettings() {
+    return startClusterOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteCluster. */
@@ -304,6 +334,10 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
     createClusterOperationSettings = settingsBuilder.createClusterOperationSettings().build();
     updateClusterSettings = settingsBuilder.updateClusterSettings().build();
     updateClusterOperationSettings = settingsBuilder.updateClusterOperationSettings().build();
+    stopClusterSettings = settingsBuilder.stopClusterSettings().build();
+    stopClusterOperationSettings = settingsBuilder.stopClusterOperationSettings().build();
+    startClusterSettings = settingsBuilder.startClusterSettings().build();
+    startClusterOperationSettings = settingsBuilder.startClusterOperationSettings().build();
     deleteClusterSettings = settingsBuilder.deleteClusterSettings().build();
     deleteClusterOperationSettings = settingsBuilder.deleteClusterOperationSettings().build();
     getClusterSettings = settingsBuilder.getClusterSettings().build();
@@ -323,6 +357,14 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
     private final OperationCallSettings.Builder<
             UpdateClusterRequest, Cluster, ClusterOperationMetadata>
         updateClusterOperationSettings;
+    private final UnaryCallSettings.Builder<StopClusterRequest, Operation> stopClusterSettings;
+    private final OperationCallSettings.Builder<
+            StopClusterRequest, Cluster, ClusterOperationMetadata>
+        stopClusterOperationSettings;
+    private final UnaryCallSettings.Builder<StartClusterRequest, Operation> startClusterSettings;
+    private final OperationCallSettings.Builder<
+            StartClusterRequest, Cluster, ClusterOperationMetadata>
+        startClusterOperationSettings;
     private final UnaryCallSettings.Builder<DeleteClusterRequest, Operation> deleteClusterSettings;
     private final OperationCallSettings.Builder<
             DeleteClusterRequest, Empty, ClusterOperationMetadata>
@@ -345,6 +387,7 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
       definitions.put(
           "retry_policy_5_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "retry_policy_6_codes",
           ImmutableSet.copyOf(
@@ -371,6 +414,8 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
               .setTotalTimeout(Duration.ofMillis(300000L))
               .build();
       definitions.put("retry_policy_5_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -396,6 +441,10 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
       createClusterOperationSettings = OperationCallSettings.newBuilder();
       updateClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateClusterOperationSettings = OperationCallSettings.newBuilder();
+      stopClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      stopClusterOperationSettings = OperationCallSettings.newBuilder();
+      startClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      startClusterOperationSettings = OperationCallSettings.newBuilder();
       deleteClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteClusterOperationSettings = OperationCallSettings.newBuilder();
       getClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -407,6 +456,8 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createClusterSettings,
               updateClusterSettings,
+              stopClusterSettings,
+              startClusterSettings,
               deleteClusterSettings,
               getClusterSettings,
               listClustersSettings,
@@ -421,6 +472,10 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
       createClusterOperationSettings = settings.createClusterOperationSettings.toBuilder();
       updateClusterSettings = settings.updateClusterSettings.toBuilder();
       updateClusterOperationSettings = settings.updateClusterOperationSettings.toBuilder();
+      stopClusterSettings = settings.stopClusterSettings.toBuilder();
+      stopClusterOperationSettings = settings.stopClusterOperationSettings.toBuilder();
+      startClusterSettings = settings.startClusterSettings.toBuilder();
+      startClusterOperationSettings = settings.startClusterOperationSettings.toBuilder();
       deleteClusterSettings = settings.deleteClusterSettings.toBuilder();
       deleteClusterOperationSettings = settings.deleteClusterOperationSettings.toBuilder();
       getClusterSettings = settings.getClusterSettings.toBuilder();
@@ -432,6 +487,8 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createClusterSettings,
               updateClusterSettings,
+              stopClusterSettings,
+              startClusterSettings,
               deleteClusterSettings,
               getClusterSettings,
               listClustersSettings,
@@ -459,6 +516,16 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
           .updateClusterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+
+      builder
+          .stopClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .startClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .deleteClusterSettings()
@@ -526,6 +593,53 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeout(Duration.ZERO)
                       .setTotalTimeout(Duration.ofMillis(900000L))
+                      .build()));
+
+      builder
+          .stopClusterOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<StopClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Cluster.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(ClusterOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .startClusterOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<StartClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Cluster.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(ClusterOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -619,6 +733,32 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
     public OperationCallSettings.Builder<UpdateClusterRequest, Cluster, ClusterOperationMetadata>
         updateClusterOperationSettings() {
       return updateClusterOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to stopCluster. */
+    public UnaryCallSettings.Builder<StopClusterRequest, Operation> stopClusterSettings() {
+      return stopClusterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to stopCluster. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<StopClusterRequest, Cluster, ClusterOperationMetadata>
+        stopClusterOperationSettings() {
+      return stopClusterOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to startCluster. */
+    public UnaryCallSettings.Builder<StartClusterRequest, Operation> startClusterSettings() {
+      return startClusterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to startCluster. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<StartClusterRequest, Cluster, ClusterOperationMetadata>
+        startClusterOperationSettings() {
+      return startClusterOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteCluster. */

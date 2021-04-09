@@ -215,9 +215,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Optional. The duration to keep the cluster alive while idling (when no jobs
    * are running). Passing this threshold will cause the cluster to be
-   * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+   * deleted. Minimum value is 5 minutes; maximum value is 14 days (see JSON
    * representation of
-   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -235,9 +235,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Optional. The duration to keep the cluster alive while idling (when no jobs
    * are running). Passing this threshold will cause the cluster to be
-   * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+   * deleted. Minimum value is 5 minutes; maximum value is 14 days (see JSON
    * representation of
-   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -257,9 +257,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Optional. The duration to keep the cluster alive while idling (when no jobs
    * are running). Passing this threshold will cause the cluster to be
-   * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+   * deleted. Minimum value is 5 minutes; maximum value is 14 days (see JSON
    * representation of
-   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -910,9 +910,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The duration to keep the cluster alive while idling (when no jobs
      * are running). Passing this threshold will cause the cluster to be
-     * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * deleted. Minimum value is 5 minutes; maximum value is 14 days (see JSON
      * representation of
-     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -930,9 +930,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The duration to keep the cluster alive while idling (when no jobs
      * are running). Passing this threshold will cause the cluster to be
-     * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * deleted. Minimum value is 5 minutes; maximum value is 14 days (see JSON
      * representation of
-     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -956,9 +956,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The duration to keep the cluster alive while idling (when no jobs
      * are running). Passing this threshold will cause the cluster to be
-     * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * deleted. Minimum value is 5 minutes; maximum value is 14 days (see JSON
      * representation of
-     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -984,9 +984,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The duration to keep the cluster alive while idling (when no jobs
      * are running). Passing this threshold will cause the cluster to be
-     * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * deleted. Minimum value is 5 minutes; maximum value is 14 days (see JSON
      * representation of
-     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1009,9 +1009,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The duration to keep the cluster alive while idling (when no jobs
      * are running). Passing this threshold will cause the cluster to be
-     * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * deleted. Minimum value is 5 minutes; maximum value is 14 days (see JSON
      * representation of
-     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1041,9 +1041,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The duration to keep the cluster alive while idling (when no jobs
      * are running). Passing this threshold will cause the cluster to be
-     * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * deleted. Minimum value is 5 minutes; maximum value is 14 days (see JSON
      * representation of
-     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1067,9 +1067,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The duration to keep the cluster alive while idling (when no jobs
      * are running). Passing this threshold will cause the cluster to be
-     * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * deleted. Minimum value is 5 minutes; maximum value is 14 days (see JSON
      * representation of
-     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1087,9 +1087,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The duration to keep the cluster alive while idling (when no jobs
      * are running). Passing this threshold will cause the cluster to be
-     * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * deleted. Minimum value is 5 minutes; maximum value is 14 days (see JSON
      * representation of
-     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>
@@ -1111,9 +1111,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The duration to keep the cluster alive while idling (when no jobs
      * are running). Passing this threshold will cause the cluster to be
-     * deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON
+     * deleted. Minimum value is 5 minutes; maximum value is 14 days (see JSON
      * representation of
-     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>

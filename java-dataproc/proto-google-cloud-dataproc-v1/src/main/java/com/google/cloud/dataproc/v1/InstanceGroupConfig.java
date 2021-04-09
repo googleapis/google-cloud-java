@@ -384,7 +384,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. The number of VM instances in the instance group.
-   * For master instance groups, must be set to 1.
+   * For [HA
+   * cluster](/dataproc/docs/concepts/configuring-clusters/high-availability)
+   * [master_config](#FIELDS.master_config) groups, **must be set to 3**.
+   * For standard cluster [master_config](#FIELDS.master_config) groups,
+   * **must be set to 1**.
    * </pre>
    *
    * <code>int32 num_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1474,7 +1478,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The number of VM instances in the instance group.
-     * For master instance groups, must be set to 1.
+     * For [HA
+     * cluster](/dataproc/docs/concepts/configuring-clusters/high-availability)
+     * [master_config](#FIELDS.master_config) groups, **must be set to 3**.
+     * For standard cluster [master_config](#FIELDS.master_config) groups,
+     * **must be set to 1**.
      * </pre>
      *
      * <code>int32 num_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1490,7 +1498,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The number of VM instances in the instance group.
-     * For master instance groups, must be set to 1.
+     * For [HA
+     * cluster](/dataproc/docs/concepts/configuring-clusters/high-availability)
+     * [master_config](#FIELDS.master_config) groups, **must be set to 3**.
+     * For standard cluster [master_config](#FIELDS.master_config) groups,
+     * **must be set to 1**.
      * </pre>
      *
      * <code>int32 num_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1509,7 +1521,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The number of VM instances in the instance group.
-     * For master instance groups, must be set to 1.
+     * For [HA
+     * cluster](/dataproc/docs/concepts/configuring-clusters/high-availability)
+     * [master_config](#FIELDS.master_config) groups, **must be set to 3**.
+     * For standard cluster [master_config](#FIELDS.master_config) groups,
+     * **must be set to 1**.
      * </pre>
      *
      * <code>int32 num_instances = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

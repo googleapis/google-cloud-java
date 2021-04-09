@@ -22,7 +22,7 @@ package com.google.cloud.dataproc.v1;
  *
  *
  * <pre>
- * Security related configuration, including Kerberos.
+ * Security related configuration, including encryption, Kerberos, etc.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.SecurityConfig}
@@ -84,6 +84,22 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 18:
+            {
+              com.google.cloud.dataproc.v1.IdentityConfig.Builder subBuilder = null;
+              if (identityConfig_ != null) {
+                subBuilder = identityConfig_.toBuilder();
+              }
+              identityConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1.IdentityConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(identityConfig_);
+                identityConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -124,10 +140,12 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Kerberos related configuration.
+   * Optional. Kerberos related configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the kerberosConfig field is set.
    */
@@ -139,10 +157,12 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Kerberos related configuration.
+   * Optional. Kerberos related configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The kerberosConfig.
    */
@@ -156,14 +176,73 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Kerberos related configuration.
+   * Optional. Kerberos related configuration.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1;</code>
+   * <code>
+   * .google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.KerberosConfigOrBuilder getKerberosConfigOrBuilder() {
     return getKerberosConfig();
+  }
+
+  public static final int IDENTITY_CONFIG_FIELD_NUMBER = 2;
+  private com.google.cloud.dataproc.v1.IdentityConfig identityConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Identity related configuration, including service account based
+   * secure multi-tenancy user mappings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.IdentityConfig identity_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the identityConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasIdentityConfig() {
+    return identityConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Identity related configuration, including service account based
+   * secure multi-tenancy user mappings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.IdentityConfig identity_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The identityConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.IdentityConfig getIdentityConfig() {
+    return identityConfig_ == null
+        ? com.google.cloud.dataproc.v1.IdentityConfig.getDefaultInstance()
+        : identityConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Identity related configuration, including service account based
+   * secure multi-tenancy user mappings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.IdentityConfig identity_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.IdentityConfigOrBuilder getIdentityConfigOrBuilder() {
+    return getIdentityConfig();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -183,6 +262,9 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
     if (kerberosConfig_ != null) {
       output.writeMessage(1, getKerberosConfig());
     }
+    if (identityConfig_ != null) {
+      output.writeMessage(2, getIdentityConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -194,6 +276,9 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (kerberosConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getKerberosConfig());
+    }
+    if (identityConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getIdentityConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -215,6 +300,10 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasKerberosConfig()) {
       if (!getKerberosConfig().equals(other.getKerberosConfig())) return false;
     }
+    if (hasIdentityConfig() != other.hasIdentityConfig()) return false;
+    if (hasIdentityConfig()) {
+      if (!getIdentityConfig().equals(other.getIdentityConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -229,6 +318,10 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasKerberosConfig()) {
       hash = (37 * hash) + KERBEROS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getKerberosConfig().hashCode();
+    }
+    if (hasIdentityConfig()) {
+      hash = (37 * hash) + IDENTITY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getIdentityConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -334,7 +427,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Security related configuration, including Kerberos.
+   * Security related configuration, including encryption, Kerberos, etc.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.SecurityConfig}
@@ -381,6 +474,12 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
         kerberosConfig_ = null;
         kerberosConfigBuilder_ = null;
       }
+      if (identityConfigBuilder_ == null) {
+        identityConfig_ = null;
+      } else {
+        identityConfig_ = null;
+        identityConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -412,6 +511,11 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
         result.kerberosConfig_ = kerberosConfig_;
       } else {
         result.kerberosConfig_ = kerberosConfigBuilder_.build();
+      }
+      if (identityConfigBuilder_ == null) {
+        result.identityConfig_ = identityConfig_;
+      } else {
+        result.identityConfig_ = identityConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -465,6 +569,9 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasKerberosConfig()) {
         mergeKerberosConfig(other.getKerberosConfig());
       }
+      if (other.hasIdentityConfig()) {
+        mergeIdentityConfig(other.getIdentityConfig());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -504,10 +611,12 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kerberos related configuration.
+     * Optional. Kerberos related configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the kerberosConfig field is set.
      */
@@ -518,10 +627,12 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kerberos related configuration.
+     * Optional. Kerberos related configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The kerberosConfig.
      */
@@ -538,10 +649,12 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kerberos related configuration.
+     * Optional. Kerberos related configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setKerberosConfig(com.google.cloud.dataproc.v1.KerberosConfig value) {
       if (kerberosConfigBuilder_ == null) {
@@ -560,10 +673,12 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kerberos related configuration.
+     * Optional. Kerberos related configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setKerberosConfig(
         com.google.cloud.dataproc.v1.KerberosConfig.Builder builderForValue) {
@@ -580,10 +695,12 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kerberos related configuration.
+     * Optional. Kerberos related configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeKerberosConfig(com.google.cloud.dataproc.v1.KerberosConfig value) {
       if (kerberosConfigBuilder_ == null) {
@@ -606,10 +723,12 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kerberos related configuration.
+     * Optional. Kerberos related configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearKerberosConfig() {
       if (kerberosConfigBuilder_ == null) {
@@ -626,10 +745,12 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kerberos related configuration.
+     * Optional. Kerberos related configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.KerberosConfig.Builder getKerberosConfigBuilder() {
 
@@ -640,10 +761,12 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kerberos related configuration.
+     * Optional. Kerberos related configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.KerberosConfigOrBuilder getKerberosConfigOrBuilder() {
       if (kerberosConfigBuilder_ != null) {
@@ -658,10 +781,12 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kerberos related configuration.
+     * Optional. Kerberos related configuration.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1;</code>
+     * <code>
+     * .google.cloud.dataproc.v1.KerberosConfig kerberos_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.KerberosConfig,
@@ -678,6 +803,219 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
         kerberosConfig_ = null;
       }
       return kerberosConfigBuilder_;
+    }
+
+    private com.google.cloud.dataproc.v1.IdentityConfig identityConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.IdentityConfig,
+            com.google.cloud.dataproc.v1.IdentityConfig.Builder,
+            com.google.cloud.dataproc.v1.IdentityConfigOrBuilder>
+        identityConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity related configuration, including service account based
+     * secure multi-tenancy user mappings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.IdentityConfig identity_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the identityConfig field is set.
+     */
+    public boolean hasIdentityConfig() {
+      return identityConfigBuilder_ != null || identityConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity related configuration, including service account based
+     * secure multi-tenancy user mappings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.IdentityConfig identity_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The identityConfig.
+     */
+    public com.google.cloud.dataproc.v1.IdentityConfig getIdentityConfig() {
+      if (identityConfigBuilder_ == null) {
+        return identityConfig_ == null
+            ? com.google.cloud.dataproc.v1.IdentityConfig.getDefaultInstance()
+            : identityConfig_;
+      } else {
+        return identityConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity related configuration, including service account based
+     * secure multi-tenancy user mappings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.IdentityConfig identity_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIdentityConfig(com.google.cloud.dataproc.v1.IdentityConfig value) {
+      if (identityConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        identityConfig_ = value;
+        onChanged();
+      } else {
+        identityConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity related configuration, including service account based
+     * secure multi-tenancy user mappings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.IdentityConfig identity_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIdentityConfig(
+        com.google.cloud.dataproc.v1.IdentityConfig.Builder builderForValue) {
+      if (identityConfigBuilder_ == null) {
+        identityConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        identityConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity related configuration, including service account based
+     * secure multi-tenancy user mappings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.IdentityConfig identity_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeIdentityConfig(com.google.cloud.dataproc.v1.IdentityConfig value) {
+      if (identityConfigBuilder_ == null) {
+        if (identityConfig_ != null) {
+          identityConfig_ =
+              com.google.cloud.dataproc.v1.IdentityConfig.newBuilder(identityConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          identityConfig_ = value;
+        }
+        onChanged();
+      } else {
+        identityConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity related configuration, including service account based
+     * secure multi-tenancy user mappings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.IdentityConfig identity_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearIdentityConfig() {
+      if (identityConfigBuilder_ == null) {
+        identityConfig_ = null;
+        onChanged();
+      } else {
+        identityConfig_ = null;
+        identityConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity related configuration, including service account based
+     * secure multi-tenancy user mappings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.IdentityConfig identity_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.IdentityConfig.Builder getIdentityConfigBuilder() {
+
+      onChanged();
+      return getIdentityConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity related configuration, including service account based
+     * secure multi-tenancy user mappings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.IdentityConfig identity_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.IdentityConfigOrBuilder getIdentityConfigOrBuilder() {
+      if (identityConfigBuilder_ != null) {
+        return identityConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return identityConfig_ == null
+            ? com.google.cloud.dataproc.v1.IdentityConfig.getDefaultInstance()
+            : identityConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity related configuration, including service account based
+     * secure multi-tenancy user mappings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.IdentityConfig identity_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.IdentityConfig,
+            com.google.cloud.dataproc.v1.IdentityConfig.Builder,
+            com.google.cloud.dataproc.v1.IdentityConfigOrBuilder>
+        getIdentityConfigFieldBuilder() {
+      if (identityConfigBuilder_ == null) {
+        identityConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.IdentityConfig,
+                com.google.cloud.dataproc.v1.IdentityConfig.Builder,
+                com.google.cloud.dataproc.v1.IdentityConfigOrBuilder>(
+                getIdentityConfig(), getParentForChildren(), isClean());
+        identityConfig_ = null;
+      }
+      return identityConfigBuilder_;
     }
 
     @java.lang.Override

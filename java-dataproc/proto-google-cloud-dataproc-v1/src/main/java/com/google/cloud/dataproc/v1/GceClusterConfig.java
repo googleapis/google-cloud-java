@@ -42,6 +42,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     zoneUri_ = "";
     networkUri_ = "";
     subnetworkUri_ = "";
+    privateIpv6GoogleAccess_ = 0;
     serviceAccount_ = "";
     serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -161,6 +162,46 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
 
               break;
             }
+          case 96:
+            {
+              int rawValue = input.readEnum();
+
+              privateIpv6GoogleAccess_ = rawValue;
+              break;
+            }
+          case 106:
+            {
+              com.google.cloud.dataproc.v1.NodeGroupAffinity.Builder subBuilder = null;
+              if (nodeGroupAffinity_ != null) {
+                subBuilder = nodeGroupAffinity_.toBuilder();
+              }
+              nodeGroupAffinity_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1.NodeGroupAffinity.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(nodeGroupAffinity_);
+                nodeGroupAffinity_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 114:
+            {
+              com.google.cloud.dataproc.v1.ShieldedInstanceConfig.Builder subBuilder = null;
+              if (shieldedInstanceConfig_ != null) {
+                subBuilder = shieldedInstanceConfig_.toBuilder();
+              }
+              shieldedInstanceConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1.ShieldedInstanceConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(shieldedInstanceConfig_);
+                shieldedInstanceConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -210,6 +251,202 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.dataproc.v1.GceClusterConfig.class,
             com.google.cloud.dataproc.v1.GceClusterConfig.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * `PrivateIpv6GoogleAccess` controls whether and how Dataproc cluster nodes
+   * can communicate with Google Services through gRPC over IPv6.
+   * These values are directly mapped to corresponding values in the
+   * [Compute Engine Instance
+   * fields](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess}
+   */
+  public enum PrivateIpv6GoogleAccess implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * If unspecified, Compute Engine default behavior will apply, which
+     * is the same as [INHERIT_FROM_SUBNETWORK][google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess.INHERIT_FROM_SUBNETWORK].
+     * </pre>
+     *
+     * <code>PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED = 0;</code>
+     */
+    PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Private access to and from Google Services configuration
+     * inherited from the subnetwork configuration. This is the
+     * default Compute Engine behavior.
+     * </pre>
+     *
+     * <code>INHERIT_FROM_SUBNETWORK = 1;</code>
+     */
+    INHERIT_FROM_SUBNETWORK(1),
+    /**
+     *
+     *
+     * <pre>
+     * Enables outbound private IPv6 access to Google Services from the Dataproc
+     * cluster.
+     * </pre>
+     *
+     * <code>OUTBOUND = 2;</code>
+     */
+    OUTBOUND(2),
+    /**
+     *
+     *
+     * <pre>
+     * Enables bidirectional private IPv6 access between Google Services and the
+     * Dataproc cluster.
+     * </pre>
+     *
+     * <code>BIDIRECTIONAL = 3;</code>
+     */
+    BIDIRECTIONAL(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * If unspecified, Compute Engine default behavior will apply, which
+     * is the same as [INHERIT_FROM_SUBNETWORK][google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess.INHERIT_FROM_SUBNETWORK].
+     * </pre>
+     *
+     * <code>PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED = 0;</code>
+     */
+    public static final int PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Private access to and from Google Services configuration
+     * inherited from the subnetwork configuration. This is the
+     * default Compute Engine behavior.
+     * </pre>
+     *
+     * <code>INHERIT_FROM_SUBNETWORK = 1;</code>
+     */
+    public static final int INHERIT_FROM_SUBNETWORK_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Enables outbound private IPv6 access to Google Services from the Dataproc
+     * cluster.
+     * </pre>
+     *
+     * <code>OUTBOUND = 2;</code>
+     */
+    public static final int OUTBOUND_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Enables bidirectional private IPv6 access between Google Services and the
+     * Dataproc cluster.
+     * </pre>
+     *
+     * <code>BIDIRECTIONAL = 3;</code>
+     */
+    public static final int BIDIRECTIONAL_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PrivateIpv6GoogleAccess valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static PrivateIpv6GoogleAccess forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED;
+        case 1:
+          return INHERIT_FROM_SUBNETWORK;
+        case 2:
+          return OUTBOUND;
+        case 3:
+          return BIDIRECTIONAL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PrivateIpv6GoogleAccess>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<PrivateIpv6GoogleAccess>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PrivateIpv6GoogleAccess>() {
+              public PrivateIpv6GoogleAccess findValueByNumber(int number) {
+                return PrivateIpv6GoogleAccess.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1.GceClusterConfig.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final PrivateIpv6GoogleAccess[] VALUES = values();
+
+    public static PrivateIpv6GoogleAccess valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PrivateIpv6GoogleAccess(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess)
   }
 
   public static final int ZONE_URI_FIELD_NUMBER = 1;
@@ -424,6 +661,50 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public boolean getInternalIpOnly() {
     return internalIpOnly_;
+  }
+
+  public static final int PRIVATE_IPV6_GOOGLE_ACCESS_FIELD_NUMBER = 12;
+  private int privateIpv6GoogleAccess_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of IPv6 access for a cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess private_ipv6_google_access = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
+   */
+  @java.lang.Override
+  public int getPrivateIpv6GoogleAccessValue() {
+    return privateIpv6GoogleAccess_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of IPv6 access for a cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess private_ipv6_google_access = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The privateIpv6GoogleAccess.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess
+      getPrivateIpv6GoogleAccess() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess result =
+        com.google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess.valueOf(
+            privateIpv6GoogleAccess_);
+    return result == null
+        ? com.google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess.UNRECOGNIZED
+        : result;
   }
 
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 8;
@@ -825,6 +1106,118 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     return getReservationAffinity();
   }
 
+  public static final int NODE_GROUP_AFFINITY_FIELD_NUMBER = 13;
+  private com.google.cloud.dataproc.v1.NodeGroupAffinity nodeGroupAffinity_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Node Group Affinity for sole-tenant clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.NodeGroupAffinity node_group_affinity = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nodeGroupAffinity field is set.
+   */
+  @java.lang.Override
+  public boolean hasNodeGroupAffinity() {
+    return nodeGroupAffinity_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Node Group Affinity for sole-tenant clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.NodeGroupAffinity node_group_affinity = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nodeGroupAffinity.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.NodeGroupAffinity getNodeGroupAffinity() {
+    return nodeGroupAffinity_ == null
+        ? com.google.cloud.dataproc.v1.NodeGroupAffinity.getDefaultInstance()
+        : nodeGroupAffinity_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Node Group Affinity for sole-tenant clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.NodeGroupAffinity node_group_affinity = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.NodeGroupAffinityOrBuilder getNodeGroupAffinityOrBuilder() {
+    return getNodeGroupAffinity();
+  }
+
+  public static final int SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER = 14;
+  private com.google.cloud.dataproc.v1.ShieldedInstanceConfig shieldedInstanceConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+   * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.ShieldedInstanceConfig shielded_instance_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the shieldedInstanceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasShieldedInstanceConfig() {
+    return shieldedInstanceConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+   * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.ShieldedInstanceConfig shielded_instance_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The shieldedInstanceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.ShieldedInstanceConfig getShieldedInstanceConfig() {
+    return shieldedInstanceConfig_ == null
+        ? com.google.cloud.dataproc.v1.ShieldedInstanceConfig.getDefaultInstance()
+        : shieldedInstanceConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+   * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.ShieldedInstanceConfig shielded_instance_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.ShieldedInstanceConfigOrBuilder
+      getShieldedInstanceConfigOrBuilder() {
+    return getShieldedInstanceConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -865,6 +1258,18 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     }
     if (reservationAffinity_ != null) {
       output.writeMessage(11, getReservationAffinity());
+    }
+    if (privateIpv6GoogleAccess_
+        != com.google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess
+            .PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(12, privateIpv6GoogleAccess_);
+    }
+    if (nodeGroupAffinity_ != null) {
+      output.writeMessage(13, getNodeGroupAffinity());
+    }
+    if (shieldedInstanceConfig_ != null) {
+      output.writeMessage(14, getShieldedInstanceConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -920,6 +1325,19 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(11, getReservationAffinity());
     }
+    if (privateIpv6GoogleAccess_
+        != com.google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess
+            .PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, privateIpv6GoogleAccess_);
+    }
+    if (nodeGroupAffinity_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getNodeGroupAffinity());
+    }
+    if (shieldedInstanceConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(14, getShieldedInstanceConfig());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -940,6 +1358,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     if (!getNetworkUri().equals(other.getNetworkUri())) return false;
     if (!getSubnetworkUri().equals(other.getSubnetworkUri())) return false;
     if (getInternalIpOnly() != other.getInternalIpOnly()) return false;
+    if (privateIpv6GoogleAccess_ != other.privateIpv6GoogleAccess_) return false;
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (!getServiceAccountScopesList().equals(other.getServiceAccountScopesList())) return false;
     if (!getTagsList().equals(other.getTagsList())) return false;
@@ -947,6 +1366,14 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     if (hasReservationAffinity() != other.hasReservationAffinity()) return false;
     if (hasReservationAffinity()) {
       if (!getReservationAffinity().equals(other.getReservationAffinity())) return false;
+    }
+    if (hasNodeGroupAffinity() != other.hasNodeGroupAffinity()) return false;
+    if (hasNodeGroupAffinity()) {
+      if (!getNodeGroupAffinity().equals(other.getNodeGroupAffinity())) return false;
+    }
+    if (hasShieldedInstanceConfig() != other.hasShieldedInstanceConfig()) return false;
+    if (hasShieldedInstanceConfig()) {
+      if (!getShieldedInstanceConfig().equals(other.getShieldedInstanceConfig())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -967,6 +1394,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getSubnetworkUri().hashCode();
     hash = (37 * hash) + INTERNAL_IP_ONLY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInternalIpOnly());
+    hash = (37 * hash) + PRIVATE_IPV6_GOOGLE_ACCESS_FIELD_NUMBER;
+    hash = (53 * hash) + privateIpv6GoogleAccess_;
     hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getServiceAccount().hashCode();
     if (getServiceAccountScopesCount() > 0) {
@@ -984,6 +1413,14 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     if (hasReservationAffinity()) {
       hash = (37 * hash) + RESERVATION_AFFINITY_FIELD_NUMBER;
       hash = (53 * hash) + getReservationAffinity().hashCode();
+    }
+    if (hasNodeGroupAffinity()) {
+      hash = (37 * hash) + NODE_GROUP_AFFINITY_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeGroupAffinity().hashCode();
+    }
+    if (hasShieldedInstanceConfig()) {
+      hash = (37 * hash) + SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getShieldedInstanceConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1159,6 +1596,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
 
       internalIpOnly_ = false;
 
+      privateIpv6GoogleAccess_ = 0;
+
       serviceAccount_ = "";
 
       serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1171,6 +1610,18 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       } else {
         reservationAffinity_ = null;
         reservationAffinityBuilder_ = null;
+      }
+      if (nodeGroupAffinityBuilder_ == null) {
+        nodeGroupAffinity_ = null;
+      } else {
+        nodeGroupAffinity_ = null;
+        nodeGroupAffinityBuilder_ = null;
+      }
+      if (shieldedInstanceConfigBuilder_ == null) {
+        shieldedInstanceConfig_ = null;
+      } else {
+        shieldedInstanceConfig_ = null;
+        shieldedInstanceConfigBuilder_ = null;
       }
       return this;
     }
@@ -1204,6 +1655,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       result.networkUri_ = networkUri_;
       result.subnetworkUri_ = subnetworkUri_;
       result.internalIpOnly_ = internalIpOnly_;
+      result.privateIpv6GoogleAccess_ = privateIpv6GoogleAccess_;
       result.serviceAccount_ = serviceAccount_;
       if (((bitField0_ & 0x00000001) != 0)) {
         serviceAccountScopes_ = serviceAccountScopes_.getUnmodifiableView();
@@ -1221,6 +1673,16 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         result.reservationAffinity_ = reservationAffinity_;
       } else {
         result.reservationAffinity_ = reservationAffinityBuilder_.build();
+      }
+      if (nodeGroupAffinityBuilder_ == null) {
+        result.nodeGroupAffinity_ = nodeGroupAffinity_;
+      } else {
+        result.nodeGroupAffinity_ = nodeGroupAffinityBuilder_.build();
+      }
+      if (shieldedInstanceConfigBuilder_ == null) {
+        result.shieldedInstanceConfig_ = shieldedInstanceConfig_;
+      } else {
+        result.shieldedInstanceConfig_ = shieldedInstanceConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1286,6 +1748,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       if (other.getInternalIpOnly() != false) {
         setInternalIpOnly(other.getInternalIpOnly());
       }
+      if (other.privateIpv6GoogleAccess_ != 0) {
+        setPrivateIpv6GoogleAccessValue(other.getPrivateIpv6GoogleAccessValue());
+      }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
         onChanged();
@@ -1313,6 +1778,12 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
       if (other.hasReservationAffinity()) {
         mergeReservationAffinity(other.getReservationAffinity());
+      }
+      if (other.hasNodeGroupAffinity()) {
+        mergeNodeGroupAffinity(other.getNodeGroupAffinity());
+      }
+      if (other.hasShieldedInstanceConfig()) {
+        mergeShieldedInstanceConfig(other.getShieldedInstanceConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1836,6 +2307,112 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearInternalIpOnly() {
 
       internalIpOnly_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int privateIpv6GoogleAccess_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of IPv6 access for a cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess private_ipv6_google_access = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
+     */
+    @java.lang.Override
+    public int getPrivateIpv6GoogleAccessValue() {
+      return privateIpv6GoogleAccess_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of IPv6 access for a cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess private_ipv6_google_access = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for privateIpv6GoogleAccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrivateIpv6GoogleAccessValue(int value) {
+
+      privateIpv6GoogleAccess_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of IPv6 access for a cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess private_ipv6_google_access = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The privateIpv6GoogleAccess.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess
+        getPrivateIpv6GoogleAccess() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess result =
+          com.google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess.valueOf(
+              privateIpv6GoogleAccess_);
+      return result == null
+          ? com.google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of IPv6 access for a cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess private_ipv6_google_access = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The privateIpv6GoogleAccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrivateIpv6GoogleAccess(
+        com.google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      privateIpv6GoogleAccess_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of IPv6 access for a cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess private_ipv6_google_access = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPrivateIpv6GoogleAccess() {
+
+      privateIpv6GoogleAccess_ = 0;
       onChanged();
       return this;
     }
@@ -2812,6 +3389,428 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         reservationAffinity_ = null;
       }
       return reservationAffinityBuilder_;
+    }
+
+    private com.google.cloud.dataproc.v1.NodeGroupAffinity nodeGroupAffinity_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.NodeGroupAffinity,
+            com.google.cloud.dataproc.v1.NodeGroupAffinity.Builder,
+            com.google.cloud.dataproc.v1.NodeGroupAffinityOrBuilder>
+        nodeGroupAffinityBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Node Group Affinity for sole-tenant clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.NodeGroupAffinity node_group_affinity = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the nodeGroupAffinity field is set.
+     */
+    public boolean hasNodeGroupAffinity() {
+      return nodeGroupAffinityBuilder_ != null || nodeGroupAffinity_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Node Group Affinity for sole-tenant clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.NodeGroupAffinity node_group_affinity = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The nodeGroupAffinity.
+     */
+    public com.google.cloud.dataproc.v1.NodeGroupAffinity getNodeGroupAffinity() {
+      if (nodeGroupAffinityBuilder_ == null) {
+        return nodeGroupAffinity_ == null
+            ? com.google.cloud.dataproc.v1.NodeGroupAffinity.getDefaultInstance()
+            : nodeGroupAffinity_;
+      } else {
+        return nodeGroupAffinityBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Node Group Affinity for sole-tenant clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.NodeGroupAffinity node_group_affinity = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNodeGroupAffinity(com.google.cloud.dataproc.v1.NodeGroupAffinity value) {
+      if (nodeGroupAffinityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nodeGroupAffinity_ = value;
+        onChanged();
+      } else {
+        nodeGroupAffinityBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Node Group Affinity for sole-tenant clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.NodeGroupAffinity node_group_affinity = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNodeGroupAffinity(
+        com.google.cloud.dataproc.v1.NodeGroupAffinity.Builder builderForValue) {
+      if (nodeGroupAffinityBuilder_ == null) {
+        nodeGroupAffinity_ = builderForValue.build();
+        onChanged();
+      } else {
+        nodeGroupAffinityBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Node Group Affinity for sole-tenant clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.NodeGroupAffinity node_group_affinity = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeNodeGroupAffinity(com.google.cloud.dataproc.v1.NodeGroupAffinity value) {
+      if (nodeGroupAffinityBuilder_ == null) {
+        if (nodeGroupAffinity_ != null) {
+          nodeGroupAffinity_ =
+              com.google.cloud.dataproc.v1.NodeGroupAffinity.newBuilder(nodeGroupAffinity_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          nodeGroupAffinity_ = value;
+        }
+        onChanged();
+      } else {
+        nodeGroupAffinityBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Node Group Affinity for sole-tenant clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.NodeGroupAffinity node_group_affinity = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearNodeGroupAffinity() {
+      if (nodeGroupAffinityBuilder_ == null) {
+        nodeGroupAffinity_ = null;
+        onChanged();
+      } else {
+        nodeGroupAffinity_ = null;
+        nodeGroupAffinityBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Node Group Affinity for sole-tenant clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.NodeGroupAffinity node_group_affinity = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.NodeGroupAffinity.Builder getNodeGroupAffinityBuilder() {
+
+      onChanged();
+      return getNodeGroupAffinityFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Node Group Affinity for sole-tenant clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.NodeGroupAffinity node_group_affinity = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.NodeGroupAffinityOrBuilder getNodeGroupAffinityOrBuilder() {
+      if (nodeGroupAffinityBuilder_ != null) {
+        return nodeGroupAffinityBuilder_.getMessageOrBuilder();
+      } else {
+        return nodeGroupAffinity_ == null
+            ? com.google.cloud.dataproc.v1.NodeGroupAffinity.getDefaultInstance()
+            : nodeGroupAffinity_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Node Group Affinity for sole-tenant clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.NodeGroupAffinity node_group_affinity = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.NodeGroupAffinity,
+            com.google.cloud.dataproc.v1.NodeGroupAffinity.Builder,
+            com.google.cloud.dataproc.v1.NodeGroupAffinityOrBuilder>
+        getNodeGroupAffinityFieldBuilder() {
+      if (nodeGroupAffinityBuilder_ == null) {
+        nodeGroupAffinityBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.NodeGroupAffinity,
+                com.google.cloud.dataproc.v1.NodeGroupAffinity.Builder,
+                com.google.cloud.dataproc.v1.NodeGroupAffinityOrBuilder>(
+                getNodeGroupAffinity(), getParentForChildren(), isClean());
+        nodeGroupAffinity_ = null;
+      }
+      return nodeGroupAffinityBuilder_;
+    }
+
+    private com.google.cloud.dataproc.v1.ShieldedInstanceConfig shieldedInstanceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.ShieldedInstanceConfig,
+            com.google.cloud.dataproc.v1.ShieldedInstanceConfig.Builder,
+            com.google.cloud.dataproc.v1.ShieldedInstanceConfigOrBuilder>
+        shieldedInstanceConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+     * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ShieldedInstanceConfig shielded_instance_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the shieldedInstanceConfig field is set.
+     */
+    public boolean hasShieldedInstanceConfig() {
+      return shieldedInstanceConfigBuilder_ != null || shieldedInstanceConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+     * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ShieldedInstanceConfig shielded_instance_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The shieldedInstanceConfig.
+     */
+    public com.google.cloud.dataproc.v1.ShieldedInstanceConfig getShieldedInstanceConfig() {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        return shieldedInstanceConfig_ == null
+            ? com.google.cloud.dataproc.v1.ShieldedInstanceConfig.getDefaultInstance()
+            : shieldedInstanceConfig_;
+      } else {
+        return shieldedInstanceConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+     * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ShieldedInstanceConfig shielded_instance_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setShieldedInstanceConfig(
+        com.google.cloud.dataproc.v1.ShieldedInstanceConfig value) {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        shieldedInstanceConfig_ = value;
+        onChanged();
+      } else {
+        shieldedInstanceConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+     * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ShieldedInstanceConfig shielded_instance_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setShieldedInstanceConfig(
+        com.google.cloud.dataproc.v1.ShieldedInstanceConfig.Builder builderForValue) {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        shieldedInstanceConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        shieldedInstanceConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+     * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ShieldedInstanceConfig shielded_instance_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeShieldedInstanceConfig(
+        com.google.cloud.dataproc.v1.ShieldedInstanceConfig value) {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        if (shieldedInstanceConfig_ != null) {
+          shieldedInstanceConfig_ =
+              com.google.cloud.dataproc.v1.ShieldedInstanceConfig.newBuilder(
+                      shieldedInstanceConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          shieldedInstanceConfig_ = value;
+        }
+        onChanged();
+      } else {
+        shieldedInstanceConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+     * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ShieldedInstanceConfig shielded_instance_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearShieldedInstanceConfig() {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        shieldedInstanceConfig_ = null;
+        onChanged();
+      } else {
+        shieldedInstanceConfig_ = null;
+        shieldedInstanceConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+     * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ShieldedInstanceConfig shielded_instance_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.ShieldedInstanceConfig.Builder
+        getShieldedInstanceConfigBuilder() {
+
+      onChanged();
+      return getShieldedInstanceConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+     * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ShieldedInstanceConfig shielded_instance_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.ShieldedInstanceConfigOrBuilder
+        getShieldedInstanceConfigOrBuilder() {
+      if (shieldedInstanceConfigBuilder_ != null) {
+        return shieldedInstanceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return shieldedInstanceConfig_ == null
+            ? com.google.cloud.dataproc.v1.ShieldedInstanceConfig.getDefaultInstance()
+            : shieldedInstanceConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+     * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ShieldedInstanceConfig shielded_instance_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.ShieldedInstanceConfig,
+            com.google.cloud.dataproc.v1.ShieldedInstanceConfig.Builder,
+            com.google.cloud.dataproc.v1.ShieldedInstanceConfigOrBuilder>
+        getShieldedInstanceConfigFieldBuilder() {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        shieldedInstanceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.ShieldedInstanceConfig,
+                com.google.cloud.dataproc.v1.ShieldedInstanceConfig.Builder,
+                com.google.cloud.dataproc.v1.ShieldedInstanceConfigOrBuilder>(
+                getShieldedInstanceConfig(), getParentForChildren(), isClean());
+        shieldedInstanceConfig_ = null;
+      }
+      return shieldedInstanceConfigBuilder_;
     }
 
     @java.lang.Override

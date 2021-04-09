@@ -450,6 +450,172 @@ public class ClusterControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Stops a cluster in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   StopClusterRequest request =
+   *       StopClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setClusterName("clusterName-1141738587")
+   *           .setClusterUuid("clusterUuid-1141510955")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Cluster response = clusterControllerClient.stopClusterAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Cluster, ClusterOperationMetadata> stopClusterAsync(
+      StopClusterRequest request) {
+    return stopClusterOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops a cluster in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   StopClusterRequest request =
+   *       StopClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setClusterName("clusterName-1141738587")
+   *           .setClusterUuid("clusterUuid-1141510955")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Cluster, ClusterOperationMetadata> future =
+   *       clusterControllerClient.stopClusterOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Cluster response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<StopClusterRequest, Cluster, ClusterOperationMetadata>
+      stopClusterOperationCallable() {
+    return stub.stopClusterOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops a cluster in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   StopClusterRequest request =
+   *       StopClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setClusterName("clusterName-1141738587")
+   *           .setClusterUuid("clusterUuid-1141510955")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterControllerClient.stopClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StopClusterRequest, Operation> stopClusterCallable() {
+    return stub.stopClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts a cluster in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   StartClusterRequest request =
+   *       StartClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setClusterName("clusterName-1141738587")
+   *           .setClusterUuid("clusterUuid-1141510955")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Cluster response = clusterControllerClient.startClusterAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Cluster, ClusterOperationMetadata> startClusterAsync(
+      StartClusterRequest request) {
+    return startClusterOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts a cluster in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   StartClusterRequest request =
+   *       StartClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setClusterName("clusterName-1141738587")
+   *           .setClusterUuid("clusterUuid-1141510955")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Cluster, ClusterOperationMetadata> future =
+   *       clusterControllerClient.startClusterOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Cluster response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<StartClusterRequest, Cluster, ClusterOperationMetadata>
+      startClusterOperationCallable() {
+    return stub.startClusterOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts a cluster in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   StartClusterRequest request =
+   *       StartClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setClusterName("clusterName-1141738587")
+   *           .setClusterUuid("clusterUuid-1141510955")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterControllerClient.startClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StartClusterRequest, Operation> startClusterCallable() {
+    return stub.startClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).

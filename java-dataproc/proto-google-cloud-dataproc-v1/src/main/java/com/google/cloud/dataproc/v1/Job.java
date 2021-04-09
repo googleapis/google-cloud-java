@@ -1582,8 +1582,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Indicates whether the job is completed. If the value is `false`,
-   * the job is still in progress. If `true`, the job is completed, and
+   * Output only. Indicates whether the job is completed. If the value is
+   * `false`, the job is still in progress. If `true`, the job is completed, and
    * `status.state` field will indicate if it was successful, failed,
    * or cancelled.
    * </pre>
@@ -6513,8 +6513,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Indicates whether the job is completed. If the value is `false`,
-     * the job is still in progress. If `true`, the job is completed, and
+     * Output only. Indicates whether the job is completed. If the value is
+     * `false`, the job is still in progress. If `true`, the job is completed, and
      * `status.state` field will indicate if it was successful, failed,
      * or cancelled.
      * </pre>
@@ -6531,8 +6531,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Indicates whether the job is completed. If the value is `false`,
-     * the job is still in progress. If `true`, the job is completed, and
+     * Output only. Indicates whether the job is completed. If the value is
+     * `false`, the job is still in progress. If `true`, the job is completed, and
      * `status.state` field will indicate if it was successful, failed,
      * or cancelled.
      * </pre>
@@ -6552,8 +6552,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Indicates whether the job is completed. If the value is `false`,
-     * the job is still in progress. If `true`, the job is completed, and
+     * Output only. Indicates whether the job is completed. If the value is
+     * `false`, the job is still in progress. If `true`, the job is completed, and
      * `status.state` field will indicate if it was successful, failed,
      * or cancelled.
      * </pre>

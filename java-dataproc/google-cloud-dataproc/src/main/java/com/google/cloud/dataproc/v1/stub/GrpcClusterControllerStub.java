@@ -35,6 +35,8 @@ import com.google.cloud.dataproc.v1.DiagnoseClusterResults;
 import com.google.cloud.dataproc.v1.GetClusterRequest;
 import com.google.cloud.dataproc.v1.ListClustersRequest;
 import com.google.cloud.dataproc.v1.ListClustersResponse;
+import com.google.cloud.dataproc.v1.StartClusterRequest;
+import com.google.cloud.dataproc.v1.StopClusterRequest;
 import com.google.cloud.dataproc.v1.UpdateClusterRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -72,6 +74,23 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
               .setFullMethodName("google.cloud.dataproc.v1.ClusterController/UpdateCluster")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<StopClusterRequest, Operation> stopClusterMethodDescriptor =
+      MethodDescriptor.<StopClusterRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.dataproc.v1.ClusterController/StopCluster")
+          .setRequestMarshaller(ProtoUtils.marshaller(StopClusterRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<StartClusterRequest, Operation>
+      startClusterMethodDescriptor =
+          MethodDescriptor.<StartClusterRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataproc.v1.ClusterController/StartCluster")
+              .setRequestMarshaller(ProtoUtils.marshaller(StartClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -119,6 +138,12 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
   private final UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable;
   private final OperationCallable<UpdateClusterRequest, Cluster, ClusterOperationMetadata>
       updateClusterOperationCallable;
+  private final UnaryCallable<StopClusterRequest, Operation> stopClusterCallable;
+  private final OperationCallable<StopClusterRequest, Cluster, ClusterOperationMetadata>
+      stopClusterOperationCallable;
+  private final UnaryCallable<StartClusterRequest, Operation> startClusterCallable;
+  private final OperationCallable<StartClusterRequest, Cluster, ClusterOperationMetadata>
+      startClusterOperationCallable;
   private final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable;
   private final OperationCallable<DeleteClusterRequest, Empty, ClusterOperationMetadata>
       deleteClusterOperationCallable;
@@ -196,6 +221,36 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
                 new RequestParamsExtractor<UpdateClusterRequest>() {
                   @Override
                   public Map<String, String> extract(UpdateClusterRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("cluster_name", String.valueOf(request.getClusterName()));
+                    params.put("project_id", String.valueOf(request.getProjectId()));
+                    params.put("region", String.valueOf(request.getRegion()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<StopClusterRequest, Operation> stopClusterTransportSettings =
+        GrpcCallSettings.<StopClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(stopClusterMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<StopClusterRequest>() {
+                  @Override
+                  public Map<String, String> extract(StopClusterRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("cluster_name", String.valueOf(request.getClusterName()));
+                    params.put("project_id", String.valueOf(request.getProjectId()));
+                    params.put("region", String.valueOf(request.getRegion()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<StartClusterRequest, Operation> startClusterTransportSettings =
+        GrpcCallSettings.<StartClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(startClusterMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<StartClusterRequest>() {
+                  @Override
+                  public Map<String, String> extract(StartClusterRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("cluster_name", String.valueOf(request.getClusterName()));
                     params.put("project_id", String.valueOf(request.getProjectId()));
@@ -282,6 +337,24 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
             settings.updateClusterOperationSettings(),
             clientContext,
             operationsStub);
+    this.stopClusterCallable =
+        callableFactory.createUnaryCallable(
+            stopClusterTransportSettings, settings.stopClusterSettings(), clientContext);
+    this.stopClusterOperationCallable =
+        callableFactory.createOperationCallable(
+            stopClusterTransportSettings,
+            settings.stopClusterOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.startClusterCallable =
+        callableFactory.createUnaryCallable(
+            startClusterTransportSettings, settings.startClusterSettings(), clientContext);
+    this.startClusterOperationCallable =
+        callableFactory.createOperationCallable(
+            startClusterTransportSettings,
+            settings.startClusterOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteClusterCallable =
         callableFactory.createUnaryCallable(
             deleteClusterTransportSettings, settings.deleteClusterSettings(), clientContext);
@@ -338,6 +411,28 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
   public OperationCallable<UpdateClusterRequest, Cluster, ClusterOperationMetadata>
       updateClusterOperationCallable() {
     return updateClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StopClusterRequest, Operation> stopClusterCallable() {
+    return stopClusterCallable;
+  }
+
+  @Override
+  public OperationCallable<StopClusterRequest, Cluster, ClusterOperationMetadata>
+      stopClusterOperationCallable() {
+    return stopClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StartClusterRequest, Operation> startClusterCallable() {
+    return startClusterCallable;
+  }
+
+  @Override
+  public OperationCallable<StartClusterRequest, Cluster, ClusterOperationMetadata>
+      startClusterOperationCallable() {
+    return startClusterOperationCallable;
   }
 
   @Override

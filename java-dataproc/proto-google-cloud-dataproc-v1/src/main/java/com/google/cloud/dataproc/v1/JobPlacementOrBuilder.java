@@ -74,4 +74,68 @@ public interface JobPlacementOrBuilder
    * @return The bytes for clusterUuid.
    */
   com.google.protobuf.ByteString getClusterUuidBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cluster labels to identify a cluster where the job will be
+   * submitted.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getClusterLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cluster labels to identify a cluster where the job will be
+   * submitted.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsClusterLabels(java.lang.String key);
+  /** Use {@link #getClusterLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getClusterLabels();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cluster labels to identify a cluster where the job will be
+   * submitted.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getClusterLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cluster labels to identify a cluster where the job will be
+   * submitted.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getClusterLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cluster labels to identify a cluster where the job will be
+   * submitted.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getClusterLabelsOrThrow(java.lang.String key);
 }

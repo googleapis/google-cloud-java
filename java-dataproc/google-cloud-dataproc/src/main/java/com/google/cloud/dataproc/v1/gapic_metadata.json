@@ -49,6 +49,12 @@
             "ListClusters": {
               "methods": ["listClusters", "listClusters", "listClusters", "listClustersPagedCallable", "listClustersCallable"]
             },
+            "StartCluster": {
+              "methods": ["startClusterAsync", "startClusterOperationCallable", "startClusterCallable"]
+            },
+            "StopCluster": {
+              "methods": ["stopClusterAsync", "stopClusterOperationCallable", "stopClusterCallable"]
+            },
             "UpdateCluster": {
               "methods": ["updateClusterAsync", "updateClusterAsync", "updateClusterOperationCallable", "updateClusterCallable"]
             }

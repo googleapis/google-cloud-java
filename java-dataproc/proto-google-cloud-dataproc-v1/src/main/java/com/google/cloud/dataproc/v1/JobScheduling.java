@@ -73,6 +73,11 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
               maxFailuresPerHour_ = input.readInt32();
               break;
             }
+          case 16:
+            {
+              maxFailuresTotal_ = input.readInt32();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -114,7 +119,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Maximum number of times per hour a driver may be restarted as
-   * a result of driver terminating with non-zero code before job is
+   * a result of driver exiting with non-zero code before job is
    * reported failed.
    * A job may be reported as thrashing if driver exits with non-zero code
    * 4 times within 10 minute window.
@@ -128,6 +133,26 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public int getMaxFailuresPerHour() {
     return maxFailuresPerHour_;
+  }
+
+  public static final int MAX_FAILURES_TOTAL_FIELD_NUMBER = 2;
+  private int maxFailuresTotal_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maximum number of times in total a driver may be restarted as a
+   * result of driver exiting with non-zero code before job is reported failed.
+   * Maximum value is 240.
+   * </pre>
+   *
+   * <code>int32 max_failures_total = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maxFailuresTotal.
+   */
+  @java.lang.Override
+  public int getMaxFailuresTotal() {
+    return maxFailuresTotal_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -147,6 +172,9 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
     if (maxFailuresPerHour_ != 0) {
       output.writeInt32(1, maxFailuresPerHour_);
     }
+    if (maxFailuresTotal_ != 0) {
+      output.writeInt32(2, maxFailuresTotal_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -158,6 +186,9 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (maxFailuresPerHour_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, maxFailuresPerHour_);
+    }
+    if (maxFailuresTotal_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxFailuresTotal_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -176,6 +207,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.dataproc.v1.JobScheduling) obj;
 
     if (getMaxFailuresPerHour() != other.getMaxFailuresPerHour()) return false;
+    if (getMaxFailuresTotal() != other.getMaxFailuresTotal()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -189,6 +221,8 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + MAX_FAILURES_PER_HOUR_FIELD_NUMBER;
     hash = (53 * hash) + getMaxFailuresPerHour();
+    hash = (37 * hash) + MAX_FAILURES_TOTAL_FIELD_NUMBER;
+    hash = (53 * hash) + getMaxFailuresTotal();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -336,6 +370,8 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       maxFailuresPerHour_ = 0;
 
+      maxFailuresTotal_ = 0;
+
       return this;
     }
 
@@ -364,6 +400,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dataproc.v1.JobScheduling result =
           new com.google.cloud.dataproc.v1.JobScheduling(this);
       result.maxFailuresPerHour_ = maxFailuresPerHour_;
+      result.maxFailuresTotal_ = maxFailuresTotal_;
       onBuilt();
       return result;
     }
@@ -416,6 +453,9 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
       if (other.getMaxFailuresPerHour() != 0) {
         setMaxFailuresPerHour(other.getMaxFailuresPerHour());
       }
+      if (other.getMaxFailuresTotal() != 0) {
+        setMaxFailuresTotal(other.getMaxFailuresTotal());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -451,7 +491,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Maximum number of times per hour a driver may be restarted as
-     * a result of driver terminating with non-zero code before job is
+     * a result of driver exiting with non-zero code before job is
      * reported failed.
      * A job may be reported as thrashing if driver exits with non-zero code
      * 4 times within 10 minute window.
@@ -471,7 +511,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Maximum number of times per hour a driver may be restarted as
-     * a result of driver terminating with non-zero code before job is
+     * a result of driver exiting with non-zero code before job is
      * reported failed.
      * A job may be reported as thrashing if driver exits with non-zero code
      * 4 times within 10 minute window.
@@ -494,7 +534,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Maximum number of times per hour a driver may be restarted as
-     * a result of driver terminating with non-zero code before job is
+     * a result of driver exiting with non-zero code before job is
      * reported failed.
      * A job may be reported as thrashing if driver exits with non-zero code
      * 4 times within 10 minute window.
@@ -508,6 +548,64 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMaxFailuresPerHour() {
 
       maxFailuresPerHour_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int maxFailuresTotal_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum number of times in total a driver may be restarted as a
+     * result of driver exiting with non-zero code before job is reported failed.
+     * Maximum value is 240.
+     * </pre>
+     *
+     * <code>int32 max_failures_total = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The maxFailuresTotal.
+     */
+    @java.lang.Override
+    public int getMaxFailuresTotal() {
+      return maxFailuresTotal_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum number of times in total a driver may be restarted as a
+     * result of driver exiting with non-zero code before job is reported failed.
+     * Maximum value is 240.
+     * </pre>
+     *
+     * <code>int32 max_failures_total = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The maxFailuresTotal to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxFailuresTotal(int value) {
+
+      maxFailuresTotal_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum number of times in total a driver may be restarted as a
+     * result of driver exiting with non-zero code before job is reported failed.
+     * Maximum value is 240.
+     * </pre>
+     *
+     * <code>int32 max_failures_total = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxFailuresTotal() {
+
+      maxFailuresTotal_ = 0;
       onChanged();
       return this;
     }

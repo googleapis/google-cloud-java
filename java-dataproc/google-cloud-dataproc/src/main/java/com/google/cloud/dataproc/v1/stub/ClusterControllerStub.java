@@ -30,6 +30,8 @@ import com.google.cloud.dataproc.v1.DiagnoseClusterResults;
 import com.google.cloud.dataproc.v1.GetClusterRequest;
 import com.google.cloud.dataproc.v1.ListClustersRequest;
 import com.google.cloud.dataproc.v1.ListClustersResponse;
+import com.google.cloud.dataproc.v1.StartClusterRequest;
+import com.google.cloud.dataproc.v1.StopClusterRequest;
 import com.google.cloud.dataproc.v1.UpdateClusterRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -65,6 +67,24 @@ public abstract class ClusterControllerStub implements BackgroundResource {
 
   public UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: updateClusterCallable()");
+  }
+
+  public OperationCallable<StopClusterRequest, Cluster, ClusterOperationMetadata>
+      stopClusterOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: stopClusterOperationCallable()");
+  }
+
+  public UnaryCallable<StopClusterRequest, Operation> stopClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: stopClusterCallable()");
+  }
+
+  public OperationCallable<StartClusterRequest, Cluster, ClusterOperationMetadata>
+      startClusterOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: startClusterOperationCallable()");
+  }
+
+  public UnaryCallable<StartClusterRequest, Operation> startClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: startClusterCallable()");
   }
 
   public OperationCallable<DeleteClusterRequest, Empty, ClusterOperationMetadata>

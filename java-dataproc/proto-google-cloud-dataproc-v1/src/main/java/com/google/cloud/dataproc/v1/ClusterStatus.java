@@ -212,6 +212,36 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>UPDATING = 5;</code>
      */
     UPDATING(5),
+    /**
+     *
+     *
+     * <pre>
+     * The cluster is being stopped. It cannot be used.
+     * </pre>
+     *
+     * <code>STOPPING = 6;</code>
+     */
+    STOPPING(6),
+    /**
+     *
+     *
+     * <pre>
+     * The cluster is currently stopped. It is not ready for use.
+     * </pre>
+     *
+     * <code>STOPPED = 7;</code>
+     */
+    STOPPED(7),
+    /**
+     *
+     *
+     * <pre>
+     * The cluster is being started. It is not ready for use.
+     * </pre>
+     *
+     * <code>STARTING = 8;</code>
+     */
+    STARTING(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -275,6 +305,36 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>UPDATING = 5;</code>
      */
     public static final int UPDATING_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * The cluster is being stopped. It cannot be used.
+     * </pre>
+     *
+     * <code>STOPPING = 6;</code>
+     */
+    public static final int STOPPING_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * The cluster is currently stopped. It is not ready for use.
+     * </pre>
+     *
+     * <code>STOPPED = 7;</code>
+     */
+    public static final int STOPPED_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * The cluster is being started. It is not ready for use.
+     * </pre>
+     *
+     * <code>STARTING = 8;</code>
+     */
+    public static final int STARTING_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -312,6 +372,12 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
           return DELETING;
         case 5:
           return UPDATING;
+        case 6:
+          return STOPPING;
+        case 7:
+          return STOPPED;
+        case 8:
+          return STARTING;
         default:
           return null;
       }

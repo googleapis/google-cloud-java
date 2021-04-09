@@ -122,6 +122,91 @@ public final class ClusterControllerGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataproc.v1.StopClusterRequest, com.google.longrunning.Operation>
+      getStopClusterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StopCluster",
+      requestType = com.google.cloud.dataproc.v1.StopClusterRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataproc.v1.StopClusterRequest, com.google.longrunning.Operation>
+      getStopClusterMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataproc.v1.StopClusterRequest, com.google.longrunning.Operation>
+        getStopClusterMethod;
+    if ((getStopClusterMethod = ClusterControllerGrpc.getStopClusterMethod) == null) {
+      synchronized (ClusterControllerGrpc.class) {
+        if ((getStopClusterMethod = ClusterControllerGrpc.getStopClusterMethod) == null) {
+          ClusterControllerGrpc.getStopClusterMethod =
+              getStopClusterMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataproc.v1.StopClusterRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StopCluster"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataproc.v1.StopClusterRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ClusterControllerMethodDescriptorSupplier("StopCluster"))
+                      .build();
+        }
+      }
+    }
+    return getStopClusterMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataproc.v1.StartClusterRequest, com.google.longrunning.Operation>
+      getStartClusterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StartCluster",
+      requestType = com.google.cloud.dataproc.v1.StartClusterRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataproc.v1.StartClusterRequest, com.google.longrunning.Operation>
+      getStartClusterMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataproc.v1.StartClusterRequest, com.google.longrunning.Operation>
+        getStartClusterMethod;
+    if ((getStartClusterMethod = ClusterControllerGrpc.getStartClusterMethod) == null) {
+      synchronized (ClusterControllerGrpc.class) {
+        if ((getStartClusterMethod = ClusterControllerGrpc.getStartClusterMethod) == null) {
+          ClusterControllerGrpc.getStartClusterMethod =
+              getStartClusterMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataproc.v1.StartClusterRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StartCluster"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataproc.v1.StartClusterRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ClusterControllerMethodDescriptorSupplier("StartCluster"))
+                      .build();
+        }
+      }
+    }
+    return getStartClusterMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataproc.v1.DeleteClusterRequest, com.google.longrunning.Operation>
       getDeleteClusterMethod;
 
@@ -383,6 +468,34 @@ public final class ClusterControllerGrpc {
      *
      *
      * <pre>
+     * Stops a cluster in a project.
+     * </pre>
+     */
+    public void stopCluster(
+        com.google.cloud.dataproc.v1.StopClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getStopClusterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a cluster in a project.
+     * </pre>
+     */
+    public void startCluster(
+        com.google.cloud.dataproc.v1.StartClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getStartClusterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
      * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
@@ -458,6 +571,18 @@ public final class ClusterControllerGrpc {
                   new MethodHandlers<
                       com.google.cloud.dataproc.v1.UpdateClusterRequest,
                       com.google.longrunning.Operation>(this, METHODID_UPDATE_CLUSTER)))
+          .addMethod(
+              getStopClusterMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dataproc.v1.StopClusterRequest,
+                      com.google.longrunning.Operation>(this, METHODID_STOP_CLUSTER)))
+          .addMethod(
+              getStartClusterMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dataproc.v1.StartClusterRequest,
+                      com.google.longrunning.Operation>(this, METHODID_START_CLUSTER)))
           .addMethod(
               getDeleteClusterMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -539,6 +664,38 @@ public final class ClusterControllerGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateClusterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops a cluster in a project.
+     * </pre>
+     */
+    public void stopCluster(
+        com.google.cloud.dataproc.v1.StopClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStopClusterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a cluster in a project.
+     * </pre>
+     */
+    public void startCluster(
+        com.google.cloud.dataproc.v1.StartClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStartClusterMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -670,6 +827,32 @@ public final class ClusterControllerGrpc {
      *
      *
      * <pre>
+     * Stops a cluster in a project.
+     * </pre>
+     */
+    public com.google.longrunning.Operation stopCluster(
+        com.google.cloud.dataproc.v1.StopClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStopClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a cluster in a project.
+     * </pre>
+     */
+    public com.google.longrunning.Operation startCluster(
+        com.google.cloud.dataproc.v1.StartClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStartClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
      * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
@@ -781,6 +964,32 @@ public final class ClusterControllerGrpc {
      *
      *
      * <pre>
+     * Stops a cluster in a project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        stopCluster(com.google.cloud.dataproc.v1.StopClusterRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStopClusterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a cluster in a project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        startCluster(com.google.cloud.dataproc.v1.StartClusterRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStartClusterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
      * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
@@ -841,10 +1050,12 @@ public final class ClusterControllerGrpc {
 
   private static final int METHODID_CREATE_CLUSTER = 0;
   private static final int METHODID_UPDATE_CLUSTER = 1;
-  private static final int METHODID_DELETE_CLUSTER = 2;
-  private static final int METHODID_GET_CLUSTER = 3;
-  private static final int METHODID_LIST_CLUSTERS = 4;
-  private static final int METHODID_DIAGNOSE_CLUSTER = 5;
+  private static final int METHODID_STOP_CLUSTER = 2;
+  private static final int METHODID_START_CLUSTER = 3;
+  private static final int METHODID_DELETE_CLUSTER = 4;
+  private static final int METHODID_GET_CLUSTER = 5;
+  private static final int METHODID_LIST_CLUSTERS = 6;
+  private static final int METHODID_DIAGNOSE_CLUSTER = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -871,6 +1082,16 @@ public final class ClusterControllerGrpc {
         case METHODID_UPDATE_CLUSTER:
           serviceImpl.updateCluster(
               (com.google.cloud.dataproc.v1.UpdateClusterRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_STOP_CLUSTER:
+          serviceImpl.stopCluster(
+              (com.google.cloud.dataproc.v1.StopClusterRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_START_CLUSTER:
+          serviceImpl.startCluster(
+              (com.google.cloud.dataproc.v1.StartClusterRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_CLUSTER:
@@ -960,6 +1181,8 @@ public final class ClusterControllerGrpc {
                       .setSchemaDescriptor(new ClusterControllerFileDescriptorSupplier())
                       .addMethod(getCreateClusterMethod())
                       .addMethod(getUpdateClusterMethod())
+                      .addMethod(getStopClusterMethod())
+                      .addMethod(getStartClusterMethod())
                       .addMethod(getDeleteClusterMethod())
                       .addMethod(getGetClusterMethod())
                       .addMethod(getListClustersMethod())

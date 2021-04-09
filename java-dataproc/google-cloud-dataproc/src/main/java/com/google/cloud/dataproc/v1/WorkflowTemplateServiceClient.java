@@ -647,7 +647,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *     </ul>
    *
    * @param parameters Optional. Map from parameter names to values that should be used for those
-   *     parameters. Values may not exceed 100 characters.
+   *     parameters. Values may not exceed 1000 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(
@@ -708,7 +708,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *     </ul>
    *
    * @param parameters Optional. Map from parameter names to values that should be used for those
-   *     parameters. Values may not exceed 100 characters.
+   *     parameters. Values may not exceed 1000 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(

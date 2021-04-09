@@ -212,6 +212,148 @@ public class ClusterControllerClientTest {
   }
 
   @Test
+  public void stopClusterTest() throws Exception {
+    Cluster expectedResponse =
+        Cluster.newBuilder()
+            .setProjectId("projectId-894832108")
+            .setClusterName("clusterName-1141738587")
+            .setConfig(ClusterConfig.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStatus(ClusterStatus.newBuilder().build())
+            .addAllStatusHistory(new ArrayList<ClusterStatus>())
+            .setClusterUuid("clusterUuid-1141510955")
+            .setMetrics(ClusterMetrics.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("stopClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockClusterController.addResponse(resultOperation);
+
+    StopClusterRequest request =
+        StopClusterRequest.newBuilder()
+            .setProjectId("projectId-894832108")
+            .setRegion("region-934795532")
+            .setClusterName("clusterName-1141738587")
+            .setClusterUuid("clusterUuid-1141510955")
+            .setRequestId("requestId693933066")
+            .build();
+
+    Cluster actualResponse = client.stopClusterAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockClusterController.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StopClusterRequest actualRequest = ((StopClusterRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getProjectId(), actualRequest.getProjectId());
+    Assert.assertEquals(request.getRegion(), actualRequest.getRegion());
+    Assert.assertEquals(request.getClusterName(), actualRequest.getClusterName());
+    Assert.assertEquals(request.getClusterUuid(), actualRequest.getClusterUuid());
+    Assert.assertEquals(request.getRequestId(), actualRequest.getRequestId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void stopClusterExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockClusterController.addException(exception);
+
+    try {
+      StopClusterRequest request =
+          StopClusterRequest.newBuilder()
+              .setProjectId("projectId-894832108")
+              .setRegion("region-934795532")
+              .setClusterName("clusterName-1141738587")
+              .setClusterUuid("clusterUuid-1141510955")
+              .setRequestId("requestId693933066")
+              .build();
+      client.stopClusterAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void startClusterTest() throws Exception {
+    Cluster expectedResponse =
+        Cluster.newBuilder()
+            .setProjectId("projectId-894832108")
+            .setClusterName("clusterName-1141738587")
+            .setConfig(ClusterConfig.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStatus(ClusterStatus.newBuilder().build())
+            .addAllStatusHistory(new ArrayList<ClusterStatus>())
+            .setClusterUuid("clusterUuid-1141510955")
+            .setMetrics(ClusterMetrics.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockClusterController.addResponse(resultOperation);
+
+    StartClusterRequest request =
+        StartClusterRequest.newBuilder()
+            .setProjectId("projectId-894832108")
+            .setRegion("region-934795532")
+            .setClusterName("clusterName-1141738587")
+            .setClusterUuid("clusterUuid-1141510955")
+            .setRequestId("requestId693933066")
+            .build();
+
+    Cluster actualResponse = client.startClusterAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockClusterController.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StartClusterRequest actualRequest = ((StartClusterRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getProjectId(), actualRequest.getProjectId());
+    Assert.assertEquals(request.getRegion(), actualRequest.getRegion());
+    Assert.assertEquals(request.getClusterName(), actualRequest.getClusterName());
+    Assert.assertEquals(request.getClusterUuid(), actualRequest.getClusterUuid());
+    Assert.assertEquals(request.getRequestId(), actualRequest.getRequestId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void startClusterExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockClusterController.addException(exception);
+
+    try {
+      StartClusterRequest request =
+          StartClusterRequest.newBuilder()
+              .setProjectId("projectId-894832108")
+              .setRegion("region-934795532")
+              .setClusterName("clusterName-1141738587")
+              .setClusterUuid("clusterUuid-1141510955")
+              .setRequestId("requestId693933066")
+              .build();
+      client.startClusterAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void deleteClusterTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =

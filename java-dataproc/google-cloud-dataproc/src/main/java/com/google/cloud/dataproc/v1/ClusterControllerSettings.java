@@ -94,6 +94,28 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
     return ((ClusterControllerStubSettings) getStubSettings()).updateClusterOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to stopCluster. */
+  public UnaryCallSettings<StopClusterRequest, Operation> stopClusterSettings() {
+    return ((ClusterControllerStubSettings) getStubSettings()).stopClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopCluster. */
+  public OperationCallSettings<StopClusterRequest, Cluster, ClusterOperationMetadata>
+      stopClusterOperationSettings() {
+    return ((ClusterControllerStubSettings) getStubSettings()).stopClusterOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startCluster. */
+  public UnaryCallSettings<StartClusterRequest, Operation> startClusterSettings() {
+    return ((ClusterControllerStubSettings) getStubSettings()).startClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startCluster. */
+  public OperationCallSettings<StartClusterRequest, Cluster, ClusterOperationMetadata>
+      startClusterOperationSettings() {
+    return ((ClusterControllerStubSettings) getStubSettings()).startClusterOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteCluster. */
   public UnaryCallSettings<DeleteClusterRequest, Operation> deleteClusterSettings() {
     return ((ClusterControllerStubSettings) getStubSettings()).deleteClusterSettings();
@@ -246,6 +268,28 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
     public OperationCallSettings.Builder<UpdateClusterRequest, Cluster, ClusterOperationMetadata>
         updateClusterOperationSettings() {
       return getStubSettingsBuilder().updateClusterOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopCluster. */
+    public UnaryCallSettings.Builder<StopClusterRequest, Operation> stopClusterSettings() {
+      return getStubSettingsBuilder().stopClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopCluster. */
+    public OperationCallSettings.Builder<StopClusterRequest, Cluster, ClusterOperationMetadata>
+        stopClusterOperationSettings() {
+      return getStubSettingsBuilder().stopClusterOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startCluster. */
+    public UnaryCallSettings.Builder<StartClusterRequest, Operation> startClusterSettings() {
+      return getStubSettingsBuilder().startClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startCluster. */
+    public OperationCallSettings.Builder<StartClusterRequest, Cluster, ClusterOperationMetadata>
+        startClusterOperationSettings() {
+      return getStubSettingsBuilder().startClusterOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteCluster. */

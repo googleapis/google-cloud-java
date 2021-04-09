@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dataproc.git",
-        "sha": "c3213c6844ec26fc2ebb55e56ee6753d56d5542d"
+        "sha": "a208e54b7d7634d1ee2de3470f7c2a3e7b0180c6"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1305ca41d554eb0725237561e34129373bb8cbc1",
-        "internalRef": "362856902"
+        "sha": "439f098cb730af18c8ae4e65971ea3badf45138a",
+        "internalRef": "367518225"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1305ca41d554eb0725237561e34129373bb8cbc1",
-        "internalRef": "362856902"
+        "sha": "439f098cb730af18c8ae4e65971ea3badf45138a",
+        "internalRef": "367518225"
       }
     },
     {
@@ -223,6 +223,7 @@
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterConfigOrBuilder.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterMetrics.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterMetricsOrBuilder.java",
+    "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterName.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterOperation.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterOperationMetadata.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ClusterOperationMetadataOrBuilder.java",
@@ -270,10 +271,14 @@
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GetJobRequestOrBuilder.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GetWorkflowTemplateRequest.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GetWorkflowTemplateRequestOrBuilder.java",
+    "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GkeClusterConfig.java",
+    "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/GkeClusterConfigOrBuilder.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/HadoopJob.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/HadoopJobOrBuilder.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/HiveJob.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/HiveJobOrBuilder.java",
+    "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/IdentityConfig.java",
+    "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/IdentityConfigOrBuilder.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/InstanceGroupAutoscalingPolicyConfig.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/InstanceGroupAutoscalingPolicyConfigOrBuilder.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/InstanceGroupConfig.java",
@@ -322,6 +327,10 @@
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ManagedClusterOrBuilder.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ManagedGroupConfig.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ManagedGroupConfigOrBuilder.java",
+    "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/MetastoreConfig.java",
+    "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/MetastoreConfigOrBuilder.java",
+    "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/NodeGroupAffinity.java",
+    "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/NodeGroupAffinityOrBuilder.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/NodeInitializationAction.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/NodeInitializationActionOrBuilder.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/OperationsProto.java",
@@ -344,7 +353,10 @@
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ReservationAffinityOrBuilder.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SecurityConfig.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SecurityConfigOrBuilder.java",
+    "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ServiceName.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SharedProto.java",
+    "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ShieldedInstanceConfig.java",
+    "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/ShieldedInstanceConfigOrBuilder.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SoftwareConfig.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SoftwareConfigOrBuilder.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SparkJob.java",
@@ -353,6 +365,10 @@
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SparkRJobOrBuilder.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SparkSqlJob.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SparkSqlJobOrBuilder.java",
+    "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/StartClusterRequest.java",
+    "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/StartClusterRequestOrBuilder.java",
+    "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/StopClusterRequest.java",
+    "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/StopClusterRequestOrBuilder.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SubmitJobRequest.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/SubmitJobRequestOrBuilder.java",
     "proto-google-cloud-dataproc-v1/src/main/java/com/google/cloud/dataproc/v1/TemplateParameter.java",

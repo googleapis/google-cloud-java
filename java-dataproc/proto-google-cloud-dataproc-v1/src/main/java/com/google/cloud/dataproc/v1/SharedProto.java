@@ -37,21 +37,26 @@ public final class SharedProto {
     java.lang.String[] descriptorData = {
       "\n%google/cloud/dataproc/v1/shared.proto\022"
           + "\030google.cloud.dataproc.v1\032\034google/api/an"
-          + "notations.proto*|\n\tComponent\022\031\n\025COMPONEN"
-          + "T_UNSPECIFIED\020\000\022\014\n\010ANACONDA\020\005\022\020\n\014HIVE_WE"
-          + "BHCAT\020\003\022\013\n\007JUPYTER\020\001\022\n\n\006PRESTO\020\006\022\014\n\010ZEPP"
-          + "ELIN\020\004\022\r\n\tZOOKEEPER\020\010Bo\n\034com.google.clou"
-          + "d.dataproc.v1B\013SharedProtoP\001Z@google.gol"
-          + "ang.org/genproto/googleapis/cloud/datapr"
-          + "oc/v1;dataprocb\006proto3"
+          + "notations.proto\032\037google/api/field_behavi"
+          + "or.proto*\277\001\n\tComponent\022\031\n\025COMPONENT_UNSP"
+          + "ECIFIED\020\000\022\014\n\010ANACONDA\020\005\022\n\n\006DOCKER\020\r\022\t\n\005D"
+          + "RUID\020\t\022\t\n\005FLINK\020\016\022\t\n\005HBASE\020\013\022\020\n\014HIVE_WEB"
+          + "HCAT\020\003\022\013\n\007JUPYTER\020\001\022\n\n\006PRESTO\020\006\022\n\n\006RANGE"
+          + "R\020\014\022\010\n\004SOLR\020\n\022\014\n\010ZEPPELIN\020\004\022\r\n\tZOOKEEPER"
+          + "\020\010Bo\n\034com.google.cloud.dataproc.v1B\013Shar"
+          + "edProtoP\001Z@google.golang.org/genproto/go"
+          + "ogleapis/cloud/dataproc/v1;dataprocb\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
             });
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

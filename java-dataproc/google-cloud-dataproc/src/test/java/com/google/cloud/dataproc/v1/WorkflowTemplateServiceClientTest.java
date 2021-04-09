@@ -30,6 +30,7 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
+import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
@@ -104,6 +105,7 @@ public class WorkflowTemplateServiceClientTest {
             .setPlacement(WorkflowTemplatePlacement.newBuilder().build())
             .addAllJobs(new ArrayList<OrderedJob>())
             .addAllParameters(new ArrayList<TemplateParameter>())
+            .setDagTimeout(Duration.newBuilder().build())
             .build();
     mockWorkflowTemplateService.addResponse(expectedResponse);
 
@@ -157,6 +159,7 @@ public class WorkflowTemplateServiceClientTest {
             .setPlacement(WorkflowTemplatePlacement.newBuilder().build())
             .addAllJobs(new ArrayList<OrderedJob>())
             .addAllParameters(new ArrayList<TemplateParameter>())
+            .setDagTimeout(Duration.newBuilder().build())
             .build();
     mockWorkflowTemplateService.addResponse(expectedResponse);
 
@@ -210,6 +213,7 @@ public class WorkflowTemplateServiceClientTest {
             .setPlacement(WorkflowTemplatePlacement.newBuilder().build())
             .addAllJobs(new ArrayList<OrderedJob>())
             .addAllParameters(new ArrayList<TemplateParameter>())
+            .setDagTimeout(Duration.newBuilder().build())
             .build();
     mockWorkflowTemplateService.addResponse(expectedResponse);
 
@@ -263,6 +267,7 @@ public class WorkflowTemplateServiceClientTest {
             .setPlacement(WorkflowTemplatePlacement.newBuilder().build())
             .addAllJobs(new ArrayList<OrderedJob>())
             .addAllParameters(new ArrayList<TemplateParameter>())
+            .setDagTimeout(Duration.newBuilder().build())
             .build();
     mockWorkflowTemplateService.addResponse(expectedResponse);
 
@@ -316,6 +321,7 @@ public class WorkflowTemplateServiceClientTest {
             .setPlacement(WorkflowTemplatePlacement.newBuilder().build())
             .addAllJobs(new ArrayList<OrderedJob>())
             .addAllParameters(new ArrayList<TemplateParameter>())
+            .setDagTimeout(Duration.newBuilder().build())
             .build();
     mockWorkflowTemplateService.addResponse(expectedResponse);
 
@@ -689,6 +695,7 @@ public class WorkflowTemplateServiceClientTest {
             .setPlacement(WorkflowTemplatePlacement.newBuilder().build())
             .addAllJobs(new ArrayList<OrderedJob>())
             .addAllParameters(new ArrayList<TemplateParameter>())
+            .setDagTimeout(Duration.newBuilder().build())
             .build();
     mockWorkflowTemplateService.addResponse(expectedResponse);
 

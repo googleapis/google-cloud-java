@@ -23,6 +23,7 @@ package com.google.cloud.dataproc.v1;
  *
  * <pre>
  * Cluster components that can be activated.
+ * Next ID: 16.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.dataproc.v1.Component}
@@ -42,12 +43,56 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The Anaconda python distribution.
+   * The Anaconda python distribution. The Anaconda component is not supported
+   * in the Dataproc
+   * &lt;a
+   * href="/dataproc/docs/concepts/versioning/dataproc-release-2.0"&gt;2.0
+   * image&lt;/a&gt;. The 2.0 image is pre-installed with Miniconda.
    * </pre>
    *
    * <code>ANACONDA = 5;</code>
    */
   ANACONDA(5),
+  /**
+   *
+   *
+   * <pre>
+   * Docker
+   * </pre>
+   *
+   * <code>DOCKER = 13;</code>
+   */
+  DOCKER(13),
+  /**
+   *
+   *
+   * <pre>
+   * The Druid query engine. (alpha)
+   * </pre>
+   *
+   * <code>DRUID = 9;</code>
+   */
+  DRUID(9),
+  /**
+   *
+   *
+   * <pre>
+   * Flink
+   * </pre>
+   *
+   * <code>FLINK = 14;</code>
+   */
+  FLINK(14),
+  /**
+   *
+   *
+   * <pre>
+   * HBase. (beta)
+   * </pre>
+   *
+   * <code>HBASE = 11;</code>
+   */
+  HBASE(11),
   /**
    *
    *
@@ -78,6 +123,26 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PRESTO = 6;</code>
    */
   PRESTO(6),
+  /**
+   *
+   *
+   * <pre>
+   * The Ranger service.
+   * </pre>
+   *
+   * <code>RANGER = 12;</code>
+   */
+  RANGER(12),
+  /**
+   *
+   *
+   * <pre>
+   * The Solr service.
+   * </pre>
+   *
+   * <code>SOLR = 10;</code>
+   */
+  SOLR(10),
   /**
    *
    *
@@ -115,12 +180,56 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The Anaconda python distribution.
+   * The Anaconda python distribution. The Anaconda component is not supported
+   * in the Dataproc
+   * &lt;a
+   * href="/dataproc/docs/concepts/versioning/dataproc-release-2.0"&gt;2.0
+   * image&lt;/a&gt;. The 2.0 image is pre-installed with Miniconda.
    * </pre>
    *
    * <code>ANACONDA = 5;</code>
    */
   public static final int ANACONDA_VALUE = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Docker
+   * </pre>
+   *
+   * <code>DOCKER = 13;</code>
+   */
+  public static final int DOCKER_VALUE = 13;
+  /**
+   *
+   *
+   * <pre>
+   * The Druid query engine. (alpha)
+   * </pre>
+   *
+   * <code>DRUID = 9;</code>
+   */
+  public static final int DRUID_VALUE = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Flink
+   * </pre>
+   *
+   * <code>FLINK = 14;</code>
+   */
+  public static final int FLINK_VALUE = 14;
+  /**
+   *
+   *
+   * <pre>
+   * HBase. (beta)
+   * </pre>
+   *
+   * <code>HBASE = 11;</code>
+   */
+  public static final int HBASE_VALUE = 11;
   /**
    *
    *
@@ -151,6 +260,26 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PRESTO = 6;</code>
    */
   public static final int PRESTO_VALUE = 6;
+  /**
+   *
+   *
+   * <pre>
+   * The Ranger service.
+   * </pre>
+   *
+   * <code>RANGER = 12;</code>
+   */
+  public static final int RANGER_VALUE = 12;
+  /**
+   *
+   *
+   * <pre>
+   * The Solr service.
+   * </pre>
+   *
+   * <code>SOLR = 10;</code>
+   */
+  public static final int SOLR_VALUE = 10;
   /**
    *
    *
@@ -200,12 +329,24 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
         return COMPONENT_UNSPECIFIED;
       case 5:
         return ANACONDA;
+      case 13:
+        return DOCKER;
+      case 9:
+        return DRUID;
+      case 14:
+        return FLINK;
+      case 11:
+        return HBASE;
       case 3:
         return HIVE_WEBHCAT;
       case 1:
         return JUPYTER;
       case 6:
         return PRESTO;
+      case 12:
+        return RANGER;
+      case 10:
+        return SOLR;
       case 4:
         return ZEPPELIN;
       case 8:

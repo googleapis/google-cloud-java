@@ -164,6 +164,36 @@ public interface GceClusterConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. The type of IPv6 access for a cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess private_ipv6_google_access = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
+   */
+  int getPrivateIpv6GoogleAccessValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of IPv6 access for a cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess private_ipv6_google_access = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The privateIpv6GoogleAccess.
+   */
+  com.google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess
+      getPrivateIpv6GoogleAccess();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The [Dataproc service
    * account](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_dataproc)
    * (also see [VM Data Plane
@@ -457,4 +487,89 @@ public interface GceClusterConfigOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.ReservationAffinityOrBuilder getReservationAffinityOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Node Group Affinity for sole-tenant clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.NodeGroupAffinity node_group_affinity = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nodeGroupAffinity field is set.
+   */
+  boolean hasNodeGroupAffinity();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Node Group Affinity for sole-tenant clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.NodeGroupAffinity node_group_affinity = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nodeGroupAffinity.
+   */
+  com.google.cloud.dataproc.v1.NodeGroupAffinity getNodeGroupAffinity();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Node Group Affinity for sole-tenant clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.NodeGroupAffinity node_group_affinity = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.NodeGroupAffinityOrBuilder getNodeGroupAffinityOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+   * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.ShieldedInstanceConfig shielded_instance_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the shieldedInstanceConfig field is set.
+   */
+  boolean hasShieldedInstanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+   * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.ShieldedInstanceConfig shielded_instance_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The shieldedInstanceConfig.
+   */
+  com.google.cloud.dataproc.v1.ShieldedInstanceConfig getShieldedInstanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+   * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.ShieldedInstanceConfig shielded_instance_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.ShieldedInstanceConfigOrBuilder getShieldedInstanceConfigOrBuilder();
 }

@@ -41,11 +41,11 @@ public interface KerberosConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The Cloud Storage URI of a KMS encrypted file containing the root
+   * Optional. The Cloud Storage URI of a KMS encrypted file containing the root
    * principal password.
    * </pre>
    *
-   * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The rootPrincipalPasswordUri.
    */
@@ -54,11 +54,11 @@ public interface KerberosConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The Cloud Storage URI of a KMS encrypted file containing the root
+   * Optional. The Cloud Storage URI of a KMS encrypted file containing the root
    * principal password.
    * </pre>
    *
-   * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string root_principal_password_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for rootPrincipalPasswordUri.
    */
@@ -68,11 +68,11 @@ public interface KerberosConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The uri of the KMS key used to encrypt various sensitive
+   * Optional. The uri of the KMS key used to encrypt various sensitive
    * files.
    * </pre>
    *
-   * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The kmsKeyUri.
    */
@@ -81,11 +81,11 @@ public interface KerberosConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The uri of the KMS key used to encrypt various sensitive
+   * Optional. The uri of the KMS key used to encrypt various sensitive
    * files.
    * </pre>
    *
-   * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string kms_key_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for kmsKeyUri.
    */
