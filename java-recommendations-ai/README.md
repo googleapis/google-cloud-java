@@ -8,8 +8,10 @@ Java idiomatic client for [Recommendations AI][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
-> Note: This client is a work-in-progress, and may occasionally
+> This repo contains beta version of Recommendations AI and may occasionally
 > make backwards-incompatible changes.
+> Recommendations AI is now GA and available as
+> [Google Cloud Retail](https://github.com/googleapis/java-retail)
 
 ## Quickstart
 
