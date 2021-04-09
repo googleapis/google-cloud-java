@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.18.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.17.0...v1.18.0) (2021-04-09)
+
+
+### Features
+
+* add deprecated annotation and tag to bq storage alpha api ([#978](https://www.github.com/googleapis/java-bigquerystorage/issues/978)) ([c7da342](https://www.github.com/googleapis/java-bigquerystorage/commit/c7da34252ee8c243be3ce737d03e1e12f10a5eba))
+* re-generated to pick up changes from googleapis. ([#982](https://www.github.com/googleapis/java-bigquerystorage/issues/982)) ([17bfbd8](https://www.github.com/googleapis/java-bigquerystorage/commit/17bfbd8dffd854356ea503adf3a6e065f1e1a4ee))
+
+
+### Bug Fixes
+
+* Cleanup JsonWriter bytes conversion code and add some test coverage ([#984](https://www.github.com/googleapis/java-bigquerystorage/issues/984)) ([e43df34](https://www.github.com/googleapis/java-bigquerystorage/commit/e43df3403c4d7644032cef6e1f1cf59e6ec1b5eb))
+
+
+### Documentation
+
+* update region tag for the storage quickstart ([#985](https://www.github.com/googleapis/java-bigquerystorage/issues/985)) ([1d0d6c3](https://www.github.com/googleapis/java-bigquerystorage/commit/1d0d6c3a877943b83775430d5a2bf7fcd24a1f21))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.127.12 ([#986](https://www.github.com/googleapis/java-bigquerystorage/issues/986)) ([d39bd79](https://www.github.com/googleapis/java-bigquerystorage/commit/d39bd79a69e987baa7721b907cdccb59d1ea4a74))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#987](https://www.github.com/googleapis/java-bigquerystorage/issues/987)) ([4fa3dbb](https://www.github.com/googleapis/java-bigquerystorage/commit/4fa3dbba64586f6bf943ba67f225fad1b994e5a7))
+
 ## [1.17.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.16.1...v1.17.0) (2021-03-30)
 
 
