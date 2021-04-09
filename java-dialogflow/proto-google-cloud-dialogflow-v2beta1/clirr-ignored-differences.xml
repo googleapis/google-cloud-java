@@ -46,7 +46,11 @@
   </difference>
   <difference>
     <differenceType>8001</differenceType>
-    <className>com/google/cloud/dialogflow/v2beta1/InputTextConfig*</className>
+    <className>com/google/cloud/dialogflow/v2beta1/InputText*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/InputAudio*</className>
   </difference>
   <difference>
     <differenceType>8001</differenceType>
