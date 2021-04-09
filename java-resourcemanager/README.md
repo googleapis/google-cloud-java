@@ -8,8 +8,11 @@ Java idiomatic client for [Resource Manager API][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
+
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
+
+
 
 ## Quickstart
 
@@ -54,12 +57,12 @@ compile 'com.google.cloud:google-cloud-resourcemanager'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-resourcemanager:0.118.12-alpha'
+compile 'com.google.cloud:google-cloud-resourcemanager:0.119.0-alpha'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-resourcemanager" % "0.118.12-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-resourcemanager" % "0.119.0-alpha"
 ```
 
 ## Authentication
