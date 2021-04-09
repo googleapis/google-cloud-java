@@ -70,6 +70,7 @@ public class BigtableCmekIT {
   private static String instanceId;
   private static String clusterId1;
   private static String clusterId2;
+  private static String clusterId3;
   private static String kmsKeyName;
   private static List<String> zones;
   private static String otherZone;
@@ -91,6 +92,7 @@ public class BigtableCmekIT {
     instanceId = AbstractTestEnv.TEST_INSTANCE_PREFIX + Instant.now().getEpochSecond();
     clusterId1 = instanceId + "-c1";
     clusterId2 = instanceId + "-c2";
+    clusterId3 = instanceId + "-c3";
     zones = testEnvRule.env().getMultipleZonesInSameRegion();
     otherZone =
         Sets.difference(
@@ -110,6 +112,7 @@ public class BigtableCmekIT {
                 .setInstanceId(instanceId)
                 .build());
 
+    LOGGER.info("Creating cluster in zone: " + zones.get(0));
     instanceAdmin.createInstance(
         CreateInstanceRequest.of(instanceId)
             .addCmekCluster(clusterId1, zones.get(0), 1, StorageType.SSD, kmsKeyName));
@@ -137,6 +140,7 @@ public class BigtableCmekIT {
     Cluster cluster = instanceAdmin.getCluster(instanceId, clusterId1);
     assertThat(cluster.getKmsKeyName()).isEqualTo(kmsKeyName);
 
+    LOGGER.info("Creating cluster in zone: " + zones.get(1));
     instanceAdmin.createCluster(
         CreateClusterRequest.of(instanceId, clusterId2)
             .setZone(zones.get(1))
@@ -147,9 +151,10 @@ public class BigtableCmekIT {
     Cluster secondCluster = instanceAdmin.getCluster(instanceId, clusterId2);
     assertThat(secondCluster.getKmsKeyName()).isEqualTo(kmsKeyName);
 
+    LOGGER.info("Trying to create cluster in zone: " + otherZone);
     try {
       instanceAdmin.createCluster(
-          CreateClusterRequest.of(instanceId, clusterId2)
+          CreateClusterRequest.of(instanceId, clusterId3)
               .setZone(otherZone)
               .setServeNodes(1)
               .setStorageType(StorageType.SSD)
