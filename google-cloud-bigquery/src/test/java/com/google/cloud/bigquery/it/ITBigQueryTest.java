@@ -2100,6 +2100,33 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testQueryParameterModeWithDryRun() {
+    String query =
+        "SELECT TimestampField, StringField, BooleanField, BigNumericField, BigNumericField1, BigNumericField2, BigNumericField3, BigNumericField4 FROM "
+            + TABLE_ID.getTable()
+            + " WHERE StringField = ?"
+            + " AND TimestampField > ?"
+            + " AND IntegerField IN UNNEST(?)"
+            + " AND IntegerField < ?"
+            + " AND FloatField > ?"
+            + " AND NumericField < ?"
+            + " AND BigNumericField = ?";
+
+    QueryJobConfiguration queryConfig =
+        QueryJobConfiguration.newBuilder(query)
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .setParameterMode("POSITIONAL")
+            .setUseLegacySql(false)
+            .setDryRun(true)
+            .build();
+
+    Job job = bigquery.create(JobInfo.of(queryConfig));
+    JobStatistics.QueryStatistics statistics = job.getStatistics();
+
+    assertNotNull(statistics.getTotalBytesProcessed());
+  }
+
+  @Test
   public void testPositionalQueryParameters() throws InterruptedException {
     String query =
         "SELECT TimestampField, StringField, BooleanField, BigNumericField, BigNumericField1, BigNumericField2, BigNumericField3, BigNumericField4 FROM "

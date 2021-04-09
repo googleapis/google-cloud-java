@@ -47,6 +47,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private final String query;
   private final ImmutableList<QueryParameterValue> positionalParameters;
   private final ImmutableMap<String, QueryParameterValue> namedParameters;
+  private final String parameterMode;
   private final TableId destinationTable;
   private final Map<String, ExternalTableDefinition> tableDefinitions;
   private final List<UserDefinedFunction> userDefinedFunctions;
@@ -98,6 +99,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private String query;
     private List<QueryParameterValue> positionalParameters = Lists.newArrayList();
     private Map<String, QueryParameterValue> namedParameters = Maps.newHashMap();
+    private String parameterMode;
     private TableId destinationTable;
     private Map<String, ExternalTableDefinition> tableDefinitions;
     private List<UserDefinedFunction> userDefinedFunctions;
@@ -131,6 +133,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.query = jobConfiguration.query;
       this.namedParameters = jobConfiguration.namedParameters;
       this.positionalParameters = jobConfiguration.positionalParameters;
+      this.parameterMode = jobConfiguration.parameterMode;
       this.destinationTable = jobConfiguration.destinationTable;
       this.tableDefinitions = jobConfiguration.tableDefinitions;
       this.userDefinedFunctions = jobConfiguration.userDefinedFunctions;
@@ -163,11 +166,13 @@ public final class QueryJobConfiguration extends JobConfiguration {
       if (queryConfigurationPb.getQueryParameters() != null
           && !queryConfigurationPb.getQueryParameters().isEmpty()) {
         if (queryConfigurationPb.getQueryParameters().get(0).getName() == null) {
+          parameterMode = "POSITIONAL";
           setPositionalParameters(
               Lists.transform(
                   queryConfigurationPb.getQueryParameters(),
                   POSITIONAL_PARAMETER_FROM_PB_FUNCTION));
         } else {
+          parameterMode = "NAMED";
           Map<String, QueryParameterValue> values = Maps.newHashMap();
           for (QueryParameter queryParameterPb : queryConfigurationPb.getQueryParameters()) {
             checkNotNull(queryParameterPb.getName());
@@ -274,6 +279,16 @@ public final class QueryJobConfiguration extends JobConfiguration {
             "Positional parameters can't be combined with named parameters");
       }
       positionalParameters.add(value);
+      return this;
+    }
+
+    /**
+     * Standard SQL only. Set to POSITIONAL to use positional (?) query parameters or to NAMED to
+     * use named (@myparam) query parameters in this query.
+     */
+    public Builder setParameterMode(String parameterMode) {
+      checkNotNull(parameterMode);
+      this.parameterMode = parameterMode;
       return this;
     }
 
@@ -639,6 +654,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     }
     positionalParameters = ImmutableList.copyOf(builder.positionalParameters);
     namedParameters = ImmutableMap.copyOf(builder.namedParameters);
+    this.parameterMode = builder.parameterMode;
     this.allowLargeResults = builder.allowLargeResults;
     this.createDisposition = builder.createDisposition;
     this.defaultDataset = builder.defaultDataset;
@@ -876,6 +892,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
         .add("query", query)
         .add("positionalParameters", positionalParameters)
         .add("namedParameters", namedParameters)
+        .add("parameterMode", parameterMode)
         .add("destinationTable", destinationTable)
         .add("destinationEncryptionConfiguration", destinationEncryptionConfiguration)
         .add("defaultDataset", defaultDataset)
@@ -919,6 +936,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
         query,
         positionalParameters,
         namedParameters,
+        parameterMode,
         tableDefinitions,
         useQueryCache,
         userDefinedFunctions,
@@ -962,6 +980,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
       List<QueryParameter> queryParametersPb =
           Lists.transform(namedParameters.entrySet().asList(), NAMED_PARAMETER_TO_PB_FUNCTION);
       queryConfigurationPb.setQueryParameters(queryParametersPb);
+    }
+    if (parameterMode != null) {
+      queryConfigurationPb.setParameterMode(parameterMode);
     }
     configurationPb.setDryRun(dryRun());
     if (allowLargeResults != null) {

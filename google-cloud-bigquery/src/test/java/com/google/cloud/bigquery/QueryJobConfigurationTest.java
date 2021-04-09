@@ -108,6 +108,7 @@ public class QueryJobConfigurationTest {
       ImmutableList.of(STRING_PARAMETER, TIMESTAMP_PARAMETER, BIGNUMERIC_PARAMETER);
   private static final Map<String, QueryParameterValue> NAME_PARAMETER =
       ImmutableMap.of("string", STRING_PARAMETER, "timestamp", TIMESTAMP_PARAMETER);
+  private static final String PARAMETER_MODE = "POSITIONAL";
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION =
       QueryJobConfiguration.newBuilder(QUERY)
           .setUseQueryCache(USE_QUERY_CACHE)
@@ -133,6 +134,7 @@ public class QueryJobConfigurationTest {
           .setRangePartitioning(RANGE_PARTITIONING)
           .setConnectionProperties(CONNECTION_PROPERTIES)
           .setPositionalParameters(POSITIONAL_PARAMETER)
+          .setParameterMode(PARAMETER_MODE)
           .build();
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION_ADD_POSITIONAL_PARAMETER =
       QUERY_JOB_CONFIGURATION
