@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.21.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.20.1...v0.21.0) (2021-04-09)
+
+
+### Dependencies
+
+* update dependency com.google.auth:google-auth-library-bom to v0.25.0 ([#310](https://www.github.com/googleapis/java-shared-dependencies/issues/310)) ([8f3a0f0](https://www.github.com/googleapis/java-shared-dependencies/commit/8f3a0f002b787f7b27cfe031654fa20bf342f839))
+* update dependency com.google.auth:google-auth-library-bom to v0.25.2 ([#311](https://www.github.com/googleapis/java-shared-dependencies/issues/311)) ([6c47a3e](https://www.github.com/googleapis/java-shared-dependencies/commit/6c47a3edbd9da04ba255487a66c0f3a41393217d))
+* update dependency com.google.errorprone:error_prone_annotations to v2.6.0 ([#315](https://www.github.com/googleapis/java-shared-dependencies/issues/315)) ([dc254ca](https://www.github.com/googleapis/java-shared-dependencies/commit/dc254ca7359b68fe9411f7b96130ffb416b45c6f))
+* update dependency com.google.http-client:google-http-client-bom to v1.39.1 ([#309](https://www.github.com/googleapis/java-shared-dependencies/issues/309)) ([37225e2](https://www.github.com/googleapis/java-shared-dependencies/commit/37225e2d1b32a618765391720b57ff29e7b8f7f9))
+* update dependency com.google.http-client:google-http-client-bom to v1.39.2 ([#321](https://www.github.com/googleapis/java-shared-dependencies/issues/321)) ([273c66d](https://www.github.com/googleapis/java-shared-dependencies/commit/273c66d374f7cd6040aac2f302fd1c1dc0f4a1c0))
+* update dependency com.google.protobuf:protobuf-bom to v3.15.6 ([#308](https://www.github.com/googleapis/java-shared-dependencies/issues/308)) ([b29dd05](https://www.github.com/googleapis/java-shared-dependencies/commit/b29dd0535f02b56607f64ba69e85d4d468902789))
+* update dependency com.google.protobuf:protobuf-bom to v3.15.7 ([#316](https://www.github.com/googleapis/java-shared-dependencies/issues/316)) ([9c00d77](https://www.github.com/googleapis/java-shared-dependencies/commit/9c00d7753c1f7b963deb9ad69dcfe24ba28da5a2))
+* update dependency com.google.protobuf:protobuf-bom to v3.15.8 ([#319](https://www.github.com/googleapis/java-shared-dependencies/issues/319)) ([15e5ae2](https://www.github.com/googleapis/java-shared-dependencies/commit/15e5ae2ef46eedcd790ffd8644677d36db5c63f9))
+* update dependency io.grpc:grpc-bom to v1.37.0 ([#313](https://www.github.com/googleapis/java-shared-dependencies/issues/313)) ([c599351](https://www.github.com/googleapis/java-shared-dependencies/commit/c5993511c7305e1ced42d73552a93a25dc5e1ac1))
+* update gax.version to v1.63.0 ([#318](https://www.github.com/googleapis/java-shared-dependencies/issues/318)) ([ba709da](https://www.github.com/googleapis/java-shared-dependencies/commit/ba709da6fb0e9bcfc83e663588336598737b46e4))
+* update google.core.version to v1.94.4 ([#305](https://www.github.com/googleapis/java-shared-dependencies/issues/305)) ([0d38f4c](https://www.github.com/googleapis/java-shared-dependencies/commit/0d38f4c9ffadcfd9446712b8bf0729399b0c9e91))
+* update google.core.version to v1.94.5 ([#320](https://www.github.com/googleapis/java-shared-dependencies/issues/320)) ([3439721](https://www.github.com/googleapis/java-shared-dependencies/commit/3439721da83a8b92d9c4b6ecfd158cfb1e1a0503))
+* update guava to 30.1.1-android ([#322](https://www.github.com/googleapis/java-shared-dependencies/issues/322)) ([a6b5d3b](https://www.github.com/googleapis/java-shared-dependencies/commit/a6b5d3b8ccfc352bf0d1678952ce3cd8b7a8361e))
+* update iam.version to v1.0.11 ([#304](https://www.github.com/googleapis/java-shared-dependencies/issues/304)) ([95a5264](https://www.github.com/googleapis/java-shared-dependencies/commit/95a526442b3d24c83782523d38dd3931e828d757))
+
 ### [0.20.1](https://www.github.com/googleapis/java-shared-dependencies/compare/0.20.0...v0.20.1) (2021-03-09)
 
 
