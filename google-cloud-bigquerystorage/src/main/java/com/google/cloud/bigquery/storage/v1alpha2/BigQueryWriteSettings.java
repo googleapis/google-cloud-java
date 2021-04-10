@@ -63,8 +63,11 @@ import javax.annotation.Generated;
  *             .build());
  * BigQueryWriteSettings bigQueryWriteSettings = bigQueryWriteSettingsBuilder.build();
  * }</pre>
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
 @BetaApi
+@Deprecated
 @Generated("by gapic-generator-java")
 public class BigQueryWriteSettings extends ClientSettings<BigQueryWriteSettings> {
 

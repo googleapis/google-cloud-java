@@ -75,8 +75,11 @@ import org.threeten.bp.Duration;
  *             .build());
  * BigQueryWriteStubSettings bigQueryWriteSettings = bigQueryWriteSettingsBuilder.build();
  * }</pre>
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
 @BetaApi
+@Deprecated
 @Generated("by gapic-generator-java")
 public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSettings> {
   /** The default scopes of the service. */

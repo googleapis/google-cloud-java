@@ -41,8 +41,11 @@ import javax.annotation.Generated;
  * gRPC callable factory implementation for the BigQueryWrite service API.
  *
  * <p>This class is for advanced usage.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
 @BetaApi
+@Deprecated
 @Generated("by gapic-generator-java")
 public class GrpcBigQueryWriteCallableFactory implements GrpcStubCallableFactory {
 
