@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.128.0](https://www.github.com/googleapis/java-bigquery/compare/v1.127.12...v1.128.0) (2021-04-09)
+
+
+### Features
+
+* add support for parameterMode in QueryJobConfiguration to unblock JDBC migration to the Java client library ([#1223](https://www.github.com/googleapis/java-bigquery/issues/1223)) ([3ce4933](https://www.github.com/googleapis/java-bigquery/commit/3ce49334478dc0905cdcb476c739a49d296de922))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20210404-1.31.0 ([#1226](https://www.github.com/googleapis/java-bigquery/issues/1226)) ([8ea26fc](https://www.github.com/googleapis/java-bigquery/commit/8ea26fcedf1f34565d287daab388c2a93d7ac6ea))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#1224](https://www.github.com/googleapis/java-bigquery/issues/1224)) ([d5c5747](https://www.github.com/googleapis/java-bigquery/commit/d5c5747e74d8c2e1ca0901eea0d82fd94460a639))
+* update dependency com.google.oauth-client:google-oauth-client-java6 to v1.31.5 ([#1221](https://www.github.com/googleapis/java-bigquery/issues/1221)) ([f7cdb36](https://www.github.com/googleapis/java-bigquery/commit/f7cdb36c1f9e513e78e390ae5319c70f7c454536))
+* update dependency com.google.oauth-client:google-oauth-client-jetty to v1.31.5 ([#1222](https://www.github.com/googleapis/java-bigquery/issues/1222)) ([0a271cb](https://www.github.com/googleapis/java-bigquery/commit/0a271cb363180a093385ed6c5c68e12c6fde6502))
+
 ### [1.127.12](https://www.github.com/googleapis/java-bigquery/compare/v1.127.11...v1.127.12) (2021-04-07)
 
 
