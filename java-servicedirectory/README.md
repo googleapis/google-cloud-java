@@ -51,12 +51,12 @@ compile 'com.google.cloud:google-cloud-servicedirectory'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-servicedirectory:1.2.0'
+compile 'com.google.cloud:google-cloud-servicedirectory:1.2.1'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-servicedirectory" % "1.2.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-servicedirectory" % "1.2.1"
 ```
 
 ## Authentication
