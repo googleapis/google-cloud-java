@@ -1080,7 +1080,9 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @param endTime Required. End time of the range of transfer runs. For example,
    *     `"2017-05-30T00:00:00+00:00"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ScheduleTransferRunsResponse scheduleTransferRuns(
       TransferConfigName parent, Timestamp startTime, Timestamp endTime) {
     ScheduleTransferRunsRequest request =
@@ -1121,7 +1123,9 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @param endTime Required. End time of the range of transfer runs. For example,
    *     `"2017-05-30T00:00:00+00:00"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ScheduleTransferRunsResponse scheduleTransferRuns(
       String parent, Timestamp startTime, Timestamp endTime) {
     ScheduleTransferRunsRequest request =
@@ -1159,7 +1163,9 @@ public class DataTransferServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ScheduleTransferRunsResponse scheduleTransferRuns(
       ScheduleTransferRunsRequest request) {
     return scheduleTransferRunsCallable().call(request);
@@ -1190,7 +1196,10 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   ScheduleTransferRunsResponse response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
       scheduleTransferRunsCallable() {
     return stub.scheduleTransferRunsCallable();

@@ -98,6 +98,7 @@ public abstract class DataTransferServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listTransferConfigsCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
       scheduleTransferRunsCallable() {
     throw new UnsupportedOperationException("Not implemented: scheduleTransferRunsCallable()");

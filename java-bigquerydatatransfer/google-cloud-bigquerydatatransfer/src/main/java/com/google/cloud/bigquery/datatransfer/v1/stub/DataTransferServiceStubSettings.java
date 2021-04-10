@@ -423,7 +423,12 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     return listTransferConfigsSettings;
   }
 
-  /** Returns the object with the settings used for calls to scheduleTransferRuns. */
+  /**
+   * Returns the object with the settings used for calls to scheduleTransferRuns.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
       scheduleTransferRunsSettings() {
     return scheduleTransferRunsSettings;
@@ -859,7 +864,12 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
       return listTransferConfigsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to scheduleTransferRuns. */
+    /**
+     * Returns the builder for the settings used for calls to scheduleTransferRuns.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
         scheduleTransferRunsSettings() {
       return scheduleTransferRunsSettings;
