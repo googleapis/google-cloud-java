@@ -1,5 +1,24 @@
 # Changelog
 
+### [1.4.1](https://www.github.com/googleapis/java-automl/compare/v1.4.0...v1.4.1) (2021-04-12)
+
+
+### Bug Fixes
+
+* **samples:** adds retry to TranslateCreateDatasetTest ([#513](https://www.github.com/googleapis/java-automl/issues/513)) ([762dd2f](https://www.github.com/googleapis/java-automl/commit/762dd2f4dae77f93d59bd82dbfa4f4a896d71dfa))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.127.12 ([#489](https://www.github.com/googleapis/java-automl/issues/489)) ([0f4a58f](https://www.github.com/googleapis/java-automl/commit/0f4a58f5f56d647a2fc0c1ea4db3c82810f6e789))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.128.0 ([#527](https://www.github.com/googleapis/java-automl/issues/527)) ([e0e75bf](https://www.github.com/googleapis/java-automl/commit/e0e75bf6d757c3976cb7c195dc1de2b193ffa35d))
+* update dependency com.google.cloud:google-cloud-core to v1.94.4 ([#515](https://www.github.com/googleapis/java-automl/issues/515)) ([d731204](https://www.github.com/googleapis/java-automl/commit/d7312043918b0df2f28c2da8ebb38fb18fc2ddf5))
+* update dependency com.google.cloud:google-cloud-core to v1.94.6 ([#521](https://www.github.com/googleapis/java-automl/issues/521)) ([db46110](https://www.github.com/googleapis/java-automl/commit/db46110e94d5ab1bcc96b94d415dcc5a4a72ad5e))
+* update dependency com.google.cloud:google-cloud-core to v1.94.7 ([#530](https://www.github.com/googleapis/java-automl/issues/530)) ([701c4a6](https://www.github.com/googleapis/java-automl/commit/701c4a654929daf73da195eacd950de89bc58329))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#524](https://www.github.com/googleapis/java-automl/issues/524)) ([dc0e41c](https://www.github.com/googleapis/java-automl/commit/dc0e41cc04951b79d7a2b1b3f762704fb375818e))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.14 ([#504](https://www.github.com/googleapis/java-automl/issues/504)) ([a107e6b](https://www.github.com/googleapis/java-automl/commit/a107e6ba7cce751a31b7ff09a032c415b52c3110))
+* update dependency net.sourceforge.argparse4j:argparse4j to v0.9.0 ([#522](https://www.github.com/googleapis/java-automl/issues/522)) ([8cf88ac](https://www.github.com/googleapis/java-automl/commit/8cf88ac086c6a95d6568e5df7c7ed9ec8cee7938))
+
 ## [1.4.0](https://www.github.com/googleapis/java-automl/compare/v1.3.6...v1.4.0) (2021-03-11)
 
 
