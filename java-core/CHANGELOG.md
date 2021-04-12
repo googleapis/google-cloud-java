@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.94.7](https://www.github.com/googleapis/java-core/compare/v1.94.6...v1.94.7) (2021-04-12)
+
+
+### Dependencies
+
+* update dependency com.google.api-client:google-api-client-bom to v1.31.4 ([#424](https://www.github.com/googleapis/java-core/issues/424)) ([6773b81](https://www.github.com/googleapis/java-core/commit/6773b81893ce9f69ce457e3243bd89b49de6e553))
+* update dependency com.google.api.grpc:proto-google-iam-v1 to v1.0.12 ([#425](https://www.github.com/googleapis/java-core/issues/425)) ([df2ba7a](https://www.github.com/googleapis/java-core/commit/df2ba7a6aa73d2755382d19a4dfd86bdd6fd927a))
+
 ### [1.94.6](https://www.github.com/googleapis/java-core/compare/v1.94.5...v1.94.6) (2021-04-09)
 
 
