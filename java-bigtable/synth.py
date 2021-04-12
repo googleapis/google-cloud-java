@@ -41,6 +41,8 @@ def main():
     # todo remove once template is updated
     '.github/ISSUE_TEMPLATE/bug_report.md',
     'CONTRIBUTING.md',
+    # exclude autogen
+    'codecov.yaml'
   ])
 
 def generate_data_api(gapic):
