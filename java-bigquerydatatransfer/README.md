@@ -38,25 +38,25 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerydatatransfer</artifactId>
-  <version>1.2.7</version>
+  <version>1.2.8</version>
 </dependency>
 
 ```
 
 If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:19.2.1')
+implementation platform('com.google.cloud:libraries-bom:20.0.0')
 
 compile 'com.google.cloud:google-cloud-bigquerydatatransfer'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigquerydatatransfer:1.2.7'
+compile 'com.google.cloud:google-cloud-bigquerydatatransfer:1.2.8'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquerydatatransfer" % "1.2.7"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquerydatatransfer" % "1.2.8"
 ```
 
 ## Authentication
