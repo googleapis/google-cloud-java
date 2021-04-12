@@ -157,7 +157,12 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
     return ((ClusterManagerStubSettings) getStubSettings()).setAddonsConfigSettings();
   }
 
-  /** Returns the object with the settings used for calls to setLocations. */
+  /**
+   * Returns the object with the settings used for calls to setLocations.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<SetLocationsRequest, Operation> setLocationsSettings() {
     return ((ClusterManagerStubSettings) getStubSettings()).setLocationsSettings();
   }
@@ -425,7 +430,12 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
       return getStubSettingsBuilder().setAddonsConfigSettings();
     }
 
-    /** Returns the builder for the settings used for calls to setLocations. */
+    /**
+     * Returns the builder for the settings used for calls to setLocations.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<SetLocationsRequest, Operation> setLocationsSettings() {
       return getStubSettingsBuilder().setLocationsSettings();
     }

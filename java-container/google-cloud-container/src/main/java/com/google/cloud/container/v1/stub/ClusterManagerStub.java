@@ -109,6 +109,7 @@ public abstract class ClusterManagerStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: setAddonsConfigCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<SetLocationsRequest, Operation> setLocationsCallable() {
     throw new UnsupportedOperationException("Not implemented: setLocationsCallable()");
   }

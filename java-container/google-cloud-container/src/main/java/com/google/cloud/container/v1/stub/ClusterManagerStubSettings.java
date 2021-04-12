@@ -286,7 +286,12 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     return setAddonsConfigSettings;
   }
 
-  /** Returns the object with the settings used for calls to setLocations. */
+  /**
+   * Returns the object with the settings used for calls to setLocations.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<SetLocationsRequest, Operation> setLocationsSettings() {
     return setLocationsSettings;
   }
@@ -1004,7 +1009,12 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       return setAddonsConfigSettings;
     }
 
-    /** Returns the builder for the settings used for calls to setLocations. */
+    /**
+     * Returns the builder for the settings used for calls to setLocations.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<SetLocationsRequest, Operation> setLocationsSettings() {
       return setLocationsSettings;
     }
