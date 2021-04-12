@@ -18,18 +18,24 @@ package beta.video;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import io.grpc.StatusRuntimeException;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
+import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Integration (system) tests for {@link StreamingShotChangeDetection}. */
+/**
+ * Integration (system) tests for {@link StreamingShotChangeDetection}.
+ */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class StreamingShotChangeDetectionIT {
+
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -50,7 +56,8 @@ public class StreamingShotChangeDetectionIT {
   }
 
   @Test
-  public void testStreamingShotChangeDetection() {
+  public void testStreamingShotChangeDetection()
+      throws IOException, TimeoutException, StatusRuntimeException {
     StreamingShotChangeDetection.streamingShotChangeDetection("resources/cat.mp4");
     String got = bout.toString();
 
