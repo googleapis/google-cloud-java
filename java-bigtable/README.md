@@ -8,9 +8,6 @@ Java idiomatic client for [Cloud Bigtable][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
-
-
-
 ## Quickstart
 
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
@@ -48,7 +45,7 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:19.2.1')
+implementation platform('com.google.cloud:libraries-bom:20.0.0')
 
 compile 'com.google.cloud:google-cloud-bigtable'
 ```
