@@ -1,7 +1,7 @@
-proto-google-cloud-document-ai-v1beta1:0.5.0:0.5.1-SNAPSHOT
-proto-google-cloud-document-ai-v1beta2:0.5.0:0.5.1-SNAPSHOT
-proto-google-cloud-document-ai-v1beta3:0.5.0:0.5.1-SNAPSHOT
-grpc-google-cloud-document-ai-v1beta1:0.5.0:0.5.1-SNAPSHOT
-grpc-google-cloud-document-ai-v1beta2:0.5.0:0.5.1-SNAPSHOT
-grpc-google-cloud-document-ai-v1beta3:0.5.0:0.5.1-SNAPSHOT
-google-cloud-document-ai:0.5.0:0.5.1-SNAPSHOT
+proto-google-cloud-document-ai-v1beta1:0.6.0:0.6.0
+proto-google-cloud-document-ai-v1beta2:0.6.0:0.6.0
+proto-google-cloud-document-ai-v1beta3:0.6.0:0.6.0
+grpc-google-cloud-document-ai-v1beta1:0.6.0:0.6.0
+grpc-google-cloud-document-ai-v1beta2:0.6.0:0.6.0
+grpc-google-cloud-document-ai-v1beta3:0.6.0:0.6.0
+google-cloud-document-ai:0.6.0:0.6.0

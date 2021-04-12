@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.6.0](https://www.github.com/googleapis/java-document-ai/compare/v0.5.0...v0.6.0) (2021-04-12)
+
+
+### Features
+
+* add EVAL_SKIPPED value to the Provenance.OperationType enum in document.proto ([#390](https://www.github.com/googleapis/java-document-ai/issues/390)) ([62f71cb](https://www.github.com/googleapis/java-document-ai/commit/62f71cb332a111a86f6147bbec6305fd198b8fca))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#406](https://www.github.com/googleapis/java-document-ai/issues/406)) ([0e6ed58](https://www.github.com/googleapis/java-document-ai/commit/0e6ed58ede9331c27a8e6bd509334e223b499660))
+
 ## [0.5.0](https://www.github.com/googleapis/java-document-ai/compare/v0.4.1...v0.5.0) (2021-03-15)
 
 
