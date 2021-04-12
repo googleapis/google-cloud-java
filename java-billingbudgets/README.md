@@ -51,12 +51,12 @@ compile 'com.google.cloud:google-cloud-billingbudgets'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-billingbudgets:1.0.7'
+compile 'com.google.cloud:google-cloud-billingbudgets:1.0.8'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-billingbudgets" % "1.0.7"
+libraryDependencies += "com.google.cloud" % "google-cloud-billingbudgets" % "1.0.8"
 ```
 
 ## Authentication
