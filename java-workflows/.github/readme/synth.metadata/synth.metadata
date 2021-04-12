@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-workflows.git",
-        "sha": "c3cef693a677061fcb1b1585bebe1fa2c39b4ed9"
+        "sha": "201bc199974d067485585af561c7974a98eb73c5"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "d9ddac83a22a600dd33854c9d835a4fe52284207"
+        "sha": "0a071b3460344886297a304253bf924aa68ddb7e"
       }
     }
   ]
