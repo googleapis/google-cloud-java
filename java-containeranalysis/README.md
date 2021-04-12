@@ -45,18 +45,18 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:19.2.1')
+implementation platform('com.google.cloud:libraries-bom:20.0.0')
 
 compile 'com.google.cloud:google-cloud-containeranalysis'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-containeranalysis:1.2.34'
+compile 'com.google.cloud:google-cloud-containeranalysis:1.2.36'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-containeranalysis" % "1.2.34"
+libraryDependencies += "com.google.cloud" % "google-cloud-containeranalysis" % "1.2.36"
 ```
 
 ## Authentication
