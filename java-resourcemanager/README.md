@@ -8,11 +8,8 @@ Java idiomatic client for [Resource Manager API][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
-
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
-
-
 
 ## Quickstart
 
@@ -51,7 +48,7 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:19.2.1')
+implementation platform('com.google.cloud:libraries-bom:20.0.0')
 
 compile 'com.google.cloud:google-cloud-resourcemanager'
 ```
