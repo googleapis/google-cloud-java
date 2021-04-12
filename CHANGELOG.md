@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.106.1](https://www.github.com/googleapis/java-datastore/compare/v1.106.0...v1.106.1) (2021-04-12)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#380](https://www.github.com/googleapis/java-datastore/issues/380)) ([7577e1b](https://www.github.com/googleapis/java-datastore/commit/7577e1b1cb1af0539fc931059fbb48ee5e934447))
+* update dependency com.google.oauth-client:google-oauth-client to v1.31.5 ([#379](https://www.github.com/googleapis/java-datastore/issues/379)) ([917719c](https://www.github.com/googleapis/java-datastore/commit/917719cb36d4d55b586b6fde7a0e0950a26cd233))
+
 ## [1.106.0](https://www.github.com/googleapis/java-datastore/compare/v1.105.9...v1.106.0) (2021-03-11)
 
 
