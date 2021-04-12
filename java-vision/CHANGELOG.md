@@ -1,5 +1,16 @@
 # Changelog
 
+### [1.112.1](https://www.github.com/googleapis/java-vision/compare/v1.112.0...v1.112.1) (2021-04-12)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.94.7 ([#441](https://www.github.com/googleapis/java-vision/issues/441)) ([d4bbb0a](https://www.github.com/googleapis/java-vision/commit/d4bbb0a8f28aa31b37932266fd9a55149debdffd))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#459](https://www.github.com/googleapis/java-vision/issues/459)) ([8278417](https://www.github.com/googleapis/java-vision/commit/827841776d2c2824c31faf8828d67072d0b2f544))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.14 ([#442](https://www.github.com/googleapis/java-vision/issues/442)) ([36dcc57](https://www.github.com/googleapis/java-vision/commit/36dcc571e68f0b18e0863e7e4e26d22e9038a9f3))
+* update dependency net.sourceforge.argparse4j:argparse4j to v0.9.0 ([#455](https://www.github.com/googleapis/java-vision/issues/455)) ([ea40b48](https://www.github.com/googleapis/java-vision/commit/ea40b487d50030959a04f3b4099afc6895ca4dc4))
+* update spring.version to v2.4.4 ([#448](https://www.github.com/googleapis/java-vision/issues/448)) ([3db8853](https://www.github.com/googleapis/java-vision/commit/3db8853edda8d4f0f436f608ed92db58eaf90b62))
+
 ## [1.112.0](https://www.github.com/googleapis/java-vision/compare/v1.111.1...v1.112.0) (2021-03-11)
 
 
