@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-service-management.git",
-        "sha": "3d4aa74301bb5b1e19ec4551f7f34a1c3df7c918"
+        "sha": "1e6e9e460f094a52b284b5649f8e88eb680fea04"
       }
     },
     {
       "git": {
         "name": "googleapis-gen",
         "remote": "https://github.com/googleapis/googleapis-gen.git",
-        "sha": "ee56c3493ec6aeb237ff515ecea949710944a20f",
-        "internalRef": "366472163"
+        "sha": "e5bf2024c2a02679278c2a12fb10b4c4ca2ebbaa",
+        "internalRef": "367652775"
       }
     },
     {

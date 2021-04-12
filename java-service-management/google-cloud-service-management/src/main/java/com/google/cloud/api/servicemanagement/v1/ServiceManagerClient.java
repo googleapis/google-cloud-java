@@ -1667,7 +1667,9 @@ public class ServiceManagerClient implements BackgroundResource {
    *     "project:&lt;project_id&gt;"
    *     <p>Note: this is made compatible with google.api.servicecontrol.v1.Operation.consumer_id.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<EnableServiceResponse, OperationMetadata> enableServiceAsync(
       String serviceName, String consumerId) {
     EnableServiceRequest request =
@@ -1701,7 +1703,9 @@ public class ServiceManagerClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<EnableServiceResponse, OperationMetadata> enableServiceAsync(
       EnableServiceRequest request) {
     return enableServiceOperationCallable().futureCall(request);
@@ -1730,7 +1734,10 @@ public class ServiceManagerClient implements BackgroundResource {
    *   EnableServiceResponse response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<EnableServiceRequest, EnableServiceResponse, OperationMetadata>
       enableServiceOperationCallable() {
     return stub.enableServiceOperationCallable();
@@ -1759,7 +1766,10 @@ public class ServiceManagerClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<EnableServiceRequest, Operation> enableServiceCallable() {
     return stub.enableServiceCallable();
   }
@@ -1791,7 +1801,9 @@ public class ServiceManagerClient implements BackgroundResource {
    *     "project:&lt;project_id&gt;"
    *     <p>Note: this is made compatible with google.api.servicecontrol.v1.Operation.consumer_id.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<DisableServiceResponse, OperationMetadata> disableServiceAsync(
       String serviceName, String consumerId) {
     DisableServiceRequest request =
@@ -1825,7 +1837,9 @@ public class ServiceManagerClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<DisableServiceResponse, OperationMetadata> disableServiceAsync(
       DisableServiceRequest request) {
     return disableServiceOperationCallable().futureCall(request);
@@ -1854,7 +1868,10 @@ public class ServiceManagerClient implements BackgroundResource {
    *   DisableServiceResponse response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<DisableServiceRequest, DisableServiceResponse, OperationMetadata>
       disableServiceOperationCallable() {
     return stub.disableServiceOperationCallable();
@@ -1883,7 +1900,10 @@ public class ServiceManagerClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<DisableServiceRequest, Operation> disableServiceCallable() {
     return stub.disableServiceCallable();
   }

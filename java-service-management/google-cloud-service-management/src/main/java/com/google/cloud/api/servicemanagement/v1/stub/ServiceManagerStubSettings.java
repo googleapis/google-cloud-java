@@ -448,7 +448,12 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
     return generateConfigReportSettings;
   }
 
-  /** Returns the object with the settings used for calls to enableService. */
+  /**
+   * Returns the object with the settings used for calls to enableService.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<EnableServiceRequest, Operation> enableServiceSettings() {
     return enableServiceSettings;
   }
@@ -459,7 +464,12 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
     return enableServiceOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to disableService. */
+  /**
+   * Returns the object with the settings used for calls to disableService.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DisableServiceRequest, Operation> disableServiceSettings() {
     return disableServiceSettings;
   }
@@ -1140,7 +1150,12 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
       return generateConfigReportSettings;
     }
 
-    /** Returns the builder for the settings used for calls to enableService. */
+    /**
+     * Returns the builder for the settings used for calls to enableService.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<EnableServiceRequest, Operation> enableServiceSettings() {
       return enableServiceSettings;
     }
@@ -1154,7 +1169,12 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
       return enableServiceOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to disableService. */
+    /**
+     * Returns the builder for the settings used for calls to disableService.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DisableServiceRequest, Operation> disableServiceSettings() {
       return disableServiceSettings;
     }

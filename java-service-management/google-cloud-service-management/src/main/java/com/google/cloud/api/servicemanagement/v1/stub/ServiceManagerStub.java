@@ -164,20 +164,24 @@ public abstract class ServiceManagerStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: generateConfigReportCallable()");
   }
 
+  @Deprecated
   public OperationCallable<EnableServiceRequest, EnableServiceResponse, OperationMetadata>
       enableServiceOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: enableServiceOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<EnableServiceRequest, Operation> enableServiceCallable() {
     throw new UnsupportedOperationException("Not implemented: enableServiceCallable()");
   }
 
+  @Deprecated
   public OperationCallable<DisableServiceRequest, DisableServiceResponse, OperationMetadata>
       disableServiceOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: disableServiceOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<DisableServiceRequest, Operation> disableServiceCallable() {
     throw new UnsupportedOperationException("Not implemented: disableServiceCallable()");
   }

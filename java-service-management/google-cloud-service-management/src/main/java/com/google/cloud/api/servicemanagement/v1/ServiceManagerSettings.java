@@ -204,23 +204,43 @@ public class ServiceManagerSettings extends ClientSettings<ServiceManagerSetting
     return ((ServiceManagerStubSettings) getStubSettings()).generateConfigReportSettings();
   }
 
-  /** Returns the object with the settings used for calls to enableService. */
+  /**
+   * Returns the object with the settings used for calls to enableService.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<EnableServiceRequest, Operation> enableServiceSettings() {
     return ((ServiceManagerStubSettings) getStubSettings()).enableServiceSettings();
   }
 
-  /** Returns the object with the settings used for calls to enableService. */
+  /**
+   * Returns the object with the settings used for calls to enableService.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public OperationCallSettings<EnableServiceRequest, EnableServiceResponse, OperationMetadata>
       enableServiceOperationSettings() {
     return ((ServiceManagerStubSettings) getStubSettings()).enableServiceOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to disableService. */
+  /**
+   * Returns the object with the settings used for calls to disableService.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DisableServiceRequest, Operation> disableServiceSettings() {
     return ((ServiceManagerStubSettings) getStubSettings()).disableServiceSettings();
   }
 
-  /** Returns the object with the settings used for calls to disableService. */
+  /**
+   * Returns the object with the settings used for calls to disableService.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public OperationCallSettings<DisableServiceRequest, DisableServiceResponse, OperationMetadata>
       disableServiceOperationSettings() {
     return ((ServiceManagerStubSettings) getStubSettings()).disableServiceOperationSettings();
@@ -434,24 +454,44 @@ public class ServiceManagerSettings extends ClientSettings<ServiceManagerSetting
       return getStubSettingsBuilder().generateConfigReportSettings();
     }
 
-    /** Returns the builder for the settings used for calls to enableService. */
+    /**
+     * Returns the builder for the settings used for calls to enableService.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<EnableServiceRequest, Operation> enableServiceSettings() {
       return getStubSettingsBuilder().enableServiceSettings();
     }
 
-    /** Returns the builder for the settings used for calls to enableService. */
+    /**
+     * Returns the builder for the settings used for calls to enableService.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public OperationCallSettings.Builder<
             EnableServiceRequest, EnableServiceResponse, OperationMetadata>
         enableServiceOperationSettings() {
       return getStubSettingsBuilder().enableServiceOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to disableService. */
+    /**
+     * Returns the builder for the settings used for calls to disableService.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DisableServiceRequest, Operation> disableServiceSettings() {
       return getStubSettingsBuilder().disableServiceSettings();
     }
 
-    /** Returns the builder for the settings used for calls to disableService. */
+    /**
+     * Returns the builder for the settings used for calls to disableService.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public OperationCallSettings.Builder<
             DisableServiceRequest, DisableServiceResponse, OperationMetadata>
         disableServiceOperationSettings() {
