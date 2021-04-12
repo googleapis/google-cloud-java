@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v1.1.0...v1.2.0) (2021-04-12)
+
+
+### Features
+
+* added mosaic layout ([#332](https://www.github.com/googleapis/java-monitoring-dashboards/issues/332)) ([01166ea](https://www.github.com/googleapis/java-monitoring-dashboards/commit/01166ea60c7b124a9f41bc7b16eb1eeb7cda67ea))
+
+
+### Documentation
+
+* clarified alignment_period max value and updated IAM docs link ([01166ea](https://www.github.com/googleapis/java-monitoring-dashboards/commit/01166ea60c7b124a9f41bc7b16eb1eeb7cda67ea))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#341](https://www.github.com/googleapis/java-monitoring-dashboards/issues/341)) ([c342cae](https://www.github.com/googleapis/java-monitoring-dashboards/commit/c342cae9cec4e84c09ab1b9e62dad2b24b89261f))
+
 ## [1.1.0](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v1.0.10...v1.1.0) (2021-03-11)
 
 
