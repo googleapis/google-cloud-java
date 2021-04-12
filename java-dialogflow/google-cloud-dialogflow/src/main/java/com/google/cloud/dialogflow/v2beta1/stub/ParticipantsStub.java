@@ -92,15 +92,18 @@ public abstract class ParticipantsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: suggestSmartRepliesCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListSuggestionsRequest, ListSuggestionsPagedResponse>
       listSuggestionsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listSuggestionsPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListSuggestionsRequest, ListSuggestionsResponse> listSuggestionsCallable() {
     throw new UnsupportedOperationException("Not implemented: listSuggestionsCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<CompileSuggestionRequest, CompileSuggestionResponse>
       compileSuggestionCallable() {
     throw new UnsupportedOperationException("Not implemented: compileSuggestionCallable()");

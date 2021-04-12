@@ -38,6 +38,7 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class AnswerRecordsStub implements BackgroundResource {
 
+  @Deprecated
   public UnaryCallable<GetAnswerRecordRequest, AnswerRecord> getAnswerRecordCallable() {
     throw new UnsupportedOperationException("Not implemented: getAnswerRecordCallable()");
   }

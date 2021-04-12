@@ -1225,7 +1225,9 @@ public class ParticipantsClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListSuggestionsPagedResponse listSuggestions(ListSuggestionsRequest request) {
     return listSuggestionsPagedCallable().call(request);
   }
@@ -1267,7 +1269,10 @@ public class ParticipantsClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListSuggestionsRequest, ListSuggestionsPagedResponse>
       listSuggestionsPagedCallable() {
     return stub.listSuggestionsPagedCallable();
@@ -1317,7 +1322,10 @@ public class ParticipantsClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListSuggestionsRequest, ListSuggestionsResponse>
       listSuggestionsCallable() {
     return stub.listSuggestionsCallable();
@@ -1352,7 +1360,9 @@ public class ParticipantsClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final CompileSuggestionResponse compileSuggestion(CompileSuggestionRequest request) {
     return compileSuggestionCallable().call(request);
   }
@@ -1386,7 +1396,10 @@ public class ParticipantsClient implements BackgroundResource {
    *   CompileSuggestionResponse response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<CompileSuggestionRequest, CompileSuggestionResponse>
       compileSuggestionCallable() {
     return stub.compileSuggestionCallable();

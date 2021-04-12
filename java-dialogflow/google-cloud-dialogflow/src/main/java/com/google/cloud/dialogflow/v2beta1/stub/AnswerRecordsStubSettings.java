@@ -164,7 +164,12 @@ public class AnswerRecordsStubSettings extends StubSettings<AnswerRecordsStubSet
             }
           };
 
-  /** Returns the object with the settings used for calls to getAnswerRecord. */
+  /**
+   * Returns the object with the settings used for calls to getAnswerRecord.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAnswerRecordRequest, AnswerRecord> getAnswerRecordSettings() {
     return getAnswerRecordSettings;
   }
@@ -371,7 +376,12 @@ public class AnswerRecordsStubSettings extends StubSettings<AnswerRecordsStubSet
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to getAnswerRecord. */
+    /**
+     * Returns the builder for the settings used for calls to getAnswerRecord.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAnswerRecordRequest, AnswerRecord>
         getAnswerRecordSettings() {
       return getAnswerRecordSettings;

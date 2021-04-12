@@ -167,7 +167,9 @@ public class AnswerRecordsClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AnswerRecord getAnswerRecord(GetAnswerRecordRequest request) {
     return getAnswerRecordCallable().call(request);
   }
@@ -188,7 +190,10 @@ public class AnswerRecordsClient implements BackgroundResource {
    *   AnswerRecord response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetAnswerRecordRequest, AnswerRecord> getAnswerRecordCallable() {
     return stub.getAnswerRecordCallable();
   }
