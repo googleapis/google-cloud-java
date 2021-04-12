@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-pubsub.git",
-        "sha": "972a286589048ec83a221501c4e2e5b39224a034"
+        "sha": "312966d58c494864d57821ed1a75c84fd3de1aab"
       }
     },
     {
