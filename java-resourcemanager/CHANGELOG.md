@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.119.1](https://www.github.com/googleapis/java-resourcemanager/compare/v0.119.0...v0.119.1) (2021-04-12)
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-cloudresourcemanager to v1-rev20210331-1.31.0 ([#430](https://www.github.com/googleapis/java-resourcemanager/issues/430)) ([6ee30fe](https://www.github.com/googleapis/java-resourcemanager/commit/6ee30fe79ee4f02b0f9c086aa0b95a75857e94af))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#429](https://www.github.com/googleapis/java-resourcemanager/issues/429)) ([b3f5353](https://www.github.com/googleapis/java-resourcemanager/commit/b3f53537ab83aed1afb065d49553649893e7f89e))
+
 ## [0.119.0](https://www.github.com/googleapis/java-resourcemanager/compare/v0.118.12...v0.119.0) (2021-04-09)
 
 
