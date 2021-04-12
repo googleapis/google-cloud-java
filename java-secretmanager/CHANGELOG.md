@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.5.0](https://www.github.com/googleapis/java-secretmanager/compare/v1.4.2...v1.5.0) (2021-04-12)
+
+
+### Features
+
+* Rotation for Secrets ([#425](https://www.github.com/googleapis/java-secretmanager/issues/425)) ([0d2e4b4](https://www.github.com/googleapis/java-secretmanager/commit/0d2e4b435f8847d0211bb9bf694fef0878364c26))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#432](https://www.github.com/googleapis/java-secretmanager/issues/432)) ([b3a2562](https://www.github.com/googleapis/java-secretmanager/commit/b3a256254793f3f6d36d8b322370fbc9dfdf36f8))
+* update dependency com.google.protobuf:protobuf-java-util to v3.15.8 ([#428](https://www.github.com/googleapis/java-secretmanager/issues/428)) ([eb0714c](https://www.github.com/googleapis/java-secretmanager/commit/eb0714c3afa4364d443f41c391b4e3b0c0cae62f))
+
 ### [1.4.2](https://www.github.com/googleapis/java-secretmanager/compare/v1.4.1...v1.4.2) (2021-03-15)
 
 
