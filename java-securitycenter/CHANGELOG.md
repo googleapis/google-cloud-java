@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.4.1](https://www.github.com/googleapis/java-securitycenter/compare/v1.4.0...v1.4.1) (2021-04-12)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub to v1.112.0 ([#423](https://www.github.com/googleapis/java-securitycenter/issues/423)) ([dc5c47a](https://www.github.com/googleapis/java-securitycenter/commit/dc5c47aef8525ca009a3dd5d7e06a1868f7049cb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#436](https://www.github.com/googleapis/java-securitycenter/issues/436)) ([9af7c29](https://www.github.com/googleapis/java-securitycenter/commit/9af7c292d565a4c579317f1e06db4e47b614b3de))
+* update dependency com.google.protobuf:protobuf-java-util to v3.15.8 ([#402](https://www.github.com/googleapis/java-securitycenter/issues/402)) ([d0480e2](https://www.github.com/googleapis/java-securitycenter/commit/d0480e2644baa0419ddeb3404591dde28e92fb9c))
+
 ## [1.4.0](https://www.github.com/googleapis/java-securitycenter/compare/v1.3.8...v1.4.0) (2021-03-11)
 
 
