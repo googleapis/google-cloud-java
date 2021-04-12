@@ -43,7 +43,7 @@ import com.google.cloud.bigtable.test_helpers.env.AbstractTestEnv;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.common.collect.Lists;
-import com.google.protobuf.Timestamp;
+import com.google.protobuf.ByteString;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.List;
@@ -119,7 +119,7 @@ public class BigtableBackupIT {
       ApiFuture<Void> future =
           dataClient.mutateRowAsync(
               RowMutation.create(testTable.getId(), "test-row-" + i)
-                  .setCell("cf1", "", rowBytes.toString()));
+                  .setCell("cf1", ByteString.EMPTY, ByteString.copyFrom(rowBytes)));
       futures.add(future);
     }
     ApiFutures.allAsList(futures).get(3, TimeUnit.MINUTES);
@@ -188,7 +188,7 @@ public class BigtableBackupIT {
           .isEqualTo(expireTime);
       assertWithMessage("Got empty start time in GetBackup API")
           .that(result.getStartTime())
-          .isNotEqualTo(Timestamp.getDefaultInstance());
+          .isNotNull();
       assertWithMessage("Got wrong size bytes in GetBackup API")
           .that(result.getSizeBytes())
           .isEqualTo(0L);

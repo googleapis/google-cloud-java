@@ -19,7 +19,10 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
+@RunWith(JUnit4.class)
 public class BigtableDataSettingsTest {
 
   @Test
