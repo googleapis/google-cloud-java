@@ -8,11 +8,8 @@ Java idiomatic client for [Video Transcoder][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
-
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
-
-
 
 ## Quickstart
 
