@@ -1,5 +1,31 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/googleapis/java-monitoring/compare/v2.1.0...v2.2.0) (2021-04-12)
+
+
+### Features
+
+* Added creation and mutation records to notification channels ([8a42810](https://www.github.com/googleapis/java-monitoring/commit/8a42810e2f0786de716b123e1091b6a1dd7d1e45))
+* Added IstioCanonicalService for service monitoring ([8a42810](https://www.github.com/googleapis/java-monitoring/commit/8a42810e2f0786de716b123e1091b6a1dd7d1e45))
+* Added support for Monitoring Query Language: https://cloud.google.com/monitoring/mql ([8a42810](https://www.github.com/googleapis/java-monitoring/commit/8a42810e2f0786de716b123e1091b6a1dd7d1e45))
+* Added support for querying metrics for folders and organizations ([8a42810](https://www.github.com/googleapis/java-monitoring/commit/8a42810e2f0786de716b123e1091b6a1dd7d1e45))
+* Added support for secondary aggregation when querying metrics ([#471](https://www.github.com/googleapis/java-monitoring/issues/471)) ([8a42810](https://www.github.com/googleapis/java-monitoring/commit/8a42810e2f0786de716b123e1091b6a1dd7d1e45))
+* Added support for units in the MetricService ([8a42810](https://www.github.com/googleapis/java-monitoring/commit/8a42810e2f0786de716b123e1091b6a1dd7d1e45))
+* Added total_size to the response of ListAlertPolicies ([8a42810](https://www.github.com/googleapis/java-monitoring/commit/8a42810e2f0786de716b123e1091b6a1dd7d1e45))
+
+
+### Bug Fixes
+
+* Extended the default deadline for UpdateGroup to 180s ([8a42810](https://www.github.com/googleapis/java-monitoring/commit/8a42810e2f0786de716b123e1091b6a1dd7d1e45))
+* Un-deprecated cluster_istio for service monitoring ([8a42810](https://www.github.com/googleapis/java-monitoring/commit/8a42810e2f0786de716b123e1091b6a1dd7d1e45))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#478](https://www.github.com/googleapis/java-monitoring/issues/478)) ([d028912](https://www.github.com/googleapis/java-monitoring/commit/d0289124b32940e1cb1ccb580c30c5b463d6db54))
+* update dependency com.google.protobuf:protobuf-java-util to v3.15.7 ([#461](https://www.github.com/googleapis/java-monitoring/issues/461)) ([aa17b1b](https://www.github.com/googleapis/java-monitoring/commit/aa17b1b006fc0203b040bdb9035df8e732c6307c))
+* update dependency com.google.protobuf:protobuf-java-util to v3.15.8 ([#477](https://www.github.com/googleapis/java-monitoring/issues/477)) ([31d72d7](https://www.github.com/googleapis/java-monitoring/commit/31d72d721af4eaec6d3896fd59f53f588911e220))
+
 ## [2.1.0](https://www.github.com/googleapis/java-monitoring/compare/v2.0.14...v2.1.0) (2021-03-11)
 
 
