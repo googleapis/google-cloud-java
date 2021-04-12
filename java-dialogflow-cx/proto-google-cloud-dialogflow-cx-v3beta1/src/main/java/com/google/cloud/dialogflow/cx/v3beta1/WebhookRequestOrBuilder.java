@@ -220,6 +220,33 @@ public interface WebhookRequestOrBuilder
    *
    *
    * <pre>
+   * The language code specified in the [original
+   * request][QueryInput.language_code].
+   * </pre>
+   *
+   * <code>string language_code = 15;</code>
+   *
+   * @return The languageCode.
+   */
+  java.lang.String getLanguageCode();
+  /**
+   *
+   *
+   * <pre>
+   * The language code specified in the [original
+   * request][QueryInput.language_code].
+   * </pre>
+   *
+   * <code>string language_code = 15;</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  com.google.protobuf.ByteString getLanguageCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Always present. Information about the fulfillment that triggered this
    * webhook call.
    * </pre>

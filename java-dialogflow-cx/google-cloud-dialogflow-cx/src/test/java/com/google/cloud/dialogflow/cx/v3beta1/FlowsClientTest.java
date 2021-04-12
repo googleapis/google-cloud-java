@@ -95,6 +95,7 @@ public class FlowsClientTest {
             .setDescription("description-1724546052")
             .addAllTransitionRoutes(new ArrayList<TransitionRoute>())
             .addAllEventHandlers(new ArrayList<EventHandler>())
+            .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
             .build();
     mockFlows.addResponse(expectedResponse);
@@ -141,6 +142,7 @@ public class FlowsClientTest {
             .setDescription("description-1724546052")
             .addAllTransitionRoutes(new ArrayList<TransitionRoute>())
             .addAllEventHandlers(new ArrayList<EventHandler>())
+            .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
             .build();
     mockFlows.addResponse(expectedResponse);
@@ -343,6 +345,7 @@ public class FlowsClientTest {
             .setDescription("description-1724546052")
             .addAllTransitionRoutes(new ArrayList<TransitionRoute>())
             .addAllEventHandlers(new ArrayList<EventHandler>())
+            .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
             .build();
     mockFlows.addResponse(expectedResponse);
@@ -386,6 +389,7 @@ public class FlowsClientTest {
             .setDescription("description-1724546052")
             .addAllTransitionRoutes(new ArrayList<TransitionRoute>())
             .addAllEventHandlers(new ArrayList<EventHandler>())
+            .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
             .build();
     mockFlows.addResponse(expectedResponse);
@@ -429,6 +433,7 @@ public class FlowsClientTest {
             .setDescription("description-1724546052")
             .addAllTransitionRoutes(new ArrayList<TransitionRoute>())
             .addAllEventHandlers(new ArrayList<EventHandler>())
+            .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
             .build();
     mockFlows.addResponse(expectedResponse);

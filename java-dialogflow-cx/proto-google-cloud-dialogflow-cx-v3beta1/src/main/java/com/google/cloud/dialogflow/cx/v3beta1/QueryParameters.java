@@ -40,6 +40,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   private QueryParameters() {
     timeZone_ = "";
     sessionEntityTypes_ = java.util.Collections.emptyList();
+    currentPage_ = "";
   }
 
   @java.lang.Override
@@ -134,6 +135,13 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
                 parameters_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              currentPage_ = s;
               break;
             }
           case 56:
@@ -542,6 +550,73 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     return getParameters();
   }
 
+  public static final int CURRENT_PAGE_FIELD_NUMBER = 6;
+  private volatile java.lang.Object currentPage_;
+  /**
+   *
+   *
+   * <pre>
+   * The unique identifier of the [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
+   * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
+   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
+   * If `current_page` is specified, the previous state of the session will be
+   * ignored by Dialogflow, including the [previous
+   * page][QueryResult.current_page] and the [previous session
+   * parameters][QueryResult.parameters].
+   * In most cases, [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page] and
+   * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters] should be configured together to
+   * direct a session to a specific state.
+   * </pre>
+   *
+   * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The currentPage.
+   */
+  @java.lang.Override
+  public java.lang.String getCurrentPage() {
+    java.lang.Object ref = currentPage_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      currentPage_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The unique identifier of the [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
+   * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
+   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
+   * If `current_page` is specified, the previous state of the session will be
+   * ignored by Dialogflow, including the [previous
+   * page][QueryResult.current_page] and the [previous session
+   * parameters][QueryResult.parameters].
+   * In most cases, [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page] and
+   * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters] should be configured together to
+   * direct a session to a specific state.
+   * </pre>
+   *
+   * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for currentPage.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCurrentPageBytes() {
+    java.lang.Object ref = currentPage_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      currentPage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int DISABLE_WEBHOOK_FIELD_NUMBER = 7;
   private boolean disableWebhook_;
   /**
@@ -737,6 +812,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (parameters_ != null) {
       output.writeMessage(5, getParameters());
     }
+    if (!getCurrentPageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, currentPage_);
+    }
     if (disableWebhook_ != false) {
       output.writeBool(7, disableWebhook_);
     }
@@ -769,6 +847,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     }
     if (parameters_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getParameters());
+    }
+    if (!getCurrentPageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, currentPage_);
     }
     if (disableWebhook_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, disableWebhook_);
@@ -816,6 +897,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (hasParameters()) {
       if (!getParameters().equals(other.getParameters())) return false;
     }
+    if (!getCurrentPage().equals(other.getCurrentPage())) return false;
     if (getDisableWebhook() != other.getDisableWebhook()) return false;
     if (getAnalyzeQueryTextSentiment() != other.getAnalyzeQueryTextSentiment()) return false;
     if (!internalGetWebhookHeaders().equals(other.internalGetWebhookHeaders())) return false;
@@ -848,6 +930,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getParameters().hashCode();
     }
+    hash = (37 * hash) + CURRENT_PAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getCurrentPage().hashCode();
     hash = (37 * hash) + DISABLE_WEBHOOK_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableWebhook());
     hash = (37 * hash) + ANALYZE_QUERY_TEXT_SENTIMENT_FIELD_NUMBER;
@@ -1050,6 +1134,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         parameters_ = null;
         parametersBuilder_ = null;
       }
+      currentPage_ = "";
+
       disableWebhook_ = false;
 
       analyzeQueryTextSentiment_ = false;
@@ -1108,6 +1194,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       } else {
         result.parameters_ = parametersBuilder_.build();
       }
+      result.currentPage_ = currentPage_;
       result.disableWebhook_ = disableWebhook_;
       result.analyzeQueryTextSentiment_ = analyzeQueryTextSentiment_;
       result.webhookHeaders_ = internalGetWebhookHeaders();
@@ -1201,6 +1288,10 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       if (other.hasParameters()) {
         mergeParameters(other.getParameters());
+      }
+      if (!other.getCurrentPage().isEmpty()) {
+        currentPage_ = other.currentPage_;
+        onChanged();
       }
       if (other.getDisableWebhook() != false) {
         setDisableWebhook(other.getDisableWebhook());
@@ -2488,6 +2579,157 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         parameters_ = null;
       }
       return parametersBuilder_;
+    }
+
+    private java.lang.Object currentPage_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
+     * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
+     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
+     * If `current_page` is specified, the previous state of the session will be
+     * ignored by Dialogflow, including the [previous
+     * page][QueryResult.current_page] and the [previous session
+     * parameters][QueryResult.parameters].
+     * In most cases, [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page] and
+     * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters] should be configured together to
+     * direct a session to a specific state.
+     * </pre>
+     *
+     * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The currentPage.
+     */
+    public java.lang.String getCurrentPage() {
+      java.lang.Object ref = currentPage_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        currentPage_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
+     * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
+     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
+     * If `current_page` is specified, the previous state of the session will be
+     * ignored by Dialogflow, including the [previous
+     * page][QueryResult.current_page] and the [previous session
+     * parameters][QueryResult.parameters].
+     * In most cases, [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page] and
+     * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters] should be configured together to
+     * direct a session to a specific state.
+     * </pre>
+     *
+     * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for currentPage.
+     */
+    public com.google.protobuf.ByteString getCurrentPageBytes() {
+      java.lang.Object ref = currentPage_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        currentPage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
+     * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
+     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
+     * If `current_page` is specified, the previous state of the session will be
+     * ignored by Dialogflow, including the [previous
+     * page][QueryResult.current_page] and the [previous session
+     * parameters][QueryResult.parameters].
+     * In most cases, [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page] and
+     * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters] should be configured together to
+     * direct a session to a specific state.
+     * </pre>
+     *
+     * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The currentPage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCurrentPage(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      currentPage_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
+     * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
+     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
+     * If `current_page` is specified, the previous state of the session will be
+     * ignored by Dialogflow, including the [previous
+     * page][QueryResult.current_page] and the [previous session
+     * parameters][QueryResult.parameters].
+     * In most cases, [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page] and
+     * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters] should be configured together to
+     * direct a session to a specific state.
+     * </pre>
+     *
+     * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCurrentPage() {
+
+      currentPage_ = getDefaultInstance().getCurrentPage();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
+     * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
+     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
+     * If `current_page` is specified, the previous state of the session will be
+     * ignored by Dialogflow, including the [previous
+     * page][QueryResult.current_page] and the [previous session
+     * parameters][QueryResult.parameters].
+     * In most cases, [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page] and
+     * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters] should be configured together to
+     * direct a session to a specific state.
+     * </pre>
+     *
+     * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for currentPage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCurrentPageBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      currentPage_ = value;
+      onChanged();
+      return this;
     }
 
     private boolean disableWebhook_;

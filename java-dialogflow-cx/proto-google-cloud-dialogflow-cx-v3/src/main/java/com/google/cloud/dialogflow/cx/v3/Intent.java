@@ -4300,7 +4300,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The key/value metadata to label an intent. Labels can contain
+   * The key/value metadata to label an intent. Labels can contain
    * lowercase letters, digits and the symbols '-' and '_'. International
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
@@ -4313,7 +4313,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * head intent. "sys.contextual" means the intent is a contextual intent.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -4332,7 +4332,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The key/value metadata to label an intent. Labels can contain
+   * The key/value metadata to label an intent. Labels can contain
    * lowercase letters, digits and the symbols '-' and '_'. International
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
@@ -4345,7 +4345,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * head intent. "sys.contextual" means the intent is a contextual intent.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -4355,7 +4355,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The key/value metadata to label an intent. Labels can contain
+   * The key/value metadata to label an intent. Labels can contain
    * lowercase letters, digits and the symbols '-' and '_'. International
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
@@ -4368,7 +4368,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * head intent. "sys.contextual" means the intent is a contextual intent.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
@@ -4382,7 +4382,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The key/value metadata to label an intent. Labels can contain
+   * The key/value metadata to label an intent. Labels can contain
    * lowercase letters, digits and the symbols '-' and '_'. International
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
@@ -4395,7 +4395,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * head intent. "sys.contextual" means the intent is a contextual intent.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -4415,11 +4415,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Human readable description for better understanding an intent like its
+   * Human readable description for better understanding an intent like its
    * scope, content, result etc. Maximum character limit: 140 characters.
    * </pre>
    *
-   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 8;</code>
    *
    * @return The description.
    */
@@ -4439,11 +4439,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Human readable description for better understanding an intent like its
+   * Human readable description for better understanding an intent like its
    * scope, content, result etc. Maximum character limit: 140 characters.
    * </pre>
    *
-   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 8;</code>
    *
    * @return The bytes for description.
    */
@@ -6153,7 +6153,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The key/value metadata to label an intent. Labels can contain
+     * The key/value metadata to label an intent. Labels can contain
      * lowercase letters, digits and the symbols '-' and '_'. International
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
@@ -6166,7 +6166,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * head intent. "sys.contextual" means the intent is a contextual intent.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 7;</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -6185,7 +6185,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The key/value metadata to label an intent. Labels can contain
+     * The key/value metadata to label an intent. Labels can contain
      * lowercase letters, digits and the symbols '-' and '_'. International
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
@@ -6198,7 +6198,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * head intent. "sys.contextual" means the intent is a contextual intent.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 7;</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -6208,7 +6208,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The key/value metadata to label an intent. Labels can contain
+     * The key/value metadata to label an intent. Labels can contain
      * lowercase letters, digits and the symbols '-' and '_'. International
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
@@ -6221,7 +6221,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * head intent. "sys.contextual" means the intent is a contextual intent.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 7;</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrDefault(
@@ -6236,7 +6236,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The key/value metadata to label an intent. Labels can contain
+     * The key/value metadata to label an intent. Labels can contain
      * lowercase letters, digits and the symbols '-' and '_'. International
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
@@ -6249,7 +6249,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * head intent. "sys.contextual" means the intent is a contextual intent.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 7;</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -6271,7 +6271,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The key/value metadata to label an intent. Labels can contain
+     * The key/value metadata to label an intent. Labels can contain
      * lowercase letters, digits and the symbols '-' and '_'. International
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
@@ -6284,7 +6284,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * head intent. "sys.contextual" means the intent is a contextual intent.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 7;</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -6302,7 +6302,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The key/value metadata to label an intent. Labels can contain
+     * The key/value metadata to label an intent. Labels can contain
      * lowercase letters, digits and the symbols '-' and '_'. International
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
@@ -6315,7 +6315,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * head intent. "sys.contextual" means the intent is a contextual intent.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 7;</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -6331,7 +6331,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The key/value metadata to label an intent. Labels can contain
+     * The key/value metadata to label an intent. Labels can contain
      * lowercase letters, digits and the symbols '-' and '_'. International
      * characters are allowed, including letters from unicase alphabets. Keys must
      * start with a letter. Keys and values can be no longer than 63 characters
@@ -6344,7 +6344,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * head intent. "sys.contextual" means the intent is a contextual intent.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>map&lt;string, string&gt; labels = 7;</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -6356,11 +6356,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Human readable description for better understanding an intent like its
+     * Human readable description for better understanding an intent like its
      * scope, content, result etc. Maximum character limit: 140 characters.
      * </pre>
      *
-     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 8;</code>
      *
      * @return The description.
      */
@@ -6379,11 +6379,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Human readable description for better understanding an intent like its
+     * Human readable description for better understanding an intent like its
      * scope, content, result etc. Maximum character limit: 140 characters.
      * </pre>
      *
-     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 8;</code>
      *
      * @return The bytes for description.
      */
@@ -6402,11 +6402,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Human readable description for better understanding an intent like its
+     * Human readable description for better understanding an intent like its
      * scope, content, result etc. Maximum character limit: 140 characters.
      * </pre>
      *
-     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 8;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -6424,11 +6424,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Human readable description for better understanding an intent like its
+     * Human readable description for better understanding an intent like its
      * scope, content, result etc. Maximum character limit: 140 characters.
      * </pre>
      *
-     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 8;</code>
      *
      * @return This builder for chaining.
      */
@@ -6442,11 +6442,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Human readable description for better understanding an intent like its
+     * Human readable description for better understanding an intent like its
      * scope, content, result etc. Maximum character limit: 140 characters.
      * </pre>
      *
-     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 8;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.

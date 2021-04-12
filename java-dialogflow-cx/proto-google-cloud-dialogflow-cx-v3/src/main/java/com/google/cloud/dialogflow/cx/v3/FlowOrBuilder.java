@@ -313,6 +313,89 @@ public interface FlowOrBuilder
    *
    *
    * <pre>
+   * A flow's transition route group serve two purposes:
+   * *   They are responsible for matching the user's first utterances in the
+   * flow.
+   * *   They are inherited by every page's [transition
+   * route groups][Page.transition_route_groups]. Transition route groups
+   * defined in the page have higher priority than those defined in the flow.
+   * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * </pre>
+   *
+   * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the transitionRouteGroups.
+   */
+  java.util.List<java.lang.String> getTransitionRouteGroupsList();
+  /**
+   *
+   *
+   * <pre>
+   * A flow's transition route group serve two purposes:
+   * *   They are responsible for matching the user's first utterances in the
+   * flow.
+   * *   They are inherited by every page's [transition
+   * route groups][Page.transition_route_groups]. Transition route groups
+   * defined in the page have higher priority than those defined in the flow.
+   * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * </pre>
+   *
+   * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of transitionRouteGroups.
+   */
+  int getTransitionRouteGroupsCount();
+  /**
+   *
+   *
+   * <pre>
+   * A flow's transition route group serve two purposes:
+   * *   They are responsible for matching the user's first utterances in the
+   * flow.
+   * *   They are inherited by every page's [transition
+   * route groups][Page.transition_route_groups]. Transition route groups
+   * defined in the page have higher priority than those defined in the flow.
+   * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * </pre>
+   *
+   * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The transitionRouteGroups at the given index.
+   */
+  java.lang.String getTransitionRouteGroups(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A flow's transition route group serve two purposes:
+   * *   They are responsible for matching the user's first utterances in the
+   * flow.
+   * *   They are inherited by every page's [transition
+   * route groups][Page.transition_route_groups]. Transition route groups
+   * defined in the page have higher priority than those defined in the flow.
+   * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * </pre>
+   *
+   * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the transitionRouteGroups at the given index.
+   */
+  com.google.protobuf.ByteString getTransitionRouteGroupsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * NLU related settings of the flow.
    * </pre>
    *

@@ -239,7 +239,7 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Optional. The key/value metadata to label an intent. Labels can contain
+   * The key/value metadata to label an intent. Labels can contain
    * lowercase letters, digits and the symbols '-' and '_'. International
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
@@ -252,14 +252,14 @@ public interface IntentOrBuilder
    * head intent. "sys-contextual" means the intent is a contextual intent.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   int getLabelsCount();
   /**
    *
    *
    * <pre>
-   * Optional. The key/value metadata to label an intent. Labels can contain
+   * The key/value metadata to label an intent. Labels can contain
    * lowercase letters, digits and the symbols '-' and '_'. International
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
@@ -272,7 +272,7 @@ public interface IntentOrBuilder
    * head intent. "sys-contextual" means the intent is a contextual intent.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -282,7 +282,7 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Optional. The key/value metadata to label an intent. Labels can contain
+   * The key/value metadata to label an intent. Labels can contain
    * lowercase letters, digits and the symbols '-' and '_'. International
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
@@ -295,14 +295,14 @@ public interface IntentOrBuilder
    * head intent. "sys-contextual" means the intent is a contextual intent.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
    *
    *
    * <pre>
-   * Optional. The key/value metadata to label an intent. Labels can contain
+   * The key/value metadata to label an intent. Labels can contain
    * lowercase letters, digits and the symbols '-' and '_'. International
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
@@ -315,14 +315,14 @@ public interface IntentOrBuilder
    * head intent. "sys-contextual" means the intent is a contextual intent.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
    *
    *
    * <pre>
-   * Optional. The key/value metadata to label an intent. Labels can contain
+   * The key/value metadata to label an intent. Labels can contain
    * lowercase letters, digits and the symbols '-' and '_'. International
    * characters are allowed, including letters from unicase alphabets. Keys must
    * start with a letter. Keys and values can be no longer than 63 characters
@@ -335,7 +335,7 @@ public interface IntentOrBuilder
    * head intent. "sys-contextual" means the intent is a contextual intent.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -343,11 +343,11 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Optional. Human readable description for better understanding an intent like its
+   * Human readable description for better understanding an intent like its
    * scope, content, result etc. Maximum character limit: 140 characters.
    * </pre>
    *
-   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 8;</code>
    *
    * @return The description.
    */
@@ -356,11 +356,11 @@ public interface IntentOrBuilder
    *
    *
    * <pre>
-   * Optional. Human readable description for better understanding an intent like its
+   * Human readable description for better understanding an intent like its
    * scope, content, result etc. Maximum character limit: 140 characters.
    * </pre>
    *
-   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 8;</code>
    *
    * @return The bytes for description.
    */
