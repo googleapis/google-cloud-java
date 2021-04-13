@@ -1,5 +1,20 @@
 # Changelog
 
+### [3.0.1](https://www.github.com/googleapis/java-dialogflow/compare/v3.0.0...v3.0.1) (2021-04-13)
+
+
+### Bug Fixes
+
+* remove unused proto InputText, InputAudio ([#500](https://www.github.com/googleapis/java-dialogflow/issues/500)) ([cf09a67](https://www.github.com/googleapis/java-dialogflow/commit/cf09a67e0cff62969423a6251da095a1b64943d1))
+* typo ([#513](https://www.github.com/googleapis/java-dialogflow/issues/513)) ([bc6c51a](https://www.github.com/googleapis/java-dialogflow/commit/bc6c51ace6f3173f6fd991da3e1c5aa321ef52fc))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.94.6 ([#501](https://www.github.com/googleapis/java-dialogflow/issues/501)) ([391b215](https://www.github.com/googleapis/java-dialogflow/commit/391b215f34b5ef72a06336eb322d3f638c10c5f7))
+* update dependency com.google.cloud:google-cloud-core to v1.94.7 ([#508](https://www.github.com/googleapis/java-dialogflow/issues/508)) ([d7c1b01](https://www.github.com/googleapis/java-dialogflow/commit/d7c1b0102af95750c2f66bbebd847ca04c522b4a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#504](https://www.github.com/googleapis/java-dialogflow/issues/504)) ([a768703](https://www.github.com/googleapis/java-dialogflow/commit/a7687036ee296e60bfe08d8cce9708dcbd38560e))
+
 ## [3.0.0](https://www.github.com/googleapis/java-dialogflow/compare/v2.6.2...v3.0.0) (2021-03-31)
 
 
