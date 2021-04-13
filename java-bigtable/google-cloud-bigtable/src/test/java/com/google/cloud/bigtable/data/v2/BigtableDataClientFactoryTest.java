@@ -19,6 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFunction;
+import com.google.api.gax.batching.BatcherImpl;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -284,6 +285,31 @@ public class BigtableDataClientFactoryTest {
     Thread.sleep(sleepTimeMs);
     // Verify that all the channels are closed
     assertThat(terminateAttributes).hasSize(poolSize);
+  }
+
+  @Test
+  public void testBulkMutationFlowControllerConfigured() throws Exception {
+    BigtableDataSettings settings =
+        BigtableDataSettings.newBuilder()
+            .setProjectId("my-project")
+            .setInstanceId("my-instance")
+            .setCredentialsProvider(credentialsProvider)
+            .enableBatchMutationLatencyBasedThrottling(10L)
+            .build();
+    try (BigtableDataClientFactory factory = BigtableDataClientFactory.create(settings)) {
+      BigtableDataClient client1 = factory.createDefault();
+      BigtableDataClient client2 = factory.createForAppProfile("app-profile");
+
+      try (BatcherImpl batcher1 = (BatcherImpl) client1.newBulkMutationBatcher("my-table");
+          BatcherImpl batcher2 = (BatcherImpl) client1.newBulkMutationBatcher("my-table")) {
+        assertThat(batcher1.getFlowController()).isSameInstanceAs(batcher2.getFlowController());
+      }
+
+      try (BatcherImpl batcher1 = (BatcherImpl) client1.newBulkMutationBatcher("my-table");
+          BatcherImpl batcher2 = (BatcherImpl) client2.newBulkMutationBatcher("my-table")) {
+        assertThat(batcher1.getFlowController()).isNotSameInstanceAs(batcher2.getFlowController());
+      }
+    }
   }
 
   private static class FakeBigtableService extends BigtableGrpc.BigtableImplBase {

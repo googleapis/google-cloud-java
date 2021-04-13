@@ -17,12 +17,15 @@ package com.google.cloud.bigtable.data.v2;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
+import com.google.api.gax.batching.Batcher;
+import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.cloud.bigtable.data.v2.stub.BigtableBatchingCallSettings;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Strings;
@@ -30,6 +33,7 @@ import io.grpc.ManagedChannelBuilder;
 import java.util.List;
 import java.util.logging.Logger;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
 
 /**
@@ -219,6 +223,25 @@ public final class BigtableDataSettings {
     return stubSettings.getPrimedTableIds();
   }
 
+  /**
+   * Gets if latency based throttling is enabled for {@link
+   * BigtableDataClient#newBulkMutationBatcher(String)}
+   */
+  @BetaApi("Latency based throttling is not currently stable and may change in the future")
+  public boolean isLatencyBasedThrottlingForBatchMutationsEnabled() {
+    return stubSettings.bulkMutateRowsSettings().isLatencyBasedThrottlingEnabled();
+  }
+
+  /**
+   * Gets target bulk mutation rpc latency if latency based throttling is enabled for {@link
+   * BigtableDataClient#newBulkMutationBatcher(String)}. Otherwise returns null.
+   */
+  @BetaApi("Latency based throttling is not currently stable and may change in the future")
+  @Nullable
+  public Long getBatchMutationsTargetRpcLatencyMs() {
+    return stubSettings.bulkMutateRowsSettings().getTargetRpcLatencyMs();
+  }
+
   /** Returns the underlying RPC settings. */
   public EnhancedBigtableStubSettings getStubSettings() {
     return stubSettings;
@@ -373,6 +396,74 @@ public final class BigtableDataSettings {
     @BetaApi("Channel priming is not currently stable and may change in the future")
     public List<String> getPrimingTableIds() {
       return stubSettings.getPrimedTableIds();
+    }
+
+    /**
+     * Enable latency based throttling for {@link BigtableDataClient#newBulkMutationBatcher(String)}
+     * with a target rpc latency. The number of allowed in-flight requests will be adjusted to reach
+     * the target bulk mutations rpc latency.
+     *
+     * <p>The logic of adjusting in-flight request limits is as follows:
+     *
+     * <pre>
+     * To start, {@link Batcher} allows {@link FlowController#getCurrentElementCountLimit()}
+     * in-flight elements with a total size of {@link FlowController#getCurrentRequestBytesLimit()}.
+     *
+     * Every 20 seconds, {@link Batcher} checks the mean rpc latency of the requests and compare
+     * it with the target rpc latency:
+     *   if (mean latency &gt; 3 * target latency) {
+     *     decrease element count limit by 30% of {@link FlowController#getMaxElementCountLimit()}
+     *   } else if (mean latency &gt; 1.2 * target latency) {
+     *     decrease element count limit by 10% of {@link FlowController#getMaxElementCountLimit()}
+     *   } else if (there was throttling in the past 5 minutes
+     *        && mean latency &lt; 0.8 * target latency) {
+     *     increase element count limit by 5% of {@link FlowController#getMaxElementCountLimit()}
+     *   } else if (there was throttling in the past 5 minutes
+     *        && parallelism is 5% of {@link FlowController#getMaxElementCountLimit()}
+     *        && mean latency &lt; 2 * target latency) {
+     *     increase element count limit by 2% of {@link FlowController#getMaxElementCountLimit()}
+     *
+     * Increases are capped by {@link
+     * FlowController#getMaxElementCountLimit()}, Decreases are floored at {@link
+     * FlowController#getMinElementCountLimit()} so that there is some level of throughput.
+     * </pre>
+     *
+     * @see BigtableBatchingCallSettings.Builder#getDynamicFlowControlSettings() for explanation on
+     *     default configurations.
+     */
+    @BetaApi("Latency based throttling is not currently stable and may change in the future")
+    public Builder enableBatchMutationLatencyBasedThrottling(long targetRpcLatencyMs) {
+      stubSettings.bulkMutateRowsSettings().enableLatencyBasedThrottling(targetRpcLatencyMs);
+      return this;
+    }
+
+    /**
+     * Disable latency based throttling for {@link
+     * BigtableDataClient#newBulkMutationBatcher(String)}.
+     */
+    @BetaApi("Latency based throttling is not currently stable and may change in the future")
+    public Builder disableBatchMutationLatencyBasedThrottling() {
+      stubSettings.bulkMutateRowsSettings().disableLatencyBasedThrottling();
+      return this;
+    }
+
+    /**
+     * Gets if latency based throttling is enabled for {@link
+     * BigtableDataClient#newBulkMutationBatcher(String)}
+     */
+    @BetaApi("Latency based throttling is not currently stable and may change in the future")
+    public boolean isLatencyBasedThrottlingForBatchMutationEnabled() {
+      return stubSettings.bulkMutateRowsSettings().isLatencyBasedThrottlingEnabled();
+    }
+
+    /**
+     * Gets target bulk mutation rpc latency if latency based throttling is enabled for {@link
+     * BigtableDataClient#newBulkMutationBatcher(String)}. Otherwise returns null.
+     */
+    @BetaApi("Latency based throttling is not currently stable and may change in the future")
+    @Nullable
+    public Long getTargetRpcLatencyMsForBatchMutation() {
+      return stubSettings.bulkMutateRowsSettings().getTargetRpcLatencyMs();
     }
 
     /**

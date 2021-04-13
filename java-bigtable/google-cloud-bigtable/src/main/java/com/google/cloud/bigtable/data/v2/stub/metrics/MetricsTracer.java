@@ -35,6 +35,7 @@ import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
 
 class MetricsTracer implements ApiTracer {
+
   private final OperationType operationType;
 
   private final Tagger tagger;

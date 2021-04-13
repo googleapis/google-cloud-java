@@ -19,6 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.batching.BatchingCallSettings;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
+import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -400,15 +401,15 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    *       after batching initialization or last processed batch.
    * </ul>
    *
-   * <p>When the pending {@link FlowControlSettings.Builder#setMaxOutstandingElementCount request
-   * count} reaches a default of 1000 entries per channel or their {@link
-   * FlowControlSettings.Builder#setMaxOutstandingRequestBytes accumulated size} reaches default
-   * value of 100MB, then this operation will by default be {@link
-   * FlowControlSettings.Builder#setLimitExceededBehavior blocked} until some of the pending batch
-   * are resolved.
+   * <p>A {@link FlowController} will be set up with {@link BigtableBatchingCallSettings.Builder
+   * #getDynamicFlowControlSettings()} for throttling in-flight requests. When the pending request
+   * count or accumulated request size reaches {@link FlowController} thresholds, then this
+   * operation will be throttled until some of the pending batches are resolved.
    *
    * @see RetrySettings for more explanation.
    * @see BatchingSettings for batch related configuration explanation.
+   * @see BigtableBatchingCallSettings.Builder#getDynamicFlowControlSettings() for flow control
+   *     related configuration explanation.
    */
   public BigtableBatchingCallSettings bulkMutateRowsSettings() {
     return bulkMutateRowsSettings;
