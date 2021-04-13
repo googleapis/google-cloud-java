@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.4.0](https://www.github.com/googleapis/java-texttospeech/compare/v1.3.0...v1.4.0) (2021-04-13)
+
+
+### Features
+
+* Add ALAW support on client library. And improve the ListVoiceRequest message's documentation ([#412](https://www.github.com/googleapis/java-texttospeech/issues/412)) ([9538a5a](https://www.github.com/googleapis/java-texttospeech/commit/9538a5ac2dbbbed162c590abbbc56762be5c5b2d))
+
+
+### Bug Fixes
+
+* typo ([#424](https://www.github.com/googleapis/java-texttospeech/issues/424)) ([f207393](https://www.github.com/googleapis/java-texttospeech/commit/f2073934cb3ee014ec1f17c6fa4209f0adea4e09))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#418](https://www.github.com/googleapis/java-texttospeech/issues/418)) ([47cb50c](https://www.github.com/googleapis/java-texttospeech/commit/47cb50cebbc275703e4814b1c9ee766adce9a005))
+* update dependency net.sourceforge.argparse4j:argparse4j to v0.9.0 ([#417](https://www.github.com/googleapis/java-texttospeech/issues/417)) ([f327c46](https://www.github.com/googleapis/java-texttospeech/commit/f327c465ee049cd784203ebc8513ca69b7d2a604))
+
 ## [1.3.0](https://www.github.com/googleapis/java-texttospeech/compare/v1.2.10...v1.3.0) (2021-03-11)
 
 
