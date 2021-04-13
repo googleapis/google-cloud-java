@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ import com.google.api.core.InternalApi;
 
 @InternalApi("For internal use only")
 public final class Version {
-  // The released version, populated by maven.
-  public static String VERSION = "${java-bigtable.version}";
+  // {x-version-update-start:google-cloud-bigtable:current}
+  public static String VERSION = "1.22.1-SNAPSHOT";
+  // {x-version-update-end}
 }

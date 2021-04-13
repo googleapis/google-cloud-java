@@ -427,16 +427,6 @@
   </profiles>
 
   <build>
-    <resources>
-      <resource>
-        <directory>src/main/templates</directory>
-        <includes>
-          <include>**/*.java</include>
-        </includes>
-        <filtering>true</filtering>
-        <targetPath>${project.build.directory}/generated-sources/java</targetPath>
-      </resource>
-    </resources>
     <plugins>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
