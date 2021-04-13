@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-gkehub.git",
-        "sha": "57eda909afb7095f219c55c5fb6b488367e19b90"
+        "sha": "376ff1d41fc74ff6366a46424c00a7f7f42b1dcc"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "1f5e6bc8dc8e3661ee550905fc070e55e1b6cea1"
+        "sha": "082e1ca0863b13ada8594fe91845380765da5b70"
       }
     }
   ],
