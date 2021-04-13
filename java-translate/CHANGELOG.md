@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.97.0](https://www.github.com/googleapis/java-translate/compare/v1.96.0...v1.97.0) (2021-04-13)
+
+
+### Features
+
+* added v3beta1 proto for online and batch document translation ([#478](https://www.github.com/googleapis/java-translate/issues/478)) ([edd06a1](https://www.github.com/googleapis/java-translate/commit/edd06a1df268bfea34a17208f6327c3932db556f))
+
+
+### Bug Fixes
+
+* typo ([#492](https://www.github.com/googleapis/java-translate/issues/492)) ([56f0bf1](https://www.github.com/googleapis/java-translate/commit/56f0bf15a3ff144158cb4ce66753e1827bea42b4))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.94.4 ([#471](https://www.github.com/googleapis/java-translate/issues/471)) ([6e514f2](https://www.github.com/googleapis/java-translate/commit/6e514f274784c3b94cfde2b77753a1f47ec4130f))
+* update dependency com.google.cloud:google-cloud-core to v1.94.7 ([#483](https://www.github.com/googleapis/java-translate/issues/483)) ([2aa6e81](https://www.github.com/googleapis/java-translate/commit/2aa6e812d89bdaeeb298d4ac8c6b2c6882591637))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#485](https://www.github.com/googleapis/java-translate/issues/485)) ([0251731](https://www.github.com/googleapis/java-translate/commit/025173100d1e08b00c21f97ef6ccf7573105449c))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.14 ([#472](https://www.github.com/googleapis/java-translate/issues/472)) ([e0e6601](https://www.github.com/googleapis/java-translate/commit/e0e66015ea2c8bb74186b9205b0146cad2683a56))
+
 ## [1.96.0](https://www.github.com/googleapis/java-translate/compare/v1.95.10...v1.96.0) (2021-03-10)
 
 
