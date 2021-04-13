@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-websecurityscanner.git",
-        "sha": "8eb8828e35152459812d59601a2289703fdda6bc"
+        "sha": "6793fb448f3a8d2091e5172ccc884c581e1803d9"
       }
     },
     {
@@ -35,7 +35,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "5b0e1592dd7d70b485e157ea4b3eb1704ecbd015"
+        "sha": "082e1ca0863b13ada8594fe91845380765da5b70"
       }
     }
   ],
@@ -79,6 +79,7 @@
     ".github/readme/synth.py",
     ".github/release-please.yml",
     ".github/snippet-bot.yml",
+    ".github/sync-repo-settings.yaml",
     ".github/trusted-contribution.yml",
     ".github/workflows/approve-readme.yaml",
     ".github/workflows/auto-release.yaml",
