@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.23.0](https://www.github.com/googleapis/java-bigtable/compare/v1.22.0...v1.23.0) (2021-04-13)
+
+
+### Features
+
+* dynamic flow control ([#721](https://www.github.com/googleapis/java-bigtable/issues/721)) ([b61c5ce](https://www.github.com/googleapis/java-bigtable/commit/b61c5ce5de9cbe2a93a4ea95bad03585069b85bb))
+
+
+### Bug Fixes
+
+* change clusterId in Cmek test ([#716](https://www.github.com/googleapis/java-bigtable/issues/716)) ([67ef155](https://www.github.com/googleapis/java-bigtable/commit/67ef15591d49d51728c769eb54a1167b15524aa1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#717](https://www.github.com/googleapis/java-bigtable/issues/717)) ([dfc2efd](https://www.github.com/googleapis/java-bigtable/commit/dfc2efda536bb5db209b7c50114b417edd7af5cd))
+
 ## [1.22.0](https://www.github.com/googleapis/java-bigtable/compare/v1.21.3...v1.22.0) (2021-04-06)
 
 
