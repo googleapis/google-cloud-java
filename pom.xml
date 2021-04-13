@@ -78,10 +78,6 @@
       <name>Central Repository</name>
       <url>https://repo.maven.apache.org/maven2</url>
     </pluginRepository>
-    <pluginRepository>
-      <id>protoc-plugin</id>
-      <url>https://dl.bintray.com/sergei-ivanov/maven/</url>
-    </pluginRepository>
   </pluginRepositories>
 
   <dependencyManagement>
