@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-iam.git",
-        "sha": "4a47e36d9410d48d7b06c1cd87f5560660b3c45e"
+        "sha": "6f2f5e69d0c1267bed90fa0e31b5c9b81b464fd2"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "5b0e1592dd7d70b485e157ea4b3eb1704ecbd015"
+        "sha": "082e1ca0863b13ada8594fe91845380765da5b70"
       }
     }
   ],
@@ -34,6 +34,7 @@
     ".github/readme/synth.py",
     ".github/release-please.yml",
     ".github/snippet-bot.yml",
+    ".github/sync-repo-settings.yaml",
     ".github/trusted-contribution.yml",
     ".github/workflows/approve-readme.yaml",
     ".github/workflows/auto-release.yaml",
