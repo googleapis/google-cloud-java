@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-monitoring.git",
-        "sha": "31d72d721af4eaec6d3896fd59f53f588911e220"
+        "sha": "f7f75f1fccbc287c4042c4d7e2149a1f3a86378a"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "5b0e1592dd7d70b485e157ea4b3eb1704ecbd015"
+        "sha": "082e1ca0863b13ada8594fe91845380765da5b70"
       }
     }
   ],
@@ -45,6 +45,7 @@
     ".github/readme/synth.py",
     ".github/release-please.yml",
     ".github/snippet-bot.yml",
+    ".github/sync-repo-settings.yaml",
     ".github/trusted-contribution.yml",
     ".github/workflows/approve-readme.yaml",
     ".github/workflows/auto-release.yaml",
