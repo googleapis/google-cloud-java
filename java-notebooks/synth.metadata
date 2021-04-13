@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-notebooks.git",
-        "sha": "cdf7dfcff6af0e402646fd7ffcc647cb567c44a6"
+        "sha": "b988980cd2865e1369c2e206b9626805ee0a7d63"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "5b0e1592dd7d70b485e157ea4b3eb1704ecbd015"
+        "sha": "082e1ca0863b13ada8594fe91845380765da5b70"
       }
     }
   ],
@@ -45,6 +45,7 @@
     ".github/readme/synth.py",
     ".github/release-please.yml",
     ".github/snippet-bot.yml",
+    ".github/sync-repo-settings.yaml",
     ".github/trusted-contribution.yml",
     ".github/workflows/approve-readme.yaml",
     ".github/workflows/auto-release.yaml",
