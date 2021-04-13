@@ -28,16 +28,16 @@ import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
+import com.google.cloud.testing.junit4.StdOutCaptureRule;
 import com.google.protobuf.Empty;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import org.hamcrest.CoreMatchers;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -60,7 +60,8 @@ public class QuickstartTest {
           + "rdd = sc.parallelize((1,2,3,4,5))\n"
           + "sum = rdd.reduce(lambda x, y: x + y)\n";
 
-  private ByteArrayOutputStream bout;
+  @Rule
+  public StdOutCaptureRule stdOutCapture = new StdOutCaptureRule();
   private Bucket bucket;
   private Blob blob;
 
@@ -78,9 +79,6 @@ public class QuickstartTest {
 
   @Before
   public void setUp() {
-    bout = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(bout));
-
     Storage storage = StorageOptions.getDefaultInstance().getService();
     bucket = storage.create(BucketInfo.of(BUCKET_NAME));
     blob = bucket.create(JOB_FILE_NAME, SORT_CODE.getBytes(UTF_8), "text/plain");
@@ -89,7 +87,7 @@ public class QuickstartTest {
   @Test
   public void quickstartTest() throws IOException, InterruptedException {
     Quickstart.main(PROJECT_ID, REGION, CLUSTER_NAME, JOB_FILE_PATH);
-    String output = bout.toString();
+    String output = stdOutCapture.getCapturedOutputAsUtf8String();
 
     assertThat(output, CoreMatchers.containsString("Cluster created successfully"));
     assertThat(output, CoreMatchers.containsString("Job finished successfully:"));
