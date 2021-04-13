@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.27.0](https://www.github.com/googleapis/java-speech/compare/v1.26.0...v1.27.0) (2021-04-13)
+
+
+### Features
+
+* Support for spoken punctuation and spoken emojis ([#477](https://www.github.com/googleapis/java-speech/issues/477)) ([872d4f0](https://www.github.com/googleapis/java-speech/commit/872d4f02731b2ba60debd40451254edf32b22709))
+* Support output transcript to GCS for LongRunningRecognize ([#467](https://www.github.com/googleapis/java-speech/issues/467)) ([5ad0d36](https://www.github.com/googleapis/java-speech/commit/5ad0d367715e59e3565ce62f5edb546047492dda))
+* Support output transcript to GCS for LongRunningRecognize ([#471](https://www.github.com/googleapis/java-speech/issues/471)) ([59d5abf](https://www.github.com/googleapis/java-speech/commit/59d5abfd75d24e87bd5b98600dafcbf674316f54))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#480](https://www.github.com/googleapis/java-speech/issues/480)) ([6d0aff8](https://www.github.com/googleapis/java-speech/commit/6d0aff858d0cdecc59666fb7e6335da77b1ce049))
+
 ## [1.26.0](https://www.github.com/googleapis/java-speech/compare/v1.25.1...v1.26.0) (2021-03-11)
 
 
