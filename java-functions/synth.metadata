@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-functions.git",
-        "sha": "6596b652ab17572b0f9f059fd26ae8521b91350e"
+        "sha": "cde92ddbfca228ad76b38c7a5ae1e9e85a4465b6"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "5b0e1592dd7d70b485e157ea4b3eb1704ecbd015"
+        "sha": "082e1ca0863b13ada8594fe91845380765da5b70"
       }
     }
   ],
@@ -45,6 +45,7 @@
     ".github/readme/synth.py",
     ".github/release-please.yml",
     ".github/snippet-bot.yml",
+    ".github/sync-repo-settings.yaml",
     ".github/trusted-contribution.yml",
     ".github/workflows/approve-readme.yaml",
     ".github/workflows/auto-release.yaml",
