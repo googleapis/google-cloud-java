@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.11.1](https://www.github.com/googleapis/java-shared-config/compare/v0.11.0...v0.11.1) (2021-04-14)
+
+
+### Dependencies
+
+* update auto-value-annotation.version to v1.8 ([#239](https://www.github.com/googleapis/java-shared-config/issues/239)) ([7fa8a9c](https://www.github.com/googleapis/java-shared-config/commit/7fa8a9c7d0020dd99fbccc3a9e7d24cbcf27a0f3))
+* update dependency com.google.auto.service:auto-service-annotations to v1.0 ([#246](https://www.github.com/googleapis/java-shared-config/issues/246)) ([a11638b](https://www.github.com/googleapis/java-shared-config/commit/a11638bf44d1d450aff8de494902bdd407988772))
+
 ## [0.11.0](https://www.github.com/googleapis/java-shared-config/compare/v0.10.0...v0.11.0) (2021-02-25)
 
 
