@@ -31,7 +31,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class BatchParseTableBetaTest {
@@ -45,8 +44,8 @@ public class BatchParseTableBetaTest {
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
-            String.format("Environment variable '%s' must be set to perform these tests.", varName),
-            System.getenv(varName));
+        String.format("Environment variable '%s' must be set to perform these tests.", varName),
+        System.getenv(varName));
   }
 
   @Before

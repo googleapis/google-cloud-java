@@ -56,8 +56,7 @@ public class SetEndPointBeta {
       // mime_type can be application/pdf, image/tiff,
       // and image/gif, or application/json
       InputConfig config =
-          InputConfig.newBuilder().setGcsSource(uri)
-                  .setMimeType("application/pdf").build();
+          InputConfig.newBuilder().setGcsSource(uri).setMimeType("application/pdf").build();
 
       ProcessDocumentRequest request =
           ProcessDocumentRequest.newBuilder().setParent(parent).setInputConfig(config).build();

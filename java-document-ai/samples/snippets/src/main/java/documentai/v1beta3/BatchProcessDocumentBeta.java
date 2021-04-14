@@ -20,7 +20,6 @@ package documentai.v1beta3;
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.Page;
-import com.google.api.gax.rpc.UnknownException;
 import com.google.cloud.documentai.v1beta3.BatchProcessMetadata;
 import com.google.cloud.documentai.v1beta3.BatchProcessRequest;
 import com.google.cloud.documentai.v1beta3.BatchProcessResponse;

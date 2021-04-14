@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version='1.0' encoding='UTF-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
@@ -74,6 +74,21 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-document-ai-v1</artifactId>
+        <version>0.6.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-document-ai-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-document-ai-v1</artifactId>
+        <version>0.6.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-document-ai-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-document-ai</artifactId>
+        <version>0.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-document-ai:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-document-ai-v1beta2</artifactId>
         <version>0.6.1-SNAPSHOT</version> <!-- {x-version-update:grpc-google-cloud-document-ai-v1beta2:current} -->
       </dependency>
@@ -133,13 +148,15 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-document-ai-v1beta1</module>
-    <module>proto-google-cloud-document-ai-v1beta2</module>
-    <module>proto-google-cloud-document-ai-v1beta3</module>
+    <module>google-cloud-document-ai</module>
     <module>grpc-google-cloud-document-ai-v1beta1</module>
     <module>grpc-google-cloud-document-ai-v1beta2</module>
     <module>grpc-google-cloud-document-ai-v1beta3</module>
-    <module>google-cloud-document-ai</module>
+    <module>grpc-google-cloud-document-ai-v1</module>
+    <module>proto-google-cloud-document-ai-v1beta1</module>
+    <module>proto-google-cloud-document-ai-v1beta2</module>
+    <module>proto-google-cloud-document-ai-v1beta3</module>
+    <module>proto-google-cloud-document-ai-v1</module>
     <module>google-cloud-document-ai-bom</module>
   </modules>
 

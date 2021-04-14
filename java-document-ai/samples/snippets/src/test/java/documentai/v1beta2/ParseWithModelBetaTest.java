@@ -34,11 +34,10 @@ public class ParseWithModelBetaTest {
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
-
   private static void requireEnvVar(String varName) {
     assertNotNull(
-            String.format("Environment variable '%s' must be set to perform these tests.", varName),
-            System.getenv(varName));
+        String.format("Environment variable '%s' must be set to perform these tests.", varName),
+        System.getenv(varName));
   }
 
   @Before
