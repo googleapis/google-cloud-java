@@ -73,7 +73,7 @@
     <opencensus.version>0.28.0</opencensus.version>
     <findbugs.version>3.0.2</findbugs.version>
     <errorprone.version>2.6.0</errorprone.version>
-    <jackson.version>2.12.2</jackson.version>
+    <jackson.version>2.12.3</jackson.version>
     <codec.version>1.15</codec.version>
   </properties>
 
