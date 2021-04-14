@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-translate.git",
-        "sha": "bd2ece1a8bafa5af342a44690f5cd79ad83f5049"
+        "sha": "0fdc3fc77124548d30e7d35c665fa9ec217344c7"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "0a071b3460344886297a304253bf924aa68ddb7e"
+        "sha": "082e1ca0863b13ada8594fe91845380765da5b70"
       }
     }
   ]
