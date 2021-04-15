@@ -43,12 +43,12 @@ compile 'com.google.cloud:google-cloud-aiplatform'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-aiplatform:0.4.0'
+compile 'com.google.cloud:google-cloud-aiplatform:0.4.1'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-aiplatform" % "0.4.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-aiplatform" % "0.4.1"
 ```
 
 ## Authentication
@@ -94,6 +94,9 @@ has instructions for running the samples.
 | Cancel Training Pipeline Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/CancelTrainingPipelineSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/CancelTrainingPipelineSample.java) |
 | Create Batch Prediction Job Bigquery Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/CreateBatchPredictionJobBigquerySample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/CreateBatchPredictionJobBigquerySample.java) |
 | Create Batch Prediction Job Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/CreateBatchPredictionJobSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/CreateBatchPredictionJobSample.java) |
+| Create Batch Prediction Job Text Classification Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/CreateBatchPredictionJobTextClassificationSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/CreateBatchPredictionJobTextClassificationSample.java) |
+| Create Batch Prediction Job Text Entity Extraction Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/CreateBatchPredictionJobTextEntityExtractionSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/CreateBatchPredictionJobTextEntityExtractionSample.java) |
+| Create Batch Prediction Job Text Sentiment Analysis Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/CreateBatchPredictionJobTextSentimentAnalysisSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/CreateBatchPredictionJobTextSentimentAnalysisSample.java) |
 | Create Batch Prediction Job Video Action Recognition Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/CreateBatchPredictionJobVideoActionRecognitionSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/CreateBatchPredictionJobVideoActionRecognitionSample.java) |
 | Create Batch Prediction Job Video Classification Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/CreateBatchPredictionJobVideoClassificationSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/CreateBatchPredictionJobVideoClassificationSample.java) |
 | Create Batch Prediction Job Video Object Tracking Sample | [source code](https://github.com/googleapis/java-aiplatform/blob/master/samples/snippets/src/main/java/aiplatform/CreateBatchPredictionJobVideoObjectTrackingSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-aiplatform&page=editor&open_in_editor=samples/snippets/src/main/java/aiplatform/CreateBatchPredictionJobVideoObjectTrackingSample.java) |
