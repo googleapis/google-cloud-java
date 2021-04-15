@@ -16,24 +16,4 @@
     <className>com/google/cloud/security/privateca/v1beta1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
-
-  <!-- TODO: remove after 0.2.0 is released -->
-  <difference>
-    <differenceType>6001</differenceType>
-    <className>com/google/cloud/security/privateca/v1beta1/CertificateAuthority$SignHashAlgorithm</className>
-    <field>RSA_PSS_*</field>
-  </difference>
-  <difference>
-    <differenceType>6011</differenceType>
-    <className>com/google/cloud/security/privateca/v1beta1/CertificateAuthority$SignHashAlgorithm</className>
-    <field>RSA_PSS_*</field>
-  </difference>
-  <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/cloud/security/privateca/v1beta1/CreateCertificateRevocationListRequest*</className>
-  </difference>
-  <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/cloud/security/privateca/v1beta1/*ReusableConfigRequest*</className>
-  </difference>
 </differences>
