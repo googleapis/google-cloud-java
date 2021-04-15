@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-security-private-ca/compare/v0.2.8...v0.3.0) (2021-04-15)
+
+
+### Features
+
+* add v1 client ([#155](https://www.github.com/googleapis/java-security-private-ca/issues/155)) ([d89b1ac](https://www.github.com/googleapis/java-security-private-ca/commit/d89b1acbf9241d0dc36d6b41b52c1e0d3612080f))
+* **generator:** update protoc to v3.15.3 ([#136](https://www.github.com/googleapis/java-security-private-ca/issues/136)) ([e659aec](https://www.github.com/googleapis/java-security-private-ca/commit/e659aec3ea037e368dc7a618a5b9bcc08987a374))
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#154](https://www.github.com/googleapis/java-security-private-ca/issues/154)) ([7ba4f75](https://www.github.com/googleapis/java-security-private-ca/commit/7ba4f75bab9b14437e967a89a3bf3d2a2842806e))
+* typo ([#152](https://www.github.com/googleapis/java-security-private-ca/issues/152)) ([eb656bf](https://www.github.com/googleapis/java-security-private-ca/commit/eb656bf5edd69a6bcce505403e6ce13da8fd863f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.1 ([#142](https://www.github.com/googleapis/java-security-private-ca/issues/142)) ([63e9eef](https://www.github.com/googleapis/java-security-private-ca/commit/63e9eef53152e569b0ae82464a4ce3c4dafc8e96))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.0 ([#150](https://www.github.com/googleapis/java-security-private-ca/issues/150)) ([d196da5](https://www.github.com/googleapis/java-security-private-ca/commit/d196da5b61ea6964a3d908ca4939200391d84ebf))
+
 ### [0.2.8](https://www.github.com/googleapis/java-security-private-ca/compare/v0.2.7...v0.2.8) (2021-02-25)
 
 
