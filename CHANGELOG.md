@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.19.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.18.1...v1.19.0) (2021-04-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove v1alpha2 library (#1003)
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#1006](https://www.github.com/googleapis/java-bigquerystorage/issues/1006)) ([f338201](https://www.github.com/googleapis/java-bigquerystorage/commit/f3382013fa4e14eba89ecbc32bdad813b2880254))
+
+
+### Code Refactoring
+
+* remove v1alpha2 library ([#1003](https://www.github.com/googleapis/java-bigquerystorage/issues/1003)) ([98cd924](https://www.github.com/googleapis/java-bigquerystorage/commit/98cd924e335441f633ad87a0aed118de6951260c))
+
 ### [1.18.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.18.0...v1.18.1) (2021-04-10)
 
 
