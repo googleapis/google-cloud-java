@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.2](https://www.github.com/googleapis/java-profiler/compare/v0.1.1...v0.1.2) (2021-04-15)
+
+
+### Bug Fixes
+
+* fix version in versions.txt ([#33](https://www.github.com/googleapis/java-profiler/issues/33)) ([f82b63a](https://www.github.com/googleapis/java-profiler/commit/f82b63a08d0ce6e57dedb205adb720f584330516))
+
 ### [0.1.1](https://www.github.com/googleapis/java-profiler/compare/v0.1.0...v0.1.1) (2021-04-09)
 
 
