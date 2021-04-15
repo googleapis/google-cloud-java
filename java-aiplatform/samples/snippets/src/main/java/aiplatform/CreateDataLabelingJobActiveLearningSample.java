@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +17,12 @@
 package aiplatform;
 
 // [START aiplatform_create_data_labeling_job_active_learning_sample]
-import com.google.cloud.aiplatform.v1beta1.ActiveLearningConfig;
-import com.google.cloud.aiplatform.v1beta1.DataLabelingJob;
-import com.google.cloud.aiplatform.v1beta1.DatasetName;
-import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
-import com.google.cloud.aiplatform.v1beta1.JobServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.LocationName;
+import com.google.cloud.aiplatform.v1.ActiveLearningConfig;
+import com.google.cloud.aiplatform.v1.DataLabelingJob;
+import com.google.cloud.aiplatform.v1.DatasetName;
+import com.google.cloud.aiplatform.v1.JobServiceClient;
+import com.google.cloud.aiplatform.v1.JobServiceSettings;
+import com.google.cloud.aiplatform.v1.LocationName;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.protobuf.Value;

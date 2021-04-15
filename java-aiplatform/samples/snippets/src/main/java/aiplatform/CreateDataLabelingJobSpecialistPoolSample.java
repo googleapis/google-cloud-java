@@ -17,12 +17,12 @@
 package aiplatform;
 
 // [START aiplatform_create_data_labeling_job_specialist_pool_sample]
-import com.google.cloud.aiplatform.v1beta1.DataLabelingJob;
-import com.google.cloud.aiplatform.v1beta1.DatasetName;
-import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
-import com.google.cloud.aiplatform.v1beta1.JobServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.LocationName;
-import com.google.cloud.aiplatform.v1beta1.SpecialistPoolName;
+import com.google.cloud.aiplatform.v1.DataLabelingJob;
+import com.google.cloud.aiplatform.v1.DatasetName;
+import com.google.cloud.aiplatform.v1.JobServiceClient;
+import com.google.cloud.aiplatform.v1.JobServiceSettings;
+import com.google.cloud.aiplatform.v1.LocationName;
+import com.google.cloud.aiplatform.v1.SpecialistPoolName;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.protobuf.Value;
@@ -78,8 +78,8 @@ public class CreateDataLabelingJobSpecialistPoolSample {
       Value inputs = inputsBuilder.build();
 
       String datasetName = DatasetName.of(project, location, dataset).toString();
-      String specialistPoolName = SpecialistPoolName.of(project, location, specialistPool)
-          .toString();
+      String specialistPoolName =
+          SpecialistPoolName.of(project, location, specialistPool).toString();
 
       DataLabelingJob dataLabelingJob =
           DataLabelingJob.newBuilder()

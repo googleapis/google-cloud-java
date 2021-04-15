@@ -77,9 +77,7 @@ public class CreateTrainingPipelineTextClassificationSample {
       LocationName locationName = LocationName.of(project, location);
 
       AutoMlTextClassificationInputs trainingTaskInputs =
-          AutoMlTextClassificationInputs.newBuilder()
-              .setMultiLabel(false)
-              .build();
+          AutoMlTextClassificationInputs.newBuilder().setMultiLabel(false).build();
 
       InputDataConfig trainingInputDataConfig =
           InputDataConfig.newBuilder().setDatasetId(datasetId).build();

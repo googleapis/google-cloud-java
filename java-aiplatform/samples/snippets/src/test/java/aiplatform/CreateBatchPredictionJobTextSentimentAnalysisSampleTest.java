@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,20 +29,19 @@ import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
-public class CreateDataLabelingJobVideoSampleTest {
-
+public class CreateBatchPredictionJobTextSentimentAnalysisSampleTest {
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String DATASET_ID = System.getenv("DATA_LABELING_VIDEO_DATASET_ID");
-  private static final String INSTRUCTION_URI =
-      "gs://ucaip-sample-resources/images/datalabeling_instructions.pdf";
-  private static final String ANNOTATION_SPEC = "cars";
+  private static final String LOCATION = "us-central1";
+  private static final String MODEL_ID = System.getenv("TEXT_SENTI_MODEL_ID");
+  private static final String GCS_SOURCE_URI =
+      "gs://ucaip-samples-test-output/inputs/batch_predict_TSN/tsn_inputs.jsonl";
+  private static final String GCS_OUTPUT_URI = "gs://ucaip-samples-test-output/";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
-  private String dataLabelingJobId;
+  private String got;
 
   private static void requireEnvVar(String varName) {
     String errorMessage =
@@ -54,7 +53,7 @@ public class CreateDataLabelingJobVideoSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("DATA_LABELING_VIDEO_DATASET_ID");
+    requireEnvVar("TEXT_SENTI_MODEL_ID");
   }
 
   @Before
@@ -68,40 +67,45 @@ public class CreateDataLabelingJobVideoSampleTest {
   @After
   public void tearDown()
       throws InterruptedException, ExecutionException, IOException, TimeoutException {
-    // Cancel data labeling job
-    CancelDataLabelingJobSample.cancelDataLabelingJob(PROJECT, dataLabelingJobId);
+    String batchPredictionJobId =
+        got.split("name:")[1].split("batchPredictionJobs/")[1].split("\"\n")[0];
+    CancelBatchPredictionJobSample.cancelBatchPredictionJobSample(PROJECT, batchPredictionJobId);
 
     // Assert
     String cancelResponse = bout.toString();
-    assertThat(cancelResponse).contains("Cancelled Data labeling job");
-    TimeUnit.MINUTES.sleep(1);
+    assertThat(cancelResponse).contains("Cancelled the Batch Prediction Job");
+    TimeUnit.MINUTES.sleep(2);
 
-    // Delete the created dataset
-    DeleteDataLabelingJobSample.deleteDataLabelingJob(PROJECT, dataLabelingJobId);
+    // Delete the Batch Prediction Job
+    DeleteBatchPredictionJobSample.deleteBatchPredictionJobSample(PROJECT, batchPredictionJobId);
 
     // Assert
     String deleteResponse = bout.toString();
-    assertThat(deleteResponse).contains("Deleted Data Labeling Job.");
+    assertThat(deleteResponse).contains("Deleted Batch");
     System.out.flush();
     System.setOut(originalPrintStream);
   }
 
   @Test
-  @Ignore("Avoid creating actual data labeling job for humans")
-  public void testCreateDataLabelingJobVideoSample() throws IOException {
+  public void testCreateBatchPredictionJobTextSentimentAnalysisSample() throws IOException {
     // Act
-    String dataLabelingDisplayName =
+    String batchPredictionDisplayName =
         String.format(
-            "temp_data_labeling_job_video_display_name_%s",
+            "temp_java_create_batch_prediction_TSN_%s",
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
 
-    CreateDataLabelingJobVideoSample.createDataLabelingJobVideo(
-        PROJECT, dataLabelingDisplayName, DATASET_ID, INSTRUCTION_URI, ANNOTATION_SPEC);
+    CreateBatchPredictionJobTextSentimentAnalysisSample
+        .createBatchPredictionJobTextSentimentAnalysisSample(
+            PROJECT,
+            LOCATION,
+            batchPredictionDisplayName,
+            MODEL_ID,
+            GCS_SOURCE_URI,
+            GCS_OUTPUT_URI);
 
     // Assert
-    String got = bout.toString();
-    assertThat(got).contains(dataLabelingDisplayName);
-    assertThat(got).contains("Create Data Labeling Job Video Response");
-    dataLabelingJobId = got.split("Name: ")[1].split("dataLabelingJobs/")[1].split("\n")[0];
+    got = bout.toString();
+    assertThat(got).contains(batchPredictionDisplayName);
+    assertThat(got).contains("response:");
   }
 }

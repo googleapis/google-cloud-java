@@ -34,7 +34,7 @@ import org.junit.Test;
 public class CreateBatchPredictionJobVideoClassificationSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String MODEL_ID = "8596984660557299712";
+  private static final String MODEL_ID = System.getenv("VIDEO_CLASS_MODEL_ID");
   private static final String GCS_SOURCE_URI =
       "gs://ucaip-samples-test-output/inputs/vcn_40_batch_prediction_input.jsonl";
   private static final String GCS_DESTINATION_OUTPUT_URI_PREFIX = "gs://ucaip-samples-test-output/";
@@ -53,6 +53,7 @@ public class CreateBatchPredictionJobVideoClassificationSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
+    requireEnvVar("VIDEO_CLASS_MODEL_ID");
   }
 
   @Before

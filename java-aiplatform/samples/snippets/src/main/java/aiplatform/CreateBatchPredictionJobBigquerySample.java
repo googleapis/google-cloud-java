@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,13 +17,13 @@
 package aiplatform;
 
 // [START aiplatform_create_batch_prediction_job_bigquery_sample]
-import com.google.cloud.aiplatform.v1beta1.BatchPredictionJob;
-import com.google.cloud.aiplatform.v1beta1.BigQueryDestination;
-import com.google.cloud.aiplatform.v1beta1.BigQuerySource;
-import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
-import com.google.cloud.aiplatform.v1beta1.JobServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.LocationName;
-import com.google.cloud.aiplatform.v1beta1.ModelName;
+import com.google.cloud.aiplatform.v1.BatchPredictionJob;
+import com.google.cloud.aiplatform.v1.BigQueryDestination;
+import com.google.cloud.aiplatform.v1.BigQuerySource;
+import com.google.cloud.aiplatform.v1.JobServiceClient;
+import com.google.cloud.aiplatform.v1.JobServiceSettings;
+import com.google.cloud.aiplatform.v1.LocationName;
+import com.google.cloud.aiplatform.v1.ModelName;
 import com.google.gson.JsonObject;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
@@ -95,8 +95,6 @@ public class CreateBatchPredictionJobBigquerySample {
               .setModelParameters(modelParameters)
               .setInputConfig(inputConfig)
               .setOutputConfig(outputConfig)
-              // optional
-              .setGenerateExplanation(true)
               .build();
       LocationName parent = LocationName.of(project, location);
       BatchPredictionJob response = client.createBatchPredictionJob(parent, batchPredictionJob);

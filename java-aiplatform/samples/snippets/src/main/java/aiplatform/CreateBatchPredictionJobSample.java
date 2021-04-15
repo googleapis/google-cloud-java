@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,19 +17,18 @@
 package aiplatform;
 
 // [START aiplatform_create_batch_prediction_job_sample]
-import com.google.cloud.aiplatform.v1beta1.AcceleratorType;
-import com.google.cloud.aiplatform.v1beta1.BatchDedicatedResources;
-import com.google.cloud.aiplatform.v1beta1.BatchPredictionJob;
-import com.google.cloud.aiplatform.v1beta1.GcsDestination;
-import com.google.cloud.aiplatform.v1beta1.GcsSource;
-import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
-import com.google.cloud.aiplatform.v1beta1.JobServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.LocationName;
-import com.google.cloud.aiplatform.v1beta1.MachineSpec;
-import com.google.cloud.aiplatform.v1beta1.ModelName;
-import com.google.gson.JsonObject;
+import com.google.cloud.aiplatform.util.ValueConverter;
+import com.google.cloud.aiplatform.v1.AcceleratorType;
+import com.google.cloud.aiplatform.v1.BatchDedicatedResources;
+import com.google.cloud.aiplatform.v1.BatchPredictionJob;
+import com.google.cloud.aiplatform.v1.GcsDestination;
+import com.google.cloud.aiplatform.v1.GcsSource;
+import com.google.cloud.aiplatform.v1.JobServiceClient;
+import com.google.cloud.aiplatform.v1.JobServiceSettings;
+import com.google.cloud.aiplatform.v1.LocationName;
+import com.google.cloud.aiplatform.v1.MachineSpec;
+import com.google.cloud.aiplatform.v1.ModelName;
 import com.google.protobuf.Value;
-import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
 
 public class CreateBatchPredictionJobSample {
@@ -74,10 +73,7 @@ public class CreateBatchPredictionJobSample {
     try (JobServiceClient client = JobServiceClient.create(settings)) {
 
       // Passing in an empty Value object for model parameters
-      JsonObject jsonModelParameters = new JsonObject();
-      Value.Builder modelParametersBuilder = Value.newBuilder();
-      JsonFormat.parser().merge(jsonModelParameters.toString(), modelParametersBuilder);
-      Value modelParameters = modelParametersBuilder.build();
+      Value modelParameters = ValueConverter.EMPTY_VALUE;
 
       GcsSource gcsSource = GcsSource.newBuilder().addUris(gcsSourceUri).build();
       BatchPredictionJob.InputConfig inputConfig =

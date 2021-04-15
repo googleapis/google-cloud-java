@@ -34,7 +34,7 @@ import org.junit.Test;
 public class CreateBatchPredictionJobVideoObjectTrackingSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String MODEL_ID = "8609932509485989888";
+  private static final String MODEL_ID = System.getenv("VIDEO_OBJECT_DETECT_MODEL_ID");
   private static final String GCS_SOURCE_URI =
       "gs://ucaip-samples-test-output/inputs/vot_batch_prediction_input.jsonl";
   private static final String GCS_DESTINATION_OUTPUT_URI_PREFIX = "gs://ucaip-samples-test-output/";

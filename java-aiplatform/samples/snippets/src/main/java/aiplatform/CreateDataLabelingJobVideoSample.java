@@ -18,11 +18,11 @@ package aiplatform;
 
 // [START aiplatform_create_data_labeling_job_video_sample]
 
-import com.google.cloud.aiplatform.v1beta1.DataLabelingJob;
-import com.google.cloud.aiplatform.v1beta1.DatasetName;
-import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
-import com.google.cloud.aiplatform.v1beta1.JobServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.LocationName;
+import com.google.cloud.aiplatform.v1.DataLabelingJob;
+import com.google.cloud.aiplatform.v1.DatasetName;
+import com.google.cloud.aiplatform.v1.JobServiceClient;
+import com.google.cloud.aiplatform.v1.JobServiceSettings;
+import com.google.cloud.aiplatform.v1.LocationName;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import com.google.type.Money;

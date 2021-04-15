@@ -69,9 +69,7 @@ public class CreateTrainingPipelineVideoObjectTrackingSample {
       LocationName locationName = LocationName.of(project, location);
 
       AutoMlVideoObjectTrackingInputs trainingTaskInputs =
-          AutoMlVideoObjectTrackingInputs.newBuilder()
-              .setModelType(ModelType.CLOUD)
-              .build();
+          AutoMlVideoObjectTrackingInputs.newBuilder().setModelType(ModelType.CLOUD).build();
 
       InputDataConfig inputDataConfig =
           InputDataConfig.newBuilder().setDatasetId(datasetId).build();

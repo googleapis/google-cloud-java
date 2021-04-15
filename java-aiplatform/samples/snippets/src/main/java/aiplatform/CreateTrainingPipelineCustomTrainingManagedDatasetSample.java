@@ -113,7 +113,7 @@ public class CreateTrainingPipelineCustomTrainingManagedDatasetSample {
               .build();
       GcsDestination gcsDestination =
           GcsDestination.newBuilder().setOutputUriPrefix(baseOutputUriPrefix).build();
-      
+
       // input_data_config
       InputDataConfig inputDataConfig =
           InputDataConfig.newBuilder()

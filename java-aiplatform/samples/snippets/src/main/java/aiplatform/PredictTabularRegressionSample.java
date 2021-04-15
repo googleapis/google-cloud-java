@@ -71,8 +71,7 @@ public class PredictTabularRegressionSample {
             TabularRegressionPredictionResult.newBuilder();
 
         TabularRegressionPredictionResult result =
-            (TabularRegressionPredictionResult) ValueConverter
-                .fromValue(resultBuilder, prediction);
+            (TabularRegressionPredictionResult) ValueConverter.fromValue(resultBuilder, prediction);
 
         System.out.printf("\tUpper bound: %f\n", result.getUpperBound());
         System.out.printf("\tLower bound: %f\n", result.getLowerBound());

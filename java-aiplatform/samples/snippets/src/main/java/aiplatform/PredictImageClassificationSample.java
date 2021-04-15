@@ -64,22 +64,20 @@ public class PredictImageClassificationSample {
       String content = new String(contents, StandardCharsets.UTF_8);
 
       ImageClassificationPredictionInstance predictionInstance =
-          ImageClassificationPredictionInstance.newBuilder()
-          .setContent(content)
-          .build();
+          ImageClassificationPredictionInstance.newBuilder().setContent(content).build();
 
       List<Value> instances = new ArrayList<>();
       instances.add(ValueConverter.toValue(predictionInstance));
 
       ImageClassificationPredictionParams predictionParams =
           ImageClassificationPredictionParams.newBuilder()
-          .setConfidenceThreshold((float) 0.5)
-          .setMaxPredictions(5)
-          .build();
+              .setConfidenceThreshold((float) 0.5)
+              .setMaxPredictions(5)
+              .build();
 
       PredictResponse predictResponse =
-          predictionServiceClient.predict(endpointName, instances,
-              ValueConverter.toValue(predictionParams));
+          predictionServiceClient.predict(
+              endpointName, instances, ValueConverter.toValue(predictionParams));
       System.out.println("Predict Image Classification Response");
       System.out.format("\tDeployed Model Id: %s\n", predictResponse.getDeployedModelId());
 

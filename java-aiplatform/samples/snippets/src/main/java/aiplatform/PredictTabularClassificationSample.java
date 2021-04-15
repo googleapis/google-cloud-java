@@ -70,8 +70,8 @@ public class PredictTabularClassificationSample {
         TabularClassificationPredictionResult.Builder resultBuilder =
             TabularClassificationPredictionResult.newBuilder();
         TabularClassificationPredictionResult result =
-            (TabularClassificationPredictionResult) ValueConverter
-                .fromValue(resultBuilder, prediction);
+            (TabularClassificationPredictionResult)
+                ValueConverter.fromValue(resultBuilder, prediction);
 
         for (int i = 0; i < result.getClassesCount(); i++) {
           System.out.printf("\tClass: %s", result.getClasses(i));

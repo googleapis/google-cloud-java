@@ -28,7 +28,6 @@ import com.google.cloud.aiplatform.v1beta1.schema.predict.instance.ImageObjectDe
 import com.google.cloud.aiplatform.v1beta1.schema.predict.params.ImageObjectDetectionPredictionParams;
 import com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.ImageObjectDetectionPredictionResult;
 import com.google.protobuf.Value;
-import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -71,9 +70,7 @@ public class PredictImageObjectDetectionSample {
               .build();
 
       ImageObjectDetectionPredictionInstance instance =
-          ImageObjectDetectionPredictionInstance.newBuilder()
-              .setContent(content)
-              .build();
+          ImageObjectDetectionPredictionInstance.newBuilder().setContent(content).build();
 
       List<Value> instances = new ArrayList<>();
       instances.add(ValueConverter.toValue(instance));
@@ -90,8 +87,8 @@ public class PredictImageObjectDetectionSample {
             ImageObjectDetectionPredictionResult.newBuilder();
 
         ImageObjectDetectionPredictionResult result =
-            (ImageObjectDetectionPredictionResult) ValueConverter
-                .fromValue(resultBuilder, prediction);
+            (ImageObjectDetectionPredictionResult)
+                ValueConverter.fromValue(resultBuilder, prediction);
 
         for (int i = 0; i < result.getIdsCount(); i++) {
           System.out.printf("\tDisplay name: %s\n", result.getDisplayNames(i));

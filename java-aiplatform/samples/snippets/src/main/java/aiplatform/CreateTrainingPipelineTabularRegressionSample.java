@@ -38,13 +38,10 @@ import com.google.cloud.aiplatform.v1beta1.PredictSchemata;
 import com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution;
 import com.google.cloud.aiplatform.v1beta1.TimestampSplit;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
-import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTables;
 import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesInputs;
 import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation;
 import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation.AutoTransformation;
 import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation.TimestampTransformation;
-import com.google.protobuf.Value;
-import com.google.protobuf.util.JsonFormat;
 import com.google.rpc.Status;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -57,15 +54,11 @@ public class CreateTrainingPipelineTabularRegressionSample {
     String modelDisplayName = "YOUR_DATASET_DISPLAY_NAME";
     String datasetId = "YOUR_DATASET_ID";
     String targetColumn = "TARGET_COLUMN";
-    createTrainingPipelineTableRegression(
-        project, modelDisplayName, datasetId, targetColumn);
+    createTrainingPipelineTableRegression(project, modelDisplayName, datasetId, targetColumn);
   }
 
   static void createTrainingPipelineTableRegression(
-      String project,
-      String modelDisplayName,
-      String datasetId,
-      String targetColumn)
+      String project, String modelDisplayName, String datasetId, String targetColumn)
       throws IOException {
     PipelineServiceSettings pipelineServiceSettings =
         PipelineServiceSettings.newBuilder()
@@ -84,79 +77,106 @@ public class CreateTrainingPipelineTabularRegressionSample {
 
       // Set the columns used for training and their data types
       ArrayList<Transformation> tranformations = new ArrayList<>();
-      tranformations.add(Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder().setColumnName("STRING_5000unique_NULLABLE"))
-          .build());
-      tranformations.add(Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder().setColumnName("INTEGER_5000unique_NULLABLE"))
-          .build());
-      tranformations.add(Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder().setColumnName("FLOAT_5000unique_NULLABLE"))
-          .build());
-      tranformations.add(Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder().setColumnName("FLOAT_5000unique_REPEATED"))
-          .build());
-      tranformations.add(Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder().setColumnName("NUMERIC_5000unique_NULLABLE"))
-          .build());
-      tranformations.add(Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder().setColumnName("BOOLEAN_2unique_NULLABLE"))
-          .build());
-      tranformations.add(Transformation.newBuilder()
-          .setTimestamp(TimestampTransformation.newBuilder()
-              .setColumnName("TIMESTAMP_1unique_NULLABLE")
-              .setInvalidValuesAllowed(true))
-          .build());
-      tranformations.add(Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder().setColumnName("DATE_1unique_NULLABLE"))
-          .build());
-      tranformations.add(Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder().setColumnName("TIME_1unique_NULLABLE"))
-          .build());
-      tranformations.add(Transformation.newBuilder()
-          .setTimestamp(TimestampTransformation.newBuilder()
-              .setColumnName("DATETIME_1unique_NULLABLE")
-              .setInvalidValuesAllowed(true))
-          .build());
-      tranformations.add(Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder()
-              .setColumnName("STRUCT_NULLABLE.STRING_5000unique_NULLABLE"))
-          .build());
-      tranformations.add(Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder()
-              .setColumnName("STRUCT_NULLABLE.INTEGER_5000unique_NULLABLE"))
-          .build());
-      tranformations.add(Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder()
-              .setColumnName("STRUCT_NULLABLE.FLOAT_5000unique_NULLABLE"))
-          .build());
-      tranformations.add(Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder()
-              .setColumnName("STRUCT_NULLABLE.FLOAT_5000unique_REQUIRED"))
-          .build());
-      tranformations.add(Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder()
-              .setColumnName("STRUCT_NULLABLE.FLOAT_5000unique_REPEATED"))
-          .build());
-      tranformations.add(Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder()
-              .setColumnName("STRUCT_NULLABLE.NUMERIC_5000unique_NULLABLE"))
-          .build());
-      tranformations.add(Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder()
-              .setColumnName("STRUCT_NULLABLE.TIMESTAMP_1unique_NULLABLE"))
-          .build());
+      tranformations.add(
+          Transformation.newBuilder()
+              .setAuto(AutoTransformation.newBuilder().setColumnName("STRING_5000unique_NULLABLE"))
+              .build());
+      tranformations.add(
+          Transformation.newBuilder()
+              .setAuto(AutoTransformation.newBuilder().setColumnName("INTEGER_5000unique_NULLABLE"))
+              .build());
+      tranformations.add(
+          Transformation.newBuilder()
+              .setAuto(AutoTransformation.newBuilder().setColumnName("FLOAT_5000unique_NULLABLE"))
+              .build());
+      tranformations.add(
+          Transformation.newBuilder()
+              .setAuto(AutoTransformation.newBuilder().setColumnName("FLOAT_5000unique_REPEATED"))
+              .build());
+      tranformations.add(
+          Transformation.newBuilder()
+              .setAuto(AutoTransformation.newBuilder().setColumnName("NUMERIC_5000unique_NULLABLE"))
+              .build());
+      tranformations.add(
+          Transformation.newBuilder()
+              .setAuto(AutoTransformation.newBuilder().setColumnName("BOOLEAN_2unique_NULLABLE"))
+              .build());
+      tranformations.add(
+          Transformation.newBuilder()
+              .setTimestamp(
+                  TimestampTransformation.newBuilder()
+                      .setColumnName("TIMESTAMP_1unique_NULLABLE")
+                      .setInvalidValuesAllowed(true))
+              .build());
+      tranformations.add(
+          Transformation.newBuilder()
+              .setAuto(AutoTransformation.newBuilder().setColumnName("DATE_1unique_NULLABLE"))
+              .build());
+      tranformations.add(
+          Transformation.newBuilder()
+              .setAuto(AutoTransformation.newBuilder().setColumnName("TIME_1unique_NULLABLE"))
+              .build());
+      tranformations.add(
+          Transformation.newBuilder()
+              .setTimestamp(
+                  TimestampTransformation.newBuilder()
+                      .setColumnName("DATETIME_1unique_NULLABLE")
+                      .setInvalidValuesAllowed(true))
+              .build());
+      tranformations.add(
+          Transformation.newBuilder()
+              .setAuto(
+                  AutoTransformation.newBuilder()
+                      .setColumnName("STRUCT_NULLABLE.STRING_5000unique_NULLABLE"))
+              .build());
+      tranformations.add(
+          Transformation.newBuilder()
+              .setAuto(
+                  AutoTransformation.newBuilder()
+                      .setColumnName("STRUCT_NULLABLE.INTEGER_5000unique_NULLABLE"))
+              .build());
+      tranformations.add(
+          Transformation.newBuilder()
+              .setAuto(
+                  AutoTransformation.newBuilder()
+                      .setColumnName("STRUCT_NULLABLE.FLOAT_5000unique_NULLABLE"))
+              .build());
+      tranformations.add(
+          Transformation.newBuilder()
+              .setAuto(
+                  AutoTransformation.newBuilder()
+                      .setColumnName("STRUCT_NULLABLE.FLOAT_5000unique_REQUIRED"))
+              .build());
+      tranformations.add(
+          Transformation.newBuilder()
+              .setAuto(
+                  AutoTransformation.newBuilder()
+                      .setColumnName("STRUCT_NULLABLE.FLOAT_5000unique_REPEATED"))
+              .build());
+      tranformations.add(
+          Transformation.newBuilder()
+              .setAuto(
+                  AutoTransformation.newBuilder()
+                      .setColumnName("STRUCT_NULLABLE.NUMERIC_5000unique_NULLABLE"))
+              .build());
+      tranformations.add(
+          Transformation.newBuilder()
+              .setAuto(
+                  AutoTransformation.newBuilder()
+                      .setColumnName("STRUCT_NULLABLE.TIMESTAMP_1unique_NULLABLE"))
+              .build());
 
-      AutoMlTablesInputs trainingTaskInputs = AutoMlTablesInputs.newBuilder()
-          .addAllTransformations(tranformations)
-          .setTargetColumn(targetColumn)
-          .setPredictionType("regression")
-          .setTrainBudgetMilliNodeHours(8000)
-          .setDisableEarlyStopping(false)
-          // supported regression optimisation objectives: minimize-rmse,
-          // minimize-mae, minimize-rmsle
-          .setOptimizationObjective("minimize-rmse")
-          .build();
+      AutoMlTablesInputs trainingTaskInputs =
+          AutoMlTablesInputs.newBuilder()
+              .addAllTransformations(tranformations)
+              .setTargetColumn(targetColumn)
+              .setPredictionType("regression")
+              .setTrainBudgetMilliNodeHours(8000)
+              .setDisableEarlyStopping(false)
+              // supported regression optimisation objectives: minimize-rmse,
+              // minimize-mae, minimize-rmsle
+              .setOptimizationObjective("minimize-rmse")
+              .build();
 
       FractionSplit fractionSplit =
           FractionSplit.newBuilder()

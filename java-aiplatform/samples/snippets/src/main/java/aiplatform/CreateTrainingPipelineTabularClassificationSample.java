@@ -41,8 +41,6 @@ import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
 import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesInputs;
 import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation;
 import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation.AutoTransformation;
-import com.google.protobuf.Value;
-import com.google.protobuf.util.JsonFormat;
 import com.google.rpc.Status;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -55,15 +53,11 @@ public class CreateTrainingPipelineTabularClassificationSample {
     String modelDisplayName = "YOUR_DATASET_DISPLAY_NAME";
     String datasetId = "YOUR_DATASET_ID";
     String targetColumn = "TARGET_COLUMN";
-    createTrainingPipelineTableClassification(
-        project, modelDisplayName, datasetId, targetColumn);
+    createTrainingPipelineTableClassification(project, modelDisplayName, datasetId, targetColumn);
   }
 
   static void createTrainingPipelineTableClassification(
-      String project,
-      String modelDisplayName,
-      String datasetId,
-      String targetColumn)
+      String project, String modelDisplayName, String datasetId, String targetColumn)
       throws IOException {
     PipelineServiceSettings pipelineServiceSettings =
         PipelineServiceSettings.newBuilder()
@@ -81,18 +75,22 @@ public class CreateTrainingPipelineTabularClassificationSample {
           "gs://google-cloud-aiplatform/schema/trainingjob/definition/automl_tables_1.0.0.yaml";
 
       // Set the columns used for training and their data types
-      Transformation transformation1 = Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder().setColumnName("sepal_width").build())
-          .build();
-      Transformation transformation2 = Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder().setColumnName("sepal_length").build())
-          .build();
-      Transformation transformation3 = Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder().setColumnName("petal_length").build())
-          .build();
-      Transformation transformation4 = Transformation.newBuilder()
-          .setAuto(AutoTransformation.newBuilder().setColumnName("petal_width").build())
-          .build();
+      Transformation transformation1 =
+          Transformation.newBuilder()
+              .setAuto(AutoTransformation.newBuilder().setColumnName("sepal_width").build())
+              .build();
+      Transformation transformation2 =
+          Transformation.newBuilder()
+              .setAuto(AutoTransformation.newBuilder().setColumnName("sepal_length").build())
+              .build();
+      Transformation transformation3 =
+          Transformation.newBuilder()
+              .setAuto(AutoTransformation.newBuilder().setColumnName("petal_length").build())
+              .build();
+      Transformation transformation4 =
+          Transformation.newBuilder()
+              .setAuto(AutoTransformation.newBuilder().setColumnName("petal_width").build())
+              .build();
 
       ArrayList<Transformation> transformationArrayList = new ArrayList<>();
       transformationArrayList.add(transformation1);

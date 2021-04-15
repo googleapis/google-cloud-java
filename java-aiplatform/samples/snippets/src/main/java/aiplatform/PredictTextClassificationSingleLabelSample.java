@@ -55,10 +55,8 @@ public class PredictTextClassificationSingleLabelSample {
       String location = "us-central1";
       EndpointName endpointName = EndpointName.of(project, location, endpointId);
 
-      TextClassificationPredictionInstance predictionInstance = TextClassificationPredictionInstance
-          .newBuilder()
-          .setContent(content)
-          .build();
+      TextClassificationPredictionInstance predictionInstance =
+          TextClassificationPredictionInstance.newBuilder().setContent(content).build();
 
       List<Value> instances = new ArrayList<>();
       instances.add(ValueConverter.toValue(predictionInstance));

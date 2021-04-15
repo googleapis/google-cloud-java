@@ -26,7 +26,6 @@ import com.google.cloud.aiplatform.v1beta1.PredictionServiceSettings;
 import com.google.cloud.aiplatform.v1beta1.schema.predict.instance.TextExtractionPredictionInstance;
 import com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextExtractionPredictionResult;
 import com.google.protobuf.Value;
-import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,9 +59,7 @@ public class PredictTextEntityExtractionSample {
       EndpointName endpointName = EndpointName.of(project, location, endpointId);
 
       TextExtractionPredictionInstance instance =
-          TextExtractionPredictionInstance.newBuilder()
-              .setContent(content)
-              .build();
+          TextExtractionPredictionInstance.newBuilder().setContent(content).build();
 
       List<Value> instances = new ArrayList<>();
       instances.add(ValueConverter.toValue(instance));

@@ -41,10 +41,7 @@ public class CreateTrainingPipelineVideoActionRecognitionSample {
   }
 
   static void createTrainingPipelineVideoActionRecognitionSample(
-      String project,
-      String displayName,
-      String datasetId,
-      String modelDisplayName)
+      String project, String displayName, String datasetId, String modelDisplayName)
       throws IOException {
     PipelineServiceSettings settings =
         PipelineServiceSettings.newBuilder()
@@ -57,9 +54,7 @@ public class CreateTrainingPipelineVideoActionRecognitionSample {
     // the "close" method on the client to safely clean up any remaining background resources.
     try (PipelineServiceClient client = PipelineServiceClient.create(settings)) {
       AutoMlVideoActionRecognitionInputs trainingTaskInputs =
-          AutoMlVideoActionRecognitionInputs.newBuilder()
-              .setModelType(ModelType.CLOUD)
-              .build();
+          AutoMlVideoActionRecognitionInputs.newBuilder().setModelType(ModelType.CLOUD).build();
 
       InputDataConfig inputDataConfig =
           InputDataConfig.newBuilder().setDatasetId(datasetId).build();

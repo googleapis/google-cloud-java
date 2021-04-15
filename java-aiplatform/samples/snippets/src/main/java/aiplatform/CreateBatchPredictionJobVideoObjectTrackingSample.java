@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,26 +18,27 @@ package aiplatform;
 
 // [START aiplatform_create_batch_prediction_job_video_object_tracking_sample]
 
-import com.google.cloud.aiplatform.v1beta1.BatchDedicatedResources;
-import com.google.cloud.aiplatform.v1beta1.BatchPredictionJob;
-import com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig;
-import com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig;
-import com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputInfo;
-import com.google.cloud.aiplatform.v1beta1.BigQueryDestination;
-import com.google.cloud.aiplatform.v1beta1.BigQuerySource;
-import com.google.cloud.aiplatform.v1beta1.CompletionStats;
-import com.google.cloud.aiplatform.v1beta1.GcsDestination;
-import com.google.cloud.aiplatform.v1beta1.GcsSource;
-import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
-import com.google.cloud.aiplatform.v1beta1.JobServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.LocationName;
-import com.google.cloud.aiplatform.v1beta1.MachineSpec;
-import com.google.cloud.aiplatform.v1beta1.ManualBatchTuningParameters;
-import com.google.cloud.aiplatform.v1beta1.ModelName;
-import com.google.cloud.aiplatform.v1beta1.ResourcesConsumed;
+import com.google.cloud.aiplatform.util.ValueConverter;
+import com.google.cloud.aiplatform.v1.BatchDedicatedResources;
+import com.google.cloud.aiplatform.v1.BatchPredictionJob;
+import com.google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig;
+import com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig;
+import com.google.cloud.aiplatform.v1.BatchPredictionJob.OutputInfo;
+import com.google.cloud.aiplatform.v1.BigQueryDestination;
+import com.google.cloud.aiplatform.v1.BigQuerySource;
+import com.google.cloud.aiplatform.v1.CompletionStats;
+import com.google.cloud.aiplatform.v1.GcsDestination;
+import com.google.cloud.aiplatform.v1.GcsSource;
+import com.google.cloud.aiplatform.v1.JobServiceClient;
+import com.google.cloud.aiplatform.v1.JobServiceSettings;
+import com.google.cloud.aiplatform.v1.LocationName;
+import com.google.cloud.aiplatform.v1.MachineSpec;
+import com.google.cloud.aiplatform.v1.ManualBatchTuningParameters;
+import com.google.cloud.aiplatform.v1.ModelName;
+import com.google.cloud.aiplatform.v1.ResourcesConsumed;
+import com.google.cloud.aiplatform.v1.schema.predict.params.VideoObjectTrackingPredictionParams;
 import com.google.protobuf.Any;
 import com.google.protobuf.Value;
-import com.google.protobuf.util.JsonFormat;
 import com.google.rpc.Status;
 import java.io.IOException;
 import java.util.List;
@@ -77,9 +78,12 @@ public class CreateBatchPredictionJobVideoObjectTrackingSample {
       LocationName locationName = LocationName.of(project, location);
       ModelName modelName = ModelName.of(project, location, modelId);
 
-      String jsonString = "{\"confidenceThreshold\": 0.0}";
-      Value.Builder modelParameters = Value.newBuilder();
-      JsonFormat.parser().merge(jsonString, modelParameters);
+      VideoObjectTrackingPredictionParams modelParamsObj =
+          VideoObjectTrackingPredictionParams.newBuilder()
+              .setConfidenceThreshold(((float) 0.5))
+              .build();
+
+      Value modelParameters = ValueConverter.toValue(modelParamsObj);
 
       GcsSource.Builder gcsSource = GcsSource.newBuilder();
       gcsSource.addUris(gcsSourceUri);
@@ -111,8 +115,6 @@ public class CreateBatchPredictionJobVideoObjectTrackingSample {
       System.out.format("\tModel %s\n", batchPredictionJobResponse.getModel());
       System.out.format(
           "\tModel Parameters: %s\n", batchPredictionJobResponse.getModelParameters());
-      System.out.format(
-          "\tGenerate Explanation: %s\n", batchPredictionJobResponse.getGenerateExplanation());
 
       System.out.format("\tState: %s\n", batchPredictionJobResponse.getState());
       System.out.format("\tCreate Time: %s\n", batchPredictionJobResponse.getCreateTime());
