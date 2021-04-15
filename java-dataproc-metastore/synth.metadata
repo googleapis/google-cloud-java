@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dataproc-metastore.git",
-        "sha": "7fd6e3ab525aebcfd29676bc95016fd51a5a0cdc"
+        "sha": "f357a8158e54f389fba56c8d5113f4314ef17fd6"
       }
     },
     {
@@ -35,7 +35,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "082e1ca0863b13ada8594fe91845380765da5b70"
+        "sha": "8285c2b4cdbc3771d031ad91e1c4ec9e55fff45d"
       }
     }
   ],
