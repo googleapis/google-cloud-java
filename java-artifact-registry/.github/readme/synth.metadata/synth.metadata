@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-artifact-registry.git",
+        "sha": "88a1ebd6b5f251813daeb08df68367bfb9f63cdd"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "898b38a6f4fab89a76dfb152480bb034a781331b"
+      }
+    }
+  ]
+}
