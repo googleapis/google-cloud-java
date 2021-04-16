@@ -32,10 +32,34 @@ public interface ActiveLearningConfigOrBuilder
    *
    * <code>int64 max_data_item_count = 1;</code>
    *
+   * @return Whether the maxDataItemCount field is set.
+   */
+  boolean hasMaxDataItemCount();
+  /**
+   *
+   *
+   * <pre>
+   * Max number of human labeled DataItems.
+   * </pre>
+   *
+   * <code>int64 max_data_item_count = 1;</code>
+   *
    * @return The maxDataItemCount.
    */
   long getMaxDataItemCount();
 
+  /**
+   *
+   *
+   * <pre>
+   * Max percent of total DataItems for human labeling.
+   * </pre>
+   *
+   * <code>int32 max_data_item_percentage = 2;</code>
+   *
+   * @return Whether the maxDataItemPercentage field is set.
+   */
+  boolean hasMaxDataItemPercentage();
   /**
    *
    *

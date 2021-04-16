@@ -32,6 +32,18 @@ public interface MigrateResourceResponseOrBuilder
    *
    * <code>string dataset = 1 [(.google.api.resource_reference) = { ... }</code>
    *
+   * @return Whether the dataset field is set.
+   */
+  boolean hasDataset();
+  /**
+   *
+   *
+   * <pre>
+   * Migrated Dataset's resource name.
+   * </pre>
+   *
+   * <code>string dataset = 1 [(.google.api.resource_reference) = { ... }</code>
+   *
    * @return The dataset.
    */
   java.lang.String getDataset();
@@ -48,6 +60,18 @@ public interface MigrateResourceResponseOrBuilder
    */
   com.google.protobuf.ByteString getDatasetBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Migrated Model's resource name.
+   * </pre>
+   *
+   * <code>string model = 2 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the model field is set.
+   */
+  boolean hasModel();
   /**
    *
    *

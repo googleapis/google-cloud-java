@@ -206,6 +206,21 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
    *
    * <code>int64 max_data_item_count = 1;</code>
    *
+   * @return Whether the maxDataItemCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxDataItemCount() {
+    return humanLabelingBudgetCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Max number of human labeled DataItems.
+   * </pre>
+   *
+   * <code>int64 max_data_item_count = 1;</code>
+   *
    * @return The maxDataItemCount.
    */
   @java.lang.Override
@@ -217,6 +232,21 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MAX_DATA_ITEM_PERCENTAGE_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Max percent of total DataItems for human labeling.
+   * </pre>
+   *
+   * <code>int32 max_data_item_percentage = 2;</code>
+   *
+   * @return Whether the maxDataItemPercentage field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxDataItemPercentage() {
+    return humanLabelingBudgetCase_ == 2;
+  }
   /**
    *
    *
@@ -789,6 +819,20 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
      *
      * <code>int64 max_data_item_count = 1;</code>
      *
+     * @return Whether the maxDataItemCount field is set.
+     */
+    public boolean hasMaxDataItemCount() {
+      return humanLabelingBudgetCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Max number of human labeled DataItems.
+     * </pre>
+     *
+     * <code>int64 max_data_item_count = 1;</code>
+     *
      * @return The maxDataItemCount.
      */
     public long getMaxDataItemCount() {
@@ -835,6 +879,20 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Max percent of total DataItems for human labeling.
+     * </pre>
+     *
+     * <code>int32 max_data_item_percentage = 2;</code>
+     *
+     * @return Whether the maxDataItemPercentage field is set.
+     */
+    public boolean hasMaxDataItemPercentage() {
+      return humanLabelingBudgetCase_ == 2;
+    }
     /**
      *
      *

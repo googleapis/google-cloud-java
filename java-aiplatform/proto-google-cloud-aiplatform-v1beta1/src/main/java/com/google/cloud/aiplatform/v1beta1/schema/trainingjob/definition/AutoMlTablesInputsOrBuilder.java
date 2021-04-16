@@ -33,10 +33,36 @@ public interface AutoMlTablesInputsOrBuilder
    *
    * <code>float optimization_objective_recall_value = 5;</code>
    *
+   * @return Whether the optimizationObjectiveRecallValue field is set.
+   */
+  boolean hasOptimizationObjectiveRecallValue();
+  /**
+   *
+   *
+   * <pre>
+   * Required when optimization_objective is "maximize-precision-at-recall".
+   * Must be between 0 and 1, inclusive.
+   * </pre>
+   *
+   * <code>float optimization_objective_recall_value = 5;</code>
+   *
    * @return The optimizationObjectiveRecallValue.
    */
   float getOptimizationObjectiveRecallValue();
 
+  /**
+   *
+   *
+   * <pre>
+   * Required when optimization_objective is "maximize-recall-at-precision".
+   * Must be between 0 and 1, inclusive.
+   * </pre>
+   *
+   * <code>float optimization_objective_precision_value = 6;</code>
+   *
+   * @return Whether the optimizationObjectivePrecisionValue field is set.
+   */
+  boolean hasOptimizationObjectivePrecisionValue();
   /**
    *
    *

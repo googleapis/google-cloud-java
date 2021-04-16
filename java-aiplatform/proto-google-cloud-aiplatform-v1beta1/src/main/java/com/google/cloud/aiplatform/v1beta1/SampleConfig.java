@@ -358,6 +358,21 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int32 initial_batch_sample_percentage = 1;</code>
    *
+   * @return Whether the initialBatchSamplePercentage field is set.
+   */
+  @java.lang.Override
+  public boolean hasInitialBatchSamplePercentage() {
+    return initialBatchSampleSizeCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The percentage of data needed to be labeled in the first batch.
+   * </pre>
+   *
+   * <code>int32 initial_batch_sample_percentage = 1;</code>
+   *
    * @return The initialBatchSamplePercentage.
    */
   @java.lang.Override
@@ -369,6 +384,22 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FOLLOWING_BATCH_SAMPLE_PERCENTAGE_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * The percentage of data needed to be labeled in each following batch
+   * (except the first batch).
+   * </pre>
+   *
+   * <code>int32 following_batch_sample_percentage = 3;</code>
+   *
+   * @return Whether the followingBatchSamplePercentage field is set.
+   */
+  @java.lang.Override
+  public boolean hasFollowingBatchSamplePercentage() {
+    return followingBatchSampleSizeCase_ == 3;
+  }
   /**
    *
    *
@@ -875,6 +906,20 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>int32 initial_batch_sample_percentage = 1;</code>
      *
+     * @return Whether the initialBatchSamplePercentage field is set.
+     */
+    public boolean hasInitialBatchSamplePercentage() {
+      return initialBatchSampleSizeCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The percentage of data needed to be labeled in the first batch.
+     * </pre>
+     *
+     * <code>int32 initial_batch_sample_percentage = 1;</code>
+     *
      * @return The initialBatchSamplePercentage.
      */
     public int getInitialBatchSamplePercentage() {
@@ -921,6 +966,21 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * The percentage of data needed to be labeled in each following batch
+     * (except the first batch).
+     * </pre>
+     *
+     * <code>int32 following_batch_sample_percentage = 3;</code>
+     *
+     * @return Whether the followingBatchSamplePercentage field is set.
+     */
+    public boolean hasFollowingBatchSamplePercentage() {
+      return followingBatchSampleSizeCase_ == 3;
+    }
     /**
      *
      *

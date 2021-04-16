@@ -3925,6 +3925,19 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <code>string gcs_output_directory = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
+     * @return Whether the gcsOutputDirectory field is set.
+     */
+    boolean hasGcsOutputDirectory();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The full path of the Cloud Storage directory created, into which
+     * the prediction output is written.
+     * </pre>
+     *
+     * <code>string gcs_output_directory = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
      * @return The gcsOutputDirectory.
      */
     java.lang.String getGcsOutputDirectory();
@@ -3942,6 +3955,20 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.ByteString getGcsOutputDirectoryBytes();
 
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The path of the BigQuery dataset created, in
+     * `bq://projectId.bqDatasetId`
+     * format, into which the prediction output is written.
+     * </pre>
+     *
+     * <code>string bigquery_output_dataset = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the bigqueryOutputDataset field is set.
+     */
+    boolean hasBigqueryOutputDataset();
     /**
      *
      *
@@ -4131,6 +4158,21 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      * <code>string gcs_output_directory = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
+     * @return Whether the gcsOutputDirectory field is set.
+     */
+    public boolean hasGcsOutputDirectory() {
+      return outputLocationCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The full path of the Cloud Storage directory created, into which
+     * the prediction output is written.
+     * </pre>
+     *
+     * <code>string gcs_output_directory = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
      * @return The gcsOutputDirectory.
      */
     public java.lang.String getGcsOutputDirectory() {
@@ -4179,6 +4221,22 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int BIGQUERY_OUTPUT_DATASET_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The path of the BigQuery dataset created, in
+     * `bq://projectId.bqDatasetId`
+     * format, into which the prediction output is written.
+     * </pre>
+     *
+     * <code>string bigquery_output_dataset = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the bigqueryOutputDataset field is set.
+     */
+    public boolean hasBigqueryOutputDataset() {
+      return outputLocationCase_ == 2;
+    }
     /**
      *
      *
@@ -4637,6 +4695,22 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        *
        * <code>string gcs_output_directory = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
+       * @return Whether the gcsOutputDirectory field is set.
+       */
+      @java.lang.Override
+      public boolean hasGcsOutputDirectory() {
+        return outputLocationCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The full path of the Cloud Storage directory created, into which
+       * the prediction output is written.
+       * </pre>
+       *
+       * <code>string gcs_output_directory = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
        * @return The gcsOutputDirectory.
        */
       @java.lang.Override
@@ -4751,6 +4825,24 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         return this;
       }
 
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The path of the BigQuery dataset created, in
+       * `bq://projectId.bqDatasetId`
+       * format, into which the prediction output is written.
+       * </pre>
+       *
+       * <code>string bigquery_output_dataset = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the bigqueryOutputDataset field is set.
+       */
+      @java.lang.Override
+      public boolean hasBigqueryOutputDataset() {
+        return outputLocationCase_ == 2;
+      }
       /**
        *
        *

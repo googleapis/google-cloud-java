@@ -32,10 +32,35 @@ public interface SampleConfigOrBuilder
    *
    * <code>int32 initial_batch_sample_percentage = 1;</code>
    *
+   * @return Whether the initialBatchSamplePercentage field is set.
+   */
+  boolean hasInitialBatchSamplePercentage();
+  /**
+   *
+   *
+   * <pre>
+   * The percentage of data needed to be labeled in the first batch.
+   * </pre>
+   *
+   * <code>int32 initial_batch_sample_percentage = 1;</code>
+   *
    * @return The initialBatchSamplePercentage.
    */
   int getInitialBatchSamplePercentage();
 
+  /**
+   *
+   *
+   * <pre>
+   * The percentage of data needed to be labeled in each following batch
+   * (except the first batch).
+   * </pre>
+   *
+   * <code>int32 following_batch_sample_percentage = 3;</code>
+   *
+   * @return Whether the followingBatchSamplePercentage field is set.
+   */
+  boolean hasFollowingBatchSamplePercentage();
   /**
    *
    *

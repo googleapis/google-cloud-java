@@ -35,6 +35,21 @@ public interface UserActionReferenceOrBuilder
    *
    * <code>string operation = 1;</code>
    *
+   * @return Whether the operation field is set.
+   */
+  boolean hasOperation();
+  /**
+   *
+   *
+   * <pre>
+   * For API calls that return a long running operation.
+   * Resource name of the long running operation.
+   * Format:
+   * 'projects/{project}/locations/{location}/operations/{operation}'
+   * </pre>
+   *
+   * <code>string operation = 1;</code>
+   *
    * @return The operation.
    */
   java.lang.String getOperation();
@@ -54,6 +69,21 @@ public interface UserActionReferenceOrBuilder
    */
   com.google.protobuf.ByteString getOperationBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * For API calls that start a LabelingJob.
+   * Resource name of the LabelingJob.
+   * Format:
+   * 'projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}'
+   * </pre>
+   *
+   * <code>string data_labeling_job = 2;</code>
+   *
+   * @return Whether the dataLabelingJob field is set.
+   */
+  boolean hasDataLabelingJob();
   /**
    *
    *

@@ -19,8 +19,16 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e8bc4471a88ac5f60defe3ed436f517174e59ba0",
-        "internalRef": "357800868"
+        "sha": "a389671476b5fe2b1c63bcc115515a76c273ceba",
+        "internalRef": "360248513"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "a389671476b5fe2b1c63bcc115515a76c273ceba",
+        "internalRef": "360248513"
       }
     },
     {
@@ -1304,9 +1312,6 @@
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/TextSentimentPredictionResult.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/TextSentimentPredictionResultOrBuilder.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/TextSentimentPredictionResultProto.java",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/TimeSeriesForecastingPredictionResult.java",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/TimeSeriesForecastingPredictionResultOrBuilder.java",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/TimeSeriesForecastingPredictionResultProto.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/VideoActionRecognitionPredictionResult.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/VideoActionRecognitionPredictionResultOrBuilder.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/VideoActionRecognitionPredictionResultProto.java",
@@ -1316,7 +1321,6 @@
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/VideoObjectTrackingPredictionResult.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/VideoObjectTrackingPredictionResultOrBuilder.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/predict/prediction/VideoObjectTrackingPredictionResultProto.java",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMLForecastingProto.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMLImageClassificationProto.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMLImageObjectDetectionProto.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMLImageSegmentationProto.java",
@@ -1327,12 +1331,6 @@
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMLVideoActionRecognitionProto.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMLVideoClassificationProto.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMLVideoObjectTrackingProto.java",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecasting.java",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingInputs.java",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingInputsOrBuilder.java",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingMetadata.java",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingMetadataOrBuilder.java",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlForecastingOrBuilder.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlImageClassification.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlImageClassificationInputs.java",
     "proto-google-cloud-aiplatform-v1beta1/src/main/java/com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/AutoMlImageClassificationInputsOrBuilder.java",
@@ -1444,7 +1442,6 @@
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/predict/prediction/tabular_regression.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/predict/prediction/text_extraction.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/predict/prediction/text_sentiment.proto",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/predict/prediction/time_series_forecasting.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/predict/prediction/video_action_recognition.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/predict/prediction/video_classification.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/predict/prediction/video_object_tracking.proto",
@@ -1455,7 +1452,6 @@
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_text_classification.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_text_extraction.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_text_sentiment.proto",
-    "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_time_series_forecasting.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_video_action_recognition.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_video_classification.proto",
     "proto-google-cloud-aiplatform-v1beta1/src/main/proto/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_video_object_tracking.proto",

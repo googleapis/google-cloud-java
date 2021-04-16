@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<!-- TODO: remove after next major version is released -->
+<differences>
+  <difference>
+    <className>
+      com/google/cloud/aiplatform/v1/*OrBuilder
+    </className>
+    <differenceType>7012</differenceType>
+    <method>* has*()</method>
+  </difference>
+  <difference>
+    <className>
+      com/google/cloud/aiplatform/v1/schema/trainingjob/definition/*OrBuilder
+    </className>
+    <differenceType>7012</differenceType>
+    <method>* has*()</method>
+  </difference>
+</differences>

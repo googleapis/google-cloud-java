@@ -190,6 +190,20 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
    *
    * <code>string dataset = 1 [(.google.api.resource_reference) = { ... }</code>
    *
+   * @return Whether the dataset field is set.
+   */
+  public boolean hasDataset() {
+    return migratedResourceCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Migrated Dataset's resource name.
+   * </pre>
+   *
+   * <code>string dataset = 1 [(.google.api.resource_reference) = { ... }</code>
+   *
    * @return The dataset.
    */
   public java.lang.String getDataset() {
@@ -237,6 +251,20 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
   }
 
   public static final int MODEL_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Migrated Model's resource name.
+   * </pre>
+   *
+   * <code>string model = 2 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the model field is set.
+   */
+  public boolean hasModel() {
+    return migratedResourceCase_ == 2;
+  }
   /**
    *
    *
@@ -762,6 +790,21 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
      *
      * <code>string dataset = 1 [(.google.api.resource_reference) = { ... }</code>
      *
+     * @return Whether the dataset field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataset() {
+      return migratedResourceCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Migrated Dataset's resource name.
+     * </pre>
+     *
+     * <code>string dataset = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
      * @return The dataset.
      */
     @java.lang.Override
@@ -872,6 +915,21 @@ public final class MigrateResourceResponse extends com.google.protobuf.Generated
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Migrated Model's resource name.
+     * </pre>
+     *
+     * <code>string model = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return Whether the model field is set.
+     */
+    @java.lang.Override
+    public boolean hasModel() {
+      return migratedResourceCase_ == 2;
+    }
     /**
      *
      *

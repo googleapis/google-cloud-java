@@ -9773,6 +9773,22 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
    *
    * <code>float optimization_objective_recall_value = 5;</code>
    *
+   * @return Whether the optimizationObjectiveRecallValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasOptimizationObjectiveRecallValue() {
+    return additionalOptimizationObjectiveConfigCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required when optimization_objective is "maximize-precision-at-recall".
+   * Must be between 0 and 1, inclusive.
+   * </pre>
+   *
+   * <code>float optimization_objective_recall_value = 5;</code>
+   *
    * @return The optimizationObjectiveRecallValue.
    */
   @java.lang.Override
@@ -9784,6 +9800,22 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int OPTIMIZATION_OBJECTIVE_PRECISION_VALUE_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Required when optimization_objective is "maximize-recall-at-precision".
+   * Must be between 0 and 1, inclusive.
+   * </pre>
+   *
+   * <code>float optimization_objective_precision_value = 6;</code>
+   *
+   * @return Whether the optimizationObjectivePrecisionValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasOptimizationObjectivePrecisionValue() {
+    return additionalOptimizationObjectiveConfigCase_ == 6;
+  }
   /**
    *
    *
@@ -10879,6 +10911,21 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
      *
      * <code>float optimization_objective_recall_value = 5;</code>
      *
+     * @return Whether the optimizationObjectiveRecallValue field is set.
+     */
+    public boolean hasOptimizationObjectiveRecallValue() {
+      return additionalOptimizationObjectiveConfigCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required when optimization_objective is "maximize-precision-at-recall".
+     * Must be between 0 and 1, inclusive.
+     * </pre>
+     *
+     * <code>float optimization_objective_recall_value = 5;</code>
+     *
      * @return The optimizationObjectiveRecallValue.
      */
     public float getOptimizationObjectiveRecallValue() {
@@ -10927,6 +10974,21 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Required when optimization_objective is "maximize-recall-at-precision".
+     * Must be between 0 and 1, inclusive.
+     * </pre>
+     *
+     * <code>float optimization_objective_precision_value = 6;</code>
+     *
+     * @return Whether the optimizationObjectivePrecisionValue field is set.
+     */
+    public boolean hasOptimizationObjectivePrecisionValue() {
+      return additionalOptimizationObjectiveConfigCase_ == 6;
+    }
     /**
      *
      *
