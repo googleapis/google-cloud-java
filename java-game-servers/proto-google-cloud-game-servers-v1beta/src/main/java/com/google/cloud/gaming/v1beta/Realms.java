@@ -118,10 +118,11 @@ public final class Realms {
           + "(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
           + "\002 \001(\t:\0028\001:^\352A[\n!gameservices.googleapis."
           + "com/Realm\0226projects/{project}/locations/"
-          + "{location}/realms/{realm}Bd\n\036com.google."
-          + "cloud.gaming.v1betaP\001Z@google.golang.org"
-          + "/genproto/googleapis/cloud/gaming/v1beta"
-          + ";gamingb\006proto3"
+          + "{location}/realms/{realm}B\201\001\n\036com.google"
+          + ".cloud.gaming.v1betaP\001Z@google.golang.or"
+          + "g/genproto/googleapis/cloud/gaming/v1bet"
+          + "a;gaming\312\002\032Google\\Cloud\\Gaming\\V1betab\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

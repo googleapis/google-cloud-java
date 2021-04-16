@@ -103,10 +103,11 @@ public final class GameServerDeploymentsServiceOuterClass {
           + "cts/*/locations/*/gameServerDeployments/"
           + "*}:fetchDeploymentState:\001*\032O\312A\033gameservi"
           + "ces.googleapis.com\322A.https://www.googlea"
-          + "pis.com/auth/cloud-platformBd\n\036com.googl"
-          + "e.cloud.gaming.v1betaP\001Z@google.golang.o"
-          + "rg/genproto/googleapis/cloud/gaming/v1be"
-          + "ta;gamingb\006proto3"
+          + "pis.com/auth/cloud-platformB\201\001\n\036com.goog"
+          + "le.cloud.gaming.v1betaP\001Z@google.golang."
+          + "org/genproto/googleapis/cloud/gaming/v1b"
+          + "eta;gaming\312\002\032Google\\Cloud\\Gaming\\V1betab"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

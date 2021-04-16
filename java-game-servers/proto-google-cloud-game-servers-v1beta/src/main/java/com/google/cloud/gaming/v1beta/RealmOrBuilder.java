@@ -186,8 +186,8 @@ public interface RealmOrBuilder
    *
    *
    * <pre>
-   * Required. Time zone where all policies targeting this realm are evaluated. The value
-   * of this field must be from the IANA time zone database:
+   * Required. Time zone where all policies targeting this realm are evaluated.
+   * The value of this field must be from the IANA time zone database:
    * https://www.iana.org/time-zones.
    * </pre>
    *
@@ -200,8 +200,8 @@ public interface RealmOrBuilder
    *
    *
    * <pre>
-   * Required. Time zone where all policies targeting this realm are evaluated. The value
-   * of this field must be from the IANA time zone database:
+   * Required. Time zone where all policies targeting this realm are evaluated.
+   * The value of this field must be from the IANA time zone database:
    * https://www.iana.org/time-zones.
    * </pre>
    *

@@ -117,9 +117,10 @@ public final class GameServerConfigs {
           + "es.googleapis.com/GameServerConfig\022[proj"
           + "ects/{project}/locations/{location}/game"
           + "ServerDeployments/{deployment}/configs/{"
-          + "config}Bd\n\036com.google.cloud.gaming.v1bet"
-          + "aP\001Z@google.golang.org/genproto/googleap"
-          + "is/cloud/gaming/v1beta;gamingb\006proto3"
+          + "config}B\201\001\n\036com.google.cloud.gaming.v1be"
+          + "taP\001Z@google.golang.org/genproto/googlea"
+          + "pis/cloud/gaming/v1beta;gaming\312\002\032Google\\"
+          + "Cloud\\Gaming\\V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

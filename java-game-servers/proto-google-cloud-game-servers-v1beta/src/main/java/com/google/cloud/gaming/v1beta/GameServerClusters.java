@@ -175,9 +175,10 @@ public final class GameServerClusters {
           + "rvices.googleapis.com/GameServerCluster\022"
           + "Sprojects/{project}/locations/{location}"
           + "/realms/{realm}/gameServerClusters/{clus"
-          + "ter}Bd\n\036com.google.cloud.gaming.v1betaP\001"
-          + "Z@google.golang.org/genproto/googleapis/"
-          + "cloud/gaming/v1beta;gamingb\006proto3"
+          + "ter}B\201\001\n\036com.google.cloud.gaming.v1betaP"
+          + "\001Z@google.golang.org/genproto/googleapis"
+          + "/cloud/gaming/v1beta;gaming\312\002\032Google\\Clo"
+          + "ud\\Gaming\\V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

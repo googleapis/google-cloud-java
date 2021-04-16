@@ -68,10 +68,10 @@ public final class GameServerConfigsServiceOuterClass {
           + "\004name\312A*\n\025google.protobuf.Empty\022\021Operati"
           + "onMetadata\032O\312A\033gameservices.googleapis.c"
           + "om\322A.https://www.googleapis.com/auth/clo"
-          + "ud-platformBd\n\036com.google.cloud.gaming.v"
-          + "1betaP\001Z@google.golang.org/genproto/goog"
-          + "leapis/cloud/gaming/v1beta;gamingb\006proto"
-          + "3"
+          + "ud-platformB\201\001\n\036com.google.cloud.gaming."
+          + "v1betaP\001Z@google.golang.org/genproto/goo"
+          + "gleapis/cloud/gaming/v1beta;gaming\312\002\032Goo"
+          + "gle\\Cloud\\Gaming\\V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

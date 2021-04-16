@@ -275,8 +275,8 @@ public final class PreviewGameServerDeploymentRolloutRequest
    *
    *
    * <pre>
-   * Optional. The target timestamp to compute the preview. Defaults to the immediately
-   * after the proposed rollout completes.
+   * Optional. The target timestamp to compute the preview. Defaults to the
+   * immediately after the proposed rollout completes.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -292,8 +292,8 @@ public final class PreviewGameServerDeploymentRolloutRequest
    *
    *
    * <pre>
-   * Optional. The target timestamp to compute the preview. Defaults to the immediately
-   * after the proposed rollout completes.
+   * Optional. The target timestamp to compute the preview. Defaults to the
+   * immediately after the proposed rollout completes.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -309,8 +309,8 @@ public final class PreviewGameServerDeploymentRolloutRequest
    *
    *
    * <pre>
-   * Optional. The target timestamp to compute the preview. Defaults to the immediately
-   * after the proposed rollout completes.
+   * Optional. The target timestamp to compute the preview. Defaults to the
+   * immediately after the proposed rollout completes.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1172,8 +1172,8 @@ public final class PreviewGameServerDeploymentRolloutRequest
      *
      *
      * <pre>
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1188,8 +1188,8 @@ public final class PreviewGameServerDeploymentRolloutRequest
      *
      *
      * <pre>
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1210,8 +1210,8 @@ public final class PreviewGameServerDeploymentRolloutRequest
      *
      *
      * <pre>
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1234,8 +1234,8 @@ public final class PreviewGameServerDeploymentRolloutRequest
      *
      *
      * <pre>
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1255,8 +1255,8 @@ public final class PreviewGameServerDeploymentRolloutRequest
      *
      *
      * <pre>
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1283,8 +1283,8 @@ public final class PreviewGameServerDeploymentRolloutRequest
      *
      *
      * <pre>
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1305,8 +1305,8 @@ public final class PreviewGameServerDeploymentRolloutRequest
      *
      *
      * <pre>
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1321,8 +1321,8 @@ public final class PreviewGameServerDeploymentRolloutRequest
      *
      *
      * <pre>
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1341,8 +1341,8 @@ public final class PreviewGameServerDeploymentRolloutRequest
      *
      *
      * <pre>
-     * Optional. The target timestamp to compute the preview. Defaults to the immediately
-     * after the proposed rollout completes.
+     * Optional. The target timestamp to compute the preview. Defaults to the
+     * immediately after the proposed rollout completes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp preview_time = 3 [(.google.api.field_behavior) = OPTIONAL];

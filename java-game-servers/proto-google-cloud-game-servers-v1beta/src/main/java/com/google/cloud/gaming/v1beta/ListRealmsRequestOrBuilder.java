@@ -61,8 +61,8 @@ public interface ListRealmsRequestOrBuilder
    * Optional. The maximum number of items to return.  If unspecified, server
    * will pick an appropriate default. Server may return fewer items than
    * requested. A caller should only rely on response's
-   * [next_page_token][google.cloud.gaming.v1beta.ListRealmsResponse.next_page_token] to
-   * determine if there are more realms left to be queried.
+   * [next_page_token][google.cloud.gaming.v1beta.ListRealmsResponse.next_page_token]
+   * to determine if there are more realms left to be queried.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
