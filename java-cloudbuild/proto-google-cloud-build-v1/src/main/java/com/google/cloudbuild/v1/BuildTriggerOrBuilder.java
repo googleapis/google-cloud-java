@@ -249,6 +249,50 @@ public interface BuildTriggerOrBuilder
    *
    *
    * <pre>
+   * Optional. PubsubConfig describes the configuration of a trigger that
+   * creates a build whenever a Pub/Sub message is published.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.PubsubConfig pubsub_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the pubsubConfig field is set.
+   */
+  boolean hasPubsubConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. PubsubConfig describes the configuration of a trigger that
+   * creates a build whenever a Pub/Sub message is published.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.PubsubConfig pubsub_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pubsubConfig.
+   */
+  com.google.cloudbuild.v1.PubsubConfig getPubsubConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. PubsubConfig describes the configuration of a trigger that
+   * creates a build whenever a Pub/Sub message is published.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.PubsubConfig pubsub_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloudbuild.v1.PubsubConfigOrBuilder getPubsubConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Contents of the build template.
    * </pre>
    *
@@ -579,6 +623,31 @@ public interface BuildTriggerOrBuilder
    * @return The bytes of the includedFiles at the given index.
    */
   com.google.protobuf.ByteString getIncludedFilesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Common Expression Language string.
+   * </pre>
+   *
+   * <code>string filter = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Common Expression Language string.
+   * </pre>
+   *
+   * <code>string filter = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
 
   public com.google.cloudbuild.v1.BuildTrigger.BuildTemplateCase getBuildTemplateCase();
 }

@@ -18,8 +18,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "913f5553d5ff5940cddd8245313136449b2a3571",
-        "internalRef": "363244566"
+        "sha": "9a9e29627a715077cd8e33c0d2bd549437039bd0",
+        "internalRef": "368533270"
       }
     },
     {
@@ -185,6 +185,8 @@
     "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/Network.java",
     "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/NetworkOrBuilder.java",
     "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/ProjectName.java",
+    "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/PubsubConfig.java",
+    "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/PubsubConfigOrBuilder.java",
     "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/PullRequestFilter.java",
     "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/PullRequestFilterOrBuilder.java",
     "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/PushFilter.java",
@@ -215,8 +217,10 @@
     "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/SourceProvenanceOrBuilder.java",
     "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/StorageSource.java",
     "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/StorageSourceOrBuilder.java",
+    "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/SubscriptionName.java",
     "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/TimeSpan.java",
     "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/TimeSpanOrBuilder.java",
+    "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/TopicName.java",
     "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/UpdateBuildTriggerRequest.java",
     "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/UpdateBuildTriggerRequestOrBuilder.java",
     "proto-google-cloud-build-v1/src/main/java/com/google/cloudbuild/v1/UpdateWorkerPoolRequest.java",

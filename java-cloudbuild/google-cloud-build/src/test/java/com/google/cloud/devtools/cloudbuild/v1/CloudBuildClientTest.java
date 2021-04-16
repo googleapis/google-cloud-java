@@ -51,6 +51,7 @@ import com.google.cloudbuild.v1.ListBuildsRequest;
 import com.google.cloudbuild.v1.ListBuildsResponse;
 import com.google.cloudbuild.v1.ListWorkerPoolsRequest;
 import com.google.cloudbuild.v1.ListWorkerPoolsResponse;
+import com.google.cloudbuild.v1.PubsubConfig;
 import com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest;
 import com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse;
 import com.google.cloudbuild.v1.RepoSource;
@@ -461,11 +462,13 @@ public class CloudBuildClientTest {
             .addAllTags(new ArrayList<String>())
             .setTriggerTemplate(RepoSource.newBuilder().build())
             .setGithub(GitHubEventsConfig.newBuilder().build())
+            .setPubsubConfig(PubsubConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setDisabled(true)
             .putAllSubstitutions(new HashMap<String, String>())
             .addAllIgnoredFiles(new ArrayList<String>())
             .addAllIncludedFiles(new ArrayList<String>())
+            .setFilter("filter-1274492040")
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
@@ -512,11 +515,13 @@ public class CloudBuildClientTest {
             .addAllTags(new ArrayList<String>())
             .setTriggerTemplate(RepoSource.newBuilder().build())
             .setGithub(GitHubEventsConfig.newBuilder().build())
+            .setPubsubConfig(PubsubConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setDisabled(true)
             .putAllSubstitutions(new HashMap<String, String>())
             .addAllIgnoredFiles(new ArrayList<String>())
             .addAllIncludedFiles(new ArrayList<String>())
+            .setFilter("filter-1274492040")
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
@@ -644,11 +649,13 @@ public class CloudBuildClientTest {
             .addAllTags(new ArrayList<String>())
             .setTriggerTemplate(RepoSource.newBuilder().build())
             .setGithub(GitHubEventsConfig.newBuilder().build())
+            .setPubsubConfig(PubsubConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setDisabled(true)
             .putAllSubstitutions(new HashMap<String, String>())
             .addAllIgnoredFiles(new ArrayList<String>())
             .addAllIncludedFiles(new ArrayList<String>())
+            .setFilter("filter-1274492040")
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
