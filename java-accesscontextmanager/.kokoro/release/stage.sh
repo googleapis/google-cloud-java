@@ -29,7 +29,7 @@ create_settings_xml_file "settings.xml"
 
 # attempt to stage 3 times with exponential backoff (starting with 10 seconds)
 retry_with_backoff 3 10 \
-  mvn clean install deploy -B \
+  mvn clean deploy -B \
     --settings ${MAVEN_SETTINGS_FILE} \
     -DskipTests=true \
     -DperformRelease=true \
