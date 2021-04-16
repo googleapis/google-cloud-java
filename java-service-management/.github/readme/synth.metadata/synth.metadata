@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-service-management.git",
+        "sha": "d97e722ea70bb86c8b602c8379ea148510c8d961"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "898b38a6f4fab89a76dfb152480bb034a781331b"
+      }
+    }
+  ]
+}
