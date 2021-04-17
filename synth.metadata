@@ -11,39 +11,31 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigquerystorage.git",
-        "sha": "42298848f5511cca98ffe04ac370e6760856b555"
+        "sha": "cc243d97a14df3c94133b0705d6e5d5ef92a8286"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "86c2fe6229f16e0f113a4cf9edea35d71895a6a6",
-        "internalRef": "367652775"
+        "sha": "95e7f055087a43f638ffd9a0f25ce36dbea87953",
+        "internalRef": "368275477"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "86c2fe6229f16e0f113a4cf9edea35d71895a6a6",
-        "internalRef": "367652775"
+        "sha": "95e7f055087a43f638ffd9a0f25ce36dbea87953",
+        "internalRef": "368275477"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "86c2fe6229f16e0f113a4cf9edea35d71895a6a6",
-        "internalRef": "367652775"
-      }
-    },
-    {
-      "git": {
-        "name": "googleapis",
-        "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "86c2fe6229f16e0f113a4cf9edea35d71895a6a6",
-        "internalRef": "367652775"
+        "sha": "95e7f055087a43f638ffd9a0f25ce36dbea87953",
+        "internalRef": "368275477"
       }
     },
     {
