@@ -1,7 +1,0 @@
----
-codecov:
-  ci:
-    - source.cloud.google.com
-
-ignore:
-  - "**/*Test.java"
