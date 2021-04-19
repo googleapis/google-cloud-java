@@ -1,5 +1,21 @@
 # Changelog
 
+### [0.21.1](https://www.github.com/googleapis/java-shared-dependencies/compare/0.21.0...v0.21.1) (2021-04-19)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#332](https://www.github.com/googleapis/java-shared-dependencies/issues/332)) ([e289825](https://www.github.com/googleapis/java-shared-dependencies/commit/e289825a3bc45b4796db7ce4347f8d9d9251a410))
+
+
+### Dependencies
+
+* update dependency com.fasterxml.jackson:jackson-bom to v2.12.3 ([#329](https://www.github.com/googleapis/java-shared-dependencies/issues/329)) ([a77b4fc](https://www.github.com/googleapis/java-shared-dependencies/commit/a77b4fcc2ea5caf366c76a4698bac6d4c9abc92e))
+* update dependency com.google.api-client:google-api-client-bom to v1.31.4 ([#326](https://www.github.com/googleapis/java-shared-dependencies/issues/326)) ([409d24f](https://www.github.com/googleapis/java-shared-dependencies/commit/409d24f8a0cac30e41ca45eb2711aecb335d70dd))
+* update dependency com.google.auth:google-auth-library-bom to v0.25.3 ([#328](https://www.github.com/googleapis/java-shared-dependencies/issues/328)) ([88cfc08](https://www.github.com/googleapis/java-shared-dependencies/commit/88cfc08952881200e23ed95cfa2eebad85ec7ab3))
+* update google.core.version to v1.94.7 ([#324](https://www.github.com/googleapis/java-shared-dependencies/issues/324)) ([0412c88](https://www.github.com/googleapis/java-shared-dependencies/commit/0412c88468940c1182bc0761bfe269a6688fe7b7))
+* update iam.version to v1.0.12 ([#327](https://www.github.com/googleapis/java-shared-dependencies/issues/327)) ([548d5f5](https://www.github.com/googleapis/java-shared-dependencies/commit/548d5f53c4f264f1cbb9ca72fdfe4608ab16b480))
+
 ## [0.21.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.20.1...v0.21.0) (2021-04-09)
 
 
