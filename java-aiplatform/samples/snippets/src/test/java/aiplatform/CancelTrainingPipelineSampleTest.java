@@ -118,6 +118,6 @@ public class CancelTrainingPipelineSampleTest {
     // Get TrainingPipeline
     GetTrainingPipelineSample.getTrainingPipeline(PROJECT, TRAINING_PIPELINE_ID);
     String trainingPipelineResponse = bout.toString();
-    assertThat(trainingPipelineResponse).contains("Message: CANCELLED");
+    assertThat(trainingPipelineResponse).contains("Message: CANCELED");
   }
 }

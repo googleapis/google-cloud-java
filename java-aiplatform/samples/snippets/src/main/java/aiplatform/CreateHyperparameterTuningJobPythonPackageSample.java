@@ -17,24 +17,24 @@
 package aiplatform;
 
 // [START aiplatform_create_hyperparameter_tuning_job_python_package_sample]
-import com.google.cloud.aiplatform.v1beta1.AcceleratorType;
-import com.google.cloud.aiplatform.v1beta1.CustomJobSpec;
-import com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob;
-import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
-import com.google.cloud.aiplatform.v1beta1.JobServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.LocationName;
-import com.google.cloud.aiplatform.v1beta1.MachineSpec;
-import com.google.cloud.aiplatform.v1beta1.PythonPackageSpec;
-import com.google.cloud.aiplatform.v1beta1.StudySpec;
-import com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec;
-import com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.GoalType;
-import com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec;
-import com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec;
-import com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition;
-import com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DiscreteValueSpec;
-import com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DoubleValueSpec;
-import com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ScaleType;
-import com.google.cloud.aiplatform.v1beta1.WorkerPoolSpec;
+import com.google.cloud.aiplatform.v1.AcceleratorType;
+import com.google.cloud.aiplatform.v1.CustomJobSpec;
+import com.google.cloud.aiplatform.v1.HyperparameterTuningJob;
+import com.google.cloud.aiplatform.v1.JobServiceClient;
+import com.google.cloud.aiplatform.v1.JobServiceSettings;
+import com.google.cloud.aiplatform.v1.LocationName;
+import com.google.cloud.aiplatform.v1.MachineSpec;
+import com.google.cloud.aiplatform.v1.PythonPackageSpec;
+import com.google.cloud.aiplatform.v1.StudySpec;
+import com.google.cloud.aiplatform.v1.StudySpec.MetricSpec;
+import com.google.cloud.aiplatform.v1.StudySpec.MetricSpec.GoalType;
+import com.google.cloud.aiplatform.v1.StudySpec.ParameterSpec;
+import com.google.cloud.aiplatform.v1.StudySpec.ParameterSpec.ConditionalParameterSpec;
+import com.google.cloud.aiplatform.v1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition;
+import com.google.cloud.aiplatform.v1.StudySpec.ParameterSpec.DiscreteValueSpec;
+import com.google.cloud.aiplatform.v1.StudySpec.ParameterSpec.DoubleValueSpec;
+import com.google.cloud.aiplatform.v1.StudySpec.ParameterSpec.ScaleType;
+import com.google.cloud.aiplatform.v1.WorkerPoolSpec;
 import java.io.IOException;
 import java.util.Arrays;
 

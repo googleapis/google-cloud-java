@@ -35,7 +35,8 @@ import org.junit.Test;
 
 public class CreateHyperparameterTuningJobSampleTest {
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String CONTAINER_IMAGE_URI = "gcr.io/ucaip-test/ucaip-training-test:latest";
+  private static final String CONTAINER_IMAGE_URI = "gcr.io/ucaip-sample-tests/ucaip-training-test:"
+      + "latest";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;

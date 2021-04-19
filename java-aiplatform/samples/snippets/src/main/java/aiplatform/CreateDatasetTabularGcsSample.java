@@ -19,11 +19,11 @@ package aiplatform;
 // [START aiplatform_create_dataset_tabular_gcs_sample]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.aiplatform.v1beta1.CreateDatasetOperationMetadata;
-import com.google.cloud.aiplatform.v1beta1.Dataset;
-import com.google.cloud.aiplatform.v1beta1.DatasetServiceClient;
-import com.google.cloud.aiplatform.v1beta1.DatasetServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.LocationName;
+import com.google.cloud.aiplatform.v1.CreateDatasetOperationMetadata;
+import com.google.cloud.aiplatform.v1.Dataset;
+import com.google.cloud.aiplatform.v1.DatasetServiceClient;
+import com.google.cloud.aiplatform.v1.DatasetServiceSettings;
+import com.google.cloud.aiplatform.v1.LocationName;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;

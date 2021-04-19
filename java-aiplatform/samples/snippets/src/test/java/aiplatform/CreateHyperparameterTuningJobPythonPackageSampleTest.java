@@ -39,7 +39,8 @@ public class CreateHyperparameterTuningJobPythonPackageSampleTest {
   private static final String EXECUTOR_IMAGE_URI =
       "us.gcr.io/cloud-aiplatform/training/tf-gpu.2-1:latest";
   private static final String PACKAGE_URI =
-      "gs://ucaip-test-us-central1/training/pythonpackages/trainer.tar.bz2";
+      "gs://cloud-samples-data-us-central1/ai-platform-unified/training/python-packages/"
+          + "trainer.tar.bz2";
   private static final String PYTHON_MODULE = "trainer.hptuning_trainer";
   private ByteArrayOutputStream bout;
   private PrintStream out;

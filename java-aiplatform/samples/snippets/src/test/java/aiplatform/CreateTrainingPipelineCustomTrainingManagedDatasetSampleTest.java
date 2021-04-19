@@ -37,7 +37,7 @@ public class CreateTrainingPipelineCustomTrainingManagedDatasetSampleTest {
   private static final String ANNOTATION_SCHEMA_URI =
       "gs://google-cloud-aiplatform/schema/dataset/annotation/image_classification_1.0.0.yaml";
   private static final String TRAINING_CONTAINER_IMAGE_URI =
-      "gcr.io/ucaip-test/custom-container-managed-dataset:latest";
+      "gcr.io/ucaip-sample-tests/custom-container-managed-dataset:latest";
   private static final String MODEL_CONTAIN_SPEC_IMAGE_URI =
       "gcr.io/cloud-aiplatform/prediction/tf-gpu.1-15:latest";
   private static final String GCS_OUTPUT_DIRECTORY =
