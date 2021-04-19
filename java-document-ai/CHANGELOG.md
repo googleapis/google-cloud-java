@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.7.0](https://www.github.com/googleapis/java-document-ai/compare/v0.6.0...v0.7.0) (2021-04-19)
+
+
+### Features
+
+* generate v1 client ([#421](https://www.github.com/googleapis/java-document-ai/issues/421)) ([01ce144](https://www.github.com/googleapis/java-document-ai/commit/01ce1447e11739371d24e76ef671f925f81d9cc0))
+
+
+### Bug Fixes
+
+* typo ([#414](https://www.github.com/googleapis/java-document-ai/issues/414)) ([eb7deac](https://www.github.com/googleapis/java-document-ai/commit/eb7deac0853ab31fcb4f21bf488a05e999c04a9b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v1.113.15 ([#416](https://www.github.com/googleapis/java-document-ai/issues/416)) ([70f4511](https://www.github.com/googleapis/java-document-ai/commit/70f45114f95861dc422df6f7e1e998938c784265))
+
 ## [0.6.0](https://www.github.com/googleapis/java-document-ai/compare/v0.5.0...v0.6.0) (2021-04-12)
 
 
