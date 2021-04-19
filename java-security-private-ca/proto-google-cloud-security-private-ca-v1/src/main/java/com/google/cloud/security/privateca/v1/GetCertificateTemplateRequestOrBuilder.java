@@ -27,10 +27,8 @@ public interface GetCertificateTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The
-   * [name][google.cloud.security.privateca.v1.CertificateTemplate.name] of the
-   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
-   * to get.
+   * Required. The [name][google.cloud.security.privateca.v1.CertificateTemplate.name] of the [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] to
+   * get.
    * </pre>
    *
    * <code>
@@ -44,10 +42,8 @@ public interface GetCertificateTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The
-   * [name][google.cloud.security.privateca.v1.CertificateTemplate.name] of the
-   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
-   * to get.
+   * Required. The [name][google.cloud.security.privateca.v1.CertificateTemplate.name] of the [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] to
+   * get.
    * </pre>
    *
    * <code>

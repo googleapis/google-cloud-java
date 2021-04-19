@@ -27,10 +27,8 @@ public interface CreateCertificateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
-   * [Certificate][google.cloud.security.privateca.v1.Certificate], in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+   * Required. The resource name of the [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the [Certificate][google.cloud.security.privateca.v1.Certificate],
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
    * </pre>
    *
    * <code>
@@ -44,10 +42,8 @@ public interface CreateCertificateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the
-   * [Certificate][google.cloud.security.privateca.v1.Certificate], in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+   * Required. The resource name of the [CaPool][google.cloud.security.privateca.v1.CaPool] associated with the [Certificate][google.cloud.security.privateca.v1.Certificate],
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
    * </pre>
    *
    * <code>
@@ -64,10 +60,8 @@ public interface CreateCertificateRequestOrBuilder
    * <pre>
    * Optional. It must be unique within a location and match the regular
    * expression `[a-zA-Z0-9_-]{1,63}`. This field is required when using a
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-   * in the Enterprise
-   * [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier], but is
-   * optional and its value is ignored otherwise.
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the Enterprise [CertificateAuthority.Tier][],
+   * but is optional and its value is ignored otherwise.
    * </pre>
    *
    * <code>string certificate_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -81,10 +75,8 @@ public interface CreateCertificateRequestOrBuilder
    * <pre>
    * Optional. It must be unique within a location and match the regular
    * expression `[a-zA-Z0-9_-]{1,63}`. This field is required when using a
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-   * in the Enterprise
-   * [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier], but is
-   * optional and its value is ignored otherwise.
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the Enterprise [CertificateAuthority.Tier][],
+   * but is optional and its value is ignored otherwise.
    * </pre>
    *
    * <code>string certificate_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -97,8 +89,7 @@ public interface CreateCertificateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [Certificate][google.cloud.security.privateca.v1.Certificate]
-   * with initial field values.
+   * Required. A [Certificate][google.cloud.security.privateca.v1.Certificate] with initial field values.
    * </pre>
    *
    * <code>
@@ -112,8 +103,7 @@ public interface CreateCertificateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [Certificate][google.cloud.security.privateca.v1.Certificate]
-   * with initial field values.
+   * Required. A [Certificate][google.cloud.security.privateca.v1.Certificate] with initial field values.
    * </pre>
    *
    * <code>
@@ -127,8 +117,7 @@ public interface CreateCertificateRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [Certificate][google.cloud.security.privateca.v1.Certificate]
-   * with initial field values.
+   * Required. A [Certificate][google.cloud.security.privateca.v1.Certificate] with initial field values.
    * </pre>
    *
    * <code>
@@ -141,10 +130,10 @@ public interface CreateCertificateRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. An ID to identify requests. Specify a unique request ID so that
-   * if you must retry your request, the server will know to ignore the request
-   * if it has already been completed. The server will guarantee that for at
-   * least 60 minutes since the first request.
+   * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+   * retry your request, the server will know to ignore the request if it has
+   * already been completed. The server will guarantee that for at least 60
+   * minutes since the first request.
    * For example, consider a situation where you make an initial request and t
    * he request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
@@ -163,10 +152,10 @@ public interface CreateCertificateRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. An ID to identify requests. Specify a unique request ID so that
-   * if you must retry your request, the server will know to ignore the request
-   * if it has already been completed. The server will guarantee that for at
-   * least 60 minutes since the first request.
+   * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+   * retry your request, the server will know to ignore the request if it has
+   * already been completed. The server will guarantee that for at least 60
+   * minutes since the first request.
    * For example, consider a situation where you make an initial request and t
    * he request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
@@ -186,15 +175,9 @@ public interface CreateCertificateRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If this is true, no
-   * [Certificate][google.cloud.security.privateca.v1.Certificate] resource will
-   * be persisted regardless of the
-   * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
-   * [tier][google.cloud.security.privateca.v1.CaPool.tier], and the returned
-   * [Certificate][google.cloud.security.privateca.v1.Certificate] will not
-   * contain the
-   * [pem_certificate][google.cloud.security.privateca.v1.Certificate.pem_certificate]
-   * field.
+   * Optional. If this is true, no [Certificate][google.cloud.security.privateca.v1.Certificate] resource will be persisted regardless
+   * of the [CaPool][google.cloud.security.privateca.v1.CaPool]'s [tier][google.cloud.security.privateca.v1.CaPool.tier], and the returned [Certificate][google.cloud.security.privateca.v1.Certificate]
+   * will not contain the [pem_certificate][google.cloud.security.privateca.v1.Certificate.pem_certificate] field.
    * </pre>
    *
    * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -207,24 +190,17 @@ public interface CreateCertificateRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The resource ID of the
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-   * that should issue the certificate.  This optional field will ignore the
-   * load-balancing scheme of the Pool and directly issue the certificate from
-   * the CA with the specified ID, contained in the same
-   * [CaPool][google.cloud.security.privateca.v1.CaPool] referenced by `parent`.
-   * Per-CA quota rules apply. If left empty, a
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-   * will be chosen from the [CaPool][google.cloud.security.privateca.v1.CaPool]
-   * by the service. For example, to issue a
-   * [Certificate][google.cloud.security.privateca.v1.Certificate] from a
-   * Certificate Authority with resource name
+   * Optional. The resource ID of the [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that should issue the
+   * certificate.  This optional field will ignore the load-balancing scheme of
+   * the Pool and directly issue the certificate from the CA with the specified
+   * ID, contained in the same [CaPool][google.cloud.security.privateca.v1.CaPool] referenced by `parent`. Per-CA quota
+   * rules apply. If left empty, a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will be chosen from
+   * the [CaPool][google.cloud.security.privateca.v1.CaPool] by the service. For example, to issue a [Certificate][google.cloud.security.privateca.v1.Certificate] from
+   * a Certificate Authority with resource name
    * "projects/my-project/locations/us-central1/caPools/my-pool/certificateAuthorities/my-ca",
-   * you can set the
-   * [parent][google.cloud.security.privateca.v1.CreateCertificateRequest.parent]
-   * to "projects/my-project/locations/us-central1/caPools/my-pool" and the
-   * [issuing_certificate_authority_id][google.cloud.security.privateca.v1.CreateCertificateRequest.issuing_certificate_authority_id]
-   * to "my-ca".
+   * you can set the [parent][google.cloud.security.privateca.v1.CreateCertificateRequest.parent] to
+   * "projects/my-project/locations/us-central1/caPools/my-pool" and the
+   * [issuing_certificate_authority_id][google.cloud.security.privateca.v1.CreateCertificateRequest.issuing_certificate_authority_id] to "my-ca".
    * </pre>
    *
    * <code>string issuing_certificate_authority_id = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -237,24 +213,17 @@ public interface CreateCertificateRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The resource ID of the
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-   * that should issue the certificate.  This optional field will ignore the
-   * load-balancing scheme of the Pool and directly issue the certificate from
-   * the CA with the specified ID, contained in the same
-   * [CaPool][google.cloud.security.privateca.v1.CaPool] referenced by `parent`.
-   * Per-CA quota rules apply. If left empty, a
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-   * will be chosen from the [CaPool][google.cloud.security.privateca.v1.CaPool]
-   * by the service. For example, to issue a
-   * [Certificate][google.cloud.security.privateca.v1.Certificate] from a
-   * Certificate Authority with resource name
+   * Optional. The resource ID of the [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that should issue the
+   * certificate.  This optional field will ignore the load-balancing scheme of
+   * the Pool and directly issue the certificate from the CA with the specified
+   * ID, contained in the same [CaPool][google.cloud.security.privateca.v1.CaPool] referenced by `parent`. Per-CA quota
+   * rules apply. If left empty, a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] will be chosen from
+   * the [CaPool][google.cloud.security.privateca.v1.CaPool] by the service. For example, to issue a [Certificate][google.cloud.security.privateca.v1.Certificate] from
+   * a Certificate Authority with resource name
    * "projects/my-project/locations/us-central1/caPools/my-pool/certificateAuthorities/my-ca",
-   * you can set the
-   * [parent][google.cloud.security.privateca.v1.CreateCertificateRequest.parent]
-   * to "projects/my-project/locations/us-central1/caPools/my-pool" and the
-   * [issuing_certificate_authority_id][google.cloud.security.privateca.v1.CreateCertificateRequest.issuing_certificate_authority_id]
-   * to "my-ca".
+   * you can set the [parent][google.cloud.security.privateca.v1.CreateCertificateRequest.parent] to
+   * "projects/my-project/locations/us-central1/caPools/my-pool" and the
+   * [issuing_certificate_authority_id][google.cloud.security.privateca.v1.CreateCertificateRequest.issuing_certificate_authority_id] to "my-ca".
    * </pre>
    *
    * <code>string issuing_certificate_authority_id = 6 [(.google.api.field_behavior) = OPTIONAL];

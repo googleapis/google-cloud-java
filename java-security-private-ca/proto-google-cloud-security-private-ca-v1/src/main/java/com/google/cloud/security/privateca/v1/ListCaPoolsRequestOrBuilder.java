@@ -60,13 +60,12 @@ public interface ListCaPoolsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Limit on the number of
-   * [CaPools][google.cloud.security.privateca.v1.CaPool] to include in the
-   * response. Further [CaPools][google.cloud.security.privateca.v1.CaPool] can
-   * subsequently be obtained by including the
-   * [ListCaPoolsResponse.next_page_token][google.cloud.security.privateca.v1.ListCaPoolsResponse.next_page_token]
-   * in a subsequent request. If unspecified, the server will pick an
-   * appropriate default.
+   * Optional. Limit on the number of [CaPools][google.cloud.security.privateca.v1.CaPool] to
+   * include in the response.
+   * Further [CaPools][google.cloud.security.privateca.v1.CaPool] can subsequently be
+   * obtained by including the
+   * [ListCaPoolsResponse.next_page_token][google.cloud.security.privateca.v1.ListCaPoolsResponse.next_page_token] in a subsequent
+   * request. If unspecified, the server will pick an appropriate default.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

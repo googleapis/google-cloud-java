@@ -127,9 +127,8 @@ public final class EnableCertificateAuthorityRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Required. The resource name for this
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-   * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+   * Required. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
    * <code>
@@ -154,9 +153,8 @@ public final class EnableCertificateAuthorityRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Required. The resource name for this
-   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-   * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+   * Required. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
    * <code>
@@ -184,10 +182,10 @@ public final class EnableCertificateAuthorityRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Optional. An ID to identify requests. Specify a unique request ID so that
-   * if you must retry your request, the server will know to ignore the request
-   * if it has already been completed. The server will guarantee that for at
-   * least 60 minutes since the first request.
+   * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+   * retry your request, the server will know to ignore the request if it has
+   * already been completed. The server will guarantee that for at least 60
+   * minutes since the first request.
    * For example, consider a situation where you make an initial request and t
    * he request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
@@ -217,10 +215,10 @@ public final class EnableCertificateAuthorityRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Optional. An ID to identify requests. Specify a unique request ID so that
-   * if you must retry your request, the server will know to ignore the request
-   * if it has already been completed. The server will guarantee that for at
-   * least 60 minutes since the first request.
+   * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+   * retry your request, the server will know to ignore the request if it has
+   * already been completed. The server will guarantee that for at least 60
+   * minutes since the first request.
    * For example, consider a situation where you make an initial request and t
    * he request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
@@ -600,9 +598,8 @@ public final class EnableCertificateAuthorityRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The resource name for this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+     * Required. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
      * <code>
@@ -626,9 +623,8 @@ public final class EnableCertificateAuthorityRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The resource name for this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+     * Required. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
      * <code>
@@ -652,9 +648,8 @@ public final class EnableCertificateAuthorityRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The resource name for this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+     * Required. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
      * <code>
@@ -677,9 +672,8 @@ public final class EnableCertificateAuthorityRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The resource name for this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+     * Required. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
      * <code>
@@ -698,9 +692,8 @@ public final class EnableCertificateAuthorityRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. The resource name for this
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
+     * Required. The resource name for this [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
      * <code>
@@ -726,10 +719,10 @@ public final class EnableCertificateAuthorityRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Optional. An ID to identify requests. Specify a unique request ID so that
-     * if you must retry your request, the server will know to ignore the request
-     * if it has already been completed. The server will guarantee that for at
-     * least 60 minutes since the first request.
+     * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has
+     * already been completed. The server will guarantee that for at least 60
+     * minutes since the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
@@ -758,10 +751,10 @@ public final class EnableCertificateAuthorityRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Optional. An ID to identify requests. Specify a unique request ID so that
-     * if you must retry your request, the server will know to ignore the request
-     * if it has already been completed. The server will guarantee that for at
-     * least 60 minutes since the first request.
+     * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has
+     * already been completed. The server will guarantee that for at least 60
+     * minutes since the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
@@ -790,10 +783,10 @@ public final class EnableCertificateAuthorityRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Optional. An ID to identify requests. Specify a unique request ID so that
-     * if you must retry your request, the server will know to ignore the request
-     * if it has already been completed. The server will guarantee that for at
-     * least 60 minutes since the first request.
+     * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has
+     * already been completed. The server will guarantee that for at least 60
+     * minutes since the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
@@ -821,10 +814,10 @@ public final class EnableCertificateAuthorityRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Optional. An ID to identify requests. Specify a unique request ID so that
-     * if you must retry your request, the server will know to ignore the request
-     * if it has already been completed. The server will guarantee that for at
-     * least 60 minutes since the first request.
+     * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has
+     * already been completed. The server will guarantee that for at least 60
+     * minutes since the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
@@ -848,10 +841,10 @@ public final class EnableCertificateAuthorityRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Optional. An ID to identify requests. Specify a unique request ID so that
-     * if you must retry your request, the server will know to ignore the request
-     * if it has already been completed. The server will guarantee that for at
-     * least 60 minutes since the first request.
+     * Optional. An ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has
+     * already been completed. The server will guarantee that for at least 60
+     * minutes since the first request.
      * For example, consider a situation where you make an initial request and t
      * he request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID

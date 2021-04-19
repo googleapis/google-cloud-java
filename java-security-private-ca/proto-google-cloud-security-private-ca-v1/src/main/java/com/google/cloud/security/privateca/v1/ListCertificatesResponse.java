@@ -22,8 +22,7 @@ package com.google.cloud.security.privateca.v1;
  *
  *
  * <pre>
- * Response message for
- * [CertificateAuthorityService.ListCertificates][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCertificates].
+ * Response message for [CertificateAuthorityService.ListCertificates][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCertificates].
  * </pre>
  *
  * Protobuf type {@code google.cloud.security.privateca.v1.ListCertificatesResponse}
@@ -519,8 +518,7 @@ public final class ListCertificatesResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Response message for
-   * [CertificateAuthorityService.ListCertificates][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCertificates].
+   * Response message for [CertificateAuthorityService.ListCertificates][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCertificates].
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.ListCertificatesResponse}

@@ -22,8 +22,7 @@ package com.google.cloud.security.privateca.v1;
  *
  *
  * <pre>
- * Request message for
- * [CertificateAuthorityService.GetCaPool][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCaPool].
+ * Request message for [CertificateAuthorityService.GetCaPool][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCaPool].
  * </pre>
  *
  * Protobuf type {@code google.cloud.security.privateca.v1.GetCaPoolRequest}
@@ -118,8 +117,7 @@ public final class GetCaPoolRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.security.privateca.v1.CaPool.name] of the
-   * [CaPool][google.cloud.security.privateca.v1.CaPool] to get.
+   * Required. The [name][google.cloud.security.privateca.v1.CaPool.name] of the [CaPool][google.cloud.security.privateca.v1.CaPool] to get.
    * </pre>
    *
    * <code>
@@ -144,8 +142,7 @@ public final class GetCaPoolRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.security.privateca.v1.CaPool.name] of the
-   * [CaPool][google.cloud.security.privateca.v1.CaPool] to get.
+   * Required. The [name][google.cloud.security.privateca.v1.CaPool.name] of the [CaPool][google.cloud.security.privateca.v1.CaPool] to get.
    * </pre>
    *
    * <code>
@@ -331,8 +328,7 @@ public final class GetCaPoolRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Request message for
-   * [CertificateAuthorityService.GetCaPool][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCaPool].
+   * Request message for [CertificateAuthorityService.GetCaPool][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCaPool].
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.privateca.v1.GetCaPoolRequest}
@@ -492,8 +488,7 @@ public final class GetCaPoolRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.security.privateca.v1.CaPool.name] of the
-     * [CaPool][google.cloud.security.privateca.v1.CaPool] to get.
+     * Required. The [name][google.cloud.security.privateca.v1.CaPool.name] of the [CaPool][google.cloud.security.privateca.v1.CaPool] to get.
      * </pre>
      *
      * <code>
@@ -517,8 +512,7 @@ public final class GetCaPoolRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.security.privateca.v1.CaPool.name] of the
-     * [CaPool][google.cloud.security.privateca.v1.CaPool] to get.
+     * Required. The [name][google.cloud.security.privateca.v1.CaPool.name] of the [CaPool][google.cloud.security.privateca.v1.CaPool] to get.
      * </pre>
      *
      * <code>
@@ -542,8 +536,7 @@ public final class GetCaPoolRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.security.privateca.v1.CaPool.name] of the
-     * [CaPool][google.cloud.security.privateca.v1.CaPool] to get.
+     * Required. The [name][google.cloud.security.privateca.v1.CaPool.name] of the [CaPool][google.cloud.security.privateca.v1.CaPool] to get.
      * </pre>
      *
      * <code>
@@ -566,8 +559,7 @@ public final class GetCaPoolRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.security.privateca.v1.CaPool.name] of the
-     * [CaPool][google.cloud.security.privateca.v1.CaPool] to get.
+     * Required. The [name][google.cloud.security.privateca.v1.CaPool.name] of the [CaPool][google.cloud.security.privateca.v1.CaPool] to get.
      * </pre>
      *
      * <code>
@@ -586,8 +578,7 @@ public final class GetCaPoolRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.security.privateca.v1.CaPool.name] of the
-     * [CaPool][google.cloud.security.privateca.v1.CaPool] to get.
+     * Required. The [name][google.cloud.security.privateca.v1.CaPool.name] of the [CaPool][google.cloud.security.privateca.v1.CaPool] to get.
      * </pre>
      *
      * <code>

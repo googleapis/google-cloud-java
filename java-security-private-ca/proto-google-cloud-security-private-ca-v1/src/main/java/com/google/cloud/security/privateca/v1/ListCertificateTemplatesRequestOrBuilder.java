@@ -28,8 +28,8 @@ public interface ListCertificateTemplatesRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the location associated with the
-   * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate],
-   * in the format `projects/&#42;&#47;locations/&#42;`.
+   * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate], in the format
+   * `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -44,8 +44,8 @@ public interface ListCertificateTemplatesRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the location associated with the
-   * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate],
-   * in the format `projects/&#42;&#47;locations/&#42;`.
+   * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate], in the format
+   * `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -61,13 +61,11 @@ public interface ListCertificateTemplatesRequestOrBuilder
    *
    * <pre>
    * Optional. Limit on the number of
-   * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate]
-   * to include in the response. Further
-   * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate]
-   * can subsequently be obtained by including the
-   * [ListCertificateTemplatesResponse.next_page_token][google.cloud.security.privateca.v1.ListCertificateTemplatesResponse.next_page_token]
-   * in a subsequent request. If unspecified, the server will pick an
-   * appropriate default.
+   * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate] to include in the response.
+   * Further [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate] can subsequently be
+   * obtained by including the
+   * [ListCertificateTemplatesResponse.next_page_token][google.cloud.security.privateca.v1.ListCertificateTemplatesResponse.next_page_token] in a subsequent
+   * request. If unspecified, the server will pick an appropriate default.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

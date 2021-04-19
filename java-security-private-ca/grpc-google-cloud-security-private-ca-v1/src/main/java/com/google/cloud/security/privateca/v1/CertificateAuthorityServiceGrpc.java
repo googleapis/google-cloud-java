@@ -21,9 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * [Certificate Authority
- * Service][google.cloud.security.privateca.v1.CertificateAuthorityService]
- * manages private certificate authorities and issued certificates.
+ * [Certificate Authority Service][google.cloud.security.privateca.v1.CertificateAuthorityService] manages private
+ * certificate authorities and issued certificates.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -1572,9 +1571,8 @@ public final class CertificateAuthorityServiceGrpc {
    *
    *
    * <pre>
-   * [Certificate Authority
-   * Service][google.cloud.security.privateca.v1.CertificateAuthorityService]
-   * manages private certificate authorities and issued certificates.
+   * [Certificate Authority Service][google.cloud.security.privateca.v1.CertificateAuthorityService] manages private
+   * certificate authorities and issued certificates.
    * </pre>
    */
   public abstract static class CertificateAuthorityServiceImplBase
@@ -1584,8 +1582,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [Certificate][google.cloud.security.privateca.v1.Certificate]
-     * in a given Project, Location from a particular
+     * Create a new [Certificate][google.cloud.security.privateca.v1.Certificate] in a given Project, Location from a particular
      * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      */
@@ -1646,8 +1643,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Update a [Certificate][google.cloud.security.privateca.v1.Certificate].
-     * Currently, the only field you can update is the
+     * Update a [Certificate][google.cloud.security.privateca.v1.Certificate]. Currently, the only field you can update is the
      * [labels][google.cloud.security.privateca.v1.Certificate.labels] field.
      * </pre>
      */
@@ -1663,16 +1659,12 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Activate a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * that is in state
+     * Activate a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that is in state
      * [AWAITING_USER_ACTIVATION][google.cloud.security.privateca.v1.CertificateAuthority.State.AWAITING_USER_ACTIVATION]
-     * and is of type
-     * [SUBORDINATE][google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE].
-     * After the parent Certificate Authority signs a certificate signing request
-     * from
-     * [FetchCertificateAuthorityCsr][google.cloud.security.privateca.v1.CertificateAuthorityService.FetchCertificateAuthorityCsr],
-     * this method can complete the activation process.
+     * and is of type [SUBORDINATE][google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE]. After
+     * the parent Certificate Authority signs a certificate signing request from
+     * [FetchCertificateAuthorityCsr][google.cloud.security.privateca.v1.CertificateAuthorityService.FetchCertificateAuthorityCsr], this method can complete the activation
+     * process.
      * </pre>
      */
     public void activateCertificateAuthority(
@@ -1686,9 +1678,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Create a new
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * in a given Project and Location.
+     * Create a new [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in a given Project and Location.
      * </pre>
      */
     public void createCertificateAuthority(
@@ -1702,8 +1692,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Disable a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Disable a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public void disableCertificateAuthority(
@@ -1717,8 +1706,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Enable a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Enable a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public void enableCertificateAuthority(
@@ -1732,17 +1720,13 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Fetch a certificate signing request (CSR) from a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * Fetch a certificate signing request (CSR) from a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * that is in state
      * [AWAITING_USER_ACTIVATION][google.cloud.security.privateca.v1.CertificateAuthority.State.AWAITING_USER_ACTIVATION]
-     * and is of type
-     * [SUBORDINATE][google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE].
-     * The CSR must then be signed by the desired parent Certificate Authority,
-     * which could be another
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resource, or could be an on-prem certificate authority. See also
-     * [ActivateCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.ActivateCertificateAuthority].
+     * and is of type [SUBORDINATE][google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE]. The
+     * CSR must then be signed by the desired parent Certificate Authority, which
+     * could be another [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] resource, or could be an on-prem
+     * certificate authority. See also [ActivateCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.ActivateCertificateAuthority].
      * </pre>
      */
     public void fetchCertificateAuthorityCsr(
@@ -1758,8 +1742,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Returns a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Returns a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public void getCertificateAuthority(
@@ -1774,8 +1757,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Lists
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Lists [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public void listCertificateAuthorities(
@@ -1791,9 +1773,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Undelete a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * that has been deleted.
+     * Undelete a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that has been deleted.
      * </pre>
      */
     public void undeleteCertificateAuthority(
@@ -1807,8 +1787,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Delete a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Delete a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public void deleteCertificateAuthority(
@@ -1822,8 +1801,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Update a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Update a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public void updateCertificateAuthority(
@@ -1908,10 +1886,8 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * FetchCaCerts returns the current trust anchor for the
-     * [CaPool][google.cloud.security.privateca.v1.CaPool]. This will include CA
-     * certificate chains for all ACTIVE
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * FetchCaCerts returns the current trust anchor for the [CaPool][google.cloud.security.privateca.v1.CaPool]. This will
+     * include CA certificate chains for all ACTIVE [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in the [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      */
@@ -1927,8 +1903,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Returns a
-     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * Returns a [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
      * </pre>
      */
     public void getCertificateRevocationList(
@@ -1944,8 +1919,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Lists
-     * [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * Lists [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
      * </pre>
      */
     public void listCertificateRevocationLists(
@@ -1961,8 +1935,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Update a
-     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * Update a [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
      * </pre>
      */
     public void updateCertificateRevocationList(
@@ -1976,9 +1949,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Create a new
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
-     * in a given Project and Location.
+     * Create a new [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] in a given Project and Location.
      * </pre>
      */
     public void createCertificateTemplate(
@@ -1992,8 +1963,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * DeleteCertificateTemplate deletes a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * DeleteCertificateTemplate deletes a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
      * </pre>
      */
     public void deleteCertificateTemplate(
@@ -2007,8 +1977,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Returns a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * Returns a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
      * </pre>
      */
     public void getCertificateTemplate(
@@ -2023,8 +1992,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Lists
-     * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
+     * Lists [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
      * </pre>
      */
     public void listCertificateTemplates(
@@ -2040,8 +2008,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Update a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * Update a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
      * </pre>
      */
     public void updateCertificateTemplate(
@@ -2262,9 +2229,8 @@ public final class CertificateAuthorityServiceGrpc {
    *
    *
    * <pre>
-   * [Certificate Authority
-   * Service][google.cloud.security.privateca.v1.CertificateAuthorityService]
-   * manages private certificate authorities and issued certificates.
+   * [Certificate Authority Service][google.cloud.security.privateca.v1.CertificateAuthorityService] manages private
+   * certificate authorities and issued certificates.
    * </pre>
    */
   public static final class CertificateAuthorityServiceStub
@@ -2284,8 +2250,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [Certificate][google.cloud.security.privateca.v1.Certificate]
-     * in a given Project, Location from a particular
+     * Create a new [Certificate][google.cloud.security.privateca.v1.Certificate] in a given Project, Location from a particular
      * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      */
@@ -2354,8 +2319,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Update a [Certificate][google.cloud.security.privateca.v1.Certificate].
-     * Currently, the only field you can update is the
+     * Update a [Certificate][google.cloud.security.privateca.v1.Certificate]. Currently, the only field you can update is the
      * [labels][google.cloud.security.privateca.v1.Certificate.labels] field.
      * </pre>
      */
@@ -2373,16 +2337,12 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Activate a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * that is in state
+     * Activate a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that is in state
      * [AWAITING_USER_ACTIVATION][google.cloud.security.privateca.v1.CertificateAuthority.State.AWAITING_USER_ACTIVATION]
-     * and is of type
-     * [SUBORDINATE][google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE].
-     * After the parent Certificate Authority signs a certificate signing request
-     * from
-     * [FetchCertificateAuthorityCsr][google.cloud.security.privateca.v1.CertificateAuthorityService.FetchCertificateAuthorityCsr],
-     * this method can complete the activation process.
+     * and is of type [SUBORDINATE][google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE]. After
+     * the parent Certificate Authority signs a certificate signing request from
+     * [FetchCertificateAuthorityCsr][google.cloud.security.privateca.v1.CertificateAuthorityService.FetchCertificateAuthorityCsr], this method can complete the activation
+     * process.
      * </pre>
      */
     public void activateCertificateAuthority(
@@ -2398,9 +2358,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Create a new
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * in a given Project and Location.
+     * Create a new [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in a given Project and Location.
      * </pre>
      */
     public void createCertificateAuthority(
@@ -2416,8 +2374,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Disable a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Disable a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public void disableCertificateAuthority(
@@ -2433,8 +2390,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Enable a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Enable a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public void enableCertificateAuthority(
@@ -2450,17 +2406,13 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Fetch a certificate signing request (CSR) from a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * Fetch a certificate signing request (CSR) from a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * that is in state
      * [AWAITING_USER_ACTIVATION][google.cloud.security.privateca.v1.CertificateAuthority.State.AWAITING_USER_ACTIVATION]
-     * and is of type
-     * [SUBORDINATE][google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE].
-     * The CSR must then be signed by the desired parent Certificate Authority,
-     * which could be another
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resource, or could be an on-prem certificate authority. See also
-     * [ActivateCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.ActivateCertificateAuthority].
+     * and is of type [SUBORDINATE][google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE]. The
+     * CSR must then be signed by the desired parent Certificate Authority, which
+     * could be another [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] resource, or could be an on-prem
+     * certificate authority. See also [ActivateCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.ActivateCertificateAuthority].
      * </pre>
      */
     public void fetchCertificateAuthorityCsr(
@@ -2478,8 +2430,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Returns a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Returns a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public void getCertificateAuthority(
@@ -2496,8 +2447,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Lists
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Lists [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public void listCertificateAuthorities(
@@ -2515,9 +2465,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Undelete a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * that has been deleted.
+     * Undelete a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that has been deleted.
      * </pre>
      */
     public void undeleteCertificateAuthority(
@@ -2533,8 +2481,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Delete a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Delete a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public void deleteCertificateAuthority(
@@ -2550,8 +2497,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Update a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Update a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public void updateCertificateAuthority(
@@ -2647,10 +2593,8 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * FetchCaCerts returns the current trust anchor for the
-     * [CaPool][google.cloud.security.privateca.v1.CaPool]. This will include CA
-     * certificate chains for all ACTIVE
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * FetchCaCerts returns the current trust anchor for the [CaPool][google.cloud.security.privateca.v1.CaPool]. This will
+     * include CA certificate chains for all ACTIVE [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in the [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      */
@@ -2668,8 +2612,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Returns a
-     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * Returns a [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
      * </pre>
      */
     public void getCertificateRevocationList(
@@ -2687,8 +2630,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Lists
-     * [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * Lists [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
      * </pre>
      */
     public void listCertificateRevocationLists(
@@ -2706,8 +2648,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Update a
-     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * Update a [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
      * </pre>
      */
     public void updateCertificateRevocationList(
@@ -2723,9 +2664,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Create a new
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
-     * in a given Project and Location.
+     * Create a new [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] in a given Project and Location.
      * </pre>
      */
     public void createCertificateTemplate(
@@ -2741,8 +2680,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * DeleteCertificateTemplate deletes a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * DeleteCertificateTemplate deletes a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
      * </pre>
      */
     public void deleteCertificateTemplate(
@@ -2758,8 +2696,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Returns a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * Returns a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
      * </pre>
      */
     public void getCertificateTemplate(
@@ -2776,8 +2713,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Lists
-     * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
+     * Lists [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
      * </pre>
      */
     public void listCertificateTemplates(
@@ -2795,8 +2731,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Update a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * Update a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
      * </pre>
      */
     public void updateCertificateTemplate(
@@ -2813,9 +2748,8 @@ public final class CertificateAuthorityServiceGrpc {
    *
    *
    * <pre>
-   * [Certificate Authority
-   * Service][google.cloud.security.privateca.v1.CertificateAuthorityService]
-   * manages private certificate authorities and issued certificates.
+   * [Certificate Authority Service][google.cloud.security.privateca.v1.CertificateAuthorityService] manages private
+   * certificate authorities and issued certificates.
    * </pre>
    */
   public static final class CertificateAuthorityServiceBlockingStub
@@ -2835,8 +2769,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [Certificate][google.cloud.security.privateca.v1.Certificate]
-     * in a given Project, Location from a particular
+     * Create a new [Certificate][google.cloud.security.privateca.v1.Certificate] in a given Project, Location from a particular
      * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      */
@@ -2889,8 +2822,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Update a [Certificate][google.cloud.security.privateca.v1.Certificate].
-     * Currently, the only field you can update is the
+     * Update a [Certificate][google.cloud.security.privateca.v1.Certificate]. Currently, the only field you can update is the
      * [labels][google.cloud.security.privateca.v1.Certificate.labels] field.
      * </pre>
      */
@@ -2904,16 +2836,12 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Activate a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * that is in state
+     * Activate a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that is in state
      * [AWAITING_USER_ACTIVATION][google.cloud.security.privateca.v1.CertificateAuthority.State.AWAITING_USER_ACTIVATION]
-     * and is of type
-     * [SUBORDINATE][google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE].
-     * After the parent Certificate Authority signs a certificate signing request
-     * from
-     * [FetchCertificateAuthorityCsr][google.cloud.security.privateca.v1.CertificateAuthorityService.FetchCertificateAuthorityCsr],
-     * this method can complete the activation process.
+     * and is of type [SUBORDINATE][google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE]. After
+     * the parent Certificate Authority signs a certificate signing request from
+     * [FetchCertificateAuthorityCsr][google.cloud.security.privateca.v1.CertificateAuthorityService.FetchCertificateAuthorityCsr], this method can complete the activation
+     * process.
      * </pre>
      */
     public com.google.longrunning.Operation activateCertificateAuthority(
@@ -2926,9 +2854,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Create a new
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * in a given Project and Location.
+     * Create a new [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in a given Project and Location.
      * </pre>
      */
     public com.google.longrunning.Operation createCertificateAuthority(
@@ -2941,8 +2867,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Disable a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Disable a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public com.google.longrunning.Operation disableCertificateAuthority(
@@ -2955,8 +2880,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Enable a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Enable a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public com.google.longrunning.Operation enableCertificateAuthority(
@@ -2969,17 +2893,13 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Fetch a certificate signing request (CSR) from a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * Fetch a certificate signing request (CSR) from a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * that is in state
      * [AWAITING_USER_ACTIVATION][google.cloud.security.privateca.v1.CertificateAuthority.State.AWAITING_USER_ACTIVATION]
-     * and is of type
-     * [SUBORDINATE][google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE].
-     * The CSR must then be signed by the desired parent Certificate Authority,
-     * which could be another
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resource, or could be an on-prem certificate authority. See also
-     * [ActivateCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.ActivateCertificateAuthority].
+     * and is of type [SUBORDINATE][google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE]. The
+     * CSR must then be signed by the desired parent Certificate Authority, which
+     * could be another [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] resource, or could be an on-prem
+     * certificate authority. See also [ActivateCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.ActivateCertificateAuthority].
      * </pre>
      */
     public com.google.cloud.security.privateca.v1.FetchCertificateAuthorityCsrResponse
@@ -2993,8 +2913,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Returns a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Returns a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public com.google.cloud.security.privateca.v1.CertificateAuthority getCertificateAuthority(
@@ -3007,8 +2926,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Lists
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Lists [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public com.google.cloud.security.privateca.v1.ListCertificateAuthoritiesResponse
@@ -3022,9 +2940,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Undelete a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * that has been deleted.
+     * Undelete a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that has been deleted.
      * </pre>
      */
     public com.google.longrunning.Operation undeleteCertificateAuthority(
@@ -3037,8 +2953,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Delete a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Delete a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public com.google.longrunning.Operation deleteCertificateAuthority(
@@ -3051,8 +2966,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Update a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Update a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public com.google.longrunning.Operation updateCertificateAuthority(
@@ -3130,10 +3044,8 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * FetchCaCerts returns the current trust anchor for the
-     * [CaPool][google.cloud.security.privateca.v1.CaPool]. This will include CA
-     * certificate chains for all ACTIVE
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * FetchCaCerts returns the current trust anchor for the [CaPool][google.cloud.security.privateca.v1.CaPool]. This will
+     * include CA certificate chains for all ACTIVE [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in the [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      */
@@ -3147,8 +3059,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Returns a
-     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * Returns a [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
      * </pre>
      */
     public com.google.cloud.security.privateca.v1.CertificateRevocationList
@@ -3162,8 +3073,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Lists
-     * [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * Lists [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
      * </pre>
      */
     public com.google.cloud.security.privateca.v1.ListCertificateRevocationListsResponse
@@ -3177,8 +3087,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Update a
-     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * Update a [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
      * </pre>
      */
     public com.google.longrunning.Operation updateCertificateRevocationList(
@@ -3191,9 +3100,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Create a new
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
-     * in a given Project and Location.
+     * Create a new [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] in a given Project and Location.
      * </pre>
      */
     public com.google.longrunning.Operation createCertificateTemplate(
@@ -3206,8 +3113,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * DeleteCertificateTemplate deletes a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * DeleteCertificateTemplate deletes a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
      * </pre>
      */
     public com.google.longrunning.Operation deleteCertificateTemplate(
@@ -3220,8 +3126,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Returns a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * Returns a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
      * </pre>
      */
     public com.google.cloud.security.privateca.v1.CertificateTemplate getCertificateTemplate(
@@ -3234,8 +3139,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Lists
-     * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
+     * Lists [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
      * </pre>
      */
     public com.google.cloud.security.privateca.v1.ListCertificateTemplatesResponse
@@ -3249,8 +3153,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Update a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * Update a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
      * </pre>
      */
     public com.google.longrunning.Operation updateCertificateTemplate(
@@ -3264,9 +3167,8 @@ public final class CertificateAuthorityServiceGrpc {
    *
    *
    * <pre>
-   * [Certificate Authority
-   * Service][google.cloud.security.privateca.v1.CertificateAuthorityService]
-   * manages private certificate authorities and issued certificates.
+   * [Certificate Authority Service][google.cloud.security.privateca.v1.CertificateAuthorityService] manages private
+   * certificate authorities and issued certificates.
    * </pre>
    */
   public static final class CertificateAuthorityServiceFutureStub
@@ -3286,8 +3188,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Create a new [Certificate][google.cloud.security.privateca.v1.Certificate]
-     * in a given Project, Location from a particular
+     * Create a new [Certificate][google.cloud.security.privateca.v1.Certificate] in a given Project, Location from a particular
      * [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      */
@@ -3344,8 +3245,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Update a [Certificate][google.cloud.security.privateca.v1.Certificate].
-     * Currently, the only field you can update is the
+     * Update a [Certificate][google.cloud.security.privateca.v1.Certificate]. Currently, the only field you can update is the
      * [labels][google.cloud.security.privateca.v1.Certificate.labels] field.
      * </pre>
      */
@@ -3360,16 +3260,12 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Activate a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * that is in state
+     * Activate a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that is in state
      * [AWAITING_USER_ACTIVATION][google.cloud.security.privateca.v1.CertificateAuthority.State.AWAITING_USER_ACTIVATION]
-     * and is of type
-     * [SUBORDINATE][google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE].
-     * After the parent Certificate Authority signs a certificate signing request
-     * from
-     * [FetchCertificateAuthorityCsr][google.cloud.security.privateca.v1.CertificateAuthorityService.FetchCertificateAuthorityCsr],
-     * this method can complete the activation process.
+     * and is of type [SUBORDINATE][google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE]. After
+     * the parent Certificate Authority signs a certificate signing request from
+     * [FetchCertificateAuthorityCsr][google.cloud.security.privateca.v1.CertificateAuthorityService.FetchCertificateAuthorityCsr], this method can complete the activation
+     * process.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -3383,9 +3279,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Create a new
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * in a given Project and Location.
+     * Create a new [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in a given Project and Location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -3399,8 +3293,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Disable a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Disable a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -3414,8 +3307,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Enable a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Enable a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -3429,17 +3321,13 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Fetch a certificate signing request (CSR) from a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * Fetch a certificate signing request (CSR) from a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * that is in state
      * [AWAITING_USER_ACTIVATION][google.cloud.security.privateca.v1.CertificateAuthority.State.AWAITING_USER_ACTIVATION]
-     * and is of type
-     * [SUBORDINATE][google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE].
-     * The CSR must then be signed by the desired parent Certificate Authority,
-     * which could be another
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * resource, or could be an on-prem certificate authority. See also
-     * [ActivateCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.ActivateCertificateAuthority].
+     * and is of type [SUBORDINATE][google.cloud.security.privateca.v1.CertificateAuthority.Type.SUBORDINATE]. The
+     * CSR must then be signed by the desired parent Certificate Authority, which
+     * could be another [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] resource, or could be an on-prem
+     * certificate authority. See also [ActivateCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.ActivateCertificateAuthority].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3454,8 +3342,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Returns a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Returns a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3470,8 +3357,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Lists
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Lists [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3486,9 +3372,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Undelete a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
-     * that has been deleted.
+     * Undelete a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] that has been deleted.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -3502,8 +3386,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Delete a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Delete a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -3517,8 +3400,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Update a
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * Update a [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -3599,10 +3481,8 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * FetchCaCerts returns the current trust anchor for the
-     * [CaPool][google.cloud.security.privateca.v1.CaPool]. This will include CA
-     * certificate chains for all ACTIVE
-     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * FetchCaCerts returns the current trust anchor for the [CaPool][google.cloud.security.privateca.v1.CaPool]. This will
+     * include CA certificate chains for all ACTIVE [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * resources in the [CaPool][google.cloud.security.privateca.v1.CaPool].
      * </pre>
      */
@@ -3617,8 +3497,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Returns a
-     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * Returns a [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3633,8 +3512,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Lists
-     * [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * Lists [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3650,8 +3528,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Update a
-     * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
+     * Update a [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -3666,9 +3543,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Create a new
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
-     * in a given Project and Location.
+     * Create a new [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] in a given Project and Location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -3682,8 +3557,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * DeleteCertificateTemplate deletes a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * DeleteCertificateTemplate deletes a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -3697,8 +3571,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Returns a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * Returns a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3713,8 +3586,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Lists
-     * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
+     * Lists [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3729,8 +3601,7 @@ public final class CertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Update a
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
+     * Update a [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

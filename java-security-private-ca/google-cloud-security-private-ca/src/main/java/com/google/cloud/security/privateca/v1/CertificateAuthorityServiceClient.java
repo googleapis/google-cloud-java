@@ -203,8 +203,8 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * @param certificateId Optional. It must be unique within a location and match the regular
    *     expression `[a-zA-Z0-9_-]{1,63}`. This field is required when using a
    *     [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
-   *     Enterprise [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier], but is optional
-   *     and its value is ignored otherwise.
+   *     Enterprise [CertificateAuthority.Tier][], but is optional and its value is ignored
+   *     otherwise.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Certificate createCertificate(
@@ -245,8 +245,8 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * @param certificateId Optional. It must be unique within a location and match the regular
    *     expression `[a-zA-Z0-9_-]{1,63}`. This field is required when using a
    *     [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority] in the
-   *     Enterprise [CaPool.Tier][google.cloud.security.privateca.v1.CaPool.Tier], but is optional
-   *     and its value is ignored otherwise.
+   *     Enterprise [CertificateAuthority.Tier][], but is optional and its value is ignored
+   *     otherwise.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Certificate createCertificate(

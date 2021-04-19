@@ -27,8 +27,7 @@ public interface ListCertificateTemplatesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of
-   * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
+   * The list of [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
    * </pre>
    *
    * <code>
@@ -41,8 +40,7 @@ public interface ListCertificateTemplatesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of
-   * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
+   * The list of [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
    * </pre>
    *
    * <code>
@@ -54,8 +52,7 @@ public interface ListCertificateTemplatesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of
-   * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
+   * The list of [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
    * </pre>
    *
    * <code>
@@ -67,8 +64,7 @@ public interface ListCertificateTemplatesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of
-   * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
+   * The list of [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
    * </pre>
    *
    * <code>
@@ -81,8 +77,7 @@ public interface ListCertificateTemplatesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of
-   * [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
+   * The list of [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
    * </pre>
    *
    * <code>

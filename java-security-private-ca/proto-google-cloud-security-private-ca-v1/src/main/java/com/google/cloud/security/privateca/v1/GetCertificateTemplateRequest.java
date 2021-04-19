@@ -118,10 +118,8 @@ public final class GetCertificateTemplateRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The
-   * [name][google.cloud.security.privateca.v1.CertificateTemplate.name] of the
-   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
-   * to get.
+   * Required. The [name][google.cloud.security.privateca.v1.CertificateTemplate.name] of the [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] to
+   * get.
    * </pre>
    *
    * <code>
@@ -146,10 +144,8 @@ public final class GetCertificateTemplateRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The
-   * [name][google.cloud.security.privateca.v1.CertificateTemplate.name] of the
-   * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
-   * to get.
+   * Required. The [name][google.cloud.security.privateca.v1.CertificateTemplate.name] of the [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] to
+   * get.
    * </pre>
    *
    * <code>
@@ -504,10 +500,8 @@ public final class GetCertificateTemplateRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The
-     * [name][google.cloud.security.privateca.v1.CertificateTemplate.name] of the
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
-     * to get.
+     * Required. The [name][google.cloud.security.privateca.v1.CertificateTemplate.name] of the [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] to
+     * get.
      * </pre>
      *
      * <code>
@@ -531,10 +525,8 @@ public final class GetCertificateTemplateRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The
-     * [name][google.cloud.security.privateca.v1.CertificateTemplate.name] of the
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
-     * to get.
+     * Required. The [name][google.cloud.security.privateca.v1.CertificateTemplate.name] of the [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] to
+     * get.
      * </pre>
      *
      * <code>
@@ -558,10 +550,8 @@ public final class GetCertificateTemplateRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The
-     * [name][google.cloud.security.privateca.v1.CertificateTemplate.name] of the
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
-     * to get.
+     * Required. The [name][google.cloud.security.privateca.v1.CertificateTemplate.name] of the [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] to
+     * get.
      * </pre>
      *
      * <code>
@@ -584,10 +574,8 @@ public final class GetCertificateTemplateRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The
-     * [name][google.cloud.security.privateca.v1.CertificateTemplate.name] of the
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
-     * to get.
+     * Required. The [name][google.cloud.security.privateca.v1.CertificateTemplate.name] of the [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] to
+     * get.
      * </pre>
      *
      * <code>
@@ -606,10 +594,8 @@ public final class GetCertificateTemplateRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The
-     * [name][google.cloud.security.privateca.v1.CertificateTemplate.name] of the
-     * [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
-     * to get.
+     * Required. The [name][google.cloud.security.privateca.v1.CertificateTemplate.name] of the [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate] to
+     * get.
      * </pre>
      *
      * <code>

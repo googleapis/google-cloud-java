@@ -118,9 +118,7 @@ public final class GetCertificateRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.security.privateca.v1.Certificate.name]
-   * of the [Certificate][google.cloud.security.privateca.v1.Certificate] to
-   * get.
+   * Required. The [name][google.cloud.security.privateca.v1.Certificate.name] of the [Certificate][google.cloud.security.privateca.v1.Certificate] to get.
    * </pre>
    *
    * <code>
@@ -145,9 +143,7 @@ public final class GetCertificateRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The [name][google.cloud.security.privateca.v1.Certificate.name]
-   * of the [Certificate][google.cloud.security.privateca.v1.Certificate] to
-   * get.
+   * Required. The [name][google.cloud.security.privateca.v1.Certificate.name] of the [Certificate][google.cloud.security.privateca.v1.Certificate] to get.
    * </pre>
    *
    * <code>
@@ -496,9 +492,7 @@ public final class GetCertificateRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.security.privateca.v1.Certificate.name]
-     * of the [Certificate][google.cloud.security.privateca.v1.Certificate] to
-     * get.
+     * Required. The [name][google.cloud.security.privateca.v1.Certificate.name] of the [Certificate][google.cloud.security.privateca.v1.Certificate] to get.
      * </pre>
      *
      * <code>
@@ -522,9 +516,7 @@ public final class GetCertificateRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.security.privateca.v1.Certificate.name]
-     * of the [Certificate][google.cloud.security.privateca.v1.Certificate] to
-     * get.
+     * Required. The [name][google.cloud.security.privateca.v1.Certificate.name] of the [Certificate][google.cloud.security.privateca.v1.Certificate] to get.
      * </pre>
      *
      * <code>
@@ -548,9 +540,7 @@ public final class GetCertificateRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.security.privateca.v1.Certificate.name]
-     * of the [Certificate][google.cloud.security.privateca.v1.Certificate] to
-     * get.
+     * Required. The [name][google.cloud.security.privateca.v1.Certificate.name] of the [Certificate][google.cloud.security.privateca.v1.Certificate] to get.
      * </pre>
      *
      * <code>
@@ -573,9 +563,7 @@ public final class GetCertificateRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.security.privateca.v1.Certificate.name]
-     * of the [Certificate][google.cloud.security.privateca.v1.Certificate] to
-     * get.
+     * Required. The [name][google.cloud.security.privateca.v1.Certificate.name] of the [Certificate][google.cloud.security.privateca.v1.Certificate] to get.
      * </pre>
      *
      * <code>
@@ -594,9 +582,7 @@ public final class GetCertificateRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The [name][google.cloud.security.privateca.v1.Certificate.name]
-     * of the [Certificate][google.cloud.security.privateca.v1.Certificate] to
-     * get.
+     * Required. The [name][google.cloud.security.privateca.v1.Certificate.name] of the [Certificate][google.cloud.security.privateca.v1.Certificate] to get.
      * </pre>
      *
      * <code>

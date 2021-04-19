@@ -154,8 +154,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
    *
    *
    * <pre>
-   * The list of
-   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+   * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>
@@ -171,8 +170,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
    *
    *
    * <pre>
-   * The list of
-   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+   * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>
@@ -189,8 +187,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
    *
    *
    * <pre>
-   * The list of
-   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+   * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>
@@ -205,8 +202,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
    *
    *
    * <pre>
-   * The list of
-   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+   * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>
@@ -222,8 +218,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
    *
    *
    * <pre>
-   * The list of
-   * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+   * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
    * </pre>
    *
    * <code>
@@ -800,8 +795,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -820,8 +814,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -839,8 +832,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -859,8 +851,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -885,8 +876,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -909,8 +899,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -935,8 +924,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -961,8 +949,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -984,8 +971,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -1008,8 +994,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -1032,8 +1017,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -1054,8 +1038,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -1076,8 +1059,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -1092,8 +1074,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -1112,8 +1093,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -1133,8 +1113,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -1151,8 +1130,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>
@@ -1170,8 +1148,7 @@ public final class ListCertificateAuthoritiesResponse extends com.google.protobu
      *
      *
      * <pre>
-     * The list of
-     * [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
+     * The list of [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
      * </pre>
      *
      * <code>

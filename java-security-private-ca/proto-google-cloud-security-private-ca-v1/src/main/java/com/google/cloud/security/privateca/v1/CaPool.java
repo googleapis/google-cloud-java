@@ -1672,7 +1672,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve elliptic_curve = 2;
+       * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType elliptic_curve = 2;
        * </code>
        *
        * @return Whether the ellipticCurve field is set.
@@ -1686,12 +1686,13 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve elliptic_curve = 2;
+       * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType elliptic_curve = 2;
        * </code>
        *
-       * @return The enum numeric value on the wire for ellipticCurve.
+       * @return The ellipticCurve.
        */
-      int getEllipticCurveValue();
+      com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
+          getEllipticCurve();
       /**
        *
        *
@@ -1700,13 +1701,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve elliptic_curve = 2;
+       * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType elliptic_curve = 2;
        * </code>
-       *
-       * @return The ellipticCurve.
        */
-      com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve
-          getEllipticCurve();
+      com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyTypeOrBuilder
+          getEllipticCurveOrBuilder();
 
       public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.KeyTypeCase
           getKeyTypeCase();
@@ -1792,11 +1791,31 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                   keyTypeCase_ = 1;
                   break;
                 }
-              case 16:
+              case 18:
                 {
-                  int rawValue = input.readEnum();
+                  com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                          .EcKeyType.Builder
+                      subBuilder = null;
+                  if (keyTypeCase_ == 2) {
+                    subBuilder =
+                        ((com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy
+                                    .AllowedKeyType.EcKeyType)
+                                keyType_)
+                            .toBuilder();
+                  }
+                  keyType_ =
+                      input.readMessage(
+                          com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy
+                              .AllowedKeyType.EcKeyType.parser(),
+                          extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(
+                        (com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                                .EcKeyType)
+                            keyType_);
+                    keyType_ = subBuilder.buildPartial();
+                  }
                   keyTypeCase_ = 2;
-                  keyType_ = rawValue;
                   break;
                 }
               default:
@@ -1833,191 +1852,6 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.class,
                 com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.Builder
                     .class);
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Describes a named Elliptic Curve that may be used in a [Certificate][google.cloud.security.privateca.v1.Certificate]
-       * issued from a [CaPool][google.cloud.security.privateca.v1.CaPool].
-       * </pre>
-       *
-       * Protobuf enum {@code
-       * google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve}
-       */
-      public enum NamedCurve implements com.google.protobuf.ProtocolMessageEnum {
-        /**
-         *
-         *
-         * <pre>
-         * Not specified.
-         * </pre>
-         *
-         * <code>NAMED_CURVE_UNSPECIFIED = 0;</code>
-         */
-        NAMED_CURVE_UNSPECIFIED(0),
-        /**
-         *
-         *
-         * <pre>
-         * Refers to the NIST P-256 curve.
-         * </pre>
-         *
-         * <code>ECDSA_P256 = 2;</code>
-         */
-        ECDSA_P256(2),
-        /**
-         *
-         *
-         * <pre>
-         * Refers to the NIST P-384 curve.
-         * </pre>
-         *
-         * <code>ECDSA_P384 = 3;</code>
-         */
-        ECDSA_P384(3),
-        /**
-         *
-         *
-         * <pre>
-         * Refers to the Ed25519 curve, as described in RFC 8410.
-         * </pre>
-         *
-         * <code>EDDSA_25519 = 4;</code>
-         */
-        EDDSA_25519(4),
-        UNRECOGNIZED(-1),
-        ;
-
-        /**
-         *
-         *
-         * <pre>
-         * Not specified.
-         * </pre>
-         *
-         * <code>NAMED_CURVE_UNSPECIFIED = 0;</code>
-         */
-        public static final int NAMED_CURVE_UNSPECIFIED_VALUE = 0;
-        /**
-         *
-         *
-         * <pre>
-         * Refers to the NIST P-256 curve.
-         * </pre>
-         *
-         * <code>ECDSA_P256 = 2;</code>
-         */
-        public static final int ECDSA_P256_VALUE = 2;
-        /**
-         *
-         *
-         * <pre>
-         * Refers to the NIST P-384 curve.
-         * </pre>
-         *
-         * <code>ECDSA_P384 = 3;</code>
-         */
-        public static final int ECDSA_P384_VALUE = 3;
-        /**
-         *
-         *
-         * <pre>
-         * Refers to the Ed25519 curve, as described in RFC 8410.
-         * </pre>
-         *
-         * <code>EDDSA_25519 = 4;</code>
-         */
-        public static final int EDDSA_25519_VALUE = 4;
-
-        public final int getNumber() {
-          if (this == UNRECOGNIZED) {
-            throw new java.lang.IllegalArgumentException(
-                "Can't get the number of an unknown enum value.");
-          }
-          return value;
-        }
-
-        /**
-         * @param value The numeric wire value of the corresponding enum entry.
-         * @return The enum associated with the given numeric wire value.
-         * @deprecated Use {@link #forNumber(int)} instead.
-         */
-        @java.lang.Deprecated
-        public static NamedCurve valueOf(int value) {
-          return forNumber(value);
-        }
-
-        /**
-         * @param value The numeric wire value of the corresponding enum entry.
-         * @return The enum associated with the given numeric wire value.
-         */
-        public static NamedCurve forNumber(int value) {
-          switch (value) {
-            case 0:
-              return NAMED_CURVE_UNSPECIFIED;
-            case 2:
-              return ECDSA_P256;
-            case 3:
-              return ECDSA_P384;
-            case 4:
-              return EDDSA_25519;
-            default:
-              return null;
-          }
-        }
-
-        public static com.google.protobuf.Internal.EnumLiteMap<NamedCurve> internalGetValueMap() {
-          return internalValueMap;
-        }
-
-        private static final com.google.protobuf.Internal.EnumLiteMap<NamedCurve> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<NamedCurve>() {
-              public NamedCurve findValueByNumber(int number) {
-                return NamedCurve.forNumber(number);
-              }
-            };
-
-        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
-          if (this == UNRECOGNIZED) {
-            throw new java.lang.IllegalStateException(
-                "Can't get the descriptor of an unrecognized enum value.");
-          }
-          return getDescriptor().getValues().get(ordinal());
-        }
-
-        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
-          return getDescriptor();
-        }
-
-        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-          return com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
-              .getDescriptor()
-              .getEnumTypes()
-              .get(0);
-        }
-
-        private static final NamedCurve[] VALUES = values();
-
-        public static NamedCurve valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-          if (desc.getType() != getDescriptor()) {
-            throw new java.lang.IllegalArgumentException(
-                "EnumValueDescriptor is not for this type.");
-          }
-          if (desc.getIndex() == -1) {
-            return UNRECOGNIZED;
-          }
-          return VALUES[desc.getIndex()];
-        }
-
-        private final int value;
-
-        private NamedCurve(int value) {
-          this.value = value;
-        }
-
-        // @@protoc_insertion_point(enum_scope:google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve)
       }
 
       public interface RsaKeyTypeOrBuilder
@@ -2765,6 +2599,948 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public interface EcKeyTypeOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A signature algorithm that must be used. If this is omitted, any
+         * EC-based signature algorithm will be allowed.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType.EcSignatureAlgorithm signature_algorithm = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for signatureAlgorithm.
+         */
+        int getSignatureAlgorithmValue();
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A signature algorithm that must be used. If this is omitted, any
+         * EC-based signature algorithm will be allowed.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType.EcSignatureAlgorithm signature_algorithm = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The signatureAlgorithm.
+         */
+        com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
+                .EcSignatureAlgorithm
+            getSignatureAlgorithm();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Describes an Elliptic Curve key that may be used in a [Certificate][google.cloud.security.privateca.v1.Certificate]
+       * issued from a [CaPool][google.cloud.security.privateca.v1.CaPool].
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType}
+       */
+      public static final class EcKeyType extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType)
+          EcKeyTypeOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use EcKeyType.newBuilder() to construct.
+        private EcKeyType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private EcKeyType() {
+          signatureAlgorithm_ = 0;
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new EcKeyType();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
+        }
+
+        private EcKeyType(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          this();
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+              com.google.protobuf.UnknownFieldSet.newBuilder();
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    int rawValue = input.readEnum();
+
+                    signatureAlgorithm_ = rawValue;
+                    break;
+                  }
+                default:
+                  {
+                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(this);
+          } finally {
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+          }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
+              .internal_static_google_cloud_security_privateca_v1_CaPool_IssuancePolicy_AllowedKeyType_EcKeyType_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
+              .internal_static_google_cloud_security_privateca_v1_CaPool_IssuancePolicy_AllowedKeyType_EcKeyType_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                      .EcKeyType.class,
+                  com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                      .EcKeyType.Builder.class);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Describes an elliptic curve-based signature algorithm that may be
+         * used in a [Certificate][google.cloud.security.privateca.v1.Certificate] issued from a [CaPool][google.cloud.security.privateca.v1.CaPool].
+         * </pre>
+         *
+         * Protobuf enum {@code
+         * google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType.EcSignatureAlgorithm}
+         */
+        public enum EcSignatureAlgorithm implements com.google.protobuf.ProtocolMessageEnum {
+          /**
+           *
+           *
+           * <pre>
+           * Not specified. Signifies that any signature algorithm may be used.
+           * </pre>
+           *
+           * <code>EC_SIGNATURE_ALGORITHM_UNSPECIFIED = 0;</code>
+           */
+          EC_SIGNATURE_ALGORITHM_UNSPECIFIED(0),
+          /**
+           *
+           *
+           * <pre>
+           * Refers to the Elliptic Curve Digital Signature Algorithm over the
+           * NIST P-256 curve.
+           * </pre>
+           *
+           * <code>ECDSA_P256 = 1;</code>
+           */
+          ECDSA_P256(1),
+          /**
+           *
+           *
+           * <pre>
+           * Refers to the Elliptic Curve Digital Signature Algorithm over the
+           * NIST P-384 curve.
+           * </pre>
+           *
+           * <code>ECDSA_P384 = 2;</code>
+           */
+          ECDSA_P384(2),
+          /**
+           *
+           *
+           * <pre>
+           * Refers to the Edwards-curve Digital Signature Algorithm over curve
+           * 25519, as described in RFC 8410.
+           * </pre>
+           *
+           * <code>EDDSA_25519 = 3;</code>
+           */
+          EDDSA_25519(3),
+          UNRECOGNIZED(-1),
+          ;
+
+          /**
+           *
+           *
+           * <pre>
+           * Not specified. Signifies that any signature algorithm may be used.
+           * </pre>
+           *
+           * <code>EC_SIGNATURE_ALGORITHM_UNSPECIFIED = 0;</code>
+           */
+          public static final int EC_SIGNATURE_ALGORITHM_UNSPECIFIED_VALUE = 0;
+          /**
+           *
+           *
+           * <pre>
+           * Refers to the Elliptic Curve Digital Signature Algorithm over the
+           * NIST P-256 curve.
+           * </pre>
+           *
+           * <code>ECDSA_P256 = 1;</code>
+           */
+          public static final int ECDSA_P256_VALUE = 1;
+          /**
+           *
+           *
+           * <pre>
+           * Refers to the Elliptic Curve Digital Signature Algorithm over the
+           * NIST P-384 curve.
+           * </pre>
+           *
+           * <code>ECDSA_P384 = 2;</code>
+           */
+          public static final int ECDSA_P384_VALUE = 2;
+          /**
+           *
+           *
+           * <pre>
+           * Refers to the Edwards-curve Digital Signature Algorithm over curve
+           * 25519, as described in RFC 8410.
+           * </pre>
+           *
+           * <code>EDDSA_25519 = 3;</code>
+           */
+          public static final int EDDSA_25519_VALUE = 3;
+
+          public final int getNumber() {
+            if (this == UNRECOGNIZED) {
+              throw new java.lang.IllegalArgumentException(
+                  "Can't get the number of an unknown enum value.");
+            }
+            return value;
+          }
+
+          /**
+           * @param value The numeric wire value of the corresponding enum entry.
+           * @return The enum associated with the given numeric wire value.
+           * @deprecated Use {@link #forNumber(int)} instead.
+           */
+          @java.lang.Deprecated
+          public static EcSignatureAlgorithm valueOf(int value) {
+            return forNumber(value);
+          }
+
+          /**
+           * @param value The numeric wire value of the corresponding enum entry.
+           * @return The enum associated with the given numeric wire value.
+           */
+          public static EcSignatureAlgorithm forNumber(int value) {
+            switch (value) {
+              case 0:
+                return EC_SIGNATURE_ALGORITHM_UNSPECIFIED;
+              case 1:
+                return ECDSA_P256;
+              case 2:
+                return ECDSA_P384;
+              case 3:
+                return EDDSA_25519;
+              default:
+                return null;
+            }
+          }
+
+          public static com.google.protobuf.Internal.EnumLiteMap<EcSignatureAlgorithm>
+              internalGetValueMap() {
+            return internalValueMap;
+          }
+
+          private static final com.google.protobuf.Internal.EnumLiteMap<EcSignatureAlgorithm>
+              internalValueMap =
+                  new com.google.protobuf.Internal.EnumLiteMap<EcSignatureAlgorithm>() {
+                    public EcSignatureAlgorithm findValueByNumber(int number) {
+                      return EcSignatureAlgorithm.forNumber(number);
+                    }
+                  };
+
+          public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+            if (this == UNRECOGNIZED) {
+              throw new java.lang.IllegalStateException(
+                  "Can't get the descriptor of an unrecognized enum value.");
+            }
+            return getDescriptor().getValues().get(ordinal());
+          }
+
+          public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+            return getDescriptor();
+          }
+
+          public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+            return com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                .EcKeyType.getDescriptor()
+                .getEnumTypes()
+                .get(0);
+          }
+
+          private static final EcSignatureAlgorithm[] VALUES = values();
+
+          public static EcSignatureAlgorithm valueOf(
+              com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+            if (desc.getType() != getDescriptor()) {
+              throw new java.lang.IllegalArgumentException(
+                  "EnumValueDescriptor is not for this type.");
+            }
+            if (desc.getIndex() == -1) {
+              return UNRECOGNIZED;
+            }
+            return VALUES[desc.getIndex()];
+          }
+
+          private final int value;
+
+          private EcSignatureAlgorithm(int value) {
+            this.value = value;
+          }
+
+          // @@protoc_insertion_point(enum_scope:google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType.EcSignatureAlgorithm)
+        }
+
+        public static final int SIGNATURE_ALGORITHM_FIELD_NUMBER = 1;
+        private int signatureAlgorithm_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A signature algorithm that must be used. If this is omitted, any
+         * EC-based signature algorithm will be allowed.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType.EcSignatureAlgorithm signature_algorithm = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for signatureAlgorithm.
+         */
+        @java.lang.Override
+        public int getSignatureAlgorithmValue() {
+          return signatureAlgorithm_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A signature algorithm that must be used. If this is omitted, any
+         * EC-based signature algorithm will be allowed.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType.EcSignatureAlgorithm signature_algorithm = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The signatureAlgorithm.
+         */
+        @java.lang.Override
+        public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
+                .EcSignatureAlgorithm
+            getSignatureAlgorithm() {
+          @SuppressWarnings("deprecation")
+          com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
+                  .EcSignatureAlgorithm
+              result =
+                  com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                      .EcKeyType.EcSignatureAlgorithm.valueOf(signatureAlgorithm_);
+          return result == null
+              ? com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                  .EcKeyType.EcSignatureAlgorithm.UNRECOGNIZED
+              : result;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (signatureAlgorithm_
+              != com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                  .EcKeyType.EcSignatureAlgorithm.EC_SIGNATURE_ALGORITHM_UNSPECIFIED
+                  .getNumber()) {
+            output.writeEnum(1, signatureAlgorithm_);
+          }
+          unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (signatureAlgorithm_
+              != com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                  .EcKeyType.EcSignatureAlgorithm.EC_SIGNATURE_ALGORITHM_UNSPECIFIED
+                  .getNumber()) {
+            size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, signatureAlgorithm_);
+          }
+          size += unknownFields.getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                  .EcKeyType)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
+              other =
+                  (com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                          .EcKeyType)
+                      obj;
+
+          if (signatureAlgorithm_ != other.signatureAlgorithm_) return false;
+          if (!unknownFields.equals(other.unknownFields)) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + SIGNATURE_ALGORITHM_FIELD_NUMBER;
+          hash = (53 * hash) + signatureAlgorithm_;
+          hash = (29 * hash) + unknownFields.hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                .EcKeyType
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                .EcKeyType
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                .EcKeyType
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                .EcKeyType
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                .EcKeyType
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                .EcKeyType
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                .EcKeyType
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                .EcKeyType
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                .EcKeyType
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                .EcKeyType
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                .EcKeyType
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                .EcKeyType
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Describes an Elliptic Curve key that may be used in a [Certificate][google.cloud.security.privateca.v1.Certificate]
+         * issued from a [CaPool][google.cloud.security.privateca.v1.CaPool].
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType)
+            com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                .EcKeyTypeOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
+                .internal_static_google_cloud_security_privateca_v1_CaPool_IssuancePolicy_AllowedKeyType_EcKeyType_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
+                .internal_static_google_cloud_security_privateca_v1_CaPool_IssuancePolicy_AllowedKeyType_EcKeyType_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                        .EcKeyType.class,
+                    com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                        .EcKeyType.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            signatureAlgorithm_ = 0;
+
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
+                .internal_static_google_cloud_security_privateca_v1_CaPool_IssuancePolicy_AllowedKeyType_EcKeyType_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                  .EcKeyType
+              getDefaultInstanceForType() {
+            return com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                .EcKeyType.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                  .EcKeyType
+              build() {
+            com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                  .EcKeyType
+              buildPartial() {
+            com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
+                result =
+                    new com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                        .EcKeyType(this);
+            result.signatureAlgorithm_ = signatureAlgorithm_;
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                    .EcKeyType) {
+              return mergeFrom(
+                  (com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                          .EcKeyType)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
+                  other) {
+            if (other
+                == com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                    .EcKeyType.getDefaultInstance()) return this;
+            if (other.signatureAlgorithm_ != 0) {
+              setSignatureAlgorithmValue(other.getSignatureAlgorithmValue());
+            }
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
+                parsedMessage = null;
+            try {
+              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              parsedMessage =
+                  (com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                          .EcKeyType)
+                      e.getUnfinishedMessage();
+              throw e.unwrapIOException();
+            } finally {
+              if (parsedMessage != null) {
+                mergeFrom(parsedMessage);
+              }
+            }
+            return this;
+          }
+
+          private int signatureAlgorithm_ = 0;
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A signature algorithm that must be used. If this is omitted, any
+           * EC-based signature algorithm will be allowed.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType.EcSignatureAlgorithm signature_algorithm = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return The enum numeric value on the wire for signatureAlgorithm.
+           */
+          @java.lang.Override
+          public int getSignatureAlgorithmValue() {
+            return signatureAlgorithm_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A signature algorithm that must be used. If this is omitted, any
+           * EC-based signature algorithm will be allowed.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType.EcSignatureAlgorithm signature_algorithm = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @param value The enum numeric value on the wire for signatureAlgorithm to set.
+           * @return This builder for chaining.
+           */
+          public Builder setSignatureAlgorithmValue(int value) {
+
+            signatureAlgorithm_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A signature algorithm that must be used. If this is omitted, any
+           * EC-based signature algorithm will be allowed.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType.EcSignatureAlgorithm signature_algorithm = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return The signatureAlgorithm.
+           */
+          @java.lang.Override
+          public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                  .EcKeyType.EcSignatureAlgorithm
+              getSignatureAlgorithm() {
+            @SuppressWarnings("deprecation")
+            com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
+                    .EcSignatureAlgorithm
+                result =
+                    com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                        .EcKeyType.EcSignatureAlgorithm.valueOf(signatureAlgorithm_);
+            return result == null
+                ? com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                    .EcKeyType.EcSignatureAlgorithm.UNRECOGNIZED
+                : result;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A signature algorithm that must be used. If this is omitted, any
+           * EC-based signature algorithm will be allowed.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType.EcSignatureAlgorithm signature_algorithm = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @param value The signatureAlgorithm to set.
+           * @return This builder for chaining.
+           */
+          public Builder setSignatureAlgorithm(
+              com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
+                      .EcSignatureAlgorithm
+                  value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+
+            signatureAlgorithm_ = value.getNumber();
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A signature algorithm that must be used. If this is omitted, any
+           * EC-based signature algorithm will be allowed.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType.EcSignatureAlgorithm signature_algorithm = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearSignatureAlgorithm() {
+
+            signatureAlgorithm_ = 0;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType)
+        private static final com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy
+                .AllowedKeyType.EcKeyType
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                  .EcKeyType();
+        }
+
+        public static com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                .EcKeyType
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<EcKeyType> PARSER =
+            new com.google.protobuf.AbstractParser<EcKeyType>() {
+              @java.lang.Override
+              public EcKeyType parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                return new EcKeyType(input, extensionRegistry);
+              }
+            };
+
+        public static com.google.protobuf.Parser<EcKeyType> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<EcKeyType> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
       private int keyTypeCase_ = 0;
       private java.lang.Object keyType_;
 
@@ -2887,11 +3663,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve elliptic_curve = 2;
+       * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType elliptic_curve = 2;
        * </code>
        *
        * @return Whether the ellipticCurve field is set.
        */
+      @java.lang.Override
       public boolean hasEllipticCurve() {
         return keyTypeCase_ == 2;
       }
@@ -2903,16 +3680,21 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve elliptic_curve = 2;
+       * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType elliptic_curve = 2;
        * </code>
        *
-       * @return The enum numeric value on the wire for ellipticCurve.
+       * @return The ellipticCurve.
        */
-      public int getEllipticCurveValue() {
+      @java.lang.Override
+      public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
+          getEllipticCurve() {
         if (keyTypeCase_ == 2) {
-          return (java.lang.Integer) keyType_;
+          return (com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                  .EcKeyType)
+              keyType_;
         }
-        return 0;
+        return com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
+            .getDefaultInstance();
       }
       /**
        *
@@ -2922,26 +3704,20 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve elliptic_curve = 2;
+       * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType elliptic_curve = 2;
        * </code>
-       *
-       * @return The ellipticCurve.
        */
-      public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve
-          getEllipticCurve() {
+      @java.lang.Override
+      public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+              .EcKeyTypeOrBuilder
+          getEllipticCurveOrBuilder() {
         if (keyTypeCase_ == 2) {
-          @SuppressWarnings("deprecation")
-          com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve
-              result =
-                  com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
-                      .NamedCurve.valueOf((java.lang.Integer) keyType_);
-          return result == null
-              ? com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
-                  .NamedCurve.UNRECOGNIZED
-              : result;
+          return (com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                  .EcKeyType)
+              keyType_;
         }
-        return com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
-            .NamedCurve.NAMED_CURVE_UNSPECIFIED;
+        return com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
+            .getDefaultInstance();
       }
 
       private byte memoizedIsInitialized = -1;
@@ -2966,7 +3742,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                   keyType_);
         }
         if (keyTypeCase_ == 2) {
-          output.writeEnum(2, ((java.lang.Integer) keyType_));
+          output.writeMessage(
+              2,
+              (com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                      .EcKeyType)
+                  keyType_);
         }
         unknownFields.writeTo(output);
       }
@@ -2987,8 +3767,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         }
         if (keyTypeCase_ == 2) {
           size +=
-              com.google.protobuf.CodedOutputStream.computeEnumSize(
-                  2, ((java.lang.Integer) keyType_));
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2,
+                  (com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                          .EcKeyType)
+                      keyType_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -3014,7 +3797,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             if (!getRsa().equals(other.getRsa())) return false;
             break;
           case 2:
-            if (getEllipticCurveValue() != other.getEllipticCurveValue()) return false;
+            if (!getEllipticCurve().equals(other.getEllipticCurve())) return false;
             break;
           case 0:
           default:
@@ -3037,7 +3820,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             break;
           case 2:
             hash = (37 * hash) + ELLIPTIC_CURVE_FIELD_NUMBER;
-            hash = (53 * hash) + getEllipticCurveValue();
+            hash = (53 * hash) + getEllipticCurve().hashCode();
             break;
           case 0:
           default:
@@ -3246,7 +4029,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             }
           }
           if (keyTypeCase_ == 2) {
-            result.keyType_ = keyType_;
+            if (ellipticCurveBuilder_ == null) {
+              result.keyType_ = keyType_;
+            } else {
+              result.keyType_ = ellipticCurveBuilder_.build();
+            }
           }
           result.keyTypeCase_ = keyTypeCase_;
           onBuilt();
@@ -3315,7 +4102,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
               }
             case ELLIPTIC_CURVE:
               {
-                setEllipticCurveValue(other.getEllipticCurveValue());
+                mergeEllipticCurve(other.getEllipticCurve());
                 break;
               }
             case KEYTYPE_NOT_SET:
@@ -3633,6 +4420,14 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           return rsaBuilder_;
         }
 
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                    .EcKeyType,
+                com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                    .EcKeyType.Builder,
+                com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                    .EcKeyTypeOrBuilder>
+            ellipticCurveBuilder_;
         /**
          *
          *
@@ -3641,7 +4436,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve elliptic_curve = 2;
+         * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType elliptic_curve = 2;
          * </code>
          *
          * @return Whether the ellipticCurve field is set.
@@ -3658,68 +4453,29 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve elliptic_curve = 2;
-         * </code>
-         *
-         * @return The enum numeric value on the wire for ellipticCurve.
-         */
-        @java.lang.Override
-        public int getEllipticCurveValue() {
-          if (keyTypeCase_ == 2) {
-            return ((java.lang.Integer) keyType_).intValue();
-          }
-          return 0;
-        }
-        /**
-         *
-         *
-         * <pre>
-         * Represents an allowed Elliptic Curve key type.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve elliptic_curve = 2;
-         * </code>
-         *
-         * @param value The enum numeric value on the wire for ellipticCurve to set.
-         * @return This builder for chaining.
-         */
-        public Builder setEllipticCurveValue(int value) {
-          keyTypeCase_ = 2;
-          keyType_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         *
-         *
-         * <pre>
-         * Represents an allowed Elliptic Curve key type.
-         * </pre>
-         *
-         * <code>
-         * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve elliptic_curve = 2;
+         * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType elliptic_curve = 2;
          * </code>
          *
          * @return The ellipticCurve.
          */
         @java.lang.Override
-        public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
-                .NamedCurve
+        public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
             getEllipticCurve() {
-          if (keyTypeCase_ == 2) {
-            @SuppressWarnings("deprecation")
-            com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve
-                result =
-                    com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
-                        .NamedCurve.valueOf((java.lang.Integer) keyType_);
-            return result == null
-                ? com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
-                    .NamedCurve.UNRECOGNIZED
-                : result;
+          if (ellipticCurveBuilder_ == null) {
+            if (keyTypeCase_ == 2) {
+              return (com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                      .EcKeyType)
+                  keyType_;
+            }
+            return com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                .EcKeyType.getDefaultInstance();
+          } else {
+            if (keyTypeCase_ == 2) {
+              return ellipticCurveBuilder_.getMessage();
+            }
+            return com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                .EcKeyType.getDefaultInstance();
           }
-          return com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
-              .NamedCurve.NAMED_CURVE_UNSPECIFIED;
         }
         /**
          *
@@ -3729,21 +4485,22 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve elliptic_curve = 2;
+         * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType elliptic_curve = 2;
          * </code>
-         *
-         * @param value The ellipticCurve to set.
-         * @return This builder for chaining.
          */
         public Builder setEllipticCurve(
-            com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve
+            com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
                 value) {
-          if (value == null) {
-            throw new NullPointerException();
+          if (ellipticCurveBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            keyType_ = value;
+            onChanged();
+          } else {
+            ellipticCurveBuilder_.setMessage(value);
           }
           keyTypeCase_ = 2;
-          keyType_ = value.getNumber();
-          onChanged();
           return this;
         }
         /**
@@ -3754,18 +4511,176 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
          * </pre>
          *
          * <code>
-         * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.NamedCurve elliptic_curve = 2;
+         * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType elliptic_curve = 2;
          * </code>
+         */
+        public Builder setEllipticCurve(
+            com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
+                    .Builder
+                builderForValue) {
+          if (ellipticCurveBuilder_ == null) {
+            keyType_ = builderForValue.build();
+            onChanged();
+          } else {
+            ellipticCurveBuilder_.setMessage(builderForValue.build());
+          }
+          keyTypeCase_ = 2;
+          return this;
+        }
+        /**
          *
-         * @return This builder for chaining.
+         *
+         * <pre>
+         * Represents an allowed Elliptic Curve key type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType elliptic_curve = 2;
+         * </code>
+         */
+        public Builder mergeEllipticCurve(
+            com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
+                value) {
+          if (ellipticCurveBuilder_ == null) {
+            if (keyTypeCase_ == 2
+                && keyType_
+                    != com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                        .EcKeyType.getDefaultInstance()) {
+              keyType_ =
+                  com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                      .EcKeyType.newBuilder(
+                          (com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy
+                                  .AllowedKeyType.EcKeyType)
+                              keyType_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              keyType_ = value;
+            }
+            onChanged();
+          } else {
+            if (keyTypeCase_ == 2) {
+              ellipticCurveBuilder_.mergeFrom(value);
+            }
+            ellipticCurveBuilder_.setMessage(value);
+          }
+          keyTypeCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Represents an allowed Elliptic Curve key type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType elliptic_curve = 2;
+         * </code>
          */
         public Builder clearEllipticCurve() {
-          if (keyTypeCase_ == 2) {
-            keyTypeCase_ = 0;
-            keyType_ = null;
-            onChanged();
+          if (ellipticCurveBuilder_ == null) {
+            if (keyTypeCase_ == 2) {
+              keyTypeCase_ = 0;
+              keyType_ = null;
+              onChanged();
+            }
+          } else {
+            if (keyTypeCase_ == 2) {
+              keyTypeCase_ = 0;
+              keyType_ = null;
+            }
+            ellipticCurveBuilder_.clear();
           }
           return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Represents an allowed Elliptic Curve key type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType elliptic_curve = 2;
+         * </code>
+         */
+        public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
+                .Builder
+            getEllipticCurveBuilder() {
+          return getEllipticCurveFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Represents an allowed Elliptic Curve key type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType elliptic_curve = 2;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                .EcKeyTypeOrBuilder
+            getEllipticCurveOrBuilder() {
+          if ((keyTypeCase_ == 2) && (ellipticCurveBuilder_ != null)) {
+            return ellipticCurveBuilder_.getMessageOrBuilder();
+          } else {
+            if (keyTypeCase_ == 2) {
+              return (com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                      .EcKeyType)
+                  keyType_;
+            }
+            return com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                .EcKeyType.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Represents an allowed Elliptic Curve key type.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType elliptic_curve = 2;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                    .EcKeyType,
+                com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                    .EcKeyType.Builder,
+                com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                    .EcKeyTypeOrBuilder>
+            getEllipticCurveFieldBuilder() {
+          if (ellipticCurveBuilder_ == null) {
+            if (!(keyTypeCase_ == 2)) {
+              keyType_ =
+                  com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                      .EcKeyType.getDefaultInstance();
+            }
+            ellipticCurveBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                        .EcKeyType,
+                    com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                        .EcKeyType.Builder,
+                    com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                        .EcKeyTypeOrBuilder>(
+                    (com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
+                            .EcKeyType)
+                        keyType_,
+                    getParentForChildren(),
+                    isClean());
+            keyType_ = null;
+          }
+          keyTypeCase_ = 2;
+          onChanged();
+          ;
+          return ellipticCurveBuilder_;
         }
 
         @java.lang.Override
