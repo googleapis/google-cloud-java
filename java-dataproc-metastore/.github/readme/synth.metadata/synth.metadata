@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-dataproc-metastore.git",
+        "sha": "ad2d3d24b8ebfd38c5ddc0f96e8590a1dab1c642"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "ff6b759fcb58f216f62b48d5be0bb85fafbc3bb2"
+      }
+    }
+  ]
+}
