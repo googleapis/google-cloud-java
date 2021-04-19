@@ -55,12 +55,12 @@ compile 'com.google.cloud:google-cloud-document-ai'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-document-ai:0.6.0'
+compile 'com.google.cloud:google-cloud-document-ai:0.7.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-document-ai" % "0.6.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-document-ai" % "0.7.0"
 ```
 
 ## Authentication
