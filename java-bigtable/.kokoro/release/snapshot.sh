@@ -25,7 +25,7 @@ grep SNAPSHOT versions.txt
 setup_environment_secrets
 create_settings_xml_file "settings.xml"
 
-mvn clean install deploy -B \
+mvn clean deploy -B \
   --settings ${MAVEN_SETTINGS_FILE} \
   -DperformRelease=true \
   -Dgpg.executable=gpg \
