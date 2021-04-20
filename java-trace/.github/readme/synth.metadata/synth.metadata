@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-trace.git",
-        "sha": "70dc425fc735997f5860d29301d37437cfec45be"
+        "sha": "cebbe63a23d7a271d7db14f7dd6483b35153616e"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "898b38a6f4fab89a76dfb152480bb034a781331b"
+        "sha": "ff6b759fcb58f216f62b48d5be0bb85fafbc3bb2"
       }
     }
   ]
