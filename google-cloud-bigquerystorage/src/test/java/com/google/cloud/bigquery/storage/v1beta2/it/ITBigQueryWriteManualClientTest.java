@@ -49,6 +49,7 @@ public class ITBigQueryWriteManualClientTest {
   private static final Logger LOG =
       Logger.getLogger(ITBigQueryWriteManualClientTest.class.getName());
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
+  private static final String DATASET_EU = RemoteBigQueryHelper.generateDatasetName();
   private static final String TABLE = "testtable";
   private static final String TABLE2 = "complicatedtable";
   private static final String DESCRIPTION = "BigQuery Write Java manual client test dataset";
@@ -56,8 +57,10 @@ public class ITBigQueryWriteManualClientTest {
   private static BigQueryWriteClient client;
   private static TableInfo tableInfo;
   private static TableInfo tableInfo2;
+  private static TableInfo tableInfoEU;
   private static String tableId;
   private static String tableId2;
+  private static String tableIdEU;
   private static BigQuery bigquery;
 
   @BeforeClass
@@ -110,6 +113,25 @@ public class ITBigQueryWriteManualClientTest {
         String.format(
             "projects/%s/datasets/%s/tables/%s",
             ServiceOptions.getDefaultProjectId(), DATASET, TABLE2);
+    DatasetInfo datasetInfoEU =
+        DatasetInfo.newBuilder(/* datasetId = */ DATASET_EU)
+            .setLocation("EU")
+            .setDescription(DESCRIPTION)
+            .build();
+    bigquery.create(datasetInfoEU);
+    tableInfoEU =
+        TableInfo.newBuilder(
+                TableId.of(DATASET_EU, TABLE),
+                StandardTableDefinition.of(
+                    Schema.of(
+                        com.google.cloud.bigquery.Field.newBuilder("foo", LegacySQLTypeName.STRING)
+                            .build())))
+            .build();
+    tableIdEU =
+        String.format(
+            "projects/%s/datasets/%s/tables/%s",
+            ServiceOptions.getDefaultProjectId(), DATASET_EU, TABLE);
+    bigquery.create(tableInfoEU);
   }
 
   @AfterClass
@@ -204,6 +226,54 @@ public class ITBigQueryWriteManualClientTest {
       assertEquals("ddd", iter.next().get(0).getStringValue());
       assertEquals(false, iter.hasNext());
     }
+  }
+
+  ProtoRows CreateProtoRows(String[] messages) {
+    ProtoRows.Builder rows = ProtoRows.newBuilder();
+    for (String message : messages) {
+      FooType foo = FooType.newBuilder().setFoo(message).build();
+      rows.addSerializedRows(foo.toByteString());
+    }
+    return rows.build();
+  }
+
+  @Test
+  public void testBatchWriteWithCommittedStreamEU()
+      throws IOException, InterruptedException, ExecutionException {
+    WriteStream writeStream =
+        client.createWriteStream(
+            CreateWriteStreamRequest.newBuilder()
+                .setParent(tableIdEU)
+                .setWriteStream(
+                    WriteStream.newBuilder().setType(WriteStream.Type.COMMITTED).build())
+                .build());
+    StreamWriterV2 streamWriter =
+        StreamWriterV2.newBuilder(writeStream.getName())
+            .setWriterSchema(ProtoSchemaConverter.convert(FooType.getDescriptor()))
+            .build();
+    LOG.info("Sending one message");
+
+    ApiFuture<AppendRowsResponse> response =
+        streamWriter.append(CreateProtoRows(new String[] {"aaa"}), 0);
+    assertEquals(0, response.get().getAppendResult().getOffset().getValue());
+
+    LOG.info("Sending two more messages");
+    ApiFuture<AppendRowsResponse> response1 =
+        streamWriter.append(CreateProtoRows(new String[] {"bbb", "ccc"}), 1);
+    ApiFuture<AppendRowsResponse> response2 =
+        streamWriter.append(CreateProtoRows(new String[] {"ddd"}), 3);
+    assertEquals(1, response1.get().getAppendResult().getOffset().getValue());
+    assertEquals(3, response2.get().getAppendResult().getOffset().getValue());
+
+    TableResult result =
+        bigquery.listTableData(
+            tableInfoEU.getTableId(), BigQuery.TableDataListOption.startIndex(0L));
+    Iterator<FieldValueList> iter = result.getValues().iterator();
+    assertEquals("aaa", iter.next().get(0).getStringValue());
+    assertEquals("bbb", iter.next().get(0).getStringValue());
+    assertEquals("ccc", iter.next().get(0).getStringValue());
+    assertEquals("ddd", iter.next().get(0).getStringValue());
+    assertEquals(false, iter.hasNext());
   }
 
   @Test
