@@ -19,6 +19,7 @@ package aiplatform;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import io.grpc.StatusRuntimeException;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -75,7 +76,22 @@ public class CreateTrainingPipelineCustomJobSampleTest {
     TimeUnit.MINUTES.sleep(2);
 
     // Delete the Training Pipeline
-    DeleteTrainingPipelineSample.deleteTrainingPipelineSample(PROJECT, trainingPipelineId);
+    int retryCount = 3;
+    while (retryCount > 0) {
+      retryCount--;
+      try {
+        DeleteTrainingPipelineSample.deleteTrainingPipelineSample(PROJECT, trainingPipelineId);
+        // if delete operation is successful, break out of the loop and continue
+        break;
+      } catch (StatusRuntimeException | ExecutionException ex) {
+        // wait for another 1 minute, then retry
+        System.out.println("Retrying (due to unfinished cancellation operation)...");
+        TimeUnit.MINUTES.sleep(1);
+      } catch (Exception otherExceptions) {
+        // other exception, let them throw
+        throw otherExceptions;
+      }
+    }
 
     // Assert
     String deleteResponse = bout.toString();
