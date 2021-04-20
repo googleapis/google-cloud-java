@@ -56,6 +56,7 @@ public class CreateTrainingPipelineCustomTrainingManagedDatasetSampleTest {
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
+    requireEnvVar("CUSTOM_MANAGED_DATASET");
     requireEnvVar("UCAIP_PROJECT_ID");
   }
 
