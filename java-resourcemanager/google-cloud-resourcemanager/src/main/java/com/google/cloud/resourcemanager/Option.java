@@ -23,7 +23,12 @@ import com.google.common.base.MoreObjects;
 import java.io.Serializable;
 import java.util.Objects;
 
-/** Base class for Resource Manager operation options. */
+/**
+ * Base class for Resource Manager operation options.
+ *
+ * @deprecated v3 GAPIC client of ResourceManager is now available
+ */
+@Deprecated
 abstract class Option implements Serializable {
 
   private static final long serialVersionUID = 2655177550880762967L;

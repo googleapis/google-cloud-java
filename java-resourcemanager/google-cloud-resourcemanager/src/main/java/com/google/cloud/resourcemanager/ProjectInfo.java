@@ -37,7 +37,10 @@ import org.threeten.bp.format.DateTimeFormatter;
  * A Google Cloud Resource Manager project metadata object. A Project is a high-level Google Cloud
  * Platform entity. It is a container for ACLs, APIs, AppEngine Apps, VMs, and other Google Cloud
  * Platform resources.
+ *
+ * @deprecated v3 GAPIC client of ResourceManager is now available
  */
+@Deprecated
 public class ProjectInfo implements Serializable {
 
   public static final DateTimeFormatter DATE_TIME_FORMATTER =

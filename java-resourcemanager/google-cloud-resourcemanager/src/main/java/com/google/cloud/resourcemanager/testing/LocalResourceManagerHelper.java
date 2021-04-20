@@ -89,7 +89,10 @@ import org.threeten.bp.format.DateTimeFormatter;
  *   <li>The messages in the error responses given by this mock do not necessarily match the
  *       messages given by the actual service.
  * </ul>
+ *
+ * @deprecated v3 GAPIC client of ResourceManager is now available
  */
+@Deprecated
 @SuppressWarnings("restriction")
 public class LocalResourceManagerHelper {
   private static final Logger log = Logger.getLogger(LocalResourceManagerHelper.class.getName());

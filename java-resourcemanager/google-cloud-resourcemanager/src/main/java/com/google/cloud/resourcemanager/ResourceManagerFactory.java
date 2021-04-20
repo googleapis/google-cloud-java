@@ -18,6 +18,11 @@ package com.google.cloud.resourcemanager;
 
 import com.google.cloud.ServiceFactory;
 
-/** An interface for ResourceManager factories. */
+/**
+ * An interface for ResourceManager factories.
+ *
+ * @deprecated v3 GAPIC client of ResourceManager is now available
+ */
+@Deprecated
 public interface ResourceManagerFactory
     extends ServiceFactory<ResourceManager, ResourceManagerOptions> {}

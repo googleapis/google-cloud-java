@@ -27,7 +27,9 @@ import java.util.Objects;
  *
  * @see <a
  *     href="https://cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse#Constraint">Constraint</a>
+ * @deprecated v3 GAPIC client of ResourceManager is now available
  */
+@Deprecated
 public class ConstraintInfo {
 
   static final Function<Constraint, ConstraintInfo> FROM_PROTOBUF_FUNCTION =

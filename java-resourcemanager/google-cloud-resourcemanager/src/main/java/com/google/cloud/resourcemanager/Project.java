@@ -32,7 +32,10 @@ import java.util.Objects;
  * AppEngine Apps, VMs, and other Google Cloud Platform resources. This class' member variables are
  * immutable. Methods that change or update the underlying Project information return a new Project
  * instance. {@code Project} adds a layer of service-related functionality over {@link ProjectInfo}.
+ *
+ * @deprecated v3 GAPIC client of ResourceManager is now available
  */
+@Deprecated
 public class Project extends ProjectInfo {
 
   private static final long serialVersionUID = 6767630161335155133L;

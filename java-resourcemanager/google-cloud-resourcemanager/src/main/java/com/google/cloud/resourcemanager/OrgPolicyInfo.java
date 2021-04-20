@@ -29,7 +29,10 @@ import java.util.Objects;
  *
  * <p>Defines a Cloud Organization Policy which specifies constraints for configurations of Cloud
  * Platform resources.
+ *
+ * @deprecated v3 GAPIC client of ResourceManager is now available
  */
+@Deprecated
 public class OrgPolicyInfo {
 
   static final Function<OrgPolicy, OrgPolicyInfo> FROM_PROTOBUF_FUNCTION =

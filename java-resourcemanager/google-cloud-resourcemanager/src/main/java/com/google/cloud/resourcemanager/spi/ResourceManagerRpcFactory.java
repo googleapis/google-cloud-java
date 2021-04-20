@@ -22,5 +22,8 @@ import com.google.cloud.spi.ServiceRpcFactory;
 /**
  * An interface for Resource Manager RPC factory. Implementation will be loaded via {@link
  * java.util.ServiceLoader}.
+ *
+ * @deprecated v3 GAPIC client of ResourceManager is now available
  */
+@Deprecated
 public interface ResourceManagerRpcFactory extends ServiceRpcFactory<ResourceManagerOptions> {}

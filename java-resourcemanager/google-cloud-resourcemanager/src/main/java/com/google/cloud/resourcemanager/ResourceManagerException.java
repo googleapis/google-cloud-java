@@ -28,7 +28,9 @@ import java.util.Set;
  *
  * @see <a href="https://cloud.google.com/resource-manager/v1/errors/core_errors">Google Cloud
  *     Resource Manager error codes</a>
+ * @deprecated v3 GAPIC client of ResourceManager is now available
  */
+@Deprecated
 public final class ResourceManagerException extends BaseHttpServiceException {
 
   // see https://cloud.google.com/resource-manager/v1/errors/core_errors
