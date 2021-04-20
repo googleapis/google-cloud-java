@@ -204,10 +204,9 @@ public class LoggingHandler extends Handler {
 
       this.enhancers.addAll(enhancersParam);
 
+      // In the following line getResourceEnhancers() never returns null (@NotNull attribute)
       List<LoggingEnhancer> loggingEnhancers = MonitoredResourceUtil.getResourceEnhancers();
-      if (loggingEnhancers != null) {
-        this.enhancers.addAll(loggingEnhancers);
-      }
+      this.enhancers.addAll(loggingEnhancers);
     } catch (Exception ex) {
       reportError(null, ex, ErrorManager.OPEN_FAILURE);
       throw ex;

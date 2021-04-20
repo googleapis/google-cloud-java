@@ -93,7 +93,7 @@ public class SinkInfo implements Serializable {
         if (obj == this) {
           return true;
         }
-        if (obj == null || !(obj instanceof BucketDestination)) {
+        if (!(obj instanceof BucketDestination)) {
           return false;
         }
         BucketDestination other = (BucketDestination) obj;
@@ -171,7 +171,7 @@ public class SinkInfo implements Serializable {
         if (obj == this) {
           return true;
         }
-        if (obj == null || !(obj instanceof DatasetDestination)) {
+        if (!(obj instanceof DatasetDestination)) {
           return false;
         }
         DatasetDestination other = (DatasetDestination) obj;
@@ -270,7 +270,7 @@ public class SinkInfo implements Serializable {
         if (obj == this) {
           return true;
         }
-        if (obj == null || !(obj instanceof LoggingBucketDestination)) {
+        if (!(obj instanceof LoggingBucketDestination)) {
           return false;
         }
         LoggingBucketDestination other = (LoggingBucketDestination) obj;
@@ -363,7 +363,7 @@ public class SinkInfo implements Serializable {
         if (obj == this) {
           return true;
         }
-        if (obj == null || !(obj instanceof TopicDestination)) {
+        if (!(obj instanceof TopicDestination)) {
           return false;
         }
         TopicDestination other = (TopicDestination) obj;

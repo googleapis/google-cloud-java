@@ -25,14 +25,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.MonitoredResource;
-import com.google.cloud.logging.BaseSystemTest;
-import com.google.cloud.logging.HttpRequest;
-import com.google.cloud.logging.LogEntry;
-import com.google.cloud.logging.Logging;
-import com.google.cloud.logging.LoggingOptions;
-import com.google.cloud.logging.Operation;
-import com.google.cloud.logging.Payload;
-import com.google.cloud.logging.Severity;
+import com.google.cloud.logging.*;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.logging.v2.LogName;
@@ -58,6 +51,10 @@ public class ITLoggingTest extends BaseSystemTest {
 
   @BeforeClass
   public static void insertLogs() {
+    // This ensures predictability of the test:
+    // with batching enabled by default, it's possible that for two log entries, batching
+    // will send them together, so they might be stored not in the same logical order.
+    logging.setWriteSynchronicity(Synchronicity.SYNC);
     LogEntry firstEntry =
         LogEntry.newBuilder(FIRST_PAYLOAD)
             .addLabel("key1", "value1")
@@ -74,7 +71,6 @@ public class ITLoggingTest extends BaseSystemTest {
             .setResource(CLOUDSQL_RESOURCE)
             .build();
     logging.write(ImmutableList.of(firstEntry));
-    logging.flush();
     logging.write(ImmutableList.of(secondEntry));
     logging.flush();
   }
