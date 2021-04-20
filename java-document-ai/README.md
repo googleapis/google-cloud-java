@@ -55,12 +55,12 @@ compile 'com.google.cloud:google-cloud-document-ai'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-document-ai:0.7.0'
+compile 'com.google.cloud:google-cloud-document-ai:0.7.1'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-document-ai" % "0.7.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-document-ai" % "0.7.1"
 ```
 
 ## Authentication
@@ -101,6 +101,9 @@ has instructions for running the samples.
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
+| Batch Process Document | [source code](https://github.com/googleapis/java-document-ai/blob/master/samples/snippets/src/main/java/documentai/v1/BatchProcessDocument.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-document-ai&page=editor&open_in_editor=samples/snippets/src/main/java/documentai/v1/BatchProcessDocument.java) |
+| Process Document | [source code](https://github.com/googleapis/java-document-ai/blob/master/samples/snippets/src/main/java/documentai/v1/ProcessDocument.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-document-ai&page=editor&open_in_editor=samples/snippets/src/main/java/documentai/v1/ProcessDocument.java) |
+| Quick Start | [source code](https://github.com/googleapis/java-document-ai/blob/master/samples/snippets/src/main/java/documentai/v1/QuickStart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-document-ai&page=editor&open_in_editor=samples/snippets/src/main/java/documentai/v1/QuickStart.java) |
 | Batch Parse Form Beta | [source code](https://github.com/googleapis/java-document-ai/blob/master/samples/snippets/src/main/java/documentai/v1beta2/BatchParseFormBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-document-ai&page=editor&open_in_editor=samples/snippets/src/main/java/documentai/v1beta2/BatchParseFormBeta.java) |
 | Batch Parse Table Beta | [source code](https://github.com/googleapis/java-document-ai/blob/master/samples/snippets/src/main/java/documentai/v1beta2/BatchParseTableBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-document-ai&page=editor&open_in_editor=samples/snippets/src/main/java/documentai/v1beta2/BatchParseTableBeta.java) |
 | Parse Form Beta | [source code](https://github.com/googleapis/java-document-ai/blob/master/samples/snippets/src/main/java/documentai/v1beta2/ParseFormBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-document-ai&page=editor&open_in_editor=samples/snippets/src/main/java/documentai/v1beta2/ParseFormBeta.java) |
@@ -108,9 +111,6 @@ has instructions for running the samples.
 | Parse With Model Beta | [source code](https://github.com/googleapis/java-document-ai/blob/master/samples/snippets/src/main/java/documentai/v1beta2/ParseWithModelBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-document-ai&page=editor&open_in_editor=samples/snippets/src/main/java/documentai/v1beta2/ParseWithModelBeta.java) |
 | Quick Start | [source code](https://github.com/googleapis/java-document-ai/blob/master/samples/snippets/src/main/java/documentai/v1beta2/QuickStart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-document-ai&page=editor&open_in_editor=samples/snippets/src/main/java/documentai/v1beta2/QuickStart.java) |
 | Set End Point Beta | [source code](https://github.com/googleapis/java-document-ai/blob/master/samples/snippets/src/main/java/documentai/v1beta2/SetEndPointBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-document-ai&page=editor&open_in_editor=samples/snippets/src/main/java/documentai/v1beta2/SetEndPointBeta.java) |
-| Batch Process Document Beta | [source code](https://github.com/googleapis/java-document-ai/blob/master/samples/snippets/src/main/java/documentai/v1beta3/BatchProcessDocumentBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-document-ai&page=editor&open_in_editor=samples/snippets/src/main/java/documentai/v1beta3/BatchProcessDocumentBeta.java) |
-| Process Document Beta | [source code](https://github.com/googleapis/java-document-ai/blob/master/samples/snippets/src/main/java/documentai/v1beta3/ProcessDocumentBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-document-ai&page=editor&open_in_editor=samples/snippets/src/main/java/documentai/v1beta3/ProcessDocumentBeta.java) |
-| Quick Start | [source code](https://github.com/googleapis/java-document-ai/blob/master/samples/snippets/src/main/java/documentai/v1beta3/QuickStart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-document-ai&page=editor&open_in_editor=samples/snippets/src/main/java/documentai/v1beta3/QuickStart.java) |
 
 
 
