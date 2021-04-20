@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-api-gateway.git",
+        "sha": "9c64584e14a8e4b9d4819e457bb6a3e07f66c5ed"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "ff6b759fcb58f216f62b48d5be0bb85fafbc3bb2"
+      }
+    }
+  ]
+}
