@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-networkconnectivity.git",
+        "sha": "60956446e32721f336de0adc1e42eb8efd3dd130"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "ff6b759fcb58f216f62b48d5be0bb85fafbc3bb2"
+      }
+    }
+  ]
+}

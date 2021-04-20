@@ -2,30 +2,70 @@
 
 Java idiomatic client for [Network Connectivity Center][product-docs].
 
+[![Maven][maven-version-image]][maven-version-link]
+![Stability][stability-image]
 
 - [Product Documentation][product-docs]
+- [Client Library Documentation][javadocs]
+
+> Note: This client is a work-in-progress, and may occasionally
+> make backwards-incompatible changes.
+
+## Quickstart
+
+
+If you are using Maven, add this to your pom.xml file:
+
+```xml
+<dependency>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-networkconnectivity</artifactId>
+  <version>0.2.3</version>
+</dependency>
+
+```
+
+If you are using Gradle without BOM, add this to your dependencies
+```Groovy
+compile 'com.google.cloud:google-cloud-networkconnectivity:0.2.3'
+```
+
+If you are using SBT, add this to your dependencies
+```Scala
+libraryDependencies += "com.google.cloud" % "google-cloud-networkconnectivity" % "0.2.3"
+```
 
 ## Authentication
 
 See the [Authentication][authentication] section in the base directory's README.
 
+## Getting Started
+
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Network Connectivity enabled.
-You will need to [enable billing][enable-billing] to use Google Network Connectivity.
+You will need a [Google Cloud Platform Console][developer-console] project with the Network Connectivity Center [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Network Connectivity Center.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 ### Installation and setup
 
-You'll need to obtain the `google-cloud-networkconnectivity` library.  See the Quickstart section
+You'll need to obtain the `google-cloud-networkconnectivity` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-networkconnectivity` as a dependency in your code.
 
 ## About Network Connectivity Center
 
 
-[Network Connectivity][product-docs] is Google's suite of products that provide enterprise connectivity from your on-premises network or from another cloud provider to your Virtual Private Cloud (VPC) network.
+[Network Connectivity Center][product-docs] Google's suite of products that provide enterprise connectivity from your on-premises network or from another cloud provider to your Virtual Private Cloud (VPC) network
+
+See the [Network Connectivity Center client library docs][javadocs] to learn how to
+use this Network Connectivity Center Client Library.
+
+
+
+
+
 
 ## Troubleshooting
 
@@ -33,7 +73,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Network ConnectivityAI PlatformAI Platform uses gRPC for the transport layer.
+Network Connectivity Center uses gRPC for the transport layer.
 
 ## Java Versions
 
@@ -63,10 +103,33 @@ information.
 
 Apache 2.0 - See [LICENSE][license] for more information.
 
+## CI Status
 
+Java Version | Status
+------------ | ------
+Java 7 | [![Kokoro CI][kokoro-badge-image-1]][kokoro-badge-link-1]
+Java 8 | [![Kokoro CI][kokoro-badge-image-2]][kokoro-badge-link-2]
+Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
+Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
+Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
+
+Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://cloud.google.com/network-connectivity/docs
-[stability-image]: https://img.shields.io/badge/stability-beta-yellow
+[javadocs]: https://googleapis.dev/java/google-cloud-networkconnectivity/latest/index.html
+[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-networkconnectivity/java7.svg
+[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-networkconnectivity/java7.html
+[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-networkconnectivity/java8.svg
+[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-networkconnectivity/java8.html
+[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-networkconnectivity/java8-osx.svg
+[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-networkconnectivity/java8-osx.html
+[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-networkconnectivity/java8-win.svg
+[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-networkconnectivity/java8-win.html
+[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-networkconnectivity/java11.svg
+[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-networkconnectivity/java11.html
+[stability-image]: https://img.shields.io/badge/stability-alpha-orange
+[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-networkconnectivity.svg
+[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-networkconnectivity&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
