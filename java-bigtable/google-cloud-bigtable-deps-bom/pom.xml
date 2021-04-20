@@ -70,10 +70,6 @@
     </license>
   </licenses>
 
-  <properties>
-    <autovalue.version>1.8</autovalue.version>
-  </properties>
-
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -82,23 +78,6 @@
         <version>0.21.1</version>
         <type>pom</type>
         <scope>import</scope>
-      </dependency>
-
-      <!-- Production dependency version definitions in alphabetical order -->
-      <dependency>
-        <groupId>com.google.auto.value</groupId>
-        <artifactId>auto-value</artifactId>
-        <version>${autovalue.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.auto.value</groupId>
-        <artifactId>auto-value-annotations</artifactId>
-        <version>${autovalue.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.errorprone</groupId>
-        <artifactId>error_prone_annotations</artifactId>
-        <version>2.6.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

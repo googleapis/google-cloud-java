@@ -100,11 +100,6 @@
     </dependency>
     <dependency>
       <groupId>com.google.auto.value</groupId>
-      <artifactId>auto-value</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.auto.value</groupId>
       <artifactId>auto-value-annotations</artifactId>
     </dependency>
     <dependency>
@@ -488,7 +483,7 @@
             grpc-auth is not directly used transitively, but is pulled to align with other grpc parts
             opencensus-impl-core is brought in transitively through opencensus-impl
             -->
-          <usedDependencies>io.grpc:grpc-auth,io.grpc:grpc-grpclb,com.google.auto.value:auto-value</usedDependencies>
+          <usedDependencies>io.grpc:grpc-auth,io.grpc:grpc-grpclb</usedDependencies>
           <ignoredUsedUndeclaredDependencies>
             <ignoredUsedUndeclaredDependency>io.opencensus:opencensus-impl-core</ignoredUsedUndeclaredDependency>
           </ignoredUsedUndeclaredDependencies>
