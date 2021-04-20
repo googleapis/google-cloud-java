@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-package documentai.v1beta3;
+package documentai.v1;
 
-// [START documentai_quickstart]
+// [START documentai_process_document]
 
-import com.google.cloud.documentai.v1beta3.Document;
-import com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient;
-import com.google.cloud.documentai.v1beta3.ProcessRequest;
-import com.google.cloud.documentai.v1beta3.ProcessResponse;
+import com.google.cloud.documentai.v1.Document;
+import com.google.cloud.documentai.v1.DocumentProcessorServiceClient;
+import com.google.cloud.documentai.v1.ProcessRequest;
+import com.google.cloud.documentai.v1.ProcessResponse;
+import com.google.cloud.documentai.v1.RawDocument;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -30,18 +31,18 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-public class QuickStart {
-  public static void quickStart()
+public class ProcessDocument {
+  public static void processDocument()
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String location = "your-project-location"; // Format is "us" or "eu".
     String processerId = "your-processor-id";
     String filePath = "path/to/input/file.pdf";
-    quickStart(projectId, location, processerId, filePath);
+    processDocument(projectId, location, processerId, filePath);
   }
 
-  public static void quickStart(
+  public static void processDocument(
       String projectId, String location, String processorId, String filePath)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
     // Initialize client that will be used to send requests. This client only needs to be created
@@ -60,12 +61,12 @@ public class QuickStart {
       // Convert the image data to a Buffer and base64 encode it.
       ByteString content = ByteString.copyFrom(imageFileData);
 
-      Document document =
-          Document.newBuilder().setContent(content).setMimeType("application/pdf").build();
+      RawDocument document =
+          RawDocument.newBuilder().setContent(content).setMimeType("application/pdf").build();
 
       // Configure the process request.
       ProcessRequest request =
-          ProcessRequest.newBuilder().setName(name).setDocument(document).build();
+          ProcessRequest.newBuilder().setName(name).setRawDocument(document).build();
 
       // Recognizes text entities in the PDF document
       ProcessResponse result = client.processDocument(request);
@@ -83,6 +84,19 @@ public class QuickStart {
         String paragraphText = getText(paragraph.getLayout().getTextAnchor(), text);
         System.out.printf("Paragraph text:\n%s\n", paragraphText);
       }
+
+      // Form parsing provides additional output about
+      // form-formatted PDFs. You  must create a form
+      // processor in the Cloud Console to see full field details.
+      System.out.println("The following form key/value pairs were detected:");
+
+      for (Document.Page.FormField field : firstPage.getFormFieldsList()) {
+        String fieldName = getText(field.getFieldName().getTextAnchor(), text);
+        String fieldValue = getText(field.getFieldValue().getTextAnchor(), text);
+
+        System.out.println("Extracted form fields pair:");
+        System.out.printf("\t(%s, %s))\n", fieldName, fieldValue);
+      }
     }
   }
 
@@ -96,4 +110,4 @@ public class QuickStart {
     return "[NO TEXT]";
   }
 }
-// [END documentai_quickstart]
+// [END documentai_process_document]

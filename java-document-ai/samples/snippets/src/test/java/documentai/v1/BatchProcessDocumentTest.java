@@ -14,24 +14,34 @@
  * limitations under the License.
  */
 
-package documentai.v1beta3;
+package documentai.v1;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertNotNull;
 
+import com.google.api.gax.paging.Page;
+import com.google.cloud.storage.Blob;
+import com.google.cloud.storage.BucketInfo;
+import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.StorageOptions;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class QuickStartTest {
+public class BatchProcessDocumentTest {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String PROCESSOR_ID = "88541adc6eeec481";
-  private static final String FILE_PATH = "resources/invoice.pdf";
+  private static final String BUCKET_NAME =
+      String.format("document-ai-output-test-%s", UUID.randomUUID());
+  private static final String INPUT_URI = "gs://cloud-samples-data/documentai/invoice.pdf";
+  private static final String OUTPUT_PREFIX = String.format("%s", UUID.randomUUID());
+  private static final String OUTPUT_BUCKET_NAME = PROJECT_ID;
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -41,6 +51,31 @@ public class QuickStartTest {
     assertNotNull(
         String.format("Environment variable '%s' must be set to perform these tests.", varName),
         System.getenv(varName));
+  }
+
+  private static void cleanUpBucket() {
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+    Page<Blob> blobs =
+        storage.list(
+            BUCKET_NAME,
+            Storage.BlobListOption.currentDirectory(),
+            Storage.BlobListOption.prefix(OUTPUT_PREFIX));
+
+    deleteDirectory(storage, blobs);
+  }
+
+  private static void deleteDirectory(Storage storage, Page<Blob> blobs) {
+    for (Blob blob : blobs.iterateAll()) {
+      if (!blob.delete()) {
+        Page<Blob> subBlobs =
+            storage.list(
+                BUCKET_NAME,
+                Storage.BlobListOption.currentDirectory(),
+                Storage.BlobListOption.prefix(blob.getName()));
+
+        deleteDirectory(storage, subBlobs);
+      }
+    }
   }
 
   @Before
@@ -55,20 +90,26 @@ public class QuickStartTest {
     out = new PrintStream(bout);
     originalPrintStream = System.out;
     System.setOut(out);
+
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+    storage.create(BucketInfo.of(BUCKET_NAME));
   }
 
   @Test
-  public void testQuickStart()
-      throws InterruptedException, ExecutionException, IOException, TimeoutException {
+  public void testBatchProcessDocument()
+      throws InterruptedException, ExecutionException, TimeoutException, IOException {
     // parse the GCS invoice as a form.
-    QuickStart.quickStart(PROJECT_ID, "us", PROCESSOR_ID, FILE_PATH);
+    BatchProcessDocument.batchProcessDocument(
+        PROJECT_ID, "us", PROCESSOR_ID, INPUT_URI, OUTPUT_BUCKET_NAME, OUTPUT_PREFIX);
     String got = bout.toString();
 
     assertThat(got).contains("Paragraph text:");
+    assertThat(got).contains("Extracted");
   }
 
   @After
   public void tearDown() {
+    cleanUpBucket();
     System.out.flush();
     System.setOut(originalPrintStream);
   }
