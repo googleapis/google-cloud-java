@@ -859,13 +859,13 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelay(Duration.ofMillis(60000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setMaxRetryDelay(Duration.ofMillis(120000L))
                       .setInitialRpcTimeout(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(4800000L))
                       .build()));
 
       builder
@@ -883,13 +883,13 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelay(Duration.ofMillis(60000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setMaxRetryDelay(Duration.ofMillis(120000L))
                       .setInitialRpcTimeout(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(3000000L))
                       .build()));
 
       builder
@@ -907,13 +907,13 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelay(Duration.ofMillis(10000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setMaxRetryDelay(Duration.ofMillis(60000L))
                       .setInitialRpcTimeout(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(1500000L))
                       .build()));
 
       builder
@@ -931,13 +931,13 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelay(Duration.ofMillis(60000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setMaxRetryDelay(Duration.ofMillis(120000L))
                       .setInitialRpcTimeout(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(4800000L))
                       .build()));
 
       builder
@@ -955,13 +955,13 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelay(Duration.ofMillis(60000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setMaxRetryDelay(Duration.ofMillis(120000L))
                       .setInitialRpcTimeout(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(1200000L))
                       .build()));
 
       builder
@@ -979,13 +979,13 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelay(Duration.ofMillis(60000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setMaxRetryDelay(Duration.ofMillis(120000L))
                       .setInitialRpcTimeout(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(4800000L))
                       .build()));
 
       builder
@@ -1003,13 +1003,13 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelay(Duration.ofMillis(60000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setMaxRetryDelay(Duration.ofMillis(120000L))
                       .setInitialRpcTimeout(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(4800000L))
                       .build()));
 
       builder
@@ -1027,13 +1027,13 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelay(Duration.ofMillis(60000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setMaxRetryDelay(Duration.ofMillis(120000L))
                       .setInitialRpcTimeout(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(4800000L))
                       .build()));
 
       builder
@@ -1051,13 +1051,13 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelay(Duration.ofMillis(10000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setMaxRetryDelay(Duration.ofMillis(60000L))
                       .setInitialRpcTimeout(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(1500000L))
                       .build()));
 
       return builder;
