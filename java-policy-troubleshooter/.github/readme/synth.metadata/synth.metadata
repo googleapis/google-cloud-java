@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-policy-troubleshooter.git",
+        "sha": "a3856754fcc780fd452f21a0e02180de4ffbe04d"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "ff6b759fcb58f216f62b48d5be0bb85fafbc3bb2"
+      }
+    }
+  ]
+}
