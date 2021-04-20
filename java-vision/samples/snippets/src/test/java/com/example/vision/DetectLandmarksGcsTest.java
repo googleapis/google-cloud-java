@@ -20,10 +20,12 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.example.vision.snippets.DetectLandmarksGcs;
 import com.example.vision.snippets.DetectLandmarksUrl;
+import com.google.cloud.testing.junit4.MultipleAttemptsRule;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -51,6 +53,9 @@ public class DetectLandmarksGcsTest {
     System.out.flush();
     System.setOut(originalPrintStream);
   }
+
+  @Rule
+  public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
 
   @Test
   public void testLandmarksUrl() throws Exception {
