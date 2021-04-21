@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.23.1](https://www.github.com/googleapis/java-bigtable/compare/v1.23.0...v1.23.1) (2021-04-20)
+
+
+### Bug Fixes
+
+* **docs:** correct docs for CUSTOMER_MANAGED_ENCRYPTION ([#737](https://www.github.com/googleapis/java-bigtable/issues/737)) ([b3bb7f7](https://www.github.com/googleapis/java-bigtable/commit/b3bb7f77610e48e849766a6e9dbacb98fc3f9811))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#741](https://www.github.com/googleapis/java-bigtable/issues/741)) ([cfdd0cd](https://www.github.com/googleapis/java-bigtable/commit/cfdd0cd760f9273e644cddc492d9c4d5327498e7))
+
 ## [1.23.0](https://www.github.com/googleapis/java-bigtable/compare/v1.22.0...v1.23.0) (2021-04-13)
 
 
