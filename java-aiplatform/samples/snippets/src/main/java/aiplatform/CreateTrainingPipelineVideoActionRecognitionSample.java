@@ -18,14 +18,14 @@ package aiplatform;
 
 // [START aiplatform_create_training_pipeline_video_action_recognition_sample]
 import com.google.cloud.aiplatform.util.ValueConverter;
-import com.google.cloud.aiplatform.v1beta1.InputDataConfig;
-import com.google.cloud.aiplatform.v1beta1.LocationName;
-import com.google.cloud.aiplatform.v1beta1.Model;
-import com.google.cloud.aiplatform.v1beta1.PipelineServiceClient;
-import com.google.cloud.aiplatform.v1beta1.PipelineServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
-import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs;
-import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs.ModelType;
+import com.google.cloud.aiplatform.v1.InputDataConfig;
+import com.google.cloud.aiplatform.v1.LocationName;
+import com.google.cloud.aiplatform.v1.Model;
+import com.google.cloud.aiplatform.v1.PipelineServiceClient;
+import com.google.cloud.aiplatform.v1.PipelineServiceSettings;
+import com.google.cloud.aiplatform.v1.TrainingPipeline;
+import com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs;
+import com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs.ModelType;
 import java.io.IOException;
 
 public class CreateTrainingPipelineVideoActionRecognitionSample {

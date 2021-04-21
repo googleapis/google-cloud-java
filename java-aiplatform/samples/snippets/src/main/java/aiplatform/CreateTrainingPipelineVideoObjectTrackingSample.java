@@ -19,18 +19,18 @@ package aiplatform;
 // [START aiplatform_create_training_pipeline_video_object_tracking_sample]
 
 import com.google.cloud.aiplatform.util.ValueConverter;
-import com.google.cloud.aiplatform.v1beta1.FilterSplit;
-import com.google.cloud.aiplatform.v1beta1.FractionSplit;
-import com.google.cloud.aiplatform.v1beta1.InputDataConfig;
-import com.google.cloud.aiplatform.v1beta1.LocationName;
-import com.google.cloud.aiplatform.v1beta1.Model;
-import com.google.cloud.aiplatform.v1beta1.PipelineServiceClient;
-import com.google.cloud.aiplatform.v1beta1.PipelineServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.PredefinedSplit;
-import com.google.cloud.aiplatform.v1beta1.TimestampSplit;
-import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
-import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs;
-import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs.ModelType;
+import com.google.cloud.aiplatform.v1.FilterSplit;
+import com.google.cloud.aiplatform.v1.FractionSplit;
+import com.google.cloud.aiplatform.v1.InputDataConfig;
+import com.google.cloud.aiplatform.v1.LocationName;
+import com.google.cloud.aiplatform.v1.Model;
+import com.google.cloud.aiplatform.v1.PipelineServiceClient;
+import com.google.cloud.aiplatform.v1.PipelineServiceSettings;
+import com.google.cloud.aiplatform.v1.PredefinedSplit;
+import com.google.cloud.aiplatform.v1.TimestampSplit;
+import com.google.cloud.aiplatform.v1.TrainingPipeline;
+import com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs;
+import com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs.ModelType;
 import com.google.rpc.Status;
 import java.io.IOException;
 

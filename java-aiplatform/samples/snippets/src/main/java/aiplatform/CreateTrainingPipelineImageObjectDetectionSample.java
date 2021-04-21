@@ -19,26 +19,22 @@ package aiplatform;
 // [START aiplatform_create_training_pipeline_image_object_detection_sample]
 
 import com.google.cloud.aiplatform.util.ValueConverter;
-import com.google.cloud.aiplatform.v1beta1.DeployedModelRef;
-import com.google.cloud.aiplatform.v1beta1.EnvVar;
-import com.google.cloud.aiplatform.v1beta1.ExplanationMetadata;
-import com.google.cloud.aiplatform.v1beta1.ExplanationParameters;
-import com.google.cloud.aiplatform.v1beta1.ExplanationSpec;
-import com.google.cloud.aiplatform.v1beta1.FilterSplit;
-import com.google.cloud.aiplatform.v1beta1.FractionSplit;
-import com.google.cloud.aiplatform.v1beta1.InputDataConfig;
-import com.google.cloud.aiplatform.v1beta1.LocationName;
-import com.google.cloud.aiplatform.v1beta1.Model;
-import com.google.cloud.aiplatform.v1beta1.Model.ExportFormat;
-import com.google.cloud.aiplatform.v1beta1.ModelContainerSpec;
-import com.google.cloud.aiplatform.v1beta1.PipelineServiceClient;
-import com.google.cloud.aiplatform.v1beta1.PipelineServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.Port;
-import com.google.cloud.aiplatform.v1beta1.PredefinedSplit;
-import com.google.cloud.aiplatform.v1beta1.PredictSchemata;
-import com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution;
-import com.google.cloud.aiplatform.v1beta1.TimestampSplit;
-import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
+import com.google.cloud.aiplatform.v1.DeployedModelRef;
+import com.google.cloud.aiplatform.v1.EnvVar;
+import com.google.cloud.aiplatform.v1.FilterSplit;
+import com.google.cloud.aiplatform.v1.FractionSplit;
+import com.google.cloud.aiplatform.v1.InputDataConfig;
+import com.google.cloud.aiplatform.v1.LocationName;
+import com.google.cloud.aiplatform.v1.Model;
+import com.google.cloud.aiplatform.v1.Model.ExportFormat;
+import com.google.cloud.aiplatform.v1.ModelContainerSpec;
+import com.google.cloud.aiplatform.v1.PipelineServiceClient;
+import com.google.cloud.aiplatform.v1.PipelineServiceSettings;
+import com.google.cloud.aiplatform.v1.Port;
+import com.google.cloud.aiplatform.v1.PredefinedSplit;
+import com.google.cloud.aiplatform.v1.PredictSchemata;
+import com.google.cloud.aiplatform.v1.TimestampSplit;
+import com.google.cloud.aiplatform.v1.TrainingPipeline;
 import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs;
 import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs.ModelType;
 import com.google.rpc.Status;
@@ -203,25 +199,6 @@ public class CreateTrainingPipelineImageObjectDetectionSample {
         System.out.format("Endpoint: %s\n", deployedModelRef.getEndpoint());
         System.out.format("Deployed Model Id: %s\n", deployedModelRef.getDeployedModelId());
       }
-
-      ExplanationSpec explanationSpec = modelResponse.getExplanationSpec();
-      System.out.println("Explanation Spec");
-
-      ExplanationParameters explanationParameters = explanationSpec.getParameters();
-      System.out.println("Parameters");
-
-      SampledShapleyAttribution sampledShapleyAttribution =
-          explanationParameters.getSampledShapleyAttribution();
-      System.out.println("Sampled Shapley Attribution");
-      System.out.format("Path Count: %s\n", sampledShapleyAttribution.getPathCount());
-
-      ExplanationMetadata explanationMetadata = explanationSpec.getMetadata();
-      System.out.println("Metadata");
-      System.out.format("Inputs: %s\n", explanationMetadata.getInputsMap());
-      System.out.format("Outputs: %s\n", explanationMetadata.getOutputsMap());
-      System.out.format(
-          "Feature Attributions Schema_uri: %s\n",
-          explanationMetadata.getFeatureAttributionsSchemaUri());
 
       Status status = trainingPipelineResponse.getError();
       System.out.println("Error");
