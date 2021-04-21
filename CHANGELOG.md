@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.106.2](https://www.github.com/googleapis/java-datastore/compare/v1.106.1...v1.106.2) (2021-04-20)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#394](https://www.github.com/googleapis/java-datastore/issues/394)) ([397ae6c](https://www.github.com/googleapis/java-datastore/commit/397ae6cdbf2effa926d0a4503148970ee7e5d8cf))
+* typo ([#389](https://www.github.com/googleapis/java-datastore/issues/389)) ([10b0336](https://www.github.com/googleapis/java-datastore/commit/10b03365c227d7b6f15ba60eb946079a3f70b729))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#397](https://www.github.com/googleapis/java-datastore/issues/397)) ([947befe](https://www.github.com/googleapis/java-datastore/commit/947befed8e074c244cb68099ed5e9a6ad0721caf))
+
 ### [1.106.1](https://www.github.com/googleapis/java-datastore/compare/v1.106.0...v1.106.1) (2021-04-12)
 
 
