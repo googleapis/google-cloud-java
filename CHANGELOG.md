@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.20.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.19.0...v1.20.0) (2021-04-20)
+
+
+### Features
+
+* new JSON type through BigQuery Write ([#1013](https://www.github.com/googleapis/java-bigquerystorage/issues/1013)) ([357e811](https://www.github.com/googleapis/java-bigquerystorage/commit/357e811f5d429cacfce597be9a3e739e659f604a))
+
+
+### Bug Fixes
+
+* It seems GAPIC is not generated expected headers for bidi streaming client lib, apply a temp fix to unblock customers ([#1017](https://www.github.com/googleapis/java-bigquerystorage/issues/1017)) ([9c1ed55](https://www.github.com/googleapis/java-bigquerystorage/commit/9c1ed556c7e3a545932ec8ceff7b3c466e72d84f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#1018](https://www.github.com/googleapis/java-bigquerystorage/issues/1018)) ([827764e](https://www.github.com/googleapis/java-bigquerystorage/commit/827764ef215bdb73ccff0a2b9329c2295e5eef1f))
+
 ## [1.19.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.18.1...v1.19.0) (2021-04-15)
 
 
