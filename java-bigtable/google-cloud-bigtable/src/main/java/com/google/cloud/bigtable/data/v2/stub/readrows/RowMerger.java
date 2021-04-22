@@ -20,13 +20,14 @@ import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter.RowBuilder;
 import com.google.cloud.bigtable.gaxx.reframing.Reframer;
 import com.google.common.base.Preconditions;
+import java.util.ArrayDeque;
+import java.util.Queue;
 
 /**
  * An implementation of a {@link Reframer} that feeds the row merging {@link StateMachine}.
  *
  * <p>{@link com.google.cloud.bigtable.gaxx.reframing.ReframingResponseObserver} pushes {@link
- * com.google.bigtable.v2.ReadRowsResponse.CellChunk}s into this class and pops fully merged logical
- * rows. Example usage:
+ * ReadRowsResponse.CellChunk}s into this class and pops fully merged logical rows. Example usage:
  *
  * <pre>{@code
  * RowMerger<Row> rowMerger = new RowMerger<>(myRowBuilder);
@@ -58,81 +59,47 @@ import com.google.common.base.Preconditions;
 @InternalApi
 public class RowMerger<RowT> implements Reframer<RowT, ReadRowsResponse> {
   private final StateMachine<RowT> stateMachine;
-  private ReadRowsResponse buffer;
-  private int nextChunk;
-  private RowT nextRow;
+  private Queue<RowT> mergedRows;
 
   public RowMerger(RowBuilder<RowT> rowBuilder) {
     stateMachine = new StateMachine<>(rowBuilder);
-
-    nextChunk = 0;
-    buffer = ReadRowsResponse.getDefaultInstance();
+    mergedRows = new ArrayDeque<>();
   }
 
   @Override
   public void push(ReadRowsResponse response) {
-    Preconditions.checkState(
-        buffer.getChunksCount() <= nextChunk, "Previous response not fully consumed");
-
-    buffer = response;
-    nextChunk = 0;
-
     // If the server sends a scan heartbeat, notify the StateMachine. It will generate a synthetic
     // row marker. See RowAdapter for more info.
     if (!response.getLastScannedRowKey().isEmpty()) {
       stateMachine.handleLastScannedRow(response.getLastScannedRowKey());
+      if (stateMachine.hasCompleteRow()) {
+        mergedRows.add(stateMachine.consumeRow());
+      }
+    }
+    for (ReadRowsResponse.CellChunk cellChunk : response.getChunksList()) {
+      stateMachine.handleChunk(cellChunk);
+      if (stateMachine.hasCompleteRow()) {
+        mergedRows.add(stateMachine.consumeRow());
+      }
     }
   }
 
   @Override
   public boolean hasFullFrame() {
-    // Check if there an assembled row to consume
-    if (nextRow != null) {
-      return true;
-    }
-
-    // Otherwise try to assemble a new row (readNextRow will set nextRow)
-    boolean newRowCompleted = readNextRow();
-    return newRowCompleted;
+    return !mergedRows.isEmpty();
   }
 
   @Override
   public boolean hasPartialFrame() {
-    // Check if any of the buffers in this class contain data.
-    // `hasFullFrame()` will check if `nextRow` has a row ready to go or if chunks in `buffer` can
-    // be used to create a new `nextRow`
-    if (hasFullFrame()) {
-      return true;
-    }
-
-    // If an assembled is still not available, then that means `buffer` has been fully consumed.
-    // The last place to check is the StateMachine buffer, to see if its holding on to an incomplete
-    // row.
-    return stateMachine.isRowInProgress();
+    // Check if buffer in this class contains data. If an assembled is still not available, then
+    // that means `buffer` has been fully consumed. The last place to check is the StateMachine
+    // buffer, to see if its holding on to an incomplete row.
+    return hasFullFrame() || stateMachine.isRowInProgress();
   }
 
   @Override
   public RowT pop() {
-    RowT row = nextRow;
-    nextRow = null;
-    return row;
-  }
-
-  private boolean readNextRow() {
-    // StateMachine might have a complete row already from receiving a scan marker.
-    if (stateMachine.hasCompleteRow()) {
-      nextRow = stateMachine.consumeRow();
-      return true;
-    }
-
-    while (nextChunk < buffer.getChunksCount()) {
-      stateMachine.handleChunk(buffer.getChunks(nextChunk++));
-
-      if (stateMachine.hasCompleteRow()) {
-        nextRow = stateMachine.consumeRow();
-        return true;
-      }
-    }
-    return false;
+    return Preconditions.checkNotNull(
+        mergedRows.poll(), "RowMerger.pop() called when there are no rows");
   }
 }
