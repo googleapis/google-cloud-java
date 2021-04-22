@@ -3,91 +3,24 @@
     {
       "git": {
         "name": ".",
-        "remote": "https://github.com/googleapis/java-resourcemanager.git",
-        "sha": "b3f53537ab83aed1afb065d49553649893e7f89e"
+        "remote": "git@github.com:googleapis/java-resourcemanager.git",
+        "sha": "3fd447e9149529a915fd982630056e74b0ad6216"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis-gen",
+        "remote": "https://github.com/googleapis/googleapis-gen.git",
+        "sha": "32337a2c2ec4d35de81519661e279ada7e3bfcf2",
+        "internalRef": "369574301"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "5b0e1592dd7d70b485e157ea4b3eb1704ecbd015"
+        "sha": "5a6f30b8bb7672cf237c4f75d5aa96bfba170e7f"
       }
     }
-  ],
-  "generatedFiles": [
-    ".github/CODEOWNERS",
-    ".github/ISSUE_TEMPLATE/bug_report.md",
-    ".github/ISSUE_TEMPLATE/feature_request.md",
-    ".github/ISSUE_TEMPLATE/support_request.md",
-    ".github/PULL_REQUEST_TEMPLATE.md",
-    ".github/blunderbuss.yml",
-    ".github/generated-files-bot.yml",
-    ".github/readme/synth.py",
-    ".github/release-please.yml",
-    ".github/snippet-bot.yml",
-    ".github/trusted-contribution.yml",
-    ".github/workflows/approve-readme.yaml",
-    ".github/workflows/auto-release.yaml",
-    ".github/workflows/ci.yaml",
-    ".github/workflows/samples.yaml",
-    ".kokoro/build.bat",
-    ".kokoro/build.sh",
-    ".kokoro/coerce_logs.sh",
-    ".kokoro/common.cfg",
-    ".kokoro/common.sh",
-    ".kokoro/continuous/common.cfg",
-    ".kokoro/continuous/java8.cfg",
-    ".kokoro/continuous/readme.cfg",
-    ".kokoro/dependencies.sh",
-    ".kokoro/nightly/common.cfg",
-    ".kokoro/nightly/integration.cfg",
-    ".kokoro/nightly/java11.cfg",
-    ".kokoro/nightly/java7.cfg",
-    ".kokoro/nightly/java8-osx.cfg",
-    ".kokoro/nightly/java8-win.cfg",
-    ".kokoro/nightly/java8.cfg",
-    ".kokoro/nightly/samples.cfg",
-    ".kokoro/populate-secrets.sh",
-    ".kokoro/presubmit/clirr.cfg",
-    ".kokoro/presubmit/common.cfg",
-    ".kokoro/presubmit/dependencies.cfg",
-    ".kokoro/presubmit/integration.cfg",
-    ".kokoro/presubmit/java11.cfg",
-    ".kokoro/presubmit/java7.cfg",
-    ".kokoro/presubmit/java8-osx.cfg",
-    ".kokoro/presubmit/java8-win.cfg",
-    ".kokoro/presubmit/java8.cfg",
-    ".kokoro/presubmit/linkage-monitor.cfg",
-    ".kokoro/presubmit/lint.cfg",
-    ".kokoro/presubmit/samples.cfg",
-    ".kokoro/readme.sh",
-    ".kokoro/release/bump_snapshot.cfg",
-    ".kokoro/release/common.cfg",
-    ".kokoro/release/common.sh",
-    ".kokoro/release/drop.cfg",
-    ".kokoro/release/drop.sh",
-    ".kokoro/release/promote.cfg",
-    ".kokoro/release/promote.sh",
-    ".kokoro/release/publish_javadoc.cfg",
-    ".kokoro/release/publish_javadoc.sh",
-    ".kokoro/release/publish_javadoc11.cfg",
-    ".kokoro/release/publish_javadoc11.sh",
-    ".kokoro/release/snapshot.cfg",
-    ".kokoro/release/snapshot.sh",
-    ".kokoro/release/stage.cfg",
-    ".kokoro/release/stage.sh",
-    ".kokoro/trampoline.sh",
-    "CODE_OF_CONDUCT.md",
-    "CONTRIBUTING.md",
-    "LICENSE",
-    "codecov.yaml",
-    "java.header",
-    "license-checks.xml",
-    "renovate.json",
-    "samples/install-without-bom/pom.xml",
-    "samples/pom.xml",
-    "samples/snapshot/pom.xml",
-    "samples/snippets/pom.xml"
   ]
 }

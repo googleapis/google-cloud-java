@@ -18,12 +18,12 @@ docker:
 deep-remove-regex:
 - "/grpc-google-.*/src"
 - "/proto-google-.*/src"
-- "/google-.*/src/main/java/com/google/cloud/resourcemanager/(v.*)"
+- "/google-.*/src"
 
 deep-copy-regex:
 - source: "/google/cloud/resourcemanager/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/proto-google-cloud-resourcemanager-$1/src"
+  dest: "/owl-bot-staging/$1/proto-google-cloud-resourcemanager-$1/src"
 - source: "/google/cloud/resourcemanager/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/grpc-google-cloud-resourcemanager-$1/src"
-- source: "/google/cloud/resourcemanager/v.*/.*-java/gapic-google-.*/src"
-  dest: "/google-cloud-resourcemanager/src"
+  dest: "/owl-bot-staging/$1/grpc-google-cloud-resourcemanager-$1/src"
+- source: "/google/cloud/resourcemanager/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/$1/google-cloud-resourcemanager/src"
