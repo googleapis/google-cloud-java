@@ -22,9 +22,8 @@ deep-remove-regex:
 
 deep-copy-regex:
 - source: "/google/appengine/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/proto-google-cloud-appengine-admin-$1/src"
+  dest: "/owl-bot-staging/$1/proto-google-cloud-appengine-admin-$1/src"
 - source: "/google/appengine/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/grpc-google-cloud-appengine-admin-$1/src"
-- source: "/google/appengine/v.*/.*-java/gapic-google-.*/src"
-  dest: "/google-cloud-appengine-admin/src"
-  
+  dest: "/owl-bot-staging/$1/grpc-google-cloud-appengine-admin-$1/src"
+- source: "/google/appengine/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/$1/google-cloud-appengine-admin/src"
