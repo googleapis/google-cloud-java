@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.21.1...v1.0.0) (2021-04-23)
+
+
+### Features
+
+* promote to 1.0.0 ([#341](https://www.github.com/googleapis/java-shared-dependencies/issues/341)) ([eddce7b](https://www.github.com/googleapis/java-shared-dependencies/commit/eddce7bda196d757c0bb93a05574cc742e3d7ff6))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.10.3 ([#340](https://www.github.com/googleapis/java-shared-dependencies/issues/340)) ([6a7fc33](https://www.github.com/googleapis/java-shared-dependencies/commit/6a7fc33548c199d5f310b3ee5024907882d22726))
+* update dependency com.google.auth:google-auth-library-bom to v0.25.4 ([#334](https://www.github.com/googleapis/java-shared-dependencies/issues/334)) ([e5c747d](https://www.github.com/googleapis/java-shared-dependencies/commit/e5c747d245194effc258ae706e7764153010cd53))
+* update dependency com.google.auth:google-auth-library-bom to v0.25.5 ([#338](https://www.github.com/googleapis/java-shared-dependencies/issues/338)) ([ffa1df5](https://www.github.com/googleapis/java-shared-dependencies/commit/ffa1df5497b5365f520b665a202b8caf6521fc9d))
+* update dependency org.threeten:threetenbp to v1.5.1 ([#335](https://www.github.com/googleapis/java-shared-dependencies/issues/335)) ([c8c6df4](https://www.github.com/googleapis/java-shared-dependencies/commit/c8c6df48e7f80944544939e502f4f08543af2631))
+* update google.core.version to v1.94.8 ([#342](https://www.github.com/googleapis/java-shared-dependencies/issues/342)) ([d946dd2](https://www.github.com/googleapis/java-shared-dependencies/commit/d946dd2299aac32f969a2226a1391e1e73f00e62))
+
 ### [0.21.1](https://www.github.com/googleapis/java-shared-dependencies/compare/0.21.0...v0.21.1) (2021-04-19)
 
 
