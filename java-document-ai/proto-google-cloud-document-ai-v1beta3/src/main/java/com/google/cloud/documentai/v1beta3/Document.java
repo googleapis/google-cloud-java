@@ -43396,6 +43396,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       com.google.cloud.documentai.v1beta3.BoundingPolyOrBuilder getBoundingPolyOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Confidence of detected page element, if applicable. Range [0, 1].
+       * </pre>
+       *
+       * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The confidence.
+       */
+      float getConfidence();
     }
     /**
      *
@@ -43484,6 +43497,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                     boundingPoly_ = subBuilder.buildPartial();
                   }
 
+                  break;
+                }
+              case 45:
+                {
+                  confidence_ = input.readFloat();
                   break;
                 }
               default:
@@ -43963,6 +43981,24 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return getBoundingPoly();
       }
 
+      public static final int CONFIDENCE_FIELD_NUMBER = 5;
+      private float confidence_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Confidence of detected page element, if applicable. Range [0, 1].
+       * </pre>
+       *
+       * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The confidence.
+       */
+      @java.lang.Override
+      public float getConfidence() {
+        return confidence_;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -43992,6 +44028,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (boundingPoly_ != null) {
           output.writeMessage(4, getBoundingPoly());
         }
+        if (confidence_ != 0F) {
+          output.writeFloat(5, confidence_);
+        }
         unknownFields.writeTo(output);
       }
 
@@ -44016,6 +44055,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (boundingPoly_ != null) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getBoundingPoly());
         }
+        if (confidence_ != 0F) {
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, confidence_);
+        }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
@@ -44039,6 +44081,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (hasBoundingPoly()) {
           if (!getBoundingPoly().equals(other.getBoundingPoly())) return false;
         }
+        if (java.lang.Float.floatToIntBits(getConfidence())
+            != java.lang.Float.floatToIntBits(other.getConfidence())) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -44060,6 +44104,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + BOUNDING_POLY_FIELD_NUMBER;
           hash = (53 * hash) + getBoundingPoly().hashCode();
         }
+        hash = (37 * hash) + CONFIDENCE_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getConfidence());
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -44223,6 +44269,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             boundingPoly_ = null;
             boundingPolyBuilder_ = null;
           }
+          confidence_ = 0F;
+
           return this;
         }
 
@@ -44260,6 +44308,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           } else {
             result.boundingPoly_ = boundingPolyBuilder_.build();
           }
+          result.confidence_ = confidence_;
           onBuilt();
           return result;
         }
@@ -44327,6 +44376,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
           if (other.hasBoundingPoly()) {
             mergeBoundingPoly(other.getBoundingPoly());
+          }
+          if (other.getConfidence() != 0F) {
+            setConfidence(other.getConfidence());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -44840,6 +44892,58 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             boundingPoly_ = null;
           }
           return boundingPolyBuilder_;
+        }
+
+        private float confidence_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Confidence of detected page element, if applicable. Range [0, 1].
+         * </pre>
+         *
+         * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The confidence.
+         */
+        @java.lang.Override
+        public float getConfidence() {
+          return confidence_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Confidence of detected page element, if applicable. Range [0, 1].
+         * </pre>
+         *
+         * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The confidence to set.
+         * @return This builder for chaining.
+         */
+        public Builder setConfidence(float value) {
+
+          confidence_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Confidence of detected page element, if applicable. Range [0, 1].
+         * </pre>
+         *
+         * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearConfidence() {
+
+          confidence_ = 0F;
+          onChanged();
+          return this;
         }
 
         @java.lang.Override
