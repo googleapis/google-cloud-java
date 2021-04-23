@@ -770,9 +770,13 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a policy tag. This method also deletes - all of its descendant policy tags, if any, -
-   * the policies associated with the policy tag and its descendants, and - references from BigQuery
-   * table schema of the policy tag and its descendants.
+   * Deletes a policy tag. This method also deletes:
+   *
+   * <ul>
+   *   <li>all of its descendant policy tags, if any
+   *   <li>the policies associated with the policy tag and its descendants
+   *   <li>references from BigQuery table schema of the policy tag and its descendants.
+   * </ul>
    *
    * <p>Sample code:
    *
@@ -796,9 +800,13 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a policy tag. This method also deletes - all of its descendant policy tags, if any, -
-   * the policies associated with the policy tag and its descendants, and - references from BigQuery
-   * table schema of the policy tag and its descendants.
+   * Deletes a policy tag. This method also deletes:
+   *
+   * <ul>
+   *   <li>all of its descendant policy tags, if any
+   *   <li>the policies associated with the policy tag and its descendants
+   *   <li>references from BigQuery table schema of the policy tag and its descendants.
+   * </ul>
    *
    * <p>Sample code:
    *
@@ -821,9 +829,13 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a policy tag. This method also deletes - all of its descendant policy tags, if any, -
-   * the policies associated with the policy tag and its descendants, and - references from BigQuery
-   * table schema of the policy tag and its descendants.
+   * Deletes a policy tag. This method also deletes:
+   *
+   * <ul>
+   *   <li>all of its descendant policy tags, if any
+   *   <li>the policies associated with the policy tag and its descendants
+   *   <li>references from BigQuery table schema of the policy tag and its descendants.
+   * </ul>
    *
    * <p>Sample code:
    *
@@ -848,9 +860,13 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a policy tag. This method also deletes - all of its descendant policy tags, if any, -
-   * the policies associated with the policy tag and its descendants, and - references from BigQuery
-   * table schema of the policy tag and its descendants.
+   * Deletes a policy tag. This method also deletes:
+   *
+   * <ul>
+   *   <li>all of its descendant policy tags, if any
+   *   <li>the policies associated with the policy tag and its descendants
+   *   <li>references from BigQuery table schema of the policy tag and its descendants.
+   * </ul>
    *
    * <p>Sample code:
    *
