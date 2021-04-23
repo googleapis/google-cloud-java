@@ -1,5 +1,21 @@
 # Changelog
 
+### [1.94.8](https://www.github.com/googleapis/java-core/compare/v1.94.7...v1.94.8) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#432](https://www.github.com/googleapis/java-core/issues/432)) ([289bcab](https://www.github.com/googleapis/java-core/commit/289bcab7d8eeffc1671c3cb4c3e8cc4843d90e1a))
+* typo ([#429](https://www.github.com/googleapis/java-core/issues/429)) ([f1ea2f8](https://www.github.com/googleapis/java-core/commit/f1ea2f8568bc7c5ed9b1d495bdd88446aa3c4135))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.10.3 ([#437](https://www.github.com/googleapis/java-core/issues/437)) ([e853d98](https://www.github.com/googleapis/java-core/commit/e853d98caca3d5f0312a0fb9bbab0ffe4a0ce6e2))
+* update dependency com.google.auth:google-auth-library-bom to v0.25.4 ([#428](https://www.github.com/googleapis/java-core/issues/428)) ([7cc490d](https://www.github.com/googleapis/java-core/commit/7cc490df5e3d24986e7032f5a93a1f844aaa66d5))
+* update dependency com.google.auth:google-auth-library-bom to v0.25.5 ([#435](https://www.github.com/googleapis/java-core/issues/435)) ([7f7f362](https://www.github.com/googleapis/java-core/commit/7f7f3624a3c436c61a366e5e172592838a4078e0))
+* update dependency org.threeten:threetenbp to v1.5.1 ([#433](https://www.github.com/googleapis/java-core/issues/433)) ([af08225](https://www.github.com/googleapis/java-core/commit/af08225277fb436a53a1a65d60a7be80b786da4b))
+
 ### [1.94.7](https://www.github.com/googleapis/java-core/compare/v1.94.6...v1.94.7) (2021-04-12)
 
 
