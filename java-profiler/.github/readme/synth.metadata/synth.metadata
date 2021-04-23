@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-profiler.git",
-        "sha": "77b0ed2c92a8669a5f37d859843b3da511a1dcaf"
+        "sha": "c93ba9f118896080b6497ee5173a2e5beb35c7ce"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "ff6b759fcb58f216f62b48d5be0bb85fafbc3bb2"
+        "sha": "5a6f30b8bb7672cf237c4f75d5aa96bfba170e7f"
       }
     }
   ]
