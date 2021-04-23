@@ -100,11 +100,12 @@ public final class MetricsProto {
           + "ection\022\031\n\025DIRECTION_UNSPECIFIED\020\000\022\t\n\005ABO"
           + "VE\020\001\022\t\n\005BELOW\020\002*Q\n\016SparkChartType\022 \n\034SPA"
           + "RK_CHART_TYPE_UNSPECIFIED\020\000\022\016\n\nSPARK_LIN"
-          + "E\020\001\022\r\n\tSPARK_BAR\020\002B\250\001\n\"com.google.monito"
+          + "E\020\001\022\r\n\tSPARK_BAR\020\002B\317\001\n\"com.google.monito"
           + "ring.dashboard.v1B\014MetricsProtoP\001ZGgoogl"
           + "e.golang.org/genproto/googleapis/monitor"
-          + "ing/dashboard/v1;dashboard\352\002(Google::Clo"
-          + "ud::Monitoring::Dashboard::V1b\006proto3"
+          + "ing/dashboard/v1;dashboard\312\002$Google\\Clou"
+          + "d\\Monitoring\\Dashboard\\V1\352\002(Google::Clou"
+          + "d::Monitoring::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

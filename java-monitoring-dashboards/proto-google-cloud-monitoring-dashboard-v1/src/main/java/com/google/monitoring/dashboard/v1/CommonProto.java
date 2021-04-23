@@ -90,12 +90,13 @@ public final class CommonProto {
           + "google.monitoring.dashboard.v1.Statistic"
           + "alTimeSeriesFilter.Method\022\027\n\017num_time_se"
           + "ries\030\002 \001(\005\"<\n\006Method\022\026\n\022METHOD_UNSPECIFI"
-          + "ED\020\000\022\032\n\026METHOD_CLUSTER_OUTLIER\020\001B\247\001\n\"com"
+          + "ED\020\000\022\032\n\026METHOD_CLUSTER_OUTLIER\020\001B\316\001\n\"com"
           + ".google.monitoring.dashboard.v1B\013CommonP"
           + "rotoP\001ZGgoogle.golang.org/genproto/googl"
-          + "eapis/monitoring/dashboard/v1;dashboard\352"
-          + "\002(Google::Cloud::Monitoring::Dashboard::"
-          + "V1b\006proto3"
+          + "eapis/monitoring/dashboard/v1;dashboard\312"
+          + "\002$Google\\Cloud\\Monitoring\\Dashboard\\V1\352\002"
+          + "(Google::Cloud::Monitoring::Dashboard::V"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

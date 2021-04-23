@@ -55,12 +55,13 @@ public final class DashboardsProto {
           + "\030\t \001(\0132,.google.monitoring.dashboard.v1."
           + "ColumnLayoutH\000:S\352AP\n#monitoring.googleap"
           + "is.com/Dashboard\022)projects/{project}/das"
-          + "hboards/{dashboard}B\010\n\006layoutB\253\001\n\"com.go"
+          + "hboards/{dashboard}B\010\n\006layoutB\322\001\n\"com.go"
           + "ogle.monitoring.dashboard.v1B\017Dashboards"
           + "ProtoP\001ZGgoogle.golang.org/genproto/goog"
           + "leapis/monitoring/dashboard/v1;dashboard"
-          + "\352\002(Google::Cloud::Monitoring::Dashboard:"
-          + ":V1b\006proto3"
+          + "\312\002$Google\\Cloud\\Monitoring\\Dashboard\\V1\352"
+          + "\002(Google::Cloud::Monitoring::Dashboard::"
+          + "V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

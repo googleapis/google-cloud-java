@@ -318,8 +318,12 @@ public final class DashboardsServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new custom dashboard. For examples on how you can use this API to create dashboards, see [Managing dashboards by API](https://cloud.google.com/monitoring/dashboards/api-dashboard).
-     * This method requires the `monitoring.dashboards.create` permission on the specified project. For more information about permissions, see [Cloud Identity and Access Management](https://cloud.google.com/iam).
+     * Creates a new custom dashboard. For examples on how you can use this API to
+     * create dashboards, see [Managing dashboards by
+     * API](/monitoring/dashboards/api-dashboard). This method requires the
+     * `monitoring.dashboards.create` permission on the specified project. For
+     * more information about permissions, see [Cloud Identity and Access
+     * Management](/iam).
      * </pre>
      */
     public void createDashboard(
@@ -465,8 +469,12 @@ public final class DashboardsServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new custom dashboard. For examples on how you can use this API to create dashboards, see [Managing dashboards by API](https://cloud.google.com/monitoring/dashboards/api-dashboard).
-     * This method requires the `monitoring.dashboards.create` permission on the specified project. For more information about permissions, see [Cloud Identity and Access Management](https://cloud.google.com/iam).
+     * Creates a new custom dashboard. For examples on how you can use this API to
+     * create dashboards, see [Managing dashboards by
+     * API](/monitoring/dashboards/api-dashboard). This method requires the
+     * `monitoring.dashboards.create` permission on the specified project. For
+     * more information about permissions, see [Cloud Identity and Access
+     * Management](/iam).
      * </pre>
      */
     public void createDashboard(
@@ -584,8 +592,12 @@ public final class DashboardsServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new custom dashboard. For examples on how you can use this API to create dashboards, see [Managing dashboards by API](https://cloud.google.com/monitoring/dashboards/api-dashboard).
-     * This method requires the `monitoring.dashboards.create` permission on the specified project. For more information about permissions, see [Cloud Identity and Access Management](https://cloud.google.com/iam).
+     * Creates a new custom dashboard. For examples on how you can use this API to
+     * create dashboards, see [Managing dashboards by
+     * API](/monitoring/dashboards/api-dashboard). This method requires the
+     * `monitoring.dashboards.create` permission on the specified project. For
+     * more information about permissions, see [Cloud Identity and Access
+     * Management](/iam).
      * </pre>
      */
     public com.google.monitoring.dashboard.v1.Dashboard createDashboard(
@@ -683,8 +695,12 @@ public final class DashboardsServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new custom dashboard. For examples on how you can use this API to create dashboards, see [Managing dashboards by API](https://cloud.google.com/monitoring/dashboards/api-dashboard).
-     * This method requires the `monitoring.dashboards.create` permission on the specified project. For more information about permissions, see [Cloud Identity and Access Management](https://cloud.google.com/iam).
+     * Creates a new custom dashboard. For examples on how you can use this API to
+     * create dashboards, see [Managing dashboards by
+     * API](/monitoring/dashboards/api-dashboard). This method requires the
+     * `monitoring.dashboards.create` permission on the specified project. For
+     * more information about permissions, see [Cloud Identity and Access
+     * Management](/iam).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
