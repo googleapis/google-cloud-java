@@ -25,8 +25,8 @@ package com.google.cloud.billing.budgets.v1beta1;
  * A budget is a plan that describes what you expect to spend on Cloud
  * projects, plus the rules to execute as spend is tracked against that plan,
  * (for example, send an alert when 90% of the target spend is met).
- * Currently all plans are monthly budgets so the usage period(s) tracked are
- * implied (calendar months of usage back-to-back).
+ * The budget time period is configurable, with options such as month (default),
+ * quarter, year, or custom time period.
  * </pre>
  *
  * Protobuf type {@code google.cloud.billing.budgets.v1beta1.Budget}
@@ -310,8 +310,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Filters that define which resources are used to compute
-   * the actual spend against the budget.
+   * Optional. Filters that define which resources are used to compute the
+   * actual spend against the budget amount, such as projects, services, and the
+   * budget's time period, as well as other filters.
    * </pre>
    *
    * <code>
@@ -328,8 +329,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Filters that define which resources are used to compute
-   * the actual spend against the budget.
+   * Optional. Filters that define which resources are used to compute the
+   * actual spend against the budget amount, such as projects, services, and the
+   * budget's time period, as well as other filters.
    * </pre>
    *
    * <code>
@@ -348,8 +350,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Filters that define which resources are used to compute
-   * the actual spend against the budget.
+   * Optional. Filters that define which resources are used to compute the
+   * actual spend against the budget amount, such as projects, services, and the
+   * budget's time period, as well as other filters.
    * </pre>
    *
    * <code>
@@ -849,8 +852,8 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * A budget is a plan that describes what you expect to spend on Cloud
    * projects, plus the rules to execute as spend is tracked against that plan,
    * (for example, send an alert when 90% of the target spend is met).
-   * Currently all plans are monthly budgets so the usage period(s) tracked are
-   * implied (calendar months of usage back-to-back).
+   * The budget time period is configurable, with options such as month (default),
+   * quarter, year, or custom time period.
    * </pre>
    *
    * Protobuf type {@code google.cloud.billing.budgets.v1beta1.Budget}
@@ -1344,8 +1347,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Filters that define which resources are used to compute
-     * the actual spend against the budget.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      * </pre>
      *
      * <code>
@@ -1361,8 +1365,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Filters that define which resources are used to compute
-     * the actual spend against the budget.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      * </pre>
      *
      * <code>
@@ -1384,8 +1389,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Filters that define which resources are used to compute
-     * the actual spend against the budget.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      * </pre>
      *
      * <code>
@@ -1409,8 +1415,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Filters that define which resources are used to compute
-     * the actual spend against the budget.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      * </pre>
      *
      * <code>
@@ -1432,8 +1439,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Filters that define which resources are used to compute
-     * the actual spend against the budget.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      * </pre>
      *
      * <code>
@@ -1461,8 +1469,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Filters that define which resources are used to compute
-     * the actual spend against the budget.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      * </pre>
      *
      * <code>
@@ -1484,8 +1493,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Filters that define which resources are used to compute
-     * the actual spend against the budget.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      * </pre>
      *
      * <code>
@@ -1501,8 +1511,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Filters that define which resources are used to compute
-     * the actual spend against the budget.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      * </pre>
      *
      * <code>
@@ -1522,8 +1533,9 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Filters that define which resources are used to compute
-     * the actual spend against the budget.
+     * Optional. Filters that define which resources are used to compute the
+     * actual spend against the budget amount, such as projects, services, and the
+     * budget's time period, as well as other filters.
      * </pre>
      *
      * <code>

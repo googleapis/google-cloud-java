@@ -83,8 +83,9 @@ public interface BudgetOrBuilder
    *
    *
    * <pre>
-   * Optional. Filters that define which resources are used to compute
-   * the actual spend against the budget.
+   * Optional. Filters that define which resources are used to compute the
+   * actual spend against the budget amount, such as projects, services, and the
+   * budget's time period, as well as other filters.
    * </pre>
    *
    * <code>
@@ -98,8 +99,9 @@ public interface BudgetOrBuilder
    *
    *
    * <pre>
-   * Optional. Filters that define which resources are used to compute
-   * the actual spend against the budget.
+   * Optional. Filters that define which resources are used to compute the
+   * actual spend against the budget amount, such as projects, services, and the
+   * budget's time period, as well as other filters.
    * </pre>
    *
    * <code>
@@ -113,8 +115,9 @@ public interface BudgetOrBuilder
    *
    *
    * <pre>
-   * Optional. Filters that define which resources are used to compute
-   * the actual spend against the budget.
+   * Optional. Filters that define which resources are used to compute the
+   * actual spend against the budget amount, such as projects, services, and the
+   * budget's time period, as well as other filters.
    * </pre>
    *
    * <code>

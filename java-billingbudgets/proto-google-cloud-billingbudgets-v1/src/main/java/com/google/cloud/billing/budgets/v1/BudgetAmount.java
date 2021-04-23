@@ -252,6 +252,10 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Use the last period's actual spend as the budget for the present period.
+   * LastPeriodAmount can only be set when the budget's time period is a
+   * [Filter.calendar_period][google.cloud.billing.budgets.v1.Filter.calendar_period].
+   * It cannot be set in combination with
+   * [Filter.custom_period][google.cloud.billing.budgets.v1.Filter.custom_period].
    * </pre>
    *
    * <code>.google.cloud.billing.budgets.v1.LastPeriodAmount last_period_amount = 2;</code>
@@ -267,6 +271,10 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Use the last period's actual spend as the budget for the present period.
+   * LastPeriodAmount can only be set when the budget's time period is a
+   * [Filter.calendar_period][google.cloud.billing.budgets.v1.Filter.calendar_period].
+   * It cannot be set in combination with
+   * [Filter.custom_period][google.cloud.billing.budgets.v1.Filter.custom_period].
    * </pre>
    *
    * <code>.google.cloud.billing.budgets.v1.LastPeriodAmount last_period_amount = 2;</code>
@@ -285,6 +293,10 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Use the last period's actual spend as the budget for the present period.
+   * LastPeriodAmount can only be set when the budget's time period is a
+   * [Filter.calendar_period][google.cloud.billing.budgets.v1.Filter.calendar_period].
+   * It cannot be set in combination with
+   * [Filter.custom_period][google.cloud.billing.budgets.v1.Filter.custom_period].
    * </pre>
    *
    * <code>.google.cloud.billing.budgets.v1.LastPeriodAmount last_period_amount = 2;</code>
@@ -931,6 +943,10 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Use the last period's actual spend as the budget for the present period.
+     * LastPeriodAmount can only be set when the budget's time period is a
+     * [Filter.calendar_period][google.cloud.billing.budgets.v1.Filter.calendar_period].
+     * It cannot be set in combination with
+     * [Filter.custom_period][google.cloud.billing.budgets.v1.Filter.custom_period].
      * </pre>
      *
      * <code>.google.cloud.billing.budgets.v1.LastPeriodAmount last_period_amount = 2;</code>
@@ -946,6 +962,10 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Use the last period's actual spend as the budget for the present period.
+     * LastPeriodAmount can only be set when the budget's time period is a
+     * [Filter.calendar_period][google.cloud.billing.budgets.v1.Filter.calendar_period].
+     * It cannot be set in combination with
+     * [Filter.custom_period][google.cloud.billing.budgets.v1.Filter.custom_period].
      * </pre>
      *
      * <code>.google.cloud.billing.budgets.v1.LastPeriodAmount last_period_amount = 2;</code>
@@ -971,6 +991,10 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Use the last period's actual spend as the budget for the present period.
+     * LastPeriodAmount can only be set when the budget's time period is a
+     * [Filter.calendar_period][google.cloud.billing.budgets.v1.Filter.calendar_period].
+     * It cannot be set in combination with
+     * [Filter.custom_period][google.cloud.billing.budgets.v1.Filter.custom_period].
      * </pre>
      *
      * <code>.google.cloud.billing.budgets.v1.LastPeriodAmount last_period_amount = 2;</code>
@@ -993,6 +1017,10 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Use the last period's actual spend as the budget for the present period.
+     * LastPeriodAmount can only be set when the budget's time period is a
+     * [Filter.calendar_period][google.cloud.billing.budgets.v1.Filter.calendar_period].
+     * It cannot be set in combination with
+     * [Filter.custom_period][google.cloud.billing.budgets.v1.Filter.custom_period].
      * </pre>
      *
      * <code>.google.cloud.billing.budgets.v1.LastPeriodAmount last_period_amount = 2;</code>
@@ -1013,6 +1041,10 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Use the last period's actual spend as the budget for the present period.
+     * LastPeriodAmount can only be set when the budget's time period is a
+     * [Filter.calendar_period][google.cloud.billing.budgets.v1.Filter.calendar_period].
+     * It cannot be set in combination with
+     * [Filter.custom_period][google.cloud.billing.budgets.v1.Filter.custom_period].
      * </pre>
      *
      * <code>.google.cloud.billing.budgets.v1.LastPeriodAmount last_period_amount = 2;</code>
@@ -1046,6 +1078,10 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Use the last period's actual spend as the budget for the present period.
+     * LastPeriodAmount can only be set when the budget's time period is a
+     * [Filter.calendar_period][google.cloud.billing.budgets.v1.Filter.calendar_period].
+     * It cannot be set in combination with
+     * [Filter.custom_period][google.cloud.billing.budgets.v1.Filter.custom_period].
      * </pre>
      *
      * <code>.google.cloud.billing.budgets.v1.LastPeriodAmount last_period_amount = 2;</code>
@@ -1071,6 +1107,10 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Use the last period's actual spend as the budget for the present period.
+     * LastPeriodAmount can only be set when the budget's time period is a
+     * [Filter.calendar_period][google.cloud.billing.budgets.v1.Filter.calendar_period].
+     * It cannot be set in combination with
+     * [Filter.custom_period][google.cloud.billing.budgets.v1.Filter.custom_period].
      * </pre>
      *
      * <code>.google.cloud.billing.budgets.v1.LastPeriodAmount last_period_amount = 2;</code>
@@ -1084,6 +1124,10 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Use the last period's actual spend as the budget for the present period.
+     * LastPeriodAmount can only be set when the budget's time period is a
+     * [Filter.calendar_period][google.cloud.billing.budgets.v1.Filter.calendar_period].
+     * It cannot be set in combination with
+     * [Filter.custom_period][google.cloud.billing.budgets.v1.Filter.custom_period].
      * </pre>
      *
      * <code>.google.cloud.billing.budgets.v1.LastPeriodAmount last_period_amount = 2;</code>
@@ -1105,6 +1149,10 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Use the last period's actual spend as the budget for the present period.
+     * LastPeriodAmount can only be set when the budget's time period is a
+     * [Filter.calendar_period][google.cloud.billing.budgets.v1.Filter.calendar_period].
+     * It cannot be set in combination with
+     * [Filter.custom_period][google.cloud.billing.budgets.v1.Filter.custom_period].
      * </pre>
      *
      * <code>.google.cloud.billing.budgets.v1.LastPeriodAmount last_period_amount = 2;</code>

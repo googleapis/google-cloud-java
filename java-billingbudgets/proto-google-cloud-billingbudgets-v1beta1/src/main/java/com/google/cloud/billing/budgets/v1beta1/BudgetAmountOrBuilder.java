@@ -30,7 +30,7 @@ public interface BudgetAmountOrBuilder
    * A specified amount to use as the budget.
    * `currency_code` is optional. If specified when creating a budget, it must
    * match the currency of the billing account. If specified when updating a
-   * budget, it must match the existing budget currency_code.
+   * budget, it must match the currency_code of the existing budget.
    * The `currency_code` is provided on output.
    * </pre>
    *
@@ -46,7 +46,7 @@ public interface BudgetAmountOrBuilder
    * A specified amount to use as the budget.
    * `currency_code` is optional. If specified when creating a budget, it must
    * match the currency of the billing account. If specified when updating a
-   * budget, it must match the existing budget currency_code.
+   * budget, it must match the currency_code of the existing budget.
    * The `currency_code` is provided on output.
    * </pre>
    *
@@ -62,7 +62,7 @@ public interface BudgetAmountOrBuilder
    * A specified amount to use as the budget.
    * `currency_code` is optional. If specified when creating a budget, it must
    * match the currency of the billing account. If specified when updating a
-   * budget, it must match the existing budget currency_code.
+   * budget, it must match the currency_code of the existing budget.
    * The `currency_code` is provided on output.
    * </pre>
    *
@@ -75,6 +75,10 @@ public interface BudgetAmountOrBuilder
    *
    * <pre>
    * Use the last period's actual spend as the budget for the present period.
+   * LastPeriodAmount can only be set when the budget's time period is a
+   * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period].
+   * It cannot be set in combination with
+   * [Filter.custom_period][google.cloud.billing.budgets.v1beta1.Filter.custom_period].
    * </pre>
    *
    * <code>.google.cloud.billing.budgets.v1beta1.LastPeriodAmount last_period_amount = 2;</code>
@@ -87,6 +91,10 @@ public interface BudgetAmountOrBuilder
    *
    * <pre>
    * Use the last period's actual spend as the budget for the present period.
+   * LastPeriodAmount can only be set when the budget's time period is a
+   * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period].
+   * It cannot be set in combination with
+   * [Filter.custom_period][google.cloud.billing.budgets.v1beta1.Filter.custom_period].
    * </pre>
    *
    * <code>.google.cloud.billing.budgets.v1beta1.LastPeriodAmount last_period_amount = 2;</code>
@@ -99,6 +107,10 @@ public interface BudgetAmountOrBuilder
    *
    * <pre>
    * Use the last period's actual spend as the budget for the present period.
+   * LastPeriodAmount can only be set when the budget's time period is a
+   * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period].
+   * It cannot be set in combination with
+   * [Filter.custom_period][google.cloud.billing.budgets.v1beta1.Filter.custom_period].
    * </pre>
    *
    * <code>.google.cloud.billing.budgets.v1beta1.LastPeriodAmount last_period_amount = 2;</code>

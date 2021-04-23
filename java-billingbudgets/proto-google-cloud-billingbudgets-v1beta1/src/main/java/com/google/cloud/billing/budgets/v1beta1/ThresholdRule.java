@@ -158,6 +158,10 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Use forecasted spend for the period as the basis for comparison against
      * the threshold.
+     * FORECASTED_SPEND can only be set when the budget's time period is a
+     * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period].
+     * It cannot be set in combination with
+     * [Filter.custom_period][google.cloud.billing.budgets.v1beta1.Filter.custom_period].
      * </pre>
      *
      * <code>FORECASTED_SPEND = 2;</code>
@@ -192,6 +196,10 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Use forecasted spend for the period as the basis for comparison against
      * the threshold.
+     * FORECASTED_SPEND can only be set when the budget's time period is a
+     * [Filter.calendar_period][google.cloud.billing.budgets.v1beta1.Filter.calendar_period].
+     * It cannot be set in combination with
+     * [Filter.custom_period][google.cloud.billing.budgets.v1beta1.Filter.custom_period].
      * </pre>
      *
      * <code>FORECASTED_SPEND = 2;</code>

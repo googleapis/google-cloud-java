@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-billingbudgets.git",
-        "sha": "71719c52e79bc05150785939a3959ad756b74db8"
+        "sha": "f7b7a72d435ed25e6b18da3e16f66b0a32ca916b"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1305ca41d554eb0725237561e34129373bb8cbc1",
-        "internalRef": "362856902"
+        "sha": "dd6ba75f1ef4175d3f34028e2c60aaa04a0e1b65",
+        "internalRef": "368871890"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1305ca41d554eb0725237561e34129373bb8cbc1",
-        "internalRef": "362856902"
+        "sha": "dd6ba75f1ef4175d3f34028e2c60aaa04a0e1b65",
+        "internalRef": "368871890"
       }
     },
     {
@@ -153,8 +153,11 @@
     "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/BudgetName.java",
     "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/BudgetOrBuilder.java",
     "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/BudgetServiceProto.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/CalendarPeriod.java",
     "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/CreateBudgetRequest.java",
     "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/CreateBudgetRequestOrBuilder.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/CustomPeriod.java",
+    "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/CustomPeriodOrBuilder.java",
     "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/DeleteBudgetRequest.java",
     "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/DeleteBudgetRequestOrBuilder.java",
     "proto-google-cloud-billingbudgets-v1/src/main/java/com/google/cloud/billing/budgets/v1/Filter.java",
@@ -185,8 +188,11 @@
     "proto-google-cloud-billingbudgets-v1beta1/src/main/java/com/google/cloud/billing/budgets/v1beta1/BudgetName.java",
     "proto-google-cloud-billingbudgets-v1beta1/src/main/java/com/google/cloud/billing/budgets/v1beta1/BudgetOrBuilder.java",
     "proto-google-cloud-billingbudgets-v1beta1/src/main/java/com/google/cloud/billing/budgets/v1beta1/BudgetServiceOuterClass.java",
+    "proto-google-cloud-billingbudgets-v1beta1/src/main/java/com/google/cloud/billing/budgets/v1beta1/CalendarPeriod.java",
     "proto-google-cloud-billingbudgets-v1beta1/src/main/java/com/google/cloud/billing/budgets/v1beta1/CreateBudgetRequest.java",
     "proto-google-cloud-billingbudgets-v1beta1/src/main/java/com/google/cloud/billing/budgets/v1beta1/CreateBudgetRequestOrBuilder.java",
+    "proto-google-cloud-billingbudgets-v1beta1/src/main/java/com/google/cloud/billing/budgets/v1beta1/CustomPeriod.java",
+    "proto-google-cloud-billingbudgets-v1beta1/src/main/java/com/google/cloud/billing/budgets/v1beta1/CustomPeriodOrBuilder.java",
     "proto-google-cloud-billingbudgets-v1beta1/src/main/java/com/google/cloud/billing/budgets/v1beta1/DeleteBudgetRequest.java",
     "proto-google-cloud-billingbudgets-v1beta1/src/main/java/com/google/cloud/billing/budgets/v1beta1/DeleteBudgetRequestOrBuilder.java",
     "proto-google-cloud-billingbudgets-v1beta1/src/main/java/com/google/cloud/billing/budgets/v1beta1/Filter.java",
