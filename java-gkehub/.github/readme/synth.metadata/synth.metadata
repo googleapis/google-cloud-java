@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-gkehub.git",
+        "sha": "be96b8bffa7fee6b9d68988fe14164bfc0ab6b5e"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "ff6b759fcb58f216f62b48d5be0bb85fafbc3bb2"
+      }
+    }
+  ]
+}
