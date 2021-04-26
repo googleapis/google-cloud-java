@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.32.3](https://www.github.com/googleapis/java-tasks/compare/v1.32.2...v1.32.3) (2021-04-26)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#410](https://www.github.com/googleapis/java-tasks/issues/410)) ([47b792a](https://www.github.com/googleapis/java-tasks/commit/47b792aa840f68e506d56aa9123464628d590bfd))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#412](https://www.github.com/googleapis/java-tasks/issues/412)) ([4b4dcd7](https://www.github.com/googleapis/java-tasks/commit/4b4dcd70ee906f8ea7e0bf8dc0b51f79d8cf7711))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#421](https://www.github.com/googleapis/java-tasks/issues/421)) ([d6f6d73](https://www.github.com/googleapis/java-tasks/commit/d6f6d73658aa8d4cbb793852239ae93158220fe3))
+
 ### [1.32.2](https://www.github.com/googleapis/java-tasks/compare/v1.32.1...v1.32.2) (2021-04-12)
 
 
