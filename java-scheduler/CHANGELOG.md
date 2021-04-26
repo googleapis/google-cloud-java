@@ -1,5 +1,20 @@
 # Changelog
 
+### [1.23.12](https://www.github.com/googleapis/java-scheduler/compare/v1.23.11...v1.23.12) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#415](https://www.github.com/googleapis/java-scheduler/issues/415)) ([fb46d51](https://www.github.com/googleapis/java-scheduler/commit/fb46d5155b11597e52f24e521a9452685f0fd2da))
+* typo ([#412](https://www.github.com/googleapis/java-scheduler/issues/412)) ([74693b2](https://www.github.com/googleapis/java-scheduler/commit/74693b2f1d29abb8723618e98a9e4272defc913e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.112.1 ([#411](https://www.github.com/googleapis/java-scheduler/issues/411)) ([c93ab79](https://www.github.com/googleapis/java-scheduler/commit/c93ab79c84178d7d84a37868749cd2df71666bad))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#418](https://www.github.com/googleapis/java-scheduler/issues/418)) ([83f1462](https://www.github.com/googleapis/java-scheduler/commit/83f1462e0d4fa324a538508a454096488d1eb2a2))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#421](https://www.github.com/googleapis/java-scheduler/issues/421)) ([49326a1](https://www.github.com/googleapis/java-scheduler/commit/49326a10a6df6f5a9bbbcee424a33a0b54acbeee))
+
 ### [1.23.11](https://www.github.com/googleapis/java-scheduler/compare/v1.23.10...v1.23.11) (2021-04-09)
 
 
