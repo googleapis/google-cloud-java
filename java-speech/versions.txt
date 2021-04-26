@@ -1,10 +1,10 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-speech:1.27.1:1.27.1
-grpc-google-cloud-speech-v1:1.27.1:1.27.1
-grpc-google-cloud-speech-v1beta1:0.80.1:0.80.1
-grpc-google-cloud-speech-v1p1beta1:0.80.1:0.80.1
-proto-google-cloud-speech-v1:1.27.1:1.27.1
-proto-google-cloud-speech-v1beta1:0.80.1:0.80.1
-proto-google-cloud-speech-v1p1beta1:0.80.1:0.80.1
+google-cloud-speech:1.27.1:1.27.2-SNAPSHOT
+grpc-google-cloud-speech-v1:1.27.1:1.27.2-SNAPSHOT
+grpc-google-cloud-speech-v1beta1:0.80.1:0.80.2-SNAPSHOT
+grpc-google-cloud-speech-v1p1beta1:0.80.1:0.80.2-SNAPSHOT
+proto-google-cloud-speech-v1:1.27.1:1.27.2-SNAPSHOT
+proto-google-cloud-speech-v1beta1:0.80.1:0.80.2-SNAPSHOT
+proto-google-cloud-speech-v1p1beta1:0.80.1:0.80.2-SNAPSHOT
