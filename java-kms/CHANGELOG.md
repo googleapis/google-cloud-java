@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.41.3](https://www.github.com/googleapis/java-kms/compare/v1.41.2...v1.41.3) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#461](https://www.github.com/googleapis/java-kms/issues/461)) ([58392fc](https://www.github.com/googleapis/java-kms/commit/58392fcaa2e0e10fd9a0292d5f6f38717669d5d6))
+* typo ([#456](https://www.github.com/googleapis/java-kms/issues/456)) ([2ebb476](https://www.github.com/googleapis/java-kms/commit/2ebb4765abb8dfe9b1f2ea91f9219279e786d065))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#464](https://www.github.com/googleapis/java-kms/issues/464)) ([a73508e](https://www.github.com/googleapis/java-kms/commit/a73508e7ff5833fe0a6fa61b34eea813a06677c4))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#469](https://www.github.com/googleapis/java-kms/issues/469)) ([a4428c0](https://www.github.com/googleapis/java-kms/commit/a4428c03b5970387e1de3766eee1f10fa120935c))
+
 ### [1.41.2](https://www.github.com/googleapis/java-kms/compare/v1.41.1...v1.41.2) (2021-04-12)
 
 
