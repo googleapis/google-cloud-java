@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.102.2](https://www.github.com/googleapis/java-language/compare/v1.102.1...v1.102.2) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#435](https://www.github.com/googleapis/java-language/issues/435)) ([bd56c26](https://www.github.com/googleapis/java-language/commit/bd56c26dfd0013a961a0d19b049c16760dd74247))
+* typo ([#432](https://www.github.com/googleapis/java-language/issues/432)) ([64d69c8](https://www.github.com/googleapis/java-language/commit/64d69c879dc6be2c56aff5c01ede91ca5680a466))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#438](https://www.github.com/googleapis/java-language/issues/438)) ([f556fd2](https://www.github.com/googleapis/java-language/commit/f556fd29bc69008713fc5f5e5a6f0a9117d3eeb4))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#441](https://www.github.com/googleapis/java-language/issues/441)) ([5a769e1](https://www.github.com/googleapis/java-language/commit/5a769e1069d4b9444651257fce89a76c2b96aa57))
+
 ### [1.102.1](https://www.github.com/googleapis/java-language/compare/v1.102.0...v1.102.1) (2021-04-09)
 
 
