@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.0.4](https://www.github.com/googleapis/java-memcache/compare/v1.0.3...v1.0.4) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#371](https://www.github.com/googleapis/java-memcache/issues/371)) ([825c818](https://www.github.com/googleapis/java-memcache/commit/825c818b892722a47b0e7a3516c98e9aea68146d))
+* typo ([#368](https://www.github.com/googleapis/java-memcache/issues/368)) ([ea42b04](https://www.github.com/googleapis/java-memcache/commit/ea42b044269ba6f0f1f3ece7e6074b38a37b2361))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#374](https://www.github.com/googleapis/java-memcache/issues/374)) ([6260b65](https://www.github.com/googleapis/java-memcache/commit/6260b652ccd8c189e77fcb68ac5271433492fd20))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#377](https://www.github.com/googleapis/java-memcache/issues/377)) ([5c897ba](https://www.github.com/googleapis/java-memcache/commit/5c897ba476a58f9776888406b86ce8a68c5cdc96))
+
 ### [1.0.3](https://www.github.com/googleapis/java-memcache/compare/v1.0.2...v1.0.3) (2021-04-09)
 
 
