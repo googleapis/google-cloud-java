@@ -1,5 +1,20 @@
 # Changelog
 
+### [1.6.2](https://www.github.com/googleapis/java-video-intelligence/compare/v1.6.1...v1.6.2) (2021-04-24)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#470](https://www.github.com/googleapis/java-video-intelligence/issues/470)) ([e3b5848](https://www.github.com/googleapis/java-video-intelligence/commit/e3b584872925905d406d0a6df6fe29e1a7771562))
+* typo ([#465](https://www.github.com/googleapis/java-video-intelligence/issues/465)) ([a1c3164](https://www.github.com/googleapis/java-video-intelligence/commit/a1c3164ddce00a65b36c0e65f868c25d2e47d96f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#473](https://www.github.com/googleapis/java-video-intelligence/issues/473)) ([129bc13](https://www.github.com/googleapis/java-video-intelligence/commit/129bc130ba79036914f02d6820baf7631c6765d2))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#484](https://www.github.com/googleapis/java-video-intelligence/issues/484)) ([64fc2cf](https://www.github.com/googleapis/java-video-intelligence/commit/64fc2cfc5140f30b044b74954d1a7915bc44285b))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.15 ([#467](https://www.github.com/googleapis/java-video-intelligence/issues/467)) ([a324ced](https://www.github.com/googleapis/java-video-intelligence/commit/a324ced93c9b8a8b20b24f4e7662b373dd73cf4d))
+
 ### [1.6.1](https://www.github.com/googleapis/java-video-intelligence/compare/v1.6.0...v1.6.1) (2021-04-09)
 
 
