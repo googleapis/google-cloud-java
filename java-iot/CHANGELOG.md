@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.2.2](https://www.github.com/googleapis/java-iot/compare/v1.2.1...v1.2.2) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#430](https://www.github.com/googleapis/java-iot/issues/430)) ([f210f43](https://www.github.com/googleapis/java-iot/commit/f210f43821fc883503b9f453c35b9b101e7784eb))
+* typo ([#427](https://www.github.com/googleapis/java-iot/issues/427)) ([e7a6dfb](https://www.github.com/googleapis/java-iot/commit/e7a6dfb3c5cecb18dce4cfb3c74c0f7c126da4b9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#433](https://www.github.com/googleapis/java-iot/issues/433)) ([88a624c](https://www.github.com/googleapis/java-iot/commit/88a624c019fe00e3f8c5d9c1200370d78b8bc3d9))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#436](https://www.github.com/googleapis/java-iot/issues/436)) ([9df5b96](https://www.github.com/googleapis/java-iot/commit/9df5b962e152c03dbc2bec65c786b5ddff3ee401))
+
 ### [1.2.1](https://www.github.com/googleapis/java-iot/compare/v1.2.0...v1.2.1) (2021-04-09)
 
 
