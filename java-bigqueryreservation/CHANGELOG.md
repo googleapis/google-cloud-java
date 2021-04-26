@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.1.4](https://www.github.com/googleapis/java-bigqueryreservation/compare/v1.1.3...v1.1.4) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#370](https://www.github.com/googleapis/java-bigqueryreservation/issues/370)) ([f5023dc](https://www.github.com/googleapis/java-bigqueryreservation/commit/f5023dc4cc0807dfe5d9bf578ddd0c3c0dd4d808))
+* typo ([#367](https://www.github.com/googleapis/java-bigqueryreservation/issues/367)) ([5efec69](https://www.github.com/googleapis/java-bigqueryreservation/commit/5efec6978ad4b21e5cdca6bd1d5ace3fa8c6375a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#372](https://www.github.com/googleapis/java-bigqueryreservation/issues/372)) ([1ad9ed7](https://www.github.com/googleapis/java-bigqueryreservation/commit/1ad9ed78cb6179cfa0ac2b177f0742ac71281726))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#376](https://www.github.com/googleapis/java-bigqueryreservation/issues/376)) ([2736ca8](https://www.github.com/googleapis/java-bigqueryreservation/commit/2736ca8b0e314e1d7d247b2ded79b98d81282a7e))
+
 ### [1.1.3](https://www.github.com/googleapis/java-bigqueryreservation/compare/v1.1.2...v1.1.3) (2021-04-09)
 
 
