@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.1.14](https://www.github.com/googleapis/java-redis/compare/v1.1.13...v1.1.14) (2021-04-24)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#389](https://www.github.com/googleapis/java-redis/issues/389)) ([353a041](https://www.github.com/googleapis/java-redis/commit/353a041103f43cba5c15692e52b6e9b140937655))
+* typo ([#386](https://www.github.com/googleapis/java-redis/issues/386)) ([acef837](https://www.github.com/googleapis/java-redis/commit/acef837542ba0fc8e75fb33a5ef8171d69db3edb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#391](https://www.github.com/googleapis/java-redis/issues/391)) ([49a4a03](https://www.github.com/googleapis/java-redis/commit/49a4a035ab6fc9a42c1e633fe42908a881236bcd))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#394](https://www.github.com/googleapis/java-redis/issues/394)) ([cae8bb0](https://www.github.com/googleapis/java-redis/commit/cae8bb06faa046f4619fb30e037315edf3f938f1))
+
 ### [1.1.13](https://www.github.com/googleapis/java-redis/compare/v1.1.12...v1.1.13) (2021-04-09)
 
 
