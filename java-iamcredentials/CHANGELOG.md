@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.2.4](https://www.github.com/googleapis/java-iamcredentials/compare/v1.2.3...v1.2.4) (2021-04-24)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#413](https://www.github.com/googleapis/java-iamcredentials/issues/413)) ([9158aa5](https://www.github.com/googleapis/java-iamcredentials/commit/9158aa50f013bb448b32ccc0969947e3ec01dfaa))
+* typo ([#410](https://www.github.com/googleapis/java-iamcredentials/issues/410)) ([1c4f634](https://www.github.com/googleapis/java-iamcredentials/commit/1c4f634eb16d5a5d543cdca4d8ebb78b3829ab2a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#416](https://www.github.com/googleapis/java-iamcredentials/issues/416)) ([0f4faeb](https://www.github.com/googleapis/java-iamcredentials/commit/0f4faeb1c15d38ead5d77f8ca6da320033cfabbc))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#419](https://www.github.com/googleapis/java-iamcredentials/issues/419)) ([eaf0a87](https://www.github.com/googleapis/java-iamcredentials/commit/eaf0a87f88fb831826a4dd77fa7f67de4e14cf28))
+
 ### [1.2.3](https://www.github.com/googleapis/java-iamcredentials/compare/v1.2.2...v1.2.3) (2021-04-09)
 
 
