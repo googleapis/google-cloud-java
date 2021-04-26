@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.1.5](https://www.github.com/googleapis/java-websecurityscanner/compare/v1.1.4...v1.1.5) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#429](https://www.github.com/googleapis/java-websecurityscanner/issues/429)) ([6bcc6cd](https://www.github.com/googleapis/java-websecurityscanner/commit/6bcc6cd78046c2258a3d25de60c297c3699e1a5f))
+* typo ([#426](https://www.github.com/googleapis/java-websecurityscanner/issues/426)) ([2c8250b](https://www.github.com/googleapis/java-websecurityscanner/commit/2c8250bdbc2c800ebd13eed3e1cebcc7439580cf))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#432](https://www.github.com/googleapis/java-websecurityscanner/issues/432)) ([c547e0c](https://www.github.com/googleapis/java-websecurityscanner/commit/c547e0c81a2ddf35ae38b2c076a1df9bc91062eb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#435](https://www.github.com/googleapis/java-websecurityscanner/issues/435)) ([1ea6cc2](https://www.github.com/googleapis/java-websecurityscanner/commit/1ea6cc2c41a82007195d970d3f0fce97d4243d21))
+
 ### [1.1.4](https://www.github.com/googleapis/java-websecurityscanner/compare/v1.1.3...v1.1.4) (2021-04-09)
 
 
