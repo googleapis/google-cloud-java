@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.4.2](https://www.github.com/googleapis/java-automl/compare/v1.4.1...v1.4.2) (2021-04-26)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#542](https://www.github.com/googleapis/java-automl/issues/542)) ([8648a87](https://www.github.com/googleapis/java-automl/commit/8648a8745fba3e8cc49f7db5567e3845b66a1eff))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#546](https://www.github.com/googleapis/java-automl/issues/546)) ([3653789](https://www.github.com/googleapis/java-automl/commit/3653789390ed6dacfafc3be8fd635e088d204fd0))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#667](https://www.github.com/googleapis/java-automl/issues/667)) ([c08cd99](https://www.github.com/googleapis/java-automl/commit/c08cd99c27efeca0b0c5912ee7d19777bf59796d))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.15 ([#537](https://www.github.com/googleapis/java-automl/issues/537)) ([c2436df](https://www.github.com/googleapis/java-automl/commit/c2436df85b687452659f3cae7ed088988bb1d775))
+
 ### [1.4.1](https://www.github.com/googleapis/java-automl/compare/v1.4.0...v1.4.1) (2021-04-12)
 
 
