@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-billingbudgets/compare/v1.0.8...v1.1.0) (2021-04-23)
+
+
+### Features
+
+* Added support for configurable budget time period ([#447](https://www.github.com/googleapis/java-billingbudgets/issues/447)) ([df1d0db](https://www.github.com/googleapis/java-billingbudgets/commit/df1d0dbde2b2472f1d313970bad2b87d4f200555))
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#445](https://www.github.com/googleapis/java-billingbudgets/issues/445)) ([f7b7a72](https://www.github.com/googleapis/java-billingbudgets/commit/f7b7a72d435ed25e6b18da3e16f66b0a32ca916b))
+* typo ([#442](https://www.github.com/googleapis/java-billingbudgets/issues/442)) ([54bdf56](https://www.github.com/googleapis/java-billingbudgets/commit/54bdf56881b8a23c1a8d9347dbb733c22f322da5))
+* Updated some documentation links ([df1d0db](https://www.github.com/googleapis/java-billingbudgets/commit/df1d0dbde2b2472f1d313970bad2b87d4f200555))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#450](https://www.github.com/googleapis/java-billingbudgets/issues/450)) ([48c31aa](https://www.github.com/googleapis/java-billingbudgets/commit/48c31aaea1df955b0916a2362b91ff6c982963be))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#453](https://www.github.com/googleapis/java-billingbudgets/issues/453)) ([cdd30b8](https://www.github.com/googleapis/java-billingbudgets/commit/cdd30b86294387c5ed40fbc622049b52e5ae6ca3))
+* update dependency org.easymock:easymock to v4.3 ([#448](https://www.github.com/googleapis/java-billingbudgets/issues/448)) ([60ceb92](https://www.github.com/googleapis/java-billingbudgets/commit/60ceb92b79051d304c72502e72afd52f4a8de9b9))
+
 ### [1.0.8](https://www.github.com/googleapis/java-billingbudgets/compare/v1.0.7...v1.0.8) (2021-04-09)
 
 
