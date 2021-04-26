@@ -1,5 +1,20 @@
 # Changelog
 
+### [1.4.2](https://www.github.com/googleapis/java-securitycenter/compare/v1.4.1...v1.4.2) (2021-04-24)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#448](https://www.github.com/googleapis/java-securitycenter/issues/448)) ([6516758](https://www.github.com/googleapis/java-securitycenter/commit/65167588563e151adea23c5fe52e56332989aeed))
+* typo ([#444](https://www.github.com/googleapis/java-securitycenter/issues/444)) ([8cf20d4](https://www.github.com/googleapis/java-securitycenter/commit/8cf20d454bf1f0b04a6c4f46cddba2b9603ea74f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub to v1.112.1 ([#443](https://www.github.com/googleapis/java-securitycenter/issues/443)) ([2176794](https://www.github.com/googleapis/java-securitycenter/commit/21767947e7461e60b179ee1a516a08c88d37de70))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#451](https://www.github.com/googleapis/java-securitycenter/issues/451)) ([636161d](https://www.github.com/googleapis/java-securitycenter/commit/636161d01594cb077c2151e3c791afb6c069b1f9))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#468](https://www.github.com/googleapis/java-securitycenter/issues/468)) ([81f841b](https://www.github.com/googleapis/java-securitycenter/commit/81f841becb6a5d270155df076f66ec04e32b060f))
+
 ### [1.4.1](https://www.github.com/googleapis/java-securitycenter/compare/v1.4.0...v1.4.1) (2021-04-12)
 
 
