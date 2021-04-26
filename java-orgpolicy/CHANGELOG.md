@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.1.4](https://www.github.com/googleapis/java-orgpolicy/compare/v1.1.3...v1.1.4) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#176](https://www.github.com/googleapis/java-orgpolicy/issues/176)) ([fb997f2](https://www.github.com/googleapis/java-orgpolicy/commit/fb997f26e9e53299732d19731db75f480ece02f2))
+* typo ([#173](https://www.github.com/googleapis/java-orgpolicy/issues/173)) ([0f3301a](https://www.github.com/googleapis/java-orgpolicy/commit/0f3301a329447f583f33fa3f03a41c9315f6a599))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#177](https://www.github.com/googleapis/java-orgpolicy/issues/177)) ([eb49662](https://www.github.com/googleapis/java-orgpolicy/commit/eb49662fa9ff36a79143b28d80160a27cf481613))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#180](https://www.github.com/googleapis/java-orgpolicy/issues/180)) ([91330da](https://www.github.com/googleapis/java-orgpolicy/commit/91330daa6a9dae62c41bad0c703123e287a00ccd))
+
 ### [1.1.3](https://www.github.com/googleapis/java-orgpolicy/compare/v1.1.2...v1.1.3) (2021-04-09)
 
 
