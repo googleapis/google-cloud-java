@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.1.3](https://www.github.com/googleapis/java-grafeas/compare/v1.1.2...v1.1.3) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#285](https://www.github.com/googleapis/java-grafeas/issues/285)) ([0ab2e2d](https://www.github.com/googleapis/java-grafeas/commit/0ab2e2dc969bce32518f565c16cb6c4ca5073eaf))
+* typo ([#282](https://www.github.com/googleapis/java-grafeas/issues/282)) ([546485b](https://www.github.com/googleapis/java-grafeas/commit/546485bf8f81c98f609b0ffe0360d789f9b85585))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#286](https://www.github.com/googleapis/java-grafeas/issues/286)) ([517fc37](https://www.github.com/googleapis/java-grafeas/commit/517fc3776fcee8870f835b0d8873b87125550464))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#289](https://www.github.com/googleapis/java-grafeas/issues/289)) ([17db4aa](https://www.github.com/googleapis/java-grafeas/commit/17db4aa02de2beee1545fa7cdec93e8dc0867e95))
+
 ### [1.1.2](https://www.github.com/googleapis/java-grafeas/compare/v1.1.1...v1.1.2) (2021-04-09)
 
 
