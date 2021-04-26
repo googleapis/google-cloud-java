@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.5.1](https://www.github.com/googleapis/java-secretmanager/compare/v1.5.0...v1.5.1) (2021-04-26)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#445](https://www.github.com/googleapis/java-secretmanager/issues/445)) ([dda6b9a](https://www.github.com/googleapis/java-secretmanager/commit/dda6b9ab661a34db0263fbb74dca1f3d8c45d5eb))
+* typo ([#440](https://www.github.com/googleapis/java-secretmanager/issues/440)) ([a74fda1](https://www.github.com/googleapis/java-secretmanager/commit/a74fda1c3e2ebb34ad1d5711bb753c7ff8c25455))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#449](https://www.github.com/googleapis/java-secretmanager/issues/449)) ([4e6371f](https://www.github.com/googleapis/java-secretmanager/commit/4e6371f2a8684f6840850f9c4f7df24eab62d54d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#459](https://www.github.com/googleapis/java-secretmanager/issues/459)) ([f39f53b](https://www.github.com/googleapis/java-secretmanager/commit/f39f53b899acf17fe0c786c2cf5097f948ecf53d))
+
 ## [1.5.0](https://www.github.com/googleapis/java-secretmanager/compare/v1.4.2...v1.5.0) (2021-04-12)
 
 
