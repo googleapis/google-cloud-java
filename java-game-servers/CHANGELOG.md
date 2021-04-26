@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.1.2](https://www.github.com/googleapis/java-game-servers/compare/v1.1.1...v1.1.2) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#403](https://www.github.com/googleapis/java-game-servers/issues/403)) ([e7a4131](https://www.github.com/googleapis/java-game-servers/commit/e7a4131c48545ddfe9ccf7fbe92d5e261c0250c6))
+* typo ([#400](https://www.github.com/googleapis/java-game-servers/issues/400)) ([b3940a4](https://www.github.com/googleapis/java-game-servers/commit/b3940a40dbd62ee02f6f3bb5313f906c11afa75e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#406](https://www.github.com/googleapis/java-game-servers/issues/406)) ([7063bce](https://www.github.com/googleapis/java-game-servers/commit/7063bcefe774e5222f7fac13da3a87659b68852a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#414](https://www.github.com/googleapis/java-game-servers/issues/414)) ([ebd2b20](https://www.github.com/googleapis/java-game-servers/commit/ebd2b208bacab56fd7c51dcd101cf453ad9beb41))
+
 ### [1.1.1](https://www.github.com/googleapis/java-game-servers/compare/v1.1.0...v1.1.1) (2021-04-09)
 
 
