@@ -1,5 +1,24 @@
 # Changelog
 
+### [1.3.2](https://www.github.com/googleapis/java-datacatalog/compare/v1.3.1...v1.3.2) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#491](https://www.github.com/googleapis/java-datacatalog/issues/491)) ([5243cd7](https://www.github.com/googleapis/java-datacatalog/commit/5243cd799592056159fb7d6b37188bf7c5814f60))
+* typo ([#488](https://www.github.com/googleapis/java-datacatalog/issues/488)) ([e81c4ca](https://www.github.com/googleapis/java-datacatalog/commit/e81c4cadb0bcc9a5049cf5fbad4c7ca956a002db))
+
+
+### Documentation
+
+* reformat comments in PolicyTagManager definition ([#493](https://www.github.com/googleapis/java-datacatalog/issues/493)) ([54f9277](https://www.github.com/googleapis/java-datacatalog/commit/54f9277a195029a235f74a63a836feefe43def42))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#495](https://www.github.com/googleapis/java-datacatalog/issues/495)) ([d12f96d](https://www.github.com/googleapis/java-datacatalog/commit/d12f96d9d9e3cb69ca9b437b001bdb49d5d92a84))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#509](https://www.github.com/googleapis/java-datacatalog/issues/509)) ([bab8d3c](https://www.github.com/googleapis/java-datacatalog/commit/bab8d3cc0df343e5bdcfdf34f19a343259e78ce9))
+
 ### [1.3.1](https://www.github.com/googleapis/java-datacatalog/compare/v1.3.0...v1.3.1) (2021-04-09)
 
 
