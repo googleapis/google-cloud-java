@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.2.20](https://www.github.com/googleapis/java-containeranalysis/compare/v1.2.19...v1.2.20) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#528](https://www.github.com/googleapis/java-containeranalysis/issues/528)) ([bbb4403](https://www.github.com/googleapis/java-containeranalysis/commit/bbb4403ceaf2e2976277cd0b4904f422613c9ac0))
+* typo ([#525](https://www.github.com/googleapis/java-containeranalysis/issues/525)) ([6156397](https://www.github.com/googleapis/java-containeranalysis/commit/6156397cefe5a88473b05ea48a9102c2a39b8214))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#531](https://www.github.com/googleapis/java-containeranalysis/issues/531)) ([231fac9](https://www.github.com/googleapis/java-containeranalysis/commit/231fac96e57a443fcb68ac48a63cda800f130df7))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#535](https://www.github.com/googleapis/java-containeranalysis/issues/535)) ([7185565](https://www.github.com/googleapis/java-containeranalysis/commit/71855653010b1a705e8ae17736d8ad020337306a))
+
 ### [1.2.19](https://www.github.com/googleapis/java-containeranalysis/compare/v1.2.18...v1.2.19) (2021-04-10)
 
 
