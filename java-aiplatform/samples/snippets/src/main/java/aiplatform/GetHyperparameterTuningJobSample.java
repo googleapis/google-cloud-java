@@ -17,10 +17,10 @@
 package aiplatform;
 
 // [START aiplatform_get_hyperparameter_tuning_job_sample]
-import com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob;
-import com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJobName;
-import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
-import com.google.cloud.aiplatform.v1beta1.JobServiceSettings;
+import com.google.cloud.aiplatform.v1.HyperparameterTuningJob;
+import com.google.cloud.aiplatform.v1.HyperparameterTuningJobName;
+import com.google.cloud.aiplatform.v1.JobServiceClient;
+import com.google.cloud.aiplatform.v1.JobServiceSettings;
 import java.io.IOException;
 
 public class GetHyperparameterTuningJobSample {

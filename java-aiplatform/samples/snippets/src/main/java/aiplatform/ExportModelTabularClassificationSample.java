@@ -19,13 +19,13 @@ package aiplatform;
 // [START aiplatform_export_model_tabular_classification_sample]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.aiplatform.v1beta1.ExportModelOperationMetadata;
-import com.google.cloud.aiplatform.v1beta1.ExportModelRequest;
-import com.google.cloud.aiplatform.v1beta1.ExportModelResponse;
-import com.google.cloud.aiplatform.v1beta1.GcsDestination;
-import com.google.cloud.aiplatform.v1beta1.ModelName;
-import com.google.cloud.aiplatform.v1beta1.ModelServiceClient;
-import com.google.cloud.aiplatform.v1beta1.ModelServiceSettings;
+import com.google.cloud.aiplatform.v1.ExportModelOperationMetadata;
+import com.google.cloud.aiplatform.v1.ExportModelRequest;
+import com.google.cloud.aiplatform.v1.ExportModelResponse;
+import com.google.cloud.aiplatform.v1.GcsDestination;
+import com.google.cloud.aiplatform.v1.ModelName;
+import com.google.cloud.aiplatform.v1.ModelServiceClient;
+import com.google.cloud.aiplatform.v1.ModelServiceSettings;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
