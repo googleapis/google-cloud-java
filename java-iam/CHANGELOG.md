@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.0.13](https://www.github.com/googleapis/java-iam/compare/v1.0.12...v1.0.13) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#132](https://www.github.com/googleapis/java-iam/issues/132)) ([9af3e17](https://www.github.com/googleapis/java-iam/commit/9af3e17ae469bd1b654942e1539a364dac08ac75))
+* typo ([#129](https://www.github.com/googleapis/java-iam/issues/129)) ([42c037a](https://www.github.com/googleapis/java-iam/commit/42c037a09184dd1a03a28b23a1dc8c4eca10cfd0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#133](https://www.github.com/googleapis/java-iam/issues/133)) ([fb23683](https://www.github.com/googleapis/java-iam/commit/fb236830857bbbe17eaa71a1dd9f0ec424e238a3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#136](https://www.github.com/googleapis/java-iam/issues/136)) ([be35bdf](https://www.github.com/googleapis/java-iam/commit/be35bdf2b8b8c271e8aba4a493994512bce24e95))
+
 ### [1.0.12](https://www.github.com/googleapis/java-iam/compare/v1.0.11...v1.0.12) (2021-04-09)
 
 
