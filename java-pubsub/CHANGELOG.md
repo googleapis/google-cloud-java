@@ -1,5 +1,20 @@
 # Changelog
 
+### [1.112.2](https://www.github.com/googleapis/java-pubsub/compare/v1.112.1...v1.112.2) (2021-04-24)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#610](https://www.github.com/googleapis/java-pubsub/issues/610)) ([70246e8](https://www.github.com/googleapis/java-pubsub/commit/70246e8fd24c7e85b0384d99bd3895094383ff5e))
+* typo ([#603](https://www.github.com/googleapis/java-pubsub/issues/603)) ([60b087d](https://www.github.com/googleapis/java-pubsub/commit/60b087d2e2afbadaff5dd0a3b946d46b61acbf95))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#614](https://www.github.com/googleapis/java-pubsub/issues/614)) ([61e2ea1](https://www.github.com/googleapis/java-pubsub/commit/61e2ea112a4d44219adb20f087e7847114be4261))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#626](https://www.github.com/googleapis/java-pubsub/issues/626)) ([a9884a9](https://www.github.com/googleapis/java-pubsub/commit/a9884a9beede67ce90616be2f1bdd7da1aa6f867))
+* update dependency org.easymock:easymock to v4.3 ([#612](https://www.github.com/googleapis/java-pubsub/issues/612)) ([b08e816](https://www.github.com/googleapis/java-pubsub/commit/b08e81604341381543b13f68bb0695c55d0a7575))
+
 ### [1.112.1](https://www.github.com/googleapis/java-pubsub/compare/v1.112.0...v1.112.1) (2021-04-12)
 
 
