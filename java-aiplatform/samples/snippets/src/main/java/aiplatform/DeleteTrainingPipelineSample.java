@@ -19,10 +19,10 @@ package aiplatform;
 // [START aiplatform_delete_training_pipeline_sample]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
-import com.google.cloud.aiplatform.v1beta1.PipelineServiceClient;
-import com.google.cloud.aiplatform.v1beta1.PipelineServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.TrainingPipelineName;
+import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
+import com.google.cloud.aiplatform.v1.PipelineServiceClient;
+import com.google.cloud.aiplatform.v1.PipelineServiceSettings;
+import com.google.cloud.aiplatform.v1.TrainingPipelineName;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;

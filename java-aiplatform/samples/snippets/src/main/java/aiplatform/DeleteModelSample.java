@@ -19,10 +19,10 @@ package aiplatform;
 // [START aiplatform_delete_model_sample]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
-import com.google.cloud.aiplatform.v1beta1.ModelName;
-import com.google.cloud.aiplatform.v1beta1.ModelServiceClient;
-import com.google.cloud.aiplatform.v1beta1.ModelServiceSettings;
+import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
+import com.google.cloud.aiplatform.v1.ModelName;
+import com.google.cloud.aiplatform.v1.ModelServiceClient;
+import com.google.cloud.aiplatform.v1.ModelServiceSettings;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;

@@ -19,10 +19,10 @@ package aiplatform;
 // [START aiplatform_delete_dataset_sample]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.aiplatform.v1beta1.DatasetName;
-import com.google.cloud.aiplatform.v1beta1.DatasetServiceClient;
-import com.google.cloud.aiplatform.v1beta1.DatasetServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
+import com.google.cloud.aiplatform.v1.DatasetName;
+import com.google.cloud.aiplatform.v1.DatasetServiceClient;
+import com.google.cloud.aiplatform.v1.DatasetServiceSettings;
+import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;

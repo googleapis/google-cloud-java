@@ -19,10 +19,10 @@ package aiplatform;
 // [START aiplatform_delete_batch_prediction_job_sample]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.aiplatform.v1beta1.BatchPredictionJobName;
-import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
-import com.google.cloud.aiplatform.v1beta1.JobServiceClient;
-import com.google.cloud.aiplatform.v1beta1.JobServiceSettings;
+import com.google.cloud.aiplatform.v1.BatchPredictionJobName;
+import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
+import com.google.cloud.aiplatform.v1.JobServiceClient;
+import com.google.cloud.aiplatform.v1.JobServiceSettings;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;

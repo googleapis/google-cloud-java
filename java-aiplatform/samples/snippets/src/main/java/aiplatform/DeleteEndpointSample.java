@@ -19,10 +19,10 @@ package aiplatform;
 // [START aiplatform_delete_endpoint_sample]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
-import com.google.cloud.aiplatform.v1beta1.EndpointName;
-import com.google.cloud.aiplatform.v1beta1.EndpointServiceClient;
-import com.google.cloud.aiplatform.v1beta1.EndpointServiceSettings;
+import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
+import com.google.cloud.aiplatform.v1.EndpointName;
+import com.google.cloud.aiplatform.v1.EndpointServiceClient;
+import com.google.cloud.aiplatform.v1.EndpointServiceSettings;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;

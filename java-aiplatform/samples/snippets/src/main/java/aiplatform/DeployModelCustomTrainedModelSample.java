@@ -18,15 +18,15 @@ package aiplatform;
 
 // [START aiplatform_deploy_model_custom_trained_model_sample]
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.aiplatform.v1beta1.DedicatedResources;
-import com.google.cloud.aiplatform.v1beta1.DeployModelOperationMetadata;
-import com.google.cloud.aiplatform.v1beta1.DeployModelResponse;
-import com.google.cloud.aiplatform.v1beta1.DeployedModel;
-import com.google.cloud.aiplatform.v1beta1.EndpointName;
-import com.google.cloud.aiplatform.v1beta1.EndpointServiceClient;
-import com.google.cloud.aiplatform.v1beta1.EndpointServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.MachineSpec;
-import com.google.cloud.aiplatform.v1beta1.ModelName;
+import com.google.cloud.aiplatform.v1.DedicatedResources;
+import com.google.cloud.aiplatform.v1.DeployModelOperationMetadata;
+import com.google.cloud.aiplatform.v1.DeployModelResponse;
+import com.google.cloud.aiplatform.v1.DeployedModel;
+import com.google.cloud.aiplatform.v1.EndpointName;
+import com.google.cloud.aiplatform.v1.EndpointServiceClient;
+import com.google.cloud.aiplatform.v1.EndpointServiceSettings;
+import com.google.cloud.aiplatform.v1.MachineSpec;
+import com.google.cloud.aiplatform.v1.ModelName;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
