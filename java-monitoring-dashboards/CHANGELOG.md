@@ -1,5 +1,24 @@
 # Changelog
 
+### [1.2.1](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v1.2.0...v1.2.1) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#352](https://www.github.com/googleapis/java-monitoring-dashboards/issues/352)) ([603dc1d](https://www.github.com/googleapis/java-monitoring-dashboards/commit/603dc1d6ba85034c86739945b35f1d70f101348a))
+* typo ([#348](https://www.github.com/googleapis/java-monitoring-dashboards/issues/348)) ([f702de4](https://www.github.com/googleapis/java-monitoring-dashboards/commit/f702de44228530a169bacd626d71e097a615b406))
+
+
+### Documentation
+
+* update links to absolute path ([#358](https://www.github.com/googleapis/java-monitoring-dashboards/issues/358)) ([3a7ac87](https://www.github.com/googleapis/java-monitoring-dashboards/commit/3a7ac8746d873a8794802d8b189964f96a46140e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#354](https://www.github.com/googleapis/java-monitoring-dashboards/issues/354)) ([4444bed](https://www.github.com/googleapis/java-monitoring-dashboards/commit/4444beda57e28caf9ada2f3622c965a34f6067d8))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#359](https://www.github.com/googleapis/java-monitoring-dashboards/issues/359)) ([e69f5d6](https://www.github.com/googleapis/java-monitoring-dashboards/commit/e69f5d697b5b52242f8665b4aa0c32aeb7aa50eb))
+
 ## [1.2.0](https://www.github.com/googleapis/java-monitoring-dashboards/compare/v1.1.0...v1.2.0) (2021-04-12)
 
 
