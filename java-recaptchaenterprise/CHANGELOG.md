@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.1.4](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v1.1.3...v1.1.4) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#423](https://www.github.com/googleapis/java-recaptchaenterprise/issues/423)) ([5a330ed](https://www.github.com/googleapis/java-recaptchaenterprise/commit/5a330ed7e09129f3af21d9df35e402fee200ccaf))
+* typo ([#419](https://www.github.com/googleapis/java-recaptchaenterprise/issues/419)) ([ee19f8c](https://www.github.com/googleapis/java-recaptchaenterprise/commit/ee19f8c403705291e7095d7202ad6f6eb8f6b6be))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#426](https://www.github.com/googleapis/java-recaptchaenterprise/issues/426)) ([ae4a425](https://www.github.com/googleapis/java-recaptchaenterprise/commit/ae4a425332f65c63400d347017cfd92901ef8cfb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#429](https://www.github.com/googleapis/java-recaptchaenterprise/issues/429)) ([18c4f35](https://www.github.com/googleapis/java-recaptchaenterprise/commit/18c4f357217ba6eec3b4c0e6d9faca5ff3418d86))
+
 ### [1.1.3](https://www.github.com/googleapis/java-recaptchaenterprise/compare/v1.1.2...v1.1.3) (2021-04-12)
 
 
