@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.1.2](https://www.github.com/googleapis/java-functions/compare/v1.1.1...v1.1.2) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#186](https://www.github.com/googleapis/java-functions/issues/186)) ([278a0e3](https://www.github.com/googleapis/java-functions/commit/278a0e33a8477d4dffd9fe22c5b0a747827aed42))
+* typo ([#183](https://www.github.com/googleapis/java-functions/issues/183)) ([5dd3420](https://www.github.com/googleapis/java-functions/commit/5dd3420cdf4c8a93c55aca209958876513fc7755))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#187](https://www.github.com/googleapis/java-functions/issues/187)) ([0ff437b](https://www.github.com/googleapis/java-functions/commit/0ff437b7f1d0abd89d8060ceb9e44b90b3d013df))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#190](https://www.github.com/googleapis/java-functions/issues/190)) ([5adca1b](https://www.github.com/googleapis/java-functions/commit/5adca1b7756febc029380c6dced1ae18021c4333))
+
 ### [1.1.1](https://www.github.com/googleapis/java-functions/compare/v1.1.0...v1.1.1) (2021-04-09)
 
 
