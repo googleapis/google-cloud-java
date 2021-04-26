@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.1.17](https://www.github.com/googleapis/java-billing/compare/v1.1.16...v1.1.17) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#385](https://www.github.com/googleapis/java-billing/issues/385)) ([dfda3c6](https://www.github.com/googleapis/java-billing/commit/dfda3c6ed2a903d0c7816567d54192c7063f9b05))
+* typo ([#382](https://www.github.com/googleapis/java-billing/issues/382)) ([7fe805b](https://www.github.com/googleapis/java-billing/commit/7fe805bb0f5ef9f9cbb1ac3c13de52959b110d14))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#388](https://www.github.com/googleapis/java-billing/issues/388)) ([74e8a2e](https://www.github.com/googleapis/java-billing/commit/74e8a2e22db2ea4cc0f50d17b5789dd4724b0b94))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#391](https://www.github.com/googleapis/java-billing/issues/391)) ([726b551](https://www.github.com/googleapis/java-billing/commit/726b551c8006acfded9d8c2e44d39e96e1e75c1a))
+
 ### [1.1.16](https://www.github.com/googleapis/java-billing/compare/v1.1.15...v1.1.16) (2021-04-09)
 
 
