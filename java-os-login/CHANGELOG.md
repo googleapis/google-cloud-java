@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.2.4](https://www.github.com/googleapis/java-os-login/compare/v1.2.3...v1.2.4) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#426](https://www.github.com/googleapis/java-os-login/issues/426)) ([c64cb79](https://www.github.com/googleapis/java-os-login/commit/c64cb79a5d1f1e10baea94e3dc27370a9b120a5b))
+* typo ([#423](https://www.github.com/googleapis/java-os-login/issues/423)) ([f9dae0a](https://www.github.com/googleapis/java-os-login/commit/f9dae0a7eab39c0c072804cb572d6a08d4a9d774))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#429](https://www.github.com/googleapis/java-os-login/issues/429)) ([da41bf0](https://www.github.com/googleapis/java-os-login/commit/da41bf021d4314238ab93b3505f20acf7f717a8e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#432](https://www.github.com/googleapis/java-os-login/issues/432)) ([d06d579](https://www.github.com/googleapis/java-os-login/commit/d06d579ba0481b74343e27c7b83c883ce216665c))
+
 ### [1.2.3](https://www.github.com/googleapis/java-os-login/compare/v1.2.2...v1.2.3) (2021-04-09)
 
 
