@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.2.2](https://www.github.com/googleapis/java-os-config/compare/v1.2.1...v1.2.2) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#258](https://www.github.com/googleapis/java-os-config/issues/258)) ([4fe217b](https://www.github.com/googleapis/java-os-config/commit/4fe217b7a6e7cc6dedaa2ef537a65b7764938fbb))
+* typo ([#255](https://www.github.com/googleapis/java-os-config/issues/255)) ([c0089dc](https://www.github.com/googleapis/java-os-config/commit/c0089dcf64fc1f7ab663567027dfbbe93efb729a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#259](https://www.github.com/googleapis/java-os-config/issues/259)) ([953c6d3](https://www.github.com/googleapis/java-os-config/commit/953c6d3c8c22cb74a12062d2ad7fc88c995cdcf7))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#262](https://www.github.com/googleapis/java-os-config/issues/262)) ([9ce6b99](https://www.github.com/googleapis/java-os-config/commit/9ce6b997c3a7560290b4ad0d6f0e63b34adf9c7e))
+
 ### [1.2.1](https://www.github.com/googleapis/java-os-config/compare/v1.2.0...v1.2.1) (2021-04-09)
 
 
