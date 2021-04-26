@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.1.5](https://www.github.com/googleapis/java-dns/compare/v1.1.4...v1.1.5) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#380](https://www.github.com/googleapis/java-dns/issues/380)) ([5aeec42](https://www.github.com/googleapis/java-dns/commit/5aeec426f2a4f2d48e5f82bf0dbeadd699121523))
+* typo ([#375](https://www.github.com/googleapis/java-dns/issues/375)) ([3542cdc](https://www.github.com/googleapis/java-dns/commit/3542cdc264fa5e085689adf852f1397e8668d5da))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#383](https://www.github.com/googleapis/java-dns/issues/383)) ([a478ad4](https://www.github.com/googleapis/java-dns/commit/a478ad490d80781e2f610896e93cac6765dd675b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#386](https://www.github.com/googleapis/java-dns/issues/386)) ([2b8cb14](https://www.github.com/googleapis/java-dns/commit/2b8cb14028b8c0e05ddcc093cf8f5b760972ba96))
+
 ### [1.1.4](https://www.github.com/googleapis/java-dns/compare/v1.1.3...v1.1.4) (2021-04-12)
 
 
