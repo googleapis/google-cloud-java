@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.3.2](https://www.github.com/googleapis/java-container/compare/v1.3.1...v1.3.2) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#426](https://www.github.com/googleapis/java-container/issues/426)) ([576ab38](https://www.github.com/googleapis/java-container/commit/576ab382f075044d9fdac18690b3b813c045b365))
+* typo ([#423](https://www.github.com/googleapis/java-container/issues/423)) ([256fed4](https://www.github.com/googleapis/java-container/commit/256fed4633992e33bc9b2bf7fce750cf31e54f41))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#429](https://www.github.com/googleapis/java-container/issues/429)) ([ee07477](https://www.github.com/googleapis/java-container/commit/ee074773c22c4c2b0c588166c7a5cad126f06afa))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#432](https://www.github.com/googleapis/java-container/issues/432)) ([2d92416](https://www.github.com/googleapis/java-container/commit/2d92416a15a7cd43379944ae03183d2d0eb9dcfc))
+
 ### [1.3.1](https://www.github.com/googleapis/java-container/compare/v1.3.0...v1.3.1) (2021-04-09)
 
 
