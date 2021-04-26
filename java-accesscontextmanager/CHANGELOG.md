@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.0.17](https://www.github.com/googleapis/java-accesscontextmanager/compare/v1.0.16...v1.0.17) (2021-04-24)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#177](https://www.github.com/googleapis/java-accesscontextmanager/issues/177)) ([5999ee8](https://www.github.com/googleapis/java-accesscontextmanager/commit/5999ee800dfa0fb6832f049469731f8034e37b86))
+* typo ([#174](https://www.github.com/googleapis/java-accesscontextmanager/issues/174)) ([eb87dae](https://www.github.com/googleapis/java-accesscontextmanager/commit/eb87dae53144f4aba9d29ccb9a5f5521732409e7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#178](https://www.github.com/googleapis/java-accesscontextmanager/issues/178)) ([a891911](https://www.github.com/googleapis/java-accesscontextmanager/commit/a8919118031e237c061b9b17c421398f04a27826))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#181](https://www.github.com/googleapis/java-accesscontextmanager/issues/181)) ([93153df](https://www.github.com/googleapis/java-accesscontextmanager/commit/93153dfba02e5bd39597a076d4d7205a6ce4d2b4))
+
 ### [1.0.16](https://www.github.com/googleapis/java-accesscontextmanager/compare/v1.0.15...v1.0.16) (2021-04-09)
 
 
