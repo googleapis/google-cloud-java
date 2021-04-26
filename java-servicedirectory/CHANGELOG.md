@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.2.2](https://www.github.com/googleapis/java-servicedirectory/compare/v1.2.1...v1.2.2) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#360](https://www.github.com/googleapis/java-servicedirectory/issues/360)) ([ba0a6fe](https://www.github.com/googleapis/java-servicedirectory/commit/ba0a6fe8410b52668cf1ebbc593f583c71b4bdf1))
+* typo ([#357](https://www.github.com/googleapis/java-servicedirectory/issues/357)) ([77d29e5](https://www.github.com/googleapis/java-servicedirectory/commit/77d29e57d56d3ff1d4f44e61c7bbeabc50a59955))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#363](https://www.github.com/googleapis/java-servicedirectory/issues/363)) ([dddf5c4](https://www.github.com/googleapis/java-servicedirectory/commit/dddf5c445c06fdd3e8bef6bced52b2578256b3ea))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#373](https://www.github.com/googleapis/java-servicedirectory/issues/373)) ([193a27b](https://www.github.com/googleapis/java-servicedirectory/commit/193a27bb62ac1fc52c2f7e405cd3672b9b39ba43))
+
 ### [1.2.1](https://www.github.com/googleapis/java-servicedirectory/compare/v1.2.0...v1.2.1) (2021-04-09)
 
 
