@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.4.2](https://www.github.com/googleapis/java-dataproc/compare/v1.4.1...v1.4.2) (2021-04-26)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v1.113.16 ([#526](https://www.github.com/googleapis/java-dataproc/issues/526)) ([779d5b5](https://www.github.com/googleapis/java-dataproc/commit/779d5b5e99b6124911784d5973aa66e47777845c))
+
 ### [1.4.1](https://www.github.com/googleapis/java-dataproc/compare/v1.4.0...v1.4.1) (2021-04-23)
 
 
