@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.1.13](https://www.github.com/googleapis/java-webrisk/compare/v1.1.12...v1.1.13) (2021-04-24)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#406](https://www.github.com/googleapis/java-webrisk/issues/406)) ([e39069e](https://www.github.com/googleapis/java-webrisk/commit/e39069e1fc4b8c951126be2e4ec90c651caed6d5))
+* typo ([#403](https://www.github.com/googleapis/java-webrisk/issues/403)) ([4a3f583](https://www.github.com/googleapis/java-webrisk/commit/4a3f58318eedd048f18ce5f75e87f5c50b1f5647))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#409](https://www.github.com/googleapis/java-webrisk/issues/409)) ([92390d5](https://www.github.com/googleapis/java-webrisk/commit/92390d56936f695a199ea825323f3d1535dafe8a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#417](https://www.github.com/googleapis/java-webrisk/issues/417)) ([7f798dd](https://www.github.com/googleapis/java-webrisk/commit/7f798dd570cccb2cc1681bc8ebd1ab610dd5b2cd))
+
 ### [1.1.12](https://www.github.com/googleapis/java-webrisk/compare/v1.1.11...v1.1.12) (2021-04-09)
 
 
