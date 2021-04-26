@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.0.2](https://www.github.com/googleapis/java-retail/compare/v1.0.1...v1.0.2) (2021-04-24)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#90](https://www.github.com/googleapis/java-retail/issues/90)) ([83796e2](https://www.github.com/googleapis/java-retail/commit/83796e2b12a4b1ff2d09d4e18d7008ccc9acd0f6))
+* typo ([#87](https://www.github.com/googleapis/java-retail/issues/87)) ([f3176fe](https://www.github.com/googleapis/java-retail/commit/f3176fe4430fdc81b29b231ec74c6ad7169676bb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#91](https://www.github.com/googleapis/java-retail/issues/91)) ([9b6a29d](https://www.github.com/googleapis/java-retail/commit/9b6a29de7e087cb42a1ecf461c2341bc2d8ae985))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#94](https://www.github.com/googleapis/java-retail/issues/94)) ([1e0f975](https://www.github.com/googleapis/java-retail/commit/1e0f975715227decfc0bb2802b735bded51c92a5))
+
 ### [1.0.1](https://www.github.com/googleapis/java-retail/compare/v1.0.0...v1.0.1) (2021-04-09)
 
 
