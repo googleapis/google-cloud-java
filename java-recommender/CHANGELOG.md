@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.5.2](https://www.github.com/googleapis/java-recommender/compare/v1.5.1...v1.5.2) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#475](https://www.github.com/googleapis/java-recommender/issues/475)) ([776b83f](https://www.github.com/googleapis/java-recommender/commit/776b83ff9d3b29876030417add1ab82ff4f69011))
+* typo ([#472](https://www.github.com/googleapis/java-recommender/issues/472)) ([3f4f74d](https://www.github.com/googleapis/java-recommender/commit/3f4f74d32ad418244e6868fe64430fdbdee912a9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#478](https://www.github.com/googleapis/java-recommender/issues/478)) ([4f5c383](https://www.github.com/googleapis/java-recommender/commit/4f5c3832d4ed973612992574838bb6a908450284))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#482](https://www.github.com/googleapis/java-recommender/issues/482)) ([3381f61](https://www.github.com/googleapis/java-recommender/commit/3381f61976df7be296a3bd830e975a2fbb7c4ad4))
+
 ### [1.5.1](https://www.github.com/googleapis/java-recommender/compare/v1.5.0...v1.5.1) (2021-04-09)
 
 
