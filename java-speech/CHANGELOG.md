@@ -1,5 +1,20 @@
 # Changelog
 
+### [1.27.1](https://www.github.com/googleapis/java-speech/compare/v1.27.0...v1.27.1) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#492](https://www.github.com/googleapis/java-speech/issues/492)) ([de8f57f](https://www.github.com/googleapis/java-speech/commit/de8f57f3a4543144a7703c14931be9bd0d8b6c74))
+* typo ([#488](https://www.github.com/googleapis/java-speech/issues/488)) ([a4f43de](https://www.github.com/googleapis/java-speech/commit/a4f43de6ca890be1a1ae5989acccc9c215d4087c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#495](https://www.github.com/googleapis/java-speech/issues/495)) ([2f4adb3](https://www.github.com/googleapis/java-speech/commit/2f4adb37ee6ac65e4574d410d26fe71f96907908))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#498](https://www.github.com/googleapis/java-speech/issues/498)) ([d794ded](https://www.github.com/googleapis/java-speech/commit/d794dedf5115ee1098fe42f8600b2177fb134f35))
+* update dependency com.google.errorprone:error_prone_annotations to v2.6.0 ([#485](https://www.github.com/googleapis/java-speech/issues/485)) ([8566bbd](https://www.github.com/googleapis/java-speech/commit/8566bbd6d1d012093d25d9cbee0a0404e388c877))
+
 ## [1.27.0](https://www.github.com/googleapis/java-speech/compare/v1.26.0...v1.27.0) (2021-04-13)
 
 
