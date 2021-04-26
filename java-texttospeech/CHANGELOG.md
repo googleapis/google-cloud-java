@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.4.1](https://www.github.com/googleapis/java-texttospeech/compare/v1.4.0...v1.4.1) (2021-04-26)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#429](https://www.github.com/googleapis/java-texttospeech/issues/429)) ([98bd2f8](https://www.github.com/googleapis/java-texttospeech/commit/98bd2f8154856f24fe39966667146fbfc924e3d9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#432](https://www.github.com/googleapis/java-texttospeech/issues/432)) ([e84d0d1](https://www.github.com/googleapis/java-texttospeech/commit/e84d0d18aad6e665c28304ed320feec98813736e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#435](https://www.github.com/googleapis/java-texttospeech/issues/435)) ([52ab43e](https://www.github.com/googleapis/java-texttospeech/commit/52ab43ecf76ea5aa26c2844626a70e7e5cd6ad72))
+
 ## [1.4.0](https://www.github.com/googleapis/java-texttospeech/compare/v1.3.0...v1.4.0) (2021-04-13)
 
 
