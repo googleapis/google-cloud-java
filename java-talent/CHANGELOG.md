@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.1.2](https://www.github.com/googleapis/java-talent/compare/v1.1.1...v1.1.2) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#465](https://www.github.com/googleapis/java-talent/issues/465)) ([7db2ed4](https://www.github.com/googleapis/java-talent/commit/7db2ed48ed1eefe8d6894ce93dbb37eec76d4c0d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#469](https://www.github.com/googleapis/java-talent/issues/469)) ([4b06052](https://www.github.com/googleapis/java-talent/commit/4b060527d56a3a5759412daaac51a1ae4ecaa2ff))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#490](https://www.github.com/googleapis/java-talent/issues/490)) ([0773346](https://www.github.com/googleapis/java-talent/commit/07733463f5fc7af891cd96ecccaa7cc1178dde31))
+
 ### [1.1.1](https://www.github.com/googleapis/java-talent/compare/v1.1.0...v1.1.1) (2021-04-09)
 
 
