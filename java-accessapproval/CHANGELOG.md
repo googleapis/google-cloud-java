@@ -1,5 +1,19 @@
 # Changelog
 
+### [1.0.16](https://www.github.com/googleapis/java-accessapproval/compare/v1.0.15...v1.0.16) (2021-04-24)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#396](https://www.github.com/googleapis/java-accessapproval/issues/396)) ([80f45e4](https://www.github.com/googleapis/java-accessapproval/commit/80f45e4b28f6735a21937ba0fc396ccb409cae62))
+* typo ([#391](https://www.github.com/googleapis/java-accessapproval/issues/391)) ([fe093bc](https://www.github.com/googleapis/java-accessapproval/commit/fe093bc87c21aefabca8dda7cbfad11031f5d498))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#399](https://www.github.com/googleapis/java-accessapproval/issues/399)) ([11965df](https://www.github.com/googleapis/java-accessapproval/commit/11965dfc632936b951624bb347e3bb6ca679bf3c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#405](https://www.github.com/googleapis/java-accessapproval/issues/405)) ([7292aea](https://www.github.com/googleapis/java-accessapproval/commit/7292aea497e641a7c6cddff920a126e3c774d71e))
+
 ### [1.0.15](https://www.github.com/googleapis/java-accessapproval/compare/v1.0.14...v1.0.15) (2021-04-12)
 
 
