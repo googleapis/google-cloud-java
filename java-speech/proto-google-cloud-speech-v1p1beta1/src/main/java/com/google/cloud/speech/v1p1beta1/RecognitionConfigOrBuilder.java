@@ -689,7 +689,7 @@ public interface RecognitionConfigOrBuilder
    *   &lt;/tr&gt;
    *   &lt;tr&gt;
    *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
-   *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+   *     &lt;td&gt;Best for audio that originated from video or includes multiple
    *         speakers. Ideally the audio is recorded at a 16khz or greater
    *         sampling rate. This is a premium model that costs more than the
    *         standard rate.&lt;/td&gt;
@@ -732,7 +732,7 @@ public interface RecognitionConfigOrBuilder
    *   &lt;/tr&gt;
    *   &lt;tr&gt;
    *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
-   *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+   *     &lt;td&gt;Best for audio that originated from video or includes multiple
    *         speakers. Ideally the audio is recorded at a 16khz or greater
    *         sampling rate. This is a premium model that costs more than the
    *         standard rate.&lt;/td&gt;

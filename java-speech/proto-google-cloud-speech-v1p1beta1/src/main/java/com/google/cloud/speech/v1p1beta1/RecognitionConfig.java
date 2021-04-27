@@ -435,6 +435,19 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>MP3 = 8;</code>
      */
     MP3(8),
+    /**
+     *
+     *
+     * <pre>
+     * Opus encoded audio frames in WebM container
+     * ([OggOpus](https://wiki.xiph.org/OggOpus)). This is a Beta features and
+     * only available in v1p1beta1. `sample_rate_hertz` must be one of 8000,
+     * 12000, 16000, 24000, or 48000.
+     * </pre>
+     *
+     * <code>WEBM_OPUS = 9;</code>
+     */
+    WEBM_OPUS(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -550,6 +563,19 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>MP3 = 8;</code>
      */
     public static final int MP3_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * Opus encoded audio frames in WebM container
+     * ([OggOpus](https://wiki.xiph.org/OggOpus)). This is a Beta features and
+     * only available in v1p1beta1. `sample_rate_hertz` must be one of 8000,
+     * 12000, 16000, 24000, or 48000.
+     * </pre>
+     *
+     * <code>WEBM_OPUS = 9;</code>
+     */
+    public static final int WEBM_OPUS_VALUE = 9;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -593,6 +619,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
           return SPEEX_WITH_HEADER_BYTE;
         case 8:
           return MP3;
+        case 9:
+          return WEBM_OPUS;
         default:
           return null;
       }
@@ -1496,7 +1524,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *   &lt;/tr&gt;
    *   &lt;tr&gt;
    *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
-   *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+   *     &lt;td&gt;Best for audio that originated from video or includes multiple
    *         speakers. Ideally the audio is recorded at a 16khz or greater
    *         sampling rate. This is a premium model that costs more than the
    *         standard rate.&lt;/td&gt;
@@ -1550,7 +1578,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *   &lt;/tr&gt;
    *   &lt;tr&gt;
    *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
-   *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+   *     &lt;td&gt;Best for audio that originated from video or includes multiple
    *         speakers. Ideally the audio is recorded at a 16khz or greater
    *         sampling rate. This is a premium model that costs more than the
    *         standard rate.&lt;/td&gt;
@@ -5094,7 +5122,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *   &lt;/tr&gt;
      *   &lt;tr&gt;
      *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
-     *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+     *     &lt;td&gt;Best for audio that originated from video or includes multiple
      *         speakers. Ideally the audio is recorded at a 16khz or greater
      *         sampling rate. This is a premium model that costs more than the
      *         standard rate.&lt;/td&gt;
@@ -5147,7 +5175,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *   &lt;/tr&gt;
      *   &lt;tr&gt;
      *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
-     *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+     *     &lt;td&gt;Best for audio that originated from video or includes multiple
      *         speakers. Ideally the audio is recorded at a 16khz or greater
      *         sampling rate. This is a premium model that costs more than the
      *         standard rate.&lt;/td&gt;
@@ -5200,7 +5228,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *   &lt;/tr&gt;
      *   &lt;tr&gt;
      *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
-     *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+     *     &lt;td&gt;Best for audio that originated from video or includes multiple
      *         speakers. Ideally the audio is recorded at a 16khz or greater
      *         sampling rate. This is a premium model that costs more than the
      *         standard rate.&lt;/td&gt;
@@ -5252,7 +5280,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *   &lt;/tr&gt;
      *   &lt;tr&gt;
      *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
-     *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+     *     &lt;td&gt;Best for audio that originated from video or includes multiple
      *         speakers. Ideally the audio is recorded at a 16khz or greater
      *         sampling rate. This is a premium model that costs more than the
      *         standard rate.&lt;/td&gt;
@@ -5300,7 +5328,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *   &lt;/tr&gt;
      *   &lt;tr&gt;
      *     &lt;td&gt;&lt;code&gt;video&lt;/code&gt;&lt;/td&gt;
-     *     &lt;td&gt;Best for audio that originated from from video or includes multiple
+     *     &lt;td&gt;Best for audio that originated from video or includes multiple
      *         speakers. Ideally the audio is recorded at a 16khz or greater
      *         sampling rate. This is a premium model that costs more than the
      *         standard rate.&lt;/td&gt;
