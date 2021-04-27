@@ -1,5 +1,22 @@
 # Changelog
 
+### [1.112.2](https://www.github.com/googleapis/java-vision/compare/v1.112.1...v1.112.2) (2021-04-27)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#473](https://www.github.com/googleapis/java-vision/issues/473)) ([022f2be](https://www.github.com/googleapis/java-vision/commit/022f2be0b04d76116ef33adab63fbc0111922ad4))
+* typo ([#468](https://www.github.com/googleapis/java-vision/issues/468)) ([d27229c](https://www.github.com/googleapis/java-vision/commit/d27229cf4f3bf0e5e051278dc2d45c2bed4739aa))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.94.8 ([#482](https://www.github.com/googleapis/java-vision/issues/482)) ([0511c89](https://www.github.com/googleapis/java-vision/commit/0511c8965554656a75d37374822b34afe1eb90ba))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#478](https://www.github.com/googleapis/java-vision/issues/478)) ([736a022](https://www.github.com/googleapis/java-vision/commit/736a0227af58e7be8f47839cfb450a43a4d62793))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#483](https://www.github.com/googleapis/java-vision/issues/483)) ([c79230b](https://www.github.com/googleapis/java-vision/commit/c79230b2faeec7a18153db3b8569583f20aef160))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.16 ([#471](https://www.github.com/googleapis/java-vision/issues/471)) ([ff0cee8](https://www.github.com/googleapis/java-vision/commit/ff0cee8e88277c2064f3bdac46b2bfd95fd825bb))
+* update spring.version to v2.4.5 ([#474](https://www.github.com/googleapis/java-vision/issues/474)) ([8753624](https://www.github.com/googleapis/java-vision/commit/87536248f99ad1ab770d1c1d8f766b35fb082fa3))
+
 ### [1.112.1](https://www.github.com/googleapis/java-vision/compare/v1.112.0...v1.112.1) (2021-04-12)
 
 
