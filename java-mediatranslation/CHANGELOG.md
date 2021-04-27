@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.3.2](https://www.github.com/googleapis/java-mediatranslation/compare/v0.3.1...v0.3.2) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#266](https://www.github.com/googleapis/java-mediatranslation/issues/266)) ([a0fd6ed](https://www.github.com/googleapis/java-mediatranslation/commit/a0fd6ed4e0990b17a60df2184d04a66eafbe1824))
+* typo ([#263](https://www.github.com/googleapis/java-mediatranslation/issues/263)) ([89975ac](https://www.github.com/googleapis/java-mediatranslation/commit/89975acfae101e24a396578bd965a54c3ff319c6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#267](https://www.github.com/googleapis/java-mediatranslation/issues/267)) ([fe89160](https://www.github.com/googleapis/java-mediatranslation/commit/fe891605dc826353d4ab190ab76fc10a9c6d5854))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#271](https://www.github.com/googleapis/java-mediatranslation/issues/271)) ([53be708](https://www.github.com/googleapis/java-mediatranslation/commit/53be70814d08bfdb6615ed389827d3942ea6c4ed))
+
 ### [0.3.1](https://www.github.com/googleapis/java-mediatranslation/compare/v0.3.0...v0.3.1) (2021-04-09)
 
 
