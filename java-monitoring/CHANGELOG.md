@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.2.1](https://www.github.com/googleapis/java-monitoring/compare/v2.2.0...v2.2.1) (2021-04-24)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#491](https://www.github.com/googleapis/java-monitoring/issues/491)) ([2649814](https://www.github.com/googleapis/java-monitoring/commit/26498148c73349b8d27617c3492532ddf28e1561))
+* typo ([#488](https://www.github.com/googleapis/java-monitoring/issues/488)) ([860e81c](https://www.github.com/googleapis/java-monitoring/commit/860e81c631c0211f8f2a26aa64daccf2cad6f3fc))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#494](https://www.github.com/googleapis/java-monitoring/issues/494)) ([d378046](https://www.github.com/googleapis/java-monitoring/commit/d378046da57095904ffc91e9528535def27cbc82))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#523](https://www.github.com/googleapis/java-monitoring/issues/523)) ([3460aad](https://www.github.com/googleapis/java-monitoring/commit/3460aad7a595aeb55d0d17a93e7477b63ae931cc))
+
 ## [2.2.0](https://www.github.com/googleapis/java-monitoring/compare/v2.1.0...v2.2.0) (2021-04-12)
 
 
