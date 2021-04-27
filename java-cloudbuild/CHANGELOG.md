@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.4.0](https://www.github.com/googleapis/java-cloudbuild/compare/v2.3.1...v2.4.0) (2021-04-23)
+
+
+### Features
+
+* Add fields for Pub/Sub triggers ([#457](https://www.github.com/googleapis/java-cloudbuild/issues/457)) ([55b10de](https://www.github.com/googleapis/java-cloudbuild/commit/55b10de722d09d8a861fc1325eeda14a208add15))
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#456](https://www.github.com/googleapis/java-cloudbuild/issues/456)) ([ad05975](https://www.github.com/googleapis/java-cloudbuild/commit/ad0597543005b36650c577490f8a93a5511fa1c2))
+* typo ([#453](https://www.github.com/googleapis/java-cloudbuild/issues/453)) ([dffb9db](https://www.github.com/googleapis/java-cloudbuild/commit/dffb9db12cc0f557031e1509c5ff13239443e6ba))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#460](https://www.github.com/googleapis/java-cloudbuild/issues/460)) ([d34cd4d](https://www.github.com/googleapis/java-cloudbuild/commit/d34cd4d347e637c847900ada7aca788608c69fb8))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#463](https://www.github.com/googleapis/java-cloudbuild/issues/463)) ([82711b3](https://www.github.com/googleapis/java-cloudbuild/commit/82711b36eeeebf187566586e9e2d6441e074562b))
+
 ### [2.3.1](https://www.github.com/googleapis/java-cloudbuild/compare/v2.3.0...v2.3.1) (2021-04-09)
 
 
