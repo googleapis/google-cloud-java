@@ -73,12 +73,12 @@ compile 'com.google.cloud:google-cloud-errorreporting'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-errorreporting:0.120.40-beta'
+compile 'com.google.cloud:google-cloud-errorreporting:0.120.41-beta'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.120.40-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.120.41-beta"
 ```
 
 ## Authentication
