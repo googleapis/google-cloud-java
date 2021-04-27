@@ -1,5 +1,20 @@
 # Changelog
 
+### [0.120.24](https://www.github.com/googleapis/java-errorreporting/compare/v0.120.23...v0.120.24) (2021-04-26)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#506](https://www.github.com/googleapis/java-errorreporting/issues/506)) ([1cdb1b2](https://www.github.com/googleapis/java-errorreporting/commit/1cdb1b2acb0badcf7968b6ed8022d606c784284d))
+* typo ([#502](https://www.github.com/googleapis/java-errorreporting/issues/502)) ([f500e1b](https://www.github.com/googleapis/java-errorreporting/commit/f500e1b5fd733cf3348c0970bc31fc06e930852e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v1.94.8 ([#513](https://www.github.com/googleapis/java-errorreporting/issues/513)) ([380fbf6](https://www.github.com/googleapis/java-errorreporting/commit/380fbf6c114b78996e083632bc2d92ed0a0ec4e5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#509](https://www.github.com/googleapis/java-errorreporting/issues/509)) ([16ba2bc](https://www.github.com/googleapis/java-errorreporting/commit/16ba2bca1832afcf8c258dd5f78f7320cdc7d163))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#514](https://www.github.com/googleapis/java-errorreporting/issues/514)) ([3b5d01d](https://www.github.com/googleapis/java-errorreporting/commit/3b5d01d09285f6545ae451403d426473fcd97dd7))
+
 ### [0.120.23](https://www.github.com/googleapis/java-errorreporting/compare/v0.120.22...v0.120.23) (2021-04-12)
 
 
