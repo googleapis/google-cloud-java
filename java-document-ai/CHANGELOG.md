@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.8.0](https://www.github.com/googleapis/java-document-ai/compare/v0.7.1...v0.8.0) (2021-04-27)
+
+
+### Features
+
+* add confidence field to the PageAnchor.PageRef in document.proto ([#450](https://www.github.com/googleapis/java-document-ai/issues/450)) ([2843a9d](https://www.github.com/googleapis/java-document-ai/commit/2843a9dba1cf0aa13ecebc8b62687c9ea091079f))
+* add confidence field to the PageAnchor.PageRef in document.proto ([#453](https://www.github.com/googleapis/java-document-ai/issues/453)) ([2d0772e](https://www.github.com/googleapis/java-document-ai/commit/2d0772e02bb2ffa2b45f026e121ac36f7b1590b9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#452](https://www.github.com/googleapis/java-document-ai/issues/452)) ([952106e](https://www.github.com/googleapis/java-document-ai/commit/952106ebcfa227d552beeb84e3fe816223e899a0))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.16 ([#454](https://www.github.com/googleapis/java-document-ai/issues/454)) ([ce87c21](https://www.github.com/googleapis/java-document-ai/commit/ce87c2199576fc98ae252449556255f00f135290))
+
 ### [0.7.1](https://www.github.com/googleapis/java-document-ai/compare/v0.7.0...v0.7.1) (2021-04-20)
 
 
