@@ -149,8 +149,8 @@ public interface ExplanationMetadataOrBuilder
    *
    * <pre>
    * Required. Map from output names to output metadata.
-   * For AI Platform provided Tensorflow images, keys can be any string user
-   * defines.
+   * For AI Platform provided Tensorflow images, keys can be any user defined
+   * string that consists of any UTF-8 characters.
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
    * Currently only one key is allowed.
@@ -166,8 +166,8 @@ public interface ExplanationMetadataOrBuilder
    *
    * <pre>
    * Required. Map from output names to output metadata.
-   * For AI Platform provided Tensorflow images, keys can be any string user
-   * defines.
+   * For AI Platform provided Tensorflow images, keys can be any user defined
+   * string that consists of any UTF-8 characters.
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
    * Currently only one key is allowed.
@@ -188,8 +188,8 @@ public interface ExplanationMetadataOrBuilder
    *
    * <pre>
    * Required. Map from output names to output metadata.
-   * For AI Platform provided Tensorflow images, keys can be any string user
-   * defines.
+   * For AI Platform provided Tensorflow images, keys can be any user defined
+   * string that consists of any UTF-8 characters.
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
    * Currently only one key is allowed.
@@ -207,8 +207,8 @@ public interface ExplanationMetadataOrBuilder
    *
    * <pre>
    * Required. Map from output names to output metadata.
-   * For AI Platform provided Tensorflow images, keys can be any string user
-   * defines.
+   * For AI Platform provided Tensorflow images, keys can be any user defined
+   * string that consists of any UTF-8 characters.
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
    * Currently only one key is allowed.
@@ -226,8 +226,8 @@ public interface ExplanationMetadataOrBuilder
    *
    * <pre>
    * Required. Map from output names to output metadata.
-   * For AI Platform provided Tensorflow images, keys can be any string user
-   * defines.
+   * For AI Platform provided Tensorflow images, keys can be any user defined
+   * string that consists of any UTF-8 characters.
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
    * Currently only one key is allowed.

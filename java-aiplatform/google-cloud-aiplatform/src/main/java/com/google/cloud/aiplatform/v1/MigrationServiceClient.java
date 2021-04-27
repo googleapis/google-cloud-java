@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -299,6 +299,13 @@ public class MigrationServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (MigrationServiceClient migrationServiceClient = MigrationServiceClient.create()) {
+   *   SearchMigratableResourcesRequest request =
+   *       SearchMigratableResourcesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   while (true) {
    *     SearchMigratableResourcesResponse response =
    *         migrationServiceClient.searchMigratableResourcesCallable().call(request);

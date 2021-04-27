@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -498,6 +498,15 @@ public class ModelServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ListModelsRequest request =
+   *       ListModelsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListModelsResponse response = modelServiceClient.listModelsCallable().call(request);
    *     for (Model element : response.getResponsesList()) {
@@ -1072,6 +1081,14 @@ public class ModelServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ListModelEvaluationsRequest request =
+   *       ListModelEvaluationsRequest.newBuilder()
+   *           .setParent(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
    *   while (true) {
    *     ListModelEvaluationsResponse response =
    *         modelServiceClient.listModelEvaluationsCallable().call(request);
@@ -1333,6 +1350,16 @@ public class ModelServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ListModelEvaluationSlicesRequest request =
+   *       ListModelEvaluationSlicesRequest.newBuilder()
+   *           .setParent(
+   *               ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
    *   while (true) {
    *     ListModelEvaluationSlicesResponse response =
    *         modelServiceClient.listModelEvaluationSlicesCallable().call(request);

@@ -426,7 +426,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Field to chose sampling strategy. Sampling strategy will decide which data
+   * Field to choose sampling strategy. Sampling strategy will decide which data
    * should be selected for human labeling in every batch.
    * </pre>
    *
@@ -442,7 +442,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Field to chose sampling strategy. Sampling strategy will decide which data
+   * Field to choose sampling strategy. Sampling strategy will decide which data
    * should be selected for human labeling in every batch.
    * </pre>
    *
@@ -1044,7 +1044,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Field to chose sampling strategy. Sampling strategy will decide which data
+     * Field to choose sampling strategy. Sampling strategy will decide which data
      * should be selected for human labeling in every batch.
      * </pre>
      *
@@ -1061,7 +1061,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Field to chose sampling strategy. Sampling strategy will decide which data
+     * Field to choose sampling strategy. Sampling strategy will decide which data
      * should be selected for human labeling in every batch.
      * </pre>
      *
@@ -1081,7 +1081,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Field to chose sampling strategy. Sampling strategy will decide which data
+     * Field to choose sampling strategy. Sampling strategy will decide which data
      * should be selected for human labeling in every batch.
      * </pre>
      *
@@ -1103,7 +1103,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Field to chose sampling strategy. Sampling strategy will decide which data
+     * Field to choose sampling strategy. Sampling strategy will decide which data
      * should be selected for human labeling in every batch.
      * </pre>
      *
@@ -1127,7 +1127,7 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Field to chose sampling strategy. Sampling strategy will decide which data
+     * Field to choose sampling strategy. Sampling strategy will decide which data
      * should be selected for human labeling in every batch.
      * </pre>
      *

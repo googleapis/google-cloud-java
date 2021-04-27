@@ -5823,8 +5823,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Timestamp when last migrate attempt on this MigratableResource started.
-   * Will not be set if there's no migrate attempt on this MigratableResource.
+   * Output only. Timestamp when the last migration attempt on this MigratableResource
+   * started. Will not be set if there's no migration attempt on this
+   * MigratableResource.
    * </pre>
    *
    * <code>
@@ -5841,8 +5842,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Timestamp when last migrate attempt on this MigratableResource started.
-   * Will not be set if there's no migrate attempt on this MigratableResource.
+   * Output only. Timestamp when the last migration attempt on this MigratableResource
+   * started. Will not be set if there's no migration attempt on this
+   * MigratableResource.
    * </pre>
    *
    * <code>
@@ -5861,8 +5863,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Timestamp when last migrate attempt on this MigratableResource started.
-   * Will not be set if there's no migrate attempt on this MigratableResource.
+   * Output only. Timestamp when the last migration attempt on this MigratableResource
+   * started. Will not be set if there's no migration attempt on this
+   * MigratableResource.
    * </pre>
    *
    * <code>
@@ -7419,8 +7422,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when last migrate attempt on this MigratableResource started.
-     * Will not be set if there's no migrate attempt on this MigratableResource.
+     * Output only. Timestamp when the last migration attempt on this MigratableResource
+     * started. Will not be set if there's no migration attempt on this
+     * MigratableResource.
      * </pre>
      *
      * <code>
@@ -7436,8 +7440,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when last migrate attempt on this MigratableResource started.
-     * Will not be set if there's no migrate attempt on this MigratableResource.
+     * Output only. Timestamp when the last migration attempt on this MigratableResource
+     * started. Will not be set if there's no migration attempt on this
+     * MigratableResource.
      * </pre>
      *
      * <code>
@@ -7459,8 +7464,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when last migrate attempt on this MigratableResource started.
-     * Will not be set if there's no migrate attempt on this MigratableResource.
+     * Output only. Timestamp when the last migration attempt on this MigratableResource
+     * started. Will not be set if there's no migration attempt on this
+     * MigratableResource.
      * </pre>
      *
      * <code>
@@ -7484,8 +7490,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when last migrate attempt on this MigratableResource started.
-     * Will not be set if there's no migrate attempt on this MigratableResource.
+     * Output only. Timestamp when the last migration attempt on this MigratableResource
+     * started. Will not be set if there's no migration attempt on this
+     * MigratableResource.
      * </pre>
      *
      * <code>
@@ -7506,8 +7513,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when last migrate attempt on this MigratableResource started.
-     * Will not be set if there's no migrate attempt on this MigratableResource.
+     * Output only. Timestamp when the last migration attempt on this MigratableResource
+     * started. Will not be set if there's no migration attempt on this
+     * MigratableResource.
      * </pre>
      *
      * <code>
@@ -7535,8 +7543,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when last migrate attempt on this MigratableResource started.
-     * Will not be set if there's no migrate attempt on this MigratableResource.
+     * Output only. Timestamp when the last migration attempt on this MigratableResource
+     * started. Will not be set if there's no migration attempt on this
+     * MigratableResource.
      * </pre>
      *
      * <code>
@@ -7558,8 +7567,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when last migrate attempt on this MigratableResource started.
-     * Will not be set if there's no migrate attempt on this MigratableResource.
+     * Output only. Timestamp when the last migration attempt on this MigratableResource
+     * started. Will not be set if there's no migration attempt on this
+     * MigratableResource.
      * </pre>
      *
      * <code>
@@ -7575,8 +7585,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when last migrate attempt on this MigratableResource started.
-     * Will not be set if there's no migrate attempt on this MigratableResource.
+     * Output only. Timestamp when the last migration attempt on this MigratableResource
+     * started. Will not be set if there's no migration attempt on this
+     * MigratableResource.
      * </pre>
      *
      * <code>
@@ -7596,8 +7607,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when last migrate attempt on this MigratableResource started.
-     * Will not be set if there's no migrate attempt on this MigratableResource.
+     * Output only. Timestamp when the last migration attempt on this MigratableResource
+     * started. Will not be set if there's no migration attempt on this
+     * MigratableResource.
      * </pre>
      *
      * <code>

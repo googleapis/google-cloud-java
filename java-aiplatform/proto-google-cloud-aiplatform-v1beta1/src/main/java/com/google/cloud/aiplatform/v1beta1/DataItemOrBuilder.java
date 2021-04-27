@@ -263,7 +263,7 @@ public interface DataItemOrBuilder
    *
    *
    * <pre>
-   * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+   * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
    * "overwrite" update happens.
    * </pre>
    *
@@ -276,7 +276,7 @@ public interface DataItemOrBuilder
    *
    *
    * <pre>
-   * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+   * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
    * "overwrite" update happens.
    * </pre>
    *

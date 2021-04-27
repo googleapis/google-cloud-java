@@ -97,7 +97,7 @@ public interface ListHyperparameterTuningJobsResponseOrBuilder
    *
    *
    * <pre>
-   * A token to retrieve next page of results.
+   * A token to retrieve the next page of results.
    * Pass to [ListHyperparameterTuningJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest.page_token] to obtain that
    * page.
    * </pre>
@@ -111,7 +111,7 @@ public interface ListHyperparameterTuningJobsResponseOrBuilder
    *
    *
    * <pre>
-   * A token to retrieve next page of results.
+   * A token to retrieve the next page of results.
    * Pass to [ListHyperparameterTuningJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest.page_token] to obtain that
    * page.
    * </pre>

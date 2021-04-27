@@ -177,6 +177,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The spec of the worker pools including machine type and Docker image.
+   * All worker pools except the first one are optional and can be skipped by
+   * providing an empty value.
    * </pre>
    *
    * <code>
@@ -193,6 +195,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The spec of the worker pools including machine type and Docker image.
+   * All worker pools except the first one are optional and can be skipped by
+   * providing an empty value.
    * </pre>
    *
    * <code>
@@ -209,6 +213,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The spec of the worker pools including machine type and Docker image.
+   * All worker pools except the first one are optional and can be skipped by
+   * providing an empty value.
    * </pre>
    *
    * <code>
@@ -224,6 +230,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The spec of the worker pools including machine type and Docker image.
+   * All worker pools except the first one are optional and can be skipped by
+   * providing an empty value.
    * </pre>
    *
    * <code>
@@ -239,6 +247,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The spec of the worker pools including machine type and Docker image.
+   * All worker pools except the first one are optional and can be skipped by
+   * providing an empty value.
    * </pre>
    *
    * <code>
@@ -984,6 +994,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>
@@ -1003,6 +1015,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>
@@ -1021,6 +1035,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>
@@ -1039,6 +1055,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>
@@ -1064,6 +1082,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>
@@ -1086,6 +1106,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>
@@ -1110,6 +1132,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>
@@ -1135,6 +1159,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>
@@ -1157,6 +1183,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>
@@ -1179,6 +1207,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>
@@ -1201,6 +1231,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>
@@ -1222,6 +1254,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>
@@ -1243,6 +1277,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>
@@ -1258,6 +1294,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>
@@ -1277,6 +1315,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>
@@ -1296,6 +1336,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>
@@ -1311,6 +1353,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>
@@ -1328,6 +1372,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The spec of the worker pools including machine type and Docker image.
+     * All worker pools except the first one are optional and can be skipped by
+     * providing an empty value.
      * </pre>
      *
      * <code>

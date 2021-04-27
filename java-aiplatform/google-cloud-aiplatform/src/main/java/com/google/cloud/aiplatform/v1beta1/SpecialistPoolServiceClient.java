@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -332,7 +332,7 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the SpecialistPool resource. The form is
-   *     <p>`projects/{project}/locations/{location}/specialistPools/{specialist_pool}`.
+   *     `projects/{project}/locations/{location}/specialistPools/{specialist_pool}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SpecialistPool getSpecialistPool(SpecialistPoolName name) {
@@ -359,7 +359,7 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the SpecialistPool resource. The form is
-   *     <p>`projects/{project}/locations/{location}/specialistPools/{specialist_pool}`.
+   *     `projects/{project}/locations/{location}/specialistPools/{specialist_pool}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SpecialistPool getSpecialistPool(String name) {
@@ -543,6 +543,13 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (SpecialistPoolServiceClient specialistPoolServiceClient =
    *     SpecialistPoolServiceClient.create()) {
+   *   ListSpecialistPoolsRequest request =
+   *       ListSpecialistPoolsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
    *   while (true) {
    *     ListSpecialistPoolsResponse response =
    *         specialistPoolServiceClient.listSpecialistPoolsCallable().call(request);

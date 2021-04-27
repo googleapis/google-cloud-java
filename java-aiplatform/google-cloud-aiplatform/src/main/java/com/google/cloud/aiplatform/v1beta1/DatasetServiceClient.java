@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -576,6 +576,15 @@ public class DatasetServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   ListDatasetsRequest request =
+   *       ListDatasetsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListDatasetsResponse response = datasetServiceClient.listDatasetsCallable().call(request);
    *     for (Dataset element : response.getResponsesList()) {
@@ -1090,6 +1099,15 @@ public class DatasetServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   ListDataItemsRequest request =
+   *       ListDataItemsRequest.newBuilder()
+   *           .setParent(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListDataItemsResponse response = datasetServiceClient.listDataItemsCallable().call(request);
    *     for (DataItem element : response.getResponsesList()) {
@@ -1124,7 +1142,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the AnnotationSpec resource. Format:
-   *     <p>`projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotationSpec getAnnotationSpec(AnnotationSpecName name) {
@@ -1151,7 +1169,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the AnnotationSpec resource. Format:
-   *     <p>`projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotationSpec getAnnotationSpec(String name) {
@@ -1227,7 +1245,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the DataItem to list Annotations from. Format:
-   *     <p>`projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAnnotationsPagedResponse listAnnotations(DataItemName parent) {
@@ -1255,7 +1273,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the DataItem to list Annotations from. Format:
-   *     <p>`projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAnnotationsPagedResponse listAnnotations(String parent) {
@@ -1334,6 +1352,16 @@ public class DatasetServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   ListAnnotationsRequest request =
+   *       ListAnnotationsRequest.newBuilder()
+   *           .setParent(
+   *               DataItemName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATA_ITEM]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListAnnotationsResponse response =
    *         datasetServiceClient.listAnnotationsCallable().call(request);

@@ -27,6 +27,31 @@ public interface TrialOrBuilder
    *
    *
    * <pre>
+   * Output only. Resource name of the Trial assigned by the service.
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resource name of the Trial assigned by the service.
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The identifier of the Trial assigned by the service.
    * </pre>
    *

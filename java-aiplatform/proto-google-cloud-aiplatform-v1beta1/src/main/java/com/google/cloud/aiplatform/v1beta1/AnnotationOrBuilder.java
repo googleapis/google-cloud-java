@@ -203,7 +203,7 @@ public interface AnnotationOrBuilder
    *
    *
    * <pre>
-   * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+   * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
    * "overwrite" update happens.
    * </pre>
    *
@@ -216,7 +216,7 @@ public interface AnnotationOrBuilder
    *
    *
    * <pre>
-   * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+   * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
    * "overwrite" update happens.
    * </pre>
    *
@@ -282,7 +282,7 @@ public interface AnnotationOrBuilder
    * and are immutable. Following system labels exist for each Annotation:
    * * "aiplatform.googleapis.com/annotation_set_name":
    *   optional, name of the UI's annotation set this Annotation belongs to.
-   *   If not set the Annotation is not visible in the UI.
+   *   If not set, the Annotation is not visible in the UI.
    * * "aiplatform.googleapis.com/payload_schema":
    *   output only, its value is the [payload_schema's][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri]
    *   title.
@@ -306,7 +306,7 @@ public interface AnnotationOrBuilder
    * and are immutable. Following system labels exist for each Annotation:
    * * "aiplatform.googleapis.com/annotation_set_name":
    *   optional, name of the UI's annotation set this Annotation belongs to.
-   *   If not set the Annotation is not visible in the UI.
+   *   If not set, the Annotation is not visible in the UI.
    * * "aiplatform.googleapis.com/payload_schema":
    *   output only, its value is the [payload_schema's][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri]
    *   title.
@@ -333,7 +333,7 @@ public interface AnnotationOrBuilder
    * and are immutable. Following system labels exist for each Annotation:
    * * "aiplatform.googleapis.com/annotation_set_name":
    *   optional, name of the UI's annotation set this Annotation belongs to.
-   *   If not set the Annotation is not visible in the UI.
+   *   If not set, the Annotation is not visible in the UI.
    * * "aiplatform.googleapis.com/payload_schema":
    *   output only, its value is the [payload_schema's][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri]
    *   title.
@@ -357,7 +357,7 @@ public interface AnnotationOrBuilder
    * and are immutable. Following system labels exist for each Annotation:
    * * "aiplatform.googleapis.com/annotation_set_name":
    *   optional, name of the UI's annotation set this Annotation belongs to.
-   *   If not set the Annotation is not visible in the UI.
+   *   If not set, the Annotation is not visible in the UI.
    * * "aiplatform.googleapis.com/payload_schema":
    *   output only, its value is the [payload_schema's][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri]
    *   title.
@@ -381,7 +381,7 @@ public interface AnnotationOrBuilder
    * and are immutable. Following system labels exist for each Annotation:
    * * "aiplatform.googleapis.com/annotation_set_name":
    *   optional, name of the UI's annotation set this Annotation belongs to.
-   *   If not set the Annotation is not visible in the UI.
+   *   If not set, the Annotation is not visible in the UI.
    * * "aiplatform.googleapis.com/payload_schema":
    *   output only, its value is the [payload_schema's][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri]
    *   title.

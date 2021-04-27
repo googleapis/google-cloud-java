@@ -16,11 +16,6 @@
 package com.google.cloud.aiplatform.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -144,7 +139,7 @@ public final class PredictionServiceGrpc {
         com.google.cloud.aiplatform.v1.PredictRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.PredictResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getPredictMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPredictMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -152,7 +147,7 @@ public final class PredictionServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getPredictMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1.PredictRequest,
                       com.google.cloud.aiplatform.v1.PredictResponse>(this, METHODID_PREDICT)))
@@ -190,7 +185,7 @@ public final class PredictionServiceGrpc {
         com.google.cloud.aiplatform.v1.PredictRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.PredictResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPredictMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -224,7 +219,8 @@ public final class PredictionServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.PredictResponse predict(
         com.google.cloud.aiplatform.v1.PredictRequest request) {
-      return blockingUnaryCall(getChannel(), getPredictMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPredictMethod(), getCallOptions(), request);
     }
   }
 
@@ -257,7 +253,8 @@ public final class PredictionServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1.PredictResponse>
         predict(com.google.cloud.aiplatform.v1.PredictRequest request) {
-      return futureUnaryCall(getChannel().newCall(getPredictMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPredictMethod(), getCallOptions()), request);
     }
   }
 

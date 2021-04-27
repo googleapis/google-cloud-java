@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,6 +129,23 @@
  *   SpecialistPoolName name =
  *       SpecialistPoolName.of("[PROJECT]", "[LOCATION]", "[SPECIALIST_POOL]");
  *   SpecialistPool response = specialistPoolServiceClient.getSpecialistPool(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= VizierServiceClient =======================
+ *
+ * <p>Service Description: Cloud AI Platform Vizier API.
+ *
+ * <p>Vizier service is a GCP service to solve blackbox optimization problems, such as tuning
+ * machine learning hyperparameters and searching over deep learning architectures.
+ *
+ * <p>Sample for VizierServiceClient:
+ *
+ * <pre>{@code
+ * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   Study study = Study.newBuilder().build();
+ *   Study response = vizierServiceClient.createStudy(parent, study);
  * }
  * }</pre>
  */

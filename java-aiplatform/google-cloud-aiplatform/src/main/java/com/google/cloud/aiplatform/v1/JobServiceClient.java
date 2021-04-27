@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -470,6 +470,14 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ListCustomJobsRequest request =
+   *       ListCustomJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
    *   while (true) {
    *     ListCustomJobsResponse response = jobServiceClient.listCustomJobsCallable().call(request);
    *     for (CustomJob element : response.getResponsesList()) {
@@ -1054,6 +1062,15 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ListDataLabelingJobsRequest request =
+   *       ListDataLabelingJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
    *   while (true) {
    *     ListDataLabelingJobsResponse response =
    *         jobServiceClient.listDataLabelingJobsCallable().call(request);
@@ -1649,6 +1666,14 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ListHyperparameterTuningJobsRequest request =
+   *       ListHyperparameterTuningJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
    *   while (true) {
    *     ListHyperparameterTuningJobsResponse response =
    *         jobServiceClient.listHyperparameterTuningJobsCallable().call(request);
@@ -2292,6 +2317,14 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ListBatchPredictionJobsRequest request =
+   *       ListBatchPredictionJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
    *   while (true) {
    *     ListBatchPredictionJobsResponse response =
    *         jobServiceClient.listBatchPredictionJobsCallable().call(request);

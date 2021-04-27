@@ -276,7 +276,7 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
    *   * `data_labeling_dataset:*`.
    * * Migrated or not: Filter migrated resource or not by last_migrate_time.
    *   * `last_migrate_time:*` will filter migrated resources.
-   *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
+   *   * `NOT last_migrate_time:*` will filter not yet migrated resources.
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -307,7 +307,7 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
    *   * `data_labeling_dataset:*`.
    * * Migrated or not: Filter migrated resource or not by last_migrate_time.
    *   * `last_migrate_time:*` will filter migrated resources.
-   *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
+   *   * `NOT last_migrate_time:*` will filter not yet migrated resources.
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -1011,7 +1011,7 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
      *   * `data_labeling_dataset:*`.
      * * Migrated or not: Filter migrated resource or not by last_migrate_time.
      *   * `last_migrate_time:*` will filter migrated resources.
-     *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
+     *   * `NOT last_migrate_time:*` will filter not yet migrated resources.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1041,7 +1041,7 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
      *   * `data_labeling_dataset:*`.
      * * Migrated or not: Filter migrated resource or not by last_migrate_time.
      *   * `last_migrate_time:*` will filter migrated resources.
-     *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
+     *   * `NOT last_migrate_time:*` will filter not yet migrated resources.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1071,7 +1071,7 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
      *   * `data_labeling_dataset:*`.
      * * Migrated or not: Filter migrated resource or not by last_migrate_time.
      *   * `last_migrate_time:*` will filter migrated resources.
-     *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
+     *   * `NOT last_migrate_time:*` will filter not yet migrated resources.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1100,7 +1100,7 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
      *   * `data_labeling_dataset:*`.
      * * Migrated or not: Filter migrated resource or not by last_migrate_time.
      *   * `last_migrate_time:*` will filter migrated resources.
-     *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
+     *   * `NOT last_migrate_time:*` will filter not yet migrated resources.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1125,7 +1125,7 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
      *   * `data_labeling_dataset:*`.
      * * Migrated or not: Filter migrated resource or not by last_migrate_time.
      *   * `last_migrate_time:*` will filter migrated resources.
-     *   * `NOT last_migrate_time:*` will filter not yet migrated resource.
+     *   * `NOT last_migrate_time:*` will filter not yet migrated resources.
      * </pre>
      *
      * <code>string filter = 4;</code>

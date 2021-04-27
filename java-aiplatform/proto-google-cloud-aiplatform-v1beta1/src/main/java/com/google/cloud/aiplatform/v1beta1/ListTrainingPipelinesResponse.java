@@ -206,7 +206,7 @@ public final class ListTrainingPipelinesResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * A token to retrieve next page of results.
+   * A token to retrieve the next page of results.
    * Pass to [ListTrainingPipelinesRequest.page_token][google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest.page_token] to obtain that page.
    * </pre>
    *
@@ -230,7 +230,7 @@ public final class ListTrainingPipelinesResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * A token to retrieve next page of results.
+   * A token to retrieve the next page of results.
    * Pass to [ListTrainingPipelinesRequest.page_token][google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest.page_token] to obtain that page.
    * </pre>
    *
@@ -1022,7 +1022,7 @@ public final class ListTrainingPipelinesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * A token to retrieve next page of results.
+     * A token to retrieve the next page of results.
      * Pass to [ListTrainingPipelinesRequest.page_token][google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest.page_token] to obtain that page.
      * </pre>
      *
@@ -1045,7 +1045,7 @@ public final class ListTrainingPipelinesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * A token to retrieve next page of results.
+     * A token to retrieve the next page of results.
      * Pass to [ListTrainingPipelinesRequest.page_token][google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest.page_token] to obtain that page.
      * </pre>
      *
@@ -1068,7 +1068,7 @@ public final class ListTrainingPipelinesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * A token to retrieve next page of results.
+     * A token to retrieve the next page of results.
      * Pass to [ListTrainingPipelinesRequest.page_token][google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest.page_token] to obtain that page.
      * </pre>
      *
@@ -1090,7 +1090,7 @@ public final class ListTrainingPipelinesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * A token to retrieve next page of results.
+     * A token to retrieve the next page of results.
      * Pass to [ListTrainingPipelinesRequest.page_token][google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest.page_token] to obtain that page.
      * </pre>
      *
@@ -1108,7 +1108,7 @@ public final class ListTrainingPipelinesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * A token to retrieve next page of results.
+     * A token to retrieve the next page of results.
      * Pass to [ListTrainingPipelinesRequest.page_token][google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest.page_token] to obtain that page.
      * </pre>
      *

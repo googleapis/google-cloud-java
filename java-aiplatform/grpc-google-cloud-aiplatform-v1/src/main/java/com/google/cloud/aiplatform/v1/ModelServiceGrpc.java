@@ -16,11 +16,6 @@
 package com.google.cloud.aiplatform.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  *
@@ -550,7 +545,8 @@ public final class ModelServiceGrpc {
     public void uploadModel(
         com.google.cloud.aiplatform.v1.UploadModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUploadModelMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUploadModelMethod(), responseObserver);
     }
 
     /**
@@ -563,7 +559,7 @@ public final class ModelServiceGrpc {
     public void getModel(
         com.google.cloud.aiplatform.v1.GetModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Model> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetModelMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetModelMethod(), responseObserver);
     }
 
     /**
@@ -577,7 +573,7 @@ public final class ModelServiceGrpc {
         com.google.cloud.aiplatform.v1.ListModelsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListModelsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListModelsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListModelsMethod(), responseObserver);
     }
 
     /**
@@ -590,7 +586,8 @@ public final class ModelServiceGrpc {
     public void updateModel(
         com.google.cloud.aiplatform.v1.UpdateModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Model> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateModelMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateModelMethod(), responseObserver);
     }
 
     /**
@@ -605,7 +602,8 @@ public final class ModelServiceGrpc {
     public void deleteModel(
         com.google.cloud.aiplatform.v1.DeleteModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteModelMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteModelMethod(), responseObserver);
     }
 
     /**
@@ -620,7 +618,8 @@ public final class ModelServiceGrpc {
     public void exportModel(
         com.google.cloud.aiplatform.v1.ExportModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getExportModelMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportModelMethod(), responseObserver);
     }
 
     /**
@@ -634,7 +633,8 @@ public final class ModelServiceGrpc {
         com.google.cloud.aiplatform.v1.GetModelEvaluationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ModelEvaluation>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetModelEvaluationMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetModelEvaluationMethod(), responseObserver);
     }
 
     /**
@@ -648,7 +648,8 @@ public final class ModelServiceGrpc {
         com.google.cloud.aiplatform.v1.ListModelEvaluationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListModelEvaluationsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListModelEvaluationsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListModelEvaluationsMethod(), responseObserver);
     }
 
     /**
@@ -662,7 +663,8 @@ public final class ModelServiceGrpc {
         com.google.cloud.aiplatform.v1.GetModelEvaluationSliceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ModelEvaluationSlice>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetModelEvaluationSliceMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetModelEvaluationSliceMethod(), responseObserver);
     }
 
     /**
@@ -677,7 +679,8 @@ public final class ModelServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListModelEvaluationSlicesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListModelEvaluationSlicesMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -685,65 +688,65 @@ public final class ModelServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getUploadModelMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1.UploadModelRequest,
                       com.google.longrunning.Operation>(this, METHODID_UPLOAD_MODEL)))
           .addMethod(
               getGetModelMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1.GetModelRequest,
                       com.google.cloud.aiplatform.v1.Model>(this, METHODID_GET_MODEL)))
           .addMethod(
               getListModelsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1.ListModelsRequest,
                       com.google.cloud.aiplatform.v1.ListModelsResponse>(
                       this, METHODID_LIST_MODELS)))
           .addMethod(
               getUpdateModelMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1.UpdateModelRequest,
                       com.google.cloud.aiplatform.v1.Model>(this, METHODID_UPDATE_MODEL)))
           .addMethod(
               getDeleteModelMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1.DeleteModelRequest,
                       com.google.longrunning.Operation>(this, METHODID_DELETE_MODEL)))
           .addMethod(
               getExportModelMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1.ExportModelRequest,
                       com.google.longrunning.Operation>(this, METHODID_EXPORT_MODEL)))
           .addMethod(
               getGetModelEvaluationMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1.GetModelEvaluationRequest,
                       com.google.cloud.aiplatform.v1.ModelEvaluation>(
                       this, METHODID_GET_MODEL_EVALUATION)))
           .addMethod(
               getListModelEvaluationsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1.ListModelEvaluationsRequest,
                       com.google.cloud.aiplatform.v1.ListModelEvaluationsResponse>(
                       this, METHODID_LIST_MODEL_EVALUATIONS)))
           .addMethod(
               getGetModelEvaluationSliceMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1.GetModelEvaluationSliceRequest,
                       com.google.cloud.aiplatform.v1.ModelEvaluationSlice>(
                       this, METHODID_GET_MODEL_EVALUATION_SLICE)))
           .addMethod(
               getListModelEvaluationSlicesMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest,
                       com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesResponse>(
@@ -780,7 +783,7 @@ public final class ModelServiceGrpc {
     public void uploadModel(
         com.google.cloud.aiplatform.v1.UploadModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUploadModelMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -796,7 +799,7 @@ public final class ModelServiceGrpc {
     public void getModel(
         com.google.cloud.aiplatform.v1.GetModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Model> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetModelMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -811,7 +814,7 @@ public final class ModelServiceGrpc {
         com.google.cloud.aiplatform.v1.ListModelsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListModelsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListModelsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -825,7 +828,7 @@ public final class ModelServiceGrpc {
     public void updateModel(
         com.google.cloud.aiplatform.v1.UpdateModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Model> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateModelMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -843,7 +846,7 @@ public final class ModelServiceGrpc {
     public void deleteModel(
         com.google.cloud.aiplatform.v1.DeleteModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteModelMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -861,7 +864,7 @@ public final class ModelServiceGrpc {
     public void exportModel(
         com.google.cloud.aiplatform.v1.ExportModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getExportModelMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -878,7 +881,7 @@ public final class ModelServiceGrpc {
         com.google.cloud.aiplatform.v1.GetModelEvaluationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ModelEvaluation>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetModelEvaluationMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -895,7 +898,7 @@ public final class ModelServiceGrpc {
         com.google.cloud.aiplatform.v1.ListModelEvaluationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListModelEvaluationsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListModelEvaluationsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -912,7 +915,7 @@ public final class ModelServiceGrpc {
         com.google.cloud.aiplatform.v1.GetModelEvaluationSliceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ModelEvaluationSlice>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetModelEvaluationSliceMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -930,7 +933,7 @@ public final class ModelServiceGrpc {
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListModelEvaluationSlicesMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -965,7 +968,8 @@ public final class ModelServiceGrpc {
      */
     public com.google.longrunning.Operation uploadModel(
         com.google.cloud.aiplatform.v1.UploadModelRequest request) {
-      return blockingUnaryCall(getChannel(), getUploadModelMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUploadModelMethod(), getCallOptions(), request);
     }
 
     /**
@@ -977,7 +981,8 @@ public final class ModelServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.Model getModel(
         com.google.cloud.aiplatform.v1.GetModelRequest request) {
-      return blockingUnaryCall(getChannel(), getGetModelMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetModelMethod(), getCallOptions(), request);
     }
 
     /**
@@ -989,7 +994,8 @@ public final class ModelServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.ListModelsResponse listModels(
         com.google.cloud.aiplatform.v1.ListModelsRequest request) {
-      return blockingUnaryCall(getChannel(), getListModelsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListModelsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1001,7 +1007,8 @@ public final class ModelServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.Model updateModel(
         com.google.cloud.aiplatform.v1.UpdateModelRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateModelMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateModelMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1015,7 +1022,8 @@ public final class ModelServiceGrpc {
      */
     public com.google.longrunning.Operation deleteModel(
         com.google.cloud.aiplatform.v1.DeleteModelRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteModelMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteModelMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1029,7 +1037,8 @@ public final class ModelServiceGrpc {
      */
     public com.google.longrunning.Operation exportModel(
         com.google.cloud.aiplatform.v1.ExportModelRequest request) {
-      return blockingUnaryCall(getChannel(), getExportModelMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportModelMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1041,7 +1050,7 @@ public final class ModelServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.ModelEvaluation getModelEvaluation(
         com.google.cloud.aiplatform.v1.GetModelEvaluationRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetModelEvaluationMethod(), getCallOptions(), request);
     }
 
@@ -1054,7 +1063,7 @@ public final class ModelServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.ListModelEvaluationsResponse listModelEvaluations(
         com.google.cloud.aiplatform.v1.ListModelEvaluationsRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListModelEvaluationsMethod(), getCallOptions(), request);
     }
 
@@ -1067,7 +1076,7 @@ public final class ModelServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.ModelEvaluationSlice getModelEvaluationSlice(
         com.google.cloud.aiplatform.v1.GetModelEvaluationSliceRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetModelEvaluationSliceMethod(), getCallOptions(), request);
     }
 
@@ -1081,7 +1090,7 @@ public final class ModelServiceGrpc {
     public com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesResponse
         listModelEvaluationSlices(
             com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListModelEvaluationSlicesMethod(), getCallOptions(), request);
     }
   }
@@ -1114,7 +1123,7 @@ public final class ModelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         uploadModel(com.google.cloud.aiplatform.v1.UploadModelRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUploadModelMethod(), getCallOptions()), request);
     }
 
@@ -1127,7 +1136,8 @@ public final class ModelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.aiplatform.v1.Model>
         getModel(com.google.cloud.aiplatform.v1.GetModelRequest request) {
-      return futureUnaryCall(getChannel().newCall(getGetModelMethod(), getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetModelMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1140,7 +1150,7 @@ public final class ModelServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1.ListModelsResponse>
         listModels(com.google.cloud.aiplatform.v1.ListModelsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListModelsMethod(), getCallOptions()), request);
     }
 
@@ -1153,7 +1163,7 @@ public final class ModelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.aiplatform.v1.Model>
         updateModel(com.google.cloud.aiplatform.v1.UpdateModelRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateModelMethod(), getCallOptions()), request);
     }
 
@@ -1168,7 +1178,7 @@ public final class ModelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteModel(com.google.cloud.aiplatform.v1.DeleteModelRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteModelMethod(), getCallOptions()), request);
     }
 
@@ -1183,7 +1193,7 @@ public final class ModelServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         exportModel(com.google.cloud.aiplatform.v1.ExportModelRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getExportModelMethod(), getCallOptions()), request);
     }
 
@@ -1197,7 +1207,7 @@ public final class ModelServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1.ModelEvaluation>
         getModelEvaluation(com.google.cloud.aiplatform.v1.GetModelEvaluationRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetModelEvaluationMethod(), getCallOptions()), request);
     }
 
@@ -1211,7 +1221,7 @@ public final class ModelServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1.ListModelEvaluationsResponse>
         listModelEvaluations(com.google.cloud.aiplatform.v1.ListModelEvaluationsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListModelEvaluationsMethod(), getCallOptions()), request);
     }
 
@@ -1226,7 +1236,7 @@ public final class ModelServiceGrpc {
             com.google.cloud.aiplatform.v1.ModelEvaluationSlice>
         getModelEvaluationSlice(
             com.google.cloud.aiplatform.v1.GetModelEvaluationSliceRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetModelEvaluationSliceMethod(), getCallOptions()), request);
     }
 
@@ -1241,7 +1251,7 @@ public final class ModelServiceGrpc {
             com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesResponse>
         listModelEvaluationSlices(
             com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListModelEvaluationSlicesMethod(), getCallOptions()), request);
     }
   }

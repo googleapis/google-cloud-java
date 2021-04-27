@@ -51,6 +51,10 @@ public final class MachineResourcesProto {
       internal_static_google_cloud_aiplatform_v1beta1_DiskSpec_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_DiskSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -69,24 +73,28 @@ public final class MachineResourcesProto {
           + "e\030\001 \001(\tB\003\340A\005\022O\n\020accelerator_type\030\002 \001(\01620"
           + ".google.cloud.aiplatform.v1beta1.Acceler"
           + "atorTypeB\003\340A\005\022\031\n\021accelerator_count\030\003 \001(\005"
-          + "\"\243\001\n\022DedicatedResources\022J\n\014machine_spec\030"
+          + "\"\202\002\n\022DedicatedResources\022J\n\014machine_spec\030"
           + "\001 \001(\0132,.google.cloud.aiplatform.v1beta1."
           + "MachineSpecB\006\340A\002\340A\005\022!\n\021min_replica_count"
           + "\030\002 \001(\005B\006\340A\002\340A\005\022\036\n\021max_replica_count\030\003 \001("
-          + "\005B\003\340A\005\"T\n\022AutomaticResources\022\036\n\021min_repl"
-          + "ica_count\030\001 \001(\005B\003\340A\005\022\036\n\021max_replica_coun"
-          + "t\030\002 \001(\005B\003\340A\005\"\252\001\n\027BatchDedicatedResources"
-          + "\022J\n\014machine_spec\030\001 \001(\0132,.google.cloud.ai"
-          + "platform.v1beta1.MachineSpecB\006\340A\002\340A\005\022#\n\026"
-          + "starting_replica_count\030\002 \001(\005B\003\340A\005\022\036\n\021max"
-          + "_replica_count\030\003 \001(\005B\003\340A\005\"/\n\021ResourcesCo"
-          + "nsumed\022\032\n\rreplica_hours\030\001 \001(\001B\003\340A\003\"=\n\010Di"
-          + "skSpec\022\026\n\016boot_disk_type\030\001 \001(\t\022\031\n\021boot_d"
-          + "isk_size_gb\030\002 \001(\005B\211\001\n#com.google.cloud.a"
-          + "iplatform.v1beta1B\025MachineResourcesProto"
-          + "P\001ZIgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/aiplatform/v1beta1;aiplatformb\006p"
-          + "roto3"
+          + "\005B\003\340A\005\022]\n\030autoscaling_metric_specs\030\004 \003(\013"
+          + "26.google.cloud.aiplatform.v1beta1.Autos"
+          + "calingMetricSpecB\003\340A\005\"T\n\022AutomaticResour"
+          + "ces\022\036\n\021min_replica_count\030\001 \001(\005B\003\340A\005\022\036\n\021m"
+          + "ax_replica_count\030\002 \001(\005B\003\340A\005\"\252\001\n\027BatchDed"
+          + "icatedResources\022J\n\014machine_spec\030\001 \001(\0132,."
+          + "google.cloud.aiplatform.v1beta1.MachineS"
+          + "pecB\006\340A\002\340A\005\022#\n\026starting_replica_count\030\002 "
+          + "\001(\005B\003\340A\005\022\036\n\021max_replica_count\030\003 \001(\005B\003\340A\005"
+          + "\"/\n\021ResourcesConsumed\022\032\n\rreplica_hours\030\001"
+          + " \001(\001B\003\340A\003\"=\n\010DiskSpec\022\026\n\016boot_disk_type\030"
+          + "\001 \001(\t\022\031\n\021boot_disk_size_gb\030\002 \001(\005\"A\n\025Auto"
+          + "scalingMetricSpec\022\030\n\013metric_name\030\001 \001(\tB\003"
+          + "\340A\002\022\016\n\006target\030\002 \001(\005B\211\001\n#com.google.cloud"
+          + ".aiplatform.v1beta1B\025MachineResourcesPro"
+          + "toP\001ZIgoogle.golang.org/genproto/googlea"
+          + "pis/cloud/aiplatform/v1beta1;aiplatformb"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -110,7 +118,7 @@ public final class MachineResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_DedicatedResources_descriptor,
             new java.lang.String[] {
-              "MachineSpec", "MinReplicaCount", "MaxReplicaCount",
+              "MachineSpec", "MinReplicaCount", "MaxReplicaCount", "AutoscalingMetricSpecs",
             });
     internal_static_google_cloud_aiplatform_v1beta1_AutomaticResources_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -143,6 +151,14 @@ public final class MachineResourcesProto {
             internal_static_google_cloud_aiplatform_v1beta1_DiskSpec_descriptor,
             new java.lang.String[] {
               "BootDiskType", "BootDiskSizeGb",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_descriptor,
+            new java.lang.String[] {
+              "MetricName", "Target",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

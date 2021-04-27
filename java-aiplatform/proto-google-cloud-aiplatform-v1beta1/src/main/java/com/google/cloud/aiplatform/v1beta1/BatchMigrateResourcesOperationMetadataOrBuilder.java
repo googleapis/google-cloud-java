@@ -63,7 +63,7 @@ public interface BatchMigrateResourcesOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Partial results that reflects the latest migration operation progress.
+   * Partial results that reflect the latest migration operation progress.
    * </pre>
    *
    * <code>
@@ -77,7 +77,7 @@ public interface BatchMigrateResourcesOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Partial results that reflects the latest migration operation progress.
+   * Partial results that reflect the latest migration operation progress.
    * </pre>
    *
    * <code>
@@ -90,7 +90,7 @@ public interface BatchMigrateResourcesOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Partial results that reflects the latest migration operation progress.
+   * Partial results that reflect the latest migration operation progress.
    * </pre>
    *
    * <code>
@@ -102,7 +102,7 @@ public interface BatchMigrateResourcesOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Partial results that reflects the latest migration operation progress.
+   * Partial results that reflect the latest migration operation progress.
    * </pre>
    *
    * <code>
@@ -118,7 +118,7 @@ public interface BatchMigrateResourcesOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Partial results that reflects the latest migration operation progress.
+   * Partial results that reflect the latest migration operation progress.
    * </pre>
    *
    * <code>

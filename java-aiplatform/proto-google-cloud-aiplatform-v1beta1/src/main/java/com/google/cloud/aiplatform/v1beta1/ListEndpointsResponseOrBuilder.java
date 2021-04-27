@@ -79,7 +79,7 @@ public interface ListEndpointsResponseOrBuilder
    *
    *
    * <pre>
-   * A token to retrieve next page of results.
+   * A token to retrieve the next page of results.
    * Pass to [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token] to obtain that page.
    * </pre>
    *
@@ -92,7 +92,7 @@ public interface ListEndpointsResponseOrBuilder
    *
    *
    * <pre>
-   * A token to retrieve next page of results.
+   * A token to retrieve the next page of results.
    * Pass to [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token] to obtain that page.
    * </pre>
    *

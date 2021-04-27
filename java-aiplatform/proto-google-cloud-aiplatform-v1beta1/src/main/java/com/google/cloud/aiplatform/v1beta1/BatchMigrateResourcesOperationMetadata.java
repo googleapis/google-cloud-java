@@ -305,7 +305,7 @@ public final class BatchMigrateResourcesOperationMetadata
    *
    *
    * <pre>
-   * Represents a partial result in batch migration opreation for one
+   * Represents a partial result in batch migration operation for one
    * [MigrateResourceRequest][google.cloud.aiplatform.v1beta1.MigrateResourceRequest].
    * </pre>
    *
@@ -973,7 +973,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      *
      * <pre>
-     * Represents a partial result in batch migration opreation for one
+     * Represents a partial result in batch migration operation for one
      * [MigrateResourceRequest][google.cloud.aiplatform.v1beta1.MigrateResourceRequest].
      * </pre>
      *
@@ -2003,7 +2003,7 @@ public final class BatchMigrateResourcesOperationMetadata
    *
    *
    * <pre>
-   * Partial results that reflects the latest migration operation progress.
+   * Partial results that reflect the latest migration operation progress.
    * </pre>
    *
    * <code>
@@ -2020,7 +2020,7 @@ public final class BatchMigrateResourcesOperationMetadata
    *
    *
    * <pre>
-   * Partial results that reflects the latest migration operation progress.
+   * Partial results that reflect the latest migration operation progress.
    * </pre>
    *
    * <code>
@@ -2039,7 +2039,7 @@ public final class BatchMigrateResourcesOperationMetadata
    *
    *
    * <pre>
-   * Partial results that reflects the latest migration operation progress.
+   * Partial results that reflect the latest migration operation progress.
    * </pre>
    *
    * <code>
@@ -2054,7 +2054,7 @@ public final class BatchMigrateResourcesOperationMetadata
    *
    *
    * <pre>
-   * Partial results that reflects the latest migration operation progress.
+   * Partial results that reflect the latest migration operation progress.
    * </pre>
    *
    * <code>
@@ -2070,7 +2070,7 @@ public final class BatchMigrateResourcesOperationMetadata
    *
    *
    * <pre>
-   * Partial results that reflects the latest migration operation progress.
+   * Partial results that reflect the latest migration operation progress.
    * </pre>
    *
    * <code>
@@ -2711,7 +2711,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      *
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>
@@ -2732,7 +2732,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      *
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>
@@ -2750,7 +2750,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      *
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>
@@ -2769,7 +2769,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      *
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>
@@ -2796,7 +2796,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      *
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>
@@ -2821,7 +2821,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      *
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>
@@ -2847,7 +2847,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      *
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>
@@ -2874,7 +2874,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      *
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>
@@ -2898,7 +2898,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      *
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>
@@ -2923,7 +2923,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      *
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>
@@ -2949,7 +2949,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      *
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>
@@ -2970,7 +2970,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      *
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>
@@ -2991,7 +2991,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      *
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>
@@ -3007,7 +3007,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      *
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>
@@ -3027,7 +3027,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      *
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>
@@ -3049,7 +3049,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      *
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>
@@ -3068,7 +3068,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      *
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>
@@ -3088,7 +3088,7 @@ public final class BatchMigrateResourcesOperationMetadata
      *
      *
      * <pre>
-     * Partial results that reflects the latest migration operation progress.
+     * Partial results that reflect the latest migration operation progress.
      * </pre>
      *
      * <code>

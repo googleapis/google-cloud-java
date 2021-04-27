@@ -125,4 +125,14 @@
     <differenceType>7012</differenceType>
     <method>* has*()</method>
   </difference>
+  <difference>
+    <className>com/google/cloud/aiplatform/v1beta1/AcceleratorType</className>
+    <differenceType>6011</differenceType>
+    <field>*VALUE</field>
+  </difference>
+  <difference>
+    <className>com/google/cloud/aiplatform/v1beta1/AcceleratorType</className>
+    <differenceType>6001</differenceType>
+    <field>TPU*</field>
+  </difference>
 </differences>

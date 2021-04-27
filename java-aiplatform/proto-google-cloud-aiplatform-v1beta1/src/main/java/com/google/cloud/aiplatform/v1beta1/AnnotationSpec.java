@@ -363,7 +363,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+   * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
    * "overwrite" update happens.
    * </pre>
    *
@@ -387,7 +387,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+   * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
    * "overwrite" update happens.
    * </pre>
    *
@@ -1443,7 +1443,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
      * "overwrite" update happens.
      * </pre>
      *
@@ -1466,7 +1466,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
      * "overwrite" update happens.
      * </pre>
      *
@@ -1489,7 +1489,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
      * "overwrite" update happens.
      * </pre>
      *
@@ -1511,7 +1511,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
      * "overwrite" update happens.
      * </pre>
      *
@@ -1529,7 +1529,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
+     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
      * "overwrite" update happens.
      * </pre>
      *

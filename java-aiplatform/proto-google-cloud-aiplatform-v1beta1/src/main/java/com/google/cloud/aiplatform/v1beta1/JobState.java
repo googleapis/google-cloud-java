@@ -119,6 +119,16 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_PAUSED = 8;</code>
    */
   JOB_STATE_PAUSED(8),
+  /**
+   *
+   *
+   * <pre>
+   * The job has expired.
+   * </pre>
+   *
+   * <code>JOB_STATE_EXPIRED = 9;</code>
+   */
+  JOB_STATE_EXPIRED(9),
   UNRECOGNIZED(-1),
   ;
 
@@ -213,6 +223,16 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_PAUSED = 8;</code>
    */
   public static final int JOB_STATE_PAUSED_VALUE = 8;
+  /**
+   *
+   *
+   * <pre>
+   * The job has expired.
+   * </pre>
+   *
+   * <code>JOB_STATE_EXPIRED = 9;</code>
+   */
+  public static final int JOB_STATE_EXPIRED_VALUE = 9;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -256,6 +276,8 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
         return JOB_STATE_CANCELLED;
       case 8:
         return JOB_STATE_PAUSED;
+      case 9:
+        return JOB_STATE_EXPIRED;
       default:
         return null;
     }

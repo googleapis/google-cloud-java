@@ -16,11 +16,6 @@
 package com.google.cloud.aiplatform.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /** */
 @javax.annotation.Generated(
@@ -408,7 +403,8 @@ public final class EndpointServiceGrpc {
     public void createEndpoint(
         com.google.cloud.aiplatform.v1beta1.CreateEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateEndpointMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateEndpointMethod(), responseObserver);
     }
 
     /**
@@ -422,7 +418,8 @@ public final class EndpointServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.GetEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Endpoint>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getGetEndpointMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetEndpointMethod(), responseObserver);
     }
 
     /**
@@ -436,7 +433,8 @@ public final class EndpointServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.ListEndpointsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListEndpointsResponse>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getListEndpointsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListEndpointsMethod(), responseObserver);
     }
 
     /**
@@ -450,7 +448,8 @@ public final class EndpointServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.UpdateEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Endpoint>
             responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateEndpointMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateEndpointMethod(), responseObserver);
     }
 
     /**
@@ -463,7 +462,8 @@ public final class EndpointServiceGrpc {
     public void deleteEndpoint(
         com.google.cloud.aiplatform.v1beta1.DeleteEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteEndpointMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteEndpointMethod(), responseObserver);
     }
 
     /**
@@ -476,7 +476,8 @@ public final class EndpointServiceGrpc {
     public void deployModel(
         com.google.cloud.aiplatform.v1beta1.DeployModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeployModelMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeployModelMethod(), responseObserver);
     }
 
     /**
@@ -490,7 +491,8 @@ public final class EndpointServiceGrpc {
     public void undeployModel(
         com.google.cloud.aiplatform.v1beta1.UndeployModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getUndeployModelMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUndeployModelMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -498,45 +500,45 @@ public final class EndpointServiceGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
               getCreateEndpointMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1beta1.CreateEndpointRequest,
                       com.google.longrunning.Operation>(this, METHODID_CREATE_ENDPOINT)))
           .addMethod(
               getGetEndpointMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1beta1.GetEndpointRequest,
                       com.google.cloud.aiplatform.v1beta1.Endpoint>(this, METHODID_GET_ENDPOINT)))
           .addMethod(
               getListEndpointsMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1beta1.ListEndpointsRequest,
                       com.google.cloud.aiplatform.v1beta1.ListEndpointsResponse>(
                       this, METHODID_LIST_ENDPOINTS)))
           .addMethod(
               getUpdateEndpointMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1beta1.UpdateEndpointRequest,
                       com.google.cloud.aiplatform.v1beta1.Endpoint>(
                       this, METHODID_UPDATE_ENDPOINT)))
           .addMethod(
               getDeleteEndpointMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1beta1.DeleteEndpointRequest,
                       com.google.longrunning.Operation>(this, METHODID_DELETE_ENDPOINT)))
           .addMethod(
               getDeployModelMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1beta1.DeployModelRequest,
                       com.google.longrunning.Operation>(this, METHODID_DEPLOY_MODEL)))
           .addMethod(
               getUndeployModelMethod(),
-              asyncUnaryCall(
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1beta1.UndeployModelRequest,
                       com.google.longrunning.Operation>(this, METHODID_UNDEPLOY_MODEL)))
@@ -566,7 +568,7 @@ public final class EndpointServiceGrpc {
     public void createEndpoint(
         com.google.cloud.aiplatform.v1beta1.CreateEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateEndpointMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -583,7 +585,7 @@ public final class EndpointServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.GetEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Endpoint>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetEndpointMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -600,7 +602,7 @@ public final class EndpointServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.ListEndpointsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListEndpointsResponse>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListEndpointsMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -617,7 +619,7 @@ public final class EndpointServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.UpdateEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Endpoint>
             responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateEndpointMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -633,7 +635,7 @@ public final class EndpointServiceGrpc {
     public void deleteEndpoint(
         com.google.cloud.aiplatform.v1beta1.DeleteEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteEndpointMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -649,7 +651,7 @@ public final class EndpointServiceGrpc {
     public void deployModel(
         com.google.cloud.aiplatform.v1beta1.DeployModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeployModelMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -666,7 +668,7 @@ public final class EndpointServiceGrpc {
     public void undeployModel(
         com.google.cloud.aiplatform.v1beta1.UndeployModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUndeployModelMethod(), getCallOptions()),
           request,
           responseObserver);
@@ -695,7 +697,8 @@ public final class EndpointServiceGrpc {
      */
     public com.google.longrunning.Operation createEndpoint(
         com.google.cloud.aiplatform.v1beta1.CreateEndpointRequest request) {
-      return blockingUnaryCall(getChannel(), getCreateEndpointMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEndpointMethod(), getCallOptions(), request);
     }
 
     /**
@@ -707,7 +710,8 @@ public final class EndpointServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1beta1.Endpoint getEndpoint(
         com.google.cloud.aiplatform.v1beta1.GetEndpointRequest request) {
-      return blockingUnaryCall(getChannel(), getGetEndpointMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEndpointMethod(), getCallOptions(), request);
     }
 
     /**
@@ -719,7 +723,8 @@ public final class EndpointServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1beta1.ListEndpointsResponse listEndpoints(
         com.google.cloud.aiplatform.v1beta1.ListEndpointsRequest request) {
-      return blockingUnaryCall(getChannel(), getListEndpointsMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEndpointsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -731,7 +736,8 @@ public final class EndpointServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1beta1.Endpoint updateEndpoint(
         com.google.cloud.aiplatform.v1beta1.UpdateEndpointRequest request) {
-      return blockingUnaryCall(getChannel(), getUpdateEndpointMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEndpointMethod(), getCallOptions(), request);
     }
 
     /**
@@ -743,7 +749,8 @@ public final class EndpointServiceGrpc {
      */
     public com.google.longrunning.Operation deleteEndpoint(
         com.google.cloud.aiplatform.v1beta1.DeleteEndpointRequest request) {
-      return blockingUnaryCall(getChannel(), getDeleteEndpointMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEndpointMethod(), getCallOptions(), request);
     }
 
     /**
@@ -755,7 +762,8 @@ public final class EndpointServiceGrpc {
      */
     public com.google.longrunning.Operation deployModel(
         com.google.cloud.aiplatform.v1beta1.DeployModelRequest request) {
-      return blockingUnaryCall(getChannel(), getDeployModelMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeployModelMethod(), getCallOptions(), request);
     }
 
     /**
@@ -768,7 +776,8 @@ public final class EndpointServiceGrpc {
      */
     public com.google.longrunning.Operation undeployModel(
         com.google.cloud.aiplatform.v1beta1.UndeployModelRequest request) {
-      return blockingUnaryCall(getChannel(), getUndeployModelMethod(), getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUndeployModelMethod(), getCallOptions(), request);
     }
   }
 
@@ -794,7 +803,7 @@ public final class EndpointServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createEndpoint(com.google.cloud.aiplatform.v1beta1.CreateEndpointRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateEndpointMethod(), getCallOptions()), request);
     }
 
@@ -808,7 +817,7 @@ public final class EndpointServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.Endpoint>
         getEndpoint(com.google.cloud.aiplatform.v1beta1.GetEndpointRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetEndpointMethod(), getCallOptions()), request);
     }
 
@@ -822,7 +831,7 @@ public final class EndpointServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.ListEndpointsResponse>
         listEndpoints(com.google.cloud.aiplatform.v1beta1.ListEndpointsRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListEndpointsMethod(), getCallOptions()), request);
     }
 
@@ -836,7 +845,7 @@ public final class EndpointServiceGrpc {
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.aiplatform.v1beta1.Endpoint>
         updateEndpoint(com.google.cloud.aiplatform.v1beta1.UpdateEndpointRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateEndpointMethod(), getCallOptions()), request);
     }
 
@@ -849,7 +858,7 @@ public final class EndpointServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteEndpoint(com.google.cloud.aiplatform.v1beta1.DeleteEndpointRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteEndpointMethod(), getCallOptions()), request);
     }
 
@@ -862,7 +871,7 @@ public final class EndpointServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deployModel(com.google.cloud.aiplatform.v1beta1.DeployModelRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeployModelMethod(), getCallOptions()), request);
     }
 
@@ -876,7 +885,7 @@ public final class EndpointServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         undeployModel(com.google.cloud.aiplatform.v1beta1.UndeployModelRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUndeployModelMethod(), getCallOptions()), request);
     }
   }

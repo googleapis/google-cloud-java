@@ -124,7 +124,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
    * on. If traffic against it increases, it may dynamically be deployed onto
    * more replicas up to [max_replica_count][google.cloud.aiplatform.v1beta1.AutomaticResources.max_replica_count], and as traffic decreases, some
    * of these extra replicas may be freed.
-   * If requested value is too large, the deployment will error.
+   * If the requested value is too large, the deployment will error.
    * </pre>
    *
    * <code>int32 min_replica_count = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -143,7 +143,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Immutable. The maximum number of replicas this DeployedModel may be deployed on when
-   * the traffic against it increases. If requested value is too large,
+   * the traffic against it increases. If the requested value is too large,
    * the deployment will error, but if deployment succeeds then the ability
    * to scale the model to that many replicas is guaranteed (barring service
    * outages). If traffic against the DeployedModel increases beyond what its
@@ -506,7 +506,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
      * on. If traffic against it increases, it may dynamically be deployed onto
      * more replicas up to [max_replica_count][google.cloud.aiplatform.v1beta1.AutomaticResources.max_replica_count], and as traffic decreases, some
      * of these extra replicas may be freed.
-     * If requested value is too large, the deployment will error.
+     * If the requested value is too large, the deployment will error.
      * </pre>
      *
      * <code>int32 min_replica_count = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -525,7 +525,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
      * on. If traffic against it increases, it may dynamically be deployed onto
      * more replicas up to [max_replica_count][google.cloud.aiplatform.v1beta1.AutomaticResources.max_replica_count], and as traffic decreases, some
      * of these extra replicas may be freed.
-     * If requested value is too large, the deployment will error.
+     * If the requested value is too large, the deployment will error.
      * </pre>
      *
      * <code>int32 min_replica_count = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -547,7 +547,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
      * on. If traffic against it increases, it may dynamically be deployed onto
      * more replicas up to [max_replica_count][google.cloud.aiplatform.v1beta1.AutomaticResources.max_replica_count], and as traffic decreases, some
      * of these extra replicas may be freed.
-     * If requested value is too large, the deployment will error.
+     * If the requested value is too large, the deployment will error.
      * </pre>
      *
      * <code>int32 min_replica_count = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -567,7 +567,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. The maximum number of replicas this DeployedModel may be deployed on when
-     * the traffic against it increases. If requested value is too large,
+     * the traffic against it increases. If the requested value is too large,
      * the deployment will error, but if deployment succeeds then the ability
      * to scale the model to that many replicas is guaranteed (barring service
      * outages). If traffic against the DeployedModel increases beyond what its
@@ -590,7 +590,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. The maximum number of replicas this DeployedModel may be deployed on when
-     * the traffic against it increases. If requested value is too large,
+     * the traffic against it increases. If the requested value is too large,
      * the deployment will error, but if deployment succeeds then the ability
      * to scale the model to that many replicas is guaranteed (barring service
      * outages). If traffic against the DeployedModel increases beyond what its
@@ -616,7 +616,7 @@ public final class AutomaticResources extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. The maximum number of replicas this DeployedModel may be deployed on when
-     * the traffic against it increases. If requested value is too large,
+     * the traffic against it increases. If the requested value is too large,
      * the deployment will error, but if deployment succeeds then the ability
      * to scale the model to that many replicas is guaranteed (barring service
      * outages). If traffic against the DeployedModel increases beyond what its

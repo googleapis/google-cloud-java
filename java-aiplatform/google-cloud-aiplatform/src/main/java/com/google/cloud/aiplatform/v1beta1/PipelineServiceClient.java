@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -293,7 +293,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the TrainingPipeline resource. Format:
-   *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+   *     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TrainingPipeline getTrainingPipeline(TrainingPipelineName name) {
@@ -319,7 +319,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the TrainingPipeline resource. Format:
-   *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+   *     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TrainingPipeline getTrainingPipeline(String name) {
@@ -502,6 +502,14 @@ public class PipelineServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   ListTrainingPipelinesRequest request =
+   *       ListTrainingPipelinesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
    *   while (true) {
    *     ListTrainingPipelinesResponse response =
    *         pipelineServiceClient.listTrainingPipelinesCallable().call(request);
@@ -538,7 +546,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the TrainingPipeline resource to be deleted. Format:
-   *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+   *     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteTrainingPipelineAsync(
@@ -565,7 +573,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the TrainingPipeline resource to be deleted. Format:
-   *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+   *     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteTrainingPipelineAsync(
@@ -678,7 +686,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the TrainingPipeline to cancel. Format:
-   *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+   *     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void cancelTrainingPipeline(TrainingPipelineName name) {
@@ -714,7 +722,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the TrainingPipeline to cancel. Format:
-   *     <p>`projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+   *     `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void cancelTrainingPipeline(String name) {

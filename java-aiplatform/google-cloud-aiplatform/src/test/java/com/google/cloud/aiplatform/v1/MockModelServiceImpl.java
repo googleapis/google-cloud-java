@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,7 +61,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
 
   @Override
   public void uploadModel(UploadModelRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -73,7 +73,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UploadModel, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -81,7 +81,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
 
   @Override
   public void getModel(GetModelRequest request, StreamObserver<Model> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Model) {
       requests.add(request);
       responseObserver.onNext(((Model) response));
@@ -93,7 +93,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetModel, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Model.class.getName(),
                   Exception.class.getName())));
     }
@@ -102,7 +102,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
   @Override
   public void listModels(
       ListModelsRequest request, StreamObserver<ListModelsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListModelsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListModelsResponse) response));
@@ -114,7 +114,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListModels, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListModelsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -122,7 +122,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
 
   @Override
   public void updateModel(UpdateModelRequest request, StreamObserver<Model> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Model) {
       requests.add(request);
       responseObserver.onNext(((Model) response));
@@ -134,7 +134,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateModel, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Model.class.getName(),
                   Exception.class.getName())));
     }
@@ -142,7 +142,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
 
   @Override
   public void deleteModel(DeleteModelRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -154,7 +154,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteModel, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -162,7 +162,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
 
   @Override
   public void exportModel(ExportModelRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -174,7 +174,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ExportModel, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
     }
@@ -183,7 +183,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
   @Override
   public void getModelEvaluation(
       GetModelEvaluationRequest request, StreamObserver<ModelEvaluation> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ModelEvaluation) {
       requests.add(request);
       responseObserver.onNext(((ModelEvaluation) response));
@@ -195,7 +195,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetModelEvaluation, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ModelEvaluation.class.getName(),
                   Exception.class.getName())));
     }
@@ -205,7 +205,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
   public void listModelEvaluations(
       ListModelEvaluationsRequest request,
       StreamObserver<ListModelEvaluationsResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListModelEvaluationsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListModelEvaluationsResponse) response));
@@ -217,7 +217,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListModelEvaluations, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListModelEvaluationsResponse.class.getName(),
                   Exception.class.getName())));
     }
@@ -227,7 +227,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
   public void getModelEvaluationSlice(
       GetModelEvaluationSliceRequest request,
       StreamObserver<ModelEvaluationSlice> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ModelEvaluationSlice) {
       requests.add(request);
       responseObserver.onNext(((ModelEvaluationSlice) response));
@@ -239,7 +239,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetModelEvaluationSlice, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ModelEvaluationSlice.class.getName(),
                   Exception.class.getName())));
     }
@@ -249,7 +249,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
   public void listModelEvaluationSlices(
       ListModelEvaluationSlicesRequest request,
       StreamObserver<ListModelEvaluationSlicesResponse> responseObserver) {
-    Object response = responses.remove();
+    Object response = responses.poll();
     if (response instanceof ListModelEvaluationSlicesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListModelEvaluationSlicesResponse) response));
@@ -261,7 +261,7 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method ListModelEvaluationSlices, expected %s or %s",
-                  response.getClass().getName(),
+                  response == null ? "null" : response.getClass().getName(),
                   ListModelEvaluationSlicesResponse.class.getName(),
                   Exception.class.getName())));
     }

@@ -28,6 +28,10 @@ public final class StudyProto {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_Study_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_Study_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_Trial_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_Trial_fieldAccessorTable;
@@ -80,6 +84,18 @@ public final class StudyProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_CategoricalValueCondition_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_StudySpec_DecayCurveAutomatedStoppingSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_StudySpec_DecayCurveAutomatedStoppingSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_StudySpec_MedianAutomatedStoppingSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_StudySpec_MedianAutomatedStoppingSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ConvexStopConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ConvexStopConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_Measurement_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_Measurement_fieldAccessorTable;
@@ -103,98 +119,125 @@ public final class StudyProto {
           + "tion.proto\032\034google/protobuf/struct.proto"
           + "\032\037google/protobuf/timestamp.proto\032\036googl"
           + "e/protobuf/wrappers.proto\032\034google/api/an"
-          + "notations.proto\"\306\005\n\005Trial\022\017\n\002id\030\002 \001(\tB\003\340"
-          + "A\003\022@\n\005state\030\003 \001(\0162,.google.cloud.aiplatf"
-          + "orm.v1beta1.Trial.StateB\003\340A\003\022I\n\nparamete"
-          + "rs\030\004 \003(\01320.google.cloud.aiplatform.v1bet"
-          + "a1.Trial.ParameterB\003\340A\003\022L\n\021final_measure"
-          + "ment\030\005 \001(\0132,.google.cloud.aiplatform.v1b"
-          + "eta1.MeasurementB\003\340A\003\0223\n\nstart_time\030\007 \001("
-          + "\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n\010en"
-          + "d_time\030\010 \001(\0132\032.google.protobuf.Timestamp"
-          + "B\003\340A\003\022?\n\ncustom_job\030\013 \001(\tB+\340A\003\372A%\n#aipla"
-          + "tform.googleapis.com/CustomJob\032R\n\tParame"
-          + "ter\022\031\n\014parameter_id\030\001 \001(\tB\003\340A\003\022*\n\005value\030"
-          + "\002 \001(\0132\026.google.protobuf.ValueB\003\340A\003\"f\n\005St"
-          + "ate\022\025\n\021STATE_UNSPECIFIED\020\000\022\r\n\tREQUESTED\020"
-          + "\001\022\n\n\006ACTIVE\020\002\022\014\n\010STOPPING\020\003\022\r\n\tSUCCEEDED"
-          + "\020\004\022\016\n\nINFEASIBLE\020\005:l\352Ai\n\037aiplatform.goog"
-          + "leapis.com/Trial\022Fprojects/{project}/loc"
-          + "ations/{location}/studies/{study}/trials"
-          + "/{trial}\"\307\024\n\tStudySpec\022K\n\007metrics\030\001 \003(\0132"
-          + "5.google.cloud.aiplatform.v1beta1.StudyS"
-          + "pec.MetricSpecB\003\340A\002\022Q\n\nparameters\030\002 \003(\0132"
-          + "8.google.cloud.aiplatform.v1beta1.StudyS"
-          + "pec.ParameterSpecB\003\340A\002\022G\n\talgorithm\030\003 \001("
-          + "\01624.google.cloud.aiplatform.v1beta1.Stud"
-          + "ySpec.Algorithm\022V\n\021observation_noise\030\006 \001"
-          + "(\0162;.google.cloud.aiplatform.v1beta1.Stu"
-          + "dySpec.ObservationNoise\022g\n\032measurement_s"
-          + "election_type\030\007 \001(\0162C.google.cloud.aipla"
-          + "tform.v1beta1.StudySpec.MeasurementSelec"
-          + "tionType\032\272\001\n\nMetricSpec\022\026\n\tmetric_id\030\001 \001"
-          + "(\tB\003\340A\002\022Q\n\004goal\030\002 \001(\0162>.google.cloud.aip"
-          + "latform.v1beta1.StudySpec.MetricSpec.Goa"
-          + "lTypeB\003\340A\002\"A\n\010GoalType\022\031\n\025GOAL_TYPE_UNSP"
-          + "ECIFIED\020\000\022\014\n\010MAXIMIZE\020\001\022\014\n\010MINIMIZE\020\002\032\310\r"
-          + "\n\rParameterSpec\022e\n\021double_value_spec\030\002 \001"
-          + "(\0132H.google.cloud.aiplatform.v1beta1.Stu"
-          + "dySpec.ParameterSpec.DoubleValueSpecH\000\022g"
-          + "\n\022integer_value_spec\030\003 \001(\0132I.google.clou"
-          + "d.aiplatform.v1beta1.StudySpec.Parameter"
-          + "Spec.IntegerValueSpecH\000\022o\n\026categorical_v"
-          + "alue_spec\030\004 \001(\0132M.google.cloud.aiplatfor"
-          + "m.v1beta1.StudySpec.ParameterSpec.Catego"
-          + "ricalValueSpecH\000\022i\n\023discrete_value_spec\030"
-          + "\005 \001(\0132J.google.cloud.aiplatform.v1beta1."
-          + "StudySpec.ParameterSpec.DiscreteValueSpe"
-          + "cH\000\022\031\n\014parameter_id\030\001 \001(\tB\003\340A\002\022V\n\nscale_"
-          + "type\030\006 \001(\0162B.google.cloud.aiplatform.v1b"
-          + "eta1.StudySpec.ParameterSpec.ScaleType\022v"
-          + "\n\033conditional_parameter_specs\030\n \003(\0132Q.go"
-          + "ogle.cloud.aiplatform.v1beta1.StudySpec."
-          + "ParameterSpec.ConditionalParameterSpec\032A"
-          + "\n\017DoubleValueSpec\022\026\n\tmin_value\030\001 \001(\001B\003\340A"
-          + "\002\022\026\n\tmax_value\030\002 \001(\001B\003\340A\002\032B\n\020IntegerValu"
-          + "eSpec\022\026\n\tmin_value\030\001 \001(\003B\003\340A\002\022\026\n\tmax_val"
-          + "ue\030\002 \001(\003B\003\340A\002\032+\n\024CategoricalValueSpec\022\023\n"
-          + "\006values\030\001 \003(\tB\003\340A\002\032(\n\021DiscreteValueSpec\022"
-          + "\023\n\006values\030\001 \003(\001B\003\340A\002\032\271\005\n\030ConditionalPara"
-          + "meterSpec\022\212\001\n\026parent_discrete_values\030\002 \001"
-          + "(\0132h.google.cloud.aiplatform.v1beta1.Stu"
-          + "dySpec.ParameterSpec.ConditionalParamete"
-          + "rSpec.DiscreteValueConditionH\000\022\200\001\n\021paren"
-          + "t_int_values\030\003 \001(\0132c.google.cloud.aiplat"
-          + "form.v1beta1.StudySpec.ParameterSpec.Con"
-          + "ditionalParameterSpec.IntValueConditionH"
-          + "\000\022\220\001\n\031parent_categorical_values\030\004 \001(\0132k."
+          + "notations.proto\"\270\003\n\005Study\022\021\n\004name\030\001 \001(\tB"
+          + "\003\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022C\n\nstudy"
+          + "_spec\030\003 \001(\0132*.google.cloud.aiplatform.v1"
+          + "beta1.StudySpecB\003\340A\002\022@\n\005state\030\004 \001(\0162,.go"
+          + "ogle.cloud.aiplatform.v1beta1.Study.Stat"
+          + "eB\003\340A\003\0224\n\013create_time\030\005 \001(\0132\032.google.pro"
+          + "tobuf.TimestampB\003\340A\003\022\034\n\017inactive_reason\030"
+          + "\006 \001(\tB\003\340A\003\"G\n\005State\022\025\n\021STATE_UNSPECIFIED"
+          + "\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010INACTIVE\020\002\022\r\n\tCOMPLETE"
+          + "D\020\003:]\352AZ\n\037aiplatform.googleapis.com/Stud"
+          + "y\0227projects/{project}/locations/{locatio"
+          + "n}/studies/{study}\"\331\005\n\005Trial\022\021\n\004name\030\001 \001"
+          + "(\tB\003\340A\003\022\017\n\002id\030\002 \001(\tB\003\340A\003\022@\n\005state\030\003 \001(\0162"
+          + ",.google.cloud.aiplatform.v1beta1.Trial."
+          + "StateB\003\340A\003\022I\n\nparameters\030\004 \003(\01320.google."
+          + "cloud.aiplatform.v1beta1.Trial.Parameter"
+          + "B\003\340A\003\022L\n\021final_measurement\030\005 \001(\0132,.googl"
+          + "e.cloud.aiplatform.v1beta1.MeasurementB\003"
+          + "\340A\003\0223\n\nstart_time\030\007 \001(\0132\032.google.protobu"
+          + "f.TimestampB\003\340A\003\0221\n\010end_time\030\010 \001(\0132\032.goo"
+          + "gle.protobuf.TimestampB\003\340A\003\022?\n\ncustom_jo"
+          + "b\030\013 \001(\tB+\340A\003\372A%\n#aiplatform.googleapis.c"
+          + "om/CustomJob\032R\n\tParameter\022\031\n\014parameter_i"
+          + "d\030\001 \001(\tB\003\340A\003\022*\n\005value\030\002 \001(\0132\026.google.pro"
+          + "tobuf.ValueB\003\340A\003\"f\n\005State\022\025\n\021STATE_UNSPE"
+          + "CIFIED\020\000\022\r\n\tREQUESTED\020\001\022\n\n\006ACTIVE\020\002\022\014\n\010S"
+          + "TOPPING\020\003\022\r\n\tSUCCEEDED\020\004\022\016\n\nINFEASIBLE\020\005"
+          + ":l\352Ai\n\037aiplatform.googleapis.com/Trial\022F"
+          + "projects/{project}/locations/{location}/"
+          + "studies/{study}/trials/{trial}\"\272\031\n\tStudy"
+          + "Spec\022o\n\031decay_curve_stopping_spec\030\004 \001(\0132"
+          + "J.google.cloud.aiplatform.v1beta1.StudyS"
+          + "pec.DecayCurveAutomatedStoppingSpecH\000\022p\n"
+          + "\036median_automated_stopping_spec\030\005 \001(\0132F."
           + "google.cloud.aiplatform.v1beta1.StudySpe"
-          + "c.ParameterSpec.ConditionalParameterSpec"
-          + ".CategoricalValueConditionH\000\022U\n\016paramete"
-          + "r_spec\030\001 \001(\01328.google.cloud.aiplatform.v"
-          + "1beta1.StudySpec.ParameterSpecB\003\340A\002\032-\n\026D"
-          + "iscreteValueCondition\022\023\n\006values\030\001 \003(\001B\003\340"
-          + "A\002\032(\n\021IntValueCondition\022\023\n\006values\030\001 \003(\003B"
-          + "\003\340A\002\0320\n\031CategoricalValueCondition\022\023\n\006val"
-          + "ues\030\001 \003(\tB\003\340A\002B\030\n\026parent_value_condition"
-          + "\"n\n\tScaleType\022\032\n\026SCALE_TYPE_UNSPECIFIED\020"
-          + "\000\022\025\n\021UNIT_LINEAR_SCALE\020\001\022\022\n\016UNIT_LOG_SCA"
-          + "LE\020\002\022\032\n\026UNIT_REVERSE_LOG_SCALE\020\003B\026\n\024para"
-          + "meter_value_spec\"J\n\tAlgorithm\022\031\n\025ALGORIT"
-          + "HM_UNSPECIFIED\020\000\022\017\n\013GRID_SEARCH\020\002\022\021\n\rRAN"
-          + "DOM_SEARCH\020\003\"H\n\020ObservationNoise\022!\n\035OBSE"
-          + "RVATION_NOISE_UNSPECIFIED\020\000\022\007\n\003LOW\020\001\022\010\n\004"
-          + "HIGH\020\002\"r\n\030MeasurementSelectionType\022*\n&ME"
-          + "ASUREMENT_SELECTION_TYPE_UNSPECIFIED\020\000\022\024"
-          + "\n\020LAST_MEASUREMENT\020\001\022\024\n\020BEST_MEASUREMENT"
-          + "\020\002\"\247\001\n\013Measurement\022\027\n\nstep_count\030\002 \001(\003B\003"
-          + "\340A\003\022I\n\007metrics\030\003 \003(\01323.google.cloud.aipl"
-          + "atform.v1beta1.Measurement.MetricB\003\340A\003\0324"
-          + "\n\006Metric\022\026\n\tmetric_id\030\001 \001(\tB\003\340A\003\022\022\n\005valu"
-          + "e\030\002 \001(\001B\003\340A\003B~\n#com.google.cloud.aiplatf"
-          + "orm.v1beta1B\nStudyProtoP\001ZIgoogle.golang"
-          + ".org/genproto/googleapis/cloud/aiplatfor"
-          + "m/v1beta1;aiplatformb\006proto3"
+          + "c.MedianAutomatedStoppingSpecH\000\022Y\n\022conve"
+          + "x_stop_config\030\010 \001(\0132;.google.cloud.aipla"
+          + "tform.v1beta1.StudySpec.ConvexStopConfig"
+          + "H\000\022K\n\007metrics\030\001 \003(\01325.google.cloud.aipla"
+          + "tform.v1beta1.StudySpec.MetricSpecB\003\340A\002\022"
+          + "Q\n\nparameters\030\002 \003(\01328.google.cloud.aipla"
+          + "tform.v1beta1.StudySpec.ParameterSpecB\003\340"
+          + "A\002\022G\n\talgorithm\030\003 \001(\01624.google.cloud.aip"
+          + "latform.v1beta1.StudySpec.Algorithm\022V\n\021o"
+          + "bservation_noise\030\006 \001(\0162;.google.cloud.ai"
+          + "platform.v1beta1.StudySpec.ObservationNo"
+          + "ise\022g\n\032measurement_selection_type\030\007 \001(\0162"
+          + "C.google.cloud.aiplatform.v1beta1.StudyS"
+          + "pec.MeasurementSelectionType\032\272\001\n\nMetricS"
+          + "pec\022\026\n\tmetric_id\030\001 \001(\tB\003\340A\002\022Q\n\004goal\030\002 \001("
+          + "\0162>.google.cloud.aiplatform.v1beta1.Stud"
+          + "ySpec.MetricSpec.GoalTypeB\003\340A\002\"A\n\010GoalTy"
+          + "pe\022\031\n\025GOAL_TYPE_UNSPECIFIED\020\000\022\014\n\010MAXIMIZ"
+          + "E\020\001\022\014\n\010MINIMIZE\020\002\032\310\r\n\rParameterSpec\022e\n\021d"
+          + "ouble_value_spec\030\002 \001(\0132H.google.cloud.ai"
+          + "platform.v1beta1.StudySpec.ParameterSpec"
+          + ".DoubleValueSpecH\000\022g\n\022integer_value_spec"
+          + "\030\003 \001(\0132I.google.cloud.aiplatform.v1beta1"
+          + ".StudySpec.ParameterSpec.IntegerValueSpe"
+          + "cH\000\022o\n\026categorical_value_spec\030\004 \001(\0132M.go"
+          + "ogle.cloud.aiplatform.v1beta1.StudySpec."
+          + "ParameterSpec.CategoricalValueSpecH\000\022i\n\023"
+          + "discrete_value_spec\030\005 \001(\0132J.google.cloud"
+          + ".aiplatform.v1beta1.StudySpec.ParameterS"
+          + "pec.DiscreteValueSpecH\000\022\031\n\014parameter_id\030"
+          + "\001 \001(\tB\003\340A\002\022V\n\nscale_type\030\006 \001(\0162B.google."
+          + "cloud.aiplatform.v1beta1.StudySpec.Param"
+          + "eterSpec.ScaleType\022v\n\033conditional_parame"
+          + "ter_specs\030\n \003(\0132Q.google.cloud.aiplatfor"
+          + "m.v1beta1.StudySpec.ParameterSpec.Condit"
+          + "ionalParameterSpec\032A\n\017DoubleValueSpec\022\026\n"
+          + "\tmin_value\030\001 \001(\001B\003\340A\002\022\026\n\tmax_value\030\002 \001(\001"
+          + "B\003\340A\002\032B\n\020IntegerValueSpec\022\026\n\tmin_value\030\001"
+          + " \001(\003B\003\340A\002\022\026\n\tmax_value\030\002 \001(\003B\003\340A\002\032+\n\024Cat"
+          + "egoricalValueSpec\022\023\n\006values\030\001 \003(\tB\003\340A\002\032("
+          + "\n\021DiscreteValueSpec\022\023\n\006values\030\001 \003(\001B\003\340A\002"
+          + "\032\271\005\n\030ConditionalParameterSpec\022\212\001\n\026parent"
+          + "_discrete_values\030\002 \001(\0132h.google.cloud.ai"
+          + "platform.v1beta1.StudySpec.ParameterSpec"
+          + ".ConditionalParameterSpec.DiscreteValueC"
+          + "onditionH\000\022\200\001\n\021parent_int_values\030\003 \001(\0132c"
+          + ".google.cloud.aiplatform.v1beta1.StudySp"
+          + "ec.ParameterSpec.ConditionalParameterSpe"
+          + "c.IntValueConditionH\000\022\220\001\n\031parent_categor"
+          + "ical_values\030\004 \001(\0132k.google.cloud.aiplatf"
+          + "orm.v1beta1.StudySpec.ParameterSpec.Cond"
+          + "itionalParameterSpec.CategoricalValueCon"
+          + "ditionH\000\022U\n\016parameter_spec\030\001 \001(\01328.googl"
+          + "e.cloud.aiplatform.v1beta1.StudySpec.Par"
+          + "ameterSpecB\003\340A\002\032-\n\026DiscreteValueConditio"
+          + "n\022\023\n\006values\030\001 \003(\001B\003\340A\002\032(\n\021IntValueCondit"
+          + "ion\022\023\n\006values\030\001 \003(\003B\003\340A\002\0320\n\031CategoricalV"
+          + "alueCondition\022\023\n\006values\030\001 \003(\tB\003\340A\002B\030\n\026pa"
+          + "rent_value_condition\"n\n\tScaleType\022\032\n\026SCA"
+          + "LE_TYPE_UNSPECIFIED\020\000\022\025\n\021UNIT_LINEAR_SCA"
+          + "LE\020\001\022\022\n\016UNIT_LOG_SCALE\020\002\022\032\n\026UNIT_REVERSE"
+          + "_LOG_SCALE\020\003B\026\n\024parameter_value_spec\032?\n\037"
+          + "DecayCurveAutomatedStoppingSpec\022\034\n\024use_e"
+          + "lapsed_duration\030\001 \001(\010\032;\n\033MedianAutomated"
+          + "StoppingSpec\022\034\n\024use_elapsed_duration\030\001 \001"
+          + "(\010\032\231\001\n\020ConvexStopConfig\022\025\n\rmax_num_steps"
+          + "\030\001 \001(\003\022\025\n\rmin_num_steps\030\002 \001(\003\022\034\n\024autoreg"
+          + "ressive_order\030\003 \001(\003\022$\n\034learning_rate_par"
+          + "ameter_name\030\004 \001(\t\022\023\n\013use_seconds\030\005 \001(\010\"J"
+          + "\n\tAlgorithm\022\031\n\025ALGORITHM_UNSPECIFIED\020\000\022\017"
+          + "\n\013GRID_SEARCH\020\002\022\021\n\rRANDOM_SEARCH\020\003\"H\n\020Ob"
+          + "servationNoise\022!\n\035OBSERVATION_NOISE_UNSP"
+          + "ECIFIED\020\000\022\007\n\003LOW\020\001\022\010\n\004HIGH\020\002\"r\n\030Measurem"
+          + "entSelectionType\022*\n&MEASUREMENT_SELECTIO"
+          + "N_TYPE_UNSPECIFIED\020\000\022\024\n\020LAST_MEASUREMENT"
+          + "\020\001\022\024\n\020BEST_MEASUREMENT\020\002B\031\n\027automated_st"
+          + "opping_spec\"\247\001\n\013Measurement\022\027\n\nstep_coun"
+          + "t\030\002 \001(\003B\003\340A\003\022I\n\007metrics\030\003 \003(\01323.google.c"
+          + "loud.aiplatform.v1beta1.Measurement.Metr"
+          + "icB\003\340A\003\0324\n\006Metric\022\026\n\tmetric_id\030\001 \001(\tB\003\340A"
+          + "\003\022\022\n\005value\030\002 \001(\001B\003\340A\003B~\n#com.google.clou"
+          + "d.aiplatform.v1beta1B\nStudyProtoP\001ZIgoog"
+          + "le.golang.org/genproto/googleapis/cloud/"
+          + "aiplatform/v1beta1;aiplatformb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -208,13 +251,28 @@ public final class StudyProto {
               com.google.protobuf.WrappersProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
             });
-    internal_static_google_cloud_aiplatform_v1beta1_Trial_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_Study_descriptor =
         getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_Study_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_Study_descriptor,
+            new java.lang.String[] {
+              "Name", "DisplayName", "StudySpec", "State", "CreateTime", "InactiveReason",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_Trial_descriptor =
+        getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_aiplatform_v1beta1_Trial_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_Trial_descriptor,
             new java.lang.String[] {
-              "Id", "State", "Parameters", "FinalMeasurement", "StartTime", "EndTime", "CustomJob",
+              "Name",
+              "Id",
+              "State",
+              "Parameters",
+              "FinalMeasurement",
+              "StartTime",
+              "EndTime",
+              "CustomJob",
             });
     internal_static_google_cloud_aiplatform_v1beta1_Trial_Parameter_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_Trial_descriptor.getNestedTypes().get(0);
@@ -225,12 +283,20 @@ public final class StudyProto {
               "ParameterId", "Value",
             });
     internal_static_google_cloud_aiplatform_v1beta1_StudySpec_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_aiplatform_v1beta1_StudySpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_StudySpec_descriptor,
             new java.lang.String[] {
-              "Metrics", "Parameters", "Algorithm", "ObservationNoise", "MeasurementSelectionType",
+              "DecayCurveStoppingSpec",
+              "MedianAutomatedStoppingSpec",
+              "ConvexStopConfig",
+              "Metrics",
+              "Parameters",
+              "Algorithm",
+              "ObservationNoise",
+              "MeasurementSelectionType",
+              "AutomatedStoppingSpec",
             });
     internal_static_google_cloud_aiplatform_v1beta1_StudySpec_MetricSpec_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_StudySpec_descriptor
@@ -343,8 +409,42 @@ public final class StudyProto {
             new java.lang.String[] {
               "Values",
             });
+    internal_static_google_cloud_aiplatform_v1beta1_StudySpec_DecayCurveAutomatedStoppingSpec_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_StudySpec_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_aiplatform_v1beta1_StudySpec_DecayCurveAutomatedStoppingSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_StudySpec_DecayCurveAutomatedStoppingSpec_descriptor,
+            new java.lang.String[] {
+              "UseElapsedDuration",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_StudySpec_MedianAutomatedStoppingSpec_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_StudySpec_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_aiplatform_v1beta1_StudySpec_MedianAutomatedStoppingSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_StudySpec_MedianAutomatedStoppingSpec_descriptor,
+            new java.lang.String[] {
+              "UseElapsedDuration",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ConvexStopConfig_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_StudySpec_descriptor
+            .getNestedTypes()
+            .get(4);
+    internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ConvexStopConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ConvexStopConfig_descriptor,
+            new java.lang.String[] {
+              "MaxNumSteps",
+              "MinNumSteps",
+              "AutoregressiveOrder",
+              "LearningRateParameterName",
+              "UseSeconds",
+            });
     internal_static_google_cloud_aiplatform_v1beta1_Measurement_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_aiplatform_v1beta1_Measurement_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_Measurement_descriptor,
