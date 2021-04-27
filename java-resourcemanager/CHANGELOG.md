@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.119.3](https://www.github.com/googleapis/java-resourcemanager/compare/v0.119.2...v0.119.3) (2021-04-26)
+
+
+### Bug Fixes
+
+* deprecate handwritten code ([#458](https://www.github.com/googleapis/java-resourcemanager/issues/458)) ([5eac339](https://www.github.com/googleapis/java-resourcemanager/commit/5eac339395251aa62222eb6c6fcaa967e7c53b4a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#467](https://www.github.com/googleapis/java-resourcemanager/issues/467)) ([767689b](https://www.github.com/googleapis/java-resourcemanager/commit/767689be8305a7fd51bf33cf0af0746ddd9a4211))
+
 ### [0.119.2](https://www.github.com/googleapis/java-resourcemanager/compare/v0.119.1...v0.119.2) (2021-04-20)
 
 
