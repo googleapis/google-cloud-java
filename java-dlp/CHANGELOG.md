@@ -1,5 +1,20 @@
 # Changelog
 
+### [2.3.2](https://www.github.com/googleapis/java-dlp/compare/v2.3.1...v2.3.2) (2021-04-26)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#494](https://www.github.com/googleapis/java-dlp/issues/494)) ([5675143](https://www.github.com/googleapis/java-dlp/commit/5675143b2710756e2802d26685c51796c0a86085))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub to v1.112.1 ([#490](https://www.github.com/googleapis/java-dlp/issues/490)) ([5924f7a](https://www.github.com/googleapis/java-dlp/commit/5924f7a10860aa46443b0da5988a45440e547cfb))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.112.3 ([#501](https://www.github.com/googleapis/java-dlp/issues/501)) ([1047216](https://www.github.com/googleapis/java-dlp/commit/10472167f1a7f573e967dffe7ca183c14ab92e9b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#497](https://www.github.com/googleapis/java-dlp/issues/497)) ([a6bbefa](https://www.github.com/googleapis/java-dlp/commit/a6bbefa7b06898bc2fee697172300f4b034d0fff))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#500](https://www.github.com/googleapis/java-dlp/issues/500)) ([c317dfd](https://www.github.com/googleapis/java-dlp/commit/c317dfd4a55febc6e9877d948e2d996a4e47b776))
+
 ### [2.3.1](https://www.github.com/googleapis/java-dlp/compare/v2.3.0...v2.3.1) (2021-04-12)
 
 
