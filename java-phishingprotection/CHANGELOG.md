@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.29.18](https://www.github.com/googleapis/java-phishingprotection/compare/v0.29.17...v0.29.18) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#417](https://www.github.com/googleapis/java-phishingprotection/issues/417)) ([912a15c](https://www.github.com/googleapis/java-phishingprotection/commit/912a15c3d8a356bc63e89f68e34f566b69064516))
+* typo ([#413](https://www.github.com/googleapis/java-phishingprotection/issues/413)) ([9c75082](https://www.github.com/googleapis/java-phishingprotection/commit/9c750826dbc90682939e98b48fb2f8cdb8ad59c6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#420](https://www.github.com/googleapis/java-phishingprotection/issues/420)) ([650c33f](https://www.github.com/googleapis/java-phishingprotection/commit/650c33f1c2592ab96328283ea7c9339110657211))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#423](https://www.github.com/googleapis/java-phishingprotection/issues/423)) ([843378d](https://www.github.com/googleapis/java-phishingprotection/commit/843378d8b20d65e079e0059240fc43dcc6592229))
+
 ### [0.29.17](https://www.github.com/googleapis/java-phishingprotection/compare/v0.29.16...v0.29.17) (2021-04-09)
 
 
