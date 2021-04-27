@@ -1,5 +1,19 @@
 # Changelog
 
+### [0.119.15](https://www.github.com/googleapis/java-datalabeling/compare/v0.119.14...v0.119.15) (2021-04-23)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#456](https://www.github.com/googleapis/java-datalabeling/issues/456)) ([51006aa](https://www.github.com/googleapis/java-datalabeling/commit/51006aa7c725f1a4cbdcdd37766177f1a2b0345f))
+* typo ([#453](https://www.github.com/googleapis/java-datalabeling/issues/453)) ([6036d50](https://www.github.com/googleapis/java-datalabeling/commit/6036d50030261371200ef1f39928c37d315c99ff))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#460](https://www.github.com/googleapis/java-datalabeling/issues/460)) ([fc3a8ee](https://www.github.com/googleapis/java-datalabeling/commit/fc3a8ee98a87ff20c90a26240032bb43cbff8c9d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#463](https://www.github.com/googleapis/java-datalabeling/issues/463)) ([9ba7a76](https://www.github.com/googleapis/java-datalabeling/commit/9ba7a768bb0ed03afc48e6c5c3e83bf2e9b536d1))
+
 ### [0.119.14](https://www.github.com/googleapis/java-datalabeling/compare/v0.119.13...v0.119.14) (2021-04-09)
 
 
