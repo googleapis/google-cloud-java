@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.2.2](https://www.github.com/googleapis/java-logging/compare/v2.2.1...v2.2.2) (2021-04-24)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#496](https://www.github.com/googleapis/java-logging/issues/496)) ([e3c1e84](https://www.github.com/googleapis/java-logging/commit/e3c1e84244b5f8cc4a792fd8c6346757f114d186))
+* typo ([#491](https://www.github.com/googleapis/java-logging/issues/491)) ([9b0423f](https://www.github.com/googleapis/java-logging/commit/9b0423fdad66368be15c2fa28f783f31964d5d9a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#500](https://www.github.com/googleapis/java-logging/issues/500)) ([f5581a5](https://www.github.com/googleapis/java-logging/commit/f5581a55dfe99812f0538ad19f9a3a259401323a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#507](https://www.github.com/googleapis/java-logging/issues/507)) ([b15d59b](https://www.github.com/googleapis/java-logging/commit/b15d59bea99a6c840b6316f5e25487cc8f057515))
+
 ### [2.2.1](https://www.github.com/googleapis/java-logging/compare/v2.2.0...v2.2.1) (2021-04-09)
 
 
