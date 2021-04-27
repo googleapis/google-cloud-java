@@ -17,18 +17,18 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-tasks</artifactId>
-  <version>1.32.2</version>
+  <version>1.32.3</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-tasks:1.32.2'
+compile 'com.google.cloud:google-cloud-tasks:1.32.3'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-tasks" % "1.32.2"
+libraryDependencies += "com.google.cloud" % "google-cloud-tasks" % "1.32.3"
 ```
 
 ## Authentication
