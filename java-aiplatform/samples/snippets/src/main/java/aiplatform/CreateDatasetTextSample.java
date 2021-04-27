@@ -68,7 +68,7 @@ public class CreateDatasetTextSample {
       System.out.format("Operation name: %s\n", datasetFuture.getInitialFuture().get().getName());
 
       System.out.println("Waiting for operation to finish...");
-      Dataset datasetResponse = datasetFuture.get(120, TimeUnit.SECONDS);
+      Dataset datasetResponse = datasetFuture.get(180, TimeUnit.SECONDS);
 
       System.out.println("Create Text Dataset Response");
       System.out.format("\tName: %s\n", datasetResponse.getName());
