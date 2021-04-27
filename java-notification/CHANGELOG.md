@@ -1,5 +1,22 @@
 # Changelog
 
+### [0.121.10](https://www.github.com/googleapis/java-notification/compare/v0.121.9...v0.121.10) (2021-04-27)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#292](https://www.github.com/googleapis/java-notification/issues/292)) ([4703954](https://www.github.com/googleapis/java-notification/commit/4703954d6bf88b33c245b8a445baf5d6063bcba4))
+* typo ([#288](https://www.github.com/googleapis/java-notification/issues/288)) ([46992b4](https://www.github.com/googleapis/java-notification/commit/46992b4531a9dc89093cb4d8edb986e3b02411fb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.112.1 ([#287](https://www.github.com/googleapis/java-notification/issues/287)) ([1161d60](https://www.github.com/googleapis/java-notification/commit/1161d6018487add7120bfd3ed912a382e52dde63))
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.112.3 ([#297](https://www.github.com/googleapis/java-notification/issues/297)) ([345fe1b](https://www.github.com/googleapis/java-notification/commit/345fe1b694fd32fe52fa8a3d79d57ddaead89e64))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#294](https://www.github.com/googleapis/java-notification/issues/294)) ([e4df540](https://www.github.com/googleapis/java-notification/commit/e4df5402f3eb88e86f1b26137d1214b923c2b111))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#296](https://www.github.com/googleapis/java-notification/issues/296)) ([f8bbd85](https://www.github.com/googleapis/java-notification/commit/f8bbd85aa4da5b33783181d0f8ebf9e4a3cc572e))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.16 ([#290](https://www.github.com/googleapis/java-notification/issues/290)) ([8f67447](https://www.github.com/googleapis/java-notification/commit/8f6744709466c78ec6e532d394cd49529cbfde1b))
+
 ### [0.121.9](https://www.github.com/googleapis/java-notification/compare/v0.121.8...v0.121.9) (2021-04-09)
 
 
