@@ -1,0 +1,4 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-dms:0.0.0:0.0.1-SNAPSHOT
