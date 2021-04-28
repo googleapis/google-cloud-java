@@ -21,9 +21,9 @@ deep-remove-regex:
 - "/google-.*/src"
 
 deep-copy-regex:
-- source: "//google/cloud/dms/(v.*)/.*-java/proto-google-.*/src"
+- source: "/google/cloud/clouddms/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/$1/proto-google-cloud-dms-$1/src"
-- source: "//google/cloud/dms/(v.*)/.*-java/grpc-google-.*/src"
+- source: "/google/cloud/clouddms/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/$1/grpc-google-cloud-dms-$1/src"
-- source: "//google/cloud/dms/(v.*)/.*-java/gapic-google-.*/src"
+- source: "/google/cloud/clouddms/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-dms/src"

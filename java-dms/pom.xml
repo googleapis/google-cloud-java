@@ -64,6 +64,16 @@
       </dependency>
 
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-dms-v1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dms-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-dms-v1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dms-v1:current} -->
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
         <version>0.20.1</version>
@@ -92,6 +102,8 @@
 
   <modules>
     <module>google-cloud-dms</module>
+    <module>grpc-google-cloud-dms-v1</module>
+    <module>proto-google-cloud-dms-v1</module>
     <module>google-cloud-dms-bom</module>
   </modules>
 
