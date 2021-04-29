@@ -24,7 +24,9 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.StorageOptions;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
+import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -58,7 +60,7 @@ public class StreamingAnnotationToStorageIT {
   }
 
   @Test
-  public void testStreamingAnnotationToStorage() {
+  public void testStreamingAnnotationToStorage() throws IOException, TimeoutException {
     String gcsUri = String.format("gs://%s/%s", PROJECT_ID, OUTPUT_PREFIX);
     StreamingAnnotationToStorage.streamingAnnotationToStorage("resources/cat.mp4", gcsUri);
     String got = bout.toString();

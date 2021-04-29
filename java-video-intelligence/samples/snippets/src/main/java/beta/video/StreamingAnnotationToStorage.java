@@ -27,16 +27,19 @@ import com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoIntelligenceServiceClient;
 import com.google.protobuf.ByteString;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.concurrent.TimeoutException;
 
 public class StreamingAnnotationToStorage {
 
   // Perform streaming video detection for explicit content
-  static void streamingAnnotationToStorage(String filePath, String gcsUri) {
+  static void streamingAnnotationToStorage(String filePath, String gcsUri)
+      throws IOException, TimeoutException, StatusRuntimeException {
     // String filePath = "path_to_your_video_file";
     // String gcsUri = "gs://BUCKET_ID";
 
@@ -89,8 +92,6 @@ public class StreamingAnnotationToStorage {
       for (StreamingAnnotateVideoResponse response : call) {
         System.out.format("Storage Uri: %s\n", response.getAnnotationResultsUri());
       }
-    } catch (IOException e) {
-      e.printStackTrace();
     }
   }
 }

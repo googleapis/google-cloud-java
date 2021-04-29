@@ -29,16 +29,19 @@ import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResu
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoIntelligenceServiceClient;
 import com.google.protobuf.ByteString;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.concurrent.TimeoutException;
 
 class StreamingLabelDetection {
 
   // Perform streaming video label detection
-  static void streamingLabelDetection(String filePath) {
+  static void streamingLabelDetection(String filePath)
+      throws IOException, TimeoutException, StatusRuntimeException {
     // String filePath = "path_to_your_video_file";
 
     try (StreamingVideoIntelligenceServiceClient client =
@@ -95,8 +98,6 @@ class StreamingLabelDetection {
           System.out.format("%fs: %s (%f)\n", offset, entity, confidence);
         }
       }
-    } catch (IOException e) {
-      e.printStackTrace();
     }
   }
 }

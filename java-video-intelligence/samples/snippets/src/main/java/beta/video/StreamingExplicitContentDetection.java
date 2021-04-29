@@ -28,16 +28,19 @@ import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResu
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoIntelligenceServiceClient;
 import com.google.protobuf.ByteString;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.concurrent.TimeoutException;
 
 class StreamingExplicitContentDetection {
 
   // Perform streaming video detection for explicit content
-  static void streamingExplicitContentDetection(String filePath) {
+  static void streamingExplicitContentDetection(String filePath)
+      throws IOException, TimeoutException, StatusRuntimeException {
     // String filePath = "path_to_your_video_file";
 
     try (StreamingVideoIntelligenceServiceClient client =
@@ -92,8 +95,6 @@ class StreamingExplicitContentDetection {
           System.out.format("\tPornography: %s", frame.getPornographyLikelihood());
         }
       }
-    } catch (IOException e) {
-      e.printStackTrace();
     }
   }
 }

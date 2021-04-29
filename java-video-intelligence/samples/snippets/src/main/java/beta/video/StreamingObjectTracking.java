@@ -29,16 +29,19 @@ import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResu
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoIntelligenceServiceClient;
 import com.google.protobuf.ByteString;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.concurrent.TimeoutException;
 
 class StreamingObjectTracking {
 
   // Perform streaming video object tracking
-  static void streamingObjectTracking(String filePath) {
+  static void streamingObjectTracking(String filePath)
+      throws IOException, TimeoutException, StatusRuntimeException {
     // String filePath = "path_to_your_video_file";
 
     try (StreamingVideoIntelligenceServiceClient client =
@@ -104,8 +107,6 @@ class StreamingObjectTracking {
           System.out.format("\tBottom: %f\n", frame.getNormalizedBoundingBox().getBottom());
         }
       }
-    } catch (IOException e) {
-      e.printStackTrace();
     }
   }
 }

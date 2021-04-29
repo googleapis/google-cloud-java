@@ -35,12 +35,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.concurrent.TimeoutException;
 
 class StreamingAutoMlClassification {
 
   // Perform streaming video classification with an AutoML Model
   static void streamingAutoMlClassification(String filePath, String projectId, String modelId)
-      throws StatusRuntimeException, IOException {
+      throws TimeoutException, StatusRuntimeException, IOException {
     // String filePath = "path_to_your_video_file";
     // String projectId = "YOUR_GCP_PROJECT_ID";
     // String modelId = "YOUR_AUTO_ML_CLASSIFICATION_MODEL_ID";

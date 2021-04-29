@@ -18,6 +18,7 @@ package video;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.testing.junit4.MultipleAttemptsRule;
 import com.google.cloud.videointelligence.v1.TextAnnotation;
 import com.google.cloud.videointelligence.v1.VideoAnnotationResults;
 import java.io.ByteArrayOutputStream;
@@ -46,7 +47,8 @@ public class DetectTextTest {
           "METRO",
           "RUE",
           "CARLO");
-  @Rule public Retry retry = new Retry(3);
+  @Rule
+  public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
