@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-profiler/compare/v0.1.3...v1.0.0) (2021-04-29)
+
+
+### Features
+
+* promote to 1.0.0 ([#49](https://www.github.com/googleapis/java-profiler/issues/49)) ([e23dcfd](https://www.github.com/googleapis/java-profiler/commit/e23dcfd2fdd760b9a90b499dcfe81fdbac26acc2))
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#44](https://www.github.com/googleapis/java-profiler/issues/44)) ([c93ba9f](https://www.github.com/googleapis/java-profiler/commit/c93ba9f118896080b6497ee5173a2e5beb35c7ce))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#47](https://www.github.com/googleapis/java-profiler/issues/47)) ([14fc29f](https://www.github.com/googleapis/java-profiler/commit/14fc29f0135c0b82d987de75d62424b2eabaede0))
+
 ### [0.1.3](https://www.github.com/googleapis/java-profiler/compare/v0.1.2...v0.1.3) (2021-04-20)
 
 
