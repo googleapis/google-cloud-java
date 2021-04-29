@@ -93,12 +93,13 @@ public final class Containeranalysis {
           + "nces:vulnerabilitySummary\332A\rparent,filte"
           + "r\032T\312A containeranalysis.googleapis.com\322A"
           + ".https://www.googleapis.com/auth/cloud-p"
-          + "latformB\324\001\n\037com.google.containeranalysis"
+          + "latformB\370\001\n\037com.google.containeranalysis"
           + ".v1P\001ZUgoogle.golang.org/genproto/google"
           + "apis/devtools/containeranalysis/v1;conta"
           + "ineranalysis\242\002\003GCA\252\002*Google.Cloud.DevToo"
-          + "ls.ContainerAnalysis.V1\352\002$Google::Cloud:"
-          + ":ContainerAnalysis::V1b\006proto3"
+          + "ls.ContainerAnalysis.V1\312\002!Google\\Cloud\\C"
+          + "ontainerAnalysis\\V1\352\002$Google::Cloud::Con"
+          + "tainerAnalysis::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
