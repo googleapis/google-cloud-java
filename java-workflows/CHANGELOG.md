@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.4.0](https://www.github.com/googleapis/java-workflows/compare/v0.3.1...v0.4.0) (2021-04-29)
+
+
+### Features
+
+* v1 client generation ([#240](https://www.github.com/googleapis/java-workflows/issues/240)) ([9619ec1](https://www.github.com/googleapis/java-workflows/commit/9619ec1badf86746f02ff7675cd0c1bebe77309b))
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#234](https://www.github.com/googleapis/java-workflows/issues/234)) ([fd2ed80](https://www.github.com/googleapis/java-workflows/commit/fd2ed802a86e6899562669daa47453e717abc385))
+* typo ([#231](https://www.github.com/googleapis/java-workflows/issues/231)) ([6a883dc](https://www.github.com/googleapis/java-workflows/commit/6a883dc973f0ec59fca2049e8fcdb92f5ca06727))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#235](https://www.github.com/googleapis/java-workflows/issues/235)) ([4b610fa](https://www.github.com/googleapis/java-workflows/commit/4b610fa70529db33ca807c1332b03a71fc9eec02))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#238](https://www.github.com/googleapis/java-workflows/issues/238)) ([563e22b](https://www.github.com/googleapis/java-workflows/commit/563e22b476b3a495c05c392e929e436262caeca8))
+
 ### [0.3.1](https://www.github.com/googleapis/java-workflows/compare/v0.3.0...v0.3.1) (2021-04-09)
 
 
