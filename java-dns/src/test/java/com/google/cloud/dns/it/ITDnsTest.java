@@ -22,6 +22,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static org.junit.Assume.assumeFalse;
 
 import com.google.api.gax.paging.Page;
 import com.google.cloud.dns.ChangeRequest;
@@ -131,6 +132,9 @@ public class ITDnsTest {
       ChangeRequest.newBuilder().delete(A_RECORD_ZONE1).delete(AAAA_RECORD_ZONE1).build();
   private static final List<String> ZONE_NAMES =
       ImmutableList.of(ZONE_NAME1, ZONE_NAME_EMPTY_DESCRIPTION);
+  private static final boolean IS_VPC_TEST =
+      System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") != null
+          && System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC").equalsIgnoreCase("true");
 
   @Rule public Timeout globalTimeout = Timeout.seconds(300);
 
@@ -211,6 +215,7 @@ public class ITDnsTest {
 
   @Test
   public void testCreateValidZone() {
+    assumeFalse(IS_VPC_TEST);
     try {
       Zone created = DNS.create(ZONE1);
       assertEquals(ZONE1.getDescription(), created.getDescription());
@@ -230,6 +235,7 @@ public class ITDnsTest {
 
   @Test
   public void testCreateValidZoneEmptyDescription() {
+    assumeFalse(IS_VPC_TEST);
     try {
       Zone created = DNS.create(ZONE_EMPTY_DESCRIPTION);
       assertEquals(ZONE_EMPTY_DESCRIPTION.getDescription(), created.getDescription());
@@ -271,6 +277,7 @@ public class ITDnsTest {
 
   @Test
   public void testCreateZoneWithOptions() {
+    assumeFalse(IS_VPC_TEST);
     try {
       Zone created = DNS.create(ZONE1, Dns.ZoneOption.fields(ZoneField.CREATION_TIME));
       assertEquals(ZONE1.getName(), created.getName()); // always returned
@@ -372,6 +379,7 @@ public class ITDnsTest {
 
   @Test
   public void testZoneCreatedWithDnsSecConfig() {
+    assumeFalse(IS_VPC_TEST);
     try {
       Zone created = DNS.create(ZONE_DNSSEC);
       assertEquals(ZONE_DNSSEC.getName(), created.getName());
@@ -444,6 +452,7 @@ public class ITDnsTest {
 
   @Test
   public void testGetZone() {
+    assumeFalse(IS_VPC_TEST);
     try {
       DNS.create(ZONE1, Dns.ZoneOption.fields(ZoneField.NAME));
       Zone created = DNS.getZone(ZONE1.getName(), Dns.ZoneOption.fields(ZoneField.CREATION_TIME));
@@ -548,6 +557,7 @@ public class ITDnsTest {
 
   @Test
   public void testListZones() {
+    assumeFalse(IS_VPC_TEST);
     try {
       List<Zone> zones = filter(DNS.listZones().iterateAll().iterator());
       assertEquals(0, zones.size());
@@ -713,6 +723,7 @@ public class ITDnsTest {
 
   @Test
   public void testDeleteZone() {
+    assumeFalse(IS_VPC_TEST);
     try {
       Zone created = DNS.create(ZONE1);
       assertEquals(created, DNS.getZone(ZONE1.getName()));
@@ -725,6 +736,7 @@ public class ITDnsTest {
 
   @Test
   public void testCreateChange() {
+    assumeFalse(IS_VPC_TEST);
     try {
       DNS.create(ZONE1, Dns.ZoneOption.fields(ZoneField.NAME));
       ChangeRequest created = DNS.applyChangeRequest(ZONE1.getName(), CHANGE_ADD_ZONE1);
@@ -810,6 +822,7 @@ public class ITDnsTest {
 
   @Test
   public void testInvalidChangeRequest() {
+    assumeFalse(IS_VPC_TEST);
     Zone zone = DNS.create(ZONE1);
     RecordSet validA =
         RecordSet.newBuilder("subdomain." + zone.getDnsName(), RecordSet.Type.A)
@@ -883,6 +896,7 @@ public class ITDnsTest {
 
   @Test
   public void testListChanges() {
+    assumeFalse(IS_VPC_TEST);
     try {
       // no such zone exists
       try {
@@ -1018,6 +1032,7 @@ public class ITDnsTest {
 
   @Test
   public void testGetChange() {
+    assumeFalse(IS_VPC_TEST);
     try {
       Zone zone = DNS.create(ZONE1, Dns.ZoneOption.fields(ZoneField.NAME));
       ChangeRequest created = zone.applyChangeRequest(CHANGE_ADD_ZONE1);
@@ -1106,6 +1121,7 @@ public class ITDnsTest {
 
   @Test
   public void testListDnsRecords() {
+    assumeFalse(IS_VPC_TEST);
     try {
       Zone zone = DNS.create(ZONE1);
       ImmutableList<RecordSet> recordSets =
@@ -1252,6 +1268,7 @@ public class ITDnsTest {
 
   @Test
   public void testListZonesBatch() {
+    assumeFalse(IS_VPC_TEST);
     try {
       DnsBatch batch = DNS.batch();
       DnsBatchResult<Page<Zone>> result = batch.listZones();
@@ -1421,6 +1438,7 @@ public class ITDnsTest {
 
   @Test
   public void testCreateValidZoneBatch() {
+    assumeFalse(IS_VPC_TEST);
     try {
       DnsBatch batch = DNS.batch();
       DnsBatchResult<Zone> completeZoneResult = batch.createZone(ZONE1);
@@ -1481,6 +1499,7 @@ public class ITDnsTest {
 
   @Test
   public void testCreateZoneWithOptionsBatch() {
+    assumeFalse(IS_VPC_TEST);
     try {
       DnsBatch batch = DNS.batch();
       DnsBatchResult<Zone> batchResult =
@@ -1593,6 +1612,7 @@ public class ITDnsTest {
 
   @Test
   public void testGetZoneBatch() {
+    assumeFalse(IS_VPC_TEST);
     try {
       DNS.create(ZONE1, Dns.ZoneOption.fields(ZoneField.NAME));
       DnsBatch batch = DNS.batch();
@@ -1691,6 +1711,7 @@ public class ITDnsTest {
 
   @Test
   public void testDeleteZoneBatch() {
+    assumeFalse(IS_VPC_TEST);
     try {
       Zone created = DNS.create(ZONE1);
       assertEquals(created, DNS.getZone(ZONE1.getName()));
@@ -1729,6 +1750,7 @@ public class ITDnsTest {
 
   @Test
   public void testCreateChangeBatch() {
+    assumeFalse(IS_VPC_TEST);
     try {
       DNS.create(ZONE1, Dns.ZoneOption.fields(ZoneField.NAME));
       DnsBatch batch = DNS.batch();
@@ -1833,6 +1855,7 @@ public class ITDnsTest {
 
   @Test
   public void testGetChangeBatch() {
+    assumeFalse(IS_VPC_TEST);
     try {
       Zone zone = DNS.create(ZONE1, Dns.ZoneOption.fields(ZoneField.NAME));
       ChangeRequest created = zone.applyChangeRequest(CHANGE_ADD_ZONE1);
@@ -1916,6 +1939,7 @@ public class ITDnsTest {
 
   @Test
   public void testListChangesBatch() {
+    assumeFalse(IS_VPC_TEST);
     try {
       DnsBatch batch = DNS.batch();
       DnsBatchResult<Page<ChangeRequest>> result = batch.listChangeRequests(ZONE1.getName());
@@ -2045,6 +2069,7 @@ public class ITDnsTest {
 
   @Test
   public void testListDnsRecordSetsBatch() {
+    assumeFalse(IS_VPC_TEST);
     try {
       Zone zone = DNS.create(ZONE1);
       DnsBatch batch = DNS.batch();
@@ -2196,6 +2221,7 @@ public class ITDnsTest {
 
   @Test
   public void testBatchCombined() {
+    assumeFalse(IS_VPC_TEST);
     // only testing that the combination is possible
     // the results are validated in the other test methods
     try {
@@ -2229,6 +2255,7 @@ public class ITDnsTest {
 
   @Test
   public void testCAARecord() {
+    assumeFalse(IS_VPC_TEST);
     try {
       Zone zone = DNS.create(ZONE1);
       String caa = "0 issue \"ca.example.net\"";
