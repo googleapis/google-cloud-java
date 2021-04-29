@@ -49,7 +49,7 @@ String SPANNER_TARGET = "spanner.googleapis.com";
 
 ManagedChannelBuilder delegateChannelBuilder = ManagedChannelBuilder.forAddress(SPANNER_TARGET, 443);
 GcpManagedChannelBuilder gcpBuilder = 
-  GcpManagedChannelBuilder.forDelegateBuilder(channedelegateChannelBuilderlBuilder)
+  GcpManagedChannelBuilder.forDelegateBuilder(delegateChannelBuilder)
                           .withApiConfigJsonFile(jsonApiConfig);
 ManagedChannel gcpChannel = gcpBuilder.build();
 ```
