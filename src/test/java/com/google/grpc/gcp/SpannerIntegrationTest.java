@@ -94,7 +94,6 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public final class SpannerIntegrationTest {
 
-  // private static final String GCP_PROJECT_ID = "cloudprober-test";
   private static final String GCP_PROJECT_ID = System.getenv("GCP_PROJECT_ID");
   private static final String INSTANCE_ID = "grpc-gcp-test-instance";
   private static final String DB_NAME = "grpc-gcp-test-db";
