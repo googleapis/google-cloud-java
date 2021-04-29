@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.4](https://www.github.com/googleapis/java-grafeas/compare/v1.1.3...v1.1.4) (2021-04-29)
+
+
+### Dependencies
+
+* update dependency com.puppycrawl.tools:checkstyle to v8.42 ([#290](https://www.github.com/googleapis/java-grafeas/issues/290)) ([32bde5e](https://www.github.com/googleapis/java-grafeas/commit/32bde5e97f20bf6ebad1f6f15288fc1bceb5cb87))
+
 ### [1.1.3](https://www.github.com/googleapis/java-grafeas/compare/v1.1.2...v1.1.3) (2021-04-23)
 
 
