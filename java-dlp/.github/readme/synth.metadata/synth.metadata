@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dlp.git",
-        "sha": "76efc45e7cdd7ddec2a6f8cef1d6e9ef1114e715"
+        "sha": "8b5e54502ebed7765315c505103dd2c7aa91c992"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "6244244abd0da5ef750e3bbb63fa22ec6803b4db"
+        "sha": "06a8cd0ff7e81b05e6c503eab510ec622384caa7"
       }
     }
   ]
