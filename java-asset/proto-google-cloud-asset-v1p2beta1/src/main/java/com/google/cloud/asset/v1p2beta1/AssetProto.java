@@ -76,7 +76,7 @@ public final class AssetProto {
           + "AssetProtoP\001ZAgoogle.golang.org/genproto"
           + "/googleapis/cloud/asset/v1p2beta1;asset\370"
           + "\001\001\252\002\034Google.Cloud.Asset.v1p2beta1\312\002\034Goog"
-          + "le\\Cloud\\Asset\\v1p2beta1b\006proto3"
+          + "le\\Cloud\\Asset\\V1p2beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

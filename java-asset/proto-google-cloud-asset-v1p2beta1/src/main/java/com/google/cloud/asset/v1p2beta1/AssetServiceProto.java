@@ -145,7 +145,7 @@ public final class AssetServiceProto {
           + "et.v1p2beta1B\021AssetServiceProtoP\001ZAgoogl"
           + "e.golang.org/genproto/googleapis/cloud/a"
           + "sset/v1p2beta1;asset\252\002\034Google.Cloud.Asse"
-          + "t.V1p2Beta1\312\002\034Google\\Cloud\\Asset\\V1p2Bet"
+          + "t.V1p2Beta1\312\002\034Google\\Cloud\\Asset\\V1p2bet"
           + "a1b\006proto3"
     };
     descriptor =
