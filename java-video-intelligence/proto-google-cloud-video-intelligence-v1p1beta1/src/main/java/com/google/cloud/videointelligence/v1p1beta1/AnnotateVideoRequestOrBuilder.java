@@ -31,10 +31,11 @@ public interface AnnotateVideoRequestOrBuilder
    * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
    * supported, which must be specified in the following format:
    * `gs://bucket-id/object-id` (other URI formats return
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-   * [Request URIs](https://cloud.google.com/storage/docs/request-endpoints).
-   * A video URI may include wildcards in `object-id`, and thus identify
-   * multiple videos. Supported wildcards: '*' to match 0 or more characters;
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+   * more information, see [Request
+   * URIs](https://cloud.google.com/storage/docs/request-endpoints). A video URI
+   * may include wildcards in `object-id`, and thus identify multiple videos.
+   * Supported wildcards: '*' to match 0 or more characters;
    * '?' to match 1 character. If unset, the input video should be embedded
    * in the request as `input_content`. If set, `input_content` should be unset.
    * </pre>
@@ -52,10 +53,11 @@ public interface AnnotateVideoRequestOrBuilder
    * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
    * supported, which must be specified in the following format:
    * `gs://bucket-id/object-id` (other URI formats return
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-   * [Request URIs](https://cloud.google.com/storage/docs/request-endpoints).
-   * A video URI may include wildcards in `object-id`, and thus identify
-   * multiple videos. Supported wildcards: '*' to match 0 or more characters;
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+   * more information, see [Request
+   * URIs](https://cloud.google.com/storage/docs/request-endpoints). A video URI
+   * may include wildcards in `object-id`, and thus identify multiple videos.
+   * Supported wildcards: '*' to match 0 or more characters;
    * '?' to match 1 character. If unset, the input video should be embedded
    * in the request as `input_content`. If set, `input_content` should be unset.
    * </pre>
@@ -197,8 +199,9 @@ public interface AnnotateVideoRequestOrBuilder
    * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
    * URIs are supported, which must be specified in the following format:
    * `gs://bucket-id/object-id` (other URI formats return
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-   * [Request URIs](https://cloud.google.com/storage/docs/request-endpoints).
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+   * more information, see [Request
+   * URIs](https://cloud.google.com/storage/docs/request-endpoints).
    * </pre>
    *
    * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -214,8 +217,9 @@ public interface AnnotateVideoRequestOrBuilder
    * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
    * URIs are supported, which must be specified in the following format:
    * `gs://bucket-id/object-id` (other URI formats return
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-   * [Request URIs](https://cloud.google.com/storage/docs/request-endpoints).
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+   * more information, see [Request
+   * URIs](https://cloud.google.com/storage/docs/request-endpoints).
    * </pre>
    *
    * <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
