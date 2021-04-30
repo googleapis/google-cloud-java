@@ -31,6 +31,14 @@
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-datacatalog</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-datacatalog-v1</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage</artifactId>
     </dependency>
     <dependency>

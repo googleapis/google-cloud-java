@@ -122,6 +122,18 @@
         <scope>test</scope>
       </dependency>
       <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-datacatalog</artifactId>
+        <version>1.3.2</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-datacatalog-v1</artifactId>
+        <version>1.3.2</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
         <groupId>org.assertj</groupId>
         <artifactId>assertj-core</artifactId>
         <!-- use 2.9.1 for Java 7 projects -->

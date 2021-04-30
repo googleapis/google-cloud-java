@@ -59,6 +59,7 @@ import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.ExternalTableDefinition;
 import com.google.cloud.bigquery.ExtractJobConfiguration;
 import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.FormatOptions;
@@ -98,6 +99,12 @@ import com.google.cloud.bigquery.TimePartitioning.Type;
 import com.google.cloud.bigquery.ViewDefinition;
 import com.google.cloud.bigquery.WriteChannelConfiguration;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
+import com.google.cloud.datacatalog.v1.CreatePolicyTagRequest;
+import com.google.cloud.datacatalog.v1.CreateTaxonomyRequest;
+import com.google.cloud.datacatalog.v1.PolicyTag;
+import com.google.cloud.datacatalog.v1.PolicyTagManagerClient;
+import com.google.cloud.datacatalog.v1.Taxonomy;
+import com.google.cloud.datacatalog.v1.Taxonomy.PolicyType;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
@@ -155,10 +162,6 @@ public class ITBigQueryTest {
       ImmutableMap.of(
           "example-label1", "example-value1",
           "example-label2", "example-value2");
-  private static final String sampleTag =
-      String.format("projects/%s/locations/us/taxonomies/1/policyTags/2", PROJECT_ID);
-  private static final PolicyTags POLICY_TAGS =
-      PolicyTags.newBuilder().setNames(ImmutableList.of(sampleTag)).build();
   private static final Field TIMESTAMP_FIELD_SCHEMA =
       Field.newBuilder("TimestampField", LegacySQLTypeName.TIMESTAMP)
           .setMode(Field.Mode.NULLABLE)
@@ -241,12 +244,6 @@ public class ITBigQueryTest {
           .setMode(Field.Mode.NULLABLE)
           .setDescription("BigNumeric4Description")
           .build();
-  private static final Field STRING_FIELD_SCHEMA_WITH_POLICY =
-      Field.newBuilder("StringFieldWithPolicy", LegacySQLTypeName.STRING)
-          .setMode(Field.Mode.NULLABLE)
-          .setDescription("field has a policy")
-          .setPolicyTags(POLICY_TAGS)
-          .build();
   private static final Schema TABLE_SCHEMA =
       Schema.of(
           TIMESTAMP_FIELD_SCHEMA,
@@ -297,8 +294,6 @@ public class ITBigQueryTest {
               .build());
 
   private static final Schema SIMPLE_SCHEMA = Schema.of(STRING_FIELD_SCHEMA);
-  private static final Schema POLICY_SCHEMA =
-      Schema.of(STRING_FIELD_SCHEMA, STRING_FIELD_SCHEMA_WITH_POLICY, INTEGER_FIELD_SCHEMA);
   private static final Schema QUERY_RESULT_SCHEMA =
       Schema.of(
           Field.newBuilder("TimestampField", LegacySQLTypeName.TIMESTAMP)
@@ -705,18 +700,85 @@ public class ITBigQueryTest {
     }
   }
 
-  public void testCreateTableWithPolicyTags() {
-    String tableName = "test_create_table_policytags";
-    TableId tableId = TableId.of(DATASET, tableName);
-    try {
+  @Test
+  public void testCreateAndUpdateTableWithPolicyTags() throws IOException {
+    // Set up policy tags in the datacatalog service
+    try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+      CreateTaxonomyRequest createTaxonomyRequest =
+          CreateTaxonomyRequest.newBuilder()
+              .setParent(String.format("projects/%s/locations/%s", PROJECT_ID, "us"))
+              .setTaxonomy(
+                  Taxonomy.newBuilder()
+                      .setDisplayName("testing taxonomy")
+                      .setDescription("taxonomy created for integration tests")
+                      .addActivatedPolicyTypes(PolicyType.FINE_GRAINED_ACCESS_CONTROL)
+                      .build())
+              .build();
+      Taxonomy taxonomyResponse = policyTagManagerClient.createTaxonomy(createTaxonomyRequest);
+      String taxonomyId = taxonomyResponse.getName();
+
+      CreatePolicyTagRequest createPolicyTagRequest =
+          CreatePolicyTagRequest.newBuilder()
+              .setParent(taxonomyId)
+              .setPolicyTag(PolicyTag.newBuilder().setDisplayName("ExamplePolicyTag").build())
+              .build();
+      PolicyTag policyTagResponse = policyTagManagerClient.createPolicyTag(createPolicyTagRequest);
+      String policyTagId = policyTagResponse.getName();
+      PolicyTags policyTags =
+          PolicyTags.newBuilder().setNames(ImmutableList.of(policyTagId)).build();
+      Field stringFieldWithPolicy =
+          Field.newBuilder("StringFieldWithPolicy", LegacySQLTypeName.STRING)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("field has a policy")
+              .setPolicyTags(policyTags)
+              .build();
+      Schema policySchema =
+          Schema.of(STRING_FIELD_SCHEMA, stringFieldWithPolicy, INTEGER_FIELD_SCHEMA);
+
+      // Test: Amend an existing schema with a policy tag.
+      String tableNameForUpdate = "test_update_table_policytags";
+      TableId tableIdForUpdate = TableId.of(DATASET, tableNameForUpdate);
+      TableInfo tableInfo =
+          TableInfo.newBuilder(tableIdForUpdate, StandardTableDefinition.of(TABLE_SCHEMA))
+              .setDescription("policy tag update test table")
+              .build();
+      Table createdTableForUpdate = bigquery.create(tableInfo);
+      assertNotNull(createdTableForUpdate);
+      Schema schema = createdTableForUpdate.getDefinition().getSchema();
+      FieldList fields = schema.getFields();
+      // Create a new schema adding the current fields, plus the new policy tag field
+      List<Field> fieldList = new ArrayList<>();
+      for (Field field : fields) {
+        fieldList.add(field);
+      }
+      fieldList.add(stringFieldWithPolicy);
+      Schema updatedSchemaWithPolicyTag = Schema.of(fieldList);
+      Table updatedTable =
+          createdTableForUpdate
+              .toBuilder()
+              .setDefinition(StandardTableDefinition.of(updatedSchemaWithPolicyTag))
+              .build();
+      updatedTable.update();
+      Table remoteUpdatedTable = bigquery.getTable(DATASET, tableNameForUpdate);
+      assertEquals(
+          updatedSchemaWithPolicyTag,
+          remoteUpdatedTable.<StandardTableDefinition>getDefinition().getSchema());
+      bigquery.delete(tableIdForUpdate);
+
+      // Test: Create a new table with a policy tag defined.
+      String tableName = "test_create_table_policytags";
+      TableId tableId = TableId.of(DATASET, tableName);
       StandardTableDefinition tableDefinition =
-          StandardTableDefinition.newBuilder().setSchema(POLICY_SCHEMA).build();
+          StandardTableDefinition.newBuilder().setSchema(policySchema).build();
       Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
       assertNotNull(createdTable);
       Table remoteTable = bigquery.getTable(DATASET, tableName);
-      assertEquals(POLICY_SCHEMA, remoteTable.<StandardTableDefinition>getDefinition().getSchema());
-    } finally {
+      assertEquals(policySchema, remoteTable.<StandardTableDefinition>getDefinition().getSchema());
       bigquery.delete(tableId);
+
+      // Clean up policy tags
+      policyTagManagerClient.deletePolicyTag(policyTagId);
+      policyTagManagerClient.deleteTaxonomy(taxonomyId);
     }
   }
 

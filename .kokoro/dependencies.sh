@@ -50,7 +50,9 @@ function completenessCheck() {
 
   # Output dep list generated using the flattened pom (only 'compile' and 'runtime' scopes)
   msg "Generating dependency list using flattened pom..."
-  mvn dependency:list -f .flattened-pom.xml -DincludeScope=runtime -Dsort=true | grep '\[INFO]    .*:.*:.*:.*:.*' >.new-list.txt
+  # Excluding commons-codec,commons-logging from the comparison as a temp fix
+  # Explanation and issue filed in maven-dependency-plugin: https://issues.apache.org/jira/browse/MDEP-737
+  mvn dependency:list -f .flattened-pom.xml -DexcludeArtifactIds=commons-codec,commons-logging -DincludeScope=runtime -Dsort=true | grep '\[INFO]    .*:.*:.*:.*:.*' >.new-list.txt
 
   # Compare two dependency lists
   msg "Comparing dependency lists..."
