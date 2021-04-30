@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
-  <version>1.24.0</version><!-- {x-version-update:grpc-google-cloud-bigtable-v2:current} -->
+  <version>1.24.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigtable-v2:current} -->
   <name>grpc-google-cloud-bigtable-v2</name>
   <description>GRPC library for grpc-google-cloud-bigtable-v2</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigtable-parent</artifactId>
-    <version>1.24.0</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+    <version>1.24.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
   </parent>
 
   <dependencyManagement>
@@ -18,14 +18,14 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigtable-deps-bom</artifactId>
-        <version>1.24.0</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+        <version>1.24.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigtable-bom</artifactId>
-        <version>1.24.0</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+        <version>1.24.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
