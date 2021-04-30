@@ -20,24 +20,46 @@ import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 /** Fluent wrapper for {@link com.google.bigtable.admin.v2.RestoreTableRequest} */
 public final class RestoreTableRequest {
   private final com.google.bigtable.admin.v2.RestoreTableRequest.Builder requestBuilder =
       com.google.bigtable.admin.v2.RestoreTableRequest.newBuilder();
-  private final String backupId;
-  private final String clusterId;
+  private final String sourceBackupId;
+  private final String sourceClusterId;
+  private final String sourceInstanceId;
 
-  public static RestoreTableRequest of(String clusterId, String backupId) {
-    RestoreTableRequest request = new RestoreTableRequest(clusterId, backupId);
+  /**
+   * Create a {@link RestoreTableRequest} object. It assumes the source backup locates in the same
+   * instance as the destination table. To restore a table from a backup in another instance, use
+   * {@link #of(String, String, String) of} method.
+   */
+  public static RestoreTableRequest of(String sourceClusterId, String sourceBackupId) {
+    RestoreTableRequest request = new RestoreTableRequest(null, sourceClusterId, sourceBackupId);
     return request;
   }
 
-  private RestoreTableRequest(String clusterId, String backupId) {
-    Preconditions.checkNotNull(clusterId);
-    Preconditions.checkNotNull(backupId);
-    this.backupId = backupId;
-    this.clusterId = clusterId;
+  /**
+   * Create a {@link RestoreTableRequest} object. The source backup could locate in a the same or a
+   * different instance.
+   */
+  public static RestoreTableRequest of(
+      String sourceInstanceId, String sourceClusterId, String sourceBackupId) {
+    RestoreTableRequest request =
+        new RestoreTableRequest(sourceInstanceId, sourceClusterId, sourceBackupId);
+    return request;
+  }
+
+  private RestoreTableRequest(
+      @Nullable String sourceInstanceId,
+      @Nonnull String sourceClusterId,
+      @Nonnull String sourceBackupId) {
+    Preconditions.checkNotNull(sourceClusterId);
+    Preconditions.checkNotNull(sourceBackupId);
+    this.sourceBackupId = sourceBackupId;
+    this.sourceInstanceId = sourceInstanceId;
+    this.sourceClusterId = sourceClusterId;
   }
 
   public RestoreTableRequest setTableId(String tableId) {
@@ -56,13 +78,15 @@ public final class RestoreTableRequest {
     }
     RestoreTableRequest that = (RestoreTableRequest) o;
     return Objects.equal(requestBuilder.getTableId(), that.requestBuilder.getTableId())
-        && Objects.equal(clusterId, that.clusterId)
-        && Objects.equal(backupId, that.backupId);
+        && Objects.equal(sourceInstanceId, that.sourceInstanceId)
+        && Objects.equal(sourceClusterId, that.sourceClusterId)
+        && Objects.equal(sourceBackupId, that.sourceBackupId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hashCode(requestBuilder.getTableId(), clusterId, backupId);
+    return Objects.hashCode(
+        requestBuilder.getTableId(), sourceInstanceId, sourceClusterId, sourceBackupId);
   }
 
   @InternalApi
@@ -73,7 +97,12 @@ public final class RestoreTableRequest {
 
     return requestBuilder
         .setParent(NameUtil.formatInstanceName(projectId, instanceId))
-        .setBackup(NameUtil.formatBackupName(projectId, instanceId, clusterId, backupId))
+        .setBackup(
+            NameUtil.formatBackupName(
+                projectId,
+                sourceInstanceId == null ? instanceId : sourceInstanceId,
+                sourceClusterId,
+                sourceBackupId))
         .build();
   }
 }
