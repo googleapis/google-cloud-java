@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-accesscontextmanager.git",
-        "sha": "95c8d17dba7b2aa33e5efbba700cc0259bb870a9"
+        "sha": "20cf32f43985a2c4ef1a06b1eb5e8545d8656dc2"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "c4e37010d74071851ff24121f522e802231ac86e",
-        "internalRef": "313460921"
+        "sha": "e7d77d65f0e05ce584c1a824c7ecab53b411498b",
+        "internalRef": "370589666"
       }
     },
     {

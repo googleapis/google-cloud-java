@@ -46,14 +46,14 @@ public final class TypeProto {
           + "\020\002\022\021\n\rDESKTOP_LINUX\020\003\022\025\n\021DESKTOP_CHROME_"
           + "OS\020\006\022\013\n\007ANDROID\020\004\022\007\n\003IOS\020\005*V\n\025DeviceMana"
           + "gementLevel\022\032\n\026MANAGEMENT_UNSPECIFIED\020\000\022"
-          + "\010\n\004NONE\020\001\022\t\n\005BASIC\020\002\022\014\n\010COMPLETE\020\003B\222\002\n-c"
+          + "\010\n\004NONE\020\001\022\t\n\005BASIC\020\002\022\014\n\010COMPLETE\020\003B\215\002\n-c"
           + "om.google.identity.accesscontextmanager."
-          + "typeB\tTypeProtoP\001ZMgoogle.golang.org/gen"
+          + "typeB\tTypeProtoP\001ZHgoogle.golang.org/gen"
           + "proto/googleapis/identity/accesscontextm"
-          + "anager/type;type\252\002)Google.Identity.Acces"
-          + "sContextManager.Type\312\002)Google\\Identity\\A"
-          + "ccessContextManager\\Type\352\002,Google::Ident"
-          + "ity::AccessContextManager::Typeb\006proto3"
+          + "anager/type\252\002)Google.Identity.AccessCont"
+          + "extManager.Type\312\002)Google\\Identity\\Access"
+          + "ContextManager\\Type\352\002,Google::Identity::"
+          + "AccessContextManager::Typeb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
