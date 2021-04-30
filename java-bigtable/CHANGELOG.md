@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.24.0](https://www.github.com/googleapis/java-bigtable/compare/v1.23.2...v1.24.0) (2021-04-30)
+
+
+### Features
+
+* allow restore backup to different instance ([#515](https://www.github.com/googleapis/java-bigtable/issues/515)) ([8a5e60e](https://www.github.com/googleapis/java-bigtable/commit/8a5e60e8ed116d36810cc4059539228768726912)), closes [#789](https://www.github.com/googleapis/java-bigtable/issues/789)
+
 ### [1.23.2](https://www.github.com/googleapis/java-bigtable/compare/v1.23.1...v1.23.2) (2021-04-23)
 
 
