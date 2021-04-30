@@ -17,7 +17,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-profiler</artifactId>
-  <version>0.1.2</version>
+  <version>0.1.3</version>
 </dependency>
 
 ```
