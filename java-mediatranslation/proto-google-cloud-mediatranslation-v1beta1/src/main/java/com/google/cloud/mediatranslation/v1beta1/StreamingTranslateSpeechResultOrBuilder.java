@@ -67,37 +67,6 @@ public interface StreamingTranslateSpeechResultOrBuilder
           .TextTranslationResultOrBuilder
       getTextTranslationResultOrBuilder();
 
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The debug only recognition result in original language. This field is debug
-   * only and will be set to empty string if not available.
-   * This is implementation detail and will not be backward compatible.
-   * Still need to decide whether to expose this field by default.
-   * </pre>
-   *
-   * <code>string recognition_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The recognitionResult.
-   */
-  java.lang.String getRecognitionResult();
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The debug only recognition result in original language. This field is debug
-   * only and will be set to empty string if not available.
-   * This is implementation detail and will not be backward compatible.
-   * Still need to decide whether to expose this field by default.
-   * </pre>
-   *
-   * <code>string recognition_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The bytes for recognitionResult.
-   */
-  com.google.protobuf.ByteString getRecognitionResultBytes();
-
   public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult.ResultCase
       getResultCase();
 }

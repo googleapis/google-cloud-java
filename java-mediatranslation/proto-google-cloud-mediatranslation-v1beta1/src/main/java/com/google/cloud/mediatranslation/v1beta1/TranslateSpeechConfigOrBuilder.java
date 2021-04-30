@@ -31,6 +31,24 @@ public interface TranslateSpeechConfigOrBuilder
    * Supported formats:
    * - `linear16`
    *   Uncompressed 16-bit signed little-endian samples (Linear PCM).
+   * - `flac`
+   *   `flac` (Free Lossless Audio Codec) is the recommended encoding
+   *   because it is lossless--therefore recognition is not compromised--and
+   *   requires only about half the bandwidth of `linear16`.
+   * - `mulaw`
+   *   8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+   * - `amr`
+   *   Adaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.
+   * - `amr-wb`
+   *   Adaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.
+   * - `ogg-opus`
+   *   Opus encoded audio frames in [Ogg](https://wikipedia.org/wiki/Ogg)
+   *   container. `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000,
+   *   or 48000.
+   * - `mp3`
+   *   MP3 audio. Support all standard MP3 bitrates (which range from 32-320
+   *   kbps). When using this encoding, `sample_rate_hertz` has to match the
+   *   sample rate of the file being used.
    * </pre>
    *
    * <code>string audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -46,6 +64,24 @@ public interface TranslateSpeechConfigOrBuilder
    * Supported formats:
    * - `linear16`
    *   Uncompressed 16-bit signed little-endian samples (Linear PCM).
+   * - `flac`
+   *   `flac` (Free Lossless Audio Codec) is the recommended encoding
+   *   because it is lossless--therefore recognition is not compromised--and
+   *   requires only about half the bandwidth of `linear16`.
+   * - `mulaw`
+   *   8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+   * - `amr`
+   *   Adaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.
+   * - `amr-wb`
+   *   Adaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.
+   * - `ogg-opus`
+   *   Opus encoded audio frames in [Ogg](https://wikipedia.org/wiki/Ogg)
+   *   container. `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000,
+   *   or 48000.
+   * - `mp3`
+   *   MP3 audio. Support all standard MP3 bitrates (which range from 32-320
+   *   kbps). When using this encoding, `sample_rate_hertz` has to match the
+   *   sample rate of the file being used.
    * </pre>
    *
    * <code>string audio_encoding = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -83,85 +119,6 @@ public interface TranslateSpeechConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of up to 3 additional language codes (BCP-47), listing possible
-   * alternative languages of the supplied audio. If alternative source
-   * languages are listed, speech translation result will translate in the most
-   * likely language detected including the main source_language_code. The
-   * translated result will include the language code of the language detected
-   * in the audio.
-   * </pre>
-   *
-   * <code>
-   * repeated string alternative_source_language_codes = 6 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return A list containing the alternativeSourceLanguageCodes.
-   */
-  java.util.List<java.lang.String> getAlternativeSourceLanguageCodesList();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. A list of up to 3 additional language codes (BCP-47), listing possible
-   * alternative languages of the supplied audio. If alternative source
-   * languages are listed, speech translation result will translate in the most
-   * likely language detected including the main source_language_code. The
-   * translated result will include the language code of the language detected
-   * in the audio.
-   * </pre>
-   *
-   * <code>
-   * repeated string alternative_source_language_codes = 6 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The count of alternativeSourceLanguageCodes.
-   */
-  int getAlternativeSourceLanguageCodesCount();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. A list of up to 3 additional language codes (BCP-47), listing possible
-   * alternative languages of the supplied audio. If alternative source
-   * languages are listed, speech translation result will translate in the most
-   * likely language detected including the main source_language_code. The
-   * translated result will include the language code of the language detected
-   * in the audio.
-   * </pre>
-   *
-   * <code>
-   * repeated string alternative_source_language_codes = 6 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @param index The index of the element to return.
-   * @return The alternativeSourceLanguageCodes at the given index.
-   */
-  java.lang.String getAlternativeSourceLanguageCodes(int index);
-  /**
-   *
-   *
-   * <pre>
-   * Optional. A list of up to 3 additional language codes (BCP-47), listing possible
-   * alternative languages of the supplied audio. If alternative source
-   * languages are listed, speech translation result will translate in the most
-   * likely language detected including the main source_language_code. The
-   * translated result will include the language code of the language detected
-   * in the audio.
-   * </pre>
-   *
-   * <code>
-   * repeated string alternative_source_language_codes = 6 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @param index The index of the value to return.
-   * @return The bytes of the alternativeSourceLanguageCodes at the given index.
-   */
-  com.google.protobuf.ByteString getAlternativeSourceLanguageCodesBytes(int index);
-
-  /**
-   *
-   *
-   * <pre>
    * Required. Target language code (BCP-47) of the output.
    * </pre>
    *
@@ -190,8 +147,7 @@ public interface TranslateSpeechConfigOrBuilder
    * Optional. Sample rate in Hertz of the audio data. Valid values are:
    * 8000-48000. 16000 is optimal. For best results, set the sampling rate of
    * the audio source to 16000 Hz. If that's not possible, use the native sample
-   * rate of the audio source (instead of re-sampling). This field can only be
-   * omitted for `FLAC` and `WAV` audio files.
+   * rate of the audio source (instead of re-sampling).
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -204,7 +160,9 @@ public interface TranslateSpeechConfigOrBuilder
    *
    *
    * <pre>
-   * Optional.
+   * Optional. `google-provided-model/video` and
+   * `google-provided-model/enhanced-phone-call` are premium models.
+   * `google-provided-model/phone-call` is not premium model.
    * </pre>
    *
    * <code>string model = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -216,7 +174,9 @@ public interface TranslateSpeechConfigOrBuilder
    *
    *
    * <pre>
-   * Optional.
+   * Optional. `google-provided-model/video` and
+   * `google-provided-model/enhanced-phone-call` are premium models.
+   * `google-provided-model/phone-call` is not premium model.
    * </pre>
    *
    * <code>string model = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

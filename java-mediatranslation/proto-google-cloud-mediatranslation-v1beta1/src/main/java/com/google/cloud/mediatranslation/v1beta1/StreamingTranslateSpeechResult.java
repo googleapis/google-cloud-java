@@ -39,9 +39,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
     super(builder);
   }
 
-  private StreamingTranslateSpeechResult() {
-    recognitionResult_ = "";
-  }
+  private StreamingTranslateSpeechResult() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -97,13 +95,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
                 result_ = subBuilder.buildPartial();
               }
               resultCase_ = 1;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              recognitionResult_ = s;
               break;
             }
           default:
@@ -187,37 +178,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
      * @return The isFinal.
      */
     boolean getIsFinal();
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The source language code (BCP-47) detected in the audio. Speech
-     * translation result will translate in the most likely language detected
-     * including the alternative source languages and main source_language_code.
-     * </pre>
-     *
-     * <code>string detected_source_language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return The detectedSourceLanguageCode.
-     */
-    java.lang.String getDetectedSourceLanguageCode();
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The source language code (BCP-47) detected in the audio. Speech
-     * translation result will translate in the most likely language detected
-     * including the alternative source languages and main source_language_code.
-     * </pre>
-     *
-     * <code>string detected_source_language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return The bytes for detectedSourceLanguageCode.
-     */
-    com.google.protobuf.ByteString getDetectedSourceLanguageCodeBytes();
   }
   /**
    *
@@ -241,7 +201,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
 
     private TextTranslationResult() {
       translation_ = "";
-      detectedSourceLanguageCode_ = "";
     }
 
     @java.lang.Override
@@ -283,13 +242,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
             case 16:
               {
                 isFinal_ = input.readBool();
-                break;
-              }
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                detectedSourceLanguageCode_ = s;
                 break;
               }
             default:
@@ -400,61 +352,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
       return isFinal_;
     }
 
-    public static final int DETECTED_SOURCE_LANGUAGE_CODE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object detectedSourceLanguageCode_;
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The source language code (BCP-47) detected in the audio. Speech
-     * translation result will translate in the most likely language detected
-     * including the alternative source languages and main source_language_code.
-     * </pre>
-     *
-     * <code>string detected_source_language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return The detectedSourceLanguageCode.
-     */
-    @java.lang.Override
-    public java.lang.String getDetectedSourceLanguageCode() {
-      java.lang.Object ref = detectedSourceLanguageCode_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        detectedSourceLanguageCode_ = s;
-        return s;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The source language code (BCP-47) detected in the audio. Speech
-     * translation result will translate in the most likely language detected
-     * including the alternative source languages and main source_language_code.
-     * </pre>
-     *
-     * <code>string detected_source_language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return The bytes for detectedSourceLanguageCode.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getDetectedSourceLanguageCodeBytes() {
-      java.lang.Object ref = detectedSourceLanguageCode_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        detectedSourceLanguageCode_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -475,9 +372,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
       if (isFinal_ != false) {
         output.writeBool(2, isFinal_);
       }
-      if (!getDetectedSourceLanguageCodeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, detectedSourceLanguageCode_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -492,11 +386,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
       }
       if (isFinal_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, isFinal_);
-      }
-      if (!getDetectedSourceLanguageCodeBytes().isEmpty()) {
-        size +=
-            com.google.protobuf.GeneratedMessageV3.computeStringSize(
-                3, detectedSourceLanguageCode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -522,8 +411,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
 
       if (!getTranslation().equals(other.getTranslation())) return false;
       if (getIsFinal() != other.getIsFinal()) return false;
-      if (!getDetectedSourceLanguageCode().equals(other.getDetectedSourceLanguageCode()))
-        return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -539,8 +426,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
       hash = (53 * hash) + getTranslation().hashCode();
       hash = (37 * hash) + IS_FINAL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsFinal());
-      hash = (37 * hash) + DETECTED_SOURCE_LANGUAGE_CODE_FIELD_NUMBER;
-      hash = (53 * hash) + getDetectedSourceLanguageCode().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -718,8 +603,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
 
         isFinal_ = false;
 
-        detectedSourceLanguageCode_ = "";
-
         return this;
       }
 
@@ -761,7 +644,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
                     .TextTranslationResult(this);
         result.translation_ = translation_;
         result.isFinal_ = isFinal_;
-        result.detectedSourceLanguageCode_ = detectedSourceLanguageCode_;
         onBuilt();
         return result;
       }
@@ -830,10 +712,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
         }
         if (other.getIsFinal() != false) {
           setIsFinal(other.getIsFinal());
-        }
-        if (!other.getDetectedSourceLanguageCode().isEmpty()) {
-          detectedSourceLanguageCode_ = other.detectedSourceLanguageCode_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1042,132 +920,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
         return this;
       }
 
-      private java.lang.Object detectedSourceLanguageCode_ = "";
-      /**
-       *
-       *
-       * <pre>
-       * Output only. The source language code (BCP-47) detected in the audio. Speech
-       * translation result will translate in the most likely language detected
-       * including the alternative source languages and main source_language_code.
-       * </pre>
-       *
-       * <code>
-       * string detected_source_language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
-       *
-       * @return The detectedSourceLanguageCode.
-       */
-      public java.lang.String getDetectedSourceLanguageCode() {
-        java.lang.Object ref = detectedSourceLanguageCode_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          detectedSourceLanguageCode_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Output only. The source language code (BCP-47) detected in the audio. Speech
-       * translation result will translate in the most likely language detected
-       * including the alternative source languages and main source_language_code.
-       * </pre>
-       *
-       * <code>
-       * string detected_source_language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
-       *
-       * @return The bytes for detectedSourceLanguageCode.
-       */
-      public com.google.protobuf.ByteString getDetectedSourceLanguageCodeBytes() {
-        java.lang.Object ref = detectedSourceLanguageCode_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          detectedSourceLanguageCode_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Output only. The source language code (BCP-47) detected in the audio. Speech
-       * translation result will translate in the most likely language detected
-       * including the alternative source languages and main source_language_code.
-       * </pre>
-       *
-       * <code>
-       * string detected_source_language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
-       *
-       * @param value The detectedSourceLanguageCode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDetectedSourceLanguageCode(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-
-        detectedSourceLanguageCode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Output only. The source language code (BCP-47) detected in the audio. Speech
-       * translation result will translate in the most likely language detected
-       * including the alternative source languages and main source_language_code.
-       * </pre>
-       *
-       * <code>
-       * string detected_source_language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearDetectedSourceLanguageCode() {
-
-        detectedSourceLanguageCode_ = getDefaultInstance().getDetectedSourceLanguageCode();
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Output only. The source language code (BCP-47) detected in the audio. Speech
-       * translation result will translate in the most likely language detected
-       * including the alternative source languages and main source_language_code.
-       * </pre>
-       *
-       * <code>
-       * string detected_source_language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
-       *
-       * @param value The bytes for detectedSourceLanguageCode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDetectedSourceLanguageCodeBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-
-        detectedSourceLanguageCode_ = value;
-        onChanged();
-        return this;
-      }
-
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1339,61 +1091,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
         .TextTranslationResult.getDefaultInstance();
   }
 
-  public static final int RECOGNITION_RESULT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object recognitionResult_;
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The debug only recognition result in original language. This field is debug
-   * only and will be set to empty string if not available.
-   * This is implementation detail and will not be backward compatible.
-   * Still need to decide whether to expose this field by default.
-   * </pre>
-   *
-   * <code>string recognition_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The recognitionResult.
-   */
-  @java.lang.Override
-  public java.lang.String getRecognitionResult() {
-    java.lang.Object ref = recognitionResult_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      recognitionResult_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The debug only recognition result in original language. This field is debug
-   * only and will be set to empty string if not available.
-   * This is implementation detail and will not be backward compatible.
-   * Still need to decide whether to expose this field by default.
-   * </pre>
-   *
-   * <code>string recognition_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The bytes for recognitionResult.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getRecognitionResultBytes() {
-    java.lang.Object ref = recognitionResult_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      recognitionResult_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1415,9 +1112,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
                   .TextTranslationResult)
               result_);
     }
-    if (!getRecognitionResultBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, recognitionResult_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -1434,9 +1128,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
               (com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult
                       .TextTranslationResult)
                   result_);
-    }
-    if (!getRecognitionResultBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, recognitionResult_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1455,7 +1146,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
     com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult other =
         (com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult) obj;
 
-    if (!getRecognitionResult().equals(other.getRecognitionResult())) return false;
     if (!getResultCase().equals(other.getResultCase())) return false;
     switch (resultCase_) {
       case 1:
@@ -1475,8 +1165,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + RECOGNITION_RESULT_FIELD_NUMBER;
-    hash = (53 * hash) + getRecognitionResult().hashCode();
     switch (resultCase_) {
       case 1:
         hash = (37 * hash) + TEXT_TRANSLATION_RESULT_FIELD_NUMBER;
@@ -1635,8 +1323,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      recognitionResult_ = "";
-
       resultCase_ = 0;
       result_ = null;
       return this;
@@ -1676,7 +1362,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
           result.result_ = textTranslationResultBuilder_.build();
         }
       }
-      result.recognitionResult_ = recognitionResult_;
       result.resultCase_ = resultCase_;
       onBuilt();
       return result;
@@ -1732,10 +1417,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
       if (other
           == com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult
               .getDefaultInstance()) return this;
-      if (!other.getRecognitionResult().isEmpty()) {
-        recognitionResult_ = other.recognitionResult_;
-        onChanged();
-      }
       switch (other.getResultCase()) {
         case TEXT_TRANSLATION_RESULT:
           {
@@ -2056,127 +1737,6 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
       onChanged();
       ;
       return textTranslationResultBuilder_;
-    }
-
-    private java.lang.Object recognitionResult_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The debug only recognition result in original language. This field is debug
-     * only and will be set to empty string if not available.
-     * This is implementation detail and will not be backward compatible.
-     * Still need to decide whether to expose this field by default.
-     * </pre>
-     *
-     * <code>string recognition_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The recognitionResult.
-     */
-    public java.lang.String getRecognitionResult() {
-      java.lang.Object ref = recognitionResult_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        recognitionResult_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The debug only recognition result in original language. This field is debug
-     * only and will be set to empty string if not available.
-     * This is implementation detail and will not be backward compatible.
-     * Still need to decide whether to expose this field by default.
-     * </pre>
-     *
-     * <code>string recognition_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The bytes for recognitionResult.
-     */
-    public com.google.protobuf.ByteString getRecognitionResultBytes() {
-      java.lang.Object ref = recognitionResult_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        recognitionResult_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The debug only recognition result in original language. This field is debug
-     * only and will be set to empty string if not available.
-     * This is implementation detail and will not be backward compatible.
-     * Still need to decide whether to expose this field by default.
-     * </pre>
-     *
-     * <code>string recognition_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @param value The recognitionResult to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRecognitionResult(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      recognitionResult_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The debug only recognition result in original language. This field is debug
-     * only and will be set to empty string if not available.
-     * This is implementation detail and will not be backward compatible.
-     * Still need to decide whether to expose this field by default.
-     * </pre>
-     *
-     * <code>string recognition_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearRecognitionResult() {
-
-      recognitionResult_ = getDefaultInstance().getRecognitionResult();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The debug only recognition result in original language. This field is debug
-     * only and will be set to empty string if not available.
-     * This is implementation detail and will not be backward compatible.
-     * Still need to decide whether to expose this field by default.
-     * </pre>
-     *
-     * <code>string recognition_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @param value The bytes for recognitionResult to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRecognitionResultBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      recognitionResult_ = value;
-      onChanged();
-      return this;
     }
 
     @java.lang.Override

@@ -6,4 +6,25 @@
     <className>com/google/cloud/mediatranslation/v1beta1/*OrBuilder</className>
     <method>* has*(*)</method>
   </difference>
+  <!-- TODO: Remove after 0.4.0 is released -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/mediatranslation/v1beta1/TranslateSpeechConfig*</className>
+    <method>* *AlternativeSourceLanguageCodes*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/mediatranslation/v1beta1/StreamingTranslateSpeechResult*</className>
+    <method>* *DetectedSourceLanguageCode*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/mediatranslation/v1beta1/StreamingTranslateSpeechResult*</className>
+    <method>* *RecognitionResult*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/mediatranslation/v1beta1/*TranslateSpeech*</className>
+    <field>*FIELD_NUMBER</field>
+  </difference>
 </differences>
