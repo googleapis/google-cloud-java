@@ -548,7 +548,7 @@ public final class PrivateCaProto {
           + "enproto/googleapis/cloud/security/privat"
           + "eca/v1;privateca\370\001\001\252\002\"Google.Cloud.Secur"
           + "ity.PrivateCA.V1\312\002\"Google\\Cloud\\Security"
-          + "\\PrivateCA\\v1\352\002&Google::Cloud::Security:"
+          + "\\PrivateCA\\V1\352\002&Google::Cloud::Security:"
           + ":PrivateCA::v1b\006proto3"
     };
     descriptor =
