@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.21](https://www.github.com/googleapis/java-containeranalysis/compare/v1.2.20...v1.2.21) (2021-04-30)
+
+
+### Dependencies
+
+* update dependency io.grafeas:grafeas to v1.1.4 ([#537](https://www.github.com/googleapis/java-containeranalysis/issues/537)) ([077b561](https://www.github.com/googleapis/java-containeranalysis/commit/077b56106b1208ae00419c32cef22c369672fd6e))
+
 ### [1.2.20](https://www.github.com/googleapis/java-containeranalysis/compare/v1.2.19...v1.2.20) (2021-04-23)
 
 
