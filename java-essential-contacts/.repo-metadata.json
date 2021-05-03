@@ -10,6 +10,6 @@
   "repo": "googleapis/java-essential-contacts",
   "repo_short": "java-essential-contacts",
   "distribution_name": "com.google.cloud:google-cloud-essential-contacts",
-  "api_id": "essential-contacts.googleapis.com",
+  "api_id": "essentialcontacts.googleapis.com",
   "requires_billing": true
 }
