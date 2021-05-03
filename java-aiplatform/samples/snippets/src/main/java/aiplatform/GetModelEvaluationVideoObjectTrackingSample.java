@@ -18,10 +18,10 @@ package aiplatform;
 
 // [START aiplatform_get_model_evaluation_object_tracking_sample]
 
-import com.google.cloud.aiplatform.v1beta1.ModelEvaluation;
-import com.google.cloud.aiplatform.v1beta1.ModelEvaluationName;
-import com.google.cloud.aiplatform.v1beta1.ModelServiceClient;
-import com.google.cloud.aiplatform.v1beta1.ModelServiceSettings;
+import com.google.cloud.aiplatform.v1.ModelEvaluation;
+import com.google.cloud.aiplatform.v1.ModelEvaluationName;
+import com.google.cloud.aiplatform.v1.ModelServiceClient;
+import com.google.cloud.aiplatform.v1.ModelServiceSettings;
 import java.io.IOException;
 
 public class GetModelEvaluationVideoObjectTrackingSample {

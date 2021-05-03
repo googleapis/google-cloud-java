@@ -18,12 +18,10 @@ package aiplatform;
 
 // [START aiplatform_get_model_evaluation_tabular_classification_sample]
 
-import com.google.cloud.aiplatform.v1beta1.Attribution;
-import com.google.cloud.aiplatform.v1beta1.ModelEvaluation;
-import com.google.cloud.aiplatform.v1beta1.ModelEvaluationName;
-import com.google.cloud.aiplatform.v1beta1.ModelExplanation;
-import com.google.cloud.aiplatform.v1beta1.ModelServiceClient;
-import com.google.cloud.aiplatform.v1beta1.ModelServiceSettings;
+import com.google.cloud.aiplatform.v1.ModelEvaluation;
+import com.google.cloud.aiplatform.v1.ModelEvaluationName;
+import com.google.cloud.aiplatform.v1.ModelServiceClient;
+import com.google.cloud.aiplatform.v1.ModelServiceSettings;
 import java.io.IOException;
 
 public class GetModelEvaluationTabularClassificationSample {
@@ -58,20 +56,6 @@ public class GetModelEvaluationTabularClassificationSample {
       System.out.format("\tMetrics: %s\n", modelEvaluation.getMetrics());
       System.out.format("\tCreate Time: %s\n", modelEvaluation.getCreateTime());
       System.out.format("\tSlice Dimensions: %s\n", modelEvaluation.getSliceDimensionsList());
-      ModelExplanation modelExplanation = modelEvaluation.getModelExplanation();
-
-      System.out.println("\tModel Explanation");
-      for (Attribution attribution : modelExplanation.getMeanAttributionsList()) {
-        System.out.println("\t\tMean Attributions");
-        System.out.format(
-            "\t\t\tBaseline Output value: %s\n", attribution.getBaselineOutputValue());
-        System.out.format(
-            "\t\t\tInstance Output value: %s\n", attribution.getInstanceOutputValue());
-        System.out.format("\t\t\tFeature attributions: %s\n", attribution.getFeatureAttributions());
-        System.out.format("\t\t\tOutput Index: %s\n", attribution.getOutputIndexList());
-        System.out.format("\t\t\tOutput Index Name: %s\n", attribution.getOutputDisplayName());
-        System.out.format("\t\t\tApproximation Error: %s\n", attribution.getApproximationError());
-      }
     }
   }
 }

@@ -18,12 +18,10 @@ package aiplatform;
 
 // [START aiplatform_get_model_evaluation_image_object_detection_sample]
 
-import com.google.cloud.aiplatform.v1beta1.Attribution;
-import com.google.cloud.aiplatform.v1beta1.ModelEvaluation;
-import com.google.cloud.aiplatform.v1beta1.ModelEvaluationName;
-import com.google.cloud.aiplatform.v1beta1.ModelExplanation;
-import com.google.cloud.aiplatform.v1beta1.ModelServiceClient;
-import com.google.cloud.aiplatform.v1beta1.ModelServiceSettings;
+import com.google.cloud.aiplatform.v1.ModelEvaluation;
+import com.google.cloud.aiplatform.v1.ModelEvaluationName;
+import com.google.cloud.aiplatform.v1.ModelServiceClient;
+import com.google.cloud.aiplatform.v1.ModelServiceSettings;
 import java.io.IOException;
 
 public class GetModelEvaluationImageObjectDetectionSample {
@@ -59,19 +57,6 @@ public class GetModelEvaluationImageObjectDetectionSample {
       System.out.format("\tMetrics: %s\n", modelEvaluation.getMetrics());
       System.out.format("\tCreate Time: %s\n", modelEvaluation.getCreateTime());
       System.out.format("\tSlice Dimensions: %s\n", modelEvaluation.getSliceDimensionsList());
-
-      ModelExplanation modelExplanation = modelEvaluation.getModelExplanation();
-      for (Attribution attribution : modelExplanation.getMeanAttributionsList()) {
-        System.out.println("\t\tMean Attribution");
-        System.out.format(
-            "\t\t\tBaseline Output Value: %s\n", attribution.getBaselineOutputValue());
-        System.out.format(
-            "\t\t\tInstance Output Value: %s\n", attribution.getInstanceOutputValue());
-        System.out.format("\t\t\tFeature Attributions: %s\n", attribution.getFeatureAttributions());
-        System.out.format("\t\t\tOutput Index: %s\n", attribution.getOutputIndexList());
-        System.out.format("\t\t\tOutput Display Name: %s\n", attribution.getOutputDisplayName());
-        System.out.format("\t\t\tApproximation Error: %s\n", attribution.getApproximationError());
-      }
     }
   }
 }
