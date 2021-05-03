@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-domains.git",
-        "sha": "4a8b8545ea32b47792ffbaf21bb172a9fe639560"
+        "sha": "75de6d733ed7319b57cd7e98cac16e3edc643f8b"
       }
     },
     {
