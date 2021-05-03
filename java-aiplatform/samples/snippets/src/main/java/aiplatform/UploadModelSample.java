@@ -19,13 +19,13 @@ package aiplatform;
 // [START aiplatform_upload_model_sample]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.aiplatform.v1beta1.LocationName;
-import com.google.cloud.aiplatform.v1beta1.Model;
-import com.google.cloud.aiplatform.v1beta1.ModelContainerSpec;
-import com.google.cloud.aiplatform.v1beta1.ModelServiceClient;
-import com.google.cloud.aiplatform.v1beta1.ModelServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.UploadModelOperationMetadata;
-import com.google.cloud.aiplatform.v1beta1.UploadModelResponse;
+import com.google.cloud.aiplatform.v1.LocationName;
+import com.google.cloud.aiplatform.v1.Model;
+import com.google.cloud.aiplatform.v1.ModelContainerSpec;
+import com.google.cloud.aiplatform.v1.ModelServiceClient;
+import com.google.cloud.aiplatform.v1.ModelServiceSettings;
+import com.google.cloud.aiplatform.v1.UploadModelOperationMetadata;
+import com.google.cloud.aiplatform.v1.UploadModelResponse;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;

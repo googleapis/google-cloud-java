@@ -19,12 +19,12 @@ package aiplatform;
 // [START aiplatform_predict_text_entity_extraction_sample]
 
 import com.google.cloud.aiplatform.util.ValueConverter;
-import com.google.cloud.aiplatform.v1beta1.EndpointName;
-import com.google.cloud.aiplatform.v1beta1.PredictResponse;
-import com.google.cloud.aiplatform.v1beta1.PredictionServiceClient;
-import com.google.cloud.aiplatform.v1beta1.PredictionServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.schema.predict.instance.TextExtractionPredictionInstance;
-import com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextExtractionPredictionResult;
+import com.google.cloud.aiplatform.v1.EndpointName;
+import com.google.cloud.aiplatform.v1.PredictResponse;
+import com.google.cloud.aiplatform.v1.PredictionServiceClient;
+import com.google.cloud.aiplatform.v1.PredictionServiceSettings;
+import com.google.cloud.aiplatform.v1.schema.predict.instance.TextExtractionPredictionInstance;
+import com.google.cloud.aiplatform.v1.schema.predict.prediction.TextExtractionPredictionResult;
 import com.google.protobuf.Value;
 import java.io.IOException;
 import java.util.ArrayList;

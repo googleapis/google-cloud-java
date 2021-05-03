@@ -19,12 +19,12 @@ package aiplatform;
 // [START aiplatform_undeploy_model_sample]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.aiplatform.v1beta1.EndpointName;
-import com.google.cloud.aiplatform.v1beta1.EndpointServiceClient;
-import com.google.cloud.aiplatform.v1beta1.EndpointServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.ModelName;
-import com.google.cloud.aiplatform.v1beta1.UndeployModelOperationMetadata;
-import com.google.cloud.aiplatform.v1beta1.UndeployModelResponse;
+import com.google.cloud.aiplatform.v1.EndpointName;
+import com.google.cloud.aiplatform.v1.EndpointServiceClient;
+import com.google.cloud.aiplatform.v1.EndpointServiceSettings;
+import com.google.cloud.aiplatform.v1.ModelName;
+import com.google.cloud.aiplatform.v1.UndeployModelOperationMetadata;
+import com.google.cloud.aiplatform.v1.UndeployModelResponse;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
