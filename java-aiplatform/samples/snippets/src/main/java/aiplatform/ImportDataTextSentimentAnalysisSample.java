@@ -19,13 +19,13 @@ package aiplatform;
 // [START aiplatform_import_data_text_sentiment_analysis_sample]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.aiplatform.v1beta1.DatasetName;
-import com.google.cloud.aiplatform.v1beta1.DatasetServiceClient;
-import com.google.cloud.aiplatform.v1beta1.DatasetServiceSettings;
-import com.google.cloud.aiplatform.v1beta1.GcsSource;
-import com.google.cloud.aiplatform.v1beta1.ImportDataConfig;
-import com.google.cloud.aiplatform.v1beta1.ImportDataOperationMetadata;
-import com.google.cloud.aiplatform.v1beta1.ImportDataResponse;
+import com.google.cloud.aiplatform.v1.DatasetName;
+import com.google.cloud.aiplatform.v1.DatasetServiceClient;
+import com.google.cloud.aiplatform.v1.DatasetServiceSettings;
+import com.google.cloud.aiplatform.v1.GcsSource;
+import com.google.cloud.aiplatform.v1.ImportDataConfig;
+import com.google.cloud.aiplatform.v1.ImportDataOperationMetadata;
+import com.google.cloud.aiplatform.v1.ImportDataResponse;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
