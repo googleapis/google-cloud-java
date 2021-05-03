@@ -1,2 +1,3 @@
-releaseType: java-yoshi
 bumpMinorPreMajor: true
+handleGHRelease: true
+releaseType: java-yoshi
