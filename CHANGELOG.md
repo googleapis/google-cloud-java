@@ -1,5 +1,20 @@
 # Changelog
 
+### [0.120.6](https://www.github.com/googleapis/java-logging-logback/compare/v0.120.5...v0.120.6) (2021-05-03)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#385](https://www.github.com/googleapis/java-logging-logback/issues/385)) ([dc86bee](https://www.github.com/googleapis/java-logging-logback/commit/dc86bee6bbfd8b14ea492caff3d19913520d892e))
+* typo ([#381](https://www.github.com/googleapis/java-logging-logback/issues/381)) ([36da065](https://www.github.com/googleapis/java-logging-logback/commit/36da065c4365cd1556eb7e66439f5159b2fc8b4a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-logging to v2.2.2 ([#391](https://www.github.com/googleapis/java-logging-logback/issues/391)) ([c3f20c5](https://www.github.com/googleapis/java-logging-logback/commit/c3f20c557a0b40280588d130927d0423eb0131ed))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.21.1 ([#387](https://www.github.com/googleapis/java-logging-logback/issues/387)) ([1381132](https://www.github.com/googleapis/java-logging-logback/commit/1381132c1ae5f6d9a921eecdb972591cb7056717))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#390](https://www.github.com/googleapis/java-logging-logback/issues/390)) ([41a5677](https://www.github.com/googleapis/java-logging-logback/commit/41a56776cf344609171c1d95feec7cf7067c59a1))
+
 ### [0.120.5](https://www.github.com/googleapis/java-logging-logback/compare/v0.120.4...v0.120.5) (2021-04-12)
 
 
