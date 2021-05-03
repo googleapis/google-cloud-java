@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-document-ai.git",
-        "sha": "952106ebcfa227d552beeb84e3fe816223e899a0"
+        "sha": "04c190bb09da304d1bf5cb516d94b0cd9f877725"
       }
     },
     {
