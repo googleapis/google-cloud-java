@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dns.git",
-        "sha": "a9cec694140cd59f4dc1afde2ae55ff785326bdd"
+        "sha": "49149a0bbb18c3e91adf4f7fdb173e0a69fcc1a5"
       }
     },
     {
