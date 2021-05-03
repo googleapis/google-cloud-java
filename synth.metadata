@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigquery.git",
-        "sha": "b9fd26f2a887ed371c7974d6a48e36d03a95e088"
+        "sha": "2a9c29b9bf4375dfa280e682908c32a13c3394b0"
       }
     },
     {
@@ -40,7 +40,6 @@
     ".kokoro/continuous/common.cfg",
     ".kokoro/continuous/java8.cfg",
     ".kokoro/continuous/readme.cfg",
-    ".kokoro/dependencies.sh",
     ".kokoro/nightly/common.cfg",
     ".kokoro/nightly/integration.cfg",
     ".kokoro/nightly/java11.cfg",
