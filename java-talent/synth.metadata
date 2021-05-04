@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-talent.git",
-        "sha": "8155d3a47b85409f92b960b8cd1a4e2aec640c87"
+        "sha": "c33ea10c69bad40fdb0faf50f79ca8ae40d33b9c"
       }
     },
     {
