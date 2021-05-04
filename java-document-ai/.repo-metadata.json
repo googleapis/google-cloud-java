@@ -12,5 +12,6 @@
     "distribution_name": "com.google.cloud:google-cloud-document-ai",
     "api_id": "documentai.googleapis.com",
     "transport": "grpc",
-    "requires_billing": true
+    "requires_billing": true,
+    "library_type": "GAPIC_AUTO"
 }
