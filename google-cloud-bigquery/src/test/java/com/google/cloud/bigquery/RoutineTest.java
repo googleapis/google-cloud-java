@@ -38,9 +38,11 @@ import org.mockito.junit.MockitoRule;
 public class RoutineTest {
 
   private static final RoutineId ROUTINE_ID = RoutineId.of("dataset", "routine");
+  private static final RoutineId ROUTINE_ID_TVF = RoutineId.of("dataset", "tvf_routine");
   private static final String DETERMINISM_LEVEL = "DETERMINISTIC";
   private static final String ETAG = "etag";
   private static final String ROUTINE_TYPE = "SCALAR_FUNCTION";
+  private static final String ROUTINE_TYPE_TVF = "TABLE_VALUED_FUNCTION";
   private static final Long CREATION_TIME = 10L;
   private static final Long LAST_MODIFIED_TIME = 20L;
   private static final String LANGUAGE = "SQL";
@@ -55,6 +57,18 @@ public class RoutineTest {
 
   private static final StandardSQLDataType RETURN_TYPE =
       StandardSQLDataType.newBuilder("FLOAT64").build();
+
+  private static final StandardSQLField COLUMN_1 =
+      StandardSQLField.newBuilder("COLUMN_1", StandardSQLDataType.newBuilder("STRING").build())
+          .build();
+  private static final StandardSQLField COLUMN_2 =
+      StandardSQLField.newBuilder("COLUMN_2", StandardSQLDataType.newBuilder("FLOAT64").build())
+          .build();
+
+  private static final List<StandardSQLField> COLUMN_LIST = ImmutableList.of(COLUMN_1, COLUMN_2);
+
+  private static final StandardSQLTableType RETURN_TABLE_TYPE =
+      StandardSQLTableType.newBuilder(COLUMN_LIST).build();
 
   private static final List<String> IMPORTED_LIBRARIES =
       ImmutableList.of("gs://foo", "gs://bar", "gs://baz");
@@ -75,11 +89,19 @@ public class RoutineTest {
           .setBody(BODY)
           .build();
 
+  private static final RoutineInfo ROUTINE_INFO_TVF =
+      RoutineInfo.newBuilder(ROUTINE_ID_TVF)
+          .setBody(BODY)
+          .setRoutineType(ROUTINE_TYPE_TVF)
+          .setReturnTableType(RETURN_TABLE_TYPE)
+          .build();
+
   @Rule public MockitoRule rule;
 
   private BigQuery bigquery;
   private BigQueryOptions mockOptions;
   private Routine expectedRoutine;
+  private Routine expectedRoutineTvf;
   private Routine routine;
 
   @Before
@@ -88,6 +110,7 @@ public class RoutineTest {
     mockOptions = mock(BigQueryOptions.class);
     when(bigquery.getOptions()).thenReturn(mockOptions);
     expectedRoutine = new Routine(bigquery, new RoutineInfo.BuilderImpl(ROUTINE_INFO));
+    expectedRoutineTvf = new Routine(bigquery, new RoutineInfo.BuilderImpl(ROUTINE_INFO_TVF));
     routine = new Routine(bigquery, new RoutineInfo.BuilderImpl(ROUTINE_INFO));
   }
 
@@ -114,6 +137,7 @@ public class RoutineTest {
   @Test
   public void testToBuilder() {
     compareRoutineInfo(expectedRoutine, expectedRoutine.toBuilder().build());
+    compareRoutineInfo(expectedRoutineTvf, expectedRoutineTvf.toBuilder().build());
   }
 
   @Test
@@ -200,6 +224,7 @@ public class RoutineTest {
     assertEquals(expected.getLanguage(), value.getLanguage());
     assertEquals(expected.getArguments(), value.getArguments());
     assertEquals(expected.getReturnType(), value.getReturnType());
+    assertEquals(expected.getReturnTableType(), value.getReturnTableType());
     assertEquals(expected.getImportedLibraries(), value.getImportedLibraries());
     assertEquals(expected.getBody(), value.getBody());
     assertEquals(expected.hashCode(), value.hashCode());

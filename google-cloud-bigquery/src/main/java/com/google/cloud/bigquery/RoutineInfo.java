@@ -67,6 +67,7 @@ public class RoutineInfo implements Serializable {
   private final String language;
   private final List<RoutineArgument> argumentList;
   private final StandardSQLDataType returnType;
+  private final StandardSQLTableType returnTableType;
   private final List<String> importedLibrariesList;
   private final String body;
 
@@ -112,6 +113,9 @@ public class RoutineInfo implements Serializable {
      * specified returned type at query time.
      */
     public abstract Builder setReturnType(StandardSQLDataType returnType);
+
+    /** Optional. Set only if Routine is a "TABLE_VALUED_FUNCTION". */
+    public abstract Builder setReturnTableType(StandardSQLTableType returnTableType);
 
     /**
      * Optional. If language = "JAVASCRIPT", this field stores the path of the imported JAVASCRIPT
@@ -159,6 +163,7 @@ public class RoutineInfo implements Serializable {
     private String language;
     private List<RoutineArgument> argumentList;
     private StandardSQLDataType returnType;
+    private StandardSQLTableType returnTableType;
     private List<String> importedLibrariesList;
     private String body;
 
@@ -175,6 +180,7 @@ public class RoutineInfo implements Serializable {
       this.language = routineInfo.language;
       this.argumentList = routineInfo.argumentList;
       this.returnType = routineInfo.returnType;
+      this.returnTableType = routineInfo.returnTableType;
       this.importedLibrariesList = routineInfo.importedLibrariesList;
       this.body = routineInfo.body;
     }
@@ -194,6 +200,9 @@ public class RoutineInfo implements Serializable {
       }
       if (routinePb.getReturnType() != null) {
         this.returnType = StandardSQLDataType.fromPb(routinePb.getReturnType());
+      }
+      if (routinePb.getReturnTableType() != null) {
+        this.returnTableType = StandardSQLTableType.fromPb(routinePb.getReturnTableType());
       }
       if (routinePb.getImportedLibraries() == null) {
         this.importedLibrariesList = Collections.emptyList();
@@ -264,6 +273,12 @@ public class RoutineInfo implements Serializable {
     }
 
     @Override
+    public Builder setReturnTableType(StandardSQLTableType returnTableType) {
+      this.returnTableType = returnTableType;
+      return this;
+    }
+
+    @Override
     public Builder setImportedLibraries(List<String> importedLibrariesList) {
       this.importedLibrariesList = importedLibrariesList;
       return this;
@@ -292,6 +307,7 @@ public class RoutineInfo implements Serializable {
     this.language = builder.language;
     this.argumentList = builder.argumentList;
     this.returnType = builder.returnType;
+    this.returnTableType = builder.returnTableType;
     this.importedLibrariesList = builder.importedLibrariesList;
     this.body = builder.body;
   }
@@ -350,6 +366,11 @@ public class RoutineInfo implements Serializable {
     return returnType;
   }
 
+  /** If specified, returns the table type returned from the routine. */
+  public StandardSQLTableType getReturnTableType() {
+    return returnTableType;
+  }
+
   /**
    * Returns the list of imported libraries for the routine. Only relevant for routines implemented
    * using the JAVASCRIPT language.
@@ -381,6 +402,7 @@ public class RoutineInfo implements Serializable {
         .add("language", language)
         .add("arguments", argumentList)
         .add("returnType", returnType)
+        .add("returnTableType", returnTableType)
         .add("importedLibrariesList", importedLibrariesList)
         .add("body", body)
         .toString();
@@ -399,6 +421,7 @@ public class RoutineInfo implements Serializable {
         language,
         argumentList,
         returnType,
+        returnTableType,
         importedLibrariesList,
         body);
   }
@@ -447,6 +470,9 @@ public class RoutineInfo implements Serializable {
     }
     if (getReturnType() != null) {
       routinePb.setReturnType(getReturnType().toPb());
+    }
+    if (getReturnTableType() != null) {
+      routinePb.setReturnTableType(getReturnTableType().toPb());
     }
     return routinePb;
   }

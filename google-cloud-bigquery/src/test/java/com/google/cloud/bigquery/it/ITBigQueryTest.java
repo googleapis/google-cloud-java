@@ -87,6 +87,8 @@ import com.google.cloud.bigquery.RoutineId;
 import com.google.cloud.bigquery.RoutineInfo;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLDataType;
+import com.google.cloud.bigquery.StandardSQLField;
+import com.google.cloud.bigquery.StandardSQLTableType;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableDataWriteChannel;
@@ -1674,6 +1676,34 @@ public class ITBigQueryTest {
     assertEquals(routine.getDeterminismLevel(), "DETERMINISTIC");
     assertEquals(routine.getRoutineType(), "SCALAR_FUNCTION");
     assertEquals(routine.getReturnType(), StandardSQLDataType.newBuilder("STRING").build());
+  }
+
+  @Test
+  public void testRoutineAPICreationTVF() {
+    String routineName = RemoteBigQueryHelper.generateRoutineName();
+    RoutineId routineId = RoutineId.of(ROUTINE_DATASET, routineName);
+    List<StandardSQLField> columns =
+        ImmutableList.of(
+            StandardSQLField.newBuilder("x", StandardSQLDataType.newBuilder("INT64").build())
+                .build());
+    StandardSQLTableType returnTableType = StandardSQLTableType.newBuilder(columns).build();
+    RoutineInfo routineInfo =
+        RoutineInfo.newBuilder(routineId)
+            .setRoutineType("TABLE_VALUED_FUNCTION")
+            .setLanguage("SQL")
+            .setArguments(
+                ImmutableList.of(
+                    RoutineArgument.newBuilder()
+                        .setName("filter")
+                        .setDataType(StandardSQLDataType.newBuilder("INT64").build())
+                        .build()))
+            .setReturnTableType(returnTableType)
+            .setBody("SELECT x FROM UNNEST([1,2,3]) x WHERE x = filter")
+            .build();
+    Routine routine = bigquery.create(routineInfo);
+    assertNotNull(routine);
+    assertEquals(routine.getRoutineType(), "TABLE_VALUED_FUNCTION");
+    assertEquals(routine.getReturnTableType(), returnTableType);
   }
 
   @Test

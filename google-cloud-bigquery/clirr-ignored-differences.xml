@@ -5,6 +5,6 @@
   <difference>
     <differenceType>7013</differenceType>
     <className>com/google/cloud/bigquery/RoutineInfo$Builder</className>
-    <method>com.google.cloud.bigquery.RoutineInfo$Builder setDeterminismLevel(java.lang.String)</method>
+    <method>com.google.cloud.bigquery.RoutineInfo$Builder setReturnTableType(com.google.cloud.bigquery.StandardSQLTableType)</method>
   </difference>
 </differences>
