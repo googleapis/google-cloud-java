@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-datastore.git",
-        "sha": "4af790dae6207c21387d12660c8972847517b197"
+        "sha": "bfabd758e4c1033aa01cc65f157e238a232dd1eb"
       }
     },
     {
