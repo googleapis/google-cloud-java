@@ -36,10 +36,7 @@ import org.json.JSONObject;
 /**
  * A StreamWriter that can write JSON data (JSONObjects) to BigQuery tables. The JsonStreamWriter is
  * built on top of a StreamWriter, and it simply converts all JSON data to protobuf messages then
- * calls StreamWriter's append() method to write to BigQuery tables. It maintains all StreamWriter
- * functions, but also provides an additional feature: schema update support, where if the BigQuery
- * table schema is updated, users will be able to ingest data on the new schema after some time (in
- * order of minutes).
+ * calls StreamWriter's append() method to write to BigQuery tables.
  */
 public class JsonStreamWriter implements AutoCloseable {
   private static String streamPatternString =
@@ -83,8 +80,7 @@ public class JsonStreamWriter implements AutoCloseable {
 
   /**
    * Writes a JSONArray that contains JSONObjects to the BigQuery table by first converting the JSON
-   * data to protobuf messages, then using StreamWriter's append() to write the data. If there is a
-   * schema update, the OnSchemaUpdateRunnable will be used to determine what actions to perform.
+   * data to protobuf messages, then using StreamWriter's append() to write the data.
    *
    * @param jsonArr The JSON array that contains JSONObjects to be written
    * @return ApiFuture<AppendRowsResponse> returns an AppendRowsResponse message wrapped in an
@@ -96,8 +92,7 @@ public class JsonStreamWriter implements AutoCloseable {
 
   /**
    * Writes a JSONArray that contains JSONObjects to the BigQuery table by first converting the JSON
-   * data to protobuf messages, then using StreamWriter's append() to write the data. If there is a
-   * schema update, the OnSchemaUpdateRunnable will be used to determine what actions to perform.
+   * data to protobuf messages, then using StreamWriter's append() to write the data.
    *
    * @param jsonArr The JSON array that contains JSONObjects to be written
    * @param offset Offset for deduplication
@@ -193,10 +188,6 @@ public class JsonStreamWriter implements AutoCloseable {
     if (createDefaultStream) {
       streamWriterBuilder.createDefaultStream();
     }
-    JsonStreamWriterOnSchemaUpdateRunnable jsonStreamWriterOnSchemaUpdateRunnable =
-        new JsonStreamWriterOnSchemaUpdateRunnable();
-    jsonStreamWriterOnSchemaUpdateRunnable.setJsonStreamWriter(this);
-    streamWriterBuilder.setOnSchemaUpdateRunnable(jsonStreamWriterOnSchemaUpdateRunnable);
   }
 
   /**
@@ -265,39 +256,6 @@ public class JsonStreamWriter implements AutoCloseable {
   @Override
   public void close() {
     this.streamWriter.close();
-  }
-
-  private class JsonStreamWriterOnSchemaUpdateRunnable extends OnSchemaUpdateRunnable {
-    private JsonStreamWriter jsonStreamWriter;
-    /**
-     * Setter for the jsonStreamWriter
-     *
-     * @param jsonStreamWriter
-     */
-    public void setJsonStreamWriter(JsonStreamWriter jsonStreamWriter) {
-      this.jsonStreamWriter = jsonStreamWriter;
-    }
-
-    /** Getter for the jsonStreamWriter */
-    public JsonStreamWriter getJsonStreamWriter() {
-      return this.jsonStreamWriter;
-    }
-
-    @Override
-    public void run() {
-      this.getJsonStreamWriter().setTableSchema(this.getUpdatedSchema());
-      try {
-        this.getJsonStreamWriter().refreshConnection();
-      } catch (InterruptedException | IOException e) {
-        LOG.severe("StreamWriter failed to refresh upon schema update." + e);
-        return;
-      } catch (Descriptors.DescriptorValidationException e) {
-        LOG.severe(
-            "Schema update fail: updated schema could not be converted to a valid descriptor.");
-        return;
-      }
-      LOG.info("Successfully updated schema: " + this.getUpdatedSchema());
-    }
   }
 
   public static final class Builder {
