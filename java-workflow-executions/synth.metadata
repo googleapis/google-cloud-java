@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-workflow-executions.git",
-        "sha": "834a9c03b41a298c889723af487ba1e38e9d3757"
+        "sha": "98eac938cbf64f5f492e347905629e344f684254"
       }
     },
     {
