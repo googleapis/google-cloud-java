@@ -259,9 +259,9 @@ public final class FulfillIntentResponse extends com.google.protobuf.GeneratedMe
    * The audio data bytes encoded as specified in the request.
    * Note: The output audio is generated based on the values of default platform
    * text responses found in the
-   * [`query_result.response_messages`][google.cloud.dialogflow.cx.v3beta1.QueryResult.response_messages] field. If
-   * multiple default text responses exist, they will be concatenated when
-   * generating audio. If no default platform text responses exist, the
+   * [`query_result.response_messages`][google.cloud.dialogflow.cx.v3beta1.QueryResult.response_messages]
+   * field. If multiple default text responses exist, they will be concatenated
+   * when generating audio. If no default platform text responses exist, the
    * generated audio content will be empty.
    * In some scenarios, multiple output audio fields may be present in the
    * response structure. In these cases, only the top-most-level audio output
@@ -1023,9 +1023,9 @@ public final class FulfillIntentResponse extends com.google.protobuf.GeneratedMe
      * The audio data bytes encoded as specified in the request.
      * Note: The output audio is generated based on the values of default platform
      * text responses found in the
-     * [`query_result.response_messages`][google.cloud.dialogflow.cx.v3beta1.QueryResult.response_messages] field. If
-     * multiple default text responses exist, they will be concatenated when
-     * generating audio. If no default platform text responses exist, the
+     * [`query_result.response_messages`][google.cloud.dialogflow.cx.v3beta1.QueryResult.response_messages]
+     * field. If multiple default text responses exist, they will be concatenated
+     * when generating audio. If no default platform text responses exist, the
      * generated audio content will be empty.
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
@@ -1047,9 +1047,9 @@ public final class FulfillIntentResponse extends com.google.protobuf.GeneratedMe
      * The audio data bytes encoded as specified in the request.
      * Note: The output audio is generated based on the values of default platform
      * text responses found in the
-     * [`query_result.response_messages`][google.cloud.dialogflow.cx.v3beta1.QueryResult.response_messages] field. If
-     * multiple default text responses exist, they will be concatenated when
-     * generating audio. If no default platform text responses exist, the
+     * [`query_result.response_messages`][google.cloud.dialogflow.cx.v3beta1.QueryResult.response_messages]
+     * field. If multiple default text responses exist, they will be concatenated
+     * when generating audio. If no default platform text responses exist, the
      * generated audio content will be empty.
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
@@ -1077,9 +1077,9 @@ public final class FulfillIntentResponse extends com.google.protobuf.GeneratedMe
      * The audio data bytes encoded as specified in the request.
      * Note: The output audio is generated based on the values of default platform
      * text responses found in the
-     * [`query_result.response_messages`][google.cloud.dialogflow.cx.v3beta1.QueryResult.response_messages] field. If
-     * multiple default text responses exist, they will be concatenated when
-     * generating audio. If no default platform text responses exist, the
+     * [`query_result.response_messages`][google.cloud.dialogflow.cx.v3beta1.QueryResult.response_messages]
+     * field. If multiple default text responses exist, they will be concatenated
+     * when generating audio. If no default platform text responses exist, the
      * generated audio content will be empty.
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output

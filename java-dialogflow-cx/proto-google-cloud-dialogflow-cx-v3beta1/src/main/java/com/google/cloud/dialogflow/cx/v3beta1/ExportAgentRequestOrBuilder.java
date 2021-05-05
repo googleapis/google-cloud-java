@@ -84,4 +84,37 @@ public interface ExportAgentRequestOrBuilder
    * @return The bytes for agentUri.
    */
   com.google.protobuf.ByteString getAgentUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Environment name. If not set, draft environment is assumed.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string environment = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The environment.
+   */
+  java.lang.String getEnvironment();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Environment name. If not set, draft environment is assumed.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string environment = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for environment.
+   */
+  com.google.protobuf.ByteString getEnvironmentBytes();
 }

@@ -99,9 +99,11 @@ public interface ListTransitionRouteGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * The language to list transition route groups for. The field
-   * [`messages`][TransitionRoute.trigger_fulfillment.messages] in
-   * [TransitionRoute][google.cloud.dialogflow.cx.v3beta1.TransitionRoute] is language dependent.
+   * The language to list transition route groups for. The following fields are
+   * language dependent:
+   * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
+   * *
+   * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -118,9 +120,11 @@ public interface ListTransitionRouteGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * The language to list transition route groups for. The field
-   * [`messages`][TransitionRoute.trigger_fulfillment.messages] in
-   * [TransitionRoute][google.cloud.dialogflow.cx.v3beta1.TransitionRoute] is language dependent.
+   * The language to list transition route groups for. The following fields are
+   * language dependent:
+   * *  `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages`
+   * *
+   * `TransitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases`
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)

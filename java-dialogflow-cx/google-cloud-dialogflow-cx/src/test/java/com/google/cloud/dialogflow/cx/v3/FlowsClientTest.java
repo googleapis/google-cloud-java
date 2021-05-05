@@ -693,4 +693,115 @@ public class FlowsClientTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void importFlowTest() throws Exception {
+    ImportFlowResponse expectedResponse =
+        ImportFlowResponse.newBuilder()
+            .setFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importFlowTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFlows.addResponse(resultOperation);
+
+    ImportFlowRequest request =
+        ImportFlowRequest.newBuilder()
+            .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+            .build();
+
+    ImportFlowResponse actualResponse = client.importFlowAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFlows.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportFlowRequest actualRequest = ((ImportFlowRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getFlowUri(), actualRequest.getFlowUri());
+    Assert.assertEquals(request.getFlowContent(), actualRequest.getFlowContent());
+    Assert.assertEquals(request.getImportOption(), actualRequest.getImportOption());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importFlowExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFlows.addException(exception);
+
+    try {
+      ImportFlowRequest request =
+          ImportFlowRequest.newBuilder()
+              .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+              .build();
+      client.importFlowAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void exportFlowTest() throws Exception {
+    ExportFlowResponse expectedResponse = ExportFlowResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportFlowTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFlows.addResponse(resultOperation);
+
+    ExportFlowRequest request =
+        ExportFlowRequest.newBuilder()
+            .setName(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+            .setFlowUri("flowUri-765815458")
+            .setIncludeReferencedFlows(true)
+            .build();
+
+    ExportFlowResponse actualResponse = client.exportFlowAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFlows.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportFlowRequest actualRequest = ((ExportFlowRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getFlowUri(), actualRequest.getFlowUri());
+    Assert.assertEquals(
+        request.getIncludeReferencedFlows(), actualRequest.getIncludeReferencedFlows());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportFlowExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFlows.addException(exception);
+
+    try {
+      ExportFlowRequest request =
+          ExportFlowRequest.newBuilder()
+              .setName(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+              .setFlowUri("flowUri-765815458")
+              .setIncludeReferencedFlows(true)
+              .build();
+      client.exportFlowAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
 }

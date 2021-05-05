@@ -662,6 +662,9 @@ public class AgentsClient implements BackgroundResource {
    *       ExportAgentRequest.newBuilder()
    *           .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setAgentUri("agentUri1469149223")
+   *           .setEnvironment(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+   *                   .toString())
    *           .build();
    *   ExportAgentResponse response = agentsClient.exportAgentAsync(request).get();
    * }
@@ -687,6 +690,9 @@ public class AgentsClient implements BackgroundResource {
    *       ExportAgentRequest.newBuilder()
    *           .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setAgentUri("agentUri1469149223")
+   *           .setEnvironment(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+   *                   .toString())
    *           .build();
    *   OperationFuture<ExportAgentResponse, Struct> future =
    *       agentsClient.exportAgentOperationCallable().futureCall(request);
@@ -712,6 +718,9 @@ public class AgentsClient implements BackgroundResource {
    *       ExportAgentRequest.newBuilder()
    *           .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
    *           .setAgentUri("agentUri1469149223")
+   *           .setEnvironment(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+   *                   .toString())
    *           .build();
    *   ApiFuture<Operation> future = agentsClient.exportAgentCallable().futureCall(request);
    *   // Do something.

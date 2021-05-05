@@ -413,6 +413,17 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * This field can be used to pass custom data into the webhook associated with
    * the agent. Arbitrary JSON objects are supported.
+   * Some integrations that query a Dialogflow agent may provide additional
+   * information in the payload.
+   * In particular, for the Dialogflow Phone Gateway integration, this field has
+   * the form:
+   * ```
+   * {
+   *  "telephony": {
+   *    "caller_id": "+18558363987"
+   *  }
+   * }
+   * ```
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 4;</code>
@@ -429,6 +440,17 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * This field can be used to pass custom data into the webhook associated with
    * the agent. Arbitrary JSON objects are supported.
+   * Some integrations that query a Dialogflow agent may provide additional
+   * information in the payload.
+   * In particular, for the Dialogflow Phone Gateway integration, this field has
+   * the form:
+   * ```
+   * {
+   *  "telephony": {
+   *    "caller_id": "+18558363987"
+   *  }
+   * }
+   * ```
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 4;</code>
@@ -445,6 +467,17 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * This field can be used to pass custom data into the webhook associated with
    * the agent. Arbitrary JSON objects are supported.
+   * Some integrations that query a Dialogflow agent may provide additional
+   * information in the payload.
+   * In particular, for the Dialogflow Phone Gateway integration, this field has
+   * the form:
+   * ```
+   * {
+   *  "telephony": {
+   *    "caller_id": "+18558363987"
+   *  }
+   * }
+   * ```
    * </pre>
    *
    * <code>.google.protobuf.Struct payload = 4;</code>
@@ -554,16 +587,18 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
-   * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
+   * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to
+   * override the [current page][QueryResult.current_page] in the session.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/pages/&lt;page ID&gt;`.
    * If `current_page` is specified, the previous state of the session will be
    * ignored by Dialogflow, including the [previous
    * page][QueryResult.current_page] and the [previous session
    * parameters][QueryResult.parameters].
-   * In most cases, [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page] and
-   * [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters] should be configured together to
-   * direct a session to a specific state.
+   * In most cases,
+   * [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page]
+   * and [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters]
+   * should be configured together to direct a session to a specific state.
    * </pre>
    *
    * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -586,16 +621,18 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
-   * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
+   * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to
+   * override the [current page][QueryResult.current_page] in the session.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/pages/&lt;page ID&gt;`.
    * If `current_page` is specified, the previous state of the session will be
    * ignored by Dialogflow, including the [previous
    * page][QueryResult.current_page] and the [previous session
    * parameters][QueryResult.parameters].
-   * In most cases, [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page] and
-   * [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters] should be configured together to
-   * direct a session to a specific state.
+   * In most cases,
+   * [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page]
+   * and [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters]
+   * should be configured together to direct a session to a specific state.
    * </pre>
    *
    * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -2055,6 +2092,17 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * This field can be used to pass custom data into the webhook associated with
      * the agent. Arbitrary JSON objects are supported.
+     * Some integrations that query a Dialogflow agent may provide additional
+     * information in the payload.
+     * In particular, for the Dialogflow Phone Gateway integration, this field has
+     * the form:
+     * ```
+     * {
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }
+     * ```
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 4;</code>
@@ -2070,6 +2118,17 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * This field can be used to pass custom data into the webhook associated with
      * the agent. Arbitrary JSON objects are supported.
+     * Some integrations that query a Dialogflow agent may provide additional
+     * information in the payload.
+     * In particular, for the Dialogflow Phone Gateway integration, this field has
+     * the form:
+     * ```
+     * {
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }
+     * ```
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 4;</code>
@@ -2089,6 +2148,17 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * This field can be used to pass custom data into the webhook associated with
      * the agent. Arbitrary JSON objects are supported.
+     * Some integrations that query a Dialogflow agent may provide additional
+     * information in the payload.
+     * In particular, for the Dialogflow Phone Gateway integration, this field has
+     * the form:
+     * ```
+     * {
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }
+     * ```
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 4;</code>
@@ -2112,6 +2182,17 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * This field can be used to pass custom data into the webhook associated with
      * the agent. Arbitrary JSON objects are supported.
+     * Some integrations that query a Dialogflow agent may provide additional
+     * information in the payload.
+     * In particular, for the Dialogflow Phone Gateway integration, this field has
+     * the form:
+     * ```
+     * {
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }
+     * ```
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 4;</code>
@@ -2132,6 +2213,17 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * This field can be used to pass custom data into the webhook associated with
      * the agent. Arbitrary JSON objects are supported.
+     * Some integrations that query a Dialogflow agent may provide additional
+     * information in the payload.
+     * In particular, for the Dialogflow Phone Gateway integration, this field has
+     * the form:
+     * ```
+     * {
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }
+     * ```
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 4;</code>
@@ -2157,6 +2249,17 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * This field can be used to pass custom data into the webhook associated with
      * the agent. Arbitrary JSON objects are supported.
+     * Some integrations that query a Dialogflow agent may provide additional
+     * information in the payload.
+     * In particular, for the Dialogflow Phone Gateway integration, this field has
+     * the form:
+     * ```
+     * {
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }
+     * ```
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 4;</code>
@@ -2178,6 +2281,17 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * This field can be used to pass custom data into the webhook associated with
      * the agent. Arbitrary JSON objects are supported.
+     * Some integrations that query a Dialogflow agent may provide additional
+     * information in the payload.
+     * In particular, for the Dialogflow Phone Gateway integration, this field has
+     * the form:
+     * ```
+     * {
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }
+     * ```
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 4;</code>
@@ -2193,6 +2307,17 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * This field can be used to pass custom data into the webhook associated with
      * the agent. Arbitrary JSON objects are supported.
+     * Some integrations that query a Dialogflow agent may provide additional
+     * information in the payload.
+     * In particular, for the Dialogflow Phone Gateway integration, this field has
+     * the form:
+     * ```
+     * {
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }
+     * ```
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 4;</code>
@@ -2210,6 +2335,17 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * This field can be used to pass custom data into the webhook associated with
      * the agent. Arbitrary JSON objects are supported.
+     * Some integrations that query a Dialogflow agent may provide additional
+     * information in the payload.
+     * In particular, for the Dialogflow Phone Gateway integration, this field has
+     * the form:
+     * ```
+     * {
+     *  "telephony": {
+     *    "caller_id": "+18558363987"
+     *  }
+     * }
+     * ```
      * </pre>
      *
      * <code>.google.protobuf.Struct payload = 4;</code>
@@ -2559,16 +2695,18 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
-     * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
+     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to
+     * override the [current page][QueryResult.current_page] in the session.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/pages/&lt;page ID&gt;`.
      * If `current_page` is specified, the previous state of the session will be
      * ignored by Dialogflow, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters].
-     * In most cases, [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page] and
-     * [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters] should be configured together to
-     * direct a session to a specific state.
+     * In most cases,
+     * [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page]
+     * and [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters]
+     * should be configured together to direct a session to a specific state.
      * </pre>
      *
      * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -2590,16 +2728,18 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
-     * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
+     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to
+     * override the [current page][QueryResult.current_page] in the session.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/pages/&lt;page ID&gt;`.
      * If `current_page` is specified, the previous state of the session will be
      * ignored by Dialogflow, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters].
-     * In most cases, [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page] and
-     * [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters] should be configured together to
-     * direct a session to a specific state.
+     * In most cases,
+     * [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page]
+     * and [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters]
+     * should be configured together to direct a session to a specific state.
      * </pre>
      *
      * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -2621,16 +2761,18 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
-     * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
+     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to
+     * override the [current page][QueryResult.current_page] in the session.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/pages/&lt;page ID&gt;`.
      * If `current_page` is specified, the previous state of the session will be
      * ignored by Dialogflow, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters].
-     * In most cases, [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page] and
-     * [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters] should be configured together to
-     * direct a session to a specific state.
+     * In most cases,
+     * [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page]
+     * and [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters]
+     * should be configured together to direct a session to a specific state.
      * </pre>
      *
      * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -2651,16 +2793,18 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
-     * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
+     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to
+     * override the [current page][QueryResult.current_page] in the session.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/pages/&lt;page ID&gt;`.
      * If `current_page` is specified, the previous state of the session will be
      * ignored by Dialogflow, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters].
-     * In most cases, [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page] and
-     * [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters] should be configured together to
-     * direct a session to a specific state.
+     * In most cases,
+     * [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page]
+     * and [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters]
+     * should be configured together to direct a session to a specific state.
      * </pre>
      *
      * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -2677,16 +2821,18 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
-     * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
+     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to
+     * override the [current page][QueryResult.current_page] in the session.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/pages/&lt;page ID&gt;`.
      * If `current_page` is specified, the previous state of the session will be
      * ignored by Dialogflow, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters].
-     * In most cases, [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page] and
-     * [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters] should be configured together to
-     * direct a session to a specific state.
+     * In most cases,
+     * [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page]
+     * and [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters]
+     * should be configured together to direct a session to a specific state.
      * </pre>
      *
      * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>

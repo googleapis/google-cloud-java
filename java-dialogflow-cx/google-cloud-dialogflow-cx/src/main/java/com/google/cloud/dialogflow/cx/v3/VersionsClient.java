@@ -723,7 +723,7 @@ public class VersionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Loads a specified version to draft version.
+   * Loads resources in the specified version to the draft flow.
    *
    * <p>Sample code:
    *
@@ -736,7 +736,7 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The [Version][google.cloud.dialogflow.cx.v3.Version] to be loaded to
-   *     draft version. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     draft flow. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -748,7 +748,7 @@ public class VersionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Loads a specified version to draft version.
+   * Loads resources in the specified version to the draft flow.
    *
    * <p>Sample code:
    *
@@ -761,7 +761,7 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The [Version][google.cloud.dialogflow.cx.v3.Version] to be loaded to
-   *     draft version. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     draft flow. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -772,7 +772,7 @@ public class VersionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Loads a specified version to draft version.
+   * Loads resources in the specified version to the draft flow.
    *
    * <p>Sample code:
    *
@@ -798,7 +798,7 @@ public class VersionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Loads a specified version to draft version.
+   * Loads resources in the specified version to the draft flow.
    *
    * <p>Sample code:
    *
@@ -824,7 +824,7 @@ public class VersionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Loads a specified version to draft version.
+   * Loads resources in the specified version to the draft flow.
    *
    * <p>Sample code:
    *

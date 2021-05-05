@@ -133,11 +133,17 @@
             "DeleteFlow": {
               "methods": ["deleteFlow", "deleteFlow", "deleteFlow", "deleteFlowCallable"]
             },
+            "ExportFlow": {
+              "methods": ["exportFlowAsync", "exportFlowOperationCallable", "exportFlowCallable"]
+            },
             "GetFlow": {
               "methods": ["getFlow", "getFlow", "getFlow", "getFlowCallable"]
             },
             "GetFlowValidationResult": {
               "methods": ["getFlowValidationResult", "getFlowValidationResult", "getFlowValidationResult", "getFlowValidationResultCallable"]
+            },
+            "ImportFlow": {
+              "methods": ["importFlowAsync", "importFlowOperationCallable", "importFlowCallable"]
             },
             "ListFlows": {
               "methods": ["listFlows", "listFlows", "listFlows", "listFlowsPagedCallable", "listFlowsCallable"]

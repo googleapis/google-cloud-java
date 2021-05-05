@@ -180,6 +180,7 @@ public class AgentsClientTest {
             .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
             .setDisplayName("displayName1714148973")
             .setDefaultLanguageCode("defaultLanguageCode2069633606")
+            .addAllSupportedLanguageCodes(new ArrayList<String>())
             .setTimeZone("timeZone-2077180903")
             .setDescription("description-1724546052")
             .setAvatarUri("avatarUri-428646061")
@@ -230,6 +231,7 @@ public class AgentsClientTest {
             .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
             .setDisplayName("displayName1714148973")
             .setDefaultLanguageCode("defaultLanguageCode2069633606")
+            .addAllSupportedLanguageCodes(new ArrayList<String>())
             .setTimeZone("timeZone-2077180903")
             .setDescription("description-1724546052")
             .setAvatarUri("avatarUri-428646061")
@@ -280,6 +282,7 @@ public class AgentsClientTest {
             .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
             .setDisplayName("displayName1714148973")
             .setDefaultLanguageCode("defaultLanguageCode2069633606")
+            .addAllSupportedLanguageCodes(new ArrayList<String>())
             .setTimeZone("timeZone-2077180903")
             .setDescription("description-1724546052")
             .setAvatarUri("avatarUri-428646061")
@@ -333,6 +336,7 @@ public class AgentsClientTest {
             .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
             .setDisplayName("displayName1714148973")
             .setDefaultLanguageCode("defaultLanguageCode2069633606")
+            .addAllSupportedLanguageCodes(new ArrayList<String>())
             .setTimeZone("timeZone-2077180903")
             .setDescription("description-1724546052")
             .setAvatarUri("avatarUri-428646061")
@@ -386,6 +390,7 @@ public class AgentsClientTest {
             .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
             .setDisplayName("displayName1714148973")
             .setDefaultLanguageCode("defaultLanguageCode2069633606")
+            .addAllSupportedLanguageCodes(new ArrayList<String>())
             .setTimeZone("timeZone-2077180903")
             .setDescription("description-1724546052")
             .setAvatarUri("avatarUri-428646061")
@@ -515,6 +520,9 @@ public class AgentsClientTest {
         ExportAgentRequest.newBuilder()
             .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
             .setAgentUri("agentUri1469149223")
+            .setEnvironment(
+                EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+                    .toString())
             .build();
 
     ExportAgentResponse actualResponse = client.exportAgentAsync(request).get();
@@ -526,6 +534,7 @@ public class AgentsClientTest {
 
     Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertEquals(request.getAgentUri(), actualRequest.getAgentUri());
+    Assert.assertEquals(request.getEnvironment(), actualRequest.getEnvironment());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -542,6 +551,9 @@ public class AgentsClientTest {
           ExportAgentRequest.newBuilder()
               .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
               .setAgentUri("agentUri1469149223")
+              .setEnvironment(
+                  EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+                      .toString())
               .build();
       client.exportAgentAsync(request).get();
       Assert.fail("No exception raised");

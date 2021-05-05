@@ -395,6 +395,96 @@ public final class FlowsGrpc {
     return getGetFlowValidationResultMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest,
+          com.google.longrunning.Operation>
+      getImportFlowMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportFlow",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest,
+          com.google.longrunning.Operation>
+      getImportFlowMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest,
+            com.google.longrunning.Operation>
+        getImportFlowMethod;
+    if ((getImportFlowMethod = FlowsGrpc.getImportFlowMethod) == null) {
+      synchronized (FlowsGrpc.class) {
+        if ((getImportFlowMethod = FlowsGrpc.getImportFlowMethod) == null) {
+          FlowsGrpc.getImportFlowMethod =
+              getImportFlowMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ImportFlow"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new FlowsMethodDescriptorSupplier("ImportFlow"))
+                      .build();
+        }
+      }
+    }
+    return getImportFlowMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest,
+          com.google.longrunning.Operation>
+      getExportFlowMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportFlow",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest,
+          com.google.longrunning.Operation>
+      getExportFlowMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest,
+            com.google.longrunning.Operation>
+        getExportFlowMethod;
+    if ((getExportFlowMethod = FlowsGrpc.getExportFlowMethod) == null) {
+      synchronized (FlowsGrpc.class) {
+        if ((getExportFlowMethod = FlowsGrpc.getExportFlowMethod) == null) {
+          FlowsGrpc.getExportFlowMethod =
+              getExportFlowMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportFlow"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new FlowsMethodDescriptorSupplier("ExportFlow"))
+                      .build();
+        }
+      }
+    }
+    return getExportFlowMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static FlowsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<FlowsStub> factory =
@@ -556,6 +646,34 @@ public final class FlowsGrpc {
           getGetFlowValidationResultMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified flow to the specified agent from a binary file.
+     * </pre>
+     */
+    public void importFlow(
+        com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getImportFlowMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports the specified flow to a binary file.
+     * Note that resources (e.g. intents, entities, webhooks) that the flow
+     * references will also be exported.
+     * </pre>
+     */
+    public void exportFlow(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExportFlowMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -610,6 +728,18 @@ public final class FlowsGrpc {
                       com.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest,
                       com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>(
                       this, METHODID_GET_FLOW_VALIDATION_RESULT)))
+          .addMethod(
+              getImportFlowMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest,
+                      com.google.longrunning.Operation>(this, METHODID_IMPORT_FLOW)))
+          .addMethod(
+              getExportFlowMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest,
+                      com.google.longrunning.Operation>(this, METHODID_EXPORT_FLOW)))
           .build();
     }
   }
@@ -753,6 +883,36 @@ public final class FlowsGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified flow to the specified agent from a binary file.
+     * </pre>
+     */
+    public void importFlow(
+        com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getImportFlowMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports the specified flow to a binary file.
+     * Note that resources (e.g. intents, entities, webhooks) that the flow
+     * references will also be exported.
+     * </pre>
+     */
+    public void exportFlow(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportFlowMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -879,6 +1039,34 @@ public final class FlowsGrpc {
         com.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetFlowValidationResultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified flow to the specified agent from a binary file.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importFlow(
+        com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportFlowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports the specified flow to a binary file.
+     * Note that resources (e.g. intents, entities, webhooks) that the flow
+     * references will also be exported.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportFlow(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportFlowMethod(), getCallOptions(), request);
     }
   }
 
@@ -1014,6 +1202,34 @@ public final class FlowsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetFlowValidationResultMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified flow to the specified agent from a binary file.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        importFlow(com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getImportFlowMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports the specified flow to a binary file.
+     * Note that resources (e.g. intents, entities, webhooks) that the flow
+     * references will also be exported.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        exportFlow(com.google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportFlowMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_FLOW = 0;
@@ -1024,6 +1240,8 @@ public final class FlowsGrpc {
   private static final int METHODID_TRAIN_FLOW = 5;
   private static final int METHODID_VALIDATE_FLOW = 6;
   private static final int METHODID_GET_FLOW_VALIDATION_RESULT = 7;
+  private static final int METHODID_IMPORT_FLOW = 8;
+  private static final int METHODID_EXPORT_FLOW = 9;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1090,6 +1308,16 @@ public final class FlowsGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>)
                   responseObserver);
+          break;
+        case METHODID_IMPORT_FLOW:
+          serviceImpl.importFlow(
+              (com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_EXPORT_FLOW:
+          serviceImpl.exportFlow(
+              (com.google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1161,6 +1389,8 @@ public final class FlowsGrpc {
                       .addMethod(getTrainFlowMethod())
                       .addMethod(getValidateFlowMethod())
                       .addMethod(getGetFlowValidationResultMethod())
+                      .addMethod(getImportFlowMethod())
+                      .addMethod(getExportFlowMethod())
                       .build();
         }
       }

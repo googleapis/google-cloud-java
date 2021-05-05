@@ -4779,7 +4779,7 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The name of the flow [Version][google.cloud.dialogflow.cx.v3beta1.Version].
-       * Format: `projects/&lt;Project Number&gt;/locations/&lt;Location
+       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
        * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
        * </pre>
        *
@@ -4793,7 +4793,7 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The name of the flow [Version][google.cloud.dialogflow.cx.v3beta1.Version].
-       * Format: `projects/&lt;Project Number&gt;/locations/&lt;Location
+       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
        * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
        * </pre>
        *
@@ -5007,7 +5007,7 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The name of the flow [Version][google.cloud.dialogflow.cx.v3beta1.Version].
-       * Format: `projects/&lt;Project Number&gt;/locations/&lt;Location
+       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
        * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
        * </pre>
        *
@@ -5032,7 +5032,7 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The name of the flow [Version][google.cloud.dialogflow.cx.v3beta1.Version].
-       * Format: `projects/&lt;Project Number&gt;/locations/&lt;Location
+       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
        * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
        * </pre>
        *
@@ -5577,7 +5577,7 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The name of the flow [Version][google.cloud.dialogflow.cx.v3beta1.Version].
-         * Format: `projects/&lt;Project Number&gt;/locations/&lt;Location
+         * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
          * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
          * </pre>
          *
@@ -5601,7 +5601,7 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The name of the flow [Version][google.cloud.dialogflow.cx.v3beta1.Version].
-         * Format: `projects/&lt;Project Number&gt;/locations/&lt;Location
+         * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
          * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
          * </pre>
          *
@@ -5625,7 +5625,7 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The name of the flow [Version][google.cloud.dialogflow.cx.v3beta1.Version].
-         * Format: `projects/&lt;Project Number&gt;/locations/&lt;Location
+         * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
          * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
          * </pre>
          *
@@ -5648,7 +5648,7 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The name of the flow [Version][google.cloud.dialogflow.cx.v3beta1.Version].
-         * Format: `projects/&lt;Project Number&gt;/locations/&lt;Location
+         * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
          * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
          * </pre>
          *
@@ -5667,7 +5667,7 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The name of the flow [Version][google.cloud.dialogflow.cx.v3beta1.Version].
-         * Format: `projects/&lt;Project Number&gt;/locations/&lt;Location
+         * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
          * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
          * </pre>
          *

@@ -24,10 +24,14 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateFlowRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteFlowRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ExportFlowResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.Flow;
 import com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult;
 import com.google.cloud.dialogflow.cx.v3beta1.GetFlowRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.ListFlowsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListFlowsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest;
@@ -92,6 +96,24 @@ public abstract class FlowsStub implements BackgroundResource {
   public UnaryCallable<GetFlowValidationResultRequest, FlowValidationResult>
       getFlowValidationResultCallable() {
     throw new UnsupportedOperationException("Not implemented: getFlowValidationResultCallable()");
+  }
+
+  public OperationCallable<ImportFlowRequest, ImportFlowResponse, Struct>
+      importFlowOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: importFlowOperationCallable()");
+  }
+
+  public UnaryCallable<ImportFlowRequest, Operation> importFlowCallable() {
+    throw new UnsupportedOperationException("Not implemented: importFlowCallable()");
+  }
+
+  public OperationCallable<ExportFlowRequest, ExportFlowResponse, Struct>
+      exportFlowOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportFlowOperationCallable()");
+  }
+
+  public UnaryCallable<ExportFlowRequest, Operation> exportFlowCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportFlowCallable()");
   }
 
   @Override

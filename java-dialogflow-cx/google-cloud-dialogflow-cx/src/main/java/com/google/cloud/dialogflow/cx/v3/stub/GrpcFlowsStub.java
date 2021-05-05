@@ -28,10 +28,14 @@ import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3.CreateFlowRequest;
 import com.google.cloud.dialogflow.cx.v3.DeleteFlowRequest;
+import com.google.cloud.dialogflow.cx.v3.ExportFlowRequest;
+import com.google.cloud.dialogflow.cx.v3.ExportFlowResponse;
 import com.google.cloud.dialogflow.cx.v3.Flow;
 import com.google.cloud.dialogflow.cx.v3.FlowValidationResult;
 import com.google.cloud.dialogflow.cx.v3.GetFlowRequest;
 import com.google.cloud.dialogflow.cx.v3.GetFlowValidationResultRequest;
+import com.google.cloud.dialogflow.cx.v3.ImportFlowRequest;
+import com.google.cloud.dialogflow.cx.v3.ImportFlowResponse;
 import com.google.cloud.dialogflow.cx.v3.ListFlowsRequest;
 import com.google.cloud.dialogflow.cx.v3.ListFlowsResponse;
 import com.google.cloud.dialogflow.cx.v3.TrainFlowRequest;
@@ -127,6 +131,22 @@ public class GrpcFlowsStub extends FlowsStub {
                   ProtoUtils.marshaller(FlowValidationResult.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ImportFlowRequest, Operation> importFlowMethodDescriptor =
+      MethodDescriptor.<ImportFlowRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.dialogflow.cx.v3.Flows/ImportFlow")
+          .setRequestMarshaller(ProtoUtils.marshaller(ImportFlowRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<ExportFlowRequest, Operation> exportFlowMethodDescriptor =
+      MethodDescriptor.<ExportFlowRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.dialogflow.cx.v3.Flows/ExportFlow")
+          .setRequestMarshaller(ProtoUtils.marshaller(ExportFlowRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
   private final UnaryCallable<CreateFlowRequest, Flow> createFlowCallable;
   private final UnaryCallable<DeleteFlowRequest, Empty> deleteFlowCallable;
   private final UnaryCallable<ListFlowsRequest, ListFlowsResponse> listFlowsCallable;
@@ -138,6 +158,12 @@ public class GrpcFlowsStub extends FlowsStub {
   private final UnaryCallable<ValidateFlowRequest, FlowValidationResult> validateFlowCallable;
   private final UnaryCallable<GetFlowValidationResultRequest, FlowValidationResult>
       getFlowValidationResultCallable;
+  private final UnaryCallable<ImportFlowRequest, Operation> importFlowCallable;
+  private final OperationCallable<ImportFlowRequest, ImportFlowResponse, Struct>
+      importFlowOperationCallable;
+  private final UnaryCallable<ExportFlowRequest, Operation> exportFlowCallable;
+  private final OperationCallable<ExportFlowRequest, ExportFlowResponse, Struct>
+      exportFlowOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -283,6 +309,32 @@ public class GrpcFlowsStub extends FlowsStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<ImportFlowRequest, Operation> importFlowTransportSettings =
+        GrpcCallSettings.<ImportFlowRequest, Operation>newBuilder()
+            .setMethodDescriptor(importFlowMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ImportFlowRequest>() {
+                  @Override
+                  public Map<String, String> extract(ImportFlowRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ExportFlowRequest, Operation> exportFlowTransportSettings =
+        GrpcCallSettings.<ExportFlowRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportFlowMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ExportFlowRequest>() {
+                  @Override
+                  public Map<String, String> extract(ExportFlowRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
 
     this.createFlowCallable =
         callableFactory.createUnaryCallable(
@@ -319,6 +371,24 @@ public class GrpcFlowsStub extends FlowsStub {
             getFlowValidationResultTransportSettings,
             settings.getFlowValidationResultSettings(),
             clientContext);
+    this.importFlowCallable =
+        callableFactory.createUnaryCallable(
+            importFlowTransportSettings, settings.importFlowSettings(), clientContext);
+    this.importFlowOperationCallable =
+        callableFactory.createOperationCallable(
+            importFlowTransportSettings,
+            settings.importFlowOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.exportFlowCallable =
+        callableFactory.createUnaryCallable(
+            exportFlowTransportSettings, settings.exportFlowSettings(), clientContext);
+    this.exportFlowOperationCallable =
+        callableFactory.createOperationCallable(
+            exportFlowTransportSettings,
+            settings.exportFlowOperationSettings(),
+            clientContext,
+            operationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -377,6 +447,28 @@ public class GrpcFlowsStub extends FlowsStub {
   public UnaryCallable<GetFlowValidationResultRequest, FlowValidationResult>
       getFlowValidationResultCallable() {
     return getFlowValidationResultCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportFlowRequest, Operation> importFlowCallable() {
+    return importFlowCallable;
+  }
+
+  @Override
+  public OperationCallable<ImportFlowRequest, ImportFlowResponse, Struct>
+      importFlowOperationCallable() {
+    return importFlowOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportFlowRequest, Operation> exportFlowCallable() {
+    return exportFlowCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportFlowRequest, ExportFlowResponse, Struct>
+      exportFlowOperationCallable() {
+    return exportFlowOperationCallable;
   }
 
   @Override

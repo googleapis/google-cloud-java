@@ -46,10 +46,14 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateFlowRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteFlowRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ExportFlowResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.Flow;
 import com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult;
 import com.google.cloud.dialogflow.cx.v3beta1.GetFlowRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.ListFlowsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListFlowsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest;
@@ -119,6 +123,12 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
   private final UnaryCallSettings<ValidateFlowRequest, FlowValidationResult> validateFlowSettings;
   private final UnaryCallSettings<GetFlowValidationResultRequest, FlowValidationResult>
       getFlowValidationResultSettings;
+  private final UnaryCallSettings<ImportFlowRequest, Operation> importFlowSettings;
+  private final OperationCallSettings<ImportFlowRequest, ImportFlowResponse, Struct>
+      importFlowOperationSettings;
+  private final UnaryCallSettings<ExportFlowRequest, Operation> exportFlowSettings;
+  private final OperationCallSettings<ExportFlowRequest, ExportFlowResponse, Struct>
+      exportFlowOperationSettings;
 
   private static final PagedListDescriptor<ListFlowsRequest, ListFlowsResponse, Flow>
       LIST_FLOWS_PAGE_STR_DESC =
@@ -220,6 +230,28 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
     return getFlowValidationResultSettings;
   }
 
+  /** Returns the object with the settings used for calls to importFlow. */
+  public UnaryCallSettings<ImportFlowRequest, Operation> importFlowSettings() {
+    return importFlowSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importFlow. */
+  public OperationCallSettings<ImportFlowRequest, ImportFlowResponse, Struct>
+      importFlowOperationSettings() {
+    return importFlowOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportFlow. */
+  public UnaryCallSettings<ExportFlowRequest, Operation> exportFlowSettings() {
+    return exportFlowSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportFlow. */
+  public OperationCallSettings<ExportFlowRequest, ExportFlowResponse, Struct>
+      exportFlowOperationSettings() {
+    return exportFlowOperationSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public FlowsStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -297,6 +329,10 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
     trainFlowOperationSettings = settingsBuilder.trainFlowOperationSettings().build();
     validateFlowSettings = settingsBuilder.validateFlowSettings().build();
     getFlowValidationResultSettings = settingsBuilder.getFlowValidationResultSettings().build();
+    importFlowSettings = settingsBuilder.importFlowSettings().build();
+    importFlowOperationSettings = settingsBuilder.importFlowOperationSettings().build();
+    exportFlowSettings = settingsBuilder.exportFlowSettings().build();
+    exportFlowOperationSettings = settingsBuilder.exportFlowOperationSettings().build();
   }
 
   /** Builder for FlowsStubSettings. */
@@ -316,6 +352,12 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
         validateFlowSettings;
     private final UnaryCallSettings.Builder<GetFlowValidationResultRequest, FlowValidationResult>
         getFlowValidationResultSettings;
+    private final UnaryCallSettings.Builder<ImportFlowRequest, Operation> importFlowSettings;
+    private final OperationCallSettings.Builder<ImportFlowRequest, ImportFlowResponse, Struct>
+        importFlowOperationSettings;
+    private final UnaryCallSettings.Builder<ExportFlowRequest, Operation> exportFlowSettings;
+    private final OperationCallSettings.Builder<ExportFlowRequest, ExportFlowResponse, Struct>
+        exportFlowOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -363,6 +405,10 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
       trainFlowOperationSettings = OperationCallSettings.newBuilder();
       validateFlowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getFlowValidationResultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importFlowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importFlowOperationSettings = OperationCallSettings.newBuilder();
+      exportFlowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportFlowOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -373,7 +419,9 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
               updateFlowSettings,
               trainFlowSettings,
               validateFlowSettings,
-              getFlowValidationResultSettings);
+              getFlowValidationResultSettings,
+              importFlowSettings,
+              exportFlowSettings);
       initDefaults(this);
     }
 
@@ -389,6 +437,10 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
       trainFlowOperationSettings = settings.trainFlowOperationSettings.toBuilder();
       validateFlowSettings = settings.validateFlowSettings.toBuilder();
       getFlowValidationResultSettings = settings.getFlowValidationResultSettings.toBuilder();
+      importFlowSettings = settings.importFlowSettings.toBuilder();
+      importFlowOperationSettings = settings.importFlowOperationSettings.toBuilder();
+      exportFlowSettings = settings.exportFlowSettings.toBuilder();
+      exportFlowOperationSettings = settings.exportFlowOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -399,7 +451,9 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
               updateFlowSettings,
               trainFlowSettings,
               validateFlowSettings,
-              getFlowValidationResultSettings);
+              getFlowValidationResultSettings,
+              importFlowSettings,
+              exportFlowSettings);
     }
 
     private static Builder createDefault() {
@@ -455,6 +509,16 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .importFlowSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .exportFlowSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .trainFlowOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<TrainFlowRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
@@ -463,6 +527,52 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .importFlowOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<ImportFlowRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ImportFlowResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .exportFlowOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<ExportFlowRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ExportFlowResponse.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
           .setPollingAlgorithm(
@@ -545,6 +655,32 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
     public UnaryCallSettings.Builder<GetFlowValidationResultRequest, FlowValidationResult>
         getFlowValidationResultSettings() {
       return getFlowValidationResultSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importFlow. */
+    public UnaryCallSettings.Builder<ImportFlowRequest, Operation> importFlowSettings() {
+      return importFlowSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importFlow. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<ImportFlowRequest, ImportFlowResponse, Struct>
+        importFlowOperationSettings() {
+      return importFlowOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportFlow. */
+    public UnaryCallSettings.Builder<ExportFlowRequest, Operation> exportFlowSettings() {
+      return exportFlowSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportFlow. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<ExportFlowRequest, ExportFlowResponse, Struct>
+        exportFlowOperationSettings() {
+      return exportFlowOperationSettings;
     }
 
     @Override

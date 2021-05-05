@@ -185,11 +185,17 @@ public final class GetPageRequest extends com.google.protobuf.GeneratedMessageV3
    * The language to retrieve the page for. The following fields are language
    * dependent:
    * *  `Page.entry_fulfillment.messages`
+   * *  `Page.entry_fulfillment.conditional_cases`
+   * *  `Page.event_handlers.trigger_fulfillment.messages`
+   * *  `Page.event_handlers.trigger_fulfillment.conditional_cases`
    * *  `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.messages`
-   * *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
-   * *  `Page.transition_routes.trigger_fulfillment.messages`
    * *
-   * `Page.transition_route_groups.transition_routes.trigger_fulfillment.messages`
+   * `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.conditional_cases`
+   * *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
+   * *
+   * `Page.form.parameters.fill_behavior.reprompt_event_handlers.conditional_cases`
+   * *  `Page.transition_routes.trigger_fulfillment.messages`
+   * *  `Page.transition_routes.trigger_fulfillment.conditional_cases`
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -220,11 +226,17 @@ public final class GetPageRequest extends com.google.protobuf.GeneratedMessageV3
    * The language to retrieve the page for. The following fields are language
    * dependent:
    * *  `Page.entry_fulfillment.messages`
+   * *  `Page.entry_fulfillment.conditional_cases`
+   * *  `Page.event_handlers.trigger_fulfillment.messages`
+   * *  `Page.event_handlers.trigger_fulfillment.conditional_cases`
    * *  `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.messages`
-   * *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
-   * *  `Page.transition_routes.trigger_fulfillment.messages`
    * *
-   * `Page.transition_route_groups.transition_routes.trigger_fulfillment.messages`
+   * `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.conditional_cases`
+   * *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
+   * *
+   * `Page.form.parameters.fill_behavior.reprompt_event_handlers.conditional_cases`
+   * *  `Page.transition_routes.trigger_fulfillment.messages`
+   * *  `Page.transition_routes.trigger_fulfillment.conditional_cases`
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -716,11 +728,17 @@ public final class GetPageRequest extends com.google.protobuf.GeneratedMessageV3
      * The language to retrieve the page for. The following fields are language
      * dependent:
      * *  `Page.entry_fulfillment.messages`
+     * *  `Page.entry_fulfillment.conditional_cases`
+     * *  `Page.event_handlers.trigger_fulfillment.messages`
+     * *  `Page.event_handlers.trigger_fulfillment.conditional_cases`
      * *  `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.messages`
-     * *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
-     * *  `Page.transition_routes.trigger_fulfillment.messages`
      * *
-     * `Page.transition_route_groups.transition_routes.trigger_fulfillment.messages`
+     * `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.conditional_cases`
+     * *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
+     * *
+     * `Page.form.parameters.fill_behavior.reprompt_event_handlers.conditional_cases`
+     * *  `Page.transition_routes.trigger_fulfillment.messages`
+     * *  `Page.transition_routes.trigger_fulfillment.conditional_cases`
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -750,11 +768,17 @@ public final class GetPageRequest extends com.google.protobuf.GeneratedMessageV3
      * The language to retrieve the page for. The following fields are language
      * dependent:
      * *  `Page.entry_fulfillment.messages`
+     * *  `Page.entry_fulfillment.conditional_cases`
+     * *  `Page.event_handlers.trigger_fulfillment.messages`
+     * *  `Page.event_handlers.trigger_fulfillment.conditional_cases`
      * *  `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.messages`
-     * *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
-     * *  `Page.transition_routes.trigger_fulfillment.messages`
      * *
-     * `Page.transition_route_groups.transition_routes.trigger_fulfillment.messages`
+     * `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.conditional_cases`
+     * *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
+     * *
+     * `Page.form.parameters.fill_behavior.reprompt_event_handlers.conditional_cases`
+     * *  `Page.transition_routes.trigger_fulfillment.messages`
+     * *  `Page.transition_routes.trigger_fulfillment.conditional_cases`
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -784,11 +808,17 @@ public final class GetPageRequest extends com.google.protobuf.GeneratedMessageV3
      * The language to retrieve the page for. The following fields are language
      * dependent:
      * *  `Page.entry_fulfillment.messages`
+     * *  `Page.entry_fulfillment.conditional_cases`
+     * *  `Page.event_handlers.trigger_fulfillment.messages`
+     * *  `Page.event_handlers.trigger_fulfillment.conditional_cases`
      * *  `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.messages`
-     * *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
-     * *  `Page.transition_routes.trigger_fulfillment.messages`
      * *
-     * `Page.transition_route_groups.transition_routes.trigger_fulfillment.messages`
+     * `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.conditional_cases`
+     * *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
+     * *
+     * `Page.form.parameters.fill_behavior.reprompt_event_handlers.conditional_cases`
+     * *  `Page.transition_routes.trigger_fulfillment.messages`
+     * *  `Page.transition_routes.trigger_fulfillment.conditional_cases`
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -817,11 +847,17 @@ public final class GetPageRequest extends com.google.protobuf.GeneratedMessageV3
      * The language to retrieve the page for. The following fields are language
      * dependent:
      * *  `Page.entry_fulfillment.messages`
+     * *  `Page.entry_fulfillment.conditional_cases`
+     * *  `Page.event_handlers.trigger_fulfillment.messages`
+     * *  `Page.event_handlers.trigger_fulfillment.conditional_cases`
      * *  `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.messages`
-     * *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
-     * *  `Page.transition_routes.trigger_fulfillment.messages`
      * *
-     * `Page.transition_route_groups.transition_routes.trigger_fulfillment.messages`
+     * `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.conditional_cases`
+     * *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
+     * *
+     * `Page.form.parameters.fill_behavior.reprompt_event_handlers.conditional_cases`
+     * *  `Page.transition_routes.trigger_fulfillment.messages`
+     * *  `Page.transition_routes.trigger_fulfillment.conditional_cases`
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -846,11 +882,17 @@ public final class GetPageRequest extends com.google.protobuf.GeneratedMessageV3
      * The language to retrieve the page for. The following fields are language
      * dependent:
      * *  `Page.entry_fulfillment.messages`
+     * *  `Page.entry_fulfillment.conditional_cases`
+     * *  `Page.event_handlers.trigger_fulfillment.messages`
+     * *  `Page.event_handlers.trigger_fulfillment.conditional_cases`
      * *  `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.messages`
-     * *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
-     * *  `Page.transition_routes.trigger_fulfillment.messages`
      * *
-     * `Page.transition_route_groups.transition_routes.trigger_fulfillment.messages`
+     * `Page.form.parameters.fill_behavior.initial_prompt_fulfillment.conditional_cases`
+     * *  `Page.form.parameters.fill_behavior.reprompt_event_handlers.messages`
+     * *
+     * `Page.form.parameters.fill_behavior.reprompt_event_handlers.conditional_cases`
+     * *  `Page.transition_routes.trigger_fulfillment.messages`
+     * *  `Page.transition_routes.trigger_fulfillment.conditional_cases`
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)

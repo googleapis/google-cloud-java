@@ -23,10 +23,14 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3.CreateFlowRequest;
 import com.google.cloud.dialogflow.cx.v3.DeleteFlowRequest;
+import com.google.cloud.dialogflow.cx.v3.ExportFlowRequest;
+import com.google.cloud.dialogflow.cx.v3.ExportFlowResponse;
 import com.google.cloud.dialogflow.cx.v3.Flow;
 import com.google.cloud.dialogflow.cx.v3.FlowValidationResult;
 import com.google.cloud.dialogflow.cx.v3.GetFlowRequest;
 import com.google.cloud.dialogflow.cx.v3.GetFlowValidationResultRequest;
+import com.google.cloud.dialogflow.cx.v3.ImportFlowRequest;
+import com.google.cloud.dialogflow.cx.v3.ImportFlowResponse;
 import com.google.cloud.dialogflow.cx.v3.ListFlowsRequest;
 import com.google.cloud.dialogflow.cx.v3.ListFlowsResponse;
 import com.google.cloud.dialogflow.cx.v3.TrainFlowRequest;
@@ -90,6 +94,24 @@ public abstract class FlowsStub implements BackgroundResource {
   public UnaryCallable<GetFlowValidationResultRequest, FlowValidationResult>
       getFlowValidationResultCallable() {
     throw new UnsupportedOperationException("Not implemented: getFlowValidationResultCallable()");
+  }
+
+  public OperationCallable<ImportFlowRequest, ImportFlowResponse, Struct>
+      importFlowOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: importFlowOperationCallable()");
+  }
+
+  public UnaryCallable<ImportFlowRequest, Operation> importFlowCallable() {
+    throw new UnsupportedOperationException("Not implemented: importFlowCallable()");
+  }
+
+  public OperationCallable<ExportFlowRequest, ExportFlowResponse, Struct>
+      exportFlowOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportFlowOperationCallable()");
+  }
+
+  public UnaryCallable<ExportFlowRequest, Operation> exportFlowCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportFlowCallable()");
   }
 
   @Override

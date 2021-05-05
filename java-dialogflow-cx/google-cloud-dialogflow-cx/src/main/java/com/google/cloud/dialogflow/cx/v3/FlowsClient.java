@@ -934,6 +934,161 @@ public class FlowsClient implements BackgroundResource {
     return stub.getFlowValidationResultCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports the specified flow to the specified agent from a binary file.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FlowsClient flowsClient = FlowsClient.create()) {
+   *   ImportFlowRequest request =
+   *       ImportFlowRequest.newBuilder()
+   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+   *           .build();
+   *   ImportFlowResponse response = flowsClient.importFlowAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportFlowResponse, Struct> importFlowAsync(
+      ImportFlowRequest request) {
+    return importFlowOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports the specified flow to the specified agent from a binary file.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FlowsClient flowsClient = FlowsClient.create()) {
+   *   ImportFlowRequest request =
+   *       ImportFlowRequest.newBuilder()
+   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+   *           .build();
+   *   OperationFuture<ImportFlowResponse, Struct> future =
+   *       flowsClient.importFlowOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ImportFlowResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ImportFlowRequest, ImportFlowResponse, Struct>
+      importFlowOperationCallable() {
+    return stub.importFlowOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports the specified flow to the specified agent from a binary file.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FlowsClient flowsClient = FlowsClient.create()) {
+   *   ImportFlowRequest request =
+   *       ImportFlowRequest.newBuilder()
+   *           .setParent(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = flowsClient.importFlowCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ImportFlowRequest, Operation> importFlowCallable() {
+    return stub.importFlowCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports the specified flow to a binary file.
+   *
+   * <p>Note that resources (e.g. intents, entities, webhooks) that the flow references will also be
+   * exported.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FlowsClient flowsClient = FlowsClient.create()) {
+   *   ExportFlowRequest request =
+   *       ExportFlowRequest.newBuilder()
+   *           .setName(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+   *           .setFlowUri("flowUri-765815458")
+   *           .setIncludeReferencedFlows(true)
+   *           .build();
+   *   ExportFlowResponse response = flowsClient.exportFlowAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportFlowResponse, Struct> exportFlowAsync(
+      ExportFlowRequest request) {
+    return exportFlowOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports the specified flow to a binary file.
+   *
+   * <p>Note that resources (e.g. intents, entities, webhooks) that the flow references will also be
+   * exported.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FlowsClient flowsClient = FlowsClient.create()) {
+   *   ExportFlowRequest request =
+   *       ExportFlowRequest.newBuilder()
+   *           .setName(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+   *           .setFlowUri("flowUri-765815458")
+   *           .setIncludeReferencedFlows(true)
+   *           .build();
+   *   OperationFuture<ExportFlowResponse, Struct> future =
+   *       flowsClient.exportFlowOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExportFlowResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ExportFlowRequest, ExportFlowResponse, Struct>
+      exportFlowOperationCallable() {
+    return stub.exportFlowOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports the specified flow to a binary file.
+   *
+   * <p>Note that resources (e.g. intents, entities, webhooks) that the flow references will also be
+   * exported.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (FlowsClient flowsClient = FlowsClient.create()) {
+   *   ExportFlowRequest request =
+   *       ExportFlowRequest.newBuilder()
+   *           .setName(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+   *           .setFlowUri("flowUri-765815458")
+   *           .setIncludeReferencedFlows(true)
+   *           .build();
+   *   ApiFuture<Operation> future = flowsClient.exportFlowCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportFlowRequest, Operation> exportFlowCallable() {
+    return stub.exportFlowCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

@@ -427,7 +427,7 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Loads a specified version to draft version.
+     * Loads resources in the specified version to the draft flow.
      * </pre>
      */
     public void loadVersion(
@@ -584,7 +584,7 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Loads a specified version to draft version.
+     * Loads resources in the specified version to the draft flow.
      * </pre>
      */
     public void loadVersion(
@@ -684,7 +684,7 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Loads a specified version to draft version.
+     * Loads resources in the specified version to the draft flow.
      * </pre>
      */
     public com.google.longrunning.Operation loadVersion(
@@ -784,7 +784,7 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Loads a specified version to draft version.
+     * Loads resources in the specified version to the draft flow.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

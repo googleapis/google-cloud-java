@@ -116,6 +116,61 @@ public interface AgentOrBuilder
    *
    *
    * <pre>
+   * The list of all languages supported by the agent (except for the
+   * `default_language_code`).
+   * </pre>
+   *
+   * <code>repeated string supported_language_codes = 4;</code>
+   *
+   * @return A list containing the supportedLanguageCodes.
+   */
+  java.util.List<java.lang.String> getSupportedLanguageCodesList();
+  /**
+   *
+   *
+   * <pre>
+   * The list of all languages supported by the agent (except for the
+   * `default_language_code`).
+   * </pre>
+   *
+   * <code>repeated string supported_language_codes = 4;</code>
+   *
+   * @return The count of supportedLanguageCodes.
+   */
+  int getSupportedLanguageCodesCount();
+  /**
+   *
+   *
+   * <pre>
+   * The list of all languages supported by the agent (except for the
+   * `default_language_code`).
+   * </pre>
+   *
+   * <code>repeated string supported_language_codes = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The supportedLanguageCodes at the given index.
+   */
+  java.lang.String getSupportedLanguageCodes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The list of all languages supported by the agent (except for the
+   * `default_language_code`).
+   * </pre>
+   *
+   * <code>repeated string supported_language_codes = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the supportedLanguageCodes at the given index.
+   */
+  com.google.protobuf.ByteString getSupportedLanguageCodesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The time zone of the agent from the [time zone
    * database](https://www.iana.org/time-zones), e.g., America/New_York,
    * Europe/Paris.

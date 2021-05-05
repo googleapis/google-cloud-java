@@ -120,6 +120,28 @@ public class FlowsSettings extends ClientSettings<FlowsSettings> {
     return ((FlowsStubSettings) getStubSettings()).getFlowValidationResultSettings();
   }
 
+  /** Returns the object with the settings used for calls to importFlow. */
+  public UnaryCallSettings<ImportFlowRequest, Operation> importFlowSettings() {
+    return ((FlowsStubSettings) getStubSettings()).importFlowSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importFlow. */
+  public OperationCallSettings<ImportFlowRequest, ImportFlowResponse, Struct>
+      importFlowOperationSettings() {
+    return ((FlowsStubSettings) getStubSettings()).importFlowOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportFlow. */
+  public UnaryCallSettings<ExportFlowRequest, Operation> exportFlowSettings() {
+    return ((FlowsStubSettings) getStubSettings()).exportFlowSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportFlow. */
+  public OperationCallSettings<ExportFlowRequest, ExportFlowResponse, Struct>
+      exportFlowOperationSettings() {
+    return ((FlowsStubSettings) getStubSettings()).exportFlowOperationSettings();
+  }
+
   public static final FlowsSettings create(FlowsStubSettings stub) throws IOException {
     return new FlowsSettings.Builder(stub.toBuilder()).build();
   }
@@ -264,6 +286,28 @@ public class FlowsSettings extends ClientSettings<FlowsSettings> {
     public UnaryCallSettings.Builder<GetFlowValidationResultRequest, FlowValidationResult>
         getFlowValidationResultSettings() {
       return getStubSettingsBuilder().getFlowValidationResultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importFlow. */
+    public UnaryCallSettings.Builder<ImportFlowRequest, Operation> importFlowSettings() {
+      return getStubSettingsBuilder().importFlowSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importFlow. */
+    public OperationCallSettings.Builder<ImportFlowRequest, ImportFlowResponse, Struct>
+        importFlowOperationSettings() {
+      return getStubSettingsBuilder().importFlowOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportFlow. */
+    public UnaryCallSettings.Builder<ExportFlowRequest, Operation> exportFlowSettings() {
+      return getStubSettingsBuilder().exportFlowSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportFlow. */
+    public OperationCallSettings.Builder<ExportFlowRequest, ExportFlowResponse, Struct>
+        exportFlowOperationSettings() {
+      return getStubSettingsBuilder().exportFlowOperationSettings();
     }
 
     @Override

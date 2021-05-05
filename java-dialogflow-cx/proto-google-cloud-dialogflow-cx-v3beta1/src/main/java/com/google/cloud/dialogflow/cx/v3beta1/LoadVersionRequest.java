@@ -122,7 +122,7 @@ public final class LoadVersionRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft version.
+   * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft flow.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
@@ -149,7 +149,7 @@ public final class LoadVersionRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft version.
+   * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft flow.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
@@ -179,10 +179,10 @@ public final class LoadVersionRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * This field is used to prevent accidental overwrite of other agent resources
-   * in the draft version, which can potentially impact other flow's behavior.
-   * If `allow_override_agent_resources` is false, conflicted agent-level
-   * resources will not be overridden (i.e. intents, entities, webhooks).
+   * This field is used to prevent accidental overwrite of other agent
+   * resources, which can potentially impact other flow's behavior. If
+   * `allow_override_agent_resources` is false, conflicted agent-level resources
+   * will not be overridden (i.e. intents, entities, webhooks).
    * </pre>
    *
    * <code>bool allow_override_agent_resources = 2;</code>
@@ -534,7 +534,7 @@ public final class LoadVersionRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft version.
+     * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft flow.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
@@ -560,7 +560,7 @@ public final class LoadVersionRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft version.
+     * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft flow.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
@@ -586,7 +586,7 @@ public final class LoadVersionRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft version.
+     * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft flow.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
@@ -611,7 +611,7 @@ public final class LoadVersionRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft version.
+     * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft flow.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
@@ -632,7 +632,7 @@ public final class LoadVersionRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft version.
+     * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft flow.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
@@ -660,10 +660,10 @@ public final class LoadVersionRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * This field is used to prevent accidental overwrite of other agent resources
-     * in the draft version, which can potentially impact other flow's behavior.
-     * If `allow_override_agent_resources` is false, conflicted agent-level
-     * resources will not be overridden (i.e. intents, entities, webhooks).
+     * This field is used to prevent accidental overwrite of other agent
+     * resources, which can potentially impact other flow's behavior. If
+     * `allow_override_agent_resources` is false, conflicted agent-level resources
+     * will not be overridden (i.e. intents, entities, webhooks).
      * </pre>
      *
      * <code>bool allow_override_agent_resources = 2;</code>
@@ -678,10 +678,10 @@ public final class LoadVersionRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * This field is used to prevent accidental overwrite of other agent resources
-     * in the draft version, which can potentially impact other flow's behavior.
-     * If `allow_override_agent_resources` is false, conflicted agent-level
-     * resources will not be overridden (i.e. intents, entities, webhooks).
+     * This field is used to prevent accidental overwrite of other agent
+     * resources, which can potentially impact other flow's behavior. If
+     * `allow_override_agent_resources` is false, conflicted agent-level resources
+     * will not be overridden (i.e. intents, entities, webhooks).
      * </pre>
      *
      * <code>bool allow_override_agent_resources = 2;</code>
@@ -699,10 +699,10 @@ public final class LoadVersionRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * This field is used to prevent accidental overwrite of other agent resources
-     * in the draft version, which can potentially impact other flow's behavior.
-     * If `allow_override_agent_resources` is false, conflicted agent-level
-     * resources will not be overridden (i.e. intents, entities, webhooks).
+     * This field is used to prevent accidental overwrite of other agent
+     * resources, which can potentially impact other flow's behavior. If
+     * `allow_override_agent_resources` is false, conflicted agent-level resources
+     * will not be overridden (i.e. intents, entities, webhooks).
      * </pre>
      *
      * <code>bool allow_override_agent_resources = 2;</code>

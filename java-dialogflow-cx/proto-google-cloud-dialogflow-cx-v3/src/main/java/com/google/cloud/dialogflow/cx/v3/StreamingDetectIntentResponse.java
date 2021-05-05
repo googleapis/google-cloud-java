@@ -28,7 +28,12 @@ package com.google.cloud.dialogflow.cx.v3;
  *     contain `recognition_result`. Each `recognition_result` represents a more
  *     complete transcript of what the user said. The last `recognition_result`
  *     has `is_final` set to `true`.
- * 2.  The last message contains `detect_intent_response`.
+ * 2.  If `enable_partial_response` is true, the following N messages
+ *     (currently 1 &lt;= N &lt;= 4) contain `detect_intent_response`. The first (N-1)
+ *     `detect_intent_response`s will have `response_type` set to `PARTIAL`.
+ *     The last `detect_intent_response` has `response_type` set to `FINAL`.
+ *     If `response_type` is false, response stream only contains
+ *     the final `detect_intent_response`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.StreamingDetectIntentResponse}
@@ -501,7 +506,12 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *     contain `recognition_result`. Each `recognition_result` represents a more
    *     complete transcript of what the user said. The last `recognition_result`
    *     has `is_final` set to `true`.
-   * 2.  The last message contains `detect_intent_response`.
+   * 2.  If `enable_partial_response` is true, the following N messages
+   *     (currently 1 &lt;= N &lt;= 4) contain `detect_intent_response`. The first (N-1)
+   *     `detect_intent_response`s will have `response_type` set to `PARTIAL`.
+   *     The last `detect_intent_response` has `response_type` set to `FINAL`.
+   *     If `response_type` is false, response stream only contains
+   *     the final `detect_intent_response`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.StreamingDetectIntentResponse}
