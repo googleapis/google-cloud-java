@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-recommendations-ai.git",
-        "sha": "014cfe6cbb734a81941c174f97d9b085862b42a8"
+        "sha": "92e26609db83318971b6cc2260bcf5b0e0ccf502"
       }
     },
     {
