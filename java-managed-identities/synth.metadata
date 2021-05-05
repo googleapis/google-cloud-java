@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-managed-identities.git",
-        "sha": "91282c66b79af638a1068b3bd40929044426b3a3"
+        "sha": "a8ac57903bf0a5e5d29bed9a43f6763713902998"
       }
     },
     {
