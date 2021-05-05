@@ -1,0 +1,18 @@
+{
+    "name": "dataproc",
+    "name_pretty": "Dataproc",
+    "product_documentation": "https://cloud.google.com/dataproc",
+    "client_documentation": "https://googleapis.dev/java/google-cloud-dataproc/latest/",
+    "issue_tracker": "https://issuetracker.google.com/savedsearches/559745",
+    "release_level": "ga",
+    "language": "java",
+    "repo": "googleapis/java-dataproc",
+    "repo_short": "java-dataproc",
+    "distribution_name": "com.google.cloud:google-cloud-dataproc",
+    "codeowner_team": "@googleapis/api-dataproc",
+    "api_id": "dataproc.googleapis.com",
+    "transport": "grpc",
+    "requires_billing": true,
+    "api_description": "is a faster, easier, more cost-effective way to run Apache Spark and Apache Hadoop.",
+    "library_type": "GAPIC_AUTO"
+  }
