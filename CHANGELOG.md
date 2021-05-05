@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.20.3](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.20.2...v1.20.3) (2021-05-04)
+
+
+### Bug Fixes
+
+* remove schema update capability from jsonwriter and delete related tests ([#1047](https://www.github.com/googleapis/java-bigquerystorage/issues/1047)) ([21e399b](https://www.github.com/googleapis/java-bigquerystorage/commit/21e399bf4fca9b3ef84443ae1d32a6bfe393b61b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.128.3 ([#1045](https://www.github.com/googleapis/java-bigquerystorage/issues/1045)) ([68beb48](https://www.github.com/googleapis/java-bigquerystorage/commit/68beb4896e5246389c216841dec519a9915362c3))
+
 ### [1.20.2](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.20.1...v1.20.2) (2021-04-27)
 
 
