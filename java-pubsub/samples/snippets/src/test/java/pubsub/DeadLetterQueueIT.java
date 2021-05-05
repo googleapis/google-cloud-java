@@ -22,6 +22,7 @@ import static junit.framework.TestCase.assertNotNull;
 import com.google.cloud.pubsub.v1.Publisher;
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
+import com.google.cloud.testing.junit4.MultipleAttemptsRule;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.ProjectTopicName;
@@ -69,6 +70,7 @@ public class DeadLetterQueueIT {
   }
 
   @Rule public Timeout globalTimeout = Timeout.seconds(300); // 5 minute timeout
+  @Rule public MultipleAttemptsRule retryRule = new MultipleAttemptsRule(/*maxAttemptCount=*/ 3);
 
   @BeforeClass
   public static void checkRequirements() {
