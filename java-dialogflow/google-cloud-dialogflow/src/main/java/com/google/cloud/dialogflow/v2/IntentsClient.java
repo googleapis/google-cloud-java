@@ -50,7 +50,7 @@ import javax.annotation.Generated;
  *
  * <pre>{@code
  * try (IntentsClient intentsClient = IntentsClient.create()) {
- *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
+ *   IntentName name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
  *   Intent response = intentsClient.getIntent(name);
  * }
  * }</pre>
@@ -170,7 +170,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.ofProjectName("[PROJECT]");
    *   for (Intent element : intentsClient.listIntents(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -197,7 +197,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   String parent = IntentName.of("[PROJECT]", "[INTENT]").toString();
+   *   String parent = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString();
    *   for (Intent element : intentsClient.listIntents(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -221,7 +221,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.ofProjectName("[PROJECT]");
    *   String languageCode = "languageCode-2092349083";
    *   for (Intent element : intentsClient.listIntents(parent, languageCode).iterateAll()) {
    *     // doThingsWith(element);
@@ -254,7 +254,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   String parent = IntentName.of("[PROJECT]", "[INTENT]").toString();
+   *   String parent = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString();
    *   String languageCode = "languageCode-2092349083";
    *   for (Intent element : intentsClient.listIntents(parent, languageCode).iterateAll()) {
    *     // doThingsWith(element);
@@ -286,7 +286,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   ListIntentsRequest request =
    *       ListIntentsRequest.newBuilder()
-   *           .setParent(IntentName.of("[PROJECT]", "[INTENT]").toString())
+   *           .setParent(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setIntentView(IntentView.forNumber(0))
    *           .setPageSize(883849137)
@@ -315,7 +315,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   ListIntentsRequest request =
    *       ListIntentsRequest.newBuilder()
-   *           .setParent(IntentName.of("[PROJECT]", "[INTENT]").toString())
+   *           .setParent(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setIntentView(IntentView.forNumber(0))
    *           .setPageSize(883849137)
@@ -344,7 +344,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   ListIntentsRequest request =
    *       ListIntentsRequest.newBuilder()
-   *           .setParent(IntentName.of("[PROJECT]", "[INTENT]").toString())
+   *           .setParent(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setIntentView(IntentView.forNumber(0))
    *           .setPageSize(883849137)
@@ -377,7 +377,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
+   *   IntentName name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
    *   Intent response = intentsClient.getIntent(name);
    * }
    * }</pre>
@@ -400,7 +400,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   String name = IntentName.of("[PROJECT]", "[INTENT]").toString();
+   *   String name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString();
    *   Intent response = intentsClient.getIntent(name);
    * }
    * }</pre>
@@ -422,7 +422,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
+   *   IntentName name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
    *   String languageCode = "languageCode-2092349083";
    *   Intent response = intentsClient.getIntent(name, languageCode);
    * }
@@ -453,7 +453,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   String name = IntentName.of("[PROJECT]", "[INTENT]").toString();
+   *   String name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString();
    *   String languageCode = "languageCode-2092349083";
    *   Intent response = intentsClient.getIntent(name, languageCode);
    * }
@@ -483,7 +483,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   GetIntentRequest request =
    *       GetIntentRequest.newBuilder()
-   *           .setName(IntentName.of("[PROJECT]", "[INTENT]").toString())
+   *           .setName(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setIntentView(IntentView.forNumber(0))
    *           .build();
@@ -508,7 +508,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   GetIntentRequest request =
    *       GetIntentRequest.newBuilder()
-   *           .setName(IntentName.of("[PROJECT]", "[INTENT]").toString())
+   *           .setName(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setIntentView(IntentView.forNumber(0))
    *           .build();
@@ -530,7 +530,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.ofProjectName("[PROJECT]");
    *   Intent intent = Intent.newBuilder().build();
    *   Intent response = intentsClient.createIntent(parent, intent);
    * }
@@ -558,7 +558,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   String parent = IntentName.of("[PROJECT]", "[INTENT]").toString();
+   *   String parent = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString();
    *   Intent intent = Intent.newBuilder().build();
    *   Intent response = intentsClient.createIntent(parent, intent);
    * }
@@ -583,7 +583,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.ofProjectName("[PROJECT]");
    *   Intent intent = Intent.newBuilder().build();
    *   String languageCode = "languageCode-2092349083";
    *   Intent response = intentsClient.createIntent(parent, intent, languageCode);
@@ -617,7 +617,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   String parent = IntentName.of("[PROJECT]", "[INTENT]").toString();
+   *   String parent = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString();
    *   Intent intent = Intent.newBuilder().build();
    *   String languageCode = "languageCode-2092349083";
    *   Intent response = intentsClient.createIntent(parent, intent, languageCode);
@@ -653,7 +653,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   CreateIntentRequest request =
    *       CreateIntentRequest.newBuilder()
-   *           .setParent(IntentName.of("[PROJECT]", "[INTENT]").toString())
+   *           .setParent(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .setIntent(Intent.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setIntentView(IntentView.forNumber(0))
@@ -679,7 +679,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   CreateIntentRequest request =
    *       CreateIntentRequest.newBuilder()
-   *           .setParent(IntentName.of("[PROJECT]", "[INTENT]").toString())
+   *           .setParent(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .setIntent(Intent.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setIntentView(IntentView.forNumber(0))
@@ -813,7 +813,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
+   *   IntentName name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
    *   intentsClient.deleteIntent(name);
    * }
    * }</pre>
@@ -837,7 +837,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   String name = IntentName.of("[PROJECT]", "[INTENT]").toString();
+   *   String name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString();
    *   intentsClient.deleteIntent(name);
    * }
    * }</pre>
@@ -862,7 +862,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   DeleteIntentRequest request =
    *       DeleteIntentRequest.newBuilder()
-   *           .setName(IntentName.of("[PROJECT]", "[INTENT]").toString())
+   *           .setName(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .build();
    *   intentsClient.deleteIntent(request);
    * }
@@ -885,7 +885,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   DeleteIntentRequest request =
    *       DeleteIntentRequest.newBuilder()
-   *           .setName(IntentName.of("[PROJECT]", "[INTENT]").toString())
+   *           .setName(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .build();
    *   ApiFuture<Empty> future = intentsClient.deleteIntentCallable().futureCall(request);
    *   // Do something.
@@ -908,7 +908,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.ofProjectName("[PROJECT]");
    *   IntentBatch intentBatchInline = IntentBatch.newBuilder().build();
    *   BatchUpdateIntentsResponse response =
    *       intentsClient.batchUpdateIntentsAsync(parent, intentBatchInline).get();
@@ -941,7 +941,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.ofProjectName("[PROJECT]");
    *   String intentBatchUri = "intentBatchUri544125582";
    *   BatchUpdateIntentsResponse response =
    *       intentsClient.batchUpdateIntentsAsync(parent, intentBatchUri).get();
@@ -976,7 +976,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   String parent = IntentName.of("[PROJECT]", "[INTENT]").toString();
+   *   String parent = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString();
    *   IntentBatch intentBatchInline = IntentBatch.newBuilder().build();
    *   BatchUpdateIntentsResponse response =
    *       intentsClient.batchUpdateIntentsAsync(parent, intentBatchInline).get();
@@ -1009,7 +1009,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   String parent = IntentName.of("[PROJECT]", "[INTENT]").toString();
+   *   String parent = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString();
    *   String intentBatchUri = "intentBatchUri544125582";
    *   BatchUpdateIntentsResponse response =
    *       intentsClient.batchUpdateIntentsAsync(parent, intentBatchUri).get();
@@ -1046,7 +1046,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   BatchUpdateIntentsRequest request =
    *       BatchUpdateIntentsRequest.newBuilder()
-   *           .setParent(IntentName.of("[PROJECT]", "[INTENT]").toString())
+   *           .setParent(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setIntentView(IntentView.forNumber(0))
@@ -1076,7 +1076,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   BatchUpdateIntentsRequest request =
    *       BatchUpdateIntentsRequest.newBuilder()
-   *           .setParent(IntentName.of("[PROJECT]", "[INTENT]").toString())
+   *           .setParent(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setIntentView(IntentView.forNumber(0))
@@ -1106,7 +1106,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   BatchUpdateIntentsRequest request =
    *       BatchUpdateIntentsRequest.newBuilder()
-   *           .setParent(IntentName.of("[PROJECT]", "[INTENT]").toString())
+   *           .setParent(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setIntentView(IntentView.forNumber(0))
@@ -1131,7 +1131,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]");
+   *   AgentName parent = AgentName.ofProjectName("[PROJECT]");
    *   List<Intent> intents = new ArrayList<>();
    *   intentsClient.batchDeleteIntentsAsync(parent, intents).get();
    * }
@@ -1163,7 +1163,7 @@ public class IntentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IntentsClient intentsClient = IntentsClient.create()) {
-   *   String parent = IntentName.of("[PROJECT]", "[INTENT]").toString();
+   *   String parent = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString();
    *   List<Intent> intents = new ArrayList<>();
    *   intentsClient.batchDeleteIntentsAsync(parent, intents).get();
    * }
@@ -1194,7 +1194,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   BatchDeleteIntentsRequest request =
    *       BatchDeleteIntentsRequest.newBuilder()
-   *           .setParent(IntentName.of("[PROJECT]", "[INTENT]").toString())
+   *           .setParent(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .addAllIntents(new ArrayList<Intent>())
    *           .build();
    *   intentsClient.batchDeleteIntentsAsync(request).get();
@@ -1221,7 +1221,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   BatchDeleteIntentsRequest request =
    *       BatchDeleteIntentsRequest.newBuilder()
-   *           .setParent(IntentName.of("[PROJECT]", "[INTENT]").toString())
+   *           .setParent(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .addAllIntents(new ArrayList<Intent>())
    *           .build();
    *   OperationFuture<Empty, Struct> future =
@@ -1248,7 +1248,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   BatchDeleteIntentsRequest request =
    *       BatchDeleteIntentsRequest.newBuilder()
-   *           .setParent(IntentName.of("[PROJECT]", "[INTENT]").toString())
+   *           .setParent(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
    *           .addAllIntents(new ArrayList<Intent>())
    *           .build();
    *   ApiFuture<Operation> future = intentsClient.batchDeleteIntentsCallable().futureCall(request);

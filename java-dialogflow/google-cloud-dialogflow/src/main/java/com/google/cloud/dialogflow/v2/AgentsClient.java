@@ -49,7 +49,7 @@ import javax.annotation.Generated;
  *
  * <pre>{@code
  * try (AgentsClient agentsClient = AgentsClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   Agent response = agentsClient.getAgent(parent);
  * }
  * }</pre>
@@ -169,6 +169,29 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Agent response = agentsClient.getAgent(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project that the agent to fetch is associated with. Format:
+   *     `projects/&lt;Project ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Agent getAgent(LocationName parent) {
+    GetAgentRequest request =
+        GetAgentRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return getAgent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   Agent response = agentsClient.getAgent(parent);
    * }
@@ -192,7 +215,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   String parent = AgentName.of("[PROJECT]").toString();
+   *   String parent = AgentName.ofProjectName("[PROJECT]").toString();
    *   Agent response = agentsClient.getAgent(parent);
    * }
    * }</pre>
@@ -215,7 +238,9 @@ public class AgentsClient implements BackgroundResource {
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   GetAgentRequest request =
-   *       GetAgentRequest.newBuilder().setParent(AgentName.of("[PROJECT]").toString()).build();
+   *       GetAgentRequest.newBuilder()
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
+   *           .build();
    *   Agent response = agentsClient.getAgent(request);
    * }
    * }</pre>
@@ -236,7 +261,9 @@ public class AgentsClient implements BackgroundResource {
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   GetAgentRequest request =
-   *       GetAgentRequest.newBuilder().setParent(AgentName.of("[PROJECT]").toString()).build();
+   *       GetAgentRequest.newBuilder()
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
+   *           .build();
    *   ApiFuture<Agent> future = agentsClient.getAgentCallable().futureCall(request);
    *   // Do something.
    *   Agent response = future.get();
@@ -323,6 +350,31 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   agentsClient.deleteAgent(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project that the agent to delete is associated with. Format:
+   *     `projects/&lt;Project ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAgent(LocationName parent) {
+    DeleteAgentRequest request =
+        DeleteAgentRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    deleteAgent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   agentsClient.deleteAgent(parent);
    * }
@@ -348,7 +400,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   String parent = AgentName.of("[PROJECT]").toString();
+   *   String parent = AgentName.ofProjectName("[PROJECT]").toString();
    *   agentsClient.deleteAgent(parent);
    * }
    * }</pre>
@@ -371,7 +423,9 @@ public class AgentsClient implements BackgroundResource {
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   DeleteAgentRequest request =
-   *       DeleteAgentRequest.newBuilder().setParent(AgentName.of("[PROJECT]").toString()).build();
+   *       DeleteAgentRequest.newBuilder()
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
+   *           .build();
    *   agentsClient.deleteAgent(request);
    * }
    * }</pre>
@@ -392,7 +446,9 @@ public class AgentsClient implements BackgroundResource {
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   DeleteAgentRequest request =
-   *       DeleteAgentRequest.newBuilder().setParent(AgentName.of("[PROJECT]").toString()).build();
+   *       DeleteAgentRequest.newBuilder()
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
+   *           .build();
    *   ApiFuture<Empty> future = agentsClient.deleteAgentCallable().futureCall(request);
    *   // Do something.
    *   future.get();
@@ -401,6 +457,38 @@ public class AgentsClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteAgentRequest, Empty> deleteAgentCallable() {
     return stub.deleteAgentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the list of agents.
+   *
+   * <p>Since there is at most one conversational agent per project, this method is useful primarily
+   * for listing all agents across projects the caller has access to. One can achieve that with a
+   * wildcard project collection id "-". Refer to [List
+   * Sub-Collections](https://cloud.google.com/apis/design/design_patterns#list_sub-collections).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Agent element : agentsClient.searchAgents(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project to list agents from. Format: `projects/&lt;Project ID or
+   *     '-'&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchAgentsPagedResponse searchAgents(LocationName parent) {
+    SearchAgentsRequest request =
+        SearchAgentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return searchAgents(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -448,7 +536,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   String parent = AgentName.of("[PROJECT]").toString();
+   *   String parent = AgentName.ofProjectName("[PROJECT]").toString();
    *   for (Agent element : agentsClient.searchAgents(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -479,7 +567,7 @@ public class AgentsClient implements BackgroundResource {
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   SearchAgentsRequest request =
    *       SearchAgentsRequest.newBuilder()
-   *           .setParent(AgentName.of("[PROJECT]").toString())
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -511,7 +599,7 @@ public class AgentsClient implements BackgroundResource {
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   SearchAgentsRequest request =
    *       SearchAgentsRequest.newBuilder()
-   *           .setParent(AgentName.of("[PROJECT]").toString())
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -543,7 +631,7 @@ public class AgentsClient implements BackgroundResource {
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   SearchAgentsRequest request =
    *       SearchAgentsRequest.newBuilder()
-   *           .setParent(AgentName.of("[PROJECT]").toString())
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -564,6 +652,31 @@ public class AgentsClient implements BackgroundResource {
    */
   public final UnaryCallable<SearchAgentsRequest, SearchAgentsResponse> searchAgentsCallable() {
     return stub.searchAgentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Trains the specified agent.
+   *
+   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   agentsClient.trainAgentAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project that the agent to train is associated with. Format:
+   *     `projects/&lt;Project ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, Struct> trainAgentAsync(LocationName parent) {
+    TrainAgentRequest request =
+        TrainAgentRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return trainAgentAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -601,7 +714,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   String parent = AgentName.of("[PROJECT]").toString();
+   *   String parent = AgentName.ofProjectName("[PROJECT]").toString();
    *   agentsClient.trainAgentAsync(parent).get();
    * }
    * }</pre>
@@ -626,7 +739,9 @@ public class AgentsClient implements BackgroundResource {
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   TrainAgentRequest request =
-   *       TrainAgentRequest.newBuilder().setParent(AgentName.of("[PROJECT]").toString()).build();
+   *       TrainAgentRequest.newBuilder()
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
+   *           .build();
    *   agentsClient.trainAgentAsync(request).get();
    * }
    * }</pre>
@@ -649,7 +764,9 @@ public class AgentsClient implements BackgroundResource {
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   TrainAgentRequest request =
-   *       TrainAgentRequest.newBuilder().setParent(AgentName.of("[PROJECT]").toString()).build();
+   *       TrainAgentRequest.newBuilder()
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
+   *           .build();
    *   OperationFuture<Empty, Struct> future =
    *       agentsClient.trainAgentOperationCallable().futureCall(request);
    *   // Do something.
@@ -672,7 +789,9 @@ public class AgentsClient implements BackgroundResource {
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   TrainAgentRequest request =
-   *       TrainAgentRequest.newBuilder().setParent(AgentName.of("[PROJECT]").toString()).build();
+   *       TrainAgentRequest.newBuilder()
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
+   *           .build();
    *   ApiFuture<Operation> future = agentsClient.trainAgentCallable().futureCall(request);
    *   // Do something.
    *   future.get();
@@ -681,6 +800,34 @@ public class AgentsClient implements BackgroundResource {
    */
   public final UnaryCallable<TrainAgentRequest, Operation> trainAgentCallable() {
     return stub.trainAgentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports the specified agent to a ZIP file.
+   *
+   * <p>Operation &lt;response:
+   * [ExportAgentResponse][google.cloud.dialogflow.v2.ExportAgentResponse]&gt;
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AgentsClient agentsClient = AgentsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ExportAgentResponse response = agentsClient.exportAgentAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project that the agent to export is associated with. Format:
+   *     `projects/&lt;Project ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportAgentResponse, Struct> exportAgentAsync(LocationName parent) {
+    ExportAgentRequest request =
+        ExportAgentRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return exportAgentAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -722,7 +869,7 @@ public class AgentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
-   *   String parent = AgentName.of("[PROJECT]").toString();
+   *   String parent = AgentName.ofProjectName("[PROJECT]").toString();
    *   ExportAgentResponse response = agentsClient.exportAgentAsync(parent).get();
    * }
    * }</pre>
@@ -749,7 +896,7 @@ public class AgentsClient implements BackgroundResource {
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ExportAgentRequest request =
    *       ExportAgentRequest.newBuilder()
-   *           .setParent(AgentName.of("[PROJECT]").toString())
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
    *           .setAgentUri("agentUri1469149223")
    *           .build();
    *   ExportAgentResponse response = agentsClient.exportAgentAsync(request).get();
@@ -777,7 +924,7 @@ public class AgentsClient implements BackgroundResource {
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ExportAgentRequest request =
    *       ExportAgentRequest.newBuilder()
-   *           .setParent(AgentName.of("[PROJECT]").toString())
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
    *           .setAgentUri("agentUri1469149223")
    *           .build();
    *   OperationFuture<ExportAgentResponse, Struct> future =
@@ -805,7 +952,7 @@ public class AgentsClient implements BackgroundResource {
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ExportAgentRequest request =
    *       ExportAgentRequest.newBuilder()
-   *           .setParent(AgentName.of("[PROJECT]").toString())
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
    *           .setAgentUri("agentUri1469149223")
    *           .build();
    *   ApiFuture<Operation> future = agentsClient.exportAgentCallable().futureCall(request);
@@ -839,7 +986,9 @@ public class AgentsClient implements BackgroundResource {
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ImportAgentRequest request =
-   *       ImportAgentRequest.newBuilder().setParent(AgentName.of("[PROJECT]").toString()).build();
+   *       ImportAgentRequest.newBuilder()
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
+   *           .build();
    *   agentsClient.importAgentAsync(request).get();
    * }
    * }</pre>
@@ -872,7 +1021,9 @@ public class AgentsClient implements BackgroundResource {
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ImportAgentRequest request =
-   *       ImportAgentRequest.newBuilder().setParent(AgentName.of("[PROJECT]").toString()).build();
+   *       ImportAgentRequest.newBuilder()
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
+   *           .build();
    *   OperationFuture<Empty, Struct> future =
    *       agentsClient.importAgentOperationCallable().futureCall(request);
    *   // Do something.
@@ -905,7 +1056,9 @@ public class AgentsClient implements BackgroundResource {
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ImportAgentRequest request =
-   *       ImportAgentRequest.newBuilder().setParent(AgentName.of("[PROJECT]").toString()).build();
+   *       ImportAgentRequest.newBuilder()
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
+   *           .build();
    *   ApiFuture<Operation> future = agentsClient.importAgentCallable().futureCall(request);
    *   // Do something.
    *   future.get();
@@ -936,7 +1089,9 @@ public class AgentsClient implements BackgroundResource {
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   RestoreAgentRequest request =
-   *       RestoreAgentRequest.newBuilder().setParent(AgentName.of("[PROJECT]").toString()).build();
+   *       RestoreAgentRequest.newBuilder()
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
+   *           .build();
    *   agentsClient.restoreAgentAsync(request).get();
    * }
    * }</pre>
@@ -968,7 +1123,9 @@ public class AgentsClient implements BackgroundResource {
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   RestoreAgentRequest request =
-   *       RestoreAgentRequest.newBuilder().setParent(AgentName.of("[PROJECT]").toString()).build();
+   *       RestoreAgentRequest.newBuilder()
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
+   *           .build();
    *   OperationFuture<Empty, Struct> future =
    *       agentsClient.restoreAgentOperationCallable().futureCall(request);
    *   // Do something.
@@ -1001,7 +1158,9 @@ public class AgentsClient implements BackgroundResource {
    * <pre>{@code
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   RestoreAgentRequest request =
-   *       RestoreAgentRequest.newBuilder().setParent(AgentName.of("[PROJECT]").toString()).build();
+   *       RestoreAgentRequest.newBuilder()
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
+   *           .build();
    *   ApiFuture<Operation> future = agentsClient.restoreAgentCallable().futureCall(request);
    *   // Do something.
    *   future.get();
@@ -1023,7 +1182,7 @@ public class AgentsClient implements BackgroundResource {
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   GetValidationResultRequest request =
    *       GetValidationResultRequest.newBuilder()
-   *           .setParent(AgentName.of("[PROJECT]").toString())
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .build();
    *   ValidationResult response = agentsClient.getValidationResult(request);
@@ -1048,7 +1207,7 @@ public class AgentsClient implements BackgroundResource {
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   GetValidationResultRequest request =
    *       GetValidationResultRequest.newBuilder()
-   *           .setParent(AgentName.of("[PROJECT]").toString())
+   *           .setParent(AgentName.ofProjectName("[PROJECT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .build();
    *   ApiFuture<ValidationResult> future =

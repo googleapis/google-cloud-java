@@ -11,13 +11,13 @@
           "libraryClient": "AgentsClient",
           "rpcs": {
             "DeleteAgent": {
-              "methods": ["deleteAgent", "deleteAgent", "deleteAgent", "deleteAgentCallable"]
+              "methods": ["deleteAgent", "deleteAgent", "deleteAgent", "deleteAgent", "deleteAgentCallable"]
             },
             "ExportAgent": {
-              "methods": ["exportAgentAsync", "exportAgentAsync", "exportAgentAsync", "exportAgentOperationCallable", "exportAgentCallable"]
+              "methods": ["exportAgentAsync", "exportAgentAsync", "exportAgentAsync", "exportAgentAsync", "exportAgentOperationCallable", "exportAgentCallable"]
             },
             "GetAgent": {
-              "methods": ["getAgent", "getAgent", "getAgent", "getAgentCallable"]
+              "methods": ["getAgent", "getAgent", "getAgent", "getAgent", "getAgentCallable"]
             },
             "GetValidationResult": {
               "methods": ["getValidationResult", "getValidationResultCallable"]
@@ -29,13 +29,13 @@
               "methods": ["restoreAgentAsync", "restoreAgentOperationCallable", "restoreAgentCallable"]
             },
             "SearchAgents": {
-              "methods": ["searchAgents", "searchAgents", "searchAgents", "searchAgentsPagedCallable", "searchAgentsCallable"]
+              "methods": ["searchAgents", "searchAgents", "searchAgents", "searchAgents", "searchAgentsPagedCallable", "searchAgentsCallable"]
             },
             "SetAgent": {
               "methods": ["setAgent", "setAgent", "setAgentCallable"]
             },
             "TrainAgent": {
-              "methods": ["trainAgentAsync", "trainAgentAsync", "trainAgentAsync", "trainAgentOperationCallable", "trainAgentCallable"]
+              "methods": ["trainAgentAsync", "trainAgentAsync", "trainAgentAsync", "trainAgentAsync", "trainAgentOperationCallable", "trainAgentCallable"]
             }
           }
         }
@@ -202,8 +202,38 @@
         "grpc": {
           "libraryClient": "EnvironmentsClient",
           "rpcs": {
+            "CreateEnvironment": {
+              "methods": ["createEnvironment", "createEnvironmentCallable"]
+            },
+            "DeleteEnvironment": {
+              "methods": ["deleteEnvironment", "deleteEnvironmentCallable"]
+            },
+            "GetEnvironment": {
+              "methods": ["getEnvironment", "getEnvironmentCallable"]
+            },
+            "GetEnvironmentHistory": {
+              "methods": ["getEnvironmentHistory", "getEnvironmentHistoryPagedCallable", "getEnvironmentHistoryCallable"]
+            },
             "ListEnvironments": {
-              "methods": ["listEnvironments", "listEnvironmentsPagedCallable", "listEnvironmentsCallable"]
+              "methods": ["listEnvironments", "listEnvironments", "listEnvironments", "listEnvironmentsPagedCallable", "listEnvironmentsCallable"]
+            },
+            "UpdateEnvironment": {
+              "methods": ["updateEnvironment", "updateEnvironmentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Fulfillments": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FulfillmentsClient",
+          "rpcs": {
+            "GetFulfillment": {
+              "methods": ["getFulfillment", "getFulfillment", "getFulfillment", "getFulfillmentCallable"]
+            },
+            "UpdateFulfillment": {
+              "methods": ["updateFulfillment", "updateFulfillment", "updateFulfillmentCallable"]
             }
           }
         }
@@ -327,6 +357,30 @@
             },
             "UpdateSessionEntityType": {
               "methods": ["updateSessionEntityType", "updateSessionEntityType", "updateSessionEntityType", "updateSessionEntityTypeCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Versions": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "VersionsClient",
+          "rpcs": {
+            "CreateVersion": {
+              "methods": ["createVersion", "createVersion", "createVersion", "createVersionCallable"]
+            },
+            "DeleteVersion": {
+              "methods": ["deleteVersion", "deleteVersion", "deleteVersion", "deleteVersionCallable"]
+            },
+            "GetVersion": {
+              "methods": ["getVersion", "getVersion", "getVersion", "getVersionCallable"]
+            },
+            "ListVersions": {
+              "methods": ["listVersions", "listVersions", "listVersions", "listVersionsPagedCallable", "listVersionsCallable"]
+            },
+            "UpdateVersion": {
+              "methods": ["updateVersion", "updateVersion", "updateVersionCallable"]
             }
           }
         }

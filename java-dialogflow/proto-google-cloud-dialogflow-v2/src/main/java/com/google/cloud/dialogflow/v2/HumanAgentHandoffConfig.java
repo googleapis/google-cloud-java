@@ -24,6 +24,8 @@ package com.google.cloud.dialogflow.v2;
  * <pre>
  * Defines the hand off to a live agent, typically on which external agent
  * service provider to connect to a conversation.
+ * Currently, this feature is not general available, please contact Google
+ * to get access.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.HumanAgentHandoffConfig}
@@ -2541,6 +2543,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
    * <pre>
    * Defines the hand off to a live agent, typically on which external agent
    * service provider to connect to a conversation.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.HumanAgentHandoffConfig}

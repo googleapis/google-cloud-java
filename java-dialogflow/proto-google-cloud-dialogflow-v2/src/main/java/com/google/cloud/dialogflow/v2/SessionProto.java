@@ -212,15 +212,19 @@ public final class SessionProto {
           + "ponse\"\000(\0010\001\032x\312A\031dialogflow.googleapis.co"
           + "m\322AYhttps://www.googleapis.com/auth/clou"
           + "d-platform,https://www.googleapis.com/au"
-          + "th/dialogflowB\304\002\n\036com.google.cloud.dialo"
+          + "th/dialogflowB\360\003\n\036com.google.cloud.dialo"
           + "gflow.v2B\014SessionProtoP\001ZDgoogle.golang."
           + "org/genproto/googleapis/cloud/dialogflow"
           + "/v2;dialogflow\370\001\001\242\002\002DF\252\002\032Google.Cloud.Di"
-          + "alogflow.V2\352A\245\001\n!dialogflow.googleapis.c"
+          + "alogflow.V2\352A\321\002\n!dialogflow.googleapis.c"
           + "om/Session\022+projects/{project}/agent/ses"
           + "sions/{session}\022Sprojects/{project}/agen"
           + "t/environments/{environment}/users/{user"
-          + "}/sessions/{session}b\006proto3"
+          + "}/sessions/{session}\022@projects/{project}"
+          + "/locations/{location}/agent/sessions/{se"
+          + "ssion}\022hprojects/{project}/locations/{lo"
+          + "cation}/agent/environments/{environment}"
+          + "/users/{user}/sessions/{session}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

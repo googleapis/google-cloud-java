@@ -16,12 +16,21 @@
 
 package com.google.cloud.dialogflow.v2.stub;
 
+import static com.google.cloud.dialogflow.v2.EnvironmentsClient.GetEnvironmentHistoryPagedResponse;
 import static com.google.cloud.dialogflow.v2.EnvironmentsClient.ListEnvironmentsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.v2.CreateEnvironmentRequest;
+import com.google.cloud.dialogflow.v2.DeleteEnvironmentRequest;
+import com.google.cloud.dialogflow.v2.Environment;
+import com.google.cloud.dialogflow.v2.EnvironmentHistory;
+import com.google.cloud.dialogflow.v2.GetEnvironmentHistoryRequest;
+import com.google.cloud.dialogflow.v2.GetEnvironmentRequest;
 import com.google.cloud.dialogflow.v2.ListEnvironmentsRequest;
 import com.google.cloud.dialogflow.v2.ListEnvironmentsResponse;
+import com.google.cloud.dialogflow.v2.UpdateEnvironmentRequest;
+import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -41,6 +50,33 @@ public abstract class EnvironmentsStub implements BackgroundResource {
   public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
       listEnvironmentsCallable() {
     throw new UnsupportedOperationException("Not implemented: listEnvironmentsCallable()");
+  }
+
+  public UnaryCallable<GetEnvironmentRequest, Environment> getEnvironmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: getEnvironmentCallable()");
+  }
+
+  public UnaryCallable<CreateEnvironmentRequest, Environment> createEnvironmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: createEnvironmentCallable()");
+  }
+
+  public UnaryCallable<UpdateEnvironmentRequest, Environment> updateEnvironmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateEnvironmentCallable()");
+  }
+
+  public UnaryCallable<DeleteEnvironmentRequest, Empty> deleteEnvironmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteEnvironmentCallable()");
+  }
+
+  public UnaryCallable<GetEnvironmentHistoryRequest, GetEnvironmentHistoryPagedResponse>
+      getEnvironmentHistoryPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getEnvironmentHistoryPagedCallable()");
+  }
+
+  public UnaryCallable<GetEnvironmentHistoryRequest, EnvironmentHistory>
+      getEnvironmentHistoryCallable() {
+    throw new UnsupportedOperationException("Not implemented: getEnvironmentHistoryCallable()");
   }
 
   @Override

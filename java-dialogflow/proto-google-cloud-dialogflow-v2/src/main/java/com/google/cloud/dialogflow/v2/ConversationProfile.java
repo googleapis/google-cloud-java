@@ -281,12 +281,12 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. The unique identifier of this conversation profile.
+   * The unique identifier of this conversation profile.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversationProfiles/&lt;Conversation Profile ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1;</code>
    *
    * @return The name.
    */
@@ -306,12 +306,12 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. The unique identifier of this conversation profile.
+   * The unique identifier of this conversation profile.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/conversationProfiles/&lt;Conversation Profile ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1;</code>
    *
    * @return The bytes for name.
    */
@@ -583,6 +583,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Configuration for connecting to a live agent.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.HumanAgentHandoffConfig human_agent_handoff_config = 5;
@@ -599,6 +601,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Configuration for connecting to a live agent.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.HumanAgentHandoffConfig human_agent_handoff_config = 5;
@@ -617,6 +621,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Configuration for connecting to a live agent.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.HumanAgentHandoffConfig human_agent_handoff_config = 5;
@@ -1498,12 +1504,12 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The unique identifier of this conversation profile.
+     * The unique identifier of this conversation profile.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversationProfiles/&lt;Conversation Profile ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1;</code>
      *
      * @return The name.
      */
@@ -1522,12 +1528,12 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The unique identifier of this conversation profile.
+     * The unique identifier of this conversation profile.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversationProfiles/&lt;Conversation Profile ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1;</code>
      *
      * @return The bytes for name.
      */
@@ -1546,12 +1552,12 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The unique identifier of this conversation profile.
+     * The unique identifier of this conversation profile.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversationProfiles/&lt;Conversation Profile ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1569,12 +1575,12 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The unique identifier of this conversation profile.
+     * The unique identifier of this conversation profile.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversationProfiles/&lt;Conversation Profile ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1;</code>
      *
      * @return This builder for chaining.
      */
@@ -1588,12 +1594,12 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The unique identifier of this conversation profile.
+     * The unique identifier of this conversation profile.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/conversationProfiles/&lt;Conversation Profile ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2518,6 +2524,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.HumanAgentHandoffConfig human_agent_handoff_config = 5;
@@ -2533,6 +2541,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.HumanAgentHandoffConfig human_agent_handoff_config = 5;
@@ -2554,6 +2564,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.HumanAgentHandoffConfig human_agent_handoff_config = 5;
@@ -2578,6 +2590,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.HumanAgentHandoffConfig human_agent_handoff_config = 5;
@@ -2599,6 +2613,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.HumanAgentHandoffConfig human_agent_handoff_config = 5;
@@ -2628,6 +2644,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.HumanAgentHandoffConfig human_agent_handoff_config = 5;
@@ -2649,6 +2667,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.HumanAgentHandoffConfig human_agent_handoff_config = 5;
@@ -2665,6 +2685,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.HumanAgentHandoffConfig human_agent_handoff_config = 5;
@@ -2685,6 +2707,8 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.HumanAgentHandoffConfig human_agent_handoff_config = 5;

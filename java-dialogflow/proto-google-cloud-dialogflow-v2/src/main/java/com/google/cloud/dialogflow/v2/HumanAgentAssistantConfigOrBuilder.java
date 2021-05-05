@@ -106,6 +106,8 @@ public interface HumanAgentAssistantConfigOrBuilder
    *
    * <pre>
    * Configuration for agent assistance of end user participant.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>
@@ -120,6 +122,8 @@ public interface HumanAgentAssistantConfigOrBuilder
    *
    * <pre>
    * Configuration for agent assistance of end user participant.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>
@@ -135,6 +139,8 @@ public interface HumanAgentAssistantConfigOrBuilder
    *
    * <pre>
    * Configuration for agent assistance of end user participant.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>

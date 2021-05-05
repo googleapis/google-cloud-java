@@ -37,6 +37,12 @@ public class ContextName implements ResourceName {
   private static final PathTemplate PROJECT_ENVIRONMENT_USER_SESSION_CONTEXT =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}");
+  private static final PathTemplate PROJECT_LOCATION_SESSION_CONTEXT =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/agent/sessions/{session}/contexts/{context}");
+  private static final PathTemplate PROJECT_LOCATION_ENVIRONMENT_USER_SESSION_CONTEXT =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}");
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
@@ -45,6 +51,7 @@ public class ContextName implements ResourceName {
   private final String context;
   private final String environment;
   private final String user;
+  private final String location;
 
   @Deprecated
   protected ContextName() {
@@ -53,6 +60,7 @@ public class ContextName implements ResourceName {
     context = null;
     environment = null;
     user = null;
+    location = null;
   }
 
   private ContextName(Builder builder) {
@@ -61,6 +69,7 @@ public class ContextName implements ResourceName {
     context = Preconditions.checkNotNull(builder.getContext());
     environment = null;
     user = null;
+    location = null;
     pathTemplate = PROJECT_SESSION_CONTEXT;
   }
 
@@ -70,7 +79,28 @@ public class ContextName implements ResourceName {
     user = Preconditions.checkNotNull(builder.getUser());
     session = Preconditions.checkNotNull(builder.getSession());
     context = Preconditions.checkNotNull(builder.getContext());
+    location = null;
     pathTemplate = PROJECT_ENVIRONMENT_USER_SESSION_CONTEXT;
+  }
+
+  private ContextName(ProjectLocationSessionContextBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    session = Preconditions.checkNotNull(builder.getSession());
+    context = Preconditions.checkNotNull(builder.getContext());
+    environment = null;
+    user = null;
+    pathTemplate = PROJECT_LOCATION_SESSION_CONTEXT;
+  }
+
+  private ContextName(ProjectLocationEnvironmentUserSessionContextBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    environment = Preconditions.checkNotNull(builder.getEnvironment());
+    user = Preconditions.checkNotNull(builder.getUser());
+    session = Preconditions.checkNotNull(builder.getSession());
+    context = Preconditions.checkNotNull(builder.getContext());
+    pathTemplate = PROJECT_LOCATION_ENVIRONMENT_USER_SESSION_CONTEXT;
   }
 
   public String getProject() {
@@ -93,6 +123,10 @@ public class ContextName implements ResourceName {
     return user;
   }
 
+  public String getLocation() {
+    return location;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
   }
@@ -106,6 +140,17 @@ public class ContextName implements ResourceName {
   public static ProjectEnvironmentUserSessionContextBuilder
       newProjectEnvironmentUserSessionContextBuilder() {
     return new ProjectEnvironmentUserSessionContextBuilder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectLocationSessionContextBuilder newProjectLocationSessionContextBuilder() {
+    return new ProjectLocationSessionContextBuilder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectLocationEnvironmentUserSessionContextBuilder
+      newProjectLocationEnvironmentUserSessionContextBuilder() {
+    return new ProjectLocationEnvironmentUserSessionContextBuilder();
   }
 
   public Builder toBuilder() {
@@ -127,6 +172,35 @@ public class ContextName implements ResourceName {
       String project, String environment, String user, String session, String context) {
     return newProjectEnvironmentUserSessionContextBuilder()
         .setProject(project)
+        .setEnvironment(environment)
+        .setUser(user)
+        .setSession(session)
+        .setContext(context)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static ContextName ofProjectLocationSessionContextName(
+      String project, String location, String session, String context) {
+    return newProjectLocationSessionContextBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setSession(session)
+        .setContext(context)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static ContextName ofProjectLocationEnvironmentUserSessionContextName(
+      String project,
+      String location,
+      String environment,
+      String user,
+      String session,
+      String context) {
+    return newProjectLocationEnvironmentUserSessionContextBuilder()
+        .setProject(project)
+        .setLocation(location)
         .setEnvironment(environment)
         .setUser(user)
         .setSession(session)
@@ -167,6 +241,37 @@ public class ContextName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationSessionContextName(
+      String project, String location, String session, String context) {
+    return newProjectLocationSessionContextBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setSession(session)
+        .setContext(context)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationEnvironmentUserSessionContextName(
+      String project,
+      String location,
+      String environment,
+      String user,
+      String session,
+      String context) {
+    return newProjectLocationEnvironmentUserSessionContextBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setEnvironment(environment)
+        .setUser(user)
+        .setSession(session)
+        .setContext(context)
+        .build()
+        .toString();
+  }
+
   public static ContextName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
@@ -180,6 +285,23 @@ public class ContextName implements ResourceName {
           PROJECT_ENVIRONMENT_USER_SESSION_CONTEXT.match(formattedString);
       return ofProjectEnvironmentUserSessionContextName(
           matchMap.get("project"),
+          matchMap.get("environment"),
+          matchMap.get("user"),
+          matchMap.get("session"),
+          matchMap.get("context"));
+    } else if (PROJECT_LOCATION_SESSION_CONTEXT.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_SESSION_CONTEXT.match(formattedString);
+      return ofProjectLocationSessionContextName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("session"),
+          matchMap.get("context"));
+    } else if (PROJECT_LOCATION_ENVIRONMENT_USER_SESSION_CONTEXT.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_ENVIRONMENT_USER_SESSION_CONTEXT.match(formattedString);
+      return ofProjectLocationEnvironmentUserSessionContextName(
+          matchMap.get("project"),
+          matchMap.get("location"),
           matchMap.get("environment"),
           matchMap.get("user"),
           matchMap.get("session"),
@@ -210,7 +332,9 @@ public class ContextName implements ResourceName {
 
   public static boolean isParsableFrom(String formattedString) {
     return PROJECT_SESSION_CONTEXT.matches(formattedString)
-        || PROJECT_ENVIRONMENT_USER_SESSION_CONTEXT.matches(formattedString);
+        || PROJECT_ENVIRONMENT_USER_SESSION_CONTEXT.matches(formattedString)
+        || PROJECT_LOCATION_SESSION_CONTEXT.matches(formattedString)
+        || PROJECT_LOCATION_ENVIRONMENT_USER_SESSION_CONTEXT.matches(formattedString);
   }
 
   @Override
@@ -233,6 +357,9 @@ public class ContextName implements ResourceName {
           }
           if (user != null) {
             fieldMapBuilder.put("user", user);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -261,7 +388,8 @@ public class ContextName implements ResourceName {
           && Objects.equals(this.session, that.session)
           && Objects.equals(this.context, that.context)
           && Objects.equals(this.environment, that.environment)
-          && Objects.equals(this.user, that.user);
+          && Objects.equals(this.user, that.user)
+          && Objects.equals(this.location, that.location);
     }
     return false;
   }
@@ -281,6 +409,8 @@ public class ContextName implements ResourceName {
     h ^= Objects.hashCode(environment);
     h *= 1000003;
     h ^= Objects.hashCode(user);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
     return h;
   }
 
@@ -388,6 +518,134 @@ public class ContextName implements ResourceName {
     }
 
     public ProjectEnvironmentUserSessionContextBuilder setContext(String context) {
+      this.context = context;
+      return this;
+    }
+
+    public ContextName build() {
+      return new ContextName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/agent/sessions/{session}/contexts/{context}.
+   */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectLocationSessionContextBuilder {
+    private String project;
+    private String location;
+    private String session;
+    private String context;
+
+    protected ProjectLocationSessionContextBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getSession() {
+      return session;
+    }
+
+    public String getContext() {
+      return context;
+    }
+
+    public ProjectLocationSessionContextBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationSessionContextBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationSessionContextBuilder setSession(String session) {
+      this.session = session;
+      return this;
+    }
+
+    public ProjectLocationSessionContextBuilder setContext(String context) {
+      this.context = context;
+      return this;
+    }
+
+    public ContextName build() {
+      return new ContextName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}.
+   */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectLocationEnvironmentUserSessionContextBuilder {
+    private String project;
+    private String location;
+    private String environment;
+    private String user;
+    private String session;
+    private String context;
+
+    protected ProjectLocationEnvironmentUserSessionContextBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getEnvironment() {
+      return environment;
+    }
+
+    public String getUser() {
+      return user;
+    }
+
+    public String getSession() {
+      return session;
+    }
+
+    public String getContext() {
+      return context;
+    }
+
+    public ProjectLocationEnvironmentUserSessionContextBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationEnvironmentUserSessionContextBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationEnvironmentUserSessionContextBuilder setEnvironment(String environment) {
+      this.environment = environment;
+      return this;
+    }
+
+    public ProjectLocationEnvironmentUserSessionContextBuilder setUser(String user) {
+      this.user = user;
+      return this;
+    }
+
+    public ProjectLocationEnvironmentUserSessionContextBuilder setSession(String session) {
+      this.session = session;
+      return this;
+    }
+
+    public ProjectLocationEnvironmentUserSessionContextBuilder setContext(String context) {
       this.context = context;
       return this;
     }

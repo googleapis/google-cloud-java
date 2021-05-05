@@ -16,7 +16,9 @@
 
 package com.google.cloud.dialogflow.v2;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -31,24 +33,52 @@ import javax.annotation.Generated;
 public class AgentName implements ResourceName {
   private static final PathTemplate PROJECT =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/agent");
+  private static final PathTemplate PROJECT_LOCATION =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}/agent");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
+  private final String location;
 
   @Deprecated
   protected AgentName() {
     project = null;
+    location = null;
   }
 
   private AgentName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
+    location = null;
+    pathTemplate = PROJECT;
+  }
+
+  private AgentName(ProjectLocationBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    pathTemplate = PROJECT_LOCATION;
   }
 
   public String getProject() {
     return project;
   }
 
+  public String getLocation() {
+    return location;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newProjectBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectLocationBuilder newProjectLocationBuilder() {
+    return new ProjectLocationBuilder();
   }
 
   public Builder toBuilder() {
@@ -59,18 +89,42 @@ public class AgentName implements ResourceName {
     return newBuilder().setProject(project).build();
   }
 
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static AgentName ofProjectName(String project) {
+    return newBuilder().setProject(project).build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static AgentName ofProjectLocationName(String project, String location) {
+    return newProjectLocationBuilder().setProject(project).setLocation(location).build();
+  }
+
   public static String format(String project) {
     return newBuilder().setProject(project).build().toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectName(String project) {
+    return newBuilder().setProject(project).build().toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationName(String project, String location) {
+    return newProjectLocationBuilder().setProject(project).setLocation(location).build().toString();
   }
 
   public static AgentName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT.validatedMatch(
-            formattedString, "AgentName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"));
+    if (PROJECT.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT.match(formattedString);
+      return ofProjectName(matchMap.get("project"));
+    } else if (PROJECT_LOCATION.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION.match(formattedString);
+      return ofProjectLocationName(matchMap.get("project"), matchMap.get("location"));
+    }
+    throw new ValidationException("AgentName.parse: formattedString not in valid format");
   }
 
   public static List<AgentName> parseList(List<String> formattedStrings) {
@@ -94,7 +148,7 @@ public class AgentName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT.matches(formattedString);
+    return PROJECT.matches(formattedString) || PROJECT_LOCATION.matches(formattedString);
   }
 
   @Override
@@ -105,6 +159,9 @@ public class AgentName implements ResourceName {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
           if (project != null) {
             fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -119,7 +176,7 @@ public class AgentName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT.instantiate("project", project);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -129,7 +186,8 @@ public class AgentName implements ResourceName {
     }
     if (o != null || getClass() == o.getClass()) {
       AgentName that = ((AgentName) o);
-      return Objects.equals(this.project, that.project);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location);
     }
     return false;
   }
@@ -138,7 +196,11 @@ public class AgentName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
     return h;
   }
 
@@ -158,7 +220,41 @@ public class AgentName implements ResourceName {
     }
 
     private Builder(AgentName agentName) {
+      Preconditions.checkArgument(
+          Objects.equals(agentName.pathTemplate, PROJECT),
+          "toBuilder is only supported when AgentName has the pattern of projects/{project}/agent");
       project = agentName.project;
+    }
+
+    public AgentName build() {
+      return new AgentName(this);
+    }
+  }
+
+  /** Builder for projects/{project}/locations/{location}/agent. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectLocationBuilder {
+    private String project;
+    private String location;
+
+    protected ProjectLocationBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public ProjectLocationBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationBuilder setLocation(String location) {
+      this.location = location;
+      return this;
     }
 
     public AgentName build() {

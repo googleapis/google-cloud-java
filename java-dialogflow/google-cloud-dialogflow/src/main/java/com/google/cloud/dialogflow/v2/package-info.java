@@ -25,7 +25,7 @@
  *
  * <pre>{@code
  * try (AgentsClient agentsClient = AgentsClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   Agent response = agentsClient.getAgent(parent);
  * }
  * }</pre>
@@ -116,7 +116,7 @@
  *
  * <pre>{@code
  * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
- *   EntityTypeName name = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
+ *   EntityTypeName name = EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]");
  *   EntityType response = entityTypesClient.getEntityType(name);
  * }
  * }</pre>
@@ -130,15 +130,26 @@
  *
  * <pre>{@code
  * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
- *   ListEnvironmentsRequest request =
- *       ListEnvironmentsRequest.newBuilder()
- *           .setParent(EnvironmentName.of("[PROJECT]", "[ENVIRONMENT]").toString())
- *           .setPageSize(883849137)
- *           .setPageToken("pageToken873572522")
+ *   GetEnvironmentRequest request =
+ *       GetEnvironmentRequest.newBuilder()
+ *           .setName(
+ *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
  *           .build();
- *   for (Environment element : environmentsClient.listEnvironments(request).iterateAll()) {
- *     // doThingsWith(element);
- *   }
+ *   Environment response = environmentsClient.getEnvironment(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= FulfillmentsClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [Fulfillments][google.cloud.dialogflow.v2.Fulfillment].
+ *
+ * <p>Sample for FulfillmentsClient:
+ *
+ * <pre>{@code
+ * try (FulfillmentsClient fulfillmentsClient = FulfillmentsClient.create()) {
+ *   FulfillmentName name = FulfillmentName.ofProjectName("[PROJECT]");
+ *   Fulfillment response = fulfillmentsClient.getFulfillment(name);
  * }
  * }</pre>
  *
@@ -150,7 +161,7 @@
  *
  * <pre>{@code
  * try (IntentsClient intentsClient = IntentsClient.create()) {
- *   IntentName name = IntentName.of("[PROJECT]", "[INTENT]");
+ *   IntentName name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
  *   Intent response = intentsClient.getIntent(name);
  * }
  * }</pre>
@@ -216,6 +227,19 @@
  *       SessionEntityTypeName.ofProjectSessionEntityTypeName(
  *           "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
  *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= VersionsClient =======================
+ *
+ * <p>Service Description: Service for managing [Versions][google.cloud.dialogflow.v2.Version].
+ *
+ * <p>Sample for VersionsClient:
+ *
+ * <pre>{@code
+ * try (VersionsClient versionsClient = VersionsClient.create()) {
+ *   VersionName name = VersionName.ofProjectVersionName("[PROJECT]", "[VERSION]");
+ *   Version response = versionsClient.getVersion(name);
  * }
  * }</pre>
  */

@@ -32,6 +32,14 @@ public final class EnvironmentProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2_Environment_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_TextToSpeechSettings_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_TextToSpeechSettings_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_TextToSpeechSettings_SynthesizeSpeechConfigsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_TextToSpeechSettings_SynthesizeSpeechConfigsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_v2_ListEnvironmentsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2_ListEnvironmentsRequest_fieldAccessorTable;
@@ -39,6 +47,34 @@ public final class EnvironmentProto {
       internal_static_google_cloud_dialogflow_v2_ListEnvironmentsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2_ListEnvironmentsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_GetEnvironmentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_GetEnvironmentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_CreateEnvironmentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_CreateEnvironmentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_UpdateEnvironmentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_UpdateEnvironmentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_DeleteEnvironmentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_DeleteEnvironmentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_GetEnvironmentHistoryRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_GetEnvironmentHistoryRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_EnvironmentHistory_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_EnvironmentHistory_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_EnvironmentHistory_Entry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_EnvironmentHistory_Entry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -50,53 +86,130 @@ public final class EnvironmentProto {
     java.lang.String[] descriptorData = {
       "\n,google/cloud/dialogflow/v2/environment"
           + ".proto\022\032google.cloud.dialogflow.v2\032\034goog"
-          + "le/api/annotations.proto\032\037google/api/fie"
-          + "ld_behavior.proto\032\031google/api/resource.p"
-          + "roto\032\033google/protobuf/empty.proto\032 googl"
-          + "e/protobuf/field_mask.proto\032\037google/prot"
-          + "obuf/timestamp.proto\032\027google/api/client."
-          + "proto\"\367\002\n\013Environment\022\021\n\004name\030\001 \001(\tB\003\340A\003"
-          + "\022\030\n\013description\030\002 \001(\tB\003\340A\001\022\032\n\ragent_vers"
-          + "ion\030\003 \001(\tB\003\340A\001\022A\n\005state\030\004 \001(\0162-.google.c"
-          + "loud.dialogflow.v2.Environment.StateB\003\340A"
-          + "\003\0224\n\013update_time\030\005 \001(\0132\032.google.protobuf"
-          + ".TimestampB\003\340A\003\"E\n\005State\022\025\n\021STATE_UNSPEC"
-          + "IFIED\020\000\022\013\n\007STOPPED\020\001\022\013\n\007LOADING\020\002\022\013\n\007RUN"
-          + "NING\020\003:_\352A\\\n%dialogflow.googleapis.com/E"
-          + "nvironment\0223projects/{project}/agent/env"
-          + "ironments/{environment}\"\211\001\n\027ListEnvironm"
-          + "entsRequest\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\022%dia"
-          + "logflow.googleapis.com/Environment\022\026\n\tpa"
-          + "ge_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003"
-          + "\340A\001\"r\n\030ListEnvironmentsResponse\022=\n\014envir"
-          + "onments\030\001 \003(\0132\'.google.cloud.dialogflow."
-          + "v2.Environment\022\027\n\017next_page_token\030\002 \001(\t2"
-          + "\366\002\n\014Environments\022\353\001\n\020ListEnvironments\0223."
-          + "google.cloud.dialogflow.v2.ListEnvironme"
-          + "ntsRequest\0324.google.cloud.dialogflow.v2."
-          + "ListEnvironmentsResponse\"l\202\323\344\223\002f\022*/v2/{p"
-          + "arent=projects/*/agent}/environmentsZ8\0226"
-          + "/v2/{parent=projects/*/locations/*/agent"
-          + "}/environments\032x\312A\031dialogflow.googleapis"
-          + ".com\322AYhttps://www.googleapis.com/auth/c"
-          + "loud-platform,https://www.googleapis.com"
-          + "/auth/dialogflowB\237\001\n\036com.google.cloud.di"
-          + "alogflow.v2B\020EnvironmentProtoP\001ZDgoogle."
-          + "golang.org/genproto/googleapis/cloud/dia"
-          + "logflow/v2;dialogflow\370\001\001\242\002\002DF\252\002\032Google.C"
-          + "loud.Dialogflow.V2b\006proto3"
+          + "le/api/annotations.proto\032\027google/api/cli"
+          + "ent.proto\032\037google/api/field_behavior.pro"
+          + "to\032\031google/api/resource.proto\032-google/cl"
+          + "oud/dialogflow/v2/audio_config.proto\032,go"
+          + "ogle/cloud/dialogflow/v2/fulfillment.pro"
+          + "to\032\033google/protobuf/empty.proto\032 google/"
+          + "protobuf/field_mask.proto\032\037google/protob"
+          + "uf/timestamp.proto\"\336\004\n\013Environment\022\021\n\004na"
+          + "me\030\001 \001(\tB\003\340A\003\022\030\n\013description\030\002 \001(\tB\003\340A\001\022"
+          + "\032\n\ragent_version\030\003 \001(\tB\003\340A\001\022A\n\005state\030\004 \001"
+          + "(\0162-.google.cloud.dialogflow.v2.Environm"
+          + "ent.StateB\003\340A\003\0224\n\013update_time\030\005 \001(\0132\032.go"
+          + "ogle.protobuf.TimestampB\003\340A\003\022V\n\027text_to_"
+          + "speech_settings\030\007 \001(\01320.google.cloud.dia"
+          + "logflow.v2.TextToSpeechSettingsB\003\340A\001\022A\n\013"
+          + "fulfillment\030\010 \001(\0132\'.google.cloud.dialogf"
+          + "low.v2.FulfillmentB\003\340A\001\"E\n\005State\022\025\n\021STAT"
+          + "E_UNSPECIFIED\020\000\022\013\n\007STOPPED\020\001\022\013\n\007LOADING\020"
+          + "\002\022\013\n\007RUNNING\020\003:\252\001\352A\246\001\n%dialogflow.google"
+          + "apis.com/Environment\0223projects/{project}"
+          + "/agent/environments/{environment}\022Hproje"
+          + "cts/{project}/locations/{location}/agent"
+          + "/environments/{environment}\"\232\003\n\024TextToSp"
+          + "eechSettings\022\"\n\025enable_text_to_speech\030\001 "
+          + "\001(\010B\003\340A\001\022S\n\025output_audio_encoding\030\002 \001(\0162"
+          + "/.google.cloud.dialogflow.v2.OutputAudio"
+          + "EncodingB\003\340A\002\022\036\n\021sample_rate_hertz\030\003 \001(\005"
+          + "B\003\340A\001\022u\n\031synthesize_speech_configs\030\004 \003(\013"
+          + "2M.google.cloud.dialogflow.v2.TextToSpee"
+          + "chSettings.SynthesizeSpeechConfigsEntryB"
+          + "\003\340A\001\032r\n\034SynthesizeSpeechConfigsEntry\022\013\n\003"
+          + "key\030\001 \001(\t\022A\n\005value\030\002 \001(\01322.google.cloud."
+          + "dialogflow.v2.SynthesizeSpeechConfig:\0028\001"
+          + "\"\211\001\n\027ListEnvironmentsRequest\022=\n\006parent\030\001"
+          + " \001(\tB-\340A\002\372A\'\022%dialogflow.googleapis.com/"
+          + "Environment\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\np"
+          + "age_token\030\003 \001(\tB\003\340A\001\"r\n\030ListEnvironments"
+          + "Response\022=\n\014environments\030\001 \003(\0132\'.google."
+          + "cloud.dialogflow.v2.Environment\022\027\n\017next_"
+          + "page_token\030\002 \001(\t\"T\n\025GetEnvironmentReques"
+          + "t\022;\n\004name\030\001 \001(\tB-\340A\002\372A\'\n%dialogflow.goog"
+          + "leapis.com/Environment\"\271\001\n\030CreateEnviron"
+          + "mentRequest\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\022%dia"
+          + "logflow.googleapis.com/Environment\022A\n\013en"
+          + "vironment\030\002 \001(\0132\'.google.cloud.dialogflo"
+          + "w.v2.EnvironmentB\003\340A\002\022\033\n\016environment_id\030"
+          + "\003 \001(\tB\003\340A\002\"\363\001\n\030UpdateEnvironmentRequest\022"
+          + "k\n\013environment\030\001 \001(\0132\'.google.cloud.dial"
+          + "ogflow.v2.EnvironmentB-\340A\002\372A\'\n%dialogflo"
+          + "w.googleapis.com/Environment\0224\n\013update_m"
+          + "ask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340"
+          + "A\002\0224\n\'allow_load_to_draft_and_discard_ch"
+          + "anges\030\003 \001(\010B\003\340A\001\"W\n\030DeleteEnvironmentReq"
+          + "uest\022;\n\004name\030\001 \001(\tB-\340A\002\372A\'\n%dialogflow.g"
+          + "oogleapis.com/Environment\"\216\001\n\034GetEnviron"
+          + "mentHistoryRequest\022=\n\006parent\030\001 \001(\tB-\340A\002\372"
+          + "A\'\n%dialogflow.googleapis.com/Environmen"
+          + "t\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030"
+          + "\003 \001(\tB\003\340A\001\"\371\001\n\022EnvironmentHistory\022\023\n\006par"
+          + "ent\030\001 \001(\tB\003\340A\003\022J\n\007entries\030\002 \003(\01324.google"
+          + ".cloud.dialogflow.v2.EnvironmentHistory."
+          + "EntryB\003\340A\003\022\034\n\017next_page_token\030\003 \001(\tB\003\340A\003"
+          + "\032d\n\005Entry\022\025\n\ragent_version\030\001 \001(\t\022\023\n\013desc"
+          + "ription\030\002 \001(\t\022/\n\013create_time\030\003 \001(\0132\032.goo"
+          + "gle.protobuf.Timestamp2\313\014\n\014Environments\022"
+          + "\364\001\n\020ListEnvironments\0223.google.cloud.dial"
+          + "ogflow.v2.ListEnvironmentsRequest\0324.goog"
+          + "le.cloud.dialogflow.v2.ListEnvironmentsR"
+          + "esponse\"u\202\323\344\223\002f\022*/v2/{parent=projects/*/"
+          + "agent}/environmentsZ8\0226/v2/{parent=proje"
+          + "cts/*/locations/*/agent}/environments\332A\006"
+          + "parent\022\332\001\n\016GetEnvironment\0221.google.cloud"
+          + ".dialogflow.v2.GetEnvironmentRequest\032\'.g"
+          + "oogle.cloud.dialogflow.v2.Environment\"l\202"
+          + "\323\344\223\002f\022*/v2/{name=projects/*/agent/enviro"
+          + "nments/*}Z8\0226/v2/{name=projects/*/locati"
+          + "ons/*/agent/environments/*}\022\374\001\n\021CreateEn"
+          + "vironment\0224.google.cloud.dialogflow.v2.C"
+          + "reateEnvironmentRequest\032\'.google.cloud.d"
+          + "ialogflow.v2.Environment\"\207\001\202\323\344\223\002\200\001\"*/v2/"
+          + "{parent=projects/*/agent}/environments:\013"
+          + "environmentZE\"6/v2/{parent=projects/*/lo"
+          + "cations/*/agent}/environments:\013environme"
+          + "nt\022\224\002\n\021UpdateEnvironment\0224.google.cloud."
+          + "dialogflow.v2.UpdateEnvironmentRequest\032\'"
+          + ".google.cloud.dialogflow.v2.Environment\""
+          + "\237\001\202\323\344\223\002\230\00126/v2/{environment.name=project"
+          + "s/*/agent/environments/*}:\013environmentZQ"
+          + "2B/v2/{environment.name=projects/*/locat"
+          + "ions/*/agent/environments/*}:\013environmen"
+          + "t\022\317\001\n\021DeleteEnvironment\0224.google.cloud.d"
+          + "ialogflow.v2.DeleteEnvironmentRequest\032\026."
+          + "google.protobuf.Empty\"l\202\323\344\223\002f**/v2/{name"
+          + "=projects/*/agent/environments/*}Z8*6/v2"
+          + "/{name=projects/*/locations/*/agent/envi"
+          + "ronments/*}\022\204\002\n\025GetEnvironmentHistory\0228."
+          + "google.cloud.dialogflow.v2.GetEnvironmen"
+          + "tHistoryRequest\032..google.cloud.dialogflo"
+          + "w.v2.EnvironmentHistory\"\200\001\202\323\344\223\002z\0224/v2/{p"
+          + "arent=projects/*/agent/environments/*}/h"
+          + "istoryZB\022@/v2/{parent=projects/*/locatio"
+          + "ns/*/agent/environments/*}/history\032x\312A\031d"
+          + "ialogflow.googleapis.com\322AYhttps://www.g"
+          + "oogleapis.com/auth/cloud-platform,https:"
+          + "//www.googleapis.com/auth/dialogflowB\237\001\n"
+          + "\036com.google.cloud.dialogflow.v2B\020Environ"
+          + "mentProtoP\001ZDgoogle.golang.org/genproto/"
+          + "googleapis/cloud/dialogflow/v2;dialogflo"
+          + "w\370\001\001\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.dialogflow.v2.AudioConfigProto.getDescriptor(),
+              com.google.cloud.dialogflow.v2.FulfillmentProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_v2_Environment_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -104,10 +217,37 @@ public final class EnvironmentProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_Environment_descriptor,
             new java.lang.String[] {
-              "Name", "Description", "AgentVersion", "State", "UpdateTime",
+              "Name",
+              "Description",
+              "AgentVersion",
+              "State",
+              "UpdateTime",
+              "TextToSpeechSettings",
+              "Fulfillment",
+            });
+    internal_static_google_cloud_dialogflow_v2_TextToSpeechSettings_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_dialogflow_v2_TextToSpeechSettings_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_TextToSpeechSettings_descriptor,
+            new java.lang.String[] {
+              "EnableTextToSpeech",
+              "OutputAudioEncoding",
+              "SampleRateHertz",
+              "SynthesizeSpeechConfigs",
+            });
+    internal_static_google_cloud_dialogflow_v2_TextToSpeechSettings_SynthesizeSpeechConfigsEntry_descriptor =
+        internal_static_google_cloud_dialogflow_v2_TextToSpeechSettings_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_v2_TextToSpeechSettings_SynthesizeSpeechConfigsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_TextToSpeechSettings_SynthesizeSpeechConfigsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_dialogflow_v2_ListEnvironmentsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_dialogflow_v2_ListEnvironmentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_ListEnvironmentsRequest_descriptor,
@@ -115,30 +255,91 @@ public final class EnvironmentProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_dialogflow_v2_ListEnvironmentsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_dialogflow_v2_ListEnvironmentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_ListEnvironmentsResponse_descriptor,
             new java.lang.String[] {
               "Environments", "NextPageToken",
             });
+    internal_static_google_cloud_dialogflow_v2_GetEnvironmentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_dialogflow_v2_GetEnvironmentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_GetEnvironmentRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_dialogflow_v2_CreateEnvironmentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_dialogflow_v2_CreateEnvironmentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_CreateEnvironmentRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Environment", "EnvironmentId",
+            });
+    internal_static_google_cloud_dialogflow_v2_UpdateEnvironmentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_dialogflow_v2_UpdateEnvironmentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_UpdateEnvironmentRequest_descriptor,
+            new java.lang.String[] {
+              "Environment", "UpdateMask", "AllowLoadToDraftAndDiscardChanges",
+            });
+    internal_static_google_cloud_dialogflow_v2_DeleteEnvironmentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_dialogflow_v2_DeleteEnvironmentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_DeleteEnvironmentRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_dialogflow_v2_GetEnvironmentHistoryRequest_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_dialogflow_v2_GetEnvironmentHistoryRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_GetEnvironmentHistoryRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_dialogflow_v2_EnvironmentHistory_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_dialogflow_v2_EnvironmentHistory_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_EnvironmentHistory_descriptor,
+            new java.lang.String[] {
+              "Parent", "Entries", "NextPageToken",
+            });
+    internal_static_google_cloud_dialogflow_v2_EnvironmentHistory_Entry_descriptor =
+        internal_static_google_cloud_dialogflow_v2_EnvironmentHistory_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_v2_EnvironmentHistory_Entry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_EnvironmentHistory_Entry_descriptor,
+            new java.lang.String[] {
+              "AgentVersion", "Description", "CreateTime",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.dialogflow.v2.AudioConfigProto.getDescriptor();
+    com.google.cloud.dialogflow.v2.FulfillmentProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

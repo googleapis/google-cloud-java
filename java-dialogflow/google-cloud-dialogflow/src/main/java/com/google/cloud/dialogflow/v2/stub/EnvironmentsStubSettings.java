@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.v2.stub;
 
+import static com.google.cloud.dialogflow.v2.EnvironmentsClient.GetEnvironmentHistoryPagedResponse;
 import static com.google.cloud.dialogflow.v2.EnvironmentsClient.ListEnvironmentsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -40,13 +41,20 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.v2.CreateEnvironmentRequest;
+import com.google.cloud.dialogflow.v2.DeleteEnvironmentRequest;
 import com.google.cloud.dialogflow.v2.Environment;
+import com.google.cloud.dialogflow.v2.EnvironmentHistory;
+import com.google.cloud.dialogflow.v2.GetEnvironmentHistoryRequest;
+import com.google.cloud.dialogflow.v2.GetEnvironmentRequest;
 import com.google.cloud.dialogflow.v2.ListEnvironmentsRequest;
 import com.google.cloud.dialogflow.v2.ListEnvironmentsResponse;
+import com.google.cloud.dialogflow.v2.UpdateEnvironmentRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -67,16 +75,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of listEnvironments to 30 seconds:
+ * <p>For example, to set the total timeout of getEnvironment to 30 seconds:
  *
  * <pre>{@code
  * EnvironmentsStubSettings.Builder environmentsSettingsBuilder =
  *     EnvironmentsStubSettings.newBuilder();
  * environmentsSettingsBuilder
- *     .listEnvironmentsSettings()
+ *     .getEnvironmentSettings()
  *     .setRetrySettings(
  *         environmentsSettingsBuilder
- *             .listEnvironmentsSettings()
+ *             .getEnvironmentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -96,6 +104,13 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
   private final PagedCallSettings<
           ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
       listEnvironmentsSettings;
+  private final UnaryCallSettings<GetEnvironmentRequest, Environment> getEnvironmentSettings;
+  private final UnaryCallSettings<CreateEnvironmentRequest, Environment> createEnvironmentSettings;
+  private final UnaryCallSettings<UpdateEnvironmentRequest, Environment> updateEnvironmentSettings;
+  private final UnaryCallSettings<DeleteEnvironmentRequest, Empty> deleteEnvironmentSettings;
+  private final PagedCallSettings<
+          GetEnvironmentHistoryRequest, EnvironmentHistory, GetEnvironmentHistoryPagedResponse>
+      getEnvironmentHistorySettings;
 
   private static final PagedListDescriptor<
           ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
@@ -137,6 +152,46 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
             }
           };
 
+  private static final PagedListDescriptor<
+          GetEnvironmentHistoryRequest, EnvironmentHistory, EnvironmentHistory.Entry>
+      GET_ENVIRONMENT_HISTORY_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              GetEnvironmentHistoryRequest, EnvironmentHistory, EnvironmentHistory.Entry>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public GetEnvironmentHistoryRequest injectToken(
+                GetEnvironmentHistoryRequest payload, String token) {
+              return GetEnvironmentHistoryRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public GetEnvironmentHistoryRequest injectPageSize(
+                GetEnvironmentHistoryRequest payload, int pageSize) {
+              return GetEnvironmentHistoryRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(GetEnvironmentHistoryRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(EnvironmentHistory payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<EnvironmentHistory.Entry> extractResources(EnvironmentHistory payload) {
+              return payload.getEntriesList() == null
+                  ? ImmutableList.<EnvironmentHistory.Entry>of()
+                  : payload.getEntriesList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
       LIST_ENVIRONMENTS_PAGE_STR_FACT =
@@ -156,11 +211,60 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
             }
           };
 
+  private static final PagedListResponseFactory<
+          GetEnvironmentHistoryRequest, EnvironmentHistory, GetEnvironmentHistoryPagedResponse>
+      GET_ENVIRONMENT_HISTORY_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              GetEnvironmentHistoryRequest,
+              EnvironmentHistory,
+              GetEnvironmentHistoryPagedResponse>() {
+            @Override
+            public ApiFuture<GetEnvironmentHistoryPagedResponse> getFuturePagedResponse(
+                UnaryCallable<GetEnvironmentHistoryRequest, EnvironmentHistory> callable,
+                GetEnvironmentHistoryRequest request,
+                ApiCallContext context,
+                ApiFuture<EnvironmentHistory> futureResponse) {
+              PageContext<
+                      GetEnvironmentHistoryRequest, EnvironmentHistory, EnvironmentHistory.Entry>
+                  pageContext =
+                      PageContext.create(
+                          callable, GET_ENVIRONMENT_HISTORY_PAGE_STR_DESC, request, context);
+              return GetEnvironmentHistoryPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to listEnvironments. */
   public PagedCallSettings<
           ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
       listEnvironmentsSettings() {
     return listEnvironmentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getEnvironment. */
+  public UnaryCallSettings<GetEnvironmentRequest, Environment> getEnvironmentSettings() {
+    return getEnvironmentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createEnvironment. */
+  public UnaryCallSettings<CreateEnvironmentRequest, Environment> createEnvironmentSettings() {
+    return createEnvironmentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateEnvironment. */
+  public UnaryCallSettings<UpdateEnvironmentRequest, Environment> updateEnvironmentSettings() {
+    return updateEnvironmentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteEnvironment. */
+  public UnaryCallSettings<DeleteEnvironmentRequest, Empty> deleteEnvironmentSettings() {
+    return deleteEnvironmentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getEnvironmentHistory. */
+  public PagedCallSettings<
+          GetEnvironmentHistoryRequest, EnvironmentHistory, GetEnvironmentHistoryPagedResponse>
+      getEnvironmentHistorySettings() {
+    return getEnvironmentHistorySettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -233,6 +337,11 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     super(settingsBuilder);
 
     listEnvironmentsSettings = settingsBuilder.listEnvironmentsSettings().build();
+    getEnvironmentSettings = settingsBuilder.getEnvironmentSettings().build();
+    createEnvironmentSettings = settingsBuilder.createEnvironmentSettings().build();
+    updateEnvironmentSettings = settingsBuilder.updateEnvironmentSettings().build();
+    deleteEnvironmentSettings = settingsBuilder.deleteEnvironmentSettings().build();
+    getEnvironmentHistorySettings = settingsBuilder.getEnvironmentHistorySettings().build();
   }
 
   /** Builder for EnvironmentsStubSettings. */
@@ -241,6 +350,17 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     private final PagedCallSettings.Builder<
             ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
         listEnvironmentsSettings;
+    private final UnaryCallSettings.Builder<GetEnvironmentRequest, Environment>
+        getEnvironmentSettings;
+    private final UnaryCallSettings.Builder<CreateEnvironmentRequest, Environment>
+        createEnvironmentSettings;
+    private final UnaryCallSettings.Builder<UpdateEnvironmentRequest, Environment>
+        updateEnvironmentSettings;
+    private final UnaryCallSettings.Builder<DeleteEnvironmentRequest, Empty>
+        deleteEnvironmentSettings;
+    private final PagedCallSettings.Builder<
+            GetEnvironmentHistoryRequest, EnvironmentHistory, GetEnvironmentHistoryPagedResponse>
+        getEnvironmentHistorySettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -280,9 +400,21 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       super(clientContext);
 
       listEnvironmentsSettings = PagedCallSettings.newBuilder(LIST_ENVIRONMENTS_PAGE_STR_FACT);
+      getEnvironmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createEnvironmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateEnvironmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteEnvironmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getEnvironmentHistorySettings =
+          PagedCallSettings.newBuilder(GET_ENVIRONMENT_HISTORY_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(listEnvironmentsSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              listEnvironmentsSettings,
+              getEnvironmentSettings,
+              createEnvironmentSettings,
+              updateEnvironmentSettings,
+              deleteEnvironmentSettings,
+              getEnvironmentHistorySettings);
       initDefaults(this);
     }
 
@@ -290,9 +422,20 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       super(settings);
 
       listEnvironmentsSettings = settings.listEnvironmentsSettings.toBuilder();
+      getEnvironmentSettings = settings.getEnvironmentSettings.toBuilder();
+      createEnvironmentSettings = settings.createEnvironmentSettings.toBuilder();
+      updateEnvironmentSettings = settings.updateEnvironmentSettings.toBuilder();
+      deleteEnvironmentSettings = settings.deleteEnvironmentSettings.toBuilder();
+      getEnvironmentHistorySettings = settings.getEnvironmentHistorySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(listEnvironmentsSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              listEnvironmentsSettings,
+              getEnvironmentSettings,
+              createEnvironmentSettings,
+              updateEnvironmentSettings,
+              deleteEnvironmentSettings,
+              getEnvironmentHistorySettings);
     }
 
     private static Builder createDefault() {
@@ -309,6 +452,31 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     private static Builder initDefaults(Builder builder) {
       builder
           .listEnvironmentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getEnvironmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createEnvironmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateEnvironmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteEnvironmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getEnvironmentHistorySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -336,6 +504,35 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
             ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
         listEnvironmentsSettings() {
       return listEnvironmentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getEnvironment. */
+    public UnaryCallSettings.Builder<GetEnvironmentRequest, Environment> getEnvironmentSettings() {
+      return getEnvironmentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createEnvironment. */
+    public UnaryCallSettings.Builder<CreateEnvironmentRequest, Environment>
+        createEnvironmentSettings() {
+      return createEnvironmentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateEnvironment. */
+    public UnaryCallSettings.Builder<UpdateEnvironmentRequest, Environment>
+        updateEnvironmentSettings() {
+      return updateEnvironmentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEnvironment. */
+    public UnaryCallSettings.Builder<DeleteEnvironmentRequest, Empty> deleteEnvironmentSettings() {
+      return deleteEnvironmentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getEnvironmentHistory. */
+    public PagedCallSettings.Builder<
+            GetEnvironmentHistoryRequest, EnvironmentHistory, GetEnvironmentHistoryPagedResponse>
+        getEnvironmentHistorySettings() {
+      return getEnvironmentHistorySettings;
     }
 
     @Override

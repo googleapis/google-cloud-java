@@ -19,6 +19,7 @@ package com.google.cloud.dialogflow.v2;
 import com.google.api.core.BetaApi;
 import com.google.cloud.dialogflow.v2.EnvironmentsGrpc.EnvironmentsImplBase;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -75,6 +76,111 @@ public class MockEnvironmentsImpl extends EnvironmentsImplBase {
                   "Unrecognized response type %s for method ListEnvironments, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListEnvironmentsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getEnvironment(
+      GetEnvironmentRequest request, StreamObserver<Environment> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Environment) {
+      requests.add(request);
+      responseObserver.onNext(((Environment) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEnvironment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Environment.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createEnvironment(
+      CreateEnvironmentRequest request, StreamObserver<Environment> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Environment) {
+      requests.add(request);
+      responseObserver.onNext(((Environment) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateEnvironment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Environment.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateEnvironment(
+      UpdateEnvironmentRequest request, StreamObserver<Environment> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Environment) {
+      requests.add(request);
+      responseObserver.onNext(((Environment) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateEnvironment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Environment.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteEnvironment(
+      DeleteEnvironmentRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteEnvironment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getEnvironmentHistory(
+      GetEnvironmentHistoryRequest request, StreamObserver<EnvironmentHistory> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EnvironmentHistory) {
+      requests.add(request);
+      responseObserver.onNext(((EnvironmentHistory) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEnvironmentHistory, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EnvironmentHistory.class.getName(),
                   Exception.class.getName())));
     }
   }

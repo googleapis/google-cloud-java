@@ -37,6 +37,12 @@ public class SessionEntityTypeName implements ResourceName {
   private static final PathTemplate PROJECT_ENVIRONMENT_USER_SESSION_ENTITY_TYPE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}/entityTypes/{entity_type}");
+  private static final PathTemplate PROJECT_LOCATION_SESSION_ENTITY_TYPE =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/agent/sessions/{session}/entityTypes/{entity_type}");
+  private static final PathTemplate PROJECT_LOCATION_ENVIRONMENT_USER_SESSION_ENTITY_TYPE =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}/entityTypes/{entity_type}");
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
@@ -45,6 +51,7 @@ public class SessionEntityTypeName implements ResourceName {
   private final String entityType;
   private final String environment;
   private final String user;
+  private final String location;
 
   @Deprecated
   protected SessionEntityTypeName() {
@@ -53,6 +60,7 @@ public class SessionEntityTypeName implements ResourceName {
     entityType = null;
     environment = null;
     user = null;
+    location = null;
   }
 
   private SessionEntityTypeName(Builder builder) {
@@ -61,6 +69,7 @@ public class SessionEntityTypeName implements ResourceName {
     entityType = Preconditions.checkNotNull(builder.getEntityType());
     environment = null;
     user = null;
+    location = null;
     pathTemplate = PROJECT_SESSION_ENTITY_TYPE;
   }
 
@@ -70,7 +79,28 @@ public class SessionEntityTypeName implements ResourceName {
     user = Preconditions.checkNotNull(builder.getUser());
     session = Preconditions.checkNotNull(builder.getSession());
     entityType = Preconditions.checkNotNull(builder.getEntityType());
+    location = null;
     pathTemplate = PROJECT_ENVIRONMENT_USER_SESSION_ENTITY_TYPE;
+  }
+
+  private SessionEntityTypeName(ProjectLocationSessionEntityTypeBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    session = Preconditions.checkNotNull(builder.getSession());
+    entityType = Preconditions.checkNotNull(builder.getEntityType());
+    environment = null;
+    user = null;
+    pathTemplate = PROJECT_LOCATION_SESSION_ENTITY_TYPE;
+  }
+
+  private SessionEntityTypeName(ProjectLocationEnvironmentUserSessionEntityTypeBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    environment = Preconditions.checkNotNull(builder.getEnvironment());
+    user = Preconditions.checkNotNull(builder.getUser());
+    session = Preconditions.checkNotNull(builder.getSession());
+    entityType = Preconditions.checkNotNull(builder.getEntityType());
+    pathTemplate = PROJECT_LOCATION_ENVIRONMENT_USER_SESSION_ENTITY_TYPE;
   }
 
   public String getProject() {
@@ -93,6 +123,10 @@ public class SessionEntityTypeName implements ResourceName {
     return user;
   }
 
+  public String getLocation() {
+    return location;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
   }
@@ -106,6 +140,18 @@ public class SessionEntityTypeName implements ResourceName {
   public static ProjectEnvironmentUserSessionEntityTypeBuilder
       newProjectEnvironmentUserSessionEntityTypeBuilder() {
     return new ProjectEnvironmentUserSessionEntityTypeBuilder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectLocationSessionEntityTypeBuilder
+      newProjectLocationSessionEntityTypeBuilder() {
+    return new ProjectLocationSessionEntityTypeBuilder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectLocationEnvironmentUserSessionEntityTypeBuilder
+      newProjectLocationEnvironmentUserSessionEntityTypeBuilder() {
+    return new ProjectLocationEnvironmentUserSessionEntityTypeBuilder();
   }
 
   public Builder toBuilder() {
@@ -127,6 +173,35 @@ public class SessionEntityTypeName implements ResourceName {
       String project, String environment, String user, String session, String entityType) {
     return newProjectEnvironmentUserSessionEntityTypeBuilder()
         .setProject(project)
+        .setEnvironment(environment)
+        .setUser(user)
+        .setSession(session)
+        .setEntityType(entityType)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static SessionEntityTypeName ofProjectLocationSessionEntityTypeName(
+      String project, String location, String session, String entityType) {
+    return newProjectLocationSessionEntityTypeBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setSession(session)
+        .setEntityType(entityType)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static SessionEntityTypeName ofProjectLocationEnvironmentUserSessionEntityTypeName(
+      String project,
+      String location,
+      String environment,
+      String user,
+      String session,
+      String entityType) {
+    return newProjectLocationEnvironmentUserSessionEntityTypeBuilder()
+        .setProject(project)
+        .setLocation(location)
         .setEnvironment(environment)
         .setUser(user)
         .setSession(session)
@@ -167,6 +242,37 @@ public class SessionEntityTypeName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationSessionEntityTypeName(
+      String project, String location, String session, String entityType) {
+    return newProjectLocationSessionEntityTypeBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setSession(session)
+        .setEntityType(entityType)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationEnvironmentUserSessionEntityTypeName(
+      String project,
+      String location,
+      String environment,
+      String user,
+      String session,
+      String entityType) {
+    return newProjectLocationEnvironmentUserSessionEntityTypeBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setEnvironment(environment)
+        .setUser(user)
+        .setSession(session)
+        .setEntityType(entityType)
+        .build()
+        .toString();
+  }
+
   public static SessionEntityTypeName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
@@ -180,6 +286,23 @@ public class SessionEntityTypeName implements ResourceName {
           PROJECT_ENVIRONMENT_USER_SESSION_ENTITY_TYPE.match(formattedString);
       return ofProjectEnvironmentUserSessionEntityTypeName(
           matchMap.get("project"),
+          matchMap.get("environment"),
+          matchMap.get("user"),
+          matchMap.get("session"),
+          matchMap.get("entity_type"));
+    } else if (PROJECT_LOCATION_SESSION_ENTITY_TYPE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_SESSION_ENTITY_TYPE.match(formattedString);
+      return ofProjectLocationSessionEntityTypeName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("session"),
+          matchMap.get("entity_type"));
+    } else if (PROJECT_LOCATION_ENVIRONMENT_USER_SESSION_ENTITY_TYPE.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_ENVIRONMENT_USER_SESSION_ENTITY_TYPE.match(formattedString);
+      return ofProjectLocationEnvironmentUserSessionEntityTypeName(
+          matchMap.get("project"),
+          matchMap.get("location"),
           matchMap.get("environment"),
           matchMap.get("user"),
           matchMap.get("session"),
@@ -211,7 +334,9 @@ public class SessionEntityTypeName implements ResourceName {
 
   public static boolean isParsableFrom(String formattedString) {
     return PROJECT_SESSION_ENTITY_TYPE.matches(formattedString)
-        || PROJECT_ENVIRONMENT_USER_SESSION_ENTITY_TYPE.matches(formattedString);
+        || PROJECT_ENVIRONMENT_USER_SESSION_ENTITY_TYPE.matches(formattedString)
+        || PROJECT_LOCATION_SESSION_ENTITY_TYPE.matches(formattedString)
+        || PROJECT_LOCATION_ENVIRONMENT_USER_SESSION_ENTITY_TYPE.matches(formattedString);
   }
 
   @Override
@@ -234,6 +359,9 @@ public class SessionEntityTypeName implements ResourceName {
           }
           if (user != null) {
             fieldMapBuilder.put("user", user);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -262,7 +390,8 @@ public class SessionEntityTypeName implements ResourceName {
           && Objects.equals(this.session, that.session)
           && Objects.equals(this.entityType, that.entityType)
           && Objects.equals(this.environment, that.environment)
-          && Objects.equals(this.user, that.user);
+          && Objects.equals(this.user, that.user)
+          && Objects.equals(this.location, that.location);
     }
     return false;
   }
@@ -282,6 +411,8 @@ public class SessionEntityTypeName implements ResourceName {
     h ^= Objects.hashCode(environment);
     h *= 1000003;
     h ^= Objects.hashCode(user);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
     return h;
   }
 
@@ -389,6 +520,135 @@ public class SessionEntityTypeName implements ResourceName {
     }
 
     public ProjectEnvironmentUserSessionEntityTypeBuilder setEntityType(String entityType) {
+      this.entityType = entityType;
+      return this;
+    }
+
+    public SessionEntityTypeName build() {
+      return new SessionEntityTypeName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/agent/sessions/{session}/entityTypes/{entity_type}.
+   */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectLocationSessionEntityTypeBuilder {
+    private String project;
+    private String location;
+    private String session;
+    private String entityType;
+
+    protected ProjectLocationSessionEntityTypeBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getSession() {
+      return session;
+    }
+
+    public String getEntityType() {
+      return entityType;
+    }
+
+    public ProjectLocationSessionEntityTypeBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationSessionEntityTypeBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationSessionEntityTypeBuilder setSession(String session) {
+      this.session = session;
+      return this;
+    }
+
+    public ProjectLocationSessionEntityTypeBuilder setEntityType(String entityType) {
+      this.entityType = entityType;
+      return this;
+    }
+
+    public SessionEntityTypeName build() {
+      return new SessionEntityTypeName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}/entityTypes/{entity_type}.
+   */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectLocationEnvironmentUserSessionEntityTypeBuilder {
+    private String project;
+    private String location;
+    private String environment;
+    private String user;
+    private String session;
+    private String entityType;
+
+    protected ProjectLocationEnvironmentUserSessionEntityTypeBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getEnvironment() {
+      return environment;
+    }
+
+    public String getUser() {
+      return user;
+    }
+
+    public String getSession() {
+      return session;
+    }
+
+    public String getEntityType() {
+      return entityType;
+    }
+
+    public ProjectLocationEnvironmentUserSessionEntityTypeBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationEnvironmentUserSessionEntityTypeBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationEnvironmentUserSessionEntityTypeBuilder setEnvironment(
+        String environment) {
+      this.environment = environment;
+      return this;
+    }
+
+    public ProjectLocationEnvironmentUserSessionEntityTypeBuilder setUser(String user) {
+      this.user = user;
+      return this;
+    }
+
+    public ProjectLocationEnvironmentUserSessionEntityTypeBuilder setSession(String session) {
+      this.session = session;
+      return this;
+    }
+
+    public ProjectLocationEnvironmentUserSessionEntityTypeBuilder setEntityType(String entityType) {
       this.entityType = entityType;
       return this;
     }

@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.stub.EnvironmentsStub;
 import com.google.cloud.dialogflow.v2.stub.EnvironmentsStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -43,15 +44,12 @@ import javax.annotation.Generated;
  *
  * <pre>{@code
  * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
- *   ListEnvironmentsRequest request =
- *       ListEnvironmentsRequest.newBuilder()
- *           .setParent(EnvironmentName.of("[PROJECT]", "[ENVIRONMENT]").toString())
- *           .setPageSize(883849137)
- *           .setPageToken("pageToken873572522")
+ *   GetEnvironmentRequest request =
+ *       GetEnvironmentRequest.newBuilder()
+ *           .setName(
+ *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
  *           .build();
- *   for (Environment element : environmentsClient.listEnvironments(request).iterateAll()) {
- *     // doThingsWith(element);
- *   }
+ *   Environment response = environmentsClient.getEnvironment(request);
  * }
  * }</pre>
  *
@@ -161,9 +159,65 @@ public class EnvironmentsClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   AgentName parent = AgentName.ofProjectName("[PROJECT]");
+   *   for (Environment element : environmentsClient.listEnvironments(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The agent to list all environments from. Format: -
+   *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEnvironmentsPagedResponse listEnvironments(AgentName parent) {
+    ListEnvironmentsRequest request =
+        ListEnvironmentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listEnvironments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the list of all non-draft environments of the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   String parent =
+   *       EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString();
+   *   for (Environment element : environmentsClient.listEnvironments(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The agent to list all environments from. Format: -
+   *     `projects/&lt;Project ID&gt;/agent` - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/agent`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEnvironmentsPagedResponse listEnvironments(String parent) {
+    ListEnvironmentsRequest request =
+        ListEnvironmentsRequest.newBuilder().setParent(parent).build();
+    return listEnvironments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the list of all non-draft environments of the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   ListEnvironmentsRequest request =
    *       ListEnvironmentsRequest.newBuilder()
-   *           .setParent(EnvironmentName.of("[PROJECT]", "[ENVIRONMENT]").toString())
+   *           .setParent(
+   *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -190,7 +244,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   ListEnvironmentsRequest request =
    *       ListEnvironmentsRequest.newBuilder()
-   *           .setParent(EnvironmentName.of("[PROJECT]", "[ENVIRONMENT]").toString())
+   *           .setParent(
+   *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -218,7 +273,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   ListEnvironmentsRequest request =
    *       ListEnvironmentsRequest.newBuilder()
-   *           .setParent(EnvironmentName.of("[PROJECT]", "[ENVIRONMENT]").toString())
+   *           .setParent(
+   *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -241,6 +297,316 @@ public class EnvironmentsClient implements BackgroundResource {
   public final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
       listEnvironmentsCallable() {
     return stub.listEnvironmentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the specified agent environment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   GetEnvironmentRequest request =
+   *       GetEnvironmentRequest.newBuilder()
+   *           .setName(
+   *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
+   *           .build();
+   *   Environment response = environmentsClient.getEnvironment(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Environment getEnvironment(GetEnvironmentRequest request) {
+    return getEnvironmentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the specified agent environment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   GetEnvironmentRequest request =
+   *       GetEnvironmentRequest.newBuilder()
+   *           .setName(
+   *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
+   *           .build();
+   *   ApiFuture<Environment> future =
+   *       environmentsClient.getEnvironmentCallable().futureCall(request);
+   *   // Do something.
+   *   Environment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetEnvironmentRequest, Environment> getEnvironmentCallable() {
+    return stub.getEnvironmentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an agent environment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   CreateEnvironmentRequest request =
+   *       CreateEnvironmentRequest.newBuilder()
+   *           .setParent(
+   *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
+   *           .setEnvironment(Environment.newBuilder().build())
+   *           .setEnvironmentId("environmentId-950205810")
+   *           .build();
+   *   Environment response = environmentsClient.createEnvironment(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Environment createEnvironment(CreateEnvironmentRequest request) {
+    return createEnvironmentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an agent environment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   CreateEnvironmentRequest request =
+   *       CreateEnvironmentRequest.newBuilder()
+   *           .setParent(
+   *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
+   *           .setEnvironment(Environment.newBuilder().build())
+   *           .setEnvironmentId("environmentId-950205810")
+   *           .build();
+   *   ApiFuture<Environment> future =
+   *       environmentsClient.createEnvironmentCallable().futureCall(request);
+   *   // Do something.
+   *   Environment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateEnvironmentRequest, Environment> createEnvironmentCallable() {
+    return stub.createEnvironmentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified agent environment.
+   *
+   * <p>This method allows you to deploy new agent versions into the environment. When an
+   * environment is pointed to a new agent version by setting `environment.agent_version`, the
+   * environment is temporarily set to the `LOADING` state. During that time, the environment keeps
+   * on serving the previous version of the agent. After the new agent version is done loading, the
+   * environment is set back to the `RUNNING` state. You can use "-" as Environment ID in
+   * environment name to update version in "draft" environment. WARNING: this will negate all recent
+   * changes to draft and can't be undone. You may want to save the draft to a version before
+   * calling this function.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   UpdateEnvironmentRequest request =
+   *       UpdateEnvironmentRequest.newBuilder()
+   *           .setEnvironment(Environment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAllowLoadToDraftAndDiscardChanges(true)
+   *           .build();
+   *   Environment response = environmentsClient.updateEnvironment(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Environment updateEnvironment(UpdateEnvironmentRequest request) {
+    return updateEnvironmentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified agent environment.
+   *
+   * <p>This method allows you to deploy new agent versions into the environment. When an
+   * environment is pointed to a new agent version by setting `environment.agent_version`, the
+   * environment is temporarily set to the `LOADING` state. During that time, the environment keeps
+   * on serving the previous version of the agent. After the new agent version is done loading, the
+   * environment is set back to the `RUNNING` state. You can use "-" as Environment ID in
+   * environment name to update version in "draft" environment. WARNING: this will negate all recent
+   * changes to draft and can't be undone. You may want to save the draft to a version before
+   * calling this function.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   UpdateEnvironmentRequest request =
+   *       UpdateEnvironmentRequest.newBuilder()
+   *           .setEnvironment(Environment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAllowLoadToDraftAndDiscardChanges(true)
+   *           .build();
+   *   ApiFuture<Environment> future =
+   *       environmentsClient.updateEnvironmentCallable().futureCall(request);
+   *   // Do something.
+   *   Environment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateEnvironmentRequest, Environment> updateEnvironmentCallable() {
+    return stub.updateEnvironmentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified agent environment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   DeleteEnvironmentRequest request =
+   *       DeleteEnvironmentRequest.newBuilder()
+   *           .setName(
+   *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
+   *           .build();
+   *   environmentsClient.deleteEnvironment(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEnvironment(DeleteEnvironmentRequest request) {
+    deleteEnvironmentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified agent environment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   DeleteEnvironmentRequest request =
+   *       DeleteEnvironmentRequest.newBuilder()
+   *           .setName(
+   *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = environmentsClient.deleteEnvironmentCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteEnvironmentRequest, Empty> deleteEnvironmentCallable() {
+    return stub.deleteEnvironmentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the history of the specified environment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   GetEnvironmentHistoryRequest request =
+   *       GetEnvironmentHistoryRequest.newBuilder()
+   *           .setParent(
+   *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (EnvironmentHistory.Entry element :
+   *       environmentsClient.getEnvironmentHistory(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GetEnvironmentHistoryPagedResponse getEnvironmentHistory(
+      GetEnvironmentHistoryRequest request) {
+    return getEnvironmentHistoryPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the history of the specified environment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   GetEnvironmentHistoryRequest request =
+   *       GetEnvironmentHistoryRequest.newBuilder()
+   *           .setParent(
+   *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<EnvironmentHistory.Entry> future =
+   *       environmentsClient.getEnvironmentHistoryPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (EnvironmentHistory.Entry element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetEnvironmentHistoryRequest, GetEnvironmentHistoryPagedResponse>
+      getEnvironmentHistoryPagedCallable() {
+    return stub.getEnvironmentHistoryPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the history of the specified environment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   GetEnvironmentHistoryRequest request =
+   *       GetEnvironmentHistoryRequest.newBuilder()
+   *           .setParent(
+   *               EnvironmentName.ofProjectEnvironmentName("[PROJECT]", "[ENVIRONMENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     EnvironmentHistory response =
+   *         environmentsClient.getEnvironmentHistoryCallable().call(request);
+   *     for (EnvironmentHistory.Entry element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetEnvironmentHistoryRequest, EnvironmentHistory>
+      getEnvironmentHistoryCallable() {
+    return stub.getEnvironmentHistoryCallable();
   }
 
   @Override
@@ -352,6 +718,95 @@ public class EnvironmentsClient implements BackgroundResource {
     protected ListEnvironmentsFixedSizeCollection createCollection(
         List<ListEnvironmentsPage> pages, int collectionSize) {
       return new ListEnvironmentsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class GetEnvironmentHistoryPagedResponse
+      extends AbstractPagedListResponse<
+          GetEnvironmentHistoryRequest,
+          EnvironmentHistory,
+          EnvironmentHistory.Entry,
+          GetEnvironmentHistoryPage,
+          GetEnvironmentHistoryFixedSizeCollection> {
+
+    public static ApiFuture<GetEnvironmentHistoryPagedResponse> createAsync(
+        PageContext<GetEnvironmentHistoryRequest, EnvironmentHistory, EnvironmentHistory.Entry>
+            context,
+        ApiFuture<EnvironmentHistory> futureResponse) {
+      ApiFuture<GetEnvironmentHistoryPage> futurePage =
+          GetEnvironmentHistoryPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<GetEnvironmentHistoryPage, GetEnvironmentHistoryPagedResponse>() {
+            @Override
+            public GetEnvironmentHistoryPagedResponse apply(GetEnvironmentHistoryPage input) {
+              return new GetEnvironmentHistoryPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private GetEnvironmentHistoryPagedResponse(GetEnvironmentHistoryPage page) {
+      super(page, GetEnvironmentHistoryFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class GetEnvironmentHistoryPage
+      extends AbstractPage<
+          GetEnvironmentHistoryRequest,
+          EnvironmentHistory,
+          EnvironmentHistory.Entry,
+          GetEnvironmentHistoryPage> {
+
+    private GetEnvironmentHistoryPage(
+        PageContext<GetEnvironmentHistoryRequest, EnvironmentHistory, EnvironmentHistory.Entry>
+            context,
+        EnvironmentHistory response) {
+      super(context, response);
+    }
+
+    private static GetEnvironmentHistoryPage createEmptyPage() {
+      return new GetEnvironmentHistoryPage(null, null);
+    }
+
+    @Override
+    protected GetEnvironmentHistoryPage createPage(
+        PageContext<GetEnvironmentHistoryRequest, EnvironmentHistory, EnvironmentHistory.Entry>
+            context,
+        EnvironmentHistory response) {
+      return new GetEnvironmentHistoryPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<GetEnvironmentHistoryPage> createPageAsync(
+        PageContext<GetEnvironmentHistoryRequest, EnvironmentHistory, EnvironmentHistory.Entry>
+            context,
+        ApiFuture<EnvironmentHistory> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class GetEnvironmentHistoryFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          GetEnvironmentHistoryRequest,
+          EnvironmentHistory,
+          EnvironmentHistory.Entry,
+          GetEnvironmentHistoryPage,
+          GetEnvironmentHistoryFixedSizeCollection> {
+
+    private GetEnvironmentHistoryFixedSizeCollection(
+        List<GetEnvironmentHistoryPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static GetEnvironmentHistoryFixedSizeCollection createEmptyCollection() {
+      return new GetEnvironmentHistoryFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected GetEnvironmentHistoryFixedSizeCollection createCollection(
+        List<GetEnvironmentHistoryPage> pages, int collectionSize) {
+      return new GetEnvironmentHistoryFixedSizeCollection(pages, collectionSize);
     }
   }
 }
