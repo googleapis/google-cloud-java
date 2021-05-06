@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -268,19 +269,30 @@ public class DynamicFlowControlCallableTest {
 
   private void createFlowControlEvent(final FlowController flowController) throws Exception {
     flowController.reserve(INITIAL_ELEMENT, 0);
+    final AtomicBoolean threadStarted = new AtomicBoolean(false);
     Thread t =
         new Thread(
             new Runnable() {
               @Override
               public void run() {
                 try {
+                  threadStarted.set(true);
                   flowController.reserve(1, 0);
                 } catch (Exception e) {
                 }
               }
             });
     t.start();
-    Thread.sleep(10);
+    // Wait 5 seconds for the thread to start, and 50 milliseconds after it's started to make sure
+    // flowController.reserve(1, 0) is blocked and creates a throttling event. It should never take
+    // so long.
+    for (int i = 0; i < 1000; i++) {
+      if (threadStarted.get()) {
+        break;
+      }
+      Thread.sleep(5);
+    }
+    Thread.sleep(50);
     flowController.release(INITIAL_ELEMENT, 0);
     t.join();
     flowController.release(1, 0);
