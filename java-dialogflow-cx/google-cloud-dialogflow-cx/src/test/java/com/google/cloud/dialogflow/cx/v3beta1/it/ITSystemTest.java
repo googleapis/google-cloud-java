@@ -103,6 +103,7 @@ public class ITSystemTest {
   private static String agentName;
   private static String entityTypesName;
   private static String flowName;
+  private static String trainFlowName;
   private static String intentsName;
   private static String pageName;
   private static String transitionRouteGroupName;
@@ -172,6 +173,17 @@ public class ITSystemTest {
         CreateFlowRequest.newBuilder().setParent(agentName).setFlow(flow).build();
     Flow flowResponse = flowsClient.createFlow(createFlowRequest);
     flowName = flowResponse.getName();
+
+    Flow trainFlow =
+        Flow.newBuilder()
+            .setNluSettings(NLUSETTINGS)
+            .setDisplayName(DISPLAY_NAME)
+            .setDescription(DESCRIPTION)
+            .build();
+    CreateFlowRequest createTrainFlowRequest =
+        CreateFlowRequest.newBuilder().setParent(agentName).setFlow(trainFlow).build();
+    Flow trainFlowResponse = flowsClient.createFlow(createTrainFlowRequest);
+    trainFlowName = trainFlowResponse.getName();
 
     /* create intents */
     intentsClient = IntentsClient.create();
@@ -245,6 +257,10 @@ public class ITSystemTest {
     /* delete flows */
     DeleteFlowRequest deleteFlowRequest = DeleteFlowRequest.newBuilder().setName(flowName).build();
     flowsClient.deleteFlow(deleteFlowRequest);
+
+    DeleteFlowRequest deleteTrainFlowRequest =
+        DeleteFlowRequest.newBuilder().setName(trainFlowName).build();
+    flowsClient.deleteFlow(deleteTrainFlowRequest);
     flowsClient.close();
 
     /* delete entity types */
@@ -381,7 +397,7 @@ public class ITSystemTest {
   @Test
   public void trainFlowTest() throws ExecutionException, InterruptedException {
     Empty expectedResponse = Empty.newBuilder().build();
-    Empty response = flowsClient.trainFlowAsync(flowName).get();
+    Empty response = flowsClient.trainFlowAsync(trainFlowName).get();
     assertEquals(expectedResponse, response);
   }
 
