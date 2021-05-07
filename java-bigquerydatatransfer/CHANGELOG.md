@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.12](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.2.11...v1.2.12) (2021-05-07)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java-util to v3.16.0 ([#807](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/807)) ([87b8e74](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/87b8e742f5a415350531905b04d0507f01423bd5))
+
 ### [1.2.11](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v1.2.10...v1.2.11) (2021-05-01)
 
 
