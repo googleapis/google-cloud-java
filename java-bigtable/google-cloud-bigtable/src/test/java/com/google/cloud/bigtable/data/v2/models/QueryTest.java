@@ -123,7 +123,7 @@ public class QueryTest {
     assertThat(actualException).isInstanceOf(NullPointerException.class);
 
     actualException = null;
-    int maxFilterSize = 20 * 1024 * 1024;
+    int maxFilterSize = 20 * 1024;
     ByteString largeValue = ByteString.copyFrom(new byte[maxFilterSize + 1]);
 
     try {
@@ -131,7 +131,7 @@ public class QueryTest {
     } catch (Exception ex) {
       actualException = ex;
     }
-    assertThat(actualException).hasMessageThat().contains("filter size can't be more than 20MB");
+    assertThat(actualException).hasMessageThat().contains("filter size can't be more than 20KB");
   }
 
   @Test

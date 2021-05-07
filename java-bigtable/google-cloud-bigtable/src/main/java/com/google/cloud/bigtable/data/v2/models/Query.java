@@ -43,8 +43,8 @@ import javax.annotation.Nonnull;
 public final class Query implements Serializable {
   private static final long serialVersionUID = -316972783499434755L;
 
-  // bigtable can server the largest filter size of 20MB.
-  private static final int MAX_FILTER_SIZE = 20 * 1024 * 1024;
+  // bigtable can server the largest filter size of 20KB.
+  private static final int MAX_FILTER_SIZE = 20 * 1024;
 
   private final String tableId;
   private transient ReadRowsRequest.Builder builder = ReadRowsRequest.newBuilder();
@@ -170,7 +170,7 @@ public final class Query implements Serializable {
 
     RowFilter rowFilter = filter.toProto();
     Preconditions.checkArgument(
-        rowFilter.getSerializedSize() < MAX_FILTER_SIZE, "filter size can't be more than 20MB");
+        rowFilter.getSerializedSize() < MAX_FILTER_SIZE, "filter size can't be more than 20KB");
 
     builder.setFilter(rowFilter);
     return this;
