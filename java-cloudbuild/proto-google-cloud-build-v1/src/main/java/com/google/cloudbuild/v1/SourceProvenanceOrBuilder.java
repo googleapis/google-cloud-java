@@ -103,6 +103,54 @@ public interface SourceProvenanceOrBuilder
    *
    *
    * <pre>
+   * A copy of the build's `source.storage_source_manifest`, if exists, with any
+   * revisions resolved.
+   * This feature is in Preview.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.StorageSourceManifest resolved_storage_source_manifest = 9;
+   * </code>
+   *
+   * @return Whether the resolvedStorageSourceManifest field is set.
+   */
+  boolean hasResolvedStorageSourceManifest();
+  /**
+   *
+   *
+   * <pre>
+   * A copy of the build's `source.storage_source_manifest`, if exists, with any
+   * revisions resolved.
+   * This feature is in Preview.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.StorageSourceManifest resolved_storage_source_manifest = 9;
+   * </code>
+   *
+   * @return The resolvedStorageSourceManifest.
+   */
+  com.google.cloudbuild.v1.StorageSourceManifest getResolvedStorageSourceManifest();
+  /**
+   *
+   *
+   * <pre>
+   * A copy of the build's `source.storage_source_manifest`, if exists, with any
+   * revisions resolved.
+   * This feature is in Preview.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.StorageSourceManifest resolved_storage_source_manifest = 9;
+   * </code>
+   */
+  com.google.cloudbuild.v1.StorageSourceManifestOrBuilder
+      getResolvedStorageSourceManifestOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Hash(es) of the build source, which can be used to verify that
    * the original source integrity was maintained in the build. Note that
    * `FileHashes` will only be populated if `BuildOptions` has requested a

@@ -96,5 +96,43 @@ public interface SourceOrBuilder
    */
   com.google.cloudbuild.v1.RepoSourceOrBuilder getRepoSourceOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * If provided, get the source from this manifest in Google Cloud Storage.
+   * This feature is in Preview.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.StorageSourceManifest storage_source_manifest = 8;</code>
+   *
+   * @return Whether the storageSourceManifest field is set.
+   */
+  boolean hasStorageSourceManifest();
+  /**
+   *
+   *
+   * <pre>
+   * If provided, get the source from this manifest in Google Cloud Storage.
+   * This feature is in Preview.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.StorageSourceManifest storage_source_manifest = 8;</code>
+   *
+   * @return The storageSourceManifest.
+   */
+  com.google.cloudbuild.v1.StorageSourceManifest getStorageSourceManifest();
+  /**
+   *
+   *
+   * <pre>
+   * If provided, get the source from this manifest in Google Cloud Storage.
+   * This feature is in Preview.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.StorageSourceManifest storage_source_manifest = 8;</code>
+   */
+  com.google.cloudbuild.v1.StorageSourceManifestOrBuilder getStorageSourceManifestOrBuilder();
+
   public com.google.cloudbuild.v1.Source.SourceCase getSourceCase();
 }

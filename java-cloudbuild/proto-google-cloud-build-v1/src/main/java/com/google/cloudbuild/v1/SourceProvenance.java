@@ -118,6 +118,22 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
 
               break;
             }
+          case 74:
+            {
+              com.google.cloudbuild.v1.StorageSourceManifest.Builder subBuilder = null;
+              if (resolvedStorageSourceManifest_ != null) {
+                subBuilder = resolvedStorageSourceManifest_.toBuilder();
+              }
+              resolvedStorageSourceManifest_ =
+                  input.readMessage(
+                      com.google.cloudbuild.v1.StorageSourceManifest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(resolvedStorageSourceManifest_);
+                resolvedStorageSourceManifest_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -263,6 +279,67 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloudbuild.v1.RepoSourceOrBuilder getResolvedRepoSourceOrBuilder() {
     return getResolvedRepoSource();
+  }
+
+  public static final int RESOLVED_STORAGE_SOURCE_MANIFEST_FIELD_NUMBER = 9;
+  private com.google.cloudbuild.v1.StorageSourceManifest resolvedStorageSourceManifest_;
+  /**
+   *
+   *
+   * <pre>
+   * A copy of the build's `source.storage_source_manifest`, if exists, with any
+   * revisions resolved.
+   * This feature is in Preview.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.StorageSourceManifest resolved_storage_source_manifest = 9;
+   * </code>
+   *
+   * @return Whether the resolvedStorageSourceManifest field is set.
+   */
+  @java.lang.Override
+  public boolean hasResolvedStorageSourceManifest() {
+    return resolvedStorageSourceManifest_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A copy of the build's `source.storage_source_manifest`, if exists, with any
+   * revisions resolved.
+   * This feature is in Preview.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.StorageSourceManifest resolved_storage_source_manifest = 9;
+   * </code>
+   *
+   * @return The resolvedStorageSourceManifest.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.StorageSourceManifest getResolvedStorageSourceManifest() {
+    return resolvedStorageSourceManifest_ == null
+        ? com.google.cloudbuild.v1.StorageSourceManifest.getDefaultInstance()
+        : resolvedStorageSourceManifest_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A copy of the build's `source.storage_source_manifest`, if exists, with any
+   * revisions resolved.
+   * This feature is in Preview.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.StorageSourceManifest resolved_storage_source_manifest = 9;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.StorageSourceManifestOrBuilder
+      getResolvedStorageSourceManifestOrBuilder() {
+    return getResolvedStorageSourceManifest();
   }
 
   public static final int FILE_HASHES_FIELD_NUMBER = 4;
@@ -428,6 +505,9 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     if (resolvedRepoSource_ != null) {
       output.writeMessage(6, getResolvedRepoSource());
     }
+    if (resolvedStorageSourceManifest_ != null) {
+      output.writeMessage(9, getResolvedStorageSourceManifest());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -455,6 +535,11 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     if (resolvedRepoSource_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getResolvedRepoSource());
     }
+    if (resolvedStorageSourceManifest_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, getResolvedStorageSourceManifest());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -479,6 +564,12 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     if (hasResolvedRepoSource()) {
       if (!getResolvedRepoSource().equals(other.getResolvedRepoSource())) return false;
     }
+    if (hasResolvedStorageSourceManifest() != other.hasResolvedStorageSourceManifest())
+      return false;
+    if (hasResolvedStorageSourceManifest()) {
+      if (!getResolvedStorageSourceManifest().equals(other.getResolvedStorageSourceManifest()))
+        return false;
+    }
     if (!internalGetFileHashes().equals(other.internalGetFileHashes())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -498,6 +589,10 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     if (hasResolvedRepoSource()) {
       hash = (37 * hash) + RESOLVED_REPO_SOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getResolvedRepoSource().hashCode();
+    }
+    if (hasResolvedStorageSourceManifest()) {
+      hash = (37 * hash) + RESOLVED_STORAGE_SOURCE_MANIFEST_FIELD_NUMBER;
+      hash = (53 * hash) + getResolvedStorageSourceManifest().hashCode();
     }
     if (!internalGetFileHashes().getMap().isEmpty()) {
       hash = (37 * hash) + FILE_HASHES_FIELD_NUMBER;
@@ -681,6 +776,12 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
         resolvedRepoSource_ = null;
         resolvedRepoSourceBuilder_ = null;
       }
+      if (resolvedStorageSourceManifestBuilder_ == null) {
+        resolvedStorageSourceManifest_ = null;
+      } else {
+        resolvedStorageSourceManifest_ = null;
+        resolvedStorageSourceManifestBuilder_ = null;
+      }
       internalGetMutableFileHashes().clear();
       return this;
     }
@@ -719,6 +820,11 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
         result.resolvedRepoSource_ = resolvedRepoSource_;
       } else {
         result.resolvedRepoSource_ = resolvedRepoSourceBuilder_.build();
+      }
+      if (resolvedStorageSourceManifestBuilder_ == null) {
+        result.resolvedStorageSourceManifest_ = resolvedStorageSourceManifest_;
+      } else {
+        result.resolvedStorageSourceManifest_ = resolvedStorageSourceManifestBuilder_.build();
       }
       result.fileHashes_ = internalGetFileHashes();
       result.fileHashes_.makeImmutable();
@@ -776,6 +882,9 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasResolvedRepoSource()) {
         mergeResolvedRepoSource(other.getResolvedRepoSource());
+      }
+      if (other.hasResolvedStorageSourceManifest()) {
+        mergeResolvedStorageSourceManifest(other.getResolvedStorageSourceManifest());
       }
       internalGetMutableFileHashes().mergeFrom(other.internalGetFileHashes());
       this.mergeUnknownFields(other.unknownFields);
@@ -1197,6 +1306,234 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
         resolvedRepoSource_ = null;
       }
       return resolvedRepoSourceBuilder_;
+    }
+
+    private com.google.cloudbuild.v1.StorageSourceManifest resolvedStorageSourceManifest_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.StorageSourceManifest,
+            com.google.cloudbuild.v1.StorageSourceManifest.Builder,
+            com.google.cloudbuild.v1.StorageSourceManifestOrBuilder>
+        resolvedStorageSourceManifestBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A copy of the build's `source.storage_source_manifest`, if exists, with any
+     * revisions resolved.
+     * This feature is in Preview.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.StorageSourceManifest resolved_storage_source_manifest = 9;
+     * </code>
+     *
+     * @return Whether the resolvedStorageSourceManifest field is set.
+     */
+    public boolean hasResolvedStorageSourceManifest() {
+      return resolvedStorageSourceManifestBuilder_ != null
+          || resolvedStorageSourceManifest_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A copy of the build's `source.storage_source_manifest`, if exists, with any
+     * revisions resolved.
+     * This feature is in Preview.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.StorageSourceManifest resolved_storage_source_manifest = 9;
+     * </code>
+     *
+     * @return The resolvedStorageSourceManifest.
+     */
+    public com.google.cloudbuild.v1.StorageSourceManifest getResolvedStorageSourceManifest() {
+      if (resolvedStorageSourceManifestBuilder_ == null) {
+        return resolvedStorageSourceManifest_ == null
+            ? com.google.cloudbuild.v1.StorageSourceManifest.getDefaultInstance()
+            : resolvedStorageSourceManifest_;
+      } else {
+        return resolvedStorageSourceManifestBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A copy of the build's `source.storage_source_manifest`, if exists, with any
+     * revisions resolved.
+     * This feature is in Preview.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.StorageSourceManifest resolved_storage_source_manifest = 9;
+     * </code>
+     */
+    public Builder setResolvedStorageSourceManifest(
+        com.google.cloudbuild.v1.StorageSourceManifest value) {
+      if (resolvedStorageSourceManifestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resolvedStorageSourceManifest_ = value;
+        onChanged();
+      } else {
+        resolvedStorageSourceManifestBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A copy of the build's `source.storage_source_manifest`, if exists, with any
+     * revisions resolved.
+     * This feature is in Preview.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.StorageSourceManifest resolved_storage_source_manifest = 9;
+     * </code>
+     */
+    public Builder setResolvedStorageSourceManifest(
+        com.google.cloudbuild.v1.StorageSourceManifest.Builder builderForValue) {
+      if (resolvedStorageSourceManifestBuilder_ == null) {
+        resolvedStorageSourceManifest_ = builderForValue.build();
+        onChanged();
+      } else {
+        resolvedStorageSourceManifestBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A copy of the build's `source.storage_source_manifest`, if exists, with any
+     * revisions resolved.
+     * This feature is in Preview.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.StorageSourceManifest resolved_storage_source_manifest = 9;
+     * </code>
+     */
+    public Builder mergeResolvedStorageSourceManifest(
+        com.google.cloudbuild.v1.StorageSourceManifest value) {
+      if (resolvedStorageSourceManifestBuilder_ == null) {
+        if (resolvedStorageSourceManifest_ != null) {
+          resolvedStorageSourceManifest_ =
+              com.google.cloudbuild.v1.StorageSourceManifest.newBuilder(
+                      resolvedStorageSourceManifest_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          resolvedStorageSourceManifest_ = value;
+        }
+        onChanged();
+      } else {
+        resolvedStorageSourceManifestBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A copy of the build's `source.storage_source_manifest`, if exists, with any
+     * revisions resolved.
+     * This feature is in Preview.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.StorageSourceManifest resolved_storage_source_manifest = 9;
+     * </code>
+     */
+    public Builder clearResolvedStorageSourceManifest() {
+      if (resolvedStorageSourceManifestBuilder_ == null) {
+        resolvedStorageSourceManifest_ = null;
+        onChanged();
+      } else {
+        resolvedStorageSourceManifest_ = null;
+        resolvedStorageSourceManifestBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A copy of the build's `source.storage_source_manifest`, if exists, with any
+     * revisions resolved.
+     * This feature is in Preview.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.StorageSourceManifest resolved_storage_source_manifest = 9;
+     * </code>
+     */
+    public com.google.cloudbuild.v1.StorageSourceManifest.Builder
+        getResolvedStorageSourceManifestBuilder() {
+
+      onChanged();
+      return getResolvedStorageSourceManifestFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A copy of the build's `source.storage_source_manifest`, if exists, with any
+     * revisions resolved.
+     * This feature is in Preview.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.StorageSourceManifest resolved_storage_source_manifest = 9;
+     * </code>
+     */
+    public com.google.cloudbuild.v1.StorageSourceManifestOrBuilder
+        getResolvedStorageSourceManifestOrBuilder() {
+      if (resolvedStorageSourceManifestBuilder_ != null) {
+        return resolvedStorageSourceManifestBuilder_.getMessageOrBuilder();
+      } else {
+        return resolvedStorageSourceManifest_ == null
+            ? com.google.cloudbuild.v1.StorageSourceManifest.getDefaultInstance()
+            : resolvedStorageSourceManifest_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A copy of the build's `source.storage_source_manifest`, if exists, with any
+     * revisions resolved.
+     * This feature is in Preview.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.StorageSourceManifest resolved_storage_source_manifest = 9;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.StorageSourceManifest,
+            com.google.cloudbuild.v1.StorageSourceManifest.Builder,
+            com.google.cloudbuild.v1.StorageSourceManifestOrBuilder>
+        getResolvedStorageSourceManifestFieldBuilder() {
+      if (resolvedStorageSourceManifestBuilder_ == null) {
+        resolvedStorageSourceManifestBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloudbuild.v1.StorageSourceManifest,
+                com.google.cloudbuild.v1.StorageSourceManifest.Builder,
+                com.google.cloudbuild.v1.StorageSourceManifestOrBuilder>(
+                getResolvedStorageSourceManifest(), getParentForChildren(), isClean());
+        resolvedStorageSourceManifest_ = null;
+      }
+      return resolvedStorageSourceManifestBuilder_;
     }
 
     private com.google.protobuf.MapField<java.lang.String, com.google.cloudbuild.v1.FileHashes>
